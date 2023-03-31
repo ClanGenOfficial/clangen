@@ -61,9 +61,9 @@
         "thoughts": [
             "Got scolded for eating what they've caught"
         ],
-        "main_backstory_constraint": [
-            "formerly a rogue"
-        ]
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        }
     },
     {
         "id": "thoughtful_apprentice",
@@ -77,8 +77,8 @@
     {
         "id": "patient_warrior_apprentice",
         "thoughts": [
-            "Is busy mastering a fighting technqiue",
-            "Spent all morning mastering and praticing the hunting crouch"
+            "Is busy mastering a fighting technique",
+            "Spent all morning mastering and practicing the hunting crouch"
         ],
         "main_trait_constraint": [
             "patient"

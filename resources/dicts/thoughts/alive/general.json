@@ -329,16 +329,10 @@
             "Doesn't want to go on patrol with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
             "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
             "warrior",
-            "medicine cat",
-            "mediator",
             "deputy",
-            "leader",
-            "elder"
+            "leader"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -781,9 +775,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ],
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        },
         "random_status_constraint": [
             "warrior"
         ]
@@ -801,9 +795,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ],
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        },
         "random_status_constraint": [
             "apprentice"
         ]
@@ -860,7 +854,7 @@
             "Wonders what they even need this training method for",
             "Brags about all the prey they caught when they were a rogue",
             "Can't help but be intrigued by the Warrior Code",
-            "Tells stories about their time as a rogue to other apprentice... with slight embellishments",
+            "Slightly embellishes a story about their rogue days to other apprentices",
             "Is trying to memorize the warrior code"
         ],
         "main_status_constraint": [
@@ -868,9 +862,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ]
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        }
     },
     {
         "id": "shameless_apprentice",
@@ -889,7 +883,7 @@
     {
         "id": "sneaky_apprentice",
         "thoughts": [
-            "Pratices stepping across the camp without making a sound",
+            "Practices stepping across the camp without making a sound",
             "Is spreading rumors about their fellow denmates",
             "Is wondering if they can talk their way out of morning duties"
         ],
@@ -982,7 +976,7 @@
         "thoughts": [
             "Doesn't think that they have performing up to their mentor's standards lately",
             "Is feeling cramped in the apprentice's den",
-            "Mananged to perform a difficult task on their own"
+            "Managed to perform a difficult task on their own"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1028,7 +1022,7 @@
             "Is hoping to not train today...",
             "Wishes they were back in the nursery",
             "Has agreed to their mentor's orders recently, despite their own doubts",
-            "Mananged to conquer a difficult task, despite feeling nervous",
+            "Managed to conquer a difficult task, despite feeling nervous",
             "Was startled by a squirrel while training"
         ],
         "main_status_constraint": [
@@ -1068,7 +1062,6 @@
             "bold"
         ]
     },
-
     {
         "id": "calm_apprentice_to_mentor",
         "thoughts": [
@@ -1119,7 +1112,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Mananged to convince another apprentices to play mossball instead of finishing their duties"
+            "Managed to convince another apprentices to play mossball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1149,7 +1142,7 @@
     {
         "id": "compassionate_apprentice_to_apprentice",
         "thoughts": [
-            "Is convincing r_c to take a moments reast - lest they become burnt out",
+            "Is convincing r_c to take a moments rest, lest they become burnt out",
             "Is thinking of giving their mentor a gift for their hard work",
             "Made a suggestion to their mentor",
             "Is doing extra apprentice tasks around camp, to help lighten the load"
@@ -1184,7 +1177,7 @@
     {
         "id": "faithful_apprentice",
         "thoughts": [
-            "Is sending a thanks to the stars for a good training session",
+            "Is sending thanks to the stars for a good training session",
             "Prays to StarClan that the training session goes well"
         ],
         "main_status_constraint": [
@@ -1249,7 +1242,6 @@
             "ambitious"
         ]
     },
-   
     {
         "id": "bloodthirsty_apprentices",
         "thoughts": [
@@ -1277,5 +1269,5 @@
         "random_status_constraint": [
             "kitten"
         ]
-    }   
+    }
 ]

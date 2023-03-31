@@ -11,15 +11,15 @@ class Thoughts():
     def thought_fulfill_rel_constraints(main_cat, random_cat, constraint) -> bool:
         """Check if the relationship fulfills the interaction relationship constraints."""
         # if the constraints are not existing, they are considered to be fulfilled
+        if not random_cat:
+            return False
         
-        # No current relationship-value bases tags, so this is commented out. 
-        """if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
-        else:
-            relationship = None"""
-        
-                
-        if "siblings" in constraint and not main_cat.is_sibling(random_cat):
+        # No current relationship-value bases tags, so this is commented out.
+        relationship = None
+        if random_cat in main_cat.relationships:
+            relationship = main_cat.relationships[random_cat]
+
+        if "siblings" in constraint and main_cat.is_sibling(random_cat):
             return False
 
         if "mates" in constraint and main_cat.mate != random_cat.ID:
@@ -32,6 +32,15 @@ class Thoughts():
             return False
 
         if "child/parent" in constraint and not random_cat.is_parent(main_cat):
+            return False
+        
+        if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
+            return False
+        
+        if "app/mentor" in constraint and random_cat.ID == main_cat.mentor:
+            return False
+        
+        if "strangers" in constraint and relationship and (relationship.platonic_like < 1 or relationship.romantic_love < 1):
             return False
 
         return True
@@ -48,35 +57,35 @@ class Thoughts():
         if "season" in thought:
             if season == None:
                 return False
-            if season not in thought["season"]:
+            elif season not in thought["season"]:
                 return False
 
         # This is for checking camp
         if "camp" in thought:
             if camp not in thought["camp"]:
                 return False
-            
+
         # This is for filtering certain relationship types between the main cat and random cat. 
         if "relationship_constraint" in thought:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
                 return False
-        
+
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
             if 'main_status_constraint' in thought and main_cat.status not in thought['main_status_constraint']:
                 return False
-        
+
         # Contraints for the status of the random cat
-        if 'random_status_constraint' in thought:
+        if 'random_status_constraint' in thought and random_cat:
             if random_cat.status not in thought['random_status_constraint']:
                 return False
-        
+
         # main cat age contraint
         if 'main_age_constraint' in thought:
             if main_cat.age not in thought['main_age_constraint']:
                 return False
         
-        if 'random_age_constraint' in thought:
+        if 'random_age_constraint' in thought and random_cat:
             if random_cat.age not in thought['random_age_constraint']:
                 return False
 
@@ -84,7 +93,7 @@ class Thoughts():
             if main_cat.trait not in thought['main_trait_constraint']:
                 return False
             
-        if 'random_trait_constraint' in thought:
+        if 'random_trait_constraint' in thought and random_cat:
             if random_cat.trait not in thought['random_trait_constraint']:
                 return False
 
@@ -93,44 +102,40 @@ class Thoughts():
                 return False
         
         if 'random_skill_constraint' in thought:
-            if random_cat.skill not in thought['random_skill_constraint']:
+            if random_cat and random_cat.skill not in thought['random_skill_constraint']:
                 return False
 
         if 'backstory_constraint' in thought:
             if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
                 return False
-            if random_cat.backstory not in thought['backstory_constraint']["r_c"]:
+            if random_cat and random_cat.backstory not in thought['backstory_constraint']["r_c"]:
                 return False
-        
+
         # Filter for the living status of the random cat. The living status of the main cat
-        # is taken into account in the thought loading process. 
+        # is taken into account in the thought loading process.
+        living_status = None
         if 'random_living_status' in thought:
-            if not random_cat.dead:
+            if random_cat and not random_cat.dead:
                 living_status = "living"
-            elif random_cat.dead and random_cat.df:
+            elif random_cat and random_cat.dead and random_cat.df:
                 living_status = "darkforest"
-            elif random_cat.dead and not random_cat.df:
+            elif random_cat and random_cat.dead and not random_cat.df:
                 living_status = "starclan"
             else:
                 living_status = 'unknownresidence'
-            
             if living_status not in thought['random_living_status']:
                 return False
         # this covers if living status isn't stated
-        if 'random_living_status' not in thought:
-            if not random_cat.dead:
+        elif 'random_living_status' not in thought:
+            if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
-            else:
-                living_status = "dead"
-            if living_status == "living":
-                pass
-            else:
+            if living_status != "living":
                 return False
             
         if 'random_outside_status' in thought:
-            if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
+            if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
-            elif random_cat.outside:
+            elif random_cat and random_cat.outside:
                 outside_status = "outside cat"
             else:
                 outside_status = "clancat"
@@ -139,17 +144,19 @@ class Thoughts():
             
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
-                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(main_cat.injuries or main_cat.illnesses) and "any" in thought['has_injuries']["m_c"]]):
                     return False
-            if "r_c" in thought['has_injuries']:
-                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+            if "r_c" in thought['has_injuries'] and random_cat:
+                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(random_cat.injuries or random_cat.illnesses) and "any" in thought['has_injuries']["r_c"]]):
                     return False
         
         if game_mode != "classic" and "perm_conditions" in thought:
             if "m_c" in thought["perm_conditions"]:
                 if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]]:
                     return False
-            if "r_c" in thought["perm_conditions"]:
+            if "r_c" in thought["perm_conditions"] and random_cat:
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]:
                     return False
 
@@ -214,7 +221,8 @@ class Thoughts():
         try:
             chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
             chosen_thought = choice(chosen_thought_group["thoughts"])
-        except:
+        except Exception as inst:
             chosen_thought = "No thoughts, head empty"
+            print(inst)
 
         return chosen_thought
