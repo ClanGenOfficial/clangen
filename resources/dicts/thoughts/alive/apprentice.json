@@ -77,8 +77,8 @@
     {
         "id": "patient_warrior_apprentice",
         "thoughts": [
-            "Is busy mastering a fighting technqiue",
-            "Spent all morning mastering and praticing the hunting crouch"
+            "Is busy mastering a fighting technique",
+            "Spent all morning mastering and practicing the hunting crouch"
         ],
         "main_trait_constraint": [
             "patient"
