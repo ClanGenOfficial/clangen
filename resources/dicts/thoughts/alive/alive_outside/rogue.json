@@ -1,0 +1,79 @@
+[
+    {
+        "id": "general_rogue_thoughts",
+        "thoughts": [
+            "Wishes the other rogues would leave them alone",
+            "Snarls at any cat that comes near",
+            "Wanders off on their own",
+            "Has been going missing quite a lot lately",
+            "Sniffs for their next meal",
+            "Wonders if they can find a warm place to sleep tonight",
+            "Was chased by a fox recently",
+            "Wishes they were in a warm nest"
+        ],
+        "main_status_constraint": [
+            "rogue"
+        ]
+    },
+    {
+        "id": "kitten_rogue_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "main_status_constraint": [
+            "rogue"
+        ],
+        "main_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "adolescent_rogue_thoughts",
+        "thoughts": [
+            "Is setting up a pile of thorns to catch a cat off guard",
+            "Wishes they still had their family around",
+            "Has been teaching themselves how to hunt",
+            "Misses their friends",
+            "Regrets their actions",
+            "Wonders what being in a Clan is like"
+        ],
+        "main_status_constraint": [
+            "rogue"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ]
+    },
+    {
+        "id": "adult_rogue_thoughts",
+        "thoughts": [
+            "Hisses at a missed catch",
+            "Is hoping they can find something to fill their belly tonight",
+            "Licks at an old, aching scar in an attempt to soothe it",
+            "Was almost found by a c_n patrol",
+            "Is lurking in c_n territory"
+        ],
+        "main_status_constraint": [
+            "rogue"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult"
+        ]
+    },
+    {
+        "id": "elder_and_senior_rogue_thoughts",
+        "thoughts": [
+            "Thinks about finding some Twolegs to help them in their old age",
+            "Thinks their joints are aching too much to hunt today",
+            "Wonders if they can carry on"
+        ],
+        "main_status_constraint": [
+            "rogue"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ]
+    }
+]

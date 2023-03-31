@@ -320,8 +320,7 @@ class Condition_Events():
                         for x in conditions:
                             if x in scarless_conditions:
                                 possible_conditions.append(x)
-
-                        if len(possible_conditions) > 0 and not int(random.random() * 40):
+                        if len(possible_conditions) > 0 and not int(random.random() * game.config["condition_related"]["permanent_condition_chance"]):
                             perm_condition = random.choice(possible_conditions)
                         else:
                             return perm_condition
@@ -350,7 +349,7 @@ class Condition_Events():
         illness_progression = {
             "running nose": "whitecough",
             "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
@@ -701,7 +700,6 @@ class Condition_Events():
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()
-                        game.ranks_changed_timeskip = True
                         event_list.append(event)
 
                 elif cat.permanent_condition[condition]['severity'] == 'severe':
@@ -727,7 +725,6 @@ class Condition_Events():
                                  f"of their contributions to {game.clan.name}Clan."
 
                     cat.retire_cat()
-                    game.ranks_changed_timeskip = True
                     event_list.append(event)
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):

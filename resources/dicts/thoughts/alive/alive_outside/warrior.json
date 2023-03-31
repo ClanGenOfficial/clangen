@@ -1,0 +1,15 @@
+[
+    {
+        "id": "lost_warrior_thoughts",
+        "thoughts": [
+            "Hopes that the Clan's kits are doing well",
+            "Misses the warmth of the warriors' den",
+            "Hopes their friends from c_n are doing okay",
+            "Dreams about hunting for their Clan",
+            "Wonders if the apprentices of the Clan are now warriors"
+        ],
+        "main_status_constraint": [
+            "warrior"
+        ]
+    }
+]

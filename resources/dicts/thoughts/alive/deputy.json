@@ -1,0 +1,69 @@
+[
+    {
+        "id": "deputy_dead_deputy",
+        "thoughts": [
+            "Wishes they could speak to r_c to learn how to assign patrols better"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    },
+    {
+        "id": "gen_deputy",
+        "thoughts": [
+            "Is assigning cats to a border patrol",
+            "Is assigning cats to a hunting patrol",
+            "Is wondering what it would be like to be a leader",
+            "Is stressed about organizing patrols",
+            "Wonders who will give them nine lives",
+            "Feels overworked",
+            "Is hoping for a break",
+            "Is assigning cats to the dawn patrol",
+            "Is assigning cats to the hunting patrol",
+            "Is assigning cats to patrol the borders",
+            "Can't believe they overslept today",
+            "Is unsure of what the rest of the Clan thinks of them as deputy"
+        ]
+    },
+    {
+        "id": "deputy_alive_leader",
+        "thoughts": [
+            "Is doing their best to honor their Clan and their leader",
+            "Must speak with the leader soon about something they found while out on patrol"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
+        "id": "deputy_alive_apprentices",
+        "thoughts": [
+            "Is assessing the apprentices"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "bloodthirsty_deputy_to_gen",
+        "thoughts": [
+            "Thinks about killing the leader and staging it as an accident",
+            "Encourages the leader to start a war"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "strange_deputy_to_gen",
+        "thoughts": [
+            "Accidentally assigns the same cat to three patrols",
+            "Insists a hunting patrol only bring back mice",
+            "Goes missing and comes back smelling like garlic",
+            "Is making odd noises"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    }
+]

@@ -1545,7 +1545,7 @@
         ],
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
         "decline_text": "They decide not to investigate.",
-        "chance_of_success": 70,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -1604,7 +1604,7 @@
         ],
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
         "decline_text": "They decide not to investigate.",
-        "chance_of_success": 70,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -1665,7 +1665,7 @@
         ],
         "intro_text": "While on patrol, app1 notices some suspicious pawprints in the swamp mud.",
         "decline_text": "They decide not to investigate.",
-        "chance_of_success": 70,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -1720,7 +1720,7 @@
         ],
         "intro_text": "On their way to mark the far corners of their swamps, r_c starts telling a story of their ancestors to keep every cat entertained.",
         "decline_text": "The patrol seems uninterested, so r_c drops the idea. ",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "It keeps the cats' minds off their damp paws and muddy path. The patrol goes quickly and easily.",

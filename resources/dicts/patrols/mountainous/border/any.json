@@ -6,7 +6,7 @@
     "tags": ["border", "fighting", "scar", "FACE", "battle_injury", "multi_deaths", "reputation"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
@@ -70,7 +70,7 @@
     "tags": ["border", "fighting", "scar", "THROAT", "battle_injury", "multi_deaths", "reputation", "respect", "trust"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
@@ -103,7 +103,7 @@
 "tags": ["border", "platonic", "comfort", "respect", "big_change", "rel_patrol", "patrol_to_r_c"],
 "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of their ancestors to keep every cat entertained.",
 "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
-"chance_of_success": 60,
+"chance_of_success": 20,
 "exp": 20,
 "success_text": [
         "It keeps the cats' minds off their sore pads and the sharp stones they walk on. The patrol goes quickly and easily.",
