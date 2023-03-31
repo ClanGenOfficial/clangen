@@ -1,19 +1,9 @@
 [
     {
-        "id": "mediator_dead_mediator",
+        "id": "gen_dead_mediator",
         "thoughts": [
-            "Wishes they could ask r_c for advice"
-        ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
-            "mediator",
-            "mediator apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
+            "Is proud of their work as c_n's mediator, and hopes that they leave behind a legacy of peace",
+            "Is a bit exasperated upon watching c_n cats' arguments"
         ]
     }
 ]
