@@ -121,6 +121,8 @@ class Thoughts():
                 living_status = "starclan"
             else:
                 living_status = 'unknownresidence'
+            if living_status not in thought['random_living_status']:
+                return False
         # this covers if living status isn't stated
         elif 'random_living_status' not in thought:
             if not random_cat.dead:
