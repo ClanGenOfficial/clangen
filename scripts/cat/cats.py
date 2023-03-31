@@ -1044,11 +1044,11 @@ class Cat():
 
         # get other cat
         i = 0
+        # makes sure that a cat won't think about a cat that they don't know that's dead
         while other_cat == self.ID and len(all_cats) > 1 or (
                 all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) or\
-                all_cats[other_cat].dead and not self.dead and dead_chance != 1 or other_cat not in self.relationships:
+                (all_cats[other_cat].dead and dead_chance != 1) or (other_cat not in self.relationships):
             other_cat = random.choice(list(all_cats.keys()))
-            # makes sure that a cat won't think about a cat that they don't know that's dead
             i += 1
             if i > 100:
                 other_cat = None
