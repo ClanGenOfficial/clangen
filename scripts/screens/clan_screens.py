@@ -47,7 +47,9 @@ class ClanScreen(Screens):
                 screen.blit(self.leaffall_bg, (0, 0))
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
                 self.save_button_saving_state.show()
                 self.save_button.disable()

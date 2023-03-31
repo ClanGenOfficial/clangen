@@ -44,7 +44,7 @@
 	{
 		"id": "group_3_leader_neg1",
 		"cat_amount": 3,
-		"interactions": ["m_c, after having r_c2 challenged them, they command r_c1 to punish r_c2. Everyone ends up hurt, but m_c feels they can trust r_c1 more."],
+		"interactions": ["After having r_c2 challenge them, m_c commands r_c1 to help them punish r_c2. Everyone ends up hurt, though m_c feels they can trust r_c1 more."],
 		"get_injuries": {
 			"m_c": {
 				"injury_names": ["claw-wound"],

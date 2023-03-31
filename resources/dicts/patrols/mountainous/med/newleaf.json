@@ -102,7 +102,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "The betony plants stretch outwards, racing to take advantage of the newleaf sun. p_l points out the plants to the warriors they brought with them, who just accept that this particular green shrub is different to all the other green shrubs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "While they haven't yet grown their flowers, the betony has no shortage of leaves for p_l's patrol to harvest. There's even a little goldenrod to pick up, half-hidden under the enthusiastic betony plant.",
@@ -171,7 +171,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Newleaf should bring new leaves on the blackberry brambles. p_l heads out to collect some, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
            "Sure enough, all along the trailing branches of the brambles, new leaves are poking towards the sun. This early in the season it's hard to differentiate between blackberry and raspberry plants, but either would be useful. p_l doesn't take too many, and the rest of the patrol listens to them describe how a medicine cat must predict the Clan's future need, respect for p_l growing.",
@@ -240,7 +240,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect", "plantain"],
     "intro_text": "Worried about their stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
            "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home. p_l is amused to find some plantain leaves in the mix as they're sorting later.",
@@ -309,7 +309,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves. They assemble a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful. And there's some dandelion nearby - perfect. With a larger patrol, the cats bring back a good haul, and p_l makes sure to thank everyone for their assistance.",
@@ -378,7 +378,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "catmint", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "jealousy", "dislike", "respect"],
     "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' them gather catmint, their heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l really needs to renew c_n's stocks of catmint as newleaf brings the plants back to life.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 0,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
@@ -424,7 +424,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The strengthening sun in the sky will bring dandelion plants out - always the first to take advantage of newleaf, those ones. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol, with the instructions to also be on the lookout for wild garlic, as they don't tend to grow far from dandelions.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite, short-lived toy.",
@@ -499,7 +499,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing a group of their Clanmates with them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 60,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats <i>murrp</i> with amusement, but it does also remind everyone to be careful as they strip leaves from the tree.",
@@ -571,7 +571,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod and marigold for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. After that, it isn't too hard to find some marigold, and then the process begins once more. The patrol chats as they work, exchanging gossip and news as the smell of cut stems grows around them.",
@@ -663,7 +663,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees. p_l heads out with a gathering patrol, promising the warriors that they can pick up a few needles for the dens of the camp to help freshen them up, so long as they gather enough for the herb stores first.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Even evergreens make sure to send out new leaves in newleaf, and p_l snips off the new, still-soft needles, taking them home for c_n. The warriors really help p_l carry more than they could ever dream of by themselves. Whilst taking them home, p_l notices a freshly fallen branch - new, bright green oak leaves rustling in the gentle breeze. They spare a moment to gather some.",
@@ -814,7 +814,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp. Thankfully, another pink-flowered plant grows nearby, and p_l had just begun to run out of betony. The patrol chats as they work, exchanging gossip and news as the smell of cut stems grows around them.",
@@ -883,7 +883,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where marigold might be growing this year, with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance, and tansy, growing hidden nearby, is betrayed by it's scent. The non-medicine cats wander straight past them, and have to be gently called back by p_l to harvest them.",
@@ -952,7 +952,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where mullein might be growing this year, with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two for each member of their patrol and rips down their central stalks, carrying them back to camp to trim the leaves off later. As they pad back, a scent draws their nose. Thyme! Well worth picking up while they're there.",
@@ -1021,7 +1021,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As the branches of the oak trees start to green, p_l heads out to collect its leaves with their Clanmates coming along. Many paws will make light work, after all.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Towering into the sky, p_l always finds the blush of new leaves budding from elder and oak branches one of the most hopeful signs of newleaf. The warriors helping them seem to just find it a fun training exercise, to see how spindly a branch they're able to balance on as they send down a rain of leaves on top of p_l.",
@@ -1090,7 +1090,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves with a gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path, next to a mullein sprout. The warriors help them pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path here is too annoying, anyways.",
@@ -1159,7 +1159,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "poppy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity. They assemble a good sized patrol full of Clanmates to help them out with the gathering of this important herb.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "These plants will be dead in leaf-fall, while the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest, with all the members of the patrol bringing back at least a couple dried flowerheads full of seeds each.",
@@ -1228,7 +1228,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They describe ragwort to the warrior with them, though they'd be surprised if anyone manages to spot it.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest, the foul scent of their petals not yet muddying the air and don't completely overpower the burdock plant sitting next to them. That's not a great improvement though, and they're still foul - p_l makes sure to send the warriors helping them for a drink afterwards, and that the whole camp sees them specifically thanking their long-suffering patrol for their work.",
@@ -1297,7 +1297,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. There shouldn't be any problem collecting it with other cats - these warriors are all strong and healthy.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. And there's ragwort. By StarClan, this gathering patrol will taste awful. There's enough of the common herb to let the warriors gather sprigs of it to freshen the dens, letting the rest of the patrol at least get a small reward for the abuse of their tastebuds.",
@@ -1366,7 +1366,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme, and the gathering patrol would rather have this over with quickly.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but one of the warriors calls them over. Thanks to its calming, well-loved scent, medicine cats aren't the only Clan cats who can identify this plant, a fact that p_l is grateful for right about now. p_l is relieved to come across a clump of goldenrod as they pad back to camp. They've been able to catch two prey with one blow today.",
@@ -1435,7 +1435,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, a patrol of warriors assisting them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The sharp tang of garlic leads p_l to a growing patch to bring home. Their helpers settle in with minimal disgust, gathering the strong-smelling herb for the Clan's stores and not far off are the pink-purple flowers of a mallow clump - just what p_l needed.",

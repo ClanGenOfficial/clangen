@@ -6,7 +6,7 @@
     "tags": ["border", "fighting", "scar", "THROAT", "battle_injury", "multiple_deaths", "trust", "reputation"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "The patrol descends into battle without a second thought, eventually driving the rogues away.",
@@ -70,7 +70,7 @@
     "tags": ["border", "fighting", "scar", "SNOUT", "battle_injury", "reputation", "respect", "trust", "clan_to_r_c", "sacrificial", "rel_patrol", "multi_deaths"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the Clan cats.",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
@@ -169,7 +169,7 @@
     "tags": ["scar", "SIDE", "battle_injury", "border", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "The patrol discusses the rumors they've been hearing that there's a badger denning in a certain part of c_n territory.",
     "decline_text": "Everyone agrees it's concerning, and the patrol is much more alert than usual while collecting moss for bedding.",
-    "chance_of_success": 50,
+    "chance_of_success": 10,
     "exp": 40,
     "success_text": [
         "Once they find the sett, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? Eventually p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
@@ -401,7 +401,7 @@
     "tags": ["fighting", "respect", "border"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
@@ -430,7 +430,7 @@
     "tags": ["fighting", "respect", "border", "scar", "BRIDGE"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud beneath the canopy.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
@@ -491,7 +491,7 @@
     "tags": ["border", "platonic", "comfort", "respect", "rel_patrol", "big_change", "patrol_to_r_c"],
     "intro_text": "On their way to mark the far corners of their forest territory, p_l starts telling a story of their ancestors to keep every cat entertained.",
     "decline_text": "The story is forgotten as the patrol comes across a strange scent trail.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
             "It keeps the cats' minds off their long shady walk. The patrol goes quickly and easily.",

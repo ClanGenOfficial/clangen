@@ -115,6 +115,7 @@ def bs_blurb_text(cat):
         'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
         'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
         'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
+        'orphaned6': "This cat was found flailing in the ocean as a teeny kitten, no parent in sight.",
         'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
@@ -142,7 +143,7 @@ def backstory_text(cat):
     bs_display = backstory
 
     backstory_map = {
-        'clanborn': 'clanborn',
+        'clanborn': 'Clanborn',
         'clan_founder': 'Clan founder',
         'halfclan1': 'half-Clan',
         'halfclan2': 'half-Clan',
@@ -986,7 +987,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.status not in ['kittypet', 'loner', 'rogue', 'former clancat']:
+        if the_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             if the_cat.backstory is not None:
                 bs_text = backstory_text(the_cat)
                 output += 'backstory: ' + bs_text
@@ -1162,7 +1163,7 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former clancat"]:
+            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former Clancat"]:
                 life_history = [str(self.get_backstory_text())]
             else:
                 life_history = []

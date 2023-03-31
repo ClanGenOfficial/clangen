@@ -150,7 +150,7 @@ class Romantic_Events():
         if become_mates and mate_string:
             self.had_one_event = True
             cat_from.set_mate(cat_to)
-            game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
+            game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
@@ -170,7 +170,7 @@ class Romantic_Events():
                 cat_from.unset_mate(breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up."
                 # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
+                game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
         """

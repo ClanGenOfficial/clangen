@@ -233,7 +233,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -435,7 +435,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "Your cats are only just smaller and heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -681,7 +681,7 @@
     "tags": ["hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"],
     "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
     "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-    "chance_of_success": 40,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",

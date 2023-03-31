@@ -16,11 +16,22 @@
     {
         "id": "gen_elder",
         "thoughts": [
+            "Is snoring in their sleep",
+            "Is feeling rather chipper today",
+            "Is snoring loudly in their sleep",
+            "Is assisting with camp cleanup",
+            "Is enjoying the warm sun in the camp clearing",
+            "Is feeling restless today",
+            "Thinks about going on a little jaunt outside camp"
+        ]
+    },
+    {
+        "id": "gen_senior_elder",
+        "thoughts": [
             "Is complaining about their nest being too rough",
             "Is complaining about their aching joints",
             "Is telling stories about when they were young",
             "Is complaining about thorns in their nest",
-            "Is snoring in their sleep",
             "Thinking about how too many cats die young",
             "Is complaining about being cold",
             "Is grateful they have lived so long",
@@ -29,9 +40,6 @@
             "Is predicting rainy weather based on their aching bones",
             "Hopes their legacy will continue on after their death",
             "Is in quite the mood today",
-            "Is feeling rather chipper today",
-            "Is snoring loudly in their sleep",
-            "Is assisting with camp cleanup",
             "Feels too stiff to leave their nest today...",
             "Has been sleeping a lot more as of late",
             "Has been enjoying their old age",
@@ -40,8 +48,10 @@
             "Is feeling rather cross today",
             "Thinks that times have changed for the better since they were young",
             "Is recalling something no other cat remembers anymore",
-            "Is enjoying the warm sun in the camp clearing",
             "Is grumbling about the weather"
+        ],
+        "main_age_constraint": [
+            "senior"
         ]
     },
     {
@@ -53,6 +63,10 @@
             "Is sharing wisdom with younger cats that is... less than helpful",
             "Is recounting daring expeditions for the younger cats to hear",
             "Is telling a rather tall tale to any cat who will listen"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
         ],
         "random_age_constraint": [
             "kitten",
@@ -68,6 +82,9 @@
             "Is requesting an apprentice's help with their ticks",
             "Is asking apprentices to help check them for ticks"
         ],
+        "main_age_constraint": [
+            "senior"
+        ],
         "random_status_constraint": [
             "apprentice"
         ]
@@ -77,8 +94,29 @@
         "thoughts": [
             "Is giving the Clan leader attitude"
         ],
+        "main_age_constraint": [
+            "senior"
+        ],
         "random_status_constraint": [
             "leader"
+        ]
+    },
+    {
+        "id": "elder_alive_mate_dead",
+        "thoughts": [
+            "Wonders when they'll join r_c in StarClan",
+            "Almost can't believe that r_c was the first to go",
+            "Had a dream about r_c last night",
+            "Purrs softly while thinking about r_c"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ],
+        "random_living_status":[
+            "starclan"
+        ],
+        "relationship_constraint":[
+            "mates"
         ]
     }
 ]

@@ -92,7 +92,7 @@
     "Eagle", "Echo", "Egret", "Elder", "Elm", "Ermine",
     "Falcon", "Fallen", "Falling", "Fallow", "Fawn", "Feather", "Fennel", "Fern",
     "Ferret", "Fidget", "Fin", "Finch", "Fir", "Fish", "Flail", "Flash", "Flax", "Fleck", "Fleet", "Flicker",
-    "Flight", "Flint", "Flip", "Flood", "Flower", "Flutter", "Fly", "Fog", "Forest", "Freckle", "Fringe",
+    "Flight", "Flint", "Flip", "Flood", "Flower", "Flutter", "Fly", "Fog", "Freckle", "Fringe",
     "Frog", "Frond", "Furled", "Furze", "Fuzzy", "Gale", "Gander", "Gannet", "Garlic", "Goose",
     "Gorge", "Gorse", "Grass", "Gravel", "Grouse", "Gull", "Gust", 
     "Heart", "Hail", "Half", "Hare", "Hatch", "Haven", "Hawk", "Hay", "Hazel", "Heath", "Heavy", "Heron", "Hill", "Hollow", "Holly",
@@ -197,7 +197,7 @@
   "biome_prefixes": {
     "Forest": [
     "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", 
-    "Cedar", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
+    "Cedar", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
     "Marten", "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Sparrow", "Sprig",
     "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Twig", "Twig", "Wood", "Wolf"
     ],

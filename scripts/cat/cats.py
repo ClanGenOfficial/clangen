@@ -134,11 +134,13 @@ class Cat():
     }
 
     backstories = [
-        'clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2',
-        'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
-        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced',
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
-        "guided3", "guided4"
+        "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
+        "kittypet1", "kittypet2", "kittypet3", "kittypet4", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2",
+        "abandoned3", "abandoned4", "medicine_cat", "otherclan", 'otherclan1', "otherclan2", "otherclan3",
+        "ostracized_warrior", "disgraced", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
+        "tragedy_suvivor", "tragedy_survivor2", "tragedy_survivor4", "tragedy_survivor4", "orphaned", "orphaned2",
+        "orphaned3", "orphaned4", "orphaned5", "orphaned6" "wandering_healer1", "wandering_healer2", "guided1",
+        "guided2", "guided3", "guided4", "outsider", "outsider2", "outsider3"
     ]
     backstory_categories = {
         'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
@@ -149,7 +151,7 @@ class Cat():
                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
         'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
-        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5'],
+        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5', 'orphaned6'],
         'abandoned_backstories': ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']
     }
 
@@ -1034,6 +1036,7 @@ class Cat():
         game_mode = game.switches['game_mode']
         biome = game.switches['biome']
         camp = game.switches['camp_bg']
+        dead_chance = random.getrandbits(4)
         try:
             season = game.clan.current_season
         except:
@@ -1041,13 +1044,11 @@ class Cat():
 
         # get other cat
         i = 0
+        # makes sure that a cat won't think about a cat that they don't know that's dead
         while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']):
-            other_cat = random.choice(list(all_cats.keys()))
-            # makes sure that a cat won't think about a cat that was dead longer than they've been alive (with 4 moons difference)
-            if all_cats[other_cat].dead and not self.dead and not self.status in ['leader', 'medicine cat']:
-                if other_cat.ID not in self.relationships:
-                    continue
+                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) or\
+                (all_cats.get(other_cat).dead and self.dead and dead_chance > 1) or (other_cat not in self.relationships):
+            other_cat = choice(list(all_cats.keys()))
             i += 1
             if i > 100:
                 other_cat = None
@@ -1727,7 +1728,6 @@ class Cat():
                 "event_triggered": new_perm_condition.new
             }
             new_condition = True
-            print(self.permanent_condition)
         return new_condition
 
     def not_working(self):

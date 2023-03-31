@@ -22,7 +22,7 @@ from scripts.game_structure import image_cache
 
 from sys import exit as sys_exit
 
-from scripts.cat.sprites import sprites, Sprites
+from scripts.cat.sprites import sprites, Sprites, spriteSize
 from scripts.cat.appearance_utility import init_pelt
 from scripts.cat.pelts import (
     choose_pelt,
@@ -248,7 +248,10 @@ def create_new_cat(Cat,
     :param outside: set this as True to generate the cat as an outsider instead of as part of the clan - default: False (clan cat)
     """
     accessory = None
-    backstory = choice(backstory)
+    if type(backstory) == list:
+        backstory = choice(backstory)
+    else:
+        backstory = backstory
 
     if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
         other_clan = True
@@ -345,8 +348,7 @@ def create_new_cat(Cat,
         if accessory:
             new_cat.accessory = accessory
 
-        # newbie thought
-        new_cat.thought = thought
+
 
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
@@ -391,6 +393,9 @@ def create_new_cat(Cat,
         if not alive:
             new_cat.die()
 
+        # newbie thought
+        new_cat.thought = thought
+
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
@@ -401,7 +406,7 @@ def create_new_cat(Cat,
     return created_cats
 
 
-def create_outside_cat(Cat, status, backstory):
+def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         """
         TODO: DOCS
         """
@@ -409,7 +414,7 @@ def create_outside_cat(Cat, status, backstory):
         if backstory in Cat.backstory_categories["rogue_backstories"]:
             status = 'rogue'
         elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
-            status = "former clancat"
+            status = "former Clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
         elif status in ['loner', 'rogue']:
@@ -428,6 +433,12 @@ def create_outside_cat(Cat, status, backstory):
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
+
+        if not alive:
+            new_cat.dead = True
+
+        if thought:
+            new_cat.thought = thought
 
         # create relationships - only with outsiders 
         # (this function will handle, that the cat only knows other outsiders)
@@ -1013,7 +1024,7 @@ def update_sprite(cat):
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
-            tint = pygame.Surface((50, 50)).convert_alpha()
+            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
             tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
@@ -1024,7 +1035,7 @@ def update_sprite(cat):
             # Apply tint to white patches.
             if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
                 "tint_colours"]:
-                tint = pygame.Surface((50, 50)).convert_alpha()
+                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
                 tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
                 white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
@@ -1036,7 +1047,7 @@ def update_sprite(cat):
             points = sprites.sprites['white' + cat.points + cat_sprite].copy()
             if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
                  "tint_colours"]:
-                tint = pygame.Surface((50, 50)).convert_alpha()
+                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
                 tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
                 points.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(points, (0, 0))
