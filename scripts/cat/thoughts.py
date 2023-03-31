@@ -13,11 +13,10 @@ class Thoughts():
         # if the constraints are not existing, they are considered to be fulfilled
         
         # No current relationship-value bases tags, so this is commented out. 
-        """if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
+        if random_cat in main_cat.relationships:
+            relationship = main_cat.relationships[random_cat]
         else:
-            relationship = None"""
-        
+            relationship = None
                 
         if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
@@ -38,6 +37,9 @@ class Thoughts():
             return False
         
         if "app/mentor" in constraint and random_cat not in main_cat.mentor:
+            return False
+        
+        if "strangers" in constraint and not (relationship.platonic_like < 1 or relationship.romantic_love < 1):
             return False
 
         return True
@@ -65,6 +67,16 @@ class Thoughts():
         # This is for filtering certain relationship types between the main cat and random cat. 
         if "relationship_constraint" in thought:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
+                return False
+        else:
+            if random_cat in main_cat.relationships:
+                relationship = main_cat.relationships[random_cat]
+                if relationship.platonic_like == 0 and relationship.romantic_love == 0 and relationship.dislike == 0\
+                and relationship.admiration == 0 and relationship.comfortable == 0 and relationship.jealousy == 0\
+                and relationship.trust == 0:
+                    return False
+            else:
+                relationship = None
                 return False
         
         # Contraints for the status of the main cat
