@@ -33,6 +33,12 @@ class Thoughts():
 
         if "child/parent" in constraint and not random_cat.is_parent(main_cat):
             return False
+        
+        if "mentor/app" in constraint and random_cat not in main_cat.current_apprentice:
+            return False
+        
+        if "app/mentor" in constraint and random_cat not in main_cat.mentor:
+            return False
 
         return True
 
