@@ -2824,18 +2824,17 @@ class MediationScreen(Screens):
 
         
         if "has a mate" in col2:
-            self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2,
-                                                                    scale(pygame.Rect((x + 220, y + 252), (161, -1))),
-                                                                    object_id="#text_box_22_horizleft_spacing_95",
-                                                                    line_spacing=0.75,
-                                                                    tool_tip_text=f"{Cat.fetch_cat(cat.mate).name}'s mate"
-                                                                   )
+            self.selected_cat_elements["col2" + tag] = UITextBox(col2,
+                                                                 scale(pygame.Rect((300, 650), (180, -1))),
+                                                                 object_id="#text_box_22_horizleft_spacing_95",
+                                                                 manager=MANAGER
+                                                                 )
         else:
-            self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2,
-                                                                    scale(pygame.Rect((x + 220, y + 252), (161, -1))),
-                                                                    object_id="#text_box_22_horizleft_spacing_95",
-                                                                    line_spacing=0.75,
-                                                                   )
+            self.selected_cat_elements["col2" + tag] = UITextBox(col2,
+                                                                 scale(pygame.Rect((300, 650), (180, -1))),
+                                                                 object_id="#text_box_22_horizleft_spacing_95",
+                                                                 manager=MANAGER
+                                                                 )
 
         # ------------------------------------------------------------------------------------------------------------ #
         # RELATION BARS
