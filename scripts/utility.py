@@ -444,7 +444,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         # (this function will handle, that the cat only knows other outsiders)
         new_cat.create_relationships_new_cat()
 
-        # game.clan.add_cat(new_cat)
+        game.clan.add_cat(new_cat)
         game.clan.add_to_outside(new_cat)
         name = str(name + suffix)
 
