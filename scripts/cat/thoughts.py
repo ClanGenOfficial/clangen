@@ -68,16 +68,6 @@ class Thoughts():
         if "relationship_constraint" in thought:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
                 return False
-        else:
-            if random_cat in main_cat.relationships:
-                relationship = main_cat.relationships[random_cat]
-                if relationship.platonic_like == 0 and relationship.romantic_love == 0 and relationship.dislike == 0\
-                and relationship.admiration == 0 and relationship.comfortable == 0 and relationship.jealousy == 0\
-                and relationship.trust == 0:
-                    return False
-            else:
-                relationship = None
-                return False
         
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
