@@ -48,11 +48,12 @@ class Thoughts():
     @staticmethod
     def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode, biome, season, camp) -> bool:
         """Check if the two cats fulfills the thought constraints."""
+
         # This is for checking biome
         if "biome" in thought:
             if biome not in thought["biome"]:
                 return False
-            
+
         # This is checking for season
         if "season" in thought:
             if season == None:
@@ -100,9 +101,8 @@ class Thoughts():
         if 'main_skill_constraint' in thought:
             if main_cat.skill not in thought['main_skill_constraint']:
                 return False
-        
-        if 'random_skill_constraint' in thought:
-            if random_cat and random_cat.skill not in thought['random_skill_constraint']:
+        if 'random_skill_constraint' in thought and random_cat:
+            if random_cat.skill not in thought['random_skill_constraint']:
                 return False
 
         if 'backstory_constraint' in thought:
@@ -114,6 +114,7 @@ class Thoughts():
         # Filter for the living status of the random cat. The living status of the main cat
         # is taken into account in the thought loading process.
         living_status = None
+        outside_status = None
         if 'random_living_status' in thought:
             if random_cat and not random_cat.dead:
                 living_status = "living"
@@ -123,13 +124,15 @@ class Thoughts():
                 living_status = "starclan"
             else:
                 living_status = 'unknownresidence'
-            if living_status not in thought['random_living_status']:
+            if living_status and living_status not in thought['random_living_status']:
                 return False
+        
         # this covers if living status isn't stated
         elif 'random_living_status' not in thought:
+            living_status = None
             if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
-            if living_status != "living":
+            if living_status and living_status != "living":
                 return False
             
         if 'random_outside_status' in thought:
@@ -139,9 +142,8 @@ class Thoughts():
                 outside_status = "outside cat"
             else:
                 outside_status = "clancat"
-            if outside_status not in thought['random_outside_status']:
+            if outside_status and outside_status not in thought['random_outside_status']:
                 return False
-            
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
                 if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
@@ -221,8 +223,7 @@ class Thoughts():
         try:
             chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
             chosen_thought = choice(chosen_thought_group["thoughts"])
-        except Exception as inst:
+        except:
             chosen_thought = "No thoughts, head empty"
-            print(inst)
 
         return chosen_thought
