@@ -19,7 +19,7 @@ class Thoughts():
         if random_cat in main_cat.relationships:
             relationship = main_cat.relationships[random_cat]
 
-        if "siblings" in constraint and main_cat.is_sibling(random_cat):
+        if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
 
         if "mates" in constraint and main_cat.mate != random_cat.ID:
