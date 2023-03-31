@@ -179,8 +179,24 @@ class Sprites():
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             sprites.make_group('nyloncollars', (a, 2), f'collars{i}')
 
+# get the width and height of the spritesheet
+lineart = pygame.image.load('sprites/lineart.png')
+width, height = lineart.get_size()
+del lineart # unneeded
 
-sprites = Sprites(50)
+# if anyone changes lineart for whatever reason update this
+if width / 3 == height / 7:
+    spriteSize = width / 3
+else:
+    spriteSize = 50 # default, what base clangen uses
+    print(f"lineart.png is not 3x7, falling back to {spriteSize}")
+    print(f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
+
+del width, height # unneeded
+
+
+# i am sorry for merge conflicts, modders :fadeaway:
+sprites = Sprites(spriteSize)
 #tiles = Sprites(64)
 
 for x in [

@@ -1,0 +1,137 @@
+[
+    {
+        "id": "general_loner_thoughts",
+        "thoughts": [
+            "Is spending the night with a friend",
+            "Wonders where r_c went",
+            "Wonders about what Clan life would be like",
+            "Is considering finding some housefolk to live with",
+            "Loves their life of freedom",
+            "Thinks that Clan cats are stupid",
+            "Debates joining a Clan",
+            "Heard a rumor of rogues in the area",
+            "Feels alone",
+            "Is recovering from an illness",
+            "Is exploring",
+            "Caught a particularly large bird",
+            "Caught a particularly large squirrel",
+            "Caught a particularly large rabbit",
+            "Is humming a tune",
+            "Got chased off by a border patrol recently",
+            "Heard some strange stories about starry ancestors living in the sky",
+            "Shivers in the cold",
+            "Wonders if Clan life is the only way to live with others",
+            "Was chased away from the shelter they had been staying in",
+            "Hopes their mild cough won't get worse",
+            "Wishes newleaf would come already",
+            "Frowns deeply at the first frost",
+            "Got invited to spend the night with a group of friendly loners",
+            "Saw a helpless cat get taken in a metal box by Twolegs",
+            "Sniffed around a known Clan territory curiously ",
+            "Chows down on some food a Twoleg left out for them",
+            "Envies the strong kinship the Clan cats have",
+            "Took a stroll through the city",
+            "Spies a kittypet outside of the window, jealous of the protection and food they have",
+            "Spies a kittypet and taunts them that they can't enjoy freedom",
+            "Taking a nap, hoping something exciting would escape their boredom",
+            "Was running carelessly across the Thunderpath and was nearly hit by a monster"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ]
+    },
+    {
+        "id": "loner_kitten_/_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird",
+            "Is currently trying to figure out how to catch a squirrel",
+            "Is currently trying to figure out how to catch a rabbit",
+            "Is missing their parents",
+            "Regrets missing an easy catch",
+            "Learned how slippery the edge of a river can be the hard way",
+            "Is playing in the fallen leaves",
+            "Has been desperately trying to ignore their possibly bleak future",
+            "Is licking their bruises after a failed attempt at catching a mouse",
+            "Is asking themself if becoming a kittypet would be an easier life",
+            "Is trying not to feel overwhelmingly lonely",
+            "Is learning about the Clans",
+            "Thinks Clan cats are strange",
+            "Is in awe hearing the stories about the Clans",
+            "Is imagining an epic life where they're a legendary wander in these lands",
+            "Is marking random locations with their claws to remember as a potential hideout",
+            "Turns up their nose when another loner tries to give them directions",
+            "Collects various items they find beautiful and interesting",
+            "Wonders if their parents were once renowned explorers",
+            "Has a mock battle with r_c from c_n whenever the apprentice flees their boring chores",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adult_thoughts",
+        "thoughts": [
+            "Is scouting out locations for a new den",
+            "Nearly got caught in a Twoleg trap!",
+            "Got pet by a Twoleg",
+            "Stayed in a Twoleg den for a couple of days for food",
+            "Was almost eaten by a monster",
+            "Is playing with kits"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult"
+        ]
+    },
+    {
+        "id": "loner_senior_or_elder_thoughts",
+        "thoughts": [
+            "Wonders if they should have joined a Clan when they were younger",
+            "Debates finding housefolk to care for them in their old age",
+            "Is enjoying the sun on their back",
+            "Purring as the sun's warmth eases their old joints",
+            "Is glad they chose this life of freedom",
+            "Thinks about old friends",
+            "Hopes it isn't too late to join a Clan",
+            "Wonders where they'll go when they die",
+            "Is telling stories about their younger days",
+            "Licks their sore pawpads from travelling too long",
+            "Is admiring the massive territory they secured for so long",
+            "Looks back with fondness at the misadventures they had with old friends",
+            "Has no shame eating crowfood if that's what it takes to survive",
+            "Easily fought off an overconfident rogue with many moons surviving in this rough life",
+            "Shows off individual scars and tells r_c in detail how they got them all",
+            "Had a vivid nightmare when they couldn't save their old friend from wild dogs",
+            "Met up with an old kittypet friend, for both the free food and company",
+            "Is gnawing at their pelt, irritated at the abundance of fleas",
+            "Coughed heavily"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ]
+    }
+]

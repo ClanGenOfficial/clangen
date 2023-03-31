@@ -104,7 +104,7 @@
             "Your patrol narrowly misses the hare."
         ],
         "decline_text": "Your patrol ignores the hare.",
-        "chance_of_success": 40,
+        "chance_of_success": 10,
         "exp": 10,
         "win_skills": [
             "fantastic hunter"
@@ -209,7 +209,7 @@
         ],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",

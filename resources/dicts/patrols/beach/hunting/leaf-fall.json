@@ -81,7 +81,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
@@ -241,7 +241,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 90,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",

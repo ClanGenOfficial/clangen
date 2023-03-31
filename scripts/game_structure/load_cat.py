@@ -252,7 +252,7 @@ def json_load():
             game.switches[
                 'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
             if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.create_all_relationships()
+                cat.init_all_relationships()
         else:
             cat.relationships = {}
 
@@ -282,7 +282,8 @@ def json_load():
 
         # Add faded children
         cat.children.extend(cat.faded_offspring)
-
+        
+        game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
         

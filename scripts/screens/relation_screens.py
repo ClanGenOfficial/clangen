@@ -215,8 +215,8 @@ class ChooseMentorScreen(Screens):
                "\n" + self.the_cat.trait + "\n" + self.the_cat.skill
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
-            scale(pygame.Rect((980, 340), (200, 200))),
-            object_id="#text_box_22_horizcenter_spacing_95",
+            scale(pygame.Rect((980, 325), (210, 250))),
+            object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER)
 
         name = str(self.the_cat.name)  # get name
@@ -328,9 +328,9 @@ class ChooseMentorScreen(Screens):
             if len(self.selected_mentor.apprentice) >= 1:
                 info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
-                                                                                   scale(pygame.Rect((420, 340),
-                                                                                                     (210, 230))),
-                                                                                   object_id="#text_box_22_horizcenter_spacing_95",
+                                                                                   scale(pygame.Rect((420, 325),
+                                                                                                     (210, 250))),
+                                                                                   object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                                    manager=MANAGER)
 
             name = str(self.selected_mentor.name)  # get name
@@ -2771,10 +2771,14 @@ class MediationScreen(Screens):
             col1 += " moon"
         else:
             col1 += " moons"
-        col1 += "\n" + cat.trait
+        if len(cat.trait) > 15:
+            _t = cat.trait[:13] + ".."
+        else:
+            _t = cat.trait
+        col1 += "\n" + _t
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
-                                                                                                   (160, -1))),
+                                                                                                   (180, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                                  manager=MANAGER)
 

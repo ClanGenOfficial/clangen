@@ -1,0 +1,217 @@
+[
+    {
+        "id": "kit_dead_kit",
+        "thoughts": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "kit_alive_elder",
+        "thoughts": [
+            "Was nipped on the rump by an elder for being naughty"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ]
+    },
+    {
+        "id": "gen_kit",
+        "thoughts": [
+            "Plays moss ball by themselves",
+            "Wonders who their mentor will be",
+            "Wants to take a nap",
+            "Tries to sneak out of camp",
+            "Is rolling around on the ground",
+            "Is chasing their tail",
+            "Is playing with a stick",
+            "Is nervous for their apprentice ceremony",
+            "Is excited for their apprentice ceremony",
+            "Is scared after having a nightmare",
+            "Wants to snuggle",
+            "Is bouncing around in excitement",
+            "Whines about being hungry",
+            "Is whining for milk",
+            "Is whimpering in their sleep",
+            "Is trying to growl menacingly",
+            "Is adamantly refusing to take their nap",
+            "Is batting pebbles across the camp clearing",
+            "Is crying after rough-housing too hard with the older cats",
+            "Is regretting eating the bug that they caught",
+            "Recently took a tumble off of a log",
+            "Is busy mastering a battle move they are performing incorrectly",
+            "Is hatching a plan to sneak out of camp and play",
+            "Is running like a whirlwind around the camp",
+            "Is pretending to be the Clan leader",
+            "Doesn't want to grow up yet...",
+            "Got in trouble for bringing thorns into the nest"
+        ]
+    },
+    {
+        "id": "kit_older_cats",
+        "thoughts": [
+            "Is asking older cats how kits are born",
+            "Wishes other cats would stop babying them",
+            "Is hiding from other cats",
+            "Is annoying older cats",
+            "Is asking the older cats about how kittens are made",
+            "Is pestering older cats to play with them"
+        ],
+        "random_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+    {
+        "id": "kit_alive_med_cat",
+        "thoughts": [
+            "Refuses to eat the herbs the medicine cat has given them for their tummy"
+        ],
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "bouncy_kit",
+        "thoughts": [
+            "Is pretending to be a rabbit and hopping about",
+            "Is pawing at r_c's tail from behind them"
+        ],
+        "main_trait_constraint": [
+            "bouncy"
+        ]
+    },
+    {
+        "id": "bullying_kit",
+        "thoughts": [
+            "Knocks over r_c",
+            "Makes fun of r_c's insecurities"
+        ],
+        "main_trait_constraint": [
+            "bullying"
+        ]
+    },
+    {
+        "id": "charming_kit",
+        "thoughts": [
+            "Is rolling around cutely while warriors look upon them",
+            "Is rubbing up against the warriors' legs",
+            "Is hoping the patrol will come back with a special gift for them like usual",
+            "Is trying to purr their way out of trouble with the medicine cat"
+        ],
+        "main_trait_constraint": [
+            "charming"
+        ]
+    },
+    {
+        "id": "daring_kit",
+        "thoughts": [
+            "Is attempting to pounce on the tail of r_c"
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ]
+    },
+    {
+        "id": "daydreamer_kit",
+        "thoughts": [
+            "Thinks they saw a StarClan cat in their dreams",
+            "Is mesmerized by the night sky",
+            "Thinks they're the leader of their own Clan",
+            "Bosses around imaginary cats as deputy",
+            "Wonders what it would be like to be leader",
+            "Sorts blades of grass like a medicine cat would",
+            "Stares into nothing in particular",
+            "Makes up a tale on the spot for the other kits",
+            "Is annoying the elders for more tales"
+        ],
+        "main_trait_constraint": [
+            "daydreamer"
+        ]
+    },
+    {
+        "id": "impulsive_kit",
+        "thoughts": [
+            "Is streaking across the clearing",
+            "Is stuck in a tree... again",
+            "Is complaining of a tummy ache after eating too much",
+            "Is awfully close to getting a nip on the rump for misbehaving",
+            "Is waiting for an opportunity to sprint out of sight"
+        ],
+        "main_trait_constraint": [
+            "impulsive"
+        ]
+    },
+    {
+        "id": "nervous_kit",
+        "thoughts": [
+            "Was startled by a croaking frog",
+            "Is doing their best not to get stepped on",
+            "Is trying to stop their paws from shaking",
+            "Is nervous about leaving their siblings",
+            "Doesn't want to be an apprentice yet",
+            "Is thinking about how nervous they are",
+            "Is worrying about their family and friends",
+            "Is trying to be brave",
+            "Is worried about making mistakes",
+            "Is feeling shaky",
+            "Is worried that they won't do a good enough job",
+            "Is trying not to shake with nerves",
+            "Is trying to stay calm",
+            "Wants to stay in their den a little longer",
+            "Is reminding themself that it will be okay",
+            "Is scared of r_c",
+            "Recently jumped at the sight of their own shadow"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "quiet_kit",
+        "thoughts": [
+            "Is too good at playing hide-and-seek"
+        ],
+        "main_trait_constraint": [
+            "quiet"
+        ]
+    },
+    {
+        "id": "sweet_kit",
+        "thoughts": [
+            "Is pretending to be the medicine cat"
+        ],
+        "main_trait_constraint": [
+            "sweet"
+        ]
+    },
+    {
+        "id": "troublesome_kit",
+        "thoughts": [
+            "Is thinking about mischief",
+            "Is wondering what trouble they can create",
+            "Is wondering about the unknown",
+            "Is planning to be naughty",
+            "Is thinking about being in trouble",
+            "Is trying to get out of trouble",
+            "Is scrambling the medicine cat's herbs",
+            "Is thinking of how to cause trouble",
+            "Is planning to annoy an elder",
+            "Is trying very hard to look innocent",
+            "Is thinking about play-fighting with their littermates",
+            "Is putting thorns in r_c's bedding",
+            "Is thinking about stealing herbs from the medicine den",
+            "Is sneaking out of camp"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    }
+]
+

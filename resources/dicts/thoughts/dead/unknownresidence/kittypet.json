@@ -1,0 +1,14 @@
+[
+{        
+    "id": "general_kittypet_dead_thoughts",
+    "thoughts": [
+        "Visits their housefolk to make sure they're okay",
+        "Hangs around their old home, hesitant to leave it",
+        "Watches over their housefolk as they sleep",
+        "Watches their housefolk's new cat with interest"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ]
+}
+]

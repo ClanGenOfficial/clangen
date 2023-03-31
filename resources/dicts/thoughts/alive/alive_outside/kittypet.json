@@ -1,0 +1,137 @@
+[
+    {
+        "id": "general_kittypet_thoughts",
+        "thoughts": [
+            "Cuddles with their housefolk",
+            "Begs for food from their housefolk",
+            "Is sunning in their yard",
+            "Doesn't want to go to the Cutter",
+            "Is resting on a fence",
+            "Almost forgot the way home",
+            "Was taken to the Cutter recently",
+            "Is looking at the forest, daydreaming about hunting a mouse",
+            "Is hunting for a gift for their housefolk",
+            "Failed to catch prey with their poor crouch",
+            "Is running away from a Clan cat",
+            "Is hiding from a dog",
+            "Is being friendly with their housefolk's dog",
+            "Is peering at a fish tank",
+            "Is looking for trouble",
+            "Is meowing to their housefolk for attention",
+            "Is tangled up in a large ball of yarn",
+            "Is stretching on their scratching post",
+            "Wishes their housefolk cared more about them",
+            "Saw warriors pass their housefolk den",
+            "Is hanging with their housefolk",
+            "Is playing with the housefolk's kits",
+            "Is enjoying a nice meal",
+            "Trying to escape from bath time",
+            "Heard stories about the nearby Clans",
+            "Is sleeping under the porch",
+            "Is sleeping in a loaf position on the bed",
+            "Is watching the Clan cats from afar",
+            "Is meowing to be let in",
+            "Is listening to frightening stories about wild cats",
+            "Is meowing at their housefolk",
+            "Wants to go outside",
+            "Plays with a yarn ball",
+            "Has the zoomies",
+            "Wishes that they could go outside more",
+            "Is looking out the window",
+            "Tries to catch a fly",
+            "Is eating some scraps that were dropped on the floor",
+            "Lays in their bed",
+            "Got stuck under the couch",
+            "Is trying to bark at a dog",
+            "Chases a mysterious red dot",
+            "Has been left in a room with the door closed",
+            "Managed to escape their den",
+            "Is enjoying some time outside",
+            "Wonders if this is the life for them",
+            "Heard a scary story about the Clans",
+            "Wonders what the Clans are like",
+            "Wishes there were more cats living with them",
+            "Got scared after hearing stories about the Clan cats",
+            "Saw a strange orange-furred kittypet crawling about in the thickets ",
+            "Was fighting with themselves in a mirror",
+            "Wonders if fresh-kill is better than their wet food",
+            "Heard about a strange Clan in the alleyways in the housefolk city ",
+            "Is proud of their large belly",
+            "Was lounging on their fence, looking at the wild beyond",
+            "Can't seem to scratch a certain spot on their neck thanks to their collar"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ]
+    },
+    {
+        "id": "kittypet_kitten_and_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ],
+        "main_age_constraint": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    {
+        "id": "kittypet_adolescent_thoughts",
+        "thoughts": [
+            "Is hogging the bed from their siblings",
+            "Thinks their new collar is uncomfortable",
+            "Is playing with a new toy their housefolk got them"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ]
+    },
+    {
+        "id": "kittypet_adult_thoughts",
+        "thoughts": [
+            "Is meowing for food",
+            "Was wandering in the backyard when a strange noise scared them back inside",
+            "Left their den to go scratch up that tree they've been eyeing",
+            "Is glad their housefolk collar them on a leash to walk them outside",
+            "Heard the yowls of a recent battle in the distances",
+            "Engaging in loaf mode",
+            "Is wandering in their neighborhood",
+            "Breathes in a sigh of relief when they escape some dogs"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult"
+        ]
+    },
+    {
+        "id": "kittypet_senior_/_elder_thoughts",
+        "thoughts": [
+            "Is enjoying the sun on their back",
+            "Is glad that their housefolk have taken care of them for so long",
+            "Wishes they had as much energy as the younger house cats",
+            "Smiled at the new younger kit their housefolk got",
+            "Is worried if their housefolk would be sad when they're gone",
+            "Snoring by a warm hearth",
+            "Engaging in loaf mode",
+            "Is having a rough time climbing their fence",
+            "Wonders what if they left to be a loner at a younger age",
+            "Took their time climbing on their fence",
+            "Shakes their head when they spotted a cold queen and their kits"
+        ],
+        "main_status_constraint": [
+            "kittypet"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ]
+    }
+]

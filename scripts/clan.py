@@ -27,6 +27,7 @@ from scripts.utility import update_sprite, get_current_season, quit # pylint: di
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.cat.sprites import spriteSize
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -1170,7 +1171,8 @@ class Clan():
         if not clan.name:
             return
         file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
-
+        if not os.path.isdir(f'{get_save_dir()}/{clan.name}/disasters'):
+            os.mkdir(f'{get_save_dir()}/{clan.name}/disasters')
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1341,7 +1343,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((50, 50))
+        white = pygame.Surface((spriteSize, spriteSize))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items

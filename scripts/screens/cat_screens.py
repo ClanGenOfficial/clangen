@@ -115,6 +115,7 @@ def bs_blurb_text(cat):
         'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
         'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
         'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
+        'orphaned6': "This cat was found flailing in the ocean as a teeny kitten, no parent in sight.",
         'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
@@ -126,8 +127,7 @@ def bs_blurb_text(cat):
     
     if backstory != None and backstory in backstory_text:
         return backstory_text.get(backstory, "")
-    else:
-        if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return f"This cat is a {cat.status} and currently resides outside of the Clans."
     
     return backstory_text.get(backstory, "")
@@ -143,7 +143,7 @@ def backstory_text(cat):
     bs_display = backstory
 
     backstory_map = {
-        'clanborn': 'clanborn',
+        'clanborn': 'Clanborn',
         'clan_founder': 'Clan founder',
         'halfclan1': 'half-Clan',
         'halfclan2': 'half-Clan',
@@ -917,7 +917,7 @@ class ProfileScreen(Screens):
 
         # STATUS
         if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
-                                                                             'former clancat']:
+                                                                             'former Clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -987,14 +987,15 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.backstory is not None:
-            bs_text = backstory_text(the_cat)
-            output += 'backstory: ' + bs_text
-        else:
-            output += 'backstory: ' + 'clanborn'
+        if the_cat.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+            if the_cat.backstory is not None:
+                bs_text = backstory_text(the_cat)
+                output += 'backstory: ' + bs_text
+            else:
+                output += 'backstory: ' + 'clanborn'
 
-        # NEWLINE ----------
-        output += "\n"
+            # NEWLINE ----------
+            output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
         if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
@@ -1162,7 +1163,10 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            life_history = [str(self.get_backstory_text())]
+            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former Clancat"]:
+                life_history = [str(self.get_backstory_text())]
+            else:
+                life_history = []
             body_history = []
 
             # now get mentor influence history and add that if any exists
@@ -1236,7 +1240,7 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
@@ -2514,16 +2518,25 @@ class RoleScreen(Screens):
                                                                                  object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
                                                                                  manager=MANAGER)
 
-        if self.the_cat.status == "leader":
-            icon_path = "resources/images/leader_icon.png"
-        elif self.the_cat.status == "deputy":
-            icon_path = "resources/images/deputy_icon.png"
-        elif self.the_cat.status == "medicine cat":
-            icon_path = "resources/images/medic_icon.png"
-        elif self.the_cat.status == "medicine cat apprentice":
-            icon_path = "resources/images/medic_app_icon.png"
+        main_dir = "resources/images/"
+        paths = {
+            "leader": "leader_icon.png",
+            "deputy": "deputy_icon.png",
+            "medicine cat": "medic_icon.png",
+            "medicine cat apprentice": "medic_app_icon.png",
+            "mediator": "mediator_icon.png",
+            "mediator apprentice": "mediator_app_icon.png",
+            "warrior": "warrior_icon.png",
+            "apprentice": "warrior_app_icon.png",
+            "kitten": "kit_icon.png",
+            "newborn": "kit_icon.png",
+            "elder": "elder_icon.png",
+        }
+
+        if self.the_cat.status in paths:
+            icon_path = os.path.join(main_dir,paths[self.the_cat.status])
         else:
-            icon_path = "resources/images/buttonrank.png"
+            icon_path = os.path.join(main_dir,"buttonrank.png")
 
         self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((165, 462), (156, 156))),
@@ -2789,6 +2802,13 @@ class RoleScreen(Screens):
                      f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "kitten":
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
+                     f"considered kits. Kits " \
+                     f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
+                     f"Although they don't have any official duties in the Clan, they are expected to learn the " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
+                     f"eat first. Kit take the suffix \"kit\"."
+        elif self.the_cat.status == "newborn":
+            output = f"{self.the_cat.name} is a <b>newborn kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
                      f"Although they don't have any official duties in the Clan, they are expected to learn the " \

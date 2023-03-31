@@ -1,0 +1,137 @@
+[
+    {
+        "id": "general_med_cat_app_to_dead_starclan_newborn1",
+        "thoughts": [
+            "Wonders if they would have gotten the chance to do r_c's first check-up",
+            "Can still smell the bitter herbs that they desperately fetched to try and save r_c's life",
+            "Thought they heard r_c's mewls, but was wrong",
+            "Contemplates how short r_c's life was and how much they are missing",
+            "Is questioning if r_c would grow up in StarClan or stay a newborn",
+            "Prays that r_c is healthy and receives the strength they need to grow in StarClan",
+            "Is finally accepting they did all they could to save r_c",
+            "Is pondering which role r_c would have been",
+            "Ponders how StarClan would deal with r_c",
+            "Thought they encountered r_c while scavenging for herbs, but it was a trick of their mind",
+            "Is listening to the reason behind r_c's name with a fond smile",
+            "Wonders if newborn kits grow up to be adults or stay young forever in StarClan",
+            "Is asking StarClan why they take newborns to Silverpelt",
+            "Prays that all the newborn kits in StarClan get enough food to stay strong",
+            "Is contemplating StarClan and why they would allow newborns to pass",
+            "Is reflecting on r_c's pelt, and is sad they never knew their eye color",
+            "Was startled to meet a newborn kit while dreaming and ponders what it meant",
+            "Was spooked when they encountered a ghostly newborn while collecting herbs, which disappeared when noticed",
+            "Is asking their mentor why StarClan allows newborns to join Silverpelt",
+            "Is vowing to never let another newborn join StarClan's ranks"
+        ],
+        "random_status_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "plain_med_cat_app_to_dead_starclan_newborn",
+        "thoughts": [
+            "Is wondering if r_c was a part of the stars last night",
+            "Thought they heard r_c's mewls, but it was just the wind",
+            "Is questioning who would provide for r_c in StarClan",
+            "Wonders if r_c would have played with the insects in the grass if they had time to grow up",
+            "Questions if r_c's spirit exists in the tall grasses",
+            "Thought they saw r_c's spirit hanging around the nursery tunnel",
+            "Wonders if r_c gets to venture out of the tunnels in StarClan",
+            "Thought they saw r_c playing with the roots of the tree, but sadly shakes off the thought",
+            "Was surprised to find r_c's spot in the nursery warm, despite them being with the stars now",
+            "Is pondering if r_c would stay in tunnels or go out an explore the territory in StarClan",
+            "Wonders if the newborns in StarClan will ever get to play and run across open fields",
+            "Prays to StarClan that the passed newborn kits get to feel the wind across their pelt"
+        ],
+        "biome":[
+            "Plains"
+        ]
+    },
+    {
+        "id": "med_cat_app_dead_app",
+        "thoughts": [
+            "Is wondering if r_c would have been their friend",
+            "Wonders if they would have swapped secrets with r_c"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "med_cat_app_gen",
+        "thoughts": [
+            "Is wondering if they are good enough to become a medicine cat",
+            "Helps apply a poultice to a small wound",
+            "Is enjoying learning all of the herbs a medicine cat needs!"
+        ]
+    },
+    {
+        "id": "med_cat_app_to_dead_SC_kit",
+        "thoughts": [
+            "Is wondering if r_c would have bothered them while they were sorting herbs",
+            "Wonders if they would have had to treat r_c for kittencough"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "med_cat_alive_apprentice",
+        "thoughts": [
+            "Wonders if r_c would have been a better healer",
+            "Wishes the other apprentices could understand how they feel",
+            "Wishes they understood the apprentice's inside jokes"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "medicine_cat_apprentice_alive_elder",
+        "thoughts": [
+            "Was asked to gather fresh moss for the elders' bedding",
+            "Plans to visit the elders soon",
+            "Is checking in on the elder's den",
+            "Plans to help the elders with their ticks",
+            "Is helping to repair the elder's den"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ]
+    },
+    {
+        "id": "medicine_cat_apprentice_to_medicine_cat1",
+        "thoughts": [
+            "Wants to help r_c gather fresh herbs"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ]
+    },
+    {
+        "id": "insecure_medicine_cat_apprentice",
+        "thoughts": [
+            "Is wondering if they are a good enough medicine cat apprentice"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "bloodthirsty_and_cold_medicine_cat_apprentice",
+        "thoughts": [
+            "Is hoping their medicine cat name will end in -claw"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "cold"
+        ]
+    }
+]

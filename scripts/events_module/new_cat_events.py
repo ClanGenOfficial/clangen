@@ -221,12 +221,12 @@ class NewCatEvents:
 
     def has_outside_cat(self):
         outside_cats = (cat for id, cat in Cat.outside_cats.items() if
-                        cat.status in ['kittypet', 'loner', 'rogue'] and not cat.dead)
+                        cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat'] and not cat.dead)
         return any(outside_cats)
 
     def select_outside_cat(self):
         for cat_id, cat in Cat.outside_cats.items():
-            if cat.status in ["kittypet", "loner", "rogue"] and not cat.dead:
+            if cat.status in ["kittypet", "loner", "rogue", "former Clancat"] and not cat.dead:
                 return cat
 
     def update_cat_properties(self, cat):

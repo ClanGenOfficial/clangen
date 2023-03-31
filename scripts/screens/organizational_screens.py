@@ -853,7 +853,7 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
-            elif (cat.status in ['kittypet', 'loner', 'rogue']
+            elif (cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']
                   or cat.outside) and not cat.dead:
                 other_num += 1
             else:

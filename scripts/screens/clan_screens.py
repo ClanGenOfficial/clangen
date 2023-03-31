@@ -47,7 +47,9 @@ class ClanScreen(Screens):
                 screen.blit(self.leaffall_bg, (0, 0))
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
@@ -502,7 +504,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -1165,11 +1167,11 @@ class ListScreen(Screens):
         self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                         object_id="#fav_cat",
                                         manager=MANAGER,
-                                        tool_tip_text='hide favorite cat inidcators')
+                                        tool_tip_text='hide favorite cat indicators')
 
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
-                                        tool_tip_text='show favorite cat inidcators')
+                                        tool_tip_text='show favorite cat indicators')
         
         if game.clan.clan_settings["show_fav"]:
             self.filter_not_fav.hide()
