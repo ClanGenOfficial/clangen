@@ -147,10 +147,12 @@ class Thoughts():
             
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
-                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(main_cat.injuries or main_cat.illnesses) and "any" in thought['has_injuries']["m_c"]]):
                     return False
             if "r_c" in thought['has_injuries'] and random_cat:
-                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(random_cat.injuries or random_cat.illnesses) and "any" in thought['has_injuries']["r_c"]]):
                     return False
         
         if game_mode != "classic" and "perm_conditions" in thought:
