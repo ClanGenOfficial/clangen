@@ -226,5 +226,6 @@ class Thoughts():
             chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception as inst:
             chosen_thought = "No thoughts, head empty"
+            print(inst)
 
         return chosen_thought
