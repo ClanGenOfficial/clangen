@@ -6,9 +6,6 @@
             "Hopes r_c knows how proud they are of them",
             "Wishes they could point r_c to where the elusive herbs are"
         ],
-        "main_status_constraint": [
-            "medicine cat"
-        ],
         "random_status_constraint": [
             "medicine cat apprentice"
         ],

@@ -72,7 +72,8 @@
             "Has seen r_c's future demise",
             "Is looking to visit r_c in a dream soon",
             "Accidentally found themselves in r_c's dreams the other night",
-            "Knows what r_c's secret is and wants to tell some cat"
+            "Knows what r_c's secret is and wants to tell some cat",
+            "Is judging r_c"
         ],
         "random_living_status": [
             "living"
@@ -159,7 +160,7 @@
         ]
     },
     {
-        "id": "dead_youngling_to_alive_youngling_sibling",
+        "id": "dead_child_to_alive_child_sibling",
         "thoughts":[
             "Wants to let r_c know they're okay",
             "Wishes they could play with r_c",
@@ -178,6 +179,36 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ]
+    },
+    {
+        "id": "gen_dead_app",
+        "thoughts": [
+            "Wants to use their training to help StarClan",
+            "Is sad they couldn't complete their training",
+            "Tries to continue their training on their own",
+            "Is listening intently to other StarClan cats' stories"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "dead_app_to_dead_other",
+        "thoughts": [
+            "Is asking r_c questions about their life",
+            "Is listening to r_c's stories",
+            "Wants to show r_c a new skill they learned"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
@@ -259,7 +290,9 @@
         "thoughts": [
             "Is trying to mediate StarClan cats' squabbles",
             "Wishes they could help resolve the Clan's issues",
-            "Is watching the Clans for any signs of discord"
+            "Is watching the Clans for any signs of discord",
+            "Thinks c_n and o_c_n relations might improve",
+            "Thinks c_n and o_c_n relations might worsen"
         ],
         "main_status_constraint": [
             "mediator",
