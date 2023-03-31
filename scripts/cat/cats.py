@@ -1036,6 +1036,7 @@ class Cat():
         game_mode = game.switches['game_mode']
         biome = game.switches['biome']
         camp = game.switches['camp_bg']
+        dead_chance = random.getrandbits(3)
         try:
             season = game.clan.current_season
         except:
@@ -1044,11 +1045,10 @@ class Cat():
         # get other cat
         i = 0
         while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']):
+                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) or\
+                all_cats[other_cat].dead and not self.dead and dead_chance != 1 or other_cat not in self.relationships:
             other_cat = random.choice(list(all_cats.keys()))
-            # makes sure that a cat won't think about a cat that was dead longer than they've been alive (with 4 moons difference)
-            if all_cats[other_cat].dead and not self.dead and not self.status in ['leader', 'medicine cat']:
-                continue
+            # makes sure that a cat won't think about a cat that they don't know that's dead
             i += 1
             if i > 100:
                 other_cat = None
