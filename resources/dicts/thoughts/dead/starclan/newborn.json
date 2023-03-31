@@ -10,9 +10,6 @@
             "Tries to practice walking to play with the other cats",
             "Attempts to snarl but can only manage a tiny mewl",
             "Rolls through the starry grass"
-        ],
-        "main_age_constraint": [
-            "newborn"
         ]
     },
     {
@@ -22,9 +19,6 @@
             "Is mewling for r_c",
             "Searches for r_c's scent",
             "Blindly reaches out for r_c"
-        ],
-        "main_age_constraint": [
-            "newborn"
         ],
         "relationship_constraint": [
             "child/parent"
@@ -40,9 +34,6 @@
             "Is being bathed by r_c",
             "Is tucked under r_c's belly",
             "Blindly swipes at r_c's tail"
-        ],
-        "main_age_constraint": [
-            "newborn"
         ],
         "random_living_status": [
             "starclan"
