@@ -13,11 +13,10 @@ class Thoughts():
         # if the constraints are not existing, they are considered to be fulfilled
         
         # No current relationship-value bases tags, so this is commented out. 
-        """if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
+        if random_cat in main_cat.relationships:
+            relationship = main_cat.relationships[random_cat]
         else:
-            relationship = None"""
-        
+            relationship = None
                 
         if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
@@ -32,6 +31,15 @@ class Thoughts():
             return False
 
         if "child/parent" in constraint and not random_cat.is_parent(main_cat):
+            return False
+        
+        if "mentor/app" in constraint and random_cat not in main_cat.current_apprentice:
+            return False
+        
+        if "app/mentor" in constraint and random_cat not in main_cat.mentor:
+            return False
+        
+        if "strangers" in constraint and not (relationship.platonic_like < 1 or relationship.romantic_love < 1):
             return False
 
         return True
@@ -113,11 +121,10 @@ class Thoughts():
                 living_status = "starclan"
             else:
                 living_status = 'unknownresidence'
-            
             if living_status not in thought['random_living_status']:
                 return False
         # this covers if living status isn't stated
-        if 'random_living_status' not in thought:
+        elif 'random_living_status' not in thought:
             if not random_cat.dead:
                 living_status = "living"
             else:
