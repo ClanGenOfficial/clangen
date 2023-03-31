@@ -1110,7 +1110,7 @@ class Patrol():
                 print('parent is alive')
                 kit_backstory = ['outsider_roots2']
             # make sure kittens get right age
-            if "newborn" in attribute_list:
+            if "litternewborn" in attribute_list:
                 print('litter is newborn')
                 kit_age = 0
                 kit_thought = "Mewls quietly for milk"
