@@ -48,6 +48,9 @@
         ],
         "biome":[
             "Plains"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
@@ -60,6 +63,9 @@
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
@@ -78,6 +84,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
