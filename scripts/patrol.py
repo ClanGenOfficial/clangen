@@ -161,7 +161,7 @@ class Patrol():
         self.experience_levels = []
         self.filter_count = 0
 
-    def patrol_setup(self, patrol_cats, patrol_type):
+    def patrol_setup(self, patrol_cats, patrol_type = "general"):
         """ Sets up the patrol, outputs intro text,
             returns None is there was an error. """
         
