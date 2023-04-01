@@ -449,3 +449,66 @@ class Inheritance():
         """Returns a list of id's which are siblings to the cat, according to the inheritance hierarchy."""
         return self.get_blood_relatives(self.siblings) + self.get_no_blood_relatives(self.siblings)
 
+    # ---------------------------------------------------------------------------- #
+    #                                parent_siblings                               #
+    # ---------------------------------------------------------------------------- #
+
+    def get_blood_parent_siblings(self) -> list:
+        """Returns a list of blood related parent_siblings id's."""
+        return self.get_blood_relatives(self.parent_siblings)
+
+    def get_not_blood_parent_siblings(self) -> list:
+        """Returns a list of id's of parent_siblings, which are not related by blood to the cat."""
+        return self.get_no_blood_relatives(self.parent_siblings)
+
+    def get_parent_siblings(self) -> list:
+        """Returns a list of id's which are parent_siblings to the cat, according to the inheritance hierarchy."""
+        return self.get_blood_relatives(self.parent_siblings) + self.get_no_blood_relatives(self.parent_siblings)
+
+    # ---------------------------------------------------------------------------- #
+    #                                    cousins                                   #
+    # ---------------------------------------------------------------------------- #
+
+    def get_blood_cousins(self) -> list:
+        """Returns a list of id's of blood related cousins."""
+        return self.get_blood_relatives(self.cousins)
+
+    def get_no_blood_cousins(self) -> list:
+        """Returns a list of id's of cousins, which are not directly related to the cat."""
+        return self.get_no_blood_relatives(self.cousins)
+
+    def get_cousins(self) -> list:
+        """Returns a list of id's which are cousins to the cat, according to the inheritance hierarchy."""
+        return self.get_blood_relatives(self.cousins) + self.get_no_blood_relatives(self.cousins)
+
+    # ---------------------------------------------------------------------------- #
+    #                                 grand_parents                                #
+    # ---------------------------------------------------------------------------- #
+
+    def get_blood_grand_parents(self) -> list:
+        """Returns a list of blood related grand_parents id's."""
+        return self.get_blood_relatives(self.grand_parents)
+
+    def get_not_blood_grand_parents(self) -> list:
+        """Returns a list of id's of grand_parents, which are not related by blood to the cat."""
+        return self.get_no_blood_relatives(self.grand_parents)
+
+    def get_grand_parents(self) -> list:
+        """Returns a list of id's which are grand_parents to the cat, according to the inheritance hierarchy."""
+        return self.get_blood_relatives(self.grand_parents) + self.get_no_blood_relatives(self.grand_parents)
+
+    # ---------------------------------------------------------------------------- #
+    #                                  grand_kits                                  #
+    # ---------------------------------------------------------------------------- #
+
+    def get_blood_grand_kits(self) -> list:
+        """Returns a list of id's of blood related grand_kits."""
+        return self.get_blood_relatives(self.grand_kits)
+
+    def get_no_blood_grand_kits(self) -> list:
+        """Returns a list of id's of grand_kits, which are not directly related to the cat."""
+        return self.get_no_blood_relatives(self.grand_kits)
+
+    def get_grand_kits(self) -> list:
+        """Returns a list of id's which are grand_kits to the cat, according to the inheritance hierarchy."""
+        return self.get_blood_relatives(self.grand_kits) + self.get_no_blood_relatives(self.grand_kits)
