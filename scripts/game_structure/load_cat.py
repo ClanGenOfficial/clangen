@@ -11,7 +11,7 @@ from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
 
-from ujson import JSONDecodeError
+from json import JSONDecodeError
 
 def load_cats():
     try:
