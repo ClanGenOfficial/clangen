@@ -661,22 +661,21 @@ class FamilyTreeScreen(Screens):
         x_dim = 160
         y_dim = 180
 
-        self.parents = self.the_cat.get_parents()
+        self.parents = self.the_cat.inheritance.get_parents()
+        self.siblings = self.the_cat.inheritance.get_siblings()
+        self.parents_siblings = self.the_cat.inheritance.get_parents_siblings()
+        self.grandparents = self.the_cat.inheritance.get_grand_parents()
+        self.cousins = self.the_cat.inheritance.get_cousins()
+        self.kits = self.the_cat.inheritance.get_kits()
+        self.grandkits = self.the_cat.inheritance.get_grand_kits()
         # collect grandparents
         if self.parents:
             y_dim += 196
             y_pos += 196
-            for parent in self.parents:
-                _temp_ob = Cat.fetch_cat(parent)
-                self.grandparents.extend(_temp_ob.get_parents())
-                # collect parent siblings
-                self.parents_siblings.extend(_temp_ob.get_siblings())
-                # collect siblings
             if self.grandparents:
                 y_dim += 160
                 y_pos += 160
 
-            self.siblings.extend(self.the_cat.get_siblings())
             x_dim += 309
             for sibling in self.siblings:
                 _temp_ob = Cat.fetch_cat(sibling)
@@ -698,20 +697,12 @@ class FamilyTreeScreen(Screens):
         if self.parents_siblings:
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
-            for sibling in self.parents_siblings:
-                _temp_ob = Cat.fetch_cat(sibling)
-                cousins = _temp_ob.get_children()
-                for cousin in cousins:
-                    if cousin in self.cousins:
-                        continue
-                    else:
-                        self.cousins.append(cousin)
+        
         # collect mates
         if len(self.the_cat.mate) > 0:
             self.mates = self.the_cat.mate
         self.mates.extend(self.the_cat.previous_mates)
 
-        self.kits = self.the_cat.get_children()
         if self.mates or self.kits:
             x_pos += 276
             x_dim += 280
@@ -726,8 +717,6 @@ class FamilyTreeScreen(Screens):
                     if len(_temp_ob.mate) > 0:
                         self.kits_mates.extend(_temp_ob.mate)
                     self.kits_mates.extend(_temp_ob.previous_mates)
-                # collect grandkits
-                self.grandkits.extend(_temp_ob.get_children())
             if self.kits_mates:
                 x_pos += 202
                 x_dim += 202
@@ -883,13 +872,26 @@ class FamilyTreeScreen(Screens):
         i = 0
         for kitty in display_cats:
             _kitty = Cat.fetch_cat(kitty)
+            info_text = f"{str(_kitty.name)}"
+            additional_info = self.the_cat.inheritance.get_cat_info(kitty)
+            if len(additional_info["type"]) > 0: # types is always real
+                rel_types = [str(rel_type.value) for rel_type in additional_info["type"]]
+                rel_types = set(rel_types) # remove duplicates
+                rel_types.remove("")       # removes empty
+                if len(rel_types) > 0:
+                    info_text += "\n"
+                    info_text += ', '.join()
+                if len(additional_info["additional"]) > 0:
+                    add_info = set(additional_info["additional"]) # remove duplicates
+                    info_text += "\n"
+                    info_text += ', '.join(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
                 _kitty.big_sprite,
                 cat_id=_kitty.ID,
                 manager=MANAGER,
-                tool_tip_text=str(_kitty.name)
+                tool_tip_text=info_text
             )
 
             pos_x += 100
@@ -1317,7 +1319,7 @@ class ChooseMateScreen(Screens):
 
         self.selected_cat = [Cat.fetch_cat(cat_id) for cat_id in self.the_cat.mate]
         # TODO: UI HAS TO BE UPDATED (maybe like in the patrol screen when a warrior has more apprentices?)
-		# maybe adding a empty space which chan be filled by new mates?
+        # maybe adding a empty space which chan be filled by new mates?
         self.selected_cat = self.selected_cat[0]
 
         self.draw_compatible_line_affection()
@@ -1949,7 +1951,7 @@ class RelationshipScreen(Screens):
 
             related = False
             # Mate Heart
-			# TODO: UI UPDATE IS NEEDED
+            # TODO: UI UPDATE IS NEEDED
             if self.the_cat.mate[0] is not None and self.the_cat.mate[0] != '' and self.inspect_cat.ID == self.the_cat.mate[0]:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(scale(pygame.Rect((90, 300), (44, 40))),
                                                                                 pygame.transform.scale(
