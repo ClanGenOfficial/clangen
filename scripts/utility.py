@@ -10,10 +10,7 @@ from random import choice, choices, randint, random, sample
 import pygame
 from scripts.cat.names import names
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 import logging
 
 

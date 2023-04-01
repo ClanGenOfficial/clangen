@@ -8,10 +8,7 @@ import itertools
 from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from .pelts import describe_appearance
 from .names import Name

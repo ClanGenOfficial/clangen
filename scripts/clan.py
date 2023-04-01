@@ -17,10 +17,7 @@ import pygame
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.game_structure.game_essentials import game
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin

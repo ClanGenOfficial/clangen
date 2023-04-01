@@ -3,10 +3,7 @@
 import random
 from random import choice, randint, choices
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.clan import HERBS, Clan
 from scripts.utility import (
