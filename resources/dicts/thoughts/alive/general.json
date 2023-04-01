@@ -778,8 +778,8 @@
         "backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
         },
-        "random_status_constraint": [
-            "warrior"
+        "relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -855,7 +855,7 @@
             "Brags about all the prey they caught when they were a rogue",
             "Can't help but be intrigued by the Warrior Code",
             "Slightly embellishes a story about their rogue days to other apprentices",
-            "Is trying to memorize the warrior code"
+            "Is trying to memorize the Warrior Code"
         ],
         "main_status_constraint": [
             "apprentice",
