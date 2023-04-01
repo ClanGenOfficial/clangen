@@ -36,6 +36,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
+from scripts.cat_relations.inheritance import Inheritance
 
 
 class Cat():
@@ -2079,7 +2080,7 @@ class Cat():
 
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
-		# TODO: redo this for poly mates?
+        # TODO: redo this for poly mates?
         if for_patrol:
             if len(self.mate) > 0 or len(other_cat.mate) > 0:
                 if not for_love_interest:
@@ -2174,6 +2175,10 @@ class Cat():
 
         self.mate.remove(other_cat.ID)
         other_cat.mate.remove(self.ID)
+        if other_cat.inheritance:
+            other_cat.inheritance.update_all_mates()
+        if self.inheritance:
+            self.inheritance.update_all_mates()
         
         #Handle previous mates:
         if other_cat.ID not in self.previous_mates:
@@ -2184,8 +2189,8 @@ class Cat():
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
         
-		# TODO: 
-		#if self.mate or other_cat.mate:
+        # TODO: 
+        #if self.mate or other_cat.mate:
         #    print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
         #    return
 
@@ -2217,6 +2222,11 @@ class Cat():
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mate = True
+
+    def create_inheritance_new_cat(self):
+        """Creates the inheritance class for a new cat."""
+        # set the born status to true, just for safety
+        self.inheritance = Inheritance(self, True)
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""

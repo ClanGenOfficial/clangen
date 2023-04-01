@@ -672,6 +672,8 @@ class FamilyTreeScreen(Screens):
         self.grandparents = self.the_cat.inheritance.get_grand_parents()
         self.grandkits = self.the_cat.inheritance.get_grand_kits()
 
+        print(self.the_cat.inheritance.get_no_blood_parents())
+
         # collect grandparents
         if self.parents:
             y_dim += 196

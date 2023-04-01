@@ -61,6 +61,7 @@ class Inheritance():
         self.grand_kits = {}
         self.all_involved = []
         self.all_but_cousins = []
+        self.other_mates = []
 
         # parents
         self.init_parents()
@@ -97,8 +98,13 @@ class Inheritance():
             self.all_inheritances[cat_id].update_inheritance()
 
     def update_all_mates(self):
-        """Update all mates inheritances"""
-        print("TODO")
+        """ 
+        This function should be called, when the cat breaks up. 
+        It renews all inheritances, where this cat is listed as a mate of a kit or sibling.
+        """
+        for inter_inheritances in self.all_inheritances:
+            if self.cat.ID in inter_inheritances.other_mates:
+                inter_inheritances.update_inheritance()
 
     def get_cat_info(self, cat_id) -> list:
         """Returns a list of the additional information of the given cat id."""
@@ -193,6 +199,7 @@ class Inheritance():
                     self.parents[mate_id]["additional"].append(f"mate from {str(relevant_cat.name)}")
                 self.all_but_cousins.append(mate_id)
                 self.all_involved.append(mate_id)
+                self.other_mates.append(mate_id)
 
         # adoptive
         current_parent_ids = self.get_no_blood_parents()
@@ -297,7 +304,7 @@ class Inheritance():
             rel_type = RelationType.BLOOD
             if inter_cat.moons + inter_cat.dead_for == self.cat.moons + self.cat.dead_for:
                 additional_info.append("litter mates")
-        elif len(blood_parent_overlap) == 1 and len(inter_parent_ids) == 1 and len(inter_parent_ids) == 1:
+        elif len(blood_parent_overlap) == 1 and (len(inter_parent_ids) > 1 or len(inter_parent_ids) > 1):
             siblings = True
             rel_type = RelationType.BLOOD
         elif len(blood_parent_overlap) == 1:
@@ -321,19 +328,24 @@ class Inheritance():
                     "type": mate_rel,
                     "additional": [f"mate of {str(inter_cat.name)}"]
                 }
+                self.other_mates.append(mate_id)
 
             # iterate over all cats, to get the children of the sibling
             for _c in self.cat.all_cats.values():
                 _c_parents = self.get_parents(_c)
+                _c_adoptive = self.get_no_blood_parents(_c)
                 if inter_id in _c_parents:
                     parents_cats = [self.cat.fetch_cat(c_id) for c_id in _c_parents]
                     parent_cats_names = [str(c.name) for c in parents_cats]
+                    kit_rel_type = RelationType.BLOOD if rel_type in BLOOD_RELATIVE_TYPES else RelationType.NOT_BLOOD
+                    if inter_id in _c_adoptive:
+                        kit_rel_type = RelationType.ADOPTIVE
 
                     add_info = ""
                     if len(parent_cats_names) > 0:
                         add_info = f"child of " + ", ".join(parent_cats_names)
                     self.siblings_kits[_c.ID] = {
-                        "type": RelationType.BLOOD if rel_type in BLOOD_RELATIVE_TYPES else RelationType.NOT_BLOOD,
+                        "type": kit_rel_type,
                         "additional": [add_info]
                     }
                     self.all_involved.append(_c.ID)
