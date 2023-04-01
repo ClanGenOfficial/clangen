@@ -13,6 +13,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
+from scripts.cat_relations.inheritance import Inheritance
 try:
     from ujson import JSONDecodeError
 except ImportError:
@@ -289,6 +290,7 @@ def json_load():
         game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
+        cat.inheritance = Inheritance(cat)
         
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:

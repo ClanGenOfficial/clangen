@@ -313,6 +313,7 @@ class Cat():
         self.favourite = False
 
         self.specsuffix_hidden = specsuffix_hidden
+        self.inheritance = None
 
         # setting ID
         if ID is None:
