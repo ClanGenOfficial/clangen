@@ -215,7 +215,11 @@ class Thoughts():
         GENTHOUGHTS = []
         with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
             GENTHOUGHTS = ujson.loads(read_file.read())
-        loaded_thoughts = THOUGHTS + GENTHOUGHTS
+        # newborns only pull from their status thoughts. this is done for convenience
+        if main_cat.age == 'newborn':
+            loaded_thoughts = THOUGHTS
+        else:
+            loaded_thoughts = THOUGHTS + GENTHOUGHTS
         final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp)
 
         return final_thoughts
