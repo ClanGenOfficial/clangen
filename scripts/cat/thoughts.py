@@ -73,15 +73,13 @@ class Thoughts():
 
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
-            if (main_cat.status not in thought['main_status_constraint']) or\
-                ('any' not in thought['main_status_constraint']):
+            if main_cat.status not in thought['main_status_constraint'] and 'any' not in thought['main_status_constraint']:
                 return False
             
 
         # Contraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
-            if (random_cat.status not in thought['random_status_constraint'])or\
-                ('any' not in thought['random_status_constraint']):
+            if random_cat.status not in thought['random_status_constraint'] and 'any' not in thought['random_status_constraint']:
                 return False
 
         # main cat age contraint
@@ -147,6 +145,7 @@ class Thoughts():
                 outside_status = "clancat"
             if outside_status and outside_status not in thought['random_outside_status']:
                 return False
+
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
                 if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
@@ -166,6 +165,7 @@ class Thoughts():
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
                     or [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
+                
         return True
     # ---------------------------------------------------------------------------- #
     #                            BUILD MASTER DICTIONARY                           #
@@ -215,8 +215,11 @@ class Thoughts():
         GENTHOUGHTS = []
         with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
             GENTHOUGHTS = ujson.loads(read_file.read())
-        loaded_thoughts += THOUGHTS
-        loaded_thoughts += GENTHOUGHTS
+        # newborns only pull from their status thoughts. this is done for convenience
+        if main_cat.age == 'newborn':
+            loaded_thoughts = THOUGHTS
+        else:
+            loaded_thoughts = THOUGHTS + GENTHOUGHTS
         final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp)
 
         return final_thoughts
