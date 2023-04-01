@@ -129,8 +129,7 @@ class Thoughts():
                 return False
         
         # this covers if living status isn't stated
-        elif 'random_living_status' not in thought:
-            living_status = None
+        else:
             if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
             if living_status and living_status != "living":
