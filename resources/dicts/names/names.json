@@ -1,11 +1,11 @@
 {
   "special_suffixes": {
-    "newborn": "egg",
-    "kitten": "egg",
-    "apprentice": "egg",
-    "medicine cat apprentice": "egg",
-    "mediator apprentice": "egg",
-    "leader": "egg"
+    "newborn": "kit",
+    "kitten": "kit",
+    "apprentice": "paw",
+    "medicine cat apprentice": "paw",
+    "mediator apprentice": "paw",
+    "leader": "star"
     },
   "normal_suffixes" : [
     "egg"
