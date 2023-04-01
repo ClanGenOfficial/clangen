@@ -662,12 +662,16 @@ class FamilyTreeScreen(Screens):
         y_dim = 180
 
         self.parents = self.the_cat.inheritance.get_parents()
-        self.siblings = self.the_cat.inheritance.get_siblings()
-        self.parents_siblings = self.the_cat.inheritance.get_parents_siblings()
-        self.grandparents = self.the_cat.inheritance.get_grand_parents()
-        self.cousins = self.the_cat.inheritance.get_cousins()
         self.kits = self.the_cat.inheritance.get_kits()
+        self.kits_mates = self.the_cat.inheritance.get_kits_mates()
+        self.siblings = self.the_cat.inheritance.get_siblings()
+        self.siblings_mates = self.the_cat.inheritance.get_siblings_mates()
+        self.siblings_kits = self.the_cat.inheritance.get_siblings_kits()
+        self.parents_siblings = self.the_cat.inheritance.get_parents_siblings()
+        self.cousins = self.the_cat.inheritance.get_cousins()
+        self.grandparents = self.the_cat.inheritance.get_grand_parents()
         self.grandkits = self.the_cat.inheritance.get_grand_kits()
+
         # collect grandparents
         if self.parents:
             y_dim += 196
@@ -677,15 +681,6 @@ class FamilyTreeScreen(Screens):
                 y_pos += 160
 
             x_dim += 309
-            for sibling in self.siblings:
-                _temp_ob = Cat.fetch_cat(sibling)
-                # collect sibling mates
-                if not _temp_ob.faded:
-                    if len(_temp_ob.mate) > 0:
-                        self.siblings_mates.extend(_temp_ob.mate)
-                    self.siblings_mates.extend(_temp_ob.previous_mates)
-                # collect sibling kits
-                self.siblings_kits.extend(_temp_ob.get_children())
             if self.siblings_mates:
                 x_dim += 417
             if self.siblings_kits:
@@ -701,7 +696,7 @@ class FamilyTreeScreen(Screens):
         # collect mates
         if len(self.the_cat.mate) > 0:
             self.mates = self.the_cat.mate
-        self.mates.extend(self.the_cat.previous_mates)
+        # self.mates.extend(self.the_cat.previous_mates)
 
         if self.mates or self.kits:
             x_pos += 276
@@ -710,13 +705,6 @@ class FamilyTreeScreen(Screens):
         if self.kits:
             if not self.siblings_kits:
                 y_dim += 80
-            for kit in self.kits:
-                _temp_ob = Cat.fetch_cat(kit)
-                # collect kits mates
-                if not _temp_ob.faded:
-                    if len(_temp_ob.mate) > 0:
-                        self.kits_mates.extend(_temp_ob.mate)
-                    self.kits_mates.extend(_temp_ob.previous_mates)
             if self.kits_mates:
                 x_pos += 202
                 x_dim += 202
@@ -877,10 +865,11 @@ class FamilyTreeScreen(Screens):
             if len(additional_info["type"]) > 0: # types is always real
                 rel_types = [str(rel_type.value) for rel_type in additional_info["type"]]
                 rel_types = set(rel_types) # remove duplicates
-                rel_types.remove("")       # removes empty
+                if "" in rel_types: 
+                    rel_types.remove("")       # removes empty
                 if len(rel_types) > 0:
                     info_text += "\n"
-                    info_text += ', '.join()
+                    info_text += ', '.join(rel_types)
                 if len(additional_info["additional"]) > 0:
                     add_info = set(additional_info["additional"]) # remove duplicates
                     info_text += "\n"
