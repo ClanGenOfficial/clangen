@@ -119,42 +119,18 @@
             "mates"
         ]
     },
-    
-    {
-        "id": "paralyzed_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Goes for a swim",
-            "Zooms around camp",
-            "Is proud that they have become stronger despite their struggles",
-            "Is having trouble grooming themself",
-            "Snaps at r_c for trying to 'help' them with something they can do just fine",
-            "Feels comforted by r_c's words about how strong they are",
-            "Snaps that they're not 'strong', they're just alive"
-        ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
+
     {
         "id": "paralyzed_gen_retired_to_alive_med",
         "thoughts": [
             "Is doing exercises with the instructions of r_c",
             "Chats with r_c while doing their exercise"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -164,46 +140,15 @@
         ]
     },
     {
-        "id": "paralyzed_gen_retired_to_alive_kit",
-        "thoughts": [
-            "Is spinning an epic tale to the kits about how they lost their legs",
-            "Couldn't escape in time before kits piled on them!"
-        ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constraint": [
-            "newborn",
-            "kitten"
-        ]
-    },
-    {
-        "id": "paralyzed_gen_retired_to_alive_young",
-        "thoughts": [
-            "Is playing moss-ball with the younger cats"
-        ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constraint": [
-            "kitten",
-            "adolescent"
-        ]
-    },
-    {
         "id": "paralyzed_gen_retired_shameless",
         "thoughts": [
             "Makes up an excuse so they don't have to exercise today"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -216,9 +161,11 @@
         "thoughts": [
             "Practices their exercises in secret due to embarrassment"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -233,12 +180,13 @@
             "Sneaks out of camp for some alone time",
             "Is being snappy about their exercises",
             "Enjoyed a walk around the camp with r_c!",
-            "Is laughing after r_c lost a race with them",
             "Is the reigning moss-ball champion, and everyone knows it"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -246,12 +194,7 @@
             "adolescent"
         ],
         "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
+            "any"
         ]
     },
     {
@@ -259,9 +202,11 @@
         "thoughts": [
             "Helps the adults around camp with a big smile on their face"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -276,52 +221,15 @@
         ]
     },
     {
-        "id": "paralyzed_adolescent_retired_to_alive_kit",
-        "thoughts": [
-            "Is letting r_c climb on their back"
-        ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "newborn",
-            "kitten"
-        ]
-    },
-    {
-        "id": "paralyzed_adolescent_retired_to_alive_apprentice",
-        "thoughts": [
-            "Boasts to r_c about how strong their front legs are"
-        ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_status_constrain": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ]
-    },
-    {
         "id": "paralyzed_adolescent_retired_to_alive_med",
         "thoughts": [
             "Is bored by r_c's concerns about their lungs"
         ],
-        "perm_conditions": [
-            "paralyzed"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -335,41 +243,15 @@
     },
 
     {
-        "id": "blind_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Wonders what their Clanmates look like",
-            "Smiles as r_c tries to describe different colors to them",
-            "Listened to bird songs all morning",
-            "Just heard a frog croaking in camp!",
-            "Knows r_c is nearby from the sound of their pawsteps",
-            "Jumps as they hit a large rock with their paw",
-            "Is annoyed that a Clanmate keeps pitying them",
-            "Confused their Clanmates when they said it was a beautiful day",
-            "Wonders if their mental image of r_c matches real life"
-        ],
-        "perm_conditions": [
-            "blind"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
         "id": "blind_gen_retired_to_alive_notkit",
         "thoughts": [
             "Explored the territory with r_c today"
         ],
-        "perm_conditions": [
-            "blind"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -382,42 +264,16 @@
         ]
     },
     {
-        "id": "blind_adolescent_retired_to_alive_gen",
-        "thoughts": [
-            "Makes a sculpture out of mud",
-            "Is memorizing the scents of their friends and family",
-            "Wonders why the ground feels that way",
-            "Won a game of hide-and-seek, to the shock of their friends!",
-            "Accidentally head-butts r_c a bit too hard, but they both laugh it off"
-        ],
-        "perm_conditions": [
-            "blind"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
         "id": "blind_adolescent_retired_to_alive_apprentice",
         "thoughts": [
-            "Brags to the apprentices that they can hear the best",
             "Sadly listens as the apprentices share stories of their feats",
             "Joins in as the apprentices share stories of their feats"
         ],
-        "perm_conditions": [
-            "blind"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -435,9 +291,11 @@
         "thoughts": [
             "Listens as r_c tells them what herbs to smell for"
         ],
-        "perm_conditions": [
-            "blind"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -450,57 +308,16 @@
         ]
     },
 
-    {
-        "id": "one_bad_eye_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Was startled by r_c suddenly appearing on their blind side",
-            "Makes an eye-patch for themself from grass and leaves",
-            "Stumbles into a tree on accident"
-        ],
-        "perm_conditions": [
-            "one bad eye"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "one_bad_eye_gen_retired_to_alive_kit",
-        "thoughts": [
-            "Tells the kits tall tales about how they became half-blind",
-            "Trips over r_c!",
-            "Laughs at a kit who offered them help to find their lost eye"
-        ],
-        "perm_conditions": [
-            "one bad eye"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten"
-        ]
-    },
     {
         "id": "one_bad_eye_adolescent_retired_to_alive_gen",
         "thoughts": [
-            "Boasts that they can take on a fox with their good eye closed",
-            "Brags to the Clan that they would've been the best leader",
-            "Wonders if their pelt looks messy on their bad side",
-            "Jokingly told r_c they can see further with one eye",
-            "Looks at their bad side in a puddle"
+            "Brags to the Clan that they would've been the best leader"
         ],
-        "perm_conditions": [
-            "one bad eye"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -508,268 +325,27 @@
             "adolescent"
         ],
         "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "one_bad_eye_adolescent_retired_to_alive_apprentice",
-        "thoughts": [
-            "Leaps up in shock when r_c sneaks up on their bad side"
-        ],
-        "perm_conditions": [
-            "one bad eye"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_status_constrain": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ]
-    },
-    {
-        "id": "one_bad_eye_adolescent_retired_to_alive_kit",
-        "thoughts": [
-            "Hisses at a kit for sneaking up on their bad side"
-        ],
-        "perm_conditions": [
-            "one bad eye"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "kitten"
+            "any"
         ]
     },
 
-    {
-        "id": "deaf_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Wishes they could hear the sounds of camp",
-            "Teaches a new Clanmate how do tail signals",
-            "Nearly hits the den's ceiling when r_c suddenly enters their line of sight",
-            "Can identify their Clanmates just by the feel of their pawsteps",
-            "Recently discovered that they have a stomping habit",
-            "Is confused when r_c mentions birdsong",
-            "Wonders what r_c sounds like",
-            "Knows what r_c is saying from their mouth movement",
-            "Teases a Clanmate for trying to call them out loud"
-        ],
-        "perm_conditions": [
-            "deaf"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "deaf_adolescent_retired_to_alive_gen",
-        "thoughts": [
-            "Wonders if the clouds make noise",
-            "Wonders if the sun makes noise",
-            "Wonders what sound is like",
-            "Tries to ask r_c for something, but they don't understand",
-            "Is frustrated that other cats don't understand their signals",
-            "Wishes they could talk to other cats",
-            "Feels thunder boom and watches the others flinch",
-            "Curiously feels the thumps of their Clanmates' pawsteps on the ground"
-        ],
-        "perm_conditions": [
-            "deaf"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "deaf_adolescent_retired_to_alive_kit",
-        "thoughts": [
-            "Teaches tail signals to the kits"
-        ],
-        "perm_conditions": [
-            "deaf"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "kitten"
-        ]
-    },
-    {
-        "id": "deaf_adolescent_retired_to_alive_med",
-        "thoughts": [
-            "Is learning tail signals with r_c"
-        ],
-        "perm_conditions": [
-            "deaf"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
-        ]
-    },
-
-    {
-        "id": "wasting_disease_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Is taken over by a coughing fit",
-            "Is frustrated by their health",
-            "Hisses at r_c for seemingly no reason",
-            "Has been experiencing changes in their behaviour",
-            "Is irritated for no reason, which frustrates them",
-            "Is frustrated by their own inexplicable irritability",
-            "Wishes their fever would go away",
-            "Dreads the potential sickness that may arrive in leaf-bare",
-            "Is losing their appetite...",
-            "Is losing fur",
-            "Is taking it easy today",
-            "Is feeling better today",
-            "Laughs happily at a joke, but it turns into a coughing fit",
-            "Feels strong today"
-        ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "wasting_disease_greenleaf_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Feels strangely cold",
-            "Is shivering, even in the greenleaf heat"
-        ],
-        "season": [
-            "Greenleaf"
-        ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "wasting_disease_leaf-fall_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Dreads the potential illness that may arrive in leaf-bare"
-        ],
-        "season": [
-            "Leaf-fall"
-        ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
     {
         "id": "wasting_disease_gen_retired_to_alive_med",
         "thoughts": [
             "Thanks r_c for their patience",
             "Feels confined to the medicine den"
         ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
         "random_status_constraint": [
             "medicine cat apprentice",
             "medicine cat"
-        ]
-    },
-    {
-        "id": "wasting_disease_adolescent_retired_to_alive_gen",
-        "thoughts": [
-            "Is frustrated by everyone's concern for their health",
-            "Daydreams about someday being leader"
-        ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
         ]
     },
     {
@@ -777,9 +353,11 @@
         "thoughts": [
             "Wishes the older cats would stop trying to get them to eat more"
         ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -798,9 +376,11 @@
         "thoughts": [
             "Enviously watches the apprentices talk about training"
         ],
-        "perm_conditions": [
-            "wasting disease"
-        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
         "main_status_constraint": [
             "elder"
         ],
@@ -811,108 +391,6 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
-        ]
-    },
-
-    {
-        "id": "missing_leg_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Tries to make a new leg out of a stick they found",
-            "Shows they can still run and jump around like any other cat!",
-            "Groaned when someone said how sad they must be to have 3 legs"
-        ],
-        "perm_conditions": [
-            "lost a leg",
-            "born without a leg"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "lost_leg_gen_retired_to_alive_kit",
-        "thoughts": [
-            "Is exaggerating the tale of how they lost their leg to the kits"
-        ],
-        "perm_conditions": [
-            "lost a leg"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constraint": [
-            "newborn",
-            "kitten"
-        ]
-    },
-
-    {
-        "id": "half_no_tail_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Points to something with a forepaw",
-            "Flicks their tail stub in annoyance",
-            "Rolls their eyes when a Clanmate says they feel bad for them"
-        ],
-        "perm_conditions": [
-            "lost their tail",
-            "born without a tail"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "half_no_tail_lost_gen_retired_to_alive_gen",
-        "thoughts": [
-            "Misses being able to do tail signals",
-            "Finds balancing harder now, though they're improving"
-        ],
-        "perm_conditions": [
-            "lost their tail"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constrain": [
-            "kitten",
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
-        ]
-    },
-    {
-        "id": "half_no_tail_gen_retired_to_alive_kit",
-        "thoughts": [
-            "Laughs when a kit asks if their tail could fall off as well one day"
-        ],
-        "perm_conditions": [
-            "lost their tail",
-            "born without a tail"
-        ],
-        "main_status_constraint": [
-            "elder"
-        ],
-        "random_age_constraint": [
-            "newborn",
-            "kitten"
         ]
     }
 ]
