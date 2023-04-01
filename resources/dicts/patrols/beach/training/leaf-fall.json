@@ -32,7 +32,7 @@
         "biome": "beach",
         "season": "leaf-fall",
         "tags": ["training"],
-        "intro_text": "p_l decides to go down to the beach by themsleves. There seems to be something strange here...",
+        "intro_text": "p_l decides to go down to the beach by themselves. There seems to be something strange here...",
         "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
         "chance_of_success": 30,
         "exp": 5,

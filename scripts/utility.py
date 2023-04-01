@@ -249,7 +249,10 @@ def create_new_cat(Cat,
     :param outside: set this as True to generate the cat as an outsider instead of as part of the clan - default: False (clan cat)
     """
     accessory = None
-    backstory = choice(backstory)
+    if type(backstory) == list:
+        backstory = choice(backstory)
+    else:
+        backstory = backstory
 
     if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
         other_clan = True
@@ -442,7 +445,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         # (this function will handle, that the cat only knows other outsiders)
         new_cat.create_relationships_new_cat()
 
-        # game.clan.add_cat(new_cat)
+        game.clan.add_cat(new_cat)
         game.clan.add_to_outside(new_cat)
         name = str(name + suffix)
 

@@ -6,7 +6,8 @@
             "Is imagining what it would be like to be a warrior",
             "Is imagining what it would be like to be a medicine cat",
             "Is imagining what it would be like to be a mediator",
-            "Is sad they couldn't experience being an apprentice"
+            "Is sad they couldn't experience being an apprentice",
+            "Doesn't really understand what being in StarClan means"
         ]
     },
     {
@@ -15,7 +16,8 @@
             "Is nagging r_c to play with them",
             "Is begging r_c to tell them stories",
             "Is following r_c around",
-            "Is sticking closely to r_c"
+            "Is sticking closely to r_c",
+            "Is asking r_c uncomfortable questions about life and death"
         ],
         "random_living_status": [
             "starclan"
@@ -89,6 +91,21 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_kit_sibling",
+        "thoughts": [
+            "Is glad that at least they have r_c"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "starclan"
         ],
         "random_age_constraint": [
             "kitten"
