@@ -28,18 +28,18 @@
     "Singlestripe": ["egg"]
   },
   "tortie_pelt_suffixes": {
-    "solid": ["egg"],
-    "tabby": ["egg"],
-    "bengal": ["egg"],
-    "marbled": ["egg"],
-    "ticked": ["egg"],
-    "smoke": ["egg"],
-    "rosette": ["egg"],
-    "speckled": ["egg"],
-    "mackerel": ["egg"],
-    "classic": ["egg"],
-    "sokoke": ["egg"],
-    "agouti": ["egg"]
+    "solid": ["dapple", "speckle", "spots", "splash"],
+    "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
+    "bengal": ["dapple", "speckle", "spots", "speck", "fern", "freckle"],
+    "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
+    "ticked": ["spots", "pelt", "speckle", "freckle"],
+    "smoke": ["fade", "dusk", "dawn", "smoke"],
+    "rosette": ["dapple", "speckle", "spots", "dapple", "fern", "freckle"],
+    "speckled": ["dapple", "speckle", "spot", "speck", "freckle"],
+    "mackerel": ["stripe", "feather", "fern", "shade"],
+    "classic": ["stripe", "feather", "fern"],
+    "sokoke": ["stripe", "feather", "fern", "shade", "dapple"],
+    "agouti": ["back", "pelt", "fur", "dapple", "splash"]
   },
 
   "normal_prefixes": [
@@ -203,23 +203,29 @@
 
   "biome_suffixes": {
     "Forest": [
-    "egg"
+    "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "deer", "fawn", "fern", "fog", "frond", "grove", "moss", 
+    "sap", "shade", "tar", "twig", "wood"
     ],
     "Beach": [
-    "egg"
+    "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
+    "spray", "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill"
     ],
     "Plains": [
-    "fgg"
+    "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner",
+    "tunnel", "horse", "sheep", "burrow", "brush"
     ],
     "Mountainous": [
-    "egg"
+    "cave", "caw", "cliff", "crag", "cricket", "drop", "eagle", "echo", "fall", "fault", "fossil", "frost", "goat", "horn", "lichen",
+    "mound", "peak", "point", "ram", "search", "shatter", "shard", "stone", "steep", "summit", "quake", "whisper",
+    "whistle"
     
     ],
     "Wetlands": [
-    "egg"
+    "flood", "swamp", "splash", "croak", "duck", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow", "wave", "creek", "ripple"
     ],
     "Desert": [
-    "egg"
+    "prickle", "dune", "sand", "canyon", "rattle", "wind", "dust", "sun", "fly", "scorpion", "snake", "needle", "fang", "tooth", "bite",
+    "aloe"
     ]
   },
 
