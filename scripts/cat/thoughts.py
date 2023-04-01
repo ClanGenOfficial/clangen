@@ -37,7 +37,7 @@ class Thoughts():
         if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
             return False
         
-        if "app/mentor" in constraint and random_cat.ID == main_cat.mentor:
+        if "app/mentor" in constraint and str(random_cat.ID) != main_cat.mentor:
             return False
         
         if "strangers" in constraint and relationship and (relationship.platonic_like < 1 or relationship.romantic_love < 1):
@@ -73,9 +73,10 @@ class Thoughts():
 
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
-            if ('main_status_constraint' in thought and main_cat.status not in thought['main_status_constraint']) or\
+            if (main_cat.status not in thought['main_status_constraint']) or\
                 ('any' not in thought['main_status_constraint']):
                 return False
+            
 
         # Contraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
@@ -165,7 +166,6 @@ class Thoughts():
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
                     or [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
-
         return True
     # ---------------------------------------------------------------------------- #
     #                            BUILD MASTER DICTIONARY                           #
