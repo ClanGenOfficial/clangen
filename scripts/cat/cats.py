@@ -736,13 +736,13 @@ class Cat():
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
-        elif self.status == 'apprentice' and self.moons >= 15 or self.experience_level not in ['trainee']:
+        elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 15 or self.experience_level not in ['untrained', 'trainee']:
+        elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
