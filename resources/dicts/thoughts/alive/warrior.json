@@ -159,13 +159,27 @@
         "Wants to go on a journey",
         "Wishes their leader would choose them to go on a quest",
         "Disappeared the whole day to explore the territory",
-        "Promises their Clanmates they won't do anything dangerous while out",
-        "Involves the kits in a game of make believe about traveling through a strange land"
+        "Promises their Clanmates they won't do anything dangerous while out"
     ],
     "main_trait_constraint": [
         "adventurous"
     ]
 
+},
+{
+    "id": "adventurous_warrior_to_alive_kits",
+    "thoughts": [
+        "Involves the kits in a game of make believe about traveling through a strange land"
+    ],
+    "random_status_constraint": [
+        "kitten"
+    ],
+    "main_trait_constraint": [
+        "adventurous"
+    ],
+    "random_living_status": [
+        "living"
+    ]
 },
 {
     "id": "ambitious_warrior",
@@ -343,13 +357,24 @@
         "Is grunting rudely at passersby",
         "Wonders why others snap back at them",
         "Notices that their Clanmates have been nervous around them lately",
-        "Is scolding the apprentices over something slight",
-        "Is pushing around the apprentices",
-        "Berates an apprentice for not doing their chores",
         "Doesn't say thank you when offered a piece of fresh-kill",
         "Turns away without saying a word when a Clanmate vents to them",
         "Thinks the leader should be harsher on codebreakers",
-        "Flatly insults a Clanmates appearance"
+        "Flatly insults a Clanmate's appearance"
+    ],
+    "main_trait_constraint": [
+        "cold"
+    ]
+},
+{
+    "id": "cold_warrior_to_alive_apprentice",
+    "thoughts": [
+        "Is scolding the apprentices over something slight",
+        "Is pushing around the apprentices",
+        "Berates an apprentice for not doing their chores"
+    ],
+    "random_status_constraint": [
+        "apprentice"
     ],
     "main_trait_constraint": [
         "cold"
