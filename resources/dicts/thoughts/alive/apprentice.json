@@ -1,13 +1,14 @@
 [
     {
-        "id": "apprentice_alive_mediator_app",
-        "thoughts": [
-            "Wishes they could train with r_c",
-            "Teases r_c for not training to be a warrior"
-        ],
-        "random_status_constraint": [
-            "mediator apprentice",
-            "medicine cat apprentice"
+        "id": "gen_warrior_app",
+        "thoughts":[
+            "Feels worn out from training",
+            "Wonders if they'll be allowed to go night-hunting soon",
+            "Is resting in the sun after a long day of training",
+            "Wonders if they'll have to fight a battle anytime soon",
+            "Bats at a beetle that wandered into camp",
+            "Is saving the softest bedding for their own nest",
+            "Practices their newest battle moves"
         ]
     },
     {
@@ -24,10 +25,24 @@
         "id": "apprentice_alive_warrior",
         "thoughts": [
             "Is watching and learning from r_c",
-            "Is asking r_c questions about warrior life"
+            "Is asking r_c questions about warrior life",
+            "Is re-enacting a move that they saw r_c do",
+            "Got caught trying to sneak out of camp without a warrior"
         ],
         "random_status_constraint": [
             "warrior"
+        ]
+    },
+    {
+        "id": "apprentice_alive_mentor",
+        "thoughts": [
+            "Is trying to perfect the latest move that r_c taught them",
+            "Is asking r_c questions",
+            "Is grumbling after r_c woke them up for dawn patrol",
+            "Obediently follows r_c out of camp for today's lesson"
+        ],
+        "relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -37,10 +52,42 @@
             "Teases r_c for missing an easy catch",
             "Is happy that they are going to train with r_c",
             "Is having a hunting contest with r_c",
-            "Helps r_c perfect a fighting pose"
+            "Helps r_c perfect a fighting pose",
+            "Hangs out with r_c after a training session"
         ],
         "random_status_constraint": [
             "apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_alive_elder",
+        "thoughts":[
+            "Is dreading having to clean the elders' den later",
+            "Is picking ticks off of r_c",
+            "Listens to a story from r_c",
+            "Is making sure the elders are comfortable",
+            "Is asking r_c how things have changed since they were a 'paw",
+            "Appreciates r_c's words of wisdom"
+        ],
+        "random_status_constraint":[
+            "elder"
+        ],
+        "random_age_constraint":[
+            "senior"
+        ]
+    },
+    {
+        "id": "apprentice_alive_kits",
+        "thoughts":[
+            "Leaves freshkill outside the nursery for the kits",
+            "Is showing r_c the proper way to do a hunter's crouch",
+            "Tries not to giggle as r_c fails at a hunting crouch",
+            "Looks at r_c and wonders if they were ever that small",
+            "Brought back some feathers for the kits to play with",
+            "Is showing off their new battle moves to the kits"
+        ],
+        "random_status_constraint":[
+            "kitten"
         ]
     },
     {
