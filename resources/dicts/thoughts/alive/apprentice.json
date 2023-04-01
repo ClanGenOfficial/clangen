@@ -8,7 +8,17 @@
             "Wonders if they'll have to fight a battle anytime soon",
             "Bats at a beetle that wandered into camp",
             "Is saving the softest bedding for their own nest",
-            "Practices their newest battle moves"
+            "Practices their newest battle moves",
+            "Hopes they'll learn something new today",
+            "Is feeling proud of the progress they've made",
+            "Practices their hunting on a smooth rock they found",
+            "Feels disappointed after a missed catch",
+            "Hopes there's a juicy mouse left on the fresh-kill pile for them",
+            "Tries to recite the Warrior Code from memory",
+            "Feels nervous about an upcoming assessment",
+            "Practices their highest jump",
+            "Practices their farthest leap",
+            "Feels proud of themselves for doing so well in training today"
         ]
     },
     {
@@ -53,7 +63,9 @@
             "Is happy that they are going to train with r_c",
             "Is having a hunting contest with r_c",
             "Helps r_c perfect a fighting pose",
-            "Hangs out with r_c after a training session"
+            "Hangs out with r_c after a training session",
+            "Listens to the latest gossip from r_c",
+            "Is practicing sparring with r_c"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -79,7 +91,7 @@
     {
         "id": "apprentice_alive_kits",
         "thoughts":[
-            "Leaves freshkill outside the nursery for the kits",
+            "Leaves fresh-kill outside the nursery for the kits",
             "Is showing r_c the proper way to do a hunter's crouch",
             "Tries not to giggle as r_c fails at a hunting crouch",
             "Looks at r_c and wonders if they were ever that small",
