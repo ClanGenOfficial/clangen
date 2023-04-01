@@ -69,16 +69,12 @@ class Thoughts():
         # This is for filtering certain relationship types between the main cat and random cat. 
         if "relationship_constraint" in thought:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed rel constraint")
                 return False
 
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
             if (main_cat.status not in thought['main_status_constraint']) or\
                 ('any' not in thought['main_status_constraint']):
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed main status constraint")
                 return False
             
 
@@ -91,8 +87,6 @@ class Thoughts():
         # main cat age contraint
         if 'main_age_constraint' in thought:
             if main_cat.age not in thought['main_age_constraint']:
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed age constraint")
                 return False
         
         if 'random_age_constraint' in thought and random_cat:
@@ -101,8 +95,6 @@ class Thoughts():
 
         if 'main_trait_constraint' in thought:
             if main_cat.trait not in thought['main_trait_constraint']:
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed main trait constraint")
                 return False
             
         if 'random_trait_constraint' in thought and random_cat:
@@ -136,8 +128,6 @@ class Thoughts():
             else:
                 living_status = 'unknownresidence'
             if living_status and living_status not in thought['random_living_status']:
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed living status constraint")
                 return False
         
         # this covers if living status isn't stated
@@ -146,8 +136,6 @@ class Thoughts():
             if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
             if living_status and living_status != "living":
-                if main_cat.status == 'apprentice':
-                    print(str(main_cat.name) + " failed living status constraint")
                 return False
             
         if 'random_outside_status' in thought:
@@ -178,8 +166,6 @@ class Thoughts():
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
                     or [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
-        if main_cat.status == 'apprentice':
-            print(str(main_cat.name) + " passed constraints")
         return True
     # ---------------------------------------------------------------------------- #
     #                            BUILD MASTER DICTIONARY                           #
@@ -191,8 +177,6 @@ class Thoughts():
         for inter in inter_list:
             if Thoughts.cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode, biome, season, camp):
                 created_list.append(inter)
-        if main_cat.status == 'apprentice':
-            print(created_list)
         return created_list
 
     @staticmethod
