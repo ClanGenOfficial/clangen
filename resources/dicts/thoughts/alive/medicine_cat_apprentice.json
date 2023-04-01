@@ -48,6 +48,9 @@
         ],
         "biome":[
             "Plains"
+        ],
+        "random_living_status":[
+            "starclan"
         ]
     },
     {
@@ -56,10 +59,8 @@
             "Is wondering if r_c would have been their friend",
             "Wonders if they would have swapped secrets with r_c"
         ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
+        "random_living_status":[
+            "starclan"
         ]
     },
     {
@@ -78,6 +79,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status":[
+            "starclan"
         ]
     },
     {
@@ -86,11 +90,6 @@
             "Wonders if r_c would have been a better healer",
             "Wishes the other apprentices could understand how they feel",
             "Wishes they understood the apprentice's inside jokes"
-        ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
         ]
     },
     {
