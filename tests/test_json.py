@@ -10,7 +10,7 @@ HOWEVER
 """
 import unittest
 import ujson
-from ujson import JSONDecodeError
+from json import JSONDecodeError
 
 import os
 import sys
