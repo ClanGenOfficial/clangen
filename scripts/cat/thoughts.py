@@ -37,7 +37,7 @@ class Thoughts():
         if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
             return False
         
-        if "app/mentor" in constraint and random_cat.ID == main_cat.mentor:
+        if "app/mentor" in constraint and str(random_cat.ID) != main_cat.mentor:
             return False
         
         if "strangers" in constraint and relationship and (relationship.platonic_like < 1 or relationship.romantic_love < 1):
@@ -75,7 +75,7 @@ class Thoughts():
 
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
-            if ('main_status_constraint' in thought and main_cat.status not in thought['main_status_constraint']) or\
+            if (main_cat.status not in thought['main_status_constraint']) or\
                 ('any' not in thought['main_status_constraint']):
                 if main_cat.status == 'apprentice':
                     print(str(main_cat.name) + " failed main status constraint")
