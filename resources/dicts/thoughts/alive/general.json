@@ -293,6 +293,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -316,6 +319,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -336,6 +342,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -358,6 +367,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -380,6 +392,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -394,6 +409,9 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -412,6 +430,9 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -429,6 +450,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -452,6 +476,9 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -530,6 +557,9 @@
             "deputy",
             "leader",
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -597,6 +627,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -613,6 +646,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -639,6 +675,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -658,6 +697,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1105,6 +1147,11 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
         "main_trait_constraint": [
             "charismatic"
         ]
@@ -1112,7 +1159,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Managed to convince another apprentices to play mossball instead of finishing their duties"
+            "Managed to convince another apprentice to play mossball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1120,7 +1167,9 @@
             "medicine cat apprentice"
         ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
         ],
         "main_trait_constraint": [
             "childish"

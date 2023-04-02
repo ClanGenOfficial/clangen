@@ -6,6 +6,12 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "relationship_constraint": [
+            "stranger"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
