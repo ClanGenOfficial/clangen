@@ -756,9 +756,11 @@ class Clan():
         """
         TODO: DOCS
         """
+        
+        version_info = None
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'clan.json'):
-            self.load_clan_json()
+            version_info = self.load_clan_json()
         elif os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                             'clan.txt'):
             self.load_clan_txt()
@@ -767,6 +769,8 @@ class Clan():
                 'error_message'] = "There was an error loading the clan.json"
             
         self.load_clan_settings()
+        
+        return version_info
 
     def load_clan_txt(self):
         """
@@ -1033,6 +1037,13 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
+        
+        # Return Version Info. 
+        return {
+            "version_name": clan_data.get("version_name"),
+            "version_commit": clan_data.get("version_commit"),
+            "source_build": clan_data.get("source_build")
+        }
 
     def load_clan_settings(self):  
         if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):

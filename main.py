@@ -100,7 +100,7 @@ print("Version Number: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
-from scripts.game_structure.load_cat import load_cats
+from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
@@ -126,7 +126,8 @@ if clan_list:
     game.switches['clan_list'] = clan_list
     try:
         load_cats()
-        clan_class.load_clan()
+        version_info = clan_class.load_clan()
+        version_convert(version_info)
     except Exception as e:
         logging.exception("File failed to load")
         if not game.switches['error_message']:
