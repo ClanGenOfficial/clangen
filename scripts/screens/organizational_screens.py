@@ -31,10 +31,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 logger = logging.getLogger(__name__)
 

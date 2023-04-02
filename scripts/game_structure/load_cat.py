@@ -3,10 +3,7 @@ from math import floor
 from .game_essentials import game
 from ..datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from re import sub
 from scripts.cat.cats import Cat
@@ -14,10 +11,8 @@ from scripts.version import VERSION_NAME
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
-try:
-    from ujson import JSONDecodeError
-except ImportError:
-    from json import JSONDecodeError
+
+from json import JSONDecodeError
 
 def load_cats():
     try:

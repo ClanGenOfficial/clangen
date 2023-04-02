@@ -1,10 +1,7 @@
 import os
 from random import choice
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 class Thoughts():
     @staticmethod

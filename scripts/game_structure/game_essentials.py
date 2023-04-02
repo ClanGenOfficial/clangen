@@ -3,11 +3,7 @@ import pygame_gui
 
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError as e:
-    print(f"ERROR: {e}\nFailed to import ujson, saving may be slower.")
-    import json as ujson
+import ujson
 import os
 from ast import literal_eval
 
