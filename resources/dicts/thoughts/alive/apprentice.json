@@ -41,6 +41,9 @@
         ],
         "random_status_constraint": [
             "warrior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
