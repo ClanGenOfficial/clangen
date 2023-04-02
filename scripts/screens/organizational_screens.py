@@ -534,7 +534,6 @@ class SettingsScreen(Screens):
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
-                    self.refresh_checkboxes()
                     if self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
                         if game.settings['discord']:
                             print("Starting Discord RPC")
@@ -545,6 +544,16 @@ class SettingsScreen(Screens):
                         else:
                             print("Stopping Discord RPC")
                             game.rpc.close()
+                    
+                    opens = {
+                        "general": self.open_general_settings,
+                        "language": self.open_lang_settings,
+                        "relation": self.open_relation_settings
+                    }
+                    
+                    if self.sub_menu in opens:
+                        opens[self.sub_menu]()
+                    
                     break
 
     def screen_switches(self):
