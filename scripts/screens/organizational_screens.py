@@ -551,9 +551,17 @@ class SettingsScreen(Screens):
                         "relation": self.open_relation_settings
                     }
                     
+                    scroll_pos = None
+                    if "container_general" in self.checkboxes_text and \
+                            self.checkboxes_text["container_general"].vert_scroll_bar:
+                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
+                    
                     if self.sub_menu in opens:
                         opens[self.sub_menu]()
-                    
+                        
+                    if scroll_pos is not None:
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
+                        
                     break
 
     def screen_switches(self):
