@@ -444,7 +444,7 @@
 {
     "id": "compassionate_warrior_to_living_apprentices",
     "thoughts": [
-        "Feels bad seeing the apprentices worked to the bone",
+        "Feels bad seeing the apprentices worked to the bone"
     ],
     "random_status_constraint": [
         "apprentice"
@@ -769,7 +769,7 @@
 {
     "id": "responsible_warrior_to_living_apprentices",
     "thoughts": [
-        "Doesn't approve of the trouble the apprentices have been making",
+        "Doesn't approve of the trouble the apprentices have been making"
     ],
     "random_status_constraint": [
         "apprentice"
