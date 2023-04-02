@@ -103,7 +103,7 @@
     {
         "id": "cold_medicine_cat",
         "thoughts": [
-            "Refuses to treat an injured, abandoned kit"
+            "Grumbles as a warrior asks for herbs for a simple bellyache"
         ],
         "main_trait_constraint": [
             "cold"
