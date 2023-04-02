@@ -23,7 +23,7 @@ import os
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info
+from scripts.version import get_version_info, VERSION_NAME
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -96,6 +96,7 @@ if get_version_info().is_source_build:
 else:
     print("Running on PyInstaller build")
 
+print("Version Number: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
@@ -141,14 +142,15 @@ sprites.load_scars()
 start_screen.screen_switches()
 
 
-
-
-
-
 #Version Number
+if get_version_info().version_number == "":
+    _display_version = VERSION_NAME
+else:
+    _display_version = get_version_info().version_number[0:8]
+
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)), get_version_info().version_number[0:8],
+        pygame.Rect((1500, 1350), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -156,12 +158,16 @@ if game.settings['fullscreen']:
          1400 - version_number.get_relative_rect()[3]))
 else:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)), get_version_info().version_number[0:8],
+        pygame.Rect((700, 650), (-1, -1)), _display_version,
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
+
+# This variable is no longer needed, and we don't need a high-level main 
+# variable just hanging around. 
+del _display_version
 
 if get_version_info().is_source_build:
     dev_watermark = pygame_gui.elements.UILabel(
