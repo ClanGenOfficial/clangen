@@ -1042,20 +1042,47 @@ class Cat():
         except:
             season = None
 
+        # this figures out where the cat is
+        where_kitty = None
+        if not self.dead and not self.outside:
+            where_kitty = "inside"
+        elif self.dead and not self.df and not self.outside:
+            where_kitty = 'starclan'
+        elif self.dead and self.df:
+            where_kitty = 'hell'
+        elif self.dead and self.outside:
+            where_kitty = 'UR'
+        elif not self.dead and self.outside:
+            where_kitty = 'outside'
         # get other cat
         i = 0
-        # makes sure that a cat won't think about a cat that they don't know that's dead
-        while other_cat == self.ID and len(all_cats) > 1 \
-                or (all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) \
-                or (all_cats.get(other_cat).dead and self.dead and dead_chance > 1) \
-                or (other_cat not in self.relationships)\
-                or (self.status in ['kittypet', 'rogue', 'loner', 'former Clancat']
-                    and all_cats.get(other_cat).status not in ['kittypet', 'rogue', 'loner', 'former Clancat']):
-            other_cat = choice(list(all_cats.keys()))
-            i += 1
-            if i > 100:
-                other_cat = None
-                break
+        # for cats inside the clan
+        if where_kitty == 'inside':
+            while other_cat == self.ID and len(all_cats) > 1 \
+            or (all_cats.get(other_cat).dead and dead_chance != 1) \
+            or (other_cat not in self.relationships):
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
+        # for dead cats
+        elif where_kitty in ['starclan', 'hell', 'UR']:
+            while other_cat == self.ID and len(all_cats) > 1:
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
+        # for cats currently outside
+        elif where_kitty == 'outside':
+            while other_cat == self.ID and len(all_cats) > 1\
+            or (other_cat not in self.relationships):
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
 
         other_cat = all_cats.get(other_cat)
 
