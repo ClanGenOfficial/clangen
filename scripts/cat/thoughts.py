@@ -66,6 +66,11 @@ class Thoughts():
             if camp not in thought["camp"]:
                 return False
 
+        # This is for checking if another cat is needed and there is a other cat
+        r_c_in = [thought_str for thought_str in thought["thoughts"] if "r_c" in thought_str]
+        if len(r_c_in) > 0 and not random_cat:
+            return False
+
         # This is for filtering certain relationship types between the main cat and random cat. 
         if "relationship_constraint" in thought:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
