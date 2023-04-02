@@ -1689,8 +1689,15 @@
         "thoughts": [
             "Is exaggerating the tale of how they lost their leg to the kits"
         ],
-        "perm_conditions": [
-            "lost a leg"
+        "perm_conditions": {
+            "m_c": ["lost a leg"]
+        },
+        "main_age_constraint":[
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
         ],
         "random_age_constraint": [
             "newborn",
