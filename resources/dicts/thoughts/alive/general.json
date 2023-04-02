@@ -1147,6 +1147,11 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
         "main_trait_constraint": [
             "charismatic"
         ]
