@@ -97,5 +97,26 @@
         {
             "rect_width": "300"
         }
+    },
+    "#med_cat_den_hover.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "280"
+        }
+    },
+    "#med_cat_den_hover_big.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "460"
+        }
+    },
+    "#blank_button.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "700"
+        }
     }
 }

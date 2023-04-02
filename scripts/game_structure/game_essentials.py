@@ -184,6 +184,10 @@ class Game():
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
 
+        if self.config['fun']['april_fools']:
+            self.config['fun']['newborns_can_roam'] = True
+            self.config['fun']['newborns_can_patrol'] = True
+
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
             self.current_screen = self.switches['cur_screen']

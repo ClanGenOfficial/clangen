@@ -103,7 +103,7 @@
     {
         "id": "cold_medicine_cat",
         "thoughts": [
-            "Refuses to treat an injured, abandoned kit"
+            "Grumbles as a warrior asks for herbs for a simple bellyache"
         ],
         "main_trait_constraint": [
             "cold"
@@ -341,9 +341,9 @@
             "Is visited by r_c",
             "Senses r_c is nearby",
             "Thought they heard a low rumbling behind them, but nothing was there",
-            "Recieved an ominous and dark message from r_c",
+            "Received an ominous and dark message from r_c",
             "Has been hearing the voices of Dark Forest cats...",
-            "Debates whether or not to ask r_c for gudiance, knowing where they are"
+            "Debates whether or not to ask r_c for guidance, knowing where they are"
         ],
         "random_living_status": [
             "darkforest"

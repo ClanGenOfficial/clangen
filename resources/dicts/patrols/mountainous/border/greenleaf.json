@@ -206,7 +206,7 @@
     "tags": ["fighting", "border"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
         "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -235,7 +235,7 @@
     "tags": ["fighting", "comfort", "respect", "trust", "border"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -267,7 +267,7 @@
     "tags": ["app_stat", "fighting", "border", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",

@@ -80,7 +80,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -270,7 +270,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",

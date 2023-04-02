@@ -4,6 +4,8 @@ import ujson
 
 from scripts.datadir import get_save_dir
 
+from scripts.game_structure.game_essentials import game
+
 
 class Name():
     if os.path.exists('resources/dicts/names/names.json'):
@@ -92,7 +94,7 @@ class Name():
                     
         # Set suffix
         while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in \
-                self.prefix.casefold() and not str(self.suffix) == '':
+                self.prefix.casefold() and not str(self.suffix) == '' or self.prefix == "Wet" and self.suffix == "back":
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
@@ -135,6 +137,8 @@ class Name():
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
             return self.prefix + self.names_dict["special_suffixes"][self.status]
         else:
+            if game.config['fun']['april_fools']:
+                return self.prefix + 'egg'
             return self.prefix + self.suffix
 
 

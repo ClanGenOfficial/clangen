@@ -6,6 +6,12 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "relationship_constraint": [
+            "stranger"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
@@ -123,7 +129,7 @@
         "thoughts": [
             "Thinks they saw a StarClan cat in their dreams",
             "Is mesmerized by the night sky",
-            "Thinks theyre the leader of their own clan",
+            "Thinks they're the leader of their own Clan",
             "Bosses around imaginary cats as deputy",
             "Wonders what it would be like to be leader",
             "Sorts blades of grass like a medicine cat would",

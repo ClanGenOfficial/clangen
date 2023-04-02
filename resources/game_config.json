@@ -206,6 +206,10 @@
 			"If you DON'T DO THIS, your game WILL break."
 		]
 	},
+    "cat_sprites": {
+        "sick_sprites": true,
+        "comment": "Set this to false to disable sick sprites."
+    },
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
 		"expanded_difficulty_modifier": 2.5,
@@ -261,6 +265,8 @@
 
 
 	"fun": {
+
+		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
 		"newborns_can_patrol": false

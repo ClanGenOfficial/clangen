@@ -351,7 +351,7 @@
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 10,
         "success_text": [
             "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce across the rocks and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -612,7 +612,7 @@
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",

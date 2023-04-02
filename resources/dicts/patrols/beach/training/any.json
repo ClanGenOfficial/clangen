@@ -6,7 +6,7 @@
     "tags": ["app_stat", "apprentice", "training", "scar", "QUILLCHUNK", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
     "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 70,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
             "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
@@ -37,7 +37,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "CHEEK", "no_change_fail", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
             "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -340,7 +340,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
@@ -364,7 +364,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
             "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",

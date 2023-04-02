@@ -111,5 +111,12 @@
         {
             "rect_width": "230"
         }
+    },
+    "#blank_button.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "350"
+        }
     }
 }

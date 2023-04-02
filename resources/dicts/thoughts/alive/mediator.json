@@ -1,8 +1,9 @@
 [
     {
-        "id": "mediator_dead_mediator",
+        "id": "mediator_to_dead_mediator",
         "thoughts": [
-            "Wishes they could ask r_c for advice"
+            "Wishes they could ask r_c for advice",
+            "Wonders how r_c would have handled their most recent conflict"
         ],
         "random_status_constraint": [
             "mediator"
@@ -12,9 +13,11 @@
         ]
     },
     {
-        "id": "mediator_alive_mediator",
+        "id": "mediator_to_alive_mediator",
         "thoughts": [
-            "Is discussing conflict resolution strategies with r_c"
+            "Is discussing conflict resolution strategies with r_c",
+            "Thinks r_c may have worsened a c_n argument",
+            "Thinks r_c did a great job resolving a conflict"
         ],
         "random_status_constraint": [
             "mediator",
@@ -22,7 +25,7 @@
         ]
     },
     {
-        "id": "mediator_alive_kits",
+        "id": "mediator_to_alive_kits",
         "thoughts": [
             "Had to fix an argument between the kits... again"
         ],
@@ -31,17 +34,18 @@
         ]
     },
     {
-        "id": "Mediator_alive_leader",
+        "id": "mediator_to_alive_leader",
         "thoughts": [
             "Is angry with the leader for a border dispute gone wrong",
-           "Mediated a meeting between senior warriors and the leader over recent Clan decisions"
+            "Mediated a meeting between senior warriors and the leader over recent Clan decisions",
+            "Thinks r_c should be more prudent regarding Clan relations"
         ],
         "random_status_constraint": [
             "leader"
         ]
     },
     {
-        "id": "mediator_alive_elder",
+        "id": "mediator_to_alive_elder",
         "thoughts": [
             "Had to fix an argument between the elders... again"
         ],
@@ -67,9 +71,18 @@
             "Wants to solve a dispute with another Clan",
             "Wonders if mediating is meant to be so draining",
             "Wonders if being a warrior would have been more fun",
-            "Is proud of how well they are doing at mediating",
+            "Is proud of how well they are doing as a mediator",
             "Accidentally made an argument worse",
-            "Is proud of getting through a difficult mediation session"
+            "Is proud of getting through a difficult mediation session",
+            "Feels exhausted from their Clanmates' bickering",
+            "Is listening to both sides of an argument",
+            "Is feeling a bit underappreciated for their mediator work",
+            "Is wondering if they made the right decision to become a mediator",
+            "Is relieved they broke up an argument before it started",
+            "Is hoping the Clan can stay peaceful",
+            "Is contemplating teaching the Clan communication skills",
+            "Is mediating a small disagreement between two Clanmates",
+            "Wonders if c_n considers them a good mediator"
         ]
     },
     {
@@ -116,7 +129,8 @@
     {
         "id": "fierce_mediator",
         "thoughts": [
-            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong",
+            "Is fighting the urge to shake some sense into a Clanmate"
         ],
         "main_trait_constraint": [
             "fierce"
@@ -125,7 +139,8 @@
     {
         "id": "insecure_mediator",
         "thoughts": [
-            "Finds mediating emotionally draining"
+            "Finds mediating emotionally draining",
+            "Is worried they may have made things worse"
         ],
         "main_trait_constraint": [
             "insecure"

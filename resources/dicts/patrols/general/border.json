@@ -72,7 +72,7 @@
     "tags": ["fighting", "death", "scar", "BRIGHTHEART", "big_bite_injury", "respect", "trust", "border", "clan_to_patrol", "patrol_rel", "pos_fail"],
     "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
     "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
-    "chance_of_success": 40,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
@@ -162,7 +162,7 @@
     "tags": ["fighting", "scar", "LEGBITE", "small_bite_injury", "border", "trust", "respect", "comfort", "no_change_fail"],
     "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
     "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 

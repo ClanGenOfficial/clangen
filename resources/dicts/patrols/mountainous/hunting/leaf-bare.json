@@ -77,7 +77,7 @@
         ],
         "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch.",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of leaf-bare.",
@@ -192,7 +192,7 @@
         ],
         "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of leaf-bare.",
@@ -464,7 +464,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last newleaf's kids. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
