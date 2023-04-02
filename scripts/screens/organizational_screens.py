@@ -753,7 +753,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'].disable()
 
         i = 0
-        y_pos = 675
+        y_pos = 731
         for tooltip in self.tooltip_text:
             if not tooltip:
                 self.tooltip[f'tip{i}'] = UIImageButton(
@@ -775,7 +775,7 @@ class SettingsScreen(Screens):
 
             i += 1
         self.info_container.set_scrollable_area_dimensions(
-            (1150 / 1600 * screen_x, 4200 / 1400 * screen_y))
+            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""
