@@ -81,11 +81,12 @@ class Thoughts():
             if main_cat.status not in thought['main_status_constraint'] and 'any' not in thought['main_status_constraint']:
                 return False
             
-
         # Contraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
             if random_cat.status not in thought['random_status_constraint'] and 'any' not in thought['random_status_constraint']:
                 return False
+        elif 'random_status_constraint' in thought and not random_cat:
+            pass
 
         # main cat age contraint
         if 'main_age_constraint' in thought:
