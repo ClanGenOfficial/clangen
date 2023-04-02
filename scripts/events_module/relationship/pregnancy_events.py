@@ -136,9 +136,8 @@ class Pregnancy_Events():
                     elif average_trust >= 35:
                         chance += 13
                 else:
-                    chance = int(200/living_cats) + 2
+                    chance = int(75/living_cats) + 2
 
-                old_male = False
                 if cat.gender == 'male' and cat.age == 'senior':
                     chance = int(chance / 2)
                 elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'senior':
