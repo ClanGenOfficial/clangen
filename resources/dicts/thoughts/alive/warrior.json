@@ -387,7 +387,6 @@
     "id": "compassionate_warrior",
     "thoughts": [
         "Spends time with a grieving Clanmate today",
-        "Is helping the medicine cat organize herb stores",
         "Let their Clanmate have the last piece of fresh-kill on the pile this morning",
         "Is noticing with joy how well the Clan is looking after one another as of late",
         "Is listening to a Clanmate's struggles with love",
@@ -440,6 +439,22 @@
     "main_trait_constraint": [
         "compassionate"
     ]
+},
+{
+    "id": "compassionate_warrior_to_living_med_cat",
+    "thoughts": [
+        "Is helping the medicine cat organize herb stores"
+    ],
+    "random_status_constraint": [
+        "medicine cat"
+    ],
+    "main_trait_constraint": [
+        "compassionate"
+    ],
+    "random_living_status": [
+        "living"
+    ]
+
 },
 {
     "id": "compassionate_warrior_to_living_apprentices",
