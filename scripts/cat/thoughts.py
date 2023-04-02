@@ -81,11 +81,12 @@ class Thoughts():
             if main_cat.status not in thought['main_status_constraint'] and 'any' not in thought['main_status_constraint']:
                 return False
             
-
         # Contraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
             if random_cat.status not in thought['random_status_constraint'] and 'any' not in thought['random_status_constraint']:
                 return False
+        elif 'random_status_constraint' in thought and not random_cat:
+            pass
 
         # main cat age contraint
         if 'main_age_constraint' in thought:
@@ -134,7 +135,7 @@ class Thoughts():
                 return False
         
         # this covers if living status isn't stated
-        elif 'random_living_status' not in thought:
+        else:
             living_status = None
             if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
@@ -150,25 +151,34 @@ class Thoughts():
                 outside_status = "clancat"
             if outside_status and outside_status not in thought['random_outside_status']:
                 return False
+        else:
+            if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
+                outside_status = "lost"
+            elif random_cat and random_cat.outside:
+                outside_status = "outside cat"
+            else:
+                outside_status = "clancat"
+            if outside_status and outside_status != 'clancat':
+                return False
 
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
                 if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
-                    or [(main_cat.injuries or main_cat.illnesses) and "any" in thought['has_injuries']["m_c"]]):
+                    and not [(main_cat.injuries or main_cat.illnesses) and "any" in thought['has_injuries']["m_c"]]):
                     return False
             if "r_c" in thought['has_injuries'] and random_cat:
                 if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]\
-                    or [(random_cat.injuries or random_cat.illnesses) and "any" in thought['has_injuries']["r_c"]]):
+                    and not [(random_cat.injuries or random_cat.illnesses) and "any" in thought['has_injuries']["r_c"]]):
                     return False
         
         if game_mode != "classic" and "perm_conditions" in thought:
             if "m_c" in thought["perm_conditions"]:
                 if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]]\
-                    or [main_cat.permanent_condition and "any" in thought['perm_conditions']["m_c"]]:
+                    or not [main_cat.permanent_condition and "any" in thought['perm_conditions']["m_c"]]:
                     return False
             if "r_c" in thought["perm_conditions"] and random_cat:
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
-                    or [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
+                    or not [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
                 
         return True
