@@ -94,7 +94,7 @@ class Name():
                     
         # Set suffix
         while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in \
-                self.prefix.casefold() and not str(self.suffix) == '':
+                self.prefix.casefold() and not str(self.suffix) == '' or self.prefix == "Wet" and self.suffix == "back":
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
