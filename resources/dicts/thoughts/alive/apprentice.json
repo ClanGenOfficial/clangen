@@ -41,6 +41,9 @@
         ],
         "random_status_constraint": [
             "warrior"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -178,7 +181,7 @@
     {
         "id": "bold_warrior_apprentice",
         "thoughts": [
-            "Taunted rival Clan apprentices at the border",
+            "Taunted a rival Clan's apprentice at the border",
             "Is looking to challenge a warrior to a sparring match"
         ],
         "main_status_constraint": [
@@ -202,11 +205,22 @@
     {
         "id": "ambitious_warrior_apprentice",
         "thoughts": [
-            "Begs to be made a warrior early",
-            "Has been catching the most prey out of all the apprentices"
+            "Begs to be made a warrior early"
         ],
         "main_trait_constraint": [
             "ambitious"
         ]
-    }   
+    },
+    {
+        "id": "ambitious_warrior_apprentice_to_other_apps",
+        "thoughts": [
+            "Has been catching the most prey out of all the apprentices"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    } 
 ]

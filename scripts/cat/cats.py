@@ -739,13 +739,13 @@ class Cat():
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
-        elif self.status == 'apprentice' and self.moons >= 15 or self.experience_level not in ['trainee']:
+        elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 15 or self.experience_level not in ['untrained', 'trainee']:
+        elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
@@ -1048,9 +1048,12 @@ class Cat():
         # get other cat
         i = 0
         # makes sure that a cat won't think about a cat that they don't know that's dead
-        while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) or\
-                (all_cats.get(other_cat).dead and self.dead and dead_chance > 1) or (other_cat not in self.relationships):
+        while other_cat == self.ID and len(all_cats) > 1 \
+                or (all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']) \
+                or (all_cats.get(other_cat).dead and self.dead and dead_chance > 1) \
+                or (other_cat not in self.relationships)\
+                or (self.status in ['kittypet', 'rogue', 'loner', 'former Clancat']
+                    and all_cats.get(other_cat).status not in ['kittypet', 'rogue', 'loner', 'former Clancat']):
             other_cat = choice(list(all_cats.keys()))
             i += 1
             if i > 100:

@@ -6,6 +6,9 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     },
     {
