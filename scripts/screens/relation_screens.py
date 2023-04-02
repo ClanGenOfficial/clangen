@@ -662,6 +662,7 @@ class FamilyTreeScreen(Screens):
         y_dim = 180
 
         self.parents = self.the_cat.inheritance.get_parents()
+        self.mates = self.the_cat.inheritance.get_mates()
         self.kits = self.the_cat.inheritance.get_kits()
         self.kits_mates = self.the_cat.inheritance.get_kits_mates()
         self.siblings = self.the_cat.inheritance.get_siblings()
@@ -694,10 +695,6 @@ class FamilyTreeScreen(Screens):
                 x_dim += 433
         
         # collect mates
-        if len(self.the_cat.mate) > 0:
-            self.mates = self.the_cat.mate
-        # self.mates.extend(self.the_cat.previous_mates)
-
         if self.mates or self.kits:
             x_pos += 276
             x_dim += 280
