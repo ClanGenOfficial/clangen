@@ -102,12 +102,13 @@
         ]
     },
     {
-        "id": "elder_alive_mate_dead",
+        "id": "elder_alive_to_dead_mate",
         "thoughts": [
             "Wonders when they'll join r_c in StarClan",
             "Almost can't believe that r_c was the first to go",
             "Had a dream about r_c last night",
-            "Purrs softly while thinking about r_c"
+            "Purrs softly while thinking about r_c",
+            "Longs to share tongues with r_c once more"
         ],
         "main_age_constraint": [
             "senior"
@@ -193,7 +194,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -213,7 +214,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "young adult",
             "adult",
             "senior adult",
@@ -236,7 +237,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "medicine cat apprentice",
             "medicine cat"
         ]
@@ -267,7 +268,8 @@
         "id": "blind_adolescent_retired_to_alive_apprentice",
         "thoughts": [
             "Sadly listens as the apprentices share stories of their feats",
-            "Joins in as the apprentices share stories of their feats"
+            "Joins in as the apprentices share stories of their feats",
+            "Asks r_c to describe what they saw on patrol today"
         ],
         "perm_conditions": {
             "m_c": [
@@ -280,7 +282,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -302,12 +304,11 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "medicine cat apprentice",
             "medicine cat"
         ]
     },
-
     {
         "id": "one_bad_eye_adolescent_retired_to_alive_gen",
         "thoughts": [
@@ -324,11 +325,10 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
-
     {
         "id": "wasting_disease_gen_retired_to_alive_med",
         "thoughts": [
@@ -364,7 +364,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "young adult",
             "adult",
             "senior adult",
@@ -387,10 +387,336 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ]
+    },
+    {
+        "id": "deaf_gen_retired_to_alive_gen",
+        "thoughts": [
+            "Idly feels the thumps of their Clanmates' pawsteps on the ground",
+            "Has learned to feel vibrations through the ground",
+            "Is teaching r_c tail signals",
+            "Tries to read r_c's posture",
+            "Asks r_c to describe what they hear",
+            "Wishes they could hear r_c's voice"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "main_age_constraint": [
+            "any"
+        ],
+        "random_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_retired_to_alive_apprentice",
+        "thoughts": [
+            "Enviously watches the apprentices talk about training"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "missing_leg/tail_gen_retired_to_alive_gen",
+        "thoughts": [
+            "Is training their balance with r_c",
+            "Is heading to the medicine den because they're starting to feel phantom pain"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost a leg",
+                "lost their tail",
+                "born without leg",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "lost_leg/tail_gen_retired_to_alive_kit",
+        "thoughts": [
+            "Tells the story of how they lost their limb to an interested group of kits",
+            "Is playing along as r_c tells the legend of how they lost their limb"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost a leg",
+                "lost their tail",
+                "born without leg",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "lost_leg/tail_gen_retired_to_alive_app",
+        "thoughts": [
+            "Explains what 'phantom pain' is to a curious apprentice"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost a leg",
+                "lost their tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "missing_leg_gen_retired_to_alive_gen",
+        "thoughts": [
+            "Ironically giggles after hearing r_c's dramtic response to stubbing their paw",
+            "Is excited to no longer have to step on sharp stones",
+            "Manages to make a once-difficult jump with ease",
+            "Boasts about being the champion of balancing on one leg"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost a leg",
+                "born without leg"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "born_without_leg_gen_retired_to_alive_born_without_leg_kit",
+        "thoughts": [
+            "Is helping r_c takes their first steps without a leg"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "born without leg"
+            ],
+            "r_c": [
+                "born without leg"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "missing_leg_gen_retired_to_alive_born_without_leg_newborn",
+        "thoughts": [
+            "Notices that r_c is missing a leg, just like them"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "born without leg",
+                "lost a leg"
+            ],
+            "r_c": [
+                "born without leg"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "missing_tail_gen_retired_to_alive_gen",
+        "thoughts": [
+            "Is training their balance with r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "missing_tail_gen_retired_to_alive_kit",
+        "thoughts": [
+            "Is being grumped at by a kit because they have no tail to chomp on",
+            "Is being asked how they balance by a kit"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "missing_tail_gen_retired_to_alive_missing_tail_kit",
+        "thoughts": [
+            "Bonds with r_c about them both missing a tail",
+            "Is comforting r_c after a cruel joke was made about their tail"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without tail"
+            ],
+            "r_c": [
+                "lost their tail",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "missing_tail_gen_retired_to_alive_missing_tail_app",
+        "thoughts": [
+            "Eagerly shows r_c the best techniques to keep upright",
+            "Is pawing r_c on the head after a cruel joke about their tail"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without tail"
+            ],
+            "r_c": [
+                "lost their tail",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "lost_tail_gen_retired_to_alive_kit",
+        "thoughts": [
+            "Gently explains their scars to r_c",
+            "Overdramatizes how they lost their tail to r_c",
+            "Is patiently answering curious kits' questions on how they lost their tail"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "missing_tail_gen_retired_to_alive_app",
+        "thoughts": [
+            "Happily trains the apprentices on new balancing techniques",
+            "Is showing the apprentices how they get into the hunting crouch without a tail"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without tail"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "persistent_headaches_gen_retired_to_alive_gen",
+        "thoughts": [
+            "Is glad their head hurts less today",
+            "Tries not to worsen their headache"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "persistent headaches"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "any"
+        ]
+    },
+    {
+        "id": "persistent_headaches_gen_retired_to_alive_med",
+        "thoughts": [
+            "Is bored of r_c's nagging about taking their herbs"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "persistent headaches"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
         ]
     }
 ]

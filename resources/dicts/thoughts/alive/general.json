@@ -8,16 +8,7 @@
             "Is learning more about r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "kitten"
@@ -35,16 +26,7 @@
             "Is sad they couldn't spend time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
@@ -62,16 +44,7 @@
             "Is sad they couldn't spend time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -88,16 +61,7 @@
             "Is sad they couldn't spend more time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "warrior"
@@ -114,16 +78,7 @@
             "Is wondering if r_c is doing well in StarClan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "medicine cat"
@@ -140,16 +95,7 @@
             "Is wondering if r_c approves from StarClan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "leader"
@@ -166,16 +112,7 @@
             "Is sad they couldn't spend more time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "deputy"
@@ -192,16 +129,7 @@
             "Is happy for their time spent with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "elder"
@@ -216,16 +144,7 @@
             "Is wondering what r_c would think of current conflicts in the Clan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "mediator"
@@ -244,28 +163,10 @@
             "Is missing r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_living_status": [
             "starclan"
