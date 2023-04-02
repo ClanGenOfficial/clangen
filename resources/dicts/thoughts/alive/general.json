@@ -8,16 +8,7 @@
             "Is learning more about r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "kitten"
@@ -35,16 +26,7 @@
             "Is sad they couldn't spend time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
@@ -62,16 +44,7 @@
             "Is sad they couldn't spend time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -88,16 +61,7 @@
             "Is sad they couldn't spend more time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "warrior"
@@ -114,16 +78,7 @@
             "Is wondering if r_c is doing well in StarClan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "medicine cat"
@@ -140,16 +95,7 @@
             "Is wondering if r_c approves from StarClan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "leader"
@@ -166,16 +112,7 @@
             "Is sad they couldn't spend more time with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "deputy"
@@ -192,16 +129,7 @@
             "Is happy for their time spent with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "elder"
@@ -216,16 +144,7 @@
             "Is wondering what r_c would think of current conflicts in the Clan"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
             "mediator"
@@ -244,28 +163,10 @@
             "Is missing r_c"
         ],
         "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "any"
         ],
         "random_living_status": [
             "starclan"
@@ -293,6 +194,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -316,6 +220,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -336,6 +243,9 @@
         ],
         "random_status_constraint": [
             "apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -358,6 +268,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -380,6 +293,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -394,6 +310,9 @@
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -412,6 +331,9 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -429,6 +351,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -452,6 +377,9 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -530,6 +458,9 @@
             "deputy",
             "leader",
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -597,6 +528,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -613,6 +547,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -639,6 +576,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -658,6 +598,9 @@
         ],
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1105,6 +1048,11 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
         "main_trait_constraint": [
             "charismatic"
         ]
@@ -1112,7 +1060,7 @@
     {
         "id": "childish_apprentice_to_apprentice",
         "thoughts": [
-            "Managed to convince another apprentices to play mossball instead of finishing their duties"
+            "Managed to convince another apprentice to play mossball instead of finishing their duties"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1120,7 +1068,9 @@
             "medicine cat apprentice"
         ],
         "random_status_constraint": [
-            "apprentice"
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
         ],
         "main_trait_constraint": [
             "childish"
@@ -1267,6 +1217,532 @@
             "medicine cat apprentice"
         ],  
         "random_status_constraint": [
+            "kitten"
+        ]
+    },
+
+    {
+        "id": "paralyzed_gen_to_alive_gen",
+        "thoughts": [
+            "Goes for a swim",
+            "Zooms around camp",
+            "Is proud that they have become stronger despite their struggles",
+            "Is having trouble grooming themself",
+            "Snaps at r_c for trying to 'help' them with something they can do just fine",
+            "Feels comforted by r_c's words about how strong they are",
+            "Snaps that they're not 'strong', they're just alive"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "paralyzed_gen_to_alive_kit",
+        "thoughts": [
+            "Is spinning an epic tale to the kits about how they lost their legs",
+            "Couldn't escape in time before kits piled on them!"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ]
+    },
+    {
+        "id": "paralyzed_gen_to_alive_young",
+        "thoughts": [
+            "Is playing moss-ball with the younger cats"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "random_age_constraint": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    {
+        "id": "paralyzed_adolescent_to_alive_gen",
+        "thoughts": [
+            "Is laughing after r_c lost a race with them"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "paralyzed_adolescent_to_alive_kit",
+        "thoughts": [
+            "Is letting r_c climb on their back"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "newborn",
+            "kitten"
+        ]
+    },
+    {
+        "id": "paralyzed_adolescent_to_alive_apprentice",
+        "thoughts": [
+            "Boasts to r_c about how strong their front legs are"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "paralyzed"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constrain": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+
+    {
+        "id": "blind_gen_to_alive_gen",
+        "thoughts": [
+            "Wonders what their Clanmates look like",
+            "Smiles as r_c tries to describe different colors to them",
+            "Listened to bird songs all morning",
+            "Just heard a frog croaking in camp!",
+            "Knows r_c is nearby from the sound of their pawsteps",
+            "Jumps as they hit a large rock with their paw",
+            "Is annoyed that a Clanmate keeps pitying them",
+            "Confused their Clanmates when they said it was a beautiful day",
+            "Wonders if their mental image of r_c matches real life"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "blind_adolescent_to_alive_gen",
+        "thoughts": [
+            "Makes a sculpture out of mud",
+            "Is memorizing the scents of their friends and family",
+            "Wonders why the ground feels that way",
+            "Won a game of hide-and-seek, to the shock of their friends!",
+            "Accidentally head-butts r_c a bit too hard, but they both laugh it off"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "blind_adolescent_to_alive_apprentice",
+        "thoughts": [
+            "Brags to the apprentices that they can hear the best"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "blind"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constrain": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+
+    {
+        "id": "one_bad_eye_gen_to_alive_gen",
+        "thoughts": [
+            "Was startled by r_c suddenly appearing on their blind side",
+            "Makes an eye-patch for themself from grass and leaves",
+            "Stumbles into a tree on accident"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "one_bad_eye_gen_to_alive_kit",
+        "thoughts": [
+            "Tells the kits tall tales about how they became half-blind",
+            "Trips over r_c!",
+            "Laughs at a kit who offered them help to find their lost eye"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "random_age_constrain": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "one_bad_eye_adolescent_to_alive_gen",
+        "thoughts": [
+            "Boasts that they can take on a fox with their good eye closed",
+            "Wonders if their pelt looks messy on their bad side",
+            "Jokingly told r_c they can see further with one eye",
+            "Looks at their bad side in a puddle"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "one_bad_eye_adolescent_to_alive_apprentice",
+        "thoughts": [
+            "Leaps up in shock when r_c sneaks up on their bad side"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constrain": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "one_bad_eye_adolescent_to_alive_kit",
+        "thoughts": [
+            "Hisses at a kit for sneaking up on their bad side"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "one bad eye"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "kitten"
+        ]
+    },
+
+    {
+        "id": "deaf_gen_to_alive_gen",
+        "thoughts": [
+            "Wishes they could hear the sounds of camp",
+            "Teaches a new Clanmate how do tail signals",
+            "Nearly hits the den's ceiling when r_c suddenly enters their line of sight",
+            "Can identify their Clanmates just by the feel of their pawsteps",
+            "Recently discovered that they have a stomping habit",
+            "Is confused when r_c mentions birdsong",
+            "Wonders what r_c sounds like",
+            "Knows what r_c is saying from their mouth movement",
+            "Teases a Clanmate for trying to call them out loud"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_to_alive_gen",
+        "thoughts": [
+            "Wonders if the clouds make noise",
+            "Wonders if the sun makes noise",
+            "Wonders what sound is like",
+            "Tries to ask r_c for something, but they don't understand",
+            "Is frustrated that other cats don't understand their signals",
+            "Wishes they could talk to other cats",
+            "Feels thunder boom and watches the others flinch",
+            "Curiously feels the thumps of their Clanmates' pawsteps on the ground"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_to_alive_kit",
+        "thoughts": [
+            "Teaches tail signals to the kits"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_to_alive_med",
+        "thoughts": [
+            "Is learning tail signals with r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "medicine cat"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_to_alive_deaf_adult",
+        "thoughts": [
+            "Is learning tail signals with r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ],
+            "r_c": [
+                "deaf"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_status_constraint": [
+            "any"
+        ],
+        "random_age_constrain": [
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+
+    {
+        "id": "wasting_disease_gen_to_alive_gen",
+        "thoughts": [
+            "Is taken over by a coughing fit",
+            "Is frustrated by their health",
+            "Hisses at r_c for seemingly no reason",
+            "Has been experiencing changes in their behaviour",
+            "Is irritated for no reason, which frustrates them",
+            "Is frustrated by their own inexplicable irritability",
+            "Wishes their fever would go away",
+            "Is losing their appetite...",
+            "Is losing fur",
+            "Is taking it easy today",
+            "Is feeling better today",
+            "Laughs happily at a joke, but it turns into a coughing fit",
+            "Feels strong today"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "wasting_disease_greenleaf_gen_to_alive_gen",
+        "thoughts": [
+            "Feels strangely cold",
+            "Is shivering, even in the greenleaf heat"
+        ],
+        "season": [
+            "Greenleaf"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "wasting_disease_leaf-fall_gen_to_alive_gen",
+        "thoughts": [
+            "Dreads the potential illness that may arrive in leaf-bare"
+        ],
+        "season": [
+            "Leaf-fall"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "wasting_disease_adolescent_to_alive_gen",
+        "thoughts": [
+            "Is frustrated by everyone's concern for their health",
+            "Daydreams about someday being leader"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "wasting disease"
+            ]
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+
+    {
+        "id": "missing_leg_gen_to_alive_gen",
+        "thoughts": [
+            "Tries to make a new leg out of a stick they found",
+            "Shows they can still run and jump around like any other cat!",
+            "Groaned when someone said how sad they must be to have 3 legs"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost a leg",
+                "born without a leg"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "lost_leg_gen_to_alive_kit",
+        "thoughts": [
+            "Is exaggerating the tale of how they lost their leg to the kits"
+        ],
+        "perm_conditions": [
+            "lost a leg"
+        ],
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ]
+    },
+
+    {
+        "id": "half_no_tail_gen_to_alive_gen",
+        "thoughts": [
+            "Points to something with a forepaw",
+            "Flicks their tail stub in annoyance",
+            "Rolls their eyes when a Clanmate says they feel bad for them"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without a tail"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "half_no_tail_lost_gen_to_alive_gen",
+        "thoughts": [
+            "Misses being able to do tail signals",
+            "Finds balancing harder now, though they're improving"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail"
+            ]
+        },
+        "random_age_constrain": [
+            "any"
+        ]
+    },
+    {
+        "id": "half_no_tail_gen_to_alive_kit",
+        "thoughts": [
+            "Laughs when a kit asks if their tail could fall off as well one day"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lost their tail",
+                "born without a tail"
+            ]
+        },
+        "random_age_constraint": [
+            "newborn",
             "kitten"
         ]
     }
