@@ -4,10 +4,7 @@ from random import choice, sample
 import pygame
 import pygame_gui
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
     get_snippet_list

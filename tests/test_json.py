@@ -9,12 +9,8 @@ HOWEVER
 
 """
 import unittest
-try:
-    import ujson
-    from ujson import JSONDecodeError
-except ImportError:
-    import json as ujson
-    from json import JSONDecodeError
+import ujson
+from json import JSONDecodeError
 
 import os
 import sys

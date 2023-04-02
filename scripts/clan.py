@@ -17,12 +17,10 @@ import pygame
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.game_structure.game_essentials import game
+from scripts.version import get_version_info, VERSION_NAME
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
@@ -680,7 +678,10 @@ class Clan():
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
             "mediated": game.mediated,
-            "starting_season": self.starting_season
+            "starting_season": self.starting_season,
+            "version_name": VERSION_NAME,
+            "version_commit": get_version_info().version_number,
+            "source_build": get_version_info().is_source_build
         }
 
         # LEADER DATA
@@ -752,9 +753,11 @@ class Clan():
         """
         TODO: DOCS
         """
+        
+        version_info = None
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'clan.json'):
-            self.load_clan_json()
+            version_info = self.load_clan_json()
         elif os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                             'clan.txt'):
             self.load_clan_txt()
@@ -763,6 +766,8 @@ class Clan():
                 'error_message'] = "There was an error loading the clan.json"
             
         self.load_clan_settings()
+        
+        return version_info
 
     def load_clan_txt(self):
         """
@@ -1029,6 +1034,13 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
+        
+        # Return Version Info. 
+        return {
+            "version_name": clan_data.get("version_name"),
+            "version_commit": clan_data.get("version_commit"),
+            "source_build": clan_data.get("source_build")
+        }
 
     def load_clan_settings(self):  
         if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):

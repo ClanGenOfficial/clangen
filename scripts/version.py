@@ -5,6 +5,7 @@ import sys
 
 logger = logging.getLogger(__name__)
 
+VERSION_NAME = "dev0.8.0"
 
 def get_version_info():
     if get_version_info.instance is None:
