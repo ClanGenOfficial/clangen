@@ -2555,7 +2555,7 @@ class MediationScreen(Screens):
                                                      manager=MANAGER)
 
         self.error = pygame_gui.elements.UITextBox("",
-                                                   scale(pygame.Rect((560, 100), (458, 100))),
+                                                   scale(pygame.Rect((560, 75), (458, 115))),
                                                    object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                    manager=MANAGER)
 

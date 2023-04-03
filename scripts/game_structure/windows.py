@@ -311,8 +311,7 @@ class ChangeCatName(UIWindow):
         # 636
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
                                                   object_id="#unchecked_checkbox",
-                                                  tool_tip_text=f"Temporarily remove the cat's special suffix, so "
-                                                                f"that you can change the hidden suffix beneath",
+                                                  tool_tip_text=f"Remove the cat's special suffix",
                                                   manager=MANAGER,
                                                   container=self)
 
