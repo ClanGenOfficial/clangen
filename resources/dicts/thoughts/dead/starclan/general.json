@@ -36,6 +36,12 @@
             "Is chattering at the birds in StarClan",
             "Is chasing rabbits in StarClan",
             "Can feel some cat forgetting them..."
+        ],
+        "random_living_status":[
+            "living",
+            "starclan",
+            "darkforest",
+            "unknownresidence"
         ]
     },
     {

@@ -4,14 +4,24 @@
         "thoughts": [
             "Is sad they never got their warrior name",
             "Patrols StarClan's territory",
-            "Imagines what their warrior ceremony would have been like"
+            "Imagines what their warrior ceremony would have been like",
+            "Practices their battle moves in the starry fields",
+            "Wonders what their warrior name would've been",
+            "Is glad that elders don't get ticks in StarClan",
+            "Wonders if the water ever freezes in StarClan",
+            "Sneaks close to the border of the Dark Forest but dares not go in"
+        ],
+        "random_living_status":[
+            "living",
+            "starclan"
         ]
     },
     {
         "id": "dead_app_to_dead_other",
         "thoughts": [
-            "Fetches moss for r_c",
-            "Helps r_c with ticks"
+            "Laughs with r_c",
+            "Stalks through StarClan's forests with r_c",
+            "Encourages r_c to dip their paws into the cool water"
         ],
         "random_living_status": [
             "starclan"
