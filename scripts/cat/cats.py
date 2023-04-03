@@ -33,7 +33,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance
+from scripts.cat_relations.inheritance import Inheritance, RelationType
 
 
 class Cat():
@@ -1428,96 +1428,62 @@ class Cat():
     # ---------------------------------------------------------------------------- #
     def get_parents(self):
         """Returns list containing parents of cat(id)."""
-        if self.parent1:
-            if self.parent2:
-                return [self.parent1, self.parent2]
-            return [self.parent1]
-        return []
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.parents.keys()
 
     def get_siblings(self):
-        """Returns list of the siblings."""
-        if not self.faded:
-            return self.siblings
-        else:
-            # Finding the siblings of faded cats. 
-            siblings = []
-            for par in self.get_parents():
-                par_ob = Cat.fetch_cat(par)
-                for x in par_ob.get_children():
-                    if x != self.ID and x not in siblings:
-                        siblings.append(x)
-            return siblings
+        """Returns list of the siblings(id)."""
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.siblings.keys()
 
     def get_children(self):
         """Returns list of the children (ids)."""
-        if not self.faded:
-            return self.children
-        else:
-            children = [i.ID for i in Cat.all_cats.values() if self.ID in i.get_parents()]
-            children.extend(self.faded_offspring)
-            return children
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.kits.keys()
 
     def is_grandparent(self, other_cat: Cat):
         """Check if the cat is the grandparent of the other cat."""
-        # Get parents ID
-        parents = other_cat.get_parents()
-        for parent in parents:
-            # Get parent 'Cat'
-            if parent in Cat.all_cats.keys():
-                parent_obj = Cat.all_cats.get(parent)
-            else:
-                parent_obj = Cat.load_faded_cat(parent)
-            if parent_obj:
-                # If there are parents, get grandparents and check if our ID is among them.
-                if self.ID in parent_obj.get_parents():
-                    return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.grand_parents.keys()
 
     def is_parent(self, other_cat: Cat):
         """Check if the cat is the parent of the other cat."""
-        if self.ID in other_cat.get_parents():
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.parents.keys()
 
     def is_sibling(self, other_cat: Cat):
         """Check if the cats are siblings."""
-        if other_cat == self:
-            return False
-        if set(self.get_parents()) & set(other_cat.get_parents()):
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.siblings.keys()
     
     def is_littermate(self, other_cat: Cat):
-        """Check if the cats are littermates"""
-        if not self.is_sibling(other_cat):
+        """Check if the cats are littermates."""
+        if other_cat.ID not in self.inheritance.siblings.keys():
             return False
-        if other_cat.moons + other_cat.dead_for == self.moons + self.dead_for:
-            return True
-        return False
+        litter_mates = [key for key, value in self.inheritance.siblings.items() if "litter mates" in value["additional"]]
+        return other_cat.ID in litter_mates
 
     def is_uncle_aunt(self, other_cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
-        if self.is_parent(other_cat):
-            return False
-        if set(self.get_siblings()) & set(other_cat.get_parents()):
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.parents_siblings.keys()
 
     def is_cousin(self, other_cat):
-        grandparent_id = []
-        for parent in other_cat.get_parents():
-            parent_ob = Cat.fetch_cat(parent)
-            grandparent_id.extend(parent_ob.get_parents())
-        for parent in self.get_parents():
-            parent_ob = Cat.fetch_cat(parent)
-            if set(parent_ob.get_parents()) & set(grandparent_id):
-                return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.cousins.keys()
 
     def is_related(self, other_cat, cousin_allowed):
         """Checks if the given cat is related to the current cat, according to the inheritance."""
         if not self.inheritance:
-            print(f"ERROR: cat {self.ID}({self.name}) has not inheritance.")
+            self.inheritance = Inheritance(self)
         if cousin_allowed:
             return other_cat.ID in self.inheritance.all_but_cousins
         return other_cat.ID in self.inheritance.all_involved
