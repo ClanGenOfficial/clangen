@@ -1514,6 +1514,14 @@ class Cat():
                 return True
         return False
 
+    def is_related(self, other_cat, cousin_allowed):
+        """Checks if the given cat is related to the current cat, according to the inheritance."""
+        if not self.inheritance:
+            print(f"ERROR: cat {self.ID}({self.name}) has not inheritance.")
+        if cousin_allowed:
+            return other_cat.ID in self.inheritance.all_but_cousins
+        return other_cat.ID in self.inheritance.all_involved
+
     # ---------------------------------------------------------------------------- #
     #                                  conditions                                  #
     # ---------------------------------------------------------------------------- #
@@ -2080,10 +2088,10 @@ class Cat():
                                other_cat: Cat,
                                for_love_interest: bool,
                                former_mentor_setting: bool,
-                               for_patrol: bool = False):
+                               for_patrol: bool = False,
+                               age_restriction: bool = True):
         """Checks if this cat is a free and potential mate for the other cat."""
         # checks if affairs are turned on
-
         affair = False
         if game.settings['affair']:
             affair = True
@@ -2092,13 +2100,21 @@ class Cat():
         if self.ID == other_cat.ID:
             return False
 
+        # Inheritance check
+        if self.is_related(other_cat, game.settings["first_cousin_mates"]):
+            return False
+
         # check exiled, outside, and dead cats
         if self.dead or self.outside or other_cat.dead or other_cat.outside:
             return False
 
         # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
+        if age_restriction:
+            if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
+                return False
+
+            if abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+                return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
@@ -2123,43 +2139,6 @@ class Cat():
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
         if is_former_mentor and not former_mentor_setting:
-            return False
-
-        # Relationship checks
-        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
-        if self.parent1 or other_cat.parent1:
-            # Check for relation via other_cat's parents (parent/grandparent)
-            if other_cat.parent1:
-                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
-                    return False
-                # Check for uncle/aunt via self's sibs & other's parents
-                if self.siblings:
-                    if self.is_uncle_aunt(other_cat):
-                        return False
-                # Check for sibs via self's parents and other_cat's parents
-                if self.parent1:
-                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-
-            # Check for relation via self's parents (parent/grandparent)
-            if self.parent1:
-                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
-                    return False
-                # Check for uncle/aunt via other_cat's sibs & self's parents
-                if other_cat.siblings:
-                    if other_cat.is_uncle_aunt(self):
-                        return False
-
-            # Only need to check one.
-            if not game.settings['first_cousin_mates']:
-                if self.is_cousin(other_cat):
-                    return False
-
-        else:
-            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                return False
-
-        if abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True
@@ -2202,16 +2181,17 @@ class Cat():
 
         self.mate.remove(other_cat.ID)
         other_cat.mate.remove(self.ID)
-        if other_cat.inheritance:
-            other_cat.inheritance.update_all_mates()
-        if self.inheritance:
-            self.inheritance.update_all_mates()
         
         #Handle previous mates:
         if other_cat.ID not in self.previous_mates:
             self.previous_mates.append(other_cat.ID)
         if self.ID not in other_cat.previous_mates:
             other_cat.previous_mates.append(self.ID)
+
+        if other_cat.inheritance:
+            other_cat.inheritance.update_all_mates()
+        if self.inheritance:
+            self.inheritance.update_all_mates()
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
@@ -2230,8 +2210,12 @@ class Cat():
         if self.ID in other_cat.previous_mates:
             other_cat.previous_mates.remove(self.ID)
 
-        # Set starting relationship values
+        if other_cat.inheritance:
+            other_cat.inheritance.update_all_mates()
+        if self.inheritance:
+            self.inheritance.update_all_mates()
 
+        # Set starting relationship values
         if not self.dead:
             if other_cat.ID not in self.relationships:
                 self.relationships[other_cat.ID] = Relationship(self, other_cat, True)

@@ -12,11 +12,11 @@ from enum import Enum  # pylint: disable=no-name-in-module
 class RelationType(Enum):
     """An enum representing the possible age groups of a cat"""
 
-    BLOOD = ''                  # direct blood related - do not need a special print
-    ADOPTIVE = 'adoptive'       # not blood related but close (parents, kits, siblings)
-    HALF_BLOOD = 'half blood'   # only one blood parent is the same (siblings only)
-    NOT_BLOOD = 'not blood related'     # not blood related for parent siblings
-    RELATED = 'blood related'   # related by blood (different mates only)
+    BLOOD = ''                  	# direct blood related - do not need a special print
+    ADOPTIVE = 'adoptive'       	# not blood related but close (parents, kits, siblings)
+    HALF_BLOOD = 'half blood'   	# only one blood parent is the same (siblings only)
+    NOT_BLOOD = 'not blood related'	# not blood related for parent siblings
+    RELATED = 'blood related'   	# related by blood (different mates only)
 
 BLOOD_RELATIVE_TYPES = [RelationType.BLOOD, RelationType.HALF_BLOOD, RelationType.RELATED]
 
@@ -116,8 +116,9 @@ class Inheritance():
         This function should be called, when the cat breaks up. 
         It renews all inheritances, where this cat is listed as a mate of a kit or sibling.
         """
-        for inter_inheritances in self.all_inheritances:
-            if self.cat.ID in inter_inheritances.other_mates:
+        self.update_inheritance()
+        for inter_inheritances in self.all_inheritances.values():
+            if self.cat.ID in inter_inheritances.other_mates or self.cat.ID in inter_inheritances.all_involved:
                 inter_inheritances.update_inheritance()
 
     def get_cat_info(self, cat_id) -> list:

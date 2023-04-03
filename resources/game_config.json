@@ -76,6 +76,9 @@
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
 		]
 	},
+	"mates":{
+		"age_range": 40
+	},
 	"new_cat": {
 		"parent_buff": {
 			"kit_to_parent": {
@@ -257,18 +260,13 @@
 	"save_load": {
 		"load_integrity_checks": true
 	},
-
-
-	"lock_season": false, 
-	"comment": "Forces the season to be locked at the clan's starting_season",
-
-
-
 	"fun": {
 
 		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
 		"newborns_can_patrol": false
-	}
+	},
+	"lock_season": false, 
+	"comment": "Forces the season to be locked at the clan's starting_season"
 }

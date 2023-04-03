@@ -1607,24 +1607,14 @@ class ChooseMateScreen(Screens):
         """Get a list of valid mates for the current cat"""
         valid_mates = []
         for relevant_cat in Cat.all_cats_list:
-            invalid_age = relevant_cat.age not in ['newborn', 'kitten', 'adolescent']
-
-            # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
-            # don't want here.
-            direct_related = self.the_cat.is_sibling(relevant_cat) or self.the_cat.is_parent(relevant_cat) \
-                             or relevant_cat.is_parent(self.the_cat)
-            indirect_related = self.the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(self.the_cat)
-
-            if not game.settings["first_cousin_mates"]:
-                indirect_related = indirect_related or relevant_cat.is_cousin(self.the_cat)
-
-            related = direct_related or indirect_related
-
-            not_available = (relevant_cat.dead != self.the_cat.dead) or (relevant_cat.outside != self.the_cat.outside) or relevant_cat.faded
-
-            not_self = relevant_cat.ID != self.the_cat.ID
-            if not related and not_self and invalid_age \
-                    and not not_available and len(relevant_cat.mate) < 1:
+            if relevant_cat.ID == self.the_cat.ID:
+                continue
+            if self.the_cat._intern_potential_mate(
+                    relevant_cat,
+                    for_love_interest=False,
+                    former_mentor_setting= game.settings['romantic with former mentor'],
+                    for_patrol=False,
+                    age_restriction=False):
                 valid_mates.append(relevant_cat)
 
         return valid_mates
