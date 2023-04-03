@@ -105,6 +105,7 @@ class Thoughts():
         if 'main_skill_constraint' in thought:
             if main_cat.skill not in thought['main_skill_constraint']:
                 return False
+            
         if 'random_skill_constraint' in thought and random_cat:
             if random_cat.skill not in thought['random_skill_constraint']:
                 return False
@@ -140,19 +141,20 @@ class Thoughts():
                 return False
             
         if 'random_outside_status' in thought:
+            outside_status = None
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
-                outside_status = "outside cat"
+                outside_status = "outside"
             else:
                 outside_status = "clancat"
-            if outside_status and outside_status not in thought['random_outside_status']:
+            if outside_status not in thought['random_outside_status']:
                 return False
         else:
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
-                outside_status = "outside cat"
+                outside_status = "outside"
             else:
                 outside_status = "clancat"
             if outside_status and outside_status != 'clancat':
@@ -177,7 +179,7 @@ class Thoughts():
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
                     or not [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
-                
+        
         return True
     # ---------------------------------------------------------------------------- #
     #                            BUILD MASTER DICTIONARY                           #

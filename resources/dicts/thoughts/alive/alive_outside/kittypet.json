@@ -62,6 +62,9 @@
         ],
         "main_status_constraint": [
             "kittypet"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -75,6 +78,9 @@
         "main_age_constraint": [
             "kitten",
             "adolescent"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -89,6 +95,9 @@
         ],
         "main_age_constraint": [
             "adolescent"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -110,6 +119,9 @@
             "young adult",
             "adult",
             "senior adult"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -132,6 +144,9 @@
         ],
         "main_age_constraint": [
             "senior"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     }
 ]
