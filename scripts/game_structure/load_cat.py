@@ -3,20 +3,16 @@ from math import floor
 from .game_essentials import game
 from ..datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from re import sub
 from scripts.cat.cats import Cat
+from scripts.version import VERSION_NAME
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
-try:
-    from ujson import JSONDecodeError
-except ImportError:
-    from json import JSONDecodeError
+
+from json import JSONDecodeError
 
 def load_cats():
     try:
@@ -496,3 +492,22 @@ def save_check():
             else:
                 # Invalid mate
                 cat_ob.mate = None
+                
+def version_convert(version_info):
+    """Does all save-convertion that require referencing the saved version number.
+    This is a seperate function, since the version info is stored in clan.json, but most converson needs to be 
+    done on the cats. Clan data is loaded in after cats, however. """
+    
+    if version_info is None:
+        return
+    
+    if version_info["version_name"] == VERSION_NAME:
+        # Save was made on current version
+        return
+    
+    if version_info["version_name"] is None:
+        # Save was made before version number stoage was implemented. 
+        # This means the EXP must be adjusted. 
+        for c in Cat.all_cats.values():
+            c.experience = c.experience * 3.2
+    

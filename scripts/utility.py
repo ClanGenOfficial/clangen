@@ -10,10 +10,7 @@ from random import choice, choices, randint, random, sample
 import pygame
 from scripts.cat.names import names
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 import logging
 
 
@@ -974,7 +971,7 @@ def update_sprite(cat):
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.not_working() and cat.age != 'newborn':
+    if cat.not_working() and cat.age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
         if cat.age in ['kitten', 'adolescent']:
             cat_sprite = str(19)
         else:
