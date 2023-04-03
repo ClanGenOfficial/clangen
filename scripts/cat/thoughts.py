@@ -73,19 +73,19 @@ class Thoughts():
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
                 return False
 
-        # Contraints for the status of the main cat
+        # Constraints for the status of the main cat
         if 'main_status_constraint' in thought:
             if main_cat.status not in thought['main_status_constraint'] and 'any' not in thought['main_status_constraint']:
                 return False
             
-        # Contraints for the status of the random cat
+        # Constraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
             if random_cat.status not in thought['random_status_constraint'] and 'any' not in thought['random_status_constraint']:
                 return False
         elif 'random_status_constraint' in thought and not random_cat:
             pass
 
-        # main cat age contraint
+        # main cat age constraint
         if 'main_age_constraint' in thought:
             if main_cat.age not in thought['main_age_constraint']:
                 return False
@@ -131,7 +131,7 @@ class Thoughts():
                 living_status = 'unknownresidence'
             if living_status and living_status not in thought['random_living_status']:
                 return False
-        
+
         # this covers if living status isn't stated
         else:
             living_status = None
@@ -139,7 +139,7 @@ class Thoughts():
                 living_status = "living"
             if living_status and living_status != "living":
                 return False
-            
+        
         if 'random_outside_status' in thought:
             outside_status = None
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
@@ -157,7 +157,7 @@ class Thoughts():
                 outside_status = "outside"
             else:
                 outside_status = "clancat"
-            if outside_status and outside_status != 'clancat':
+            if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
                 return False
 
         if game_mode != "classic" and 'has_injuries' in thought:
@@ -241,10 +241,7 @@ class Thoughts():
     @staticmethod
     def get_chosen_thought(main_cat, other_cat, game_mode, biome, season, camp):
         # get possible thoughts
-        try:
-            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
-            chosen_thought = choice(chosen_thought_group["thoughts"])
-        except:
-            chosen_thought = "No thoughts, head empty"
+        chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
+        chosen_thought = choice(chosen_thought_group["thoughts"])
 
         return chosen_thought
