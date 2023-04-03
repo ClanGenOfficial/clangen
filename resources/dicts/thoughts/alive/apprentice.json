@@ -182,10 +182,25 @@
         "id": "bold_warrior_apprentice",
         "thoughts": [
             "Taunted a rival Clan's apprentice at the border",
+            "Took the biggest piece of prey from the pile"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bold_warrior_apprentice_to_warrior",
+        "thoughts": [
             "Is looking to challenge a warrior to a sparring match"
         ],
         "main_status_constraint": [
             "apprentice"
+        ],
+        "random_status_constraint":[
+            "warrior"
         ],
         "main_trait_constraint": [
             "bold"

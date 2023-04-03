@@ -4,10 +4,7 @@ from random import choice, sample
 import pygame
 import pygame_gui
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
     get_snippet_list
@@ -795,8 +792,7 @@ class PatrolScreen(Screens):
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
                 print('counting')
-                if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
-                        or patrol.patrol_random_cat == patrol.patrol_leader:
+                if patrol.patrol_random_cat in (patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
                     if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None

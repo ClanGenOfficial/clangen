@@ -2,10 +2,7 @@ import itertools
 import random
 from random import choice, randint
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events

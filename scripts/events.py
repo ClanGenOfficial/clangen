@@ -12,10 +12,7 @@ import traceback
 
 from scripts.patrol import Patrol
 
-try:
-    import ujson as json
-except ImportError:
-    import json
+import ujson
 
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
@@ -768,6 +765,7 @@ class Events():
             cat.thoughts()
             return
 
+        self.handle_apprentice_EX(cat) # This must be before perform_ceremonies! 
         # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
         self.perform_ceremonies(cat)
 
@@ -779,7 +777,6 @@ class Events():
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-        self.handle_apprentice_EX(cat)
         cat.create_interaction()
 
         # this is the new interaction function, currently not active
@@ -1114,7 +1111,7 @@ class Events():
         resource_dir = "resources/dicts/events/ceremonies/"
         with open(f"{resource_dir}ceremony-master.json",
                   encoding="ascii") as read_file:
-            self.CEREMONY_TXT = json.loads(read_file.read())
+            self.CEREMONY_TXT = ujson.loads(read_file.read())
 
         self.ceremony_id_by_tag = {}
         # Sorting.
@@ -1302,7 +1299,7 @@ class Events():
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
-                TRAITS = json.loads(read_file.read())
+                TRAITS = ujson.loads(read_file.read())
             try:
                 random_honor = random.choice(TRAITS[cat.trait])
             except KeyError:

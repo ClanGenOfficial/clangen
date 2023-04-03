@@ -8,10 +8,7 @@ import pygame
 from ..datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
 

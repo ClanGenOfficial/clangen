@@ -14,10 +14,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.names import names, Name
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 class Pregnancy_Events():
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
@@ -140,9 +137,8 @@ class Pregnancy_Events():
                     elif average_trust >= 35:
                         chance += 13
                 else:
-                    chance = int(200/living_cats) + 2
+                    chance = int(75/living_cats) + 2
 
-                old_male = False
                 if cat.gender == 'male' and cat.age == 'senior':
                     chance = int(chance / 2)
                 elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'senior':

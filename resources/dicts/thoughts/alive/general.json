@@ -931,7 +931,7 @@
         ]
     },
     {
-        "id": "loving_apprentice",
+        "id": "loving_apprentice_to_apprentice",
         "thoughts": [
             "Is listening to another apprentice's troubles sympathetically"
         ],
@@ -942,6 +942,11 @@
         ],
         "main_trait_constraint": [
             "loving"
+        ],
+        "random_status_constraint":[
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ]
     },
     {
@@ -1006,7 +1011,7 @@
         ]
     },
     {
-        "id": "calm_apprentice_to_mentor",
+        "id": "calm_apprentice_to_apprentice",
         "thoughts": [
             "Helps r_c work through a personal issue"
         ],
@@ -1015,8 +1020,10 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "random_status_constraint": [
-            "apprentice"
+        "random_status_constraint":[
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "main_trait_constraint": [
             "calm"
@@ -1220,7 +1227,6 @@
             "kitten"
         ]
     },
-
     {
         "id": "paralyzed_gen_to_alive_gen",
         "thoughts": [
@@ -1326,7 +1332,6 @@
             "mediator apprentice"
         ]
     },
-
     {
         "id": "blind_gen_to_alive_gen",
         "thoughts": [
@@ -1345,7 +1350,7 @@
                 "blind"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1366,7 +1371,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1383,7 +1388,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1402,7 +1407,7 @@
                 "one bad eye"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1418,7 +1423,7 @@
                 "one bad eye"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "kitten"
         ]
     },
@@ -1438,7 +1443,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1455,7 +1460,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -1474,11 +1479,10 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "kitten"
         ]
     },
-
     {
         "id": "deaf_gen_to_alive_gen",
         "thoughts": [
@@ -1497,7 +1501,7 @@
                 "deaf"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1521,7 +1525,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1538,7 +1542,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "kitten"
         ]
     },
@@ -1579,14 +1583,13 @@
         "random_status_constraint": [
             "any"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "young adult",
             "adult",
             "senior adult",
             "senior"
         ]
     },
-
     {
         "id": "wasting_disease_gen_to_alive_gen",
         "thoughts": [
@@ -1609,7 +1612,7 @@
                 "wasting disease"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1627,7 +1630,7 @@
                 "wasting disease"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1644,7 +1647,7 @@
                 "wasting disease"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1662,7 +1665,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1680,7 +1683,7 @@
                 "born without a leg"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1689,15 +1692,21 @@
         "thoughts": [
             "Is exaggerating the tale of how they lost their leg to the kits"
         ],
-        "perm_conditions": [
-            "lost a leg"
+        "perm_conditions": {
+            "m_c": ["lost a leg"]
+        },
+        "main_age_constraint":[
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
         ],
         "random_age_constraint": [
             "newborn",
             "kitten"
         ]
     },
-
     {
         "id": "half_no_tail_gen_to_alive_gen",
         "thoughts": [
@@ -1711,7 +1720,7 @@
                 "born without a tail"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1726,7 +1735,7 @@
                 "lost their tail"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },

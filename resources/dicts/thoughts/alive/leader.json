@@ -3,10 +3,15 @@
         "id": "leader_alive_kits",
         "thoughts": [
             "Has recently picked up the scent of mischievous kits in their den...",
-            "Is pondering the next mentors for the kits of the Clan"
+            "Is pondering the next mentors for the kits of the Clan",
+            "Thinks about who should mentor new apprentices",
+            "Bats a mossball back to r_c when it hits them, chuckling at the wide-eyed kit"
         ],  
         "random_status_constraint": [
             "kitten"
+        ],
+        "random_living_status":[
+            "living"
         ]
     },
     {
@@ -26,7 +31,7 @@
             "Is thinking about forming an alliance",
             "Is making a solemn vow to protect their Clanmates",
             "Called an important Clan meeting recently",
-            "Think they have been hearing the voices of StarClan cats...",
+            "Thinks they have been hearing the voices of StarClan cats...",
             "Is pondering recent dreams they have had... perhaps from StarClan?",
             "Recently called a Clan meeting, but forgot what to say"
         ]
@@ -34,21 +39,29 @@
     {
         "id": "leader_alive_apprentices",
         "thoughts": [
-            "Thinks about who should mentor new apprentices",
-            "Is assessing some apprentices"
+            "Is assessing some apprentices",
+            "Is satisfied that r_c is doing well in their training"
         ],
         "random_status_constraint": [
-            "kitten"
+            "apprentice"
+        ],
+        "random_living_status":[
+            "living"
         ]
     },
     {
         "id":"leader_alive_deputy",
         "thoughts":[
             "Tries to set a good example for the deputy",
-            "Has been letting their deputy call the shots recently, and is proud of their initiative"
+            "Has been letting their deputy call the shots recently, and is proud of their initiative",
+            "Needs to talk to r_c about something",
+            "Wants to go on patrol with r_c so they can have a chat"
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status":[
+            "living"
         ]
     },
     {
@@ -57,7 +70,7 @@
             "Thinks they have been hearing the voices of Dark Forest cats...",
             "Is pondering recent dreams they have had... perhaps from the Dark Forest?"
         ],
-        "random_status_constraint": [
+        "random_living_status": [
             "darkforest"
         ]
     },
@@ -76,7 +89,7 @@
         "id": "strange_leader",
         "thoughts": [
             "No thoughts, head empty",
-            "Insists they they received ten lives instead of nine",
+            "Insists that they received ten lives instead of nine",
             "Has a crazed look in their eyes",
             "Is wondering how many cats would agree to changing the Clan's name..."
         ],

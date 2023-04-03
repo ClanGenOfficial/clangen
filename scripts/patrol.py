@@ -3,10 +3,7 @@
 import random
 from random import choice, randint, choices
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.clan import HERBS, Clan
 from scripts.utility import (
@@ -1047,7 +1044,7 @@ class Patrol():
             kit = True
             age = randint(1, 5)
             status = "kitten"
-            chosen_backstory = ['abandoned2', 'abandoned1', 'abandoned3']
+            chosen_kit_backstory = ['abandoned2', 'abandoned1', 'abandoned3']
         elif "apprentice" in attribute_list:
             status = "apprentice"
         elif "warrior" in attribute_list:
@@ -1105,10 +1102,10 @@ class Patrol():
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
                 print('parent is dead')
-                kit_backstory = ['orphaned', 'orphaned2']
+                chosen_kit_backstory = ['orphaned', 'orphaned2']
             else:
                 print('parent is alive')
-                kit_backstory = ['outsider_roots2']
+                chosen_kit_backstory = ['outsider_roots2', 'outsider_roots2']
             # make sure kittens get right age
             if "litternewborn" in attribute_list:
                 print('litter is newborn')
@@ -1132,7 +1129,7 @@ class Patrol():
             # if none of these tags are present, then it uses the chosen_backstory from before
         else:
             if "dead" in attribute_list:
-                kit_backstory = chosen_backstory
+                kit_backstory = chosen_kit_backstory
             else:
                 backstory = chosen_backstory
 

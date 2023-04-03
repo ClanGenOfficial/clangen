@@ -3,10 +3,7 @@ from copy import deepcopy
 from random import choice
 import random
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.utility import (
     get_highest_romantic_relation, 
