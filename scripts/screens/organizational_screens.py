@@ -548,9 +548,17 @@ class SettingsScreen(Screens):
                         "relation": self.open_relation_settings
                     }
                     
+                    scroll_pos = None
+                    if "container_general" in self.checkboxes_text and \
+                            self.checkboxes_text["container_general"].vert_scroll_bar:
+                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
+                    
                     if self.sub_menu in opens:
                         opens[self.sub_menu]()
-                    
+                        
+                    if scroll_pos is not None:
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
+                        
                     break
 
     def screen_switches(self):
@@ -731,30 +739,17 @@ class SettingsScreen(Screens):
         self.sub_menu = 'info'
         self.save_settings_button.hide()
 
-        self.info_container = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["info_container"] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((200, 300), (1200, 1000))),
             manager=MANAGER
         )
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((100, 0), (1200, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            container=self.info_container,
-            manager=MANAGER)
-
-        rel_rect = self.checkboxes_text['info_text_box'].get_relative_rect()
-        print(rel_rect)
-        self.checkboxes_text['info_text_box'].kill()
-
-        self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
-            self.info_text,
             scale(pygame.Rect((0, 0), (1200, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            container=self.info_container,
+            container=self.checkboxes_text["info_container"],
             manager=MANAGER)
-
-        print(self.info_text)
 
         self.checkboxes_text['info_text_box'].disable()
 
@@ -766,7 +761,7 @@ class SettingsScreen(Screens):
                     scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
                     "",
                     object_id="#blank_button",
-                    container=self.info_container,
+                    container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
                 ),
             else:
@@ -774,13 +769,13 @@ class SettingsScreen(Screens):
                     scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
                     "",
                     object_id="#blank_button",
-                    container=self.info_container,
+                    container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
                     tool_tip_text=tooltip
                 ),
 
             i += 1
-        self.info_container.set_scrollable_area_dimensions(
+        self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
             (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
 
     def open_lang_settings(self):
