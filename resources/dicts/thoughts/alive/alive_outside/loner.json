@@ -31,13 +31,16 @@
             "Chows down on some food a Twoleg left out for them",
             "Envies the strong kinship the Clan cats have",
             "Took a stroll through the city",
-            "Spies a kittypet outside of the window, jealous of the protection and food they have",
+            "Spies a kittypet through a window, jealous of the protection and food they have",
             "Spies a kittypet and taunts them that they can't enjoy freedom",
             "Taking a nap, hoping something exciting would escape their boredom",
             "Was running carelessly across the Thunderpath and was nearly hit by a monster"
         ],
         "main_status_constraint": [
             "loner"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -75,6 +78,21 @@
             "Turns up their nose when another loner tries to give them directions",
             "Collects various items they find beautiful and interesting",
             "Wonders if their parents were once renowned explorers",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_outside_status":[
+            "outside"
+        ]
+    },
+    {
+        "id": "loner_adolescent_to_clanapp_thoughts",
+        "thoughts": [
             "Has a mock battle with r_c from c_n whenever the apprentice flees their boring chores",
             "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
         ],
@@ -83,6 +101,12 @@
         ],
         "main_age_constraint": [
             "adolescent"
+        ],
+        "random_age_constraint":[
+            "adolescent"
+        ],
+        "random_outside_status":[
+            "clancat"
         ]
     },
     {
@@ -102,6 +126,9 @@
             "young adult",
             "adult",
             "senior adult"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     },
     {
@@ -132,6 +159,9 @@
         ],
         "main_age_constraint": [
             "senior"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     }
 ]
