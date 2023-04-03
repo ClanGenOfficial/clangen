@@ -1,4 +1,5 @@
 import os
+import traceback
 from random import choice
 
 import ujson
@@ -69,7 +70,7 @@ class Thoughts():
             return False
 
         # This is for filtering certain relationship types between the main cat and random cat. 
-        if "relationship_constraint" in thought:
+        if "relationship_constraint" in thought and random_cat:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
                 return False
 
@@ -120,7 +121,7 @@ class Thoughts():
         # is taken into account in the thought loading process.
         living_status = None
         outside_status = None
-        if 'random_living_status' in thought:
+        if random_cat and 'random_living_status' in thought:
             if random_cat and not random_cat.dead:
                 living_status = "living"
             elif random_cat and random_cat.dead and random_cat.df:
@@ -140,7 +141,7 @@ class Thoughts():
             if living_status and living_status != "living":
                 return False
         
-        if 'random_outside_status' in thought:
+        if random_cat and 'random_outside_status' in thought:
             outside_status = None
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
@@ -241,7 +242,11 @@ class Thoughts():
     @staticmethod
     def get_chosen_thought(main_cat, other_cat, game_mode, biome, season, camp):
         # get possible thoughts
-        chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
-        chosen_thought = choice(chosen_thought_group["thoughts"])
+        try:
+            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
+            chosen_thought = choice(chosen_thought_group["thoughts"])
+        except Exception:
+            traceback.print_exc()
+            chosen_thought = "No thoughts, head empty"
 
         return chosen_thought

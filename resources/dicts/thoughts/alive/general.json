@@ -383,10 +383,8 @@
         ]
     },
     {
-        "id": "gen_to_alive_gen",
+        "id": "gen",
         "thoughts": [
-            "Is eavesdropping on r_c",
-            "Wants to get to know r_c better",
             "Is feeling quite lazy",
             "Is spending a considerable amount of time grooming",
             "Is looking forward to today",
@@ -433,7 +431,25 @@
             "Is staring off into space",
             "Is picking the burrs from their pelt",
             "Is sharpening their claws",
-            "Woke up on the wrong side of the nest",
+            "Woke up on the wrong side of the nest"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+    },
+    {
+        "id": "gen_to_alive_gen",
+        "thoughts": [
+            "Is eavesdropping on r_c",
+            "Wants to get to know r_c better",
             "Wonders how r_c is doing"
         ],
         "main_status_constraint": [
@@ -447,17 +463,8 @@
             "leader",
             "elder"
         ],
-        "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+        "random_status_constraint":[
+            "any"
         ],
         "random_living_status": [
             "living"
@@ -1291,7 +1298,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1326,7 +1333,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_status_constrain": [
+        "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
