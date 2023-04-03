@@ -11,6 +11,7 @@ from scripts.version import VERSION_NAME
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
+from scripts.cat_relations.inheritance import Inheritance
 
 from json import JSONDecodeError
 
