@@ -730,7 +730,7 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'info'
         self.save_settings_button.hide()
-
+        
         self.info_container = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((200, 300), (1200, 1000))),
             manager=MANAGER
@@ -744,7 +744,9 @@ class SettingsScreen(Screens):
             manager=MANAGER)
 
         rel_rect = self.checkboxes_text['info_text_box'].get_relative_rect()
-        print(rel_rect)
+        # relative rect - don't need to print this
+        #print(rel_rect)
+        
         self.checkboxes_text['info_text_box'].kill()
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
@@ -752,9 +754,9 @@ class SettingsScreen(Screens):
             scale(pygame.Rect((0, 0), (1200, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.info_container,
-            manager=MANAGER)
-
-        print(self.info_text)
+            manager=MANAGER)  
+        # info text - don't need to print this
+        #print(self.info_text)
 
         self.checkboxes_text['info_text_box'].disable()
 
@@ -780,6 +782,7 @@ class SettingsScreen(Screens):
                 ),
 
             i += 1
+        
         self.info_container.set_scrollable_area_dimensions(
             (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
 
@@ -859,6 +862,12 @@ class SettingsScreen(Screens):
         for text in self.checkboxes_text.values():
             text.kill()
         self.checkboxes_text = {}
+        
+        # if info panel as opened, this line of code will remove the container when the windows are switched
+        # (was a bit tired, so there might be a better way to do this)
+        if hasattr(self, 'info_container'):
+            self.info_container.kill()
+            del self.info_container
 
     def enable_all_menu_buttons(self):
         """
