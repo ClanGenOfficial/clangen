@@ -101,7 +101,6 @@ class Inheritance():
         if len(self.need_update) > 1:
             for update_id in self.need_update:
                 if update_id in self.all_inheritances:
-                    print("SECOND UPDATE: ")
                     self.all_inheritances[update_id].update_inheritance()
                     # if the inheritance is updated, remove the id of the need_update list
                     self.need_update.remove(update_id)

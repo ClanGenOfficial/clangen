@@ -1066,7 +1066,7 @@ class Cat():
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
         
         # insert name if it is needed
-        if "r_c" in chosen_thought:
+        if "r_c" in chosen_thought and other_cat:
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
 
         # insert Clan name if needed
