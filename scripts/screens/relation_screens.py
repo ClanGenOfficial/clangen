@@ -2443,7 +2443,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.patrolled.append(self.mediators[self.selected_mediator])
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic)
@@ -2452,7 +2452,7 @@ class MediationScreen(Screens):
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
                 game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.patrolled.append(self.mediators[self.selected_mediator])
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic,
@@ -3024,7 +3024,7 @@ class MediationScreen(Screens):
             if self.mediators[self.selected_mediator].not_working():
                 invalid_mediator = True
                 error_message += "This mediator can't work this moon. "
-            elif self.mediators[self.selected_mediator].ID in game.patrolled:
+            elif self.mediators[self.selected_mediator] in game.patrolled:
                 invalid_mediator = True
                 error_message += "This mediator has already worked this moon. "
         else:
