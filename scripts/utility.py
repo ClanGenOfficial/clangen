@@ -434,8 +434,8 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         if not alive:
             new_cat.dead = True
 
-        if thought:
-            new_cat.thought = thought
+        thought = "Wonders about those Clan cats they just met"
+        new_cat.thought = thought
 
         # create relationships - only with outsiders 
         # (this function will handle, that the cat only knows other outsiders)
