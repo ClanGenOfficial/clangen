@@ -1,4 +1,5 @@
 import os
+import traceback
 from random import choice
 
 import ujson
@@ -244,7 +245,8 @@ class Thoughts():
         try:
             chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
             chosen_thought = choice(chosen_thought_group["thoughts"])
-        except:
+        except Exception:
+            traceback.print_exc()
             chosen_thought = "No thoughts, head empty"
 
         return chosen_thought
