@@ -9,6 +9,9 @@
         ],
         "main_status_constraint": [
             "exiled"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     }
 ]

@@ -71,6 +71,9 @@
             "Bristles at the alert call of a bird",
             "Is sneezing",
             "Takes stock of their surroundings"
+        ],
+        "random_outside_status":[
+            "outside"
         ]
     }
 ]
