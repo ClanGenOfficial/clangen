@@ -62,5 +62,18 @@
             "deputy",
             "leader"
         ]
+    },
+    {
+        "id": "general_outside_thoughts",
+        "thoughts":[
+            "Stops to sniff a patch of grass",
+            "Watches the clouds roll by",
+            "Bristles at the alert call of a bird",
+            "Is sneezing",
+            "Takes stock of their surroundings"
+        ],
+        "random_outside_status":[
+            "outside"
+        ]
     }
 ]
