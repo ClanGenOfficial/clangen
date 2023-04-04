@@ -672,6 +672,51 @@
         "negate_other_cat_skill": null,
         "backstory_constraint": null
      
-     }
+     },
+    {
+   "injury": "headache",
+   "camp": "any",
+   "tags": [
+       "Newleaf",
+       "Greenleaf",
+       "Leaf-fall",
+       "Leaf-bare"
+   ],
+   "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
+   "history_text": null,
+   "cat_trait": null,
+   "cat_skill": null,
+   "other_cat_trait": null,
+   "other_cat_skill": null,
+   "negate_cat_trait": null,
+   "negate_cat_skill": null,
+   "negate_other_cat_trait": null,
+   "negate_other_cat_skill": null,
+   "backstory_constraint": null
+
+},
+{
+   "injury": "severe headache",
+   "camp": "any",
+   "tags": [
+       "Newleaf",
+       "Greenleaf",
+       "Leaf-fall",
+       "Leaf-bare"
+   ],
+   "event_text": "m_c woke up with a splitting headache, and could not get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
+   "history_text": null,
+   "cat_trait": null,
+   "cat_skill": null,
+   "other_cat_trait": null,
+   "other_cat_skill": null,
+   "negate_cat_trait": null,
+   "negate_cat_skill": null,
+   "negate_other_cat_trait": null,
+   "negate_other_cat_skill": null,
+   "backstory_constraint": null
+
+}
+
      
 ]
