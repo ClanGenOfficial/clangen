@@ -1118,11 +1118,13 @@ class Patrol():
             # giving specified backstories if any were specified
             possible_backstories = []
             for backstory in Cat.backstories:
-                if backstory in attribute_list:
+                if f'{backstory}{outcome}' in attribute_list:
                     possible_backstories.append(backstory)
 
             if possible_backstories:
                 kit_backstory = possible_backstories
+            else:
+                kit_backstory = chosen_kit_backstory
 
             backstory = chosen_backstory
         else:
