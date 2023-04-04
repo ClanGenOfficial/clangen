@@ -287,7 +287,6 @@ def create_new_cat(Cat,
 
     # cat creation and naming time
     for index in range(number_of_cats):
-
         # setting gender
         if not gender:
             _gender = choice(['female', 'male'])
@@ -345,8 +344,6 @@ def create_new_cat(Cat,
         if accessory:
             new_cat.accessory = accessory
 
-
-
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
             new_cat.update_mentor()
@@ -388,7 +385,7 @@ def create_new_cat(Cat,
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.die()
+            new_cat.dead = True
 
         # newbie thought
         new_cat.thought = thought

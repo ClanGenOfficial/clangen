@@ -196,8 +196,8 @@ class Events():
 
             else:
                 event = f"The past moon, {insert} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
-                        f"loss, and their Clanmates will miss the spot they took up in their lives. Moments of their" \
-                        f"life are shared in stories around the circle of mourners as those that were closest to them" \
+                        f"loss, and their Clanmates will miss the spot they took up in their lives. Moments of their " \
+                        f"life are shared in stories around the circle of mourners as those that were closest to them " \
                         f"take them to their final resting place."
 
             game.cur_events_list.append(
@@ -684,8 +684,8 @@ class Events():
 
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
 
-        # killing exiled cats
-        if cat.exiled or cat.outside:
+        # killing outside cats
+        if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
                 # print("Cat Died: " + str(cat.name))
                 cat.dead = True
