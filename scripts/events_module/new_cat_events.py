@@ -45,7 +45,6 @@ class NewCatEvents:
                 outside_cat = self.select_outside_cat()
                 backstory = outside_cat.status
                 outside_cat = self.update_cat_properties(outside_cat)
-                game.clan.add_to_clan(outside_cat)
                 event_text = f"A {backstory} named {outside_cat.name} waits on the border, asking to join the Clan."
                 name_change = random.choice([1, 2])
                 if name_change == 1 or backstory == 'former Clancat':
@@ -64,6 +63,8 @@ class NewCatEvents:
                         continue
                     the_cat.relationships[outside_cat.ID] = Relationship(the_cat, outside_cat)
                     outside_cat.relationships[the_cat.ID] = Relationship(outside_cat, the_cat)
+                # takes cat out of the outside cat list
+                game.clan.add_to_clan(outside_cat)
 
                 return [outside_cat]
         # ---------------------------------------------------------------------------- #
