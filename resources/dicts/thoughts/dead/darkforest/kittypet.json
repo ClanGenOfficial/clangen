@@ -1,0 +1,14 @@
+[
+{        
+    "id": "general_kittypet_dead_thoughts",
+    "thoughts": [
+        "Wonders how they ended up here",
+        "Traipses through the muck with a disgusted look on their face",
+        "Growls at the shadows",
+        "Wonders if their housefolk are okay"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ]
+}
+]
