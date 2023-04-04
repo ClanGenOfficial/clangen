@@ -62,15 +62,17 @@
         ],
         "main_status_constraint": [
             "kittypet"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
         "id": "kittypet_kitten_and_adolescent_thoughts",
         "thoughts": [
-            "Is currently trying to figure out how to catch a bird"
+            "Is currently trying to figure out how to catch a bird",
+            "Plays with a crinkly ball",
+            "Plays with a toy mouse",
+            "Looks out the window at the birds",
+            "Chatters at the birds outside",
+            "Wonders if they could survive in the wild"
         ],
         "main_status_constraint": [
             "kittypet"
@@ -78,9 +80,6 @@
         "main_age_constraint": [
             "kitten",
             "adolescent"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -95,9 +94,6 @@
         ],
         "main_age_constraint": [
             "adolescent"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -119,9 +115,6 @@
             "young adult",
             "adult",
             "senior adult"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -135,7 +128,7 @@
             "Snoring by a warm hearth",
             "Engaging in loaf mode",
             "Is having a rough time climbing their fence",
-            "Wonders what if they left to be a loner at a younger age",
+            "Wonders what would have happened if they left to be a loner at a younger age",
             "Took their time climbing on their fence",
             "Shakes their head when they spotted a cold queen and their kits"
         ],
@@ -144,9 +137,6 @@
         ],
         "main_age_constraint": [
             "senior"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     }
 ]
