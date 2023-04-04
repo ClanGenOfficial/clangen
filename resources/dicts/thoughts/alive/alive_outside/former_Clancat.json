@@ -15,4 +15,22 @@
     "main_status_constraint": [
         "former Clancat"
     ]
+},
+{
+    "id": "formerclancat_tragedy_thoughts",
+    "thoughts": [
+        "Wonders what happened to their Clanmates",
+        "Wakes up shaking after a nightmare",
+        "Wonders if there's anything left of their old Clan",
+        "Misses their family",
+        "Wishes they could have helped their Clan more"
+    ],
+    "main_status_constraint": [
+        "former Clancat"
+    ],
+    "backstory_constraint":{
+        "m_c": [
+            "tragedy_survivor"
+        ]
+    }
 }]
