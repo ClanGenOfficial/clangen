@@ -684,7 +684,7 @@ class Events():
 
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
 
-        # killing exiled cats
+        # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
                 # print("Cat Died: " + str(cat.name))
