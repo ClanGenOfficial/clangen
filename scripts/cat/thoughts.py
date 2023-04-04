@@ -158,8 +158,11 @@ class Thoughts():
                 outside_status = "outside"
             else:
                 outside_status = "clancat"
-            if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
-                return False
+            if main_cat.outside: # makes sure that outsiders can get thoughts all the time
+                pass
+            else:
+                if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
+                    return False
 
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
@@ -207,6 +210,8 @@ class Thoughts():
             status = "mediator_apprentice"
         elif status == "medicine cat":
             status = "medicine_cat"
+        elif status == 'former Clancat':
+            status = 'former_Clancat'
 
         if not main_cat.dead:
             life_dir = "alive"
