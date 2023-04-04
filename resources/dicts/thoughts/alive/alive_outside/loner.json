@@ -38,9 +38,6 @@
         ],
         "main_status_constraint": [
             "loner"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -85,9 +82,6 @@
         ],
         "main_age_constraint": [
             "adolescent"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -126,9 +120,6 @@
             "young adult",
             "adult",
             "senior adult"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     },
     {
@@ -159,9 +150,6 @@
         ],
         "main_age_constraint": [
             "senior"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     }
 ]
