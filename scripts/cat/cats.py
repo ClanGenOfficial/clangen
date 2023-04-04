@@ -1072,10 +1072,7 @@ class Cat():
                     other_cat = None
                     break
         # for cats currently outside
-        
-        # it appears as for now, kittypets and loners can only think about outsider cats so if
-        # the program gave them a cat who is not an outsider, no thoughts would be available...
-        # (this can be changed in the future as I believe a more efficient thought system can be made)
+        # it appears as for now, kittypets and loners can only think about outsider cats
         elif where_kitty == 'outside':
             while other_cat == self.ID and len(all_cats) > 1\
             or (other_cat not in self.relationships)\
