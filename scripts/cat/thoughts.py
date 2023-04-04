@@ -207,6 +207,8 @@ class Thoughts():
             status = "mediator_apprentice"
         elif status == "medicine cat":
             status = "medicine_cat"
+        elif status == 'former Clancat':
+            status = 'former_Clancat'
 
         if not main_cat.dead:
             life_dir = "alive"

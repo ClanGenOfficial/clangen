@@ -1,0 +1,18 @@
+[{
+    "id": "general_formerclancat_thoughts",
+    "thoughts": [
+        "Thinks about their former clanmates forlornly",
+        "Wonders if StarClan still watches over them",
+        "Feels conflicted about hunting in another cat's territory",
+        "Wonders if they could start their own Clan",
+        "Thinks wistfully about the Warrior Code",
+        "Is glad for their sharp hunting skills",
+        "Wishes they had other cats to help protect them",
+        "Dreams of sleeping in a crowded den",
+        "Listens for the alarm calls of birds",
+        "Quickly veers away from a fox scent"
+    ],
+    "main_status_constraint": [
+        "former Clancat"
+    ]
+}]
