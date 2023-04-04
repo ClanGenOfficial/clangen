@@ -560,8 +560,6 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
-            if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
-                cat.suffix = ''
 
     def add_to_darkforest(self, cat):  # Same as add_cat
         """
