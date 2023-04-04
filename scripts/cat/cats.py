@@ -1072,8 +1072,7 @@ class Cat():
                     other_cat = None
                     break
         # for cats currently outside
-        # ----------------------------
-        # FIXED KITTYPETS/LONERS NO THOUGHTS
+        
         # it appears as for now, kittypets and loners can only think about outsider cats so if
         # the program gave them a cat who is not an outsider, no thoughts would be available...
         # (this can be changed in the future as I believe a more efficient thought system can be made)
