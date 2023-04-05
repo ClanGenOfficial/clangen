@@ -2106,12 +2106,8 @@ class Cat():
         # if the cat has a mate, they are not open for a new mate
         if for_patrol:
             if self.mate or other_cat.mate:
-                if not for_love_interest:
+                if not for_love_interest or not affair:
                     return False
-                elif not affair:
-                    return False
-                else:
-                    return True
         else:
             if self.mate or other_cat.mate and not for_love_interest:
                 return False

@@ -1621,7 +1621,8 @@ class ChooseMateScreen(Screens):
             # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
             # don't want here.
             direct_related = self.the_cat.is_sibling(relevant_cat) or self.the_cat.is_parent(relevant_cat) \
-                             or relevant_cat.is_parent(self.the_cat)
+                             or relevant_cat.is_parent(self.the_cat) or self.the_cat.is_grandparent(relevant_cat) \
+                             or self.the_cat.is_grandparent(relevant_cat)
             indirect_related = self.the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(self.the_cat)
 
             if not game.settings["first_cousin_mates"]:
