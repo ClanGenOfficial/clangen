@@ -732,7 +732,6 @@ class Cat():
 
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
-            self.status = 'warrior'
         elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
@@ -818,7 +817,6 @@ class Cat():
             self.update_mentor()
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -845,7 +843,6 @@ class Cat():
             self.retired = True
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
