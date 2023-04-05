@@ -32,7 +32,7 @@
             "Is complaining about their aching joints",
             "Is telling stories about when they were young",
             "Is complaining about thorns in their nest",
-            "Thinking about how too many cats die young",
+            "Is thinking about how too many cats die young",
             "Is complaining about being cold",
             "Is grateful they have lived so long",
             "Is sharing their wisdom",
@@ -71,9 +71,7 @@
         "random_age_constraint": [
             "kitten",
             "adolescent",
-            "young adult",
-            "adult",
-            "senior adult"
+            "young adult"
         ]
     },
     {
@@ -120,7 +118,66 @@
             "mates"
         ]
     },
-
+    {
+        "id": "gen_retired_disabled_thoughts",
+        "thoughts": [
+            "Wants everyone to stop pitying them, they're fine!",
+            "Is glad they retired",
+            "Knows they are helping the Clan more now",
+            "Feels like they are missing out on adventures",
+            "Feels alone in their struggles",
+            "Is becoming more confident in their position in the Clan",
+            "Is enjoying their retirement under the sun"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "any"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ]
+    },
+    {
+        "id": "gen_retired_disabled_to_med_thoughts",
+        "thoughts": [
+            "Wonders if the medicine cat needs any help today",
+            "Offers to help r_c sort herbs",
+            "Wonders if they could've been a medicine cat with r_c instead of retiring",
+            "Brought r_c some fresh-kill"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "any"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint":[
+            "medicine cat"
+        ]
+    },
+    {
+        "id": "gen_retired_disabled_to_kit_thoughts",
+        "thoughts": [
+            "Plays with the kits as a form of exercise",
+            "Offers to watch the kits",
+            "Is busy telling r_c a story",
+            "Knows exactly how to keep the kits busy"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "any"
+            ]
+        },
+        "main_status_constraint": [
+            "elder"
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ]
+    },
     {
         "id": "paralyzed_gen_retired_to_alive_med",
         "thoughts": [
