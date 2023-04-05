@@ -781,6 +781,12 @@
         ],
         "main_trait_constraint": [
             "vengeful"
+        ],
+        "random_living_status":[
+            "living"
+        ],
+        "random_status_constraint":[
+            "apprentice"
         ]
     },
     {
