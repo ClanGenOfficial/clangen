@@ -776,8 +776,8 @@ class FamilyTreeScreen(Screens):
             name = short_name + '...'
         self.cat_elements["center_cat_name"] = pygame_gui.elements.UITextBox(name,
                                                                              scale(
-                                                                                 pygame.Rect((15 + x_pos, 118 + y_pos),
-                                                                                             (135, 100))),
+                                                                                 pygame.Rect((10 + x_pos, 118 + y_pos),
+                                                                                             (145, 100))),
                                                                              object_id=get_text_box_theme(
                                                                                  "#text_box_22_horizcenter"),
                                                                              manager=MANAGER,
