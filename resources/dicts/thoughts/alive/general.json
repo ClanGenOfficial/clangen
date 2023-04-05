@@ -1250,7 +1250,7 @@
                 "paralyzed"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1315,7 +1315,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "newborn",
             "kitten"
         ]
