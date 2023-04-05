@@ -33,7 +33,7 @@
 			"medicine cat apprentice",
 			"warrior"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"warrior",
 			"elder",
 			"medicine cat",
@@ -52,7 +52,7 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"medicine cat apprentice",
 			"apprentice",
 			"mediator apprentice"
@@ -76,7 +76,7 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {

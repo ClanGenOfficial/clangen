@@ -6,7 +6,7 @@
     "tags": ["border", "fighting", "scar", "CATBITE", "battle_injury", "reputation", "multi_deaths", "respect", "trust", "platonic", "no_change_fail"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "The patrol descends into battle without a second thought, eventually driving the rogues away.",
@@ -72,7 +72,7 @@
     "tags": ["border", "fighting", "scar", "CATBITE", "battle_injury", "reputation", "respect", "trust", "multi_deaths"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the Clan cats!",
     "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
@@ -430,7 +430,7 @@
     "tags": ["fighting", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -459,7 +459,7 @@
     "tags": ["fighting", "scar", "BRIDGE", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -490,7 +490,7 @@
     "tags": ["app_stat", "fighting", "border", "apprentice"],
     "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",

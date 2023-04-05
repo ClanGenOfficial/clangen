@@ -85,7 +85,7 @@
         "camp": "any",
         "tags": ["m_c", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "reputation": ["welcoming", "neutral", "hostile"],
-        "event_text": "m_c finds a loner named n_c_pre who joins the Clan. The loner decides to take on a more Clan-like name, and is now called n_c",
+        "event_text": "m_c finds a loner named n_c_pre who joins the Clan. The loner decides to take on a more Clan-like name, and is now called n_c.",
         "loner": true,
         "backstory": ["loner1", "loner2", "refugee2", "tragedy_survivor4", "guided3"],
         "new_name": true,

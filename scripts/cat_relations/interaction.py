@@ -1,8 +1,5 @@
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 class Single_Interaction():
 
@@ -199,7 +196,7 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
 
     value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
     for v_type in value_types:
-        tags = list(filter(lambda constr: v_type in constr, constraint))
+        tags = [i for i in constraint if v_type in i]
         if len(tags) < 1:
             continue
         threshold = 0
@@ -208,7 +205,7 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
         try:
             splitted = tags[0].split('_')
             threshold = int(splitted[1])
-            if len(splitted) > 3:
+            if len(splitted) >= 3:
                 lower_than = True
         except:
             print(f"ERROR: interaction {interaction_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")

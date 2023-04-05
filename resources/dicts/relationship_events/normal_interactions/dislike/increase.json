@@ -90,6 +90,16 @@
 		]
 	},
 	{
+		"id": "dislike_effect_other1",
+		"relationship_constraint": [
+			"dislike_40"
+		],
+		"interactions": [
+			"r_c is spreading a rumor about m_c.",
+			"r_c is mocking m_c."
+		]
+	},
+	{
 		"id": "dislike_kit_inc_med1",
 		"interactions": [
 			"m_c trips over r_c.",

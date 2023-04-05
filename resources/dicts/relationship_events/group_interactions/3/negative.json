@@ -42,14 +42,29 @@
 		}
 	},
 	{
-		"id": "group_3_ leader_neg",
+		"id": "group_3_leader_neg1",
 		"cat_amount": 3,
-		"interactions": ["m_c, after having r_c2 challenge them, takes r_c1 to punish r_c2. Everyone ends up hurt, but m_c feels they can trust r_c1 more."],
+		"interactions": ["After having r_c2 challenge them, m_c commands r_c1 to help them punish r_c2. Everyone ends up hurt, though m_c feels they can trust r_c1 more."],
 		"get_injuries": {
-			"m_c": ["claw-wound"],
-			"r_c1": ["claw-wound"],
-			"r_c": ["claw-wound", "bite-wound"]
-		},	
+			"m_c": {
+				"injury_names": ["claw-wound"],
+				"scar_text": "m_c got a scar after r_c2 challenged them.",
+				"death_text": "Died after r_c2 challenged them.",
+				"death_leader_text": "after r_c2 challenged them"
+			},
+			"r_c1": {
+				"injury_names": ["claw-wound"],
+				"scar_text": "Got a scar while punishing r_c2, in the name of m_c",
+				"death_text": "Died after punishing r_c2, in the name of m_c.",
+				"death_leader_text": "while punishing r_c2"
+			},
+			"r_c2": {
+				"injury_names": ["claw-wound", "bite-wound"],
+				"scar_text": "r_c2 challenged m_c, was punished by r_c1 and got a scar as memory of their actions.",
+				"death_text": "They challenged m_c, was punished by r_c1 and in the cause of their actions, r_c2 died.",
+				"death_leader_text": "after challenged m_c and got punished by r_c1"
+			}
+		},
 		"status_constraint": {
 			"m_c": [
 				"leader"
@@ -81,6 +96,68 @@
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_r_c1": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_m_c": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_leader_neg2",
+		"cat_amount": 3,
+		"interactions": ["m_c and r_c1 are where they should put their border marks that r_c2 overheards and disagrees with. m_c and r_c1 sneer at r_c2."],
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"warrior",
+				"deputy"
+			],
+			"r_c2": [
+				"warrior"
+			]
+		},
+		"trait_constraint": {
+			"m_c": ["bloodthirsty", "vengeful", "fierce", "bold"]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"dislike": "decrease",
+				"comfortable": "increase",
+				"trust": "increase"
+			},
+			"r_c1_to_m_c": {
+				"dislike": "decrease",
+				"comfortable": "decrease",
+				"trust": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_r_c1": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_m_c": {
 				"platonic": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",

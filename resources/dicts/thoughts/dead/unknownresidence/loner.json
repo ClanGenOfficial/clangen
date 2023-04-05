@@ -1,0 +1,12 @@
+[{
+    "id": "general_loner_dead_thoughts",
+    "thoughts": [
+        "Wanders around their old territory",
+        "Catches sight of Clan cats near their old territory",
+        "Explores places they were afraid to go in life",
+        "Hunts for prey, despite not feeling hungry"
+    ],
+    "main_status_constraint": [
+        "loner"
+    ]
+}]

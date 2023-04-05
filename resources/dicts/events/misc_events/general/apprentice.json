@@ -28,7 +28,7 @@
     },
   {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c sneaks out of camp with r_c.",
         "cat_trait": null,
         "cat_skill": null,
@@ -67,7 +67,7 @@
    },
    {
     "camp": "any",
-    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app"],
+    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app","to_both", "platonic", "trust", "comfort", "neg_dislike"],
     "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
     "cat_trait": null,
     "cat_skill": null,
@@ -76,7 +76,7 @@
   },
   {
     "camp": "any",
-    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app"],
+    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
     "event_text": "m_c and r_c sneak out of camp to see the moon rise.",
     "cat_trait": null,
     "cat_skill": null,
@@ -94,7 +94,7 @@
   },
   {
     "camp": "any",
-    "tags": ["Leaf-fall", "other_cat", "other_cat_app"],
+    "tags": ["Leaf-fall", "other_cat", "other_cat_app", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
     "event_text": "m_c and r_c play in the fallen leaves outside of camp.",
     "cat_trait": null,
     "cat_skill": null,
@@ -103,7 +103,7 @@
   },
   {
     "camp": "any",
-    "tags": ["Leaf-bare", "other_cat", "other_cat_app"],
+    "tags": ["Leaf-bare", "other_cat", "other_cat_app", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
     "event_text": "m_c and r_c play in the snow outside of camp.",
     "cat_trait": null,
     "cat_skill": null,
@@ -129,5 +129,23 @@
     "other_cat_trait": null,
     "other_cat_skill": null,
     "accessories": ["COLLAR"]
-  }
+  },
+  {
+    "camp": "any",
+    "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
+    "event_text": "m_c and r_c were practicing climbing when they found a nest of strange eggs.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+  "camp": "any",
+  "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
+  "event_text": "m_c and r_c sneak out of camp to go bird watching.",
+  "cat_trait": null,
+  "cat_skill": null,
+  "other_cat_trait": null,
+  "other_cat_skill": null
+}
 ]

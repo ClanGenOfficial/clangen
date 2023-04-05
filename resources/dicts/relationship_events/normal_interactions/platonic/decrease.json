@@ -32,7 +32,7 @@
 		"main_status_constraint": [
 			"apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"elder"
 		]
 	},
@@ -76,7 +76,7 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"medicine cat apprentice",
 			"apprentice",
 			"mediator apprentice"
@@ -94,7 +94,7 @@
 		"main_status_constraint": [
 			"apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
@@ -115,7 +115,7 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		],
-		"random_status_constrain": [
+		"random_status_constraint": [
 			"medicine cat apprentice",
 			"apprentice",
 			"mediator apprentice"

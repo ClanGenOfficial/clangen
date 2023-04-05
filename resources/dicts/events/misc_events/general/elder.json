@@ -62,5 +62,14 @@
         "other_cat_trait": null,
         "other_cat_skill": null,
         "accessories": ["COLLAR"]
+      },
+      {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c woke up with multiple objects stacked on them, and the sound of giggling cats in the distance.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
       }
 ]

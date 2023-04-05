@@ -28,7 +28,7 @@
 	{
 		"id": "admire_de_medium2",
 		"interactions": [
-			"m_c tried talking to r_c about r_c's behaviour, but it turned into a fight that someone else had to break up."
+			"m_c tried to bring r_c's behaviour up to them, but it turned into a fight that someone else had to break up."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
