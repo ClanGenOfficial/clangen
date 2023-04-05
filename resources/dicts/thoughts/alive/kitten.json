@@ -134,11 +134,25 @@
             "Wonders what it would be like to be leader",
             "Sorts blades of grass like a medicine cat would",
             "Stares into nothing in particular",
-            "Makes up a tale on the spot for the other kits",
             "Is annoying the elders for more tales"
         ],
         "main_trait_constraint": [
             "daydreamer"
+        ]
+    },
+    {
+        "id": "daydreamer_kit",
+        "thoughts": [
+            "Makes up a tale on the spot for the other kits"
+        ],
+        "main_trait_constraint": [
+            "daydreamer"
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ],
+        "random_living_status":[
+            "alive"
         ]
     },
     {
