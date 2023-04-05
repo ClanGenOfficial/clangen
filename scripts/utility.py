@@ -365,22 +365,30 @@ def create_new_cat(Cat,
                 possible_conditions = []
                 for condition in PERMANENT:
                     if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
-                        print(condition)
+                        continue
+                    # next part ensures that a kit won't get a condition that takes too long to reveal
+                    age = new_cat.moons
+                    leeway = 5 - (PERMANENT[condition]['moons_until'] + 1)
+                    if age > leeway:
                         continue
                     possible_conditions.append(condition)
                 print(possible_conditions)
-                chosen_condition = choice(possible_conditions)
-                born_with = False
-                if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
-                    born_with = True
 
-                new_cat.get_permanent_condition(chosen_condition, born_with)
+                if possible_conditions:
+                    chosen_condition = choice(possible_conditions)
+                    born_with = False
+                    if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
+                        born_with = True
 
-                # assign scars
-                if chosen_condition in ['lost a leg', 'born without a leg']:
-                    new_cat.scars.append('NOPAW')
-                elif chosen_condition in ['lost their tail', 'born without a tail']:
-                    new_cat.scars.append("NOTAIL")
+                    new_cat.get_permanent_condition(chosen_condition, born_with)
+                    if new_cat.permanent_condition[chosen_condition]["moons_until"] == 0:
+                        new_cat.permanent_condition[chosen_condition]["moons_until"] = -2
+
+                    # assign scars
+                    if chosen_condition in ['lost a leg', 'born without a leg']:
+                        new_cat.scars.append('NOPAW')
+                    elif chosen_condition in ['lost their tail', 'born without a tail']:
+                        new_cat.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
