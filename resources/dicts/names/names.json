@@ -372,20 +372,19 @@
     ],
 	"animal_suffixes": [
 		"bee", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", 
-		"horse", "jay", "kestrel", "kite", "lamb", "minnow", "moth", "mouse", "newt", "ram", "sheep", "squid", "scorpion", 
-    "snake", "tiger", "turtle"
+		"horse", "lamb", "moth", "mouse", "newt", "ram", "sheep", "squid", "scorpion", "snake", "tiger", "turtle"
 	],
 	"animal_prefixes": [
 		"Adder", "Albatross", "Alligator", "Alpaca", "Ant", "Antelope", "Avocet", "Axolotl", "Badger", "Barracuda", "Bass", "Bat", 
 		"Bear", "Beaver", "Bee", "Beluga", "Beetle", "Bird", "Bison", "Bittern", "Boar", "Buck", "Buffalo", "Bug", "Butterfly", "Camel", 
-		"Canary", "Caracal", "Chaffinch", "Chick", "Cicada", "Chamois", "Cheetah", "Clam", "Cobra", "Cod", "Condor", "Coral", "Cow", "Crab", 
+		"Canary", "Caracal", "Carp", "Chaffinch", "Chick", "Cicada", "Chamois", "Cheetah", "Clam", "Cobra", "Cod", "Condor", "Coral", "Cow", "Crab", 
 		"Crocodile", "Cormorant", "Cougar", "Coyote", "Crane", "Crow", "Curlew", "Cygnet", "Deer", "Dingo", "Doe", "Dog", "Dolphin", "Dove", 
 		"Dromedary", "Duck", "Eagle", "Egret", "Elk", "Ermine", "Falcon", "Fawn", "Ferret", "Fish", "Finch", "Fox", "Frog", "Gander", "Gannet", 
 		"Gazelle", "Goat", "Goose", "Gosling","Grackle", "Grebe", "Grouse", "Gull", "Hare", "Hawk", "Heron", "Hornet", "Horse", "Hound", "Ibis", 
-		"Jackal", "Jackdaw", "Jackrabbit", "Jellyfish", "Jay", "Kestrel", "Kingfisher", "Lamb", "Lark", "Leopard", "Lion", "Lizard", "Loach", "Locust", 
-		"Lynx", "Magpie", "Mantis", "Marlin", "Marten", "Meerkat", "Midge", "Mink", "Minnow", "Mite", "Mole", "Moorhen", "Moose", "Mosquito", "Moth", 
-		"Mouse", "Newt", "Octopus", "Oryx", "Osprey", "Otter", "Owl", "Panther", "Partridge", "Pelican", "Perch", "Pheasant", "Pigeon", "Pipit", 
-		"Pronghorn", "Quail", "Ram", "Rat", "Raven", "Robin", "Roach", "Salamander", "Salmon", "Sardine", "Scorpion", "Seabass", "Seagull", "Shark", 
+		"Jackal", "Jackdaw", "Jackrabbit", "Jellyfish", "Kestrel", "Kingfisher", "Kite", "Lamb", "Lark", "Leopard", "Lion", "Lizard", "Loach", 
+		"Locust", "Lynx", "Magpie", "Mantis", "Marlin", "Marten", "Meerkat", "Midge", "Mink", "Minnow", "Mite", "Mole", "Moorhen", "Moose", "Mosquito", "Moth", 
+		"Mouse", "Newt", "Octopus", "Oryx", "Osprey", "Otter", "Owl", "Panther", "Partridge", "Pelican", "Perch", "Pheasant", "Pigeon", "Pike", "Pipit", 
+		"Pronghorn", "Quail", "Rabbit", "Raccoon", "Ram", "Rat", "Raven", "Robin", "Roach", "Salamander", "Salmon", "Sardine", "Scorpion", "Seabass", "Seagull", "Shark", 
 		"Sheep", "Shrew", "Shrike", "Skink", "Skunk", "Slug", "Snail", "Snake", "Sparrow", "Spider", "Spoonbill", "Squid", "Squirrel", "Stag", 
 		"Starling", "Stoat", "Stork", "Swallow", "Swan", "Tiapan", "Tiger", "Titmouse", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", 
 		"Vulture", "Warbler", "Wasp", "Weasel", "Whale", "Wolf", "Wren"
