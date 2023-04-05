@@ -1136,6 +1136,8 @@ class Patrol():
 
             if possible_backstories:
                 backstory = possible_backstories
+            elif kit:
+                backstory = chosen_kit_backstory
                 # if none of these tags are present, then it uses the chosen_backstory from before
             else:
                 backstory = chosen_backstory
