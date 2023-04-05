@@ -372,7 +372,7 @@
     ],
 	"animal_suffixes": [
 		"bee", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", 
-		"horse", "lamb", "moth", "mouse", "newt", "ram", "sheep", "squid", "scorpion", "snake", "tiger", "turtle"
+		"horse", "jay", "kestrel", "kite", "lamb", "minnow", "moth", "mouse", "newt", "ram", "sheep", "squid", "scorpion", "snake", "tiger", "turtle"
 	],
 	"animal_prefixes": [
 		"Adder", "Albatross", "Alligator", "Alpaca", "Ant", "Antelope", "Avocet", "Axolotl", "Badger", "Barracuda", "Bass", "Bat", 
@@ -381,7 +381,7 @@
 		"Crocodile", "Cormorant", "Cougar", "Coyote", "Crane", "Crow", "Curlew", "Cygnet", "Deer", "Dingo", "Doe", "Dog", "Dolphin", "Dove", 
 		"Dromedary", "Duck", "Eagle", "Egret", "Elk", "Ermine", "Falcon", "Fawn", "Ferret", "Fish", "Finch", "Fox", "Frog", "Gander", "Gannet", 
 		"Gazelle", "Goat", "Goose", "Gosling","Grackle", "Grebe", "Grouse", "Gull", "Hare", "Hawk", "Heron", "Hornet", "Horse", "Hound", "Ibis", 
-		"Jackal", "Jackdaw", "Jackrabbit", "Jellyfish", "Kestrel", "Kingfisher", "Kite", "Lamb", "Lark", "Leopard", "Lion", "Lizard", "Loach", 
+		"Jackal", "Jackdaw", "Jackrabbit", "Jay", "Jellyfish", "Kestrel", "Kingfisher", "Kite", "Lamb", "Lark", "Leopard", "Lion", "Lizard", "Loach", 
 		"Locust", "Lynx", "Magpie", "Mantis", "Marlin", "Marten", "Meerkat", "Midge", "Mink", "Minnow", "Mite", "Mole", "Moorhen", "Moose", "Mosquito", "Moth", 
 		"Mouse", "Newt", "Octopus", "Oryx", "Osprey", "Otter", "Owl", "Panther", "Partridge", "Pelican", "Perch", "Pheasant", "Pigeon", "Pike", "Pipit", 
 		"Pronghorn", "Quail", "Rabbit", "Raccoon", "Ram", "Rat", "Raven", "Robin", "Roach", "Salamander", "Salmon", "Sardine", "Scorpion", "Seabass", "Seagull", "Shark", 
