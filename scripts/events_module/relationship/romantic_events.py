@@ -40,7 +40,7 @@ class Romantic_Events():
             return False
 
         relevant_dict = deepcopy(ROMANTIC_INTERACTIONS)
-        if cat_from.mate == cat_to.ID:
+        if cat_from.mate == cat_to.ID and not cat_to.dead:
             relevant_dict = deepcopy(MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
