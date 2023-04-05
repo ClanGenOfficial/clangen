@@ -490,8 +490,6 @@
             "Is acting angsty",
             "Is dreading their apprentice duties",
             "Fell into the nearby creek yesterday and is still feeling damp",
-            "Is making their mentor laugh",
-            "Is really bonding with their mentor",
             "Is having a hard time keeping up with their training",
             "Was tasked with lining nests with fresh moss today",
             "Is dreaming of someday making their Clan proud",
@@ -500,27 +498,30 @@
             "Is helping to reinforce the camp wall with brambles",
             "Is daydreaming about having a mate and kits someday",
             "Had quite the adventure today",
-            "Is thinking about how cool it will be when they are a warrior",
-            "Wants to become a fierce warrior someday",
-            "Wants to learn as many fighting techniques as they can",
-            "Wants to show their mentor that they are smart, skilled, and talented",
-            "Wants to earn their warrior name",
-            "Is determined to master a hunting technique by dusk",
-            "Can see how busy their mentor is",
-            "Wants to be taught an advanced hunting move",
             "Has been training very hard recently",
-            "Is anxious about becoming a warrior",
             "Had a very strange dream"
         ],
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "general_apprentices_to_mentor_thoughts",
+        "thoughts": [
+            "Is making their mentor laugh",
+            "Is really bonding with their mentor",
+            "Wants to show their mentor that they are smart, skilled, and talented",
+            "Can see how busy their mentor is"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "relationship_constraint":[
+            "app/mentor"
         ]
     },
     {
@@ -1250,7 +1251,7 @@
                 "paralyzed"
             ]
         },
-        "random_age_constrain": [
+        "random_age_constraint": [
             "any"
         ]
     },
@@ -1315,7 +1316,7 @@
         "main_age_constraint": [
             "adolescent"
         ],
-        "random_age_constrain": [
+        "random_age_constraint": [
             "newborn",
             "kitten"
         ]

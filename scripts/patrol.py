@@ -1028,7 +1028,7 @@ class Patrol():
                 new_name = choice([True, False])
                 chosen_backstory = Cat.backstory_categories["rogue_backstories"]
                 if "medcat" in attribute_list:
-                    backstory = ["medicine_cat", "disgraced"]
+                    chosen_backstory = ["medicine_cat", "disgraced"]
                 if not success:
                     outsider = create_outside_cat(Cat, loner, backstory=choice(chosen_backstory))
                     self.results_text.append(f"The Clan has met {outsider}.")
@@ -1115,21 +1115,30 @@ class Patrol():
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
 
-        # giving specified backstories if any were specified
-        possible_backstories = []
-        for backstory in Cat.backstories:
-            if backstory in attribute_list:
-                possible_backstories.append(backstory)
+            # giving specified backstories if any were specified
+            possible_backstories = []
+            for backstory in Cat.backstories:
+                if f'{backstory}{outcome}' in attribute_list:
+                    possible_backstories.append(backstory)
 
-        if possible_backstories:
-            if "dead" in attribute_list:
+            if possible_backstories:
                 kit_backstory = possible_backstories
             else:
-                backstory = possible_backstories
-            # if none of these tags are present, then it uses the chosen_backstory from before
-        else:
-            if "dead" in attribute_list:
                 kit_backstory = chosen_kit_backstory
+
+            backstory = chosen_backstory
+        else:
+            # giving specified backstories if any were specified
+            possible_backstories = []
+            for backstory in Cat.backstories:
+                if backstory in attribute_list:
+                    possible_backstories.append(backstory)
+
+            if possible_backstories:
+                backstory = possible_backstories
+            elif kit:
+                backstory = chosen_kit_backstory
+                # if none of these tags are present, then it uses the chosen_backstory from before
             else:
                 backstory = chosen_backstory
 
@@ -1196,7 +1205,7 @@ class Patrol():
                                                new_name=new_name,
                                                loner=loner,
                                                kittypet=kittypet,
-                                               kit=False,
+                                               kit=False, #this is for singular kits, litters need this to be false
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
