@@ -89,14 +89,14 @@ if os.environ.get('CODESPACES'):
 
 if get_version_info().is_source_build:
     print("Running on source code")
-    if get_version_info().version_number == "":
+    if get_version_info().version_number == VERSION_NAME:
         print("Failed to get git commit hash, using hardcoded version number instead.")
         print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
 else:
     print("Running on PyInstaller build")
 
-print("Version Number: ", VERSION_NAME)
+print("Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
@@ -142,16 +142,9 @@ sprites.load_scars()
 
 start_screen.screen_switches()
 
-
-#Version Number
-if get_version_info().version_number == "":
-    _display_version = VERSION_NAME
-else:
-    _display_version = get_version_info().version_number[0:8]
-
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)), _display_version,
+        pygame.Rect((1500, 1350), (-1, -1)), get_version_info().version_number[0:8],
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -159,16 +152,12 @@ if game.settings['fullscreen']:
          1400 - version_number.get_relative_rect()[3]))
 else:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)), _display_version,
+        pygame.Rect((700, 650), (-1, -1)), get_version_info().version_number[0:8],
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
-
-# This variable is no longer needed, and we don't need a high-level main 
-# variable just hanging around. 
-del _display_version
 
 if get_version_info().is_source_build:
     dev_watermark = pygame_gui.elements.UILabel(
