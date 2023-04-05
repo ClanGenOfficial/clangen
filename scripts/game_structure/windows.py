@@ -381,7 +381,7 @@ class ChangeCatName(UIWindow):
             elif event.ui_element == self.random_prefix:
                 self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
-                                                    self.the_cat.name.suffix,
+                                                    self.suffix_entry_box.text,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
@@ -391,7 +391,7 @@ class ChangeCatName(UIWindow):
                                                         "special_suffixes"])).prefix)
             elif event.ui_element == self.random_suffix:
                 self.suffix_entry_box.set_text(Name(self.the_cat.status,
-                                                    self.the_cat.name.prefix,
+                                                    self.prefix_entry_box.text,
                                                     None,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
