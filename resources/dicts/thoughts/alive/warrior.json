@@ -751,13 +751,27 @@
         "Is running after a colorful beetle",
         "Is letting out mrrows of laughter",
         "Has been playing tricks on their fellow warriors",
-        "Pretends the mouse they're chasing is a bird, and they're a hawk",
-        "Plays mossball with some kits",
+        "Pretends the mouse they're chasing is a bird, and they're a hawk",        
         "Doesn't get their chores done all morning, too busy climbing trees",
         "Is making up songs and encouraging others to join in"
     ],
     "main_trait_constraint": [
         "playful"
+    ]
+},
+{
+    "id": "playful_warrior_to_living_kit",
+    "thoughts": [
+        "Plays mossball with a kit"
+    ],
+    "random_status_constraint": [
+        "kitten"
+    ],
+    "main_trait_constraint": [
+        "playful"
+    ],
+    "random_living_status": [
+        "living"
     ]
 },
 {
@@ -772,13 +786,27 @@
         "Is making sure no work is being shirked!",
         "Is repairing one of the camp walls",
         "Is offering to lead the next patrol out",
-        "Is watching the kits to make sure none of them accidentally hurt each other",
         "Deeply apologizes for a mistake they've made and tries to fix it",
         "Volunteers to lead a patrol",
         "Goes to bed early so they can work more tomorrow"
     ],
     "main_trait_constraint": [
         "responsible"
+    ]
+},
+{
+    "id": "responsible_warrior_kits",
+    "thoughts": [
+        "Is watching the kits to make sure none of them accidentally hurt each other"
+    ],
+    "main_trait_constraint": [
+        "responsible"
+    ],
+    "random_status_constraint":[
+        "kitten"
+    ],
+    "random_living_status":[
+        "living"
     ]
 },
 {

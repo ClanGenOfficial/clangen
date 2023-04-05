@@ -1203,7 +1203,7 @@ class Patrol():
                                                new_name=new_name,
                                                loner=loner,
                                                kittypet=kittypet,
-                                               kit=False,
+                                               kit=False, #this is for singular kits, litters need this to be false
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
