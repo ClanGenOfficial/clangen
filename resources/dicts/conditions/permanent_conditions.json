@@ -89,7 +89,7 @@
     "weak leg": {
         "severity": "minor",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 3,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -242,7 +242,7 @@
     "raspy lungs": {
         "severity": "minor",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 3,
         "mortality": {
             "newborn": 20,
             "kitten": 20,
@@ -268,7 +268,7 @@
     "wasting disease": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 0,
+        "moons_until": 1,
         "mortality": {
             "newborn": 10,
             "kitten": 10,
@@ -359,7 +359,7 @@
     "failing eyesight": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 3,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -405,7 +405,7 @@
     "deaf": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 1,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -453,7 +453,7 @@
     "seizure prone": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 3,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -579,7 +579,7 @@
     "persistent headaches": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 4,
         "mortality": {
             "newborn": 0,
             "kitten": 0,

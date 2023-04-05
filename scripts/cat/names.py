@@ -132,6 +132,10 @@ class Name():
                     else:
                         triple_letter = False
                 MAX_ATTEMPT -= 1
+            
+            if self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
+                replace_suffix = [i for i in self.names_dict["normal_suffixes"] if i not in self.names_dict["animal_suffixes"]]
+                self.suffix = random.choice(replace_suffix)
 
     def __repr__(self):
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:

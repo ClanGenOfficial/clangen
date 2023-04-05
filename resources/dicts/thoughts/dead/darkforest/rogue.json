@@ -1,0 +1,12 @@
+[{
+    "id": "general_rogue_dead_thoughts",
+    "thoughts": [
+        "Growls viciously at anything that moves",
+        "Ignores the pain in their belly",
+        "Thinks about how they'd kill for some prey right now",
+        "Hisses at the muck squelching beneath their toes"
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ]
+}]
