@@ -215,8 +215,8 @@ class ChooseMentorScreen(Screens):
                "\n" + self.the_cat.trait + "\n" + self.the_cat.skill
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
-            scale(pygame.Rect((980, 340), (200, 200))),
-            object_id="#text_box_22_horizcenter_spacing_95",
+            scale(pygame.Rect((980, 325), (210, 250))),
+            object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER)
 
         name = str(self.the_cat.name)  # get name
@@ -328,9 +328,9 @@ class ChooseMentorScreen(Screens):
             if len(self.selected_mentor.apprentice) >= 1:
                 info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
-                                                                                   scale(pygame.Rect((420, 340),
-                                                                                                     (210, 230))),
-                                                                                   object_id="#text_box_22_horizcenter_spacing_95",
+                                                                                   scale(pygame.Rect((420, 325),
+                                                                                                     (210, 250))),
+                                                                                   object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                                    manager=MANAGER)
 
             name = str(self.selected_mentor.name)  # get name
@@ -776,8 +776,8 @@ class FamilyTreeScreen(Screens):
             name = short_name + '...'
         self.cat_elements["center_cat_name"] = pygame_gui.elements.UITextBox(name,
                                                                              scale(
-                                                                                 pygame.Rect((15 + x_pos, 118 + y_pos),
-                                                                                             (135, 100))),
+                                                                                 pygame.Rect((10 + x_pos, 118 + y_pos),
+                                                                                             (145, 100))),
                                                                              object_id=get_text_box_theme(
                                                                                  "#text_box_22_horizcenter"),
                                                                              manager=MANAGER,
@@ -883,8 +883,7 @@ class FamilyTreeScreen(Screens):
         i = 0
         for kitty in display_cats:
             _kitty = Cat.fetch_cat(kitty)
-            if not _kitty:
-                print(kitty)
+
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
                 _kitty.big_sprite,
@@ -1622,7 +1621,8 @@ class ChooseMateScreen(Screens):
             # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
             # don't want here.
             direct_related = self.the_cat.is_sibling(relevant_cat) or self.the_cat.is_parent(relevant_cat) \
-                             or relevant_cat.is_parent(self.the_cat)
+                             or relevant_cat.is_parent(self.the_cat) or relevant_cat.is_grandparent(self.the_cat) \
+                             or self.the_cat.is_grandparent(relevant_cat)
             indirect_related = self.the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(self.the_cat)
 
             if not game.settings["first_cousin_mates"]:
@@ -2444,7 +2444,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.patrolled.append(self.mediators[self.selected_mediator])
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic)
@@ -2453,7 +2453,7 @@ class MediationScreen(Screens):
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
                 game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
-                game.patrolled.append(self.mediators[self.selected_mediator].ID)
+                game.patrolled.append(self.mediators[self.selected_mediator])
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic,
@@ -2556,7 +2556,7 @@ class MediationScreen(Screens):
                                                      manager=MANAGER)
 
         self.error = pygame_gui.elements.UITextBox("",
-                                                   scale(pygame.Rect((560, 100), (458, 100))),
+                                                   scale(pygame.Rect((560, 75), (458, 115))),
                                                    object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                    manager=MANAGER)
 
@@ -2772,10 +2772,14 @@ class MediationScreen(Screens):
             col1 += " moon"
         else:
             col1 += " moons"
-        col1 += "\n" + cat.trait
+        if len(cat.trait) > 15:
+            _t = cat.trait[:13] + ".."
+        else:
+            _t = cat.trait
+        col1 += "\n" + _t
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
-                                                                                                   (160, -1))),
+                                                                                                   (180, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                                  manager=MANAGER)
 
@@ -3021,7 +3025,7 @@ class MediationScreen(Screens):
             if self.mediators[self.selected_mediator].not_working():
                 invalid_mediator = True
                 error_message += "This mediator can't work this moon. "
-            elif self.mediators[self.selected_mediator].ID in game.patrolled:
+            elif self.mediators[self.selected_mediator] in game.patrolled:
                 invalid_mediator = True
                 error_message += "This mediator has already worked this moon. "
         else:

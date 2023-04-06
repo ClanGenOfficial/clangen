@@ -6,18 +6,18 @@
     "tags": ["herb", "raspberry", "training", "injury", "poisoned", "comfort", "trust", "no_herbs0", "no_herbs2"],
     "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
         "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c is suprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
+        "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
@@ -38,16 +38,16 @@
     "tags": ["herb", "raspberry","training", "apprentice", "injury", "poisoned", "death", "no_herbs0"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
@@ -67,15 +67,15 @@
     "tags": ["herb", "raspberry", "training", "injury", "poisoned", "no_herbs0", "no_herbs2"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
         "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
         "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what they're eating. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
@@ -98,16 +98,16 @@
     "tags": ["herb", "raspberry", "training", "apprentice", "injury", "poisoned", "death", "no_herbs0"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
+        "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
@@ -127,7 +127,7 @@
     "tags": ["platonic", "training"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and the cats have a successful training session, swapping tips and advice as they stretch out and bask.",
@@ -172,7 +172,7 @@
     "tags": ["platonic", "romantic", "big_change", "no_app", "training"],
     "intro_text": "p_l and r_c find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "The sunlight feels so warm on p_l's pelt, and they stretch, lazily lengthening into one long arc of cat. r_c's whiskers twitch with interest as they studiously look elsewhere.",
@@ -197,7 +197,7 @@
     "tags": ["app_stat", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "training"],
     "intro_text": "app1 and app2 find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "app1 nearly dozes off, but they can't quite get to sleep, app2 seems shifting around. Are they uncomfortable? app1 opens one of their eyes, to see app2 staring at them.",
@@ -222,7 +222,7 @@
     "tags": ["training", "dislike", "comfort", "respect", "trust", "patrol_to_p_l"],
     "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
     "decline_text": "Your patrol decides to head home.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "p_l manages to skillfully smooth over any disagreement.",
@@ -251,7 +251,7 @@
     "tags": ["training", "dislike", "comfort", "respect", "trust", "patrol_to_p_l"],
     "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
     "decline_text": "Your patrol decides to head home.",
-    "chance_of_success": 70,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "p_l manages to skillfully smooth over any disagreement.",
@@ -330,8 +330,8 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there're heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
-        "That's kinda odd. app1 hastens to add that that doens't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
+        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there are heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
+        "That's kinda odd. app1 hastens to add that that doesn't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
     ],
     "fail_text": [
         "That's super weird, app1 tells them. Does app2's mentor know that they're so weird?"
@@ -348,7 +348,7 @@
     "tags": ["training", "no_app", "platonic"],
     "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
     "decline_text": "p_l quickly silences any talk about ghosts.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Despite the tense mood, the patrol is successful, and as the afternoon wears on the cats relax with each other.",
@@ -371,7 +371,7 @@
     "tags": ["app_stat", "training", "platonic", "dislike", "apprentice", "two_apprentices"],
     "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
     "decline_text": "p_l quickly silences any talk about ghosts.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "app2 and app1 wind each other up, making up story after story in ever increasing tales of horror, until finally one sounds a little too ridiculous and both of them nearly fall over laughing, the tension erased as they giggle.",
@@ -501,7 +501,7 @@
     "tags": ["training", "big_change", "platonic", "trust", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
@@ -593,7 +593,7 @@
     "tags": ["adult_stat", "training", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "warrior", "rel_two_apps", "no_change_fail"],
     "intro_text": "As p_l sets the cats up to practise together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "In a brilliant example of teamwork and coordination, app1 manages to push p_l at just the right moment to trip them over app2, sending the warrior careening down the bank into debris. Both apprentices fall over laughing.",
@@ -616,7 +616,7 @@
     "tags": ["training", "no_app", "platonic", "trust"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol.",
@@ -662,7 +662,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -708,7 +708,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -731,7 +731,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -754,7 +754,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -777,7 +777,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -800,7 +800,7 @@
     "tags": ["training", "no_app", "platonic", "trust"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish.",
@@ -846,7 +846,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -892,7 +892,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -915,7 +915,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -938,7 +938,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
@@ -961,7 +961,7 @@
     "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",

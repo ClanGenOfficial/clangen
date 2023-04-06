@@ -1,0 +1,13 @@
+[
+{        
+    "id": "general_kittypet_dead_thoughts",
+    "thoughts": [
+        "Admires the stars in their fur",
+        "Wonders how they ended up here",
+        "Is glad that the Clancats seem welcoming"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ]
+}
+]

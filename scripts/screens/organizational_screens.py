@@ -31,10 +31,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 logger = logging.getLogger(__name__)
 
@@ -158,7 +155,6 @@ class StartScreen(Screens):
             manager=MANAGER,
             layer_starting_height=3)
 
-        self.error_label.disable()
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
@@ -457,13 +453,18 @@ class SettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
+    # contains the tooltips for contributors
+    tooltip = {}
+
     info_text = ""
+    tooltip_text = []
     with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
     for string in credits_text["text"]:
         if string == "{contrib}":
             for contributor in credits_text["contrib"]:
                 info_text += contributor + "<br>"
+                tooltip_text.append(credits_text["contrib"][contributor])
         else:
             info_text += string
             info_text += "<br>"
@@ -530,7 +531,6 @@ class SettingsScreen(Screens):
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
-                    self.refresh_checkboxes()
                     if self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
                         if game.settings['discord']:
                             print("Starting Discord RPC")
@@ -541,6 +541,24 @@ class SettingsScreen(Screens):
                         else:
                             print("Stopping Discord RPC")
                             game.rpc.close()
+                    
+                    opens = {
+                        "general": self.open_general_settings,
+                        "language": self.open_lang_settings,
+                        "relation": self.open_relation_settings
+                    }
+                    
+                    scroll_pos = None
+                    if "container_general" in self.checkboxes_text and \
+                            self.checkboxes_text["container_general"].vert_scroll_bar:
+                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
+                    
+                    if self.sub_menu in opens:
+                        opens[self.sub_menu]()
+                        
+                    if scroll_pos is not None:
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
+                        
                     break
 
     def screen_switches(self):
@@ -721,11 +739,44 @@ class SettingsScreen(Screens):
         self.sub_menu = 'info'
         self.save_settings_button.hide()
 
+        self.checkboxes_text["info_container"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((200, 300), (1200, 1000))),
+            manager=MANAGER
+        )
+
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((200, 300), (1200, 1000))),
+            scale(pygame.Rect((0, 0), (1200, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            container=self.checkboxes_text["info_container"],
             manager=MANAGER)
+
+        self.checkboxes_text['info_text_box'].disable()
+
+        i = 0
+        y_pos = 731
+        for tooltip in self.tooltip_text:
+            if not tooltip:
+                self.tooltip[f'tip{i}'] = UIImageButton(
+                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    "",
+                    object_id="#blank_button",
+                    container=self.checkboxes_text["info_container"],
+                    manager=MANAGER,
+                ),
+            else:
+                self.tooltip[f'tip{i}'] = UIImageButton(
+                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    "",
+                    object_id="#blank_button",
+                    container=self.checkboxes_text["info_container"],
+                    manager=MANAGER,
+                    tool_tip_text=tooltip
+                ),
+
+            i += 1
+        self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
+            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""
@@ -854,7 +905,7 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
-            elif (cat.status in ['kittypet', 'loner', 'rogue']
+            elif (cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']
                   or cat.outside) and not cat.dead:
                 other_num += 1
             else:

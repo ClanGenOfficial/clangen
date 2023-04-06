@@ -17,16 +17,15 @@ import pygame
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.game_structure.game_essentials import game
+from scripts.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.cat.sprites import spriteSize
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -495,7 +494,7 @@ class Clan():
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).create_all_relationships()
+            Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = 'clan_founder'
             if Cat.all_cats.get(cat_id).status == 'apprentice':
                 Cat.all_cats.get(cat_id).status_change('apprentice')
@@ -561,8 +560,6 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
-            if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
-                cat.suffix = ''
 
     def add_to_darkforest(self, cat):  # Same as add_cat
         """
@@ -679,7 +676,10 @@ class Clan():
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
             "mediated": game.mediated,
-            "starting_season": self.starting_season
+            "starting_season": self.starting_season,
+            "version_name": SAVE_VERSION_NUMBER,
+            "version_commit": get_version_info().version_number,
+            "source_build": get_version_info().is_source_build
         }
 
         # LEADER DATA
@@ -751,9 +751,11 @@ class Clan():
         """
         TODO: DOCS
         """
+        
+        version_info = None
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'clan.json'):
-            self.load_clan_json()
+            version_info = self.load_clan_json()
         elif os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                             'clan.txt'):
             self.load_clan_txt()
@@ -762,6 +764,8 @@ class Clan():
                 'error_message'] = "There was an error loading the clan.json"
             
         self.load_clan_settings()
+        
+        return version_info
 
     def load_clan_txt(self):
         """
@@ -1028,6 +1032,13 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
+        
+        # Return Version Info. 
+        return {
+            "version_name": clan_data.get("version_name"),
+            "version_commit": clan_data.get("version_commit"),
+            "source_build": clan_data.get("source_build")
+        }
 
     def load_clan_settings(self):  
         if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):
@@ -1170,7 +1181,8 @@ class Clan():
         if not clan.name:
             return
         file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
-
+        if not os.path.isdir(f'{get_save_dir()}/{clan.name}/disasters'):
+            os.mkdir(f'{get_save_dir()}/{clan.name}/disasters')
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1341,7 +1353,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((50, 50))
+        white = pygame.Surface((spriteSize, spriteSize))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items

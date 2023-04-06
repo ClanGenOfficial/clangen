@@ -103,7 +103,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "SIDE", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -401,7 +401,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
@@ -425,7 +425,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
             "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",

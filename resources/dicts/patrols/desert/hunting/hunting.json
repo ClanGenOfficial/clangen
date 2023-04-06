@@ -66,6 +66,9 @@
             "no_fail_prey"
         ],
         "intro_text": "Your patrol comes across a large rat.",
+        "decline_text": "Your patrol ignores the rat.",
+        "chance_of_success": 50,
+        "exp": 20,
         "success_text": [
             "Your patrol catches the rat! More fresh-kill!",
             "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
@@ -74,9 +77,7 @@
         "fail_text": [
             "Your patrol misses the rat, and their confidence is shaken."
         ],
-        "decline_text": "Your patrol ignores the rat.",
-        "chance_of_success": 50,
-        "exp": 20,
+   
         "win_skills": [
             "great hunter",
             "fantastic hunter"
@@ -94,7 +95,10 @@
             "hunting",
             "large_prey"
         ],
-        "intro_text": "Your patrol comes across a large hare.",
+        "intro_text": "Your patrol comes across a large hare.",    
+        "decline_text": "Your patrol ignores the hare.",
+        "chance_of_success": 10,
+        "exp": 10,
         "success_text": [
             "Your patrol catches the hare!",
             null,
@@ -103,9 +107,8 @@
         "fail_text": [
             "Your patrol narrowly misses the hare."
         ],
-        "decline_text": "Your patrol ignores the hare.",
-        "chance_of_success": 40,
-        "exp": 10,
+       
+     
         "win_skills": [
             "fantastic hunter"
         ],
@@ -209,7 +212,7 @@
         ],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",

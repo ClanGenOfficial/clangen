@@ -23,7 +23,7 @@ import os
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info
+from scripts.version import get_version_info, VERSION_NAME
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -89,17 +89,18 @@ if os.environ.get('CODESPACES'):
 
 if get_version_info().is_source_build:
     print("Running on source code")
-    if get_version_info().version_number == "":
+    if get_version_info().version_number == VERSION_NAME:
         print("Failed to get git commit hash, using hardcoded version number instead.")
         print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
 else:
     print("Running on PyInstaller build")
 
+print("Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
-from scripts.game_structure.load_cat import load_cats
+from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
@@ -125,7 +126,8 @@ if clan_list:
     game.switches['clan_list'] = clan_list
     try:
         load_cats()
-        clan_class.load_clan()
+        version_info = clan_class.load_clan()
+        version_convert(version_info)
     except Exception as e:
         logging.exception("File failed to load")
         if not game.switches['error_message']:
@@ -140,12 +142,6 @@ sprites.load_scars()
 
 start_screen.screen_switches()
 
-
-
-
-
-
-#Version Number
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
         pygame.Rect((1500, 1350), (-1, -1)), get_version_info().version_number[0:8],

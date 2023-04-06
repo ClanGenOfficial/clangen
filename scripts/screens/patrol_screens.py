@@ -4,10 +4,7 @@ from random import choice, sample
 import pygame
 import pygame_gui
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
     get_snippet_list
@@ -743,44 +740,37 @@ class PatrolScreen(Screens):
                 continue
             if "adult_stat" in event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
                 continue
+            if "rc_has_stat" in event.tags and kitty != patrol.patrol_random_cat:
+                continue
+            elif "rc_has_stat" not in event.tags and kitty == patrol.patrol_random_cat:
+                continue
             possible_stat_cats.append(kitty)
 
+        print('POSSIBLE STAT CATS', possible_stat_cats)
+
         if event.win_skills:
-            if "rc_has_stat" in event.tags:
-                if patrol.patrol_random_cat.skill in event.win_skills:
-                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
-            else:
-                for kitty in possible_stat_cats:
-                    if kitty.skill in event.win_skills:
-                        patrol.patrol_win_stat_cat = kitty
-                        break
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.win_skills:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.win_trait and not patrol.patrol_win_stat_cat:
-            if "rc_has_stat" in event.tags:
-                if patrol.patrol_random_cat.trait in event.win_trait:
-                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
-            else:
-                for kitty in possible_stat_cats:
-                    if kitty.trait in event.win_trait:
-                        patrol.patrol_win_stat_cat = kitty
-                        break
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.win_trait:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.fail_skills:
-            if "rc_has_stat" in event.tags:
-                if patrol.patrol_random_cat.skill in event.fail_skills:
-                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
-            else:
-                for kitty in possible_stat_cats:
-                    if kitty.skill in event.fail_skills:
-                        patrol.patrol_fail_stat_cat = kitty
-                        break
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.fail_skills:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
-            if "rc_has_stat" in event.tags:
-                if patrol.patrol_random_cat.trait in event.fail_trait:
-                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
-            else:
-                for kitty in possible_stat_cats:
-                    if kitty.trait in event.fail_trait:
-                        patrol.patrol_fail_stat_cat = kitty
-                        break
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.fail_trait:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
+
+        print('PATROL WIN STAT', patrol.patrol_win_stat_cat)
+        print('PATROL FAIL STAT', patrol.patrol_fail_stat_cat)
 
         # we don't need to check for random/stat cat since we already require them to be the same
         if "rc_has_stat" in event.tags:
@@ -801,8 +791,7 @@ class PatrolScreen(Screens):
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
                 print('counting')
-                if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
-                        or patrol.patrol_random_cat == patrol.patrol_leader:
+                if patrol.patrol_random_cat in (patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
                     if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
@@ -1144,7 +1133,8 @@ class PatrolScreen(Screens):
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.trait) +
                                                                           "\n" + str(self.selected_cat.skill) +
-                                                                          "\n" + str(self.selected_cat.experience_level),
+                                                                          "\n" + str(self.selected_cat.experience_level) +
+                                                                          (f' ({str(self.selected_cat.experience)})' if game.settings['showxp'] else ''),
                                                                           scale(pygame.Rect((600, 700), (400, 150))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_22_horizcenter_spacing_95"),

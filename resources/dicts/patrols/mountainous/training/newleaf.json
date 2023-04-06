@@ -57,7 +57,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
@@ -82,7 +82,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",

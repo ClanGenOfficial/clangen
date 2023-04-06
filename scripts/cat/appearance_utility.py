@@ -393,6 +393,8 @@ def init_sprite(cat):
 
 def init_scars(cat):
     if not cat.scars:
+        if cat.age == "newborn":
+            return
         scar_choice = randint(0, 15)
         if cat.age in ['kitten', 'adolescent']:
             scar_choice = randint(0, 50)
@@ -438,7 +440,6 @@ def init_pattern(cat):
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
-                print("WILDCARD TORTIE")
 
                 # Allow any pattern:
                 cat.tortiepattern = choice(tortiebases)

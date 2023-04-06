@@ -3,11 +3,7 @@ import pygame_gui
 
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError as e:
-    print(f"ERROR: {e}\nFailed to import ujson, saving may be slower.")
-    import json as ujson
+import ujson
 import os
 from ast import literal_eval
 
@@ -24,7 +20,6 @@ class Game():
     # max_relation_events_displayed = 10
     # relation_scroll_ct = 0
 
-    ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
     mediated = []  # Keep track of which couples have been mediated this moon.
 
     cur_events_list = []
@@ -184,6 +179,10 @@ class Game():
 
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
+
+        if self.config['fun']['april_fools']:
+            self.config['fun']['newborns_can_roam'] = True
+            self.config['fun']['newborns_can_patrol'] = True
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:

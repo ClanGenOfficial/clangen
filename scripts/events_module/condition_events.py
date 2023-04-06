@@ -1,7 +1,4 @@
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 import random
 from copy import deepcopy
 
@@ -320,13 +317,12 @@ class Condition_Events():
                         for x in conditions:
                             if x in scarless_conditions:
                                 possible_conditions.append(x)
-
-                        if len(possible_conditions) > 0 and not int(random.random() * 40):
+                        if len(possible_conditions) > 0 and not int(random.random() * game.config["condition_related"]["permanent_condition_chance"]):
                             perm_condition = random.choice(possible_conditions)
                         else:
                             return perm_condition
                 except KeyError:
-                    print(f"WARNING: {injury_name} couldn't be found in injury dict! no scar was given")
+                    print(f"WARNING: {injury_name} couldn't be found in injury dict! no permanent condition was given")
                     return perm_condition
 
         elif condition is not None:
@@ -350,7 +346,7 @@ class Condition_Events():
         illness_progression = {
             "running nose": "whitecough",
             "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
@@ -701,7 +697,6 @@ class Condition_Events():
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()
-                        game.ranks_changed_timeskip = True
                         event_list.append(event)
 
                 elif cat.permanent_condition[condition]['severity'] == 'severe':
@@ -727,7 +722,6 @@ class Condition_Events():
                                  f"of their contributions to {game.clan.name}Clan."
 
                     cat.retire_cat()
-                    game.ranks_changed_timeskip = True
                     event_list.append(event)
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
@@ -775,7 +769,7 @@ class Condition_Events():
                                 old_risk["chance"] = 0
                             else:
                                 old_risk['chance'] = risk["chance"] + 10
-                            print('RISK UPDATED', risk['chance'], old_risk['chance'])
+                            #print('RISK UPDATED', risk['chance'], old_risk['chance'])
 
                 med_cat = None
                 removed_condition = False

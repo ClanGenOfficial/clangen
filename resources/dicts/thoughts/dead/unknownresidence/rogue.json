@@ -1,0 +1,11 @@
+[{
+    "id": "general_rogue_dead_thoughts",
+    "thoughts": [
+        "Refuses to leave their territory",
+        "Thinks about how they defended their territory in life and laments that they cannot in death",
+        "Growls at a new cat entering their land"
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ]
+}]

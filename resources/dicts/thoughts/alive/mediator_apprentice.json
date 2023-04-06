@@ -1,0 +1,54 @@
+[
+    {
+        "id": "gen_mediator_apprentice",
+        "thoughts": [
+            "Is enjoying learning about mediating",
+            "Is learning how to deal with argumentative Clanmates",
+            "Is learning how to gently guide a cat into accepting a truth they don't like",
+            "Wishes they had learned to mediate arguments sooner",
+            "Wants their training to be completed already"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_mediator_app",
+        "thoughts": [
+            "Had an argument with another mediator apprentice"
+        ],
+        "random_status_constraint": [
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_mediator",
+        "thoughts": [
+            "Is amazed at how well r_c mediated a fight between Clanmates",
+            "Is amazed at how well r_c mediated a territory dispute",
+            "Is amazed at how r_c talked their way out of a potential war"
+        ],
+        "random_status_constraint": [
+            "mediator"
+        ]
+    },
+    {
+        "id": "mediator_app_alive_apprentice",
+        "thoughts": [
+            "Successfully solved an argument between their denmates",
+            "Tried to solve an argument between their denmates but only made it worse"
+        ],
+        "random_status_constraint": [
+            "mediator apprentice",
+            "apprentice",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "righteous_mediator_apprentice",
+        "thoughts": [
+            "Was scolded for taking sides in mediating arguments recently",
+            "Is being reminded to be neutral in mediation"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    }
+]

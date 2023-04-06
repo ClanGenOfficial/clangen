@@ -445,6 +445,10 @@ class EventsScreen(Screens):
         self.event_container.kill()
         self.make_events_container()
 
+        # Stop if clan is new, so that events from previously loaded clan don't show up
+        if game.clan.age == 0:
+            return
+
         # Make display, with buttons and all that.
         box_length = self.event_container.get_relative_rect()[2]
         i = 0
@@ -488,8 +492,8 @@ class EventsScreen(Screens):
 
                 y += 68/1600 * screen_y
                 i += 1
-
-
+            else:
+                print("Incorrectly formatted event:", ev.text, type(ev))
 
         # Set scrolling container length
         # This is a hack-y solution, but it was the easiest way to have the shading go all the way across the box
@@ -535,7 +539,7 @@ class EventsScreen(Screens):
                                       text=name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button", manager=MANAGER))
                     # There is only room for about four buttons.
-                    if i > 4:
+                    if i > 3:
                         break
                     i += 1
 
