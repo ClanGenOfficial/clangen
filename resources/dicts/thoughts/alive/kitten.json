@@ -1,4 +1,5 @@
 [
+
     {
         "id": "kit_dead_kit",
         "thoughts": [
@@ -6,18 +7,15 @@
         ],
         "random_status_constraint": [
             "kitten"
-        ],
-        "relationship_constraint": [
-            "stranger"
-        ],
-        "random_living_status": [
-            "starclan"
         ]
     },
     {
         "id": "kit_alive_elder",
         "thoughts": [
-            "Was nipped on the rump by an elder for being naughty"
+            "Was nipped on the rump by an elder for being naughty",
+            "Is listening intently to a elder's story",
+            "Is watching the elders",
+            "Is being scolded by a elder"
         ],
         "random_status_constraint": [
             "elder"
@@ -52,7 +50,13 @@
             "Is running like a whirlwind around the camp",
             "Is pretending to be the Clan leader",
             "Doesn't want to grow up yet...",
-            "Got in trouble for bringing thorns into the nest"
+            "Got in trouble for bringing thorns into the nest",
+            "Is curious to see what's beyond the camp walls",
+            "Is playing with their fresh-kill",
+            "Wonders what its like to be a warrior",
+            "Wonders what their warrior name would be",
+            "Is daydreaming about being the leader of their clan someday",
+            "Is thinking of their future"
         ]
     },
     {
@@ -81,6 +85,48 @@
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
+        ]
+    },
+    {
+        "id":"kit_alive_kit",
+        "thoughts":[
+            "Is playing tag with r_c",
+            "Is feeling a little mischievous and trying to playfully pounce on r_c",
+            "Teaches r_c how to play mossball",
+            "Is playing a game of Clans, and makes r_c deputy",
+            "Got in a kit squabble with r_c and has to apologize",
+            "Is rolling in the flowers with r_c",
+            "Got in trouble for accidentally hurting r_c while playfighting",
+            "Wants to stay up until moonhigh with r_c",
+            "Brags to r_c that their parents lets them roam outside the nursery freely",
+            "Is pretending to be a rogue and playfights with r_c",
+            "Bosses around the other kits as leader in a game of Clans",
+            "Pretends to die in a game of Clans, so r_c can be the leader!",
+            "Watches in jealousy as r_c gets a badger ride around the camp, wishing that they can join too.",
+            "Watches the other kits play hide and seek",
+            "Is chasing a butterfly with r_c",
+            "Feeling exhausted but happy after a long play session with r_c",
+            "Feeling a special bond and connection with r_c through playtime",
+            "Feeling comforted by r_c's presence when they're scared or upset"
+            
+        ],
+        "random_status_constraint":[
+            "kitten"
+        ]
+    },
+    {
+        "id":"kit_alive_apprentice",
+        "thoughts":[
+            "Was sneered at by a apprentice",
+            "Was made fun of when they entered the apprentice's den",
+            "Is watching the apprentices play",
+            "Is watching the apprentices chatting with eachother",
+            "Wins a playfight with r_c, and brags about it to their friends"
+        ],
+        "random_status_constraint":[
+            "medicine cat apprentice",
+            "apprentice",
+            "mediator apprentice"
         ]
     },
     {
@@ -129,30 +175,16 @@
         "thoughts": [
             "Thinks they saw a StarClan cat in their dreams",
             "Is mesmerized by the night sky",
-            "Thinks they're the leader of their own Clan",
+            "Thinks theyre the leader of their own clan",
             "Bosses around imaginary cats as deputy",
             "Wonders what it would be like to be leader",
             "Sorts blades of grass like a medicine cat would",
             "Stares into nothing in particular",
+            "Makes up a tale on the spot for the other kits",
             "Is annoying the elders for more tales"
         ],
         "main_trait_constraint": [
             "daydreamer"
-        ]
-    },
-    {
-        "id": "daydreamer_kit",
-        "thoughts": [
-            "Makes up a tale on the spot for the other kits"
-        ],
-        "main_trait_constraint": [
-            "daydreamer"
-        ],
-        "random_status_constraint":[
-            "kitten"
-        ],
-        "random_living_status":[
-            "alive"
         ]
     },
     {
@@ -234,4 +266,3 @@
         ]
     }
 ]
-
