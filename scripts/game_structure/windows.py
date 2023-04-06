@@ -379,9 +379,13 @@ class ChangeCatName(UIWindow):
                     self.the_cat.name.specsuffix_hidden = False
                 self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
             elif event.ui_element == self.random_prefix:
+                if self.suffix_entry_box.text:
+                    use_suffix = self.suffix_entry_box.text
+                else:
+                    use_suffix = self.the_cat.name.suffix
                 self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
-                                                    self.the_cat.name.suffix,
+                                                    use_suffix,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
@@ -390,8 +394,12 @@ class ChangeCatName(UIWindow):
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).prefix)
             elif event.ui_element == self.random_suffix:
+                if self.prefix_entry_box.text:
+                    use_prefix = self.prefix_entry_box.text
+                else:
+                    use_prefix = self.the_cat.name.prefix
                 self.suffix_entry_box.set_text(Name(self.the_cat.status,
-                                                    self.the_cat.name.prefix,
+                                                    use_prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,

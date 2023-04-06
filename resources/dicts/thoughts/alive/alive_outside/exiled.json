@@ -9,13 +9,14 @@
             "Catches a huge rat and wishes they could share it with their Clanmates",
             "Regrets what they have done",
             "Still doesn't understand why they were exiled",
-            "Yowls into the night, hoping for a response"
+            "Yowls into the night, hoping for a response",
+            "Sniffs for prey",
+            "Lingers around c_n's borders",
+            "Wonders if they should join another Clan",
+            "Explores the land outside c_n's territory"
         ],
         "main_status_constraint": [
             "exiled"
-        ],
-        "random_outside_status":[
-            "outside"
         ]
     }
 ]

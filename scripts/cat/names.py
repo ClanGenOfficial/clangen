@@ -70,8 +70,11 @@ class Name():
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
         
+        animals_look_again = False
         # Set prefix
         if prefix is None:
+            # needed for random dice double animal checks
+            animals_look_again = True
             named_after_appearance = not random.getrandbits(2)  # Chance for True is '1/4'
             named_after_biome = not random.getrandbits(3) # chance for True is 1/8
             # Add possible prefix categories to list.
@@ -95,6 +98,9 @@ class Name():
         # Set suffix
         while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in \
                 self.prefix.casefold() and not str(self.suffix) == '' or self.prefix == "Wet" and self.suffix == "back":
+            if not self.prefix:
+                # needed for random dice double animal checks
+                look_again = False
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
@@ -114,7 +120,8 @@ class Name():
                 else:
                     self.suffix = random.choice(self.names_dict["normal_suffixes"])
         
-        #Prevent triple letter names from joining prefix and suffix from occuring
+        # Prevent triple letter names from joining prefix and suffix from occuring
+        # Prevent double animal names (ex. Spiderfalcon)
         if self.suffix:
             possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])
 
@@ -132,6 +139,15 @@ class Name():
                     else:
                         triple_letter = False
                 MAX_ATTEMPT -= 1
+            
+            if not animals_look_again and self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
+                replace_suffix = [i for i in self.names_dict["normal_suffixes"] if i not in self.names_dict["animal_suffixes"]]
+                self.suffix = random.choice(replace_suffix)
+        
+        # this is mostly added for the name randomizer (double animal names)
+        if animals_look_again and self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
+            replace_prefix = [i for i in self.names_dict["normal_prefixes"] if i not in self.names_dict["animal_prefixes"]]
+            self.prefix = random.choice(replace_prefix)
 
     def __repr__(self):
         if self.status in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:

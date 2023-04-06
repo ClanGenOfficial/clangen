@@ -323,7 +323,6 @@ class Events():
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
-                # print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
@@ -687,7 +686,6 @@ class Events():
         # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                # print("Cat Died: " + str(cat.name))
                 cat.dead = True
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
@@ -1051,7 +1049,7 @@ class Events():
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            if cat.is_disabled():
+                            if cat.is_disabled() and not game.settings["retirement"]:
                                 for condition in cat.permanent_condition:
                                     if cat.permanent_condition[condition]["severity"] == "severe":
                                         cat.status = 'apprentice'
