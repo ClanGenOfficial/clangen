@@ -738,6 +738,10 @@ class Cat():
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
+            self.update_skill()
+            self.update_traits()
+            if self.experience < self.experience_levels_range["prepared"][0]:
+                self.experience = self.experience_levels_range["prepared"][0]
         elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
             involved_cats = [self.ID]
