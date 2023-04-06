@@ -2154,8 +2154,8 @@ class RelationshipScreen(Screens):
             name = short_name + '...'
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x, pos_y - 48),
-                                                                                         (204, 60))),
+                                                                                         (pos_x - 5, pos_y - 48),
+                                                                                         (215, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
