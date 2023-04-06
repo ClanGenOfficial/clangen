@@ -1119,6 +1119,7 @@ class ChooseMateScreen(Screens):
         self.mate_frame = None
         self.the_cat_frame = None
         self.info = None
+        self.all_pages = []
 
     def handle_event(self, event):
         """ Handles events. """
@@ -1155,10 +1156,10 @@ class ChooseMateScreen(Screens):
                 self.update_buttons()
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
-                self.update_cat_list()
+                self.update_cat_page()
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
-                self.update_cat_list()
+                self.update_cat_page()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1204,6 +1205,8 @@ class ChooseMateScreen(Screens):
         self.kitten_message = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 666), (1200, 80))),
                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"))
         self.kitten_message.hide()
+        
+        self.all_pages = []
 
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
@@ -1244,6 +1247,8 @@ class ChooseMateScreen(Screens):
         del self.toggle_mate
         self.kitten_message.kill()
         del self.kitten_message
+        
+        self.all_pages = []
 
     def update_current_cat_info(self):
         """Updates all elements with the current cat, as well as the selected cat.
@@ -1358,38 +1363,41 @@ class ChooseMateScreen(Screens):
         self.kitten_message.show()
 
     def update_cat_list(self):
+        """Gathers all the cats to list, then updates the page. Also 
+            sets the current page to 1. This should not be called when
+            switching the page, but only when a new list of cats needs
+            to be displayed. """
+        
         # If the cat already has a mate, we display the children. If not, we display the possible mates
-        all_pages = []
+        self.all_pages = []
         if self.selected_cat and self.the_cat.mate:
             self.kittens = False
             for x in game.clan.clan_cats:
-                if self.the_cat.ID in [
-                    Cat.all_cats[x].parent1,
-                    Cat.all_cats[x].parent2
-                ] and self.selected_cat.ID in [
-                    Cat.all_cats[x].parent1,
-                    Cat.all_cats[x].parent2
-                ]:
-                    all_pages.append(Cat.all_cats[x])
+                if self.the_cat.ID in Cat.all_cats[x].get_parents() and \
+                        self.selected_cat.ID in Cat.all_cats[x].get_parents():
+                    self.all_pages.append(Cat.all_cats[x])
                     self.kittens = True
         else:
-            all_pages = self.get_valid_mates()
+            self.all_pages = self.get_valid_mates()
 
-        all_pages = self.chunks(all_pages, 30)
+        self.all_pages = self.chunks(self.all_pages, 30)
 
-        # If the number of pages becomes smaller than the number of our current page, set
+        self.update_cat_page()
+
+    def update_cat_page(self):
+         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
-        if self.current_page > len(all_pages):
-            self.list_page = len(all_pages)
+        if self.current_page > len(self.all_pages):
+            self.current_page = len(self.all_pages)
 
         # Handle which next buttons are clickable.
-        if len(all_pages) <= 1:
+        if len(self.all_pages) <= 1:
             self.previous_page_button.disable()
             self.next_page_button.disable()
-        elif self.current_page >= len(all_pages):
+        elif self.current_page >= len(self.all_pages):
             self.previous_page_button.enable()
             self.next_page_button.disable()
-        elif self.current_page == 1 and len(all_pages) > 1:
+        elif self.current_page == 1 and len(self.all_pages) > 1:
             self.previous_page_button.disable()
             self.next_page_button.enable()
         else:
@@ -1397,7 +1405,7 @@ class ChooseMateScreen(Screens):
             self.next_page_button.enable()
 
         # Display the current page and total pages.
-        total_pages = len(all_pages)
+        total_pages = len(self.all_pages)
         if total_pages == 0:
             display_total_pages = 1
         else:
@@ -1405,7 +1413,7 @@ class ChooseMateScreen(Screens):
         self.page_number.set_text(f"page {self.current_page} / {display_total_pages}")
 
         if total_pages != 0:
-            display_cats = all_pages[self.current_page - 1]
+            display_cats = self.all_pages[self.current_page - 1]
         else:
             display_cats = []
 
@@ -1425,6 +1433,7 @@ class ChooseMateScreen(Screens):
                 pos_x = 0
                 pos_y += 120
             i += 1
+        
 
     def update_choose_mate(self, breakup=False):
         """This sets up the page for choosing a mate. Called when the current cat doesn't have a mate, or if
@@ -2154,8 +2163,8 @@ class RelationshipScreen(Screens):
             name = short_name + '...'
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x, pos_y - 48),
-                                                                                         (204, 60))),
+                                                                                         (pos_x - 5, pos_y - 48),
+                                                                                         (215, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
