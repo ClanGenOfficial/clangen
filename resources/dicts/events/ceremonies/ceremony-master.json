@@ -489,7 +489,7 @@
       "strict",
       "wise"
     ],
-    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} were still a kit!"
+    "m_c touches noses with {PRONOUN/m_c/poss} mentor, (mentor), looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} were still a kit!"
   ],
   "app_39": [
     [
@@ -721,7 +721,7 @@
       "clanborn",
       "all_traits"
     ],
-    "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor), but all {PRONOUN/m_c/subject} can think about is how much they wish that dead_par1 and dead_par2 were still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan."
+    "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor), but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that dead_par1 and dead_par2 were still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan."
   ],
   "app_58": [
     [
@@ -802,7 +802,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} can provide for {PRONOUN/m_c/poss} Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. (mentor) proudly becomes their mentor."
+    "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} can provide for {PRONOUN/m_c/poss} Clan. Instead, {PRONOUN/m_c/subject} have decided to serve {PRONOUN/m_c/poss} Clan by healing and communing with StarClan. (mentor) proudly becomes {PRONOUN/m_c/poss} mentor."
   ],
   "med_app_2": [
     [
@@ -813,7 +813,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Interested in herbs even in their {PRONOUN/m_c/poss}, m_c is eager to be apprenticed to (mentor)."
+    "Interested in herbs even in {PRONOUN/m_c/poss} kithood, m_c is eager to be apprenticed to (mentor)."
   ],
   "med_app_3": [
     [
@@ -869,7 +869,7 @@
       "nervous",
       "insecure"
     ],
-    "Worried they may not be good as a hunter or fighter, but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
+    "Worried {PRONOUN/m_c/subject} may not be good as a hunter or fighter, but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
   ],
   "med_app_8": [
     [
@@ -880,7 +880,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) stands before the Clan and announces that {PRONOUN/(mentor)/subject} won't be there forever, and it is time {PRONOUN/(mentor)/subject} took on an apprentice. They tell the Clan that {PRONOUN/(mentor)/subject} have chosen (prefix)kit, now m_c, to be {PRONOUN/(mentor)/poss} new apprentice."
+    "(mentor) stands before the Clan and announces that {PRONOUN/(mentor)/subject} won't be there forever, and it is time {PRONOUN/(mentor)/subject} took on an apprentice. {PRONOUN/(mentor)/subject/CAP} {VERB/(mentor)/tell/tells} the Clan that {PRONOUN/(mentor)/subject} {VERB/(mentor)/have/has} chosen (prefix)kit, now m_c, to be {PRONOUN/(mentor)/poss} new apprentice."
   ],
   "med_app_9": [
     [
@@ -891,7 +891,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) has no doubts in their mind of who {PRONOUN/(mentor)/poss} new apprentice will be. (prefix)kit has always been looking for an excuse to be in {PRONOUN/(mentor)/poss} den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c will be {PRONOUN/(mentor)/poss} apprentice, {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} m_c's eyes shining in delight and excitement, and knows {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} right in choosing {PRONOUN/m_c/object}."
+    "(mentor) has no doubts in {PRONOUN/(mentor)/poss} mind of who {PRONOUN/(mentor)/poss} new apprentice will be. (prefix)kit has always been looking for an excuse to be in {PRONOUN/(mentor)/poss} den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c will be {PRONOUN/(mentor)/poss} apprentice, {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} m_c's eyes shining in delight and excitement, and knows {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} right in choosing {PRONOUN/m_c/object}."
   ],
   "med_app_10": [
     [
@@ -1052,7 +1052,7 @@
       "general_backstory",
       "loving"
     ],
-    "m_c was never interested in fighting and decided to devote {PRONOUN/m_c/poss} life to healing and helping all kinds of cats in any way {PRONOUN/m_c/subject} can. (mentor) is almost awed when {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} the determination and love m_c feels for all the cats that they meet and is extremely proud to become {PRONOUN/(mentor)/poss} mentor."
+    "m_c was never interested in fighting and decided to devote {PRONOUN/m_c/poss} life to healing and helping all kinds of cats in any way {PRONOUN/m_c/subject} can. (mentor) is almost awed when {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} the determination and love m_c feels for all the cats that {PRONOUN/m_c/subject} {VERB/m_c/meet/meets} and is extremely proud to become {PRONOUN/(mentor)/poss} mentor."
   ],
   "med_app_25": [
     [
@@ -1270,7 +1270,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit always dreamed of becoming a mediator: Now that they're m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
+    "(prefix)kit always dreamed of becoming a mediator: Now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
   ],
   "med_0": [
     [
@@ -1906,7 +1906,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw has waited a long time for this day! Heart pounding, they listen intently as (previous_mentor) names them m_c after their r_h."
+    "(prefix)paw has waited a long time for this day! Heart pounding, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} intently as (previous_mentor) names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "med_52": [
     [
@@ -1918,7 +1918,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Inspired by (prefix)paw's r_h, (previous_mentor) names them m_c, and welcomes them as a full medicine cat."
+    "Inspired by (prefix)paw's r_h, (previous_mentor) names {PRONOUN/m_c/object} m_c, and welcomes {PRONOUN/m_c/object} as a full medicine cat."
   ],
   "warrior_0": [
     [
@@ -2122,7 +2122,7 @@
       "general_backstory",
       "careful"
     ],
-    "(prefix)paw sits neatly in front of l_n as they talk about how well (prefix)paw did in their assessment. They are named m_c after their r_h."
+    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/object} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_15": [
     [
@@ -2737,7 +2737,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As (prefix)paw has finished their mediator training, l_n gives them the name m_c after their r_h, welcoming them as the Clan's new mediator."
+    "As (prefix)paw has finished {PRONOUN/m_c/poss} mediator training, l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
   ],
   "mediator_4": [
     [
@@ -2748,7 +2748,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(previous_mentor) tells l_n that (prefix)paw has completed their mediator training, and l_n gives them the name m_c after their r_h, welcoming them as the Clan's new mediator."
+    "(previous_mentor) tells l_n that (prefix)paw has completed {PRONOUN/m_c/poss} mediator training, and l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
   ],
   "elder_0": [
     [
