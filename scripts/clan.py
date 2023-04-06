@@ -20,7 +20,7 @@ from scripts.datadir import get_save_dir
 import ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.version import get_version_info, VERSION_NAME
+from scripts.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
@@ -677,7 +677,7 @@ class Clan():
             "reputation": self.reputation,
             "mediated": game.mediated,
             "starting_season": self.starting_season,
-            "version_name": VERSION_NAME,
+            "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build
         }
