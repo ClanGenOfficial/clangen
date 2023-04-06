@@ -10,8 +10,8 @@
 
     ],
     "twisted leg": [
-        "r_c examines m_c as their parent holds them by the scruff, checking on a leg that is becoming twisted as the kit grows.",
-        "When m_c tries to toddle around, they seem to be slower than their siblings. A quick inspection reveals that one of their legs was born twisted and deformed, but they should find their footing in life soon enough."
+        "r_c examines m_c as {PRONOUN/m_c/poss} parent holds {PRONOUN/m_c/object} by the scruff, checking on a leg that is becoming twisted as the kit grows.",
+        "When m_c tries to toddle around, {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} to be slower than {PRONOUN/m_c/poss} siblings. A quick inspection reveals that one of {PRONOUN/m_c/poss} legs was born twisted and deformed, but {PRONOUN/m_c/subject} should find {PRONOUN/m_c/poss} footing in life soon enough."
 
     ],
     "born without a tail": [

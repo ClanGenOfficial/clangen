@@ -522,7 +522,7 @@ class Group_Events():
         """
         Injuring the cats based on the list of the injuries of the chosen group interaction.
         """
-        if len(self.chosen_interaction.get_injuries.items) <= 0:
+        if len(self.chosen_interaction.get_injuries.items()) <= 0:
             return
 
         for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
