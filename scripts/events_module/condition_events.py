@@ -769,7 +769,7 @@ class Condition_Events():
                                 old_risk["chance"] = 0
                             else:
                                 old_risk['chance'] = risk["chance"] + 10
-                            print('RISK UPDATED', risk['chance'], old_risk['chance'])
+                            #print('RISK UPDATED', risk['chance'], old_risk['chance'])
 
                 med_cat = None
                 removed_condition = False

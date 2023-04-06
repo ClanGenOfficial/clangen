@@ -169,10 +169,10 @@ class Events():
             insert = adjust_list_text(ghost_names)
 
             if len(Cat.dead_cats) > 1:
-                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
-                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
-                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
-                        f"resting place."
+                event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
+                        f"lives are shared in stories around the circle of mourners as those that were closest to them " \
+                        f"take them to their final resting place."
 
                 if len(ghost_names) > 2:
                     alive_cats = list(
@@ -323,7 +323,6 @@ class Events():
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
-                # print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
@@ -687,7 +686,6 @@ class Events():
         # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                # print("Cat Died: " + str(cat.name))
                 cat.dead = True
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
