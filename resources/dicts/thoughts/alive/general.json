@@ -431,7 +431,8 @@
             "Is staring off into space",
             "Is picking the burrs from their pelt",
             "Is sharpening their claws",
-            "Woke up on the wrong side of the nest"
+            "Woke up on the wrong side of the nest",
+            "Has been having a hard time getting their sleep schedule on track"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -499,7 +500,24 @@
             "Is daydreaming about having a mate and kits someday",
             "Had quite the adventure today",
             "Has been training very hard recently",
-            "Had a very strange dream"
+            "Had a very strange dream",
+            "Went too hard on other apprentices while training today",
+            "Annoyed their mentor pretty badly while on a patrol",
+            "Offered a helping hand in the elder's den without being told to!",
+            "Is getting picked on by one of the other apprentices",
+            "Is begging their mentor to go battle training",
+            "Is begging their mentor to go hunting training",
+            "Has been getting a lot of praise from their mentor lately",
+            "Is feeling out of place in the clan",
+            "Is trying to impress a certain warrior",
+            "Is nervous about the warrior assessment",
+            "Is wondering how other apprentices are so much better than them",
+            "Is struggling to sleep at night",
+            "Is frustrated by the way the other apprentices are behaving",
+            "Is worried about failing their assessment",
+            "Is feeling jealous of a fellow apprentices abilities",
+            "Has been given the task to help repair the elder's den",
+            "Has recently impressed the leader during a hunting competition"
         ],
         "main_status_constraint": [
             "apprentice",
