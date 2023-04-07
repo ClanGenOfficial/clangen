@@ -169,10 +169,10 @@ class Events():
             insert = adjust_list_text(ghost_names)
 
             if len(Cat.dead_cats) > 1:
-                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
-                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
-                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
-                        f"resting place."
+                event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
+                        f"lives are shared in stories around the circle of mourners as those that were closest to them " \
+                        f"take them to their final resting place."
 
                 if len(ghost_names) > 2:
                     alive_cats = list(
@@ -1723,7 +1723,6 @@ class Events():
         # check if clan has kits, if True then clan has kits
         alive_kits = get_alive_kits(Cat)
 
-        # chance to kill leader: 1/100
         # chance to kill leader: 1/100
         if not int(random.random() *
                    100) and cat.status == 'leader' and not cat.not_working():
