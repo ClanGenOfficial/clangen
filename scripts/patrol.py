@@ -11,7 +11,6 @@ from scripts.utility import (
     add_children_to_cat,
     event_text_adjust,
     change_clan_relations,
-    change_clan_reputation,
     change_relationship_values, create_new_cat,
     create_outside_cat
 )
@@ -788,7 +787,7 @@ class Patrol():
                 for tag in self.patrol_event.tags:
                     if "new_cat" in tag:
                         if antagonize:
-                            self.handle_reputation(-20)
+                            self.handle_reputation(-10)
                         else:
                             self.handle_reputation(10)
                         break
@@ -900,7 +899,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(-10)
+                        self.handle_reputation(-5)
                     else:
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
@@ -1859,7 +1858,7 @@ class Patrol():
         """
         if "no_change_fail_rep" in self.patrol_event.tags and not self.success:
             difference = 0
-        change_clan_reputation(difference)
+        game.clan.reputation += difference
         if difference > 0:
             insert = "improved"
         elif difference == 0:

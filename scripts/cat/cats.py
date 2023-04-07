@@ -734,18 +734,30 @@ class Cat():
             self.status_change('warrior')
         elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
+            
         elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
+            self.update_skill()
+            self.update_traits()
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
