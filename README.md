@@ -30,4 +30,4 @@ Run `pip install -r requirements.txt` to install dependencies.
 Run `python3 main.py`. If python3 does not exist try running `python main.py` instead.
 
 ### Bug Reporting
-If you're a Beta Tester, please report bugs using the approrate discord channels. Otherwise, if you enounter any bugs, we encourage reporting [using this form.](https://docs.google.com/forms/d/e/1FAIpQLSfl-H-HjSTfZ51DCtIHj8uGKtWF-3uysSaP8R6KMTLp7nzmMw/viewform)
+If you're a Beta Tester, please report bugs using the appropriate discord channels. Otherwise, if you enounter any bugs, we encourage reporting [using this form.](https://docs.google.com/forms/d/e/1FAIpQLSfl-H-HjSTfZ51DCtIHj8uGKtWF-3uysSaP8R6KMTLp7nzmMw/viewform)
