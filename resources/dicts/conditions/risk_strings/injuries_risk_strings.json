@@ -157,30 +157,30 @@
     },
     "shock": {
         "lingering shock": [
-            "r_c gives m_c the poppy seeds they ask for, to help them sleep, but it worries them that m_c's shock has lingered so long.",
-            "m_c wakes again from another nightmare, feeling adrenaline rush through their veins as they try not to bolt. It feels like days since they've been able to sleep through the night, and it's wearing them down."
+            "r_c gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for, to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c/object} that m_c's shock has lingered so long.",
+            "m_c wakes again from another nightmare, feeling adrenaline rush through {PRONOUN/m_c/poss} veins as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to bolt. It feels like days since {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been able to sleep through the night, and it's wearing {PRONOUN/m_c/object} down."
 
         ]
     },
     "shivering": {
         "frostbite": [
             "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
-            "m_c says that their extremities feel like they're being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
-            "The skin of m_c's extremities is a worrying black and blue, one of their friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
+            "m_c says that {PRONOUN/m_c/poss} extremities feel like they're being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
+            "The skin of m_c's extremities is a worrying black and blue, one of {PRONOUN/m_c/poss} friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
 
         ]
     },
     "dehydrated": {
         "heat exhaustion": [
             "r_c has managed to get some water into m_c, but m_c is showing signs of confusion and fatigue, clear indications of heat exhaustion.",
-            "m_c pants, helplessly searching for a cooler place to lie and nap. They feel utterly exhausted by this heat."
+            "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
 
         ]
     },
     "damaged eyes": {
         "an infected wound": [
-            "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to their protests. This infection needs to be stopped before it goes any further.",
-            "m_c can't open their eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
+            "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to {PRONOUN/m_c/poss} protests. This infection needs to be stopped before it goes any further.",
+            "m_c can't open {PRONOUN/m_c/poss} eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
 
         ]
     },
@@ -188,30 +188,30 @@
         "an infected wound": [
             "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found it's way in.",
             "The wounds left behind on m_c by the porcupine quills have become infected.",
-            "m_c is distraught to find that infection has set in on their quill wounds."
+            "m_c is distraught to find that infection has set in on {PRONOUN/m_c/poss} quill wounds."
         ]
     },
     "poisoned": {
         "redcough": [
-            "r_c watches as the inevitable happens and m_c begins to cough and choke on their own blood. The end is coming quickly for them.",
-            "m_c has been left weak and barely responsive from the poison, and now they've begun to choke up blood. That can't be a good sign.",
-            "m_c hacks and sputters on their own blood, they know the end is soon."
+            "r_c watches as the inevitable happens and m_c begins to cough and choke on {PRONOUN/m_c/poss} own blood. The end is coming quickly for {PRONOUN/m_c/object}.",
+            "m_c has been left weak and barely responsive from the poison, and now {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to choke up blood. That can't be a good sign.",
+            "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} the end is soon."
         ]
     },
     "broken back": {
         "an infected wound": [
-            "r_c does their best to further prop up m_c's body and feels growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
-            "m_c can smell the infection from their back and feels the fever coming over them, this injury feels less and less survivable with the day."
+            "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body and feels growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
+            "m_c can smell the infection from {PRONOUN/m_c/poss} back and feels the fever coming over {PRONOUN/m_c/object}, this injury feels less and less survivable with the day."
         ]
     },
     "head damage": {
         "headache": [
-            "r_c prepares a soothing mix of herbs for m_c, who has been complaining of head pain after their injury. ",
-            "m_c awakes with a dull, throbbing pain in their head. Their head injury doesn't appear to be healing as they hoped. "
+            "r_c prepares a soothing mix of herbs for m_c, who has been complaining of head pain after {PRONOUN/m_c/poss} injury. ",
+            "m_c awakes with a dull, throbbing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury doesn't appear to be healing as {PRONOUN/m_c/subject} hoped. "
         ],
         "severe headache": [
-            "m_c yowls with pain, begging r_c for any relief. The damage to their head must have been severe to cause such painful headaches. ",
-            "m_c can't focus on anything but the searing pain in their head. Their head injury must have rattled something deep in their skull."
+            "m_c yowls with pain, begging r_c for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches. ",
+            "m_c can't focus on anything but the searing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury must have rattled something deep in {PRONOUN/m_c/poss} skull."
         ]
     }
 }
