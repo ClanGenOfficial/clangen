@@ -65,7 +65,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was carried off by an eagle and never seen again.",
+        "death_text": "m_c was carried off by an eagle, never to be seen again.",
         "history_text": [null, "were carried away by an eagle"],
         "cat_trait": null,
         "cat_skill": null,
@@ -96,7 +96,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c fell into a hidden burrow and was buried alive.",
+        "death_text": "m_c fell into a hidden burrow and was buried alive, losing all their lives.",
         "history_text": [null, "fell into a hidden burrow"],
         "cat_trait": null,
         "cat_skill": null,
@@ -106,7 +106,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Green-leaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was buried alive when a burrow collapsed on them.",
+        "death_text": "m_c was buried alive when a burrow collapsed on them, losing all their lives.",
         "history_text": [null, "were buried alive by a collapsing burrow"],
         "cat_trait": null,
         "cat_skill": null,

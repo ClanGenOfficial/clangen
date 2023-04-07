@@ -2,7 +2,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall"],
-        "death_text": "Lightning struck in camp and m_c lost a life.",
+        "death_text": "Lightning struck in camp, and m_c lost a life.",
         "history_text": [null,"were struck by lightning"],
         "cat_trait": null,
         "cat_skill": null,
@@ -12,7 +12,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was mortally wounded by a fox.",
+        "death_text": "m_c was mortally wounded by a fox, and lost a life.",
         "history_text": [null, "were wounded by a fox"],
         "cat_trait": null,
         "cat_skill": null,
@@ -58,7 +58,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was bit by a venomous spider and lost a life.",
+        "death_text": "m_c was bit by a venomous spider, and lost a life.",
         "history_text": [null, "were bit by a venomous spider"],
         "cat_trait": null,
         "cat_skill": null,
@@ -68,7 +68,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was bit by a venomous snake and lost a life.",
+        "death_text": "m_c was bit by a venomous snake, and lost a life.",
         "history_text": [null, "were bit by a venomous snake"],
         "cat_trait": null,
         "cat_skill": null,
@@ -78,7 +78,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c ate tainted fresh-kill and lost a life.",
+        "death_text": "m_c ate tainted fresh-kill, and lost a life.",
         "history_text": [null, "ate tainted fresh-kill"],
         "cat_trait": null,
         "cat_skill": null,
@@ -88,7 +88,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c failed to interpret a warning sign from StarClan and lost a life as a result.",
+        "death_text": "m_c failed to interpret a warning sign from StarClan, and lost a life as a result.",
         "history_text": [null, "failed to interpret a warning from StarClan"],
         "cat_trait": null,
         "cat_skill": null,
@@ -162,7 +162,7 @@
     {
         "camp": "any",
         "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "neg_platonic", "neg_trust", "neg_comfort", "dislike", "neg_respect"],
-        "death_text": "m_c was pushed under a monster and lost a life",
+        "death_text": "m_c was pushed under a monster, and lost a life.",
         "history_text": [null, "were pushed under a monster"],
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
@@ -194,7 +194,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to a o_c apprentice.",
+        "death_text": "m_c lost a life to an apprentice from o_c.",
         "history_text": [null, "fought a o_c apprentice"],
         "cat_trait": null,
         "cat_skill": null,
@@ -205,7 +205,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "neutral", "ally", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life trying to save a o_c apprentice.",
+        "death_text": "m_c lost a life trying to save an apprentice from o_c.",
         "history_text": [null, "saved a o_c apprentice"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
@@ -216,7 +216,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to a o_c warrior.",
+        "death_text": "m_c lost a life to a warrior from o_c.",
         "history_text": [null, "fought a o_c warrior"],
         "cat_trait": null,
         "cat_skill": null,
@@ -227,7 +227,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life trying to save a o_c warrior.",
+        "death_text": "m_c lost a life trying to save a warrior from o_c.",
         "history_text": [null, "saved a o_c warrior"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
@@ -238,7 +238,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to the o_c leader.",
+        "death_text": "m_c lost a life to the leader of o_c.",
         "history_text": [null, "fought the o_c leader"],
         "cat_trait": null,
         "cat_skill": null,
@@ -249,7 +249,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life trying to save the o_c leader.",
+        "death_text": "m_c lost a life trying to save the leader of o_c.",
         "history_text": [null, "saved the o_c leader"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
@@ -260,7 +260,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life trying to save the o_c deputy.",
+        "death_text": "m_c lost a life trying to save the deputy of o_c.",
         "history_text": [null, "saved the o_c deputy"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
@@ -271,7 +271,7 @@
     {
         "camp": "any",
         "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to the o_c deputy.",
+        "death_text": "m_c lost a life to the deputy of o_c.",
         "history_text": [null, "fought the o_c deputy"],
         "cat_trait": null,
         "cat_skill": null,
@@ -292,7 +292,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c's body just couldn't continue forward, they've lost all their remaining lives to old age.",
+        "death_text": "m_c's body just couldn't continue forward - they've lost all of their remaining lives to old age.",
         "history_text": [null, "succumbed to old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -302,7 +302,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was brutally attacked by a rogue and lost all of their lives.",
+        "death_text": "m_c was brutally attacked by a rogue, and lost all of their lives.",
         "history_text": [null, "were brutally attacked by a rogue"],
         "cat_trait": null,
         "cat_skill": null,
@@ -313,7 +313,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was mauled by dogs and lost all of their lives.",
+        "death_text": "m_c was mauled by dogs, and lost all of their lives.",
         "history_text": [null, "were mauled by dogs"],
         "cat_trait": null,
         "cat_skill": null,
@@ -334,7 +334,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "hostile", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was brutally murdered by a o_c warrior who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by a warrior from o_c, who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by a o_c warrior"],
         "cat_trait": null,
         "cat_skill": null,
@@ -345,7 +345,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "hostile", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was brutally murdered by the o_c leader who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by the leader of o_c, who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by the o_c leader"],
         "cat_trait": null,
         "cat_skill": null,
@@ -356,7 +356,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "other_clan", "hostile", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was brutally murdered by the o_c deputy who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by the deputy of o_c, who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by the o_c deputy"],
         "cat_trait": null,
         "cat_skill": null,
@@ -367,7 +367,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "other_cat_dep", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "jealousy", "neg_platonic"],
-        "death_text": "m_c was murdered by r_c in cold blood with the intention of taking their place.",
+        "death_text": "m_c was murdered by r_c in cold blood, with the intention of taking their place.",
         "history_text": [null, "were murdered by r_c"],
         "cat_trait": null,
         "cat_skill": null,
@@ -378,7 +378,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_dep", "multi-death", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "mc_to_rc", "neg_platonic", "neg_respect", "neg_trust", "dislike"],
-        "death_text": "m_c was murdered by r_c with the intention of taking their place, but r_c miscalculated how many lives m_c had left!  m_c retaliated and killed r_c in self defense.",
+        "death_text": "m_c was murdered by r_c, with the intention of taking their place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
         "history_text": [null, "r_c was killed by m_c in self defense"],
         "cat_trait": null,
         "cat_skill": ["great fighter", "excellent fighter"],
@@ -389,7 +389,7 @@
     {
         "camp": "any",
         "tags": ["classic", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life from greencough.",
+        "death_text": "m_c lost a life to greencough.",
         "history_text": [null, "contracted greencough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -399,7 +399,7 @@
     {
         "camp": "any",
         "tags": ["classic", "some_lives", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c caught greencough and died more than once despite the efforts of StarClan.",
+        "death_text": "m_c caught greencough, and died more than once, despite the efforts of StarClan.",
         "history_text": [null, "contracted greencough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -409,7 +409,7 @@
     {
         "camp": "any",
         "tags": ["classic", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life from whitecough.",
+        "death_text": "m_c lost a life to whitecough.",
         "history_text": [null, "contracted whitecough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -419,7 +419,7 @@
     {
         "camp": "any",
         "tags": ["classic", "some_lives", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c caught whitecough and died more than once despite the efforts of StarClan.",
+        "death_text": "m_c caught whitecough, and died more than once, despite the efforts of StarClan.",
         "history_text": [null, "contracted whitecough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -429,7 +429,7 @@
     {
         "camp": "any",
         "tags": ["classic", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life from yellowcough.",
+        "death_text": "m_c lost a life to yellowcough.",
         "history_text": [null, "contracted yellowcough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -439,7 +439,7 @@
     {
         "camp": "any",
         "tags": ["classic", "some_lives", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c caught yellowcough and died more than once despite the efforts of StarClan.",
+        "death_text": "m_c caught yellowcough, and died more than once, despite the efforts of StarClan.",
         "history_text": [null, "contracted yellowcough"],
         "cat_trait": null,
         "cat_skill": null,
@@ -469,7 +469,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c collapses in the midst of camp and loses their remaining lives to old age.",
+        "death_text": "m_c collapses in the midst of camp, losing their remaining lives to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -479,7 +479,7 @@
     {
         "camp": "any",
         "tags": ["old_age",  "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "One day the deputy finds m_c dead in the leader's den, it seems they lost a life to old age.",
+        "death_text": "One day, the deputy finds m_c dead in the leader's den, and experiences several fear-filled moments before m_c rises again. Seems they lost a life to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -489,7 +489,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "One day m_c is found dead in the leader's den, it seems they lost the rest of their lives to old age.",
+        "death_text": "One day, m_c is found dead in the leader's den, never to rise again. Seems they lost the rest of their lives to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,

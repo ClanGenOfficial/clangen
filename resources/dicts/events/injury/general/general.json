@@ -9,7 +9,7 @@
             "scar",
             "SNAKE"
         ],
-        "event_text": "m_c was bitten by a snake and miraculously survived!",
+        "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "history_text": [
             "m_c was scarred by a snake bite.",
             "m_c died after they were bit by a snake.",
@@ -28,7 +28,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c didn't look where they were going and tripped over a small trunk, gaining a few bruises.",
+        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, gaining a few bruises.",
         "history_text": [
             null,
             null,
@@ -66,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and their leg was dislocated.",
+        "event_text": "m_c slipped on some rocks and dislocated their leg.",
         "history_text": [
             null,
             null,
@@ -85,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and they twisted their paw.",
+        "event_text": "m_c slipped on some rocks and twisted their paw.",
         "history_text": [
             null,
             null,
@@ -142,7 +142,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c didn't look where they were going and tripped over a small trunk, spraining their paw.",
+        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, spraining their paw.",
         "history_text": [
             null,
             null,
@@ -196,7 +196,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "event_text": "The weather has been cold and dry, m_c's paw pads have cracked as a result.",
+        "event_text": "The weather has been cold and dry, and m_c's paw pads have cracked as a result.",
         "history_text": [
             null,
             null,
@@ -234,7 +234,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overexerted themselves and is feeling extremely sore.",
+        "event_text": "m_c overexerted themself, and is feeling extremely sore.",
         "history_text": [
             null,
             null,
@@ -378,7 +378,7 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c got their paw stuck in a Twoleg trap and while they eventually escaped, their leg is heavily injured.",
+        "event_text": "m_c got their paw stuck in a Twoleg trap, and while they eventually escaped, their leg is heavily injured.",
         "history_text": [
             "m_c was scarred by a Twoleg trap.",
             "m_c died from their injuries caused by a Twoleg trap.",
@@ -674,49 +674,35 @@
      
      },
     {
-   "injury": "headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
-
-},
-{
-   "injury": "severe headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a splitting headache, and could not get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
-
-}
-
-     
+       "injury": "headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    },
+    {
+       "injury": "severe headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    }
 ]

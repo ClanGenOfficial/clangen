@@ -38,9 +38,9 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
+        "event_text": "m_c was injured recklessly fighting a rogue that their mentor, r_c, encouraged them to attack.",
         "history_text": [
-            "m_c was scarred recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
+            "m_c was scarred recklessly fighting a rogue that their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a rogue.",
             null
         ],
@@ -67,9 +67,9 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
+        "event_text": "m_c was injured recklessly fighting an enemy warrior that their mentor, r_c, encouraged them to attack.",
         "history_text": [
-            "m_c was scarred recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
+            "m_c was scarred recklessly fighting an enemy warrior that their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight an enemy warrior.",
             null
         ],
@@ -96,9 +96,9 @@
             "scar",
             "LEGBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
+        "event_text": "m_c was injured recklessly fighting a dog that their mentor, r_c, encouraged them to attack.",
         "history_text": [
-            "m_c was scarred recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
+            "m_c was scarred recklessly fighting a dog that their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a dog.",
             null
         ],
@@ -125,9 +125,9 @@
             "scar",
             "LEGBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
+        "event_text": "m_c was injured recklessly fighting a fox that their mentor, r_c, encouraged them to attack.",
         "history_text": [
-            "m_c was scarred recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
+            "m_c was scarred recklessly fighting a fox that their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a fox.",
             null
         ],
@@ -298,7 +298,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
+        "event_text": "m_c could not handle their mentor's harsh training, and was injured as a result.",
         "history_text": [
             "m_c was scarred by their mentor's harsh training.",
             "m_c died from wounds caused by their mentor's harsh training.",
@@ -317,7 +317,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress their mentor, but were a bit too rough with their body and have the bruises to show it.",
+        "event_text": "m_c trained extra hard to impress their mentor, but were a bit too rough with their body, and have the bruises to show it.",
         "history_text": [
             null,
             null,
@@ -336,7 +336,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c took a tumble off a rock while practicing their battle moves. They'll be tender for the next few days.",
+        "event_text": "m_c took a tumble off a rock while practicing their battle moves. They'll be a bit tender for the next few days.",
         "history_text": [
             null,
             null,
@@ -355,13 +355,51 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was practicing their hunting pounce when they pounced right into a rock! Ow, they might be sore for a while.",
+        "event_text": "m_c was practicing their hunting pounce when they pounced right into a rock! Ow! They might be sore for a while.",
         "history_text": [
             null,
             null,
             null
         ],
         "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bruises",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c overdid their last battle training session, and has been wincing all day. Seems they're a bit bruised.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "scrapes",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c overdid their last battle training session, and has been wincing all day. Seems they're a bit scraped up.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -393,13 +431,32 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was rushing around the camp in excitement for a patrol when their paw landed wrong on a rock! They took a tumble and can't help limping the rest of the day.",
+        "event_text": "m_c was rushing around the camp in excitement for a patrol when their paw landed wrong on a rock! They took a tumble, and can't help limping the rest of the day.",
         "history_text": [
             null,
             null,
             null
         ],
         "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c overdid their last battle training session and sprained a paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -546,7 +603,7 @@
             "scar",
             "RIGHTEAR"
         ],
-        "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out and m_c was hurt.",
+        "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out, and m_c got hurt.",
         "history_text": [
             "m_c was scarred while practicing battle moves with r_c.",
             "m_c died from their wounds after r_c insisted on practicing with their claws out.",
@@ -633,7 +690,7 @@
             "scar",
             "BELLY"
         ],
-        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
+        "event_text": "m_c could not handle their mentor's harsh training, and was injured as a result.",
         "history_text": [
             "m_c was scarred by their mentor's harsh training.",
             "m_c died after their were injured by their mentor's harsh training.",
