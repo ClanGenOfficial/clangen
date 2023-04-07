@@ -33,6 +33,8 @@ class ClanScreen(Screens):
         self.med_den_label = None
         self.leader_den_label = None
         self.warrior_den_label = None
+        self.num_moons = None
+        self.curr_season = None
         self.layout = None
 
     def on_use(self):
@@ -83,7 +85,7 @@ class ClanScreen(Screens):
             self.layout = game.clan.layouts["default"]
 
         self.choose_cat_positions()
-
+        
         self.set_disabled_menu_buttons(["clan_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
@@ -111,6 +113,55 @@ class ClanScreen(Screens):
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
+                    
+        # Display number of moons
+        # Display season
+        if game.clan.age == 1:
+            moons_text = 'moon'
+        else:
+            moons_text = 'moons'
+        self.num_moons = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((50, 190), (310, 60))),
+            manager=MANAGER
+        )
+        self.num_moons_moon = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 5), (50, 50))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/icon_moon.png'),
+                (40, 40)),
+            container = self.num_moons)
+        self.num_moons_text = pygame_gui.elements.UITextBox(
+            f'{game.clan.age} {moons_text}',
+            scale(pygame.Rect((55, 0), (250, 60))),
+            container = self.num_moons,
+            manager=MANAGER,
+            object_id="#text_box_30_horizleft_light")
+            
+        if game.clan.current_season == 'Newleaf':
+            season_icon = 'resources/images/icon_newleaf.png'
+        elif game.clan.current_season == 'Greenleaf':
+            season_icon = 'resources/images/icon_greenleaf.png'
+        elif game.clan.current_season == 'Leaf-bare':
+            season_icon = 'resources/images/icon_leafbare.png'
+        elif game.clan.current_season == 'Leaf-fall':
+            season_icon = 'resources/images/icon_leaffall.png'
+        
+        self.curr_season = pygame_gui.elements.UIScrollingContainer(
+                    scale(pygame.Rect((50, 255), (310, 60))),
+                    manager=MANAGER
+                )        
+        self.num_moons_moon = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((0, 5), (50, 50))),
+            pygame.transform.scale(
+                image_cache.load_image(season_icon),
+                (40, 40)),
+            container = self.curr_season)
+        self.num_moons_text = pygame_gui.elements.UITextBox(
+            f'{game.clan.current_season}',
+            scale(pygame.Rect((55, 0), (250, 60))),
+            container = self.curr_season,
+            manager=MANAGER,
+            object_id="#text_box_30_horizleft_light")
 
         # Den Labels
         # Redo the locations, so that it uses layout on the clan page
@@ -184,6 +235,10 @@ class ClanScreen(Screens):
         self.cat_buttons = []
 
         # Kill all other elements, and destroy the reference so they aren't hanging around
+        self.num_moons.kill()
+        del self.num_moons
+        self.curr_season.kill()
+        del self.curr_season
         self.save_button.kill()
         del self.save_button
         self.save_button_saved_state.kill()
