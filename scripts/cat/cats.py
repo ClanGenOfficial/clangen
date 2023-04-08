@@ -565,7 +565,7 @@ class Cat():
         if game.clan.game_mode != 'classic':
             self.grief(body)
 
-        if not self.outside or self.exiled:
+        if not self.outside:
             Cat.dead_cats.append(self)
 
         return text
@@ -735,21 +735,32 @@ class Cat():
 
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
-            self.status = 'warrior'
         elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
+            
         elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
+            self.update_skill()
+            self.update_traits()
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
@@ -821,7 +832,6 @@ class Cat():
             self.update_mentor()
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -848,7 +858,6 @@ class Cat():
             self.retired = True
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -1075,9 +1084,11 @@ class Cat():
                     other_cat = None
                     break
         # for cats currently outside
+        # it appears as for now, kittypets and loners can only think about outsider cats
         elif where_kitty == 'outside':
             while other_cat == self.ID and len(all_cats) > 1\
             or (other_cat not in self.relationships):
+                '''or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):'''
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
                 if i > 100:
@@ -2092,12 +2103,8 @@ class Cat():
         # TODO: redo this for poly mates?
         if for_patrol:
             if len(self.mate) > 0 or len(other_cat.mate) > 0:
-                if not for_love_interest:
+                if not for_love_interest or not affair:
                     return False
-                elif not affair:
-                    return False
-                else:
-                    return True
         else:
             if len(self.mate) > 0 or len(other_cat.mate) > 0 and not for_love_interest:
                 return False

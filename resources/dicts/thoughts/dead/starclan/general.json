@@ -36,6 +36,12 @@
             "Is chattering at the birds in StarClan",
             "Is chasing rabbits in StarClan",
             "Can feel some cat forgetting them..."
+        ],
+        "random_living_status":[
+            "living",
+            "starclan",
+            "darkforest",
+            "unknownresidence"
         ]
     },
     {
@@ -291,9 +297,7 @@
         "thoughts": [
             "Is trying to mediate StarClan cats' squabbles",
             "Wishes they could help resolve the Clan's issues",
-            "Is watching the Clans for any signs of discord",
-            "Thinks c_n and o_c_n relations might improve",
-            "Thinks c_n and o_c_n relations might worsen"
+            "Is watching the Clans for any signs of discord"
         ],
         "main_status_constraint": [
             "mediator",

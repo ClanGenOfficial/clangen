@@ -322,7 +322,7 @@ class Condition_Events():
                         else:
                             return perm_condition
                 except KeyError:
-                    print(f"WARNING: {injury_name} couldn't be found in injury dict! no scar was given")
+                    print(f"WARNING: {injury_name} couldn't be found in injury dict! no permanent condition was given")
                     return perm_condition
 
         elif condition is not None:
@@ -769,7 +769,7 @@ class Condition_Events():
                                 old_risk["chance"] = 0
                             else:
                                 old_risk['chance'] = risk["chance"] + 10
-                            print('RISK UPDATED', risk['chance'], old_risk['chance'])
+                            #print('RISK UPDATED', risk['chance'], old_risk['chance'])
 
                 med_cat = None
                 removed_condition = False

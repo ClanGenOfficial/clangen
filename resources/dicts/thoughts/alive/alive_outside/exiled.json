@@ -5,7 +5,11 @@
             "Wishes they could atone for their mistakes",
             "Curses c_n for driving them out",
             "Found a nice, dry den",
-            "Heard a rumor of hostile rogues in the area"
+            "Heard a rumor of hostile rogues in the area",
+            "Sniffs for prey",
+            "Lingers around c_n's borders",
+            "Wonders if they should join another Clan",
+            "Explores the land outside c_n's territory"
         ],
         "main_status_constraint": [
             "exiled"

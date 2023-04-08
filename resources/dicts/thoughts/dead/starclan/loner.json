@@ -1,0 +1,12 @@
+[{
+    "id": "general_loner_dead_thoughts",
+    "thoughts": [
+        "Wonders how they ended up here",
+        "Admires their starry fur",
+        "Hunts for star-speckled prey",
+        "Enjoys the warm sun against their back"
+    ],
+    "main_status_constraint": [
+        "loner"
+    ]
+}]

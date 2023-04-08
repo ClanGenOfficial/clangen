@@ -7,7 +7,7 @@ import ujson
 
 from re import sub
 from scripts.cat.cats import Cat
-from scripts.version import VERSION_NAME
+from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
@@ -506,12 +506,13 @@ def version_convert(version_info):
     if version_info is None:
         return
     
-    if version_info["version_name"] == VERSION_NAME:
+    if version_info["version_name"] == SAVE_VERSION_NUMBER:
         # Save was made on current version
         return
     
     if version_info["version_name"] is None:
         # Save was made before version number stoage was implemented. 
+        # (ie, save file version 0)
         # This means the EXP must be adjusted. 
         for c in Cat.all_cats.values():
             c.experience = c.experience * 3.2

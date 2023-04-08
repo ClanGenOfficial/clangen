@@ -681,7 +681,7 @@
       "apprentice",
       "yes_mentor",
       "yes_leader_mentor",
-      "dead1_parents",
+      "dead2_parents",
       "general_leader",
       "general_backstory",
       "all_traits"
@@ -2585,25 +2585,25 @@
     [
       "warrior",
       "prepared",
-      "yes_mentor",
+      "alive_mentor",
       "general_parents",
       "no_leader",
       "general_backstory",
       "all_traits"
     ],
-    "Leader or no leader, c_n needs more warriors, and (prefix)paw has been working incredibly hard lately. The Clan agrees that they should be made a warrior. They gather around the apprentice, and (mentor) is nudged forward to do the honor of giving them their name. Purring in pride for their apprentice, (mentor) rests their muzzle on (prefix)paw's head, and names them m_c, honoring their r_h."
+    "Leader or no leader, c_n needs more warriors, and (prefix)paw has been working incredibly hard lately. The Clan agrees that they should be made a warrior. They gather around the apprentice, and (previous_mentor) is nudged forward to do the honor of giving them their name. Purring in pride for their apprentice, (previous_mentor) rests their muzzle on (prefix)paw's head, and names them m_c, honoring their r_h."
   ],
   "warrior_53": [
     [
       "warrior",
       "prepared",
-      "yes_mentor",
+      "alive_mentor",
       "general_parents",
       "no_leader",
       "general_backstory",
       "all_traits"
     ],
-    "They don't care if there's no leader, (mentor) knows that (prefix)paw is deserving of their full name. They gather the Clan themself to hold a ceremony for (prefix)paw, and name them m_c, honoring their r_h."
+    "They don't care if there's no leader, (previous_mentor) knows that (prefix)paw is deserving of their full name. They gather the Clan themself to hold a ceremony for (prefix)paw, and name them m_c, honoring their r_h."
   ],
   "warrior_54": [
     [

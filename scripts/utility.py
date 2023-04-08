@@ -185,19 +185,6 @@ def get_current_season():
     return game.clan.current_season
 
 
-def change_clan_reputation(difference=0):
-    """
-    will change the clan's reputation with outsider cats according to the difference parameter.
-    """
-    # grab rep
-    reputation = int(game.clan.reputation)
-    # ensure this is an int value
-    difference = int(difference)
-    # change rep
-    reputation += difference
-    game.clan.reputation = reputation
-
-
 def change_clan_relations(other_clan, difference=0):
     """
     will change the clan's relation with other clans according to the difference parameter.
@@ -288,7 +275,6 @@ def create_new_cat(Cat,
 
     # cat creation and naming time
     for index in range(number_of_cats):
-
         # setting gender
         if not gender:
             _gender = choice(['female', 'male'])
@@ -346,8 +332,6 @@ def create_new_cat(Cat,
         if accessory:
             new_cat.accessory = accessory
 
-
-
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
             new_cat.update_mentor()
@@ -369,27 +353,35 @@ def create_new_cat(Cat,
                 possible_conditions = []
                 for condition in PERMANENT:
                     if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
-                        print(condition)
+                        continue
+                    # next part ensures that a kit won't get a condition that takes too long to reveal
+                    age = new_cat.moons
+                    leeway = 5 - (PERMANENT[condition]['moons_until'] + 1)
+                    if age > leeway:
                         continue
                     possible_conditions.append(condition)
-                print(possible_conditions)
-                chosen_condition = choice(possible_conditions)
-                born_with = False
-                if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
-                    born_with = True
+                # print(possible_conditions, str(new_cat.name), new_cat.moons)
 
-                new_cat.get_permanent_condition(chosen_condition, born_with)
+                if possible_conditions:
+                    chosen_condition = choice(possible_conditions)
+                    born_with = False
+                    if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
+                        born_with = True
 
-                # assign scars
-                if chosen_condition in ['lost a leg', 'born without a leg']:
-                    new_cat.scars.append('NOPAW')
-                elif chosen_condition in ['lost their tail', 'born without a tail']:
-                    new_cat.scars.append("NOTAIL")
+                    new_cat.get_permanent_condition(chosen_condition, born_with)
+                    if new_cat.permanent_condition[chosen_condition]["moons_until"] == 0:
+                        new_cat.permanent_condition[chosen_condition]["moons_until"] = -2
+
+                    # assign scars
+                    if chosen_condition in ['lost a leg', 'born without a leg']:
+                        new_cat.scars.append('NOPAW')
+                    elif chosen_condition in ['lost their tail', 'born without a tail']:
+                        new_cat.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.die()
+            new_cat.dead = True
 
         # newbie thought
         new_cat.thought = thought

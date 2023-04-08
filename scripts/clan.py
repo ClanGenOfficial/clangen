@@ -20,7 +20,7 @@ from scripts.datadir import get_save_dir
 import ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.version import get_version_info, VERSION_NAME
+from scripts.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
@@ -561,8 +561,6 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
-            if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
-                cat.suffix = ''
 
     def add_to_darkforest(self, cat):  # Same as add_cat
         """
@@ -680,7 +678,7 @@ class Clan():
             "reputation": self.reputation,
             "mediated": game.mediated,
             "starting_season": self.starting_season,
-            "version_name": VERSION_NAME,
+            "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build
         }
@@ -1331,7 +1329,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(self._reputation + a)
+        self._reputation = int(a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

@@ -1,4 +1,5 @@
 import os
+import traceback
 from random import choice
 
 import ujson
@@ -69,23 +70,23 @@ class Thoughts():
             return False
 
         # This is for filtering certain relationship types between the main cat and random cat. 
-        if "relationship_constraint" in thought:
+        if "relationship_constraint" in thought and random_cat:
             if not Thoughts.thought_fulfill_rel_constraints(main_cat, random_cat, thought["relationship_constraint"]):
                 return False
 
-        # Contraints for the status of the main cat
+        # Constraints for the status of the main cat
         if 'main_status_constraint' in thought:
             if main_cat.status not in thought['main_status_constraint'] and 'any' not in thought['main_status_constraint']:
                 return False
             
-        # Contraints for the status of the random cat
+        # Constraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
             if random_cat.status not in thought['random_status_constraint'] and 'any' not in thought['random_status_constraint']:
                 return False
         elif 'random_status_constraint' in thought and not random_cat:
             pass
 
-        # main cat age contraint
+        # main cat age constraint
         if 'main_age_constraint' in thought:
             if main_cat.age not in thought['main_age_constraint']:
                 return False
@@ -105,6 +106,7 @@ class Thoughts():
         if 'main_skill_constraint' in thought:
             if main_cat.skill not in thought['main_skill_constraint']:
                 return False
+            
         if 'random_skill_constraint' in thought and random_cat:
             if random_cat.skill not in thought['random_skill_constraint']:
                 return False
@@ -119,7 +121,7 @@ class Thoughts():
         # is taken into account in the thought loading process.
         living_status = None
         outside_status = None
-        if 'random_living_status' in thought:
+        if random_cat and 'random_living_status' in thought:
             if random_cat and not random_cat.dead:
                 living_status = "living"
             elif random_cat and random_cat.dead and random_cat.df:
@@ -130,7 +132,7 @@ class Thoughts():
                 living_status = 'unknownresidence'
             if living_status and living_status not in thought['random_living_status']:
                 return False
-        
+
         # this covers if living status isn't stated
         else:
             living_status = None
@@ -138,25 +140,29 @@ class Thoughts():
                 living_status = "living"
             if living_status and living_status != "living":
                 return False
-            
-        if 'random_outside_status' in thought:
+        
+        if random_cat and 'random_outside_status' in thought:
+            outside_status = None
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
-                outside_status = "outside cat"
+                outside_status = "outside"
             else:
                 outside_status = "clancat"
-            if outside_status and outside_status not in thought['random_outside_status']:
+            if outside_status not in thought['random_outside_status']:
                 return False
         else:
             if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
             elif random_cat and random_cat.outside:
-                outside_status = "outside cat"
+                outside_status = "outside"
             else:
                 outside_status = "clancat"
-            if outside_status and outside_status != 'clancat':
-                return False
+            if main_cat.outside: # makes sure that outsiders can get thoughts all the time
+                pass
+            else:
+                if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
+                    return False
 
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
@@ -177,7 +183,7 @@ class Thoughts():
                 if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
                     or not [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
-                
+        
         return True
     # ---------------------------------------------------------------------------- #
     #                            BUILD MASTER DICTIONARY                           #
@@ -204,6 +210,8 @@ class Thoughts():
             status = "mediator_apprentice"
         elif status == "medicine cat":
             status = "medicine_cat"
+        elif status == 'former Clancat':
+            status = 'former_Clancat'
 
         if not main_cat.dead:
             life_dir = "alive"
@@ -242,7 +250,8 @@ class Thoughts():
         try:
             chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
             chosen_thought = choice(chosen_thought_group["thoughts"])
-        except:
+        except Exception:
+            traceback.print_exc()
             chosen_thought = "No thoughts, head empty"
 
         return chosen_thought

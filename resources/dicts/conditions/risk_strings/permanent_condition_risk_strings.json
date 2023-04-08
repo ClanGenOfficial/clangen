@@ -150,11 +150,11 @@
         ]
     },
     "persistent headaches": {
-        "headaches": [
+        "headache": [
             "m_c's headaches have plagued them particularly badly this moon, and r_c is running low on their pain-relieving mixture, having used so much up in keeping m_c feeling able.",
             "m_c growls as another wave of head pain hits them. It's on-and-off, and herbs have been helping, but StarClan help them, having so many headaches gets annoying."
         ],
-        "severe headaches": [
+        "severe headache": [
             "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for them in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. They curl up as tightly in their nest as they can, screwing their eyes shut and flattening their ears. There's no way they'll get work done today."
         ]

@@ -58,16 +58,52 @@
             "Heard about a strange Clan in the alleyways in the housefolk city ",
             "Is proud of their large belly",
             "Was lounging on their fence, looking at the wild beyond",
-            "Can't seem to scratch a certain spot on their neck thanks to their collar"
+            "Can't seem to scratch a certain spot on their neck thanks to their collar",
+            "Just saw a flaming ball in the sky! They hope it doesn't hit somebody nearby",
+            "Bit their housefolk who tried to pet them",
+            "Is throwing a hissy fit at the vet",
+            "Doesn't want to go to the vet",
+            "Is hiding under the bed",
+            "Is lying about whether they've been fed",
+            "Is stuck with a cone of shame",
+            "Is showing their belly to a housefolk... but it's a trap",
+            "Is showing their belly to a housefolk and it's not a trap",
+            "Had a weird dream recently and wonders what it means",
+            "Was naughty, but their housefolk can't stay mad at them",
+            "Is getting yelled at for being naughty",
+            "Doesn't understand why their housefolk is mad at them"
         ],
         "main_status_constraint": [
             "kittypet"
         ]
     },
     {
+        "id": "kittypet_shameless_thoughts",
+        "thoughts":[
+            "Stole food the second their housefolk turned their head",
+            "Is sleeping in the dog's bed",
+            "Is inside a twoleg den that's not theirs",
+            "Is pretending to be a hungry loner to get more food"
+        ],
+        "main_status_constraint":[
+            "kittypet"
+        ],
+        "main_trait_constraint":[
+            "shameless"
+        ]
+    },
+    {
         "id": "kittypet_kitten_and_adolescent_thoughts",
         "thoughts": [
-            "Is currently trying to figure out how to catch a bird"
+            "Is currently trying to figure out how to catch a bird",
+            "Plays with a crinkly ball",
+            "Plays with a toy mouse",
+            "Looks out the window at the birds",
+            "Chatters at the birds outside",
+            "Wonders if they could survive in the wild",
+            "Tries to look cute for the housefolk's kits",
+            "Mumble at annoyance when their housefolk won't let them go outside",
+            "Wonders if their littermates are nearby"
         ],
         "main_status_constraint": [
             "kittypet"
@@ -123,7 +159,7 @@
             "Snoring by a warm hearth",
             "Engaging in loaf mode",
             "Is having a rough time climbing their fence",
-            "Wonders what if they left to be a loner at a younger age",
+            "Wonders what would have happened if they left to be a loner at a younger age",
             "Took their time climbing on their fence",
             "Shakes their head when they spotted a cold queen and their kits"
         ],

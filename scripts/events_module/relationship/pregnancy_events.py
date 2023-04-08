@@ -373,7 +373,8 @@ class Pregnancy_Events():
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if clan.game_mode != 'classic':
+        if clan.game_mode != 'classic' and not cat.dead: 
+            #If they are died in childbirth above, all condition are cleared anyway. 
             try:
                 cat.injuries.pop("pregnant")
             except:
