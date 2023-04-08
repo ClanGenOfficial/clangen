@@ -446,10 +446,10 @@ class Cat():
             else:
                 self.genderalign = self.gender
                 
-            if self.genderalign in ["female", "trans female"]:
+            """if self.genderalign in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = [self.default_pronouns[2].copy()]
+                self.pronouns = [self.default_pronouns[2].copy()]"""
 
             # setting up sprites that might not be correct
             if self.pelt is not None:
