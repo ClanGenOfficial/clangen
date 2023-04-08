@@ -1,6 +1,7 @@
 from random import choice
 import random
 
+from scripts.cat.history import History
 from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
@@ -20,9 +21,8 @@ class Pregnancy_Events():
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
     
     def __init__(self) -> None:
+        self.history = History()
         self.condition_events = Condition_Events()
-        pass
-
 
     def handle_pregnancy_age(self, clan):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
@@ -348,13 +348,19 @@ class Pregnancy_Events():
             if cat.status == 'leader':
                 clan.leader_lives -= 1
                 cat.die()
-                cat.died_by.append(f" died shortly after kitting.")
+                death_event = (f" died shortly after kitting.")
             else:
                 cat.die()
-                cat.died_by.append(f"{cat.name} died while kitting.")
+                death_event = (f"{cat.name} died while kitting.")
+            self.history.add_death_or_scars(cat, text=death_event, death=True)
         elif clan.game_mode != 'classic' and not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
+                if cat.status == 'leader':
+                    death_event = (f" died after a harsh kitting.")
+                else:
+                    death_event = (f"{cat.name} after a harsh kitting.")
+                self.history.add_possible_death_or_scars(cat, 'blood loss', death_event, death=True)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
                 meds = get_med_cats(Cat, working=False)
@@ -365,7 +371,7 @@ class Pregnancy_Events():
 
                 event_list.append(choice(possible_events))
         if clan.game_mode != 'classic' and not cat.dead: 
-            #If they are died in childbirth above, all condition are cleared anyway. 
+            #If they are dead in childbirth above, all condition are cleared anyway. 
             try:
                 cat.injuries.pop("pregnant")
             except:

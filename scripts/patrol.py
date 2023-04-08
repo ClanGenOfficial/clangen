@@ -5,12 +5,14 @@ from random import choice, randint, choices
 
 import ujson
 
+from scripts.cat.history import History
 from scripts.clan import HERBS, Clan
 from scripts.utility import (
     add_siblings_to_cat,
     add_children_to_cat,
     event_text_adjust,
     change_clan_relations,
+    change_clan_reputation,
     change_relationship_values, create_new_cat,
     create_outside_cat
 )
@@ -34,6 +36,7 @@ class Patrol():
     used_patrols = []
 
     def __init__(self):
+        self.history = History()
         self.results_text = []
         self.patrol_event = None
         self.patrol_leader = None
@@ -787,7 +790,7 @@ class Patrol():
                 for tag in self.patrol_event.tags:
                     if "new_cat" in tag:
                         if antagonize:
-                            self.handle_reputation(-10)
+                            self.handle_reputation(-20)
                         else:
                             self.handle_reputation(10)
                         break
@@ -899,7 +902,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(-5)
+                        self.handle_reputation(-10)
                     else:
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
@@ -1457,17 +1460,18 @@ class Patrol():
                 else:
                     game.clan.leader_lives -= 1
                     self.results_text.append(f"{cat.name} lost one life.")
-            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat, cat))
-                self.results_text.append(f"{cat.name} died.")
-            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat, cat))
-            elif cat.status != 'leader':
-                cat.died_by.append(f'This cat died while patrolling.')
-                self.results_text.append(f"{cat.name} died.")
             else:
-                cat.died_by.append(f'died while patrolling')
+                self.results_text.append(f"{cat.name} died.")
 
+            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
+            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+                self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
+            elif cat.status != 'leader':
+                self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
+            else:
+                self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
+                
             cat.die(body)
 
             if len(patrol.patrol_cats) > 1:
@@ -1494,16 +1498,17 @@ class Patrol():
                     else:
                         self.results_text.append(f"{cat.name} lost all their lives.")
                         game.clan.leader_lives -= 10
-                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                    self.results_text.append(f"{cat.name} died.")
-                    cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat, cat))
-                elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                    cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat, cat))
-                elif cat.status != 'leader':
-                    self.results_text.append(f"{cat.name} died.")
-                    cat.died_by.append(f'This cat died while patrolling.')
                 else:
-                    cat.died_by.append(f'died while patrolling')
+                    self.results_text.append(f"{cat.name} died.")
+
+                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
+                elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
+                elif cat.status != 'leader':
+                    self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
+                else:
+                    self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
                 cat.die(body)
 
         elif "multi_deaths" in self.patrol_event.tags:
@@ -1530,17 +1535,13 @@ class Patrol():
                 else:
                     self.results_text.append(f"{cat.name} died.")
                 if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                    cat.died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat,
-                                          cat))
+                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
                 elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
-                    cat.died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat,
-                                          cat))
+                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
                 elif cat.status != 'leader':
-                    cat.died_by.append(f'This cat died while patrolling.')
+                    self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
                 else:
-                    cat.died_by.append(f'died while patrolling')
+                    self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
                 cat.die()
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
@@ -1642,6 +1643,8 @@ class Patrol():
                             cat.get_ill(new_condition, lethal=lethal)
                         elif new_condition in PERMANENT:
                             cat.get_permanent_condition(new_condition)
+                        if self.patrol_event.history_text:
+                            self.history.add_possible_death_or_scars(cat, new_condition, self.patrol_event.history_text[0], scar=True)
             else:
                 if len(possible_conditions) > 0:
                     new_condition = choice(possible_conditions)
@@ -1652,6 +1655,9 @@ class Patrol():
                         cat.get_ill(new_condition, lethal=lethal)
                     elif new_condition in PERMANENT:
                         cat.get_permanent_condition(new_condition)
+                    if self.patrol_event.history_text:
+                        self.history.add_possible_death_or_scars(cat, new_condition, self.patrol_event.history_text[0],
+                                                                 scar=True)
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
@@ -1673,10 +1679,9 @@ class Patrol():
                     if len(self.patrol_event.history_text) >= 1:
                         adjust_text = self.patrol_event.history_text[0]
                         adjust_text = adjust_text.replace("r_c", str(cat.name))
-                        self.patrol_random_cat.scar_event.append(
-                            f'{adjust_text}')
+                        self.history.add_death_or_scars(cat, text=adjust_text, scar=True)
                     else:
-                        self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
+                        self.history.add_death_or_scars(cat, text=f'This cat gained a scar while patrolling.', scar=True)
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
@@ -1858,7 +1863,7 @@ class Patrol():
         """
         if "no_change_fail_rep" in self.patrol_event.tags and not self.success:
             difference = 0
-        game.clan.reputation += difference
+        change_clan_reputation(difference)
         if difference > 0:
             insert = "improved"
         elif difference == 0:

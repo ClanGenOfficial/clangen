@@ -34,5 +34,57 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["all_lives", "murder", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
+        "history_text": [
+            null,
+            "were pushed off a cliff by r_c"],
+        "cat_trait": ["adventurous", "daring", "bold", "childish", "confident", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "ambitious", "bold", "careful", "calm", "cold", "fierce", "insecure", "nervous", "responsible", "sneaky", "strict", "vengeful", "wise"],
+        "other_cat_skill": ["great hunter", "fantastic hunter", "very smart", "extremely smart", "keen eye", "smart tactician", "valuable tactician", "valuable insight"],
+        "negate_cat_trait": ["careful", "nervous", "responsible"],
+        "negate_cat_skill": ["very smart", "extremely smart", "clairvoyant", "prophet", "omen sight"]
+    },
+    {
+        "camp": "any",
+        "tags": ["all_lives", "murder", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
+        "history_text": [
+            null,
+            "were pushed off a cliff by r_c"],
+        "cat_trait": ["adventurous", "daring", "bold", "childish", "confident", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "ambitious", "bold", "careful", "calm", "cold", "fierce", "insecure", "nervous", "responsible", "sneaky", "strict", "vengeful", "wise"],
+        "other_cat_skill": ["great hunter", "fantastic hunter", "very smart", "extremely smart", "keen eye", "smart tactician", "valuable tactician", "valuable insight"],
+        "negate_cat_trait": ["careful", "nervous", "responsible"],
+        "negate_cat_skill": ["very smart", "extremely smart", "clairvoyant", "prophet", "omen sight"]
+    },
+    {
+        "camp": "any",
+        "tags": ["all_lives", "murder", "other_cat", "other_cat_dep", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "death_text": "Usually m_c is well aware of when the high tide will come in, but today they're distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at their paws, the last thing they see is the smug grin of r_c sat high above on the rocks.",
+        "history_text": [
+            null,
+            "were trapped by the high tide"],
+        "cat_trait": ["responsible", "loyal", "lonesome"],
+        "other_cat_trait": ["ambitious", "bold", "careful", "calm", "cold", "confident", "daring", "lonesome", "shameless", "sneaky", "strange", "vengeful", "wise"],
+        "other_cat_skill": ["great hunter", "fantastic hunter", "very smart", "extremely smart", "keen eye", "great speaker", "excellent speaker"],
+        "negate_cat_trait": ["careful", "wise"],
+        "negate_cat_skill": ["very smart", "extremely smart", "clairvoyant", "prophet", "omen sight"]
+    },
+    {
+        "camp": "any",
+        "tags": ["clan_kits", "kit_manipulated", "murder", "other_cat", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water, but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
+        "history_text": [
+            null,
+            "saved a drowning kit"],
+        "cat_trait": ["ambitious", "bold", "compassionate", "confident", "daring", "fierce", "loving", "loyal", "responsible", "righteous", "thoughtful", "vengeful"],
+        "other_cat_trait": ["ambitious", "careful", "calm", "cold", "confident", "daring", "shameless", "sneaky", "strange", "vengeful", "wise"],
+        "other_cat_skill": ["very smart", "extremely smart", "great speaker", "excellent speaker"]
     }
 ]

@@ -134,7 +134,8 @@ class Game():
         'favorite_sub_tab': None,
         'root_cat': None,
         'window_open': False,
-        'skip_conditions': []
+        'skip_conditions': [],
+        'show_history_moons': False,
     }
     all_screens = {}
     cur_events = {}
@@ -429,6 +430,8 @@ class Game():
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()
+            if inter_cat.history:
+                inter_cat.save_history(directory + '/history')
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
         try:

@@ -66,10 +66,10 @@ def get_alive_clan_queens(all_cats):
 
 def get_alive_kits(Cat):
     """
-    returns a list of all living kittens in the clan
+    returns a list of IDs for all living kittens in the clan
     """
     alive_kits = [i for i in Cat.all_cats.values() if 
-                  i.age in ['kitten', 'newborn'] and not (i.dead or i.outside)]
+                  i.age in ['kitten', 'newborn'] and not i.dead and not i.outside]
     return alive_kits
 
 
@@ -182,6 +182,19 @@ def get_current_season():
 
 
     return game.clan.current_season
+
+
+def change_clan_reputation(difference=0):
+    """
+    will change the clan's reputation with outsider cats according to the difference parameter.
+    """
+    # grab rep
+    reputation = int(game.clan.reputation)
+    # ensure this is an int value
+    difference = int(difference)
+    # change rep
+    reputation += difference
+    game.clan.reputation = reputation
 
 
 def change_clan_relations(other_clan, difference=0):

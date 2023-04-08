@@ -5,6 +5,7 @@ import random
 
 import ujson
 
+from scripts.cat.history import History
 from scripts.utility import (
     get_highest_romantic_relation, 
     event_text_adjust, 
@@ -25,8 +26,8 @@ class Romantic_Events():
     """All events which are related to mate's such as becoming mates and breakups, but also for possible mates and romantic interactions."""
     
     def __init__(self) -> None:
+        self.history = History()
         self.had_one_event = False
-        pass
 
     def start_interaction(self, cat_from, cat_to):
         """
@@ -106,13 +107,21 @@ class Romantic_Events():
                 if abbreviations != "m_c":
                     injured_cat = cat_to
                 
+                injuries = []
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
+                    injuries.append(inj)
 
-                injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
-                injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+                possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
+                possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
                 if injured_cat.status == "leader":
-                    injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+                    possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+                if possible_scar:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
+                if possible_death:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
 
         # get any possible interaction string out of this interaction
         interaction_str = choice(chosen_interaction.interactions)

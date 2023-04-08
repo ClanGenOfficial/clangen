@@ -5,6 +5,7 @@ from random import choice
 
 import pygame
 
+from ..cat.history import History
 from ..datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender
 
@@ -225,6 +226,7 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.history = History()
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -387,8 +389,10 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
-                self.the_cat.died_by.append(
-                    f'It was the will of something even mightier than StarClan that this cat died.')
+                if self.the_cat.status != 'leader':
+                    self.history.add_death_or_scars(self.the_cat, text=f'It was the will of something even mightier than StarClan that this cat died.', death=True)
+                else:
+                    self.history.add_death_or_scars(self.the_cat, text=f'killed by something unknowable to even StarClan')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -1163,35 +1167,36 @@ class ProfileScreen(Screens):
                 life_history = [str(self.get_backstory_text())]
             else:
                 life_history = []
-            body_history = []
 
-            # now get mentor influence history and add that if any exists
-            influence_history = self.get_influence_text()
-            if influence_history:
-                life_history.append(str(influence_history))
+            # now get apprenticeship history and add that if any exists
+            app_history = self.get_apprenticeship_text()
+            if app_history:
+                life_history.append(str(app_history))
 
             # now go get the scar history and add that if any exists
+            body_history = []
             scar_history = self.get_scar_text()
             if scar_history:
                 body_history.append(str(scar_history))
-
-            if self.the_cat.dead or (self.the_cat.status == 'leader' and game.clan.leader_lives < 9):
-                death_history = self.get_death_text()
-                if death_history:
-                    body_history.append(str(death_history))
-                else:
-                    body_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
-
+            death_history = self.get_death_text()
+            if death_history:
+                body_history.append(str(death_history))
             # join scar and death into one paragraph
             if body_history:
                 life_history.append(" ".join(body_history))
+
+            murder = self.get_murder_text()
+            if murder:
+                life_history.append(murder)
 
             # join together history list with line breaks
             output = '\n\n'.join(life_history)
         return output
 
     def get_backstory_text(self):
-        text = None
+        """
+        returns the backstory blurb
+        """
         bs_blurb = bs_blurb_text(self.the_cat)
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
@@ -1201,137 +1206,248 @@ class ProfileScreen(Screens):
         return text
 
     def get_scar_text(self):
-        scar_history = None
+        """
+        returns the adjusted scar text
+        """
+        scar_text = []
+        scar_history = self.history.get_death_or_scars(self.the_cat, scar=True)
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
 
-        if self.the_cat.scar_event:
-            scar_text = self.the_cat.scar_event
-            for x in range(len(self.the_cat.scar_event)):
-                # first event in the list will keep the cat's name, so we don't want to permanently change the text in
-                # the save else the name end up different later in the cat's life
-                if x == 0:
-                    scar_text[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
-                # however, for all other events we want to permanently alter the saved text as none of these events will
-                # use the cat's name, rather they'll use one of the provided sentence beginners.  We don't want this
-                # sentence beginning to change everytime this text is pulled, so we need to make it permanent.
-                else:
-                    self.the_cat.scar_event[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+        if scar_history:
+            i = 0
+            for scar in scar_history:
+                # base adjustment to get the cat's name and moons if needed
+                new_text = (event_text_adjust(Cat,
+                                              scar_history[scar]["text"],
+                                              self.the_cat,
+                                              scar_history[scar]["involved"]))
+                if moons:
+                    new_text += f" (Moon {scar_history[scar]['moon']})"
 
-                sentence_beginners = [
-                    "This cat",
-                    "Then they",
-                    "They also"
-                ]
+                # checking to see if we can throw out a duplicate
+                if new_text in scar_text:
+                    i += 1
+                    continue
 
-                # first event needs no adjustments, as it's keeping the cat's name. all other events are adjusted.
-                if x != 0:
+                # the first event keeps the cat's name, consecutive events get to switch it up a bit
+                if i != 0:
+                    sentence_beginners = [
+                        "This cat",
+                        "Then they",
+                        "They also"
+                    ]
                     chosen = choice(sentence_beginners)
-                    self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name}',
-                                                                                         chosen, 1)
-                    if chosen != 'This cat':
-                        self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f' was ', ' were ', 1)
-                    scar_text[x] = self.the_cat.scar_event[x]
+                    if chosen == 'This cat':
+                        new_text = new_text.replace(str(self.the_cat.name), chosen, 1)
+                    else:
+                        new_text = new_text.replace(f"{self.the_cat.name} was", f"{chosen} were", 1)
+                scar_text.append(new_text)
+                i += 1
+
             scar_history = ' '.join(scar_text)
 
         return scar_history
 
-    def get_influence_text(self):
-        influence_history = None
+    def get_apprenticeship_text(self):
+        """
+        returns adjusted apprenticeship history text (mentor influence and app ceremony)
+        """
         if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
-        # check if cat has any mentor influence, else assign None
-        if len(self.the_cat.mentor_influence) >= 1:
-            influenced_trait = str(self.the_cat.mentor_influence[0])
-            if len(self.the_cat.mentor_influence) >= 2:
-                influenced_skill = str(self.the_cat.mentor_influence[1])
-            else:
-                influenced_skill = None
-        else:
-            game.switches['sub_tab_group'] = 'life sub tab'
-            influenced_trait = None
-            influenced_skill = None
 
-        # if they did have mentor influence, check if skill or trait influence actually happened and assign None
-        if influenced_skill in ['None', 'none']:
-            influenced_skill = None
-        if influenced_trait in ['None', 'none']:
-            influenced_trait = None
+        mentor_influence = self.history.get_mentor_influence(self.the_cat)
 
-        # if cat had mentor influence then write history text for those influences and append to history
-        # assign proper grammar to skills
-        vowels = ['e', 'a', 'i', 'o', 'u']
-        if influenced_skill in Cat.skill_groups.get('special'):
-            adjust_skill = f'unlock their abilities as a {influenced_skill}'
-            for y in vowels:
-                if influenced_skill.startswith(y):
-                    adjust_skill = adjust_skill.replace(' a ', ' an ')
-                    break
-            influenced_skill = adjust_skill
-        elif influenced_skill in Cat.skill_groups.get('star'):
-            adjust_skill = f'grow a {influenced_skill}'
-            influenced_skill = adjust_skill
-        elif influenced_skill in Cat.skill_groups.get('smart'):
-            adjust_skill = f'become {influenced_skill}'
-            influenced_skill = adjust_skill
-        else:
-            # for loop to assign proper grammar to all these groups
-            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
-            for x in become_group:
-                if influenced_skill in Cat.skill_groups.get(x):
-                    adjust_skill = f'become a {influenced_skill}'
+        if mentor_influence:
+            mentor = Cat.fetch_cat(mentor_influence["mentor"])
+            influenced_trait = mentor_influence["trait"]
+            influenced_skill = mentor_influence["skill"]
+
+            if influenced_skill or influenced_trait:
+                vowels = ['e', 'a', 'i', 'o', 'u']
+                if influenced_skill in Cat.skill_groups.get('special'):
+                    adjust_skill = f'unlock their abilities as a {influenced_skill}'
                     for y in vowels:
                         if influenced_skill.startswith(y):
                             adjust_skill = adjust_skill.replace(' a ', ' an ')
                             break
                     influenced_skill = adjust_skill
-                    break
-        if self.the_cat.former_mentor:
-            former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
-            mentor = former_mentor_ob.name
-        else:
-            mentor = None
+                elif influenced_skill in Cat.skill_groups.get('star'):
+                    adjust_skill = f'grow a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('smart'):
+                    adjust_skill = f'become {influenced_skill}'
+                    influenced_skill = adjust_skill
+                else:
+                    # for loop to assign proper grammar to all these groups
+                    become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+                    for x in become_group:
+                        if influenced_skill in Cat.skill_groups.get(x):
+                            adjust_skill = f'become a {influenced_skill}'
+                            for y in vowels:
+                                if influenced_skill.startswith(y):
+                                    adjust_skill = adjust_skill.replace(' a ', ' an ')
+                                    break
+                            influenced_skill = adjust_skill
+                            break
 
-        # append influence blurb to history
-        if mentor is None:
+            mentor = mentor.name
+            if influenced_skill and not influenced_trait:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+            elif influenced_trait and not influenced_skill:
+                if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
+                    influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
+                else:
+                    influence_history = f"This cat's mentor was {mentor}."
+            elif influenced_trait and influenced_skill:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
+            else:
+                influence_history = f"This cat's mentor was {mentor}."
+
+        else:
             influence_history = "This cat either did not have a mentor, or their mentor is unknown."
-            if self.the_cat.status == 'kitten':
+            if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
-        elif influenced_skill is not None and influenced_trait is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
-        elif influenced_skill is None and influenced_trait is not None:
-            if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
-            else:
-                influence_history = f"This cat's mentor was {mentor}."
-        elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
-        else:
-            influence_history = f"This cat's mentor was {mentor}."
 
-        return influence_history
+        app_ceremony = self.history.get_app_ceremony(self.the_cat)
+
+        graduation_history = ""
+        if app_ceremony:
+            graduation_history = f"When {self.the_cat.name} graduated they were honored for their {app_ceremony['honor']}."
+
+            grad_age = app_ceremony["graduation_age"]
+            if grad_age < 11:
+                graduation_history += " Their training went so well that they graduated early."
+            elif grad_age > 13:
+                graduation_history += " They graduated a little bit late."
+
+            if game.switches['show_history_moons']:
+                graduation_history += f" (Moon {app_ceremony['moon']})"
+
+        apprenticeship_history = influence_history + " " + graduation_history
+
+        return apprenticeship_history
 
     def get_death_text(self):
+        """
+        returns adjusted death history text
+        """
         text = None
-        if self.the_cat.died_by:
-            if self.the_cat.status == 'leader':
-                insert2 = f"lost their lives"
-                if len(self.the_cat.died_by) > 2:
-                    insert = f"{', '.join(self.the_cat.died_by[0:-1])}, and {self.the_cat.died_by[-1]}"
-                elif len(self.the_cat.died_by) == 2:
-                    insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
+        death_history = self.history.get_death_or_scars(self.the_cat, death=True)
+        murder_history = self.history.get_murders(self.the_cat)
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
+
+        if death_history:
+
+            all_deaths = []
+            for death in death_history:
+                text = event_text_adjust(Cat,
+                                         death_history[death]["text"],
+                                         self.the_cat,
+                                         Cat.fetch_cat(death_history[death]["involved"]))
+                if moons:
+                    text += f" (Moon {death_history[death]['moon']}"
+                all_deaths.append(text)
+
+            death_number = len(all_deaths)
+
+            if self.the_cat.status == 'leader' or death_number > 1:
+
+                if death_number > 2:
+                    deaths = f"{','.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                elif death_number == 2:
+                    deaths = " and ".join(all_deaths)
                 else:
-                    insert = f"{self.the_cat.died_by[0]}"
-                    if self.the_cat.dead:
-                        insert2 = f'lost all their lives'
-                    elif game.clan.leader_lives == 8:
-                        insert2 = f"lost a life"
-                    else:
-                        insert2 = f"lost lives"
-                text = f"{self.the_cat.name} {insert2} when they {insert}."
+                    deaths = all_deaths[0]
+
+                if self.the_cat.dead:
+                    insert = 'lost all their lives'
+                elif game.clan.leader_lives == 8:
+                    insert = 'lost a life'
+                else:
+                    insert = 'lost their lives'
+
+                text = f"{self.the_cat.name} {insert} when they {deaths}."
             else:
-                text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
+                text = all_deaths[0]
+
         return text
+
+    def get_murder_text(self):
+        """
+        returns adjusted murder history text
+
+        """
+        murder_history = self.history.get_murders(self.the_cat)
+        victim_text = ""
+        murdered_text = ""
+
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
+        if murder_history:
+            victims = murder_history["is_murderer"]
+            murderers = murder_history["is_victim"]
+
+            if victims:
+                victim_names = {}
+                name_list = []
+
+                for victim in victims:
+                    name = Cat.fetch_cat(victim["victim"]).name
+
+                    if victim["revealed"]:
+                        victim_names[name] = []
+                        if moons:
+                            victim_names[name].append(victim["moons"])
+
+                for name in victim_names:
+                    if not moons:
+                        name_list.append(name)
+                    else:
+                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
+
+                if len(name_list) == 1:
+                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                elif len(victim_names) == 2:
+                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+                else:
+                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+            if murderers:
+                murderer_names = {}
+                name_list = []
+
+                for murderer in murderers:
+                    name = Cat.fetch_cat(murderer["victim"]).name
+
+                    if murderer["revealed"]:
+                        murderer_names[name] = []
+                        if moons:
+                            murderer_names[name].append(murderer["moons"])
+
+                for name in murderer_names:
+                    if not moons:
+                        name_list.append(name)
+                    else:
+                        name_list.append(name + f" (Moon {', '.join(murderer_names[name])})")
+
+                if len(name_list) == 1:
+                    murdered_text = f"{self.the_cat.name} was murdered by {name_list[0]}."
+                elif len(murderer_names) == 2:
+                    murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
+                else:
+                    murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+        return " ".join([victim_text, murdered_text])
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
