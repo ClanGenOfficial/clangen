@@ -221,7 +221,8 @@ class Relation_Events():
             # only if it is 0 then all the other cats should be used
             # otherwise only the mates are chosen for romantic interactions
             if use_mate:
-                cat_to_choose_from = [cat.all_cats[mate_id] for mate_id in cat.mate]
+                cat_to_choose_from = [cat.all_cats[mate_id] for mate_id in cat.mate if\
+                                      not cat.all_cats[mate_id].dead and not cat.all_cats[mate_id].outside]
 
         if len(cat_to_choose_from) < 1:
             return
