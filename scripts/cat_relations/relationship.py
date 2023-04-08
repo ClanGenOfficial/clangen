@@ -135,7 +135,7 @@ class Relationship():
                 if abbreviations != "m_c":
                     injured_cat = self.cat_to
                 
-                for inj in injuries:
+                for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
         
         # get any possible interaction string out of this interaction
