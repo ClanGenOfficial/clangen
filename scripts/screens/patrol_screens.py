@@ -1142,7 +1142,7 @@ class PatrolScreen(Screens):
                                                                           manager=MANAGER)
 
             # Show Cat's Mate, if they have one
-            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
+            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice', 'mediator apprentice']:
                 if len(self.selected_cat.mate) > 0:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((280, 380), (332, 340))),

@@ -111,11 +111,9 @@ class NewCatEvents:
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
-                new_cat.parent1 = cat.ID
-                # TODO: fix when solving the relative issues
-                if cat.mate[0]:
-                    new_cat.parent2 = cat.mate[0]
-                # print('parent is', new_cat.parent1, cat.ID)
+                new_cat.adoption_parents.append(cat.ID)
+                if len(cat.mate) > 0:
+                    new_cat.adoption_parents.extend(cat.mate)
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')

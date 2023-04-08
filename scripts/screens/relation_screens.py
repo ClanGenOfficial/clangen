@@ -1937,7 +1937,7 @@ class RelationshipScreen(Screens):
             related = False
             # Mate Heart
             # TODO: UI UPDATE IS NEEDED
-            if self.the_cat.mate[0] is not None and self.the_cat.mate[0] != '' and self.inspect_cat.ID == self.the_cat.mate[0]:
+            if len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(scale(pygame.Rect((90, 300), (44, 40))),
                                                                                 pygame.transform.scale(
                                                                                     image_cache.load_image(
@@ -1945,19 +1945,8 @@ class RelationshipScreen(Screens):
                                                                                     (44, 40)))
             else:
                 # Family Dot
-                # Only show family dot on cousins if first cousin mates are disabled.
-                if game.settings['first_cousin_mates']:
-                    check_cousins = False
-                else:
-                    check_cousins = self.inspect_cat.is_cousin(self.the_cat)
-
-                if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat) \
-                        or self.inspect_cat.is_grandparent(self.the_cat) or \
-                        self.the_cat.is_grandparent(self.inspect_cat) or \
-                        self.inspect_cat.is_parent(self.the_cat) or \
-                        self.the_cat.is_parent(self.inspect_cat) or \
-                        self.inspect_cat.is_sibling(self.the_cat) or check_cousins:
-                    related = True
+                related = self.the_cat.is_related(self.inspect_cat, game.settings["first_cousin_mates"])
+                if related:
                     self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((90, 300), (36, 36))),
                         pygame.transform.scale(
