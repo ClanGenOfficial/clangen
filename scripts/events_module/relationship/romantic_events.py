@@ -151,14 +151,10 @@ class Romantic_Events():
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
-        if len(cat_from.mate) > 0:
-            for mate_id in cat_from.mate:
-                if mate_id not in Cat.all_cats.keys():
-                    print(f"WARNING: Cat #{cat_from} has a invalid mate. It will set be removed.")
-                    cat_from.mate.remove(mate_id)
-                    return
-            cat_from_mate = Cat.all_cats.get(cat_from.mate[0])
-            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.outside
+        if cat_to.ID in cat_from.mate:
+            from_mate_in_clan = cat_to.is_alive() and not cat_to.outside
+        else:
+            return
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
             if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):

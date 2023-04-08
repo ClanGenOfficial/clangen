@@ -57,23 +57,23 @@ class Relation_Events():
         if not random.getrandbits(4):
             self.romantic_events(cat)
 
-        # TODO: find a solution 
-        # THIS CODE PART IS FOR ONLY ONE MATE 
+        # TODO: still a rough-fix but with new rng mates events will be added soon
         cat_mate = None
         if len(cat.mate) > 1:
             for mate_id in cat.mate:
                 if mate_id not in Cat.all_cats:
                     print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
                     cat.mate.remove(mate_id)
-            cat_mate = Cat.all_cats.get(cat.mate[0])
+                    continue
 
-        #Move on from dead mates
-        if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
-            # randint is a slow function, don't call it unless we have to.
-            if random.random() > 0.6: 
-                text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
-                game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
-                cat.unset_mate(cat_mate)
+                cat_mate = Cat.fetch_cat(mate_id)
+                # Move on from dead mates
+                if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
+                    # randint is a slow function, don't call it unless we have to.
+                    if random.random() > 0.6: 
+                        text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
+                        game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
+                        cat.unset_mate(cat_mate)
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
@@ -181,9 +181,7 @@ class Relation_Events():
         if not self.can_trigger_events(cat):
             return
 
-
         other_cat = None
-        info_text = ""
 
         # get the cats which are relevant for romantic interactions
         free_possible_mates = get_free_possible_mates(cat, Relationship)
@@ -210,19 +208,20 @@ class Relation_Events():
             if cat_to_inter and inter_to_cat:
                 cat_to_choose_from.append(inter_cat)
 
+        # if the cat has one or more mates, check how high the chance is, 
+        # that the cat interacts romantic with ANOTHER cat than their mate
         if len(cat.mate) > 0:
-            info_text ="cat has mate"
-            # TODO: find a solution 
-            # THIS CODE PART IS FOR ONLY ONE MATE 
-            first_mate_id = cat.mate[0]
             chance_number = game.config["relationship"]["chance_romantic_not_mate"]
-            chance_number += int(cat.relationships[first_mate_id].romantic_love / 10)
+             
+            # the more mates the cat has, the less likely it will be that they interact with another cat romantically
+            for mate_id in cat.mate:
+                chance_number += int(cat.relationships[mate_id].romantic_love / 10)
             use_mate = int(random.random() * chance_number)  
+            
             # only if it is 0 then all the other cats should be used
+            # otherwise only the mates are chosen for romantic interactions
             if use_mate:
-                cat_to_choose_from = [cat.all_cats[first_mate_id]]
-        else:
-            info_text = "cat has no mate"
+                cat_to_choose_from = [cat.all_cats[mate_id] for mate_id in cat.mate]
 
         if len(cat_to_choose_from) < 1:
             return
@@ -231,7 +230,6 @@ class Relation_Events():
         if self.romantic_events_class.start_interaction(cat, other_cat):
             self.trigger_event(cat)
             self.trigger_event(other_cat)
-            #print(info_text)
 
     def same_age_events(self, cat):
         """	

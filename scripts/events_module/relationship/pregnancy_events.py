@@ -507,11 +507,6 @@ class Pregnancy_Events():
         affair_chance = 15
         average_romantic_love = (relation.romantic_love + relation.opposite_relationship.romantic_love) / 2
 
-        # If the highest romantic reltaion has a mate, increase the chance.
-        # TODO: DO WE HAVE TO? - and it is noe increasing btw :joy:
-        #if relation.cat_to.mate[0]:
-        #    affair_chance = 30
-
         if average_romantic_love > 50:
             affair_chance -= 12
         elif average_romantic_love > 40:
