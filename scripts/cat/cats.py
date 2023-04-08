@@ -2066,7 +2066,8 @@ class Cat():
                                for_love_interest: bool,
                                former_mentor_setting: bool,
                                for_patrol: bool = False,
-                               age_restriction: bool = True):
+                               allow_multiple_mates: bool = False,
+                               age_restriction: bool = False):
         """Checks if this cat is a free and potential mate for the other cat."""
         # checks if affairs are turned on
         affair = False
@@ -2086,7 +2087,7 @@ class Cat():
             return False
 
         # check for age
-        if age_restriction:
+        if not age_restriction:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
@@ -2102,11 +2103,11 @@ class Cat():
         # if the cat has a mate, they are not open for a new mate
         # TODO: redo this for poly mates?
         if for_patrol:
-            if len(self.mate) > 0 or len(other_cat.mate) > 0:
+            if not allow_multiple_mates and (len(self.mate) > 0 or len(other_cat.mate) > 0):
                 if not for_love_interest or not affair:
                     return False
         else:
-            if len(self.mate) > 0 or len(other_cat.mate) > 0 and not for_love_interest:
+            if not allow_multiple_mates and (len(self.mate) > 0 or len(other_cat.mate) > 0 and not for_love_interest):
                 return False
 
         # check for mentor
