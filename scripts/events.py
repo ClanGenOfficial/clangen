@@ -1724,7 +1724,6 @@ class Events():
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/100
-        # chance to kill leader: 1/100
         if not int(random.random() *
                    100) and cat.status == 'leader' and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
