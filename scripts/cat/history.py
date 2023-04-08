@@ -142,6 +142,17 @@ class History:
             "moon": game.clan.age
         }
 
+    def add_lead_ceremony(self, cat, ceremony_text):
+        """
+        this adds the full leader ceremony text to the cat's history save
+        :param cat: cat object
+        :param ceremony_text: the full ceremony text
+        :return:
+        """
+        self.check_load(cat)
+
+        cat.history.lead_ceremony = ceremony_text
+
     def add_possible_death_or_scars(self, cat, condition, text, other_cat=None, scar=False, death=False):
         """
         this adds the possible death/scar the cat's history
@@ -308,6 +319,15 @@ class History:
         """
         self.check_load(cat)
         return cat.history["app_ceremony"]
+
+    def get_lead_ceremony(self, cat):
+        """
+        returns the leader ceremony text
+        :param cat: cat object
+        """
+        self.check_load(cat)
+
+        return cat.history.lead_ceremony
 
     def get_possible_death_or_scars(self, cat, condition=None, death=False, scar=False):
         """
