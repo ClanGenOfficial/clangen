@@ -111,9 +111,9 @@ class NewCatEvents:
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
-                new_cat.adoption_parents.append(cat.ID)
+                new_cat.adoptive_parents.append(cat.ID)
                 if len(cat.mate) > 0:
-                    new_cat.adoption_parents.extend(cat.mate)
+                    new_cat.adoptive_parents.extend(cat.mate)
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')
