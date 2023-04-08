@@ -479,7 +479,7 @@
     {
         "camp": "any",
         "tags": ["old_age",  "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "One day, the deputy finds m_c dead in the leader's den, and experiences several fear-filled moments before m_c rises again. Seems they lost a life to old age.",
+        "death_text": "One day, the deputy finds m_c dead in the leader's den. Seems they lost a life to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
