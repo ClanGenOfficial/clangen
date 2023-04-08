@@ -1,5 +1,5 @@
 from .base_screens import Screens
-from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, CeremonyScreen, RoleScreen
+from .cat_screens import ProfileScreen, CeremonyScreen, RoleScreen
 from .clan_creation_screens import MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen, MedDenScreen
 from .event_screens import EventsScreen
@@ -7,7 +7,7 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen, MediationScreen
+    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
 
 # ---------------------------------------------------------------------------- #
@@ -36,8 +36,6 @@ screens = Screens()
 #                                 cat_screens.py                               #
 # ---------------------------------------------------------------------------- #
 
-change_gender_screen = ChangeGenderScreen('change gender screen')
-change_name_screen = ChangeNameScreen('change name screen')
 profile_screen = ProfileScreen('profile screen')
 ceremony_screen = CeremonyScreen('ceremony screen')
 role_screen = RoleScreen('role screen')
@@ -87,7 +85,7 @@ patrol_screen = PatrolScreen('patrol screen')
 choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 relationship_screen = RelationshipScreen('relationship screen')
-view_children_screen = ViewChildrenScreen('see kits screen')
+view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")
 
 # ---------------------------------------------------------------------------- #

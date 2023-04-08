@@ -1,8 +1,5 @@
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from random import choice, shuffle
 from copy import deepcopy
 
@@ -11,6 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
 from scripts.game_structure.game_essentials import game
+from scripts.cat_relations.relationship import Relationship
 
 class Group_Events():
 
@@ -91,7 +89,7 @@ class Group_Events():
         interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
-        if len(self.chosen_interaction.get_injuries) > 0:
+        if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
 
         game.cur_events_list.append(Single_Event(
@@ -125,11 +123,11 @@ class Group_Events():
         allowed_biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = list(filter(lambda inter_biome: inter_biome in allowed_biome, interact.biome))
+            in_tags = [i for i in interact.biome if i in allowed_biome] 
             if len(in_tags) < 1:
                 continue
 
-            in_tags = list(filter(lambda inter_season: inter_season in allowed_season, interact.season))
+            in_tags = [i for i in interact.season if i in allowed_season]
             if len(in_tags) < 1:
                 continue
 
@@ -335,7 +333,9 @@ class Group_Events():
             cat_to = Cat.all_cats[cat_to_id]
 
             if cat_to_id not in cat_from.relationships:
-                print(f"ERROR: there is no relationship from {cat_from.name} to {cat_to.name}")
+                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                if cat_from.ID not in cat_to.relationships:
+                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
                 continue
 
             relationship = cat_from.relationships[cat_to_id]
@@ -522,7 +522,7 @@ class Group_Events():
         """
         Injuring the cats based on the list of the injuries of the chosen group interaction.
         """
-        if len(self.chosen_interaction.get_injuries) <= 0:
+        if not self.chosen_interaction.get_injuries.items:
             return
 
         for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
@@ -534,10 +534,10 @@ class Group_Events():
             for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
 
-            injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
-            injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
             if injured_cat.status == "leader":
-                injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""

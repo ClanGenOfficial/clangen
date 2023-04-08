@@ -77,7 +77,7 @@ class Screens():
             scale(pygame.Rect((620, 54), (360, 70))),
             visible=False,
             manager=MANAGER,
-            object_id="#menu_header_text_box")
+            object_id="#text_box_34_horizcenter_light")
     }
 
     def change_screen(self, new_screen):
@@ -89,7 +89,7 @@ class Screens():
 
         # This keeps track of the last list-like screen for the back button on cat profiles
         if self.name in ['clan screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
-                         'med den screen']:
+                         'med den screen', 'unknown residence screen']:
             game.last_screen_forProfile = self.name
 
         game.switches['cur_screen'] = new_screen
@@ -152,7 +152,9 @@ class Screens():
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
             This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if event.ui_element == self.menu_buttons["events_screen"]:
+        if game.switches['window_open']:
+            pass
+        elif event.ui_element == self.menu_buttons["events_screen"]:
             self.change_screen('events screen')
         elif event.ui_element == self.menu_buttons["clan_screen"]:
             self.change_screen('clan screen')

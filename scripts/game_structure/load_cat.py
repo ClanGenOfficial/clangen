@@ -3,20 +3,16 @@ from math import floor
 from .game_essentials import game
 from ..datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from re import sub
 from scripts.cat.cats import Cat
+from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
-try:
-    from ujson import JSONDecodeError
-except ImportError:
-    from json import JSONDecodeError
+
+from json import JSONDecodeError
 
 def load_cats():
     try:
@@ -97,8 +93,6 @@ def json_load():
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.mentor_influence = cat["mentor_influence"] if "mentor_influence" in cat else []
             new_cat.paralyzed = cat["paralyzed"]
-            if new_cat.paralyzed:
-                new_cat.get_permanent_condition("paralyzed")
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
             new_cat.cat_sprites['kitten'] = cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"]
@@ -203,6 +197,7 @@ def json_load():
 
             new_cat.accessory = cat["accessory"]
             new_cat.mate = cat["mate"]
+            new_cat.previous_mates = cat["previous_mates"] if "previous_mates" in cat else []
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []
             new_cat.experience = cat["experience"]
@@ -237,6 +232,13 @@ def json_load():
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
         cat.load_conditions()
+
+        # this is here to handle paralyzed cats in old saves
+        if cat.paralyzed and "paralyzed" not in cat.permanent_condition:
+            cat.get_permanent_condition("paralyzed")
+        elif "paralyzed" in cat.permanent_condition and not cat.paralyzed:
+            cat.paralyzed = True
+
         # load the relationships
         if not cat.dead:
             game.switches[
@@ -246,7 +248,7 @@ def json_load():
             game.switches[
                 'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
             if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.create_all_relationships()
+                cat.init_all_relationships()
         else:
             cat.relationships = {}
 
@@ -276,9 +278,15 @@ def json_load():
 
         # Add faded children
         cat.children.extend(cat.faded_offspring)
-
+        
+        game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
+        
+        # Save integrety checks
+        if game.config["save_load"]["load_integrity_checks"]:
+            save_check()
+    
 
 def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
@@ -467,3 +475,40 @@ def csv_load(all_cats):
                 if the_cat.relationships is not None and len(the_cat.relationships) < 1:
                     the_cat.create_all_relationships()
         game.switches['error_message'] = ''
+
+def save_check():
+    """Checks through loaded cats, checks and attempts to fix issues """
+    
+    for cat in Cat.all_cats:
+        cat_ob = Cat.all_cats[cat]
+        
+        # Not-mutural mate relations
+        if cat_ob.mate:
+            _temp_ob = Cat.all_cats.get(cat_ob.mate)
+            if _temp_ob:
+                # Check if the mate's mate feild is set to none
+                if not _temp_ob.mate:
+                    _temp_ob.mate = cat_ob.ID 
+            else:
+                # Invalid mate
+                cat_ob.mate = None
+                
+def version_convert(version_info):
+    """Does all save-convertion that require referencing the saved version number.
+    This is a seperate function, since the version info is stored in clan.json, but most converson needs to be 
+    done on the cats. Clan data is loaded in after cats, however. """
+    
+    if version_info is None:
+        return
+    
+    if version_info["version_name"] == SAVE_VERSION_NUMBER:
+        # Save was made on current version
+        return
+    
+    if version_info["version_name"] is None:
+        # Save was made before version number stoage was implemented. 
+        # (ie, save file version 0)
+        # This means the EXP must be adjusted. 
+        for c in Cat.all_cats.values():
+            c.experience = c.experience * 3.2
+    

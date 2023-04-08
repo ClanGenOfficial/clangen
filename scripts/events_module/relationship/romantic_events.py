@@ -3,10 +3,7 @@ from copy import deepcopy
 from random import choice
 import random
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.utility import (
     get_highest_romantic_relation, 
@@ -43,7 +40,7 @@ class Romantic_Events():
             return False
 
         relevant_dict = deepcopy(ROMANTIC_INTERACTIONS)
-        if cat_from.mate == cat_to.ID:
+        if cat_from.mate == cat_to.ID and not cat_to.dead:
             relevant_dict = deepcopy(MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
@@ -56,11 +53,11 @@ class Romantic_Events():
         _season = [str(game.clan.current_season).casefold(), "Any", "any"]
         _biome = [str(game.clan.biome).casefold(), "Any", "any"]
         for interaction in possible_interactions:
-            in_tags = list(filter(lambda biome: biome not in _biome, interaction.biome))
+            in_tags = [i for i in interaction.biome if i not in _biome]
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season not in _season, interaction.season))
+            in_tags = [i for i in interaction.season if i not in _season]
             if len(in_tags) > 0:
                 continue
 
@@ -139,7 +136,7 @@ class Romantic_Events():
         game.cur_events_list.append(Single_Event(
             interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
         ))
-        print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
+        #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
         return True
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
@@ -150,8 +147,7 @@ class Romantic_Events():
         if become_mates and mate_string:
             self.had_one_event = True
             cat_from.set_mate(cat_to)
-            cat_to.set_mate(cat_from)
-            game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
+            game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
@@ -168,11 +164,10 @@ class Romantic_Events():
                 # TODO: filter log to check if last interaction was a fight
                 had_fight = False
                 self.had_one_event = True
-                cat_from.unset_mate(breakup=True, fight=had_fight)
-                cat_to.unset_mate(breakup=True, fight=had_fight)
+                cat_from.unset_mate(cat_to, breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up."
                 # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
+                game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
         """
@@ -197,7 +192,6 @@ class Romantic_Events():
             if cat_to.mate is None and cat.mate is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
-                cat_to.set_mate(cat)
 
                 if highest_romantic_relation.opposite_relationship is None:
                     highest_romantic_relation.link_relationship()
