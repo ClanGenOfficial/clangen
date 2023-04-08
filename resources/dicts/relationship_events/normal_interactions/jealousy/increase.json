@@ -103,7 +103,7 @@
 		"id": "jel_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c is jealous that r_c gets to do cool super secret medicine cat things.",
+			"m_c is jealous that r_c gets to do cool, super-secret medicine cat things.",
 			"m_c thinks it's unfair that r_c always gets to go to Gatherings."
 		],
 		"main_status_constraint": [
@@ -125,7 +125,7 @@
 		"id": "jel_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c sees r_c lazing about in the sunshine and is resentful at how little they're expected to contribute."
+			"m_c sees r_c lazing about in the sunshine, and is resentful at how little they're expected to contribute."
 		],
 		"random_status_constraint": [
 			"elder"

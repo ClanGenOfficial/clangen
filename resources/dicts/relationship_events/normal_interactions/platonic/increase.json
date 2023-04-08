@@ -20,7 +20,7 @@
 	{
 		"id": "platonic_inc_med1",
 		"interactions": [
-			"m_c saw r_c the other day and did get a chance to meow hello!",
+			"m_c saw r_c the other day, and did get a chance to meow hello!",
 			"m_c reminds r_c to grab something from the fresh-kill pile if they haven't already."
 		]
 	},
@@ -41,7 +41,7 @@
 			"m_c waves to r_c with their tail as their patrols cross paths on the territory.",
 			"m_c calls to r_c to catch them a fat mouse on their next hunting patrol.",
 			"m_c hopes they are assigned to patrol with r_c tomorrow.",
-			"m_c noticed that r_c is falling behind in training and offered to help them catch up."
+			"m_c noticed that r_c is falling behind in training, and offered to help them catch up."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -62,9 +62,9 @@
 	{
 		"id": "platonic_inc_med4",
 		"interactions": [
-			"r_c charms m_c.",
+			"r_c charms m_c with a smile.",
 			"r_c smiles at m_c whenever they meet.",
-			"r_c knows what to say to make m_c feel better.",
+			"r_c knows just what to say to make m_c feel better.",
 			"r_c compliments m_c for their good disposition."
 		],
 		"random_trait_constraint": [
@@ -139,7 +139,7 @@
 	{
 		"id": "platonic_inc_med10",
 		"interactions": [
-			"m_c is hiding behind a bush ready to pounce on r_c."
+			"m_c is hiding behind a bush, ready to pounce on r_c."
 		],
 		"random_trait_constraint": [
 			"childish"
@@ -264,9 +264,9 @@
 			"m_c bats the mossball back to r_c when it flies in front of their paws.",
 			"m_c spends most of the afternoon describing the territory to r_c.",
 			"m_c purrs as r_c asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
-			"m_c whiskers twitch in amusement as r_c tells them that they hope they're their mentor when they become an apprentice.",
+			"m_c whiskers twitch in amusement as r_c tells them that they hope m_c is their mentor when they become an apprentice.",
 			"m_c tells r_c that they caught this prey just for them as they deliver it to them.",
-			"m_c joins a game as r_c runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender."
+			"m_c joins a game as r_c runs up to them, yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight when m_c rolls over in surrender."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -395,7 +395,7 @@
 		"interactions": [
 			"m_c brings r_c a piece of prey to share after a long day of training.",
 			"m_c offers to help r_c clean out the elder's bedding.",
-			"m_c was playing with r_c and learned a fun new battle move from them!",
+			"m_c was playing with r_c, and learned a fun new battle move from them!",
 			"m_c is excitedly trying to guess what their and r_c's warrior names will be."
 		],
 		"main_status_constraint": [
@@ -414,7 +414,7 @@
 			"m_c daydreams with r_c about their future warrior ceremonies.",
 			"m_c feels like training goes by much faster when they're with r_c.",
 			"m_c is playfully making fun of their mentors with r_c.",
-			"m_c stays awake all night whispering secrets to r_c.",
+			"m_c stays awake all night, whispering secrets to r_c.",
 			"m_c promises not to tell r_c's mentor that they've been sneaking out of camp."
 		],
 		"relationship_constraint": [

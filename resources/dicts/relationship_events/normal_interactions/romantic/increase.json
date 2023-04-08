@@ -17,7 +17,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c is admiring r_c from afar...",
-			"m_c stayed up all night thinking of ways to impress r_c.",
+			"m_c stayed up all night, thinking of ways to impress r_c.",
 			"m_c thinks r_c is really funny."
 		]
 	},
@@ -120,7 +120,7 @@
 		"id": "rom_inc_medium5",
 		"intensity": "medium",
 		"interactions": [
-			"m_c brushes against r_c while correcting their stance and looks away with a purr.",
+			"m_c brushes against r_c while correcting their stance, and looks away with a purr.",
 			"m_c left a gift in r_c's nest for them to find.",
 			"m_c picked out the best piece of prey to share with r_c.",
 			"m_c sees r_c stumble while hunting and thinks it's cute."
@@ -166,11 +166,11 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c is spending a lot of time with r_c.",
-			"m_c enjoys the time with r_c and feels secure.",
+			"m_c enjoys time spent with r_c, and feels secure around them.",
 			"m_c wants to spend the entire day with r_c.",
 			"m_c saves a piece of prey for r_c because they know it's their favorite.",
 			"m_c brings r_c some fresh-kill, hoping that they remembered what r_c's favorite was.",
-			"m_c got stuck in the same tree with r_c for hours and realized how much they have in common.",
+			"m_c got stuck in the same tree with r_c for hours, but realized in the process how much they have in common.",
 			"m_c asks r_c to help them freshen up on some battle moves, and compliments them constantly during it.",
 			"m_c asks r_c to go fishing with them, but they keep on getting distracted by each other.",
 			"m_c gives r_c a beautiful feather they found, and hides behind their whiskers when thanked.",
@@ -232,7 +232,7 @@
 		"interactions": [
 			"m_c was caught enjoying a moonlit stroll with r_c last night...",
 			"m_c sneaks out at night to sleep in r_c's nest.",
-			"m_c purrs for a long time at one of r_c's lame jokes."
+			"m_c purrs for a bit too long at one of r_c's lamest jokes."
 		],
 		"relationship_constraint": [
 			"romantic_40",

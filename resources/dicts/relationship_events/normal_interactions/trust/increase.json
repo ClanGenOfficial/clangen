@@ -50,7 +50,7 @@
 	{
 		"id": "trust_inc_med3",
 		"interactions": [
-			"r_c is telling m_c in great detail how they would protect them from any danger."
+			"r_c is telling m_c, in great detail, how they would protect them from any danger."
 		],
 		"random_trait_constraint": [
 			"fierce"
@@ -122,7 +122,7 @@
 		"id": "trust_adult_inc_med2",
 		"interactions": [
 			"m_c goes to r_c to ask for their wisdom.",
-			"m_c is faced with a tough decision and wonders what r_c would do."
+			"m_c is faced with a tough decision, and wonders what r_c would do."
 		],
 		"main_status_constraint": [
 			"kitten",

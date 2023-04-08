@@ -78,7 +78,7 @@
 	{
 		"id": "comfort_inc_med6",
 		"interactions": [
-			"r_c crashes into m_c while eager for the new day.",
+			"r_c crashes into m_c, a bit too eager for the new day.",
 			"r_c rejects m_c's advice without letting them finish.",
 			"r_c interrupts m_c during a conversation."
 		],
