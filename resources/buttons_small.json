@@ -183,7 +183,11 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/back_hover.png"
-            }
+            },
+			"disabled_image":
+            {
+				"path": "resources/images/buttons/back_unavailable.png"
+			}
         }
     },
     "#exit_window_button":

@@ -1759,7 +1759,15 @@ class RelationshipScreen(Screens):
                 self.current_page += 1
                 self.update_cat_page()
             elif event.ui_element == self.log_icon:
-                RelationshipLog(self.the_cat)
+                if self.inspect_cat.ID not in self.the_cat.relationships:
+                    return
+                RelationshipLog(
+                    self.the_cat.relationships[self.inspect_cat.ID],
+                    [self.view_profile_button, self.switch_focus_button,\
+                        self.next_cat_button,self.previous_cat_button,self.next_page_button],
+                    [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"],\
+                     self.show_dead_text, self.show_empty_text]
+                )
             elif event.ui_element == self.checkboxes["show_dead"]:
                 if game.settings['show dead relation']:
                     game.settings['show dead relation'] = False
@@ -1812,7 +1820,7 @@ class RelationshipScreen(Screens):
                                                  object_id="#view_profile_button")
         self.view_profile_button.disable()
 
-        self.log_icon = UIImageButton(scale(pygame.Rect((440, 808), (68, 68))), "",
+        self.log_icon = UIImageButton(scale(pygame.Rect((445, 808), (68, 68))), "",
                                                  object_id="#log_icon")
         self.log_icon.disable()
 
