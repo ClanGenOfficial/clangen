@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp sore and bruised.",
+        "event_text": "m_c had a bad fall while taking a walk through the territory, returning to camp sore and bruised.",
         "history_text": [
             null,
             null,
@@ -27,7 +27,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits and may have overdone it a bit, they'll be sore for the next few days.",
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "history_text": [
             null,
             null,
@@ -47,7 +47,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits and may have overdone it a bit, they'll be sore for the next few days.",
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "history_text": [
             null,
             null,
@@ -66,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp sore.",
+        "event_text": "m_c had a bad fall while taking a walk through the territory, and comes back to camp quite sore.",
         "history_text": [
             null,
             null,
@@ -85,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "The weather has been bad lately and m_c can feel it in their bones.",
+        "event_text": "The weather has been bad lately, and m_c can feel it in their bones.",
         "history_text": [
             null,
             null,
@@ -104,7 +104,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c can feel their bones and joints aching, bad weather must be on its way.",
+        "event_text": "m_c can feel their bones and joints aching. Bad weather must be on its way.",
         "history_text": [
             null,
             null,
@@ -123,7 +123,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c isn't as young as they used to be and their joints are making that extremely clear.",
+        "event_text": "m_c isn't as young as they used to be, and their aching joints are making that extremely clear.",
         "history_text": [
             null,
             null,
@@ -142,7 +142,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard, their joints are sore.",
+        "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - their joints are now quite sore.",
         "history_text": [
             null,
             null,
@@ -201,7 +201,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has collected a lot of ticks in their pelt.",
+        "event_text": "m_c has collected quite a lot of ticks in their pelt, and grumbles about the itchy bites dotted through their pelt.",
         "history_text": [
             null,
             null,
@@ -220,7 +220,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has been yowling about their ticks for the better part of the day.",
+        "event_text": "m_c has been yowling about their ticks for the better part of the day, the itchy bites maddening to them.",
         "history_text": [
             null,
             null,
@@ -239,7 +239,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet.",
+        "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting their pelt.",
         "history_text": [
             null,
             null,
@@ -258,7 +258,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles.",
+        "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles. Regardless, they're found out when someone spots them scratching at the bites.",
         "history_text": [
             null,
             null,
@@ -286,7 +286,7 @@
             "scar",
             "CHEEK"
         ],
-        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates but r_c retaliated at the interruption.  m_c limps away, new clawmarks on their pelt.",
+        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through their pelt.",
         "history_text": [
             "m_c was scarred by r_c.",
             "m_c died after r_c hurt them during an argument.",

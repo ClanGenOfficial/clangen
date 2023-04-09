@@ -64,7 +64,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was carried off by an eagle and never seen again.",
+        "death_text": "m_c was carried off by an eagle, never to be seen again.",
         "history_text": [null, "were carried away by an eagle."],
         "cat_trait": null,
         "cat_skill": null,
@@ -85,7 +85,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was buried alive in an avalanche and lost all their lives.",
+        "death_text": "m_c was buried alive in an avalanche, and lost all their lives.",
         "history_text": [null, "were buried alive in an avalanche."],
         "cat_trait": null,
         "cat_skill": null,
@@ -95,7 +95,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall"],
-        "death_text": "m_c was buried alive in an landslide and lost all their lives.",
+        "death_text": "m_c was buried alive in an landslide, and lost all their lives.",
         "history_text": [null, "were buried alive in an landslide."],
         "cat_trait": null,
         "cat_skill": null,
@@ -105,7 +105,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf"],
-        "death_text": "m_c was buried alive in an mudslide and lost all their lives.",
+        "death_text": "m_c was buried alive in an mudslide, and lost all their lives.",
         "history_text": [null, "were buried alive in an mudslide."],
         "cat_trait": null,
         "cat_skill": null,
@@ -115,7 +115,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "neg_platonic", "dislike", "neg_trust", "neg_comfort"],
-        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom and couldn't recover.",
+        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom, and couldn't recover.",
         "history_text": [null, "were pushed off a cliff."],
         "cat_trait": null,
         "cat_skill": null,
@@ -125,7 +125,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c slipped off a cliff onto the sharp rocks at the bottom and couldn't recover.",
+        "death_text": "m_c slipped off a cliff onto the sharp rocks at the bottom, and couldn't recover.",
         "history_text": [null, "slipped off a cliff edge."],
         "cat_trait": null,
         "cat_skill": null,

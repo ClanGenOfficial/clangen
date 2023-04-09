@@ -74,12 +74,12 @@
 		"id": "admire_med_inc_med2",
 		"interactions": [
 			"m_c escorted r_c so they could gather herbs.",
-			"m_c thought of r_c on the last patrol and brought an herb back with them.",
+			"m_c thought of r_c on the last patrol, and brought an herb back for them.",
 			"m_c notices that r_c is trying really hard to be a great medicine cat.",
 			"m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
 			"m_c thanks r_c for keeping the Clan healthy.",
 			"m_c watches r_c sort herbs as they chat about how their day has gone.",
-			"m_c lets r_c know that they're about to go out and asks if they need to watch for any herbs.",
+			"m_c lets r_c know that they're about to go out, and asks if they need to watch for any herbs.",
 			"m_c asks r_c if there's any herbs they should look out for while they're out on patrol later."
 		],
 		"main_status_constraint": [
@@ -122,7 +122,7 @@
 	{
 		"id": "admeration_kit_inc_med2",
 		"interactions": [
-			"m_c tells r_c that they would like to be like them when they grows up."
+			"m_c tells r_c that they would like to be like them when they grow up."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -231,7 +231,7 @@
 		"id": "admire_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c had a difficult conversation with r_c and they now have a deeper understanding of each other."
+			"m_c had a difficult conversation with r_c, and they now have a deeper understanding of each other."
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"

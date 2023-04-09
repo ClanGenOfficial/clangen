@@ -10,7 +10,7 @@
 		"id": "trust_de_low2",
 		"intensity": "low",
 		"interactions": [
-			"m_c shared a embarrassing story about r_c they were asked not to share..."
+			"m_c shared a embarrassing story about r_c that they were asked not to share..."
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"
@@ -25,7 +25,7 @@
 	{
 		"id": "trust_de_med2",
 		"interactions": [
-			"m_c said they'd cover for r_c, but when it came time, they got r_c in trouble."
+			"m_c said they'd cover for r_c, but when it came time, they got r_c in trouble!"
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"
@@ -60,7 +60,7 @@
 		"id": "trust_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to them."
+			"m_c goes to tell a secret to r_c, only for r_c to tell someone else's secret to them instead."
 		]
 	},
 	{
@@ -90,7 +90,7 @@
 		"id": "trust_for_medcat_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c is dissatisfied that r_c can't seem to get rid of their chronic pain."
+			"m_c is dissatisfied that r_c can't seem to make their chronic pain go away."
 		],
 		"main_status_constraint": [
 			"elder"

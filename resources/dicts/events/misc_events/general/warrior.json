@@ -1,5 +1,5 @@
 [
-      {
+    {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_warrior"],
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
@@ -7,17 +7,17 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-      },
-      {
+    },
+    {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_warrior"],
-        "event_text": "m_c and r_c take an early evening out of camp to watch the moon rise.",
+        "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
          "other_cat_skill": null
-      },
-      {
+    },
+    {
         "camp": "any",
         "tags": ["Leaf-bare", "other_cat", "other_cat_warrior"],
         "event_text": "m_c encourages r_c to play in the snow with them during a patrol.",
@@ -25,8 +25,8 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-      },
-      {
+    },
+    {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_mate", "romantic", "comfort", "trust"],
         "event_text": "m_c gifts their beloved r_c with a acc_singular to wear in their pelt.",
@@ -34,177 +34,177 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-      },
-      {
-      "camp": "any",
-      "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_mate", "romantic", "comfort", "trust"],
-      "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
     },
     {
-      "camp": "any",
-      "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-      "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null,
-      "accessories": ["COLLAR"]
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_mate", "romantic", "comfort", "trust"],
+        "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_up"],
-      "event_text": "m_c was seen speaking calmly to a cat from o_c.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_down"],
-      "event_text": "m_c was seen arguing and borderline fighting with a cat from o_c.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-      "event_text": "m_c was seen racing along the border with their rival from o_c.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-      "event_text": "m_c was loitering around o_c's border, looking for a specific cat.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen talking calmly to a loner before both cats went their separate ways.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-    "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
-    "cat_trait": null,
-    "cat_skill": null,
-    "other_cat_trait": null,
-    "other_cat_skill": null
-},
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen touching noses with a loner. Scandalous!",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen arguing and borderline fighting with a loner.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was chasing a kittypet off of the territory.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen chasing a rogue off of the territory.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was touching noses with a rogue. Scandalous!",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen playing with a kittypet over the border.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen taking food from a twoleg!",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was caught sharing prey with a rogue, who was chased off by a patrol.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was caught sharing prey with a kittypet, who was chased off by a patrol.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  },
-  {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was touching noses with a kittypet. Scandalous!",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-  }
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["COLLAR"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_up"],
+        "event_text": "m_c was seen speaking calmly to a cat from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_down"],
+        "event_text": "m_c was seen arguing, and borderline-fighting with, a cat from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was seen racing along the border with their rival from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was loitering around o_c's border, looking for a specific cat.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen talking calmly to a loner, before both cats went their separate ways.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen touching noses with a loner. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen arguing, and borderline-fighting with, a loner.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen chasing a kittypet off of the territory.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen chasing a rogue off of the territory.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen touching noses with a rogue. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen playing with a kittypet over the border.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen taking food from a Twoleg!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was caught sharing prey with a rogue, who was chased off by a patrol.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was caught sharing prey with a kittypet, who was chased off by a patrol.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen touching noses with a kittypet. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
 ]

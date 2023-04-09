@@ -2,7 +2,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was washed out to sea and never seen again.",
+        "death_text": "m_c was washed out to sea, never to be seen again.",
         "history_text": ["m_c was washed out to sea.", null],
         "cat_trait": null,
         "cat_skill": null,

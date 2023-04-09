@@ -267,7 +267,7 @@
 	{
 		"id": "dislike_kit_de_med2",
 		"interactions": [
-			"m_c tried to have a discussion with r_c about what prey tastes best, but it turned into an argument."
+			"m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument."
 		],
 		"main_status_constraint": [
 			"kitten"

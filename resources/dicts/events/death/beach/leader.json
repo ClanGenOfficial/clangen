@@ -14,7 +14,7 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was washed out to sea and never seen again.",
+        "death_text": "m_c was washed out to sea, never to be seen again.",
         "history_text": [
             null,
             "were washed out to sea"],

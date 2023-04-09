@@ -89,7 +89,7 @@
 			"m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
 			"m_c mocks r_c for smelling like gross herbs.",
 			"m_c mocks r_c for smelling like mouse bile.",
-			"m_c looks down on r_c, because there's no way they could ever be a useful medicine cat."
+			"m_c looks down on r_c, convinced there's no way they could ever be a useful medicine cat."
 		],
 		"main_status_constraint": [
 			"apprentice"

@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overdid their last sparring session and has been wincing all day.",
+        "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit bruised.",
         "history_text": [
             null,
             null,
@@ -26,7 +26,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c fought a rogue, but was barely even hurt.",
+        "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -45,7 +45,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c fought a fox, but was barely even hurt.",
+        "event_text": "m_c fought a fox, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -64,7 +64,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c fought a dog, but was barely even hurt.",
+        "event_text": "m_c fought a dog, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -89,7 +89,7 @@
             "comfort",
             "trust"
         ],
-        "event_text": "m_c saved r_c from an enemy warrior and was barely even hurt.",
+        "event_text": "m_c saved r_c from an enemy warrior, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -114,7 +114,7 @@
             "comfort",
             "trust"
         ],
-        "event_text": "m_c saved r_c from a dog and was barely even hurt.",
+        "event_text": "m_c saved r_c from a dog, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -133,7 +133,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overdid their last sparring session and has been wincing all day.",
+        "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit scraped up.",
         "history_text": [
             null,
             null,
@@ -152,7 +152,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c fought a rogue, but was barely even hurt.",
+        "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -171,7 +171,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c fought a fox, but was barely even hurt.",
+        "event_text": "m_c fought a fox, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -196,7 +196,7 @@
             "comfort",
             "trust"
         ],
-        "event_text": "m_c saved r_c from a fox and was barely even hurt.",
+        "event_text": "m_c saved r_c from a fox, and was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
         "history_text": [
             null,
             null,
@@ -696,7 +696,7 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c's leg was badly injured after r_c forces them to fight a big dog.",
+        "event_text": "m_c's leg was badly injured after r_c forced them to fight a big dog.",
         "history_text": [
             "m_c was scarred by a big dog.",
             "m_c died from their wounds after fighting a big dog.",

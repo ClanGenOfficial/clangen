@@ -1,32 +1,32 @@
 [
-   {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_clan", "rel_up"],
-        "event_text": "m_c went to o_c in an attempt to ease the tension of war between the clans: it goes well and o_c begins to draw back from c_n's territory.",
+        "event_text": "m_c goes to o_c in an attempt to ease the tension of war between the Clans: it goes well, and o_c begins to draw back from c_n's territory!",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_clan", "rel_down"],
-        "event_text": "m_c went to o_c in an attempt to ease the tension of war between the clans: it doesn't go well, and o_c further advances in c_n's territory.",
+        "event_text": "m_c goes to o_c in an attempt to ease the tension of war between the Clans: it doesn't go well, and o_c further advances in c_n's territory.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-   {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_adult", "rc_to_mc", "comfort", "trust", "neg_dislike"],
-        "event_text": "m_c pulls r_c to the side, and asks them about their crush on a fellow Clanmate.",
+        "event_text": "m_c pulls r_c to the side, quietly asking them about their crush on a fellow Clanmate.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_kit", "platonic", "comfort", "neg_dislike"],
         "event_text": "m_c spots r_c looking a little bit lonely, and invites them to watch as they perform their duties.",
