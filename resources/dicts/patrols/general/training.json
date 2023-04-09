@@ -1166,5 +1166,28 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
-} 
+},
+{
+    "patrol_id": "gen_train_mosstraining1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["herb", "moss", "apprentice", "warrior", "rel_patrol", "respect", "disrespect", "trust", "training"],
+    "intro_text": "p_l takes app1 out of camp to gather moss.",
+    "decline_text": "Before they even leave the camp r_c's expertise is required in another matter.",
+    "chance_of_success": 40,
+    "exp": 5,
+    "success_text": [
+        "p_l patiently shows app1 the best places to gather moss. They show them how to gather it, and explain to app1 that by doing this they will gain the muscles and strength necessary to be a great warrior.",
+        "p_l notices app1's distracted face. Taking on a more paws-on approach, they show them the strength they gained from gathering the moss and the control they learned from not shredding it. app1 seems awed and impressed."
+    ],
+    "fail_text": [
+        "No matter how patiently p_l tries to teach app1 how to firmly but gently gather and shred the moss, they don't seem to be paying any attention. Frustrated with them, p_l decides to have a talk with the leader upon their return to camp."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": []
+}
 ]
