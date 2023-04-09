@@ -485,5 +485,31 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
-    }
+    },
+
+    {
+        "patrol_id": "gen_hunt_twolegdogsdeer1",
+        "biome": "Any",
+        "season": "newleaf",
+        "tags": ["hunting", "large_prey", "no_fail_prey", "warrior", "clan_to_patrol", "respect", "trust", "dislike"],
+        "intro_text": "The patrol hears a lot of barking and commotion.",
+        "decline_text": "p_l makes the decision to go to another part of the territory to hunt, they want no part of this ruckus.",
+        "chance_of_success": 25,
+        "exp": 10,
+        "success_text": [
+"The patrol silently creeps towards the noise. They discover several dogs gnawing on a deer carcass with their Twolegs shouting at them in apparent anger. The Twolegs grab the dogs and drag them away, their whines softly disappearing in the distance. p_l can't help but feel thankful to the dogs, c_n will eat well for several days to come.",
+"p_l and the patrol pause and snicker when they see some Twolegs' attempt to catch several dogs gnawing on a deer carcass. As the Twolegs catch the dogs and leave, the patrol begins snacking on the carcass. A soft bleating noise nearby notifies them of the presence of the deer's still nursing fawn. They return to c_n with the fawn's carcass, proud and tall."
+        ],
+        "fail_text": [
+"Following the noises, they see dogs eating a deer and Twolegs trying to catch them. Soon, the beasts are caught and the patrol goes to check out the deer. Suddenly, the sound of barking reaches their ears and as the dogs come back into view, the patrol scatters! p_l has to spend the whole day gathering the patrol rather than hunting."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "win_trait": ["sneaky", "careful", "calm"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": []
+}
+
 ]
