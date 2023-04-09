@@ -15,7 +15,6 @@ class MiscEvents():
     """All events that do not fit in a different category."""
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
@@ -29,7 +28,7 @@ class MiscEvents():
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
         for event in possible_events:
             if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
@@ -40,7 +39,7 @@ class MiscEvents():
 
             acc_checked_events.append(event)
 
-        final_events = self.generate_events.filter_possible_events(acc_checked_events, cat, other_cat, war,
+        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war,
                                                                    enemy_clan, other_clan,
                                                                    alive_kits)
 
@@ -153,14 +152,14 @@ class MiscEvents():
         if "COLLAR" in possible_accs:
             acc_list.extend(collars)
 
+        for acc in possible_accs:
+            if acc not in ["WILD", "PLANT", "COLLAR"]:
+                acc_list.append(acc)
+
         if ("NOTAIL" or "HALFTAIL") in cat.scars:
             try:
                 acc_list.remove(acc for acc in tail_accessories)
             except:
                 print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
-
-        for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
-                acc_list.append(acc)
 
         cat.accessory = random.choice(acc_list)

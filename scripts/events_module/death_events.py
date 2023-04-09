@@ -14,7 +14,6 @@ class Death_Events():
     """All events with a connection to conditions."""
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
@@ -33,15 +32,18 @@ class Death_Events():
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "death")
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
-                                                                   other_clan, alive_kits)
-
+        possible_short_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
+        final_events = self.generate_events.filter_possible_short_events(possible_short_events, cat, other_cat, war, enemy_clan,
+                                                                         other_clan, alive_kits)
 
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        death_cause = (random.choice(final_events))
+        try:
+            death_cause = (random.choice(final_events))
+        except IndexError:
+            print('WARNING: no death events found for', cat.name)
+            return
 
         # check if the cat's body was retrievable
         if "no_body" in death_cause.tags:

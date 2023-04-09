@@ -2,13 +2,11 @@
 # -*- coding: ascii -*-
 import random
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from scripts.game_structure.game_essentials import game
 
 resource_directory = "resources/dicts/events/"
+
 
 # ---------------------------------------------------------------------------- #
 #                Tagging Guidelines can be found at the bottom                 #
@@ -18,11 +16,11 @@ class GenerateEvents:
     loaded_events = {}
 
     @staticmethod
-    def get_event_dicts(file_path):
+    def get_short_event_dicts(file_path):
         try:
             with open(
-                file_path,
-                "r",
+                    file_path,
+                    "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -32,20 +30,49 @@ class GenerateEvents:
         return events
 
     @staticmethod
+    def get_ongoing_event_dicts(file_path):
+        events = None
+        try:
+            with open(
+                    file_path,
+                    "r",
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except:
+            print(f"ERROR: Unable to load events from biome {file_path}.")
+
+        return events
+
+    @staticmethod
+    def get_death_reaction_dicts(family_relation, rel_value):
+        try:
+            file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
+            with open(
+                    file_path,
+                    "r",
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except:
+            print(f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}.")
+        return events
+
+    @staticmethod
     def clear_loaded_events():
         GenerateEvents.loaded_events = {}
 
-    def generate_events(self, event_triggered, cat_type, biome):
+    def generate_short_events(self, event_triggered, cat_type, biome):
 
-        if biome:
-            file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
-        else:
+        if cat_type and not biome:
             file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+        elif not cat_type and biome:
+            file_path = f"{resource_directory}{event_triggered}/{biome}.json"
+        else:
+            file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
 
         if file_path in GenerateEvents.loaded_events:
             return GenerateEvents.loaded_events[file_path]
         else:
-            events_dict = GenerateEvents.get_event_dicts(file_path)
+            events_dict = GenerateEvents.get_short_event_dicts(file_path)
 
             event_list = []
             if not events_dict:
@@ -57,7 +84,7 @@ class GenerateEvents:
 
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
-                event = PossibleEvent(
+                event = ShortEvent(
                     camp="any",
                     tags=event["tags"],
                     event_text=event_text,
@@ -68,8 +95,10 @@ class GenerateEvents:
                     other_cat_skill=event["other_cat_skill"],
                     cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
                     cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
-                    other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-                    other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    other_cat_negate_trait=event[
+                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    other_cat_negate_skill=event[
+                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
                     backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
 
                     # injury event only
@@ -94,7 +123,59 @@ class GenerateEvents:
             GenerateEvents.loaded_events[file_path] = event_list
             return event_list
 
-    def possible_events(self, cat_type, age, event_type):
+    def generate_ongoing_events(self, event_type, biome, specific_event=None):
+
+        file_path = f"resources/dicts/events/{event_type}/{biome}.json"
+
+        if file_path in GenerateEvents.loaded_events:
+            return GenerateEvents.loaded_events[file_path]
+        else:
+            events_dict = GenerateEvents.get_ongoing_event_dicts(file_path)
+
+            if not specific_event:
+                event_list = []
+                for event in events_dict:
+                    event = OngoingEvent(
+                        event=event["event"],
+                        camp=event["camp"],
+                        season=event["season"],
+                        tags=event["tags"],
+                        priority=event["priority"],
+                        duration=event["duration"],
+                        current_duration=0,
+                        rarity=event["rarity"],
+                        trigger_events=event["trigger_events"],
+                        progress_events=event["progress_events"],
+                        conclusion_events=event["conclusion_events"],
+                        secondary_disasters=event["secondary_disasters"],
+                        collateral_damage=event["collateral_damage"]
+                    )
+                    event_list.append(event)
+                return event_list
+            else:
+                event = None
+                for event in events_dict:
+                    if event["event"] != specific_event:
+                        print(event["event"], 'is not', specific_event)
+                        continue
+                    print(event["event"], "is", specific_event)
+                    event = OngoingEvent(
+                        event=event["event"],
+                        camp=event["camp"],
+                        season=event["season"],
+                        tags=event["tags"],
+                        priority=event["priority"],
+                        duration=event["duration"],
+                        current_duration=0,
+                        progress_events=event["progress_events"],
+                        conclusion_events=event["conclusion_events"],
+                        collateral_damage=event["collateral_damage"]
+                    )
+                    break
+                print(event)
+                return event
+
+    def possible_short_events(self, cat_type=None, age=None, event_type=None):
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
@@ -106,33 +187,33 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
 
             event_list.extend(
-                self.generate_events(event_type, cat_type, "general"))
+                self.generate_short_events(event_type, cat_type, "general"))
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
-            print(f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
+            print(
+                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
 
         elif game.clan.biome not in game.clan.BIOME_TYPES:
-            print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
+            print(
+                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
 
         else:
-            event_list.extend(
-                self.generate_events(event_type, cat_type, biome))
+            event_list.extend(self.generate_short_events(event_type, cat_type, biome))
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_events(event_type, "warrior", biome))
+                    self.generate_short_events(event_type, "warrior", biome))
 
-            if cat_type not in ["kitten", "leader"]:
+            if cat_type not in ["kitten", "leader", "newborn"]:
                 if event_type != "nutrition":
-                    event_list.extend(
-                        self.generate_events(event_type, "general", "general"))
-                event_list.extend(
-                    self.generate_events(event_type, "general", biome))
+                    event_list.extend(self.generate_short_events(event_type, "general", "general"))
+
+                event_list.extend(self.generate_short_events(event_type, "general", biome))
 
         return event_list
 
-    def filter_possible_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
+    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
         murder_events = []
 
@@ -181,19 +262,19 @@ class GenerateEvents:
             if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
-                dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
-                jealous_relation = list(filter(lambda rel: rel.jealousy > 50, relationships))
+                dislike_relation = [i for i in relationships if i.dislike > 50]
+                jealous_relation = [i for i in relationships if i.jealousy > 50]
                 for y in range(len(dislike_relation)):
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
-                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
+                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
-                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
+                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 if not hate:
                     continue
@@ -239,6 +320,10 @@ class GenerateEvents:
             # check for old age
             if "old_age" in event.tags and cat.moons < 150:
                 continue
+            # remove some non-old age events to encourage elders to die of old age more often
+            if "old_age" not in event.tags and cat.moons < 150:
+                if not int(random.random() * 2):
+                    continue
 
             # check other_cat status and other identifiers
             if other_cat:
@@ -256,9 +341,9 @@ class GenerateEvents:
                     continue
                 elif "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
                     continue
-                elif "other_cat_kit" in event.tags and other_cat.status != "kitten":
+                elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:
@@ -312,24 +397,35 @@ class GenerateEvents:
             final_events.append(event)
 
         if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
-            print('WE KILL TONIGHT')
+            # print('WE KILL TONIGHT')
             return murder_events
         return final_events
 
-    @staticmethod
-    def get_death_reaction_dicts(family_relation, rel_value):
-        try:
-            file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
-            with open(
-                file_path,
-                "r",
-            ) as read_file:
-                events = ujson.loads(read_file.read())
-        except:
-            print(f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}.")
-        return events
+    def possible_ongoing_events(self, event_type=None, specific_event=None):
+        event_list = []
 
-    def get_possible_death_reactions(self, family_relation, rel_value, trait, body_status):
+        if game.clan.biome not in game.clan.BIOME_TYPES:
+            print(
+                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
+
+        else:
+            biome = game.clan.biome.lower()
+            if not specific_event:
+                event_list.extend(
+                    self.generate_ongoing_events(event_type, biome)
+                )
+                """event_list.extend(
+                    self.generate_ongoing_events(event_type, "general", specific_event)
+                )"""
+                return event_list
+            else:
+                print(specific_event)
+                event = (
+                    self.generate_ongoing_events(event_type, biome, specific_event)
+                )
+                return event
+
+    def possible_death_reactions(self, family_relation, rel_value, trait, body_status):
         possible_events = []
         # grab general events first, since they'll always exist
         events = self.get_death_reaction_dicts("general", rel_value)
@@ -347,7 +443,7 @@ class GenerateEvents:
         return possible_events
 
 
-class PossibleEvent:
+class ShortEvent:
     def __init__(
             self,
             camp="any",
@@ -480,6 +576,37 @@ Following tags are used for freshkill pile events:
 "other_cat" < there is a second cat in this event
 
 """
+
+
+class OngoingEvent:
+    def __init__(self,
+                 event=None,
+                 camp=None,
+                 season=None,
+                 tags=None,
+                 priority='secondary',
+                 duration=None,
+                 current_duration=0,
+                 rarity=0,
+                 trigger_events=None,
+                 progress_events=None,
+                 conclusion_events=None,
+                 secondary_disasters=None,
+                 collateral_damage=None
+                 ):
+        self.event = event
+        self.camp = camp
+        self.season = season
+        self.tags = tags
+        self.priority = priority
+        self.duration = duration
+        self.current_duration = current_duration
+        self.rarity = rarity
+        self.trigger_events = trigger_events
+        self.progress_events = progress_events
+        self.conclusion_events = conclusion_events
+        self.secondary_disasters = secondary_disasters
+        self.collateral_damage = collateral_damage
 
 
 INJURY_DISTRIBUTION = None

@@ -1,0 +1,69 @@
+[
+    {
+        "id": "general_dark_forest_thoughts",
+        "thoughts": [
+            "Is practicing battle moves",
+            "Is sharpening their claws",
+            "Is slinking through the shadows",
+            "Is acting suspiciously",
+            "Is thinking about revenge",
+            "Wishes they could go to StarClan",
+            "Feels regret for their actions",
+            "Is reconsidering some of their choices in life",
+            "Is planning something",
+            "Angrily stalks through the muck",
+            "Is lashing their tail while thinking of those still living",
+            "Is fighting with another member of the Dark Forest",
+            "Wishes they could hurt those who have wronged them",
+            "Is tired of the constant mud staining their pelt",
+            "Wants to unleash mayhem on the cats who hurt them in life",
+            "Is warily watching the shadows",
+            "Is hissing at anyone who comes near",
+            "Is yowling their woes into the endless darkness",
+            "Is feeling hungry",
+            "Is digging their claws into the mud",
+            "Is sending a message to one of the cats still living",
+            "Is scheming",
+            "Found a living cat that they could manipulate",
+            "Found a living cat that they hope will help their plans come to fruition",
+            "Wishes they could destroy the Clan that wronged them",
+            "Has no regrets",
+            "Is curled up in a ball crying",
+            "Is snarling at the shadows",
+            "Has been feeling more miserable than usual",
+            "Is watching for their next victim",
+            "Is licking their wounds",
+            "Is cleaning their fur of muck",
+            "Is hiding a limp after a recent spar",
+            "Is discussing their plans eagerly",
+            "Has picked up fear scent",
+            "Stares through the fog mournfully",
+            "Can feel themselves forgetting about their life",
+            "Sits longingly at the StarClan border",
+            "Is whimpering pathetically",
+            "Almost drowned in the mud",
+            "Thought they heard the voice of a loved one",
+            "Has been behaving erratically recently",
+            "Yearns to taste fresh-kill again",
+            "Yearns to feel the sun on their pelt again",
+            "Is whispering lies into a living cat's ear",
+            "Gingerly checks a recent wound",
+            "Feels the shadows watching them",
+            "Wishes to be alone",
+            "Misses the feeling of a warm nest",
+            "Feels a sharp pang of hunger"
+        ]
+    },
+    {
+        "id": "dark_forest_to_living_other",
+        "thoughts": [
+            "Is thinking about walking in the dreams of r_c",
+            "Watches r_c with malice in their eyes",
+            "Is whispering in the ear of r_c",
+            "Is watching r_c with a sly smile"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]

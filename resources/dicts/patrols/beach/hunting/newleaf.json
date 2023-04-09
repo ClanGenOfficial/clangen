@@ -81,7 +81,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The coasts will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -243,7 +243,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 90,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
@@ -253,7 +253,7 @@
     ],
     "fail_text": [
         "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises the cats. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one. In a moment that embarasses them deeply, the gray vixen slips past them and flees into the maze of the sand dunes.",
         null,
         "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
         null,
@@ -314,7 +314,7 @@
         "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises r_c. This round goes to the gray fox.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
         null,
-        "r_c nearly managed to pin the gray vixen they find on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today this round goes to the gray fox.",
+        "r_c nearly manages to pin the gray vixen they find on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today, this round goes to the gray fox.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
     ],

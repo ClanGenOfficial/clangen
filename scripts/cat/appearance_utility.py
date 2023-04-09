@@ -35,131 +35,9 @@ from .pelts import (
     pelt_colours,
     tortiepatterns,
     )
-
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 
-# ---------------------------------------------------------------------------- #
-#                               utility functions                              #
-# ---------------------------------------------------------------------------- #
-
-def plural_acc_names(accessory, plural, singular):
-    acc_display = accessory.lower()
-    if acc_display == 'maple leaf':
-        if plural:
-            acc_display = 'maple leaves'
-        if singular:
-            acc_display = 'maple leaf'
-    elif acc_display == 'holly':
-        if plural:
-            acc_display = 'holly berries'
-        if singular:
-            acc_display = 'holly berry'
-    elif acc_display == 'blue berries':
-        if plural:
-            acc_display = 'blueberries'
-        if singular:
-            acc_display = 'blueberry'
-    elif acc_display == 'forget me nots':
-        if plural:
-            acc_display = 'forget me nots'
-        if singular:
-            acc_display = 'forget me not flower'
-    elif acc_display == 'rye stalk':
-        if plural:
-            acc_display = 'rye stalks'
-        if singular:
-            acc_display = 'rye stalk'
-    elif acc_display == 'laurel':
-        if plural:
-            acc_display = 'laurel'
-        if singular:
-            acc_display = 'laurel plant'
-    elif acc_display == 'bluebells':
-        if plural:
-            acc_display = 'bluebells'
-        if singular:
-            acc_display = 'bluebell flower'
-    elif acc_display == 'nettle':
-        if plural:
-            acc_display = 'nettles'
-        if singular:
-            acc_display = 'nettle'
-    elif acc_display == 'poppy':
-        if plural:
-            acc_display = 'poppies'
-        if singular:
-            acc_display = 'poppy flower'
-    elif acc_display == 'lavender':
-        if plural:
-            acc_display = 'lavender'
-        if singular:
-            acc_display = 'lavender flower'
-    elif acc_display == 'herbs':
-        if plural:
-            acc_display = 'herbs'
-        if singular:
-            acc_display = 'herb'
-    elif acc_display == 'petals':
-        if plural:
-            acc_display = 'petals'
-        if singular:
-            acc_display = 'petal'
-    elif acc_display == ('dry herbs' or 'dry_herbs'):
-        if plural:
-            acc_display = 'dry herbs'
-        if singular:
-            acc_display = 'dry herb'
-    elif acc_display == 'oak leaves':
-        if plural:
-            acc_display = 'oak leaves'
-        if singular:
-            acc_display = 'oak leaf'
-    elif acc_display == 'catmint':
-        if plural:
-            acc_display = 'catnip'
-        if singular:
-            acc_display = 'catnip sprig'
-    elif acc_display == 'maple seed':
-        if plural:
-            acc_display = 'maple seeds'
-        if singular:
-            acc_display = 'maple seed'
-    elif acc_display == 'juniper':
-        if plural:
-            acc_display = 'juniper berries'
-        if singular:
-            acc_display = 'juniper berry'
-    elif acc_display == 'red feathers':
-        if plural:
-            acc_display = 'cardinal feathers'
-        if singular:
-            acc_display = 'cardinal feather'
-    elif acc_display == 'blue feathers':
-        if plural:
-            acc_display = 'crow feathers'
-        if singular:
-            acc_display = 'crow feather'
-    elif acc_display == 'jay feathers':
-        if plural:
-            acc_display = 'jay feathers'
-        if singular:
-            acc_display = 'jay feather'
-    elif acc_display == 'moth wings':
-        if plural:
-            acc_display = 'moth wings'
-        if singular:
-            acc_display = 'moth wing'
-    elif acc_display == 'cicada wings':
-        if plural:
-            acc_display = 'cicada wings'
-        if singular:
-            acc_display = 'cicada wing'
-
-    if plural is True and singular is False:
-        return acc_display
-    elif singular is True and plural is False:
-        return acc_display
 
 # ---------------------------------------------------------------------------- #
 #                                init functions                                #
@@ -209,6 +87,7 @@ def init_eyes(cat):
             elif cat.eye_colour in green_eyes:
                 eye_choice = choice([yellow_eyes, blue_eyes])
                 cat.eye_colour2 = choice(eye_choice)
+
 
 def pelt_inheritance(cat, parents: tuple):
     # setting parent pelt categories
@@ -402,6 +281,7 @@ def pelt_inheritance(cat, parents: tuple):
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
     cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
+
 def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
     #   PELT
@@ -465,6 +345,7 @@ def randomize_pelt(cat):
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
     cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
+
 def init_pelt(cat):
     if cat.pelt is not None:
         return cat.pelt
@@ -483,13 +364,17 @@ def init_pelt(cat):
         else:
             randomize_pelt(cat)
 
+
 def init_sprite(cat):
     if cat.pelt is None:
         init_pelt(cat)
-    cat.age_sprites = {
+    cat.cat_sprites = {
+        'newborn': 20,
         'kitten': randint(0, 2),
         'adolescent': randint(3, 5),
-        'elder': randint(3, 5)
+        'senior': randint(12, 14),
+        'sick_young': 19,
+        'sick_adult': 18
     }
     cat.reverse = choice([True, False])
     # skin chances
@@ -497,16 +382,19 @@ def init_sprite(cat):
             
     if cat.pelt is not None:
         if cat.pelt.length != 'long':
-            cat.age_sprites['adult'] = randint(6, 8)
+            cat.cat_sprites['adult'] = randint(6, 8)
+            cat.cat_sprites['para_adult'] = 16
         else:
-            cat.age_sprites['adult'] = randint(0, 2)
-        cat.age_sprites['young adult'] = cat.age_sprites['adult']
-        cat.age_sprites['senior adult'] = cat.age_sprites['adult']
-        cat.age_sprites['dead'] = None
+            cat.cat_sprites['adult'] = randint(9, 11)
+            cat.cat_sprites['para_adult'] = 15
+        cat.cat_sprites['young adult'] = cat.cat_sprites['adult']
+        cat.cat_sprites['senior adult'] = cat.cat_sprites['adult']
 
 
 def init_scars(cat):
     if not cat.scars:
+        if cat.age == "newborn":
+            return
         scar_choice = randint(0, 15)
         if cat.age in ['kitten', 'adolescent']:
             scar_choice = randint(0, 50)
@@ -552,7 +440,6 @@ def init_pattern(cat):
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
-                print("WILDCARD TORTIE")
 
                 # Allow any pattern:
                 cat.tortiepattern = choice(tortiebases)
@@ -600,9 +487,13 @@ def init_pattern(cat):
 def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
+    par_points = []
     for p in parents:
-        if p and p.white_patches:
-            par_whitepatches.add(p.white_patches)
+        if p:
+            if p.white_patches:
+                par_whitepatches.add(p.white_patches)
+            if p.points:
+                par_points.append(p.points)
 
     if not parents:
         print("Error - no parents. Randomizing white patches.")
@@ -611,32 +502,57 @@ def white_patches_inheritance(cat, parents: tuple):
 
     # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
     if par_whitepatches and not randint(0, game.config["cat_generation"]["direct_inheritance"]):
-        cat.white_patches = choice(list(par_whitepatches))
-        return
+        # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
+        _temp = par_whitepatches.copy()
+        if cat.pelt.name == "Tortie":
+            for p in _temp.copy():
+                if p in high_white + mostly_white + ["FULLWHITE"]:
+                    _temp.remove(p)
+        elif cat.pelt.name == "Calico":
+            for p in _temp.copy():
+                if p in little_white + mid_white:
+                    _temp.remove(p)
 
-    vit_chance = not randint(0, 40)
-    if vit_chance:
-        cat.white_patches = choice(vit)
-        return
+        # Only proceed with the direct inheritance if there are white patches that match the pelt.
+        if _temp:
+            cat.white_patches = choice(list(_temp))
 
-    white_list = [little_white, mid_white, high_white, mostly_white, point_markings, ['FULLWHITE']]
+            # Direct inheritance also effect the point marking.
+            if par_points and cat.pelt.name != "Tortie":
+                cat.points = choice(par_points)
+            else:
+                cat.points = None
 
-    weights = [0, 0, 0, 0, 0, 0]  # Same order as white_list
+            return
+
+    # dealing with points
+    if par_points:
+        chance = 10 - len(par_points)
+    else:
+        chance = 40
+
+    if cat.pelt != "Tortie" and not (random.random() * chance):
+        cat.points = choice(point_markings)
+    else:
+        cat.points = None
+
+
+    white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
+
+    weights = [0, 0, 0, 0, 0]  # Same order as white_list
     for p_ in par_whitepatches:
         if p_ in little_white:
-            add_weights = (40, 20, 15, 5, 0, 0)
+            add_weights = (40, 20, 15, 5, 0)
         elif p_ in mid_white:
-            add_weights = (10, 40, 15, 10, 0, 0)
+            add_weights = (10, 40, 15, 10, 0)
         elif p_ in high_white:
-            add_weights = (15, 20, 40, 10, 0, 1)
+            add_weights = (15, 20, 40, 10, 1)
         elif p_ in mostly_white:
-            add_weights = (5, 15, 20, 40, 0, 5)
-        elif p_ in point_markings:
-            add_weights = (10, 10, 10, 10, 65, 5)
+            add_weights = (5, 15, 20, 40, 5)
         elif p_ == "FULLWHITE":
-            add_weights = (0, 5, 15, 40, 0, 10)
+            add_weights = (0, 5, 15, 40, 10)
         else:
-            add_weights = (0, 0, 0, 0, 0, 0)
+            add_weights = (0, 0, 0, 0, 0)
 
         for x in range(0, len(weights)):
             weights[x] += add_weights[x]
@@ -645,63 +561,90 @@ def white_patches_inheritance(cat, parents: tuple):
     # If all the weights are still 0, that means none of the parents have white patches.
     if not any(weights):
         if not all(parents):  # If any of the parents are None (unknown), use the following distribution:
-            weights = [20, 10, 10, 5, 5, 0]
+            weights = [20, 10, 10, 5, 0]
         else:
             # Otherwise, all parents are known and don't have any white patches. Focus distribution on little_white.
-            weights = [50, 5, 0, 0, 0, 0]
+            weights = [50, 5, 0, 0, 0]
 
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
-        weights = weights[:2] + [0, 0, 0, 0]
+        weights = weights[:2] + [0, 0, 0]
         # Another check to make sure not all the values are zero. This should never happen, but better
         # safe then sorry.
         if not any(weights):
-            weights = [2, 1, 0, 0, 0, 0]
-
+            weights = [2, 1, 0, 0, 0]
+    elif cat.pelt.name == "Calico":
+        weights = [0, 0, 0] + weights[3:]
+        # Another check to make sure not all the values are zero. This should never happen, but better
+        # safe then sorry.
+        if not any(weights):
+            weights = [2, 1, 0, 0, 0]
 
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
     )
 
     cat.white_patches = chosen_white_patches
+    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
+        cat.points = None
+
 
 def randomize_white_patches(cat):
-    vit_chance = not randint(0, 40)
-    if vit_chance:
-        cat.white_patches = choice(vit)
-        return
+
+    # Points determination. Tortie can't be pointed
+    if cat.pelt.name != "Tortie" and not random.getrandbits(game.config["cat_generation"]["random_point_chance"]):
+        # Cat has colorpoint!
+        cat.points = choice(point_markings)
+    else:
+        cat.points = None
 
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
-        weights = (2, 1, 0, 0, 0, 0)
+        weights = (2, 1, 0, 0, 0)
+    elif cat.pelt.name == "Calico":
+        weights = (0, 0, 20, 15, 1)
     else:
-        weights = (10, 10, 10, 10, 5, 1)
+        weights = (10, 10, 10, 10, 1)
 
-
-    white_list = [little_white, mid_white, high_white, mostly_white, point_markings, ['FULLWHITE']]
+    white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
     )
 
     cat.white_patches = chosen_white_patches
+    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
+        cat.points = None
 
 def init_white_patches(cat):
 
     if cat.pelt is None:
         init_pelt(cat)
 
-    if cat.white_patches:
+    #Gather parents
+    par1 = None
+    par2 = None
+    if cat.parent1 in cat.all_cats:
+        par1 = cat.all_cats[cat.parent1]
+    if cat.parent2 in cat.all_cats:
+        par2 = cat.all_cats[cat.parent2]
+
+    # Vit can rool for anyone, not just cats who rolled to have white in their pelt. 
+    par_vit = []
+    for p in (par1, par2):
+        if p:
+            if p.vitiligo:
+                par_vit.append(p.vitiligo)
+    
+    vit_chance = max(game.config["cat_generation"]["vit_chance"] - len(par_vit), 0)
+    if not random.getrandbits(vit_chance):
+        cat.vitiligo = choice(vit)
+
+    if cat.white_patches or cat.points:
         return
 
+    # If the cat was rolled previously to have white patches, then determine the patch they will have
+    # these functions also handle points. 
     if cat.pelt.white:
-
-        par1 = None
-        par2 = None
-        if cat.parent1 in cat.all_cats:
-            par1 = cat.all_cats[cat.parent1]
-        if cat.parent2 in cat.all_cats:
-            par2 = cat.all_cats[cat.parent2]
-
         if par1 or par2:
             white_patches_inheritance(cat, (par1, par2))
         else:
@@ -711,6 +654,7 @@ def init_white_patches(cat):
 def init_tint(cat):
     """Sets tint for pelt and white patches"""
 
+    # PELT TINT
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
@@ -720,10 +664,8 @@ def init_tint(cat):
     else:
         cat.tint = "none"
 
-    # These are the patches where the tint should always be none
-    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT'] + vit
-
-    if cat.white_patches and cat.white_patches not in no_tint_patches:
+    # WHITE PATCHES TINT
+    if cat.white_patches or cat.points:
         #Now for white patches
         possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
         if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:

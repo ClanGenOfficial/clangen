@@ -1,12 +1,9 @@
 import pygame
 import pygame_gui
 
+from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError as e:
-    print(f"ERROR: {e}\nFailed to import ujson, saving may be slower.")
-    import json as ujson
+import ujson
 import os
 from ast import literal_eval
 
@@ -23,7 +20,6 @@ class Game():
     # max_relation_events_displayed = 10
     # relation_scroll_ct = 0
 
-    ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
     mediated = []  # Keep track of which couples have been mediated this moon.
 
     cur_events_list = []
@@ -53,8 +49,6 @@ class Game():
 
     # Sort-type
     sort_type = "rank"
-
-    sort_fav = False
 
     choose_cats = {}
     '''cat_buttons = {
@@ -111,6 +105,7 @@ class Game():
         'fill_patrol': False,
         'patrol_done': False,
         'error_message': '',
+        'traceback': '',
         'apprentice': None,
         'change_name': '',
         'change_suffix': '',
@@ -136,72 +131,35 @@ class Game():
         'broke_up': False,
         'show_info': False,
         'patrol_chosen': 'general',
-        'favorite_sub_tab': None
-
+        'favorite_sub_tab': None,
+        'root_cat': None,
+        'window_open': False,
+        'skip_conditions': []
     }
     all_screens = {}
     cur_events = {}
     map_info = {}
 
     # SETTINGS
-    settings = {
-        'no gendered breeding': False,
-        'text size': '0',
-        'no unknown fathers': False,
-        'dark mode': False,
-        'backgrounds': True,
-        'autosave': False,
-        'disasters': False,
-        'retirement': False,
-        'language': 'english',
-        'affair': False,
-        'shaders': False,
-        'hotkey display': False,
-        'random relation': True,
-        'show dead relation': False,
-        'show empty relation': False,
-        'romantic with former mentor': True,
-        'game_mode': None,
-        'deputy': False,
-        'den labels': True,
-        'fading': True,
-        "save_faded_copy": False,
-        'favorite sub tab': None,
-        'gore': False,
-        'first_cousin_mates': True,
-        'become_mediator': False,
-        'fullscreen': False,
-        'discord': False,
-    }  # The current settings
-    setting_lists = {
-        'no gendered breeding': [False, True],
-        'text size': ['0', '1', '2'],
-        'no unknown fathers': [False, True],
-        'dark mode': [False, True],
-        'backgrounds': [True, False],
-        'autosave': [False, True],
-        'disasters': [False, True],
-        'retirement': [True, False],
-        'language': language_list,
-        'affair': [False, True],
-        'shaders': [False, True],
-        'hotkey display': [False, True],
-        'random relation': [False, True],
-        'show dead relation': [False, True],
-        'show empty relation': [False, True],
-        'romantic with former mentor': [False, True],
-        'game_mode': game_mode_list,
-        'deputy': [False, True],
-        'den labels': [False, True],
-        'favorite sub tab': sub_tab_list,
-        'fading': [True, False],
-        'save_faded_copy': [False, True],
-        "gore": [False, True],
-        'discord': [False, True],
-        'first_cousin_mates': [True, False],
-        'become_mediator': [False, True],
-        'fullscreen': [False, True]
-    }  # Lists of possible options for each setting
+    settings = {}
+    setting_lists = {}
+
+    with open("resources/gamesettings.json", 'r') as read_file:
+        _settings = ujson.loads(read_file.read())
+
+    for setting, values in _settings['__other'].items():
+        settings[setting] = values[0]
+        setting_lists[setting] = values
+
+    _ = []
+    _.append(_settings['relation'])
+    _.append(_settings['general'])
+
+    for cat in _:  # Add all the settings to the settings dictionary
+        for setting_name, inf in cat.items():
+            settings[setting_name] = inf[2]
+            setting_lists[setting_name] = [inf[2], not inf[2]]
+
     settings_changed = False
 
     # CLAN
@@ -222,6 +180,9 @@ class Game():
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
 
+        if self.config['fun']['april_fools']:
+            self.config['fun']['newborns_can_roam'] = True
+            self.config['fun']['newborns_can_patrol'] = True
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
@@ -231,7 +192,7 @@ class Game():
         self.keyspressed = []
 
     def read_clans(self):
-        '''with open('saves/clanlist.txt', 'r') as read_file:
+        '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -247,30 +208,30 @@ class Game():
         # so we can just get a list of all the folders in the saves folder
 
         # First, we need to make sure the saves folder exists
-        if not os.path.exists('saves'):
-            os.makedirs('saves')
+        if not os.path.exists(get_save_dir()):
+            os.makedirs(get_save_dir())
             print('Created saves folder')
             return None
-        
+
         # Now we can get a list of all the folders in the saves folder
-        clan_list = [f.name for f in os.scandir('saves') if f.is_dir()]
+        clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
 
         # the clan specified in saves/clanlist.txt should be first in the list
         # so we can load it automatically
 
-        if os.path.exists('saves/clanlist.txt'):
-            with open('saves/clanlist.txt', 'r') as f:
+        if os.path.exists(get_save_dir() + '/clanlist.txt'):
+            with open(get_save_dir() + '/clanlist.txt', 'r') as f:
                 loaded_clan = f.read().strip().splitlines()
                 if loaded_clan:
                     loaded_clan = loaded_clan[0]
                 else:
                     loaded_clan = None
-            os.remove('saves/clanlist.txt')
+            os.remove(get_save_dir() + '/clanlist.txt')
             if loaded_clan:
-                with open('saves/currentclan.txt', 'w') as f:
+                with open(get_save_dir() + '/currentclan.txt', 'w') as f:
                     f.write(loaded_clan)
-        elif os.path.exists('saves/currentclan.txt'):
-            with open('saves/currentclan.txt', 'r') as f:
+        elif os.path.exists(get_save_dir() + '/currentclan.txt'):
+            with open(get_save_dir() + '/currentclan.txt', 'r') as f:
                 loaded_clan = f.read().strip()
         else:
             loaded_clan = None
@@ -296,29 +257,29 @@ class Game():
                 clans.append(f"{clan_name}\n")
 
         if clans:
-            with open('saves/clanlist.txt', 'w') as f:
+            with open(get_save_dir() + '/clanlist.txt', 'w') as f:
                 f.writelines(clans)'''
         if loaded_clan:
-            if os.path.exists('saves/clanlist.txt'):
-                os.remove('saves/clanlist.txt') # we don't need clanlist.txt anymore
-            with open('saves/currentclan.txt', 'w') as f:
+            if os.path.exists(get_save_dir() + '/clanlist.txt'):
+                os.remove(get_save_dir() + '/clanlist.txt')  # we don't need clanlist.txt anymore
+            with open(get_save_dir() + '/currentclan.txt', 'w') as f:
                 f.write(loaded_clan)
         else:
-            if os.path.exists('saves/currentclan.txt'):
-                os.remove('saves/currentclan.txt')
+            if os.path.exists(get_save_dir() + '/currentclan.txt'):
+                os.remove(get_save_dir() + '/currentclan.txt')
 
     def save_settings(self):
         """ Save user settings for later use """
         data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
-        with open('saves/settings.txt', 'w') as write_file:
+        with open(get_save_dir() + '/settings.txt', 'w') as write_file:
             write_file.write(data)
         self.settings_changed = False
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
-        with open('saves/settings.txt', 'r') as read_file:
+        with open(get_save_dir() + '/settings.txt', 'r') as read_file:
             settings_data = read_file.read()
 
         lines = settings_data.split(
@@ -381,9 +342,15 @@ class Game():
             clanname = game.switches['clan_list'][0]'''
         if game.clan is not None:
             clanname = game.clan.name
-        directory = 'saves/' + clanname
+        directory = get_save_dir() + '/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
+
+        # Delete all existing relationship files
+        if not os.path.exists(directory + '/relationships'):
+            os.makedirs(directory + '/relationships')
+        for f in os.listdir(directory + '/relationships'):
+            os.remove(os.path.join(directory + '/relationships', f))
 
         self.save_faded_cats(clanname)  # Fades cat and saves them, if needed
 
@@ -393,6 +360,7 @@ class Game():
                 "ID": inter_cat.ID,
                 "name_prefix": inter_cat.name.prefix,
                 "name_suffix": inter_cat.name.suffix,
+                "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
@@ -408,6 +376,7 @@ class Game():
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
+                "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
                 "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
@@ -417,17 +386,19 @@ class Game():
                 "pelt_color": inter_cat.pelt.colour,
                 "pelt_white": inter_cat.pelt.white,
                 "pelt_length": inter_cat.pelt.length,
-                "spirit_kitten": inter_cat.age_sprites['kitten'],
-                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
-                "spirit_young_adult": inter_cat.age_sprites['young adult'],
-                "spirit_adult": inter_cat.age_sprites['adult'],
-                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
-                "spirit_elder": inter_cat.age_sprites['elder'],
-                "spirit_dead": inter_cat.age_sprites['dead'],
+                "sprite_kitten": inter_cat.cat_sprites['kitten'],
+                "sprite_adolescent": inter_cat.cat_sprites['adolescent'],
+                "sprite_young_adult": inter_cat.cat_sprites['young adult'],
+                "sprite_adult": inter_cat.cat_sprites['adult'],
+                "sprite_senior_adult": inter_cat.cat_sprites['senior adult'],
+                "sprite_senior": inter_cat.cat_sprites['senior'],
+                "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
+                "vitiligo": inter_cat.vitiligo,
+                "points": inter_cat.points,
                 "white_patches_tint": inter_cat.white_patches_tint,
                 "pattern": inter_cat.pattern,
                 "tortie_base": inter_cat.tortiebase,
@@ -459,9 +430,9 @@ class Game():
             clan_cats.append(cat_data)
             inter_cat.save_condition()
             if not inter_cat.dead:
-                inter_cat.save_relationship_of_cat()
+                inter_cat.save_relationship_of_cat(directory + '/relationships')
         try:
-            with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
+            with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
                 write_file.write(json_string)
         except:
@@ -470,7 +441,7 @@ class Game():
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
         if game.cat_to_fade:
-            directory = 'saves/' + clanname + "/faded_cats"
+            directory = get_save_dir() + '/' + clanname + "/faded_cats"
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
@@ -510,6 +481,7 @@ class Game():
                 "ID": {inter_cat.ID},
                 "name_prefix": {inter_cat.name.prefix},
                 "name_suffix": {inter_cat.name.suffix},
+                "specsuffix_hidden": {inter_cat.name.specsuffix_hidden},
                 "gender": {inter_cat.gender},
                 "gender_align": {inter_cat.genderalign},
                 "birth_cooldown": {inter_cat.birth_cooldown},
@@ -520,11 +492,12 @@ class Game():
                 "trait": {inter_cat.trait},
                 "parent1": {inter_cat.parent1},
                 "parent2": {inter_cat.parent2},
-                "mentor": {inter_cat.mentor.ID if inter_cat.mentor else None},
-                "former_mentor": {inter_cat.former_mentor if inter_cat.former_mentor else []},
+                "mentor": {inter_cat.mentor if inter_cat.mentor else None},
+                "former_mentor": {[cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else []},
                 "patrol_with_mentor": {inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0},
                 "mentor_influence": {inter_cat.mentor_influence if inter_cat.mentor_influence else []},
                 "mate": {inter_cat.mate},
+                "previous_mates": {inter_cat.previous_mates},
                 "dead": {inter_cat.dead},
                 "died_by": {inter_cat.died_by if inter_cat.died_by else []},
                 "paralyzed": {inter_cat.paralyzed},
@@ -534,34 +507,46 @@ class Game():
                 "pelt_color": {inter_cat.pelt.colour},
                 "pelt_white": {inter_cat.pelt.white},
                 "pelt_length": {inter_cat.pelt.length},
-                "spirit_kitten": {inter_cat.age_sprites['kitten']},
-                "spirit_adolescent": {inter_cat.age_sprites['adolescent']},
-                "spirit_young_adult": {inter_cat.age_sprites['young adult']},
-                "spirit_adult": {inter_cat.age_sprites['adult']},
-                "spirit_senior_adult": {inter_cat.age_sprites['senior adult']},
-                "spirit_elder": {inter_cat.age_sprites['elder']},
-                "spirit_dead": {inter_cat.age_sprites['dead']},
+                "sprite_kitten": {inter_cat.cat_sprites['kitten']},
+                "sprite_adolescent": {inter_cat.cat_sprites['adolescent']},
+                "sprite_young_adult": {inter_cat.cat_sprites['young adult']},
+                "sprite_adult": {inter_cat.cat_sprites['adult']},
+                "sprite_senior_adult": {inter_cat.cat_sprites['senior adult']},
+                "sprite_senior": {inter_cat.cat_sprites['senior']},
+                "sprite_para_adult": {inter_cat.cat_sprites['para_adult']},
                 "eye_colour": {inter_cat.eye_colour},
+                "eye_colour2": {inter_cat.eye_colour2 if inter_cat.eye_colour2 else None},
                 "reverse": {inter_cat.reverse},
                 "white_patches": {inter_cat.white_patches},
+                "vitiligo": {inter_cat.vitiligo},
+                "points": {inter_cat.points},
+                "white_patches_tint": {inter_cat.white_patches_tint},
                 "pattern": {inter_cat.pattern},
                 "tortie_base": {inter_cat.tortiebase},
                 "tortie_color": {inter_cat.tortiecolour},
                 "tortie_pattern": {inter_cat.tortiepattern},
                 "skin": {inter_cat.skin},
+                "tint": {inter_cat.tint},
                 "skill": {inter_cat.skill},
+                "scars": {inter_cat.scars if inter_cat.scars else []},
                 "accessory": {inter_cat.accessory},
                 "experience": {inter_cat.experience},
                 "dead_moons": {inter_cat.dead_for},
-                "current_apprentice":{inter_cat.apprentice},
-                "former_apprentices": {inter_cat.former_apprentices},
+                "current_apprentice": {[appr for appr in inter_cat.apprentice]},
+                "former_apprentices": {[appr for appr in inter_cat.former_apprentices]},
                 "possible_scar": {inter_cat.possible_scar if inter_cat.possible_scar else None},
                 "scar_event": {inter_cat.scar_event if inter_cat.scar_event else []},
                 "df": {inter_cat.df},
-                "corruption": {inter_cat.corruption if inter_cat.corruption else 0},
                 "outside": {inter_cat.outside},
-                "retired": {inter_cat.retired if inter_cat.retired else False}
-                "faded_offspring: {inter_cat.faded_offspring}\n'''
+                "corruption": {inter_cat.corruption if inter_cat.corruption else 0},
+                "life_givers": {inter_cat.life_givers if inter_cat.life_givers else []},
+                "known_life_givers": {inter_cat.known_life_givers if inter_cat.known_life_givers else []},
+                "virtues": {inter_cat.virtues if inter_cat.virtues else []},
+                "retired": {inter_cat.retired if inter_cat.retired else False},
+                "faded_offspring": {inter_cat.faded_offspring},
+                "opacity": {inter_cat.opacity},
+                "prevent_fading": {inter_cat.prevent_fading},
+                "favourite": {inter_cat.favourite}\n'''
 
             # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
             cat_data = {
@@ -572,12 +557,12 @@ class Game():
                 "moons": inter_cat.moons,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
-                "paralyzed": inter_cat.paralyzed,
+                "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
             try:
 
-                with open('saves/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
+                with open(get_save_dir() + '/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
                     json_string = ujson.dumps(cat_data, indent=4)
                     write_file.write(json_string)
             except:
@@ -587,12 +572,12 @@ class Game():
 
         # Save the copy data is needed
         if game.settings["save_faded_copy"]:
-            if not os.path.exists('saves/' + clanname + '/faded_cats_info_copy.txt'):
+            if not os.path.exists(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt'):
                 # Create the file if it doesn't exist
-                with open('saves/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
+                with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
                     pass
 
-            with open('saves/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
+            with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
                 write_file.write(copy_of_info)
 
         game.cat_to_fade = []
@@ -601,7 +586,7 @@ class Game():
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
         try:
-            with open('saves/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: loading faded cat")
@@ -609,7 +594,7 @@ class Game():
 
         cat_info["faded_offspring"].append(offspring)
 
-        with open('saves/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
+        with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
             json_string = ujson.dumps(cat_info, indent=4)
             write_file.write(json_string)
 
@@ -618,10 +603,9 @@ class Game():
 
 game = Game()
 
-
-if not os.path.exists('saves/settings.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/settings.txt', 'w') as write_file:
+if not os.path.exists(get_save_dir() + '/settings.txt'):
+    os.makedirs(get_save_dir(), exist_ok=True)
+    with open(get_save_dir() + '/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()
 
@@ -637,7 +621,7 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',

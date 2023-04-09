@@ -1,5 +1,9 @@
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.patrol import PatrolEvent, Patrol

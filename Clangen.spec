@@ -22,6 +22,7 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
+a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
 
 
 exe = EXE(
@@ -56,5 +57,6 @@ app = BUNDLE(
     coll,
     name='Clangen.app',
     icon='resources/images/icon.png',
-    bundle_identifier=None,
+    bundle_identifier='com.sablesteel.clangen',
+    version='0.7.5' # imo we should give dev builds .5
 )

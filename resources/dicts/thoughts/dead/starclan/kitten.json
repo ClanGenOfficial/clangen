@@ -1,0 +1,114 @@
+[
+    {
+        "id": "gen_dead_kit",
+        "thoughts": [
+            "Wants to find StarClan cats to play with",
+            "Is imagining what it would be like to be a warrior",
+            "Is imagining what it would be like to be a medicine cat",
+            "Is imagining what it would be like to be a mediator",
+            "Is sad they couldn't experience being an apprentice",
+            "Doesn't really understand what being in StarClan means"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_older",
+        "thoughts": [
+            "Is nagging r_c to play with them",
+            "Is begging r_c to tell them stories",
+            "Is following r_c around",
+            "Is sticking closely to r_c",
+            "Is asking r_c uncomfortable questions about life and death"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_kit",
+        "thoughts": [
+            "Is happy to have r_c to play with",
+            "Is playing hide and seek with r_c"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_other_newborn",
+        "thoughts": [
+            "Can't wait for r_c to grow up, so they can play together"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_other_kit",
+        "thoughts": [
+            "Is sad because they can't play with r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_parent",
+        "thoughts": [
+            "Is missing r_c",
+            "Wonders if r_c is missing them too",
+            "Is sad about being apart from r_c"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_kit_to_alive_kit_sibling",
+        "thoughts":[
+            "Wishes they could become apprentices with r_c"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_kit_to_dead_kit_sibling",
+        "thoughts": [
+            "Is glad that at least they have r_c"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    }
+]

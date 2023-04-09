@@ -10,6 +10,7 @@ Fan edit creator: SableSteel, and many others
 
 ## Downloads
 Note: These are developer builds and are not guaranteed to work!
+We do not give support to developer builds!
 - [Windows 10+](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_Win64_Windows10%2B.zip)
 - [macOS](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_macOS64.dmg.zip)
 - [Linux](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_Linux64_glibc2.35%2B.tar.xz.zip)
@@ -27,3 +28,6 @@ Run `pip install -r requirements.txt` to install dependencies.
 
 ### Running game
 Run `python3 main.py`. If python3 does not exist try running `python main.py` instead.
+
+### Bug Reporting
+If you're a Beta Tester, please report bugs using the appropriate discord channels. Otherwise, if you enounter any bugs, we encourage reporting [using this form.](https://docs.google.com/forms/d/e/1FAIpQLSfl-H-HjSTfZ51DCtIHj8uGKtWF-3uysSaP8R6KMTLp7nzmMw/viewform)

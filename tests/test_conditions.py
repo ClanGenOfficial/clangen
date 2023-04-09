@@ -1,9 +1,10 @@
 import unittest
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled
@@ -58,6 +59,8 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
+        med.experience = 100
+        med.experience_level = 'competent'
 
         all_cats = [cat1, cat2, cat3, cat4, med]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 2))
@@ -68,7 +71,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.injuries["splinter"] = {"severity": "minor"}
+        med.injuries["small cut"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))

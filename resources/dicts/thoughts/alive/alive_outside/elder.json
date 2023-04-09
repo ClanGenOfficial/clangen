@@ -1,0 +1,22 @@
+[
+    {
+        "id": "lost_elder_thoughts",
+        "thoughts": [
+            "Wishes they had some help getting around",
+            "Wants an apprentice nearby to help with ticks",
+            "Is saddened by the fact that they can't tell stories to anyone",
+            "Misses the kits stumbling around and bothering them",
+            "Is feeling weary and tired, wondering if there even is a point to carrying on",
+            "Prays that they will see their friends again, in this world or StarClan...",
+            "Their aches and pain make them unable to hunt",
+            "Feels the cold seep and settle into their old bones",
+            "Is unable to remember what herbs to look out for to ease their pain",
+            "Wishes they could check in on the Clan's kits",
+            "Is scared they may die away from the Clan",
+            "Has aching bones from wandering so long"
+        ],
+        "main_status_constraint": [
+            "elder"
+        ]
+    }
+]
