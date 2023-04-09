@@ -136,6 +136,7 @@ class Screens():
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
+        # Check if the setting for moons and seasons UI is on so stats button can be moved
         self.update_stats_button()
         for button in self.menu_buttons:
             self.menu_buttons[button].show()
@@ -177,7 +178,7 @@ class Screens():
         """Updates the menu heading text"""
         self.menu_buttons['heading'].set_text(text)        
     
-    # Check if the setting for moons and seasons UI is on, so the stats button can be moved
+    # Update stats button position if moons and seasons UI is on
     def update_stats_button(self):
         if game.settings["moons and seasons"] and self.name == "clan screen":
             self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((1388, 190))
