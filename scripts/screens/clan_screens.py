@@ -20,7 +20,6 @@ from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fu
 class ClanScreen(Screens):
     max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once. 400 is enough.
     cat_buttons = []
-    tooltip = {}
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -37,7 +36,6 @@ class ClanScreen(Screens):
         self.moons_n_seasons = None
         self.moons_n_seasons_arrow = None
         self.layout = None
-        tooltip = {}
 
     def on_use(self):
         if game.settings['backgrounds']:
