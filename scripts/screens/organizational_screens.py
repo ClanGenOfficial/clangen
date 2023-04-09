@@ -203,7 +203,7 @@ class StartScreen(Screens):
         self.open_data_directory_button.hide()
         self.closebtn.hide()
 
-        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (306, 60))), "",
+        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (382.5, 75))), "",
                                              object_id="#update_button", manager=MANAGER)
         self.update_button.visible = 0
 
