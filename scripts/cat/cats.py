@@ -12,7 +12,7 @@ from ..events_module.generate_events import GenerateEvents
 import ujson
 
 from .pelts import describe_appearance
-from .names import Name
+from .names import Name, names
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -242,7 +242,6 @@ class Cat():
         self.scars = []
         self.former_mentor = []
         self.patrol_with_mentor = 0
-        self.mentor_influence = []
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = {}
@@ -253,7 +252,6 @@ class Cat():
         self.dead = False
         self.exiled = False
         self.outside = False
-        self.died_by = []  # once the cat dies, tell the cause
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
@@ -275,16 +273,8 @@ class Cat():
         self.also_got = False
         self.permanent_condition = {}
         self.retired = False
-        self.possible_scar = None
-        self.possible_death = None
-        self.scar_event = []
-        self.death_event = []
         self.df = False
         self.experience_level = None
-        self.corruption = 0
-        self.life_givers = []
-        self.known_life_givers = []
-        self.virtues = []
         self.no_kits = False
         self.paralyzed = False
         self.cat_sprites = {
@@ -986,7 +976,7 @@ class Cat():
             colour = 'sunlit ice'
         elif colour == 'greenyellow':
             colour = 'green-yellow'
-        if self.eye_colour2 != None:
+        if self.eye_colour2:
             if colour2 == 'palegreen':
                 colour2 = 'pale green'
             if colour2 == 'darkblue':
@@ -1003,6 +993,41 @@ class Cat():
                 colour2 = 'green-yellow'
             colour = colour + ' and ' + colour2
         return colour
+
+    def convert_history(self, mentor_influence, died_by, scar_events):
+        """
+        this is to handle old history save conversions
+        """
+        if mentor_influence or self.former_mentor:
+            mentor_influence = {
+                "mentor": self.former_mentor[-1] if self.former_mentor else None,
+                "skill": mentor_influence[0] if mentor_influence else None,
+                "trait": mentor_influence[1] if mentor_influence else None
+            }
+
+        if died_by:
+            for death in died_by:
+                died_by.append(
+                    {
+                        "involved": None,
+                        "text": death,
+                        "moon": "?"
+                    }
+                )
+        if scar_events:
+            for scar in scar_events:
+                scar_events.append(
+                    {
+                        "involved": None,
+                        "text": scar,
+                        "moon": "?"
+                    }
+                )
+        self.history = History(
+            mentor_influence=mentor_influence,
+            died_by=died_by,
+            scar_events=scar_events,
+        )
 
     def load_history(self):
         if game.switches['clan_name'] != '':
@@ -1024,13 +1049,13 @@ class Cat():
                     self.history = History(
                         mentor_influence=history_data[
                             'mentor_influence'] if "mentor_influence" in history_data else None,
-                        app_ceremony=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
+                        app_ceremony=history_data['app_ceremony'] if "app_ceremony" in history_data else None,
                         lead_ceremony=history_data['lead_ceremony'] if "lead_ceremony" in history_data else None,
-                        possible_death=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
-                        died_by=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
-                        possible_scar=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
-                        scar_events=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
-                        murder=history_data['mentor_influence'] if "mentor_influence" in history_data else None,
+                        possible_death=history_data['possible_death'] if "possible_death" in history_data else None,
+                        died_by=history_data['died_by'] if "died_by" in history_data else None,
+                        possible_scar=history_data['possible_scar'] if "possible_scar" in history_data else None,
+                        scar_events=history_data['scar_events'] if "scar_events" in history_data else None,
+                        murder=history_data['murder'] if "murder" in history_data else None,
                     )
 
             except:
@@ -1046,6 +1071,304 @@ class Cat():
                 history_file.write(json_string)
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")
+
+    # TODO: REWRITE THIS, it's not gonna work at all
+    def create_leadership_ceremony(self):
+        queen = ""
+        warrior = ""
+        kit = ""
+        warrior2 = ""
+        app = ""
+        elder = ""
+        warrior3 = ""
+        med_cat = ""
+        prev_lead = ""
+        known = None
+        virtues = None
+        if len(self.life_givers) == 0:
+            queen_virtues = ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+            warrior_virtues = ["acceptance", "bravery", "certainty", "clear judgement", "confidence"]
+            kit_virtues = ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+            warrior2_virtues = ["courage", "determination", "endurance", "sympathy"]
+            app_virtues = ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
+            elder_virtues = ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+            warrior3_virtues = ["farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+            med_cat_virtues = ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+            prev_lead_virtues = ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
+                                 "leadership through the darkest times", "loyalty to their Clan",
+                                 "the strength to overcome their fears", "tireless energy"]
+            virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues),
+                       choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues),
+                       choice(prev_lead_virtues)]
+            known = [False, False, False, False, False, False, False, False, False]
+
+            for i in reversed(game.clan.starclan_cats):
+                c = Cat.all_cats[i]
+                if c.dead and not c.outside and not c.df:
+                    if not queen and c.status == 'queen':
+                        queen = str(c.name)
+                        known[0] = True
+                        continue
+                    elif not kit and c.status == 'kitten':
+                        kit = str(c.name)
+                        known[2] = True
+                        continue
+                    elif not app and c.status == 'apprentice':
+                        app = str(c.name)
+                        known[4] = True
+                        continue
+                    elif not prev_lead and c.status == 'leader':
+                        prev_lead = str(c.name)
+                        known[8] = True
+                        continue
+                    elif not elder and c.status == 'elder':
+                        elder = str(c.name)
+                        known[5] = True
+                        continue
+                    elif not warrior and c.status == 'warrior':
+                        warrior = str(c.name)
+                        known[1] = True
+                        continue
+                    elif not warrior2 and c.status == 'warrior':
+                        warrior2 = str(c.name)
+                        known[3] = True
+                        continue
+                    elif not warrior3 and c.status == 'warrior':
+                        warrior3 = str(c.name)
+                        known[6] = True
+                        continue
+                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
+                        med_cat = str(c.name)
+                        known[7] = True
+                        continue
+                    if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
+                        break
+            if not queen:
+                queen = choice(names.names_dict["normal_prefixes"]) + \
+                        choice(names.names_dict["normal_suffixes"])
+            if not warrior:
+                warrior = choice(names.names_dict["normal_prefixes"]) + \
+                          choice(names.names_dict["normal_suffixes"])
+            if not kit:
+                kit = choice(names.names_dict["normal_prefixes"]) + "kit"
+            if not warrior2:
+                warrior2 = choice(names.names_dict["normal_prefixes"]) + \
+                           choice(names.names_dict["normal_suffixes"])
+            if not app:
+                app = choice(names.names_dict["normal_prefixes"]) + "paw"
+            if not elder:
+                elder = choice(names.names_dict["normal_prefixes"]) + \
+                        choice(names.names_dict["normal_suffixes"])
+            if not warrior3:
+                warrior3 = choice(names.names_dict["normal_prefixes"]) + \
+                           choice(names.names_dict["normal_suffixes"])
+            if not med_cat:
+                med_cat = choice(names.names_dict["normal_prefixes"]) + \
+                          choice(names.names_dict["normal_suffixes"])
+            if not prev_lead:
+                prev_lead = choice(names.names_dict["normal_prefixes"]) + "star"
+            self.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
+            self.known_life_givers.extend(known)
+            self.virtues.extend(virtues)
+        else:
+            queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = self.life_givers[0], \
+                                                                                      self.life_givers[1], \
+                                                                                      self.life_givers[2], \
+                                                                                      self.life_givers[3], \
+                                                                                      self.life_givers[4], \
+                                                                                      self.life_givers[5], \
+                                                                                      self.life_givers[6], \
+                                                                                      self.life_givers[7], \
+                                                                                      self.life_givers[8]
+
+        # TODO: purely a temporary measure for this to still run through the old lead ceremony function,
+        #  this will need to be changed once the lead ceremony code is recoded
+        return self.handle_old_lead_ceremony()
+
+    def handle_old_lead_ceremony(self, life_givers, known_life_givers, virtues):
+        """
+        this is purely to convert old leader ceremony saves
+        """
+
+        dep_name = str(self.name.prefix) + str(self.name.suffix)
+        if self.trait == "bloodthirsty":
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
+        else:
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        known = known_life_givers
+        virtues = virtues
+        if not known or not virtues:
+            self.create_leadership_ceremony()
+        queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = life_givers[0], \
+                                                                                  life_givers[1], \
+                                                                                  life_givers[2], \
+                                                                                  life_givers[3], \
+                                                                                  life_givers[4], \
+                                                                                  life_givers[5], \
+                                                                                  life_givers[6], \
+                                                                                  life_givers[7], \
+                                                                                  life_givers[8]
+        if known[0]:
+            if self.trait == "bloodthirsty":
+                queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
+                             virtues[
+                                 0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'
+            else:
+                queen_text = queen + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + \
+                             virtues[0] + '.'
+        else:
+            if self.trait == "bloodthirsty":
+                queen_text = 'A queen introduces themself as ' + queen + '. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
+                             virtues[
+                                 0] + '. Their eyes are slightly narrowed as they step back, turning away as ' + dep_name + ' struggles to gain the new life.'
+            else:
+                queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
+                             virtues[0] + '.'
+        if known[1]:
+            if self.trait == "bloodthirsty":
+                warrior_text = warrior + ' walks up to ' + dep_name + ' next, giving them a life for ' + virtues[
+                    1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
+            else:
+                warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + virtues[
+                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
+        else:
+            if self.trait == "bloodthirsty":
+                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
+                               virtues[1] + '. There is a sad look in their eyes.'
+            else:
+                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
+                               virtues[1] + '.'
+        if known[2]:
+            if self.trait == "bloodthirsty":
+                kit_text = kit + ' hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
+                           virtues[2] + '. They lash their tail and head back to make room for the next cat.'
+            else:
+                kit_text = kit + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
+                           virtues[2] + '. They flick their tail and head back to make room for the next cat.'
+        else:
+            if self.trait == "bloodthirsty":
+                kit_text = kit + ' introduces themself and hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
+                           virtues[2] + '.'
+            else:
+                kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
+                           virtues[2] + '.'
+        if known[3]:
+            if self.trait == "bloodthirsty":
+                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
+                                virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
+            else:
+                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
+                                virtues[3] + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
+        else:
+            if self.trait == "bloodthirsty":
+                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
+                                virtues[
+                                    3] + '. Their pelt does not gleam with starlight; instead, a black ooze drips from their fur.'
+            else:
+                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
+                                virtues[3] + '.'
+        if known[4]:
+            if self.trait == "bloodthirsty":
+                app_text = 'A young cat is next to give a life. They hesitate, before an older cat nudges them forward, whispering something in their ear. ' + app + ' stretches up to give a life for ' + \
+                           virtues[4] + '.'
+            else:
+                app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + app + ' stretches up to give a life for ' + \
+                           self.virtues[4] + '.'
+        else:
+            if self.trait == "bloodthirsty":
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + virtues[
+                    4] + '. They start to growl something, but an older StarClan cat nudges them back into their ranks.'
+            else:
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + virtues[
+                    4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
+        if known[5]:
+            if self.trait == "bloodthirsty":
+                elder_text = elder + ' pads forward with a wary expression. They give a life for ' + \
+                             virtues[5] + '.'
+            else:
+                elder_text = elder + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + \
+                             virtues[5] + '.'
+        else:
+            if self.trait == "bloodthirsty":
+                elder_text = 'An elder pads forward with a wary expression. They do not introduce them They give a life for ' + \
+                             virtues[5] + '.'
+            else:
+                elder_text = elder + ', an elder, introduces themself and strides forward to give a new life for ' + \
+                             virtues[5] + '.'
+        if known[6]:
+            if self.trait == "bloodthirsty":
+                warrior3_text = warrior3 + ' approaches. Pain surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
+                                virtues[6] + '. ' + warrior3 + ' watches dispassionately.'
+            else:
+                warrior3_text = warrior3 + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
+                                virtues[6] + '. They reassure ' + dep_name + ' that they are almost done.'
+        else:
+            if self.trait == "bloodthirsty":
+                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + virtues[
+                    6] + '. The cat hurries back to take their place back in StarClan, leaving room for the next cat to give a life.'
+            else:
+                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + virtues[
+                    6] + '. The cat turns around to take their place back in StarClan, leaving room for the next cat to give a life.'
+        if known[7]:
+            if self.trait == "bloodthirsty":
+                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
+                               virtues[7] + ', whispering to not lose their way.'
+            else:
+                med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + \
+                               virtues[7] + ', whispering to take care of the Clan the best they can.'
+        else:
+            if self.trait == "bloodthirsty":
+                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
+                               virtues[7] + '.'
+            else:
+                med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + \
+                               virtues[7] + '.'
+        if known[8]:
+            if self.trait == "bloodthirsty":
+                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is a conflicted expression on their face when they step forward and stare into ' + dep_name + '\'s eyes. They give a life for ' + \
+                                 virtues[8] + '.'
+            else:
+                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + \
+                                 virtues[8] + '.'
+        else:
+            if self.trait == "bloodthirsty":
+                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
+                                 virtues[8] + '.'
+            else:
+                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+                                 virtues[8] + '.'
+        if known[8]:
+            if self.trait == "bloodthirsty":
+                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
+                    self.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
+                    self.name.prefix) + "star stands, feeling a new strength within their body, and grins."
+            else:
+                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
+                    self.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
+                    self.name.prefix) + "star\'s name in support. " + str(
+                    self.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+
+        else:
+            if self.trait == "bloodthirsty":
+                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
+                    self.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
+                    self.name.prefix) + "star stands, feeling a new strength within their body, and grins."
+            else:
+                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
+                    self.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
+                    self.name.prefix) + "star\'s name in support. " + str(
+                    self.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+
+        text = intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
+        return text
 
     # ---------------------------------------------------------------------------- #
     #                              moon skip functions                             #

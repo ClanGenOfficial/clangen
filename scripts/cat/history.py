@@ -122,11 +122,11 @@ class History:
         self.check_load(cat)
 
         if mentor:
-            cat.history.mentor_influence["mentor"] = mentor
+            cat.history.mentor_influence["mentor"] = mentor if mentor else None
         if skill:
-            cat.history.mentor_influence["skill"] = skill
+            cat.history.mentor_influence["skill"] = skill if skill else None
         if trait:
-            cat.history.mentor_influence["trait"] = trait
+            cat.history.mentor_influence["trait"] = trait if trait else None
 
     def add_app_ceremony(self, cat, honor):
         """
