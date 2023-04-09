@@ -480,3 +480,28 @@ class SpecifyCatGender(UIWindow):
                 game.all_screens['profile screen'].exit_screen()
                 game.all_screens['profile screen'].screen_switches()
                 self.kill()
+
+
+class RelationshipLog(UIWindow):
+    """This window allows the user to see the relationship log of a certain relationship."""
+
+    def __init__(self, cat):
+        super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
+                         window_display_title='Relationship Log',
+                         object_id='#relationship_log_window',
+                         resizable=False)
+        game.switches['window_open'] = True
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((740, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                self.kill()

@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.game_structure.windows import RelationshipLog
 
 
 class ChooseMentorScreen(Screens):
@@ -1730,6 +1731,7 @@ class RelationshipScreen(Screens):
         self.back_button = None
         self.next_cat_button = None
         self.previous_cat_button = None
+        self.log_icon = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -1756,6 +1758,8 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
                 self.update_cat_page()
+            elif event.ui_element == self.log_icon:
+                RelationshipLog(self.the_cat)
             elif event.ui_element == self.checkboxes["show_dead"]:
                 if game.settings['show dead relation']:
                     game.settings['show dead relation'] = False
@@ -1808,6 +1812,10 @@ class RelationshipScreen(Screens):
                                                  object_id="#view_profile_button")
         self.view_profile_button.disable()
 
+        self.log_icon = UIImageButton(scale(pygame.Rect((440, 808), (68, 68))), "",
+                                                 object_id="#log_icon")
+        self.log_icon.disable()
+
         # Updates all info for the currently focused cat.
         self.update_focus_cat()
 
@@ -1854,6 +1862,8 @@ class RelationshipScreen(Screens):
         del self.switch_focus_button
         self.view_profile_button.kill()
         del self.view_profile_button
+        self.log_icon.kill()
+        del self.log_icon
 
     def get_previous_next_cat(self):
         """Determines where the previous the next buttons should lead, and enables/diables them"""
@@ -2091,12 +2101,15 @@ class RelationshipScreen(Screens):
             if self.inspect_cat.dead:
                 self.view_profile_button.enable()
                 self.switch_focus_button.disable()
+                self.log_icon.enable()
             else:
                 self.view_profile_button.enable()
                 self.switch_focus_button.enable()
+                self.log_icon.enable()
         else:
             self.view_profile_button.disable()
             self.switch_focus_button.disable()
+            self.log_icon.disable()
 
     def apply_cat_filter(self, search_text=""):
         # Filter for dead or empty cats
