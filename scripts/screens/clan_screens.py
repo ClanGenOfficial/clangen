@@ -132,7 +132,7 @@ class ClanScreen(Screens):
             moons_text = 'moons'
         
         self.moons_n_seasons_arrow = UIImageButton(
-            scale(pygame.Rect((140, 160), (57, 75))),
+            scale(pygame.Rect((345, 172.5), (38, 50))),
             "",
             visible = moons_n_seasons_show,
             manager=MANAGER,
@@ -449,7 +449,7 @@ class ClanScreen(Screens):
         if game.settings['moons and seasons']:
             if game.settings['mns open']:
                 self.moons_n_seasons_arrow = UIImageButton(
-                    scale(pygame.Rect((349, 160), (57, 75))),
+                    scale(pygame.Rect((345, 172.5), (38, 50))),
                     "",
                     manager=MANAGER,
                     object_id="#mns_arrow")
@@ -502,7 +502,7 @@ class ClanScreen(Screens):
                     object_id="#text_box_30_horizleft_dark")
             else:
                 self.moons_n_seasons_arrow = UIImageButton(
-                    scale(pygame.Rect((140, 160), (57, 75))),
+                    scale(pygame.Rect((139, 172.5), (38, 50))),
                     "",
                     object_id="#mns_arrow")
                 self.moons_n_seasons = pygame_gui.elements.UIScrollingContainer(
