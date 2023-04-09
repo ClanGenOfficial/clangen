@@ -498,7 +498,7 @@
         "exp": 10,
         "success_text": [
 "The patrol silently creeps towards the noise. They discover several dogs gnawing on a deer carcass with their Twolegs shouting at them in apparent anger. The Twolegs grab the dogs and drag them away, their whines softly disappearing in the distance. p_l can't help but feel thankful to the dogs, c_n will eat well for several days to come.",
-"p_l and the patrol pause and snicker at some Twolegs' noisy attempt to catch the dogs gnawing on a deer carcass. As the Twolegs leave, the patrol begins their feast. A soft bleating noise notifies them of the presence of the deer's still nursing calf. They return to c_n with the calf's carcass, proud and tall."
+"p_l and the patrol pause and snicker when they see some Twolegs' attempt to catch several dogs gnawing on a deer carcass. As the Twolegs catch the dogs and leave, the patrol begins snacking on the carcass. A soft bleating noise nearby notifies them of the presence of the deer's still nursing fawn. They return to c_n with the fawn's carcass, proud and tall."
         ],
         "fail_text": [
 "They wait till the Twolegs drag the dogs away and start to eat. Unfortunately it seems the dogs escaped their Twolegs grasp and the patrol has to run away. Both their bellies and that of their Clanmates will remain empty if no other hunting patrol has caught anything that day. They walk back to c_n in shame, dragging their tails."

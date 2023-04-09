@@ -1178,10 +1178,10 @@
     "exp": 5,
     "success_text": [
         "p_l patiently shows app1 the best places to gather moss. They show them how to gather it, and explain to app1 that by doing this they will gain the muscles and strength necessary to be a great warrior.",
-        "p_l notices app1's distracted face. Taking on a more paws-on approach, they show them the strength they gained from gathering the moss and the control they learned from not shredding it. app1 seems awed and impressed."
+        "p_l notices app1's distracted face. Taking a more paws-on approach, they show app1 the strength they gained from gathering the moss and the control they learned from not shredding it. app1 seems awed and impressed."
     ],
     "fail_text": [
-        "No matter how patiently p_l tries to teach app1 how to firmly but gently gather and shred the moss, they don't seem to be paying any attention. Frustrated with them, p_l decides to have a talk with the leader upon their return to camp."
+        "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, they don't seem to be paying any attention. Frustrated with them, p_l decides to have a talk with the leader upon their return to camp."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
