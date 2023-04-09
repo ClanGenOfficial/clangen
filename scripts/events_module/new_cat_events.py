@@ -147,6 +147,8 @@ class NewCatEvents:
 
         if "adoption" in new_cat_event.tags:
             add_children_to_cat(cat, cat_class)
+            if cat.mate:
+                add_children_to_cat(Cat.fetch_cat(cat.mate), cat_class)
             if new_cat_event.litter:
                 for new_cat in created_cats:
                     add_siblings_to_cat(new_cat, cat_class)
