@@ -449,7 +449,7 @@ class ClanScreen(Screens):
         if game.settings['moons and seasons']:
             if game.settings['mns open']:
                 self.moons_n_seasons_arrow = UIImageButton(
-                    scale(pygame.Rect((351, 160), (57, 75))),
+                    scale(pygame.Rect((349, 160), (57, 75))),
                     "",
                     manager=MANAGER,
                     object_id="#mns_arrow")
