@@ -27,7 +27,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRestart
+from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRestart, UpdateAvailablePopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
@@ -211,6 +211,7 @@ class StartScreen(Screens):
             global has_checked_for_update
             if game.settings['check_for_updates'] and not has_checked_for_update and has_update(UpdateChannel(get_version_info().release_channel)):
                 self.update_button.visible = 1
+                UpdateAvailablePopup(game.switches['last_screen'])
                 has_checked_for_update = True
         except (ConnectionError, HTTPError):
             logger.exception("Failed to check for update")

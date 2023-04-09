@@ -16,7 +16,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.progress_bar_updater import UIUpdateProgressBar
-from scripts.update import self_update, UpdateChannel
+from scripts.update import self_update, UpdateChannel, get_latest_version_number
 from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.version import get_version_info
@@ -561,3 +561,66 @@ class AnnounceRestart(UIWindow):
             time.sleep(1)
             self.announce_message.set_text(f"The game will automatically restart in {i}...")
 
+
+class UpdateAvailablePopup(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(scale(pygame.Rect((200, 400), (1000, 360))),
+                         window_display_title='Update available',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.last_screen = last_screen
+        self.game_over_message = UITextBoxTweaked(
+            f"A new ClanGen version is available!",
+            scale(pygame.Rect((50, 40), (900, -1))),
+            line_spacing=1,
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"Current version: {get_version_info().version_number}",
+            scale(pygame.Rect((50, 100), (900, -1))),
+            line_spacing=.8,
+            object_id="#text_box_22",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"Newest version: {get_latest_version_number()}",
+            scale(pygame.Rect((50, 130), (900, -1))),
+            line_spacing=.8,
+            object_id="#text_box_22",
+            container=self
+        )
+
+        self.begin_anew_button = UIImageButton(
+            scale(pygame.Rect((50, 230), (154, 60))),
+            "",
+            object_id="#done_button",
+            container=self
+        )
+        self.not_yet_button = UIImageButton(
+            scale(pygame.Rect((218, 230), (156, 60))),
+            "",
+            object_id="#cancel_button",
+            container=self
+        )
+
+        self.not_yet_button.enable()
+        self.begin_anew_button.enable()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.begin_anew_button:
+                game.last_screen_forupdate = game.switches['cur_screen']
+                game.switches['cur_screen'] = 'start screen'
+                game.switch_screens = True
+                game.switches['window_open'] = False
+                self.kill()
+            elif event.ui_element == self.not_yet_button:
+                game.switches['window_open'] = False
+                self.kill()

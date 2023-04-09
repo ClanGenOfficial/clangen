@@ -35,6 +35,8 @@ if use_proxy:
 else:
     proxies = {}
 
+latest_version = ""
+
 
 def get_timeout() -> int:
     return 15
@@ -66,6 +68,11 @@ def get_update_url():
 get_update_url.value = None
 
 
+def get_latest_version_number():
+    global latest_version
+    return latest_version
+
+
 def has_update(update_channel: UpdateChannel):
     latest_endpoint = f"{get_update_url()}/v1/Update/Channels/{update_channel.value}/Releases/Latest"
     result = configured_get_request(latest_endpoint)
@@ -74,6 +81,9 @@ def has_update(update_channel: UpdateChannel):
 
     release_info = result.json()['release']
     latest_version_number = release_info['name']
+
+    global latest_version
+    latest_version = latest_version_number.strip()
 
     if get_version_info().version_number.strip() != latest_version_number.strip():
         print(f"Update available!")
