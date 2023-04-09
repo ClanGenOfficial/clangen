@@ -8,11 +8,12 @@ import tempfile
 import time
 import urllib.parse
 import zipfile
-from enum import StrEnum, auto
+from enum import auto
 
 import pgpy
 import requests
 from requests import Response
+from strenum import StrEnum
 
 from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.utility import quit
