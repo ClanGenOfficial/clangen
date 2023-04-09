@@ -531,6 +531,7 @@ class ClanScreen(Screens):
                     manager=MANAGER,
                     object_id="#mns_image_moon",
                     container = self.moons_n_seasons,
+                    starting_height=2,
                     tool_tip_text= f'{game.clan.age} {moons_text}')
                     
                 if game.clan.current_season == 'Newleaf':
@@ -548,6 +549,7 @@ class ClanScreen(Screens):
                     manager=MANAGER,
                     object_id= season_image_id,
                     container = self.moons_n_seasons,
+                    starting_height=2,
                     tool_tip_text= f'{game.clan.current_season}')
             
 
