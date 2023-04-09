@@ -1259,9 +1259,13 @@ class ProfileScreen(Screens):
             return ""
 
         mentor_influence = self.history.get_mentor_influence(self.the_cat)
+        influence_history = None
 
         if mentor_influence:
-            mentor = Cat.fetch_cat(mentor_influence["mentor"])
+            if mentor_influence["mentor"]:
+                mentor = Cat.fetch_cat(mentor_influence["mentor"]).name
+            else:
+                mentor = None
             influenced_trait = mentor_influence["trait"]
             influenced_skill = mentor_influence["skill"]
 
@@ -1293,8 +1297,13 @@ class ProfileScreen(Screens):
                             influenced_skill = adjust_skill
                             break
 
-            mentor = mentor.name
-            if influenced_skill and not influenced_trait:
+            if not mentor:
+                influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+                if self.the_cat.status in ['kitten', 'newborn']:
+                    influence_history = 'This cat has not begun training.'
+                if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                    influence_history = 'This cat has not finished training.'
+            elif influenced_skill and not influenced_trait:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
             elif influenced_trait and not influenced_skill:
                 if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
@@ -1306,11 +1315,11 @@ class ProfileScreen(Screens):
             else:
                 influence_history = f"This cat's mentor was {mentor}."
 
-        else:
+        if not influence_history:
             influence_history = "This cat either did not have a mentor, or their mentor is unknown."
             if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
-            if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
+            if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                 influence_history = 'This cat has not finished training.'
 
         app_ceremony = self.history.get_app_ceremony(self.the_cat)

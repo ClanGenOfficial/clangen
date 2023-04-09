@@ -303,7 +303,7 @@ class History:
         if mentor influence is empty, a NoneType is returned
         """
         self.check_load(cat)
-        return cat.history["mentor_influence"]
+        return cat.history.mentor_influence
 
     def get_app_ceremony(self, cat):
         """
@@ -318,7 +318,7 @@ class History:
         if app_ceremony is empty, a NoneType is returned
         """
         self.check_load(cat)
-        return cat.history["app_ceremony"]
+        return cat.history.app_ceremony
 
     def get_lead_ceremony(self, cat):
         """
@@ -373,7 +373,10 @@ class History:
         if condition:
             return cat.history[event_type][condition]
 
-        return cat.history[event_type]
+        if event_type == 'possible_scar':
+            return cat.history.possible_scar
+        else:
+            return cat.history.possible_death
 
     def get_death_or_scars(self, cat, death=False, scar=False):
         """
@@ -411,8 +414,10 @@ class History:
                   'did you remember to set scar or death as True?')
             return
 
-        return cat.history[event_type]
-
+        if event_type == 'scar_events':
+            return cat.history.scar_events
+        else:
+            return cat.history.died_by
     def get_murders(self, cat):
         """
         this returns the cat's murder dict. example of dict structure:

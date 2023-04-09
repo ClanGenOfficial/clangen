@@ -999,6 +999,8 @@ class Cat():
         this is to handle old history save conversions
         """
         if mentor_influence or self.former_mentor:
+            if len(mentor_influence) == 1:
+                mentor_influence = [mentor_influence[0], 'None']
             mentor_influence = {
                 "mentor": self.former_mentor[-1] if self.former_mentor else None,
                 "skill": mentor_influence[0] if mentor_influence else None,
@@ -1057,9 +1059,12 @@ class Cat():
                         scar_events=history_data['scar_events'] if "scar_events" in history_data else None,
                         murder=history_data['murder'] if "murder" in history_data else None,
                     )
-
+                print('loaded')
             except:
-                print(f'WARNING: There was an error reading the history file of cat #{self}.')
+                self.history = History()
+                print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
+                      f'empty. Default history info was given. Close game without saving if you have save information '
+                      f'you\'d like to preserve!')
 
     def save_history(self, history_dir):
         if not os.path.exists(history_dir):
