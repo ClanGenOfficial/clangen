@@ -1617,12 +1617,10 @@ class Events():
 
         clan_size = len(alive_cats)
 
-        base_chance = 200
+        base_chance = 700
         if clan_size < 10:
             base_chance = 200
-        elif clan_size > 50:
-            base_chance = 700
-        elif clan_size > 30:
+        elif clan_size < 50:
             base_chance = 300
 
         reputation = game.clan.reputation
