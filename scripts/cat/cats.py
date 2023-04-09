@@ -2162,7 +2162,7 @@ class Cat():
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                 return False
 
-        if abs(self.moons - other_cat.moons) > 40:
+        if self.age != other_cat.age and abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True
