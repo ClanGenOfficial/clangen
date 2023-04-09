@@ -20,6 +20,7 @@ from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fu
 class ClanScreen(Screens):
     max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once. 400 is enough.
     cat_buttons = []
+    tooltip = {}
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -36,6 +37,7 @@ class ClanScreen(Screens):
         self.moons_n_seasons = None
         self.moons_n_seasons_arrow = None
         self.layout = None
+        tooltip = {}
 
     def on_use(self):
         if game.settings['backgrounds']:
@@ -413,6 +415,7 @@ class ClanScreen(Screens):
             elif Cat.all_cats[x].status == "leader":
                 game.clan.leader.placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                   [1, 200, 1, 1, 1, 1, 1])
+                                                                                  
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
@@ -462,10 +465,12 @@ class ClanScreen(Screens):
                     manager=MANAGER,
                     object_id="#mns_bg",
                     container = self.moons_n_seasons)
+                
                 if game.clan.age == 1:
                     moons_text = "moon"
                 else:
                     moons_text = "moons"
+                    
                 self.moons_n_seasons_moon = UIImageButton(
                     scale(pygame.Rect((25, 25), (50, 50))),
                     "",
@@ -514,12 +519,19 @@ class ClanScreen(Screens):
                     manager=MANAGER,
                     object_id="#mns_bg_closed",
                     container = self.moons_n_seasons)
+                    
+                if game.clan.age == 1:
+                    moons_text = "moon"
+                else:
+                    moons_text = "moons"
+                
                 self.moons_n_seasons_moon = UIImageButton(
                     scale(pygame.Rect((25, 25), (50, 50))),
                     "",
                     manager=MANAGER,
                     object_id="#mns_image_moon",
-                    container = self.moons_n_seasons)
+                    container = self.moons_n_seasons,
+                    tool_tip_text= f'{game.clan.age} {moons_text}')
                     
                 if game.clan.current_season == 'Newleaf':
                     season_image_id = '#mns_image_newleaf'
@@ -535,7 +547,8 @@ class ClanScreen(Screens):
                     "",
                     manager=MANAGER,
                     object_id= season_image_id,
-                    container = self.moons_n_seasons)
+                    container = self.moons_n_seasons,
+                    tool_tip_text= f'{game.clan.current_season}')
             
 
 
