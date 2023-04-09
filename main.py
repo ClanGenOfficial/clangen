@@ -9,7 +9,7 @@
 
 This file is the main file for the game.
 It also contains the main pygame loop
-It first sets up logging, then loads the version hash from commit.txt (if it exists), then loads the cats and clan.
+It first sets up logging, then loads the version hash from version.ini (if it exists), then loads the cats and clan.
 It then loads the settings, and then loads the start screen.
 
 
@@ -34,7 +34,7 @@ if directory:
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
     os.remove("auto-updated")
-    shutil.rmtree("Downloads")
+    shutil.rmtree("Downloads", ignore_errors=True)
     print("Update Complete!")
     print("New version: " + get_version_info().version_number)
 
@@ -169,7 +169,7 @@ else:
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
 
-if get_version_info().is_source_build or not get_version_info().is_release:
+if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
         scale(pygame.Rect((1050, 1321), (600, 100))),
         "Dev Build:",

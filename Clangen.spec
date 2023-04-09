@@ -22,7 +22,7 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
-a.datas += [ ('commit.txt', './commit.txt', 'DATA') ]
+a.datas += [ ('version.ini', './version.ini', 'DATA') ]
 a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
 
 exe = EXE(

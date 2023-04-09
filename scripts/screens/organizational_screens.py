@@ -21,6 +21,7 @@ from html import escape
 
 from .base_screens import Screens
 
+from requests.exceptions import ConnectionError
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
@@ -30,7 +31,7 @@ from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRe
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
-from ..update import self_update, has_update
+from ..update import self_update, has_update, UpdateChannel
 
 import ujson
 
@@ -83,11 +84,11 @@ class StartScreen(Screens):
                 game.switches['error_message'] = ''
                 game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
-                self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart)
+                self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart_callback)
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
-    def announce_restart(self):
+    def announce_restart_callback(self):
         self.x.kill()
         y = AnnounceRestart(game.switches['cur_screen'])
         y.update(1)
@@ -203,8 +204,11 @@ class StartScreen(Screens):
                                              object_id="#update_button", manager=MANAGER)
         self.update_button.visible = 0
 
-        if has_update():
-            self.update_button.visible = 1
+        try:
+            if has_update(UpdateChannel.DEVELOPMENT_TEST):
+                self.update_button.visible = 1
+        except ConnectionError:
+            logger.warning("Failed to check for update")
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",

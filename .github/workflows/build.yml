@@ -21,10 +21,16 @@ jobs:
         run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -79,10 +85,16 @@ jobs:
         run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -148,10 +160,16 @@ jobs:
         run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -225,10 +243,16 @@ jobs:
         run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -307,10 +331,16 @@ jobs:
         run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -390,10 +420,16 @@ jobs:
         run: python -m pip install --upgrade PyInstaller
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.sha }}" >> version.ini
+          echo "release_channel=development-test" >> version.ini
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_name=${{ github.ref_name }}" >> version.ini
+          echo "release_channel=release-test
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         # run: poetry run python3 -m PyInstaller Clangen.spec

@@ -16,7 +16,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.progress_bar_updater import UIUpdateProgressBar
-from scripts.update import self_update
+from scripts.update import self_update, UpdateChannel
 from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game, MANAGER
 
@@ -488,7 +488,7 @@ class SpecifyCatGender(UIWindow):
 
 
 class UpdateWindow(UIWindow):
-    def __init__(self, last_screen, asdf):
+    def __init__(self, last_screen, announce_restart_callback):
         super().__init__(scale(pygame.Rect((500, 400), (600, 320))),
                          window_display_title='Game Over',
                          object_id='#game_over_window',
@@ -498,16 +498,16 @@ class UpdateWindow(UIWindow):
             f"Update in progress.",
             scale(pygame.Rect((40, 20), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
-        self.asdf = asdf
+        self.announce_restart_callback = announce_restart_callback
 
         self.step_text = UITextBoxTweaked(
             f"Downloading update...",
             scale(pygame.Rect((40, 80), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 
@@ -518,7 +518,7 @@ class UpdateWindow(UIWindow):
             container=self,
         )
 
-        x = threading.Thread(target=self_update, daemon=True, args=('development-test', self.progress_bar, self.step_text, asdf))
+        x = threading.Thread(target=self_update, daemon=True, args=(UpdateChannel.DEVELOPMENT_TEST, self.progress_bar, announce_restart_callback))
         x.start()
 
         self.not_yet_button = UIImageButton(
@@ -549,7 +549,7 @@ class AnnounceRestart(UIWindow):
             f"The game will automatically restart in 3...",
             scale(pygame.Rect((40, 40), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 
@@ -559,3 +559,4 @@ class AnnounceRestart(UIWindow):
         for i in range(2, 0, -1):
             time.sleep(1)
             self.announce_message.set_text(f"The game will automatically restart in {i}...")
+

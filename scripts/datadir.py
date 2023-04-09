@@ -24,7 +24,7 @@ def get_data_dir():
 
     from platformdirs import user_data_dir
 
-    if not get_version_info().is_release:
+    if not get_version_info().is_dev():
         return user_data_dir('ClanGenBeta', 'ClanGen')
     return user_data_dir('ClanGen', 'ClanGen')
 

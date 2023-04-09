@@ -1,27 +1,31 @@
 import os
+import platform
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import time
 import urllib.parse
 import zipfile
-import tarfile
-import platform
-import pathlib
+from enum import StrEnum, auto
 
 import pgpy
-import requests as requests
+import requests
+from requests import Response
 
-from scripts.game_structure.image_button import UITextBoxTweaked
 from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.utility import quit
 from scripts.version import get_version_info
 
-
-
-
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
+
+
+class UpdateChannel(StrEnum):
+    STABLE = auto()
+    DEVELOPMENT = auto()
+    DEVELOPMENT_TEST = "development-test"
+
 
 if use_proxy:
     proxies = {
@@ -32,13 +36,21 @@ else:
     proxies = {}
 
 
-def download_file(url):
+def get_timeout() -> int:
+    return 15
+
+
+def configured_get_request(url: str, stream: bool = False) -> Response:
+    return requests.get(url, stream=stream, proxies=proxies, verify=(not use_proxy), timeout=get_timeout())
+
+
+def download_file(url: str):
     local_filename = url.split('/')[-1]
     os.makedirs('Downloads', exist_ok=True)
-    with requests.get(url, stream=True, proxies=proxies, verify=(not use_proxy)) as r:
-        r.raise_for_status()
+    with configured_get_request(url, stream=True) as response:
+        response.raise_for_status()
         with open('Downloads/' + local_filename, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
+            for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
     return 'Downloads/' + local_filename
 
@@ -46,54 +58,64 @@ def download_file(url):
 def get_update_url():
     if get_update_url.value is None:
         fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_api_url.txt"
-        result = requests.get(fetch_url)
+        result = configured_get_request(fetch_url)
         get_update_url.value = result.text
     return get_update_url.value
 
 
 get_update_url.value = None
 
-def has_update():
-    latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest"
-    result = requests.get(latest_endpoint, proxies=proxies, verify=(not use_proxy))
+
+def has_update(update_channel: UpdateChannel):
+    latest_endpoint = f"{get_update_url()}/v1/Update/Channels/{update_channel.value}/Releases/Latest"
+    result = configured_get_request(latest_endpoint)
 
     release_info = result.json()['release']
     latest_version_number = release_info['name']
 
     if get_version_info().version_number.strip() != latest_version_number.strip():
-        print(
-            f"Update available!\nCurrent version: {get_version_info().version_number}\nNewest version : {latest_version_number.strip()}")
+        print(f"Update available!")
+        print(f"Current version: {get_version_info().version_number}")
+        print(f"Newest version : {latest_version_number.strip()}")
         return True
     else:
         return False
 
 
-def self_update(release_channel='development-test', progress_bar: UIUpdateProgressBar = None, progress_text: UITextBoxTweaked = None, asdf = None):
-    print("Updating Clangen...")
+def determine_platform_name() -> str:
     if platform.system() == 'Windows':
         if platform.architecture()[0][:2] == '32':
-            artifact_name = 'win32'
+            return 'win32'
         elif platform.architecture()[0][:2] == '64':
-            artifact_name = 'win64'
             if platform.win32_ver()[0] == '10' or platform.win32_ver()[0] == '11':
-                artifact_name = 'win10+'
+                return 'win10+'
+            else:
+                return 'win64'
     elif platform.system() == 'Darwin':
-        artifact_name = 'macOS'
+        return 'macOS'
     elif platform.system() == 'Linux':
         if platform.libc_ver()[0] != 'glibc':
-            print("Unsupported libc.")
-            return
+            raise RuntimeError()
         elif platform.libc_ver()[1] == '2.31':
-            artifact_name = 'linux2.31'
+            return 'linux2.31'
         elif platform.libc_ver()[1] == '2.35':
-            artifact_name = 'linux2.35'
+            return 'linux2.35'
         else:
-            print("Unsupported libc version.")
-            return
+            raise RuntimeError()
 
-    response = requests.get(
-        f"{get_update_url()}/v1/Update/Channels/{release_channel}/Releases/Latest/Artifacts/{artifact_name}",
-        proxies=proxies, verify=(not use_proxy))
+    raise RuntimeError()
+
+
+def self_update(
+        update_channel: UpdateChannel = UpdateChannel.DEVELOPMENT_TEST,
+        progress_bar: UIUpdateProgressBar = None,
+        announce_restart_callback: callable = None):
+    print("Updating Clangen...")
+
+    platform_name = determine_platform_name()
+
+    response = configured_get_request(f"{get_update_url()}/v1/Update/Channels/{update_channel}/Releases/Latest/Artifacts/{platform_name}")
+
     encoded_signature = response.headers['x-gpg-signature']
 
     print("Verifying...")
@@ -145,37 +167,22 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
     print('Installing...')
 
     if platform.system() == 'Windows':
-        # pwsh = ''
-        # if shutil.which('pwsh') is not None:
-        #     pwsh = shutil.which('pwsh')
-        # elif shutil.which('powershell') is not None:
-        #     pwsh = shutil.which('powershell')
-        # else:
-        #     print("Powershell not found. Please install it and try again")
-        #     return
-        with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
+        with zipfile.ZipFile("download.tmp") as zip_ref:
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
-
-        path = pathlib.Path(os.getcwd()).parent.absolute()
-
-        # shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
-        # print("Clangen python application cannot continue to run while it is being updated.")
-        # print("Powershell will now be used to update Clangen.")
-        # print("A console window will open and close automatically. Please do not be alarmed.")
-
-        #subprocess.Popen("./winupdate.exe", cwd=os.getcwd(), close_fds=True, creationflags=subprocess.CREATE_NEW_CONSOLE | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
-
         shutil.copy("./Downloads/Clangen/resources/self_updater.exe", "./Downloads/self_updater.exe")
-        asdf()
+        announce_restart_callback()
         time.sleep(3)
-        subprocess.Popen(["./Downloads/self_updater.exe", "../"], cwd="./Downloads/", close_fds=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
+        subprocess.Popen(
+            ["./Downloads/self_updater.exe", "../"],
+            cwd="./Downloads/",
+            creationflags=subprocess.CREATE_NEW_PROCESS_GROUP
+        )
         os._exit(1)
-
     elif platform.system() == 'Darwin':
         progress_bar.set_steps(11, "Installing update...")
 
-        with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
+        with zipfile.ZipFile("download.tmp") as zip_ref:
             progress_bar.advance()
 
             zip_ref.extractall('Downloads')
@@ -193,7 +200,8 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
             shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
             progress_bar.advance()
 
-            shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
+            if os.path.exists("/Applications/Clangen.app"):
+                shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
             progress_bar.advance()
 
             shutil.copytree(f'{mountdir}/Clangen.app', '/Applications/Clangen.app')
@@ -207,7 +215,7 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
 
             os.rmdir(mountdir)
             progress_bar.advance()
-        asdf()
+        announce_restart_callback()
         time.sleep(3)
         os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
         quit()
