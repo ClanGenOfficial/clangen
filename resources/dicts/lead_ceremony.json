@@ -12,6 +12,8 @@
       "leadership through the darkest times", "loyalty to their Clan","the strength to overcome their fears",
       "tireless energy"]
   },
+
+
   "intros": {
     "ID": {
       "tags": [],
@@ -21,7 +23,10 @@
       ]
     }
   },
-  "lives": {
+
+
+  "lives":
+  {
     "queen1": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
@@ -41,6 +46,27 @@
           "virtue": ["this", "is", "a", "list", "of", "virtues"]
         }
       ]
+    },
+    "ID": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": [],
+      "life-giving": [
+        {
+          "text": "text",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        },
+        {
+          "text": "this is the text aaaaa",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        },
+        {
+          "text": "this is the text aaaaa",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        }
+      ]
     }
+
   }
 }
