@@ -1,8 +1,6 @@
-import os.path
 
-import ujson
+import json
 
-from scripts.datadir import get_save_dir
 from scripts.game_structure.game_essentials import game
 
 
@@ -101,6 +99,10 @@ class History:
         }
         """
 
+    # ---------------------------------------------------------------------------- #
+    #                                   utility                                    #
+    # ---------------------------------------------------------------------------- #
+
     @staticmethod
     def check_load(cat):
         """
@@ -110,6 +112,24 @@ class History:
         """
         if not cat.history:
             cat.load_history()
+
+    @staticmethod
+    def make_dict(self, cat):
+        history_dict = {
+            "mentor_influence": cat.history.mentor_influence,
+            "app_ceremony": cat.history.app_ceremony,
+            "lead_ceremony": cat.history.lead_ceremony,
+            "possible_death": cat.history.possible_death,
+            "died_by": cat.history.died_by,
+            "possible_scar": cat.history.possible_scar,
+            "scar_events": cat.history.scar_events,
+            "murder": cat.history.murder,
+        }
+        return history_dict
+
+    # ---------------------------------------------------------------------------- #
+    #                            adding and removing                               #
+    # ---------------------------------------------------------------------------- #
 
     def add_mentor_influence(self, cat, mentor, skill, trait):
         """
@@ -290,6 +310,13 @@ class History:
             "moon": game.clan.age
         })
 
+    def add_lead_ceremony(self, cat):
+
+
+    # ---------------------------------------------------------------------------- #
+    #                                 retrieving                                   #
+    # ---------------------------------------------------------------------------- #
+
     def get_mentor_influence(self, cat):
         """
         Returns mentor influence dict, example of structure:
@@ -418,6 +445,7 @@ class History:
             return cat.history.scar_events
         else:
             return cat.history.died_by
+
     def get_murders(self, cat):
         """
         this returns the cat's murder dict. example of dict structure:
@@ -446,3 +474,4 @@ class History:
         self.check_load(cat)
 
         return cat.history.murder
+

@@ -1,0 +1,46 @@
+{
+  "virtues": {
+    "queen_virtues": ["affection", "compassion", "empathy", "duty", "protection", "pride"],
+    "warrior_virtues": ["acceptance", "bravery", "certainty", "clear judgement", "confidence","courage",
+      "determination", "endurance", "sympathy","farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"],
+    "kit_virtues": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"],
+    "app_virtues": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"],
+    "elder_virtues": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"],
+    "med_cat_virtues": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"],
+    "prev_lead_virtues": ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
+      "leadership through the darkest times", "loyalty to their Clan","the strength to overcome their fears",
+      "tireless energy"]
+  },
+  "intros": {
+    "ID": {
+      "tags": [],
+      "lead_trait": [],
+      "text": [
+        "m_C leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader."
+      ]
+    }
+  },
+  "lives": {
+    "queen1": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["queen"],
+      "life-giving": [
+        {
+          "text": "r_c stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to m_c's head, giving them a life for [virtue]",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        },
+        {
+          "text": "this is the text aaaaa",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        },
+        {
+          "text": "this is the text aaaaa",
+          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+        }
+      ]
+    }
+  }
+}

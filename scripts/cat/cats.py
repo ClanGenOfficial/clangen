@@ -999,26 +999,41 @@ class Cat():
         this is to handle old history save conversions
         """
         if mentor_influence or self.former_mentor:
-            if len(mentor_influence) == 1:
-                mentor_influence = [mentor_influence[0], 'None']
+            trait = None
+            skill = None
+            if mentor_influence:
+                if len(mentor_influence) == 1:
+                    mentor_influence = [mentor_influence[0], 'None']
+                if mentor_influence[0] not in ['None', 'none']:
+                    if mentor_influence[0] in ["Benevolent", "Abrasive", "Outgoing", "Reserved"]:
+                        trait = mentor_influence[0]
+                        if mentor_influence[1] not in ['None', 'none']:
+                            skill = mentor_influence[1]
+                    else:
+                        skill = mentor_influence[0]
+                if mentor_influence[1] not in ['None', 'none'] and not trait:
+                    trait = mentor_influence[1]
+
             mentor_influence = {
                 "mentor": self.former_mentor[-1] if self.former_mentor else None,
-                "skill": mentor_influence[0] if mentor_influence else None,
-                "trait": mentor_influence[1] if mentor_influence else None
+                "skill": skill,
+                "trait": trait
             }
 
+        deaths = []
         if died_by:
             for death in died_by:
-                died_by.append(
+                deaths.append(
                     {
                         "involved": None,
                         "text": death,
                         "moon": "?"
                     }
                 )
+        scars = []
         if scar_events:
             for scar in scar_events:
-                scar_events.append(
+                scars.append(
                     {
                         "involved": None,
                         "text": scar,
@@ -1027,8 +1042,8 @@ class Cat():
                 )
         self.history = History(
             mentor_influence=mentor_influence,
-            died_by=died_by,
-            scar_events=scar_events,
+            died_by=deaths,
+            scar_events=scars,
         )
 
     def load_history(self):
@@ -1040,39 +1055,48 @@ class Cat():
         history_directory = get_save_dir() + '/' + clanname + '/history/'
         cat_history_directory = history_directory + self.ID + '_history.json'
 
-        self.history = {}
-        if os.path.exists(history_directory):
-            if not os.path.exists(cat_history_directory):
-                self.history = History()
-                return
-            try:
-                with open(cat_history_directory, 'r') as read_file:
-                    history_data = ujson.loads(read_file.read())
-                    self.history = History(
-                        mentor_influence=history_data[
-                            'mentor_influence'] if "mentor_influence" in history_data else None,
-                        app_ceremony=history_data['app_ceremony'] if "app_ceremony" in history_data else None,
-                        lead_ceremony=history_data['lead_ceremony'] if "lead_ceremony" in history_data else None,
-                        possible_death=history_data['possible_death'] if "possible_death" in history_data else None,
-                        died_by=history_data['died_by'] if "died_by" in history_data else None,
-                        possible_scar=history_data['possible_scar'] if "possible_scar" in history_data else None,
-                        scar_events=history_data['scar_events'] if "scar_events" in history_data else None,
-                        murder=history_data['murder'] if "murder" in history_data else None,
-                    )
-                print('loaded')
-            except:
-                self.history = History()
-                print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
-                      f'empty. Default history info was given. Close game without saving if you have save information '
-                      f'you\'d like to preserve!')
+        if not os.path.exists(cat_history_directory):
+            self.history = History(
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
+            return
+        try:
+            with open(cat_history_directory, 'r') as read_file:
+                history_data = ujson.loads(read_file.read())
+                self.history = History(
+                    mentor_influence=history_data[
+                        'mentor_influence'] if "mentor_influence" in history_data else {},
+                    app_ceremony=history_data['app_ceremony'] if "app_ceremony" in history_data else {},
+                    lead_ceremony=history_data['lead_ceremony'] if "lead_ceremony" in history_data else None,
+                    possible_death=history_data['possible_death'] if "possible_death" in history_data else {},
+                    died_by=history_data['died_by'] if "died_by" in history_data else [],
+                    possible_scar=history_data['possible_scar'] if "possible_scar" in history_data else {},
+                    scar_events=history_data['scar_events'] if "scar_events" in history_data else [],
+                    murder=history_data['murder'] if "murder" in history_data else {},
+                )
+            print('loaded')
+        except:
+            self.history = History()
+            print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
+                  f'empty. Default history info was given. Close game without saving if you have save information '
+                  f'you\'d like to preserve!')
 
     def save_history(self, history_dir):
         if not os.path.exists(history_dir):
             os.makedirs(history_dir)
 
+        history_dict = self.history_class.make_dict(self)
+
         try:
             with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
-                json_string = ujson.dumps(self.history, indent=4)
+                json_string = ujson.dumps(history_dict, indent=4)
                 history_file.write(json_string)
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")

@@ -1221,11 +1221,11 @@ class ProfileScreen(Screens):
             for scar in scar_history:
                 # base adjustment to get the cat's name and moons if needed
                 new_text = (event_text_adjust(Cat,
-                                              scar_history[scar]["text"],
+                                              scar["text"],
                                               self.the_cat,
-                                              scar_history[scar]["involved"]))
+                                              scar["involved"]))
                 if moons:
-                    new_text += f" (Moon {scar_history[scar]['moon']})"
+                    new_text += f" (Moon {scar['moon']})"
 
                 # checking to see if we can throw out a duplicate
                 if new_text in scar_text:
@@ -1236,14 +1236,17 @@ class ProfileScreen(Screens):
                 if i != 0:
                     sentence_beginners = [
                         "This cat",
-                        "Then they",
-                        "They also"
+                        "Then they were",
+                        "They were also",
+                        "Also, they were",
+                        "As well as",
+                        "They were then"
                     ]
                     chosen = choice(sentence_beginners)
                     if chosen == 'This cat':
                         new_text = new_text.replace(str(self.the_cat.name), chosen, 1)
                     else:
-                        new_text = new_text.replace(f"{self.the_cat.name} was", f"{chosen} were", 1)
+                        new_text = new_text.replace(f"{self.the_cat.name} was", f"{chosen}", 1)
                 scar_text.append(new_text)
                 i += 1
 
