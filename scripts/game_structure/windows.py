@@ -521,20 +521,20 @@ class UpdateWindow(UIWindow):
         x = threading.Thread(target=self_update, daemon=True, args=(UpdateChannel.DEVELOPMENT_TEST, self.progress_bar, announce_restart_callback))
         x.start()
 
-        self.not_yet_button = UIImageButton(
-            scale(pygame.Rect((318, 230), (222, 60))),
+        self.cancel_button = UIImageButton(
+            scale(pygame.Rect((400, 230), (156, 60))),
             "",
-            object_id="#not_yet_button",
+            object_id="#cancel_button",
             container=self
         )
 
-        self.not_yet_button.enable()
+        self.cancel_button.enable()
 
     def process_event(self, event):
         super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.not_yet_button:
+            if event.ui_element == self.cancel_button:
                 self.kill()
 
 

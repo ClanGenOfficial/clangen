@@ -3316,6 +3316,29 @@
             }
         }
     },
+    "#cancel_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cancel.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cancel_unavailable.png"
+            }
+        }
+    },
     "#fav_star":
     {
         "prototype": "#image_button",
