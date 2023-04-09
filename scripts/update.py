@@ -70,6 +70,8 @@ def has_update(update_channel: UpdateChannel):
     latest_endpoint = f"{get_update_url()}/v1/Update/Channels/{update_channel.value}/Releases/Latest"
     result = configured_get_request(latest_endpoint)
 
+    result.raise_for_status()
+
     release_info = result.json()['release']
     latest_version_number = release_info['name']
 

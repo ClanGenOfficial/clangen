@@ -21,7 +21,7 @@ from html import escape
 
 from .base_screens import Screens
 
-from requests.exceptions import ConnectionError
+from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
@@ -34,6 +34,8 @@ from ..datadir import get_data_dir
 from ..update import self_update, has_update, UpdateChannel
 
 import ujson
+
+from ..version import get_version_info
 
 logger = logging.getLogger(__name__)
 
@@ -200,15 +202,15 @@ class StartScreen(Screens):
         self.open_data_directory_button.hide()
         self.closebtn.hide()
 
-        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (384, 70))), "",
+        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (306, 60))), "",
                                              object_id="#update_button", manager=MANAGER)
         self.update_button.visible = 0
 
         try:
-            if has_update(UpdateChannel.DEVELOPMENT_TEST):
+            if game.settings['check_for_updates'] and has_update(UpdateChannel(get_version_info().release_channel)):
                 self.update_button.visible = 1
-        except ConnectionError:
-            logger.warning("Failed to check for update")
+        except (ConnectionError, HTTPError):
+            logger.exception("Failed to check for update")
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",

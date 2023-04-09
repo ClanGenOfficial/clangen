@@ -19,6 +19,7 @@ from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.update import self_update, UpdateChannel
 from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.version import get_version_info
 
 
 class SaveCheck(UIWindow):
@@ -518,8 +519,8 @@ class UpdateWindow(UIWindow):
             container=self,
         )
 
-        x = threading.Thread(target=self_update, daemon=True, args=(UpdateChannel.DEVELOPMENT_TEST, self.progress_bar, announce_restart_callback))
-        x.start()
+        self.update_thread = threading.Thread(target=self_update, daemon=True, args=(UpdateChannel(get_version_info().release_channel), self.progress_bar, announce_restart_callback))
+        self.update_thread.start()
 
         self.cancel_button = UIImageButton(
             scale(pygame.Rect((400, 230), (156, 60))),
