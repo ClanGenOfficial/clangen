@@ -1617,12 +1617,10 @@ class Events():
 
         clan_size = len(alive_cats)
 
-        base_chance = 200
+        base_chance = 700
         if clan_size < 10:
             base_chance = 200
-        elif clan_size > 50:
-            base_chance = 700
-        elif clan_size > 30:
+        elif clan_size < 30:
             base_chance = 300
 
         reputation = game.clan.reputation
@@ -1723,7 +1721,6 @@ class Events():
         # check if clan has kits, if True then clan has kits
         alive_kits = get_alive_kits(Cat)
 
-        # chance to kill leader: 1/100
         # chance to kill leader: 1/100
         if not int(random.random() *
                    100) and cat.status == 'leader' and not cat.not_working():

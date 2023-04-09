@@ -2340,6 +2340,29 @@
             }
         }
     },
+    "#crystal_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/crystal_camp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/crystal_camp_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/crystal_camp_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/crystal_camp_unavailable.png"
+            }
+        }
+    },
     "#grasslands_tab": 
     {
         "prototype": "#image_button",
