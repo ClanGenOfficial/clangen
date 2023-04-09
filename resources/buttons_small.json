@@ -59,26 +59,26 @@
             "tool_tip_delay": "0"
         }
     },
-	"#mns_arrow": 
+	"#arrow_mns_button": 
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/moons_n_seasons_arrow.png"
+                "path": "resources/images/buttons/arrow_mns.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/moons_n_seasons_arrow_hover.png"
+                "path": "resources/images/buttons/arrow_mns_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/moons_n_seasons_arrow.png"
+                "path": "resources/images/buttons/arrow_mns.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/moons_n_seasons_arrow_unavailable.png"
+                "path":"resources/images/buttons/arrow_mns.png"
             }
         }
     },
