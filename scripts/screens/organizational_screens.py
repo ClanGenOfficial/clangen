@@ -38,6 +38,7 @@ import ujson
 from ..version import get_version_info
 
 logger = logging.getLogger(__name__)
+has_checked_for_update = False
 
 class StartScreen(Screens):
     """
@@ -207,8 +208,10 @@ class StartScreen(Screens):
         self.update_button.visible = 0
 
         try:
-            if game.settings['check_for_updates'] and has_update(UpdateChannel(get_version_info().release_channel)):
+            global has_checked_for_update
+            if game.settings['check_for_updates'] and not has_checked_for_update and has_update(UpdateChannel(get_version_info().release_channel)):
                 self.update_button.visible = 1
+                has_checked_for_update = True
         except (ConnectionError, HTTPError):
             logger.exception("Failed to check for update")
 
