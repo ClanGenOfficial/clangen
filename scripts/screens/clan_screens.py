@@ -80,6 +80,22 @@ class ClanScreen(Screens):
                 self.update_buttons_and_text()
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                self.change_screen('starclan screen')
+            elif event.key == pygame.K_LEFT:
+                self.change_screen('events screen')
+            elif event.key == pygame.K_SPACE:
+                self.save_button_saving_state.show()
+                self.save_button.disable()
+                game.save_cats()
+                game.clan.save_clan()
+                game.clan.save_pregnancy(game.clan)
+                game.save_settings()
+                game.switches['saved_clan'] = True
+                self.update_buttons_and_text()
+
 
     def screen_switches(self):
         cat_profiles()
