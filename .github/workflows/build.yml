@@ -19,18 +19,22 @@ jobs:
           cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test" >> version.ini
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -50,11 +54,11 @@ jobs:
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/linux2.31' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/linux2.31' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -83,18 +87,22 @@ jobs:
           cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -113,11 +121,11 @@ jobs:
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/linux2.35' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/linux2.35' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -158,18 +166,22 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -196,11 +208,11 @@ jobs:
         run: |
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/win32' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/win32' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -241,18 +253,22 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -284,11 +300,11 @@ jobs:
         run: |
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/win64' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/win64' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -329,18 +345,22 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -372,11 +392,11 @@ jobs:
         run: |
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/win10+' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/win10+' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -418,18 +438,22 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.sha }}" >> version.ini
-          echo "release_channel=development-test" >> version.ini
-      - name: Write Release Version File
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Write version file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ github.ref_name }}" >> version.ini
-          echo "release_channel=release-test
+          echo "version_number=${{ VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ RELEASE_CHANNEL }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         # run: poetry run python3 -m PyInstaller Clangen.spec
@@ -455,11 +479,11 @@ jobs:
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/macOS' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Artifacts/macOS' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
@@ -481,9 +505,19 @@ jobs:
       - build_win64_py311
       - build_macos64
     steps:
+      - name: Configure dev
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Confirm release
         run: |
           curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ RELEASE_CHANNEL }}/Releases/${{ VERSION_NUMBER }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'

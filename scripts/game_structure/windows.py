@@ -11,7 +11,7 @@ from re import sub
 from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
-from scripts.datadir import get_save_dir
+from scripts.datadir import get_save_dir, get_cache_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
@@ -519,7 +519,8 @@ class UpdateWindow(UIWindow):
             container=self,
         )
 
-        self.update_thread = threading.Thread(target=self_update, daemon=True, args=(UpdateChannel(get_version_info().release_channel), self.progress_bar, announce_restart_callback))
+        self.update_thread = threading.Thread(target=self_update, daemon=True, args=(
+        UpdateChannel(get_version_info().release_channel), self.progress_bar, announce_restart_callback))
         self.update_thread.start()
 
         self.cancel_button = UIImageButton(
@@ -563,64 +564,121 @@ class AnnounceRestart(UIWindow):
 
 
 class UpdateAvailablePopup(UIWindow):
-    def __init__(self, last_screen):
-        super().__init__(scale(pygame.Rect((200, 400), (1000, 360))),
+    def __init__(self, last_screen, show_checkbox: bool = False):
+        super().__init__(scale(pygame.Rect((400, 400), (800, 460))),
                          window_display_title='Update available',
                          object_id='#game_over_window',
                          resizable=False)
         self.set_blocking(True)
         game.switches['window_open'] = True
         self.last_screen = last_screen
-        self.game_over_message = UITextBoxTweaked(
-            f"A new ClanGen version is available!",
-            scale(pygame.Rect((50, 40), (900, -1))),
-            line_spacing=1,
-            object_id="#text_box_30_horizcenter",
-            container=self
-        )
 
-        self.game_over_message = UITextBoxTweaked(
-            f"Current version: {get_version_info().version_number}",
-            scale(pygame.Rect((50, 100), (900, -1))),
-            line_spacing=.8,
-            object_id="#text_box_22",
-            container=self
-        )
-
-        self.game_over_message = UITextBoxTweaked(
-            f"Newest version: {get_latest_version_number()}",
-            scale(pygame.Rect((50, 130), (900, -1))),
-            line_spacing=.8,
-            object_id="#text_box_22",
-            container=self
-        )
-
-        self.begin_anew_button = UIImageButton(
-            scale(pygame.Rect((50, 230), (154, 60))),
+        self.begin_update_title = UIImageButton(
+            scale(pygame.Rect((195, 30), (400, 81))),
             "",
-            object_id="#done_button",
+            object_id="#new_update_button",
             container=self
         )
-        self.not_yet_button = UIImageButton(
-            scale(pygame.Rect((218, 230), (156, 60))),
+
+        latest_version_number = "{:.16}".format(get_latest_version_number())
+        current_version_number = "{:.16}".format(get_version_info().version_number)
+
+        self.game_over_message = UITextBoxTweaked(
+            f"<strong>Update to ClanGen {latest_version_number}</strong>",
+            scale(pygame.Rect((20, 160), (800, -1))),
+            line_spacing=.8,
+            object_id="#update_popup_title",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"Your current version: {current_version_number}",
+            scale(pygame.Rect((22, 200), (800, -1))),
+            line_spacing=.8,
+            object_id="#text_box_current_version",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"Install update now?",
+            scale(pygame.Rect((20, 262), (400, -1))),
+            line_spacing=.8,
+            object_id="#text_box_30",
+            container=self
+        )
+
+        self.box_unchecked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#unchecked_checkbox", container=self)
+        self.box_checked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#checked_checkbox", container=self)
+        self.box_text = UITextBoxTweaked(
+            f"Don't ask again",
+            scale(pygame.Rect((78, 370), (250, -1))),
+            line_spacing=.8,
+            object_id="#text_box_30",
+            container=self
+        )
+
+        self.continue_button = UIImageButton(
+            scale(pygame.Rect((556, 370), (204, 60))),
+            "",
+            object_id="#continue_button_small",
+            container=self
+        )
+
+        self.cancel_button = UIImageButton(
+            scale(pygame.Rect((374, 370), (156, 60))),
             "",
             object_id="#cancel_button",
             container=self
         )
 
-        self.not_yet_button.enable()
-        self.begin_anew_button.enable()
+        self.close_button = UIImageButton(
+            scale(pygame.Rect((740, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+
+        if show_checkbox:
+            self.box_unchecked.enable()
+            self.box_checked.hide()
+        else:
+            self.box_checked.hide()
+            self.box_unchecked.hide()
+            self.box_text.hide()
+
+        self.continue_button.enable()
+        self.cancel_button.enable()
+        self.close_button.enable()
+
 
     def process_event(self, event):
         super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = game.switches['cur_screen']
-                game.switches['cur_screen'] = 'start screen'
-                game.switch_screens = True
+            if event.ui_element == self.continue_button:
+                game.switches['window_open'] = False
+                self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart_callback)
+                self.kill()
+            elif event.ui_element == self.close_button or event.ui_element == self.cancel_button:
                 game.switches['window_open'] = False
                 self.kill()
-            elif event.ui_element == self.not_yet_button:
-                game.switches['window_open'] = False
-                self.kill()
+            elif event.ui_element == self.box_unchecked:
+                self.box_unchecked.disable()
+                self.box_unchecked.hide()
+                self.box_checked.enable()
+                self.box_checked.show()
+                with open(f"{get_cache_dir()}/.suppress_update_popup", 'w') as write_file:
+                    write_file.write(get_latest_version_number())
+            elif event.ui_element == self.box_checked:
+                self.box_checked.disable()
+                self.box_checked.hide()
+                self.box_unchecked.enable()
+                self.box_unchecked.show()
+                if os.path.exists(f"{get_cache_dir()}/.suppress_update_popup"):
+                    os.remove(f"{get_cache_dir()}/.suppress_update_popup")
+
+
+    def announce_restart_callback(self):
+        self.x.kill()
+        y = AnnounceRestart(game.switches['cur_screen'])
+        y.update(1)

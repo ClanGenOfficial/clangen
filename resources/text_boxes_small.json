@@ -184,6 +184,24 @@
             "size": "15"
         }
     },
+    "#text_box_current_version": {
+        "prototype": "#text_box",
+        "colours": {
+            "normal_text": "#222222"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "12"
+        }
+    },
+    "#update_popup_title": {
+        "prototype": "#text_box",
+        "font": {
+            "name": "notosans",
+            "size": "15",
+            "bold": "1"
+        }
+    },
     "#text_box_30_horizcenter": {
         "prototype": "#text_box_30",
         "misc": {

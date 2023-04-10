@@ -158,6 +158,17 @@
             }
 		}
     },
+	"#new_update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/new_update.png"
+            }
+		}
+    },
     "#done_button":
 	{
 		"prototype": "#image_button",
@@ -179,7 +190,7 @@
             {
 				"path": "resources/images/buttons/done_unavailable.png"
 			}
-			
+
 		}
     },
     "#back_button":

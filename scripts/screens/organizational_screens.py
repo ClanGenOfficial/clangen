@@ -30,8 +30,8 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRestart, UpdateAvailablePopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
-from ..datadir import get_data_dir
-from ..update import self_update, has_update, UpdateChannel
+from ..datadir import get_data_dir, get_cache_dir
+from ..update import self_update, has_update, UpdateChannel, get_latest_version_number
 
 import ujson
 
@@ -39,6 +39,7 @@ from ..version import get_version_info
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
+update_available = False
 
 class StartScreen(Screens):
     """
@@ -87,7 +88,7 @@ class StartScreen(Screens):
                 game.switches['error_message'] = ''
                 game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
-                self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart_callback)
+                UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
@@ -209,10 +210,23 @@ class StartScreen(Screens):
 
         try:
             global has_checked_for_update
-            if game.settings['check_for_updates'] and not has_checked_for_update and has_update(UpdateChannel(get_version_info().release_channel)):
-                self.update_button.visible = 1
-                UpdateAvailablePopup(game.switches['last_screen'])
+            global update_available
+            if not get_version_info().is_source_build and game.settings['check_for_updates'] and not has_checked_for_update:
+                if has_update(UpdateChannel(get_version_info().release_channel)):
+                    update_available = True
+                    show_popup = True
+                    if os.path.exists(f"{get_cache_dir()}/.suppress_update_popup"):
+                        with open(f"{get_cache_dir()}/.suppress_update_popup", 'r') as read_file:
+                            if read_file.readline() == get_latest_version_number():
+                                show_popup = False
+
+                    if show_popup:
+                        UpdateAvailablePopup(game.switches['last_screen'], show_checkbox=True)
+
                 has_checked_for_update = True
+
+            if update_available:
+                self.update_button.visible = 1
         except (ConnectionError, HTTPError):
             logger.exception("Failed to check for update")
 
