@@ -2,7 +2,11 @@
     {
         "id": "lost_medicine_cats_thoughts",
         "thoughts": [
-            "Hopes that their Clan is doing okay without their help"
+            "Hopes that their Clan is doing okay without their help",
+            "Feels useless without having cats to help",
+            "Wonders if their clan's being taken good care of without them",
+            "Wishes they could attend another half-moon medicine cat meeting",
+            "Wonders how medicine cats from other clans are doing"
         ],
         "main_status_constraint": [
             "medicine cat",
