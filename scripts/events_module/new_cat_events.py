@@ -25,7 +25,7 @@ class NewCatEvents:
         self.generate_events = GenerateEvents()
         pass
 
-    def handle_new_cats(self, cat, other_cat, war, enemy_clan, alive_kits):
+    def handle_new_cats(self, cat: Cat, other_cat, war, enemy_clan, alive_kits):
         """ 
         This function handles the new cats
         """
@@ -108,6 +108,12 @@ class NewCatEvents:
                                       status
                                       )
         # print(created_cats)
+
+        if "adoption" in new_cat_event.tags:
+            if cat.no_kits:
+                return
+            if cat.mate and cat.mate.no_kits:
+                return
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
