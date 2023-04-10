@@ -9,7 +9,10 @@
             "Sniffs for prey",
             "Lingers around c_n's borders",
             "Wonders if they should join another Clan",
-            "Explores the land outside c_n's territory"
+            "Explores the land outside c_n's territory",
+            "Can't believe they were thrown away so easily",
+            "Laments on their mistakes",
+            "Thinks about their past actions leading to this point"
         ],
         "main_status_constraint": [
             "exiled"
