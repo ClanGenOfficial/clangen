@@ -344,6 +344,25 @@ class ProfileScreen(Screens):
                     self.clear_profile()
                     self.build_profile()
 
+        elif event.type == pygame.KEYDOWN:
+            if game.switches['window_open']:
+                pass
+
+            elif event.key == pygame.K_LEFT:
+                self.clear_profile()
+                game.switches['cat'] = self.previous_cat
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            elif event.key == pygame.K_RIGHT:
+                self.clear_profile()
+                game.switches['cat'] = self.next_cat
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            
+            elif event.key == pygame.K_ESCAPE:
+                self.close_current_tab()
+                self.change_screen(game.last_screen_forProfile)
+
     def handle_tab_events(self, event):
         # Relations Tab
         if self.open_tab == 'relations':
@@ -2334,8 +2353,14 @@ class CeremonyScreen(Screens):
         return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
 
     def handle_event(self, event):
+        if game.switches['window_open']:
+            pass
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+        
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
                 self.change_screen('profile screen')
         return
 
@@ -2392,6 +2417,16 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator_app:
                 self.the_cat.status_change("mediator apprentice", resort=True)
+                self.update_selected_cat()
+        
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen("profile screen")
+            elif event.key == pygame.K_RIGHT:
+                game.switches["cat"] = self.next_cat
+                self.update_selected_cat()
+            elif event.key == pygame.K_LEFT:
+                game.switches["cat"] = self.previous_cat
                 self.update_selected_cat()
 
     def screen_switches(self):
