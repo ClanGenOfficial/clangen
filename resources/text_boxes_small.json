@@ -202,6 +202,30 @@
             "bold": "1"
         }
     },
+    "#changelog_popup_title": {
+        "prototype": "#text_box",
+        "misc": {
+            "text_horiz_alignment": "center"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "20",
+            "bold": "1"
+        }
+    },
+    "#changelog_popup_subtitle": {
+        "prototype": "#text_box",
+        "misc": {
+            "text_horiz_alignment": "center"
+        },
+        "colours": {
+            "normal_text": "#222222"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "12"
+        }
+    },
     "#text_box_30_horizcenter": {
         "prototype": "#text_box_30",
         "misc": {

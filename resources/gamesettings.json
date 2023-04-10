@@ -115,6 +115,11 @@
             "Check for updates",
             "Automatically checks for updates on startup",
             true
+        ],
+        "show_changelog": [
+            "Display changelog on startup",
+            "Shows the changelog of the latest release on startup",
+            true
         ]
     },
     "relation": {

@@ -13,7 +13,7 @@ from pygame_gui.elements import UIWindow
 
 from scripts.datadir import get_save_dir, get_cache_dir
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.update import self_update, UpdateChannel, get_latest_version_number
@@ -650,7 +650,6 @@ class UpdateAvailablePopup(UIWindow):
         self.cancel_button.enable()
         self.close_button.enable()
 
-
     def process_event(self, event):
         super().process_event(event)
 
@@ -677,8 +676,71 @@ class UpdateAvailablePopup(UIWindow):
                 if os.path.exists(f"{get_cache_dir()}/.suppress_update_popup"):
                     os.remove(f"{get_cache_dir()}/.suppress_update_popup")
 
-
     def announce_restart_callback(self):
         self.x.kill()
         y = AnnounceRestart(game.switches['cur_screen'])
         y.update(1)
+
+
+class ChangelogPopup(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(scale(pygame.Rect((300, 300), (1000, 800))),
+                         window_display_title='Changelog',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.last_screen = last_screen
+        self.changelog_popup_title = UITextBoxTweaked(
+            f"<strong>What's New</strong>",
+            scale(pygame.Rect((40, 20), (960, -1))),
+            line_spacing=1,
+            object_id="#changelog_popup_title",
+            container=self
+        )
+
+        current_version_number = "{:.16}".format(get_version_info().version_number)
+
+        self.changelog_popup_subtitle = UITextBoxTweaked(
+            f"Version {current_version_number}",
+            scale(pygame.Rect((40, 70), (960, -1))),
+            line_spacing=1,
+            object_id="#changelog_popup_subtitle",
+            container=self
+        )
+
+        self.scrolling_container = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((20, 130), (960, 650))),
+            container=self,
+            manager=MANAGER)
+
+        with open("changelog.txt", "r") as read_file:
+            file_cont = read_file.read()
+
+        self.changelog_text = pygame_gui.elements.UITextBox(
+            f"{file_cont}",
+            scale(pygame.Rect((0, 0), (900, -1))),
+            object_id="#text_box_30",
+            container=self.scrolling_container,
+            manager=MANAGER)
+
+        self.changelog_text.disable()
+
+        self.close_button = UIImageButton(
+            scale(pygame.Rect((940, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            starting_height=2,
+            container=self
+        )
+
+        self.scrolling_container.set_scrollable_area_dimensions(
+            (self.changelog_text.relative_rect.width, self.changelog_text.relative_rect.height))
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.close_button:
+                game.switches['window_open'] = False
+                self.kill()

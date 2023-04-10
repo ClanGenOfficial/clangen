@@ -27,7 +27,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir, get_cache_dir
@@ -223,6 +223,20 @@ class StartScreen(Screens):
                 self.update_button.visible = 1
         except (ConnectionError, HTTPError):
             logger.exception("Failed to check for update")
+
+        if game.settings['show_changelog']:
+            show_changelog = False
+            if os.path.exists(f"{get_cache_dir()}/.changelog_popup_shown"):
+                with open(f"{get_cache_dir()}/.changelog_popup_shown") as read_file:
+                    if read_file.readline() != get_version_info().version_number:
+                        show_changelog = True
+            else:
+                show_changelog = True
+
+            if show_changelog:
+                with open(f"{get_cache_dir()}/.changelog_popup_shown", 'w') as write_file:
+                    write_file.write(get_version_info().version_number)
+                ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
