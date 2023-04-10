@@ -34,6 +34,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -101,6 +102,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -182,6 +184,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -271,6 +274,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -365,6 +369,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -457,6 +462,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         # run: poetry run python3 -m PyInstaller Clangen.spec

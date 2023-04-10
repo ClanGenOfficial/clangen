@@ -33,8 +33,6 @@ class ClanScreen(Screens):
         self.med_den_label = None
         self.leader_den_label = None
         self.warrior_den_label = None
-        self.moons_n_seasons = None
-        self.moons_n_seasons_arrow = None
         self.layout = None
 
     def on_use(self):
@@ -72,12 +70,6 @@ class ClanScreen(Screens):
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
                 self.change_screen('med den screen')
-            if event.ui_element == self.moons_n_seasons_arrow:
-                if game.settings['mns open']:
-                    game.settings['mns open'] = False
-                else:
-                    game.settings['mns open'] = True
-                self.update_buttons_and_text()
             else:
                 self.menu_button_pressed(event)
 
@@ -120,67 +112,6 @@ class ClanScreen(Screens):
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
                     
-        # Display number of moons
-        # Display season
-        if game.settings["moons and seasons"]:
-            moons_n_seasons_show = True
-        else:
-            moons_n_seasons_show = False
-        if game.clan.age == 1:
-            moons_text = 'moon'
-        else:
-            moons_text = 'moons'
-        
-        self.moons_n_seasons_arrow = UIImageButton(
-            scale(pygame.Rect((349, 163.5), (44, 68))),
-            "",
-            manager=MANAGER,
-            object_id="#arrow_mns_button")
-        self.moons_n_seasons = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((50, 120), (306, 155))),
-            visible = moons_n_seasons_show,
-            manager=MANAGER)
-        self.moons_n_seasons_bg = UIImageButton(
-            scale(pygame.Rect((0, 0), (306, 155))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_bg",
-            container = self.moons_n_seasons)
-        self.moons_n_seasons_moon = UIImageButton(
-            scale(pygame.Rect((25, 25), (50, 50))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_image_moon",
-            container = self.moons_n_seasons)
-        self.moons_n_seasons_text = pygame_gui.elements.UITextBox(
-            f'{game.clan.age} {moons_text}',
-            scale(pygame.Rect((80, 15.5), (200, 60))),
-            container = self.moons_n_seasons,
-            manager=MANAGER,
-            object_id="#text_box_30_horizleft_light")
-            
-        if game.clan.current_season == 'Newleaf':
-            season_image_id = '#mns_image_newleaf'
-        elif game.clan.current_season == 'Greenleaf':
-            season_image_id = '#mns_image_greenleaf'
-        elif game.clan.current_season == 'Leaf-bare':
-            season_image_id = '#mns_image_leafbare'
-        elif game.clan.current_season == 'Leaf-fall':
-            season_image_id = '#mns_image_leaffall'
-        
-        self.moons_n_seasons_season = UIImageButton(
-            scale(pygame.Rect((25, 86.5), (50, 50))),
-            "",
-            manager=MANAGER,
-            object_id= season_image_id,
-            container = self.moons_n_seasons)
-        self.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-            f'{game.clan.current_season}',
-            scale(pygame.Rect((80, 80), (200, 60))),
-            container = self.moons_n_seasons,
-            manager=MANAGER,
-            object_id="#text_box_30_horizleft_dark")
-
         # Den Labels
         # Redo the locations, so that it uses layout on the clan page
         self.warrior_den_label = pygame_gui.elements.UIImage(
@@ -253,10 +184,6 @@ class ClanScreen(Screens):
         self.cat_buttons = []
 
         # Kill all other elements, and destroy the reference so they aren't hanging around
-        self.moons_n_seasons.kill()
-        del self.moons_n_seasons
-        self.moons_n_seasons_arrow.kill()
-        del self.moons_n_seasons_arrow
         self.save_button.kill()
         del self.save_button
         self.save_button_saved_state.kill()
@@ -443,113 +370,6 @@ class ClanScreen(Screens):
             self.leader_den_label.hide()
             self.med_den_label.hide()
             self.elder_den_label.hide()
-        
-        self.moons_n_seasons_arrow.kill()
-        self.moons_n_seasons.kill()
-        if game.settings['moons and seasons']:
-            if game.settings['mns open']:
-                self.moons_n_seasons_arrow = UIImageButton(
-                    scale(pygame.Rect((349, 163.5), (44, 68))),
-                    "",
-                    manager=MANAGER,
-                    object_id="#arrow_mns_button")
-                self.moons_n_seasons = pygame_gui.elements.UIScrollingContainer(
-                    scale(pygame.Rect((50, 120), (306, 155))),
-                    manager=MANAGER)
-                self.moons_n_seasons_bg = UIImageButton(
-                    scale(pygame.Rect((0, 0), (306, 155))),
-                    "",
-                    manager=MANAGER,
-                    object_id="#mns_bg",
-                    container = self.moons_n_seasons)
-                
-                if game.clan.age == 1:
-                    moons_text = "moon"
-                else:
-                    moons_text = "moons"
-                    
-                self.moons_n_seasons_moon = UIImageButton(
-                    scale(pygame.Rect((25, 25), (50, 50))),
-                    "",
-                    manager=MANAGER,
-                    object_id="#mns_image_moon",
-                    container = self.moons_n_seasons)
-                self.moons_n_seasons_text = pygame_gui.elements.UITextBox(
-                    f'{game.clan.age} {moons_text}',
-                    scale(pygame.Rect((80, 15.5), (200, 60))),
-                    container = self.moons_n_seasons,
-                    manager=MANAGER,
-                    object_id="#text_box_30_horizleft_light")
-                    
-                if game.clan.current_season == 'Newleaf':
-                    season_image_id = '#mns_image_newleaf'
-                elif game.clan.current_season == 'Greenleaf':
-                    season_image_id = '#mns_image_greenleaf'
-                elif game.clan.current_season == 'Leaf-bare':
-                    season_image_id = '#mns_image_leafbare'
-                elif game.clan.current_season == 'Leaf-fall':
-                    season_image_id = '#mns_image_leaffall'
-                
-                self.moons_n_seasons_season = UIImageButton(
-                    scale(pygame.Rect((25, 86.5), (50, 50))),
-                    "",
-                    manager=MANAGER,
-                    object_id= season_image_id,
-                    container = self.moons_n_seasons)
-                self.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-                    f'{game.clan.current_season}',
-                    scale(pygame.Rect((80, 80), (200, 60))),
-                    container = self.moons_n_seasons,
-                    manager=MANAGER,
-                    object_id="#text_box_30_horizleft_dark")
-            else:
-                self.moons_n_seasons_arrow = UIImageButton(
-                    scale(pygame.Rect((143, 163.5), (44, 68))),
-                    "",
-                    object_id="#arrow_mns_button")
-                self.moons_n_seasons = pygame_gui.elements.UIScrollingContainer(
-                    scale(pygame.Rect((50, 120), (100, 155))),
-                    manager=MANAGER)
-                self.moons_n_seasons_bg = UIImageButton(
-                    scale(pygame.Rect((0, 0), (100, 155))),
-                    "",
-                    manager=MANAGER,
-                    object_id="#mns_bg_closed",
-                    container = self.moons_n_seasons)
-                    
-                if game.clan.age == 1:
-                    moons_text = "moon"
-                else:
-                    moons_text = "moons"
-                
-                self.moons_n_seasons_moon = UIImageButton(
-                    scale(pygame.Rect((25, 25), (50, 50))),
-                    "",
-                    manager=MANAGER,
-                    object_id="#mns_image_moon",
-                    container = self.moons_n_seasons,
-                    starting_height=2,
-                    tool_tip_text= f'{game.clan.age} {moons_text}')
-                    
-                if game.clan.current_season == 'Newleaf':
-                    season_image_id = '#mns_image_newleaf'
-                elif game.clan.current_season == 'Greenleaf':
-                    season_image_id = '#mns_image_greenleaf'
-                elif game.clan.current_season == 'Leaf-bare':
-                    season_image_id = '#mns_image_leafbare'
-                elif game.clan.current_season == 'Leaf-fall':
-                    season_image_id = '#mns_image_leaffall'
-                
-                self.moons_n_seasons_season = UIImageButton(
-                    scale(pygame.Rect((25, 86.5), (50, 50))),
-                    "",
-                    manager=MANAGER,
-                    object_id= season_image_id,
-                    container = self.moons_n_seasons,
-                    starting_height=2,
-                    tool_tip_text= f'{game.clan.current_season}')
-            
-
 
 class StarClanScreen(Screens):
     list_page = 1
@@ -785,7 +605,6 @@ class StarClanScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -861,6 +680,7 @@ class StarClanScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        # Check if window needs to be moved down for extra UI
         bg = self.starclan_bg
 
         # Only update the positions if the search text changes
@@ -870,7 +690,7 @@ class StarClanScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -903,7 +723,7 @@ class DFScreen(Screens):
             (screen_x, screen_y))
         self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (int(456 / 1600 * screen_x),
-                                                                                   int(68 / 1400 * screen_x)))
+                                                                                   int(68 / 1400 * screen_y)))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (int(380 / 1600 * screen_x),
                                                                                           int(68 / 1400 * screen_y)))
@@ -1116,7 +936,6 @@ class DFScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -1192,6 +1011,7 @@ class DFScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        
         bg = self.df_bg
         screen.blit(bg, (0, 0))
 
@@ -1202,7 +1022,7 @@ class DFScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -1464,7 +1284,6 @@ class ListScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -1539,13 +1358,12 @@ class ListScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
-
         # Only update the postions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -1564,7 +1382,7 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
-                                                     scale(pygame.Rect((60, 220), (800, 80))),
+                                                     scale(pygame.Rect((60, 280), (800, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizleft")
                                                      , manager=MANAGER)
 
@@ -1575,7 +1393,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1430, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 380), (1430, 1000)))
                                                                          , manager=MANAGER)
         
         self.ranks_boxes = []
