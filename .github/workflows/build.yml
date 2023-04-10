@@ -27,8 +27,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -94,8 +94,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -172,8 +172,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=release-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -258,8 +258,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -349,8 +349,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -441,8 +441,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Write version file
         run: |
           echo "[DEFAULT]" > version.ini
@@ -507,8 +507,8 @@ jobs:
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable-test" >> $GITHUB_ENV
       - name: Confirm release
         run: |
           curl -X 'POST' \
