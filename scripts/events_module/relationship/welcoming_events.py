@@ -30,7 +30,7 @@ class Welcoming_Events():
         if new_cat.ID == clan_cat.ID:
             return
 
-		# setup the status as "kay" to use it
+        # setup the status as "key" to use it
         status = clan_cat.status
         if status == "medicine cat" or status == "medicine cat apprentice":
             status = "medicine"
@@ -38,7 +38,7 @@ class Welcoming_Events():
         if status == "mediator apprentice":
             status = "mediator"
 
-		# collect all events
+        # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
         if status not in WELCOMING_MASTER_DICT:
             print(f"ERROR: there is no welcoming json for the status {status}")
@@ -53,6 +53,12 @@ class Welcoming_Events():
         # prepare string for display
         interaction_str = interaction_str.replace("m_c", str(clan_cat.name))
         interaction_str = interaction_str.replace("r_c", str(new_cat.name))
+
+        # add to relationship log
+        if new_cat.ID in clan_cat.relationships:
+            clan_cat.relationships[new_cat.ID].log.append(interaction_str)
+        if clan_cat in new_cat.relationships:
+            new_cat.relationships[clan_cat.ID].log.append(interaction_str)
 
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
