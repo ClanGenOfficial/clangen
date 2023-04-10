@@ -10,7 +10,10 @@
         "Wishes they had other cats to help protect them",
         "Dreams of sleeping in a crowded den",
         "Listens for the alarm calls of birds",
-        "Quickly veers away from a fox scent"
+        "Quickly veers away from a fox scent",
+        "Wonders if their clan is missing them as much as they miss their clan",
+        "Feels like they worked so hard for nothing",
+        "Is missing home"
     ],
     "main_status_constraint": [
         "former Clancat"
@@ -24,6 +27,7 @@
         "Wonders if there's anything left of their old Clan",
         "Misses their family",
         "Wishes they could have helped their Clan more"
+        "Feels like they failed their warrior ancestors"
     ],
     "main_status_constraint": [
         "former Clancat"
