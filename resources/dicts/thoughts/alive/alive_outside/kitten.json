@@ -2,7 +2,8 @@
     "id": "lost_kitten_thoughts",
     "thoughts": [
         "Misses playing moss ball",
-        "Is looking desperately for their parent"
+        "Is looking desperately for their parent",
+        "Misses their friends"
     ],
     "main_status_constraint": [
         "kitten"
