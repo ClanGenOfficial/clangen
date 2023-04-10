@@ -147,7 +147,7 @@ class Screens():
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
         # Check if the setting for moons and seasons UI is on so stats button can be moved
-        self.update_stats_button()
+        self.update_mns()
         for button in self.menu_buttons:
             if button in ['moons_n_seasons', 'moons_n_seasons_arrow']:
                 continue
@@ -191,14 +191,14 @@ class Screens():
                 game.settings['mns open'] = False
             else:
                 game.settings['mns open'] = True
-            self.update_stats_button()
+            self.update_mns()
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""
         self.menu_buttons['heading'].set_text(text)        
     
     # Update stats button position if moons and seasons UI is on
-    def update_stats_button(self):
+    def update_mns(self):
         if game.settings["moons and seasons"]:
             self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((1388, 190))
             self.menu_buttons['stats']._rect = scale(pygame.Rect(1388, 190, 162, 60))
