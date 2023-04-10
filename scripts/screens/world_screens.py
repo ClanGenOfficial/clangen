@@ -468,19 +468,19 @@ class UnknownResScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 328), (294, 46))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
-        self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button")
-        self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
+        self.starclan_button = UIImageButton(scale(pygame.Rect((230, 320), (68, 68))), "", object_id="#starclan_button")
+        self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 320), (68, 68))), "",
                                                       object_id="#unknown_residence_button", manager=MANAGER)
         self.unknown_residence_button.disable()
-        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "",
+        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 320), (68, 68))), "",
                                                 object_id="#dark_forest_button", manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1240), (68, 68))), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1240), (68, 68))), "",
                                                   object_id="#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1240), (220, 60))),
                                                          object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)  # Text will be filled in later
 
@@ -491,7 +491,7 @@ class UnknownResScreen(Screens):
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
         x_pos = 1152
-        y_pos = 270
+        y_pos = 320
         self.filter_by_closed = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (196, 68))),
             "",
@@ -606,13 +606,13 @@ class UnknownResScreen(Screens):
                     
                     self.display_cats.append(
                         pygame_gui.elements.UIImage(
-                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            scale(pygame.Rect((260 + pos_x, 410 + pos_y), (100, 100))),
                             _temp))
                     self.display_cats[-1].disable()
                     
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
+                                   ((260 + pos_x, 410 + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
@@ -622,7 +622,7 @@ class UnknownResScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
+                                                                    scale(pygame.Rect((160 + pos_x, 510 + pos_y), (300, 60))),
                                                                     object_id="#text_box_30_horizcenter_light",
                                                                     manager=MANAGER))
                 pos_x += 240
@@ -638,6 +638,6 @@ class UnknownResScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(self.search_bar_image, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(self.search_bar_image, (696/1600 * screen_x, 320/1400 * screen_y))
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

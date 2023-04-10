@@ -207,11 +207,7 @@ class Screens():
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
-                if self.name in ['starclan screen', 'list screen', 'events screen']:
-                    # keep the UI narrow for design purposes, might change in the future
-                    self.mns_close()
-                else: 
-                    self.mns_open()
+                self.mns_open()
             else:
                 self.mns_close()
         else:
@@ -285,8 +281,6 @@ class Screens():
             scale(pygame.Rect((143, 163.5), (44, 68))),
             "",
             object_id="#arrow_mns_closed_button")
-        if self.name in ['starclan screen', 'list screen', 'events screen']:
-            self.menu_buttons['moons_n_seasons_arrow'].disable()
         
         self.menu_buttons['moons_n_seasons'] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((50, 120), (100, 155))),
