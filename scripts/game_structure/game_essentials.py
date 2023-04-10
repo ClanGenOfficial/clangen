@@ -142,6 +142,7 @@ class Game():
 
     # SETTINGS
     settings = {}
+    settings['mns open'] = False
     setting_lists = {}
 
     with open("resources/gamesettings.json", 'r') as read_file:
