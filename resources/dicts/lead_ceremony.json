@@ -1,72 +1,481 @@
 {
   "virtues": {
     "queen_virtues": ["affection", "compassion", "empathy", "duty", "protection", "pride"],
-    "warrior_virtues": ["acceptance", "bravery", "certainty", "clear judgement", "confidence","courage",
-      "determination", "endurance", "sympathy","farsightedness", "friendship", "instincts", "mercy", "strength",
+    "warrior_virtues": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
       "unity"],
     "kit_virtues": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"],
     "app_virtues": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"],
     "elder_virtues": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"],
     "med_cat_virtues": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"],
     "prev_lead_virtues": ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
-      "leadership through the darkest times", "loyalty to their Clan","the strength to overcome their fears",
+      "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears",
       "tireless energy"]
   },
 
 
   "intros": {
-    "ID": {
+    "default": {
       "tags": [],
       "lead_trait": [],
       "text": [
-        "m_C leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader."
+        "m_c leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader."
+      ]
+    },
+    "bloodthirsty": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "text": [
+            "m_c leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur."
       ]
     }
   },
 
 
-  "lives":
-  {
-    "queen1": {
+  "lives": {
+    "default_queen_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["queen"],
+      "life-giving": [
+        {
+          "text": "r_c pads up to the new leader first, softly touching their nose to m_c's head. They give a life for [virtue].",
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+        }
+      ]
+    },
+    "default_queen_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["queen"],
+      "life-giving": [
+        {
+          "text": "A queen introduces themself as r_c. They softly touch their nose to m_c's head, giving them a life for [virtue].",
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+        }
+      ]
+    },
+
+    "bloodthirsty_queen_known": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
       "rank": ["queen"],
       "life-giving": [
         {
-          "text": "r_c stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to m_c's head, giving them a life for [virtue]",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
-        },
-        {
-          "text": "this is the text aaaaa",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
-        },
-        {
-          "text": "this is the text aaaaa",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+          "text": "r_c stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
         }
       ]
     },
-    "ID": {
+    "bloodthirsty_queen_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["queen"],
+      "life-giving": [
+        {
+          "text": "A queen introduces themself as r_c. They touch their nose to m_c's head, giving them a life for [virtue]. Their eyes are slightly narrowed as they step back, turning away as m_c struggles to gain the new life.",
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+        }
+      ]
+    },
+
+
+    "default_warrior_known": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
-      "rank": [],
+      "rank": ["warrior"],
       "life-giving": [
         {
-          "text": "text",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+          "text": "r_c walks up to m_c next, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
         },
         {
-          "text": "this is the text aaaaa",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
         },
         {
-          "text": "this is the text aaaaa",
-          "virtue": ["this", "is", "a", "list", "of", "virtues"]
+          "text": "r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+    "default_warrior_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life-giving": [
+        {
+          "text": "An unknown warrior walks towards m_c, stating that their name is r_c. They offer a life for [virtue]",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "r_c states their name and steps forward to give m_c a life for [virtue]",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "r_c, an unknown warrior, gives a life for [virtue]. The cat turns around to take their place back in StarClan, leaving room for the next cat to give a life.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+    "bloodthirsty_warrior_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life-giving": [
+        {
+          "text": "r_c walks up to m_c next, giving them a life for [virtue]. They pause, then shake their head, heading back into the ranks of StarClan.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches dispassionately.'",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+    "bloodthirsty_warrior_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life-giving": [
+        {
+          "text": "An unknown warrior walks towards m_c, stating that their name is r_c. They offer a life for [virtue]. There is a sad look in their eyes.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "r_c states their name and steps forward to give m_c a life for [virtue]. Their pelt does not gleam with starlight; instead, a black ooze drips from their fur.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "r_c, an unknown warrior, gives a life for [virtue]. The cat hurries back to take their place back in StarClan, leaving room for the next cat to give a life.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+
+    "default_kit_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life-giving": [
+        {
+          "text": "r_c bounds up to the new leader, reaching up on their hind legs to give them a new life for [virtue]. They flick their tail and head back to make room for the next cat.",
+          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+        }
+      ]
+    },
+    "default_kit_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life-giving": [
+        {
+          "text": "r_c introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for [virtue].",
+          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+        }
+      ]
+    },
+
+    "bloodthirsty_kit_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life-giving": [
+        {
+          "text": "r_c hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for [virtue]. They lash their tail and head back to make room for the next cat.",
+          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+        }
+      ]
+    },
+    "bloodthirsty_kit_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life-giving": [
+        {
+          "text": "r_c introduces themself and hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for [virtue].",
+          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+        }
+      ]
+    },
+
+
+    "default_app_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["apprentice"],
+      "life-giving": [
+        {
+          "text": "A young cat is next to give a life. Starlight reflects off their youthful eyes. r_c stretches up to give a life for [virtue].",
+          "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
+        }
+      ]
+    },
+    "default_app_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["apprentice"],
+      "life-giving": [
+        {
+          "text": "r_c, an unfamiliar apprentice, stretches up to give a life for [virtue]. Their eyes glimmer as they wish m_c well, and step back for the next cat.",
+          "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
+        }
+      ]
+    },
+
+    "bloodthirsty_app_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["apprentice"],
+      "life-giving": [
+        {
+          "text": "A young cat is next to give a life. They hesitate, before an older cat nudges them forward, whispering something in their ear. r_c stretches up to give a life for [virtue].",
+          "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
+        }
+      ]
+    },
+    "bloodthirsty_app_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["apprentice"],
+      "life-giving": [
+        {
+          "text": "r_c, an unfamiliar apprentice, stretches up to give a life for [virtue]. They start to growl something, but an older StarClan cat nudges them back into their ranks.",
+          "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
+        }
+      ]
+    },
+
+
+    "default_elder_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["elder"],
+      "life-giving": [
+        {
+          "text": "r_c strides forward, an energy in their steps that wasn't present in their last moments. They give a life for [virtue].",
+          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+        }
+      ]
+    },
+    "default_elder_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["elder"],
+      "life-giving": [
+        {
+          "text": " r_c, an elder, introduces themself and strides forward to give a new life for [virtue].",
+          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+        }
+      ]
+    },
+
+    "bloodthirsty_elder_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["elder"],
+      "life-giving": [
+        {
+          "text": "r_c pads forward with a wary expression. They give a life for [virtue].",
+          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+        }
+      ]
+    },
+    "bloodthirsty_elder_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["elder"],
+      "life-giving": [
+        {
+          "text": "An elder pads forward with a wary expression. They do not introduce themself. They give a life for [virtue].",
+          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+        }
+      ]
+    },
+
+
+    "default_med_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["medicine cat"],
+      "life-giving": [
+        {
+          "text": " r_c approaches next, a warm smile on their face. They offer a life for [virtue], whispering to take care of the Clan the best they can.",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+        }
+      ]
+    },
+    "default_med_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["medicine cat"],
+      "life-giving": [
+        {
+          "text": "The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells m_c that their name is r_c. They offer a life for [virtue].",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+        }
+      ]
+    },
+
+    "bloodthirsty_med_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["medicine cat"],
+      "life-giving": [
+        {
+          "text": "r_c approaches next, a blank expression on their face. They offer a life for [virtue], whispering to not lose their way.",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+        }
+      ]
+    },
+    "bloodthirsty_med_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["medicine cat"],
+      "life-giving": [
+        {
+          "text": "r_c, who appears to be an unfamiliar medicine cat, approaches next, a blank expression on their face. They offer a life for [virtue].",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+        }
+      ]
+    },
+
+
+    "default_leader_known": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life-giving": [
+        {
+          "text": "Finally, r_c steps forward. There is pride in their gaze as they stare into m_c's eyes. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+        }
+      ]
+    },
+    "default_leader_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life-giving": [
+        {
+          "text": "r_c, one of StarClan's oldest leaders, looks at the new leader with pride. They give a last life, the gift of [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+        }
+      ]
+    },
+
+    "bloodthirsty_leader_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life-giving": [
+        {
+          "text": "Finally, r_c steps forward. There is a conflicted expression on their face when they step forward and stare into m_c's eyes. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+        }
+      ]
+    },
+    "bloodthirsty_leader_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life-giving": [
+        {
+          "text": "r_c, one of StarClan's oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     }
+  },
 
+
+  "outros": {
+    "default_known": {
+      "tags": [],
+      "lead_trait": [],
+      "text": [
+            "r_c hails m_c by their new name, [m_c + star?], telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. The group of starry cats yowls [m_c + star?]'s name in support. [m_c + star?] wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+      ]
+    },
+    "default_unknown": {
+      "tags": [],
+      "lead_trait": [],
+      "text": [
+            "StarClan hails m_c by their new name, [m_c + star?], telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. The group of starry cats yowls [m_c + star?]'s name in support. [m_c + star?] wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+      ]
+    },
+
+    "bloodthirsty_known": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "text": [
+        "r_c hails m_c by their new name, [m_c + star?], telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. [m_c + star?] stands, feeling a new strength within their body, and grins."
+      ]
+    },
+    "bloodthirsty_unknown": {
+      "tags": [],
+      "lead_trait": ["bloodthirsty"],
+      "text": [
+        "StarClan hails m_c by their new name, [m_c + star?], telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. [m_c + star?] stands, feeling a new strength within their body, and grins."
+      ]
+    }
   }
 }
