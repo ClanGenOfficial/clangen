@@ -59,6 +59,190 @@
             "tool_tip_delay": "0"
         }
     },
+	"#arrow_mns_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/arrow_mns.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/arrow_mns.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/arrow_mns.png"
+            }
+        }
+    },
+	"#mns_bg": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/moons_n_seasons.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/moons_n_seasons.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/moons_n_seasons.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/moons_n_seasons.png"
+            }
+        }
+    },
+	"#mns_bg_closed": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/moons_n_seasons_closed.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/moons_n_seasons_closed.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/moons_n_seasons_closed.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/moons_n_seasons_closed.png"
+            }
+        }
+    },
+	"#mns_image_moon": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/icon_moon.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/icon_moon.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/icon_moon.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/icon_moon.png"
+            }
+        }
+    },
+	"#mns_image_newleaf": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/icon_newleaf.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/icon_newleaf.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/icon_newleaf.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/icon_newleaf.png"
+            }
+        }
+    },
+	"#mns_image_greenleaf": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/icon_greenleaf.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/icon_greenleaf.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/icon_greenleaf.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/icon_greenleaf.png"
+            }
+        }
+    },
+	"#mns_image_leafbare": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/icon_leafbare.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/icon_leafbare.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/icon_leafbare.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/icon_leafbare.png"
+            }
+        }
+    },
+	"#mns_image_leaffall": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/icon_leaffall.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/icon_leaffall.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/icon_leaffall.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/icon_leaffall.png"
+            }
+        }
+    },
     "#continue_button": 
     {
         "prototype": "#image_button",
@@ -142,6 +326,32 @@
                 "path": "resources/images/buttons/settings_hover.png"
             }
         }
+    },
+    "#update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/update_available.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/update_available_hover.png"
+            }
+		}
+    },
+	"#new_update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/new_update.png"
+            }
+		}
     },
     "#done_button":
 	{
@@ -3325,6 +3535,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/not_yet.png"
+            }
+        }
+    },
+    "#cancel_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cancel.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cancel_unavailable.png"
             }
         }
     },

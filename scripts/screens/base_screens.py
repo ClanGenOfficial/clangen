@@ -1,7 +1,8 @@
 import pygame
 
-from scripts.utility import update_sprite, scale
+from scripts.utility import update_sprite, scale, scale_dimentions
 from scripts.cat.cats import Cat
+from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton
@@ -135,6 +136,8 @@ class Screens():
 
     def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able. """
+        # Check if the setting for moons and seasons UI is on so stats button can be moved
+        self.update_stats_button()
         for button in self.menu_buttons:
             self.menu_buttons[button].show()
 
@@ -173,8 +176,20 @@ class Screens():
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""
-        self.menu_buttons['heading'].set_text(text)
-
+        self.menu_buttons['heading'].set_text(text)        
+    
+    # Update stats button position if moons and seasons UI is on
+    def update_stats_button(self):
+        if game.settings["moons and seasons"] and self.name == "clan screen":
+            self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((1388, 190))
+            self.menu_buttons['stats']._rect = scale(pygame.Rect(1388, 190, 162, 60))
+            self.menu_buttons['stats'].blit_data[1] = scale(pygame.Rect(1388, 190, 162, 60))
+            self.menu_buttons['stats'].rebuild()
+        else:
+            self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((50, 120))
+            self.menu_buttons['stats']._rect = scale(pygame.Rect(50, 120, 162, 60))
+            self.menu_buttons['stats'].blit_data[1] = scale(pygame.Rect(50, 120, 162, 60))
+            self.menu_buttons['stats'].rebuild()
 
 
 # CAT PROFILES
