@@ -78,7 +78,30 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/arrow_mns.png"
+                "path":"resources/images/buttons/arrow_mns_unavailable.png"
+            }
+        }
+    },
+	"#arrow_mns_closed_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/arrow_mns_closed_unavailable.png"
             }
         }
     },
