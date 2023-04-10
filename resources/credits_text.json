@@ -52,7 +52,7 @@
         "wood pank": "Art",
         "grif": "Scar sprites",
         "beejeans": "patrol sprites, classic, mackerel, and sokoke tabbies, various white patches",
-        "Irony-Dragon": "Art",
+        "Irony-Dragon": "",
         "Kassi": "Various patrol sprites, various tortoiseshell sprites",
         "milly!": "Art",
         "coyotedawn": "Art",
@@ -64,11 +64,11 @@
         "Perrio": "Newborn sprites, Painted & Heart2 white patches, Sepiapoint+Minkpoint+Colorpoint",
         "anonn (Nicole)": "Art and Writing",
         "catastrophe": "Writing (ceremonies, patrols, thoughts)",
-        "Kittenvy": "Writing",
+        "Kittenvy": "",
         "SunlitFable": "Writing contributions; medicine cat patrols, both new and rewritten, various typo and wording changes | 'PACMAN' tortie patch",
         "Hobohime": "relationship event overhaul, writing contributions, editor, proof reader, MOON vit, half of PHANTOM vit, bug fixes",
         "DaMoomin": "Patrol Art",
-        "SkylerStarling": "Art",
+        "SkylerStarling": "Patrol sprites",
         "lividjesmar": "Patrol art, outsider patrol and faded DF color palettes",
         "teutonic": "Patrol Art",
         "redhairdl": "Numerous writing contributions",
@@ -77,7 +77,8 @@
         "izzyphobic": "Art",
         "Maxxicloudd": "bugfixing and minor content",
         "Ronfaure": "Writing contributions, medicine cat patrols, misc moon events (Scandalous!)",
-        "chrnakry": "Bug fixes, misc. code",
-        "Reaus": "UR Background "
+        "chrnakry": "User interface, bug fixes, cat names code, misc. code",
+        "Reaus": "UR Background ",
+		"Archanyhm": "Contributed Auto-Updater, Update-API, macOS fixes, changelog display"
     }
 }
