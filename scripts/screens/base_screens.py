@@ -208,6 +208,7 @@ class Screens():
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
                 if self.name in ['starclan screen', 'list screen', 'events screen']:
+                    # keep the UI narrow for design purposes, might change in the future
                     self.mns_close()
                 else: 
                     self.mns_open()
@@ -220,7 +221,8 @@ class Screens():
             self.menu_buttons['stats']._rect = scale(pygame.Rect(50, 120, 162, 60))
             self.menu_buttons['stats'].blit_data[1] = scale(pygame.Rect(50, 120, 162, 60))
             self.menu_buttons['stats'].rebuild()
-            
+    
+    # open moons and seasons UI (AKA wide version)    
     def mns_open(self):
         self.menu_buttons['moons_n_seasons_arrow'] = UIImageButton(
             scale(pygame.Rect((349, 163.5), (44, 68))),
@@ -277,6 +279,7 @@ class Screens():
             manager=MANAGER,
             object_id="#text_box_30_horizleft_dark")
     
+    # close moons and seasons UI (AKA narrow version)
     def mns_close(self):
         self.menu_buttons['moons_n_seasons_arrow'] = UIImageButton(
             scale(pygame.Rect((143, 163.5), (44, 68))),
