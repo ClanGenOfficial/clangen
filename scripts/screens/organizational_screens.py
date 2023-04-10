@@ -27,11 +27,11 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRestart, UpdateAvailablePopup
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir, get_cache_dir
-from ..update import self_update, has_update, UpdateChannel, get_latest_version_number
+from ..update import has_update, UpdateChannel, get_latest_version_number
 
 import ujson
 
@@ -91,12 +91,6 @@ class StartScreen(Screens):
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
-
-    def announce_restart_callback(self):
-        self.x.kill()
-        y = AnnounceRestart(game.switches['cur_screen'])
-        y.update(1)
-
 
     def on_use(self):
         """
