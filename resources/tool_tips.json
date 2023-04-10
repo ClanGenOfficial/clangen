@@ -118,5 +118,40 @@
         {
             "rect_width": "700"
         }
+    },
+	"#mns_image_moon.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "240"
+        }
+    },
+	"#mns_image_newleaf.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
+    },
+	"#mns_image_greenleaf.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
+    },
+	"#mns_image_leafbare.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
+    },
+	"#mns_image_leaffall.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
     }
 }
