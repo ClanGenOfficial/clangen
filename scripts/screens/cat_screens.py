@@ -1350,7 +1350,6 @@ class ProfileScreen(Screens):
         """
         text = None
         death_history = self.history.get_death_or_scars(self.the_cat, death=True)
-        murder_history = self.history.get_murders(self.the_cat)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1361,11 +1360,11 @@ class ProfileScreen(Screens):
             all_deaths = []
             for death in death_history:
                 text = event_text_adjust(Cat,
-                                         death_history[death]["text"],
+                                         death["text"],
                                          self.the_cat,
-                                         Cat.fetch_cat(death_history[death]["involved"]))
+                                         Cat.fetch_cat(death["involved"]))
                 if moons:
-                    text += f" (Moon {death_history[death]['moon']}"
+                    text += f" (Moon {death['moon']}"
                 all_deaths.append(text)
 
             death_number = len(all_deaths)
@@ -1446,7 +1445,8 @@ class ProfileScreen(Screens):
                 name_list = []
 
                 for murderer in murderers:
-                    name = Cat.fetch_cat(murderer["victim"]).name
+                    print(murderer)
+                    name = Cat.fetch_cat(murderer["murderer"]).name
 
                     if murderer["revealed"]:
                         murderer_names[name] = []
@@ -1466,6 +1466,7 @@ class ProfileScreen(Screens):
                 else:
                     murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
+        print(victim_text, murdered_text)
         return " ".join([victim_text, murdered_text])
 
     def toggle_conditions_tab(self):

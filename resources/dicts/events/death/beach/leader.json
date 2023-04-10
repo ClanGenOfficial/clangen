@@ -37,8 +37,14 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "murder", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "tags": ["all_lives", "murder", "revealed", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
+        "history_text": {
+            "reg_death_or_murder": "death for non-leader",
+            "reg_murder_unrevealed": "death message that obscures the murderer of a non-leader",
+            "lead_death": "death for leader",
+            "lead_murder_unrevealed": "death message that obscures the murderer of a leader"
+        },
         "history_text": [
             null,
             "were pushed off a cliff by r_c"],
@@ -51,7 +57,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "murder", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "tags": ["all_lives", "murder", "revealed", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
         "history_text": [
             null,
@@ -65,7 +71,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "murder", "other_cat", "other_cat_dep", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "tags": ["all_lives", "murder", "revealed", "other_cat", "other_cat_dep", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "Usually m_c is well aware of when the high tide will come in, but today they're distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at their paws, the last thing they see is the smug grin of r_c sat high above on the rocks.",
         "history_text": [
             null,
@@ -78,7 +84,7 @@
     },
     {
         "camp": "any",
-        "tags": ["clan_kits", "kit_manipulated", "murder", "other_cat", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["clan_kits", "kit_manipulated", "murder", "revealed", "other_cat", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c saves one of the Clan's kits from drowning, but loses a life in the process. The kit is well scolded for straying into the water, but is even more subdued than expected afterwards; sending nervous glances at r_c that no one else seems to catch.",
         "history_text": [
             null,

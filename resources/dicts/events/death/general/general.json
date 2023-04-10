@@ -11,7 +11,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
         "death_text": "m_c was murdered. r_c stands over them, blood dripping from their pelt.",
         "history_text": ["m_c was murdered by r_c.", null],
         "cat_trait": null,
@@ -83,7 +83,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
         "death_text": "m_c was murdered by r_c in cold blood.",
         "history_text": ["m_c was murdered by r_c.", null],
         "cat_trait": null,
@@ -94,7 +94,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
         "death_text": "m_c was murdered by r_c in cold blood. r_c has made the death look accidental.",
         "history_text": ["m_c was murdered by r_c.", null],
         "cat_trait": null,
@@ -105,7 +105,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
         "death_text": "r_c killed m_c by feeding them deathberries.",
         "history_text": ["m_c was killed when r_c fed them deathberries.", null],
         "cat_trait": null,
@@ -116,7 +116,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
         "death_text": "r_c killed m_c by feeding them foxglove seeds.",
         "history_text": ["m_c was killed when r_c fed them foxglove seeds.", null],
         "cat_trait": null,
@@ -127,7 +127,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
         "death_text": "r_c killed m_c by feeding them nightshade berries.",
         "history_text": ["m_c was killed when r_c fed them nightshade berries.", null],
         "cat_trait": null,
@@ -138,7 +138,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
         "death_text": "r_c killed m_c by feeding them water hemlock.",
         "history_text": ["m_c was killed when r_c fed them water hemlock.", null],
         "cat_trait": null,
@@ -149,7 +149,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
         "death_text": "r_c killed m_c by consciously giving them the wrong herbs.",
         "history_text": ["m_c was killed when r_c consciously gave them the wrong herbs.", null],
         "cat_trait": null,

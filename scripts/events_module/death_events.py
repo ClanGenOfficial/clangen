@@ -49,6 +49,7 @@ class Death_Events():
             print('WARNING: no death events found for', cat.name)
             return
 
+        revealed = False
         if murder:
             if "kit_manipulated" in death_cause.tags:
                 kit = Cat.fetch_cat(random.choice(get_alive_kits(Cat)))
@@ -81,7 +82,11 @@ class Death_Events():
             other_clan_name = other_clan.name + "Clan"
 
         if "other_cat" and other_cat:
-            involved_cats.append(other_cat.ID)
+            if murder:
+                if revealed:
+                    involved_cats.append(other_cat.ID)
+            else:
+                involved_cats.append(other_cat.ID)
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:

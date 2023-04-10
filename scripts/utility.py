@@ -855,7 +855,7 @@ def leader_ceremony_text_adjust(Cat,
                                 leader,
                                 life_giver=None,
                                 virtue=None,
-                                extra_lives=None):
+                                extra_lives=None,):
     """
     used to adjust the text for leader ceremonies
     """
@@ -872,6 +872,8 @@ def leader_ceremony_text_adjust(Cat,
 
     if extra_lives:
         adjust_text = adjust_text.replace('[life_num]', str(extra_lives))
+
+    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
 
     return adjust_text
 

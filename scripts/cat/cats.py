@@ -921,7 +921,8 @@ class Cat():
 
                         if chosen_trait in self.kit_traits:
                             chosen_group = choice(possible_groups)
-                            possible_traits = [i for i in self.personality_groups[chosen_group] if i not in self.kit_traits]
+                            possible_traits = [i for i in self.personality_groups[chosen_group] if
+                                               i not in self.kit_traits]
                             self.trait = choice(possible_traits)
                             influence_trait = None
                         else:
@@ -1109,23 +1110,38 @@ class Cat():
         :param cat: cat object
         """
 
+        # determine which dict we're pulling from
         if game.clan.instructor.df:
             starclan = False
+            ceremony_dict = LEAD_CEREMONY_DF
         else:
             starclan = True
+            ceremony_dict = LEAD_CEREMONY_SC
 
-        # get the intro
-        possible_intros = LEAD_CEREMONY["intros"]
+        # ---------------------------------------------------------------------------- #
+        #                                    INTRO                                     #
+        # ---------------------------------------------------------------------------- #
+        all_intros = ceremony_dict["intros"]
 
-        if game.clan.age == 0:
-            if starclan:
-                chosen_intro = possible_intros['new_clan_starclan']
-            else:
-                chosen_intro = possible_intros['new_clan_darkforest']
-        else:
-            chosen_intro = possible_intros['default']
+        # filter the intros
+        possible_intros = []
+        for intro in all_intros:
+            tags = all_intros[intro]["tags"]
 
+            if game.clan.age != 0 and "new_clan" in tags:
+                continue
+            elif game.clan.age == 0 and "new_clan" not in tags:
+                continue
+
+            if all_intros[intro]["lead_trait"]:
+                if self.trait not in all_intros[intro]["lead_trait"]:
+                    continue
+            possible_intros.append(all_intros[intro])
+
+        # choose and adjust text
+        chosen_intro = random.choice(possible_intros)
         if chosen_intro:
+            print(chosen_intro)
             intro = random.choice(chosen_intro["text"])
             intro = leader_ceremony_text_adjust(Cat,
                                                 intro,
@@ -1134,37 +1150,42 @@ class Cat():
         else:
             intro = 'this should not appear'
 
-        # get the lives
-
-        """
-        so we want to grab the cats that the lead has an existing relationship with, then find those with the highest 
-        positive relationships.  if there aren't enough, then we grab any available starclan cats.  if no more starclan
-        cats, then we switch to the 'ghost' blurbs.
-
-        """
-
-        possible_lives = LEAD_CEREMONY["lives"]
-        life_events = []
+        # ---------------------------------------------------------------------------- #
+        #                                 LIFE GIVING                                  #
+        # ---------------------------------------------------------------------------- #
+        life_givers = []
+        dead_relations = []
+        life_giving_leader = None
 
         # grab life givers that the cat actually knew in life and sort by amount of relationship!
         relationships = self.relationships.values()
 
-        life_givers = []
-        dead_relations = []
-        life_giving_leader = None
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
             if kitty.dead:
+                # check where they reside
+                if starclan:
+                    if kitty not in game.clan.starclan_cats:
+                        continue
+                else:
+                    if kitty not in game.clan.darkforest_cats:
+                        continue
+                # leaders are handled differently, since we only want one leader in each ceremony
                 if kitty.status == 'leader':
+                    if life_giving_leader:
+                        continue
                     life_giving_leader = kitty
+                # guides aren't allowed here
                 elif kitty == game.clan.instructor:
                     continue
                 else:
                     dead_relations.append(rel)
 
+        # sort relations by the strength of their relationship
         dead_relations.sort(
             key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust)
 
+        # if we have relations, then make sure we only take the top 8
         if dead_relations:
             i = 0
             for rel in dead_relations:
@@ -1173,25 +1194,32 @@ class Cat():
                 life_givers.append(rel.cat_to)
                 i += 1
 
-        # check amount of life givers, if we need more, then grab from the other StarClan cats
+        # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
-            print(life_givers)
             amount = 8 - len(life_givers)
+
             if starclan:
-                if len(game.clan.starclan_cats) - 1 < amount:
-                    amount = len(game.clan.starclan_cats) - 1
-                print(amount)
-                extra_givers = random.sample(
-                    [i for i in game.clan.starclan_cats if i not in life_givers and not game.clan.instructor], k=amount)
+                # this part just checks how many SC cats are available, if there aren't enough to fill all the slots,
+                # then we just take however many are available
+                possible_sc_cats = [i for i in game.clan.starclan_cats if
+                                    i not in life_givers and
+                                    self.fetch_cat(i).status != 'leader']
+                if len(possible_sc_cats) - 1 < amount:
+                    extra_givers = possible_sc_cats
+                else:
+                    extra_givers = random.sample(possible_sc_cats, k=amount)
             else:
-                print(game.clan.darkforest_cats)
-                if len(game.clan.darkforest_cats) - 1 < amount:
-                    amount = len(game.clan.darkforest_cats) - 1
-                extra_givers = random.sample(
-                    [i for i in game.clan.darkforest_cats if i not in life_givers and not game.clan.instructor],
-                    k=amount)
+                possible_df_cats = [i for i in game.clan.darkforest_cats if
+                                    i not in life_givers and
+                                    self.fetch_cat(i).status != 'leader']
+                if len(possible_df_cats) - 1 < amount:
+                    extra_givers = possible_df_cats
+                else:
+                    extra_givers = random.sample(possible_df_cats, k=amount)
+
             life_givers.extend(extra_givers)
 
+        # making sure we have a leader at the end
         if not life_giving_leader:
             # choosing if the life giving leader will be oldest leader or previous leader
             coin_flip = random.randint(1, 2)
@@ -1227,49 +1255,106 @@ class Cat():
         # check amount again, if more are needed then we'll add the ghost-y cats at the end
         if len(life_givers) < 9:
             unknown_blessing = True
-            extra_lives = str(8 - len(life_givers))
+            extra_lives = str(9 - len(life_givers))
         else:
             unknown_blessing = False
-            extra_lives = str(8 - len(life_givers))
+            extra_lives = str(9 - len(life_givers))
 
-        if len(life_givers) == 0:
-            if starclan:
-                life_events.append(possible_lives["only_sc_guide"])
+        possible_lives = ceremony_dict["lives"]
+        lives = []
+        for giver in life_givers:
+            giver_cat = self.fetch_cat(giver)
+            life_list = []
+            for life in possible_lives:
+                tags = possible_lives[life]["tags"]
+                rank = self.fetch_cat(giver).status
+
+                if "unknown_blessing" in tags:
+                    continue
+
+                if "guide" in tags and giver_cat != game.clan.instructor:
+                    continue
+                if game.clan.age != 0 and "new_clan" in tags:
+                    continue
+                elif game.clan.age == 0 and "new_clan" not in tags:
+                    continue
+
+                if possible_lives[life]["rank"]:
+                    if rank not in possible_lives[life]["rank"]:
+                        continue
+                if possible_lives[life]["lead_trait"]:
+                    if self.trait not in possible_lives[life]["lead_trait"]:
+                        continue
+                if possible_lives[life]["star_trait"]:
+                    if giver.trait not in possible_lives[life]["star_trait"]:
+                        continue
+
+                life_list.append(possible_lives[life])
+            chosen_life = random.choice(life_list)
+            chosen_text = random.choice(chosen_life["life_giving"])
+            print(chosen_text)
+            if chosen_text["virtue"]:
+                virtues = chosen_text["virtue"]
             else:
-                life_events.append(possible_lives["only_df_guide"])
+                virtues = None
 
-        all_lives = []
-        events = []
-        for event in life_events:
-            life_dict = random.choice(event["life_giving"])
-            events.append(leader_ceremony_text_adjust(Cat,
-                                                      life_dict["text"],
-                                                      leader=self,
-                                                      life_giver=game.clan.instructor,
-                                                      virtue=life_dict["virtues"],
-                                                      ))
+            lives.append(leader_ceremony_text_adjust(Cat,
+                                                     chosen_text["text"],
+                                                     leader=self,
+                                                     life_giver=giver,
+                                                     virtue=virtues,
+                                                     ))
+        if unknown_blessing:
+            possible_blessing = []
+            for life in possible_lives:
+                tags = possible_lives[life]["tags"]
 
-        all_lives = "<br><br>".join(events)
+                if "unknown_blessing" not in tags:
+                    continue
+
+                if possible_lives[life]["lead_trait"]:
+                    if self.trait not in possible_lives[life]["lead_trait"]:
+                        continue
+                possible_blessing.append(possible_lives[life])
+            chosen_blessing = choice(possible_blessing)
+            print(chosen_blessing)
+            chosen_text = random.choice(chosen_blessing["life_giving"])
+            lives.append(leader_ceremony_text_adjust(Cat,
+                                                     chosen_text["text"],
+                                                     leader=self,
+                                                     virtue=chosen_text["virtues"],
+                                                     extra_lives=extra_lives,
+                                                     ))
+        all_lives = "<br><br>".join(lives)
+
+        # ---------------------------------------------------------------------------- #
+        #                                    OUTRO                                     #
+        # ---------------------------------------------------------------------------- #
 
         # get the outro
+        all_outros = ceremony_dict["outros"]
 
-        possible_outros = LEAD_CEREMONY["outros"]
+        possible_outros = []
+        for outro in all_outros:
+            tags = all_outros[outro]["tags"]
 
-        if game.clan.age == 0 or unknown_blessing:
-            if starclan:
-                chosen_outro = possible_outros["unknown_sc_ghosts"]
-            else:
-                chosen_outro = possible_outros["unknown_df_ghosts"]
-        else:
-            chosen_outro = possible_outros["default_known"]
+            if game.clan.age != 0 and "new_clan" in tags:
+                continue
+            elif game.clan.age == 0 and "new_clan" not in tags:
+                continue
+
+            if all_outros[outro]["lead_trait"]:
+                if self.trait not in all_outros[outro]["lead_trait"]:
+                    continue
+            possible_outros.append(all_outros[outro])
+
+        chosen_outro = random.choice(possible_outros)
 
         if chosen_outro:
-            print(chosen_outro)
             outro = random.choice(chosen_outro["text"])
             outro = leader_ceremony_text_adjust(Cat,
                                                 outro,
                                                 self,
-                                                extra_lives=extra_lives
                                                 )
         else:
             outro = 'this should not appear'
@@ -3483,6 +3568,10 @@ MINOR_MAJOR_REACTION = None
 with open(f"{resource_directory}minor_major.json", 'r') as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-LEAD_CEREMONY = None
-with open(f"resources/dicts/lead_ceremony.json", 'r') as read_file:
-    LEAD_CEREMONY = ujson.loads(read_file.read())
+LEAD_CEREMONY_SC = None
+with open(f"resources/dicts/lead_ceremony_sc.json", 'r') as read_file:
+    LEAD_CEREMONY_SC = ujson.loads(read_file.read())
+
+LEAD_CEREMONY_DF = None
+with open(f"resources/dicts/lead_ceremony_df.json", 'r') as read_file:
+    LEAD_CEREMONY_DF = ujson.loads(read_file.read())
