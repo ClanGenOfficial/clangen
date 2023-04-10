@@ -28,7 +28,8 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
 import bisect
 import pygame
 
-from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
+from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
+    leader_ceremony_text_adjust
 from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
@@ -919,9 +920,10 @@ class Cat():
                         chosen_trait = choice(possible_trait)
 
                         if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
-                            if 'Reserved' in self.mentor_influence:
-                                self.mentor_influence.pop(0)
+                            chosen_group = choice(possible_groups)
+                            possible_traits = [i for i in self.personality_groups[chosen_group] if i not in self.kit_traits]
+                            self.trait = choice(possible_traits)
+                            influence_trait = None
                         else:
                             self.trait = chosen_trait
                             if not influence_trait:
@@ -1100,6 +1102,181 @@ class Cat():
                 history_file.write(json_string)
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")
+
+    def generate_lead_ceremony(self):
+        """
+        here we create a leader ceremony and add it to the history
+        :param cat: cat object
+        """
+
+        if game.clan.instructor.df:
+            starclan = False
+        else:
+            starclan = True
+
+        # get the intro
+        possible_intros = LEAD_CEREMONY["intros"]
+
+        if game.clan.age == 0:
+            if starclan:
+                chosen_intro = possible_intros['new_clan_starclan']
+            else:
+                chosen_intro = possible_intros['new_clan_darkforest']
+        else:
+            chosen_intro = possible_intros['default']
+
+        if chosen_intro:
+            intro = random.choice(chosen_intro["text"])
+            intro = leader_ceremony_text_adjust(Cat,
+                                                intro,
+                                                self,
+                                                )
+        else:
+            intro = 'this should not appear'
+
+        # get the lives
+
+        """
+        so we want to grab the cats that the lead has an existing relationship with, then find those with the highest 
+        positive relationships.  if there aren't enough, then we grab any available starclan cats.  if no more starclan
+        cats, then we switch to the 'ghost' blurbs.
+
+        """
+
+        possible_lives = LEAD_CEREMONY["lives"]
+        life_events = []
+
+        # grab life givers that the cat actually knew in life and sort by amount of relationship!
+        relationships = self.relationships.values()
+
+        life_givers = []
+        dead_relations = []
+        life_giving_leader = None
+        for rel in relationships:
+            kitty = self.fetch_cat(rel.cat_to)
+            if kitty.dead:
+                if kitty.status == 'leader':
+                    life_giving_leader = kitty
+                elif kitty == game.clan.instructor:
+                    continue
+                else:
+                    dead_relations.append(rel)
+
+        dead_relations.sort(
+            key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust)
+
+        if dead_relations:
+            i = 0
+            for rel in dead_relations:
+                if i == 8:
+                    break
+                life_givers.append(rel.cat_to)
+                i += 1
+
+        # check amount of life givers, if we need more, then grab from the other StarClan cats
+        if len(life_givers) < 8:
+            print(life_givers)
+            amount = 8 - len(life_givers)
+            if starclan:
+                if len(game.clan.starclan_cats) - 1 < amount:
+                    amount = len(game.clan.starclan_cats) - 1
+                print(amount)
+                extra_givers = random.sample(
+                    [i for i in game.clan.starclan_cats if i not in life_givers and not game.clan.instructor], k=amount)
+            else:
+                print(game.clan.darkforest_cats)
+                if len(game.clan.darkforest_cats) - 1 < amount:
+                    amount = len(game.clan.darkforest_cats) - 1
+                extra_givers = random.sample(
+                    [i for i in game.clan.darkforest_cats if i not in life_givers and not game.clan.instructor],
+                    k=amount)
+            life_givers.extend(extra_givers)
+
+        if not life_giving_leader:
+            # choosing if the life giving leader will be oldest leader or previous leader
+            coin_flip = random.randint(1, 2)
+            if coin_flip == 1:
+                # pick oldest leader in SC
+                if starclan:
+                    print(game.clan.starclan_cats.reverse())
+                    for kitty in reversed(game.clan.starclan_cats):
+                        if self.fetch_cat(kitty).status == 'leader':
+                            life_giving_leader = kitty
+                            break
+                else:
+                    for kitty in reversed(game.clan.darkforest_cats):
+                        if self.fetch_cat(kitty).status == 'leader':
+                            life_giving_leader = kitty
+                            break
+            else:
+                # pick previous leader
+                if starclan:
+                    for kitty in game.clan.starclan_cats:
+                        if self.fetch_cat(kitty).status == 'leader':
+                            life_giving_leader = kitty
+                            break
+                else:
+                    for kitty in game.clan.darkforest_cats:
+                        if self.fetch_cat(kitty).status == 'leader':
+                            life_giving_leader = kitty
+                            break
+
+        if life_giving_leader:
+            life_givers.append(life_giving_leader)
+
+        # check amount again, if more are needed then we'll add the ghost-y cats at the end
+        if len(life_givers) < 9:
+            unknown_blessing = True
+            extra_lives = str(8 - len(life_givers))
+        else:
+            unknown_blessing = False
+            extra_lives = str(8 - len(life_givers))
+
+        if len(life_givers) == 0:
+            if starclan:
+                life_events.append(possible_lives["only_sc_guide"])
+            else:
+                life_events.append(possible_lives["only_df_guide"])
+
+        all_lives = []
+        events = []
+        for event in life_events:
+            life_dict = random.choice(event["life_giving"])
+            events.append(leader_ceremony_text_adjust(Cat,
+                                                      life_dict["text"],
+                                                      leader=self,
+                                                      life_giver=game.clan.instructor,
+                                                      virtue=life_dict["virtues"],
+                                                      ))
+
+        all_lives = "<br><br>".join(events)
+
+        # get the outro
+
+        possible_outros = LEAD_CEREMONY["outros"]
+
+        if game.clan.age == 0 or unknown_blessing:
+            if starclan:
+                chosen_outro = possible_outros["unknown_sc_ghosts"]
+            else:
+                chosen_outro = possible_outros["unknown_df_ghosts"]
+        else:
+            chosen_outro = possible_outros["default_known"]
+
+        if chosen_outro:
+            print(chosen_outro)
+            outro = random.choice(chosen_outro["text"])
+            outro = leader_ceremony_text_adjust(Cat,
+                                                outro,
+                                                self,
+                                                extra_lives=extra_lives
+                                                )
+        else:
+            outro = 'this should not appear'
+
+        full_ceremony = "<br><br>".join([intro, all_lives, outro])
+        print(full_ceremony)
+        return full_ceremony
 
     # TODO: REWRITE THIS, it's not gonna work at all
     def create_leadership_ceremony(self):
@@ -3305,3 +3482,7 @@ resource_directory = "resources/dicts/events/death/death_reactions/"
 MINOR_MAJOR_REACTION = None
 with open(f"{resource_directory}minor_major.json", 'r') as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
+
+LEAD_CEREMONY = None
+with open(f"resources/dicts/lead_ceremony.json", 'r') as read_file:
+    LEAD_CEREMONY = ujson.loads(read_file.read())

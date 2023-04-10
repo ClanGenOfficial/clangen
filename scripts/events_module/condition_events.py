@@ -403,7 +403,7 @@ class Condition_Events():
 
             # heal the cat
             elif cat.healed_condition is True:
-                self.history.remove_possible_death_or_scars(cat, illness, death=True)
+                self.history.remove_possible_death_or_scars(cat, illness)
                 game.switches['skip_conditions'].append(illness)
                 # gather potential event strings for healed illness
                 possible_string_list = ILLNESS_HEALED_STRINGS[illness]
@@ -503,7 +503,7 @@ class Condition_Events():
                 triggered = True
                 scar_given = None
 
-                self.history.remove_possible_death_or_scars(cat, injury, death=True)
+                self.history.remove_possible_death_or_scars(cat, injury)
 
                 # only try to give a scar if the event gave possible scar history
                 if self.history.get_possible_death_or_scars(cat, injury, scar=True):

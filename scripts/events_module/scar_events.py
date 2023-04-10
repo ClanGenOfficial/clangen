@@ -192,7 +192,7 @@ class Scar_Events():
                     event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
                 scar_given = None
         else:
-            self.history.remove_possible_death_or_scars(cat, injury_name, scar=True)
+            self.history.remove_possible_death_or_scars(cat, injury_name)
             if injury_name == "poisoned":
                 event_string = f"{cat.name} has recovered fully from the poison."
             else:

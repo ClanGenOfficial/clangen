@@ -1,5 +1,6 @@
+import random
 
-import json
+import ujson
 
 from scripts.game_structure.game_essentials import game
 
@@ -114,7 +115,7 @@ class History:
             cat.load_history()
 
     @staticmethod
-    def make_dict(self, cat):
+    def make_dict(cat):
         history_dict = {
             "mentor_influence": cat.history.mentor_influence,
             "app_ceremony": cat.history.app_ceremony,
@@ -148,6 +149,13 @@ class History:
         if trait:
             cat.history.mentor_influence["trait"] = trait if trait else None
 
+        if "mentor" not in cat.history.mentor_influence:
+            cat.history.mentor_influence["mentor"] = None
+        if "skill" not in cat.history.mentor_influence:
+            cat.history.mentor_influence["skill"] = None
+        if "trait" not in cat.history.mentor_influence:
+            cat.history.mentor_influence["trait"] = None
+
     def add_app_ceremony(self, cat, honor):
         """
         adds ceremony honor to the cat's history
@@ -158,20 +166,9 @@ class History:
 
         cat.history.app_ceremony = {
             "honor": honor,
-            "graduation_age": cat.age,
+            "graduation_age": cat.moons,
             "moon": game.clan.age
         }
-
-    def add_lead_ceremony(self, cat, ceremony_text):
-        """
-        this adds the full leader ceremony text to the cat's history save
-        :param cat: cat object
-        :param ceremony_text: the full ceremony text
-        :return:
-        """
-        self.check_load(cat)
-
-        cat.history.lead_ceremony = ceremony_text
 
     def add_possible_death_or_scars(self, cat, condition, text, other_cat=None, scar=False, death=False):
         """
@@ -199,18 +196,24 @@ class History:
         # now just make sure the names aren't actually in the text and replace as necessary
         # we can't have the names in the text bc names change over time and so would eventually be out of date
         # on the history display
-        if cat.name in text:
-            text = text.replace(cat.name, "m_c")
+        if str(cat.name) in text:
+            text = text.replace(str(cat.name), "m_c")
         if other_cat:
-            if other_cat.name in text:
-                text = text.replace(other_cat.name, "r_c")
+            if str(other_cat.name) in text:
+                text = text.replace(str(other_cat.name), "r_c")
 
-        cat.history[event_type][condition] = {
-            "involved": other_cat.ID,
-            "text": text
-        }
+        if event_type == "possible_scar":
+            cat.history.possible_scar[condition] = {
+                "involved": other_cat.ID,
+                "text": text
+            }
+        elif event_type == 'possible_death':
+            cat.history.possible_death[condition] = {
+                "involved": other_cat.ID,
+                "text": text
+            }
 
-    def remove_possible_death_or_scars(self, cat, condition, scar=False, death=False):
+    def remove_possible_death_or_scars(self, cat, condition):
         """
         use to remove possible death/scar histories
         :param cat: cat object
@@ -221,18 +224,10 @@ class History:
 
         self.check_load(cat)
 
-        event_type = None
-        if scar:
-            event_type = "possible_scar"
-        elif death:
-            event_type = "possible_death"
-
-        if not event_type:
-            print('WARNING: event type was not specified during possible scar/death history removal, '
-                  'did you remember to set scar or death as True?')
-            return
-
-        cat.history[event_type].pop(condition)
+        if condition in cat.history.possible_scar:
+            cat.history.possible_scar.pop(condition)
+        if condition in cat.history.possible_death:
+            cat.history.possible_death.pop(condition)
 
     def add_death_or_scars(self, cat, other_cat=None, text=None, condition=None, scar=False, death=False):
         """
@@ -264,10 +259,12 @@ class History:
 
         # if this was caused by a condition, then we need to get info from the possible scar/death dicts
         if condition:
-            old_event = cat.history[old_event_type][condition]
+            if old_event_type == 'possible_scar':
+                old_event = cat.history.possible_scar[condition]
+            else:
+                old_event = cat.history.possible_death[condition]
             other_cat = old_event["involved"]
             text = old_event["text"]
-
             # and then remove from possible scar/death dict
             if condition in cat.history[old_event_type]:
                 cat.history[old_event_type].pop(condition)
@@ -275,11 +272,11 @@ class History:
         # now just make sure the names aren't actually in the text and replace as necessary
         # we can't have the names in the text bc names change over time and so would eventually be out of date
         # on the history display
-        if cat.name in text:
-            text = text.replace(cat.name, "m_c")
+        if str(cat.name) in text:
+            text = text.replace(str(cat.name), "m_c")
         if other_cat:
-            if other_cat.name in text:
-                text = text.replace(other_cat.name, "r_c")
+            if str(other_cat.name) in text:
+                text = text.replace(str(other_cat.name), "r_c")
             other_cat = other_cat.ID
 
         history_dict = {
@@ -287,7 +284,11 @@ class History:
             "text": text,
             "moon": game.clan.age
         }
-        cat.history[event_type].append(history_dict)
+
+        if event_type == 'scar_events':
+            cat.history.scar_events.append(history_dict)
+        elif event_type == 'died_by':
+            cat.history.died_by.append(history_dict)
 
     def add_murders(self, cat, other_cat, revealed):
         """
@@ -298,6 +299,11 @@ class History:
         :return:
         """
         self.check_load(cat)
+
+        if "is_murderer" not in other_cat.history.murder:
+            other_cat.history.murder["is_murderer"] = []
+        if 'is_victim' not in cat.history.murder:
+            cat.history.murder["is_victim"] = []
 
         other_cat.history.murder["is_murderer"].append({
             "victim": cat.ID,
@@ -311,7 +317,12 @@ class History:
         })
 
     def add_lead_ceremony(self, cat):
+        """
+        generates and adds lead ceremony to history
+        """
+        self.check_load(cat)
 
+        cat.history.lead_ceremony = cat.generate_lead_ceremony()
 
     # ---------------------------------------------------------------------------- #
     #                                 retrieving                                   #
@@ -330,6 +341,7 @@ class History:
         if mentor influence is empty, a NoneType is returned
         """
         self.check_load(cat)
+        print(cat.history.mentor_influence)
         return cat.history.mentor_influence
 
     def get_app_ceremony(self, cat):
@@ -353,8 +365,9 @@ class History:
         :param cat: cat object
         """
         self.check_load(cat)
-
-        return cat.history.lead_ceremony
+        if not cat.history.lead_ceremony:
+            self.add_lead_ceremony(cat)
+        return str(cat.history.lead_ceremony)
 
     def get_possible_death_or_scars(self, cat, condition=None, death=False, scar=False):
         """
@@ -398,7 +411,14 @@ class History:
             return
 
         if condition:
-            return cat.history[event_type][condition]
+            if event_type == 'possible_scar':
+                if condition in cat.history.possible_scar:
+                    return cat.history.possible_scar[condition]
+            elif event_type == 'possible_death':
+                if condition in cat.history.possible_death:
+                    return cat.history.possible_death[condition]
+            else:
+                return None
 
         if event_type == 'possible_scar':
             return cat.history.possible_scar
@@ -474,4 +494,6 @@ class History:
         self.check_load(cat)
 
         return cat.history.murder
+
+
 

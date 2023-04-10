@@ -1332,9 +1332,9 @@ class ProfileScreen(Screens):
             graduation_history = f"When {self.the_cat.name} graduated they were honored for their {app_ceremony['honor']}."
 
             grad_age = app_ceremony["graduation_age"]
-            if grad_age < 11:
+            if int(grad_age) < 11:
                 graduation_history += " Their training went so well that they graduated early."
-            elif grad_age > 13:
+            elif int(grad_age) > 13:
                 graduation_history += " They graduated a little bit late."
 
             if game.switches['show_history_moons']:
@@ -1406,8 +1406,14 @@ class ProfileScreen(Screens):
         else:
             moons = False
         if murder_history:
-            victims = murder_history["is_murderer"]
-            murderers = murder_history["is_victim"]
+            if 'is_murderer' in murder_history:
+                victims = murder_history["is_murderer"]
+            else:
+                victims = []
+            if "is_victim" in murder_history:
+                murderers = murder_history["is_victim"]
+            else:
+                murderers = []
 
             if victims:
                 victim_names = {}
@@ -1427,6 +1433,7 @@ class ProfileScreen(Screens):
                     else:
                         name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
+                print(name_list)
                 if len(name_list) == 1:
                     victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
                 elif len(victim_names) == 2:
@@ -2157,10 +2164,10 @@ class CeremonyScreen(Screens):
                                                         object_id=get_text_box_theme(), manager=MANAGER)
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.life_text = self.history.get_lead_ceremony(self.the_cat)
-            if not self.the_cat.history.lead_ceremony:
-                self.life_text = self.the_cat.create_leadership_ceremony()
+
         else:
             self.life_text = ""
+
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox(self.life_text,
                                                   scale(pygame.Rect((0, 0), (1100, -1))),

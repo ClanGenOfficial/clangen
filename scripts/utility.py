@@ -850,6 +850,32 @@ def event_text_adjust(Cat,
     return adjust_text
 
 
+def leader_ceremony_text_adjust(Cat,
+                                text,
+                                leader,
+                                life_giver=None,
+                                virtue=None,
+                                extra_lives=None):
+    """
+    used to adjust the text for leader ceremonies
+    """
+    adjust_text = text.replace("m_c_star", leader.name.prefix + "star")
+    adjust_text = adjust_text.replace("m_c", leader.name.prefix + leader.name.suffix)
+
+    if life_giver:
+        life_giver_name = str(Cat.fetch_cat(life_giver).name)
+        adjust_text = adjust_text.replace("r_c", life_giver_name)
+
+    if virtue:
+        virtue = choice(virtue)
+        adjust_text = adjust_text.replace("[virtue]", virtue)
+
+    if extra_lives:
+        adjust_text = adjust_text.replace('[life_num]', str(extra_lives))
+
+    return adjust_text
+
+
 def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,
                          living_parents=(), dead_parents=()):
     name = str(cat.name)
