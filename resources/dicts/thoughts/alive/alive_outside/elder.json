@@ -13,7 +13,8 @@
             "Is unable to remember what herbs to look out for to ease their pain",
             "Wishes they could check in on the Clan's kits",
             "Is scared they may die away from the Clan",
-            "Has aching bones from wandering so long"
+            "Has aching bones from wandering so long",
+            "Wishes they had a medicine cat with them to soothe their aches and pains"
         ],
         "main_status_constraint": [
             "elder"
