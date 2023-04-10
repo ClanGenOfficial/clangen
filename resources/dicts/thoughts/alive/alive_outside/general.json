@@ -48,7 +48,8 @@
             "Is trying to get back to c_n as soon as possible",
             "Wonders how they will survive without their Clanmates",
             "Is missing r_c",
-            "Is scared that they will never be found"
+            "Is scared that they will never be found",
+            "Fears StarClan has forgotten about them"
         ],
         "main_status_constraint": [
             "newborn",
