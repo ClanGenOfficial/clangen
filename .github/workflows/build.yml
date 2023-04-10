@@ -30,7 +30,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
@@ -98,7 +97,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
@@ -177,7 +175,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
@@ -264,7 +261,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
@@ -356,7 +352,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
@@ -449,7 +444,6 @@ jobs:
           echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=development-test" >> $GITHUB_ENV
       - name: Write version file
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
