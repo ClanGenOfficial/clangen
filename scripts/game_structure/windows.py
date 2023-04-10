@@ -666,15 +666,15 @@ class UpdateAvailablePopup(UIWindow):
                 self.box_unchecked.hide()
                 self.box_checked.enable()
                 self.box_checked.show()
-                with open(f"{get_cache_dir()}/.suppress_update_popup", 'w') as write_file:
+                with open(f"{get_cache_dir()}/suppress_update_popup", 'w') as write_file:
                     write_file.write(get_latest_version_number())
             elif event.ui_element == self.box_checked:
                 self.box_checked.disable()
                 self.box_checked.hide()
                 self.box_unchecked.enable()
                 self.box_unchecked.show()
-                if os.path.exists(f"{get_cache_dir()}/.suppress_update_popup"):
-                    os.remove(f"{get_cache_dir()}/.suppress_update_popup")
+                if os.path.exists(f"{get_cache_dir()}/suppress_update_popup"):
+                    os.remove(f"{get_cache_dir()}/suppress_update_popup")
 
     def announce_restart_callback(self):
         self.x.kill()
