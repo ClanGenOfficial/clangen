@@ -468,7 +468,7 @@ class UnknownResScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 328), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 328), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 320), (68, 68))), "", object_id="#starclan_button")
