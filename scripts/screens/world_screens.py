@@ -15,7 +15,7 @@ class OutsideClanScreen(Screens):
     list_page = 1  # Holds the current page
     display_cats = []  # Holds the cat sprite objects
     cat_names = []  # Holds the cat name text-box objects
-
+    
     previous_search_text = ""
 
     def load_images(self):
@@ -126,21 +126,27 @@ class OutsideClanScreen(Screens):
                 self.living_cats.append(the_cat)
 
     def screen_switches(self):
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
+        
         # Determine the living, non-exiled cats.
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278 + move_for_mns), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
-        self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#your_clan_button")
-        self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
+        self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270 + move_for_mns), (68, 68))), "", object_id="#your_clan_button")
+        self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270 + move_for_mns), (68, 68))), "",
                                                  object_id="#outside_clan_button", manager=MANAGER)
         self.outside_clan_button.disable()
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190 + move_for_mns), (68, 68))), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190 + move_for_mns), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190 + move_for_mns), (220, 60))),
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                          manager=MANAGER)  # Text will be filled in later
 
@@ -150,7 +156,7 @@ class OutsideClanScreen(Screens):
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
         x_pos = 1152
-        y_pos = 270
+        y_pos = 270 + move_for_mns
         self.filter_by_closed = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (196, 68))),
             "",
@@ -239,7 +245,11 @@ class OutsideClanScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -288,13 +298,13 @@ class OutsideClanScreen(Screens):
                     
                     self.display_cats.append(
                         pygame_gui.elements.UIImage(
-                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            scale(pygame.Rect((260 + pos_x, 360 + move_for_mns + pos_y), (100, 100))),
                             _temp))
                     self.display_cats[-1].disable()
                 
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
+                                   ((260 + pos_x, 360 + move_for_mns + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
@@ -304,7 +314,7 @@ class OutsideClanScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + move_for_mns + pos_y), (300, 60))),
                                                                     object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
@@ -312,13 +322,18 @@ class OutsideClanScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
 
         # Only update the postions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(self.search_bar_image, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(self.search_bar_image, (696/1600 * screen_x, (270 + move_for_mns)/1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -328,6 +343,11 @@ class UnknownResScreen(Screens):
     display_cats = []
     cat_names = []
     previous_search_text = ""
+    
+    if game.settings['moons and seasons']:
+        move_for_mns = 50
+    else:
+        move_for_mns = 0    
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -463,24 +483,28 @@ class UnknownResScreen(Screens):
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
         # Determine the dead, non-exiled cats.
-        
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 328), (294, 55))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278 + move_for_mns), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
-        self.starclan_button = UIImageButton(scale(pygame.Rect((230, 320), (68, 68))), "", object_id="#starclan_button")
-        self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 320), (68, 68))), "",
+        self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270 + move_for_mns), (68, 68))), "", object_id="#starclan_button")
+        self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 270 + move_for_mns), (68, 68))), "",
                                                       object_id="#unknown_residence_button", manager=MANAGER)
         self.unknown_residence_button.disable()
-        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 320), (68, 68))), "",
+        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270 + move_for_mns), (68, 68))), "",
                                                 object_id="#dark_forest_button", manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1240), (68, 68))), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1240), (68, 68))), "",
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190 + move_for_mns), (68, 68))), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190 + move_for_mns), (68, 68))), "",
                                                   object_id="#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1240), (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190 + move_for_mns), (220, 60))),
                                                          object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)  # Text will be filled in later
 
@@ -491,7 +515,7 @@ class UnknownResScreen(Screens):
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
         x_pos = 1152
-        y_pos = 320
+        y_pos = 270 + move_for_mns
         self.filter_by_closed = UIImageButton(
             scale(pygame.Rect((x_pos, y_pos), (196, 68))),
             "",
@@ -556,7 +580,11 @@ class UnknownResScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -606,13 +634,13 @@ class UnknownResScreen(Screens):
                     
                     self.display_cats.append(
                         pygame_gui.elements.UIImage(
-                            scale(pygame.Rect((260 + pos_x, 410 + pos_y), (100, 100))),
+                            scale(pygame.Rect((260 + pos_x, 360 + move_for_mns + pos_y), (100, 100))),
                             _temp))
                     self.display_cats[-1].disable()
                     
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 410 + pos_y), (100, 100))),
+                                   ((260 + pos_x, 360 + move_for_mns + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
@@ -622,7 +650,7 @@ class UnknownResScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 510 + pos_y), (300, 60))),
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + move_for_mns + pos_y), (300, 60))),
                                                                     object_id="#text_box_30_horizcenter_light",
                                                                     manager=MANAGER))
                 pos_x += 240
@@ -631,6 +659,11 @@ class UnknownResScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        # Check if window needs to be moved down for extra UI
+        if game.settings['moons and seasons']:
+            move_for_mns = 50
+        else:
+            move_for_mns = 0
         bg = self.ur_bg
         screen.blit(bg, (0, 0))
         # Only update the positions if the search text changes
@@ -638,6 +671,6 @@ class UnknownResScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(self.search_bar_image, (696/1600 * screen_x, 320/1400 * screen_y))
+        screen.blit(self.search_bar_image, (696/1600 * screen_x, (270 + move_for_mns)/1400 * screen_y))
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
