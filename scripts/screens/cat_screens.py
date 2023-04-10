@@ -344,7 +344,7 @@ class ProfileScreen(Screens):
                     self.clear_profile()
                     self.build_profile()
 
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if game.switches['window_open']:
                 pass
 
@@ -2359,7 +2359,7 @@ class CeremonyScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen('profile screen')
         
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen('profile screen')
         return
@@ -2419,7 +2419,7 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
         
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:

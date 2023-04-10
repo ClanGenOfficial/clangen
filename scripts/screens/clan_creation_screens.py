@@ -127,7 +127,7 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == 'saved screen':
                 self.handle_saved_clan_event(event)
         
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if self.sub_screen == 'game mode':
                 self.handle_game_mode_key(event)
             elif self.sub_screen == 'name clan':

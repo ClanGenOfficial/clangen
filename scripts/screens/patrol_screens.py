@@ -87,7 +87,7 @@ class PatrolScreen(Screens):
                     self.update_selected_cat()
                     self.update_button()
         
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_LEFT:
                 self.change_screen("list screen")
 

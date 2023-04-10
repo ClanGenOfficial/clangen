@@ -235,7 +235,7 @@ class EventsScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
                 self.change_screen('clan screen')
             elif event.key == pygame.K_UP:
