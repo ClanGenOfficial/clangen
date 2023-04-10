@@ -1984,23 +1984,22 @@ class ProfileScreen(Screens):
             offset = 80
         
         if the_cat.df:
-            # !!!!!!!!! FIX THE TRANSPARENCY
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70)).convert_alpha()
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70)).convert_alpha()
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
         else:
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(480 + offset, 0, 80, 70)), (240, 210)).convert_alpha()
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(480 + offset, 0, 80, 70)), (240, 210))
 
     def on_use(self):
         pass
