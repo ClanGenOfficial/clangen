@@ -225,13 +225,11 @@ class StartScreen(Screens):
             logger.exception("Failed to check for update")
 
         if game.settings['show_changelog']:
-            show_changelog = False
+            show_changelog = True
             if os.path.exists(f"{get_cache_dir()}/.changelog_popup_shown"):
                 with open(f"{get_cache_dir()}/.changelog_popup_shown") as read_file:
-                    if read_file.readline() != get_version_info().version_number:
-                        show_changelog = True
-            else:
-                show_changelog = True
+                    if read_file.readline() == get_version_info().version_number:
+                        show_changelog = False
 
             if show_changelog:
                 with open(f"{get_cache_dir()}/.changelog_popup_shown", 'w') as write_file:
