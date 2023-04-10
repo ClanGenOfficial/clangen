@@ -143,6 +143,32 @@
             }
         }
     },
+    "#update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/update_available.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/update_available_hover.png"
+            }
+		}
+    },
+	"#new_update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/new_update.png"
+            }
+		}
+    },
     "#done_button":
 	{
 		"prototype": "#image_button",
@@ -164,7 +190,7 @@
             {
 				"path": "resources/images/buttons/done_unavailable.png"
 			}
-			
+
 		}
     },
     "#back_button":
@@ -3321,6 +3347,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/not_yet.png"
+            }
+        }
+    },
+    "#cancel_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cancel.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cancel_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cancel_unavailable.png"
             }
         }
     },

@@ -105,6 +105,11 @@
             "Show exact XP",
             "Will turn experience: proficient into experience: proficient (151)",
             false
+        ],
+        "check_for_updates": [
+            "Check for updates",
+            "Automatically checks for updates on startup",
+            true
         ]
     },
     "relation": {
