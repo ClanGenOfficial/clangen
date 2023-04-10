@@ -717,10 +717,11 @@ class ChangelogPopup(UIWindow):
         with open("changelog.txt", "r") as read_file:
             file_cont = read_file.read()
 
-        self.changelog_text = pygame_gui.elements.UITextBox(
+        self.changelog_text = UITextBoxTweaked(
             f"{file_cont}",
             scale(pygame.Rect((0, 0), (900, -1))),
             object_id="#text_box_30",
+            line_spacing=.8,
             container=self.scrolling_container,
             manager=MANAGER)
 
