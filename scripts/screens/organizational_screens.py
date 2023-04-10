@@ -91,6 +91,10 @@ class StartScreen(Screens):
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
+                self.change_screen('clan screen')
 
     def on_use(self):
         """
@@ -316,6 +320,10 @@ class SwitchClanScreen(Screens):
                         game.clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
+                        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
 
     def exit_screen(self):
         """
@@ -566,6 +574,24 @@ class SettingsScreen(Screens):
                 self.open_lang_settings()
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
+            elif event.key == pygame.K_RIGHT:
+                if self.sub_menu == 'general':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'relation':
+                    self.open_info_screen()
+                elif self.sub_menu == 'info':
+                    self.open_lang_settings()
+            elif event.key == pygame.K_LEFT:
+                if self.sub_menu == 'relation':
+                    self.open_general_settings()
+                elif self.sub_menu == 'info':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'language':
+                    self.open_info_screen()
 
     def handle_checkbox_events(self, event):
         """
