@@ -88,6 +88,7 @@
         "id": "warrior_gen_deputy",
         "thoughts": [
             "Wants to be chosen as the new deputy"
+            "Thinks they would make a good deputy"
         ],
         "random_status_constraint": [
             "deputy"
@@ -226,6 +227,8 @@
         "Draws blood when training with another warrior and coldly says it was an accident",
         "Wonders how easy it'd be to attack the leader from where they lay",
         "Daydreams about slaughtering every cat they despise"
+        "Delights in killing prey a little too much",
+        "Cruelly plays with their prey before finally killing it"
     ],
     "main_trait_constraint": [
         "bloodthirsty"
