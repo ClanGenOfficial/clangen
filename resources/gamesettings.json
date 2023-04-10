@@ -41,6 +41,11 @@
             "Even with this off, the camp you choose will still affect the events you encounter.",
             true
         ],
+		"moons and seasons": [
+            "Show moons and seasons UI",
+            "Enable a clan page UI addition which displays clan age and current clan season",
+            false
+        ],
         "den labels": [
             "Show den labels",
             "Enables the button / labels hovering over dens",
