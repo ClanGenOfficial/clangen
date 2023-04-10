@@ -207,7 +207,10 @@ class Screens():
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
-                self.mns_open()
+                if self.name == 'events screen':
+                    self.mns_close()
+                else:
+                    self.mns_open()
             else:
                 self.mns_close()
         else:
@@ -281,6 +284,8 @@ class Screens():
             scale(pygame.Rect((143, 163.5), (44, 68))),
             "",
             object_id="#arrow_mns_closed_button")
+        if self.name == 'events screen':
+            self.menu_buttons['moons_n_seasons_arrow'].disable()
         
         self.menu_buttons['moons_n_seasons'] = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((50, 120), (100, 155))),
