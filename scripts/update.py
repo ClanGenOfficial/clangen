@@ -23,8 +23,9 @@ use_proxy = False  # Set this to True if you want to use a proxy for the update 
 
 
 class UpdateChannel(StrEnum):
-    STABLE = auto()
-    DEVELOPMENT = auto()
+    STABLE = "stable"
+    STABLE_TEST = "stable-test"
+    DEVELOPMENT = "development"
     DEVELOPMENT_TEST = "development-test"
 
 
