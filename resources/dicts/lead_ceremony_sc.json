@@ -1,5 +1,6 @@
 {
   "virtues": {
+    "comment": "THIS DICT DOES NOTHING - it's purely here for quick reference of some possible virtues, you are not constrained to using these nor should you use these lists",
     "queen_virtues": ["affection", "compassion", "empathy", "duty", "protection", "pride"],
     "warrior_virtues": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
@@ -66,11 +67,11 @@
       ]
     },
 
-    "default_queen_known": {
+    "benevolent_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": [],
-      "rank": ["queen"],
+      "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
+      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
           "text": "r_c pads up to the new leader, softly touching their nose to m_c's head. They give a life for [virtue].",
@@ -79,11 +80,11 @@
       ]
     },
 
-    "bloodthirsty_queen_known": {
+    "bloodthirsty_adult": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
-      "star_trait": [],
-      "rank": ["queen"],
+      "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
+      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
           "text": "r_c stalks up to the new leader, eyes burning with unexpected ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
@@ -92,7 +93,7 @@
       ]
     },
 
-    "default_warrior_known": {
+    "default_warrior": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -119,7 +120,7 @@
       ]
     },
 
-    "bloodthirsty_warrior_known": {
+    "bloodthirsty_warrior": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -146,7 +147,7 @@
       ]
     },
 
-    "default_kit_known": {
+    "default_kit": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -159,7 +160,7 @@
       ]
     },
 
-    "bloodthirsty_kit_known": {
+    "bloodthirsty_kit": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -172,7 +173,7 @@
       ]
     },
 
-    "default_app_known": {
+    "default_app": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -185,7 +186,7 @@
       ]
     },
 
-    "bloodthirsty_app_known": {
+    "bloodthirsty_app": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -198,7 +199,7 @@
       ]
     },
 
-    "default_elder_known": {
+    "default_elder": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -211,7 +212,7 @@
       ]
     },
 
-    "bloodthirsty_elder_known": {
+    "bloodthirsty_elder": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -224,7 +225,7 @@
       ]
     },
 
-    "default_med_known": {
+    "default_med": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -237,7 +238,7 @@
       ]
     },
 
-    "bloodthirsty_med_known": {
+    "bloodthirsty_med": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -250,7 +251,7 @@
       ]
     },
 
-    "default_leader_known": {
+    "default_leader": {
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
@@ -262,8 +263,20 @@
         }
       ]
     },
+    "default_leader_ancient": {
+      "tags": ["old_leader"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life_giving": [
+        {
+          "text": "Finally, r_c steps forward. There is a conflicted expression on their face when they step forward and stare into m_c's eyes. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+        }
+      ]
+    },
 
-    "bloodthirsty_leader_known": {
+    "bloodthirsty_leader": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
@@ -274,12 +287,25 @@
           "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
+    },
+    "bloodthirsty_leader_ancient": {
+      "tags": ["old_leader"],
+      "lead_trait": ["bloodthirsty"],
+      "star_trait": [],
+      "rank": ["leader"],
+      "life_giving": [
+        {
+          "text": "r_c, one of StarClan's oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+        }
+      ]
     }
+
   },
 
 
   "outros": {
-    "default_known": {
+    "default": {
       "tags": [],
       "lead_trait": [],
       "text": [
@@ -295,7 +321,7 @@
       ]
     },
 
-    "bloodthirsty_known": {
+    "bloodthirsty": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [

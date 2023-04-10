@@ -1141,7 +1141,6 @@ class Cat():
         # choose and adjust text
         chosen_intro = random.choice(possible_intros)
         if chosen_intro:
-            print(chosen_intro)
             intro = random.choice(chosen_intro["text"])
             intro = leader_ceremony_text_adjust(Cat,
                                                 intro,
@@ -1162,37 +1161,40 @@ class Cat():
 
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
-            if kitty.dead:
+            if (kitty).dead:
                 # check where they reside
                 if starclan:
-                    if kitty not in game.clan.starclan_cats:
+                    if kitty.ID not in game.clan.starclan_cats:
                         continue
                 else:
-                    if kitty not in game.clan.darkforest_cats:
+                    if kitty.ID not in game.clan.darkforest_cats:
                         continue
-                # leaders are handled differently, since we only want one leader in each ceremony
-                if kitty.status == 'leader':
-                    if life_giving_leader:
-                        continue
-                    life_giving_leader = kitty
                 # guides aren't allowed here
-                elif kitty == game.clan.instructor:
+                if kitty == game.clan.instructor:
                     continue
                 else:
                     dead_relations.append(rel)
 
         # sort relations by the strength of their relationship
-        dead_relations.sort(
-            key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust)
 
+        dead_relations.sort(
+            key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust, reverse=True)
+        for rel in dead_relations:
+            print(self.fetch_cat(rel.cat_to).name)
         # if we have relations, then make sure we only take the top 8
         if dead_relations:
             i = 0
             for rel in dead_relations:
                 if i == 8:
                     break
+                if self.fetch_cat(rel.cat_to).status == 'leader':
+                    life_giving_leader = rel.cat_to
+                    continue
                 life_givers.append(rel.cat_to)
                 i += 1
+
+        for giver in life_givers:
+            print(self.fetch_cat(giver).name)
 
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
@@ -1220,11 +1222,13 @@ class Cat():
             life_givers.extend(extra_givers)
 
         # making sure we have a leader at the end
+        ancient_leader = False
         if not life_giving_leader:
             # choosing if the life giving leader will be oldest leader or previous leader
             coin_flip = random.randint(1, 2)
             if coin_flip == 1:
                 # pick oldest leader in SC
+                ancient_leader = True
                 if starclan:
                     print(game.clan.starclan_cats.reverse())
                     for kitty in reversed(game.clan.starclan_cats):
@@ -1262,6 +1266,7 @@ class Cat():
 
         possible_lives = ceremony_dict["lives"]
         lives = []
+        used_lives = []
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             life_list = []
@@ -1278,6 +1283,15 @@ class Cat():
                     continue
                 elif game.clan.age == 0 and "new_clan" not in tags:
                     continue
+                if "old_leader" in tags and not ancient_leader:
+                    continue
+                if "leader_parent" in tags and giver_cat not in self.get_parents():
+                    continue
+                elif "leader_child" in tags and giver_cat not in self.get_children():
+                    continue
+                elif "leader_mate" in tags and giver_cat not in self.mate:
+                    continue
+
 
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
@@ -1286,13 +1300,18 @@ class Cat():
                     if self.trait not in possible_lives[life]["lead_trait"]:
                         continue
                 if possible_lives[life]["star_trait"]:
-                    if giver.trait not in possible_lives[life]["star_trait"]:
+                    if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
 
                 life_list.append(possible_lives[life])
-            chosen_life = random.choice(life_list)
+                used_lives.append(life)
+            i = 0
+            chosen_life = {}
+            while i < 10:
+                chosen_life = random.choice(life_list)
+                if chosen_life not in used_lives:
+                    break
             chosen_text = random.choice(chosen_life["life_giving"])
-            print(chosen_text)
             if chosen_text["virtue"]:
                 virtues = chosen_text["virtue"]
             else:
@@ -1317,7 +1336,6 @@ class Cat():
                         continue
                 possible_blessing.append(possible_lives[life])
             chosen_blessing = choice(possible_blessing)
-            print(chosen_blessing)
             chosen_text = random.choice(chosen_blessing["life_giving"])
             lives.append(leader_ceremony_text_adjust(Cat,
                                                      chosen_text["text"],
@@ -1354,7 +1372,8 @@ class Cat():
             outro = random.choice(chosen_outro["text"])
             outro = leader_ceremony_text_adjust(Cat,
                                                 outro,
-                                                self,
+                                                leader=self,
+                                                life_giver=life_givers[-1],
                                                 )
         else:
             outro = 'this should not appear'
