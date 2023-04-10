@@ -921,6 +921,13 @@ def scale(rect):
 
     return rect
 
+def scale_dimentions(dim):
+    dim = list(dim)
+    dim[0] = round(dim[0] / 1600 * screen_x) if dim[0] > 0 else dim[0]
+    dim[1] = round(dim[1] / 1400 * screen_y) if dim[1] > 0 else dim[1]
+    dim = tuple(dim)
+    
+    return dim
 
 def draw(cat, pos):
     new_pos = list(pos)
