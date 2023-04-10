@@ -87,7 +87,7 @@
     {
         "id": "warrior_gen_deputy",
         "thoughts": [
-            "Wants to be chosen as the new deputy"
+            "Wants to be chosen as the new deputy",
             "Thinks they would make a good deputy"
         ],
         "random_status_constraint": [
