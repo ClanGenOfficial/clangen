@@ -5,7 +5,10 @@
             "Mewls pitifully for milk",
             "Tries to figure out all of the smells around them",
             "Snoozes peacefully",
-            "Tries to open their eyes, but it's all blurry"
+            "Tries to open their eyes, but it's all blurry",
+            "Wriggles next to their siblings",
+            "Paws at the air with their tiny claws",
+            "Tries to hiss, adorably"
         ],
         "main_age_constraint": [
             "newborn"
@@ -16,7 +19,9 @@
         "thoughts":[
             "Snuggles closer to r_c",
             "Smells r_c and immediately perks up",
-            "Mews at r_c as they shift in the nest"
+            "Mews at r_c as they shift in the nest",
+            "Purrs feebly as r_c licks them clean",
+            "Mewls when r_c accidentally steps on their tail"
         ],
         "main_age_constraint": [
             "newborn"
