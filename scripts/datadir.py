@@ -25,7 +25,7 @@ def get_data_dir():
 
     from platformdirs import user_data_dir
 
-    if not get_version_info().is_dev():
+    if get_version_info().is_dev():
         return user_data_dir('ClanGenBeta', 'ClanGen')
     return user_data_dir('ClanGen', 'ClanGen')
 
@@ -36,6 +36,7 @@ def get_log_dir():
 
 def get_save_dir():
     return get_data_dir() + '/saves'
+
 
 def get_cache_dir():
     return get_data_dir() + '/cache'
