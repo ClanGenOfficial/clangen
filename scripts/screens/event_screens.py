@@ -166,6 +166,7 @@ class EventsScreen(Screens):
                     self.display_events = self.misc_events
 
                 self.update_events_display()
+                self.show_menu_buttons()
 
             elif event.ui_element == self.toggle_borders_button:
                 if game.clan.closed_borders:

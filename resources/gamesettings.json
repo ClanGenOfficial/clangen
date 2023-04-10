@@ -41,6 +41,11 @@
             "Even with this off, the camp you choose will still affect the events you encounter.",
             true
         ],
+		"moons and seasons": [
+            "Show moons and seasons UI",
+            "Enable a clan page UI addition which displays clan age and current clan season",
+            false
+        ],
         "den labels": [
             "Show den labels",
             "Enables the button / labels hovering over dens",
@@ -105,6 +110,16 @@
             "Show exact XP",
             "Will turn experience: proficient into experience: proficient (151)",
             false
+        ],
+        "check_for_updates": [
+            "Check for updates",
+            "Automatically checks for updates on startup",
+            true
+        ],
+        "show_changelog": [
+            "Display changelog on startup",
+            "Shows the changelog of the latest release on startup",
+            true
         ]
     },
     "relation": {

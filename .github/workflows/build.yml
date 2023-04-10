@@ -19,12 +19,22 @@ jobs:
           cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -34,7 +44,28 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
           path: Clangen_Linux64_glibc2.31+.tar.xz
-      - name: Release 
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        run: |
+          gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.31' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
+            --http1.1
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -56,12 +87,22 @@ jobs:
           cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -70,7 +111,28 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
           path: Clangen_Linux64_glibc2.35+.tar.xz
-      - name: Release 
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        run: |
+          gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.35' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
+            --http1.1
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -90,14 +152,45 @@ jobs:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
           cache: 'poetry'
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
+        shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
+        shell: bash
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
@@ -107,6 +200,28 @@ jobs:
         with:
           name: Clangen_Win32
           path: Clangen_Win32.zip
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        shell: bash
+        run: |
+          gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win32' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_Win32.zip.sig' \
+            --http1.1
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -127,19 +242,50 @@ jobs:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
           cache: 'poetry'
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
+        shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
+        shell: bash
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
@@ -149,7 +295,29 @@ jobs:
         with:
           name: Clangen_Win64
           path: Clangen_Win64.zip
-      - name: Release 
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        shell: bash
+        run: |
+          gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win64' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_Win64.zip.sig' \
+            --http1.1
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -169,19 +337,50 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
           cache: 'poetry'
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
-      - name: Write Dev Version File
+      - name: Configure dev
+        shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
+        shell: bash
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
@@ -191,7 +390,29 @@ jobs:
         with:
           name: Clangen_Win64_Windows10+
           path: Clangen_Win64_Windows10+.zip
-      - name: Release 
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        shell: bash
+        run: |
+          gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win10+' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
+            --http1.1
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -226,12 +447,22 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Dev Version File
+      - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: echo ${{ github.sha }} > commit.txt
-      - name: Write Release Version File
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
-        run: echo ${{ github.ref_name }} > commit.txt
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Write version file
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
+          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         # run: poetry run python3 -m PyInstaller Clangen.spec
@@ -246,8 +477,56 @@ jobs:
         with:
           name: Clangen_macOS64.dmg
           path: Clangen_macOS64.dmg
-      - name: Release 
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        run: |
+          zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
+          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/macOS' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
+            --http1.1
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_macOS64.dmg
+  confirm_release_ubuntu_22_04:
+    runs-on: ubuntu-22.04
+    needs:
+      - build_ubuntu_20_04
+      - build_ubuntu_22_04
+      - build_win32
+      - build_win64
+      - build_win64_py311
+      - build_macos64
+    steps:
+      - name: Configure dev
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+      - name: Configure release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+      - name: Confirm release
+        run: |
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'

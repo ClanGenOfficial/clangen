@@ -1,0 +1,3 @@
+<strong>Example changelog</strong>
+- Some
+- Features
