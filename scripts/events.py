@@ -180,7 +180,10 @@ class Events():
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
                                            not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
                     # finds a percentage of the living clan to become shaken
-                    shaken_cats = random.sample(alive_cats, k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
+                    if len(alive_cats) == 0:
+                        return
+                    else:
+                        shaken_cats = random.sample(alive_cats, k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
 
                     shaken_cat_names = []
                     for cat in shaken_cats:
