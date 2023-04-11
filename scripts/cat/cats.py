@@ -505,6 +505,7 @@ class Cat():
         else:
             biome = None
         # NAME
+        # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
             self.name = Name(status,
                              prefix,
@@ -514,9 +515,10 @@ class Cat():
                              self.pelt.name,
                              self.tortiepattern,
                              biome=biome,
-                             specsuffix_hidden=self.specsuffix_hidden)
+                             specsuffix_hidden=self.specsuffix_hidden,
+                             load_existing_name = loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
         # Sprite sizes
         self.sprite = None
