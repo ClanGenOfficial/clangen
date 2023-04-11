@@ -23,7 +23,8 @@
         "id": "ambitious_medicine_cat",
         "thoughts": [
             "Insists on taking on more tasks",
-            "Spends all day gathering herbs"
+            "Spends all day gathering herbs",
+            "Wants to be the best medicine cat the Clan has ever seen"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -85,7 +86,9 @@
     {
         "id": "charismatic_medicine_cat",
         "thoughts": [
-            "Is doing their daily checkup on the elders"
+            "Is doing their daily checkup on the elders",
+            "Talks constantly while dressing a wound",
+            "Makes a sick cat feel at ease with some jokes"
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -94,7 +97,8 @@
     {
         "id": "childish_medicine_cat",
         "thoughts": [
-            "Bounces excitedly at the half-moon meeting"
+            "Bounces excitedly at the half-moon meeting",
+            "Complains that they have to collect more cobwebs"
         ],
         "main_trait_constraint": [
             "childish"
@@ -103,7 +107,8 @@
     {
         "id": "cold_medicine_cat",
         "thoughts": [
-            "Grumbles as a warrior asks for herbs for a simple bellyache"
+            "Grumbles as a warrior asks for herbs for a simple bellyache",
+            "Mocks a warrior who asks for pain-relieving herbs"
         ],
         "main_trait_constraint": [
             "cold"
@@ -133,7 +138,9 @@
     {
         "id": "daring_medicine_cat",
         "thoughts": [
-            "Steals catmint from a Twoleg garden"
+            "Steals catmint from a Twoleg garden",
+            "Gathers leaves from the tallest tree around",
+            "Argues with the leader about relations with other Clans"
         ],
         "main_trait_constraint": [
             "daring"
@@ -142,7 +149,9 @@
     {
         "id": "faithful_medicine_cat",
         "thoughts": [
-            "Has been hearing the voices of StarClan cats..."
+            "Has been hearing the voices of StarClan cats...",
+            "Prays to StarClan for guidance",
+            "Feels StarClan all around them while they work"
         ],
         "main_trait_constraint": [
             "faithful"
@@ -151,7 +160,8 @@
     {
         "id": "fierce_medicine_cat",
         "thoughts": [
-            "Insists on joining battle training once a moon"
+            "Insists on joining battle training once a moon",
+            "Snaps at their apprentice to reorganize the herbs"
         ],
         "main_trait_constraint": [
             "fierce"
@@ -160,7 +170,8 @@
     {
         "id": "insecure_medicine_cat",
         "thoughts": [
-            "Is saying that they don't deserve their full name"
+            "Is saying that they don't deserve their full name",
+            "Worries that they'll forget something"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -186,7 +197,10 @@
     {
         "id": "loving_medicine_cat",
         "thoughts": [
-            "Watches over some newborn kits"
+            "Watches over some newborn kits",
+            "Brings a sick cat some extra fresh-kill",
+            "Changes dressings with extra care",
+            "Purrs while helping a new parent with their kits"
         ],
         "main_trait_constraint": [
             "loving"
@@ -214,7 +228,9 @@
     {
         "id": "playful_medicine_cat",
         "thoughts": [
-            "Excitedly teaches the kits about basic herbs"
+            "Excitedly teaches the kits about basic herbs",
+            "Bats a moss-ball around while thinking",
+            "Lets the kits play with their tail"
         ],
         "main_trait_constraint": [
             "playful"
@@ -250,7 +266,8 @@
     {
         "id": "sneaky_medicine_cat",
         "thoughts": [
-            "Seems to be hiding something in the medicine they give to the leader"
+            "Seems to be hiding something in the medicine they give to the leader",
+            "Slips out of camp in secret"
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -262,7 +279,12 @@
             "Insists everyone eat chamomile leaves at moonhigh",
             "Sleeps in the middle of the clearing",
             "Looks dazed",
-            "Hisses at the kits randomly"
+            "Hisses at the kits randomly",
+            "Speaks in riddles",
+            "Draws strange shapes in the den floor",
+            "Says that they know the leader's secret",
+            "Is acting skittish",
+            "Coughs up a hairball then pretends they didn't" 
         ],
         "main_trait_constraint": [
             "strange"
@@ -298,7 +320,8 @@
     {
         "id": "vengeful_medicine_cat",
         "thoughts": [
-            "Refuses to treat a cat that once bullied them"
+            "Refuses to treat a cat that once bullied them",
+            "Doesn't give soothing herbs to a cat they don't like"
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -307,7 +330,9 @@
     {
         "id": "wise_medicine_cat",
         "thoughts": [
-            "Tells an ancient tale about StarClan"
+            "Tells an ancient tale about StarClan",
+            "Gives advice to any cat that needs it",
+            "Seems older than their moons"
         ],
         "main_trait_constraint": [
             "wise"
@@ -374,7 +399,8 @@
             "Has the foul taste of bitter herbs in their mouth",
             "Is wondering if they could borrow some catmint from the other Clans",
             "Is happy that they chose life as a medicine cat",
-            "Is proud of their ability to care for their Clanmates"
+            "Is proud of their ability to care for their Clanmates",
+            "Wants to find new ways to use common herbs"
         ]
     },
     {
