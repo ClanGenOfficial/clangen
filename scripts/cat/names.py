@@ -156,6 +156,8 @@ class Name():
             elif named_after_biome:
                 if biome in self.names_dict["biome_suffixes"]:
                     self.suffix = random.choice(self.names_dict["biome_suffixes"][biome])
+                else:
+                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
     
