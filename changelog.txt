@@ -1,4 +1,13 @@
-<strong>v0.8.1 Changelog</strong>
+<strong>v0.8.3</strong>
+- fixed some naming code
+
+<strong>v0.8.2</strong>
+- squashed some bugs
+
+<strong>v0.8.1</strong>
+- added changelog text
+
+<strong>v0.8.0</strong>
 <u>Cat and Sprite Changes:</u>
 - New sprites for paralyzed, sick/injured, and newborn cats. 
 - Separated vitiligo and points from white patches. It's now possible for a cat to have all three! 
