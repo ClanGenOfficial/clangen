@@ -83,7 +83,7 @@ class Name():
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
-            self.give_suffix(pelt, biome)
+            self.give_suffix(pelt, biome, tortiepattern)
 
         if self.suffix and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
@@ -107,7 +107,7 @@ class Name():
                 if name_fixpref:
                     self.give_prefix(eyes, colour, biome)
                 else:
-                    self.give_suffix(pelt, biome)
+                    self.give_suffix(pelt, biome, tortiepattern)
                 
                 nono_name = "".join(self.prefix,self.suffix)
                 possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])    
@@ -139,7 +139,7 @@ class Name():
         else:
             self.prefix = random.choice(self.names_dict["normal_prefixes"])
     # Generate possible suffix
-    def give_suffix(self, pelt, biome):
+    def give_suffix(self, pelt, biome, tortiepattern):
         if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
         else:
