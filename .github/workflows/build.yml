@@ -65,6 +65,13 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux_64_glibc_231
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -132,6 +139,13 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux_64_glibc_235
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -224,6 +238,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win32.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push Clangen_Win32.zip sablesteel/clan-gen-fan-edit:win_32
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -321,6 +342,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64.zip sablesteel/clan-gen-fan-edit:win64
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -418,6 +446,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -505,6 +540,13 @@ jobs:
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_macOS64.dmg sablesteel/clan-gen-fan-edit:osx_64
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
