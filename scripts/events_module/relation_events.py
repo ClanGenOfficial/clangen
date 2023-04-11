@@ -50,7 +50,7 @@ class Relation_Events():
 
         # This is the "big love check", and it must be handled first. 
         if random.random() > 0.8:
-            if self.romantic_events_class.big_love_check(cat):
+            if self.romantic_events_class.handle_confession(cat):
                 return
 
         # 1/16 for an additional event
