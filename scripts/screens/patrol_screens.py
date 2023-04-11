@@ -106,19 +106,22 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                self.selected_cat = choice(self.able_cats)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                self.selected_cat = choice(able_no_med)
                 self.update_selected_cat()
                 self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                self.current_patrol += sample(self.able_cats, k=3)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                self.current_patrol += sample(able_no_med, k=3)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                self.current_patrol += sample(self.able_cats, k=6)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                self.current_patrol += sample(able_no_med, k=6)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['remove_all']:
@@ -268,12 +271,13 @@ class PatrolScreen(Screens):
                 self.elements['claws'].hide()
                 self.elements['herb'].hide()
 
-            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
+            able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+            if len(self.current_patrol) >= 6 or len(able_no_med) < 1:
                 self.elements['add_one'].disable()
                 self.elements["random"].disable()
-            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
+            if len(self.current_patrol) > 3 or len(able_no_med) < 3:
                 self.elements['add_three'].disable()
-            if len(self.current_patrol) > 0 or len(self.able_cats) < 6:
+            if len(self.current_patrol) > 0 or len(able_no_med) < 6:
                 self.elements['add_six'].disable()
 
                 # Update the availability of the tab buttons
