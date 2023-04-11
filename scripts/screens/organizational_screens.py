@@ -205,12 +205,12 @@ class StartScreen(Screens):
         try:
             global has_checked_for_update
             global update_available
-            if not get_version_info().is_source_build and game.settings['check_for_updates'] and not has_checked_for_update:
+            if not get_version_info().is_source_build and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and game.settings['check_for_updates'] and not has_checked_for_update:
                 if has_update(UpdateChannel(get_version_info().release_channel)):
                     update_available = True
                     show_popup = True
-                    if os.path.exists(f"{get_cache_dir()}/.suppress_update_popup"):
-                        with open(f"{get_cache_dir()}/.suppress_update_popup", 'r') as read_file:
+                    if os.path.exists(f"{get_cache_dir()}/suppress_update_popup"):
+                        with open(f"{get_cache_dir()}/suppress_update_popup", 'r') as read_file:
                             if read_file.readline() == get_latest_version_number():
                                 show_popup = False
 
@@ -225,16 +225,14 @@ class StartScreen(Screens):
             logger.exception("Failed to check for update")
 
         if game.settings['show_changelog']:
-            show_changelog = False
-            if os.path.exists(f"{get_cache_dir()}/.changelog_popup_shown"):
-                with open(f"{get_cache_dir()}/.changelog_popup_shown") as read_file:
-                    if read_file.readline() != get_version_info().version_number:
-                        show_changelog = True
-            else:
-                show_changelog = True
+            show_changelog = True
+            if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
+                with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
+                    if read_file.readline() == get_version_info().version_number:
+                        show_changelog = False
 
             if show_changelog:
-                with open(f"{get_cache_dir()}/.changelog_popup_shown", 'w') as write_file:
+                with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
                     write_file.write(get_version_info().version_number)
                 ChangelogPopup(game.switches['last_screen'])
 

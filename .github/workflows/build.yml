@@ -34,6 +34,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
@@ -50,6 +51,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
@@ -101,6 +103,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -116,6 +119,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
@@ -182,6 +186,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Build self-updater binary
         shell: bash
         run: |
@@ -204,6 +209,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
@@ -271,6 +277,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -298,6 +305,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
@@ -365,6 +373,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -392,6 +401,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
@@ -457,6 +467,7 @@ jobs:
           echo "[DEFAULT]" > version.ini
           echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         # run: poetry run python3 -m PyInstaller Clangen.spec
@@ -478,6 +489,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip

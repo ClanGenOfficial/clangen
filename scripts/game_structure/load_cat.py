@@ -13,8 +13,6 @@ from scripts.utility import update_sprite, is_iterable
 from random import choice
 from scripts.cat_relations.inheritance import Inheritance
 
-from json import JSONDecodeError
-
 def load_cats():
     try:
         json_load()
@@ -40,7 +38,7 @@ def json_load():
         game.switches['error_message'] = f'Can\t open {clan_cats_json_path}!'
         game.switches['traceback'] = e
         raise
-    except JSONDecodeError as e:
+    except ujson.JSONDecodeError as e:
         game.switches['error_message'] = f'{clan_cats_json_path} is malformed!'
         game.switches['traceback'] = e
         raise
