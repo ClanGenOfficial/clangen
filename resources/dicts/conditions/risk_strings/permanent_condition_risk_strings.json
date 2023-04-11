@@ -112,7 +112,7 @@
     },
     "partial hearing loss": {
         "deaf": [
-            "m_c explains to r_c with signs and body language that it doesn't seem like they're able to hear any details of the world anymore.",
+            "r_c listens as m_c explains that it doesn't seem like they can hear the details of the world anymore.",
             "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems they've lost their hearing entirely."
 
         ]
