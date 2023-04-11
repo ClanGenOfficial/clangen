@@ -112,9 +112,8 @@
     },
     "partial hearing loss": {
         "deaf": [
-            "m_c explains to r_c with signs and body language that it doesn't seem like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} able to hear any details of the world anymore.",
-            "m_c realizes one day that the noises around {PRONOUN/m_c/object} are no longer just quiet, but completely silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lost {PRONOUN/m_c/poss} hearing entirely."
-
+            "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore.",
+            "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lost {PRONOUN/m_c/poss} hearing entirely."
         ]
     },
     "constant joint pain": {
