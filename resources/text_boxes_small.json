@@ -195,12 +195,7 @@
         }
     },
     "#update_popup_title": {
-        "prototype": "#text_box",
-        "font": {
-            "name": "notosans",
-            "size": "15",
-            "bold": "1"
-        }
+        "prototype": "#text_box_30"
     },
     "#changelog_popup_title": {
         "prototype": "#text_box",
