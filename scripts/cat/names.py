@@ -109,7 +109,7 @@ class Name():
                 else:
                     self.give_suffix(pelt, biome, tortiepattern)
                 
-                nono_name = "".join(self.prefix,self.suffix)
+                nono_name = self.prefix + self.suffix
                 possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])    
                 if not(all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
                         all(i == possible_three_letter[1][0] for i in possible_three_letter[1])):
