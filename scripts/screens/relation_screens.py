@@ -1667,12 +1667,9 @@ class ChooseMateScreen(Screens):
         for relevant_cat in Cat.all_cats_list:
             if relevant_cat.ID == self.the_cat.ID:
                 continue
-            if self.the_cat._intern_potential_mate(
+            if self.the_cat.is_potential_mate(
                     relevant_cat,
                     for_love_interest=False,
-                    former_mentor_setting= game.settings['romantic with former mentor'],
-                    for_patrol=False,
-                    allow_multiple_mates=True,
                     age_restriction=False):
                 valid_mates.append(relevant_cat)
         return valid_mates

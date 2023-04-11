@@ -112,8 +112,11 @@ class NewCatEvents:
         if "adoption" in new_cat_event.tags:
             if cat.no_kits:
                 return
-            if cat.mate and cat.mate.no_kits:
-                return
+            if len(cat.mate) > 0:
+                for mate_id in cat.mate:
+                    mate = cat.fetch_cat(mate_id)
+                    if mate.no_kits:
+                       return
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:

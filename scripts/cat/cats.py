@@ -2055,25 +2055,11 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          for_patrol: bool = False):
-        """Add additional information to call the check."""
-        former_mentor_setting = game.settings['romantic with former mentor']
-        for_patrol = for_patrol
-        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)
-
-    def _intern_potential_mate(self,
-                               other_cat: Cat,
-                               for_love_interest: bool,
-                               former_mentor_setting: bool,
-                               for_patrol: bool = False,
-                               allow_multiple_mates: bool = False,
-                               age_restriction: bool = False):
-        """Checks if this cat is a free and potential mate for the other cat."""
-        # checks if affairs are turned on
-        affair = False
-        if game.settings['affair']:
-            affair = True
-
+                          age_restriction: bool = False):
+        """
+        	Checks if this cat is potential mate for the other cat.
+            There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
+        """
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -2099,20 +2085,9 @@ class Cat():
             if self.age != other_cat.age:
                 return False
 
-        # check for current mate
-        # if the cat has a mate, they are not open for a new mate
-        # TODO: redo this for poly mates?
-        if for_patrol:
-            if not allow_multiple_mates and (len(self.mate) > 0 or len(other_cat.mate) > 0):
-                if not for_love_interest or not affair:
-                    return False
-        else:
-            if not allow_multiple_mates and (len(self.mate) > 0 or len(other_cat.mate) > 0 and not for_love_interest):
-                return False
-
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
-        if is_former_mentor and not former_mentor_setting:
+        if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
 
         return True

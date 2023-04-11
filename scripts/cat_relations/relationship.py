@@ -343,8 +343,8 @@ class Relationship():
 
         # if a romantic relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
-        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, True)
-        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, True)
+        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True)
+        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True)
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")

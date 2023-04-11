@@ -148,10 +148,8 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
-        # TODO: maybe redo this to increase polymate chance?
-        if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
-            if len(inter_cat.mate) < 1:
-                cats.append(inter_cat)
+        if inter_cat.is_potential_mate(cat, for_love_interest=True) and cat.is_potential_mate(inter_cat, for_love_interest=True):
+            cats.append(inter_cat)
     return cats
 
 

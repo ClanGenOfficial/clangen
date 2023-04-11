@@ -73,6 +73,8 @@ class Romantic_Events():
             filtered_interactions.append(interaction)
         
         if len(filtered_interactions) < 1:
+            print(cat_from.status, cat_to.status)
+            print(game.clan.current_season, game.clan.biome)
             print(f"There were no romantic interactions for: {cat_from.name} to {cat_to.name}")
             return False
         
@@ -273,7 +275,7 @@ class Romantic_Events():
         become_mates = False
         young_age = ['newborn', 'kitten', 'adolescent']
         if cat_from.age in young_age or cat_to.age in young_age:
-            return False
+            return  False, None
 
         mate_string = None
         mate_chance = game.config["mates"]["chance_fulfilled_condition"]
@@ -285,63 +287,68 @@ class Romantic_Events():
 
         # already return if there is 'no' hit (everything above 0), other checks are not necessary
         if hit > 0 and random_hit > 0:
-            return False
+            return False, None
 
         poly = len(cat_from.mate) > 0 or len(cat_to.mate) > 0
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
-            return False
+            return False, None
 
         if not hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["mate_condition"]) and\
             self.relationship_fulfill_condition(relationship_to, game.config["mates"]["mate_condition"]):
+            become_mates = True
             if not poly:
                 mate_string = choice(MATE_DICTS["low_romantic"])
             else:
                 poly_key = ""
                 if len(cat_from.mate) > 0 and len(cat_to.mate) > 0:
-                    poly_key = "both"
+                    poly_key = "both_mates"
                 elif len(cat_from.mate) > 0 and len(cat_to.mate) <= 0:
                     poly_key = "m_c_mates"
                 elif len(cat_from.mate) <= 0 and len(cat_to.mate) > 0:
                     poly_key = "r_c_mates"
                 mate_string = choice(POLY_MATE_DICTS["low_romantic"][poly_key])
-            become_mates = True
         if not random_hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["friends_to_lovers"]) and\
             self.relationship_fulfill_condition(relationship_to, game.config["mates"]["friends_to_lovers"]):
+            become_mates = True
             if not poly:
                 mate_string = choice(MATE_DICTS["platonic_to_romantic"])
             else:
                 poly_key = ""
                 if len(cat_from.mate) > 0 and len(cat_to.mate) > 0:
-                    poly_key = "both"
+                    poly_key = "both_mates"
                 elif len(cat_from.mate) > 0 and len(cat_to.mate) <= 0:
                     poly_key = "m_c_mates"
                 elif len(cat_from.mate) <= 0 and len(cat_to.mate) > 0:
                     poly_key = "r_c_mates"
                 mate_string = choice(POLY_MATE_DICTS["friends_to_lovers"][poly_key])
-            become_mates = True
 
-        mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
+        if not become_mates:
+            return False, None
+
+        if poly:
+            print("----- POLY-POLY-POLY")
+
         # replace mates with their names
         if "[m_c_mates]" in mate_string:
-            mate_names = [cat_from.fetch_cat(mate_id).name for mate_id in cat_from.mate]
+            mate_names = [str(cat_from.fetch_cat(mate_id).name) for mate_id in cat_from.mate]
             mate_name_string = mate_names[0]
-            if len(mate_name_string) > 1:
+            if len(mate_names) == 2:
                 mate_name_string = mate_names[0] + " and " + mate_names[1]
-            if len(mate_name_string) > 2:
-                mate_name_string = mate_names[0] + ", " + mate_names[1]
+            if len(mate_names) > 2:
                 mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
             mate_string = mate_string.replace("[m_c_mates]", mate_name_string)
 
         if "[r_c_mates]" in mate_string:
-            mate_names = [cat_to.fetch_cat(mate_id).name for mate_id in cat_to.mate]
+            mate_names = [str(cat_to.fetch_cat(mate_id).name) for mate_id in cat_to.mate]
             mate_name_string = mate_names[0]
-            if len(mate_name_string) > 1:
+            if len(mate_names) == 2:
                 mate_name_string = mate_names[0] + " and " + mate_names[1]
-            if len(mate_name_string) > 2:
-                mate_name_string = mate_names[0] + ", " + mate_names[1]
+            if len(mate_names) > 2:
                 mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
             mate_string = mate_string.replace("[r_c_mates]", mate_name_string)
+
+        mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
 
         return become_mates, mate_string
 
@@ -417,6 +424,8 @@ class Romantic_Events():
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_mate_condition):
                         all_mates_fulfill_current_mate_condition = False
+                
+                if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_to_new_condition):
                         all_mates_fulfill_current_to_new = False
@@ -434,6 +443,8 @@ class Romantic_Events():
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_mate_condition):
                         all_mates_fulfill_current_mate_condition = False
+
+                if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_to_new_condition):
                         all_mates_fulfill_current_to_new = False

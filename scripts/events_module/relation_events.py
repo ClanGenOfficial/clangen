@@ -103,12 +103,12 @@ class Relation_Events():
                 current_relationship.link_relationship()
 
             # new mates
-            if not self.had_one_event and not cat_mate:
+            if not self.had_one_event:
                 if cat_to.is_potential_mate(cat):
                     self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
 
             # breakup and new mate
-            if (not self.had_one_event and len(cat.mate) > 0 and
+            if (not self.had_one_event and cat_mate and
                     cat.is_potential_mate(cat_to) and cat_to.is_potential_mate(cat)
             ):
                 love_over_30 = current_relationship.romantic_love > 30 and current_relationship.opposite_relationship.romantic_love > 30

@@ -6,10 +6,10 @@
 		],
 		"r_c_mates": [
 			"m_c asked r_c out, after they talked with [r_c_mates], m_c and r_c become mates.",
-			"m_c asked r_c out, after they talked with their mates, they become mates."
+			"m_c asked r_c out, after they talked with their mates, m_c and r_c become mates."
 		],
 		"both_mates": [
-			"m_c and r_c talked with their mates and happily announced that they are mates."
+			"m_c and r_c talked with their mates and happily announced that m_c and r_c are mates."
 		]
 	},
 	"low_romantic":{
@@ -19,7 +19,7 @@
 		],
 		"r_c_mates": [
 			"After r_c talked with [r_c_mates] about their feelings for m_c, m_c and r_c become mates.",
-			"After r_c talked with their mates about their feelings for m_c, they become mates."
+			"After r_c talked with their mates about their feelings for m_c, m_c and r_c become mates."
 		],
 		"both_mates": [
 			"m_c and r_c talked with their mates and announced that they are mates."
