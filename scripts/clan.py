@@ -268,7 +268,7 @@ class Clan():
         },
         "Mountainouscamp3": {
             'leader den': (956, 191),
-            'medicine den': (160, 220),
+            'medicine den': (70, 300),
             'nursery': (1378, 350),
             'clearing': (799, 500),
             'apprentice den': (77, 825),
