@@ -9,13 +9,14 @@
 
 This file is the main file for the game.
 It also contains the main pygame loop
-It first sets up logging, then loads the version hash from commit.txt (if it exists), then loads the cats and clan.
+It first sets up logging, then loads the version hash from version.ini (if it exists), then loads the cats and clan.
 It then loads the settings, and then loads the start screen.
 
 
 
 
 """ # pylint: enable=line-too-long
+import shutil
 import sys
 import time
 import os
@@ -28,6 +29,14 @@ from scripts.version import get_version_info, VERSION_NAME
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
+
+
+if os.path.exists("auto-updated"):
+    print("Clangen starting, deleting auto-updated file")
+    os.remove("auto-updated")
+    shutil.rmtree("Downloads", ignore_errors=True)
+    print("Update Complete!")
+    print("New version: " + get_version_info().version_number)
 
 
 setup_data_dir()
@@ -48,6 +57,7 @@ formatter = logging.Formatter(
 
 
 # Logging for file
+timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
 file_handler = logging.FileHandler(log_file_name)
 file_handler.setFormatter(formatter)
@@ -159,7 +169,7 @@ else:
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
 
-if get_version_info().is_source_build:
+if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
         scale(pygame.Rect((1050, 1321), (600, 100))),
         "Dev Build:",
