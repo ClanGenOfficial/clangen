@@ -484,7 +484,7 @@ class Cat():
                              specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
         # Sprite sizes
         self.sprite = None
