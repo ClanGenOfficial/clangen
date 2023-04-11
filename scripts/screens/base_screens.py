@@ -337,6 +337,3 @@ def cat_profiles():
 
     for x in Cat.all_cats:
         update_sprite(Cat.all_cats[x])
-
-
-
