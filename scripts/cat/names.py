@@ -85,7 +85,7 @@ class Name():
                 name_fixpref = False
             self.give_suffix(pelt, biome, tortiepattern)
 
-        if self.suffix and not load_existing_name:
+        if self.suffix is not None and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
             triple_letter = False
             possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])
@@ -97,7 +97,11 @@ class Name():
             if self.prefix in self.names_dict["animal_prefixes"] and self.suffix in self.names_dict["animal_suffixes"]:
                 double_animal = True
             # Prevent the inappropriate names
-            nono_name = self.prefix + self.suffix
+            if self.prefix = None:
+                add_prefix = ""
+            else:
+                add_prefix = self.prefix
+            nono_name = add_prefix + self.suffix
             # Prevent double names (ex. Iceice)
             # Prevent suffixes containing the prefix (ex. Butterflyfly)
             while nono_name in self.names_dict["inappropriate_names"] or triple_letter or double_animal or self.suffix == self.prefix.casefold() or str(self.suffix) in \
@@ -109,7 +113,11 @@ class Name():
                 else:
                     self.give_suffix(pelt, biome, tortiepattern)
                 
-                nono_name = self.prefix + self.suffix
+                if self.prefix = None:
+                add_prefix = ""
+                else:
+                    add_prefix = self.prefix
+                nono_name = add_prefix + self.suffix
                 possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])    
                 if not(all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
                         all(i == possible_three_letter[1][0] for i in possible_three_letter[1])):
