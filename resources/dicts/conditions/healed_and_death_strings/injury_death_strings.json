@@ -36,13 +36,13 @@
         "m_c died from frostbite."
     ],
     "water in their lungs": [
-        "m_c died from water in their lungs."
+        "m_c died from water in {PRONOUN/m_c/poss} lungs."
     ],
     "burn": [
-        "m_c died from their burns."
+        "m_c died from {PRONOUN/m_c/poss} burns."
     ],
     "severe burn": [
-        "m_c died from their severe burns."
+        "m_c died from {PRONOUN/m_c/poss} severe burns."
     ],
     "shock": [
         "m_c died from shock."
@@ -57,18 +57,18 @@
         "m_c died from head damage."
     ],
     "damaged eyes": [
-        "m_c's eyes were too badly damaged and they died."
+        "m_c's eyes were too badly damaged and {PRONOUN/m_c/subject} died."
     ],
     "quilled by a porcupine": [
-        "m_c died from their wounds after being quilled by a porcupine."
+        "m_c died from {PRONOUN/m_c/poss} wounds after being quilled by a porcupine."
     ],
     "poisoned": [
-        "m_c died from the poison in their body."
+        "m_c died from the poison in {PRONOUN/m_c/poss} body."
     ],
     "broken back": [
-        "m_c couldn't survive their broken back."
+        "m_c couldn't survive {PRONOUN/m_c/poss} broken back."
     ],
     "bee sting": [
-        "m_c seemed to have a horrible reaction to their bee sting. Cats usually don't die from a sting, but it seems this time was different."
+        "m_c seemed to have a horrible reaction to {PRONOUN/m_c/poss} bee sting. Cats usually don't die from a sting, but it seems this time was different."
     ]
 }

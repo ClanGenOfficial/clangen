@@ -3,7 +3,7 @@
 		"id": "platonic_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c was nice to them today."
+			"m_c thinks r_c was nice to {PRONOUN/m_c/object} today."
 		]
 	},
 	{
@@ -11,7 +11,7 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c is talking with r_c.",
-			"m_c asks r_c how they're doing."
+			"m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
@@ -21,7 +21,7 @@
 		"id": "platonic_inc_med1",
 		"interactions": [
 			"m_c saw r_c the other day and did get a chance to meow hello!",
-			"m_c reminds r_c to grab something from the fresh-kill pile if they haven't already."
+			"m_c reminds r_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} haven't already."
 		]
 	},
 	{
@@ -38,10 +38,10 @@
 	{
 		"id": "platonic_inc_med3",
 		"interactions": [
-			"m_c waves to r_c with their tail as their patrols cross paths on the territory.",
-			"m_c calls to r_c to catch them a fat mouse on their next hunting patrol.",
-			"m_c hopes they are assigned to patrol with r_c tomorrow.",
-			"m_c noticed that r_c is falling behind in training and offered to help them catch up."
+			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
+			"m_c calls to r_c to catch {PRONOUN/m_c/subject} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
+			"m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow.",
+			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -65,7 +65,7 @@
 			"r_c charms m_c.",
 			"r_c smiles at m_c whenever they meet.",
 			"r_c knows what to say to make m_c feel better.",
-			"r_c compliments m_c for their good disposition."
+			"r_c compliments m_c for {PRONOUN/m_c/poss} good disposition."
 		],
 		"random_trait_constraint": [
 			"charismatic"
@@ -74,7 +74,7 @@
 	{
 		"id": "platonic_inc_med5",
 		"interactions": [
-			"r_c is relaxing with m_c.",
+			"r_c relaxing with m_c.",
 			"r_c is helping m_c calm down.",
 			"r_c is soothing m_c's irrational thoughts."
 		],
@@ -94,8 +94,8 @@
 	{
 		"id": "platonic_inc_med7",
 		"interactions": [
-			"r_c is making sure m_c knows that they are loved.",
-			"r_c is telling m_c how much they cherish them.",
+			"r_c is making sure m_c knows that {PRONOUN/m_c/subject} {VERB/m_c/are/is} loved.",
+			"r_c is telling m_c how much {PRONOUN/r_c/subject} {VERB/r_c/cherish/cherishes} {PRONOUN/m_c/object}.",
 			"r_c is purring loudly to comfort m_c."
 		],
 		"random_trait_constraint": [
@@ -106,7 +106,7 @@
 		"id": "platonic_inc_med8",
 		"interactions": [
 			"r_c is playing tag with m_c.",
-			"r_c bats a bit of fluff in front of m_c and gets them to play a game with them."
+			"r_c bats a bit of fluff in front of m_c and gets {PRONOUN/m_c/subject} to play a game."
 		],
 		"random_trait_constraint": [
 			"playful"
@@ -115,8 +115,8 @@
 	{
 		"id": "platonic_inc_med9",
 		"interactions": [
-			"m_c feels bad that they caused a problem for r_c.",
-			"m_c convinces r_c to help them pull a prank on a Clanmate."
+			"m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c.",
+			"m_c convinces r_c to help {PRONOUN/m_c/object} pull a prank on a Clanmate."
 		],
 		"main_trait_constraint": [
 			"troublesome"
@@ -191,12 +191,12 @@
 	{
 		"id": "platonic_kit_inc_med3",
 		"interactions": [
-			"m_c lets r_c play with their favorite toy.",
+			"m_c lets r_c play with {PRONOUN/m_c/poss} favorite toy.",
 			"m_c pretends to be a warrior with r_c.",
 			"m_c is pretending to ward off foxes with r_c.",
 			"m_c is pretending to fight off badgers with r_c.",
 			"m_c is racing r_c back and forth across the camp clearing.",
-			"m_c hopes r_c will be their friend forever."
+			"m_c hopes r_c will be {PRONOUN/m_c/poss} friend forever."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -214,7 +214,7 @@
 	{
 		"id": "platonic_kit_inc_med4",
 		"interactions": [
-			"m_c decorates their nest with gifts that r_c brought them."
+			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -256,17 +256,17 @@
 		"interactions": [
 			"m_c is watching over r_c.",
 			"m_c trains playfully with r_c.",
-			"m_c gave r_c a trinket they found while out of the camp today.",
-			"m_c is charmed to hear that r_c really admires them.",
-			"m_c is giving r_c a badger ride on their back!",
+			"m_c gave r_c a trinket {PRONOUN/m_c/subject} found while out of the camp today.",
+			"m_c is charmed to hear that r_c really admires {PRONOUN/m_c/object}.",
+			"m_c is giving r_c a badger ride on {PRONOUN/m_c/poss} back!",
 			"m_c remembers how cute kits are because of time spent with r_c.",
-			"m_c is promising to take r_c outside of camp if they behave.",
-			"m_c bats the mossball back to r_c when it flies in front of their paws.",
+			"m_c is promising to take r_c outside of camp if {PRONOUN/r_c/subject} {VERB/r_c/behave/behaves}.",
+			"m_c bats the mossball back to r_c when it flies in front of {PRONOUN/m_c/poss} paws.",
 			"m_c spends most of the afternoon describing the territory to r_c.",
-			"m_c purrs as r_c asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
-			"m_c whiskers twitch in amusement as r_c tells them that they hope they're their mentor when they become an apprentice.",
-			"m_c tells r_c that they caught this prey just for them as they deliver it to them.",
-			"m_c joins a game as r_c runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender."
+			"m_c purrs as r_c asks {PRONOUN/m_c/object} to show {PRONOUN/r_c/object} how to do a hunter's crouch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/oblige/obliges}, happy to show {PRONOUN/m_c/poss} skills.",
+			"m_c whiskers twitch in amusement as r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/hope/hopes} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} {PRONOUN/r_c/poss} mentor when {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} an apprentice.",
+			"m_c tells r_c that {PRONOUN/m_c/subject} caught this prey just for {PRONOUN/r_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/deliver/delivers} it to {PRONOUN/r_c/object}.",
+			"m_c joins a game as r_c runs up to {PRONOUN/m_c/object} yowling that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -322,6 +322,8 @@
 		"id": "platonic_app_med1",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
+			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/subject} of {PRONOUN/m_c/poss} own apprentice days.",
+			"m_c is telling r_c about {PRONOUN/m_c/poss} own days as an apprentice.",
 			"m_c promises to teach r_c a new technique later."
 		],
 		"main_status_constraint": [
@@ -340,63 +342,10 @@
 	{
 		"id": "platonic_app_med2",
 		"interactions": [
-			"m_c is thinking about how much r_c reminds them of their own apprentice days.",
-			"m_c is telling r_c about their own days as an apprentice."
-		],
-		"main_status_constraint": [
-			"elder",
-			"deputy",
-			"leader",
-			"warrior"
-		],
-		"random_status_constraint": [
-			"apprentice"
-		],
-		"reaction_random_cat": {
-			"platonic": "increase"
-		},
-		"backstory_constraint": {
-			"m_c": [
-				"clanborn", 
-				"clan_founder", 
-				"halfclan1", 
-				"halfclan2", 
-				"outsider_roots1", 
-				"outsider_roots2",
-				"abandoned1",
-				"abandoned2",
-				"abandoned3",
-				"abandoned4",
-				"otherclan",
-				"otherclan1",
-				"otherclan2",
-				"otherclan3",
-				"ostracized_warrior",
-				"disgraced",
-				"disgraced2",
-				"disgraced3",
-				"retired_leader",
-				"refugee",
-				"refugee2",
-				"refugee3",
-				"refugee4",
-				"tragedy_survivor",
-				"orphaned",
-				"orphaned2",
-				"orphaned3",
-				"orphaned4",
-				"orphaned5",
-				"guided4"
-			]
-		}
-	},
-	{
-		"id": "platonic_app_med2",
-		"interactions": [
 			"m_c brings r_c a piece of prey to share after a long day of training.",
 			"m_c offers to help r_c clean out the elder's bedding.",
-			"m_c was playing with r_c and learned a fun new battle move from them!",
-			"m_c is excitedly trying to guess what their and r_c's warrior names will be."
+			"m_c was playing with r_c and learned a fun new battle move from {PRONOUN/r_c/object}!",
+			"m_c is excitedly trying to guess what {PRONOUN/m_c/poss} and r_c's warrior names will be."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -412,10 +361,10 @@
 		"id": "platonic_app_med3",
 		"interactions": [
 			"m_c daydreams with r_c about their future warrior ceremonies.",
-			"m_c feels like training goes by much faster when they're with r_c.",
+			"m_c feels like training goes by much faster when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} with r_c.",
 			"m_c is playfully making fun of their mentors with r_c.",
 			"m_c stays awake all night whispering secrets to r_c.",
-			"m_c promises not to tell r_c's mentor that they've been sneaking out of camp."
+			"m_c promises not to tell r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -430,8 +379,8 @@
 	{
 		"id": "platonic_app_med4",
 		"interactions": [
-			"m_c listens closely as r_c tells them about the new herb they learned to recognize today.",
-			"m_c playfully teases r_c for having herbs stuck in their fur."
+			"m_c listens closely as r_c tells {PRONOUN/m_c/object} about the new herb {PRONOUN/r_c/subject} learned to recognize today.",
+			"m_c playfully teases r_c for having herbs stuck in {PRONOUN/r_c/poss} fur."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -444,7 +393,7 @@
 		"id": "platonic_app_med5",
 		"interactions": [
 			"m_c gently grooms some cobwebs off  r_c's fur.",
-			"m_c tells r_c that they'll be an amazing medicine cat someday."
+			"m_c tells r_c that {PRONOUN/r_c/subject}'ll be an amazing medicine cat someday."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -459,9 +408,9 @@
 	{
 		"id": "platonic_warrior_inc_med1",
 		"interactions": [
-			"m_c greets r_c as they're exiting the warriors' den.",
+			"m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
 			"m_c chats quietly with r_c while they're both on camp guard duty.",
-			"m_c thanks r_c for covering for them during a patrol earlier."
+			"m_c thanks r_c for covering for {PRONOUN/m_c/subject} during a patrol earlier."
 		],
 		"main_status_constraint": [
 			"warrior"
@@ -484,8 +433,8 @@
 		"id": "platonic_elder_med1",
 		"interactions": [
 			"m_c is pestering r_c for a story.",
-			"m_c settles down next to r_c to listen to their stories.",
-			"m_c tells r_c that they're an amazing storyteller."
+			"m_c settles down next to r_c to listen to {PRONOUN/r_c/poss} stories.",
+			"m_c tells r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} an amazing storyteller."
 		],
 		"random_status_constraint": [
 			"elder"
@@ -508,7 +457,7 @@
 		"id": "platonic_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c thinks about how lucky they are to have someone like r_c as a friend."
+			"m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -520,7 +469,7 @@
 		"interactions": [
 			"m_c tells a joke that only r_c can understand.",
 			"m_c is always happy to grab some fresh-kill for r_c to share.",
-			"m_c saved a piece of fresh-kill that they know is r_c's favorite."
+			"m_c saved a piece of fresh-kill that {PRONOUN/m_c/subject} {VERB/m_c/know/knows} is r_c's favorite."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -533,8 +482,8 @@
 		"id": "platonic_inc_high5",
 		"intensity": "high",
 		"interactions": [
-			"m_c can't imagine their life if they never met r_c.",
-			"m_c thinks of r_c as their best friend."
+			"m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
+			"m_c thinks of r_c as {PRONOUN/m_c/poss} best friend."
 		],
 		"relationship_constraint": [
 			"platonic_60"
@@ -545,7 +494,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks r_c tells the best stories.",
-			"m_c listens to r_c talk about what life was like when they were young."
+			"m_c listens to r_c talk about what life was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} young."
 		],
 		"random_status_constraint": [
 			"elder"

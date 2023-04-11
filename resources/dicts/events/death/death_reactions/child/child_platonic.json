@@ -1,18 +1,18 @@
 {
   "general": {
     "body": [
-      "r_c wails when they see the body of their parent, m_c, lying still and cold.",
-      "r_c feels numb with grief when they hear what's happened to m_c. They can hardly imagine a world without their parent's love and support.",
-      "m_c's body lays in the clearing and r_c nuzzles up beside them, wishing only to feel the warmth of their parent's presence.",
-      "As the Clan sits vigil for m_c, r_c wants to howl. How are they supposed to go through life without m_c guiding them?",
-      "r_c gently licks m_c's fur clean, as m_c once did for them in the nursery, and blinks back tears.",
-      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for them, making sure c_n honors their parent."
+      "r_c wails when {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the body of {PRONOUN/r_c/poss} parent, m_c, lying still and cold.",
+      "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
+      "m_c's body lays in the clearing and r_c nuzzles up beside {PRONOUN/m_c/object}, wishing only to feel the warmth of {PRONOUN/r_c/poss} parent's presence.",
+      "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
+      "r_c gently licks m_c's fur clean, as m_c once did for {PRONOUN/r_c/object} in the nursery, and blinks back tears.",
+      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
 
     ],
     "no_body": [
-      "r_c feels numb with grief when they hear what's happened to m_c. They can hardly imagine a world without their parent's love and support.",
-      "As the Clan sits vigil for m_c, r_c wants to howl. How are they supposed to go through life without m_c guiding them?",
-      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for them, making sure c_n honors their parent."
+      "r_c feels numb with grief when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} what's happened to m_c. {PRONOUN/r_c/subject/CAP} can hardly imagine a world without {PRONOUN/r_c/poss} parent's love and support.",
+      "As the Clan sits vigil for m_c, r_c wants to howl. How {VERB/r_c/are/is} {PRONOUN/r_c/subject} supposed to go through life without m_c guiding {PRONOUN/r_c/object}?",
+      "r_c, voice hoarse with grief, tells stories of m_c's care and wisdom as the Clan sits vigil for {PRONOUN/m_c/object}, making sure c_n honors {PRONOUN/r_c/poss} parent."
     ]
   },
   "adventurous": {

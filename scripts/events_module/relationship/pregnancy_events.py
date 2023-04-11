@@ -5,7 +5,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     add_children_to_cat,
-    add_siblings_to_cat, event_text_adjust
+    add_siblings_to_cat, 
+    event_text_adjust
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -381,6 +382,7 @@ class Pregnancy_Events():
                 print("Is this an old save? Your cat didn't have the pregnant condition!")
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
+        
         print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
