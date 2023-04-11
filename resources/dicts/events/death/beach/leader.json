@@ -40,7 +40,7 @@
         "tags": ["all_lives", "murder", "revealed", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
         "history_text": {
-            "reg_death_or_murder": "death for non-leader",
+            "reg_death": "death for non-leader",
             "reg_murder_unrevealed": "death message that obscures the murderer of a non-leader",
             "lead_death": "death for leader",
             "lead_murder_unrevealed": "death message that obscures the murderer of a leader"
