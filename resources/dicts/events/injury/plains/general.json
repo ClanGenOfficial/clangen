@@ -9,7 +9,7 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
+        "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
         "history_text": [
             "m_c was scarred after being grabbed by an eagle.",
             "m_c died from their wounds after being grabbed by an eagle.",
@@ -28,7 +28,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills when they tripped over their own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "history_text": [
             null,
             null,
@@ -45,7 +45,7 @@
             "Newleaf",
             "Leaf-fall"
         ],
-        "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains their paw while trying to walk through the muck.",
+        "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "history_text": [
             null,
             null,
@@ -64,7 +64,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trips over an unseen rabbit hole, spraining their paw.",
+        "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
         "history_text": [
             null,
             null,
@@ -83,7 +83,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills when they tripped over their own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "history_text": [
             null,
             null,
@@ -102,7 +102,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c is feeling extremely sore from the long distances they've run lately.",
+        "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "history_text": [
             null,
             null,
@@ -160,7 +160,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
+        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been hacking ever since.",
         "history_text": [
             null,
             "m_c died after they fell in the river and inhaled too much water.",

@@ -11,7 +11,7 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
-			"m_c has drawn the ire of r_c by deliberately taking the last of their favorite nesting materials for themselves."
+			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}."
 		],
 		"reaction_random_cat": {
 			"platonic": "decrease"
@@ -21,13 +21,13 @@
 		"id": "platonic_de_med1",
 		"intensity": "high",
 		"interactions": [
-			"m_c caught r_c complaining about them behind their back."
+			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back."
 		]
 	},
 	{
 		"id": "platonic_de_med2",
 		"interactions": [
-			"m_c is annoyed that they have to pull ticks off of r_c today."
+			"m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -68,8 +68,8 @@
 		"id": "platonic_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c doesn't like how r_c has been talking about their mentor.",
-			"m_c wishes they had r_c's mentor instead."
+			"m_c doesn't like how r_c has been talking about {PRONOUN/m_c/poss} mentor.",
+			"m_c wishes {PRONOUN/m_c/subject} had r_c's mentor instead."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -89,7 +89,7 @@
 			"m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
 			"m_c mocks r_c for smelling like gross herbs.",
 			"m_c mocks r_c for smelling like mouse bile.",
-			"m_c looks down on r_c, because there's no way they could ever be a useful medicine cat."
+			"m_c looks down on r_c, because there's no way {PRONOUN/r_c/subject} could ever be a useful medicine cat."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -105,10 +105,10 @@
 		"id": "platonic_de_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c keeps leaving all of the boring apprentice tasks for r_c to do by themself.",
-			"m_c tells r_c's mentor that they've been sneaking out of camp without permission.",
+			"m_c keeps leaving all of the boring apprentice tasks for r_c to do by {PRONOUN/r_c/self}.",
+			"m_c tells r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp without permission.",
 			"m_c has a disagreement with r_c over who is the better hunter.",
-			"m_c accuses r_c of cheating; there's no way they could win so many practice fights fairly."
+			"m_c accuses r_c of cheating; there's no way {PRONOUN/r_c/subject} could win so many practice fights fairly."
 		],
 		"main_status_constraint": [
 			"apprentice",
