@@ -195,7 +195,9 @@ jobs:
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
+        run: |
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
@@ -290,7 +292,9 @@ jobs:
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
+        run: |
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
@@ -385,7 +389,9 @@ jobs:
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
+        run: |
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
