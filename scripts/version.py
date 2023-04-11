@@ -15,6 +15,7 @@ def get_version_info():
         version_number = VERSION_NAME
         release_channel = False
         upstream = ""
+        is_managed = False
 
         if not getattr(sys, 'frozen', False):
             is_source_build = True
@@ -30,7 +31,11 @@ def get_version_info():
                 version_number = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
             except:
                 logger.exception("Git CLI invocation failed")
-        get_version_info.instance = VersionInfo(is_source_build, release_channel, version_number, upstream)
+
+        if "--managed" in sys.argv or "CLANGEN_MANAGED" in os.environ:
+            is_managed = True
+
+        get_version_info.instance = VersionInfo(is_source_build, release_channel, version_number, upstream, is_managed)
     return get_version_info.instance
 
 
@@ -38,11 +43,12 @@ get_version_info.instance = None
 
 
 class VersionInfo:
-    def __init__(self, is_source_build: bool, release_channel: str, version_number: str, upstream: str):
+    def __init__(self, is_source_build: bool, release_channel: str, version_number: str, upstream: str, is_managed: bool):
         self.is_source_build = is_source_build
         self.release_channel = release_channel
         self.version_number = version_number
         self.upstream = upstream
+        self.is_managed = is_managed
 
     def is_dev(self) -> bool:
         if self.release_channel != "stable":
