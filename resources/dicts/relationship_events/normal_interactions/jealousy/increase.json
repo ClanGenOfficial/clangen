@@ -3,7 +3,7 @@
 		"id": "jel_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c wishes they could get their pelt to shine like r_c's."
+			"m_c wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} pelt to shine like r_c's."
 		]
 	},
 	{
@@ -16,7 +16,7 @@
 		"id": "jel_inc_med2",
 		"interactions": [
 			"m_c is jealous that r_c got to go to the last Gathering.",
-			"m_c is jealous that r_c went on patrol without them."
+			"m_c is jealous that r_c went on patrol without {PRONOUN/m_c/object}."
 		],
 		"main_status_constraint": [
 			"mediator apprentice",
@@ -37,7 +37,7 @@
 		"id": "jealousy_inc_med3",
 		"interactions": [
 			"m_c is jealous that r_c got praised by the leader.",
-			"m_c is jealous that r_c got to fight in a border skirmish when they didn't.",
+			"m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
 			"m_c is jealous that r_c got to go on border patrol this morning.",
 			"m_c doesn't understand how r_c got so good at hunting."
 		],
@@ -56,7 +56,7 @@
 	{
 		"id": "jealousy_kit_inc_med1",
 		"interactions": [
-			"m_c is jealous that r_c is getting more attention than them.",
+			"m_c is jealous that r_c is getting more attention than {PRONOUN/m_c/object}.",
 			"m_c is upset that r_c always wins in their games."
 		],
 		"main_status_constraint": [
@@ -85,7 +85,7 @@
 		"id": "jealousy_kit_inc_med3",
 		"interactions": [
 			"m_c looks at r_c and remembers how easy it was to be a kitten.",
-			"m_c is resentful that so much is expected of them, yet no one expects anything of r_c."
+			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -125,7 +125,7 @@
 		"id": "jel_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c sees r_c lazing about in the sunshine and is resentful at how little they're expected to contribute."
+			"m_c sees r_c lazing about in the sunshine and is resentful at how little {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} expected to contribute."
 		],
 		"random_status_constraint": [
 			"elder"

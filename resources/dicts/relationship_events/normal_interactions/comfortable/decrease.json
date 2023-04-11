@@ -3,7 +3,7 @@
 		"id": "comfort_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c overheard a joke from r_c they didn't get."
+			"m_c overheard a joke from r_c {PRONOUN/m_c/subject} didn't get."
 		]
 	},
 	{
@@ -48,7 +48,7 @@
 		"id": "comfort_de_med3",
 		"interactions": [
 			"r_c is following m_c around.",
-			"r_c tells m_c that their pelt looks like a different color today."
+			"r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today."
 		],
 		"random_trait_constraint": [
 			"strange"
@@ -68,7 +68,7 @@
 		"id": "comfort_de_med5",
 		"interactions": [
 			"r_c hissed at m_c.",
-			"r_c tells m_c to leave them alone.",
+			"r_c tells m_c to leave {PRONOUN/r_c/object} alone.",
 			"r_c is glaring at m_c from across the camp."
 		],
 		"random_trait_constraint": [
@@ -79,7 +79,7 @@
 		"id": "comfort_inc_med6",
 		"interactions": [
 			"r_c crashes into m_c while eager for the new day.",
-			"r_c rejects m_c's advice without letting them finish.",
+			"r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",
 			"r_c interrupts m_c during a conversation."
 		],
 		"random_trait_constraint": [
