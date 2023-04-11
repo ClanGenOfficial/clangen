@@ -10,6 +10,7 @@ class History:
     this class handles the cat's history!
     """
     def __init__(self,
+                 beginning=None,
                  mentor_influence=None,
                  app_ceremony=None,
                  lead_ceremony=None,
@@ -19,6 +20,7 @@ class History:
                  scar_events=None,
                  murder=None
                  ):
+        self.beginning = beginning if beginning else {}
         self.mentor_influence = mentor_influence if mentor_influence else {}
         self.app_ceremony = app_ceremony if app_ceremony else {}
         self.lead_ceremony = lead_ceremony if lead_ceremony else None
@@ -31,6 +33,12 @@ class History:
         """
         want save to look like
         {
+        "beginning":{
+            "clan_born": bool,
+            "birth_season": season,
+            "age": age,
+            "moon": moon
+            },
         "mentor_influence":{
             "mentor": ID
             "skill": skill
@@ -117,6 +125,7 @@ class History:
     @staticmethod
     def make_dict(cat):
         history_dict = {
+            "beginning": cat.history.beginning,
             "mentor_influence": cat.history.mentor_influence,
             "app_ceremony": cat.history.app_ceremony,
             "lead_ceremony": cat.history.lead_ceremony,
@@ -131,6 +140,20 @@ class History:
     # ---------------------------------------------------------------------------- #
     #                            adding and removing                               #
     # ---------------------------------------------------------------------------- #
+
+    def add_beginning(self, cat, clan_born=False):
+        """
+        adds joining age and moon info to the cat's history save
+        :param cat: cat object
+        """
+        self.check_load(cat)
+
+        cat.history.beginning = {
+            "clan_born": clan_born,
+            "birth_season": game.clan.current_season if clan_born else None,
+            "age": cat.moons,
+            "moon": game.clan.age
+        }
 
     def add_mentor_influence(self, cat, mentor, skill, trait):
         """
@@ -259,15 +282,20 @@ class History:
 
         # if this was caused by a condition, then we need to get info from the possible scar/death dicts
         if condition:
-            if old_event_type == 'possible_scar':
-                old_event = cat.history.possible_scar[condition]
-            else:
-                old_event = cat.history.possible_death[condition]
-            other_cat = old_event["involved"]
-            text = old_event["text"]
-            # and then remove from possible scar/death dict
-            if condition in cat.history[old_event_type]:
-                cat.history[old_event_type].pop(condition)
+            try:
+                if old_event_type == 'possible_scar':
+                    old_event = cat.history.possible_scar[condition]
+                else:
+                    old_event = cat.history.possible_death[condition]
+                other_cat = old_event["involved"]
+                text = old_event["text"]
+                # and then remove from possible scar/death dict
+                if condition in cat.history[old_event_type]:
+                    cat.history[old_event_type].pop(condition)
+            except KeyError:
+                print(f"WARNING: could not find {condition} in cat's possible death/scar history,"
+                      f" this maybe be due to an expected save conversion change.")
+                return
 
         # now just make sure the names aren't actually in the text and replace as necessary
         # we can't have the names in the text bc names change over time and so would eventually be out of date
@@ -299,7 +327,7 @@ class History:
         :return:
         """
         self.check_load(cat)
-
+        self.check_load(other_cat)
         if "is_murderer" not in other_cat.history.murder:
             other_cat.history.murder["is_murderer"] = []
         if 'is_victim' not in cat.history.murder:
@@ -328,6 +356,23 @@ class History:
     #                                 retrieving                                   #
     # ---------------------------------------------------------------------------- #
 
+    def get_beginning(self, cat):
+        """
+        returns the beginning info, example of structure:
+
+        "beginning":{
+            "clan_born": bool,
+            "birth_season": season,
+            "age": age,
+            "moon": moon
+            },
+
+        if beginning info is empty, a NoneType is returned
+        :param cat: cat object
+        """
+        self.check_load(cat)
+        return cat.history.beginning
+
     def get_mentor_influence(self, cat):
         """
         Returns mentor influence dict, example of structure:
@@ -341,7 +386,6 @@ class History:
         if mentor influence is empty, a NoneType is returned
         """
         self.check_load(cat)
-        print(cat.history.mentor_influence)
         return cat.history.mentor_influence
 
     def get_app_ceremony(self, cat):

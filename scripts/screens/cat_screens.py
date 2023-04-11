@@ -7,7 +7,7 @@ import pygame
 
 from ..cat.history import History
 from ..datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
 
@@ -388,17 +388,18 @@ class ProfileScreen(Screens):
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
             if event.ui_element == self.kill_cat_button:
-                if self.the_cat.status == 'leader':
+                KillCat(self.the_cat)
+                """if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
                 if self.the_cat.status != 'leader':
                     self.history.add_death_or_scars(self.the_cat, text=f'It was the will of something even mightier than StarClan that this cat died.', death=True)
                 else:
-                    self.history.add_death_or_scars(self.the_cat, text=f'killed by something unknowable to even StarClan')
+                    self.history.add_death_or_scars(self.the_cat, text=f'were killed by something unknowable to even StarClan')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
-                self.update_disabled_buttons_and_text()
+                self.update_disabled_buttons_and_text()"""
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
@@ -1094,6 +1095,18 @@ class ProfileScreen(Screens):
                 # This will be overwritten in update_disabled_buttons_and_text()
                 self.history_text_box = pygame_gui.elements.UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
                                                                       , manager=MANAGER)
+                self.no_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#unchecked_checkbox",
+                    tool_tip_text='Show the Moon that certain history events occurred on', manager=MANAGER
+                )
+                self.show_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#checked_checkbox",
+                    tool_tip_text='Stop showing the Moon that certain history events occurred on', manager=MANAGER
+                )
 
                 self.update_disabled_buttons_and_text()
 
@@ -1106,7 +1119,8 @@ class ProfileScreen(Screens):
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             scale(pygame.Rect((200, 946), (1200, 298))),
             initial_text=self.user_notes,
-            object_id='#text_box_26_horizleft_pad_10_14', manager=MANAGER
+            object_id='#text_box_26_horizleft_pad_10_14',
+            manager=MANAGER
         )
 
         self.display_notes = UITextBoxTweaked(self.user_notes,
@@ -1214,6 +1228,14 @@ class ProfileScreen(Screens):
             text = adjust_text
         else:
             text = f"{self.the_cat.name} was born into the Clan where they currently reside."
+
+        beginning = self.history.get_beginning(self.the_cat)
+        if beginning:
+            if beginning['clan_born']:
+                text += f" They were born into the Clan on Moon {beginning['moon']} during {beginning['birth_season']}."
+            else:
+                text += f" {self.the_cat.name} joined the Clan on Moon {beginning['moon']} at the age of {beginning['age']} Moons."
+
         return text
 
     def get_scar_text(self):
@@ -1377,7 +1399,7 @@ class ProfileScreen(Screens):
                                          self.the_cat,
                                          Cat.fetch_cat(death["involved"]))
                 if moons:
-                    text += f" (Moon {death['moon']}"
+                    text += f" (Moon {death['moon']})"
                 all_deaths.append(text)
 
             death_number = len(all_deaths)
@@ -1432,12 +1454,12 @@ class ProfileScreen(Screens):
                 name_list = []
 
                 for victim in victims:
-                    name = Cat.fetch_cat(victim["victim"]).name
+                    name = str(Cat.fetch_cat(victim["victim"]).name)
 
                     if victim["revealed"]:
                         victim_names[name] = []
                         if moons:
-                            victim_names[name].append(victim["moons"])
+                            victim_names[name].append(victim["moon"])
 
                 for name in victim_names:
                     if not moons:
@@ -1454,30 +1476,33 @@ class ProfileScreen(Screens):
                     victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
             if murderers:
+                print(murderers)
                 murderer_names = {}
                 name_list = []
 
                 for murderer in murderers:
                     print(murderer)
-                    name = Cat.fetch_cat(murderer["murderer"]).name
-
+                    name = str(Cat.fetch_cat(murderer["murderer"]).name)
+                    print(name)
                     if murderer["revealed"]:
                         murderer_names[name] = []
                         if moons:
-                            murderer_names[name].append(murderer["moons"])
+                            murderer_names[name].append(murderer["moon"])
 
-                for name in murderer_names:
-                    if not moons:
-                        name_list.append(name)
+                if murderer_names:
+                    for name in murderer_names:
+                        print(murderer_names)
+                        if not moons:
+                            name_list.append(name)
+                        else:
+                            name_list.append(name + f" (Moon {', '.join(murderer_names[name])})")
+
+                    if len(name_list) == 1:
+                        murdered_text = f"{self.the_cat.name} was murdered by {name_list[0]}."
+                    elif len(murderer_names) == 2:
+                        murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
                     else:
-                        name_list.append(name + f" (Moon {', '.join(murderer_names[name])})")
-
-                if len(name_list) == 1:
-                    murdered_text = f"{self.the_cat.name} was murdered by {name_list[0]}."
-                elif len(murderer_names) == 2:
-                    murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
-                else:
-                    murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."
+                        murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
         print(victim_text, murdered_text)
         return " ".join([victim_text, murdered_text])
@@ -1981,6 +2006,9 @@ class ProfileScreen(Screens):
                                                          scale(pygame.Rect((200, 946), (1200, 298))),
                                                          object_id="#text_box_26_horizleft_pad_10_14",
                                                          line_spacing=1, manager=MANAGER)
+
+                self.no_moons.kill()
+                self.show_moons.kill()
                 self.no_moons = UIImageButton(scale(pygame.Rect(
                     (104, 1028), (68, 68))),
                     "",
@@ -1994,11 +2022,9 @@ class ProfileScreen(Screens):
                     tool_tip_text='Stop showing the Moon that certain history events occurred on', manager=MANAGER
                 )
                 if game.switches["show_history_moons"]:
-                    self.no_moons.hide()
-                    self.show_moons.show()
+                    self.no_moons.kill()
                 else:
-                    self.no_moons.show()
-                    self.show_moons.hide()
+                    self.show_moons.kill()
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
@@ -2108,6 +2134,8 @@ class ProfileScreen(Screens):
             elif self.open_sub_tab == 'life events':
                 if self.history_text_box:
                     self.history_text_box.kill()
+                self.show_moons.kill()
+                self.no_moons.kill()
 
         elif self.open_tab == 'conditions':
             self.first_page.kill()

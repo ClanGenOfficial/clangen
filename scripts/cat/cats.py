@@ -1060,6 +1060,7 @@ class Cat():
 
         if not os.path.exists(cat_history_directory):
             self.history = History(
+                beginning={},
                 mentor_influence={},
                 app_ceremony={},
                 lead_ceremony=None,
@@ -1074,6 +1075,7 @@ class Cat():
             with open(cat_history_directory, 'r') as read_file:
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
+                    beginning=history_data["beginning"] if "beginning" in history_data else {},
                     mentor_influence=history_data[
                         'mentor_influence'] if "mentor_influence" in history_data else {},
                     app_ceremony=history_data['app_ceremony'] if "app_ceremony" in history_data else {},
@@ -1084,7 +1086,6 @@ class Cat():
                     scar_events=history_data['scar_events'] if "scar_events" in history_data else [],
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
-            print('loaded')
         except:
             self.history = History()
             print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
