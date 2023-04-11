@@ -837,9 +837,6 @@ def event_text_adjust(Cat,
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
         cat_dict["o_c"] = (other_clan_name, None)
-    if cat.mate:
-        mate = Cat.fetch_cat(cat.mate)
-        cat_dict["c_m"] = (str(mate.name), choice(mate.pronouns))
     if new_cat:
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
