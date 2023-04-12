@@ -17,7 +17,7 @@
         "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
+        "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and are rushed back to camp for deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
@@ -47,8 +47,8 @@
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
@@ -78,7 +78,7 @@
         "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what they're eating. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
@@ -107,8 +107,8 @@
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
@@ -151,14 +151,14 @@
     "season": "Any",
     "tags": ["training"],
     "intro_text": "r_c finds a nice spot to sun themselves.",
-    "decline_text": "They decide to stay focused instead.",
+    "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "The sunlight energizes r_c for a solo training session."
     ],
     "fail_text": [
-            "The patrol doesn't get much done because of that."
+        "r_c doesn't get much done because of that."
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -175,7 +175,7 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "The sunlight feels so warm on p_l's pelt, and they stretch, lazily lengthening into one long arc of cat. r_c's whiskers twitch with interest as they studiously look elsewhere.",
+        "The sunlight feels so warm on p_l's pelt, and {PRONOUN/p_l/subject} {VERB/p_l/stretch/stretches}, lazily lengthening into one long arc of cat. r_c's whiskers twitch with interest as {PRONOUN/r_c/subject} studiously {VERB/r_c/look/looks} elsewhere.",
         "The sunlight energizes the cats for a training session, and soon everyone puts that energy to good use!",
         null,
         "s_c makes sure r_c gets a good basking spot as the cats pause for a little break before resuming their training."
@@ -200,10 +200,10 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "app1 nearly dozes off, but they can't quite get to sleep, app2 seems shifting around. Are they uncomfortable? app1 opens one of their eyes, to see app2 staring at them.",
+        "app1 nearly dozes off, but {PRONOUN/app1/subject} can't quite get to sleep, app2 seems shifting around. {VERB/app2/Are/Is} {PRONOUN/app2/subject} uncomfortable? app1 opens one of {PRONOUN/app1/poss} eyes, to see {PRONOUN/app2/object} staring at them.",
         "app1 and app2 end up napping for far longer than they intended, curled up together with their tails brushing up against each other.",
         null,
-        "s_c courteously offers app2 the better basking spot, making them blush."
+        "s_c courteously offers app2 the better basking spot, making {PRONOUN/app2/object} blush."
     ],
     "fail_text": [
             "The patrol doesn't get much done, lazing about and snapping at each other irritably."
@@ -228,10 +228,10 @@
         "p_l manages to skillfully smooth over any disagreement.",
         "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
         "Talking everyone down, p_l encourages the patrol to focus on their work collecting nesting material.",
-        "p_l nods sympathetically, hearing out every side to the argument, and with their help the patrol feels comfortable, even with their differences."
+        "p_l nods sympathetically, hearing out every side to the argument, and with {PRONOUN/p_l/poss} help the patrol feels comfortable, even with their differences."
     ],
     "fail_text": [
-        "p_l stutters; they don't think they are fit to lead the patrol.",
+        "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
         "p_l rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens."
     ],
     "win_skills": ["great speaker", "excellent speaker"],
@@ -260,8 +260,8 @@
         "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
-        "p_l stutters; they don't think they are fit to lead the patrol.",
-        "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return back home the quarrel continues."
+        "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
+        "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return home, the quarrel continues."
     ],
     "win_skills": ["great speaker", "excellent speaker"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
@@ -278,18 +278,18 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training", "warrior", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
-    "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits they think they had a vision from StarClan last night.",
+    "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}} had a vision from StarClan last night.",
     "decline_text": "The patrol doesn't talk about the vision.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "The patrol talks to them about whether it was a real vision as they train.",
-        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
-        "s_c chooses to train with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them."
+        "The patrol talks to {PRONOUN/r_c/object} about whether it was a real vision as they train.",
+        "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
+        "s_c chooses to train with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}."
     ],
     "fail_text": [
         "No one can make sense of the vision.",
-        "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
+        "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
     ],
     "win_skills": ["strong connection to starclan"],
     "min_cats": 2,
@@ -302,8 +302,8 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training"],
-    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night... was it sent by StarClan?",
-    "decline_text": "They push it from their mind.",
+    "intro_text": "As they head out to work on their skills, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
+    "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/push/pushes} it from {PRONOUN/r_c/poss} mind.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
