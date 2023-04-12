@@ -7,7 +7,7 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_snippet_list
+    get_snippet_list, process_text
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
@@ -106,19 +106,28 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                self.selected_cat = choice(self.able_cats)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                if len(able_no_med) == 0:
+                    able_no_med = self.able_cats
+                self.selected_cat = choice(able_no_med)
                 self.update_selected_cat()
                 self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                self.current_patrol += sample(self.able_cats, k=3)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                if len(able_no_med) < 3:
+                    able_no_med = self.able_cats
+                self.current_patrol += sample(able_no_med, k=3)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                self.current_patrol += sample(self.able_cats, k=6)
+                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                if len(able_no_med) < 6:
+                    able_no_med = self.able_cats
+                self.current_patrol += sample(able_no_med, k=6)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['remove_all']:
@@ -268,12 +277,15 @@ class PatrolScreen(Screens):
                 self.elements['claws'].hide()
                 self.elements['herb'].hide()
 
-            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
+            able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+            if len(able_no_med) == 0:
+                able_no_med = self.able_cats
+            if len(self.current_patrol) >= 6 or len(able_no_med) < 1:
                 self.elements['add_one'].disable()
                 self.elements["random"].disable()
-            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
+            if len(self.current_patrol) > 3 or len(able_no_med) < 3:
                 self.elements['add_three'].disable()
-            if len(self.current_patrol) > 0 or len(self.able_cats) < 6:
+            if len(self.current_patrol) > 0 or len(able_no_med) < 6:
                 self.elements['add_six'].disable()
 
                 # Update the availability of the tab buttons
@@ -418,47 +430,56 @@ class PatrolScreen(Screens):
         vowels = ['A', 'E', 'I', 'O', 'U']
         if not text:
             text = 'This should not appear, report as a bug please!'
-        if size == 1:
-            text = text.replace('Your patrol',
-                                str(patrol.patrol_leader_name))
-            text = text.replace('The patrol',
-                                str(patrol.patrol_leader_name))
-        text = text.replace('p_l', str(patrol.patrol_leader_name))
-        if patrol.patrol_random_cat is not None:
-            text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        
+        replace_dict = {
+            "p_l" : (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
+        }
+        
+        if patrol.patrol_random_cat:
+            replace_dict["r_c"] = (str(patrol.patrol_random_cat.name), 
+                                   choice(patrol.patrol_random_cat.pronouns))
         else:
-            text = text.replace('r_c', str(patrol.patrol_leader_name))
-        text = text.replace('app1', str(patrol.app1_name))
-        text = text.replace('app2', str(patrol.app2_name))
-        text = text.replace('app3', str(patrol.app3_name))
-        text = text.replace('app4', str(patrol.app4_name))
-        text = text.replace('app5', str(patrol.app5_name))
-        text = text.replace('app6', str(patrol.app6_name))
-        if len(patrol.patrol_other_cats) == 1:
-            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
-        elif len(patrol.patrol_other_cats) == 2:
-            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
-            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
-        elif len(patrol.patrol_other_cats) == 3:
-            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
-            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
-            text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
-        elif len(patrol.patrol_other_cats) == 4:
-            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
-            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
-            text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
-            text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
+            replace_dict["r_c"] = (str(patrol.patrol_leader_name), 
+                                   choice(patrol.patrol_leader.pronouns))
+        
+        if len(patrol.patrol_other_cats) >= 1:
+            replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name), 
+                                        choice(patrol.patrol_other_cats[0].pronouns))
+        if len(patrol.patrol_other_cats) >= 2:
+            replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name), 
+                                        choice(patrol.patrol_other_cats[1].pronouns))
+        if len(patrol.patrol_other_cats) >= 3:
+            replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
+                                        choice(patrol.patrol_other_cats[2].pronouns))
+        if len(patrol.patrol_other_cats) == 4:
+            replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
+                                        choice(patrol.patrol_other_cats[3].pronouns))
 
-        if 's_c' in text:
-            stat_cat = None
-            if patrol.patrol_win_stat_cat:
-                stat_cat = patrol.patrol_win_stat_cat
-            elif patrol.patrol_fail_stat_cat:
-                stat_cat = patrol.patrol_fail_stat_cat
-            if stat_cat:
-                text = text.replace('s_c', str(stat_cat.name))
-            else:
-                text = text.replace('s_c', str(patrol.patrol_leader_name))
+        if patrol.app1:
+            replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
+        if patrol.app2:
+            replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
+        if patrol.app3:
+            replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
+        if patrol.app4:
+            replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
+        if patrol.app5:
+            replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
+        if patrol.app6:
+            replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
+
+        stat_cat = None
+        if patrol.patrol_win_stat_cat:
+            stat_cat = patrol.patrol_win_stat_cat
+        elif patrol.patrol_fail_stat_cat:
+            stat_cat = patrol.patrol_fail_stat_cat
+        if stat_cat:
+            replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
+        else:
+            replace_dict['s_c'] = (str(patrol.patrol_leader_name), 
+                                   choice(patrol.patrol_leader.pronouns))
+
+        text = process_text(text, replace_dict)
 
         other_clan_name = patrol.other_clan.name
         s = 0
@@ -501,6 +522,7 @@ class PatrolScreen(Screens):
                             modify.insert(pos - 1, 'an')
                         text = " ".join(modify)
                         break
+         
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
         # Prey lists for forest random prey patrols
