@@ -6,7 +6,7 @@
     "tags": ["herb_gathering", "med_only", "random_herbs", "platonic", "comfort", "respect", "trust", "med_cat"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n.",
@@ -380,7 +380,7 @@
     "tags": ["herb_gathering", "med_only", "apprentice", "four_apprentices", "random_herbs", "many_herbs1", "comfort", "trust", "platonic", "no_change_fail"],
     "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that {PRONOUN/app1/subject} {VERB/app1/need/needs} to get some sunshine before hunting for herbs. app2 purrs and flops beside {PRONOUN/app1/object}, while app3 rolls {PRONOUN/app3/poss} eyes and loafs beside app4. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
@@ -401,7 +401,7 @@
     "tags": ["herb_gathering", "med_only", "apprentice", "five_apprentices", "random_herbs", "many_herbs1", "comfort", "trust", "platonic", "no_change_fail"],
     "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that {PRONOUN/app1/subject} {VERB/app1/need/needs} to get some sunshine before hunting for herbs. app2 purrs and flops beside {PRONOUN/app1/object}, while app3 rolls {PRONOUN/app3/poss} eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
@@ -422,7 +422,7 @@
     "tags": ["herb_gathering", "med_only", "apprentice", "six_apprentices", "random_herbs", "many_herbs1", "comfort", "trust", "platonic", "no_change_fail"],
     "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that {PRONOUN/app1/subject} {VERB/app1/need/needs} to get some sunshine before hunting for herbs. app2 purrs and flops beside {PRONOUN/app1/object}, while app3 rolls {PRONOUN/app3/poss} eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",

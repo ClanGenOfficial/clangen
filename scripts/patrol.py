@@ -711,9 +711,9 @@ class Patrol():
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                if ("great" or "very") in kitty.skill:
+                if "great" in kitty.skill or "very" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
-                elif ("fantastic" or "excellent" or "extremely") in kitty.skill:
+                elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
             if kitty.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -723,11 +723,13 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        if success_chance >= 120:
+            success_chance = 115
+            skill_updates += "success chance over 120, updated to 115"
         print(skill_updates)
-        print('ending chance', success_chance)
-
-        c = int(random.getrandbits(7))
+        c = int(random.random() * 120)
         outcome = int(random.getrandbits(4))
+        print('ending chance', success_chance, 'vs.', c)
 
         # denotes if they get the common "basic" outcome or the rare "basic" outcome
         rare = False
