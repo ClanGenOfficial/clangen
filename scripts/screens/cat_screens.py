@@ -389,17 +389,6 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'dangerous':
             if event.ui_element == self.kill_cat_button:
                 KillCat(self.the_cat)
-                """if self.the_cat.status == 'leader':
-                    game.clan.leader_lives -= 10
-                self.the_cat.die()
-                if self.the_cat.status != 'leader':
-                    self.history.add_death_or_scars(self.the_cat, text=f'It was the will of something even mightier than StarClan that this cat died.', death=True)
-                else:
-                    self.history.add_death_or_scars(self.the_cat, text=f'were killed by something unknowable to even StarClan')
-                update_sprite(self.the_cat)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()"""
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
@@ -1865,7 +1854,7 @@ class ProfileScreen(Screens):
                 scale(pygame.Rect((1156, 972), (344, 72))),
                 "",
                 object_id="#kill_cat_button",
-                tool_tip_text='This cannot be reversed.',
+                tool_tip_text='This will open a confirmation window and allow you to input a death reason',
                 starting_height=2, manager=MANAGER
             )
 

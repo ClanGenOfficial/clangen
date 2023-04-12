@@ -227,12 +227,12 @@ class History:
 
         if event_type == "possible_scar":
             cat.history.possible_scar[condition] = {
-                "involved": other_cat.ID,
+                "involved": other_cat.ID if other_cat else None,
                 "text": text
             }
         elif event_type == 'possible_death':
             cat.history.possible_death[condition] = {
-                "involved": other_cat.ID,
+                "involved": other_cat.ID if other_cat else None,
                 "text": text
             }
 
