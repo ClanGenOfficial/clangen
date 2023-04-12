@@ -28,6 +28,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "sore",
         "tags": [
@@ -57,6 +58,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "joint pain",
         "tags": [
@@ -113,6 +115,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "broken bone",
         "tags": [
@@ -124,16 +127,16 @@
             "TOETRAP"
         ],
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
-        "history_text": [
-            "m_c was scarred after a bad fall.",
-            "m_c died after they broke a bone while on a walk.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after a bad fall.",
+            "reg_death": "m_c died from their wounds after taking a bad fall."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "dislocated joint",
         "tags": [
@@ -148,6 +151,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "tick bites",
         "tags": [
@@ -204,6 +208,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "tags": [
@@ -222,11 +227,10 @@
             "CHEEK"
         ],
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through their pelt.",
-        "history_text": [
-            "m_c was scarred by r_c.",
-            "m_c died after r_c hurt them during an argument.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c.",
+            "reg_death": "m_c died from their wounds after r_c hurt them for trying to stop an argument."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "patient", "thoughtful", "wise"],
         "cat_skill": ["good mediator"],
         "other_cat_trait": ["bloodthirsty", "bold", "childish", "daring", "fierce", "insecure", "righteous", "shameless", "strict", "troublesome", "vengeful"],
@@ -250,11 +254,10 @@
             "ONE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from an enemy warrior.",
-            "m_c died from their wounds after saving r_c from an enemy warrior.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from an enemy warrior.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from an enemy warrior."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -278,16 +281,16 @@
             "TWO"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from a rogue.",
-            "m_c died from their wounds after saving r_c from a rogue.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from a rogue.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from a rogue."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bite-wound",
         "tags": [
@@ -306,11 +309,10 @@
             "LEGBITE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from a dog.",
-            "m_c died from their wounds after saving r_c from a dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from a dog.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from a dog."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,

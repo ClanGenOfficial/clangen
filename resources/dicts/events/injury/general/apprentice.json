@@ -10,16 +10,16 @@
             "FACE"
         ],
         "event_text": "m_c mistook a hare for a rabbit while hunting and their eyes were scratched, a valuable lesson learnt.",
-        "history_text": [
-            "m_c got a scar when a hare scratched them in retaliation.",
-            "m_c died after they were wounded by a hare.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred when a hare scratched their eyes.",
+            "reg_death": "m_c died from their wounds after a hare scratched their eyes."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "cat bite",
         "tags": [
@@ -39,11 +39,10 @@
             "CATBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a rogue that their mentor, r_c, encouraged them to attack.",
-        "history_text": [
-            "m_c was scarred recklessly fighting a rogue that their mentor, r_c, encouraged them to attack.",
-            "m_c died after their mentor encouraged them to fight a rogue.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred fighting a rogue that their mentor, r_c, encouraged them to attack.",
+            "reg_death": "m_c died from their wounds after their mentor encouraged them to fight a rogue."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
@@ -68,16 +67,16 @@
             "CATBITE"
         ],
         "event_text": "m_c was injured recklessly fighting an enemy warrior that their mentor, r_c, encouraged them to attack.",
-        "history_text": [
-            "m_c was scarred recklessly fighting an enemy warrior that their mentor, r_c, encouraged them to attack.",
-            "m_c died after their mentor encouraged them to fight an enemy warrior.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred fighting an enemy warrior that their mentor, r_c, encouraged them to attack.",
+            "reg_death": "m_c died from their wounds after their mentor encouraged them to fight an enemy warrior."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
         "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
     },
+    
     {
         "injury": "bite-wound",
         "tags": [
@@ -97,11 +96,10 @@
             "LEGBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a dog that their mentor, r_c, encouraged them to attack.",
-        "history_text": [
-            "m_c was scarred recklessly fighting a dog that their mentor, r_c, encouraged them to attack.",
-            "m_c died after their mentor encouraged them to fight a dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred fighting a dog that their mentor, r_c, encouraged them to attack.",
+            "reg_death": "m_c died from their wounds after their mentor encouraged them to fight a dog."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
@@ -126,11 +124,10 @@
             "LEGBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a fox that their mentor, r_c, encouraged them to attack.",
-        "history_text": [
-            "m_c was scarred recklessly fighting a fox that their mentor, r_c, encouraged them to attack.",
-            "m_c died after their mentor encouraged them to fight a fox.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred fighting a dog that their mentor, r_c, encouraged them to attack.",
+            "reg_death": "m_c died from their wounds after their mentor encouraged them to fight a dog."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
@@ -147,11 +144,10 @@
             "NECKBITE"
         ],
         "event_text": "m_c fought a dog and got hurt.",
-        "history_text": [
-            "m_c was scarred by a dog.",
-            "m_c died from their wounds after fighting a dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a dog.",
+            "reg_death": "m_c died from their wounds after fighting a dog."
+        },
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -174,20 +170,21 @@
             "LEGBITE"
         ],
         "event_text": "m_c saved r_c from a fox, but was hurt.",
-        "history_text": [
-            "m_c was scarred by a fox.",
-            "m_c died from their wounds after fighting a fox.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a fox while rescuing r_c.",
+            "reg_death": "m_c died from their wounds after saving r_c from a fox."
+        },
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+    
     {
         "injury": "cat bite",
         "tags": [
             "other_cat",
+            "other_cat_mentor",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -202,11 +199,10 @@
             "CATBITE"
         ],
         "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
-        "history_text": [
-            "m_c was scarred by r_c for not defending the territory well enough.",
-            "m_c died after r_c hurt them for not defending the territory well enough.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for failing to defend the territory well enough.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for failing to defend the territory well enough."
+        },
         "cat_trait": ["insecure", "nervous", "careful", "loving"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -231,11 +227,10 @@
             "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
-        "history_text": [
-            "m_c was scarred by r_c for accidentally wandering over the border.",
-            "m_c died after their mentor punished them for accidentally wandering over the border.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for accidentally crossing the border.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for accidentally crossing the border."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -260,11 +255,10 @@
             "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
-        "history_text": [
-            "m_c was scarred by r_c for messing with a Twoleg object.",
-            "m_c died after their mentor punished them for messing with a Twoleg object.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for messing with a Twoleg object.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for messing with a Twoleg object."
+        },
         "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -289,11 +283,10 @@
             "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
-        "history_text": [
-            "m_c was scarred by r_c for disobeying them.",
-            "m_c died after their mentor punished them for disobeying.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for disobeying them.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for disobeying them."
+        },
         "cat_trait": ["troublesome", "childish", "playful"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -318,11 +311,10 @@
             "CATBITE"
         ],
         "event_text": "m_c fought with their mentor, r_c, and was injured.",
-        "history_text": [
-            "m_c was scarred during a fight with their mentor, r_c.",
-            "m_c died after fighting with their mentor.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after fighting with their mentor, r_c.",
+            "reg_death": "m_c died from their wounds after fighting with their mentor."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -347,11 +339,10 @@
             "CATBITE"
         ],
         "event_text": "m_c could not handle their mentor's harsh training, and was injured as a result.",
-        "history_text": [
-            "m_c was scarred by their mentor's harsh training.",
-            "m_c died from wounds caused by their mentor's harsh training.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c's, harsh training.",
+            "reg_death": "m_c died from wounds caused by their mentor's harsh training."
+        },
         "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -368,16 +359,16 @@
             "CATBITE"
         ],
         "event_text": "m_c fought a rogue and got hurt.",
-        "history_text": [
-            "m_c was scarred by a rogue.",
-            "m_c died from their wounds after fighting a rogue.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a rogue.",
+            "reg_death": "m_c died from their wounds after fighting a rogue."
+        },
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bruises",
         "tags": [
@@ -434,6 +425,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "scrapes",
         "tags": [
@@ -448,6 +440,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "sprain",
         "tags": [
@@ -490,6 +483,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "cracked pads",
         "tags": [
@@ -518,6 +512,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "broken bone",
         "tags": [
@@ -529,11 +524,10 @@
             "MANLEG"
         ],
         "event_text": "m_c fought a big dog and was badly injured.",
-        "history_text": [
-            "m_c was scarred by a big dog.",
-            "m_c died from their wounds after fighting a big dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a big dog.",
+            "reg_death": "m_c died from their wounds after fighting a big dog."
+        },
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -557,16 +551,16 @@
             "MANTAIL"
         ],
         "event_text": "m_c saved r_c from a big dog, but was badly injured.",
-        "history_text": [
-            "m_c was scarred by a big dog.",
-            "m_c died from their wounds after fighting a big dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a big dog while rescuing r_c.",
+            "reg_death": "m_c died from their wounds after saving r_c from a big dog."
+        },
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "tags": [
@@ -578,11 +572,10 @@
             "ONE"
         ],
         "event_text": "m_c fought a hawk and got hurt.",
-        "history_text": [
-            "m_c was scarred by a hawk.",
-            "m_c died from their wounds after fighting a hawk.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a hawk.",
+            "reg_death": "m_c died from their wounds after fighting a hawk."
+        },
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -605,11 +598,10 @@
             "TWO"
         ],
         "event_text": "m_c saved r_c from a hawk, but was hurt.",
-        "history_text": [
-            "m_c was scarred by a hawk.",
-            "m_c died from their wounds after fighting a hawk.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a hawk while rescuing r_c.",
+            "reg_death": "m_c died from their wounds after saving r_c from a hawk."
+        },
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -619,6 +611,7 @@
         "injury": "claw-wound",
         "tags": [
             "other_cat",
+            "other_cat_mentor",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -633,11 +626,10 @@
             "BRIDGE"
         ],
         "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
-        "history_text": [
-            "m_c was scarred by r_c for not defending the territory well enough.",
-            "m_c died after r_c hurt them for not defending the territory well enough.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for failing to defend the territory well enough.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for failing to defend the territory well enough."
+        },
         "cat_trait": ["insecure", "nervous", "careful", "loving"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -662,11 +654,10 @@
             "TOETRAP"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
-        "history_text": [
-            "m_c was scarred by r_c for accidentally wandering over the border.",
-            "m_c died after their mentor punished them for accidentally wandering over the border.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for accidentally crossing the border.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for accidentally crossing the border."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -691,11 +682,10 @@
             "TAILSCAR"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
-        "history_text": [
-            "m_c was scarred by r_c for messing with a Twoleg object.",
-            "m_c died after their mentor punished them for messing with a Twoleg object.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for messing with a Twoleg object.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for messing with a Twoleg object."
+        },
         "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
@@ -720,11 +710,10 @@
             "RIGHTEAR"
         ],
         "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out, and m_c got hurt.",
-        "history_text": [
-            "m_c was scarred while practicing battle moves with r_c.",
-            "m_c died from their wounds after r_c insisted on practicing with their claws out.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, during battle training.",
+            "reg_death": "m_c died from their wounds after their mentor insisted on training with unsheathed claws."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "daring", "bold"],
@@ -749,11 +738,10 @@
             "LEFTEAR"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
-        "history_text": [
-            "m_c was scarred by r_c for disobeying them.",
-            "m_c died after their mentor punished them for disobeying.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, for disobeying them.",
+            "reg_death": "m_c died from their wounds after their mentor hurt them for disobeying them."
+        },
         "cat_trait": ["troublesome", "childish", "playful"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -778,11 +766,10 @@
             "CHEEK"
         ],
         "event_text": "m_c fought with their mentor, r_c, and was injured.",
-        "history_text": [
-            "m_c was scarred during a fight with their mentor, r_c.",
-            "m_c died after fighting with their mentor.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after fighting with their mentor, r_c.",
+            "reg_death": "m_c died from their wounds after fighting with their mentor."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -807,16 +794,16 @@
             "BELLY"
         ],
         "event_text": "m_c could not handle their mentor's harsh training, and was injured as a result.",
-        "history_text": [
-            "m_c was scarred by their mentor's harsh training.",
-            "m_c died after their were injured by their mentor's harsh training.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c's, harsh training.",
+            "reg_death": "m_c died from wounds caused by their mentor's harsh training."
+        },
         "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null
     },
+
     {
         "injury": "mangled leg",
         "tags": [
@@ -836,11 +823,10 @@
             "MANLEG"
         ],
         "event_text": "m_c's leg was badly hurt after their mentor used a Twoleg trap during a training exercise.",
-        "history_text": [
-            "m_c was scarred when their mentor used a Twoleg trap for training.",
-            "m_c died after their mentor used a Twoleg trap for training.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by their mentor, r_c, when they used a Twoleg trap for training.",
+            "reg_death": "m_c died from wounds caused by their mentor using a Twoleg trap for training."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "cold", "fierce", "strict", "adventurous"],
