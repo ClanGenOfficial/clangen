@@ -1,5 +1,6 @@
 <strong>v0.8.5</strong>
 - adjusted the difficulty of patrols
+- Classic Mode cats will no longer gain shock from the 'large amount of death' moon events
 
 <strong>v0.8.4</strong>
 - fixed a crash when there was only one cat left in the clan
