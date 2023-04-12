@@ -14,6 +14,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "cracked pads",
         "camp": "any",
@@ -29,6 +30,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "small cut",
         "camp": "any",
@@ -44,6 +46,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "water in their lungs",
         "camp": "any",
@@ -53,12 +56,10 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was dragged out into the ocean by the tide and inhaled a lot of water before managing to get out, they've been hacking ever since.",
-        "history_text": [
-            null,
-            "m_c died after they were dragged into the ocean and inhaled too much water.",
-            "were dragged out into the ocean."
-        ],
+        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "history_text": {
+            "reg_death": "m_c died from water-inhalation after being dragged out to sea."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
