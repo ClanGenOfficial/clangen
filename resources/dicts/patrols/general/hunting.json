@@ -3,10 +3,7 @@
         "patrol_id": "gen_hunt_mouse2",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "small_prey"
-        ],
+        "tags": ["hunting", "small_prey"],
         "intro_text": "Your patrol catches scent of a mouse nearby.",
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
@@ -18,11 +15,7 @@
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
         "exp": 10,
-        "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -32,12 +25,7 @@
         "patrol_id": "gen_hunt_mouse3",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "small_prey",
-            "warrior"
-        ],
+        "tags": ["hunting", "apprentice", "small_prey", "warrior"],
         "intro_text": "Your patrol comes across a mouse.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
@@ -58,13 +46,7 @@
         "patrol_id": "gen_hunt_rat1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "medium_prey0",
-            "medium_prey1",
-            "large_prey2",
-            "no_fail_prey"
-        ],
+        "tags": ["hunting", "medium_prey0", "medium_prey1", "large_prey2", "no_fail_prey"],
         "intro_text": "Your patrol comes across a large rat.",
         "success_text": [
             "Your patrol catches the rat! More fresh-kill!",
@@ -77,10 +59,7 @@
         "decline_text": "Your patrol ignores the rat.",
         "chance_of_success": 50,
         "exp": 20,
-        "win_skills": [
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -90,10 +69,7 @@
         "patrol_id": "gen_hunt_hare1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "large_prey"
-        ],
+        "tags": ["hunting", "large_prey"],
         "intro_text": "Your patrol comes across a large hare.",
         "success_text": [
             "Your patrol catches the hare!",
@@ -106,9 +82,7 @@
         "decline_text": "Your patrol ignores the hare.",
         "chance_of_success": 10,
         "exp": 10,
-        "win_skills": [
-            "fantastic hunter"
-        ],
+        "win_skills": ["fantastic hunter"],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -118,10 +92,7 @@
         "patrol_id": "gen_hunt_bird1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "small_prey"
-        ],
+        "tags": ["hunting", "small_prey"],
         "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
         "success_text": [
             "Your patrol catches the bird before it flies away!",
@@ -133,10 +104,7 @@
         "decline_text": "Your patrol ignores the bird.",
         "chance_of_success": 50,
         "exp": 15,
-        "win_skills": [
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -146,10 +114,7 @@
         "patrol_id": "gen_hunt_squirrel1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "medium_prey"
-        ],
+        "tags": ["hunting", "medium_prey"],
         "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "success_text": [
             "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
@@ -161,11 +126,7 @@
         "decline_text": "Your patrol ignores the squirrel.",
         "chance_of_success": 50,
         "exp": 10,
-        "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -175,10 +136,7 @@
         "patrol_id": "gen_hunt_fish1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "medium_prey"
-        ],
+        "tags": ["hunting", "medium_prey"],
         "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
         "success_text": [
             "r_c very carefully walks to the water's edge and waits for {PRONOUN/r_c/poss} chance. When the fish is near, {PRONOUN/r_c/subject} {VERB/r_c/hook/hooks} it out of the water with {PRONOUN/r_c/poss} claws. More fresh-kill!",
@@ -190,10 +148,7 @@
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
         "exp": 10,
-        "win_skills": [
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -203,10 +158,7 @@
         "patrol_id": "gen_hunt_fish2",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "large_prey"
-        ],
+        "tags": ["hunting", "large_prey"],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 10,
@@ -219,11 +171,7 @@
         "fail_text": [
             "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
         ],
-        "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -233,11 +181,7 @@
         "patrol_id": "gen_hunt_strangerabbit1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "poison_clan",
-            "large_prey0"
-        ],
+        "tags": ["hunting", "poison_clan", "large_prey0"],
         "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "success_text": [
             "r_c catches the rabbit and it is eaten as normal.",
@@ -253,11 +197,7 @@
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
         "chance_of_success": 30,
         "exp": 10,
-        "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
-        ],
+        "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -267,12 +207,7 @@
         "patrol_id": "gen_hunt_rabbit2",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "trust",
-            "minor_injury",
-            "large_prey"
-        ],
+        "tags": ["hunting", "trust", "minor_injury", "large_prey"],
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
@@ -286,10 +221,7 @@
             "Your patrol jumps after it, but the rabbit has too great of a head start.",
             "s_c is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         ],
-        "win_skills": [
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -299,11 +231,7 @@
         "patrol_id": "gen_hunt_rabbit3",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "minor_injury",
-            "large_prey"
-        ],
+        "tags": ["hunting", "minor_injury", "large_prey"],
         "intro_text": "A rabbit bursts out from cover, startled by r_c.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/watch/watches} it go, just as startled.",
         "chance_of_success": 40,
@@ -317,10 +245,7 @@
             "r_c jumps after it, but the rabbit has too great of a head start.",
             "s_c reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         ],
-        "win_skills": [
-            "great hunter",
-            "fantastic hunter"
-        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -330,13 +255,7 @@
         "patrol_id": "gen_hunt_vision1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "respect",
-            "trust",
-            "jealousy",
-            "medium_prey"
-        ],
+        "tags": ["hunting", "respect", "trust", "jealousy", "medium_prey"],
         "intro_text": "As the patrol spreads out to hunt, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
         "decline_text": "The patrol doesn't talk about the vision.",
         "chance_of_success": 40,
@@ -350,9 +269,7 @@
             "No one can make sense of the vision.",
             "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
         ],
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": ["strong connection to starclan"],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -362,11 +279,7 @@
         "patrol_id": "gen_hunt_vision2",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "large_prey1",
-            "large_prey2"
-        ],
+        "tags": ["hunting", "large_prey1", "large_prey2"],
         "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/head/heads} out to hunt, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/push/pushes} it from {PRONOUN/r_c/poss} mind.",
         "chance_of_success": 40,
@@ -379,9 +292,7 @@
         "fail_text": [
             "r_c can't make sense of the vision."
         ],
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": ["strong connection to starclan"],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -391,16 +302,7 @@
         "patrol_id": "gen_hunt_sneakprey1",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "trust",
-            "respect",
-            "disrespect",
-            "distrust",
-            "no_app",
-            "clan_to_r_c",
-            "large_prey0",
-            "huge_prey1"
+        "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "large_prey0", "huge_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
         "decline_text": "r_c decides against breaking the warrior code.",
@@ -422,17 +324,7 @@
         "patrol_id": "gen_hunt_sneakprey2",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "apprentice",
-            "trust",
-            "respect",
-            "disrespect",
-            "distrust",
-            "clan_to_r_c",
-            "large_prey0",
-            "huge_prey1"
-        ],
+        "tags": [ "hunting", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c", "large_prey0", "huge_prey1"],
         "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
         "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
@@ -453,19 +345,7 @@
         "patrol_id": "gen_hunt_sneakprey3",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "hunting",
-            "trust",
-            "dislike",
-            "respect",
-            "disrespect",
-            "distrust",
-            "no_app",
-            "clan_to_r_c",
-            "patrol_to_r_c",
-            "large_prey0",
-            "huge_prey1"
-        ],
+        "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "patrol_to_r_c", "large_prey0", "huge_prey1"],
         "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
         "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
@@ -487,20 +367,7 @@
         "patrol_id": "gen_hunt_sneakprey4",
         "biome": "Any",
         "season": "Any",
-        "tags": [
-            "no_app",
-            "hunting",
-            "trust",
-            "dislike",
-            "apprentice",
-            "respect",
-            "disrespect",
-            "distrust",
-            "clan_to_r_c",
-            "patrol_to_r_c",
-            "small_prey0",
-            "large_prey1"
-        ],
+        "tags": ["no_app", "hunting", "trust", "dislike", "apprentice", "respect", "disrespect", "distrust", "clan_to_r_c", "patrol_to_r_c", "small_prey0", "large_prey1"],
         "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
         "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
