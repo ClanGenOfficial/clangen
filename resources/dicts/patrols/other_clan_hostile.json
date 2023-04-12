@@ -6,7 +6,7 @@
     "tags": ["border", "other_clan", "battle_injury", "death", "scar", "CHEEK"],
     "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the c_n patrol.",
     "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "The patrol remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
@@ -41,7 +41,7 @@
     "tags": ["border", "other_clan", "battle_injury", "death", "scar", "BRIDGE"],
     "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the c_n patrol.",
     "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The patrol remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
@@ -76,7 +76,7 @@
     "tags": ["otherclan_nochangesuccess", "border", "other_clan", "hunting", "scar", "LEGBITE", "battle_injury", "death", "small_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on an enemy's territory.",
     "decline_text": "Your patrol decides that one rabbit isn't worth the potential fight.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
@@ -112,7 +112,7 @@
     "tags": ["herb_gathering", "med_cat", "herb", "raspberry", "other_clan", "med_only", "battle_injury"],
     "intro_text": "p_l pads along, mouth open slightly as they scent for any traces of herbs. Oh! They can smell some raspberries nearby - but it seems that they're just over the border.",
     "decline_text": "They decide that trespassing isn't worth it in this case.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
@@ -139,7 +139,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "torn pelt", "injury", "scar", "BRIGHTHEART"],
     "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
     "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
-    "chance_of_success": 60,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "After poking around a bit, your patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, they only lecture the apprentice on border lines before sending them back into o_c_n territory.",
@@ -173,7 +173,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "mangled tail", "injury", "scar", "TAILSCAR"],
     "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
     "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, they only lecture the apprentice on border lines before sending them back into o_c_n territory.",

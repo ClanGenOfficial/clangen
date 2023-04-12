@@ -15,7 +15,7 @@
     ],
     "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
     "decline_text": "They decide to turn back and wait until the snow dies down.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "Despite the snow, the patrol manages to hunt successfully, finding crabs running about on the beach, oblivious to leaf-bare. With the sea to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
@@ -103,7 +103,7 @@
     ],
     "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
     "decline_text": "They decide to turn back and wait until the snow dies down.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a sea cave and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",

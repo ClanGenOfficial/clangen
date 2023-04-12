@@ -5,6 +5,8 @@
     "season": "Any",
     "tags": ["border", "new_cat_loner_warrior_litter1", "reputation", "no_change_fail_rep", "meeting"],
     "intro_text": "Your patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
+    "chance_of_success": 60,
+    "exp": 10,
     "success_text": [
             "The patrol doesn't have to do much convincing. The loner seems happy to join the Clan.",
             "The patrol doesn't have to do much convincing. The loner seems happy to join the Clan with their litter of kits."
@@ -15,8 +17,7 @@
     "decline_text": "Your patrol decides to leave the loner be.",
     "antagonize_text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
     "antagonize_fail_text": "The patrol approaches the loner and tries to explain that c_n currently has enough mouths to feed, but the loner seems to take offense and leaves in a huff.",
-    "chance_of_success": 60,
-    "exp": 10,
+
     "win_skills": ["great speaker", "excellent speaker"],
     "min_cats": 1,
     "max_cats": 6
@@ -51,6 +52,8 @@
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds a wounded cat near the Thunderpath.",
+    "chance_of_success": 50,
+    "exp": 10,
     "success_text": [
         "The patrol approaches the injured cat and sees signs of life. Alarmed, they gently pick up the cat and take them back to camp to be treated by the medicine cat. The grateful cat decides to join the Clan."
     ],
@@ -61,8 +64,7 @@
     "decline_text": "They leave the wounded cat alone.",
     "antagonize_text": "Your patrol helps the cat to the nearest healer. They can't spare the herbs for an outsider right now.",
     "antagonize_fail_text": "The patrol attempts to help the cat to a healer nearby, but the cat passes before they can make it. They bury the cat outside their borders.",
-    "chance_of_success": 60,
-    "exp": 10,
+
     "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 6
@@ -74,6 +76,8 @@
     "season": "Any",
     "tags": ["border", "new_cat_kitten_abandoned1", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
+    "chance_of_success": 50,
+    "exp": 10,
     "success_text": [
         "r_c rushes the kit back to camp. The kit is nursed back to health and promised a place in the Clan."
     ],
@@ -84,8 +88,7 @@
     "decline_text": "The patrol goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
     "antagonize_text": "Your patrol can't bear to leave the kit alone, so they take it to the border of the closest Clan and wait for a patrol to arrive. The other Clan agrees to take the kit.",
     "antagonize_fail_text": "Your patrol attempts to take the kit to a neighboring Clan instead of leaving it, but it dies on the journey. They give it a small burial.",
-    "chance_of_success": 60,
-    "exp": 10,
+
     "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 6
@@ -312,7 +315,7 @@
     ],
     "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
     "decline_text": "The patrol decides to hunt elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "p_l hears r_c softly calling them through the bushes, and drops the idea of following mouse scent, hurrying to their mate's side. r_c, head poking into the nest's garden through a gap in the fense, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued before something happens to them!",

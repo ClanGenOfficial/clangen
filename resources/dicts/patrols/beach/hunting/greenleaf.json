@@ -60,7 +60,7 @@
     "tags": ["fighting", "scar", "NECKBITE", "big_bite_injury", "respect", "trust", "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 10,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her growing cubs. The coasts will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -97,7 +97,7 @@
     "tags": ["fighting", "death", "scar", "THREE", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 10,
+    "chance_of_success": 30,
     "exp": 50,
     "success_text": [
         "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
@@ -146,7 +146,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
@@ -266,7 +266,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 50,
     "success_text": [
         "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
@@ -321,7 +321,7 @@
     ],
     "intro_text": "As the patrol arrives at a beach, they spot Twolegs and their kits lounging around a brightly colored pelt of some kind, and smell food-scent.",
     "decline_text": "The patrol decides to avoid the Twolegs.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "The patrol sneaks closer. It seems the Twolegs are eating, though the open beach shore means the cats don't have any chances of stealing a bite.",

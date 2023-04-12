@@ -62,7 +62,7 @@
         ],
         "intro_text": "The patrol approaches a Twoleg nest perched on the beachfront while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
@@ -680,7 +680,7 @@
         ],
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -745,7 +745,7 @@
         ],
         "intro_text": "app1 decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -803,7 +803,7 @@
         ],
         "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -867,7 +867,7 @@
         ],
         "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -921,7 +921,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed sand.",
         "decline_text": "Turning their nose up at the temptation, they continue on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
@@ -975,7 +975,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed sand.",
         "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
@@ -1034,7 +1034,7 @@
         ],
         "intro_text": "The patrol comes across a Thunderpath running along the shore.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the Thunderpath and can hunt on the other side.",
@@ -1475,7 +1475,7 @@
         ],
         "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same area that cumulatively are just as impressive as the eagle's massive catch.",
@@ -1576,7 +1576,7 @@
         ],
         "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
         "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same area that cumulatively are just as impressive as the eagle's massive catch.",
@@ -1623,7 +1623,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a shark that the waves have washed ashore in the night.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
@@ -1812,7 +1812,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever-it-is makes the patrols' eyes go wide, and they leap to claim possession of it. Outnumbered and already full of stinky nonsense, the gray fox leaves the beach, scrambling up a cliff as the cats give in to instinct and roll around in the glorious smell.",
@@ -1927,7 +1927,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 30,
         "success_text": [
             "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever-it-is makes their eyes go wide, and they leap to claim some of it for themselves and c_n. It's such a big lump that the fox doesn't seem to mind sharing.",
@@ -1990,7 +1990,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox leaps up frightened out of its skin as the cats pounce to take possession of the bird.",
@@ -2066,7 +2066,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panicks when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
@@ -2215,7 +2215,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
@@ -2290,7 +2290,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "It's a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
@@ -2358,7 +2358,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 15,
         "success_text": [
             "Spotting the gray fox they've tracked dipping into a sheltered cove, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old log a storm washed in moons ago. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",

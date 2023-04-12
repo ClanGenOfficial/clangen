@@ -81,7 +81,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 10,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
@@ -180,7 +180,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
@@ -300,7 +300,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 50,
     "success_text": [
         "Thinking they could kill a gray fox by themselves, r_c launches into battle! r_c makes it out alive, but so does the gray fox. Upon bringing reinforcements to finish her off, it's discovered she's wisely left the territory with her kits.",
@@ -351,7 +351,7 @@
     "tags": ["large_prey", "hunting", "no_fail_prey", "warrior", "patrol_to_p_l", "no_change_success", "dislike", "respect", "trust", "death", "scar", "BURNRUMP", "injury", "burn", "no_body", "apprentice"],
     "intro_text": "A sudden gust of wind and rain hits the patrol, they were wrong about the weather and are now soaking wet.",
     "decline_text": "The patrol decides to make a run back to camp, they can go hunting another time.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
     "p_l and their patrol decide to leave the beach behind and find some trees to shelter under. It turns out to be a stroke of luck as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey and they end up going back to camp soaked anyway but successful.",

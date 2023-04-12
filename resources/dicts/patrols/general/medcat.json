@@ -6,7 +6,7 @@
     "tags": ["herb_gathering", "med_only", "random_herbs", "platonic", "comfort", "respect", "trust", "med_cat"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 80,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n.",
@@ -31,7 +31,7 @@
     "tags": ["herb_gathering", "random_herbs"],
     "intro_text": "r_c finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and r_c has a successful patrol.",
@@ -248,7 +248,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
     "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene, leaving r_c behind.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "p_l eventually relents, and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together.",
@@ -269,7 +269,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on their troubles, r_c comments that they could not help but think of what legacy they would leave behind if StarClan calls upon them.",
     "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "p_l and r_c spend their time on the patrol discussing how, to StarClan, the end of their life did not mean it was the true end. Even in StarClan, cats had their role to play. r_c's legacy would shine brighter than any star. Comforted by these words, r_c thanks p_l and helps bring back the herbs.",
@@ -290,7 +290,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "It was one of the worst storms of the season, and left p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
     "decline_text": "Before r_c can come up with a plan, a cry from the camp forces p_l to return in a hurry.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "r_c splashes water from a puddle onto p_l's fur. p_l fluffs up like a bottlebrush, turning around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c is glad to see p_l looks much happier."
@@ -1021,7 +1021,7 @@
     ],
     "intro_text": "In order to spice up their patrol, p_l challenges app2 to a herb-gathering competition.",
     "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in their dismay.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
          "The game is on! p_l and app2 are quite evenly matched, and both their mentors are pleased with the herbs they bring back.",
@@ -1054,7 +1054,7 @@
     ],
     "intro_text": "app2 boasts about their hunting skills, saying that makes them better at finding herbs than p_l.",
     "decline_text": "p_l rolls their eyes, ignoring them for the rest of the patrol.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "p_l takes the bait, and the two apprentices have a lot of fun during this herb-gathering patrol, happily bickering all the way.",
