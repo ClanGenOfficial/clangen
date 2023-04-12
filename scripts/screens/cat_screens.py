@@ -226,6 +226,8 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.show_moons = None
+        self.no_moons = None
         self.history = History()
         self.help_button = None
         self.open_sub_tab = None
@@ -454,6 +456,12 @@ class ProfileScreen(Screens):
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.edit_text:
                 self.editing_notes = True
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.no_moons:
+                game.switches["show_history_moons"] = True
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.show_moons:
+                game.switches["show_history_moons"] = False
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
@@ -1069,13 +1077,15 @@ class ProfileScreen(Screens):
                 scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#fav_star",
-                tool_tip_text='un-favorite this tab', manager=MANAGER
+                tool_tip_text='un-favorite this sub tab',
+                manager=MANAGER
             )
             self.not_fav_tab = UIImageButton(
                 scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#not_fav_star",
-                tool_tip_text='favorite this tab', manager=MANAGER
+                tool_tip_text='favorite this sub tab - it will be the default sub tab displayed when History is viewed',
+                manager=MANAGER
             )
 
             if self.open_sub_tab != 'life events':
@@ -1084,6 +1094,7 @@ class ProfileScreen(Screens):
                 # This will be overwritten in update_disabled_buttons_and_text()
                 self.history_text_box = pygame_gui.elements.UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
                                                                       , manager=MANAGER)
+
                 self.update_disabled_buttons_and_text()
 
     def toggle_user_notes_tab(self):
@@ -1333,9 +1344,11 @@ class ProfileScreen(Screens):
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
-                graduation_history += " Their training went so well that they graduated early."
+                graduation_history += f" Their training went so well that they graduated early at {grad_age} moons old."
             elif int(grad_age) > 13:
-                graduation_history += " They graduated a little bit late."
+                graduation_history += f" They graduated late at {grad_age} moons old."
+            else:
+                graduation_history += f" They graduated at {grad_age} moons old."
 
             if game.switches['show_history_moons']:
                 graduation_history += f" (Moon {app_ceremony['moon']})"
@@ -1866,7 +1879,6 @@ class ProfileScreen(Screens):
             else:
                 self.manage_roles.enable()
 
-
         elif self.open_tab == "personal":
 
             # Button to trans or cis the cats.
@@ -1969,6 +1981,24 @@ class ProfileScreen(Screens):
                                                          scale(pygame.Rect((200, 946), (1200, 298))),
                                                          object_id="#text_box_26_horizleft_pad_10_14",
                                                          line_spacing=1, manager=MANAGER)
+                self.no_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#unchecked_checkbox",
+                    tool_tip_text='Show the Moon that certain history events occurred on', manager=MANAGER
+                )
+                self.show_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#checked_checkbox",
+                    tool_tip_text='Stop showing the Moon that certain history events occurred on', manager=MANAGER
+                )
+                if game.switches["show_history_moons"]:
+                    self.no_moons.hide()
+                    self.show_moons.show()
+                else:
+                    self.no_moons.show()
+                    self.show_moons.hide()
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
@@ -2099,9 +2129,6 @@ class ProfileScreen(Screens):
         if game.settings["dark mode"]:
             light_dark = "dark"
 
-        platform_base_dir = 'resources/images/platforms/'
-        leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
-
         available_biome = ['Forest', 'Mountainous', 'Plains', 'Beach']
         biome = game.clan.biome
 
@@ -2112,26 +2139,33 @@ class ProfileScreen(Screens):
 
         biome = biome.lower()
 
-        all_platforms = []
-        if the_cat.df:
-            dead_platform = [f'{platform_base_dir}darkforestplatform_{light_dark}.png']
-            all_platforms = dead_platform * 4
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            dead_platform = [f'{platform_base_dir}/starclanplatform_{light_dark}.png']
-            all_platforms = dead_platform * 4
-        else:
-            for leaf in leaves:
-                platform_dir = f'{platform_base_dir}/{biome}/{leaf}_{light_dark}.png'
-                all_platforms.append(platform_dir)
+        platformsheet = pygame.image.load('resources/images/platforms.png').convert_alpha()
+        
+        order = ['beach', 'forest', 'mountainous', 'nest', 'plains', 'SC/DF']
 
-        self.newleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[0]).convert_alpha(), (240, 210))
-        self.greenleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[1]).convert_alpha(), (240, 210))
-        self.leafbare_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[2]).convert_alpha(), (240, 210))
-        self.leaffall_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[3]).convert_alpha(), (240, 210))
+        biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+        
+        offset = 0
+        if light_dark == "light":
+            offset = 80
+        
+        if the_cat.df:
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+        else:
+            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70)), (240, 210))
+            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(480 + offset, 0, 80, 70)), (240, 210))
 
     def on_use(self):
         pass
