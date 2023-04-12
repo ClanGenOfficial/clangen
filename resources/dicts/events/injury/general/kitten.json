@@ -41,6 +41,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "scrapes",
         "tags": [
@@ -83,6 +84,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
      {
        "injury": "headache",
        "camp": "any",
@@ -92,7 +94,7 @@
            "Leaf-fall",
            "Leaf-bare"
        ],
-       "event_text": "m_c woke up with a mild headache, but got up to play with their littermates anyway, trying to ignore the nagging pain.",
+       "event_text": "m_c woke up with a mild headache, but got up to play anyways, trying to ignore the nagging pain.",
        "history_text": null,
        "cat_trait": null,
        "cat_skill": null,
@@ -108,7 +110,7 @@
            "Leaf-fall",
            "Leaf-bare"
        ],
-       "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up next to their parent, trying to avoid light and noise so that the throbbing pain could subside.",
+       "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up in the nursery, trying to avoid light and noise so that the throbbing pain could subside.",
        "history_text": null,
        "cat_trait": null,
        "cat_skill": null,
