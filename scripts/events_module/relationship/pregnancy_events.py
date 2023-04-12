@@ -666,6 +666,9 @@ class Pregnancy_Events():
             kit.accessory = None
             clan.add_cat(kit)
 
+            # give history
+            self.history.add_beginning(kit, clan_born=True)
+
         # check other cats of clan for siblings
         for kitten in all_kitten:
             add_siblings_to_cat(kitten, cat_class)
