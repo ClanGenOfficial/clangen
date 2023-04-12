@@ -1288,7 +1288,7 @@
     ],
     "intro_text": "r_c decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -1352,7 +1352,7 @@
     ],
     "intro_text": "app1 decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1411,7 +1411,7 @@
     ],
     "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nests today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -1476,7 +1476,7 @@
     ],
     "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
     "decline_text": "On second thought, they decide to reline their nests today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1528,7 +1528,7 @@
     "tags": ["hunting", "gone"],
     "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
     "decline_text": "Turning their nose up at the temptation, they continue on their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
@@ -1564,7 +1564,7 @@
     ],
     "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
     "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
@@ -1624,7 +1624,7 @@
     ],
     "intro_text": "The patrol comes across a Thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "Your patrol crosses the Thunderpath and can hunt on the other side.",
