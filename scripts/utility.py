@@ -8,6 +8,8 @@ TODO: Docs
 
 from random import choice, choices, randint, random, sample
 import pygame
+
+from scripts.cat.history import History
 from scripts.cat.names import names
 
 import ujson
@@ -401,6 +403,8 @@ def create_new_cat(Cat,
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
+        history = History()
+        history.add_beginning(new_cat)
 
         # create relationships
         new_cat.create_relationships_new_cat()
