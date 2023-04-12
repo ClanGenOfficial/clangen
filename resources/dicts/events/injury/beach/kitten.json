@@ -112,11 +112,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is hopping around in the tide pools when they trip and fall onto the rocks. Thankfully they're only a bit bruised.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["bouncy"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -130,11 +125,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -148,11 +138,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -166,11 +151,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and twist their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -186,11 +166,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is jumping around on the rocks when they slip and fall. The soft sand of the cave floor softens their landing, but they're still sporting some new bruises.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
         "cat_skill": null,
         "other_cat_trait": null,

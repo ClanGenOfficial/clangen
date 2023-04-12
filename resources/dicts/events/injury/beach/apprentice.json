@@ -64,11 +64,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c's paw pads aren't used to all the salt water they've been traipsing around in since becoming an apprentice, they've become cracked and sore.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -81,11 +76,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was dashing around the apprentice rock when they slipped and fell into the high tide waters of the cave. They're alright, if a bit bruised and embarrassed.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -100,11 +90,6 @@
             "Leaf-fall"
         ],
         "event_text": "m_c was messing around in the tide pools of the camp clearing when their paw slipped and they fell in face first. Their pride is wounded, but otherwise they're only bruised.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,

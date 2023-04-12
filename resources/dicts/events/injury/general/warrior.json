@@ -8,11 +8,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit bruised.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -27,11 +22,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -46,11 +36,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a fox, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -65,11 +50,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a dog, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -90,11 +70,6 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from an enemy warrior, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -115,11 +90,6 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from a dog, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -134,11 +104,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit scraped up.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -153,11 +118,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -172,11 +132,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a fox, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -197,11 +152,6 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from a fox, and was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
         "other_cat_trait": null,
@@ -216,11 +166,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session and sprained a paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
