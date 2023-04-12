@@ -63,7 +63,7 @@ def json_load():
                     cat["eye_colour2"] = "GREEN"
                 cat["eye_colour"] = "BLUE"
             if cat["eye_colour2"] == "BLUE2":
-                new_cat.eye_colour2 = "COBALT"
+                cat["eye_colour2"] = "COBALT"
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -126,7 +126,7 @@ def json_load():
                         new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            if cat["white_patches"] in old_creamy_patches:
+            if cat["white_patches"] in convert["old_creamy_patches"]:
                 new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
             else:
