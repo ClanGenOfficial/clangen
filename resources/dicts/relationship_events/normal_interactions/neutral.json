@@ -46,7 +46,7 @@
 	{
 		"id": "neutral_interaction5",
 		"interactions": [
-			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
+			"m_c challenged r_c to spar with them."
 		],
 		"main_trait_constraint": [
 			"bold"

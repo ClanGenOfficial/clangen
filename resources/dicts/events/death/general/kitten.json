@@ -32,7 +32,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was killed when {PRONOUN/m_c/subject} snuck out of camp.",
+        "death_text": "m_c was killed when they snuck out of camp.",
         "history_text": ["m_c was killed when they snuck out of camp.", null],
         "cat_trait": ["troublesome", "daring", "impulsive", "attention-seeker"],
         "cat_skill": null,
@@ -52,7 +52,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was killed in {PRONOUN/m_c/poss} sleep by a snake that had snuck into camp.",
+        "death_text": "m_c was killed in their sleep by a snake that had snuck into camp.",
         "history_text": ["m_c was killed by a snake.", null],
         "cat_trait": null,
         "cat_skill": null,

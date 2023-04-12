@@ -12,7 +12,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was having a peaceful stroll outside of camp when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a fox.",
+        "death_text": "m_c was having a peaceful stroll outside of camp when they were attacked and killed by a fox.",
         "history_text": ["m_c was killed by a fox.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -22,7 +22,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was having a peaceful stroll outside of camp when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a badger.",
+        "death_text": "m_c was having a peaceful stroll outside of camp when they were attacked and killed by a badger.",
         "history_text": ["m_c was killed by a badger.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -32,7 +32,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was having a peaceful stroll outside of camp when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a dog.",
+        "death_text": "m_c was having a peaceful stroll outside of camp when they were attacked and killed by a dog.",
         "history_text": ["m_c was killed by a dog.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -82,7 +82,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c wandered out into the territory and was later found dead, a peaceful expression on {PRONOUN/m_c/poss} face.",
+        "death_text": "m_c wandered out into the territory and was later found dead, a peaceful expression on their face.",
         "history_text": ["m_c died of old age.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -92,7 +92,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was found stiff and curled up in {PRONOUN/m_c/poss} nest.  It seems {PRONOUN/m_c/subject} died in {PRONOUN/m_c/poss} sleep.",
+        "death_text": "m_c was found stiff and curled up in their nest.  It seems they died in their sleep.",
         "history_text": ["m_c died of old age.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -102,7 +102,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c faded more and more as the days went by, until one day {PRONOUN/m_c/subject} {VERB/m_c/were/was} found dead in {PRONOUN/m_c/subject} nest.",
+        "death_text": "m_c faded more and more as the days went by, until one day they were found dead in their nest.",
         "history_text": ["m_c died of old age.", null],
         "cat_trait": null,
         "cat_skill": null,

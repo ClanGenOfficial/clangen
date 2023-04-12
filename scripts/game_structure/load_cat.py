@@ -12,6 +12,8 @@ from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
 
+from json import JSONDecodeError
+
 def load_cats():
     try:
         json_load()
@@ -37,7 +39,7 @@ def json_load():
         game.switches['error_message'] = f'Can\t open {clan_cats_json_path}!'
         game.switches['traceback'] = e
         raise
-    except ujson.JSONDecodeError as e:
+    except JSONDecodeError as e:
         game.switches['error_message'] = f'{clan_cats_json_path} is malformed!'
         game.switches['traceback'] = e
         raise
@@ -217,7 +219,6 @@ def json_load():
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
-            #new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
             all_cats.append(new_cat)
         except KeyError as e:
             if "ID" in cat:

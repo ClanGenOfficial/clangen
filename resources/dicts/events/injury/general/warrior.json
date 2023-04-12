@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session and has been wincing all day.",
+        "event_text": "m_c overdid their last sparring session and has been wincing all day.",
         "history_text": [
             null,
             null,
@@ -133,7 +133,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session and has been wincing all day.",
+        "event_text": "m_c overdid their last sparring session and has been wincing all day.",
         "history_text": [
             null,
             null,
@@ -215,7 +215,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session and sprained a paw.",
+        "event_text": "m_c overdid their last sparring session and sprained a paw.",
         "history_text": [
             null,
             null,
@@ -666,7 +666,7 @@
             "scar",
             "MANTAIL"
         ],
-        "event_text": "m_c's tail was badly hurt by a fox while {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to follow r_c's orders.",
+        "event_text": "m_c's tail was badly hurt by a fox while they were trying to follow r_c's orders.",
         "history_text": [
             "m_c was scarred by a fox.",
             "m_c died from their wounds after fighting a fox.",

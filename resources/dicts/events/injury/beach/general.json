@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell, luckily {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
+        "event_text": "m_c was climbing a tree when they fell, luckily they were only bruised by the incident.",
         "history_text": [
             null,
             null,
@@ -68,7 +68,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was dragged out into the ocean by the tide and inhaled a lot of water before managing to get out, {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking ever since.",
+        "event_text": "m_c was dragged out into the ocean by the tide and inhaled a lot of water before managing to get out, they've been hacking ever since.",
         "history_text": [
             null,
             "m_c died after they were dragged into the ocean and inhaled too much water.",

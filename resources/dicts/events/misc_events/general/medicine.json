@@ -49,7 +49,7 @@
   {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
+        "event_text": "m_c always seems to have acc_plural stuck in their fur.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -59,7 +59,7 @@
     {
       "camp": "any",
       "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_leader"],
-      "event_text": "m_c speaks to r_c about an omen {PRONOUN/r_c/subject} saw while on patrol recently.",
+      "event_text": "m_c speaks to r_c about an omen they saw while on patrol recently.",
       "cat_trait": null,
       "cat_skill": ["omen sight"],
       "other_cat_trait": null,
@@ -77,7 +77,7 @@
   {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} clanmates while everyone sleeps.",
+    "event_text": "m_c walks into the dreams of their clanmates while everyone sleeps.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,
@@ -86,7 +86,7 @@
   {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c correctly warns the leader of an ambush thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
+    "event_text": "m_c correctly warns the leader of an ambush thanks to their clairvoyant nature.",
     "cat_trait": null,
     "cat_skill": ["clairvoyant"],
     "other_cat_trait": null,
@@ -95,7 +95,7 @@
   {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c correctly warns the leader of an ambush thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
+    "event_text": "m_c correctly warns the leader of an ambush thanks to their clairvoyant nature.",
     "cat_trait": null,
     "cat_skill": ["clairvoyant"],
     "other_cat_trait": null,
@@ -104,7 +104,7 @@
   {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
+    "event_text": "m_c spends their day communing with StarClan, attempting to figure out a recent prophecy.",
     "cat_trait": null,
     "cat_skill": ["prophet"],
     "other_cat_trait": null,

@@ -12,7 +12,7 @@
     {
         "camp": "any",
         "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
-        "death_text": "m_c was murdered.  r_c stands over {PRONOUN/m_c/object}, blood dripping from {PRONOUN/r_c/poss} pelt.",
+        "death_text": "m_c was murdered.  r_c stands over them, blood dripping from their pelt.",
         "history_text": ["m_c was murdered by r_c.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -43,7 +43,7 @@
     {
         "camp": "any",
         "tags": ["clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c saved a kit from a snake, but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
+        "death_text": "m_c saved a kit from a snake, but was bitten in the process. The venom killed them.",
         "history_text": ["m_c was killed by a snake while saving a kit.", null],
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
@@ -107,7 +107,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving {PRONOUN/m_c/object} deathberries.",
+        "death_text": "r_c killed m_c by giving them deathberries.",
         "history_text": ["m_c was killed when r_c gave them deathberries.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -118,7 +118,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving {PRONOUN/m_c/object} foxglove seeds.",
+        "death_text": "r_c killed m_c by giving them foxglove seeds.",
         "history_text": ["m_c was killed when r_c gave them foxglove seeds.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -129,7 +129,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving {PRONOUN/m_c/object} nightshade berries.",
+        "death_text": "r_c killed m_c by giving them nightshade berries.",
         "history_text": ["m_c was killed when r_c gave them nightshade berries.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -140,7 +140,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving {PRONOUN/m_c/object} water hemlock.",
+        "death_text": "r_c killed m_c by giving them water hemlock.",
         "history_text": ["m_c was killed when r_c gave them water hemlock.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -151,7 +151,7 @@
     {
         "camp": "any",
         "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by consciously giving {PRONOUN/m_c/object} the wrong herbs.",
+        "death_text": "r_c killed m_c by consciously giving them the wrong herbs.",
         "history_text": ["m_c was killed when r_c consciously gave them the wrong herbs.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -192,7 +192,7 @@
     {
         "camp": "any",
         "tags": ["multi_death", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c fell into the river and r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
+        "death_text": "m_c fell into the river and r_c drowned alongside m_c while trying to rescue them.",
         "history_text": ["m_c died from drowning.", "died from drowning"],
         "cat_trait": null,
         "cat_skill": null,

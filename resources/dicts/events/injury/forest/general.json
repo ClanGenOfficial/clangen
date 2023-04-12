@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell, luckily {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
+        "event_text": "m_c was climbing a tree when they fell, luckily they were only bruised by the incident.",
         "history_text": [
             null,
             null,
@@ -28,7 +28,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
+        "event_text": "m_c trips over an unseen rabbit hole, spraining their paw.",
         "history_text": [
             null,
             null,
@@ -48,7 +48,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
         "history_text": [
             null,
             null,
@@ -88,7 +88,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was moving some branches out of the way when {PRONOUN/m_c/subject} got a splinter.",
+        "event_text": "m_c was moving some branches out of the way when they got a splinter.",
         "history_text": [
             null,
             null,
@@ -127,7 +127,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been hacking ever since.",
+        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
         "history_text": [
             null,
             "m_c died after they fell in the river and inhaled too much water.",
@@ -214,7 +214,7 @@
             "scar",
             "BURNPAWS"
         ],
-        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/r_c/poss} grasp.",
+        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
         "history_text": [
             "m_c was scarred by a forest fire.",
             "m_c died from their burns.",
@@ -241,7 +241,7 @@
             "scar",
             "BURNBELLY"
         ],
-        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/r_c/poss} grasp.",
+        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
         "history_text": [
             "m_c was scarred by a forest fire.",
             "m_c died from their burns.",
