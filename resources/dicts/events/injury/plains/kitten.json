@@ -62,7 +62,7 @@
             "scar",
             "FROSTMITT"
         ],
-        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
+        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
         "history_text": [
             "m_c was permanently scarred by frostbite.",
             "m_c died from frostbite after sneaking out of camp.",

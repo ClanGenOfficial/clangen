@@ -7,7 +7,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('commit.txt', '.')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -22,8 +22,10 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
+a.datas += [ ('version.ini', './version.ini', 'DATA') ]
+a.datas += [ ('changelog.txt', './changelog.txt', 'DATA') ]
 a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
-
+a.datas += [ ('.itch.toml', './.itch.toml', 'DATA') ]
 
 exe = EXE(
     pyz,

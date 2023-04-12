@@ -142,6 +142,7 @@ class Game():
 
     # SETTINGS
     settings = {}
+    settings['mns open'] = False
     setting_lists = {}
 
     with open("resources/gamesettings.json", 'r') as read_file:
@@ -363,6 +364,7 @@ class Game():
                 "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
+                #"pronouns": inter_cat.pronouns,
                 "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
                 "backstory": inter_cat.backstory if inter_cat.backstory else None,

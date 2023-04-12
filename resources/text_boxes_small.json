@@ -184,6 +184,43 @@
             "size": "15"
         }
     },
+    "#text_box_current_version": {
+        "prototype": "#text_box",
+        "colours": {
+            "normal_text": "#222222"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "12"
+        }
+    },
+    "#update_popup_title": {
+        "prototype": "#text_box_30"
+    },
+    "#changelog_popup_title": {
+        "prototype": "#text_box",
+        "misc": {
+            "text_horiz_alignment": "center"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "20",
+            "bold": "1"
+        }
+    },
+    "#changelog_popup_subtitle": {
+        "prototype": "#text_box",
+        "misc": {
+            "text_horiz_alignment": "center"
+        },
+        "colours": {
+            "normal_text": "#222222"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "12"
+        }
+    },
     "#text_box_30_horizcenter": {
         "prototype": "#text_box_30",
         "misc": {
@@ -220,6 +257,12 @@
         "prototype": "#text_box_30",
         "misc": {
             "text_horiz_alignment": "left"
+        }
+    },
+	"#text_box_30_horizleft_light": {
+        "prototype": "#text_box_30_horizleft",
+        "colours": {
+            "normal_text": "#EFE5CE"
         }
     },
     "#text_box_30_horizleft_pad_10_10": {
