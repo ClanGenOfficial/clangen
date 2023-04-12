@@ -294,14 +294,17 @@ class Game():
                     ":")  # first part is setting name, second is value
                 # Turn value into right type (int types stay string and will be turned into int when needed)
                 # And put it into game settings
-                if parts[1] in ['True', 'True ', 'true', ' True']:
-                    self.settings[parts[0]] = True
-                elif parts[1] in ['False', 'False ', 'false', ' False']:
-                    self.settings[parts[0]] = False
-                elif parts[1] in ['None', 'None ', 'none', ' None']:
-                    self.settings[parts[0]] = None
-                else:
-                    self.settings[parts[0]] = parts[1]
+                try:
+                    if parts[1] in ['True', 'True ', 'true', ' True']:
+                        self.settings[parts[0]] = True
+                    elif parts[1] in ['False', 'False ', 'false', ' False']:
+                        self.settings[parts[0]] = False
+                    elif parts[1] in ['None', 'None ', 'none', ' None']:
+                        self.settings[parts[0]] = None
+                    else:
+                        self.settings[parts[0]] = parts[1]
+                except IndexError:
+                    print("error loading setting:", parts)
 
         self.switches['language'] = self.settings['language']
         self.switches['game_mode'] = self.settings['game_mode']
