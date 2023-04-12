@@ -164,6 +164,34 @@ class Cat():
         "master": (321, 321)
     }
 
+    default_pronouns = [
+        {
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1
+        },
+        {
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2
+        },
+        {
+            "subject": "he",
+            "object": "him",
+            "poss": "his",
+            "inposs": "his",
+            "self": "himself",
+            "conju": 2
+        }
+    ]
+
+
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -246,6 +274,7 @@ class Cat():
         self.relationships = {}
         self.mate = None
         self.previous_mates = []
+        self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
         self.example = example
         self.dead = False
@@ -416,6 +445,11 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
+                
+            """if self.genderalign in ["female", "trans female"]:
+                self.pronouns = [self.default_pronouns[1].copy()]
+            elif self.genderalign in ["male", "trans male"]:
+                self.pronouns = [self.default_pronouns[2].copy()]"""
 
             # setting up sprites that might not be correct
             if self.pelt is not None:
@@ -471,6 +505,7 @@ class Cat():
         else:
             biome = None
         # NAME
+        # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
             self.name = Name(status,
                              prefix,
@@ -480,9 +515,10 @@ class Cat():
                              self.pelt.name,
                              self.tortiepattern,
                              biome=biome,
-                             specsuffix_hidden=self.specsuffix_hidden)
+                             specsuffix_hidden=self.specsuffix_hidden,
+                             load_existing_name = loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
         # Sprite sizes
         self.sprite = None
