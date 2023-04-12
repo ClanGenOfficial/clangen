@@ -168,7 +168,7 @@ class Events():
                 ghost_names.append(str(ghost.name))
             insert = adjust_list_text(ghost_names)
 
-            if len(Cat.dead_cats) > 1:
+            if len(Cat.dead_cats) > 1 and game.clan.game_mode != 'classic':
                 event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
                         f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \

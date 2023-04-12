@@ -344,7 +344,7 @@
     "tags": ["border", "battle_injury", "scar", "BRIDGE", "reputation", "new_cat_apprentice"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
@@ -374,7 +374,7 @@
     "tags": ["fighting", "border", "new_cat_elder_loner", "no_new_cat2", "no_new_cat3", "disaster"],
     "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
     "decline_text": "Your patrol decides not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
             "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
@@ -444,7 +444,7 @@
     ],
     "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
     "decline_text": "The patrol decides to hunt elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "p_l hears r_c softly calling them through the bushes, and drops the idea of following mouse scent, hurrying to their mate's side. r_c, head poking into the nest's garden through a gap in the fense, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued.",
