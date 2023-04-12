@@ -6,7 +6,7 @@
     "tags": ["hunting", "fighting", "scar", "NECKBITE", "injury", "bite-wound", "clan_to_patrol", "respect", "rel_patrol", "medium_prey0", "medium_prey1", "large_prey2", "large_prey3"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -196,7 +196,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -319,7 +319,7 @@
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
@@ -447,7 +447,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 10,
+    "chance_of_success": 20,
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -692,7 +692,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 50,
     "success_text": [
         "The stocky gray vixen they track down smells of milk, and though she's near double r_c's weight and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes.",

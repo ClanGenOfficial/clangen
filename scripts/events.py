@@ -174,7 +174,7 @@ class Events():
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \
                         f"take them to their final resting place."
 
-                if len(ghost_names) > 2:
+                if len(ghost_names) > 2 and game.clan.game_mode != 'classic':
                     alive_cats = list(
                         filter(
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and

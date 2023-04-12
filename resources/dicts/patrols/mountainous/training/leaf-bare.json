@@ -7,7 +7,7 @@
     "tags": ["app_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail", "shivering", "injury"],
     "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
     "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
@@ -34,7 +34,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
@@ -57,7 +57,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
