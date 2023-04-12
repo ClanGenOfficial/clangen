@@ -4,7 +4,7 @@
         "tags": ["Greenleaf", "Newleaf", "Leaf-fall"],
         "death_text": "m_c lost a life after falling into a river.",
         "history_text": {
-            "lead_death": "fell into a river"
+            "lead_death": "fell into the river"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -90,7 +90,7 @@
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "no_body"],
         "death_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
         "history_text": {
-            "lead_death": "were swept away by a river"
+            "lead_death": "were swept away by the river"
         },
         "cat_trait": null,
         "cat_skill": null,
