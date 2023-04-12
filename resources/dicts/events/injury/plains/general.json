@@ -135,12 +135,10 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
-        "history_text": [
-            null,
-            "m_c died after they fell in the river and inhaled too much water.",
-            "fell into the river."
-        ],
+        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "history_text": {
+            "reg_death": "m_c died from water-inhalation after falling in the river."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
