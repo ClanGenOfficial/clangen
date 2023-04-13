@@ -6,7 +6,7 @@
         "tags": ["med_cat", "random_herbs", "respect", "trust", "platonic", "med_only", "no_app"],
         "intro_text": "p_l and r_c head out to look for herbs, discussing the latest news and taking advantage of the rains of leaf-bare.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
-        "chance_of_success": 80,
+        "chance_of_success": 70,
         "exp": 10,
         "success_text": [
                 "They have a good discussion while foraging among the dunes and manage to come up with several ideas to discuss with c_n's leadership.",
@@ -31,7 +31,7 @@
         "tags": ["random_herbs", "med_cat", "med_only", "platonic", "dislike", "respect"],
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
-        "chance_of_success": 80,
+        "chance_of_success": 70,
         "exp": 10,
         "success_text": [
                 "p_l and r_c decide to search on the normally barren scrublands, where recently fallen rain has brought the desert to life. As the sun rises in the sky, its usual heat is dulled by the welcome defense of the clouds, letting the medicine cats fetch the season's bounty.",

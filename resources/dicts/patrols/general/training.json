@@ -204,7 +204,7 @@
     "tags": ["warrior", "adult_stat", "apprentice", "comfort", "training"],
     "intro_text": "The pair find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "p_l smiles, inviting app1 to sit down. The apprentice is a little stiff at first, unsure how to act in front of the warrior, but that's actually what p_l wants to work on here. c_n contains cats of all ages, skills, and talents - it's important to work on being comfortable with everyone, just as important as working on respecting them. They're all c_n, after all.",
@@ -227,7 +227,7 @@
     "tags": ["warrior", "adult_stat", "apprentice", "platonic", "dislike", "comfort", "training"],
     "intro_text": "The pair find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "p_l smiles, inviting app1 to sit down. A little embarassed, app1 looks like they're going to object - but not, they're the only two cats around. They lie down, and p_l curls around them, settling down to ash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",

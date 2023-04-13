@@ -2423,7 +2423,7 @@
         "tags": ["hunting", "random_herbs", "respect", "warrior", "medium_prey","patrol_to_p_l", "dislike"],
         "intro_text": "The patrol going back to camp with a good haul of fish sees a pod of dolphins chattering at them.",
         "decline_text": "p_l bows their head and offers their apologies to the pod of dolphins but they will keep those fish for the fresh kill pile.",
-        "chance_of_success": 90,
+        "chance_of_success": 60,
         "exp": 5,
         "success_text": [
                "p_l offers the dolphins some of their fish catch. Good relations with the dolphins are more important than a few fish, they are surprised to see that they have offered a few soggy wet herbs back in return and they accept them with gratitude and grace.",
