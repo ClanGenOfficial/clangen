@@ -21,14 +21,14 @@
 		"interactions": [
 			"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
 			"m_c thinks r_c has a strange sense of humor.",
-			"m_c is frustrated that r_c won't take their actions more seriously.",
-			"m_c feels like r_c isn't taking their own personal health seriously."
+			"m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",
+			"m_c feels like r_c isn't taking {PRONOUN/r_c/poss} own personal health seriously."
 		]
 	},
 	{
 		"id": "admire_de_medium2",
 		"interactions": [
-			"m_c tried talking to r_c about r_c's behaviour, but it turned into a fight that someone else had to break up."
+			"m_c tried to bring r_c's behaviour up to them, but it turned into a fight that someone else had to break up."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"

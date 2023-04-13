@@ -184,13 +184,13 @@ class Scar_Events():
                 scar_given = specialty
                 event_string = random.choice(scar_gain_strings)
             else:
-                if (injury_name == "poisoned"):
+                if injury_name == "poisoned":
                     event_string = f"{cat.name} has recovered fully from the poison."
                 else:
                     event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
                 scar_given = None
         else:
-            if (injury_name == "poisoned"):
+            if injury_name == "poisoned":
                 event_string = f"{cat.name} has recovered fully from the poison."
             else:
                 event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."

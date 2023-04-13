@@ -17,16 +17,15 @@ import pygame
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from scripts.game_structure.game_essentials import game
+from scripts.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.cat.sprites import spriteSize
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -244,7 +243,7 @@ class Clan():
                               ([1170, 640], 'xy'), ([1272, 640], 'xy'),
                               ([1274, 640], 'xy'), ([1170, 740], 'xy'),
                               ([1272, 740], 'xy'), ([1470, 740], 'xy')],
-            "clearing place": [([358, 262], 'x'), ([528, 252], 'xy'),
+            "clearing place": [([360, 262], 'x'), ([528, 252], 'xy'),
                                ([584, 420], 'xy'), ([598, 592], 'xy'),
                                ([532, 694], 'xy'), ([522, 798], 'xy'),
                                ([566, 902], 'xy'), ([632, 698], 'xy'),
@@ -266,6 +265,42 @@ class Clan():
                             ([856, 1038], 'xy'), ([960, 1020], 'xy'),
                             ([628, 1140], 'xy'), ([730, 1140], 'xy'),
                             ([832, 1140], 'xy')]
+        },
+        "Mountainouscamp3": {
+            'leader den': (956, 191),
+            'medicine den': (70, 300),
+            'nursery': (1378, 350),
+            'clearing': (799, 500),
+            'apprentice den': (77, 825),
+            'warrior den': (1226, 786),
+            'elder den': (672, 888),
+            "leader place": [([1049, 514], 'xy'), ([797, 211], 'xy'),
+                             ([678, 272], 'xy'), ([817, 315], 'xy')],
+            "medicine place": [([358, 356], ''), ([159, 510], 'xy'),
+                               ([401, 594], 'xy'),
+                               ([331, 487], 'xy'), ([471, 475], 'xy'),
+                               ([269, 606], '')],
+            "nursery place": [([1237, 288], 'x'),
+                              ([1188, 502], 'xy'), ([1299, 489], 'xy'),
+                              ([1401, 463], 'xy'), ([1126, 637], 'y'),
+                              ([1243, 598], 'xy'), ([1245, 698], 'xy'),
+                              ([1344, 627], 'xy'), ([1444, 672], 'xy')],
+            "clearing place": [([643, 534], 'x'), ([764, 571], 'xy'),
+                               ([657, 641], 'xy'), ([827, 690], 'xy'),
+                               ([971, 665], 'xy'), ([719, 747], 'xy'),
+                               ([924, 807], '')],
+            'apprentice place': [([114, 842], 'xy'), ([235, 874], 'xy'),
+                                 ([344, 868], 'xy'), ([135, 950], 'xy'),
+                                 ([159, 1047], 'xy'), ([282, 938], 'xy'),
+                                 ([534, 895], 'xy')],
+            'warrior place': [([1116, 903], 'y'), ([1254, 868], 'xy'),
+                              ([1364, 924], 'xy'), ([1469, 844], ''),
+                              ([1221, 1014], 'xy'), ([1321, 1026], 'xy'),
+                              ([1426, 1020], 'xy'), ([1124, 1094], 'xy'),
+                              ([1245, 1133], 'xy')],
+            'elder place': [([727, 979], 'xy'), ([616, 1032], 'xy'),
+                            ([786, 1083], 'xy'), ([534, 1137], 'xy'),
+                            ([663, 1153], 'xy'), ([842, 1190], 'xy')]
         },
         "Beachcamp1": {
             'leader den': (798, 188),
@@ -353,7 +388,7 @@ class Clan():
                               ([1144, 624], 'xy'), ([1042, 674], 'xy'),
                               ([1144, 728], 'xy'), ([1248, 698], 'xy'),
                               ([1340, 670], 'xy')],
-            'clearing place': [([252, 176], 'xy'), ([1190, 30], 'x'), 
+            'clearing place': [([330, 270], 'xy'), ([1190, 30], 'x'), 
                                ([534, 418], 'y'), ([540, 520], 'y'),
                                ([524, 624], 'xy'), ([530, 726], 'xy'),
                                ([574, 828], 'xy'), ([640, 588], 'xy'),
@@ -561,8 +596,6 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
-            if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
-                cat.suffix = ''
 
     def add_to_darkforest(self, cat):  # Same as add_cat
         """
@@ -679,7 +712,10 @@ class Clan():
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
             "mediated": game.mediated,
-            "starting_season": self.starting_season
+            "starting_season": self.starting_season,
+            "version_name": SAVE_VERSION_NUMBER,
+            "version_commit": get_version_info().version_number,
+            "source_build": get_version_info().is_source_build
         }
 
         # LEADER DATA
@@ -751,9 +787,11 @@ class Clan():
         """
         TODO: DOCS
         """
+        
+        version_info = None
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'clan.json'):
-            self.load_clan_json()
+            version_info = self.load_clan_json()
         elif os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                             'clan.txt'):
             self.load_clan_txt()
@@ -762,6 +800,8 @@ class Clan():
                 'error_message'] = "There was an error loading the clan.json"
             
         self.load_clan_settings()
+        
+        return version_info
 
     def load_clan_txt(self):
         """
@@ -1028,6 +1068,13 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
+        
+        # Return Version Info. 
+        return {
+            "version_name": clan_data.get("version_name"),
+            "version_commit": clan_data.get("version_commit"),
+            "source_build": clan_data.get("source_build")
+        }
 
     def load_clan_settings(self):  
         if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):
@@ -1170,7 +1217,8 @@ class Clan():
         if not clan.name:
             return
         file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
-
+        if not os.path.isdir(f'{get_save_dir()}/{clan.name}/disasters'):
+            os.mkdir(f'{get_save_dir()}/{clan.name}/disasters')
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1290,7 +1338,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(self._reputation + a)
+        self._reputation = int(a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:
@@ -1341,7 +1389,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((50, 50))
+        white = pygame.Surface((spriteSize, spriteSize))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items

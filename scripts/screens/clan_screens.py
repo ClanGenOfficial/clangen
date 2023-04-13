@@ -47,7 +47,9 @@ class ClanScreen(Screens):
                 screen.blit(self.leaffall_bg, (0, 0))
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
@@ -81,7 +83,7 @@ class ClanScreen(Screens):
             self.layout = game.clan.layouts["default"]
 
         self.choose_cat_positions()
-
+        
         self.set_disabled_menu_buttons(["clan_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
@@ -109,7 +111,7 @@ class ClanScreen(Screens):
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
-
+                    
         # Den Labels
         # Redo the locations, so that it uses layout on the clan page
         self.warrior_den_label = pygame_gui.elements.UIImage(
@@ -337,6 +339,7 @@ class ClanScreen(Screens):
             elif Cat.all_cats[x].status == "leader":
                 game.clan.leader.placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                   [1, 200, 1, 1, 1, 1, 1])
+                                                                                  
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
@@ -367,7 +370,6 @@ class ClanScreen(Screens):
             self.leader_den_label.hide()
             self.med_den_label.hide()
             self.elder_den_label.hide()
-
 
 class StarClanScreen(Screens):
     list_page = 1
@@ -501,8 +503,8 @@ class StarClanScreen(Screens):
     def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and\
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -603,7 +605,6 @@ class StarClanScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -679,6 +680,7 @@ class StarClanScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        # Check if window needs to be moved down for extra UI
         bg = self.starclan_bg
 
         # Only update the positions if the search text changes
@@ -688,7 +690,7 @@ class StarClanScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -721,7 +723,7 @@ class DFScreen(Screens):
             (screen_x, screen_y))
         self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (int(456 / 1600 * screen_x),
-                                                                                   int(68 / 1400 * screen_x)))
+                                                                                   int(68 / 1400 * screen_y)))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (int(380 / 1600 * screen_x),
                                                                                           int(68 / 1400 * screen_y)))
@@ -833,7 +835,7 @@ class DFScreen(Screens):
         self.dead_cats = [game.clan.instructor] if game.clan.instructor.df else []
 
         for the_cat in Cat.all_cats_list:
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df and \
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and the_cat.df and \
                     not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
@@ -934,7 +936,6 @@ class DFScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -1010,6 +1011,7 @@ class DFScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        
         bg = self.df_bg
         screen.blit(bg, (0, 0))
 
@@ -1020,7 +1022,7 @@ class DFScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -1282,7 +1284,6 @@ class ListScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -1357,13 +1358,12 @@ class ListScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
-
         # Only update the postions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270/ 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -1382,7 +1382,7 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
-                                                     scale(pygame.Rect((60, 220), (800, 80))),
+                                                     scale(pygame.Rect((60, 280), (800, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizleft")
                                                      , manager=MANAGER)
 
@@ -1393,7 +1393,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1430, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 380), (1430, 1000)))
                                                                          , manager=MANAGER)
         
         self.ranks_boxes = []

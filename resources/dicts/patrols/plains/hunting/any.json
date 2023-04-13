@@ -61,7 +61,7 @@
         ],
         "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its leaves circling slowly in the wind.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
@@ -85,7 +85,7 @@
         ],
         "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twolegs have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
         "decline_text": "The patrol decides to hunt elsewhere",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "exp": 10,
         "success_text": [
             "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable fresh-kill.  They manage to find some carcasses worth taking.",
@@ -120,7 +120,7 @@
         ],
         "intro_text": "The patrol finds a small burrow in the ground with a strange scent. They hesitate, unsure if this is worth checking.",
         "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "The patrol flushes a gopher out of the burrow! More fresh-kill!",
@@ -507,7 +507,7 @@
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 10,
         "success_text": [
             "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -554,7 +554,7 @@
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -648,7 +648,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected.",
@@ -708,7 +708,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
@@ -768,7 +768,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected.",
@@ -828,7 +828,7 @@
         ],
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -891,7 +891,7 @@
         ],
         "intro_text": "app1 decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -949,7 +949,7 @@
         ],
         "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -1014,7 +1014,7 @@
         ],
         "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1068,7 +1068,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
         "decline_text": "Turning their nose up at the temptation, they continue on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
@@ -1123,7 +1123,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
         "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
@@ -1181,15 +1181,15 @@
             "hunting",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
@@ -1238,20 +1238,20 @@
             "cruel_season",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": [
@@ -1294,20 +1294,20 @@
             "hunting",
             "large_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
         ],
         "fail_text": [
             null,
             null,
-            "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
+            "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": [
@@ -1351,20 +1351,20 @@
             "cruel_season",
             "large_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 30,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+            "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": [
@@ -1406,7 +1406,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
@@ -1457,7 +1457,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the fresh-kill pile.",
@@ -1512,7 +1512,7 @@
         ],
         "intro_text": "As r_c jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
         "decline_text": "Not today, thank you - they'll go back to camp.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
@@ -1670,7 +1670,7 @@
         ],
         "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
         "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
-        "chance_of_success": 30,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",

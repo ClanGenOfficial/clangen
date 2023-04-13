@@ -15,7 +15,7 @@ class OutsideClanScreen(Screens):
     list_page = 1  # Holds the current page
     display_cats = []  # Holds the cat sprite objects
     cat_names = []  # Holds the cat name text-box objects
-
+    
     previous_search_text = ""
 
     def load_images(self):
@@ -126,6 +126,7 @@ class OutsideClanScreen(Screens):
                 self.living_cats.append(the_cat)
 
     def screen_switches(self):
+        
         # Determine the living, non-exiled cats.
         cat_profiles()
         self.get_living_cats()
@@ -239,7 +240,6 @@ class OutsideClanScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
@@ -328,6 +328,11 @@ class UnknownResScreen(Screens):
     display_cats = []
     cat_names = []
     previous_search_text = ""
+    
+    if game.settings['moons and seasons']:
+        move_for_mns = 50
+    else:
+        move_for_mns = 0    
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -459,16 +464,15 @@ class UnknownResScreen(Screens):
         self.dead_cats = []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.faded \
-                    and (the_cat.outside or the_cat.exiled):
+            and (the_cat.outside):
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
-        
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button")
@@ -556,7 +560,6 @@ class UnknownResScreen(Screens):
 
     def update_page(self):
         """Run this function when page changes."""
-
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:

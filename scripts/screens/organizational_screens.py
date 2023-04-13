@@ -21,22 +21,25 @@ from html import escape
 
 from .base_screens import Screens
 
+from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
-from ..datadir import get_data_dir
+from ..datadir import get_data_dir, get_cache_dir
+from ..update import has_update, UpdateChannel, get_latest_version_number
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
+
+from ..version import get_version_info
 
 logger = logging.getLogger(__name__)
+has_checked_for_update = False
+update_available = False
 
 class StartScreen(Screens):
     """
@@ -84,6 +87,8 @@ class StartScreen(Screens):
                 self.open_data_directory_button.kill()
                 game.switches['error_message'] = ''
                 game.switches['traceback'] = ''
+            elif event.ui_element == self.update_button:
+                UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
@@ -105,6 +110,7 @@ class StartScreen(Screens):
         self.settings_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
+        self.update_button.kill()
         self.quit.kill()
         self.closebtn.kill()
 
@@ -192,6 +198,44 @@ class StartScreen(Screens):
         self.open_data_directory_button.hide()
         self.closebtn.hide()
 
+        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (382.5, 75))), "",
+                                             object_id="#update_button", manager=MANAGER)
+        self.update_button.visible = 0
+
+        try:
+            global has_checked_for_update
+            global update_available
+            if not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and game.settings['check_for_updates'] and not has_checked_for_update:
+                if has_update(UpdateChannel(get_version_info().release_channel)):
+                    update_available = True
+                    show_popup = True
+                    if os.path.exists(f"{get_cache_dir()}/suppress_update_popup"):
+                        with open(f"{get_cache_dir()}/suppress_update_popup", 'r') as read_file:
+                            if read_file.readline() == get_latest_version_number():
+                                show_popup = False
+
+                    if show_popup:
+                        UpdateAvailablePopup(game.switches['last_screen'], show_checkbox=True)
+
+                has_checked_for_update = True
+
+            if update_available:
+                self.update_button.visible = 1
+        except (ConnectionError, HTTPError):
+            logger.exception("Failed to check for update")
+
+        if game.settings['show_changelog']:
+            show_changelog = True
+            if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
+                with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
+                    if read_file.readline() == get_version_info().version_number:
+                        show_changelog = False
+
+            if show_changelog:
+                with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
+                    write_file.write(get_version_info().version_number)
+                ChangelogPopup(game.switches['last_screen'])
+
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
             scale(pygame.Rect((100, 1244), (1400, 60))),
@@ -217,12 +261,16 @@ class StartScreen(Screens):
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'])))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches['traceback'].__traceback__)))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
+
+            if get_version_info().is_sandboxed:
+                self.open_data_directory_button.hide()
+
             self.closebtn.show()
 
         if game.clan is not None:
@@ -456,13 +504,18 @@ class SettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
+    # contains the tooltips for contributors
+    tooltip = {}
+
     info_text = ""
+    tooltip_text = []
     with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
     for string in credits_text["text"]:
         if string == "{contrib}":
             for contributor in credits_text["contrib"]:
                 info_text += contributor + "<br>"
+                tooltip_text.append(credits_text["contrib"][contributor])
         else:
             info_text += string
             info_text += "<br>"
@@ -529,7 +582,6 @@ class SettingsScreen(Screens):
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
-                    self.refresh_checkboxes()
                     if self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
                         if game.settings['discord']:
                             print("Starting Discord RPC")
@@ -540,6 +592,24 @@ class SettingsScreen(Screens):
                         else:
                             print("Stopping Discord RPC")
                             game.rpc.close()
+                    
+                    opens = {
+                        "general": self.open_general_settings,
+                        "language": self.open_lang_settings,
+                        "relation": self.open_relation_settings
+                    }
+                    
+                    scroll_pos = None
+                    if "container_general" in self.checkboxes_text and \
+                            self.checkboxes_text["container_general"].vert_scroll_bar:
+                        scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
+                    
+                    if self.sub_menu in opens:
+                        opens[self.sub_menu]()
+                        
+                    if scroll_pos is not None:
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
+                        
                     break
 
     def screen_switches(self):
@@ -591,6 +661,9 @@ class SettingsScreen(Screens):
             tool_tip_text="Opens the data directory. "
             "This is where save files "
             "and logs are stored.")
+
+        if get_version_info().is_sandboxed:
+            self.open_data_directory_button.hide()
 
         self.update_save_button()
         self.main_menu_button = UIImageButton(scale(
@@ -720,11 +793,44 @@ class SettingsScreen(Screens):
         self.sub_menu = 'info'
         self.save_settings_button.hide()
 
+        self.checkboxes_text["info_container"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((200, 300), (1200, 1000))),
+            manager=MANAGER
+        )
+
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((200, 300), (1200, 1000))),
+            scale(pygame.Rect((0, 0), (1200, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            container=self.checkboxes_text["info_container"],
             manager=MANAGER)
+
+        self.checkboxes_text['info_text_box'].disable()
+
+        i = 0
+        y_pos = 731
+        for tooltip in self.tooltip_text:
+            if not tooltip:
+                self.tooltip[f'tip{i}'] = UIImageButton(
+                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    "",
+                    object_id="#blank_button",
+                    container=self.checkboxes_text["info_container"],
+                    manager=MANAGER,
+                ),
+            else:
+                self.tooltip[f'tip{i}'] = UIImageButton(
+                    scale(pygame.Rect((400, i * 56 + y_pos), (400, 56))),
+                    "",
+                    object_id="#blank_button",
+                    container=self.checkboxes_text["info_container"],
+                    manager=MANAGER,
+                    tool_tip_text=tooltip
+                ),
+
+            i += 1
+        self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
+            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""

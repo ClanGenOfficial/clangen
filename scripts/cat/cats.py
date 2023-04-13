@@ -8,14 +8,10 @@ import itertools
 from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 from .pelts import describe_appearance
 from .names import Name
-from .thoughts import get_thoughts
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -33,10 +29,10 @@ import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
 from scripts.game_structure.game_essentials import game, screen
-from scripts.cat.thoughts import get_thoughts
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
+from .thoughts import Thoughts
 
 
 class Cat():
@@ -135,11 +131,13 @@ class Cat():
     }
 
     backstories = [
-        'clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2',
-        'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
-        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced',
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
-        "guided3", "guided4"
+        "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
+        "kittypet1", "kittypet2", "kittypet3", "kittypet4", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2",
+        "abandoned3", "abandoned4", "medicine_cat", "otherclan", 'otherclan1', "otherclan2", "otherclan3",
+        "ostracized_warrior", "disgraced", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
+        "tragedy_suvivor", "tragedy_survivor2", "tragedy_survivor4", "tragedy_survivor4", "orphaned", "orphaned2",
+        "orphaned3", "orphaned4", "orphaned5", "orphaned6" "wandering_healer1", "wandering_healer2", "guided1",
+        "guided2", "guided3", "guided4", "outsider", "outsider2", "outsider3"
     ]
     backstory_categories = {
         'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
@@ -150,7 +148,7 @@ class Cat():
                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
         'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
-        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5'],
+        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5', 'orphaned6'],
         'abandoned_backstories': ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']
     }
 
@@ -165,6 +163,34 @@ class Cat():
         "expert": (241, 320),
         "master": (321, 321)
     }
+
+    default_pronouns = [
+        {
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1
+        },
+        {
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2
+        },
+        {
+            "subject": "he",
+            "object": "him",
+            "poss": "his",
+            "inposs": "his",
+            "self": "himself",
+            "conju": 2
+        }
+    ]
+
 
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
@@ -248,6 +274,7 @@ class Cat():
         self.relationships = {}
         self.mate = None
         self.previous_mates = []
+        self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
         self.example = example
         self.dead = False
@@ -418,6 +445,11 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
+                
+            """if self.genderalign in ["female", "trans female"]:
+                self.pronouns = [self.default_pronouns[1].copy()]
+            elif self.genderalign in ["male", "trans male"]:
+                self.pronouns = [self.default_pronouns[2].copy()]"""
 
             # setting up sprites that might not be correct
             if self.pelt is not None:
@@ -473,6 +505,7 @@ class Cat():
         else:
             biome = None
         # NAME
+        # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
             self.name = Name(status,
                              prefix,
@@ -482,9 +515,10 @@ class Cat():
                              self.pelt.name,
                              self.tortiepattern,
                              biome=biome,
-                             specsuffix_hidden=self.specsuffix_hidden)
+                             specsuffix_hidden=self.specsuffix_hidden,
+                             load_existing_name = loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
         # Sprite sizes
         self.sprite = None
@@ -564,7 +598,7 @@ class Cat():
         if game.clan.game_mode != 'classic':
             self.grief(body)
 
-        if not self.outside or self.exiled:
+        if not self.outside:
             Cat.dead_cats.append(self)
 
         return text
@@ -718,7 +752,7 @@ class Cat():
 
         elif self.status == 'deputy':
             self.outside = True
-            self.status = 'warrior'
+            #self.status = 'warrior'
             game.clan.deputy.outside = True
         else:
             self.outside = True
@@ -734,21 +768,32 @@ class Cat():
 
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
-            self.status = 'warrior'
-        elif self.status == 'apprentice' and self.moons >= 12:
+        elif self.status == 'apprentice' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 12:
+            
+        elif self.status == 'kitten' and self.moons >= 15:
             self.status_change('warrior')
+            self.update_skill()
+            self.update_traits()
+            self.experience = max(self.experience_levels_range["prepared"][0], self.experience)
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
+            self.update_skill()
+            self.update_traits()
+            
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
@@ -781,7 +826,7 @@ class Cat():
         if len(names) > 0:
             event_text = "This text should not appear, script cat.py function add_to_clan."
             if len(names) > 2:
-                event_text = f"{', '.join(names[0:-1])}, and {names[-1]}"
+                event_text = f"{', '.join([str(i) for i in names[0:-1]])}, and {names[-1]}"
             elif len(names) == 2:
                 event_text = f"{names[0]} and {names[1]}"
             else:
@@ -820,7 +865,6 @@ class Cat():
             self.update_mentor()
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -847,7 +891,6 @@ class Cat():
             self.retired = True
 
             if old_status == 'leader':
-                game.clan.leader_lives = 0
                 self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -1032,23 +1075,64 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
+        game_mode = game.switches['game_mode']
+        biome = game.switches['biome']
+        camp = game.switches['camp_bg']
+        dead_chance = random.getrandbits(4)
+        try:
+            season = game.clan.current_season
+        except:
+            season = None
 
+        # this figures out where the cat is
+        where_kitty = None
+        if not self.dead and not self.outside:
+            where_kitty = "inside"
+        elif self.dead and not self.df and not self.outside:
+            where_kitty = 'starclan'
+        elif self.dead and self.df:
+            where_kitty = 'hell'
+        elif self.dead and self.outside:
+            where_kitty = 'UR'
+        elif not self.dead and self.outside:
+            where_kitty = 'outside'
         # get other cat
         i = 0
-        while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner']):
-            other_cat = random.choice(list(all_cats.keys()))
-            i += 1
-            if i > 100:
-                other_cat = None
-                break
+        # for cats inside the clan
+        if where_kitty == 'inside':
+            while other_cat == self.ID and len(all_cats) > 1 \
+            or (all_cats.get(other_cat).dead and dead_chance != 1) \
+            or (other_cat not in self.relationships):
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
+        # for dead cats
+        elif where_kitty in ['starclan', 'hell', 'UR']:
+            while other_cat == self.ID and len(all_cats) > 1:
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
+        # for cats currently outside
+        # it appears as for now, kittypets and loners can only think about outsider cats
+        elif where_kitty == 'outside':
+            while other_cat == self.ID and len(all_cats) > 1\
+            or (other_cat not in self.relationships):
+                '''or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):'''
+                other_cat = choice(list(all_cats.keys()))
+                i += 1
+                if i > 100:
+                    other_cat = None
+                    break
 
         other_cat = all_cats.get(other_cat)
 
-        # get possible thoughts
-        thought_possibilities = get_thoughts(self, other_cat)
-        chosen_thought = random.choice(thought_possibilities)
-
+        # get chosen thought
+        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
+        
         # insert name if it is needed
         if "r_c" in chosen_thought:
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
@@ -2069,12 +2153,8 @@ class Cat():
         # if the cat has a mate, they are not open for a new mate
         if for_patrol:
             if self.mate or other_cat.mate:
-                if not for_love_interest:
+                if not for_love_interest or not affair:
                     return False
-                elif not affair:
-                    return False
-                else:
-                    return True
         else:
             if self.mate or other_cat.mate and not for_love_interest:
                 return False
@@ -2118,7 +2198,7 @@ class Cat():
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                 return False
 
-        if abs(self.moons - other_cat.moons) > 40:
+        if self.age != other_cat.age and abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True

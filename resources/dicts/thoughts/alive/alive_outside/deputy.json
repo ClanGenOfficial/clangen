@@ -1,0 +1,14 @@
+[
+    {
+        "id": "lost_deputy_thoughts",
+        "thoughts": [
+            "Wonders if they are still the deputy",
+            "Wonders how the patrols are currently organized without them",
+            "Feels sad by the thought of being replaced",
+            "Is wondering if they'll still remain deputy after returning"
+        ],
+        "main_status_constraint": [
+            "deputy"
+        ]
+    }
+]

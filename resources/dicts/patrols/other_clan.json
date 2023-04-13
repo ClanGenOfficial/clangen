@@ -6,7 +6,7 @@
     "tags": ["border", "no_leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
     "decline_text": "Your patrol decides to avoid the other Clan cats.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
@@ -36,7 +36,7 @@
     "tags": ["border", "no_leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
     "decline_text": "Your patrol decides to avoid the other Clan cats.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
@@ -66,7 +66,7 @@
     "tags": ["otherclan_nochangesuccess","border", "other_clan", "hunting", "scar", "LEGBITE", "battle_injury", "small_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different Clan's territory.",
     "decline_text": "Your patrol decides that one rabbit isn't worth making an enemy.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
@@ -98,7 +98,7 @@
     "tags": ["border", "leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
     "decline_text": "Your patrol decides to avoid the other Clan cats.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leader from o_c_n gives p_l a respectful nod, which they return. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
@@ -128,7 +128,7 @@
     "tags": ["border", "leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
     "decline_text": "Your patrol decides to avoid the other Clan cats.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leader from o_c_n gives p_l a respectful nod, which they return. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
@@ -185,7 +185,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "torn pelt", "injury", "scar", "NORIGHTEAR", "no_leader"],
     "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
     "decline_text": "p_l decides that it isn't important.  Maybe an apprentice simply lost their way.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
     "After poking around a bit, your patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l understands it was an honest mistake, they still lecture the apprentice on the importance of respecting border lines.",

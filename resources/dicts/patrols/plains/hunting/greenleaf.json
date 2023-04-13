@@ -25,8 +25,6 @@
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "This cat got heat exhaustion while on a patrol."
         ]
@@ -42,7 +40,7 @@
             "LEFTEAR",
             "torn ear"
         ],
-        "intro_text": "As the patrol wanders near a thunderpath, they watch Twolegs throw something from a monster. Intrigued, they wander over.",
+        "intro_text": "As the patrol wander near a Thunderpath, they watch Twolegs throw something from a monster. Intrigued, they wander over.",
         "decline_text": "The patrol decides to avoid the Twoleg object.",
         "chance_of_success": 50,
         "exp": 10,
@@ -63,9 +61,7 @@
             "extremely smart"
         ],
         "min_cats": 1,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafscavenge1",
@@ -84,7 +80,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -123,8 +119,6 @@
         ],
         "min_cats": 2,
         "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight.",
             null
@@ -148,7 +142,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -187,8 +181,6 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight."
         ]
@@ -247,8 +239,6 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a solo fox fight.",
             "r_c fell in a solo battle with a fox.",
@@ -272,7 +262,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -310,8 +300,6 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight."
         ]
@@ -371,8 +359,6 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a solo fight with a vixen.",
             "r_c fell in a solo battle with a vixen.",
@@ -436,8 +422,6 @@
         ],
         "min_cats": 2,
         "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight.",
             "r_c fell in battle with a fox.",
@@ -460,7 +444,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 30,
         "success_text": [
             "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
@@ -483,8 +467,6 @@
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c was marked by a fight with a swift fox vixen."
         ]
@@ -527,8 +509,6 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c was marked by a fight with a swift fox vixen."
         ]
@@ -546,7 +526,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
@@ -584,9 +564,7 @@
             "shameless"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafscavenge2",
@@ -604,7 +582,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
@@ -647,8 +625,6 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from fighting with a swift fox.",
             "While scavenging alone, r_c was killed by a predator they didn't see.",
@@ -682,9 +658,7 @@
             "fantastic hunter"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_greenleaf_soloappsquirrel1",
@@ -708,9 +682,7 @@
             "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed."
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_greenleaf_mentorsquirrel1",
@@ -736,9 +708,7 @@
             "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in their excitement, app1 rustles the grass a little too hard; the squirrel shrieks at them and vanishes into the burrow."
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 2
     },
     {
         "patrol_id": "pln_hunt_greenleaf_squirrel_burrowbusiness1",
@@ -777,8 +747,6 @@
         ],
         "min_cats": 3,
         "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred as an apprentice by an angry ground squirrel."
         ]
@@ -813,9 +781,7 @@
             "fantastic hunter"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_greenleaf_solomouse1",
@@ -844,9 +810,7 @@
             "fantastic hunter"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_greenleaf_soloappmouse1",
@@ -869,9 +833,7 @@
             "Your patrol narrowly misses the mouse."
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_greenleaf_mentormouse1",
@@ -897,9 +859,7 @@
             "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 2
     },
     {
         "patrol_id": "pln_hunt_greenleaf_mice_appshowoff1",
@@ -937,9 +897,7 @@
             "troublesome"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_greenleaf_groupmice1",
@@ -971,8 +929,6 @@
             "fantastic hunter"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     }
 ]

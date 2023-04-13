@@ -5,7 +5,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     add_children_to_cat,
-    add_siblings_to_cat, event_text_adjust
+    add_siblings_to_cat, 
+    event_text_adjust
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -14,10 +15,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.names import names, Name
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 
 class Pregnancy_Events():
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
@@ -136,12 +134,11 @@ class Pregnancy_Events():
                     elif average_trust >= 35:
                         chance += 13
                 else:
-                    chance = int(200/living_cats) + 2
+                    chance = int(75/living_cats) + 2
 
-                old_male = False
-                if cat.gender == 'male' and cat.age == 'elder':
+                if cat.gender == 'male' and cat.age == 'senior':
                     chance = int(chance / 2)
-                elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'elder':
+                elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'senior':
                     chance = int(chance / 2)
 
             else:
@@ -368,13 +365,15 @@ class Pregnancy_Events():
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if clan.game_mode != 'classic':
+        if clan.game_mode != 'classic' and not cat.dead: 
+            #If they are died in childbirth above, all condition are cleared anyway. 
             try:
                 cat.injuries.pop("pregnant")
             except:
                 print("Is this an old save? Your cat didn't have the pregnant condition!")
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
+        
         print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
