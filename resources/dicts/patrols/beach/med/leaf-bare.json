@@ -114,7 +114,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "cold_injury", "scar", "FROSTFACE", "herb", "blackberry", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 10,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can. The patrol sees their stress, and gathers around to support them.",
@@ -288,7 +288,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 10,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",

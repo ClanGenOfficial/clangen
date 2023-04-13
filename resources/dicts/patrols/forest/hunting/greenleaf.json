@@ -88,7 +88,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -291,7 +291,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
@@ -420,7 +420,7 @@
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
@@ -791,7 +791,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 50,
     "success_text": [
         "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",

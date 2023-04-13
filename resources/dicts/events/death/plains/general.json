@@ -22,7 +22,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was buried alive when a burrow collapsed on {PRONOUN/m_c/object}.",
+        "death_text": "m_c was buried alive when a burrow collapsed on them.",
         "history_text": ["m_c was buried alive by a collapsing burrow.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -62,7 +62,7 @@
     {
         "camp": "any",
         "tags": ["Leaf-bare"],
-        "death_text": "m_c was walking on the ice when the ice cracked and {PRONOUN/m_c/subject} fell in.",
+        "death_text": "m_c was walking on the ice when the ice cracked and they fell in.",
         "history_text": ["m_c froze to death after falling through ice.", null],
         "cat_trait": null,
         "cat_skill": null,

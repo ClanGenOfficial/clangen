@@ -18,7 +18,7 @@
     ],
     "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
     "decline_text": "They decide to turn back and wait until the snow dies down.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "Despite the snow, the patrol manages to hunt successfully, finding mice underneath the leaf litter. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
@@ -109,7 +109,7 @@
     ],
     "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
     "decline_text": "They decide to turn back and wait until the snow dies down.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat under some evergreen underbrush and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
@@ -368,7 +368,7 @@
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",

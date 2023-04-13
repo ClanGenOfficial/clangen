@@ -2,7 +2,7 @@ import random
 from random import choice
 from scripts.event_class import Single_Event
 
-from scripts.utility import get_personality_compatibility, process_text
+from scripts.utility import get_personality_compatibility
 from scripts.game_structure.game_essentials import game
 from scripts.cat_relations.interaction import (
     Single_Interaction, 
@@ -137,12 +137,17 @@ class Relationship():
                 
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
+
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = self.adjust_interaction_string(interaction_str)
+        interaction_str = self.prepare_text(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -156,20 +161,8 @@ class Relationship():
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+            interaction_str, relevant_event_tabs, [self.cat_to.ID, self.cat_from.ID]
         ))
-
-    def adjust_interaction_string(self, string):
-
-        cat_dict = {
-            "m_c": (str(self.cat_from.name), choice(self.cat_to.pronouns)),
-            "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
-        }
-
-        return process_text(string, cat_dict)
-
-
-
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
@@ -211,7 +204,7 @@ class Relationship():
 
             Parameters
             ----------
-            in_de_crease : list
+            in_de_crease : str
                 if the relationship value is increasing or decreasing the value
             intensity : str
                 the intensity of the affect
@@ -374,7 +367,7 @@ class Relationship():
             season : str
                 current season of the clan
             game_mode : str
-				game mode of the clan
+                game mode of the clan
 
             Returns
             -------
@@ -389,11 +382,11 @@ class Relationship():
             return filtered
 
         for interact in interactions:
-            in_tags = list(filter(lambda biome: biome not in _biome, interact.biome))
+            in_tags = [i for i in interact.biome if i not in _biome]
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season not in _season, interact.season))
+            in_tags = [i for i in interact.season if i not in _season]
             if len(in_tags) > 0:
                 continue
 
@@ -412,6 +405,12 @@ class Relationship():
 
         return filtered
 
+
+    def prepare_text(self, text: str) -> str:
+        """Prep the text based of the amount of cats and the assigned abbreviations."""
+        text = text.replace("m_c", str(self.cat_from.name))
+        text = text.replace("r_c", str(self.cat_to.name))
+        return text
 
     # ---------------------------------------------------------------------------- #
     #                            complex value addition                            #

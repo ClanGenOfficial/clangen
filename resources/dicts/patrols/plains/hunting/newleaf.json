@@ -17,7 +17,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
@@ -389,7 +389,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 30,
         "success_text": [
             "Anticipating the coming greenleaf, this swift fox is checking for a suitable burrow for her litter. And that burrow will not be in c_n's territory. The patrol makes that clear, screaming and charging at her until the fox flees beyond their borders, away from where her cubs could threaten the Clan.",
@@ -424,7 +424,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "This swift vixen is scouting out potential dens for greenleaf, r_c realises, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
@@ -466,7 +466,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
@@ -524,7 +524,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",

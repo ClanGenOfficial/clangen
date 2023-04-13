@@ -84,7 +84,6 @@ class Name():
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
-
         if self.suffix and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occuring (ex. Beeeye)
             triple_letter = False
@@ -100,11 +99,9 @@ class Name():
             nono_name = self.prefix + self.suffix
             # Prevent double names (ex. Iceice)
             # Prevent suffixes containing the prefix (ex. Butterflyfly)
-
             i = 0
             while nono_name in self.names_dict["inappropriate_names"] or triple_letter or double_animal or self.suffix == self.prefix.casefold() or str(self.suffix) in \
                 self.prefix.casefold() and not str(self.suffix) == '':
-
                 # check if random die was for prefix
                 if name_fixpref:
                     self.give_prefix(eyes, colour, biome)
@@ -123,9 +120,7 @@ class Name():
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):
         named_after_appearance = not random.getrandbits(2)  # Chance for True is '1/4'
-
         named_after_biome_ = not random.getrandbits(3) # chance for True is 1/8
-
         # Add possible prefix categories to list.
         possible_prefix_categories = []
         if eyes in self.names_dict["eye_prefixes"]:
@@ -139,12 +134,10 @@ class Name():
             prefix_category = random.choice(possible_prefix_categories)
             self.prefix = random.choice(prefix_category)
         elif named_after_biome_ and possible_prefix_categories:
-
             prefix_category = random.choice(possible_prefix_categories)
             self.prefix = random.choice(prefix_category)
         else:
             self.prefix = random.choice(self.names_dict["normal_prefixes"])
-
     
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortiepattern):

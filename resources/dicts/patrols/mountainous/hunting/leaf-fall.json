@@ -207,7 +207,7 @@
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
-        "chance_of_success": 70,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for leaf-bare. As p_l leads them home there's a sense of security and competence driving them onwards.",
@@ -301,7 +301,7 @@
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
-        "chance_of_success": 70,
+        "chance_of_success": 30,
         "exp": 10,
         "success_text": [
             "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats dig a snow-den and cuddle together, sharing what little warmth they have. Each cat takes a turn on the side nearest the entrance tunnel, selflessly risking themselves.",
@@ -353,7 +353,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",

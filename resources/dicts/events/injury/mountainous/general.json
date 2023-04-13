@@ -9,7 +9,7 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
+        "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
         "history_text": [
             "m_c was scarred after being grabbed by an eagle.",
             "m_c died from their wounds after being grabbed by an eagle.",
@@ -28,7 +28,7 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift till it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
+        "event_text": "m_c thought they were walking on a snowdrift till it gave way and they fell down the mountain, breaking their leg.",
         "history_text": [
             "m_c was scarred after falling from a cliff.",
             "m_c died after they fell from a cliff.",
@@ -47,7 +47,7 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
+        "event_text": "m_c fell from a cliff and somehow survived, though not without breaking their leg.",
         "history_text": [
             "m_c was scarred after falling from a cliff.",
             "m_c died after they fell from a cliff.",
@@ -66,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell, luckily {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
+        "event_text": "m_c was climbing a tree when they fell, luckily they were only bruised by the incident.",
         "history_text": [
             null,
             null,
@@ -85,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
         "history_text": [
             null,
             null,
@@ -144,7 +144,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was moving some branches out of the way when {PRONOUN/m_c/subject} got a splinter.",
+        "event_text": "m_c was moving some branches out of the way when they got a splinter.",
         "history_text": [
             null,
             null,
@@ -181,7 +181,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been hacking ever since.",
+        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
         "history_text": [
             null,
             "m_c died after they fell in the river and inhaled too much water.",

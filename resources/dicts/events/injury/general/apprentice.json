@@ -9,7 +9,7 @@
             "scar",
             "FACE"
         ],
-        "event_text": "m_c mistook a hare for a rabbit while hunting and {PRONOUN/r_c/poss} eyes were scratched, a valuable lesson learnt.",
+        "event_text": "m_c mistook a hare for a rabbit while hunting and their eyes were scratched, a valuable lesson learnt.",
         "history_text": [
             "m_c got a scar when a hare scratched them in retaliation.",
             "m_c died after they were wounded by a hare.",
@@ -38,7 +38,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a rogue after {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
+        "event_text": "m_c was injured recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
         "history_text": [
             "m_c was scarred recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a rogue.",
@@ -67,7 +67,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting an enemy warrior after {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
+        "event_text": "m_c was injured recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
         "history_text": [
             "m_c was scarred recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight an enemy warrior.",
@@ -96,7 +96,7 @@
             "scar",
             "LEGBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a dog after {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
+        "event_text": "m_c was injured recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
         "history_text": [
             "m_c was scarred recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a dog.",
@@ -125,7 +125,7 @@
             "scar",
             "LEGBITE"
         ],
-        "event_text": "m_c was injured recklessly fighting a fox after {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
+        "event_text": "m_c was injured recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
         "history_text": [
             "m_c was scarred recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
             "m_c died after their mentor encouraged them to fight a fox.",
@@ -182,7 +182,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for accidentally wandering over the border.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
         "history_text": [
             "m_c was scarred by r_c for accidentally wandering over the border.",
             "m_c died after their mentor punished them for accidentally wandering over the border.",
@@ -211,7 +211,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for messing with a Twoleg object.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
         "history_text": [
             "m_c was scarred by r_c for messing with a Twoleg object.",
             "m_c died after their mentor punished them for messing with a Twoleg object.",
@@ -240,7 +240,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for disobeying.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
         "history_text": [
             "m_c was scarred by r_c for disobeying them.",
             "m_c died after their mentor punished them for disobeying.",
@@ -269,7 +269,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c fought with {PRONOUN/m_c/poss} mentor, r_c, and was injured.",
+        "event_text": "m_c fought with their mentor, r_c, and was injured.",
         "history_text": [
             "m_c was scarred during a fight with their mentor, r_c.",
             "m_c died after fighting with their mentor.",
@@ -298,7 +298,7 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c could not handle {PRONOUN/m_c/poss} mentor's harsh training and was injured.",
+        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
         "history_text": [
             "m_c was scarred by their mentor's harsh training.",
             "m_c died from wounds caused by their mentor's harsh training.",
@@ -317,7 +317,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but were a bit too rough with {PRONOUN/m_c/poss} body and have the bruises to show it.",
+        "event_text": "m_c trained extra hard to impress their mentor, but were a bit too rough with their body and have the bruises to show it.",
         "history_text": [
             null,
             null,
@@ -336,7 +336,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c took a tumble off a rock while practicing {PRONOUN/m_c/poss} battle moves. {PRONOUN/m_c/subject/CAP}'ll be tender for the next few days.",
+        "event_text": "m_c took a tumble off a rock while practicing their battle moves. They'll be tender for the next few days.",
         "history_text": [
             null,
             null,
@@ -355,7 +355,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was practicing {PRONOUN/m_c/poss} hunting pounce when {PRONOUN/m_c/subject} pounced right into a rock! Ow, {PRONOUN/m_c/subject} might be sore for a while.",
+        "event_text": "m_c was practicing their hunting pounce when they pounced right into a rock! Ow, they might be sore for a while.",
         "history_text": [
             null,
             null,
@@ -374,7 +374,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but twisted {PRONOUN/m_c/poss} paw at an awkward angle.",
+        "event_text": "m_c trained extra hard to impress their mentor, but twisted their paw at an awkward angle.",
         "history_text": [
             null,
             null,
@@ -393,7 +393,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was rushing around the camp in excitement for a patrol when {PRONOUN/m_c/poss} paw landed wrong on a rock! {PRONOUN/m_c/subject/CAP} took a tumble and can't help limping the rest of the day.",
+        "event_text": "m_c was rushing around the camp in excitement for a patrol when their paw landed wrong on a rock! They took a tumble and can't help limping the rest of the day.",
         "history_text": [
             null,
             null,
@@ -412,7 +412,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but now finds {PRONOUN/m_c/poss} paws to be sore and bleeding.",
+        "event_text": "m_c trained extra hard to impress their mentor, but now finds their paws to be sore and bleeding.",
         "history_text": [
             null,
             null,
@@ -431,7 +431,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but is extremely sore when {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} the next morning.",
+        "event_text": "m_c trained extra hard to impress their mentor, but is extremely sore when they wake the next morning.",
         "history_text": [
             null,
             null,
@@ -488,7 +488,7 @@
             "scar",
             "TOETRAP"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for accidentally wandering over the border.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
         "history_text": [
             "m_c was scarred by r_c for accidentally wandering over the border.",
             "m_c died after their mentor punished them for accidentally wandering over the border.",
@@ -517,7 +517,7 @@
             "scar",
             "TAILSCAR"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for messing with a Twoleg object.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
         "history_text": [
             "m_c was scarred by r_c for messing with a Twoleg object.",
             "m_c died after their mentor punished them for messing with a Twoleg object.",
@@ -575,7 +575,7 @@
             "scar",
             "LEFTEAR"
         ],
-        "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for disobeying.",
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
         "history_text": [
             "m_c was scarred by r_c for disobeying them.",
             "m_c died after their mentor punished them for disobeying.",
@@ -604,7 +604,7 @@
             "scar",
             "CHEEK"
         ],
-        "event_text": "m_c fought with {PRONOUN/m_c/poss} mentor, r_c, and was injured.",
+        "event_text": "m_c fought with their mentor, r_c, and was injured.",
         "history_text": [
             "m_c was scarred during a fight with their mentor, r_c.",
             "m_c died after fighting with their mentor.",
@@ -633,7 +633,7 @@
             "scar",
             "BELLY"
         ],
-        "event_text": "m_c could not handle {PRONOUN/m_c/poss} mentor's harsh training and was injured.",
+        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
         "history_text": [
             "m_c was scarred by their mentor's harsh training.",
             "m_c died after their were injured by their mentor's harsh training.",
@@ -662,7 +662,7 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c's leg was badly hurt after {PRONOUN/m_c/poss} mentor used a Twoleg trap during a training exercise'.",
+        "event_text": "m_c's leg was badly hurt after their mentor used a Twoleg trap during a training exercise'.",
         "history_text": [
             "m_c was scarred when their mentor used a Twoleg trap for training.",
             "m_c died after their mentor used a Twoleg trap for training.",

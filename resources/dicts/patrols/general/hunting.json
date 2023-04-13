@@ -16,7 +16,7 @@
             "Your patrol narrowly misses the mouse."
         ],
         "decline_text": "Your patrol ignores the mouse.",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
             "good hunter",
@@ -40,7 +40,7 @@
         ],
         "intro_text": "Your patrol comes across a mouse.",
         "decline_text": "Your patrol ignores the mouse.",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "exp": 10,
         "success_text": [
             "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
@@ -209,7 +209,7 @@
         ],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
-        "chance_of_success": 10,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",

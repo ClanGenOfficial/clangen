@@ -19,7 +19,7 @@
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
@@ -109,7 +109,7 @@
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat under some evergreen shrubs and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
@@ -344,7 +344,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
@@ -402,7 +402,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
