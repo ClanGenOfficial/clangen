@@ -261,7 +261,7 @@ class StartScreen(Screens):
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'])))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches['traceback'].__traceback__)))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()

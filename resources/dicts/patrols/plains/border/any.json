@@ -271,7 +271,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "comfort", "trust", "no_app", "border"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -304,7 +304,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "comfort", "trust", "no_app", "border"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -338,7 +338,7 @@
     "intro_text": "While on patrol, app1 notices some suspicious pawprints in the mud by the short grass.",
 
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory.",
