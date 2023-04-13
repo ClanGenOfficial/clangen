@@ -192,7 +192,9 @@ class Romantic_Events():
         if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(cat_to):
             return False
 
-        poly = len(cat_from.mate) > 0 or len(cat_to.mate) > 0
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
             return False
@@ -299,7 +301,9 @@ class Romantic_Events():
         if hit > 0 and random_hit > 0:
             return False, None
 
-        poly = len(cat_from.mate) > 0 or len(cat_to.mate) > 0
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
             return False, None

@@ -62,9 +62,9 @@
 	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 8,
-			"medium": 10,
-			"high": 15
+			"low": 10,
+			"medium": 15,
+			"high": 20
 		},
 		"max_interaction": 5,
 		"max_interaction_special": 8,
