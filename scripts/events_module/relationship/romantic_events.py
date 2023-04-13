@@ -393,6 +393,8 @@ class Romantic_Events():
         if len(cat_from.mate) > 0:
             for mate_id in cat_from.mate:
                 mate_cat = cat_from.fetch_cat(mate_id)
+                if mate_cat.dead:
+                    continue
                 if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_mate_condition):
@@ -414,6 +416,8 @@ class Romantic_Events():
         if len(cat_to.mate) > 0:
             for mate_id in cat_to.mate:
                 mate_cat = cat_to.fetch_cat(mate_id)
+                if mate_cat.dead:
+                    continue
                 if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_mate_condition):
@@ -461,11 +465,13 @@ class Romantic_Events():
             return choice(MATE_DICTS[key])
         else:
             poly_key = ""
-            if len(cat_from.mate) > 0 and len(cat_to.mate) > 0:
+            alive_inclan_from_mates = [mate for mate in cat_from.mate if cat_from.fetch_cat(mate).alive and not cat_from.fetch_cat(mate).outside]
+            alive_inclan_to_mates = [mate for mate in cat_to.mate if cat_to.fetch_cat(mate).alive and not cat_to.fetch_cat(mate).outside]
+            if len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) > 0:
                 poly_key = "both_mates"
-            elif len(cat_from.mate) > 0 and len(cat_to.mate) <= 0:
+            elif len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) <= 0:
                 poly_key = "m_c_mates"
-            elif len(cat_from.mate) <= 0 and len(cat_to.mate) > 0:
+            elif len(alive_inclan_from_mates) <= 0 and len(alive_inclan_to_mates) > 0:
                 poly_key = "r_c_mates"
             return choice(POLY_MATE_DICTS[key][poly_key])
 
