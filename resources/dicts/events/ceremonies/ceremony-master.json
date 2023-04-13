@@ -468,7 +468,7 @@
       "troublesome",
       "vengeful"
     ],
-    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss} claws are itching to tear at something."
+    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something."
   ],
   "app_38": [
     [
@@ -1402,7 +1402,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw is taken to speak with StarClan. {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c and {VERB/m_c/are/is} now a full medicine cat of the Clan."
+    "(prefix)paw is taken to speak with StarClan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and {VERB/m_c/are/is} now a full medicine cat of the Clan."
   ],
   "med_9": [
     [
