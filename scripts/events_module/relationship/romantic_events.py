@@ -590,11 +590,11 @@ MATE_INTERACTIONS = {
 }
 for val_type, dictionary in MATE_RELEVANT_INTERACTIONS.items():
     if val_type in ["jealousy", "dislike"]:
-        MATE_INTERACTIONS["positive"] += dictionary["decrease"]
-        MATE_INTERACTIONS["negative"] += dictionary["increase"]
+        MATE_INTERACTIONS["positive"].extend(dictionary["decrease"])
+        MATE_INTERACTIONS["negative"].extend(dictionary["increase"])
     else:
-        MATE_INTERACTIONS["positive"] += dictionary["increase"]
-        MATE_INTERACTIONS["negative"] += dictionary["decrease"]
+        MATE_INTERACTIONS["positive"].extend(dictionary["increase"])
+        MATE_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
 # ---------------------------------------------------------------------------- #
 #                                   ROMANTIC                                   #

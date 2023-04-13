@@ -43,17 +43,26 @@
 			"m_c heard a rumor that r_c likes someone else.",
 			"m_c worries that r_c will never feel the same way {PRONOUN/m_c/subject} {VERB/m_c/do/does}.",
 			"m_c noticed r_c flirting with someone else.",
-			"m_c had a disagreement with r_c over kits.",
 			"m_c heard r_c discussing potential mates but {PRONOUN/m_c/poss} name never came up.",
 			"m_c thinks {PRONOUN/m_c/poss} dreams might not come true with r_c."
 		]
 	},
 	{
-		"id": "rom_dec_medium3",
+		"id": "rom_dec_low3",
 		"intensity": "low",
 		"interactions": [
 			"m_c feels ignored by r_c.",
 			"m_c didn't get the joke r_c was telling."
+		]
+	},
+	{
+		"id": "rom_dec_medium4",
+		"intensity": "medium",
+		"interactions": [
+			"m_c had a disagreement with r_c over kits."
+		],
+		"relationship_constraint": [
+			"mates"
 		]
 	}
 ]
