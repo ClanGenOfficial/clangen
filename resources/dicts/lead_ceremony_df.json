@@ -76,7 +76,7 @@
       "life_giving": [
         {
           "text": "Despite looking quite out of place among the battle-hardened shadows, r_c still places their muzzle harshly against the new leader's head. They give a life for [virtue], hoping that they will remember their own kindness.",
-          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride", "hope"]
         }
       ]
     },
@@ -94,6 +94,32 @@
       ]
     },
 
+    "Outgoing_adult": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
+      "life_giving": [
+        {
+          "text": "r_c jovially jaunts up to the new leader. The dark murk on their fur or the red eyes did not seem to dampen their spirit one whit. They touch their nose to m_c's head, giving them a life fur [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
+          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
+        }
+      ]
+    },
+
+    "Reserved_adult": {
+      "tags": [],
+      "lead_trait": [],
+      "star_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
+      "life_giving": [
+        {
+          "text": "r_c seemed to appear to m_c out of nowhere in the shadowy gloom of the Dark Forest, and quietly gives them a live of [virtue]. As quickly as they appeared, r_c vanished when the life was given.",
+          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "leve-headedness", "caution in the heat of battle", "the strength to carry on alone"]
+        }
+      ]
+    },
+
     "default_warrior": {
       "tags": [],
       "lead_trait": [],
@@ -101,22 +127,19 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c walks up to m_c next, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+          "text": "r_c walks up to m_c next, offering a life for [virtue]. They give a wicked grin, telling m_c that their Clan will survive any threat.",
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "instincts", "strength"]
         },
         {
           "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "instincts", "strength"]
         },
         {
-          "text": "r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They spit at m_c that their pain is almost over.",
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "instincts", "strength"]
         }
       ]
     },
@@ -128,22 +151,19 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c walks up to m_c next, giving them a life for [virtue]. They pause, then shake their head, heading back into the ranks of StarClan.",
+          "text": "r_c walks up to m_c next, giving them a life for [virtue]. They growl a word of encouragement over the destruction of their enemies before returning to the line of shadows.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+      "determination", "endurance", "farsightedness", "instincts", "strength"]
         },
         {
           "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into them.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+      "determination", "endurance", "farsightedness", "instincts", "strength"]
         },
         {
-          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches dispassionately.'",
+          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.'",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
-      "unity"]
+      "determination", "endurance", "farsightedness", "instincts", "strength"]
         }
       ]
     },
@@ -155,8 +175,8 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c bounds up to the new leader, reaching up on their hind legs to give them a new life for [virtue]. They flick their tail and head back to make room for the next cat.",
-          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+          "text": "r_c bounds up to the new leader, reaching up on their hind legs to give them a new life for [virtue]. They flick their muck-covered tail and run back to the line of shadows.",
+          "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]
     },
@@ -168,8 +188,8 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for [virtue]. They lash their tail and head back to make room for the next cat.",
-          "virtue": ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
+          "text": "r_c giddily approaches the new leader, reaching up on their hind legs to give them a new life for [virtue]. They lash their tail and head back to make room for the next cat.",
+          "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]
     },
@@ -181,7 +201,7 @@
       "rank": ["apprentice"],
       "life_giving": [
         {
-          "text": "A young cat is next to give a life. Starlight reflects off their youthful eyes. r_c stretches up to give a life for [virtue].",
+          "text": "A young cat is next to give a life. Crimsom gloom reflects off their youthful eyes. r_c stretches up to give a life for [virtue].",
           "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
         }
       ]
@@ -194,7 +214,7 @@
       "rank": ["apprentice"],
       "life_giving": [
         {
-          "text": "A young cat is next to give a life. They hesitate, before an older cat nudges them forward, whispering something in their ear. r_c stretches up to give a life for [virtue].",
+          "text": "A young cat is next to give a life. They hesitate, before an older cat shoves them forward, growling in their ear. r_c stretches up to give a life for [virtue].",
           "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
         }
       ]
@@ -208,7 +228,7 @@
       "life_giving": [
         {
           "text": "r_c strides forward, an energy in their steps that wasn't present in their last moments. They give a life for [virtue].",
-          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+          "virtue": ["grace", "humility", "integrity", "persistence", "resilience"]
         }
       ]
     },
@@ -220,8 +240,8 @@
       "rank": ["elder"],
       "life_giving": [
         {
-          "text": "r_c pads forward with a wary expression. They give a life for [virtue].",
-          "virtue": ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
+          "text": "r_c pads forward with a savage expression. They give a life for [virtue].",
+          "virtue": ["grace", "humility", "integrity", "persistence", "resilience"]
         }
       ]
     },
@@ -233,8 +253,8 @@
       "rank": ["medicine cat"],
       "life_giving": [
         {
-          "text": " r_c approaches next, a warm smile on their face. They offer a life for [virtue], whispering to take care of the Clan the best they can.",
-          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+          "text": " r_c approaches next, a sharp grin on their maw. They offer a life for [virtue], whispering to make sure their Clan remains strong. No matter the cost.",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "wisdom"]
         }
       ]
     },
@@ -246,8 +266,8 @@
       "rank": ["medicine cat"],
       "life_giving": [
         {
-          "text": "r_c approaches next, a blank expression on their face. They offer a life for [virtue], whispering to not lose their way.",
-          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
+          "text": "r_c approaches next, a dark expression on their face. They offer a life for [virtue], whispering to inspire true loyalty through fear of punishment.",
+          "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "wisdom"]
         }
       ]
     },
@@ -259,8 +279,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. There is pride in their gaze as they stare into m_c's eyes. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The gloom and murk across their pelt shows the future that m_c will endure one day. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -271,8 +291,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. There is a conflicted expression on their face when they step forward and stare into m_c's eyes. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in their eyes. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -284,8 +304,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. There is a conflicted expression on their face when they step forward and stare into m_c's eyes. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in their eyes. They give a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -296,8 +316,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "r_c, one of StarClan's oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "r_c, one of the Dark Forest's oldest leaders, looks at the new leader with a triumphant expression. They give a last life, the gift of [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     }
