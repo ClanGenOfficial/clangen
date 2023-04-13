@@ -744,7 +744,7 @@ def adjust_list_text(list_of_items):
     return insert
 
 
-def get_prey_choice(patrol_text):
+def adjust_prey_abbr(patrol_text):
     """
     checks for prey abbreviations and returns adjusted text
     """

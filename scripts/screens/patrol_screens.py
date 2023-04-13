@@ -7,8 +7,8 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    process_text, get_omen_snippet_list, get_prey_choice
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UITextBoxTweaked
+    get_omen_snippet_list, process_text, adjust_prey_abbr
+from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -57,7 +57,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
 
             # Checking if the mentor or mate selection buttons are clicked. This must be separate, because
-            # these buttons may not exist. 
+            # these buttons may not exist.
             if "mate_button" in self.elements:
                 if event.ui_element == self.elements['mate_button']:
                     self.selected_cat = Cat.all_cats[self.selected_cat.mate]
@@ -106,7 +106,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) == 0:
                     able_no_med = self.able_cats
                 self.selected_cat = choice(able_no_med)
@@ -116,7 +117,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) < 3:
                     able_no_med = self.able_cats
                 self.current_patrol += sample(able_no_med, k=3)
@@ -124,7 +126,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) < 6:
                     able_no_med = self.able_cats
                 self.current_patrol += sample(able_no_med, k=6)
@@ -268,7 +271,8 @@ class PatrolScreen(Screens):
                     text = ""
 
                 self.elements['info'] = pygame_gui.elements.UITextBox(
-                    text, scale(pygame.Rect((500, 1050), (600, 800))), object_id=get_text_box_theme(), manager=MANAGER
+                    text, scale(pygame.Rect((500, 1050), (600, 800))),
+                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                 )
             else:
                 self.elements['paw'].hide()
@@ -276,7 +280,8 @@ class PatrolScreen(Screens):
                 self.elements['claws'].hide()
                 self.elements['herb'].hide()
 
-            able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+            able_no_med = [cat for cat in self.able_cats if
+                           cat.status not in ['medicine cat', 'medicine cat apprentice']]
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
             if len(self.current_patrol) >= 6 or len(able_no_med) < 1:
@@ -407,9 +412,11 @@ class PatrolScreen(Screens):
                                                     object_id="#remove_all_button", manager=MANAGER)
 
         # Text box for skills and traits. Hidden for now, and with no text in it
-        self.elements["skills_box"] = UITextBoxTweaked("", scale(pygame.Rect((1020, 1020), (480, 180))), visible=False,
-                                                       object_id="#cat_profile_info_box",
-                                                       line_spacing=0.95, manager=MANAGER)
+        self.elements["skills_box"] = pygame_gui.elements.UITextBox("",
+                                                                    scale(pygame.Rect((1020, 1020), (480, 180))),
+                                                                    visible=False,
+                                                                    object_id="#text_box_22_horizcenter_spacing_95",
+                                                                    manager=MANAGER)
 
         # Start Patrol Button
         self.elements['patrol_start'] = UIImageButton(scale(pygame.Rect((666, 1200), (270, 60))), "",
@@ -427,30 +434,30 @@ class PatrolScreen(Screens):
         vowels = ['A', 'E', 'I', 'O', 'U']
         if not text:
             text = 'This should not appear, report as a bug please!'
-        
+
         replace_dict = {
-            "p_l" : (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
+            "p_l": (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
         }
-        
+
         if patrol.patrol_random_cat:
-            replace_dict["r_c"] = (str(patrol.patrol_random_cat.name), 
+            replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
                                    choice(patrol.patrol_random_cat.pronouns))
         else:
-            replace_dict["r_c"] = (str(patrol.patrol_leader_name), 
+            replace_dict["r_c"] = (str(patrol.patrol_leader_name),
                                    choice(patrol.patrol_leader.pronouns))
-        
+
         if len(patrol.patrol_other_cats) >= 1:
-            replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name), 
-                                        choice(patrol.patrol_other_cats[0].pronouns))
+            replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name),
+                                    choice(patrol.patrol_other_cats[0].pronouns))
         if len(patrol.patrol_other_cats) >= 2:
-            replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name), 
-                                        choice(patrol.patrol_other_cats[1].pronouns))
+            replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name),
+                                    choice(patrol.patrol_other_cats[1].pronouns))
         if len(patrol.patrol_other_cats) >= 3:
             replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
-                                        choice(patrol.patrol_other_cats[2].pronouns))
+                                    choice(patrol.patrol_other_cats[2].pronouns))
         if len(patrol.patrol_other_cats) == 4:
             replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
-                                        choice(patrol.patrol_other_cats[3].pronouns))
+                                    choice(patrol.patrol_other_cats[3].pronouns))
 
         if patrol.app1:
             replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
@@ -473,10 +480,11 @@ class PatrolScreen(Screens):
         if stat_cat:
             replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
         else:
-            replace_dict['s_c'] = (str(patrol.patrol_leader_name), 
+            replace_dict['s_c'] = (str(patrol.patrol_leader_name),
                                    choice(patrol.patrol_leader.pronouns))
 
         text = process_text(text, replace_dict)
+        text = adjust_prey_abbr(text)
 
         other_clan_name = patrol.other_clan.name
         s = 0
@@ -519,10 +527,30 @@ class PatrolScreen(Screens):
                             modify.insert(pos - 1, 'an')
                         text = " ".join(modify)
                         break
-         
+
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
-        text = get_prey_choice(text)
+        # Prey lists for forest random prey patrols
+        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
+                                  'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
+                                  'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
+
+        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
+                               'sleepy dormice', 'chipmunks', 'woodrats', ]
+        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
+
+        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
+                                 'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
+                                 'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+        text = text.replace('f_mp_s', str(fst_midprey_singlular))
+
+        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
+                              'red squirrels', 'gray squirrels', 'rats', ]
+        text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = get_omen_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
         sign = choice(sign_list)
@@ -601,6 +629,7 @@ class PatrolScreen(Screens):
 
         self.choose_normal_or_romance()
 
+        patrol.used_patrols.append(patrol.patrol_event.patrol_id)
         print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         patrol_size = len(patrol.patrol_cats)
 
@@ -609,8 +638,10 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 345), (670, 500))),
-                                                        object_id="#patrol_text_box", manager=MANAGER)
+        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
+                                                                     scale(pygame.Rect((770, 345), (670, 500))),
+                                                                     object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
+                                                                     manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
         members = []
@@ -630,8 +661,10 @@ class PatrolScreen(Screens):
             f'patrol leader: {patrol.patrol_leader_name} \n'
             f'patrol members: {self.get_list_text(members)} \n'
             f'patrol skills: {self.get_list_text(skills)} \n'
-            f'patrol traits: {self.get_list_text(traits)}', scale(pygame.Rect((210, 920), (480, 400))),
-            object_id="#cat_profile_info_box", manager=MANAGER)
+            f'patrol traits: {self.get_list_text(traits)}',
+            scale(pygame.Rect((210, 920), (480, 400))),
+            object_id="#text_box_22_horizleft",
+            manager=MANAGER)
 
         # Draw Patrol Cats
         pos_x = 800
@@ -682,7 +715,8 @@ class PatrolScreen(Screens):
         print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
         chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
-        if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
+        if get_personality_compatibility(patrol.patrol_leader,
+                                         patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
             chance_of_romance_patrol -= 10
         else:
             chance_of_romance_patrol += 10
@@ -784,7 +818,8 @@ class PatrolScreen(Screens):
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
                 print('counting')
-                if patrol.patrol_random_cat in (patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
+                if patrol.patrol_random_cat in (
+                patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
                     if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
@@ -811,12 +846,10 @@ class PatrolScreen(Screens):
     def get_patrol_art(self):
         """
         grabs art for the patrol based on the patrol_id
-
         -first checks for image file with exact patrol_id
         -then checks for image file with the patrol_id minus any numbers
         -then checks for image file with the patrol_id minus any numbers and with 'gen' replacing biome indicator
         -if none of those are available, then uses placeholder patrol type image
-
         if you are adding art and the art has gore or blood, add it's exact patrol id to the explicit_patrol_art.json
         """
         path = "resources/images/patrol_art/"
@@ -933,8 +966,8 @@ class PatrolScreen(Screens):
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
-                                                                            "#cat_patrol_info_box")
-                                                                        , manager=MANAGER)
+                                                                            "#text_box_22_horizcenter_spacing_95"),
+                                                                        manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
 
         self.elements["patrol_text"].set_text(display_text)
@@ -955,7 +988,11 @@ class PatrolScreen(Screens):
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
                 'elder', 'kitten', 'mediator', 'mediator apprentice'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
-                self.able_cats.append(the_cat)
+                if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                    if game.config['fun']['newborns_can_patrol']:
+                        self.able_cats.append(the_cat)
+                else:
+                    self.able_cats.append(the_cat)
 
         if not self.able_cats:
             all_pages = []
@@ -994,14 +1031,14 @@ class PatrolScreen(Screens):
         pos_x = 100
         i = 0
         for cat in display_cats:
-            if cat.favourite:
+            if game.clan.clan_settings["show_fav"] and cat.favourite:
                 self.fav[str(i)] = pygame_gui.elements.UIImage(
-                            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                            pygame.transform.scale(
-                                pygame.image.load(
-                                    f"resources/images/fav_marker.png").convert_alpha(),
-                                (100, 100))
-                        )
+                    scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    pygame.transform.scale(
+                        pygame.image.load(
+                            f"resources/images/fav_marker.png").convert_alpha(),
+                        (100, 100))
+                )
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                                                                    pygame.transform.scale(cat.large_sprite, (100, 100))
@@ -1105,7 +1142,8 @@ class PatrolScreen(Screens):
             self.elements["selected_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((640, 350), (300, 300))),
                                                                           pygame.transform.scale(
                                                                               self.selected_cat.large_sprite,
-                                                                              (300, 300)), manager=MANAGER)
+                                                                              (300, 300)),
+                                                                          manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
             if len(name) >= 16:  # check name length
@@ -1114,13 +1152,17 @@ class PatrolScreen(Screens):
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
-                                                                           object_id=get_text_box_theme())
+                                                                           object_id=get_text_box_theme(
+                                                                               "#text_box_30_horizcenter"),
+                                                                           manager=MANAGER)
 
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.trait) +
                                                                           "\n" + str(self.selected_cat.skill) +
-                                                                          "\n" + str(self.selected_cat.experience_level) +
-                                                                          (f' ({str(self.selected_cat.experience)})' if game.settings['showxp'] else ''),
+                                                                          "\n" + str(
+                self.selected_cat.experience_level) +
+                                                                          (f' ({str(self.selected_cat.experience)})' if
+                                                                           game.settings['showxp'] else ''),
                                                                           scale(pygame.Rect((600, 700), (400, 150))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_22_horizcenter_spacing_95"),
@@ -1150,8 +1192,7 @@ class PatrolScreen(Screens):
                     self.elements['mate_info'] = pygame_gui.elements.UITextBox(
                         "mate",
                         scale(pygame.Rect((300, 650), (200, 60))),
-                        object_id=get_text_box_theme(
-                            "#cat_patrol_info_box"))
+                        object_id=get_text_box_theme("#text_box_22_horizcenter"))
                     self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
                                                                  object_id="#patrol_select_button", manager=MANAGER)
                     # Disable mate_button if the cat is not able to go on a patrol
@@ -1192,8 +1233,7 @@ class PatrolScreen(Screens):
                     self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(
                         relation,
                         scale(pygame.Rect((1100, 650), (200, 60))),
-                        object_id=get_text_box_theme(
-                            "#cat_patrol_info_box"))
+                        object_id=get_text_box_theme("#text_box_22_horizcenter"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((1100, 400), (200, 200))),
                         pygame.transform.scale(

@@ -22,14 +22,11 @@
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": [
         null,
         "r_c mistook deathberries for something edible.",
         "after eating deathberries"
-]
-
+    ]
 },
 {
     "patrol_id": "gen_train_berrybush2",
@@ -52,8 +49,6 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": [
         null,
         "r_c mistook deathberries for something edible.",
@@ -83,8 +78,6 @@
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": [
         null,
         "r_c mistook deathberries for something edible.",
@@ -111,7 +104,7 @@
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
     ],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
     "history_text": [
         null,
         "r_c mistook deathberries for something edible.",
@@ -250,7 +243,7 @@
                     "patient", "responsible", "thoughtful", "wise"],
     "fail_trait":["cold", "ambitious"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
     "relationship_constraint": [
         "parent/child"
 ]
@@ -1177,7 +1170,7 @@
     ],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
     "history_text": [
         "This cat's back was broken after attempting to enter the forbidden tunnels."
     ]
