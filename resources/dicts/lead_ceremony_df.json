@@ -20,7 +20,7 @@
       "tags": [],
       "lead_trait": [],
       "text": [
-        "m_c leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader."
+        "m_c leaves to speak with the Dark Forest. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Murk and shadows cling to their pelts like frost, and their eyes gleam dangerously as they greet the new leader."
       ]
     },
     "new_clan": {
@@ -34,7 +34,7 @@
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [
-            "m_c leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur."
+            "m_c leaves to speak with the Dark Forest. They close their eyes and awaken under an oppressing darkness, devoid of the stars they left behind. They turn around to see a shadowy group of cats approaching, troumph in their eyes."
       ]
 
     }
@@ -75,7 +75,7 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "r_c pads up to the new leader, softly touching their nose to m_c's head. They give a life for [virtue].",
+          "text": "Despite looking quite out of place among the battle-hardened shadows, r_c still places their muzzle harshly against the new leader's head. They give a life for [virtue], hoping that they will remember their own kindness.",
           "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
         }
       ]
@@ -88,8 +88,8 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "r_c stalks up to the new leader, eyes burning with unexpected ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
-          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride"]
+          "text": "r_c stalks up to the new leader, eyes burning with the increasingly familiar Dark Forest ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
+          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
         }
       ]
     },
@@ -309,7 +309,7 @@
       "tags": [],
       "lead_trait": [],
       "text": [
-            "r_c hails m_c by their new name, m_c_star, telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. The group of starry cats yowls m_c_star's name in support. m_c_star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+            "r_c hails m_c by their new name, m_c_star, telling them that their old pathetic life is no more. They are granted guardianship of c_n, and are told to use their new power however they wish. The group of shadowy cats yowls m_c_star's name in support. m_c_star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
       ]
     },
     "new_clan": {
@@ -323,7 +323,7 @@
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [
-        "r_c hails m_c by their new name, m_c_star, telling them that their old life is no more. They are granted guardianship of c_n, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. m_c_star stands, feeling a new strength within their body, and grins."
+        "r_c hails m_c by their new name, m_c_star, telling them that their old pathetic life is no more. They are granted guardianship of c_n, and are told to use their new power however they wish. The Dark Forest's hissing and yowls echo in the dusky clearing as the new leader begins to wake up. m_c_star stands, feeling a new strength within their body, and grins."
       ]
     }
   }
