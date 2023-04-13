@@ -62,17 +62,18 @@
 	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 5,
-			"medium": 8,
-			"high": 10
+			"low": 8,
+			"medium": 10,
+			"high": 15
 		},
-		"compatibility_bonus": 3,
-		"passive_influence": 4,
-		"chance_for_neutral": 6,
+		"compatibility_effect": 5,
+		"passive_influence": 5,
+		"chance_for_neutral": 10,
 		"chance_of_special_group": 4,
 		"chance_romantic_not_mate": 10,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
+			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
 		]
 	},
@@ -109,7 +110,7 @@
 			"jealousy": 0,
 			"trust": 0
 		},
-		"friends_to_lovers": {
+		"platonic_to_romantic": {
 			"romantic": 0,
 			"platonic": 40,
 			"dislike": -15,

@@ -457,24 +457,19 @@ with open(f"{resource_directory}personality_compatibility.json", 'r') as read_fi
 
 def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
-    # Different filters for different
-    romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID not in rel.cat_to.mate)
-                           and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
-               relationships))
+    max_love_value = 0
+    current_max_relationship = None
+    for rel in relationships:
+        if rel.romantic_love < 0:
+            continue
+        if exclude_mate and rel.cat_to.ID in rel.cat_from.mate:
+            continue
+        if potential_mate and not rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True):
+            continue
+        if max_love_value < rel.romantic_love:
+            current_max_relationship = rel
 
-    if romantic_relation is None or len(romantic_relation) == 0:
-        return None
-
-    relation = romantic_relation[0]
-    max_love_value = relation.romantic_love
-    # if there more love relations, pick the biggest one
-    for inter_rel in romantic_relation:
-        if max_love_value < inter_rel.romantic_love:
-            max_love_value = inter_rel.romantic_love
-            relation = inter_rel
-
-    return relation
+    return current_max_relationship
 
 
 def check_relationship_value(cat_from, cat_to, rel_value=None):

@@ -200,10 +200,10 @@ class Relationship():
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_bonus"]
+            amount += game.config["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_bonus"]
+            amount -= game.config["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str) -> None:

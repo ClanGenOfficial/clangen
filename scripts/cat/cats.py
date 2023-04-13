@@ -2093,7 +2093,7 @@ class Cat():
                           for_love_interest: bool = False,
                           age_restriction: bool = False):
         """
-        	Checks if this cat is potential mate for the other cat.
+            Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
         """
         # just to be sure, check if it is not the same cat
@@ -2180,14 +2180,10 @@ class Cat():
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
-        
-        # TODO: 
-        #if self.mate or other_cat.mate:
-        #    print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
-        #    return
-
-        self.mate.append(other_cat.ID)
-        other_cat.mate.append(self.ID)
+        if other_cat.ID not in self.mate:
+            self.mate.append(other_cat.ID)
+        if self.ID not in other_cat.mate:
+            other_cat.mate.append(self.ID)
 
         # If the current mate was in the previous mate list, remove them. 
         if other_cat.ID in self.previous_mates:

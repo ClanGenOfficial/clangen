@@ -44,9 +44,7 @@ class Relation_Events():
         # TODO: maybe change in future
         self.group_events(cat)
 
-        # 1/3 for an additional event
-        if not randint(0,2):
-            self.same_age_events(cat)
+        self.same_age_events(cat)
 
         # This is the "big love check", and it must be handled first. 
         if random.random() > 0.8:
@@ -77,10 +75,10 @@ class Relation_Events():
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
-        if cats_amount >= 30:
-            range_number = 20
-        else:
-            range_number = int(cats_amount / 1.5)  # int(1.9) rounds to 1
+        range_number = int(cats_amount / 1.5)  # int(1.9) rounds to 1
+        
+        if range_number > 60:
+            range_number = 60
 
         # for i in range(0, range_number):
         for _ in itertools.repeat(None, range_number):
@@ -240,8 +238,7 @@ class Relation_Events():
         if not self.can_trigger_events(cat):
             return
 
-        range = 15 + randint(0, 10)
-        same_age_cats = get_cats_same_age(cat, Relationship, range)
+        same_age_cats = get_cats_same_age(cat, Relationship, game.config["mates"]["age_range"])
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if self.can_trigger_events(random_cat) and random_cat.ID in cat.relationships:
