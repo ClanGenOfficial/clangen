@@ -292,6 +292,7 @@ class Romantic_Events():
         poly = len(cat_from.mate) > 0 or len(cat_to.mate) > 0
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
+            print("NONO CURRENT MATES ")
             return False, None
 
         if not hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["mate_condition"]) and\
@@ -357,13 +358,13 @@ class Romantic_Events():
         Check if the relationship can fulfill the condition. 
         Example condition:
             {
-			"romantic": 20,
-			"platonic": 30,
-			"dislike": -10,
-			"admiration": 0,
-			"comfortable": 20,
-			"jealousy": 0,
-			"trust": 0
+            "romantic": 20,
+            "platonic": 30,
+            "dislike": -10,
+            "admiration": 0,
+            "comfortable": 20,
+            "jealousy": 0,
+            "trust": 0
             }
 
         VALUES: 
@@ -383,29 +384,29 @@ class Romantic_Events():
             if condition["platonic"] < 0 and relationship.platonic_like > abs(condition["platonic"]):
                 return False
         if "dislike" in condition and condition["dislike"] != 0:
-            if condition["dislike"] > 0 and relationship.platonic_like < condition["dislike"]:
+            if condition["dislike"] > 0 and relationship.dislike < condition["dislike"]:
                 return False
-            if condition["dislike"] < 0 and relationship.platonic_like > abs(condition["dislike"]):
+            if condition["dislike"] < 0 and relationship.dislike > abs(condition["dislike"]):
                 return False
         if "admiration" in condition and condition["admiration"] != 0:
-            if condition["admiration"] > 0 and relationship.platonic_like < condition["admiration"]:
+            if condition["admiration"] > 0 and relationship.admiration < condition["admiration"]:
                 return False
-            if condition["admiration"] < 0 and relationship.platonic_like > abs(condition["admiration"]):
+            if condition["admiration"] < 0 and relationship.admiration > abs(condition["admiration"]):
                 return False
         if "comfortable" in condition and condition["comfortable"] != 0:
-            if condition["comfortable"] > 0 and relationship.platonic_like < condition["comfortable"]:
+            if condition["comfortable"] > 0 and relationship.comfortable < condition["comfortable"]:
                 return False
-            if condition["comfortable"] < 0 and relationship.platonic_like > abs(condition["comfortable"]):
+            if condition["comfortable"] < 0 and relationship.comfortable > abs(condition["comfortable"]):
                 return False
         if "jealousy" in condition and condition["jealousy"] != 0:
-            if condition["jealousy"] > 0 and relationship.platonic_like < condition["jealousy"]:
+            if condition["jealousy"] > 0 and relationship.jealousy < condition["jealousy"]:
                 return False
-            if condition["jealousy"] < 0 and relationship.platonic_like > abs(condition["jealousy"]):
+            if condition["jealousy"] < 0 and relationship.jealousy > abs(condition["jealousy"]):
                 return False
         if "trust" in condition and condition["trust"] != 0:
-            if condition["trust"] > 0 and relationship.platonic_like < condition["trust"]:
+            if condition["trust"] > 0 and relationship.trust < condition["trust"]:
                 return False
-            if condition["trust"] < 0 and relationship.platonic_like > abs(condition["trust"]):
+            if condition["trust"] < 0 and relationship.trust > abs(condition["trust"]):
                 return False
         return True
 
@@ -423,11 +424,13 @@ class Romantic_Events():
                 if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_mate_condition):
+                        print("nono mates - ", mate_cat.name, cat_from.name)
                         all_mates_fulfill_current_mate_condition = False
                 
                 if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_to_new_condition):
+                        print("nono new_mates - ", mate_cat.name, cat_to.name)
                         all_mates_fulfill_current_to_new = False
         if not all_mates_fulfill_current_mate_condition or\
             not all_mates_fulfill_current_to_new:
@@ -442,11 +445,13 @@ class Romantic_Events():
                 if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_mate_condition):
+                        print("nono mates - ", mate_cat.name, cat_to.name)
                         all_mates_fulfill_current_mate_condition = False
 
                 if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_to_new_condition):
+                        print("nono new_mate - ", mate_cat.name, cat_from.name)
                         all_mates_fulfill_current_to_new = False
         if not all_mates_fulfill_current_mate_condition or\
             not all_mates_fulfill_current_to_new:

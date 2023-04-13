@@ -1330,9 +1330,7 @@ class Clan():
                 json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
-            print(
-                "ERROR: Saving nutrition information of the freshkill pile didn't work."
-            )
+            print("ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
     def save_inheritance(self, clan):
         """Saving the inheritance information of the clan."""

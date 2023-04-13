@@ -126,14 +126,14 @@
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": -10,
-				"trust": 30
+				"trust": 20
 			},
 			"mates_to_each_other": {
 				"romantic": 0,
 				"platonic": 0,
 				"dislike": -15,
 				"admiration": 0,
-				"comfortable": 15,
+				"comfortable": 10,
 				"jealousy": -10,
 				"trust": 20
 			}
