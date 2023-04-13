@@ -101,6 +101,8 @@ class History:
                     {
                     "murderer": ID,
                     "revealed": bool,
+                    "text": same text as the death history for this murder (revealed history)
+                    "unrevealed_text": unrevealed death history
                     "moon": moon
                     },
                 ]
@@ -252,7 +254,7 @@ class History:
         if condition in cat.history.possible_death:
             cat.history.possible_death.pop(condition)
 
-    def add_death_or_scars(self, cat, other_cat=None, text=None, condition=None, scar=False, death=False):
+    def add_death_or_scars(self, cat, other_cat=None, text=None, extra_text=None, condition=None, scar=False, death=False):
         """
         this adds death or scar events to the cat's history, if the condition
          was already in possible death/scars then it's info is moved to this list
@@ -260,6 +262,7 @@ class History:
         :param cat: cat object
         :param other_cat: if another cat is involved in the event, add them here
         :param text: event history text
+        :param text: the second event string if one exists, this is for use with the murder reveal system
         :param condition: if it was caused by a condition, add name here
         :param scar: set True if scar
         :param death: set True if death
@@ -318,12 +321,14 @@ class History:
         elif event_type == 'died_by':
             cat.history.died_by.append(history_dict)
 
-    def add_murders(self, cat, other_cat, revealed):
+    def add_murders(self, cat, other_cat, revealed, text=None, unrevealed_text=None):
         """
         this adds murder info
         :param cat: cat object (cat being murdered)
         :param other_cat: cat object (cat doing the murdering)
         :param revealed: True or False depending on if the murderer has been revealed to the player
+        :param text: event text for the victim's death (should be same as their death history)
+        :param unrevealed_text: unrevealed event text for victim's death (not saved in their death history)
         :return:
         """
         self.check_load(cat)
@@ -341,6 +346,8 @@ class History:
         cat.history.murder["is_victim"].append({
             "murderer": other_cat.ID,
             "revealed": revealed,
+            "text": text,
+            "unrevealed_text": unrevealed_text,
             "moon": game.clan.age
         })
 
@@ -514,22 +521,24 @@ class History:
         """
         this returns the cat's murder dict. example of dict structure:
 
-        {
-        "is_murderer": [
-                {
-                "victim": ID,
-                "revealed": bool,
-                "moon": moon
-                },
-            ]
-        "is_victim": [
-                {
-                "murderer": ID,
-                "revealed": bool,
-                "moon": moon
-                },
-            ]
-        }
+        "murder": {
+            "is_murderer": [
+                    {
+                    "victim": ID,
+                    "revealed": bool,
+                    "moon": moon
+                    },
+                ]
+            "is_victim": [
+                    {
+                    "murderer": ID,
+                    "revealed": bool,
+                    "text": same text as the death history for this murder (revealed history)
+                    "unrevealed_text": unrevealed death history
+                    "moon": moon
+                    },
+                ]
+            }
 
         if murders is empty, a NoneType is returned
         :param cat: cat object

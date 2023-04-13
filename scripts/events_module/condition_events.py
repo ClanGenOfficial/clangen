@@ -166,32 +166,32 @@ class Condition_Events():
                                     cat.scars.append(scar)
 
                             # add scar history
-                            if injury_event.history_text is not None:
-                                if injury_event.history_text[0] is not None:
-                                    history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                            if injury_event.history_text:
+                                if "scar" in injury_event.history_text:
+                                    history_text = event_text_adjust(Cat, injury_event.history_text['scar'], cat, other_cat,
                                                                      other_clan_name, keep_m_c=True)
                                     self.history.add_death_or_scars(cat, other_cat, history_text, scar=True)
                     else:
                         # record proper history text possibilities
-                        if injury_event.history_text is not None:
+                        if injury_event.history_text:
                             possible_scar = None
                             possible_death = None
-                            if injury_event.history_text[0] is not None:
-                                history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
-                                                                 other_clan_name, keep_m_c=True)
-                                possible_scar = str(history_text)
-                            if injury_event.history_text[1] is not None and cat.status != "leader":
-                                history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
-                                                                 other_clan_name, keep_m_c=True)
-                                possible_death = str(history_text)
-                            elif injury_event.history_text[2] is not None and cat.status == "leader":
-                                history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
-                                                                 other_clan_name)
-                                possible_death = str(history_text)
+                            if "scar" in injury_event.history_text:
+                                possible_scar = event_text_adjust(Cat, injury_event.history_text["scar"], cat,
+                                                                  other_cat, other_clan_name, keep_m_c=True)
+                            if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
+                                possible_death = event_text_adjust(Cat, injury_event.history_text['lead_death'], cat,
+                                                                   other_cat, other_clan_name, keep_m_c=True)
+                            elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
+                                possible_death = event_text_adjust(Cat, injury_event.history_text['reg_death'], cat,
+                                                                   other_cat, other_clan_name, keep_m_c=True)
+
                             if possible_scar:
-                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_scar, other_cat, scar=True)
+                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_scar,
+                                                                         other_cat, scar=True)
                             elif possible_death:
-                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_death, other_cat, death=True)
+                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_death,
+                                                                         other_cat, death=True)
                         cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead

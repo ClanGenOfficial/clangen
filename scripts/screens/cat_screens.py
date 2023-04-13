@@ -1374,19 +1374,38 @@ class ProfileScreen(Screens):
         """
         text = None
         death_history = self.history.get_death_or_scars(self.the_cat, death=True)
+        murder_history = self.history.get_murders(self.the_cat)
+        print(death_history)
+        print(murder_history)
         if game.switches['show_history_moons']:
             moons = True
         else:
             moons = False
 
         if death_history:
-
             all_deaths = []
             for death in death_history:
-                text = event_text_adjust(Cat,
-                                         death["text"],
-                                         self.the_cat,
-                                         Cat.fetch_cat(death["involved"]))
+                if murder_history:
+                    # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
+                    for event in murder_history["is_victim"]:
+                        if event["text"] == death["text"] and event["moon"] == death["moon"]:
+                            if event["revealed"] is True:
+                                print('event revealed')
+                                text = event_text_adjust(Cat,
+                                                         event["text"],
+                                                         self.the_cat,
+                                                         Cat.fetch_cat(death["involved"]))
+                            else:
+                                print('event unrevealed')
+                                text = event_text_adjust(Cat,
+                                                         event["unrevealed_text"],
+                                                         self.the_cat,
+                                                         Cat.fetch_cat(death["involved"]))
+                else:
+                    text = event_text_adjust(Cat,
+                                             death["text"],
+                                             self.the_cat,
+                                             Cat.fetch_cat(death["involved"]))
                 if moons:
                     text += f" (Moon {death['moon']})"
                 all_deaths.append(text)
@@ -1433,10 +1452,11 @@ class ProfileScreen(Screens):
                 victims = murder_history["is_murderer"]
             else:
                 victims = []
-            if "is_victim" in murder_history:
-                murderers = murder_history["is_victim"]
-            else:
-                murderers = []
+
+            #if "is_victim" in murder_history:
+            #    murderers = murder_history["is_victim"]
+            #else:
+            #    murderers = []
 
             if victims:
                 victim_names = {}
@@ -1464,7 +1484,8 @@ class ProfileScreen(Screens):
                 else:
                     victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-            if murderers:
+            # don't think i need this anymore, but keeping till i'm sure
+            """if murderers:
                 print(murderers)
                 murderer_names = {}
                 name_list = []
@@ -1491,7 +1512,7 @@ class ProfileScreen(Screens):
                     elif len(murderer_names) == 2:
                         murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
                     else:
-                        murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."
+                        murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."""""
 
         print(victim_text, murdered_text)
         return " ".join([victim_text, murdered_text])

@@ -594,11 +594,10 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat_dep", "multi-death", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "mc_to_rc", "neg_platonic", "neg_respect", "neg_trust", "dislike"],
+        "tags": ["other_cat_dep", "multi_death", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "mc_to_rc", "neg_platonic", "neg_respect", "neg_trust", "dislike"],
         "death_text": "m_c was murdered by r_c, with the intention of taking their place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
-            "reg_murder_unrevealed": "m_c was murdered by an unknown killer.",
             "lead_death": "were murdered by r_c in an attempt to usurp their lead",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
