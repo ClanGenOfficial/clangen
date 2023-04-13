@@ -481,15 +481,6 @@
             "great hunter",
             "fantastic hunter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -521,15 +512,6 @@
             "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
         ],
         "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
             "None"
         ],
         "min_cats": 2,

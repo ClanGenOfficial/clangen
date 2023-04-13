@@ -1933,5 +1933,91 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_lillizard1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "platonic",
+        "comfort",
+        "small_prey"
+    ],
+    "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little lizard!",
+    "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+        "r_c pounces on the little creature and carries the nice mouthful home.",
+        "The lizard drops its tail, and r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together.",
+        "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments them on the catch with a laugh in their meow, and s_c has to agree with them, purring with laughter."
+    ],
+    "fail_text": [
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
+        "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 2,
+    "max_cats": 3
+},
+{
+    "patrol_id": "fst_hunt_lillizard2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "rel_two_apps",
+        "platonic",
+        "comfort",
+        "romantic",
+        "two_apprentices",
+        "apprentice",
+        "small_prey"
+    ],
+    "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
+    "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+        "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+        "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+    ],
+    "fail_text": [
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
+    ],
+    "min_cats": 2,
+    "max_cats": 3
+},
+{
+    "patrol_id": "fst_hunt_vole1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "medium_prey"
+    ],
+    "intro_text": "Your patrol comes across a vole nibbling at a seed.",
+    "success_text": [
+        "r_c drops into a crouch and lightly stalks towards the vole. They pause, waggling their haunches before pouncing. They catch the vole easily and deliver a killing bite to the back of its head.",
+        "r_c drops into a crouch and begins stalking forward. When they get close, the vole suddenly stops chewing and r_c takes the opportunity to pounce. They kill the prey quickly and lick the blood from their lips with satisfaction.",
+        "s_c drops into a crouch and has to consciously stop their tail from swaying in excitement as they stalk the prey. Once they think they're close enough, they give their haunches a little wiggle and leap. They catch the vole squarely between their paws and kill it quickly."
+    ],
+    "fail_text": [
+        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!"
+    ],
+    "decline_text": "Your patrol decides to look for other prey.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
 }
 ]
