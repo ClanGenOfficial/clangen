@@ -444,14 +444,12 @@ class Relation_Events():
 
     def can_trigger_events(self, cat):
         """Returns if the given cat can still trigger events."""
-        MAX_NORMAL = 4
-        MAX_SPECIAL = 6
         special_status = ["leader", "deputy", "medicine cat", "mediator"]
         
         # set the threshold correctly
-        threshold = MAX_NORMAL
+        threshold = game.config["relationship"]["max_interaction"]
         if cat.status in special_status:
-            threshold = MAX_SPECIAL
+            threshold = game.config["relationship"]["max_interaction_special"]
         
         if cat.ID not in self.cats_triggered_events:
             return True

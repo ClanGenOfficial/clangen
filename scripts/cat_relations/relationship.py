@@ -222,22 +222,23 @@ class Relationship():
             -------
         """
         amount = self.get_amount(in_de_crease, intensity)
+        passive_buff = int(amount/game.config["relationship"]["passive_influence_div"])
 
         # influence the own relationship
         if rel_type == "romantic":
-            self.complex_romantic(amount)
+            self.complex_romantic(amount, passive_buff)
         elif rel_type == "platonic":
-            self.complex_platonic(amount)
+            self.complex_platonic(amount, passive_buff)
         elif rel_type == "dislike":
-            self.complex_dislike(amount)
+            self.complex_dislike(amount, passive_buff)
         elif rel_type == "admiration":
-            self.complex_admiration(amount)
+            self.complex_admiration(amount, passive_buff)
         elif rel_type == "comfortable":
-            self.complex_comfortable(amount)
+            self.complex_comfortable(amount, passive_buff)
         elif rel_type == "jealousy":
-            self.complex_jealousy(amount)
+            self.complex_jealousy(amount, passive_buff)
         elif rel_type == "trust":
-            self.complex_trust(amount)
+            self.complex_trust(amount, passive_buff)
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -428,57 +429,51 @@ class Relationship():
 
     # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
 
-    def complex_romantic(self, value):
+    def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
         self.romantic_love += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.platonic_like += buff
             self.comfortable += buff
             self.dislike -= buff
 
-    def complex_platonic(self, value):
+    def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
         self.platonic_like += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.comfortable += buff
             self.dislike -= buff
 
-    def complex_dislike(self, value):
+    def complex_dislike(self, value, buff):
         """Add the value to the dislike type and influence other value types as well."""
         self.dislike += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.romantic_love -= buff
             self.platonic_like -= buff
 
-    def complex_admiration(self, value):
+    def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
         self.admiration += value
 
-    def complex_comfortable(self, value):
+    def complex_comfortable(self, value, buff):
         """Add the value to the comfortable type and influence other value types as well."""
         self.comfortable += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.trust += buff
             self.platonic_like += buff
             self.dislike -= buff
             self.jealousy -= buff
 
-    def complex_jealousy(self, value):
+    def complex_jealousy(self, value, buff):
         """Add the value to the jealousy type and influence other value types as well."""
         self.jealousy += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.dislike += buff
 
-    def complex_trust(self, value):
+    def complex_trust(self, value, buff):
         """Add the value to the trust type and influence other value types as well."""
         self.trust += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.dislike -= buff
 
 

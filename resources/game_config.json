@@ -66,10 +66,12 @@
 			"medium": 10,
 			"high": 15
 		},
+		"max_interaction": 5,
+		"max_interaction_special": 8,
 		"compatibility_effect": 5,
-		"passive_influence": 5,
+		"passive_influence_div": 1.3,
 		"chance_for_neutral": 10,
-		"chance_of_special_group": 4,
+		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 10,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",

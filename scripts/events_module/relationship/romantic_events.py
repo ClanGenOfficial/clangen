@@ -73,8 +73,6 @@ class Romantic_Events():
             filtered_interactions.append(interaction)
         
         if len(filtered_interactions) < 1:
-            print(cat_from.status, cat_to.status)
-            print(game.clan.current_season, game.clan.biome)
             print(f"There were no romantic interactions for: {cat_from.name} to {cat_to.name}")
             return False
         
@@ -465,8 +463,8 @@ class Romantic_Events():
             return choice(MATE_DICTS[key])
         else:
             poly_key = ""
-            alive_inclan_from_mates = [mate for mate in cat_from.mate if cat_from.fetch_cat(mate).alive and not cat_from.fetch_cat(mate).outside]
-            alive_inclan_to_mates = [mate for mate in cat_to.mate if cat_to.fetch_cat(mate).alive and not cat_to.fetch_cat(mate).outside]
+            alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+            alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
             if len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) > 0:
                 poly_key = "both_mates"
             elif len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) <= 0:
