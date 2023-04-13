@@ -71,7 +71,7 @@ def get_alive_kits(Cat):
     """
     returns a list of all living kittens in the clan
     """
-    alive_kits = [i for i in Cat.all_cats.values() if 
+    alive_kits = [i for i in Cat.all_cats.values() if
                   i.age in ['kitten', 'newborn'] and not (i.dead or i.outside)]
     return alive_kits
 
@@ -83,11 +83,12 @@ def get_med_cats(Cat, working=True):
     set working to False if you want all meds and med apps regardless of their work status
     """
     all_cats = Cat.all_cats.values()
-    possible_med_cats = [i for i in all_cats if i.status in ['medicine cat apprentice','medicine cat'] and not (i.dead or i.outside)] 
+    possible_med_cats = [i for i in all_cats if
+                         i.status in ['medicine cat apprentice', 'medicine cat'] and not (i.dead or i.outside)]
 
     if working:
         possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
-  
+
     return possible_med_cats
 
 
@@ -151,7 +152,7 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
-        if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
+        if inter_cat.is_potential_mate(cat, True) and cat.is_potential_mate(inter_cat, True):
             if not inter_cat.mate:
                 cats.append(inter_cat)
     return cats
@@ -165,11 +166,11 @@ def get_current_season():
     function to handle the math for finding the clan's current season
     :return: the clan's current season
     """
-    
+
     if game.config['lock_season']:
         game.clan.current_season = game.clan.starting_season
         return game.clan.starting_season
-    
+
     modifiers = {
         "Newleaf": 0,
         "Greenleaf": 3,
@@ -183,41 +184,7 @@ def get_current_season():
 
     game.clan.current_season = game.clan.seasons[index]
 
-
     return game.clan.current_season
-
-
-def pronoun_repl(m, cat_pronouns_dict):
-    """ Helper function for add_pronouns """
-    inner_details = m.group(1).split("/")
-    try:
-        d = cat_pronouns_dict[inner_details[1]][1]
-        if inner_details[0] == "PRONOUN":
-            pro = d[inner_details[2]]
-            if inner_details[-1] == "CAP":
-                pro = pro.capitalize()
-            return pro
-        elif inner_details[0] == "VERB":
-            return inner_details[d["conju"] + 1]
-        return "error1"
-    except KeyError as e:
-        logger.exception("Failed to load sprite")
-        return "error2"
-
-
-def name_repl(m, cat_dict):
-    return cat_dict[m.group(0)][0]
-
-
-def process_text(text, cat_dict):
-    """ Add the correct name and pronouns into a string. """
-    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_dict), text)
-
-    name_patterns = [re.escape(l) for l in cat_dict]
-
-    adjust_text = re.sub("|".join(name_patterns), lambda x: name_repl(x, cat_dict), adjust_text)
-    return adjust_text
-
 
 
 def change_clan_relations(other_clan, difference=0):
@@ -273,7 +240,8 @@ def create_new_cat(Cat,
     else:
         backstory = backstory
 
-    if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
+    if backstory in (
+            Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
         other_clan = True
 
     created_cats = []
@@ -432,48 +400,49 @@ def create_new_cat(Cat,
 
 
 def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
-        """
+    """
         TODO: DOCS
         """
-        suffix = ''
-        if backstory in Cat.backstory_categories["rogue_backstories"]:
-            status = 'rogue'
-        elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
-            status = "former Clancat"
-        if status == 'kittypet':
-            name = choice(names.names_dict["loner_names"])
-        elif status in ['loner', 'rogue']:
-            name = choice(names.names_dict["loner_names"] +
-                                 names.names_dict["normal_prefixes"])
-        elif status == 'former Clancat':
-            name = choice(names.names_dict["normal_prefixes"])
-            suffix = choice(names.names_dict["normal_suffixes"])
-        else:
-            name = choice(names.names_dict["loner_names"])
-        new_cat = Cat(prefix=name,
-                      suffix=suffix,
-                      status=status,
-                      gender=choice(['female', 'male']),
-                      backstory=backstory)
-        if status == 'kittypet':
-            new_cat.accessory = choice(collars)
-        new_cat.outside = True
+    suffix = ''
+    if backstory in Cat.backstory_categories["rogue_backstories"]:
+        status = 'rogue'
+    elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
+        status = "former Clancat"
+    if status == 'kittypet':
+        name = choice(names.names_dict["loner_names"])
+    elif status in ['loner', 'rogue']:
+        name = choice(names.names_dict["loner_names"] +
+                      names.names_dict["normal_prefixes"])
+    elif status == 'former Clancat':
+        name = choice(names.names_dict["normal_prefixes"])
+        suffix = choice(names.names_dict["normal_suffixes"])
+    else:
+        name = choice(names.names_dict["loner_names"])
+    new_cat = Cat(prefix=name,
+                  suffix=suffix,
+                  status=status,
+                  gender=choice(['female', 'male']),
+                  backstory=backstory)
+    if status == 'kittypet':
+        new_cat.accessory = choice(collars)
+    new_cat.outside = True
 
-        if not alive:
-            new_cat.dead = True
+    if not alive:
+        new_cat.dead = True
 
-        thought = "Wonders about those Clan cats they just met"
-        new_cat.thought = thought
+    thought = "Wonders about those Clan cats they just met"
+    new_cat.thought = thought
 
-        # create relationships - only with outsiders 
-        # (this function will handle, that the cat only knows other outsiders)
-        new_cat.create_relationships_new_cat()
+    # create relationships - only with outsiders
+    # (this function will handle, that the cat only knows other outsiders)
+    new_cat.create_relationships_new_cat()
 
-        game.clan.add_cat(new_cat)
-        game.clan.add_to_outside(new_cat)
-        name = str(name + suffix)
+    game.clan.add_cat(new_cat)
+    game.clan.add_to_outside(new_cat)
+    name = str(name + suffix)
 
-        return name
+    return name
+
 
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
@@ -567,7 +536,7 @@ def get_cats_of_romantic_interest(cat, Relationship):
             continue
         if inter_cat.ID == cat.ID:
             continue
-        
+
         if inter_cat.ID not in cat.relationships:
             cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
             if cat.ID not in inter_cat.relationships:
@@ -725,6 +694,37 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+def pronoun_repl(m, cat_pronouns_dict):
+    """ Helper function for add_pronouns """
+    inner_details = m.group(1).split("/")
+    try:
+        d = cat_pronouns_dict[inner_details[1]][1]
+        if inner_details[0] == "PRONOUN":
+            pro = d[inner_details[2]]
+            if inner_details[-1] == "CAP":
+                pro = pro.capitalize()
+            return pro
+        elif inner_details[0] == "VERB":
+            return inner_details[d["conju"] + 1]
+        return "error1"
+    except KeyError as e:
+        logger.exception("Failed to load sprite")
+        return "error2"
+
+
+def name_repl(m, cat_dict):
+    return cat_dict[m.group(0)][0]
+
+
+def process_text(text, cat_dict):
+    """ Add the correct name and pronouns into a string. """
+    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_dict), text)
+
+    name_patterns = [re.escape(l) for l in cat_dict]
+
+    adjust_text = re.sub("|".join(name_patterns), lambda x: name_repl(x, cat_dict), adjust_text)
+    return adjust_text
+
 
 def adjust_list_text(list_of_items):
     """
@@ -743,7 +743,22 @@ def adjust_list_text(list_of_items):
 
     return insert
 
-def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
+
+def get_prey_choice(patrol_text):
+    """
+    checks for prey abbreviations and returns adjusted text
+    """
+    for abbr in PREY_LISTS["abbreviations"]:
+        if abbr in patrol_text:
+            chosen_list = PREY_LISTS["abbreviations"].get(abbr)
+            chosen_list = PREY_LISTS[chosen_list]
+            prey = choice(chosen_list)
+            patrol_text = patrol_text.replace(abbr, prey)
+
+    return patrol_text
+
+
+def get_omen_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
     """
     function to grab items from various lists in snippet_collections.json
     list options are:
@@ -856,19 +871,19 @@ def event_text_adjust(Cat,
 
     # Dreams and Omens
     if "omen_list" in text:
-        chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
+        chosen_omens = get_omen_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
         cat_dict["omen_list"] = (chosen_omens, None)
     if "prophecy_list" in text:
-        chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
+        chosen_prophecy = get_omen_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
         cat_dict["prophecy_list"] = (chosen_prophecy, None)
     if "dream_list" in text:
-        chosen_dream = get_snippet_list("dream_list", randint(2, 4))
+        chosen_dream = get_omen_snippet_list("dream_list", randint(2, 4))
         cat_dict["dream_list"] = (chosen_dream, None)
     if "clair_list" in text:
-        chosen_clair = get_snippet_list("clair_list", randint(2, 4))
+        chosen_clair = get_omen_snippet_list("clair_list", randint(2, 4))
         cat_dict["clair_list"] = (chosen_clair, None)
     if "story_list" in text:
-        chosen_story = get_snippet_list("story_list", randint(1, 2))
+        chosen_story = get_omen_snippet_list("story_list", randint(1, 2))
         cat_dict["story_list"] = (chosen_story, None)
 
     adjust_text = process_text(text, cat_dict)
@@ -890,9 +905,13 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     cat_dict = {
         "m_c": (str(cat.name), choice(cat.pronouns)) if cat else ("cat_placeholder", None),
         "(mentor)": (str(mentor.name), choice(mentor.pronouns)) if mentor else ("mentor_placeholder", None),
-        "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else ("dead_mentor_name", None),
-        "(previous_mentor)": (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else ("previous_mentor_name", None),
-        "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else ("leader_name", None),
+        "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else (
+        "dead_mentor_name", None),
+        "(previous_mentor)": (
+        str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else (
+        "previous_mentor_name", None),
+        "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else (
+        "leader_name", None),
         "c_n": (clanname, None),
         "(prefix)": (prefix, None),
     }
@@ -933,13 +952,15 @@ def scale(rect):
 
     return rect
 
+
 def scale_dimentions(dim):
     dim = list(dim)
     dim[0] = round(dim[0] / 1600 * screen_x) if dim[0] > 0 else dim[0]
     dim[1] = round(dim[1] / 1400 * screen_y) if dim[1] > 0 else dim[1]
     dim = tuple(dim)
-    
+
     return dim
+
 
 def draw(cat, pos):
     new_pos = list(pos)
@@ -977,7 +998,7 @@ def update_sprite(cat):
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
         init_pelt(cat)
-            # THE SPRITE UPDATE
+        # THE SPRITE UPDATE
     # draw colour & style
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
@@ -1003,29 +1024,29 @@ def update_sprite(cat):
         else:
             cat_sprite = str(cat.cat_sprites[cat.age])
 
-# generating the sprite
+    # generating the sprite
     try:
         if cat.pelt.name not in ['Tortie', 'Calico']:
             new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + cat_sprite], (0, 0))
         else:
-                # Base Coat
-                new_sprite.blit(
-                    sprites.sprites[cat.tortiebase + cat.pelt.colour + cat_sprite],
-                    (0, 0))
+            # Base Coat
+            new_sprite.blit(
+                sprites.sprites[cat.tortiebase + cat.pelt.colour + cat_sprite],
+                (0, 0))
 
-                # Create the patch image
-                if cat.tortiepattern == "Single":
-                    tortie_pattern = "SingleColour"
-                else:
-                    tortie_pattern = cat.tortiepattern
+            # Create the patch image
+            if cat.tortiepattern == "Single":
+                tortie_pattern = "SingleColour"
+            else:
+                tortie_pattern = cat.tortiepattern
 
-                patches = sprites.sprites[
-                    tortie_pattern + cat.tortiecolour + cat_sprite].copy()
-                patches.blit(sprites.sprites["tortiemask" + cat.pattern + cat_sprite], (0, 0),
-                             special_flags=pygame.BLEND_RGBA_MULT)
+            patches = sprites.sprites[
+                tortie_pattern + cat.tortiecolour + cat_sprite].copy()
+            patches.blit(sprites.sprites["tortiemask" + cat.pattern + cat_sprite], (0, 0),
+                         special_flags=pygame.BLEND_RGBA_MULT)
 
-                # Add patches onto cat.
-                new_sprite.blit(patches, (0, 0))
+            # Add patches onto cat.
+            new_sprite.blit(patches, (0, 0))
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
@@ -1054,12 +1075,11 @@ def update_sprite(cat):
         if cat.points:
             points = sprites.sprites['white' + cat.points + cat_sprite].copy()
             if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
-                 "tint_colours"]:
+                "tint_colours"]:
                 tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
                 tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
                 points.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(points, (0, 0))
-
 
         if cat.vitiligo:
             new_sprite.blit(sprites.sprites['white' + cat.vitiligo + cat_sprite], (0, 0))
@@ -1102,7 +1122,7 @@ def update_sprite(cat):
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
-            
+
             stage = "0"
             if 80 >= cat.opacity > 45:
                 # Stage 1
@@ -1111,7 +1131,7 @@ def update_sprite(cat):
                 # Stage 2
                 stage = "2"
 
-            new_sprite.blit(sprites.sprites['fademask' + stage + cat_sprite], 
+            new_sprite.blit(sprites.sprites['fademask' + stage + cat_sprite],
                             (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
 
             if cat.df:
@@ -1156,6 +1176,7 @@ def apply_opacity(surface, opacity):
             surface.set_at((x, y), tuple(pixel))
     return surface
 
+
 # ---------------------------------------------------------------------------- #
 #                                Fun Date Stuff                                #
 # ---------------------------------------------------------------------------- #
@@ -1168,12 +1189,14 @@ class SpecialDate(Enum):
     HALLOWEEN = (10, 31)
     NEW_YEARS = (1, 1)
 
+
 def is_today(date: SpecialDate) -> bool:
     """
     Checks if today is a specified 'special date'.
     """
     today = datetime.date.today()
     return (today.month, today.day) == date.value
+
 
 def get_special_date() -> SpecialDate:
     """
@@ -1186,6 +1209,7 @@ def get_special_date() -> SpecialDate:
         if (today.month, today.day) == date.value:
             return date
     return None
+
 
 # ---------------------------------------------------------------------------- #
 #                                     OTHER                                    #
@@ -1240,3 +1264,7 @@ with open(f"resources/dicts/acc_display.json", 'r') as read_file:
 SNIPPETS = None
 with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
     SNIPPETS = ujson.loads(read_file.read())
+
+PREY_LISTS = None
+with open(f"resources/dicts/prey_text_replacements.json", 'r') as read_file:
+    PREY_LISTS = ujson.loads(read_file.read())
