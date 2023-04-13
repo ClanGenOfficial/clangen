@@ -36,7 +36,8 @@
         "app1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
     ],
     "min_cats": 2,
-    "max_cats": 2,
+    "max_cats": 2
+},
 {
     "patrol_id": "bch_med_herblocation2",
     "biome": "beach",
