@@ -301,7 +301,7 @@ class Relation_Events():
 
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(new_cat, Relationship)
-            alive_cats = [i for i in new_cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
+            alive_cats = [i for i in new_cat.all_cats.values() if not i.dead and not i.outside]
             number = game.config["new_cat"]["cat_amount_welcoming"]
 
             if len(alive_cats) == 0:
@@ -311,18 +311,25 @@ class Relation_Events():
                     self.welcome_events_class.welcome_cat(age_cat, new_cat)
                 
                 rest_number = number - len(same_age_cats)
+                same_age_ids = [c.ID for c in same_age_cats]
+                alive_cats = [alive_cat for alive_cat in alive_cats if alive_cat.ID not in same_age_ids]
+                
                 chosen_rest = random.choices(population=alive_cats, k=len(alive_cats))
                 if rest_number >= len(alive_cats):
                     chosen_rest = random.choices(population=alive_cats, k=rest_number)
                 for inter_cat in chosen_rest:
                     self.welcome_events_class.welcome_cat(inter_cat, new_cat)
             elif len(same_age_cats) >= number:
-                chosen = random.choices(population=alive_cats, k=number)
+                chosen = random.choices(population=same_age_cats, k=number)
                 for chosen_cat in chosen:
                     self.welcome_events_class.welcome_cat(chosen_cat, new_cat)
             elif len(alive_cats) <= number:
                 for alive_cat in alive_cats:
                     self.welcome_events_class.welcome_cat(alive_cat, new_cat)
+            else:
+                chosen = random.choices(population=alive_cats, k=number)
+                for chosen_cat in chosen:
+                    self.welcome_events_class.welcome_cat(chosen_cat, new_cat)
 
     # ---------------------------------------------------------------------------- #
     #                                helper function                               #

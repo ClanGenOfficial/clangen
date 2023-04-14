@@ -215,6 +215,8 @@ class Romantic_Events():
 
         if poly:
             print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+            print(cat_from.mate)
+            print(cat_to.mate)
 
         return become_mate
 
@@ -322,6 +324,8 @@ class Romantic_Events():
 
         if poly:
             print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+            print(cat_from.mate)
+            print(cat_to.mate)
 
         mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
 
@@ -392,21 +396,20 @@ class Romantic_Events():
         # check relationship from current mates from cat_from
         all_mates_fulfill_current_mate_condition = True
         all_mates_fulfill_current_to_new = True
-        if len(cat_from.mate) > 0:
-            for mate_id in cat_from.mate:
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        if len(alive_inclan_from_mates) > 0:
+            for mate_id in alive_inclan_from_mates:
                 mate_cat = cat_from.fetch_cat(mate_id)
                 if mate_cat.dead:
                     continue
                 if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_mate_condition):
-                        #print("nono mates - ", mate_cat.name, cat_from.name)
                         all_mates_fulfill_current_mate_condition = False
                 
                 if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_to_new_condition):
-                        #print("nono new_mates - ", mate_cat.name, cat_to.name)
                         all_mates_fulfill_current_to_new = False
         if not all_mates_fulfill_current_mate_condition or\
             not all_mates_fulfill_current_to_new:
@@ -415,21 +418,20 @@ class Romantic_Events():
         # check relationship from current mates from cat_to
         all_mates_fulfill_current_mate_condition = True
         all_mates_fulfill_current_to_new = True
-        if len(cat_to.mate) > 0:
-            for mate_id in cat_to.mate:
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        if len(alive_inclan_to_mates) > 0:
+            for mate_id in alive_inclan_to_mates:
                 mate_cat = cat_to.fetch_cat(mate_id)
                 if mate_cat.dead:
                     continue
                 if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_mate_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_mate_condition):
-                        #print("nono mates - ", mate_cat.name, cat_to.name)
                         all_mates_fulfill_current_mate_condition = False
 
                 if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
                     if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_to_new_condition) or\
                         not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_to_new_condition):
-                        #print("nono new_mate - ", mate_cat.name, cat_from.name)
                         all_mates_fulfill_current_to_new = False
         if not all_mates_fulfill_current_mate_condition or\
             not all_mates_fulfill_current_to_new:

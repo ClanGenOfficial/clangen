@@ -762,7 +762,7 @@ class Events():
 
         # newborns don't do much
         if cat.status == 'newborn':
-            cat.create_interaction()
+            cat.relationship_interaction()
             cat.thoughts()
             return
 
@@ -778,10 +778,9 @@ class Events():
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-        cat.create_interaction()
 
         # this is the new interaction function, currently not active
-        # cat.relationship_interaction()
+        cat.relationship_interaction()
         cat.thoughts()
 
         # relationships have to be handled separately, because of the ceremony name change

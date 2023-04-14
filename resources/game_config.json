@@ -62,9 +62,9 @@
 	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 10,
-			"medium": 15,
-			"high": 20
+			"low": 8,
+			"medium": 12,
+			"high": 16
 		},
 		"max_interaction": 5,
 		"max_interaction_special": 8,
@@ -95,10 +95,10 @@
 			},
 			"accept_confession" : {
 				"romantic": 15,
-				"platonic": 5,
+				"platonic": 10,
 				"dislike": -15,
 				"admiration": 0,
-				"comfortable": 10,
+				"comfortable": 15,
 				"jealousy": 0,
 				"trust": 0
 			}
@@ -128,7 +128,7 @@
 				"dislike": 0,
 				"admiration": 0,
 				"comfortable": 15,
-				"jealousy": -10,
+				"jealousy": -15,
 				"trust": 20
 			},
 			"mates_to_each_other": {
@@ -137,7 +137,7 @@
 				"dislike": -15,
 				"admiration": 0,
 				"comfortable": 10,
-				"jealousy": -10,
+				"jealousy": -15,
 				"trust": 20
 			}
 		},
