@@ -23,7 +23,22 @@ class Pregnancy_Events():
     
     def __init__(self) -> None:
         self.condition_events = Condition_Events()
+        self.biggest_family = None
+        self.set_biggest_family()
         pass
+
+    def set_biggest_family(self):
+        """Gets the biggest family of the clan."""
+        biggest_family = None
+        for cat in Cat.all_cats.values():
+            ancestors = cat.get_relatives()
+            if not biggest_family:
+                biggest_family = ancestors
+                biggest_family.append(cat.ID)
+            elif len(biggest_family) < len(ancestors) + 1:
+                biggest_family = ancestors
+                biggest_family.append(cat.ID)
+        self.biggest_family = biggest_family
 
     def handle_pregnancy_age(self, clan):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
@@ -34,6 +49,9 @@ class Pregnancy_Events():
         """Handles pregnancy of a cat."""
         if not clan:
             return
+
+        if not self.biggest_family:
+            self.set_biggest_family()
 
         #Handles if a cat is already pregnant
         if cat.ID in clan.pregnancy_data:
@@ -72,8 +90,6 @@ class Pregnancy_Events():
                 return
 
         chance = self.get_balanced_kit_chance(cat, second_parent, affair)
-        second_name = second_parent.name if second_parent else ""
-        print("KITS CHANCE", chance , cat.name, second_name)
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
@@ -202,6 +218,7 @@ class Pregnancy_Events():
 
         kits = self.get_kits(kits_amount, cat, other_cat, clan)
         kits_amount = len(kits)
+        self.set_biggest_family()
 
         # delete the cat out of the pregnancy dictionary
         del clan.pregnancy_data[cat.ID]
@@ -642,30 +659,30 @@ class Pregnancy_Events():
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
         # get the chance for pregnancy
-        neg_chance = game.config["pregnancy"]["primary_chance_unmated"]
+        inverse_chance = game.config["pregnancy"]["primary_chance_unmated"]
         if len(first_parent.mate) > 0 and not affair:
-            neg_chance = game.config["pregnancy"]["primary_chance_mated"]
+            inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
 
         # SETTINGS
         # - buff if only mated pairs can have kits
         if game.settings['no unknown fathers']:
-            neg_chance = int(neg_chance * 0.7)
+            inverse_chance = int(inverse_chance * 0.7)
         
         # - buff if gender is relevant for pregnancy
         if not game.settings['no gendered breeding']:
-            neg_chance = int(neg_chance * 0.7)
+            inverse_chance = int(inverse_chance * 0.7)
 
         # - buff if affairs are not allowed
         if not game.settings['affair']:
-            neg_chance = int(neg_chance * 0.7)
+            inverse_chance = int(inverse_chance * 0.7)
 
         # CURRENT CAT AMOUNT
-        # - increase the negative chance if the clan is bigger
+        # - increase the inverse chance if the clan is bigger
         living_cats = len([i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)])
         if living_cats < 10:
-            neg_chance = int(neg_chance * 0.5) 
+            inverse_chance = int(inverse_chance * 0.5) 
         elif living_cats > 30:
-            neg_chance = int(neg_chance * (living_cats/30))
+            inverse_chance = int(inverse_chance * (living_cats/30))
 
         # COMPATIBILITY
         # - decrease / increase depending on the compatibility
@@ -675,10 +692,10 @@ class Pregnancy_Events():
                 buff = 0.85
                 if not comp:
                     buff += 0.3
-                neg_chance = int(neg_chance * buff)
+                inverse_chance = int(inverse_chance * buff)
 
         # RELATIONSHIP
-        # - decrease the negative chance if the cats are going along well
+        # - decrease the inverse chance if the cats are going along well
         if second_parent:
             # get the needed relationships
             if second_parent.ID in first_parent.relationships:
@@ -696,35 +713,46 @@ class Pregnancy_Events():
                              second_parent_relation.opposite_relationship.trust) / 2
 
             if average_romantic_love >= 85:
-                neg_chance -= int(neg_chance * 0.3)
+                inverse_chance -= int(inverse_chance * 0.3)
             elif average_romantic_love >= 55:
-                neg_chance -= int(neg_chance * 0.2)
+                inverse_chance -= int(inverse_chance * 0.2)
             elif average_romantic_love >= 35:
-                neg_chance -= int(neg_chance * 0.1)
+                inverse_chance -= int(inverse_chance * 0.1)
 
             if average_comfort >= 85:
-                neg_chance -= int(neg_chance * 0.3)
+                inverse_chance -= int(inverse_chance * 0.3)
             elif average_comfort >= 55:
-                neg_chance -= int(neg_chance * 0.2)
+                inverse_chance -= int(inverse_chance * 0.2)
             elif average_comfort >= 35:
-                neg_chance -= int(neg_chance * 0.1)
+                inverse_chance -= int(inverse_chance * 0.1)
 
             if average_trust >= 85:
-                neg_chance -= int(neg_chance * 0.3)
+                inverse_chance -= int(inverse_chance * 0.3)
             elif average_trust >= 55:
-                neg_chance -= int(neg_chance * 0.2)
+                inverse_chance -= int(inverse_chance * 0.2)
             elif average_trust >= 35:
-                neg_chance -= int(neg_chance * 0.1)
+                inverse_chance -= int(inverse_chance * 0.1)
         
         # AGE
-        # - increase the negative chance if the cats are old males
+        # - increase the inverse chance if the cats are old males
         if first_parent.gender == 'male' and first_parent.age == 'senior':
-            neg_chance = int(neg_chance * 1.5)
+            inverse_chance = int(inverse_chance * 1.5)
         elif second_parent and second_parent.gender == 'male' and second_parent.age == 'senior':
-            neg_chance = int(neg_chance * 1.5)
+            inverse_chance = int(inverse_chance * 1.5)
 
+        # 'INBREED' counter
+        # - increase inverse chance if one of the current cats belongs in the biggest family
+        if not self.biggest_family:
+            self.set_biggest_family()
 
-        return neg_chance
+        if first_parent.ID in self.biggest_family or second_parent and second_parent.ID in self.biggest_family:
+            inverse_chance = int(inverse_chance * 1.7)
+
+        # - decrease inverse chance if the current family is small
+        if len(first_parent.get_relatives(game.settings["first_cousin_mates"])) < (living_cats/15):
+            inverse_chance = int(inverse_chance * 0.7)
+
+        return inverse_chance
 
 
 PREGNANT_STRINGS = None

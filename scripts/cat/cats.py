@@ -1453,6 +1453,12 @@ class Cat():
             return other_cat.ID in self.inheritance.all_but_cousins
         return other_cat.ID in self.inheritance.all_involved
 
+    def get_relatives(self, cousin_allowed = True) -> list:
+        """Returns a list of ids of all nearly related ancestors."""
+        if cousin_allowed:
+            return self.inheritance.all_involved
+        return self.inheritance.all_but_cousins
+
     # ---------------------------------------------------------------------------- #
     #                                  conditions                                  #
     # ---------------------------------------------------------------------------- #
