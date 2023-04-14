@@ -143,16 +143,16 @@ class Relationship():
                     injured_cat.get_injured(inj, True)
                     injuries.append(inj)
 
-            possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
-            possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
-            if injured_cat.status == "leader":
-                possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
-            if possible_scar:
-                for condition in injuries:
-                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
-            if possible_death:
-                for condition in injuries:
-                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
+                possible_scar = self.adjust_interaction_string(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+                possible_death = self.adjust_interaction_string(injury_dict["death_text"]) if "death_text" in injury_dict else None
+                if injured_cat.status == "leader":
+                    possible_death = self.adjust_interaction_string(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                if possible_scar:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
+                if possible_death:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
 
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
@@ -183,8 +183,6 @@ class Relationship():
         }
 
         return process_text(string, cat_dict)
-
-
 
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
