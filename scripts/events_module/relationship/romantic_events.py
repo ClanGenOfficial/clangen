@@ -179,7 +179,7 @@ class Romantic_Events():
         return: bool if event is triggered or not
         """
         # get the highest romantic love relationships and
-        highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
+        highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values(), potential_mate=True)
         max_love_value = 0
         if highest_romantic_relation is not None:
             max_love_value = highest_romantic_relation.romantic_love
@@ -188,24 +188,23 @@ class Romantic_Events():
             return False
 
         cat_to = highest_romantic_relation.cat_to
-        if cat_to.is_potential_mate(cat) and cat.is_potential_mate(cat_to):
-            if cat_to.mate is None and cat.mate is None:
-                self.had_one_event = True
-                cat.set_mate(cat_to)
+        if cat_to.mate is None and cat.mate is None:
+            self.had_one_event = True
+            cat.set_mate(cat_to)
 
-                if highest_romantic_relation.opposite_relationship is None:
-                    highest_romantic_relation.link_relationship()
+            if highest_romantic_relation.opposite_relationship is None:
+                highest_romantic_relation.link_relationship()
 
-                if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
-                    mate_string = choice(MATE_DICTS["rejected"])
-                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
-                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
-                    return False
-                else:
-                    mate_string = choice(MATE_DICTS["high_romantic"])
-                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
-                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
-                    return True
+            if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
+                mate_string = choice(MATE_DICTS["rejected"])
+                mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
+                game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
+                return False
+            else:
+                mate_string = choice(MATE_DICTS["high_romantic"])
+                mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
+                game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
+                return True
         return False
 
 
