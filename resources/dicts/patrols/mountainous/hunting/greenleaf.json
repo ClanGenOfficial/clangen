@@ -23,10 +23,7 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim1",
@@ -70,9 +67,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim2",
@@ -116,9 +113,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim3",
@@ -170,11 +167,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim4",
@@ -220,11 +217,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge1",
@@ -284,9 +281,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge2",
@@ -346,9 +343,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_greenleafscavenge3",
@@ -407,11 +404,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "were killed in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "were killed in battle with a fox"
+    }
     },
         {
         "patrol_id": "mtn_hunt_greenleaf_solosquirrel1",

@@ -155,9 +155,9 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "mtn_hunt_solo2",
@@ -362,9 +362,9 @@
         ],
         "min_cats": 5,
         "max_cats": 6,
-        "history_text": [
-            "p_l gained a scar from a fox."
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox."
+    }
     },
     {
         "patrol_id": "mtn_hunt_noise2",
@@ -406,11 +406,11 @@
         ],
         "min_cats": 2,
         "max_cats": 4,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine.",
-            "were killed by a wolverine"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "were killed by a wolverine"
+    }
     },
     {
         "patrol_id": "mtn_hunt_noise3",
@@ -453,11 +453,11 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine while patrolling alone.",
-            "were killed by a predator while patrolling alone"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine while patrolling alone.",
+        "lead_death": "were killed by a predator while patrolling alone"
+    }
     },
     {
         "patrol_id": "mtn_hunt_gonetnr1",
@@ -513,10 +513,7 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "mtn_hunt_gonetnr2",
@@ -571,10 +568,7 @@
         ],
         "min_cats": 2,
         "max_cats": 3,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "mtn_hunt_gonetnr3",
@@ -629,10 +623,7 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "mtn_hunt_thunderpath1",
@@ -681,11 +672,11 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "mtn_hunt_thunderpath2",
@@ -735,10 +726,10 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     }
 ]

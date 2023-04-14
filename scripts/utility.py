@@ -929,7 +929,6 @@ def leader_ceremony_text_adjust(Cat,
     text = process_text(text, replace_dict)
 
     if virtue:
-        virtue = choice(virtue)
         text = text.replace("[virtue]", virtue)
 
     if extra_lives:

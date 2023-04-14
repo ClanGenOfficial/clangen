@@ -142,9 +142,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred after an unfortunate encounter with a wolverine."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+    }
     },
     {
         "patrol_id": "pln_hunt_burrow2",
@@ -179,11 +179,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was killed after an unfortunate experience with a wolverine.",
-            "were killed by a wolverine"
-        ]
+        "history_text": {
+        "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+        "lead_death": "were killed by a wolverine"
+    }
     },
     {
         "patrol_id": "pln_hunt_strange1",
@@ -317,9 +316,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "pln_hunt_solo2",
@@ -534,9 +533,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox."
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox."
+    }
     },
     {
         "patrol_id": "pln_hunt_noise2",
@@ -581,11 +580,11 @@
         "max_cats": 4,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_noise3",
@@ -630,11 +629,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine while patrolling alone.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine while patrolling alone.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_gonetnr1",
@@ -691,10 +690,7 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetnr2",
@@ -751,10 +747,7 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetnr3",
@@ -811,10 +804,7 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetwolegden1",
@@ -872,10 +862,7 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetwolegden2",
@@ -930,10 +917,7 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_twolegdencatdare1",
@@ -993,10 +977,7 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_twolegdenappdare1",
@@ -1053,10 +1034,7 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetwolegtrap1",
@@ -1108,10 +1086,7 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_gonetwolegtrap2",
@@ -1163,10 +1138,7 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        
     },
     {
         "patrol_id": "pln_hunt_thunderpath1",
@@ -1218,11 +1190,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath2",
@@ -1275,11 +1247,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath3",
@@ -1331,11 +1303,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath4",
@@ -1388,11 +1360,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
 
 
@@ -1496,10 +1468,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a kit fox.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a kit fox."
+    }
     },
     {
         "patrol_id": "pln_hunt_BIGFOX1",
@@ -1594,9 +1565,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from irritating a maned wolf as an apprentice."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from irritating a maned wolf as an apprentice."
+    }
     },
     {
         "patrol_id": "pln_hunt_BIGFOX3",
@@ -1707,8 +1678,8 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by a maned wolf, fighting over food."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by a maned wolf, fighting over food."
+    }
     }
 ]

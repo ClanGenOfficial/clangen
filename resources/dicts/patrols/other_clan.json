@@ -26,8 +26,7 @@
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
     "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
-    "history_text": [
-    ]
+    
 },
 {
     "patrol_id": "gen_bord_otherclan2",
@@ -56,8 +55,7 @@
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
     "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
-    "history_text": [
-    ]
+    
 },
 {
     "patrol_id": "gen_bord_otherclan3",
@@ -87,9 +85,9 @@
     "max_cats": 6,
     "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
     "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
-    "history_text": [
-    "r_c disrespected the border lines and was scarred by an enemy warrior for it."
-    ]
+    "history_text": {
+        "scar": "r_c disrespected the border lines and was scarred by an enemy warrior for it."
+    }
     },
     {
     "patrol_id": "gen_bord_otherclan4",
@@ -118,8 +116,7 @@
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
     "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
-    "history_text": [
-    ]
+    
 },
 {
     "patrol_id": "gen_bord_otherclan5",
@@ -148,8 +145,7 @@
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
     "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
-    "history_text": [
-    ]
+    
 },    
 {
     "patrol_id": "gen_med_borderherb2",
@@ -206,11 +202,11 @@
     "max_cats": 6,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n deputy conversing with your leader. They tell the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
-    "history_text": [
-    "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-    "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "gen_bord_scent2",
@@ -239,11 +235,11 @@
     "max_cats": 1,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp.  Inside they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
-    "history_text": [
-    "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-    "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "bch_bord_soloneutral1",
@@ -273,9 +269,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was injured by an enemy patrol while marking the border."
-    ]
+    "history_text": {
+        "scar": "r_c was injured by an enemy patrol while marking the border."
+    }
 },
 {
     "patrol_id": "bch_bord_soloneutral2",
@@ -305,11 +301,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was injured by an enemy patrol while marking the border.",
-    "r_c lost their life in an ambush on the border.",
-        "were killed in a border ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was injured by an enemy patrol while marking the border.",
+        "reg_death": "r_c lost their life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_soloneutral3",
@@ -339,11 +335,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was injured by an enemy patrol while marking the border.",
-    "r_c lost a life in an ambush on the border.",
-        "were killed in a border ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was injured by an enemy patrol while marking the border.",
+        "reg_death": "r_c lost a life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_soloneutral4",
@@ -372,9 +368,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was injured by an enemy patrol while marking the border."
-    ]
+    "history_text": {
+        "scar": "r_c was injured by an enemy patrol while marking the border."
+    }
 },
 {
     "patrol_id": "bch_bord_soloneutral5",
@@ -403,9 +399,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was injured by an enemy patrol while marking the border."
-    ]
+    "history_text": {
+        "scar": "r_c was injured by an enemy patrol while marking the border."
+    }
 },
 {
     "patrol_id": "dst_bord_soloneutral1",
@@ -465,9 +461,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "dst_bord_soloneutral3",
@@ -497,9 +493,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "dst_bord_soloneutral4",
@@ -585,9 +581,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "fst_bord_soloneutral2",
@@ -617,11 +613,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border.",
-    "r_c lost their life in an ambush on the border.",
-        "were killed in a border ambush"
-]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost their life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "fst_bord_soloneutral3",
@@ -651,11 +647,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border.",
-    "r_c lost a life in an ambush on the border.",
-        "were killed in a border ambush"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "fst_bord_soloneutral4",
@@ -684,9 +680,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "fst_bord_soloneutral5",
@@ -715,9 +711,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_soloneutral1",
@@ -747,9 +743,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_soloneutral2",
@@ -779,9 +775,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_soloneutral3",
@@ -811,9 +807,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_soloneutral4",
@@ -893,9 +889,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "pln_bord_soloneutral2",
@@ -925,11 +921,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border.",
-    "r_c lost their life in an ambush on the border.",
-        "were killed in a border ambush"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost their life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "pln_bord_soloneutral3",
@@ -959,11 +955,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border.",
-    "r_c lost a life in an ambush on the border.",
-        "were killed in a border ambush"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life in an ambush on the border.",
+        "lead_death": "were killed in a border ambush"
+    }
 },
 {
     "patrol_id": "pln_bord_soloneutral4",
@@ -992,9 +988,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "pln_bord_soloneutral5",
@@ -1023,8 +1019,8 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 }
 ]

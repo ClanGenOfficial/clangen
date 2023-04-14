@@ -702,7 +702,7 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_adjust = (1 + 0.10 * len(self.patrol_cats)) * self.patrol_total_experience / (
-                    len(self.patrol_cats) * gm_modifier * 2)
+                len(self.patrol_cats) * gm_modifier * 2)
         success_chance = self.patrol_event.chance_of_success + int(success_adjust)
 
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
@@ -1194,7 +1194,7 @@ class Patrol():
                                                new_name=new_name,
                                                loner=loner,
                                                kittypet=kittypet,
-                                               kit=False, #this is for singular kits, litters need this to be false
+                                               kit=False,  # this is for singular kits, litters need this to be false
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
@@ -1450,15 +1450,7 @@ class Patrol():
             else:
                 self.results_text.append(f"{cat.name} died.")
 
-            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
-            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
-            elif cat.status != 'leader':
-                self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
-            else:
-                self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
-                
+            self.handle_history(cat, death=True)
             cat.die(body)
 
             if len(patrol.patrol_cats) > 1:
@@ -1488,14 +1480,7 @@ class Patrol():
                 else:
                     self.results_text.append(f"{cat.name} died.")
 
-                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
-                elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
-                elif cat.status != 'leader':
-                    self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
-                else:
-                    self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
+                self.handle_history(cat, death=True)
                 cat.die(body)
 
         elif "multi_deaths" in self.patrol_event.tags:
@@ -1521,14 +1506,7 @@ class Patrol():
                         game.clan.leader_lives -= 10
                 else:
                     self.results_text.append(f"{cat.name} died.")
-                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[1]}', death=True)
-                elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
-                    self.history.add_death_or_scars(cat, text=f'{self.patrol_event.history_text[2]}', death=True)
-                elif cat.status != 'leader':
-                    self.history.add_death_or_scars(cat, text='This cat died while patrolling.', death=True)
-                else:
-                    self.history.add_death_or_scars(cat, text='died while patrolling.', death=True)
+                self.handle_history(cat, death=True)
                 cat.die()
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
@@ -1617,6 +1595,7 @@ class Patrol():
                 for cat in cats_to_poison:
                     cat.get_injured('poisoned')
                     self.results_text.append(f"{cat.name} got: poisoned")
+                    self.handle_history(cat, 'poisoned', possible=True, death=True)
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
@@ -1630,8 +1609,7 @@ class Patrol():
                             cat.get_ill(new_condition, lethal=lethal)
                         elif new_condition in PERMANENT:
                             cat.get_permanent_condition(new_condition)
-                        if self.patrol_event.history_text:
-                            self.history.add_possible_death_or_scars(cat, new_condition, self.patrol_event.history_text[0], scar=True)
+                        self.handle_history(cat, new_condition, possible=True, scar=True, death=True)
             else:
                 if len(possible_conditions) > 0:
                     new_condition = choice(possible_conditions)
@@ -1642,9 +1620,7 @@ class Patrol():
                         cat.get_ill(new_condition, lethal=lethal)
                     elif new_condition in PERMANENT:
                         cat.get_permanent_condition(new_condition)
-                    if self.patrol_event.history_text:
-                        self.history.add_possible_death_or_scars(cat, new_condition, self.patrol_event.history_text[0],
-                                                                 scar=True)
+                    self.handle_history(cat, new_condition, possible=True, scar=True, death=True)
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
@@ -1663,12 +1639,48 @@ class Patrol():
                             print('gave scar')
                             cat.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
-                    if len(self.patrol_event.history_text) >= 1:
-                        adjust_text = self.patrol_event.history_text[0]
-                        adjust_text = adjust_text.replace("r_c", str(cat.name))
-                        self.history.add_death_or_scars(cat, text=adjust_text, scar=True)
+                    self.handle_history(cat, scar=True)
+                    
+    def handle_history(self, cat, condition=None, possible=False, scar=False, death=False):
+        """
+        this handles the scar and death history of the cat
+        :param cat: the cat gaining the history
+        :param condition: if the history is related to a condition, include its name here
+        :param possible: if you want the history added to the possible scar/death then set this to True, defaults to False
+        :param scar: if you want the scar history added set this to True, default is False
+        :param death: if you want the death history added set this to True, default is False
+        """
+
+        if scar and "scar" in self.patrol_event.history_text:
+            adjust_text = self.patrol_event.history_text['scar']
+            adjust_text = adjust_text.replace("r_c", str(cat.name))
+            if possible:
+                self.history.add_possible_death_or_scars(cat, condition, adjust_text,
+                                                         scar=True)
+            else:
+                self.history.add_death_or_scars(cat, condition, adjust_text,
+                                                scar=True)
+        if death:
+            if cat.status == 'leader':
+                if "lead_death" in self.patrol_event.history_text:
+                    adjust_text = self.patrol_event.history_text['lead_death']
+                    adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    if possible:
+                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
+                                                                 death=True)
                     else:
-                        self.history.add_death_or_scars(cat, text=f'This cat gained a scar while patrolling.', scar=True)
+                        self.history.add_death_or_scars(cat, condition, adjust_text,
+                                                        death=True)
+            else:
+                if "reg_death" in self.patrol_event.history_text:
+                    adjust_text = self.patrol_event.history_text['reg_death']
+                    adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    if possible:
+                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
+                                                                 death=True)
+                    else:
+                        self.history.add_death_or_scars(cat, condition, adjust_text,
+                                                        death=True)
 
     def handle_herbs(self, outcome):
         herbs_gotten = []

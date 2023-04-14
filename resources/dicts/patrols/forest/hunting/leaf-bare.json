@@ -47,10 +47,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-bare_snowstorm2",
@@ -87,10 +86,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-bare_snowstorm3",
@@ -138,11 +136,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            "r_c froze to death while hunting in a storm.",
-            "froze to death while hunting"
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare.",
+        "reg_death": "r_c froze to death while hunting in a storm.",
+        "lead_death": "froze to death while hunting"
+    }
     },
     {
         "patrol_id": "fst_hunt_fox_leaf-barescavenge1",
@@ -202,10 +200,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "fst_hunt_fox_leaf-barescavenge2",
@@ -265,9 +262,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "fst_hunt_fox_leaf-barescavenge3",
@@ -326,11 +323,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died while fighting a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died while fighting a fox"
+    }
     },
     {
         "patrol_id": "fst_hunt_foxgray_leaf-barescavenge1",
@@ -390,10 +387,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "fst_hunt_foxgray_leaf-barescavenge2",
@@ -448,9 +444,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "fst_hunt_foxgray_leaf-barescavenge3",
@@ -508,10 +504,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-bare_solomouse1",
@@ -882,10 +877,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c was scarred after disappearing on patrol and being discovered injured.",
-                null
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-bare_solorat1",
@@ -995,9 +989,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting a swarm of rats."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting a swarm of rats."
+    }
     },
     {    
         "patrol_id": "fst_hunt_leaf-bare_ratking1",
@@ -1033,9 +1027,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c carries a scar from fighting a rat king."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting a rat king."
+    }
     },
     {    
         "patrol_id": "fst_hunt_leaf-bare_ratking2",
@@ -1071,10 +1065,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c died from their wounds after battling the rat king."
-        ]
+        "history_text": {
+        "reg_death": "r_c died from their wounds after battling the rat king."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-bare_solobird1",
@@ -1305,9 +1298,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "fst_hunt_leafbaresnowstorm1",
@@ -1355,10 +1348,9 @@
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "fst_hunt_random_leafbaresoloapp1",
@@ -1397,10 +1389,10 @@
         "fail_trait": ["bold", "daring"],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-            "r_c froze to death, caught in a snowstorm while hunting by themselves."
-    ]
+        "history_text": {
+        "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
+        "reg_death": "r_c froze to death, caught in a snowstorm while hunting by themselves."
+    }
 },
 {
     "patrol_id": "fst_hunt_leafbaresnowstorm3",
@@ -1446,11 +1438,11 @@
     ],
     "min_cats": 2,
     "max_cats": 6,
-    "history_text": [
-        "r_c caught a chill while hunting in leaf-bare.",
-        "r_c froze to death while hunting in a storm.",
-        "froze to death while hunting"
-    ]
+    "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare.",
+        "reg_death": "r_c froze to death while hunting in a storm.",
+        "lead_death": "froze to death while hunting"
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_leaf-barescavenge1",
@@ -1513,10 +1505,9 @@
     ],
     "min_cats": 2,
     "max_cats": 3,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_leaf-barescavenge2",
@@ -1579,9 +1570,9 @@
     ],
     "min_cats": 4,
     "max_cats": 6,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_leaf-barescavenge3",
@@ -1643,11 +1634,11 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox.",
-        "died while fighting a fox"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died while fighting a fox"
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-barescavenge1",
@@ -1710,10 +1701,9 @@
     ],
     "min_cats": 2,
     "max_cats": 3,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-barescavenge2",
@@ -1771,9 +1761,9 @@
     ],
     "min_cats": 4,
     "max_cats": 6,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-barescavenge3",
@@ -1834,10 +1824,9 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_mouse4",

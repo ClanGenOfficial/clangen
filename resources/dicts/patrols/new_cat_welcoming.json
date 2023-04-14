@@ -165,9 +165,9 @@
     "max_cats": 6,
     "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and informs them there's no room in c_n.",
     "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
-    "history_text": [
-            "p_l gained a scar after tussling with a rogue."
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar after tussling with a rogue."
+    }
 },
 {
     "patrol_id": "gen_med_rescue9",
@@ -359,9 +359,9 @@
     "max_cats": 6,
     "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
     "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarassed, the patrol goes home.",
-    "history_text": [
-            "This cat gained a scar from a fight with an angry kittypet."
-    ]
+    "history_text": {
+        "scar": "This cat gained a scar from a fight with an angry kittypet."
+    }
 },
 {
     "patrol_id": "gen_bord_injuredcat1",
@@ -386,9 +386,7 @@
     "max_cats": 6,
     "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
     "antagonize_fail_text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tells no one of what they saw.",
-    "history_text": [
-            null
-    ]
+    
 },
 {
     "patrol_id": "mnt_hunt_newcat_leaf-barecatcrywelcoming1",

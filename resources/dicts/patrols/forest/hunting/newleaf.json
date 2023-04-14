@@ -236,9 +236,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c was scarred after disappearing on patrol and being discovered injured."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+    }
     },
     {
         "patrol_id": "fst_hunt_newleaf_solorat1",
@@ -361,9 +361,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting a swarm of rats."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting a swarm of rats."
+    }
     },
     {    
         "patrol_id": "fst_hunt_newleaf_ratking1",
@@ -408,9 +408,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c was scarred fighting a rat king."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred fighting a rat king."
+    }
     },
     {    
         "patrol_id": "fst_hunt_newleaf_ratking2",
@@ -448,10 +448,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c died from their wounds after battling the rat king."
-        ]
+        "history_text": {
+        "reg_death": "r_c died from their wounds after battling the rat king."
+    }
     },
     {
         "patrol_id": "fst_hunt_newleaf_lillizard1",
@@ -555,10 +554,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_newleafscavenge2",
@@ -623,9 +621,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_newleafscavenge3",
@@ -689,11 +687,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox.",
-        "died while fighting a fox"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died while fighting a fox"
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_newleafscavenge1",
@@ -758,10 +756,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_newleafscavenge2",
@@ -880,10 +877,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen1",
@@ -944,11 +940,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox.",
-        "died while fighting a fox"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight.",
+        "reg_death": "r_c fell in battle with a fox.",
+        "lead_death": "died while fighting a fox"
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen2",
@@ -1007,9 +1003,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen3",
@@ -1070,11 +1066,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a vixen.",
-        "r_c fell in a solo battle with a vixen.",
-        "died while fighting a vixen"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a vixen"
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen1",
@@ -1132,10 +1128,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen2",
@@ -1193,9 +1188,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen3",
@@ -1252,10 +1247,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a vixen.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a vixen."
+    }
 },
 {
     "patrol_id": "fst_hunt_mouse1",
@@ -1678,11 +1672,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
-        "r_c died falling from the treetops, out on a solo nest raid.",
-        "falling from the treetops"
-]
+    "history_text": {
+        "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
+        "reg_death": "r_c died falling from the treetops, out on a solo nest raid.",
+        "lead_death": "falling from the treetops"
+    }
 },
 {
     "patrol_id": "fst_hunt_eggs_newleaf5",
@@ -1731,11 +1725,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
-        "r_c died falling from the treetops, out on a solo nest raid.",
-        "falling from the treetops"
-]
+    "history_text": {
+        "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
+        "reg_death": "r_c died falling from the treetops, out on a solo nest raid.",
+        "lead_death": "falling from the treetops"
+    }
 },
 {
     "patrol_id": "fst_hunt_eggs_newleaf6",
@@ -1822,9 +1816,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
-]
+    "history_text": {
+        "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
+    }
 },
 {
     "patrol_id": "fst_hunt_eggs_newleaf8",
@@ -1864,9 +1858,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
-        "r_c died as an apprentice after going out nest raiding alone."
-]
+    "history_text": {
+        "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
+        "reg_death": "r_c died as an apprentice after going out nest raiding alone."
+    }
 }
 ]

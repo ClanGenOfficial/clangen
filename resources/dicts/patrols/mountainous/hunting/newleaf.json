@@ -41,9 +41,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_eagleswim2",
@@ -87,9 +87,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_eagleswim3",
@@ -141,11 +141,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_eagleswim4",
@@ -191,11 +191,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_snowstorm1",
@@ -247,10 +247,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in newleaf.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in newleaf."
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_snowstorm2",
@@ -289,10 +288,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in newleaf.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in newleaf."
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_snowstorm3",
@@ -341,10 +339,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in newleaf.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in newleaf."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_newleafscavenge1",
@@ -405,10 +402,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_newleafscavenge2",
@@ -469,9 +465,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_newleafscavenge3",
@@ -531,11 +527,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "were killed in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "were killed in battle with a fox"
+    }
     },
     {
         "patrol_id": "mtn_hunt_newleaf_solosquirrel1",

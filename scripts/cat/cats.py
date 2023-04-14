@@ -1205,10 +1205,10 @@ class Cat():
             if (kitty).dead:
                 # check where they reside
                 if starclan:
-                    if kitty.ID not in game.clan.starclan_cats:
+                    if kitty.ID not in game.clan.starclan_cats or kitty.outside:
                         continue
                 else:
-                    if kitty.ID not in game.clan.darkforest_cats:
+                    if kitty.ID not in game.clan.darkforest_cats or kitty.outside:
                         continue
                 # guides aren't allowed here
                 if kitty == game.clan.instructor:
@@ -1308,12 +1308,15 @@ class Cat():
         possible_lives = ceremony_dict["lives"]
         lives = []
         used_lives = []
+        used_virtues = []
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             life_list = []
+            print('FOR GIVER', giver_cat.name, giver_cat.status)
             for life in possible_lives:
+                print(life)
                 tags = possible_lives[life]["tags"]
-                rank = self.fetch_cat(giver).status
+                rank = giver_cat.status
 
                 if "unknown_blessing" in tags:
                     continue
@@ -1326,43 +1329,54 @@ class Cat():
                     continue
                 if "old_leader" in tags and not ancient_leader:
                     continue
-                if "leader_parent" in tags and giver_cat not in self.get_parents():
+                if "leader_parent" in tags and giver_cat.ID not in self.get_parents():
                     continue
-                elif "leader_child" in tags and giver_cat not in self.get_children():
+                elif "leader_child" in tags and giver_cat.ID not in self.get_children():
+                    print(giver_cat.ID, self.get_children())
                     continue
-                elif "leader_mate" in tags and giver_cat not in self.mate:
+                elif "leader_mate" in tags and giver_cat.ID not in self.mate:
                     continue
-
-
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
                         continue
+                print("passed rank")
                 if possible_lives[life]["lead_trait"]:
                     if self.trait not in possible_lives[life]["lead_trait"]:
                         continue
+                print('passed lead trait')
                 if possible_lives[life]["star_trait"]:
                     if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
+                print('passed star trait')
 
-                life_list.append(possible_lives[life])
-                used_lives.append(life)
+                life_list.extend([i for i in possible_lives[life]["life_giving"]])
+                print(life_list)
+            print(life_list)
             i = 0
             chosen_life = {}
             while i < 10:
+                attempted = []
                 chosen_life = random.choice(life_list)
-                if chosen_life not in used_lives:
+                if chosen_life not in used_lives and chosen_life not in attempted:
                     break
-            chosen_text = random.choice(chosen_life["life_giving"])
-            if chosen_text["virtue"]:
-                virtues = chosen_text["virtue"]
+                else:
+                    attempted.append(chosen_life)
+                i += 1
+            used_lives.append(chosen_life)
+            if chosen_life["virtue"]:
+                poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
+                if not poss_virtues:
+                    poss_virtues = ['faith', 'friendship', 'love', 'strength']
+                virtue = choice(poss_virtues)
+                used_virtues.append(virtue)
             else:
-                virtues = None
+                virtue = None
 
             lives.append(leader_ceremony_text_adjust(Cat,
-                                                     chosen_text["text"],
+                                                     chosen_life["text"],
                                                      leader=self,
                                                      life_giver=giver,
-                                                     virtue=virtues,
+                                                     virtue=virtue,
                                                      ))
         if unknown_blessing:
             possible_blessing = []
