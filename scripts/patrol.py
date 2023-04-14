@@ -58,12 +58,12 @@ class Patrol():
         self.patrol_other_cats = []
         self.patrol_fail_stat_cat = None
         self.patrol_win_stat_cat = None
-        self.app1_name = None
-        self.app2_name = None
-        self.app3_name = None
-        self.app4_name = None
-        self.app5_name = None
-        self.app6_name = None
+        self.app1 = None
+        self.app2 = None
+        self.app3 = None
+        self.app4 = None
+        self.app5 = None
+        self.app6 = None
         self.other_clan = None
         self.experience_levels = []
         self.filter_count = 0
@@ -159,33 +159,18 @@ class Patrol():
 
         # grabbing the apprentices' names
         if len(self.patrol_apprentices) != 0:
-            if len(self.patrol_apprentices) == 1:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-            elif len(self.patrol_apprentices) == 2:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-                self.app2_name = str(self.patrol_apprentices[1].name)
-            elif len(self.patrol_apprentices) == 3:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-                self.app2_name = str(self.patrol_apprentices[1].name)
-                self.app3_name = str(self.patrol_apprentices[2].name)
-            elif len(self.patrol_apprentices) == 4:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-                self.app2_name = str(self.patrol_apprentices[1].name)
-                self.app3_name = str(self.patrol_apprentices[2].name)
-                self.app4_name = str(self.patrol_apprentices[3].name)
-            elif len(self.patrol_apprentices) == 5:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-                self.app2_name = str(self.patrol_apprentices[1].name)
-                self.app3_name = str(self.patrol_apprentices[2].name)
-                self.app4_name = str(self.patrol_apprentices[3].name)
-                self.app5_name = str(self.patrol_apprentices[4].name)
-            elif len(self.patrol_apprentices) == 6:
-                self.app1_name = str(self.patrol_apprentices[0].name)
-                self.app2_name = str(self.patrol_apprentices[1].name)
-                self.app3_name = str(self.patrol_apprentices[2].name)
-                self.app4_name = str(self.patrol_apprentices[3].name)
-                self.app5_name = str(self.patrol_apprentices[4].name)
-                self.app6_name = str(self.patrol_apprentices[5].name)
+            if len(self.patrol_apprentices) >= 1:
+                self.app1 = self.patrol_apprentices[0]
+            if len(self.patrol_apprentices) >= 2:
+                self.app2 = self.patrol_apprentices[1]
+            if len(self.patrol_apprentices) >= 3:
+                self.app3 = self.patrol_apprentices[2]
+            if len(self.patrol_apprentices) >= 4:
+                self.app4 = self.patrol_apprentices[3]
+            if len(self.patrol_apprentices) >= 5:
+                self.app5 = self.patrol_apprentices[4]
+            if len(self.patrol_apprentices) >= 6:
+                self.app6 = self.patrol_apprentices[5]
 
         if clan.all_clans and len(clan.all_clans) > 0:
             self.other_clan = choice(clan.all_clans)
@@ -729,9 +714,9 @@ class Patrol():
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                if ("great" or "very") in kitty.skill:
+                if "great" in kitty.skill or "very" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
-                elif ("fantastic" or "excellent" or "extremely") in kitty.skill:
+                elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
             if kitty.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -741,11 +726,13 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        if success_chance >= 120:
+            success_chance = 115
+            skill_updates += "success chance over 120, updated to 115"
         print(skill_updates)
-        print('ending chance', success_chance)
-
-        c = int(random.getrandbits(7))
+        c = int(random.random() * 120)
         outcome = int(random.getrandbits(4))
+        print('ending chance', success_chance, 'vs.', c)
 
         # denotes if they get the common "basic" outcome or the rare "basic" outcome
         rare = False

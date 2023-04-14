@@ -244,7 +244,7 @@ class Screens():
             moons_text = "moons"
             
         self.moons_n_seasons_moon = UIImageButton(
-            scale(pygame.Rect((26, 19), (48, 48))),
+            scale(pygame.Rect((28, 21), (48, 48))),
             "",
             manager=MANAGER,
             object_id="#mns_image_moon",
@@ -266,7 +266,7 @@ class Screens():
             season_image_id = '#mns_image_leaffall'
         
         self.moons_n_seasons_season = UIImageButton(
-            scale(pygame.Rect((26, 80), (48, 48))),
+            scale(pygame.Rect((28, 82), (48, 48))),
             "",
             manager=MANAGER,
             object_id= season_image_id,
@@ -303,7 +303,7 @@ class Screens():
             moons_text = "moons"
         
         self.moons_n_seasons_moon = UIImageButton(
-            scale(pygame.Rect((26, 19), (48, 48))),
+            scale(pygame.Rect((28, 21), (48, 48))),
             "",
             manager=MANAGER,
             object_id="#mns_image_moon",
@@ -321,7 +321,7 @@ class Screens():
             season_image_id = '#mns_image_leaffall'
         
         self.moons_n_seasons_season = UIImageButton(
-            scale(pygame.Rect((26, 80), (48, 48))),
+            scale(pygame.Rect((28, 82), (48, 48))),
             "",
             manager=MANAGER,
             object_id= season_image_id,
@@ -337,6 +337,3 @@ def cat_profiles():
 
     for x in Cat.all_cats:
         update_sprite(Cat.all_cats[x])
-
-
-

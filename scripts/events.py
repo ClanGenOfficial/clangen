@@ -170,7 +170,7 @@ class Events():
                 ghost_names.append(str(ghost.name))
             insert = adjust_list_text(ghost_names)
 
-            if len(Cat.dead_cats) > 1:
+            if len(Cat.dead_cats) > 1 and game.clan.game_mode != 'classic':
                 event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
                         f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \
@@ -182,8 +182,11 @@ class Events():
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
                                            not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
                     # finds a percentage of the living clan to become shaken
-                    shaken_cats = random.sample(alive_cats,
-                                                k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
+
+                    if len(alive_cats) == 0:
+                        return
+                    else:
+                        shaken_cats = random.sample(alive_cats, k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
 
                     shaken_cat_names = []
                     for cat in shaken_cats:
@@ -2042,10 +2045,13 @@ class Events():
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
                     cat.genderalign = "trans female"
+                    #cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
                     cat.genderalign = "trans male"
+                    #cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
                 cat.genderalign = "nonbinary"
+                #cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == 'male':
                 gender = 'tom'

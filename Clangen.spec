@@ -25,6 +25,7 @@ a.datas += Tree('./sprites', prefix='sprites')
 a.datas += [ ('version.ini', './version.ini', 'DATA') ]
 a.datas += [ ('changelog.txt', './changelog.txt', 'DATA') ]
 a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
+a.datas += [ ('.itch.toml', './.itch.toml', 'DATA') ]
 
 exe = EXE(
     pyz,

@@ -32,7 +32,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
@@ -55,7 +55,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
