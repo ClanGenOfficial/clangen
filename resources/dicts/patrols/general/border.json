@@ -201,6 +201,6 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/tell/tells} the kittypet that they are not welcome here, but after {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} that the kittypet is ill, {PRONOUN/p_l/subject} {VERB/p_l/agree/agrees} to carry them to a nearby Twoleg den to find help.",
-    "antagonize_fail_text": "The kittypet tries to make a run for it when suddenly they collapse! When p_l comes closer {PRONOUN/p_l/subject} can smell the sickness coming off the kittypet's pelt. {PRONOUN/p_l/subject/CAP} {VERb/p_l/decide/decides} to resume the border patrol - it's not {PRONOUN/p_l/poss} problem anymore."
+    "antagonize_fail_text": "The kittypet tries to make a run for it when suddenly they collapse! When p_l comes closer {PRONOUN/p_l/subject} can smell the sickness coming off the kittypet's pelt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to resume the border patrol - it's not {PRONOUN/p_l/poss} problem anymore."
 }
 ]
