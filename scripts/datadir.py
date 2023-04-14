@@ -6,7 +6,11 @@ from scripts.version import get_version_info
 
 def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
-    os.makedirs(get_save_dir(), exist_ok=True)
+    try:
+        os.makedirs(get_save_dir(), exist_ok=True)
+    except FileExistsError:
+        print("Macos ignored exists=okay for save dir, continuing")
+        pass
     os.makedirs(get_log_dir(), exist_ok=True)
     os.makedirs(get_cache_dir(), exist_ok=True)
 
