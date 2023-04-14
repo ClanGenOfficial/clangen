@@ -1341,7 +1341,7 @@ class Cat():
             lives.append(leader_ceremony_text_adjust(Cat,
                                                      chosen_text["text"],
                                                      leader=self,
-                                                     virtue=chosen_text["virtues"],
+                                                     virtue=chosen_text["virtue"],
                                                      extra_lives=extra_lives,
                                                      ))
         all_lives = "<br><br>".join(lives)

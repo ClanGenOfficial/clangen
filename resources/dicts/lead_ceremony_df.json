@@ -20,21 +20,21 @@
       "tags": [],
       "lead_trait": [],
       "text": [
-        "m_c leaves to speak with the Dark Forest. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Murk and shadows cling to their pelts like frost, and their eyes gleam dangerously as they greet the new leader."
+        "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/close/closes} {PRONOUN/m_c/poss} eyes and {VERB/m_c/are/is} immediately surrounded by {PRONOUN/m_c/poss} loved ones, friends, and Clanmates who have passed on. Murk and shadows cling to their pelts like frost, and their eyes gleam dangerously as they greet the new leader."
       ]
     },
     "new_clan": {
       "tags": ["new_clan"],
       "lead_trait": [],
       "text": [
-        "As m_c dreams that night, they find themselves walking through darkness, mud and muck sticking to their paws. The world around them is devoid of light and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
+        "As m_c dreams that night, {PRONOUN/m_c/subject} find themselves walking through darkness, mud and muck sticking to {PRONOUN/m_c/poss} paws. The world around {PRONOUN/m_c/object} is devoid of light and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
       ]
     },
     "bloodthirsty": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [
-            "m_c leaves to speak with the Dark Forest. They close their eyes and awaken under an oppressing darkness, devoid of the stars they left behind. They turn around to see a shadowy group of cats approaching, triumph in their eyes."
+            "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/close/closes} {PRONOUN/m_c/poss} eyes and {VERB/m_c/awaken/awakens} under an oppressing darkness, devoid of the stars {PRONOUN/m_c/subject} left behind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/turn/turns} around to see a shadowy group of cats approaching, triumph in their eyes."
       ]
 
     }
@@ -49,7 +49,7 @@
       "rank": [],
       "life_giving": [
         {
-          "text": "The cat stands and stalks towards m_c, circling them as though a hunter appraising their next meal. \"You come here, ignorant to the lands you walk, expecting a gift? A boon? You'll all wallow here in the darkness with me one day,\" the cat's eyes pierce into m_c's pelt, \"You'll remember me as r_c, and you'll remember that I've granted you a life for [virtue]. And one day, we'll speak again.\"",
+          "text": "The cat stands and stalks towards m_c, circling {PRONOUN/m_c/object} as though a hunter appraising {PRONOUN/r_c/poss} next meal. \"You come here, ignorant to the lands you walk, expecting a gift? A boon? You'll all wallow here in the darkness with me one day,\" the cat's eyes pierce into m_c's pelt, \"You'll remember me as r_c, and you'll remember that I've granted you a life for [virtue]. And one day, we'll speak again.\"",
           "virtue": ["strength unending", "ruthless efficiency", "never-ending ambition", "righteous anger", "brutality in the face of opposition"]
         }
       ]
@@ -75,7 +75,7 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "Despite looking quite out of place among the battle-hardened shadows, r_c still places their muzzle harshly against the new leader's head. They give a life for [virtue], hoping that they will remember their own kindness.",
+          "text": "Despite looking quite out of place among the battle-hardened shadows, r_c still places {PRONOUN/r_c/poss} muzzle harshly against the new leader's head. {PRONOUN/r_c/object/CAP} {VERB/r_c/give/gives} a life for [virtue], hoping that {PRONOUN/m_c/subject} will remember {PRONOUN/m_c/poss} own kindness.",
           "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride", "hope"]
         }
       ]
@@ -88,7 +88,7 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "r_c stalks up to the new leader, eyes burning with the increasingly familiar Dark Forest ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
+          "text": "r_c stalks up to the new leader, eyes burning with the increasingly familiar Dark Forest ferocity. {PRONOUN/r_c/object/CAP} {VERB/r_c/touch/touches} their nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. m_c reels back with the emotion of the life that courses through {PRONOUN/m_c/object}.",
           "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
         }
       ]
@@ -101,7 +101,7 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "r_c jovially jaunts up to the new leader. The dark murk on their fur or the red eyes did not seem to dampen their spirit one whit. They touch their nose to m_c's head, giving them a life fur [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
+          "text": "r_c jovially jaunts up to the new leader. The dark murk on {PRONOUN/r_c/poss} fur or the red eyes did not seem to dampen {PRONOUN/r_c/poss} spirit one bit. {PRONOUN/r_c/subject/CAP} {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
           "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
         }
       ]
@@ -114,8 +114,8 @@
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
-          "text": "r_c seemed to appear to m_c out of nowhere in the shadowy gloom of the Dark Forest, and quietly gives them a live of [virtue]. As quickly as they appeared, r_c vanished when the life was given.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "leve-headedness", "caution in the heat of battle", "the strength to carry on alone"]
+          "text": "r_c seems to appear to m_c out of nowhere in the shadowy gloom of the Dark Forest, and quietly gives {PRONOUN/m_c/object} a life for [virtue]. As quickly as {PRONOUN/r_c/subject} appeared, r_c vanishes.",
+          "virtue": ["resilience", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "leve-headedness", "caution in the heat of battle", "the strength to carry on alone"]
         }
       ]
     },
@@ -127,17 +127,17 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c walks up to m_c next, offering a life for [virtue]. They give a wicked grin, telling m_c that their Clan will survive any threat.",
+          "text": "r_c walks up to m_c next, offering a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a wicked grin, telling m_c that {PRONOUN/m_c/poss} Clan will survive any threat.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "instincts", "strength"]
         },
         {
-          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits {PRONOUN/m_c/poss} teeth as the life rushes into {PRONOUN/m_c/object}.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "instincts", "strength"]
         },
         {
-          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They spit at m_c that their pain is almost over.",
+          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/spit/spits} at m_c that {PRONOUN/m_c/poss} pain is almost over.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "instincts", "strength"]
         }
@@ -151,19 +151,19 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c walks up to m_c next, giving them a life for [virtue]. They growl a word of encouragement over the destruction of their enemies before returning to the line of shadows.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "text": "r_c walks up to m_c next, giving {PRONOUN/m_c/object} a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/m_c/give/gives} a word of encouragement for the destruction of {PRONOUN/m_c/poss} enemies before returning to the line of shadows.",
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance",
+            "farsightedness", "instincts", "strength"]
         },
         {
-          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into {PRONOUN/m_c/object}.",
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance",
+            "farsightedness", "instincts", "strength"]
         },
         {
-          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.'",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "text": "r_c approaches. Pain surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/receive/receives} a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.'",
+          "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance",
+            "farsightedness", "instincts", "strength"]
         }
       ]
     },
@@ -175,7 +175,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c bounds up to the new leader, reaching up on their hind legs to give them a new life for [virtue]. They flick their muck-covered tail and run back to the line of shadows.",
+          "text": "r_c bounds up to the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/m_c/object/CAP} {VERB/m_c/flick/flicks} {PRONOUN/r_c/poss} muck-covered tail and run back to the line of shadows.",
           "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]
@@ -188,7 +188,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c giddily approaches the new leader, reaching up on their hind legs to give them a new life for [virtue]. They lash their tail and head back to make room for the next cat.",
+          "text": "r_c giddily approaches the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/lash/lashes} {PRONOUN/r_c/poss} tail and head back to make room for the next cat.",
           "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]
@@ -201,7 +201,7 @@
       "rank": ["apprentice"],
       "life_giving": [
         {
-          "text": "A young cat is next to give a life. Crimsom gloom reflects off their youthful eyes. r_c stretches up to give a life for [virtue].",
+          "text": "A young cat is next to give a life. Crimson gloom reflects off {PRONOUN/r_c/poss} youthful eyes. r_c stretches up to give a life for [virtue].",
           "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
         }
       ]
@@ -214,7 +214,7 @@
       "rank": ["apprentice"],
       "life_giving": [
         {
-          "text": "A young cat is next to give a life. They hesitate, before an older cat shoves them forward, growling in their ear. r_c stretches up to give a life for [virtue].",
+          "text": "A young cat is next to give a life. {PRONOUN/r_c/subject} {VERB/r_c/hesitate/hesitates}, before an older cat shoves {PRONOUN/r_c/object} forward, growling in {PRONOUN/r_c/poss} ear. r_c stretches up to give a life for [virtue].",
           "virtue": ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
         }
       ]
@@ -227,7 +227,7 @@
       "rank": ["elder"],
       "life_giving": [
         {
-          "text": "r_c strides forward, an energy in their steps that wasn't present in their last moments. They give a life for [virtue].",
+          "text": "r_c strides forward, an energy in {PRONOUN/r_c/poss} steps that wasn't present in {PRONOUN/r_c/poss} last moments. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
           "virtue": ["grace", "humility", "integrity", "persistence", "resilience"]
         }
       ]
@@ -240,7 +240,7 @@
       "rank": ["elder"],
       "life_giving": [
         {
-          "text": "r_c pads forward with a savage expression. They give a life for [virtue].",
+          "text": "r_c pads forward with a savage expression. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
           "virtue": ["grace", "humility", "integrity", "persistence", "resilience"]
         }
       ]
@@ -253,7 +253,7 @@
       "rank": ["medicine cat"],
       "life_giving": [
         {
-          "text": " r_c approaches next, a sharp grin on their maw. They offer a life for [virtue], whispering to make sure their Clan remains strong. No matter the cost.",
+          "text": " r_c approaches next, a sharp grin on {PRONOUN/r_c/poss} maw. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], whispering to make sure {PRONOUN/m_c/poss} Clan remains strong. No matter the cost.",
           "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "wisdom"]
         }
       ]
@@ -266,7 +266,7 @@
       "rank": ["medicine cat"],
       "life_giving": [
         {
-          "text": "r_c approaches next, a dark expression on their face. They offer a life for [virtue], whispering to inspire true loyalty through fear of punishment.",
+          "text": "r_c approaches next, a dark expression on {PRONOUN/r_c/poss} face. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], whispering to inspire true loyalty through fear of punishment.",
           "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "wisdom"]
         }
       ]
@@ -279,8 +279,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. The gloom and murk across their pelt shows the future that m_c will endure one day. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The gloom and murk across {PRONOUN/r_c/poss} pelt shows the future that m_c will endure one day. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose to lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -291,8 +291,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in their eyes. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in {PRONOUN/r_c/poss} eyes. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose to lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -304,8 +304,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in their eyes. They give a life for [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "Finally, r_c steps forward. The dark shadows across the clearing could not hide the corrupted satisfaction in {PRONOUN/r_c/poss} eyes. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose to lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     },
@@ -316,8 +316,8 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "r_c, one of the Dark Forest's oldest leaders, looks at the new leader with a triumphant expression. They give a last life, the gift of [virtue].",
-          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
+          "text": "r_c, one of the Dark Forest's oldest leaders, looks at the new leader with a triumphant expression. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a last life, the gift of [virtue].",
+          "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose to lay in wait", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
     }
@@ -329,21 +329,21 @@
       "tags": [],
       "lead_trait": [],
       "text": [
-            "r_c hails m_c by their new name, m_c_star, telling them that their old pathetic life is no more. They are granted guardianship of c_n, and are told to use their new power however they wish. The group of shadowy cats yowls m_c_star's name in support. m_c_star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+            "r_c hails m_c by {PRONOUN/m_c/poss} new name, m_c_star, telling them that {PRONOUN/m_c/poss} old, pathetic life is no more. {PRONOUN/m_c/subject} {VERB/m_c/are/is} granted guardianship of c_n, and are told to use {PRONOUN/m_c/poss} new power however they wish. The group of shadowy cats yowls m_c_star's name in support. m_c_star wakes up feeling a new strength within {PRONOUN/m_c/poss} body and know that {PRONOUN/m_c/subject} {VERB/m_c/are/is} now ready to lead the Clan."
       ]
     },
     "new_clan": {
       "tags": ["new_clan"],
       "lead_trait": [],
       "text": [
-        "m_c_star wakes, a hissing echo of their new name lingering in the air."
+        "m_c_star wakes, a hissing echo of {PRONOUN/m_c/poss} new name lingering in the air."
       ]
     },
     "bloodthirsty": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [
-        "r_c hails m_c by their new name, m_c_star, telling them that their old pathetic life is no more. They are granted guardianship of c_n, and are told to use their new power however they wish. The Dark Forest's hissing and yowls echo in the dusky clearing as the new leader begins to wake up. m_c_star stands, feeling a new strength within their body, and grins."
+        "r_c hails m_c by {PRONOUN/m_c/poss} new name, m_c_star, telling them that {PRONOUN/m_c/poss} old, pathetic life is no more. {PRONOUN/m_c/subject} {VERB/m_c/are/is} granted guardianship of c_n, and are told to use {PRONOUN/m_c/poss} new power however they wish. The Dark Forest's hissing and yowls echo in the dusky clearing as the new leader begins to wake up. m_c_star stands, feeling a new strength within {PRONOUN/m_c/poss} body, and grins."
       ]
     }
   }
