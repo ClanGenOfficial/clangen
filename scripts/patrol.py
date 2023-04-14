@@ -2087,7 +2087,7 @@ class PatrolEvent():
         if history_text:
             self.history_text = history_text
         else:
-            history_text = []
+            self.history_text = []
 
         if relationship_constraint:
             self.relationship_constraint = relationship_constraint
