@@ -856,11 +856,14 @@ def event_text_adjust(Cat,
         cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
 
     if clan:
-        _tmp = clan
+        _tmp = str(clan.name)
     else:
-        _tmp = game.clan
+        if game.clan is None:
+            _tmp = game.switches["clan_list"][0] + 'Clan'
+        else:
+            _tmp = str(game.clan.name)
 
-    cat_dict["c_n"] = (str(_tmp.name) + "Clan", None)
+    cat_dict["c_n"] = (_tmp + "Clan", None)
 
     # Dreams and Omens
     if "omen_list" in text:
