@@ -39,7 +39,7 @@
 		"id": "rom_dec_medium3",
 		"intensity": "medium",
 		"interactions": [
-			"m_c starting to have doubts about {PRONOUN/m_c/poss} feelings for r_c.",
+			"m_c is starting to have doubts about {PRONOUN/m_c/poss} feelings for r_c.",
 			"m_c heard a rumor that r_c likes someone else.",
 			"m_c worries that r_c will never feel the same way {PRONOUN/m_c/subject} {VERB/m_c/do/does}.",
 			"m_c noticed r_c flirting with someone else.",
