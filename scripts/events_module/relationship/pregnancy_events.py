@@ -669,8 +669,6 @@ class Pregnancy_Events():
 
         # check other cats of clan for siblings
         for kitten in all_kitten:
-            add_siblings_to_cat(kitten, cat_class)
-            add_children_to_cat(kitten, cat_class)
             # update/buff the relationship towards the siblings
             for second_kitten in all_kitten:
                 y = random.randrange(0, 10)
@@ -679,7 +677,7 @@ class Pregnancy_Events():
                 kitten.relationships[second_kitten.ID].platonic_like += 20 + y
                 kitten.relationships[second_kitten.ID].comfortable += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
-
+            kitten.create_inheritance_new_cat()
         return all_kitten
 
     def get_amount_of_kits(self, cat):

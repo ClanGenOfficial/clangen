@@ -27,7 +27,6 @@ class Welcoming_Events():
             Returns
             -------
         """
-        print("NEW CAT")
         if new_cat.ID == clan_cat.ID:
             return
 

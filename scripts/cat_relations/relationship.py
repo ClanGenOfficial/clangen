@@ -162,14 +162,11 @@ class Relationship():
     def adjust_interaction_string(self, string):
 
         cat_dict = {
-            "m_c": (str(self.cat_from.name), choice(self.cat_to.pronouns)),
+            "m_c": (str(self.cat_from.name), choice(self.cat_from.pronouns)),
             "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
         }
 
         return process_text(string, cat_dict)
-
-
-
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
