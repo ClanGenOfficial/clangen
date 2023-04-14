@@ -943,7 +943,7 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = self.trait
+                            self.trait = choice(self.traits)
                             self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
@@ -1133,17 +1133,7 @@ class Cat():
         # get chosen thought
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
         
-        # insert name if it is needed
-        if "r_c" in chosen_thought:
-            chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
-
-        # insert Clan name if needed
-        try:
-            if "c_n" in chosen_thought:
-                chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
-        except AttributeError:
-            if "c_n" in chosen_thought:
-                chosen_thought = chosen_thought.replace("c_n", game.switches["clan_list"][0] + 'Clan')
+        chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
 
         # insert thought
         self.thought = str(chosen_thought)

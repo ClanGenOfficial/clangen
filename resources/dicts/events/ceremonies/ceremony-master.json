@@ -468,7 +468,7 @@
       "troublesome",
       "vengeful"
     ],
-    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss} claws are itching to tear at something."
+    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something."
   ],
   "app_38": [
     [
@@ -662,7 +662,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/poss} claws dig into the ground as {PRONOUN/m_c/subject} glare up at the sky, wondering why dead_par1 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
+    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/poss} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_53": [
     [
@@ -745,7 +745,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/subject} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/glare/glares} up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
+    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/subject} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_60": [
     [
@@ -1402,7 +1402,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw is taken to speak with StarClan. {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c and {VERB/m_c/are/is} now a full medicine cat of the Clan."
+    "(prefix)paw is taken to speak with StarClan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and {VERB/m_c/are/is} now a full medicine cat of the Clan."
   ],
   "med_9": [
     [
