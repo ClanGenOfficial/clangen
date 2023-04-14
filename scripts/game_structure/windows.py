@@ -830,7 +830,7 @@ class SendLogsPopup(UIWindow):
                 self.continue_button.enable()
                 self.tokeninvalid.hide()
             else:
-                self.continue_button.disable()
+                #self.continue_button.disable()
                 self.tokeninvalid.show()
 
 
