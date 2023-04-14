@@ -40,6 +40,11 @@ class Pregnancy_Events():
                 biggest_family.append(cat.ID)
         self.biggest_family = biggest_family
 
+    def biggest_family_is_big(self):
+        """Returns if the current biggest family is big enough to 'activates' additional inbreeding counters."""
+        living_cats = len([i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)])
+        return len(self.biggest_family) > (living_cats/10)
+
     def handle_pregnancy_age(self, clan):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
         for pregnancy_key in clan.pregnancy_data.keys():
@@ -425,6 +430,13 @@ class Pregnancy_Events():
             chance = game.config["pregnancy"]["unmated_random_affair_chance"]
             special_affair = True
 
+        # 'buff' affairs if the current biggest family is big + this cat doesn't belong there
+        if not self.biggest_family:
+            self.set_biggest_family()
+
+        if self.biggest_family_is_big() and cat.ID not in self.biggest_family:
+            chance = int(chance * 0.8) 
+
         # "regular" random affair
         if not int(random.random() * chance):
             possible_affair_partners = [i for i in Cat.all_cats_list if 
@@ -664,15 +676,15 @@ class Pregnancy_Events():
             inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
 
         # SETTINGS
-        # - buff if only mated pairs can have kits
+        # - decrease inverse chance if only mated pairs can have kits
         if game.settings['no unknown fathers']:
             inverse_chance = int(inverse_chance * 0.7)
         
-        # - buff if gender is relevant for pregnancy
+        # - decrease inverse chance if gender is relevant for pregnancy
         if not game.settings['no gendered breeding']:
             inverse_chance = int(inverse_chance * 0.7)
 
-        # - buff if affairs are not allowed
+        # - decrease inverse chance if affairs are not allowed
         if not game.settings['affair']:
             inverse_chance = int(inverse_chance * 0.7)
 
@@ -740,6 +752,11 @@ class Pregnancy_Events():
         elif second_parent and second_parent.gender == 'male' and second_parent.age == 'senior':
             inverse_chance = int(inverse_chance * 1.5)
 
+        # - decrease the inverse chance if the whole clan is really old
+        avg_age = int(sum([cat.moons for cat in Cat.all_cats.values()])/living_cats)
+        if avg_age > 80:
+            inverse_chance = int(inverse_chance * 0.8)
+
         # 'INBREED' counter
         # - increase inverse chance if one of the current cats belongs in the biggest family
         if not self.biggest_family:
@@ -751,6 +768,11 @@ class Pregnancy_Events():
         # - decrease inverse chance if the current family is small
         if len(first_parent.get_relatives(game.settings["first_cousin_mates"])) < (living_cats/15):
             inverse_chance = int(inverse_chance * 0.7)
+
+        # - decrease inverse chance single parents if settings allow an biggest family is huge
+        settings_allow = not second_parent and not game.settings['no unknown fathers']
+        if settings_allow and self.biggest_family_is_big():
+            inverse_chance = int(inverse_chance * 0.9)
 
         return inverse_chance
 
