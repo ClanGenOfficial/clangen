@@ -89,7 +89,12 @@
             "Helps r_c perfect a fighting pose",
             "Hangs out with r_c after a training session",
             "Listens to the latest gossip from r_c",
-            "Is practicing sparring with r_c"
+            "Is practicing sparring with r_c",
+            "Is feeling jealous of a fellow apprentices abilities",
+            "Is wondering how other apprentices are so much better than them",
+            "Is frustrated by the way the other apprentices are behaving",
+            "Went too hard on other apprentices while training today",
+            "Is getting picked on by one of the other apprentices"
         ],
         "random_status_constraint": [
             "apprentice"
