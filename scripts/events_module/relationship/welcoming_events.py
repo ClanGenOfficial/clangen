@@ -3,7 +3,7 @@ import ujson
 from copy import deepcopy
 from random import choice
 
-from scripts.utility import change_relationship_values
+from scripts.utility import change_relationship_values, event_text_adjust
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
@@ -27,6 +27,7 @@ class Welcoming_Events():
             Returns
             -------
         """
+        print("NEW CAT")
         if new_cat.ID == clan_cat.ID:
             return
 
@@ -51,8 +52,7 @@ class Welcoming_Events():
         interaction_str = choice(random_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(clan_cat.name))
-        interaction_str = interaction_str.replace("r_c", str(new_cat.name))
+        interaction_str = event_text_adjust(Cat, interaction_str, clan_cat, new_cat)
 
         # add to relationship log
         if new_cat.ID in clan_cat.relationships:
