@@ -148,11 +148,13 @@ class History:
         adds joining age and moon info to the cat's history save
         :param cat: cat object
         """
+        if not game.clan:
+            return
         self.check_load(cat)
 
         cat.history.beginning = {
             "clan_born": clan_born,
-            "birth_season": game.clan.current_season if clan_born and game.clan.current_season else None,
+            "birth_season": game.clan.current_season if clan_born else None,
             "age": cat.moons,
             "moon": game.clan.age
         }
@@ -187,6 +189,8 @@ class History:
         :param cat: cat object
         :param honor: the honor trait given during the cat's ceremony
         """
+        if not game.clan:
+            return
         self.check_load(cat)
 
         cat.history.app_ceremony = {
@@ -267,6 +271,8 @@ class History:
         :param scar: set True if scar
         :param death: set True if death
         """
+        if not game.clan:
+            return
         self.check_load(cat)
 
         event_type = None
@@ -331,6 +337,8 @@ class History:
         :param unrevealed_text: unrevealed event text for victim's death (not saved in their death history)
         :return:
         """
+        if not game.clan:
+            return
         self.check_load(cat)
         self.check_load(other_cat)
         if "is_murderer" not in other_cat.history.murder:
