@@ -153,7 +153,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "mangled tail", "injury", "scar", "TAILSCAR"],
     "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
     "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance.  Maybe an apprentice simply lost their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory.",

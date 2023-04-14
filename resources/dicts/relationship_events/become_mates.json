@@ -1,6 +1,6 @@
 {
 	"high_romantic": [
-		"m_c confessed their feelings to r_c and they have become mates."
+		"m_c confessed {PRONOUN/m_c/poss} feelings to r_c and they have become mates."
 	],
 	"low_romantic":[
 		"m_c and r_c have become mates."
@@ -9,6 +9,6 @@
 		"m_c and r_c see each other in a different light and have become mates."
 	],
 	"rejected":[
-		"m_c confessed their feelings to r_c but they got rejected."
+		"m_c confessed {PRONOUN/m_c/poss} feelings to r_c but {PRONOUN/m_c/subject} got rejected."
 	]
 }

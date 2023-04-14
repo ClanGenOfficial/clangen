@@ -1,0 +1,24 @@
+[
+    {
+        "id": "gen_dead_elder",
+        "thoughts": [
+            "Is watching c_n proudly",
+            "Is having some well-deserved rest",
+            "Is telling the same story to whoever is around to listen",
+            "Watches c_n with affection",
+            "Is laughing at c_n mishaps",
+            "Hopes c_n won't forget them",
+            "Is reminiscing about the days gone by"
+        ]
+    },
+    {
+        "id": "dead_elder_to_dead_other",
+        "thoughts": [
+            "Is giving r_c unasked for advice",
+            "Is telling r_c about their glory days"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    }
+]

@@ -1,8 +1,5 @@
 import os
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+import ujson
 from random import choice, shuffle
 from copy import deepcopy
 
@@ -92,7 +89,7 @@ class Group_Events():
         interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
-        if len(self.chosen_interaction.get_injuries) > 0:
+        if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
 
         game.cur_events_list.append(Single_Event(
@@ -525,7 +522,7 @@ class Group_Events():
         """
         Injuring the cats based on the list of the injuries of the chosen group interaction.
         """
-        if len(self.chosen_interaction.get_injuries) <= 0:
+        if not self.chosen_interaction.get_injuries.items:
             return
 
         for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():

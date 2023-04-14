@@ -206,6 +206,10 @@
 			"If you DON'T DO THIS, your game WILL break."
 		]
 	},
+    "cat_sprites": {
+        "sick_sprites": true,
+        "comment": "Set this to false to disable sick sprites."
+    },
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
 		"expanded_difficulty_modifier": 2.5,
@@ -213,7 +217,7 @@
 		"win_stat_cat_modifier": 10,
 		"better_stat_modifier": 5,
 		"best_stat_modifier": 10,
-		"fail_stat_cat_modifier": -20,
+		"fail_stat_cat_modifier": -15,
 		"chance_of_romance_patrol": 16,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
@@ -233,7 +237,8 @@
 		"cruel season_illness_chance": 200,
 		"classic_injury_chance": 250,
 		"expanded_injury_chance": 200,
-		"cruel season_death_chance": 150
+		"cruel season_death_chance": 150,
+		"permanent_condition_chance": 20
 	},
 	"clan_creation": {
 		"rerolls": 3,
@@ -260,6 +265,8 @@
 
 
 	"fun": {
+
+		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
 		"newborns_can_patrol": false

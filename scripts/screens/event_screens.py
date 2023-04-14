@@ -49,6 +49,7 @@ class EventsScreen(Screens):
         self.display_events_elements = {}
         self.involved_cat_buttons = []
         self.cat_profile_buttons = {}
+        self.scroll_height = {}
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -73,6 +74,7 @@ class EventsScreen(Screens):
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button:
+                self.scroll_height = {}
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:
                     GameOver('events screen')
@@ -166,6 +168,7 @@ class EventsScreen(Screens):
                     self.display_events = self.misc_events
 
                 self.update_events_display()
+                self.show_menu_buttons()
 
             elif event.ui_element == self.toggle_borders_button:
                 if game.clan.closed_borders:
@@ -177,12 +180,16 @@ class EventsScreen(Screens):
 
             # Change the type of events displayed
             elif event.ui_element == self.all_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "all events"
                 # Update Display
                 self.update_list_buttons(self.all_events_button)
                 self.display_events = self.all_events
                 self.update_events_display()
             elif event.ui_element == self.ceremonies_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "ceremony events"
                 self.ceremonies_events_button.disable()
                 # Update Display
@@ -190,6 +197,8 @@ class EventsScreen(Screens):
                 self.display_events = self.ceremony_events
                 self.update_events_display()
             elif event.ui_element == self.birth_death_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "birth death events"
                 self.birth_death_events_button.enable()
                 # Update Display
@@ -197,6 +206,8 @@ class EventsScreen(Screens):
                 self.display_events = self.birth_death_events
                 self.update_events_display()
             elif event.ui_element == self.relationship_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "relationship events"
                 self.relationship_events_button.enable()
                 # Update Display
@@ -204,6 +215,8 @@ class EventsScreen(Screens):
                 self.display_events = self.relation_events
                 self.update_events_display()
             elif event.ui_element == self.health_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "health events"
                 self.health_events_button.disable()
                 # Update Display
@@ -211,6 +224,8 @@ class EventsScreen(Screens):
                 self.display_events = self.health_events
                 self.update_events_display()
             elif event.ui_element == self.other_clans_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "other clans events"
                 self.other_clans_events_button.disable()
                 # Update Display
@@ -218,6 +233,8 @@ class EventsScreen(Screens):
                 self.display_events = self.other_clans_events
                 self.update_events_display()
             elif event.ui_element == self.misc_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "misc events"
                 self.misc_events_button.disable()
                 # Update Display
@@ -445,6 +462,10 @@ class EventsScreen(Screens):
         self.event_container.kill()
         self.make_events_container()
 
+        # Stop if clan is new, so that events from previously loaded clan don't show up
+        if game.clan.age == 0:
+            return
+
         # Make display, with buttons and all that.
         box_length = self.event_container.get_relative_rect()[2]
         i = 0
@@ -488,8 +509,8 @@ class EventsScreen(Screens):
 
                 y += 68/1600 * screen_y
                 i += 1
-
-
+            else:
+                print("Incorrectly formatted event:", ev.text, type(ev))
 
         # Set scrolling container length
         # This is a hack-y solution, but it was the easiest way to have the shading go all the way across the box
@@ -504,6 +525,9 @@ class EventsScreen(Screens):
             self.event_container.horiz_scroll_bar.hide()
         else:
             self.event_container.set_dimensions((box_length, self.events_container_y))
+        # Set the scroll bar to the last position it was at
+        if self.scroll_height.get(self.event_display_type):
+            self.event_container.vert_scroll_bar.set_scroll_from_start_percentage(self.scroll_height[self.event_display_type])
 
     def make_cat_buttons(self, button_pressed):
         """ Makes the buttons that take you to the profile. """
@@ -535,7 +559,7 @@ class EventsScreen(Screens):
                                       text=name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button", manager=MANAGER))
                     # There is only room for about four buttons.
-                    if i > 4:
+                    if i > 3:
                         break
                     i += 1
 

@@ -25,7 +25,7 @@ class NewCatEvents:
         self.generate_events = GenerateEvents()
         pass
 
-    def handle_new_cats(self, cat, other_cat, war, enemy_clan, alive_kits):
+    def handle_new_cats(self, cat: Cat, other_cat, war, enemy_clan, alive_kits):
         """ 
         This function handles the new cats
         """
@@ -44,15 +44,12 @@ class NewCatEvents:
             if random.randint(1, 3) == 1:
                 outside_cat = self.select_outside_cat()
                 backstory = outside_cat.status
-                self.update_cat_properties(outside_cat)
-                game.clan.add_cat(outside_cat)
-                Cat.outside_cats.pop(outside_cat.ID)
+                outside_cat = self.update_cat_properties(outside_cat)
                 event_text = f"A {backstory} named {outside_cat.name} waits on the border, asking to join the Clan."
                 name_change = random.choice([1, 2])
-                if name_change == 1:
+                if name_change == 1 or backstory == 'former Clancat':
                     event_text = event_text + f" They decide to keep their name."
-                elif name_change == 2:
-                    outside_cat.name.status = 'warrior'
+                elif name_change == 2 and backstory != 'former Clancat':
                     outside_cat.name.prefix = random.choice(names.names_dict["normal_prefixes"])
                     outside_cat.name.suffix = random.choice(names.names_dict["normal_suffixes"])
                     event_text = event_text + f" They decide to take a new name, {outside_cat.name}."
@@ -66,6 +63,8 @@ class NewCatEvents:
                         continue
                     the_cat.relationships[outside_cat.ID] = Relationship(the_cat, outside_cat)
                     outside_cat.relationships[the_cat.ID] = Relationship(outside_cat, the_cat)
+                # takes cat out of the outside cat list
+                game.clan.add_to_clan(outside_cat)
 
                 return [outside_cat]
         # ---------------------------------------------------------------------------- #
@@ -109,6 +108,12 @@ class NewCatEvents:
                                       status
                                       )
         # print(created_cats)
+
+        if "adoption" in new_cat_event.tags:
+            if cat.no_kits:
+                return
+            if cat.mate and cat.mate.no_kits:
+                return
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
@@ -148,6 +153,8 @@ class NewCatEvents:
 
         if "adoption" in new_cat_event.tags:
             add_children_to_cat(cat, cat_class)
+            if cat.mate:
+                add_children_to_cat(Cat.fetch_cat(cat.mate), cat_class)
             if new_cat_event.litter:
                 for new_cat in created_cats:
                     add_siblings_to_cat(new_cat, cat_class)
@@ -230,6 +237,9 @@ class NewCatEvents:
                 return cat
 
     def update_cat_properties(self, cat):
-        cat.backstory = cat.status + str(random.choice([1, 2]))
-        cat.status = "warrior"
+        if cat.backstory in Cat.backstory_categories['healer_backstories']:
+                cat.status = 'medicine cat'
+        else:
+            cat.status = "warrior"
         cat.outside = False
+        return cat
