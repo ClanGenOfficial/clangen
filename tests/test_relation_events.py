@@ -119,7 +119,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_platonic_apprentice_mating(self):
         # given
@@ -139,7 +139,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_romantic_kitten_mating(self):
         # given
@@ -159,7 +159,7 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_romantic_apprentice_mating(self):
         # given
@@ -179,4 +179,4 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
