@@ -1086,10 +1086,14 @@ class Cat():
         )
 
     def load_history(self):
-        if game.switches['clan_name'] != '':
-            clanname = game.switches['clan_name']
-        else:
-            clanname = game.switches['clan_list'][0]
+        try:
+            if game.switches['clan_name'] != '':
+                clanname = game.switches['clan_name']
+            else:
+                clanname = game.switches['clan_list'][0]
+        except IndexError:
+            print('WARNING: History failed to load, no clan in game.switches?')
+            return
 
         history_directory = get_save_dir() + '/' + clanname + '/history/'
         cat_history_directory = history_directory + self.ID + '_history.json'
