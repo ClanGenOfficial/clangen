@@ -1164,6 +1164,8 @@ class Cat():
             return
 
         chosen_cat = choice(cats_to_choose)
+        if chosen_cat.ID not in self.relationships:
+            self.relationships[chosen_cat.ID] = Relationship(self, chosen_cat)
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 

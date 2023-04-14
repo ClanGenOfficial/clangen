@@ -651,7 +651,7 @@ class Pregnancy_Events():
         if game.settings['no unknown fathers']:
             neg_chance = int(neg_chance * 0.7)
         
-        # - buff if gender is relevant for kit
+        # - buff if gender is relevant for pregnancy
         if not game.settings['no gendered breeding']:
             neg_chance = int(neg_chance * 0.7)
 
@@ -659,14 +659,22 @@ class Pregnancy_Events():
         if not game.settings['affair']:
             neg_chance = int(neg_chance * 0.7)
 
+        # CURRENT CAT AMOUNT
+        # - increase the negative chance if the clan is bigger
+        living_cats = len([i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)])
+        if living_cats < 10:
+            neg_chance = int(neg_chance * 0.5) 
+        elif living_cats > 30:
+            neg_chance = int(neg_chance * (living_cats/30))
+
         # COMPATIBILITY
         # - decrease / increase depending on the compatibility
         if second_parent:
             comp = get_personality_compatibility(first_parent, second_parent)
             if comp is not None:
-                buff = 0.2
+                buff = 0.85
                 if not comp:
-                    buff += 1
+                    buff += 0.3
                 neg_chance = int(neg_chance * buff)
 
         # RELATIONSHIP
@@ -707,15 +715,7 @@ class Pregnancy_Events():
                 neg_chance -= int(neg_chance * 0.2)
             elif average_trust >= 35:
                 neg_chance -= int(neg_chance * 0.1)
-
-        # CURRENT CAT AMOUNT
-        # - increase the negative chance if the clan is bigger
-        living_cats = len([i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)])
-        if living_cats < 10:
-            neg_chance = int(neg_chance * 0.5) 
-        elif living_cats > 30:
-            neg_chance = int(neg_chance * (int(5/living_cats) + 1))
-
+        
         # AGE
         # - increase the negative chance if the cats are old males
         if first_parent.gender == 'male' and first_parent.age == 'senior':
