@@ -918,23 +918,26 @@ def leader_ceremony_text_adjust(Cat,
     """
     used to adjust the text for leader ceremonies
     """
-    adjust_text = text.replace("m_c_star", leader.name.prefix + "star")
-    adjust_text = adjust_text.replace("m_c", leader.name.prefix + leader.name.suffix)
+    replace_dict = {
+        "m_c_star": (str(leader.name.prefix + "star"), choice(leader.pronouns)),
+        "m_c": (str(leader.name.prefix + leader.name.suffix), choice(leader.pronouns)),
+    }
 
     if life_giver:
-        life_giver_name = str(Cat.fetch_cat(life_giver).name)
-        adjust_text = adjust_text.replace("r_c", life_giver_name)
+        replace_dict["r_c"] = (str(Cat.fetch_cat(life_giver).name), choice(Cat.fetch_cat(life_giver).pronouns))
+
+    text = process_text(text, replace_dict)
 
     if virtue:
         virtue = choice(virtue)
-        adjust_text = adjust_text.replace("[virtue]", virtue)
+        text = text.replace("[virtue]", virtue)
 
     if extra_lives:
-        adjust_text = adjust_text.replace('[life_num]', str(extra_lives))
+        text = text.replace('[life_num]', str(extra_lives))
 
-    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
+    text = text.replace("c_n", str(game.clan.name) + "Clan")
 
-    return adjust_text
+    return text
 
 
 def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,

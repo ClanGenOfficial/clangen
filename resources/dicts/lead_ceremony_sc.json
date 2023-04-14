@@ -27,7 +27,7 @@
       "tags": ["new_clan"],
       "lead_trait": [],
       "text": [
-        "As m_c dreams that night, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/mc/self} walking the stars of Silverpelt, a ghostly landscape surrounding {PRONOUN/m_c/object} and a single, starry cat sat within a clearing."
+        "As m_c dreams that night, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} walking the stars of Silverpelt, a ghostly landscape surrounding {PRONOUN/m_c/object} and a single, starry cat sat within a clearing."
       ]
     },
     "bloodthirsty": {
