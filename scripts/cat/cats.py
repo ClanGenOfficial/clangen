@@ -332,7 +332,7 @@ class Cat():
 
         self.specsuffix_hidden = specsuffix_hidden
 
-        self.history = {}
+        self.history = History()
 
         # setting ID
         if ID is None:

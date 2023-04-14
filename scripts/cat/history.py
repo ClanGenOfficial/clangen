@@ -152,7 +152,7 @@ class History:
 
         cat.history.beginning = {
             "clan_born": clan_born,
-            "birth_season": game.clan.current_season if clan_born else None,
+            "birth_season": game.clan.current_season if clan_born and game.clan.current_season else None,
             "age": cat.moons,
             "moon": game.clan.age
         }
