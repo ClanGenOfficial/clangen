@@ -62,6 +62,9 @@
             "very smart",
             "extremely smart"
         ],
+        "history_text": [
+            "r_c was scarred by a sharp piece of twoleg garbage. "
+        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
