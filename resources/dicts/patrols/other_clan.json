@@ -18,14 +18,13 @@
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
     "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
     ],
-    "other_clan": null,
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "calm", "charismatic", "confident", "wise"],
     "fail_trait": ["troublesome", "strange", "playful", "daring", "childish"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing."
     
 },
 {
@@ -54,7 +53,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing."
     
 },
 {
@@ -108,14 +107,13 @@
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
     "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
     ],
-    "other_clan": null,
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "calm", "charismatic", "confident", "wise"],
     "fail_trait": ["troublesome", "strange", "playful", "daring", "childish"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing."
     
 },
 {
@@ -137,14 +135,13 @@
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
     "s_c pins their ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious and the other patrol definitely notices. While they don't remark on the hostility, your patrol gets the sense that the rude behavior has been noted."
     ],
-    "other_clan": null,
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "daring", "shameless", "troublesome", "playful", "childish"],
     "fail_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+    "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing."
     
 },    
 {
@@ -168,11 +165,8 @@
     "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is running their way. They force their fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. The warriors either don't hear them or don't care and they get in a good scratch before the medicine cat can retreat."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 1
 },
 {
     "patrol_id": "gen_bord_scent1",
@@ -267,8 +261,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was injured by an enemy patrol while marking the border."
     }
@@ -299,8 +291,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was injured by an enemy patrol while marking the border.",
         "reg_death": "r_c lost their life in an ambush on the border.",
@@ -333,8 +323,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was injured by an enemy patrol while marking the border.",
         "reg_death": "r_c lost a life in an ambush on the border.",
@@ -366,8 +354,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was injured by an enemy patrol while marking the border."
     }
@@ -397,8 +383,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was injured by an enemy patrol while marking the border."
     }
@@ -428,10 +412,7 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-
+    "max_cats": 1
 },
 {
     "patrol_id": "dst_bord_soloneutral2",
@@ -459,8 +440,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -491,8 +470,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -521,9 +498,7 @@
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 1
 },
 {
     "patrol_id": "dst_bord_soloneutral5",
@@ -549,9 +524,7 @@
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_bord_soloneutral1",
@@ -579,8 +552,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -611,8 +582,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border.",
         "reg_death": "r_c lost their life in an ambush on the border.",
@@ -645,8 +614,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border.",
         "reg_death": "r_c lost a life in an ambush on the border.",
@@ -678,8 +645,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -709,8 +674,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -741,8 +704,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -773,8 +734,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -805,8 +764,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -832,9 +789,7 @@
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 1
 },
 {
     "patrol_id": "mtn_bord_soloneutral5",
@@ -857,9 +812,7 @@
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 1
 },
 {
     "patrol_id": "pln_bord_soloneutral1",
@@ -887,8 +840,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -919,8 +870,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border.",
         "reg_death": "r_c lost their life in an ambush on the border.",
@@ -953,8 +902,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border.",
         "reg_death": "r_c lost a life in an ambush on the border.",
@@ -986,8 +933,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }
@@ -1017,8 +962,6 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c got injured patrolling on the border."
     }

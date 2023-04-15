@@ -536,10 +536,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "bch_hunt_gonetnr2",
@@ -593,10 +590,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_gonetnr3",
@@ -650,10 +644,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden1",
@@ -712,10 +703,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden2",
@@ -769,10 +757,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_twolegdencatdare1",
@@ -829,10 +814,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 2
     },
     {
         "patrol_id": "bch_hunt_twolegdenappdare1",
@@ -885,10 +867,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 2
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap1",
@@ -936,10 +915,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap2",
@@ -987,10 +963,7 @@
             "playful"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_thunderpath1",
@@ -1040,8 +1013,6 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": {
         "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
         "reg_death": "r_c was hit by a monster and killed.",
@@ -1097,8 +1068,6 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": {
         "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
         "reg_death": "r_c was hit by a monster and killed.",

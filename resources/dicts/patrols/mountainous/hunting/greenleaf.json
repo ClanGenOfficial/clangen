@@ -20,10 +20,7 @@
             "No way, it's too hot for this. They can try to hunt again later."
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "mtn_hunt_greenleaf_eagleswim1",

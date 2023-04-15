@@ -512,8 +512,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_gonetnr2",
@@ -567,8 +566,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "mtn_hunt_gonetnr3",
@@ -622,8 +620,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "mtn_hunt_thunderpath1",
