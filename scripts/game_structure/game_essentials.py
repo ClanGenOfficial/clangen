@@ -601,10 +601,10 @@ class Game():
                 "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
-
-            self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
             
             self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
+            
+            self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
 
         # Save the copy data is needed
         if game.settings["save_faded_copy"]:
