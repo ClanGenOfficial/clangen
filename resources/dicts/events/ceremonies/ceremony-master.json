@@ -2122,7 +2122,7 @@
       "general_backstory",
       "careful"
     ],
-    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/object} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/subject} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_15": [
     [
@@ -2337,7 +2337,6 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "loyal",
       "loyal"
     ],
     "(prefix)paw looks around at {PRONOUN/m_c/poss} Clanmates with adoration while l_n announces that {PRONOUN/m_c/poss} new name will be m_c after {PRONOUN/m_c/poss} r_h. m_c is happy to be a warrior now, but mostly {PRONOUN/m_c/subject} just {VERB/m_c/want/wants} to celebrate with {PRONOUN/m_c/poss} Clan, whether it's for {PRONOUN/m_c/object} or not."
@@ -2352,7 +2351,7 @@
       "general_backstory",
       "nervous"
     ],
-    "(prefix)paw fidgets nervously as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward in front of the Clan. This is an important moment, so {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to hide {PRONOUN/m_c/poss} face from the crowd as l_n gives {PRONOUN/m_c/object} the name m_c in honor of {PRONOUN/m_c/poss} r_h {PRONOUN/m_c/subject/CAP} quickly {VERB/m_c/scurry/scurries} back into the crowd once the ceremony is done, silently hoping that this will be the last ceremony {PRONOUN/m_c/subject} ever {VERB/m_c/have/has}."
+    "(prefix)paw fidgets nervously as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward in front of the Clan. This is an important moment, so {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to hide {PRONOUN/m_c/poss} face from the crowd as l_n gives {PRONOUN/m_c/object} the name m_c in honor of {PRONOUN/m_c/poss} r_h. {PRONOUN/m_c/subject/CAP} quickly {VERB/m_c/scurry/scurries} back into the crowd once the ceremony is done, silently hoping that this will be the last ceremony {PRONOUN/m_c/subject} ever {VERB/m_c/have/has}."
   ],
   "warrior_34": [
     [
@@ -2400,7 +2399,7 @@
       "general_backstory",
       "responsible"
     ],
-    "(prefix)paw has shown more maturity than most cats {PRONOUN/m_c/poss} age, always offering to take on the worst apprentice jobs first, and counting the prey in the pile to know just how much to catch on patrol. l_n was tempted to make {PRONOUN/m_c/object} a warrior sooner, but now will have to do. {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+    "(prefix)paw has shown more maturity than most cats {PRONOUN/m_c/poss} age, always offering to take on the worst apprentice jobs first, and counting the prey in the pile to know just how much to catch on patrol. l_n was tempted to make {PRONOUN/m_c/object} a warrior sooner, but now will have to do. {PRONOUN/l_n/subject/CAP} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_38": [
     [
