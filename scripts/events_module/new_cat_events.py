@@ -123,6 +123,7 @@ class NewCatEvents:
                 new_cat.adoptive_parents.append(cat.ID)
                 if len(cat.mate) > 0:
                     new_cat.adoptive_parents.extend(cat.mate)
+                new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')
