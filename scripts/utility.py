@@ -452,9 +452,10 @@ with open(f"{resource_directory}personality_compatibility.json", 'r') as read_fi
 def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
     # Different filters for different
+    
     romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
-                           and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
+        filter(lambda rel: rel.romantic_love > 0 and (not exclude_mate or rel.cat_to.ID != rel.cat_to.mate)
+                           and (not potential_mate or rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
                relationships))
 
     if romantic_relation is None or len(romantic_relation) == 0:

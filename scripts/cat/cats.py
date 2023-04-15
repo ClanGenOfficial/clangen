@@ -909,7 +909,7 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = self.trait
+                            self.trait = choice(self.traits)
                             self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
