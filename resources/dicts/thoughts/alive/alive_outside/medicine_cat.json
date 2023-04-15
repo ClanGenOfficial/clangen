@@ -2,11 +2,7 @@
     {
         "id": "lost_medicine_cats_thoughts",
         "thoughts": [
-            "Hopes that their Clan is doing okay without their help"
-        ],
-        "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "Hopes that {PRONOUN/m_c/poss} Clan is doing okay without {PRONOUN/m_c/poss} help"
         ]
     }
 ]

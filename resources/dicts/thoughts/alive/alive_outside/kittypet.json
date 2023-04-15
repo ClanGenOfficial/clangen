@@ -2,27 +2,28 @@
     {
         "id": "general_kittypet_thoughts",
         "thoughts": [
-            "Cuddles with their housefolk",
-            "Begs for food from their housefolk",
-            "Is sunning in their yard",
+            "Engages in loaf mode",
+            "Cuddles with {PRONOUN/m_c/poss} housefolk",
+            "Begs for food from {PRONOUN/m_c/poss} housefolk",
+            "Is sunning in {PRONOUN/m_c/poss} yard",
             "Doesn't want to go to the Cutter",
             "Is resting on a fence",
             "Almost forgot the way home",
             "Was taken to the Cutter recently",
             "Is looking at the forest, daydreaming about hunting a mouse",
-            "Is hunting for a gift for their housefolk",
-            "Failed to catch prey with their poor crouch",
+            "Is hunting for a gift for {PRONOUN/m_c/poss} housefolk",
+            "Failed to catch prey with {PRONOUN/m_c/poss} poor crouch",
             "Is running away from a Clan cat",
             "Is hiding from a dog",
-            "Is being friendly with their housefolk's dog",
+            "Is being friendly with {PRONOUN/m_c/poss} housefolk's dog",
             "Is peering at a fish tank",
             "Is looking for trouble",
-            "Is meowing to their housefolk for attention",
+            "Is meowing to {PRONOUN/m_c/poss} housefolk for attention",
             "Is tangled up in a large ball of yarn",
-            "Is stretching on their scratching post",
-            "Wishes their housefolk cared more about them",
-            "Saw warriors pass their housefolk den",
-            "Is hanging with their housefolk",
+            "Is stretching on {PRONOUN/m_c/poss} scratching post",
+            "Wishes {PRONOUN/m_c/poss} housefolk cared more about {PRONOUN/m_c/object}",
+            "Saw warriors pass {PRONOUN/m_c/poss} housefolk den",
+            "Is hanging with {PRONOUN/m_c/poss} housefolk",
             "Is playing with the housefolk's kits",
             "Is enjoying a nice meal",
             "Trying to escape from bath time",
@@ -32,61 +33,55 @@
             "Is watching the Clan cats from afar",
             "Is meowing to be let in",
             "Is listening to frightening stories about wild cats",
-            "Is meowing at their housefolk",
+            "Is meowing at {PRONOUN/m_c/poss} housefolk",
             "Wants to go outside",
             "Plays with a yarn ball",
             "Has the zoomies",
-            "Wishes that they could go outside more",
+            "Wishes that {PRONOUN/m_c/subject} could go outside more",
             "Is looking out the window",
             "Tries to catch a fly",
             "Is eating some scraps that were dropped on the floor",
-            "Lays in their bed",
+            "Lays in {PRONOUN/m_c/poss} bed",
             "Got stuck under the couch",
             "Is trying to bark at a dog",
             "Chases a mysterious red dot",
             "Has been left in a room with the door closed",
-            "Managed to escape their den",
+            "Managed to escape {PRONOUN/m_c/poss} den",
             "Is enjoying some time outside",
-            "Wonders if this is the life for them",
+            "Wonders if this is the life for {PRONOUN/m_c/object}",
             "Heard a scary story about the Clans",
             "Wonders what the Clans are like",
-            "Wishes there were more cats living with them",
+            "Wishes there were more cats living with {PRONOUN/m_c/object}",
             "Got scared after hearing stories about the Clan cats",
             "Saw a strange orange-furred kittypet crawling about in the thickets ",
-            "Was fighting with themselves in a mirror",
-            "Wonders if fresh-kill is better than their wet food",
+            "Was fighting with {PRONOUN/m_c/self} in a mirror",
+            "Wonders if fresh-kill is better than {PRONOUN/m_c/poss} wet food",
             "Heard about a strange Clan in the alleyways in the housefolk city ",
-            "Is proud of their large belly",
-            "Was lounging on their fence, looking at the wild beyond",
-            "Can't seem to scratch a certain spot on their neck thanks to their collar",
-            "Just saw a flaming ball in the sky! They hope it doesn't hit somebody nearby",
-            "Bit their housefolk who tried to pet them",
+            "Is proud of {PRONOUN/m_c/poss} large belly",
+            "Was lounging on {PRONOUN/m_c/poss} fence, looking at the wild beyond",
+            "Can't seem to scratch a certain spot on {PRONOUN/m_c/poss} neck thanks to {PRONOUN/m_c/poss} collar",
+            "Just saw a flaming ball in the sky",
+            "Bit {PRONOUN/m_c/poss} housefolk who tried to pet {PRONOUN/m_c/object}",
             "Is throwing a hissy fit at the vet",
             "Doesn't want to go to the vet",
             "Is hiding under the bed",
-            "Is lying about whether they've been fed",
+            "Is lying about whether {PRONOUN/m_c/subject} {VERB/m_c/have/had} been fed",
             "Is stuck with a cone of shame",
-            "Is showing their belly to a housefolk... but it's a trap",
-            "Is showing their belly to a housefolk and it's not a trap",
+            "Is showing {PRONOUN/m_c/poss} belly to a housefolk... but it's a trap",
+            "Is showing {PRONOUN/m_c/poss} belly to a housefolk and it's not a trap",
             "Had a weird dream recently and wonders what it means",
-            "Was naughty, but their housefolk can't stay mad at them",
+            "Was naughty, but {PRONOUN/m_c/poss} housefolk can't stay mad at {PRONOUN/m_c/object}",
             "Is getting yelled at for being naughty",
-            "Doesn't understand why their housefolk is mad at them"
-        ],
-        "main_status_constraint": [
-            "kittypet"
+            "Doesn't understand why {PRONOUN/m_c/poss} housefolk is mad at {PRONOUN/m_c/object}"
         ]
     },
     {
         "id": "kittypet_shameless_thoughts",
         "thoughts":[
-            "Stole food the second their housefolk turned their head",
+            "Stole food the second {PRONOUN/m_c/poss} housefolk turned their head",
             "Is sleeping in the dog's bed",
-            "Is inside a twoleg den that's not theirs",
+            "Is inside a twoleg den that's not {PRONOUN/m_c/inposs}",
             "Is pretending to be a hungry loner to get more food"
-        ],
-        "main_status_constraint":[
-            "kittypet"
         ],
         "main_trait_constraint":[
             "shameless"
@@ -100,13 +95,10 @@
             "Plays with a toy mouse",
             "Looks out the window at the birds",
             "Chatters at the birds outside",
-            "Wonders if they could survive in the wild",
+            "Wonders if {PRONOUN/m_c/subject} could survive in the wild",
             "Tries to look cute for the housefolk's kits",
-            "Mumble at annoyance when their housefolk won't let them go outside",
-            "Wonders if their littermates are nearby"
-        ],
-        "main_status_constraint": [
-            "kittypet"
+            "Mumble at annoyance when {PRONOUN/m_c/poss} housefolk won't let {PRONOUN/m_c/object} go outside",
+            "Wonders if {PRONOUN/m_c/poss} littermates are nearby"
         ],
         "main_age_constraint": [
             "kitten",
@@ -116,12 +108,9 @@
     {
         "id": "kittypet_adolescent_thoughts",
         "thoughts": [
-            "Is hogging the bed from their siblings",
-            "Thinks their new collar is uncomfortable",
-            "Is playing with a new toy their housefolk got them"
-        ],
-        "main_status_constraint": [
-            "kittypet"
+            "Is hogging the bed from {PRONOUN/m_c/poss} siblings",
+            "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable",
+            "Is playing with a new toy {PRONOUN/m_c/poss} housefolk got {PRONOUN/m_c/object}"
         ],
         "main_age_constraint": [
             "adolescent"
@@ -131,16 +120,12 @@
         "id": "kittypet_adult_thoughts",
         "thoughts": [
             "Is meowing for food",
-            "Was wandering in the backyard when a strange noise scared them back inside",
-            "Left their den to go scratch up that tree they've been eyeing",
-            "Is glad their housefolk collar them on a leash to walk them outside",
+            "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
+            "Left {PRONOUN/m_c/poss} den to go scratch up that tree {PRONOUN/m_c/subject} {VERB/m_c/have/had} been eyeing",
+            "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
             "Heard the yowls of a recent battle in the distances",
-            "Is engaging in loaf mode",
-            "Is wandering in their neighborhood",
-            "Breathes in a sigh of relief when they escape some dogs"
-        ],
-        "main_status_constraint": [
-            "kittypet"
+            "Is wandering in {PRONOUN/m_c/poss} neighborhood",
+            "Breathes in a sigh of relief when {PRONOUN/m_c/subject} {VERB/m_c/escape/escapes} some dogs"
         ],
         "main_age_constraint": [
             "young adult",
@@ -149,22 +134,18 @@
         ]
     },
     {
-        "id": "kittypet_senior_/_elder_thoughts",
+        "id": "kittypet_senior_thoughts",
         "thoughts": [
-            "Is enjoying the sun on their back",
-            "Is glad that their housefolk have taken care of them for so long",
-            "Wishes they had as much energy as the younger house cats",
-            "Smiled at the new younger kit their housefolk got",
-            "Is worried if their housefolk would be sad when they're gone",
+            "Is enjoying the sun on {PRONOUN/m_c/poss} back",
+            "Is glad that {PRONOUN/m_c/poss} housefolk have taken care of them for so long",
+            "Wishes {PRONOUN/m_c/subject} had as much energy as the younger house cats",
+            "Smiled at the new younger kit {PRONOUN/m_c/poss} housefolk got",
+            "Is worried if {PRONOUN/m_c/poss} housefolk would be sad when {PRONOUN/m_c/subject} {VERB/m_c/are/is} gone",
             "Snoring by a warm hearth",
-            "Is engaging in loaf mode",
-            "Is having a rough time climbing their fence",
-            "Wonders what would have happened if they left to be a loner at a younger age",
-            "Took their time climbing on their fence",
-            "Shakes their head when they spotted a cold queen and their kits"
-        ],
-        "main_status_constraint": [
-            "kittypet"
+            "Is having a rough time climbing {PRONOUN/m_c/poss} fence",
+            "Wonders what would have happened if {PRONOUN/m_c/subject} left to be a loner at a younger age",
+            "Took {PRONOUN/m_c/poss} time climbing on {PRONOUN/m_c/poss} fence",
+            "Shakes {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} spotted a cold queen and their kits"
         ],
         "main_age_constraint": [
             "senior"
