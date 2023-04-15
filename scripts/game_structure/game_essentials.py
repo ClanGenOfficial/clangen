@@ -1,11 +1,13 @@
 import pygame
 import pygame_gui
 
-from scripts.datadir import get_save_dir
+from scripts.datadir import get_save_dir, get_temp_dir
 
 import ujson
 import os
+from shutil import move as shutil_move
 from ast import literal_eval
+import traceback
 
 pygame.init()
 
@@ -191,6 +193,57 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
+    
+    @staticmethod
+    def safe_save(path: str, write_data):
+        """ Attempt to safely safe a file.
+            If write_data is not a string, assumes you want this
+            in json format. 
+            Return true if the file saving successed, returned false is the
+            saving failed """
+        
+        # If write_data is not a string, 
+        if type(write_data) is not str:
+            _data = ujson.dumps(write_data, indent=4)
+        else:
+            _data = write_data
+            
+        dir_name, file_name = os.path.split(path)
+        
+        temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
+        max_attempts = 15
+        i = 0
+        try:
+            while True:
+                # Attempt to write to temp file
+                with open(temp_file_path, "w") as write_file:
+                    write_file.write(_data)
+                # Read the file back in, in binary mode, so
+                # we can properly check for file nullification. 
+                # We don't need to read the entire file, 
+                # so let's just read the first 200 bytes. 
+                with open(temp_file_path, 'rb') as read_file:
+                    _binary_data = read_file.read(200)
+                
+                #print(file_name, _binary_data)
+                
+                # If _binary_data is not empty, and it's all null bytes
+                if _binary_data and not any(_binary_data):
+                    i += 1
+                    if i > max_attempts:
+                        print(f"{file_name} has been nullied too many times. Saving Failed.")
+                        return False
+                    print(f"{file_name} was nullifed. Trying again.")
+                    continue
+                    
+                # This section is reached is the file was not nullied. Move the file and return True
+                os.makedirs(dir_name, exist_ok=True)
+                shutil_move(temp_file_path, path)
+                return True
+        except Exception:
+            print(f"Unexpected error saving {file_name}")
+            print(traceback.format_exc())
+            return False
 
     def read_clans(self):
         '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
@@ -263,20 +316,21 @@ class Game():
         if loaded_clan:
             if os.path.exists(get_save_dir() + '/clanlist.txt'):
                 os.remove(get_save_dir() + '/clanlist.txt')  # we don't need clanlist.txt anymore
-            with open(get_save_dir() + '/currentclan.txt', 'w') as f:
-                f.write(loaded_clan)
+            return game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + '/currentclan.txt'):
                 os.remove(get_save_dir() + '/currentclan.txt')
+        
+        return True
+
 
     def save_settings(self):
         """ Save user settings for later use """
         data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
-        with open(get_save_dir() + '/settings.txt', 'w') as write_file:
-            write_file.write(data)
         self.settings_changed = False
+        return game.safe_save(get_save_dir() + '/settings.txt', data)
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
@@ -432,13 +486,9 @@ class Game():
             inter_cat.save_condition()
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
-        try:
-            with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
-                json_string = ujson.dumps(clan_cats, indent=4)
-                write_file.write(json_string)
-        except:
-            print("ERROR: Saving cats didn't work.")
-
+        
+        return self.safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
+            
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
         if game.cat_to_fade:
@@ -561,15 +611,10 @@ class Game():
                 "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
-            try:
-
-                with open(get_save_dir() + '/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
-                    json_string = ujson.dumps(cat_data, indent=4)
-                    write_file.write(json_string)
-            except:
-                print("ERROR: Something went wrong while saving a faded cat")
 
             self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
+            
+            self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
 
         # Save the copy data is needed
         if game.settings["save_faded_copy"]:
@@ -595,12 +640,7 @@ class Game():
 
         cat_info["faded_offspring"].append(offspring)
 
-        with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
-            json_string = ujson.dumps(cat_info, indent=4)
-            write_file.write(json_string)
-
-        return True
-
+        return self.safe_save(f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info)
 
 game = Game()
 

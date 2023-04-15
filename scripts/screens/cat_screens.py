@@ -1118,13 +1118,7 @@ class ProfileScreen(Screens):
 
         new_notes = {str(self.the_cat.ID): notes}
 
-        try:
-            with open(notes_file_path, 'w') as rel_file:
-                json_string = ujson.dumps(new_notes, indent=2)
-                rel_file.write(json_string)
-
-        except:
-            print(f"WARNING: Saving notes of cat #{self.the_cat.ID} didn't work.")
+        return game.safe_save(notes_file_path, new_notes)
 
     def load_user_notes(self):
         """Loads user-entered notes. """
