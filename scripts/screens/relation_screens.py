@@ -1407,6 +1407,19 @@ class ChooseMateScreen(Screens):
             self.kitten_message.set_text("This pair has never had offspring.")
         self.kitten_message.show()
 
+        if len(self.the_cat.mate) <= 0:
+            self.cycle_mate_left_button.hide()
+            self.cycle_mate_right_button.hide()
+        else:
+            self.cycle_mate_left_button.show()
+            self.cycle_mate_right_button.show()
+            self.cycle_mate_left_button.enable()
+            self.cycle_mate_right_button.enable()
+            if self.selected_mate_index == len(self.the_cat.mate): 
+                self.cycle_mate_right_button.disable()
+            if self.selected_mate_index == 0:
+                self.cycle_mate_left_button.disable()
+
     def update_cat_list(self):
         """Gathers all the cats to list, then updates the page. Also 
             sets the current page to 1. This should not be called when
