@@ -1382,7 +1382,7 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
-                                                     scale(pygame.Rect((60, 280), (800, 80))),
+                                                     scale(pygame.Rect((625, 230), (800, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizleft")
                                                      , manager=MANAGER)
 
@@ -1393,7 +1393,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 380), (1430, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
                                                                          , manager=MANAGER)
         
         self.ranks_boxes = []
