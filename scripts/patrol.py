@@ -1613,10 +1613,10 @@ class Patrol():
                     if not the_cat.dead and not the_cat.outside:
                         self.living_cats.append(the_cat)
                 
-                cats_to_poison = random.sample(self.living_cats, k=choice([2, 3, 4]))
-                for cat in cats_to_poison:
-                    cat.get_injured('poisoned')
-                    self.results_text.append(f"{cat.name} got: poisoned")
+                cats_to_poison = random.sample(self.living_cats, k=min(len(self.living_cats), choice([2, 3, 4])))
+                for poisoned in cats_to_poison:
+                    poisoned.get_injured('poisoned')
+                    self.results_text.append(f"{poisoned.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
