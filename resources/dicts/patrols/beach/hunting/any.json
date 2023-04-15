@@ -131,21 +131,21 @@
             "large_prey",
             "no_fail_prey"
         ],
-        "intro_text": "app1's mentor assesses them by sending them on a solo hunt.",
-        "decline_text": "app1 asks their mentor to do the assessment some other time.",
+        "intro_text": "app1's mentor assesses {PRONOUN/app1/object} by sending {PRONOUN/app1/object} on a solo hunt.",
+        "decline_text": "app1 asks {PRONOUN/app1/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "app1 manages a skillful catch, and brings it back to the camp to show everyone!",
-            "app1 focuses completely on their test, slipping into a clear-eyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            "app1 focuses completely on {PRONOUN/app1/poss} test, slipping into a clear-eyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/app1/subject}{VERB/app1/'ve/'s} caught enough to need {PRONOUN/app1/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/app1/poss} prey stock the fresh-kill pile - {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready to burst with happiness!",
             null,
-            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
         ],
         "fail_text": [
             "Hunting is poor, and while app1's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
-            "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/app1/object} empty pawed and exhausted. {PRONOUN/app1/poss/CAP} mentor is disappointed - {PRONOUN/app1/subject} clearly {VERB/app1/need/needs} more training.",
             null,
-            "While on the hunt, app1 tumbles right down into a rock pool while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+            "While on the hunt, app1 tumbles right down into a rock pool while {PRONOUN/app1/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/app1/subject} {VERB/app1/return/returns} to camp."
         ],
         "win_trait": [
             "calm",
@@ -188,19 +188,19 @@
             "large_prey",
             "no_fail_prey"
         ],
-        "intro_text": "r_c heads out along the coast alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "r_c heads off to one of their favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that big crab thought.",
-            "r_c finds a trapped fish flopping in a tidal pool, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
-            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren in the sand dunes that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that big crab thought.",
+            "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with their Clanmates.",
+            "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren in the sand dunes that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/magages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
-            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp, empty-pawed and prickling with frustration."
         ],
         "win_skills": [
             "smart",
@@ -242,7 +242,7 @@
             "large_prey",
 			"no_fail_prey"
         ],
-        "intro_text": "r_c heads out along the coast alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "exp": 20,
