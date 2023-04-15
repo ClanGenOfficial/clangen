@@ -1878,7 +1878,7 @@ class Cat():
         if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
-            return True
+            return
 
         conditions = {}
 
@@ -1891,7 +1891,7 @@ class Cat():
         if self.is_disabled():
             conditions["permanent conditions"] = self.permanent_condition
 
-        return game.safe_save(condition_file_path, conditions)
+        game.safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
         if game.switches['clan_name'] != '':
@@ -2352,7 +2352,7 @@ class Cat():
             }
             rel.append(r_data)
 
-        return game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
+        game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':

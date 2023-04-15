@@ -195,7 +195,7 @@ class Game():
         self.keyspressed = []
     
     @staticmethod
-    def safe_save(path: str, write_data):
+    def safe_save(path: str, write_data, max_attempts: int=15):
         """ Attempt to safely safe a file.
             If write_data is not a string, assumes you want this
             in json format. 
@@ -211,39 +211,32 @@ class Game():
         dir_name, file_name = os.path.split(path)
         
         temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
-        max_attempts = 15
         i = 0
-        try:
-            while True:
-                # Attempt to write to temp file
-                with open(temp_file_path, "w") as write_file:
-                    write_file.write(_data)
-                # Read the file back in, in binary mode, so
-                # we can properly check for file nullification. 
-                # We don't need to read the entire file, 
-                # so let's just read the first 200 bytes. 
-                with open(temp_file_path, 'rb') as read_file:
-                    _binary_data = read_file.read(200)
+        while True:
+            # Attempt to write to temp file
+            with open(temp_file_path, "w") as write_file:
+                write_file.write(_data)
+            # Read the file back in, in binary mode, so
+            # we can properly check for file nullification. 
+            # We don't need to read the entire file, 
+            # so let's just read the first 200 bytes. 
+            with open(temp_file_path, 'rb') as read_file:
+                _binary_data = read_file.read(200)
+            
+            # If_data is not empty, and _binary_data is
+            # all null_bytes or empty. 
+            if _data and not any(_binary_data):
+                i += 1
+                if i > max_attempts:
+                    print(f"{file_name} has been nullied too many times. Saving Failed.")
+                    raise RuntimeError(f"{file_name} was nullied too many times!")
+                print(f"{file_name} was nullifed. Trying again.")
+                continue
                 
-                #print(file_name, _binary_data)
-                
-                # If _binary_data is not empty, and it's all null bytes
-                if _binary_data and not any(_binary_data):
-                    i += 1
-                    if i > max_attempts:
-                        print(f"{file_name} has been nullied too many times. Saving Failed.")
-                        return False
-                    print(f"{file_name} was nullifed. Trying again.")
-                    continue
-                    
-                # This section is reached is the file was not nullied. Move the file and return True
-                os.makedirs(dir_name, exist_ok=True)
-                shutil_move(temp_file_path, path)
-                return True
-        except Exception:
-            print(f"Unexpected error saving {file_name}")
-            print(traceback.format_exc())
-            return False
+            # This section is reached is the file was not nullied. Move the file and return True
+            os.makedirs(dir_name, exist_ok=True)
+            shutil_move(temp_file_path, path)
+            return True
 
     def read_clans(self):
         '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
@@ -316,21 +309,18 @@ class Game():
         if loaded_clan:
             if os.path.exists(get_save_dir() + '/clanlist.txt'):
                 os.remove(get_save_dir() + '/clanlist.txt')  # we don't need clanlist.txt anymore
-            return game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
+            game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + '/currentclan.txt'):
                 os.remove(get_save_dir() + '/currentclan.txt')
         
-        return True
-
-
     def save_settings(self):
         """ Save user settings for later use """
         data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
         self.settings_changed = False
-        return game.safe_save(get_save_dir() + '/settings.txt', data)
+        game.safe_save(get_save_dir() + '/settings.txt', data)
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
@@ -487,7 +477,7 @@ class Game():
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
         
-        return self.safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
+        self.safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
             
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
@@ -636,11 +626,11 @@ class Game():
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: loading faded cat")
-            return False
+            return
 
         cat_info["faded_offspring"].append(offspring)
 
-        return self.safe_save(f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info)
+        self.safe_save(f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info)
 
 game = Game()
 

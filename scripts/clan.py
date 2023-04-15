@@ -760,21 +760,17 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join(
             [str(i.temperament) for i in self.all_clans])
 
-        herbs_success = self.save_herbs(game.clan)
-        disaster_success = self.save_disaster(game.clan)
-        settings_success = self.save_clan_settings()
+        self.save_herbs(game.clan)
+        self.save_disaster(game.clan)
+        self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
-            freshkill_success = self.save_freshkill_pile(game.clan)
-        else:
-            freshkill_success = True
+            self.save_freshkill_pile(game.clan)
 
-        clan_data_success = game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
-        return all((herbs_success, disaster_success, settings_success, 
-                   clan_data_success, freshkill_success))
             
     def save_clan_settings(self):
-        return game.safe_save(f"{get_save_dir()}/{self.name}/clan_settings.json", self.clan_settings)
+       game.safe_save(f"{get_save_dir()}/{self.name}/clan_settings.json", self.clan_settings)
 
     def load_clan(self):
         """
@@ -1104,7 +1100,7 @@ class Clan():
         if not game.clan.name:
             return
         
-        return game.safe_save(f"{get_save_dir()}/{game.clan.name}/herbs.json", clan.herbs)
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/herbs.json", clan.herbs)
 
     def load_pregnancy(self, clan):
         """
@@ -1126,7 +1122,7 @@ class Clan():
         if not game.clan.name:
             return
         
-        return game.safe_save(f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data)
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data)
 
     def load_disaster(self, clan):
         """
@@ -1215,7 +1211,7 @@ class Clan():
         else:
             disaster = {}
 
-        primary_success = game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
+        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
 
         if clan.secondary_disaster:
             disaster = {
@@ -1233,9 +1229,8 @@ class Clan():
         else:
             disaster = {}
 
-        secondary_success = game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
+        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
 
-        return all((secondary_success, primary_success))
 
     def load_freshkill_pile(self, clan):
         """
@@ -1272,7 +1267,7 @@ class Clan():
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        pile_success = game.safe_save(f"/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
+        game.safe_save(f"/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
         
         data = {}
         for k, nutr in clan.freshkill_pile.nutrition_info.items():
@@ -1282,9 +1277,8 @@ class Clan():
                 "percentage": nutr.percentage,
             }
         
-        nutrition_success = game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
 
-        return all((pile_success, nutrition_success))
 
     ## Properties
     
