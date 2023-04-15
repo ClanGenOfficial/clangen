@@ -1628,12 +1628,15 @@ class Patrol():
                     the_cat = list(Cat.all_cats.values())[x]
                     if not the_cat.dead and not the_cat.outside:
                         self.living_cats.append(the_cat)
-                    while num_of_poisoned > 0:
-                        cat_to_poison = random.choice(self.living_cats)
-                        cat_to_poison.get_injured('poisoned')
-                        self.results_text.append(f"{cat_to_poison.name} got: poisoned")
-                        self.living_cats.remove(cat_to_poison)
-                        num_of_poisoned -= 1
+                 
+                num_of_poisoned = choice([2,3,4])
+                poison_candidates = self.living_cats
+                while num_of_poisoned > 0:
+                    cat_to_poison = random.choice(poison_candidates)
+                    cat_to_poison.get_injured('poisoned')
+                    self.results_text.append(f"{cat_to_poison.name} got: poisoned")
+                    poison_candidates.remove(cat_to_poison)
+                    num_of_poisoned -= 1
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
