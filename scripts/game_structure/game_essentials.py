@@ -626,11 +626,12 @@ class Game():
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: loading faded cat")
-            return
+            return False
 
         cat_info["faded_offspring"].append(offspring)
 
         self.safe_save(f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info)
+        return True
 
 game = Game()
 
