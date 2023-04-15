@@ -70,7 +70,7 @@ logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
 
 
-prune_logs(logs_to_keep=5, retain_empty_logs=False)
+prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):
