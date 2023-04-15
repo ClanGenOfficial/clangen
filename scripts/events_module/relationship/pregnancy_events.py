@@ -88,8 +88,9 @@ class Pregnancy_Events():
             cat.relationships[second_parent.ID] = second_parent_relation
 
         # check if the second_parent is not none and if they also can have kits
-        if second_parent and not self.check_second_parent(cat, second_parent):
-            return
+        if second_parent:
+            if not self.check_second_parent(cat, second_parent):
+                return
         else:
             if not game.settings['no unknown fathers']:
                 return
