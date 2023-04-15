@@ -1604,18 +1604,19 @@ class Patrol():
             # check for lethality
             if "non_lethal" in self.patrol_event.tags:
                 lethal = False
-
+            
+            # poisons cats
             if "poison_clan" in self.patrol_event.tags:
-                cat.get_injured("poisoned")
                 self.living_cats = []
                 for x in range(len(Cat.all_cats.values())):
                     the_cat = list(Cat.all_cats.values())[x]
                     if not the_cat.dead and not the_cat.outside:
                         self.living_cats.append(the_cat)
-                cats_to_poison = random.choices(self.living_cats, k=choice([2, 3, 4]))
-                for cat in cats_to_poison:
-                    cat.get_injured('poisoned')
-                    self.results_text.append(f"{cat.name} got: poisoned")
+                
+                cats_to_poison = random.sample(self.living_cats, k=min(len(self.living_cats), choice([2, 3, 4])))
+                for poisoned in cats_to_poison:
+                    poisoned.get_injured('poisoned')
+                    self.results_text.append(f"{poisoned.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
