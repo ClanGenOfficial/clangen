@@ -2122,7 +2122,7 @@
       "general_backstory",
       "careful"
     ],
-    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/object} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/subject} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_15": [
     [
@@ -2158,7 +2158,7 @@
       "general_backstory",
       "childish"
     ],
-    "While l_n is not quite sure that (prefix)paw has outgrown {PRONOUN/m_c/poss} childish quirks or {PRONOUN/m_c/poss} love of pranks, {PRONOUN/l_n/subject} {VERB/l_n/welcome/welcomes} {PRONOUN/m_c/object} as a full warrior to the Clan and naming {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} lightheartedness and r_h."
+    "While l_n is not quite sure that (prefix)paw has outgrown {PRONOUN/m_c/poss} childish quirks or {PRONOUN/m_c/poss} love of pranks, {PRONOUN/l_n/subject} {VERB/l_n/welcome/welcomes} {PRONOUN/m_c/object} as a full warrior to the Clan and name {PRONOUN/m_c/object} after {PRONOUN/m_c/poss} lightheartedness and r_h."
   ],
   "warrior_18": [
     [
