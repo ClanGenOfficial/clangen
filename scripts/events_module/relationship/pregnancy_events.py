@@ -73,7 +73,7 @@ class Pregnancy_Events():
             return
 
         # Check if they can have kits.
-        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'])
+        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'], game.settings['affair'])
         if not can_have_kits:
             return
 
@@ -336,7 +336,7 @@ class Pregnancy_Events():
     #                          check if event is triggered                         #
     # ---------------------------------------------------------------------------- #
 
-    def check_if_can_have_kits(self, cat, unknown_parent_setting):
+    def check_if_can_have_kits(self, cat, unknown_parent_setting, affair_setting):
         """Check if the given cat can have kits, see for age, birth-cooldown and so on."""
 
         if cat.birth_cooldown > 0:
@@ -360,7 +360,7 @@ class Pregnancy_Events():
                     cat.mate.remove(mate_id)
 
         # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
-        if not unknown_parent_setting and len(cat.mate) < 1:
+        if not unknown_parent_setting and len(cat.mate) < 1 and not affair_setting:
             return False
 
         # if function reaches this point, having kits is possible
@@ -370,7 +370,7 @@ class Pregnancy_Events():
         """This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits. """
 
         # Checks for second parent alone:
-        if not self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers']):
+        if not self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'], game.settings['affair']):
             return False
 
         # Check to see if the pair can have kits.

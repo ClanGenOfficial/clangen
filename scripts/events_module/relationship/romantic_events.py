@@ -186,14 +186,10 @@ class Romantic_Events():
 
         condition = game.config["mates"]["confession"]["make_confession"]
         if not self.relationship_fulfill_condition(highest_romantic_relation, condition):
-            if cat_from.ID == "10":
-                print("Nono 1")
             return False
 
         cat_to = highest_romantic_relation.cat_to
         if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(cat_to):
-            if cat_from.ID == "10":
-                print("Nono 2")
             return False
 
         alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
@@ -201,8 +197,6 @@ class Romantic_Events():
         poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
-            if cat_from.ID == "10":
-                print("Nono 3")
             return False
 
         become_mate = False
