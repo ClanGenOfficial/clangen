@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version={0.8.4}
+Type=Application
+Terminal=false
+Exec=/opt/clangen/Clangen
+Name=Clangen
+Icon=/opt/clangen/resources/images/icon.png

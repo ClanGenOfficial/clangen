@@ -20,7 +20,10 @@ def setup_data_dir():
         if os.path.exists('game_data'):
             os.remove('game_data')
         if not get_version_info().is_source_build:
-            os.symlink(get_data_dir(), 'game_data', target_is_directory=True)
+            try:
+                os.symlink(get_data_dir(), 'game_data', target_is_directory=True)
+            except PermissionError:
+                print("Unable to create symlink to game data directory")
 
 
 def get_data_dir():

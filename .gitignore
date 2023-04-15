@@ -168,6 +168,11 @@ scripts/__pycache__/**
 saves/currentclan.txt
 
 tests/testSaves
+
+.debpkg/usr/local/bin
+.debpkg/opt
+
+.debpkg.deb
 cache/
 
 # Update system
