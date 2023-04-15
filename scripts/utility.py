@@ -462,12 +462,13 @@ def get_highest_romantic_relation(relationships, exclude_mate=False, potential_m
     for rel in relationships:
         if rel.romantic_love < 0:
             continue
-        if exclude_mate and rel.cat_to.ID in rel.cat_from.mate:
+        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
             continue
         if potential_mate and not rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True):
             continue
-        if max_love_value < rel.romantic_love:
+        if rel.romantic_love > max_love_value:
             current_max_relationship = rel
+            max_love_value = rel.romantic_love
 
     return current_max_relationship
 
