@@ -199,8 +199,8 @@ class Game():
         """ Attempt to safely safe a file.
             If write_data is not a string, assumes you want this
             in json format. 
-            Return true if the file saving successed, returned false is the
-            saving failed """
+            Raises a RunTimeError is 
+            the file is nullied too many times. """
         
         # If write_data is not a string, 
         if type(write_data) is not str:
