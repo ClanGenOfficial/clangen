@@ -1640,7 +1640,7 @@ class Patrol():
                             cat.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
                     self.handle_history(cat, scar=True)
-                    
+
     def handle_history(self, cat, condition=None, possible=False, scar=False, death=False):
         """
         this handles the scar and death history of the cat

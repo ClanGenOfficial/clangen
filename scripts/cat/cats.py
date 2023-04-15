@@ -1312,9 +1312,7 @@ class Cat():
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             life_list = []
-            print('FOR GIVER', giver_cat.name, giver_cat.status)
             for life in possible_lives:
-                print(life)
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
 
@@ -1332,26 +1330,21 @@ class Cat():
                 if "leader_parent" in tags and giver_cat.ID not in self.get_parents():
                     continue
                 elif "leader_child" in tags and giver_cat.ID not in self.get_children():
-                    print(giver_cat.ID, self.get_children())
                     continue
                 elif "leader_mate" in tags and giver_cat.ID not in self.mate:
                     continue
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
                         continue
-                print("passed rank")
                 if possible_lives[life]["lead_trait"]:
                     if self.trait not in possible_lives[life]["lead_trait"]:
                         continue
-                print('passed lead trait')
                 if possible_lives[life]["star_trait"]:
                     if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
-                print('passed star trait')
 
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
-                print(life_list)
-            print(life_list)
+
             i = 0
             chosen_life = {}
             while i < 10:
