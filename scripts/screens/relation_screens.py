@@ -1379,8 +1379,8 @@ class ChooseMateScreen(Screens):
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
-        if self.current_page > len(self.all_pages):
-            self.current_page = max(len(self.all_pages), 1)
+        if self.current_page > len(all_pages):
+            self.current_page = max(len(all_pages), 1)
 
         # Handle which next buttons are clickable.
         if len(all_pages) <= 1:
@@ -1397,11 +1397,11 @@ class ChooseMateScreen(Screens):
             self.next_page_button.enable()
 
         # Display the current page and total pages.
-        display_total_pages = max(1, len(self.all_pages))
+        display_total_pages = max(1, len(all_pages))
         self.page_number.set_text(f"page {self.current_page} / {display_total_pages}")
 
-        if len(self.all_pages) > 0:
-            display_cats = self.all_pages[self.current_page - 1]
+        if len(all_pages) > 0:
+            display_cats = all_pages[self.current_page - 1]
         else:
             display_cats = []
 
