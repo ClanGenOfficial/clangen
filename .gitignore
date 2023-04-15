@@ -169,7 +169,7 @@ saves/currentclan.txt
 
 tests/testSaves
 
-.debpkg/usr
+.debpkg/usr/local/bin
 .debpkg/opt
 
 .debpkg.deb
