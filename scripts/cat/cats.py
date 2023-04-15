@@ -1145,6 +1145,8 @@ class Cat():
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")
 
+        self.history = History()
+
     def generate_lead_ceremony(self):
         """
         here we create a leader ceremony and add it to the history

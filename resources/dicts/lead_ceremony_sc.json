@@ -266,7 +266,7 @@
       "rank": ["apprentice"],
       "life_giving": [
         {
-          "text": "r_c bounds out of the crowd, <i>mrrp</i>-ing as {PRONOUN/r_c/subject} {PRONOUN/r_c/press/presses} {PRONOUN/r_c/self} into m_c's fur. m_c chokes back a startled laugh before returning the affection as r_c offers a life for [virtue].",
+          "text": "r_c bounds out of the crowd, <i>mrrp</i>-ing as {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} into m_c's fur. m_c chokes back a startled laugh before returning the affection as r_c offers a life for [virtue].",
           "virtue": ["happiness", "compassion", "protection", "pride", "certainty", "confidence", "sympathy", "unity", "humor", "justice", "trust", "forgiveness"]
         }
       ]

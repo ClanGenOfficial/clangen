@@ -1224,9 +1224,9 @@ class ProfileScreen(Screens):
         beginning = self.history.get_beginning(self.the_cat)
         if beginning:
             if beginning['clan_born']:
-                text += " {PRONOUN/m_c/subject/CAP} were born on Moon" + beginning['moon'] + " during " + beginning['birth_season'] + "."
+                text += " {PRONOUN/m_c/subject/CAP} were born on Moon" + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
             else:
-                text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + beginning['moon'] + "at the age of " + beginning['age'] + "Moons."
+                text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
 
         text = process_text(text, cat_dict)
         return text
@@ -1296,7 +1296,7 @@ class ProfileScreen(Screens):
 
         if mentor_influence:
             if mentor_influence["mentor"]:
-                mentor = Cat.fetch_cat(mentor_influence["mentor"]).name
+                mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
                 mentor = None
             influenced_trait = mentor_influence["trait"]
@@ -1363,11 +1363,11 @@ class ProfileScreen(Screens):
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
-                graduation_history += " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at " + grad_age + "moons old."
+                graduation_history += " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at " + str(grad_age) + " moons old."
             elif int(grad_age) > 13:
-                graduation_history += " {PRONOUN/m_c/subject} graduated late at " + grad_age + "moons old."
+                graduation_history += " {PRONOUN/m_c/subject} graduated late at " + str(grad_age) + " moons old."
             else:
-                graduation_history += " {PRONOUN/m_c/subject} graduated at " + grad_age + "moons old."
+                graduation_history += " {PRONOUN/m_c/subject} graduated at " + str(grad_age) + " moons old."
 
             if game.switches['show_history_moons']:
                 graduation_history += f" (Moon {app_ceremony['moon']})"
@@ -1434,7 +1434,7 @@ class ProfileScreen(Screens):
                 else:
                     insert = 'lost {PRONOUN/m_c/poss} lives'
 
-                text = self.the_cat.name + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
+                text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
             else:
                 text = all_deaths[0]
             cat_dict = {

@@ -2056,7 +2056,7 @@ class PatrolEvent():
                  antagonize_fail_text="",
                  history_text=None,
                  relationship_constraint=None,
-                 other_clan):
+                 other_clan=None):
         self.patrol_id = patrol_id
         self.biome = biome or "Any"
         self.season = season or "Any"

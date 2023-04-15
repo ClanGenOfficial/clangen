@@ -427,7 +427,6 @@ class Game():
             if inter_cat.history:
                 inter_cat.save_history(directory + '/history')
                 # after saving, dump the history info
-                inter_cat.history.clear()
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
 
