@@ -76,25 +76,25 @@
       "life_giving": [
         {
           "text": "Despite looking quite out of place among the battle-hardened shadows, r_c still places their muzzle harshly against the new leader's head. They give a life for [virtue], hoping that they will remember their own kindness.",
-          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride", "hope"]
+          "virtue": ["affection", "compassion", "empathy", "duty", "protection", "pride", "hope", "regret", "inspiration", "shaping their own future", "wisdom to know what's right"]
         }
       ]
     },
 
-    "bloodthirsty_adult": {
+    "abrasive_adult": {
       "tags": [],
-      "lead_trait": ["bloodthirsty"],
-      "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
+      "lead_trait": [],
+      "star_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
       "rank": ["warrior", "elder", "leader", "medicine cat", "mediator"],
       "life_giving": [
         {
           "text": "r_c stalks up to the new leader, eyes burning with the increasingly familiar Dark Forest ferocity. They touch their nose to m_c's head, giving them a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
+          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "hunger for battle", "greed", "authority", "disdain for the weak-willed"]
         }
       ]
     },
 
-    "Outgoing_adult": {
+    "outgoing_adult": {
       "tags": [],
       "lead_trait": [],
       "star_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -102,12 +102,12 @@
       "life_giving": [
         {
           "text": "r_c jovially jaunts up to the new leader. The dark murk on their fur or the red eyes did not seem to dampen their spirit one whit. They touch their nose to m_c's head, giving them a life fur [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride"]
+          "virtue": ["humor", "seeing the brighter side of a dark situation", "adventure", "confidence", "daring to do what must be done", "humor", "inspiring obedience", "authority"]
         }
       ]
     },
 
-    "Reserved_adult": {
+    "reserved_adult": {
       "tags": [],
       "lead_trait": [],
       "star_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
@@ -115,7 +115,7 @@
       "life_giving": [
         {
           "text": "r_c seemed to appear to m_c out of nowhere in the shadowy gloom of the Dark Forest, and quietly gives them a live of [virtue]. As quickly as they appeared, r_c vanished when the life was given.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "leve-headedness", "caution in the heat of battle", "the strength to carry on alone"]
+          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "leve-headedness", "caution in the heat of battle", "the strength to carry on alone", "inspiring obedience", "independence"]
         }
       ]
     },
@@ -129,17 +129,17 @@
         {
           "text": "r_c walks up to m_c next, offering a life for [virtue]. They give a wicked grin, telling m_c that their Clan will survive any threat.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "instincts", "strength"]
+      "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         },
         {
           "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "instincts", "strength"]
+      "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         },
         {
           "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They spit at m_c that their pain is almost over.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "instincts", "strength"]
+      "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         }
       ]
     },
@@ -152,22 +152,802 @@
       "life_giving": [
         {
           "text": "r_c walks up to m_c next, giving them a life for [virtue]. They growl a word of encouragement over the destruction of their enemies before returning to the line of shadows.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
         },
         {
           "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
         },
         {
-          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.'",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength"]
+          "text": "r_c approaches. Pain surges through m_c's pelt as they receive a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
         }
       ]
     },
 
+    "adventerous_warrior": {
+      "tags": [],
+      "lead_trait": ["adventerous"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "r_c narrows their eyes as they stalk up to m_c. After a cryptic warning to keep their eyes on their -own- Clan than the horizons, they give a live for [virtue].",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
+        },
+        {
+          "text": "r_c places their muzzle against m_c, giving a harsh life of [virtue]. They leave with a whisper that the borders are not to be trusted.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
+        },
+        {
+          "text": "r_c approaches next and growls under their breath about the soft-hearted kittypets stalking around the borders. They give a live of [virtue] and hurridly steps away.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
+        }
+      ]
+    },
+
+    "ambitious_warrior": {
+      "tags": [],
+      "lead_trait": ["ambitious"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "With a taunting laugh, r_c approaches and gives m_c a life of [virtue]. r_c asks if their ambition to lead the Clan was worth the pain, but leaves before m_c could answer.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
+        },
+        {
+          "text": "There is a proud gleam in r_c's eyes as they approached the new leader. They give a life of [virtue], and encouragement to raise their ambitions even higher than the stars themselves.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+      "stubborness", "authority"]
+        }
+      ]
+    },
+  
+  	"bold_warrior": {
+      "tags": [],
+      "lead_trait": ["bold"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "calm_warrior": {
+      "tags": [],
+      "lead_trait": ["calm"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "careful_warrior": {
+      "tags": [],
+      "lead_trait": ["careful"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "charismatic_warrior": {
+      "tags": [],
+      "lead_trait": ["charismatic"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "childish_warrior": {
+      "tags": [],
+      "lead_trait": ["childish"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+    "cold_warrior": {
+      "tags": [],
+      "lead_trait": ["cold"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "compassionate_warrior": {
+      "tags": [],
+      "lead_trait": ["compassionate"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+    "confident_warrior": {
+      "tags": [],
+      "lead_trait": ["confident"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "daring_warrior": {
+      "tags": [],
+      "lead_trait": ["daring"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "faithful_warrior": {
+      "tags": [],
+      "lead_trait": ["faithful"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "fierce_warrior": {
+      "tags": [],
+      "lead_trait": ["fierce"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "insecure_warrior": {
+      "tags": [],
+      "lead_trait": ["insecure"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "lonesome_warrior": {
+      "tags": [],
+      "lead_trait": ["lonesome"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "loving_warrior": {
+      "tags": [],
+      "lead_trait": ["loving"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+  	"loyal_warrior": {
+      "tags": [],
+      "lead_trait": ["loyal"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+    "nervous_warrior": {
+      "tags": [],
+      "lead_trait": ["nervous"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "playful_warrior": {
+      "tags": [],
+      "lead_trait": ["playful"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+  	"responsible_warrior": {
+      "tags": [],
+      "lead_trait": ["responsible"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+    "righteous_warrior": {
+      "tags": [],
+      "lead_trait": ["righteous"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "shameless_warrior": {
+      "tags": [],
+      "lead_trait": ["shameless"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "sneaky_warrior": {
+      "tags": [],
+      "lead_trait": ["sneaky"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "strange_warrior": {
+      "tags": [],
+      "lead_trait": ["strange"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "strict_warrior": {
+      "tags": [],
+      "lead_trait": ["strict"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "thoughtful_warrior": {
+      "tags": [],
+      "lead_trait": ["thoughtful"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+
+  	"troublesome_warrior": {
+      "tags": [],
+      "lead_trait": ["troublesome"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "vengeful_warrior": {
+      "tags": [],
+      "lead_trait": ["vengeful"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
+    "wise_warrior": {
+      "tags": [],
+      "lead_trait": ["wise"],
+      "star_trait": [],
+      "rank": ["warrior"],
+      "life_giving": [
+        {
+          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        },
+        {
+          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
+      "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
+      "unity"]
+        }
+      ]
+    },
+  
     "default_kit": {
       "tags": [],
       "lead_trait": [],
