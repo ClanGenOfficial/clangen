@@ -428,10 +428,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr2",
@@ -484,10 +481,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr3",
@@ -540,10 +534,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr4",
@@ -596,10 +587,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden1",
@@ -655,10 +643,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden2",
@@ -709,10 +694,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdencatdare1",
@@ -769,10 +751,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 2
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdenappdare1",
@@ -825,10 +804,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 2
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap1",
@@ -877,10 +853,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap2",
@@ -929,10 +902,7 @@
             "playful"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath1",
@@ -1183,10 +1153,7 @@
             null
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander1",
@@ -1219,10 +1186,7 @@
             "fantastic hunter"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander2",
@@ -1250,10 +1214,7 @@
             "The patrol is unable to catch the small amphibian quick enough and the little salamander lives another day."
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_leafbaresnowstorm1",

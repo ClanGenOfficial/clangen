@@ -159,8 +159,6 @@
     "fail_skills": ["good fighter"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was scarred by an invading rogue."
     }
@@ -190,8 +188,6 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
     "history_text": {
         "scar": "r_c was scarred by an invading rogue."
     }
@@ -221,9 +217,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue8",
@@ -250,10 +244,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue9",

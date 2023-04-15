@@ -1576,10 +1576,7 @@
             "smart"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue8",
@@ -1633,8 +1630,6 @@
         ],
         "min_cats": 3,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": {
         "scar": "r_c was scarred by an invading rogue."
     }
@@ -1684,10 +1679,7 @@
             "righteous"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_bord_story1",
@@ -1737,8 +1729,6 @@
             "wise"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     }
 ]

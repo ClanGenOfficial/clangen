@@ -22,10 +22,7 @@
 		"They gaze into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because they really could have used some guidance from StarClan."
 	],
 	"min_cats":1,
-	"max_cats":1,
-	"Antagonize_text":null,
-	"Antagonize_fail_text":null,
-	
+	"max_cats":1
 },
 {
 	"patrol_id":"dst_med_app_herblocation1",
@@ -53,9 +50,7 @@
 		"app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 	],
 	"min_cats":2,
-	"max_cats":2,
-	"antagonize_text":null,
-	"antagonize_fail_text":null
+	"max_cats":2
 },
 {
 	"patrol_id":"dst_med_app_herblocation2",
@@ -81,9 +76,7 @@
 		"app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
 	],
 	"min_cats":1,
-	"max_cats":1,
-	"antagonize_text":null,
-	"antagonize_fail_text":null,
+	"max_cats":1
 	
 },
 {

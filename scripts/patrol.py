@@ -680,7 +680,8 @@ class Patrol():
                 antagonize_text=patrol["antagonize_text"] if "antagonize_text" in patrol else None,
                 antagonize_fail_text=patrol["antagonize_fail_text"] if "antagonize_fail_text" in patrol else None,
                 history_text=patrol["history_text"] if "history_text" in patrol else [],
-                relationship_constraint=patrol["relationship_constraint"] if "relationship_constraint" in patrol else []
+                relationship_constraint=patrol["relationship_constraint"] if "relationship_constraint" in patrol else [],
+                other_clan=patrol["other_clan"] if "other_clan" in patrol else None
             )
 
             all_patrol_events.append(patrol_event)
@@ -1126,7 +1127,7 @@ class Patrol():
             if possible_backstories:
                 backstory = possible_backstories
             elif kit:
-                backstory = chosen_kit_backstory
+                backstory = ['abandoned2', 'abandoned1', 'abandoned3']
                 # if none of these tags are present, then it uses the chosen_backstory from before
             else:
                 backstory = chosen_backstory
@@ -2054,7 +2055,8 @@ class PatrolEvent():
                  antagonize_text="",
                  antagonize_fail_text="",
                  history_text=None,
-                 relationship_constraint=None):
+                 relationship_constraint=None,
+                 other_clan):
         self.patrol_id = patrol_id
         self.biome = biome or "Any"
         self.season = season or "Any"
@@ -2071,6 +2073,7 @@ class PatrolEvent():
         self.max_cats = max_cats
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
+        self.other_clan = other_clan
 
         # if someone needs a empty list, don't make it as a default parameter
         # otherwise all instances of this class will use the same list

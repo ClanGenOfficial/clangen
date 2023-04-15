@@ -391,10 +391,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "dst_hunt_gonetnr2",
@@ -446,10 +443,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 3
     },
     {
         "patrol_id": "dst_hunt_gonetnr3",
@@ -501,10 +495,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_thunderpath1",
@@ -976,10 +967,7 @@
             "loving"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_leafbarerainstorm2",
@@ -1006,10 +994,7 @@
             "fantastic hunter"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 1
     },
     {
         "patrol_id": "dst_hunt_leafbarerainstorm3",
@@ -1048,10 +1033,7 @@
             "loving"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_swiftfox_anysteal1",
