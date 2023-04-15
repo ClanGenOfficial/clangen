@@ -2158,7 +2158,7 @@
       "general_backstory",
       "childish"
     ],
-    "While l_n is not quite sure that (prefix)paw has outgrown {PRONOUN/m_c/poss} childish quirks or {PRONOUN/m_c/poss} love of pranks, {PRONOUN/l_n/subject} {VERB/l_n/welcome/welcomes} {PRONOUN/m_c/object} as a full warrior to the Clan and name {PRONOUN/m_c/object} after {PRONOUN/m_c/poss} lightheartedness and r_h."
+    "While l_n is not quite sure that (prefix)paw has outgrown {PRONOUN/m_c/poss} childish quirks or {PRONOUN/m_c/poss} love of pranks, {PRONOUN/l_n/subject} {VERB/l_n/welcome/welcomes} {PRONOUN/m_c/object} as a full warrior to the Clan and naming {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} lightheartedness and r_h."
   ],
   "warrior_18": [
     [
@@ -2337,7 +2337,6 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "loyal",
       "loyal"
     ],
     "(prefix)paw looks around at {PRONOUN/m_c/poss} Clanmates with adoration while l_n announces that {PRONOUN/m_c/poss} new name will be m_c after {PRONOUN/m_c/poss} r_h. m_c is happy to be a warrior now, but mostly {PRONOUN/m_c/subject} just {VERB/m_c/want/wants} to celebrate with {PRONOUN/m_c/poss} Clan, whether it's for {PRONOUN/m_c/object} or not."
@@ -2352,7 +2351,7 @@
       "general_backstory",
       "nervous"
     ],
-    "(prefix)paw fidgets nervously as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward in front of the Clan. This is an important moment, so {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to hide {PRONOUN/m_c/poss} face from the crowd as l_n gives {PRONOUN/m_c/object} the name m_c in honor of {PRONOUN/m_c/poss} r_h {PRONOUN/m_c/subject/CAP} quickly {VERB/m_c/scurry/scurries} back into the crowd once the ceremony is done, silently hoping that this will be the last ceremony {PRONOUN/m_c/subject} ever {VERB/m_c/have/has}."
+    "(prefix)paw fidgets nervously as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward in front of the Clan. This is an important moment, so {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to hide {PRONOUN/m_c/poss} face from the crowd as l_n gives {PRONOUN/m_c/object} the name m_c in honor of {PRONOUN/m_c/poss} r_h. {PRONOUN/m_c/subject/CAP} quickly {VERB/m_c/scurry/scurries} back into the crowd once the ceremony is done, silently hoping that this will be the last ceremony {PRONOUN/m_c/subject} ever {VERB/m_c/have/has}."
   ],
   "warrior_34": [
     [
