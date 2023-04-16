@@ -696,16 +696,18 @@ def pronoun_repl(m, cat_pronouns_dict):
     inner_details = m.group(1).split("/")
     try:
         d = cat_pronouns_dict[inner_details[1]][1]
-        if inner_details[0] == "PRONOUN":
+        if inner_details[0].upper() == "PRONOUN":
             pro = d[inner_details[2]]
             if inner_details[-1] == "CAP":
                 pro = pro.capitalize()
             return pro
-        elif inner_details[0] == "VERB":
+        elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
+        print("Failed to find pronoun:", m.group(1))
         return "error1"
     except KeyError as e:
-        logger.exception("Failed to load sprite")
+        logger.exception("Failed to find pronoun: " + m.group(1))
+        print("Failed to find pronoun:", m.group(1))
         return "error2"
 
 
