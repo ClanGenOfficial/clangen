@@ -767,6 +767,9 @@ class Clan():
             self.save_freshkill_pile(game.clan)
 
         game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        
+        if os.path.exists(get_save_dir() + f'/{self.name}clan.txt'):   
+            os.remove(get_save_dir() + f'/{self.name}clan.txt')
 
             
     def save_clan_settings(self):

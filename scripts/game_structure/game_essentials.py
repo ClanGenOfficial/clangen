@@ -209,6 +209,8 @@ class Game():
             _data = write_data
             
         dir_name, file_name = os.path.split(path)
+        if not file_name:
+            raise RuntimeError(f"Safe_Save: No file name was found in {path}")
         
         temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
         i = 0
@@ -224,9 +226,9 @@ class Game():
             if _data != _read_data:
                 i += 1
                 if i > max_attempts:
-                    print(f"ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
-                    raise RuntimeError(f"{file_name} was unable to properly save {i} times!")
-                print(f"{file_name} was incorrectly saved. Trying again.")
+                    print(f"Safe_Save ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
+                    raise RuntimeError(f"Safe_Save: {file_name} was unable to properly save {i} times!")
+                print(f"Safe_Save: {file_name} was incorrectly saved. Trying again.")
                 continue
                 
             # This section is reached is the file was not nullied. Move the file and return True
