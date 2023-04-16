@@ -931,7 +931,7 @@
     {
         "id": "lonesome_apprentice",
         "thoughts": [
-            "Doesn't think that {PRONOUN/cat/subject} {VERB/cat/have/has} been performing up to {PRONOUN/cat/poss} mentor's standards lately",
+            "Doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
             "Is feeling cramped in the apprentice's den",
             "Managed to perform a difficult task on {PRONOUN/m_c/poss} own"
         ],
@@ -982,7 +982,7 @@
         "id": "nervous_apprentices",
         "thoughts": [
             "Is hoping to not train today...",
-            "Wishes {PRONOUN/m_c/subject} {VERB/cat/were/was} back in the nursery",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} back in the nursery",
             "Has agreed to {PRONOUN/m_c/poss} mentor's orders recently, despite {PRONOUN/m_c/poss} own doubts",
             "Managed to conquer a difficult task, despite feeling nervous",
             "Was startled by a squirrel while training"
@@ -1046,7 +1046,7 @@
     {
         "id": "careful_apprentices",
         "thoughts": [
-            "Is asking if {PRONOUN/m_c/subject} {VERB/cat/need/needs} more training"
+            "Is asking if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} more training"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1113,7 +1113,7 @@
     {
         "id": "compassionate_apprentice_to_apprentice",
         "thoughts": [
-            "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/cat/become/becomes} burnt out",
+            "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} burnt out",
             "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
             "Made a suggestion to {PRONOUN/m_c/poss} mentor",
             "Is doing extra apprentice tasks around camp, to help lighten the load"
@@ -1163,12 +1163,12 @@
     {
         "id": "insecure_apprentice",
         "thoughts": [
-            "Doesn't think that {PRONOUN/m_c/subject} {VERB/cat/have/has} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
+            "Doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
             "Finds that today is going to be a better day than the last",
             "Is making {PRONOUN/m_c/poss} friends laugh at the expense of {PRONOUN/m_c/self}",
-            "Finds that {PRONOUN/m_c/subject} {VERB/cat/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
+            "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
             "Is complimenting another apprentice on their hunting crouch",
-            "Is unsure that this is what {PRONOUN/m_c/subject} {VERB/cat/want/wants} to do"
+            "Is unsure that this is what {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to do"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1246,11 +1246,11 @@
         "thoughts": [
             "Goes for a swim",
             "Zooms around camp",
-            "Is proud that {PRONOUN/m_c/subject} {VERB/cat/have/has} become stronger despite {PRONOUN/m_c/poss} struggles",
+            "Is proud that {PRONOUN/m_c/subject} {VERB/m_c/have/has} become stronger despite {PRONOUN/m_c/poss} struggles",
             "Is having trouble grooming {PRONOUN/m_c/self}",
             "Snaps at r_c for trying to 'help' {PRONOUN/m_c/object} with something {PRONOUN/m_c/subject} can do just fine",
-            "Feels comforted by r_c's words about how strong {PRONOUN/m_c/subject} {VERB/cat/are/is}",
-            "Snaps that {PRONOUN/m_c/subject}{VERB/cat/'re/'s} not 'strong', {PRONOUN/m_c/subject}{VERB/cat/'re/'s} just alive"
+            "Feels comforted by r_c's words about how strong {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
+            "Snaps that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not 'strong', {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just alive"
         ],
         "perm_conditions": {
             "m_c": [
@@ -1354,7 +1354,7 @@
             "Listened to bird songs all morning",
             "Just heard a frog croaking in camp!",
             "Knows r_c is nearby from the sound of {PRONOUN/r_c/poss} pawsteps",
-            "Jumps as {PRONOUN/m_c/subject} {VERB/cat/hit/hits} a large rock with {PRONOUN/m_c/poss} paw",
+            "Jumps as {PRONOUN/m_c/subject} {VERB/m_c/hit/hits} a large rock with {PRONOUN/m_c/poss} paw",
             "Is annoyed that a Clanmate keeps pitying {PRONOUN/m_c/object}",
             "Confused {PRONOUN/m_c/poss} Clanmates when {PRONOUN/m_c/subject} said it was a beautiful day",
             "Wonders if {PRONOUN/m_c/poss} mental image of r_c matches real life"
@@ -1504,7 +1504,7 @@
             "Teaches a new Clanmate how to do tail signals",
             "Nearly hits the den's ceiling when r_c suddenly enters {PRONOUN/m_c/poss} line of sight",
             "Can identify {PRONOUN/m_c/poss} Clanmates just by the feel of their pawsteps",
-            "Recently discovered that {PRONOUN/m_c/subject} {VERB/cat/have/has} a stomping habit",
+            "Recently discovered that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a stomping habit",
             "Is confused when r_c indicates birdsong",
             "Wonders what r_c sounds like",
             "Knows what r_c is saying from {PRONOUN/r_c/poss} mouth movement",
@@ -1525,7 +1525,7 @@
             "Wonders if the clouds make noise",
             "Wonders if the sun makes noise",
             "Wonders what sound is like",
-            "Tries to ask r_c for something, but {PRONOUN/m_c/subject} {VERB/cat/don't/doesn't} understand",
+            "Tries to ask r_c for something, but {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} understand",
             "Is frustrated that other cats don't understand {PRONOUN/m_c/poss} signals",
             "Wishes {PRONOUN/m_c/subject} could talk to other cats",
             "Feels thunder boom and watches the others flinch",
@@ -1742,7 +1742,7 @@
         "id": "half_no_tail_lost_gen_to_alive_gen",
         "thoughts": [
             "Misses being able to do tail signals",
-            "Finds balancing harder now, though {PRONOUN/m_c/subject}{VERB/cat/'re/'s} improving"
+            "Finds balancing harder now, though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} improving"
         ],
         "perm_conditions": {
             "m_c": [

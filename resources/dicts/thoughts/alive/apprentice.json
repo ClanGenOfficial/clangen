@@ -11,7 +11,7 @@
             "Practices {PRONOUN/m_c/poss} newest battle moves",
             "Hopes {PRONOUN/m_c/subject}'ll learn something new today",
             "Is feeling proud of the progress {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} made",
-            "Practices {PRONOUN/m_c/object} hunting on a smooth rock {PRONOUN/m_c/subject} found",
+            "Practices {PRONOUN/m_c/poss} hunting on a smooth rock {PRONOUN/m_c/subject} found",
             "Feels disappointed after a missed catch",
             "Hopes there's a juicy mouse left on the fresh-kill pile for {PRONOUN/m_c/object}",
             "Tries to recite the Warrior Code from memory",
@@ -171,7 +171,7 @@
         "id": "insecure_warrior_apprentice",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
-            "Is reluctant to spar with {PRONOUN/m_c/object} mentor today",
+            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
             "Doesn't think {PRONOUN/m_c/poss} hauls on hunting patrols have been substantial enough"
         ],
         "main_trait_constraint": [
