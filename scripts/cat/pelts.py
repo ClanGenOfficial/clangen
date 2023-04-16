@@ -252,17 +252,17 @@ class Calico():
 # ATTRIBUTES, including non-pelt related
 pelt_colours = [
     'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'RED', 'DARKGINGER', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
     'CHOCOLATE'
 ]
 pelt_c_no_white = [
     'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'RED', 'DARKGINGER', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
     'CHOCOLATE'
 ]
 pelt_c_no_bw = [
     'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'RED', 'DARKGINGER', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
     'CHOCOLATE'
 ]
 
@@ -317,10 +317,10 @@ pelt_categories = [tabbies, spotted, plain, exotic, torties]
 # SPRITE NAMES
 single_colours = [
     'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'RED', 'DARKGINGER', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
     'CHOCOLATE'
 ]
-ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'RED', 'DARKGINGER']
+ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']
 black_colours = ['GREY', 'DARKGREY', 'GHOST', 'BLACK']
 white_colours = ['WHITE', 'PALEGREY', 'SILVER']
 brown_colours = ['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']
@@ -345,7 +345,7 @@ vit = ['VITILIGO', 'VITILIGOTWO', 'MOON', 'PHANTOM', 'KARPATI', 'POWDER']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
-skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
+skin_sprites = ['BLACK',  'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
                 'SALMON', 'PEACH', 'DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']
 
 
@@ -479,22 +479,32 @@ def describe_appearance(cat, short=False):
     # Define look-up dictionaries
     if short:
         renamed_colors = {
+            "white": "pale",
             "palegrey": "gray",
             "darkgrey": "gray",
+            "grey": "gray",
             "paleginger": "ginger",
             "darkginger": "ginger",
+            "sienna": "ginger",
             "lightbrown": "brown",
+            "lilac": "brown",
             "darkbrown": "brown",
+            "chocolate": "brown",
             "ghost": "black"
         }
     else:
         renamed_colors = {
+            "white": "pale",
             "palegrey": "pale gray",
+            "grey": "gray",
             "darkgrey": "dark gray",
             "paleginger": "pale ginger",
             "darkginger": "dark ginger",
+            "sienna": "dark ginger",
             "lightbrown": "light brown",
+            "lilac": "light brown",
             "darkbrown": "dark brown",
+            "chocolate": "dark brown",
             "ghost": "black"
         }
 
