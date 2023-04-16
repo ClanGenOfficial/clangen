@@ -488,6 +488,7 @@ def describe_appearance(cat, short=False):
             "sienna": "ginger",
             "lightbrown": "brown",
             "lilac": "brown",
+            "golden-brown": "brown",
             "darkbrown": "brown",
             "chocolate": "brown",
             "ghost": "black"
@@ -503,6 +504,7 @@ def describe_appearance(cat, short=False):
             "sienna": "dark ginger",
             "lightbrown": "light brown",
             "lilac": "light brown",
+            "golden-brown": "golden brown",
             "darkbrown": "dark brown",
             "chocolate": "dark brown",
             "ghost": "black"
