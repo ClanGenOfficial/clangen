@@ -101,7 +101,7 @@
     {
         "id": "dead_kit_to_dead_kit_sibling",
         "thoughts": [
-            "Is glad that at least {PRONOUN/m_c/subject} have r_c"
+            "Is glad that at least {PRONOUN/m_c/subject} {VERB/m_c/have/has} r_c"
         ],
         "relationship_constraint": [
             "siblings"
