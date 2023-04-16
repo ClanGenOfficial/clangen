@@ -184,7 +184,6 @@ class Thoughts():
                 if main_cat.permanent_condition:
                     if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]] and \
                             "any" not in thought['perm_conditions']["m_c"]:
-                        print(thought["perm_conditions"]["m_c"], str(main_cat.name))
                         return False
 
             if "r_c" in thought["perm_conditions"] and random_cat:

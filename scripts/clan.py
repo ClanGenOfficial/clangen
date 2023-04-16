@@ -480,6 +480,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.inheritance = {}
             self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
@@ -772,6 +773,8 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_pregnancy(game.clan)
+
         self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
@@ -1075,7 +1078,7 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        if game.clan.game_mode in ['expanded', 'cruel season']:
+        if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
         
@@ -1335,9 +1338,7 @@ class Clan():
                 json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
-            print(
-                "ERROR: Saving nutrition information of the freshkill pile didn't work."
-            )
+            print("ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
 
     ## Properties

@@ -489,8 +489,8 @@ class OtherCatsFiltering(unittest.TestCase):
         )
 
 
-        random1.mate = random2.ID
-        random2.mate = random1.ID
+        random1.mate.append(random2.ID)
+        random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
             random1, random2, True, False, 50, 50, 0, 0, 0, 0, 50
         )
@@ -599,8 +599,8 @@ class OtherCatsFiltering(unittest.TestCase):
         )
 
 
-        random1.mate = random2.ID
-        random2.mate = random1.ID
+        random1.mate.append(random2.ID)
+        random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
             random1, random2, True, False, 50, 50, 0, 0, 0, 0, 50
         )

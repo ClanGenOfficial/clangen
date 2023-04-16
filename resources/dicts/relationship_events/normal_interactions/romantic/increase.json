@@ -231,11 +231,26 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c was caught enjoying a moonlit stroll with r_c last night...",
-			"m_c sneaks out at night to sleep in r_c's nest.",
-			"m_c purrs for a long time at one of r_c's lame jokes."
+			"m_c sneaks out at night to sleep in r_c's nest."
 		],
 		"relationship_constraint": [
 			"romantic_40",
+			"mates"
+		],
+		"reaction_random_cat": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"platonic": "increase",
+			"comfortable": "increase"
+		}
+	},
+	{
+		"id": "rom_inc_high4",
+		"intensity": "high",
+		"interactions": [
+			"m_c purrs for a long time at one of r_c's lame jokes."
+		],
+		"relationship_constraint": [
 			"mates"
 		],
 		"reaction_random_cat": {

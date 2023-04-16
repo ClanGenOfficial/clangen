@@ -155,9 +155,8 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
-        if inter_cat.is_potential_mate(cat, True) and cat.is_potential_mate(inter_cat, True):
-            if not inter_cat.mate:
-                cats.append(inter_cat)
+        if inter_cat.is_potential_mate(cat, for_love_interest= True) and cat.is_potential_mate(inter_cat, for_love_interest=True):
+            cats.append(inter_cat)
     return cats
 
 
@@ -413,6 +412,7 @@ def create_new_cat(Cat,
 
         # create relationships
         new_cat.create_relationships_new_cat()
+        new_cat.create_inheritance_new_cat()
 
     return created_cats
 
@@ -454,6 +454,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
     # create relationships - only with outsiders
     # (this function will handle, that the cat only knows other outsiders)
     new_cat.create_relationships_new_cat()
+    new_cat.create_inheritance_new_cat()
 
     game.clan.add_cat(new_cat)
     game.clan.add_to_outside(new_cat)
@@ -474,24 +475,20 @@ with open(f"{resource_directory}personality_compatibility.json", 'r') as read_fi
 
 def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
-    # Different filters for different
-    romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
-                           and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
-               relationships))
+    max_love_value = 0
+    current_max_relationship = None
+    for rel in relationships:
+        if rel.romantic_love < 0:
+            continue
+        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
+            continue
+        if potential_mate and not rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True):
+            continue
+        if rel.romantic_love > max_love_value:
+            current_max_relationship = rel
+            max_love_value = rel.romantic_love
 
-    if romantic_relation is None or len(romantic_relation) == 0:
-        return None
-
-    relation = romantic_relation[0]
-    max_love_value = relation.romantic_love
-    # if there more love relations, pick the biggest one
-    for inter_rel in romantic_relation:
-        if max_love_value < inter_rel.romantic_love:
-            max_love_value = inter_rel.romantic_love
-            relation = inter_rel
-
-    return relation
+    return current_max_relationship
 
 
 def check_relationship_value(cat_from, cat_to, rel_value=None):
@@ -679,8 +676,8 @@ def change_relationship_values(cats_to: list,
             if kitty.ID == rel.cat_to.ID:
                 continue
 
-            # here we just double-check that the cats are allowed to be romantic with eath other
-            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate == rel.cat_to.ID:
+            # here we just double-check that the cats are allowed to be romantic with each other
+            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or rel.cat_to.ID in kitty.mate:
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
                 if rel.romantic_love > 0 and auto_romance:
@@ -869,9 +866,6 @@ def event_text_adjust(Cat,
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
         cat_dict["o_c"] = (other_clan_name, None)
-    if cat.mate:
-        mate = Cat.fetch_cat(cat.mate)
-        cat_dict["c_m"] = (str(mate.name), choice(mate.pronouns))
     if new_cat:
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))

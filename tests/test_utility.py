@@ -6,7 +6,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-from scripts.utility import get_personality_compatibility, get_amount_of_cats_with_relation_value_towards
+from scripts.utility import get_highest_romantic_relation, get_personality_compatibility, get_amount_of_cats_with_relation_value_towards
 
 class TestPersonalityCompatibility(unittest.TestCase):
 
@@ -126,3 +126,52 @@ class TestCountRelation(unittest.TestCase):
         self.assertEqual(relation_dict["comfortable"],0)
         self.assertEqual(relation_dict["jealousy"],2)
         self.assertEqual(relation_dict["trust"],0)
+
+class TestHighestRomance(unittest.TestCase):
+    def test_exclude_mate(self):
+        # given
+        cat1 = Cat()
+        cat2 = Cat()
+        cat3 = Cat()
+        cat4 = Cat()
+
+        # when
+        cat1.mate.append(cat2.ID)
+        cat2.mate.append(cat1.ID)
+        relation_1_2 = Relationship(cat_from=cat1,cat_to=cat2, mates=True)
+        relation_1_3 = Relationship(cat_from=cat1,cat_to=cat3)
+        relation_1_4 = Relationship(cat_from=cat1,cat_to=cat4)
+        relation_1_2.romantic_love = 60
+        relation_1_3.romantic_love = 50
+        relation_1_4.romantic_love = 40
+
+        relations = [relation_1_2, relation_1_3, relation_1_4]
+
+        #then
+        self.assertNotEqual(relation_1_2, get_highest_romantic_relation(relations, exclude_mate=True))
+        self.assertEqual(relation_1_3, get_highest_romantic_relation(relations, exclude_mate=True))
+        self.assertNotEqual(relation_1_4, get_highest_romantic_relation(relations, exclude_mate=True))
+
+    def test_include_mate(self):
+        # given
+        cat1 = Cat()
+        cat2 = Cat()
+        cat3 = Cat()
+        cat4 = Cat()
+
+        # when
+        cat1.mate.append(cat2.ID)
+        cat2.mate.append(cat1.ID)
+        relation_1_2 = Relationship(cat_from=cat1,cat_to=cat2, mates=True)
+        relation_1_3 = Relationship(cat_from=cat1,cat_to=cat3)
+        relation_1_4 = Relationship(cat_from=cat1,cat_to=cat4)
+        relation_1_2.romantic_love = 60
+        relation_1_3.romantic_love = 50
+        relation_1_4.romantic_love = 40
+
+        relations = [relation_1_2, relation_1_3, relation_1_4]
+
+        #then
+        self.assertEqual(relation_1_2, get_highest_romantic_relation(relations, exclude_mate=False))
+        self.assertNotEqual(relation_1_3, get_highest_romantic_relation(relations, exclude_mate=False))
+        self.assertNotEqual(relation_1_4, get_highest_romantic_relation(relations, exclude_mate=False))
