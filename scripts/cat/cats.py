@@ -226,6 +226,8 @@ class Cat():
             self.name = Name(status, prefix=prefix, suffix=suffix)
             self.parent1 = None
             self.parent2 = None
+            self.adoptive_parents = []
+            self.mate = []
             self.status = status
             self.moons = moons
             if "df" in kwargs:
