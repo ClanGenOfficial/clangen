@@ -16,8 +16,8 @@
             "Hopes there's a juicy mouse left on the fresh-kill pile for {PRONOUN/m_c/object}",
             "Tries to recite the Warrior Code from memory",
             "Feels nervous about an upcoming assessment",
-            "Practices {PRONOUN/m_c/object} highest jump",
-            "Practices {PRONOUN/m_c/object} farthest leap",
+            "Practices {PRONOUN/m_c/poss} highest jump",
+            "Practices {PRONOUN/m_c/poss} farthest leap",
             "Feels proud of {PRONOUN/m_c/self} for doing so well in training today",
             "Is gossiping",
             "Is acting angsty",
@@ -120,7 +120,7 @@
             "Tries not to giggle as r_c fails at a hunting crouch",
             "Looks at r_c and wonders if {PRONOUN/m_c/subject} {VERB/cat/were/was} ever that small",
             "Brought back some feathers for the kits to play with",
-            "Is showing off {PRONOUN/m_c/object} new battle moves to the kits"
+            "Is showing off {PRONOUN/m_c/poss} new battle moves to the kits"
         ],
         "random_status_constraint":[
             "kitten"
@@ -151,7 +151,7 @@
     {
         "id": "thoughtful_apprentice",
         "thoughts": [
-            "Offered to go on the dawn patrol with {PRONOUN/m_c/object} mentor"
+            "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor"
         ],
         "main_trait_constraint": [
             "thoughtful"
