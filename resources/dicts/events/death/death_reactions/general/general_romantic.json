@@ -105,7 +105,7 @@
   },
   "compassionate": {
     "body": [
-      "Although r_c's grief at the loss of m_c is overwhelming, {PRONOUN/r_c/subject} make sure to tend to {PRONOUN/r_c/poss} Clanmates before indulging in {PRONOUN/r_c/poss} own mourning. It's all {PRONOUN/r_c/subject} can do not to collapse, but caring for the cats around {PRONOUN/r_c/object} has always brought {PRONOUN/r_c/object} comfort in times of need."
+      "Although r_c's grief at the loss of m_c is overwhelming, {PRONOUN/r_c/subject} {VERB/r_c/make/makes} sure to tend to {PRONOUN/r_c/poss} Clanmates before indulging in {PRONOUN/r_c/poss} own mourning. It's all {PRONOUN/r_c/subject} can do not to collapse, but caring for the cats around {PRONOUN/r_c/object} has always brought {PRONOUN/r_c/object} comfort in times of need."
 
     ],
     "no_body": [
