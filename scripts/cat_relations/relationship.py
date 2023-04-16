@@ -62,7 +62,7 @@ class Relationship():
             return
 
         # update relationship
-        if self.cat_from.mate == self.cat_to.ID:
+        if self.cat_to.ID in self.cat_from.mate:
             self.mates = True
 
         # check if opposite_relationship is here, otherwise creates it
@@ -162,14 +162,11 @@ class Relationship():
     def adjust_interaction_string(self, string):
 
         cat_dict = {
-            "m_c": (str(self.cat_from.name), choice(self.cat_to.pronouns)),
+            "m_c": (str(self.cat_from.name), choice(self.cat_from.pronouns)),
             "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
         }
 
         return process_text(string, cat_dict)
-
-
-
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
@@ -200,10 +197,10 @@ class Relationship():
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_bonus"]
+            amount += game.config["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_bonus"]
+            amount -= game.config["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str) -> None:
@@ -222,22 +219,23 @@ class Relationship():
             -------
         """
         amount = self.get_amount(in_de_crease, intensity)
+        passive_buff = int(amount/game.config["relationship"]["passive_influence_div"])
 
         # influence the own relationship
         if rel_type == "romantic":
-            self.complex_romantic(amount)
+            self.complex_romantic(amount, passive_buff)
         elif rel_type == "platonic":
-            self.complex_platonic(amount)
+            self.complex_platonic(amount, passive_buff)
         elif rel_type == "dislike":
-            self.complex_dislike(amount)
+            self.complex_dislike(amount, passive_buff)
         elif rel_type == "admiration":
-            self.complex_admiration(amount)
+            self.complex_admiration(amount, passive_buff)
         elif rel_type == "comfortable":
-            self.complex_comfortable(amount)
+            self.complex_comfortable(amount, passive_buff)
         elif rel_type == "jealousy":
-            self.complex_jealousy(amount)
+            self.complex_jealousy(amount, passive_buff)
         elif rel_type == "trust":
-            self.complex_trust(amount)
+            self.complex_trust(amount, passive_buff)
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -350,8 +348,8 @@ class Relationship():
 
         # if a romantic relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
-        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, True)
-        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, True)
+        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True)
+        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True)
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
@@ -428,57 +426,51 @@ class Relationship():
 
     # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
 
-    def complex_romantic(self, value):
+    def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
         self.romantic_love += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.platonic_like += buff
             self.comfortable += buff
             self.dislike -= buff
 
-    def complex_platonic(self, value):
+    def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
         self.platonic_like += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.comfortable += buff
             self.dislike -= buff
 
-    def complex_dislike(self, value):
+    def complex_dislike(self, value, buff):
         """Add the value to the dislike type and influence other value types as well."""
         self.dislike += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.romantic_love -= buff
             self.platonic_like -= buff
 
-    def complex_admiration(self, value):
+    def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
         self.admiration += value
 
-    def complex_comfortable(self, value):
+    def complex_comfortable(self, value, buff):
         """Add the value to the comfortable type and influence other value types as well."""
         self.comfortable += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.trust += buff
             self.platonic_like += buff
             self.dislike -= buff
             self.jealousy -= buff
 
-    def complex_jealousy(self, value):
+    def complex_jealousy(self, value, buff):
         """Add the value to the jealousy type and influence other value types as well."""
         self.jealousy += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.dislike += buff
 
-    def complex_trust(self, value):
+    def complex_trust(self, value, buff):
         """Add the value to the trust type and influence other value types as well."""
         self.trust += value
         if value > 0:
-            buff = game.config["relationship"]["passive_influence"]
             self.dislike -= buff
 
 

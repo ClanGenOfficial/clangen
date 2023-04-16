@@ -26,5 +26,8 @@
     },
     "#change_cat_gender_window": {
         "prototype": "#window_base_theme"
-    }
+    },
+	"#relationship_log_window": {
+        "prototype": "#window_base_theme"
+	}
 }
