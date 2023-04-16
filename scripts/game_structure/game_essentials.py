@@ -216,15 +216,11 @@ class Game():
             # Attempt to write to temp file
             with open(temp_file_path, "w") as write_file:
                 write_file.write(_data)
-            # Read the file back in, in binary mode, so
-            # we can properly check for file nullification. 
-            # We don't need to read the entire file, 
-            # so let's just read the first 200 bytes. 
+            
+            # Read the entire file back in 
             with open(temp_file_path, 'r') as read_file:
                 _read_data = read_file.read()
             
-            # If_data is not empty, and _binary_data is
-            # all null_bytes or empty.
             if _data != _read_data:
                 i += 1
                 if i > max_attempts:
