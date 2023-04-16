@@ -11,6 +11,7 @@ from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
+from scripts.cat_relations.inheritance import Inheritance
 
 def load_cats():
     try:
@@ -74,6 +75,7 @@ def json_load():
                         eye_colour=cat["eye_colour"],
                         pelt=new_pelt,
                         loading_cat=True)
+            new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
             if new_cat.age == 'elder':
@@ -194,7 +196,9 @@ def json_load():
                     new_cat.scars.append(cat["specialty2"])
 
             new_cat.accessory = cat["accessory"]
-            new_cat.mate = cat["mate"]
+            new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
+            if None in new_cat.mate:
+                new_cat.mate = [i for i in new_cat.mate if i is not None]
             new_cat.previous_mates = cat["previous_mates"] if "previous_mates" in cat else []
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []
@@ -281,6 +285,7 @@ def json_load():
         game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
+        cat.inheritance = Inheritance(cat)
         
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:
@@ -403,7 +408,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate = attr[31]
+                        the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
@@ -482,15 +487,15 @@ def save_check():
         cat_ob = Cat.all_cats[cat]
         
         # Not-mutural mate relations
-        if cat_ob.mate:
-            _temp_ob = Cat.all_cats.get(cat_ob.mate)
-            if _temp_ob:
-                # Check if the mate's mate feild is set to none
-                if not _temp_ob.mate:
-                    _temp_ob.mate = cat_ob.ID 
-            else:
-                # Invalid mate
-                cat_ob.mate = None
+        #if cat_ob.mate:
+        #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
+        #    if _temp_ob:
+        #        # Check if the mate's mate feild is set to none
+        #        if not _temp_ob.mate:
+        #            _temp_ob.mate = cat_ob.ID 
+        #    else:
+        #        # Invalid mate
+        #        cat_ob.mate = None
                 
 def version_convert(version_info):
     """Does all save-convertion that require referencing the saved version number.

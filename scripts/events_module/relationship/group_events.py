@@ -3,7 +3,7 @@ import ujson
 from random import choice, shuffle
 from copy import deepcopy
 
-from scripts.utility import change_relationship_values
+from scripts.utility import change_relationship_values, process_text
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
@@ -541,10 +541,12 @@ class Group_Events():
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
+        
+        replace_dict = {}
         for abbr, cat_id in self.abbreviations_cat_id.items():
-            current_cat_name = Cat.all_cats[cat_id].name
-            text = text.replace(abbr, str(current_cat_name))
-        return text
+            replace_dict[abbr] = (str(Cat.all_cats[cat_id].name), choice(Cat.all_cats[cat_id].pronouns))
+        
+        return process_text(text, replace_dict)
 
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #

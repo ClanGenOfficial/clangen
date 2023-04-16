@@ -547,9 +547,9 @@ class Patrol():
                     cat1 = self.patrol_cats[0]
                     cat2 = self.patrol_cats[1]
                     # if one of the cat has no mate, not add this patrol
-                    if not cat1.mate or not cat2.mate:
+                    if len(cat1.mate) < 1 or len(cat1.mate) < 1:
                         continue
-                    elif cat1.mate != cat2.ID or cat2.mate != cat1.ID:
+                    elif cat2.ID not in cat1.mate or cat1.ID not in cat2.mate:
                         continue
 
             # check if the cats are in a parent/child relationship
@@ -711,9 +711,9 @@ class Patrol():
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                if ("great" or "very") in kitty.skill:
+                if "great" in kitty.skill or "very" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
-                elif ("fantastic" or "excellent" or "extremely") in kitty.skill:
+                elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
             if kitty.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -723,11 +723,13 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        if success_chance >= 120:
+            success_chance = 115
+            skill_updates += "success chance over 120, updated to 115"
         print(skill_updates)
-        print('ending chance', success_chance)
-
-        c = int(random.getrandbits(7))
+        c = int(random.random() * 120)
         outcome = int(random.getrandbits(4))
+        print('ending chance', success_chance, 'vs.', c)
 
         # denotes if they get the common "basic" outcome or the rare "basic" outcome
         rare = False
@@ -1602,18 +1604,19 @@ class Patrol():
             # check for lethality
             if "non_lethal" in self.patrol_event.tags:
                 lethal = False
-
+            
+            # poisons cats
             if "poison_clan" in self.patrol_event.tags:
-                cat.get_injured("poisoned")
                 self.living_cats = []
                 for x in range(len(Cat.all_cats.values())):
                     the_cat = list(Cat.all_cats.values())[x]
                     if not the_cat.dead and not the_cat.outside:
                         self.living_cats.append(the_cat)
-                cats_to_poison = random.choices(self.living_cats, k=choice([2, 3, 4]))
-                for cat in cats_to_poison:
-                    cat.get_injured('poisoned')
-                    self.results_text.append(f"{cat.name} got: poisoned")
+                
+                cats_to_poison = random.sample(self.living_cats, k=min(len(self.living_cats), choice([2, 3, 4])))
+                for poisoned in cats_to_poison:
+                    poisoned.get_injured('poisoned')
+                    self.results_text.append(f"{poisoned.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:

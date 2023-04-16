@@ -33,6 +33,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
+from scripts.cat_relations.inheritance import Inheritance, RelationType
 
 
 class Cat():
@@ -225,6 +226,8 @@ class Cat():
             self.name = Name(status, prefix=prefix, suffix=suffix)
             self.parent1 = None
             self.parent2 = None
+            self.adoptive_parents = []
+            self.mate = []
             self.status = status
             self.moons = moons
             if "df" in kwargs:
@@ -260,6 +263,7 @@ class Cat():
         self.trait = None
         self.parent1 = parent1
         self.parent2 = parent2
+        self.adoptive_parents = []
         self.pelt = pelt
         self.tint = None
         self.white_patches_tint = None
@@ -272,7 +276,7 @@ class Cat():
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = {}
-        self.mate = None
+        self.mate = []
         self.previous_mates = []
         self.pronouns = [self.default_pronouns[0].copy()]
         self.placement = None
@@ -338,6 +342,7 @@ class Cat():
         self.favourite = False
 
         self.specsuffix_hidden = specsuffix_hidden
+        self.inheritance = None
 
         # setting ID
         if ID is None:
@@ -943,7 +948,7 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = self.trait
+                            self.trait = choice(self.traits)
                             self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
@@ -1133,104 +1138,10 @@ class Cat():
         # get chosen thought
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
         
-        # insert name if it is needed
-        if "r_c" in chosen_thought:
-            chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
-
-        # insert Clan name if needed
-        try:
-            if "c_n" in chosen_thought:
-                chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
-        except AttributeError:
-            if "c_n" in chosen_thought:
-                chosen_thought = chosen_thought.replace("c_n", game.switches["clan_list"][0] + 'Clan')
+        chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
 
         # insert thought
         self.thought = str(chosen_thought)
-
-    def create_interaction(self):
-        """Creates an interaction between this cat and another, which effects relationship values. """
-        # if the cat has no relationships, skip
-        if not self.relationships or len(self.relationships) < 1:
-            return
-
-        cats_to_choose = list(
-            filter(lambda iter_cat_id: iter_cat_id != self.ID,
-                   Cat.all_cats.copy()))
-        # increase chance of cats, which are already befriended
-        like_threshold = 30
-        relevant_relationships = list(
-            filter(lambda relation: relation.platonic_like >= like_threshold,
-                   self.relationships.values()))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.platonic_like >= like_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase chance of cats, which are already may be in love
-        love_threshold = 30
-        relevant_relationships = list(
-            filter(lambda relation: relation.romantic_love >= love_threshold,
-                   self.relationships.values()))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.romantic_love >= love_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase the chance a kitten interacts with other kittens
-        if self.age == "kitten":
-            kittens = list(
-                filter(
-                    lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and
-                                   cat_id != self.ID, Cat.all_cats.copy()))
-            amount = int(len(cats_to_choose) / 4)
-            if len(kittens) > 0:
-                amount = int(len(cats_to_choose) / len(kittens))
-            cats_to_choose = cats_to_choose + kittens * amount
-
-        # increase the chance an apprentice interacts with other apprentices
-        if self.age == "adolescent":
-            apprentices = list(
-                filter(
-                    lambda cat_id: self.all_cats.get(cat_id).age == "adolescent"
-                                   and cat_id != self.ID, Cat.all_cats.copy()))
-            amount = int(len(cats_to_choose) / 4)
-            if len(apprentices) > 0:
-                amount = int(len(cats_to_choose) / len(apprentices))
-            cats_to_choose = cats_to_choose + apprentices * amount
-
-        # choose cat and start
-        random_id = random.choice(cats_to_choose)
-        relevant_relationship_list = list(
-            filter(
-                lambda relation: str(relation.cat_to) == str(random_id) and
-                                 not relation.cat_to.dead, self.relationships.values()))
-        random_cat = self.all_cats.get(random_id)
-        kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
-
-        # is also found in Relation_Events.MAX_ATTEMPTS
-        attempts_left = 1000
-        while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_outside:
-            random_id = random.choice(cats_to_choose)
-            random_cat = self.all_cats.get(random_id)
-            kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
-            relevant_relationship_list = list(
-                filter(
-                    lambda relation: str(relation.cat_to) == str(random_id) and
-                                     not relation.cat_to.dead, self.relationships.values()))
-            attempts_left -= 1
-            if attempts_left <= 0:
-                return
-        relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_interaction()
-
-        if game.game_mode == "classic":
-            return
-        # handle contact with ill cat if
-        if self.is_ill():
-            relevant_relationship.cat_to.contact_with_ill_cat(self)
-        if relevant_relationship.cat_to.is_ill():
-            self.contact_with_ill_cat(relevant_relationship.cat_to)
 
     def relationship_interaction(self):
         """Randomly choose a cat of the clan and have a interaction with them."""
@@ -1245,6 +1156,8 @@ class Cat():
             return
 
         chosen_cat = choice(cats_to_choose)
+        if chosen_cat.ID not in self.relationships:
+            self.relationships[chosen_cat.ID] = Relationship(self, chosen_cat)
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
@@ -1471,92 +1384,74 @@ class Cat():
     #                                   relative                                   #
     # ---------------------------------------------------------------------------- #
     def get_parents(self):
-        """Returns list containing parents of cat."""
-        if self.parent1:
-            if self.parent2:
-                return [self.parent1, self.parent2]
-            return [self.parent1]
-        return []
+        """Returns list containing parents of cat(id)."""
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.parents.keys()
 
     def get_siblings(self):
-        """Returns list of the siblings."""
-        if not self.faded:
-            return self.siblings
-        else:
-            # Finding the siblings of faded cats. 
-            siblings = []
-            for par in self.get_parents():
-                par_ob = Cat.fetch_cat(par)
-                for x in par_ob.get_children():
-                    if x != self.ID and x not in siblings:
-                        siblings.append(x)
-            return siblings
+        """Returns list of the siblings(id)."""
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.siblings.keys()
 
     def get_children(self):
         """Returns list of the children (ids)."""
-        if not self.faded:
-            return self.children
-        else:
-            children = [i.ID for i in Cat.all_cats.values() if self.ID in i.get_parents()]
-            children.extend(self.faded_offspring)
-            return children
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return self.inheritance.kits.keys()
 
     def is_grandparent(self, other_cat: Cat):
         """Check if the cat is the grandparent of the other cat."""
-        # Get parents ID
-        parents = other_cat.get_parents()
-        for parent in parents:
-            # Get parent 'Cat'
-            if parent in Cat.all_cats.keys():
-                parent_obj = Cat.all_cats.get(parent)
-            else:
-                parent_obj = Cat.load_faded_cat(parent)
-            if parent_obj:
-                # If there are parents, get grandparents and check if our ID is among them.
-                if self.ID in parent_obj.get_parents():
-                    return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.grand_kits.keys()
 
     def is_parent(self, other_cat: Cat):
         """Check if the cat is the parent of the other cat."""
-        if self.ID in other_cat.get_parents():
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.kits.keys()
 
     def is_sibling(self, other_cat: Cat):
         """Check if the cats are siblings."""
-        if other_cat == self:
-            return False
-        if set(self.get_parents()) & set(other_cat.get_parents()):
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.siblings.keys()
     
     def is_littermate(self, other_cat: Cat):
-        """Check if the cats are littermates"""
-        if not self.is_sibling(other_cat):
+        """Check if the cats are littermates."""
+        if other_cat.ID not in self.inheritance.siblings.keys():
             return False
-        if other_cat.moons + other_cat.dead_for == self.moons + self.dead_for:
-            return True
-        return False
+        litter_mates = [key for key, value in self.inheritance.siblings.items() if "litter mates" in value["additional"]]
+        return other_cat.ID in litter_mates
 
     def is_uncle_aunt(self, other_cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
-        if self.is_parent(other_cat):
-            return False
-        if set(self.get_siblings()) & set(other_cat.get_parents()):
-            return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.siblings_kits.keys()
 
     def is_cousin(self, other_cat):
-        grandparent_id = []
-        for parent in other_cat.get_parents():
-            parent_ob = Cat.fetch_cat(parent)
-            grandparent_id.extend(parent_ob.get_parents())
-        for parent in self.get_parents():
-            parent_ob = Cat.fetch_cat(parent)
-            if set(parent_ob.get_parents()) & set(grandparent_id):
-                return True
-        return False
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        return other_cat.ID in self.inheritance.cousins.keys()
+
+    def is_related(self, other_cat, cousin_allowed):
+        """Checks if the given cat is related to the current cat, according to the inheritance."""
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        if cousin_allowed:
+            return other_cat.ID in self.inheritance.all_but_cousins
+        return other_cat.ID in self.inheritance.all_involved
+
+    def get_relatives(self, cousin_allowed = True) -> list:
+        """Returns a list of ids of all nearly related ancestors."""
+        if not self.inheritance:
+            self.inheritance = Inheritance(self)
+        if cousin_allowed:
+            return self.inheritance.all_involved
+        return self.inheritance.all_but_cousins
 
     # ---------------------------------------------------------------------------- #
     #                                  conditions                                  #
@@ -2114,26 +2009,17 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          for_patrol: bool = False):
-        """Add additional information to call the check."""
-        former_mentor_setting = game.settings['romantic with former mentor']
-        for_patrol = for_patrol
-        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)
-
-    def _intern_potential_mate(self,
-                               other_cat: Cat,
-                               for_love_interest: bool,
-                               former_mentor_setting: bool,
-                               for_patrol: bool = False):
-        """Checks if this cat is a free and potential mate for the other cat."""
-        # checks if affairs are turned on
-
-        affair = False
-        if game.settings['affair']:
-            affair = True
-
+                          age_restriction: bool = False):
+        """
+            Checks if this cat is potential mate for the other cat.
+            There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
+        """
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
+            return False
+
+        # Inheritance check
+        if self.is_related(other_cat, game.settings["first_cousin_mates"]):
             return False
 
         # check exiled, outside, and dead cats
@@ -2141,64 +2027,21 @@ class Cat():
             return False
 
         # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
+        if not age_restriction:
+            if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
+                return False
+
+            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+                return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
             if self.age != other_cat.age:
                 return False
 
-        # check for current mate
-        # if the cat has a mate, they are not open for a new mate
-        if for_patrol:
-            if self.mate or other_cat.mate:
-                if not for_love_interest or not affair:
-                    return False
-        else:
-            if self.mate or other_cat.mate and not for_love_interest:
-                return False
-
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
-        if is_former_mentor and not former_mentor_setting:
-            return False
-
-        # Relationship checks
-        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
-        if self.parent1 or other_cat.parent1:
-            # Check for relation via other_cat's parents (parent/grandparent)
-            if other_cat.parent1:
-                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
-                    return False
-                # Check for uncle/aunt via self's sibs & other's parents
-                if self.siblings:
-                    if self.is_uncle_aunt(other_cat):
-                        return False
-                # Check for sibs via self's parents and other_cat's parents
-                if self.parent1:
-                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-
-            # Check for relation via self's parents (parent/grandparent)
-            if self.parent1:
-                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
-                    return False
-                # Check for uncle/aunt via other_cat's sibs & self's parents
-                if other_cat.siblings:
-                    if other_cat.is_uncle_aunt(self):
-                        return False
-
-            # Only need to check one.
-            if not game.settings['first_cousin_mates']:
-                if self.is_cousin(other_cat):
-                    return False
-
-        else:
-            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                return False
-
-        if self.age != other_cat.age and abs(self.moons - other_cat.moons) > 40:
+        if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
 
         return True
@@ -2207,11 +2050,11 @@ class Cat():
         """Unset the mate from both self and other_cat"""   
 
         # Both cats must have mates for this to work
-        if not self.mate or not other_cat.mate:
+        if len(self.mate) < 1 or len(other_cat.mate) < 1:
             return
         
         # AND they must be mates with each other. 
-        if self.ID != other_cat.mate or other_cat.ID != self.mate:
+        if self.ID not in other_cat.mate or other_cat.ID not in self.mate:
             print(f"Unsetting mates: These {self.name} and {other_cat.name} are not mates!")
             return
         
@@ -2239,8 +2082,8 @@ class Cat():
                 if fight:
                     other_relationship.platonic_like -= 30
 
-        self.mate = None
-        other_cat.mate = None
+        self.mate.remove(other_cat.ID)
+        other_cat.mate.remove(self.ID)
         
         #Handle previous mates:
         if other_cat.ID not in self.previous_mates:
@@ -2248,23 +2091,30 @@ class Cat():
         if self.ID not in other_cat.previous_mates:
             other_cat.previous_mates.append(self.ID)
 
+        if other_cat.inheritance:
+            other_cat.inheritance.update_all_mates()
+        if self.inheritance:
+            self.inheritance.update_all_mates()
+
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
-        if self.mate or other_cat.mate:
-            print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
-            return
-
-        self.mate = other_cat.ID
-        other_cat.mate = self.ID
+        if other_cat.ID not in self.mate:
+            self.mate.append(other_cat.ID)
+        if self.ID not in other_cat.mate:
+            other_cat.mate.append(self.ID)
 
         # If the current mate was in the previous mate list, remove them. 
-        if self.mate in self.previous_mates:
-            self.previous_mates.remove(self.mate)
-        if other_cat.mate in other_cat.previous_mates:
-            other_cat.previous_mates.remove(other_cat.mate)
+        if other_cat.ID in self.previous_mates:
+            self.previous_mates.remove(other_cat.ID)
+        if self.ID in other_cat.previous_mates:
+            other_cat.previous_mates.remove(self.ID)
+
+        if other_cat.inheritance:
+            other_cat.inheritance.update_all_mates()
+        if self.inheritance:
+            self.inheritance.update_all_mates()
 
         # Set starting relationship values
-
         if not self.dead:
             if other_cat.ID not in self.relationships:
                 self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
@@ -2282,6 +2132,11 @@ class Cat():
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mate = True
+
+    def create_inheritance_new_cat(self):
+        """Creates the inheritance class for a new cat."""
+        # set the born status to true, just for safety
+        self.inheritance = Inheritance(self, True)
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
@@ -2314,7 +2169,7 @@ class Cat():
         for id in self.all_cats:
             the_cat = self.all_cats.get(id)
             if the_cat.ID is not self.ID:
-                mates = the_cat is self.mate
+                mates = the_cat.ID in self.mate
                 are_parents = False
                 parents = False
                 siblings = False
@@ -2462,7 +2317,7 @@ class Cat():
             rel2 = cat2.create_one_relationship(cat1)
 
         # Are they mates?
-        if rel1.cat_to.mate == rel1.cat_from.ID:
+        if rel1.cat_from.ID in rel1.cat_to.mate:
             mates = True
         else:
             mates = False
