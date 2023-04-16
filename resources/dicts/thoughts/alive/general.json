@@ -395,7 +395,7 @@
             "Is relaxing in camp",
             "Is daydreaming",
             "Is napping",
-            "Thinks {PRONOUN/cat/subject} {VERB/cat/are/is} going crazy",
+            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going crazy",
             "Is feeling gloomy",
             "Is looking around camp",
             "Is feeling happy!",
@@ -419,7 +419,7 @@
             "Is chattering at the birds in the trees above",
             "Was recently caught humming to {PRONOUN/m_c/self}",
             "Had a nightmare involving the rushing river nearby",
-            "Wishes {PRONOUN/m_c/subject} {VERB/cat/were/was} still in their nest sleeping",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still in their nest sleeping",
             "Is craving the taste of mouse",
             "Is craving the taste of rabbit",
             "Is craving the taste of vole",
@@ -512,7 +512,7 @@
         "thoughts": [
             "Is making {PRONOUN/m_c/poss} mentor laugh",
             "Is really bonding with {PRONOUN/m_c/poss} mentor",
-            "Wants to show {PRONOUN/m_c/poss} mentor that {PRONOUN/m_c/subject} {VERB/cat/are/is} smart, skilled, and talented",
+            "Wants to show {PRONOUN/m_c/poss} mentor that {PRONOUN/m_c/subject} {VERB/m_c/are/is} smart, skilled, and talented",
             "Can see how busy their mentor is"
         ],
         "main_status_constraint": [
@@ -545,7 +545,7 @@
         "id": "apprentice_alive_leader",
         "thoughts": [
             "Wants to make r_c proud",
-            "Wants r_c to notice {PRONOUN/cat/object}",
+            "Wants r_c to notice {PRONOUN/m_c/object}",
             "Is paying extra attention to r_c's announcements"
         ],
         "main_status_constraint": [
@@ -718,7 +718,7 @@
     {
         "id": "gen_formerly_a_rogue_apprentice_to_mentor",
         "thoughts": [
-            "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/cat/poss} own thing",
+            "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/m_c/poss} own thing",
             "Is rolling {PRONOUN/m_c/poss} eyes at {PRONOUN/m_c/poss} mentor's teachings"
         ],
         "main_status_constraint": [
@@ -808,8 +808,8 @@
         "id": "gen_formerly_a_rogue_apprentice",
         "thoughts": [
             "Discovers that {PRONOUN/m_c/poss} self-taught method is less effective",
-            "Wonders what {PRONOUN/m_c/subject} even {VERB/cat/need/needs} this training method for",
-            "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/cat/were/was} a rogue",
+            "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
+            "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/m_c/were/was} a rogue",
             "Can't help but be intrigued by the Warrior Code",
             "Slightly embellishes a story about {PRONOUN/m_c/poss} rogue days to other apprentices",
             "Is trying to memorize the Warrior Code"
