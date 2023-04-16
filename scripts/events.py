@@ -254,7 +254,6 @@ class Events():
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
             game.save_cats()
             game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
 
     def mediator_events(self, cat):
         """ Check for mediator events """
@@ -641,9 +640,10 @@ class Events():
                     game.clan.med_cat_list.remove(cat.ID)
 
                 # Unset their mate, if they have one
-                if cat.mate:
-                    if Cat.all_cats.get(cat.mate):
-                        cat.unset_mate(Cat.all_cats.get(cat.mate))
+                if len(cat.mate) > 0:
+                    for mate_id in cat.mate:
+                        if Cat.all_cats.get(mate_id):
+                            cat.unset_mate(Cat.all_cats.get(mate_id))
 
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
@@ -762,7 +762,7 @@ class Events():
 
         # newborns don't do much
         if cat.status == 'newborn':
-            cat.create_interaction()
+            cat.relationship_interaction()
             cat.thoughts()
             return
 
@@ -778,10 +778,9 @@ class Events():
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-        cat.create_interaction()
 
         # this is the new interaction function, currently not active
-        # cat.relationship_interaction()
+        cat.relationship_interaction()
         cat.thoughts()
 
         # relationships have to be handled separately, because of the ceremony name change

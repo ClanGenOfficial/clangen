@@ -373,6 +373,7 @@ class Game():
                 "trait": inter_cat.trait,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
+                "adoptive_parents": inter_cat.adoptive_parents,
                 "mentor": inter_cat.mentor if inter_cat.mentor else None,
                 "former_mentor": [cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
@@ -456,9 +457,10 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if inter_cat.mate:
-                if inter_cat.mate in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.mate].mate = None
+            if len(inter_cat.mate):
+                for mate_id in inter_cat.mate:
+                    if mate_id in self.cat_class.all_cats:
+                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
 
             # If they have parents, add them to their parents "faded offspring" list:
             if inter_cat.parent1:

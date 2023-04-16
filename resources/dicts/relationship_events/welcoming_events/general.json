@@ -2,7 +2,8 @@
 	{
 		"id": "gen1",
 		"interactions":[
-			"m_c is welcoming r_c."
+			"m_c is welcoming r_c.",
+			"m_c see r_c arrive in the Clan and offers {PRONOUN/r_c/object} to show {PRONOUN/r_c/object} around."
 		]
 	},
 	{
