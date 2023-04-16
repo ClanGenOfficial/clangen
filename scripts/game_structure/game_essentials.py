@@ -220,17 +220,17 @@ class Game():
             # we can properly check for file nullification. 
             # We don't need to read the entire file, 
             # so let's just read the first 200 bytes. 
-            with open(temp_file_path, 'rb') as read_file:
-                _binary_data = read_file.read(200)
+            with open(temp_file_path, 'r') as read_file:
+                _read_data = read_file.read()
             
             # If_data is not empty, and _binary_data is
-            # all null_bytes or empty. 
-            if _data and not any(_binary_data):
+            # all null_bytes or empty.
+            if _data != _read_data:
                 i += 1
                 if i > max_attempts:
-                    print(f"{file_name} has been nullied too many times. Saving Failed.")
-                    raise RuntimeError(f"{file_name} was nullied too many times!")
-                print(f"{file_name} was nullifed. Trying again.")
+                    print(f"ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
+                    raise RuntimeError(f"{file_name} was unable to properly save {i} times!")
+                print(f"{file_name} was incorrectly saved. Trying again.")
                 continue
                 
             # This section is reached is the file was not nullied. Move the file and return True
