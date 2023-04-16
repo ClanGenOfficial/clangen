@@ -395,7 +395,7 @@
             "Is relaxing in camp",
             "Is daydreaming",
             "Is napping",
-            "Thinks they are going crazy",
+            "Thinks {PRONOUN/cat/subject} {VERB/cat/are/is} going crazy",
             "Is feeling gloomy",
             "Is looking around camp",
             "Is feeling happy!",
@@ -545,7 +545,7 @@
         "id": "apprentice_alive_leader",
         "thoughts": [
             "Wants to make r_c proud",
-            "Wants r_c to notice them",
+            "Wants r_c to notice {PRONOUN/cat/object}",
             "Is paying extra attention to r_c's announcements"
         ],
         "main_status_constraint": [
@@ -718,7 +718,7 @@
     {
         "id": "gen_formerly_a_rogue_apprentice_to_mentor",
         "thoughts": [
-            "Ditched {PRONOUN/m_c/poss} mentor to do to their own thing",
+            "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/cat/poss} own thing",
             "Is rolling {PRONOUN/m_c/poss} eyes at {PRONOUN/m_c/poss} mentor's teachings"
         ],
         "main_status_constraint": [
@@ -931,7 +931,7 @@
     {
         "id": "lonesome_apprentice",
         "thoughts": [
-            "Doesn't think that they have performing up to their mentor's standards lately",
+            "Doesn't think that {PRONOUN/cat/subject} {VERB/cat/have/has} been performing up to {PRONOUN/cat/poss} mentor's standards lately",
             "Is feeling cramped in the apprentice's den",
             "Managed to perform a difficult task on {PRONOUN/m_c/poss} own"
         ],
