@@ -10,8 +10,8 @@
             "Is saving the softest bedding for {PRONOUN/m_c/poss} own nest",
             "Practices {PRONOUN/m_c/poss} newest battle moves",
             "Hopes {PRONOUN/m_c/subject}'ll learn something new today",
-            "Is feeling proud of the progress {PRONOUN/cat/subject}{VERB/cat/'ve/'s} made",
-            "Practices {PRONOUN/cat/object} hunting on a smooth rock {PRONOUN/m_c/subject} found",
+            "Is feeling proud of the progress {PRONOUN/m_c/subject}{VERB/cat/'ve/'s} made",
+            "Practices {PRONOUN/m_c/object} hunting on a smooth rock {PRONOUN/m_c/subject} found",
             "Feels disappointed after a missed catch",
             "Hopes there's a juicy mouse left on the fresh-kill pile for {PRONOUN/m_c/object}",
             "Tries to recite the Warrior Code from memory",
@@ -142,7 +142,7 @@
     {
         "id": "formerly_a_rogue_warrior_apprentice",
         "thoughts": [
-            "Got scolded for eating what {PRONOUN/cat/subject} caught"
+            "Got scolded for eating what {PRONOUN/m_c/subject} caught"
         ],
         "backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
@@ -151,7 +151,7 @@
     {
         "id": "thoughtful_apprentice",
         "thoughts": [
-            "Offered to go on the dawn patrol with {PRONOUN/cat/object} mentor"
+            "Offered to go on the dawn patrol with {PRONOUN/m_c/object} mentor"
         ],
         "main_trait_constraint": [
             "thoughtful"
