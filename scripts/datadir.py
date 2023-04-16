@@ -13,6 +13,7 @@ def setup_data_dir():
         pass
     os.makedirs(get_log_dir(), exist_ok=True)
     os.makedirs(get_cache_dir(), exist_ok=True)
+    os.makedirs(get_temp_dir(), exist_ok=True)
 
     # Windows requires elevated permissions to create symlinks.
     # The OpenDataDirectory.bat can be used instead as "shortcut".
@@ -44,3 +45,6 @@ def get_save_dir():
 
 def get_cache_dir():
     return get_data_dir() + '/cache'
+
+def get_temp_dir():
+    return get_data_dir() + '/~temp'

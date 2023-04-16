@@ -1877,9 +1877,6 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        if not os.path.exists(condition_directory):
-            os.makedirs(condition_directory)
-
         if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
@@ -1896,12 +1893,7 @@ class Cat():
         if self.is_disabled():
             conditions["permanent conditions"] = self.permanent_condition
 
-        try:
-            with open(condition_file_path, 'w') as rel_file:
-                json_string = ujson.dumps(conditions, indent=4)
-                rel_file.write(json_string)
-        except:
-            print(f"WARNING: Saving conditions of cat #{self} didn't work.")
+        game.safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
         if game.switches['clan_name'] != '':
@@ -2343,8 +2335,6 @@ class Cat():
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
-        if not os.path.exists(relationship_dir):
-            os.makedirs(relationship_dir)
 
         rel = []
         for r in self.relationships.values():
@@ -2364,13 +2354,7 @@ class Cat():
             }
             rel.append(r_data)
 
-        try:
-            with open(relationship_dir + '/' + self.ID + '_relations.json',
-                      'w') as rel_file:
-                json_string = ujson.dumps(rel, indent=4)
-                rel_file.write(json_string)
-        except:
-            print(f"WARNING: Saving relationship of cat #{self} didn't work.")
+        game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
