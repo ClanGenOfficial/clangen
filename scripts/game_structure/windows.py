@@ -745,3 +745,91 @@ class ChangelogPopup(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+
+
+class RelationshipLog(UIWindow):
+    """This window allows the user to see the relationship log of a certain relationship."""
+
+    def __init__(self, relationship, disable_button_list, hide_button_list):
+        super().__init__(scale(pygame.Rect((546, 245), (1010, 1100))),
+                         window_display_title='Relationship Log',
+                         object_id='#relationship_log_window',
+                         resizable=False)
+        game.switches['window_open'] = True
+        self.hide_button_list = hide_button_list
+        for button in self.hide_button_list:
+            button.hide()
+
+        self.exit_button = UIImageButton(
+            scale(pygame.Rect((940, 15), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
+        self.log_icon = UIImageButton(scale(pygame.Rect((445, 808), (68, 68))), "", object_id="#log_icon")
+        self.closing_buttons = [self.exit_button, self.back_button, self.log_icon]
+
+        self.disable_button_list = disable_button_list
+        for button in self.disable_button_list:
+            button.disable()
+
+        if game.settings["fullscreen"]:
+            img_path = "resources/images/spacer.png"
+        else:
+            img_path = "resources/images/spacer_small.png"
+
+        opposite_log_string = None
+        if not relationship.opposite_relationship:
+            relationship.link_relationship()
+        if relationship.opposite_relationship and len(relationship.opposite_relationship.log) > 0:
+            opposite_log_string = f"{f'<br><img src={img_path}><br>'.join(relationship.opposite_relationship.log)}<br>"
+
+        log_string = f"{f'<br><img src={img_path}><br>'.join(relationship.log)}<br>" if len(relationship.log) > 0 else\
+            "There are no relationship logs."
+        
+        if not opposite_log_string:
+            self.log = pygame_gui.elements.UITextBox(log_string,
+                                                     scale(pygame.Rect((30, 70), (953, 850))),
+                                                     object_id="#text_box_30_horizleft",
+                                                     manager=MANAGER,
+                                                     container=self)
+        else:
+            self.log = pygame_gui.elements.UITextBox(log_string,
+                                                     scale(pygame.Rect((30, 70), (953, 500))),
+                                                     object_id="#text_box_30_horizleft",
+                                                     manager=MANAGER,
+                                                     container=self)
+            self.opp_heading = pygame_gui.elements.UITextBox("<u><b>OPPOSITE RELATIONSHIP</b></u>",
+                                                     scale(pygame.Rect((30, 550), (953, 560))),
+                                                     object_id="#text_box_30_horizleft",
+                                                     manager=MANAGER,
+                                                     container=self)
+            self.opp_log = pygame_gui.elements.UITextBox(opposite_log_string,
+                                                     scale(pygame.Rect((30, 610), (953, 465))),
+                                                     object_id="#text_box_30_horizleft",
+                                                     manager=MANAGER,
+                                                     container=self)
+
+
+        self.set_blocking(True)
+
+    def closing_process(self):
+        """Handles to enable and kill all processes when a exit button is clicked."""
+        game.switches['window_open'] = False
+        for button in self.disable_button_list:
+            button.enable()
+        for button in self.hide_button_list:
+            button.show()
+            button.enable()
+        self.log_icon.kill()
+        self.exit_button.kill()
+        self.back_button.kill()
+        self.kill()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element in self.closing_buttons:
+                self.closing_process()

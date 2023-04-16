@@ -2,13 +2,10 @@
     {
         "id": "lost_deputy_thoughts",
         "thoughts": [
-            "Wonders if they are still the deputy",
-            "Wonders how the patrols are currently organized without them",
+            "Wonders if {PRONOUN/m_c/subject} are still the deputy",
+            "Wonders how the patrols are currently organized without {PRONOUN/m_c/object}",
             "Feels sad by the thought of being replaced",
-            "Is wondering if they'll still remain deputy after returning"
-        ],
-        "main_status_constraint": [
-            "deputy"
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/'ll} still remain deputy after returning"
         ]
     }
 ]

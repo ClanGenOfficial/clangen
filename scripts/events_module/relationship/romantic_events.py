@@ -16,6 +16,7 @@ from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import (
     INTERACTION_MASTER_DICT,
+    Relationship,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
@@ -40,7 +41,7 @@ class Romantic_Events():
             return False
 
         relevant_dict = deepcopy(ROMANTIC_INTERACTIONS)
-        if cat_from.mate == cat_to.ID and not cat_to.dead:
+        if cat_to.ID in cat_from.mate and not cat_to.dead:
             relevant_dict = deepcopy(MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
@@ -141,6 +142,10 @@ class Romantic_Events():
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
+        if cat_from.ID in cat_to.mate:
+            if cat_to.ID not in cat_from.mate:
+                cat_to.set_mate(cat_from)
+            return
         relationship_to = relationship.opposite_relationship
         become_mates, mate_string = self.check_if_new_mate(relationship, relationship_to, cat_from, cat_to)
 
@@ -151,13 +156,10 @@ class Romantic_Events():
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
-        if cat_from.mate:
-            if cat_from.mate not in Cat.all_cats.keys():
-                print(f"WARNING: Cat #{cat_from} has a invalid mate. It will set to none.")
-                cat_from.mate = None
-                return
-            cat_from_mate = Cat.all_cats.get(cat_from.mate)
-            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.outside
+        if cat_to.ID in cat_from.mate:
+            from_mate_in_clan = cat_to.is_alive() and not cat_to.outside
+        else:
+            return
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
             if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
@@ -169,45 +171,54 @@ class Romantic_Events():
                 # game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
-    def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
+    def handle_confession(self, cat_from):
         """
         Check if the cat has a high love for another and mate them if there are in the boundaries 
         :param cat: cat in question
-        :upper_threshold integer:
-        :lower_threshold integer:
 
         return: bool if event is triggered or not
         """
         # get the highest romantic love relationships and
-        highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
-        max_love_value = 0
-        if highest_romantic_relation is not None:
-            max_love_value = highest_romantic_relation.romantic_love
+        rel_list = cat_from.relationships.values()
+        highest_romantic_relation = get_highest_romantic_relation(rel_list, exclude_mate=True)
+        if not highest_romantic_relation:
+            return False
 
-        if max_love_value < upper_threshold:
+        condition = game.config["mates"]["confession"]["make_confession"]
+        if not self.relationship_fulfill_condition(highest_romantic_relation, condition):
             return False
 
         cat_to = highest_romantic_relation.cat_to
-        if cat_to.is_potential_mate(cat) and cat.is_potential_mate(cat_to):
-            if cat_to.mate is None and cat.mate is None:
-                self.had_one_event = True
-                cat.set_mate(cat_to)
+        if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(cat_to):
+            return False
 
-                if highest_romantic_relation.opposite_relationship is None:
-                    highest_romantic_relation.link_relationship()
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
-                if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
-                    mate_string = choice(MATE_DICTS["rejected"])
-                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
-                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
-                    return False
-                else:
-                    mate_string = choice(MATE_DICTS["high_romantic"])
-                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
-                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
-                    return True
-        return False
+        if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
+            return False
 
+        become_mate = False
+        condition = game.config["mates"]["confession"]["accept_confession"]
+        if self.relationship_fulfill_condition(highest_romantic_relation, condition):
+            become_mate = True
+            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+        else:
+            mate_string = self.get_mate_string("reject", poly, cat_from, cat_to)
+
+        mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
+        game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+
+        if become_mate:
+            cat_from.set_mate(cat_to)
+
+        if poly:
+            print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+            print(cat_from.mate)
+            print(cat_to.mate)
+
+        return become_mate
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
@@ -235,6 +246,8 @@ class Romantic_Events():
             Returns:
                 bool (True or False)
         """
+        if not relationship_from or not relationship_to or not cat_from or cat_to:
+            return False
         will_break_up = False
         # TODO: Check log for had fight check
         had_fight = False
@@ -274,33 +287,197 @@ class Romantic_Events():
     def check_if_new_mate(self, relationship_from, relationship_to, cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
-        young_age = ['kitten', 'adolescent']
+        young_age = ['newborn', 'kitten', 'adolescent']
         if cat_from.age in young_age or cat_to.age in young_age:
-            return become_mates
+            return  False, None
 
         mate_string = None
-        mate_chance = 5
+        mate_chance = game.config["mates"]["chance_fulfilled_condition"]
         hit = int(random.random() * mate_chance)
 
-        # has to be high because every moon this will be checked for each relationship in the came
-        random_mate_chance = 300
-        random_hit = int(random.random() * random_mate_chance)
+        # has to be high because every moon this will be checked for each relationship in the game
+        friends_to_lovers = game.config["mates"]["chance_friends_to_lovers"]
+        random_hit = int(random.random() * friends_to_lovers)
 
-        low_dislike = relationship_from.dislike < 15 and relationship_to.dislike < 15
-        high_like = relationship_from.platonic_like > 30 and relationship_to.platonic_like > 30
-        semi_high_like = relationship_from.platonic_like > 20 and relationship_to.platonic_like > 20
-        high_comfort = relationship_from.comfortable > 25 and relationship_to.comfortable > 25
+        # already return if there is 'no' hit (everything above 0), other checks are not necessary
+        if hit > 0 and random_hit > 0:
+            return False, None
 
-        if not hit and relationship_from.romantic_love > 20 and relationship_to.romantic_love > 20 and semi_high_like:
-            mate_string = choice(MATE_DICTS["low_romantic"])
-            mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
+
+        if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
+            return False, None
+
+        if not hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["mate_condition"]) and\
+            self.relationship_fulfill_condition(relationship_to, game.config["mates"]["mate_condition"]):
             become_mates = True
-        elif not random_hit and low_dislike and (high_like or high_comfort):
-            mate_string = choice(MATE_DICTS["platonic_to_romantic"])
-            mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
+            mate_string = self.get_mate_string("low_romantic", poly, cat_from, cat_to)
+        if not random_hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["platonic_to_romantic"]) and\
+            self.relationship_fulfill_condition(relationship_to, game.config["mates"]["platonic_to_romantic"]):
             become_mates = True
+            mate_string = self.get_mate_string("platonic_to_romantic", poly, cat_from, cat_to)
+
+        if not become_mates:
+            return False, None
+
+        if poly:
+            print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+            print(cat_from.mate)
+            print(cat_to.mate)
+
+        mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
 
         return become_mates, mate_string
+
+    def relationship_fulfill_condition(self, relationship, condition):
+        """
+        Check if the relationship can fulfill the condition. 
+        Example condition:
+            {
+            "romantic": 20,
+            "platonic": 30,
+            "dislike": -10,
+            "admiration": 0,
+            "comfortable": 20,
+            "jealousy": 0,
+            "trust": 0
+            }
+
+        VALUES: 
+            - 0: no condition
+            - positive number: value has to be higher than number
+            - negative number: value has to be lower than number
+        
+        """
+        if "romantic" in condition and condition["romantic"] != 0:
+            if condition["romantic"] > 0 and relationship.romantic_love < condition["romantic"]:
+                return False
+            if condition["romantic"] < 0 and relationship.romantic_love > abs(condition["romantic"]):
+                return False
+        if "platonic" in condition and condition["platonic"] != 0:
+            if condition["platonic"] > 0 and relationship.platonic_like < condition["platonic"]:
+                return False
+            if condition["platonic"] < 0 and relationship.platonic_like > abs(condition["platonic"]):
+                return False
+        if "dislike" in condition and condition["dislike"] != 0:
+            if condition["dislike"] > 0 and relationship.dislike < condition["dislike"]:
+                return False
+            if condition["dislike"] < 0 and relationship.dislike > abs(condition["dislike"]):
+                return False
+        if "admiration" in condition and condition["admiration"] != 0:
+            if condition["admiration"] > 0 and relationship.admiration < condition["admiration"]:
+                return False
+            if condition["admiration"] < 0 and relationship.admiration > abs(condition["admiration"]):
+                return False
+        if "comfortable" in condition and condition["comfortable"] != 0:
+            if condition["comfortable"] > 0 and relationship.comfortable < condition["comfortable"]:
+                return False
+            if condition["comfortable"] < 0 and relationship.comfortable > abs(condition["comfortable"]):
+                return False
+        if "jealousy" in condition and condition["jealousy"] != 0:
+            if condition["jealousy"] > 0 and relationship.jealousy < condition["jealousy"]:
+                return False
+            if condition["jealousy"] < 0 and relationship.jealousy > abs(condition["jealousy"]):
+                return False
+        if "trust" in condition and condition["trust"] != 0:
+            if condition["trust"] > 0 and relationship.trust < condition["trust"]:
+                return False
+            if condition["trust"] < 0 and relationship.trust > abs(condition["trust"]):
+                return False
+        return True
+
+    def current_mates_allow_new_mate(self, cat_from, cat_to) -> bool:
+        """Check if all current mates are fulfill the given conditions."""
+        current_mate_condition = game.config["mates"]["poly"]["current_mate_condition"]
+        current_to_new_condition = game.config["mates"]["poly"]["mates_to_each_other"]
+
+        # check relationship from current mates from cat_from
+        all_mates_fulfill_current_mate_condition = True
+        all_mates_fulfill_current_to_new = True
+        alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+        if len(alive_inclan_from_mates) > 0:
+            for mate_id in alive_inclan_from_mates:
+                mate_cat = cat_from.fetch_cat(mate_id)
+                if mate_cat.dead:
+                    continue
+                if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
+                    if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_mate_condition) or\
+                        not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_mate_condition):
+                        all_mates_fulfill_current_mate_condition = False
+                
+                if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
+                    if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_to_new_condition) or\
+                        not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_to_new_condition):
+                        all_mates_fulfill_current_to_new = False
+        if not all_mates_fulfill_current_mate_condition or\
+            not all_mates_fulfill_current_to_new:
+            return False
+
+        # check relationship from current mates from cat_to
+        all_mates_fulfill_current_mate_condition = True
+        all_mates_fulfill_current_to_new = True
+        alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+        if len(alive_inclan_to_mates) > 0:
+            for mate_id in alive_inclan_to_mates:
+                mate_cat = cat_to.fetch_cat(mate_id)
+                if mate_cat.dead:
+                    continue
+                if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
+                    if not self.relationship_fulfill_condition(cat_to.relationships[mate_id], current_mate_condition) or\
+                        not self.relationship_fulfill_condition(mate_cat.relationships[cat_to.ID], current_mate_condition):
+                        all_mates_fulfill_current_mate_condition = False
+
+                if mate_id in cat_from.relationships and cat_from.ID in mate_cat.relationships:
+                    if not self.relationship_fulfill_condition(cat_from.relationships[mate_id], current_to_new_condition) or\
+                        not self.relationship_fulfill_condition(mate_cat.relationships[cat_from.ID], current_to_new_condition):
+                        all_mates_fulfill_current_to_new = False
+        if not all_mates_fulfill_current_mate_condition or\
+            not all_mates_fulfill_current_to_new:
+            return False
+
+        return True
+
+    def prepare_relationship_string(self, mate_string, cat_from, cat_to):
+        """Prepares the relationship event string for display"""
+        # replace mates with their names
+        if "[m_c_mates]" in mate_string:
+            mate_names = [str(cat_from.fetch_cat(mate_id).name) for mate_id in cat_from.mate]
+            mate_name_string = mate_names[0]
+            if len(mate_names) == 2:
+                mate_name_string = mate_names[0] + " and " + mate_names[1]
+            if len(mate_names) > 2:
+                mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
+            mate_string = mate_string.replace("[m_c_mates]", mate_name_string)
+
+        if "[r_c_mates]" in mate_string:
+            mate_names = [str(cat_to.fetch_cat(mate_id).name) for mate_id in cat_to.mate]
+            mate_name_string = mate_names[0]
+            if len(mate_names) == 2:
+                mate_name_string = mate_names[0] + " and " + mate_names[1]
+            if len(mate_names) > 2:
+                mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
+            mate_string = mate_string.replace("[r_c_mates]", mate_name_string)
+
+        mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
+        return mate_string
+
+    def get_mate_string(self, key, poly, cat_from, cat_to):
+        """Returns the mate string with the certain key, cats and poly."""
+        if not poly:
+            return choice(MATE_DICTS[key])
+        else:
+            poly_key = ""
+            alive_inclan_from_mates = [mate for mate in cat_from.mate if not cat_from.fetch_cat(mate).dead and not cat_from.fetch_cat(mate).outside]
+            alive_inclan_to_mates = [mate for mate in cat_to.mate if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside]
+            if len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) > 0:
+                poly_key = "both_mates"
+            elif len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) <= 0:
+                poly_key = "m_c_mates"
+            elif len(alive_inclan_from_mates) <= 0 and len(alive_inclan_to_mates) > 0:
+                poly_key = "r_c_mates"
+            return choice(POLY_MATE_DICTS[key][poly_key])
 
     # ---------------------------------------------------------------------------- #
     #                             get/calculate chances                            #
@@ -369,8 +546,6 @@ class Romantic_Events():
 
         return chance_number
 
-
-
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
@@ -380,6 +555,10 @@ resource_directory = "resources/dicts/relationship_events/"
 MATE_DICTS = None
 with open(f"{resource_directory}become_mates.json", 'r') as read_file:
     MATE_DICTS = ujson.loads(read_file.read())
+
+POLY_MATE_DICTS = None
+with open(f"{resource_directory}become_mates_poly.json", 'r') as read_file:
+    POLY_MATE_DICTS = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
 #            build up dictionaries which can be used for moon events           #
@@ -413,11 +592,11 @@ MATE_INTERACTIONS = {
 }
 for val_type, dictionary in MATE_RELEVANT_INTERACTIONS.items():
     if val_type in ["jealousy", "dislike"]:
-        MATE_INTERACTIONS["positive"] += dictionary["decrease"]
-        MATE_INTERACTIONS["negative"] += dictionary["increase"]
+        MATE_INTERACTIONS["positive"].extend(dictionary["decrease"])
+        MATE_INTERACTIONS["negative"].extend(dictionary["increase"])
     else:
-        MATE_INTERACTIONS["positive"] += dictionary["increase"]
-        MATE_INTERACTIONS["negative"] += dictionary["decrease"]
+        MATE_INTERACTIONS["positive"].extend(dictionary["increase"])
+        MATE_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
 # ---------------------------------------------------------------------------- #
 #                                   ROMANTIC                                   #
