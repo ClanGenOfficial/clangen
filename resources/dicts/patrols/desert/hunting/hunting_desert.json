@@ -68,8 +68,8 @@
         "success_text": [
             "They can't think of anything that would work, but their hunt goes well regardless.",
             "A sand bath will do! The plan works and their hunt goes well.",
-            "s_c leads them to some rabbit droppings in the scrubland - it's not clean, but it's extremely effective, and the patrol hunts well.",
-            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
+            "s_c leads {PRONOUN/s_c/object} to some rabbit droppings in the scrubland - it's not clean, but it's extremely effective, and the patrol hunts well.",
+            "s_c tells the patrol to roll in a patch of garlic to disguise {PRONOUN/s_c/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/s_c/poss} pelts though."
         ],
         "fail_text": [
             "The patrol finds nothing to disguise their scent, and no prey either.",
@@ -97,7 +97,7 @@
             "large_prey3",
             "no_fail_prey"
         ],
-        "intro_text": "r_c looks around for something to disguise their scent while hunting.",
+        "intro_text": "r_c looks around for something to disguise {PRONOUN/r_c/poss} scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 40,
         "exp": 20,
@@ -105,11 +105,11 @@
             "They can't think of anything that would work, but their hunt goes well regardless.",
             null,
             "s_c finds some rabbit droppings in the scrublands - it's not clean, but it's extremely effective, and the hunt goes well.",
-            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though."
+            "s_c rolls in a patch of garlic to disguise {PRONOUN/s_c/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/s_c/poss} pelt though."
         ],
         "fail_text": [
             "The patrol finds nothing to disguise their scent, and no prey either.",
-            "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+            "r_c finds no prey; it seems like all the prey was scared off because of {PRONOUN/r_c/poss} stench!"
         ],
         "win_skills": [
             "very smart",
@@ -135,21 +135,21 @@
             "large_prey2",
             "no_fail_prey"
         ],
-        "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
-        "decline_text": "r_c asks their mentor to do the assessment some other time.",
+        "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
+        "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-            "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
             null,
-            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object} , until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
         ],
         "fail_text": [
-            "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
-            "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+            "Hunting is poor, and while r_c's mentor is disappointed, {PRONOUN/r_c/subject} {VERB/r_c/do/dos} n't expect r_c to be able to catch what isn't there.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/self} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
             null,
-            "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+            "While on the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_trait": [
             "calm",
@@ -187,17 +187,17 @@
         "tags": [
             "hunting",
             "medium_prey",
-			"no_fail_prey"
+            "no_fail_prey"
         ],
-        "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out into the desert alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self} .",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
-            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/ares} bush! Or {PRONOUN/r_c/subject} were as far as that hare thought.",
+            "r_c finds a fat, dumb, slow ground squirrel, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
+            "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a nest of lizards that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that've chosen a particularly bad home, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to reach down into one of the rock refuges, fishing out small reptiles by the handful.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/self} ."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
@@ -241,21 +241,21 @@
             "hunting",
             "deputy",
             "medium_prey",
-			"no_fail_prey"
+            "no_fail_prey"
         ],
-        "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out into the desert alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self} .",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
-            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in greenleaf.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/ares} bush! Or {PRONOUN/r_c/subject} were as far as that hare thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "r_c finds a fat, dumb, slow ground squirrel, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a nest of lizards that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that've chosen a particularly bad home, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in greenleaf.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/self} ."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
-            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and return to camp, to try and at least make progress on all the work piling up there.",
             null,
             null
         ],
@@ -295,21 +295,21 @@
             "hunting",
             "leader",
             "medium_prey",
-			"no_fail_prey"
+            "no_fail_prey"
         ],
-        "intro_text": "r_c heads out into the desert  alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out into the desert  alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self} .",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
-            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in greenleaf.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/ares} bush! Or {PRONOUN/r_c/subject} were as far as that hare thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "r_c finds a fat, dumb, slow ground squirrel, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a nest of lizards that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that've chosen a particularly bad home, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in greenleaf.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/self} ."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
-            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and return to camp, to try and at least make progress on all the work piling up there.",
             null,
             null
         ],
@@ -355,15 +355,15 @@
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-            "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, r_c uses the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
-            "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
+            "r_c immediately turns and heads for home to report this to {PRONOUN/r_c/poss} leader, alarmed by the sudden presence of Twolegs in {PRONOUN/r_c/poss} territory.",
+            "Slyly, r_c uses the unusual presence of the weird Twolegs to help {PRONOUN/r_c/poss} hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards {PRONOUN/r_c/self} . It works, and {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} the Twolegs to {PRONOUN/r_c/poss} business.",
+            "s_c spots the Twolegs unloading metal boxes from {PRONOUN/s_c/poss} monsters, and recognises that it can't be anything good, leaving immediately.",
             "s_c spits in the Twolegs' direction and picking a different place to hunt."
         ],
         "fail_text": [
             null,
-            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
-            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they can do - eventually the Twolegs notice, and r_c is taken by them.",
+            "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} 're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts} , crawling into a metal box to follow the scent of food. But when {PRONOUN/r_c/subject} {VERB/r_c/try/trys} to back up, the way is blocked, and there's nothing {PRONOUN/r_c/subject} can do - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/self} .",
             null
         ],
         "win_skills": [
@@ -415,13 +415,13 @@
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
             "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
-            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c spots the Twolegs unloading metal boxes from {PRONOUN/s_c/poss} monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and {PRONOUN/s_c/poss} monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,
-            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
-            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} 're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts} , crawling into a metal box to follow the scent of food. But when {PRONOUN/r_c/subject} {VERB/r_c/try/trys} to back up, the way is blocked, and there's nothing {PRONOUN/r_c/subject} or the patrol can do - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/self} .",
             null
         ],
         "win_skills": [
@@ -473,13 +473,13 @@
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
             "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
-            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c spots the Twolegs unloading metal boxes from {PRONOUN/s_c/poss} monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and {PRONOUN/s_c/poss} monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,
-            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
-            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} 're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts} , crawling into a metal box to follow the scent of food. But when {PRONOUN/r_c/subject} {VERB/r_c/try/trys} to back up, the way is blocked, and there's nothing {PRONOUN/r_c/subject} or the patrol can do - eventually the Twolegs notice, and r_c is taken by {PRONOUN/r_c/self} .",
             null
         ],
         "win_skills": [
@@ -539,10 +539,10 @@
             "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty."
         ],
         "fail_text": [
-            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "r_c hears a monster thundering towards {PRONOUN/r_c/self} , but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is hit by a monster while crossing and dies instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers.",
-            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
+            "r_c is hit by a monster while crossing and dies instantly. c_n is shaken by the death, and it's a reminder to every cat that just because {PRONOUN/r_c/poss} territory contains few Thunderpaths doesn't mean {PRONOUN/r_c/subject} can forget {PRONOUN/r_c/poss} dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because {PRONOUN/r_c/poss} territory contains few Thunderpaths doesn't mean {PRONOUN/r_c/subject} can forget {PRONOUN/r_c/poss} dangers."
         ],
         "win_skills": [
             "smart",
@@ -596,10 +596,10 @@
             "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty."
         ],
         "fail_text": [
-            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "r_c hears a monster thundering towards {PRONOUN/r_c/self} , but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers.",
-            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
+            "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/self} . {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes} , and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly. c_n is shaken by the death, and it's a reminder to every cat that just because {PRONOUN/r_c/poss} territory contains few Thunderpaths doesn't mean {PRONOUN/r_c/subject} can forget {PRONOUN/r_c/poss} dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because {PRONOUN/r_c/poss} territory contains few Thunderpaths doesn't mean {PRONOUN/r_c/subject} can forget {PRONOUN/r_c/poss} dangers."
         ],
         "win_skills": [
             "smart",
@@ -642,20 +642,20 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-            "Anticipating the heat of the greenleaf sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+            "r_c watches from the shade of a large rock formation. Eventually {PRONOUN/r_c/poss} wait pays off, and {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/r_c/poss} pounce is too soon, and {PRONOUN/r_c/poss} prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip {PRONOUN/r_c/poss} positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the greenleaf sun, s_c has positioned {PRONOUN/s_c/object} in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but also s_c, and {PRONOUN/s_c/subject} {VERB/s_c/settle/settles} back down to wait until it's cooler to try and bring {PRONOUN/s_c/poss} catch back to c_n."
         ],
         "fail_text": [
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
-            "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognise the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "r_c starts feeling confused and fuzzy as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} , but ignore it. It takes {PRONOUN/r_c/object} too long to recognise the symptoms of heat exhaustion, and when {PRONOUN/r_c/subject} {VERB/r_c/do/dos} it's too late, with r_c stranded far from shade. Dizzy and retching, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} on the desert sands.,",
+            "r_c collapses from heat exhaustion while trying to position {PRONOUN/r_c/object} for a hunt. {PRONOUN/r_c/subject/CAP} {VERB/r_c/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -695,21 +695,21 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            "app1 watches from the shade of a large rock formation. Eventually {PRONOUN/app1/poss} wait pays off, and {PRONOUN/app1/subject} {VERB/app1/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/app1/poss} pounce is too soon, and {PRONOUN/app1/poss} prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} a burrow to wait out the heat of the day - except {PRONOUN/app1/poss} burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
             null,
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
         ],
         "fail_text": [
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
-            "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
-            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
-            "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. {PRONOUN/app1/subject/CAP} {VERB/app1/do/dos} n't find any prey, but don't overheat either.",
+            "app1 doesn't make it back to camp. A patrol sent out for {PRONOUN/app1/self} find {PRONOUN/app1/poss} body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "When s_c doesn't return to camp that evening, a search party goes out for {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} app1 collapsed and badly affected by heat stroke, and carry {PRONOUN/s_c/object} back to camp where {PRONOUN/s_c/poss} might be a way to help {PRONOUN/s_c/object} . However, app1's breathing stops on the journey home, and {PRONOUN/s_c/subject} {VERB/s_c/slip/slips} to StarClan.",
+            "s_c collapses from heat exhaustion while trying to position {PRONOUN/s_c/object} for a hunt. {PRONOUN/s_c/subject/CAP} {VERB/s_c/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} able to totter home shakily."
         ],
         "win_trait": [
             "patient",
@@ -752,20 +752,20 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-            "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+            "r_c watches from the shade of a large rock formation. Eventually {PRONOUN/r_c/poss} wait pays off, and {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/r_c/poss} pounce is too soon, and {PRONOUN/r_c/poss} prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip {PRONOUN/r_c/poss} positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the sun, s_c has positioned {PRONOUN/s_c/object} in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but also s_c, and {PRONOUN/s_c/subject} {VERB/s_c/settle/settles} back down to wait until it's cooler to try and bring {PRONOUN/s_c/poss} catch back to c_n."
         ],
         "fail_text": [
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
             null,
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "r_c collapses from heat exhaustion while trying to position {PRONOUN/r_c/object} for a hunt. {PRONOUN/r_c/subject/CAP} {VERB/r_c/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -804,20 +804,20 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            "app1 watches from the shade of a large rock formation. Eventually {PRONOUN/app1/poss} wait pays off, and {PRONOUN/app1/subject} {VERB/app1/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/app1/poss} pounce is too soon, and {PRONOUN/app1/poss} prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} a burrow to wait out the heat of the day - except {PRONOUN/app1/poss} burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
             null,
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
         ],
         "fail_text": [
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             null,
-            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "app1 doesn't make it back to camp. A patrol sent out for {PRONOUN/app1/self} find {PRONOUN/app1/poss} body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "app1 collapses from heat exhaustion while trying to position {PRONOUN/app1/object} for a hunt. {PRONOUN/app1/subject/CAP} {VERB/app1/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/'re/'res} able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -857,20 +857,20 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
-            "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+            "r_c watches from the shade of a large rock formation. Eventually {PRONOUN/r_c/poss} wait pays off, and {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/r_c/poss} pounce is too soon, and {PRONOUN/r_c/poss} prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip {PRONOUN/r_c/poss} positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the sun, s_c has positioned {PRONOUN/s_c/object} in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but also s_c, and {PRONOUN/s_c/subject} {VERB/s_c/settle/settles} back down to wait until it's cooler to try and bring {PRONOUN/s_c/poss} catch back to c_n."
         ],
         "fail_text": [
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
             null,
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "r_c collapses from heat exhaustion while trying to position {PRONOUN/r_c/object} for a hunt. {PRONOUN/r_c/subject/CAP} {VERB/r_c/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -909,20 +909,20 @@
             "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until {PRONOUN/r_c/subject} can return back to camp.",
         "chance_of_success": 50,
         "exp": 15,
         "success_text": [
-            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
-            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            "app1 watches from the shade of a large rock formation. Eventually {PRONOUN/app1/poss} wait pays off, and {PRONOUN/app1/subject} {VERB/app1/spot/spots} a lizard searching for shelter from the sun, but {PRONOUN/app1/poss} pounce is too soon, and {PRONOUN/app1/poss} prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} a burrow to wait out the heat of the day - except {PRONOUN/app1/poss} burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
             null,
-            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+            "s_c watches from the shade of a large rock formation. Eventually {PRONOUN/s_c/poss} wait pays off, and {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
         ],
         "fail_text": [
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             null,
-            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+            "app1 doesn't make it back to camp. A patrol sent out for {PRONOUN/app1/self} find {PRONOUN/app1/poss} body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "app1 collapses from heat exhaustion while trying to position {PRONOUN/app1/object} for a hunt. {PRONOUN/app1/subject/CAP} {VERB/app1/'re/'res} able to move to the shade, but the hunt is over, and it's only when a Clanmate finds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/'re/'res} able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -969,8 +969,8 @@
         "success_text": [
             "The desert cats turn their faces to the skies, revelling in the life-giving water. It feels like the very world itself joins them in celebration, insects emerging from hiding and chirping, birds flitting across the sandy scrubland, and the patrol returns to camp with a huge bounty of catches.",
             null,
-            "s_c leads the patrol to one of their favourite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c they bring home a mighty haul, laughing at eachother's damp and fluffed out fur.",
-            "The cats slip and slide in a world suddenly damp and wet in the growing rainstorm, but s_c commiserates with those who fall and encourages every cat on, the patrol not only having fun with each other, but also managing to catch a good haul of desert creatures as confused by the slippery ground as they are."
+            "s_c leads the patrol to one of {PRONOUN/s_c/poss} favourite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} home a mighty haul, laughing at eachother's damp and fluffed out fur.",
+            "The cats slip and slide in a world suddenly damp and wet in the growing rainstorm, but s_c commiserates with those who fall and encourages every cat on, the patrol not only having fun with each other, but also managing to catch a good haul of desert creatures as confused by the slippery ground as {PRONOUN/s_c/subject} {VERB/s_c/are/ares} ."
         ],
         "fail_text": [
             "Although the cats rejoice at the rain, after the uptenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
@@ -1008,12 +1008,12 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": [
-            "Despite the rain, and how unfamiliar the desert looks in the gray haze, r_c manages to hunt successfully, finding the normal birds hiding from the downpour. It amuses them that their prey hides in the same places from rain as the birds normally do from sun.",
+            "Despite the rain, and how unfamiliar the desert looks in the gray haze, r_c manages to hunt successfully, finding the normal birds hiding from the downpour. It amuses {PRONOUN/r_c/object} that {PRONOUN/r_c/poss} prey hides in the same places from rain as the birds normally do from sun.",
             null,
-            "s_c really shows their talent, hunting down a mid-sized tortiose that has overturned itself on the newly slippery ground in the rain storm."
+            "s_c really shows {PRONOUN/s_c/poss} talent, hunting down a mid-sized tortiose that has overturned itself on the newly slippery ground in the rain storm."
         ],
         "fail_text": [
-            "Although r_c rejoices at the rain, after the uptenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
+            "Although r_c rejoices at the rain, after the uptenth time {PRONOUN/r_c/subject} {VERB/r_c/slip/slips} on the wet rock the hunting trip has to be called off. {PRONOUN/r_c/subject/CAP} 'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
         ],
         "win_skills": [
             "great hunter",
@@ -1047,7 +1047,7 @@
         "success_text": [
             "A storm descends, sudden and violent enough to drive the c_n cats to shelter. The life-giving water is still a relief to witness, but they aren't interested in being as pummeled like the dry ground. The cats shelter in a rocky alcove, sharing stories and laughing occasionally as everyone shares tongues, licking their pelts dry.",
             null,
-            "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get them, until everyone is talking, a little damp but keeping eachother's spirits up.",
+            "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get {PRONOUN/s_c/object} , until everyone is talking, a little damp but keeping eachother's spirits up.",
             "A storm descends, sudden and violent enough to drive the c_n cats to shelter. As the cats hide from the wind, s_c keeps an eye out for everyone. There's a lot of restless energy in the shelter as the cats watch Leaf-bare bless c_n, but it's easily redirected to games and friendly debates, perhaps even a little flirting."
         ],
         "fail_text": [
@@ -1091,8 +1091,8 @@
         "success_text": [
             "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, starled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
             "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but its not much else, and your patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
-            "s_c stops them before the patrol can start haring off after the swift fox. Instead, the cats sneak up on it, not allowing it to deploy its speed to escape. It's a successful strategy, and together they're able to bring down the fox, winning both the prey it poached and the chance to eliminate a thief.",
-            "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of blouders the cats can at least bring the hare home for the fresh-kill pile."
+            "s_c stops {PRONOUN/s_c/object} before the patrol can start haring off after the swift fox. Instead, the cats sneak up on it, not allowing it to deploy its speed to escape. It's a successful strategy, and together {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} able to bring down the fox, winning both the prey it poached and the chance to eliminate a thief.",
+            "s_c leads the charge! {PRONOUN/s_c/poss/CAP} boldness sends the swift fox running, and though {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} the fox in a tumble of blouders the cats can at least bring the hare home for the fresh-kill pile."
         ],
         "fail_text": [
             "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name."
@@ -1127,21 +1127,21 @@
             "LEGBITE",
             "small_bite_injury"
         ],
-        "intro_text": "r_c spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
+        "intro_text": "r_c spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should {PRONOUN/r_c/subject} try and take it on?",
         "decline_text": "Best not to risk a fight. r_c watches it go.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retreives the poached prey for c_n's fresh-kill pile.",
             "The swift fox is tired from its hunt, and not capable of living up to its name. r_c catches it in a chase, and claims the hare back for c_n, leaving the fox with a bloodied nose. That'll teach it!",
-            "r_c sneaks up on the fox, approaching through the cover of thornbushes. They burst out, snarling with claws extended, and batter the fox as it screams in surprise, dropping it's stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
-            "It makes r_c's blood boil, watching the fox carry away prey it's stolen from c_n's mouths. They creep between the fox and a ravine, waiting until the perfect moment, until they're able to burst from cover, snatching back the hare as the fox tumbles into the steep gash in the ground."
+            "r_c sneaks up on the fox, approaching through the cover of thornbushes. {PRONOUN/r_c/subject/CAP} {VERB/r_c/burst/bursts} out, snarling with claws extended, and batter the fox as it screams in surprise, dropping it's stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
+            "It makes r_c's blood boil, watching the fox carry away prey it's stolen from c_n's mouths. {PRONOUN/r_c/subject/CAP} {VERB/r_c/creep/creeps} between the fox and a ravine, waiting until the perfect moment, until {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} able to burst from cover, snatching back the hare as the fox tumbles into the steep gash in the ground."
         ],
         "fail_text": [
             "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
             null,
             null,
-            "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving its prey up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
+            "Puffed up, r_c approaches the swift fox. But there's only one of {PRONOUN/r_c/self} , and the fox is {PRONOUN/r_c/poss} equal in size and weight. Instead of running or giving its prey up, it snarls, and attacks. r_c gives just as good as {PRONOUN/r_c/subject} {VERB/r_c/get/gets} , and both animals end up limping away."
         ],
         "win_skills": [
             "smart",
@@ -1215,20 +1215,20 @@
             "clan_to_r_c",
             "small_bite_injury"
         ],
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
+        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should {PRONOUN/r_c/subject} try and take it on?",
         "decline_text": "Best not to risk a fight. r_c watches it go.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "She's scouting out potential dens for leaf-bare, r_c realises, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
-            "She's scouting out potential dens for leaf-bare, r_c realises. This could be bad, and r_c gives up on the hunt, instead following the vixen and using tall rocks to bounce their yowls around her, convicning her this patch of desert contains a  thousand cats and warning her off from try to live in it.",
-            "s_c positions themselves down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat."
+            "She's scouting out potential dens for leaf-bare, r_c realises. This could be bad, and r_c gives up on the hunt, instead following the vixen and using tall rocks to bounce {PRONOUN/r_c/poss} yowls around her, convicning her this patch of desert contains a  thousand cats and warning her off from try to live in it.",
+            "s_c positions {PRONOUN/s_c/object} down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat."
         ],
         "fail_text": [
             "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
             null,
             null,
-            "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
+            "Puffed up, r_c approaches the swift fox. But there's only one of {PRONOUN/r_c/self} , and the fox is {PRONOUN/r_c/poss} equal in size and weight. Instead of running or giving up, it snarls, and attacks. r_c gives just as good as {PRONOUN/r_c/subject} {VERB/r_c/get/gets} , and both animals end up limping away."
         ],
         "win_skills": [
             "smart",
@@ -1269,13 +1269,13 @@
         "success_text": [
             "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
             "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight.",
-            "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+            "s_c holds the patrol back until {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
         ],
         "fail_text": [
             "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
             null,
             null,
-            "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
+            "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as {PRONOUN/r_c/poss} signal to flee."
         ],
         "win_skills": [
             "smart",
@@ -1308,14 +1308,14 @@
             "clan_to_r_c",
             "small_bite_injury"
         ],
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
+        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should {PRONOUN/r_c/subject} try and take it on?",
         "decline_text": "Best not to risk a fight. r_c watches it go.",
         "chance_of_success": 20,
         "exp": 30,
         "success_text": [
-            "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they find the tiny fox cubs. Killing them protects the Clan, they remind themselves.",
+            "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the tiny fox cubs. Killing {PRONOUN/r_c/object} protects the Clan, {PRONOUN/r_c/subject} {VERB/r_c/remind/reminds} {PRONOUN/r_c/object} .",
             "She has a den, r_c realises, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den, and it's contents. No swift cubs will be raised within c_n's borders.",
-            "s_c scents the air, following the milk scent of the mother fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat."
+            "s_c scents the air, following the milk scent of the mother fox from afar. It means {PRONOUN/s_c/subject} can position {PRONOUN/s_c/object} for the perfect ambush, leaping from cover to fasten {PRONOUN/s_c/poss} teeth in her throat."
         ],
         "fail_text": [
             "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
@@ -1361,14 +1361,14 @@
         "exp": 30,
         "success_text": [
             "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. But they don't know where her cubs might've been hidden, and they'll be old enough to survive without her - this bodes ill for greenleaf.",
-            "The patrol sneaks closer, until p_l realises that the vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
-            "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n."
+            "The patrol sneaks closer, until p_l realises that the vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke {PRONOUN/p_l/poss} heads out, and the cats yowl in outrage. {PRONOUN/p_l/subject/CAP} {VERB/p_l/charge/charges} the den, killing two of the cubs before the vixen runs with her third.",
+            "s_c holds the patrol back until {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n."
         ],
         "fail_text": [
             "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
             null,
             null,
-            "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
+            "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as {PRONOUN/r_c/poss} signal to flee."
         ],
         "win_skills": [
             "smart",
@@ -1401,14 +1401,14 @@
             "clan_to_r_c",
             "small_bite_injury"
         ],
-        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
+        "intro_text": "r_c spots a swift fox in the distance, behaving weirdly. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should {PRONOUN/r_c/subject} try and take it on?",
         "decline_text": "Best not to risk a fight. r_c watches it go.",
         "chance_of_success": 40,
         "exp": 30,
         "success_text": [
-            "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the desert, while the third falls to r_c's claws.",
+            "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. She has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} over the den. Two of the cubs flee into the desert, while the third falls to r_c's claws.",
             "She has a den, r_c realises, one perched just under a rocky slope. Once the vixen leaves, r_c uses the rubble around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
-            "s_c scents the air, following the milk scent of the mother fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat. Her cubs will be old enough to survive without her, but this vixen will never raise kitten killers again."
+            "s_c scents the air, following the milk scent of the mother fox from afar. It means {PRONOUN/s_c/subject} can position {PRONOUN/s_c/object} for the perfect ambush, leaping from cover to fasten {PRONOUN/s_c/poss} teeth in her throat. Her cubs will be old enough to survive without her, but this vixen will never raise kitten killers again."
         ],
         "fail_text": [
             "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
@@ -1453,14 +1453,14 @@
         "success_text": [
             "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
             "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
-            "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
-            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
+            "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before {PRONOUN/s_c/self} . There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
+            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and {PRONOUN/s_c/poss} vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as {PRONOUN/s_c/subject} can carry before it spots {PRONOUN/s_c/object} ."
         ],
         "fail_text": [
             "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
             null,
             null,
-            "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         ],
         "win_skills": [
             "smart",
@@ -1503,14 +1503,14 @@
         "success_text": [
             "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
             "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
-            "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
-            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
+            "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before {PRONOUN/s_c/self} . There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
+            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and {PRONOUN/s_c/poss} vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as {PRONOUN/s_c/subject} can carry before it spots {PRONOUN/s_c/object} ."
         ],
         "fail_text": [
             "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
             null,
             null,
-            "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         ],
         "win_skills": [
             "smart",
@@ -1554,21 +1554,21 @@
             "clan_to_patrol",
             "respect"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
-        "decline_text": "r_c decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
+        "decline_text": "r_c decides the boar is probably coming back, and {PRONOUN/r_c/subject} {VERB/r_c/do/dos} n't want to be here when it arrives to feed on its victim.",
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "One tiny kit fox? r-c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
-            "The kit fox gives way to the bigger cat, melting away into the scrubby dry bush as r_c brings as much of the feast as they can back to the Clan. It knows that the cat will leave more than enough scraps behind to fill its belly full of pork.",
-            "s_c is smart enough to stop themselves from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and s_c is focused on bringing its meat back for the Clan.",
-            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means they see the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
+            "The kit fox gives way to the bigger cat, melting away into the scrubby dry bush as r_c brings as much of the feast as {PRONOUN/r_c/subject} can back to the Clan. It knows that the cat will leave more than enough scraps behind to fill its belly full of pork.",
+            "s_c is smart enough to stop {PRONOUN/s_c/object} from pursuing the kit fox as it melts away before {PRONOUN/s_c/self} . There's no point - the peccary carcass is the real prize here, and s_c is focused on bringing its meat back for the Clan.",
+            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and {PRONOUN/s_c/poss} vigilence means {PRONOUN/s_c/subject} {VERB/s_c/see/sees} the boar coming to cannibalise its victim from far off, making off with as much of the carcass as {PRONOUN/s_c/subject} can carry before it spots {PRONOUN/s_c/object} ."
         ],
         "fail_text": [
             "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
             null,
             "One tiny kit fox against r_c? No contest. r_c settles in to open the carcass, but is caught unawares by the boar returning to reclaim it, and is killed and eaten by the boar.",
-            "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         ],
         "win_skills": [
             "smart",
@@ -1600,7 +1600,7 @@
         "antagonize_fail_text": null,
         "history_text": [
             null,
-            "r_c fell when they were surprised by a peccary boar.",
+            "r_c fell when {PRONOUN/r_c/subject} were surprised by a peccary boar.",
             "were gored and eaten by a peccary boar"
         ]
     },
@@ -1617,15 +1617,15 @@
             "medium_prey",
             "trust"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through {PRONOUN/r_c/poss} territory, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
         "chance_of_success": 70,
         "exp": 15,
         "success_text": [
             "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
             "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
-            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
-            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, {PRONOUN/s_c/subject} {VERB/s_c/are/ares} prey.",
+            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} the lead hunting down the kit fox, fearless as {PRONOUN/s_c/subject} {VERB/s_c/win/wins} not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
         ],
         "fail_text": [
             "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
@@ -1674,15 +1674,15 @@
             "LEGBITE",
             "small_bite_injury"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a kit fox wandering through {PRONOUN/r_c/poss} territory, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
         "chance_of_success": 50,
         "exp": 25,
         "success_text": [
-            "The hunter melts into the thorny scrubland and sneaks towards the smaller predator. By the time it scents them, it's too late. While r_c will happily accept the mouse it carried, the fox was the prey they were actually after.",
-            "The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with their skill they're able to bring down the kit fox. It should have run from them - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
-            "s_c pounces, snarling, and the fox turns tail with a yelp. But they're prepared for the fox trying to flee, and leap fast and low to the gorund, slamming their teeth into the fox's throat. Kit foxes not only steal prey, for c_n, they are prey.",
-            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+            "The hunter melts into the thorny scrubland and sneaks towards the smaller predator. By the time it scents {PRONOUN/r_c/object} , it's too late. While r_c will happily accept the mouse it carried, the fox was the prey {PRONOUN/r_c/subject} were actually after.",
+            "The kit fox locks eyes with r_c as {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with {PRONOUN/r_c/poss} skill {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} able to bring down the kit fox. It should have run from {PRONOUN/r_c/self} - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
+            "s_c pounces, snarling, and the fox turns tail with a yelp. But {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} prepared for the fox trying to flee, and leap fast and low to the gorund, slamming {PRONOUN/s_c/poss} teeth into the fox's throat. Kit foxes not only steal prey, for c_n, {PRONOUN/s_c/subject} {VERB/s_c/are/ares} prey.",
+            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, fearless as {PRONOUN/s_c/subject} {VERB/s_c/win/wins} not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
         ],
         "fail_text": [
             "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
@@ -1729,15 +1729,15 @@
             "small_prey",
             "trust"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through {PRONOUN/r_c/poss} territory, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
         "chance_of_success": 30,
         "exp": 15,
         "success_text": [
             "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
             "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
-            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
-            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, {PRONOUN/s_c/subject} {VERB/s_c/are/ares} prey.",
+            "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} the lead hunting down the kit fox, fearless as {PRONOUN/s_c/subject} {VERB/s_c/win/wins} not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
         ],
         "fail_text": [
             "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart."
