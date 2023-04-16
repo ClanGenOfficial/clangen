@@ -2855,7 +2855,7 @@ class Cat():
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = "elder"
+                self.age = "senior"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
             print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
