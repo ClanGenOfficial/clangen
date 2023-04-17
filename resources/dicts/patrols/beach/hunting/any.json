@@ -115,9 +115,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+            "scar": "r_c got injured as an apprentice, exploring alone."
+        }
     },
     {
         "patrol_id": "bch_hunt_solo2",
@@ -231,9 +231,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox."
-        ]
+        "history_text": {
+            "scar": "p_l gained a scar from a fox."
+        }
     },
     {
         "patrol_id": "bch_hunt_noise2",
@@ -261,11 +261,11 @@
         "max_cats": 4,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine.",
-            "{VERB/p_l/were/was} killed by a wolverine"
-        ]
+        "history_text": {
+            "scar": "p_l gained a scar from a fox.",
+            "reg_death": "p_l was killed by a wolverine.",
+            "lead_death": "{VERB/p_l/were/was} killed by a wolverine"
+        }
     },
     {
         "patrol_id": "bch_hunt_noise3",
@@ -293,11 +293,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a dog while patrolling alone.",
-            "were killed while patrolling alone"
-        ]
+        "history_text": {
+            "scar": "p_l gained a scar from a fox.",
+            "reg_death": "p_l was killed by a dog while patrolling alone.",
+            "lead_death": "were killed while patrolling alone"
+        }
     },
     {
         "patrol_id": "bch_hunt_gonetnr1",
@@ -327,11 +327,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetnr2",
@@ -361,11 +357,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetnr3",
@@ -395,11 +387,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden1",
@@ -428,11 +416,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden2",
@@ -460,11 +444,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_twolegdencatdare1",
@@ -500,11 +480,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_twolegdenappdare1",
@@ -532,11 +508,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap1",
@@ -564,11 +536,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap2",
@@ -596,11 +564,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_thunderpath1",
@@ -629,11 +593,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "{VERB/r_c/were/was} hit by a monster"
-        ]
+        "history_text": {
+            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "r_c was hit by a monster and killed.",
+            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+        }
     },
     {
         "patrol_id": "bch_hunt_thunderpath2",
@@ -656,32 +620,18 @@
             "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUn/r_c/object} deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
-        "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+        "win_skills": ["smart", "very smart", "extremely smart"
         ],
-        "win_trait": [
-            "calm",
-            "careful",
-            "insecure",
-            "nervous",
-            "sneaky",
-            "strange",
-            "patient",
-            "responsible",
-            "thoughtful",
-            "wise"
-        ],
+        "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "{VERB/r_c/were/was} hit by a monster"
-        ]
+        "history_text": {
+            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "r_c was hit by a monster and killed.",
+            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+        }
     },
     {
         "patrol_id": "bch_hunt_thunderpath3",
@@ -710,11 +660,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed.",
-            "{VERB/r_c/were/was} hit by a monster"
-        ]
+        "history_text": {
+            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "r_c was hit by a monster and killed.",
+            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+        }
     },
     {
         "patrol_id": "bch_hunt_thunderpath4",
@@ -743,11 +693,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed.",
-            "{VERB/r_c/were/was} hit by a monster"
-        ]
+        "history_text": {
+            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "r_c was hit by a monster and killed.",
+            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+        }
     },
     {
         "patrol_id": "bch_hunt_octopus1",
@@ -883,10 +833,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from an eagle's beak."
+        }
     },
     {
         "patrol_id": "bch_hunt_eagleswim2",
@@ -915,10 +864,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from an eagle's beak."
+        }
     },
     {
         "patrol_id": "bch_hunt_eagleswim3",
@@ -947,11 +895,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "{VERB/r_c/were/was} killed by an eagle"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from an eagle's beak.",
+            "reg_death": "r_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+        }
     },
     {
         "patrol_id": "bch_hunt_eagleswim4",
@@ -980,11 +928,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "{VERB/r_c/were/was} killed by an eagle"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from an eagle's beak.",
+            "reg_death": "r_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge1",
@@ -1016,10 +964,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge2",
@@ -1051,9 +998,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge3",
@@ -1085,11 +1032,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died fighting a fox"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fox fight.",
+            "reg_death": "r_c fell in a solo battle with a fox.",
+            "lead_death": "died fighting a fox"
+        }
     },
     {
         "patrol_id": "bch_hunt_foxgray_scavenge1",
@@ -1121,10 +1068,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a gray fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_foxgray_scavenge2",
@@ -1184,10 +1130,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fight with a gray fox."
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal1",
@@ -1219,10 +1164,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a red fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal2",
@@ -1254,9 +1198,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a red fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal3",
@@ -1288,9 +1232,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red fox."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fight with a red fox."
+        }
     },
     {
         "patrol_id": "bch_hunt_foxgray_steal1",
@@ -1322,10 +1266,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a gray fox fight."
+        }
     },
     {
         "patrol_id": "bch_hunt_foxgray_steal2",
@@ -1388,9 +1331,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fight with a gray fox."
+        }
     },
     {
         "patrol_id": "bch_hunting_patrol_dolphinofferings1",
