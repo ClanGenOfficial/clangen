@@ -11,9 +11,9 @@
             "Is leisurly strolling around, taking in the scenery",
             "Wonders if there are other places that cats go in the afterlife",
             "Is floating around, exploring the world in this new point of view",
-            "Is in awe at the creation {PRONOUN/m_c/subject} {VERB/m_c/are/is} making with the smokes surrounding {PRONOUN/m_c/object}",
-            "Is intrigued by this new afterlife {PRONOUN/m_c/subject} were never told about",
-            "Thought {PRONOUN/m_c/subject} found the scent of a cat {PRONOUN/m_c/subject} know, but can't seem to find the source of the scent",
+            "Is in awe at the creations {PRONOUN/m_c/subject} {VERB/m_c/are/is} making with the smoke surrounding {PRONOUN/m_c/object}",
+            "Is intrigued by this new afterlife {PRONOUN/m_c/subject} {VERB/m_c/were/was} never told about",
+            "Thought {PRONOUN/m_c/subject} found the scent of a cat {PRONOUN/m_c/subject} {VERB/m_c/know/knows}, but can't seem to find the source of the scent",
             "Is unable to pick up any scents through the fog",
             "Visits {PRONOUN/m_c/poss} old haunts, remembering the good times",
             "Tries to remember something that happened long ago",
@@ -46,7 +46,7 @@
             "Is pleased to no longer be burdened by the limitations of a physical body",
             "Is watching a storm rage on in the distance",
             "Is chasing after the flickering light of a ghostly firefly",
-            "Is overwhelmed with a wave of nostalgia as {PRONOUN/m_c/subject} watch a living cat nuzzle their newborn litter",
+            "Is overwhelmed with a wave of nostalgia as {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} a living cat nuzzle their newborn litter",
             "Is watching a group of living cats mourn a departed friend",
             "Is comforted by the knowledge that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not alone in this afterlife",
             "Is grateful for moments of solitude",
@@ -54,10 +54,10 @@
             "Is yearning for something {PRONOUN/m_c/subject} can't quite put {PRONOUN/m_c/poss} paw on",
             "Is momentarily haunted by the memory of {PRONOUN/m_c/poss} own death",
             "Is giving a group of ghost kittens a badger ride",
-            "Is purring as {PRONOUN/m_c/subject} watch fellow ghost cats frolic and play",
+            "Is purring as {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} fellow ghost cats frolic and play",
             "Is listening attentively as other ghost cats tell tales of their own past lives",
             "Comforts a newly arrived ghost cat that feels lost and bewildered within this afterlife",
-            "Feels a sense of melancholy as {PRONOUN/m_c/subject} watch a living cat struggle with their health"
+            "Feels a sense of melancholy as {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} a living cat struggle with their health"
 
 
             
