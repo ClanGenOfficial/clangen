@@ -686,13 +686,13 @@
             "trust",
             "warrior"
         ],
-        "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in teh snow, until p_l indicates the snowdrift itself with a wave of their tail.",
+        "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in the snow, until p_l indicates the snowdrift itself with a wave of their tail.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling ungainly on top of the snowdrift and burying themselves in cold white fluff. Fox-dung! But p_l approaches them afterwards with a commiserating purr. Even though app1 missed their mouse, the commotion was enough to startle another into p_l's paws, so they don't return home without any prey.",
-            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into teh snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
+            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into the snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
         ],
         "fail_text": [
             "app1 tries to dive for the mouse in the snow, but the only thing they catch under their claws is a pebble. p_l curls around them to warm them up afterwards, instructing them on the delicate art of pouncing for prey you can't see."
