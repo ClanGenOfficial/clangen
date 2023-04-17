@@ -1321,7 +1321,7 @@ class Cat():
             life_list = []
             print(giver)
             for life in possible_lives:
-                print(life)
+                print('NEW LIFE', life)
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
 
@@ -1335,7 +1335,6 @@ class Cat():
                     continue
                 elif game.clan.age == 0 and "new_clan" not in tags:
                     continue
-                print(game.clan.age)
                 print('new_clan pass')
                 if "old_leader" in tags and not ancient_leader:
                     continue
@@ -1359,8 +1358,9 @@ class Cat():
                     if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
                 print('star_trait pass')
-
+                print('PASSED')
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
+            print(life_list)
 
             i = 0
             chosen_life = {}
