@@ -508,7 +508,7 @@ class Clan():
         """
         self.instructor = Cat(status=choice(["warrior", "elder"]))
         self.instructor.dead = True
-        update_sprite(self.instructor)
+        #update_sprite(self.instructor)
         self.add_cat(self.instructor)
         self.all_clans = []
         other_clans = []
@@ -611,7 +611,7 @@ class Clan():
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
+            #update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
@@ -935,7 +935,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -1030,7 +1030,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 

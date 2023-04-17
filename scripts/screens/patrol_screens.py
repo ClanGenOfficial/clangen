@@ -214,7 +214,6 @@ class PatrolScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
         self.open_choose_cats_screen()
-        cat_profiles()
 
     def update_button(self):
         """" Updates button availabilities. """
@@ -359,7 +358,6 @@ class PatrolScreen(Screens):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
         self.clear_cat_buttons()
-        cat_profiles()
 
         self.current_patrol = []
         self.current_page = 1
@@ -705,7 +703,7 @@ class PatrolScreen(Screens):
             if u < len(patrol.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    patrol.patrol_cats[u].big_sprite,
+                    patrol.patrol_cats[u].sprite,
                     manager=MANAGER)
                 pos_x += 100
                 if pos_x > 900:
@@ -1073,7 +1071,7 @@ class PatrolScreen(Screens):
                 )
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                   pygame.transform.scale(cat.large_sprite, (100, 100))
+                                                                   pygame.transform.scale(cat.sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
             pos_x += 100
             if pos_x >= 600:
@@ -1090,7 +1088,7 @@ class PatrolScreen(Screens):
             i = 0
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                         pygame.transform.scale(cat.large_sprite,
+                                                                         pygame.transform.scale(cat.sprite,
                                                                                                 (100, 100)),
                                                                          cat_object=cat, manager=MANAGER)
                 pos_x += 150
@@ -1179,7 +1177,7 @@ class PatrolScreen(Screens):
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((640, 350), (300, 300))),
                                                                           pygame.transform.scale(
-                                                                              self.selected_cat.large_sprite,
+                                                                              self.selected_cat.sprite,
                                                                               (300, 300)),
                                                                           manager=MANAGER)
 
@@ -1218,7 +1216,7 @@ class PatrolScreen(Screens):
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((300, 400), (200, 200))),
                         pygame.transform.scale(
-                            self.mate.large_sprite, (200, 200))
+                            self.mate.sprite, (200, 200))
                         , manager=MANAGER)
                     # Check for name length
                     name = str(self.mate.name)  # get name
@@ -1293,7 +1291,7 @@ class PatrolScreen(Screens):
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((1100, 400), (200, 200))),
                         pygame.transform.scale(
-                            self.app_mentor.large_sprite,
+                            self.app_mentor.sprite,
                             (200, 200)), manager=MANAGER)
 
                     # Button to switch to that cat
