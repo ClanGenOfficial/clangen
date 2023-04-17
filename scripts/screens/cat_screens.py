@@ -890,17 +890,42 @@ class ProfileScreen(Screens):
                 output += ' moons'
 
         # MATE
-        if the_cat.mate:
+        if len(the_cat.mate) > 0:
             # NEWLINE ----------
             output += "\n"
-            if the_cat.mate in Cat.all_cats:
-                mate_ob = Cat.fetch_cat(the_cat.mate)
-                if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
-                    output += 'former mate: ' + str(Cat.all_cats[the_cat.mate].name)
-                else:
-                    output += 'mate: ' + str(Cat.all_cats[the_cat.mate].name)
-            else:
-                output += 'Error: mate: ' + str(the_cat.mate) + " not found"
+            if len(the_cat.mate) > 0:
+                # collect all names
+                mates = []
+                prev_mates = []
+                for mate_id in the_cat.mate:
+                    if mate_id in Cat.all_cats:
+                        mate_ob = Cat.fetch_cat(mate_id)
+                        if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
+                            prev_mates.append(str(mate_ob.name))
+                        else:
+                            mates.append(str(mate_ob.name))
+                    else:
+                        output += 'Error: mate: ' + str(mate_id) + " not found"
+                for prev_mate_id in the_cat.previous_mates:
+                    if prev_mate_id in Cat.all_cats:
+                        mate_ob = Cat.fetch_cat(prev_mate_id)
+                        prev_mates.append(str(mate_ob.name))
+                    else:
+                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
+                # merge the names together for the output
+                if len(mates) > 0:
+                    if len(mates) > 1:
+                        output += 'mates: ' + str(', '.join(mates))
+                    else:
+                        output += 'mate: ' + mates[0]
+                if len(prev_mates) > 0:
+                    if len(mates) > 0:
+                        output += '\n'
+                    if len(prev_mates) > 1:
+                        output += 'former mates: ' + str(', '.join(prev_mates))
+                    else:
+                        output += 'former mate: ' + prev_mates[0]
+
 
         if not the_cat.dead:
             # NEWLINE ----------

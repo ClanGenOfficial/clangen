@@ -121,7 +121,7 @@
             null,
             null,
             "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, their life slips away, and their distraught Clanmates are left to carry their body home.",
-            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
         ],
         "win_skills": [
             "great speaker",
@@ -553,7 +553,7 @@
             "apprentice",
             "medium_prey"
         ],
-        "intro_text": "app1 catches scent of a mouse nearby. But they're by themselves, and the chill of leaf-bare has stripped the forest of it's green cloak, can they managed the catch?",
+        "intro_text": "app1 catches scent of a mouse nearby. But they're by themselves, and the chill of leaf-bare has stripped the forest of it's green cloak; Can they manage the catch?",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 10,
         "exp": 40,
@@ -1235,7 +1235,7 @@
         "exp": 15,
         "success_text": [
             "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol really doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slighlty odd prize home without trouble.",
-            "It very weird how the lizards won't wake, not even with cats ripping apart their burrow, but no one is going to argue with more prey for the fresh-kill pile.",
+            "It's very weird how the lizards won't wake, not even with cats ripping apart their burrow, but no one is going to argue with more prey for the fresh-kill pile.",
             "s_c manages to figure it out - a hibernating lizard! If they hadn't all already had their faces in the snow, they'd never have found it, it gives off such little scent."
         ],
         "fail_text": [
@@ -1381,7 +1381,7 @@
             "The prey sure seem to agree that the weather is no barrier to feeding, and app1 proudly brings back three f_tp_p for the Clan, and hopefully for their own dinner.",
             "Alright, snow is awful to chase in - but it's awful to be chased in too, and the fluffy stuff is as much an obstacle for the f_mp_s app1 finds as it is for them. It's a tough hunt, but a successful one.",
             null,
-            "As keen as they are for dinner, app1 isn't reskless. Instead, they go to hunt in a sheltered spot where the pine trees have shielded the gorund and the wind can't blow snow. It's a good plain, netting them a thin f_mp_s for their work."
+            "As keen as they are for dinner, app1 isn't reckless. Instead, they go to hunt in a sheltered spot where the pine trees have shielded the ground and the wind can't blow snow. It's a good plain, netting them a thin f_mp_s for their work."
         ],
         "fail_text": [
             null,
@@ -1431,7 +1431,7 @@
         null,
         null,
         "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, their life slips away, and their distraught Clanmates are left to carry their body home.",
-        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
     ],
     "win_skills": [
         "great speaker",
@@ -1966,7 +1966,14 @@
     "patrol_id": "fst_hunt_mice4",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"],
+    "tags": [
+        "hunting",
+        "respect",
+        "patrol_to_r_c",
+        "medium_prey0",
+        "large_prey1",
+        "large_prey2"
+    ],
     "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
     "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
     "chance_of_success": 10,

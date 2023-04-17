@@ -112,15 +112,18 @@ class NewCatEvents:
         if "adoption" in new_cat_event.tags:
             if cat.no_kits:
                 return
-            if cat.mate and cat.mate.no_kits:
-                return
+            if len(cat.mate) > 0:
+                for mate_id in cat.mate:
+                    mate = cat.fetch_cat(mate_id)
+                    if mate.no_kits:
+                       return
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
-                new_cat.parent1 = cat.ID
-                if cat.mate:
-                    new_cat.parent2 = cat.mate
-                # print('parent is', new_cat.parent1, cat.ID)
+                new_cat.adoptive_parents.append(cat.ID)
+                if len(cat.mate) > 0:
+                    new_cat.adoptive_parents.extend(cat.mate)
+                new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')
@@ -152,14 +155,11 @@ class NewCatEvents:
                 )
 
         if "adoption" in new_cat_event.tags:
-            add_children_to_cat(cat, cat_class)
-            if cat.mate:
-                add_children_to_cat(Cat.fetch_cat(cat.mate), cat_class)
             if new_cat_event.litter:
                 for new_cat in created_cats:
-                    add_siblings_to_cat(new_cat, cat_class)
                     # giving relationships for siblings
-                    for sibling in new_cat.siblings:
+                    siblings = new_cat.get_siblings()
+                    for sibling in siblings:
                         sibling = Cat.fetch_cat(sibling)
                         sibling.relationships[new_cat.ID] = Relationship(sibling, new_cat)
                         new_cat.relationships[sibling.ID] = Relationship(new_cat, sibling)
