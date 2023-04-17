@@ -14,6 +14,7 @@ import os
 
 import pygame
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
@@ -53,6 +54,7 @@ class Clan():
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
+    darkforest_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -441,6 +443,7 @@ class Clan():
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf'):
+        self.history = History()
         if name != "":
             self.name = name
             self.leader = leader
@@ -477,6 +480,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.inheritance = {}
             self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
@@ -507,7 +511,7 @@ class Clan():
         """
         self.instructor = Cat(status=choice(["warrior", "elder"]))
         self.instructor.dead = True
-        update_sprite(self.instructor)
+        #update_sprite(self.instructor)
         self.add_cat(self.instructor)
         self.all_clans = []
         other_clans = []
@@ -575,9 +579,13 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            if cat in self.darkforest_cats:
+                cat.df = False
+                self.darkforest_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
+            update_sprite(Cat.all_cats[str(cat)])
 
     def add_to_clan(self, cat):
         """
@@ -602,15 +610,17 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is False:
+        if cat.ID in Cat.all_cats and cat.dead:
             cat.df = True
+            self.darkforest_cats.append(cat.ID)
+            print('add to df')
             cat.thought = "Is distraught after being sent to the Place of No Stars"
             if cat in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
+            #update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
@@ -643,6 +653,7 @@ class Clan():
         TODO: DOCS
         """
         if leader:
+            self.history.add_lead_ceremony(leader)
             self.leader = leader
             Cat.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
@@ -762,6 +773,8 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_pregnancy(game.clan)
+
         self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
@@ -932,7 +945,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -1027,7 +1040,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
@@ -1065,7 +1078,7 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        if game.clan.game_mode in ['expanded', 'cruel season']:
+        if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
         
@@ -1325,9 +1338,7 @@ class Clan():
                 json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
-            print(
-                "ERROR: Saving nutrition information of the freshkill pile didn't work."
-            )
+            print("ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
 
     ## Properties
@@ -1338,7 +1349,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(a)
+        self._reputation = int(self._reputation + a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

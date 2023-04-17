@@ -244,15 +244,12 @@ class EventsScreen(Screens):
             elif event.ui_element in self.involved_cat_buttons:
                 self.make_cat_buttons(event.ui_element)
             elif event.ui_element in self.cat_profile_buttons:
-                cat_profiles()
                 game.switches['cat'] = event.ui_element.ids
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
 
     def screen_switches(self):
-        cat_profiles()
-
         self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
                                                      "Clan",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),

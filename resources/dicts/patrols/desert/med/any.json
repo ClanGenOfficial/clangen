@@ -22,13 +22,7 @@
 		"They gaze into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because they really could have used some guidance from StarClan."
 	],
 	"min_cats":1,
-	"max_cats":1,
-	"Antagonize_text":null,
-	"Antagonize_fail_text":null,
-	"history_text":[
-		null,
-		null
-	]
+	"max_cats":1
 },
 {
 	"patrol_id":"dst_med_app_herblocation1",
@@ -56,9 +50,7 @@
 		"app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 	],
 	"min_cats":2,
-	"max_cats":2,
-	"antagonize_text":null,
-	"antagonize_fail_text":null
+	"max_cats":2
 },
 {
 	"patrol_id":"dst_med_app_herblocation2",
@@ -84,13 +76,8 @@
 		"app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
 	],
 	"min_cats":1,
-	"max_cats":1,
-	"antagonize_text":null,
-	"antagonize_fail_text":null,
-	"history_text":[
-		null,
-		null
-	]
+	"max_cats":1
+	
 },
 {
 	"patrol_id":"dst_medcat_emergency1",
@@ -135,10 +122,9 @@
 	"max_cats":1,
 	"Antagonize_text":null,
 	"Antagonize_fail_text":null,
-	"history_text":[
-		null,
-		"p_l died trying to communicate with StarClan using a rare and dangerous ritual trying to save their Clan."
-	]
+	"history_text": {
+        "reg_death": "p_l died trying to communicate with StarClan using a rare and dangerous ritual trying to save their Clan."
+    }
 },
 {
 	"patrol_id":"dst_med_lungwort1",
@@ -159,7 +145,7 @@
 	"chance_of_success":15,
 	"exp":20,
 	"success_text":[
-		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back inteh withering heat of greenleaf. For just a second, p_l feels the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back inthe withering heat of greenleaf. For just a second, p_l feels the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
 		"app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
 		"It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
 		"Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
@@ -534,12 +520,10 @@
 	"max_cats":2,
 	"antagonize_text":"null, ",
 	"antagonize_fail_text":"null, ",
-	"history_text":[
-		"Scar",
-		null,
-		"Death",
-		null
-	]
+	"history_text": {
+        "scar": "Scar",
+        "lead_death": "Death"
+    }
 },
 {
 	"patrol_id":"dst_med_romance1",

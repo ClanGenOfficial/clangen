@@ -9,6 +9,8 @@ TODO: Docs
 from random import choice, choices, randint, random, sample
 import re
 import pygame
+
+from scripts.cat.history import History
 from scripts.cat.names import names
 
 import ujson
@@ -69,10 +71,11 @@ def get_alive_clan_queens(all_cats):
 
 def get_alive_kits(Cat):
     """
-    returns a list of all living kittens in the clan
+    returns a list of IDs for all living kittens in the clan
     """
     alive_kits = [i for i in Cat.all_cats.values() if
-                  i.age in ['kitten', 'newborn'] and not (i.dead or i.outside)]
+                  i.age in ['kitten', 'newborn'] and not i.dead and not i.outside]
+
     return alive_kits
 
 
@@ -152,9 +155,8 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
-        if inter_cat.is_potential_mate(cat, True) and cat.is_potential_mate(inter_cat, True):
-            if not inter_cat.mate:
-                cats.append(inter_cat)
+        if inter_cat.is_potential_mate(cat, for_love_interest= True) and cat.is_potential_mate(inter_cat, for_love_interest=True):
+            cats.append(inter_cat)
     return cats
 
 
@@ -185,6 +187,19 @@ def get_current_season():
     game.clan.current_season = game.clan.seasons[index]
 
     return game.clan.current_season
+
+
+def change_clan_reputation(difference=0):
+    """
+    will change the clan's reputation with outsider cats according to the difference parameter.
+    """
+    # grab rep
+    reputation = int(game.clan.reputation)
+    # ensure this is an int value
+    difference = int(difference)
+    # change rep
+    reputation += difference
+    game.clan.reputation = reputation
 
 
 def change_clan_relations(other_clan, difference=0):
@@ -392,9 +407,12 @@ def create_new_cat(Cat,
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
+        history = History()
+        history.add_beginning(new_cat)
 
         # create relationships
         new_cat.create_relationships_new_cat()
+        new_cat.create_inheritance_new_cat()
 
     return created_cats
 
@@ -436,6 +454,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
     # create relationships - only with outsiders
     # (this function will handle, that the cat only knows other outsiders)
     new_cat.create_relationships_new_cat()
+    new_cat.create_inheritance_new_cat()
 
     game.clan.add_cat(new_cat)
     game.clan.add_to_outside(new_cat)
@@ -456,24 +475,20 @@ with open(f"{resource_directory}personality_compatibility.json", 'r') as read_fi
 
 def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
-    # Different filters for different
-    romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
-                           and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
-               relationships))
+    max_love_value = 0
+    current_max_relationship = None
+    for rel in relationships:
+        if rel.romantic_love < 0:
+            continue
+        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
+            continue
+        if potential_mate and not rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True):
+            continue
+        if rel.romantic_love > max_love_value:
+            current_max_relationship = rel
+            max_love_value = rel.romantic_love
 
-    if romantic_relation is None or len(romantic_relation) == 0:
-        return None
-
-    relation = romantic_relation[0]
-    max_love_value = relation.romantic_love
-    # if there more love relations, pick the biggest one
-    for inter_rel in romantic_relation:
-        if max_love_value < inter_rel.romantic_love:
-            max_love_value = inter_rel.romantic_love
-            relation = inter_rel
-
-    return relation
+    return current_max_relationship
 
 
 def check_relationship_value(cat_from, cat_to, rel_value=None):
@@ -661,8 +676,8 @@ def change_relationship_values(cats_to: list,
             if kitty.ID == rel.cat_to.ID:
                 continue
 
-            # here we just double-check that the cats are allowed to be romantic with eath other
-            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate == rel.cat_to.ID:
+            # here we just double-check that the cats are allowed to be romantic with each other
+            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or rel.cat_to.ID in kitty.mate:
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
                 if rel.romantic_love > 0 and auto_romance:
@@ -699,16 +714,18 @@ def pronoun_repl(m, cat_pronouns_dict):
     inner_details = m.group(1).split("/")
     try:
         d = cat_pronouns_dict[inner_details[1]][1]
-        if inner_details[0] == "PRONOUN":
+        if inner_details[0].upper() == "PRONOUN":
             pro = d[inner_details[2]]
             if inner_details[-1] == "CAP":
                 pro = pro.capitalize()
             return pro
-        elif inner_details[0] == "VERB":
+        elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
+        print("Failed to find pronoun:", m.group(1))
         return "error1"
     except KeyError as e:
-        logger.exception("Failed to load sprite")
+        logger.exception("Failed to find pronoun: " + m.group(1))
+        print("Failed to find pronoun:", m.group(1))
         return "error2"
 
 
@@ -851,9 +868,6 @@ def event_text_adjust(Cat,
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
         cat_dict["o_c"] = (other_clan_name, None)
-    if cat.mate:
-        mate = Cat.fetch_cat(cat.mate)
-        cat_dict["c_m"] = (str(mate.name), choice(mate.pronouns))
     if new_cat:
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
@@ -892,6 +906,36 @@ def event_text_adjust(Cat,
     adjust_text = process_text(text, cat_dict)
 
     return adjust_text
+
+
+def leader_ceremony_text_adjust(Cat,
+                                text,
+                                leader,
+                                life_giver=None,
+                                virtue=None,
+                                extra_lives=None,):
+    """
+    used to adjust the text for leader ceremonies
+    """
+    replace_dict = {
+        "m_c_star": (str(leader.name.prefix + "star"), choice(leader.pronouns)),
+        "m_c": (str(leader.name.prefix + leader.name.suffix), choice(leader.pronouns)),
+    }
+
+    if life_giver:
+        replace_dict["r_c"] = (str(Cat.fetch_cat(life_giver).name), choice(Cat.fetch_cat(life_giver).pronouns))
+
+    text = process_text(text, replace_dict)
+
+    if virtue:
+        text = text.replace("[virtue]", virtue)
+
+    if extra_lives:
+        text = text.replace('[life_num]', str(extra_lives))
+
+    text = text.replace("c_n", str(game.clan.name) + "Clan")
+
+    return text
 
 
 def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,
@@ -980,7 +1024,7 @@ def draw_big(cat, pos):
         new_pos[0] = screen_x / 2 - sprites.new_size / 2
     elif pos[0] < 0:
         new_pos[0] = screen_x + pos[0] - sprites.new_size
-    cat.used_screen.blit(cat.big_sprite, new_pos)
+    cat.used_screen.blit(cat.sprite, new_pos)
 
 
 def draw_large(cat, pos):
@@ -989,7 +1033,7 @@ def draw_large(cat, pos):
         new_pos[0] = screen_x / 2 - sprites.size * 3 / 2
     elif pos[0] < 0:
         new_pos[0] = screen_x + pos[0] - sprites.size * 3
-    cat.used_screen.blit(cat.large_sprite, new_pos)
+    cat.used_screen.blit(cat.sprite, new_pos)
 
 
 def update_sprite(cat):
@@ -1088,9 +1132,17 @@ def update_sprite(cat):
             new_sprite.blit(sprites.sprites['white' + cat.vitiligo + cat_sprite], (0, 0))
 
         # draw eyes & scars1
-        new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + cat_sprite], (0, 0))
+        eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
-            new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+            eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+        #Eye tint
+        if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
+                "tint_colours"]:
+            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
+            tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
+            eyes.blit(tint, (0,0), special_flags=pygame.BLEND_RGB_MULT)
+        new_sprite.blit(eyes, (0,0))
+        
         for scar in cat.scars:
             if scar in scars1:
                 new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
@@ -1145,6 +1197,10 @@ def update_sprite(cat):
                 temp = sprites.sprites['fadestarclan' + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+                
+        # reverse, if assigned so
+        if cat.reverse:
+            new_sprite = pygame.transform.flip(new_sprite, True, False)
 
     except (TypeError, KeyError):
         logger.exception("Failed to load sprite")
@@ -1157,16 +1213,8 @@ def update_sprite(cat):
     if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
         new_sprite = apply_opacity(new_sprite, cat.opacity)"""
 
-    # reverse, if assigned so
-    if cat.reverse:
-        new_sprite = pygame.transform.flip(new_sprite, True, False)
-
     # apply
     cat.sprite = new_sprite
-    cat.big_sprite = pygame.transform.scale(
-        new_sprite, (sprites.new_size, sprites.new_size))
-    cat.large_sprite = pygame.transform.scale(
-        cat.big_sprite, (sprites.size * 3, sprites.size * 3))
     # update class dictionary
     cat.all_cats[cat.ID] = cat
 

@@ -10,6 +10,7 @@ TODO: Docs
 import random
 import traceback
 
+from scripts.cat.history import History
 from scripts.patrol import Patrol
 
 import ujson
@@ -45,6 +46,7 @@ class Events():
     generate_events = GenerateEvents()
 
     def __init__(self, e_type=None, **cats):
+        self.history = History()
         self.e_type = e_type
         self.ID = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(
             random.randint(0, 9)) + str(random.randint(0, 9))
@@ -180,6 +182,7 @@ class Events():
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
                                            not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
                     # finds a percentage of the living clan to become shaken
+
                     if len(alive_cats) == 0:
                         return
                     else:
@@ -243,7 +246,7 @@ class Events():
         self.check_and_promote_leader()
         self.check_and_promote_deputy()
 
-        #Resort
+        # Resort
         if game.sort_type != "id":
             Cat.sort_cats()
 
@@ -254,7 +257,6 @@ class Events():
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
             game.save_cats()
             game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
 
     def mediator_events(self, cat):
         """ Check for mediator events """
@@ -641,9 +643,10 @@ class Events():
                     game.clan.med_cat_list.remove(cat.ID)
 
                 # Unset their mate, if they have one
-                if cat.mate:
-                    if Cat.all_cats.get(cat.mate):
-                        cat.unset_mate(Cat.all_cats.get(cat.mate))
+                if len(cat.mate) > 0:
+                    for mate_id in cat.mate:
+                        if Cat.all_cats.get(mate_id):
+                            cat.unset_mate(Cat.all_cats.get(mate_id))
 
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
@@ -762,11 +765,11 @@ class Events():
 
         # newborns don't do much
         if cat.status == 'newborn':
-            cat.create_interaction()
+            cat.relationship_interaction()
             cat.thoughts()
             return
 
-        self.handle_apprentice_EX(cat) # This must be before perform_ceremonies! 
+        self.handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
         # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
         self.perform_ceremonies(cat)
 
@@ -778,10 +781,9 @@ class Events():
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-        cat.create_interaction()
 
         # this is the new interaction function, currently not active
-        # cat.relationship_interaction()
+        cat.relationship_interaction()
         cat.thoughts()
 
         # relationships have to be handled separately, because of the ceremony name change
@@ -811,6 +813,8 @@ class Events():
             else:
                 game.switches['skip_conditions'].clear()
                 return
+
+        self.handle_murder(cat)
 
         game.switches['skip_conditions'].clear()
 
@@ -964,7 +968,7 @@ class Events():
                 if cat.status == 'kitten':
                     med_cat_list = [i for i in Cat.all_cats_list if
                                     i.status in ["medicine cat", "medicine cat apprentice"] and not (
-                                                i.dead or i.outside)]
+                                            i.dead or i.outside)]
 
                     # check if the medicine cat is an elder
                     has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "medicine cat"]
@@ -1305,7 +1309,9 @@ class Events():
                 random_honor = random.choice(TRAITS[cat.trait])
             except KeyError:
                 random_honor = "hard work"
-
+        
+        self.history.add_app_ceremony(cat, random_honor)
+        
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
 
@@ -1725,6 +1731,7 @@ class Events():
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/100
+        # chance to kill leader: 1/100
         if not int(random.random() *
                    100) and cat.status == 'leader' and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
@@ -1762,6 +1769,41 @@ class Events():
                 cat, other_cat, alive_kits, self.at_war, self.enemy_clan,
                 game.clan.current_season)
             return triggered_death
+
+    def handle_murder(self, cat):
+        relationships = cat.relationships.values()
+        targets = []
+
+        # first we grab all hate and resentment relationships, if any
+        hate_relation = [i for i in relationships if i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        targets.extend(hate_relation)
+        resent_relation = [i for i in relationships if i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        targets.extend(resent_relation)
+
+        # if we have some, then we need to decide if this cat will kill
+        if targets:
+            chosen_target = random.choice(targets)
+            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            kill_chance = 120
+
+            # chance to murder grows with the dislike and jealousy value
+            kill_chance -= chosen_target.dislike
+            print('DISLIKE MODIFIER', kill_chance)
+            kill_chance -= chosen_target.jealousy
+            print('JEALOUS MODIFIER', kill_chance)
+
+            # this next part is probably temporary, since the personality rework is coming up so
+            # TODO: when personality rework is out, make sure this is changed to take the rework into account
+            if cat.trait in ["vengeful", "bloodthirsty", "cold"]:
+                kill_chance -= 30
+                print('TRAIT MODIFIER', kill_chance)
+
+            if kill_chance < 1:
+                kill_chance = 1
+            if not int(random.random() * kill_chance):
+                print("KILL KILL KILL")
+                self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, self.at_war,
+                                                self.enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
 
     def handle_mass_extinctions(self, cat):  # pylint: disable=unused-argument
         """Affects random cats in the clan, no cat needs to be passed to this function."""

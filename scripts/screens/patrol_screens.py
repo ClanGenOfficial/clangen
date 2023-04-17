@@ -35,6 +35,7 @@ class PatrolScreen(Screens):
     cat_buttons = {}  # Hold cat image sprites.
     selected_cat = None  # Holds selected cat.
     selected_apprentice_index = 0
+    selected_mate_index = 0
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -60,7 +61,7 @@ class PatrolScreen(Screens):
             # these buttons may not exist.
             if "mate_button" in self.elements:
                 if event.ui_element == self.elements['mate_button']:
-                    self.selected_cat = Cat.all_cats[self.selected_cat.mate]
+                    self.selected_cat = self.mate
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
@@ -84,6 +85,21 @@ class PatrolScreen(Screens):
                 if event.ui_element == self.elements['cycle_app_mentor_right_button']:
                     self.selected_apprentice_index += 1
                     self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+                    self.update_selected_cat()
+                    self.update_button()
+
+            # Check if mate cycle buttons are clicked.
+            if "cycle_mate_left_button" in self.elements:
+                if event.ui_element == self.elements['cycle_mate_left_button']:
+                    self.selected_mate_index -= 1
+                    self.mate = self.selected_cat.mate[self.selected_mate_index]
+                    self.update_selected_cat()
+                    self.update_button()
+
+            if "cycle_mate_right_button" in self.elements:
+                if event.ui_element == self.elements['cycle_mate_right_button']:
+                    self.selected_mate_index += 1
+                    self.mate = self.selected_cat.mate[self.selected_mate_index]
                     self.update_selected_cat()
                     self.update_button()
 
@@ -198,7 +214,6 @@ class PatrolScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
         self.open_choose_cats_screen()
-        cat_profiles()
 
     def update_button(self):
         """" Updates button availabilities. """
@@ -323,11 +338,26 @@ class PatrolScreen(Screens):
                         self.elements['cycle_app_mentor_left_button'].hide()
                         self.elements['cycle_app_mentor_right_button'].hide()
 
+                if 'cycle_mate_right_button' in self.elements and 'cycle_mate_left_button' in self.elements:
+                    if self.selected_mate_index == len(self.selected_cat.mate) - 1:
+                        self.elements['cycle_mate_right_button'].disable()
+                    else:
+                        self.elements['cycle_mate_left_button'].enable()
+
+                    if self.selected_mate_index == 0:
+                        self.elements['cycle_mate_left_button'].disable()
+                    else:
+                        self.elements['cycle_mate_left_button'].enable()
+
+                    if len(self.selected_cat.mate) <= 0:
+                        self.elements['cycle_mate_left_button'].hide()
+                        self.elements['cycle_mate_right_button'].hide()
+
+
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
         self.clear_cat_buttons()
-        cat_profiles()
 
         self.current_patrol = []
         self.current_page = 1
@@ -673,7 +703,7 @@ class PatrolScreen(Screens):
             if u < len(patrol.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    patrol.patrol_cats[u].big_sprite,
+                    patrol.patrol_cats[u].sprite,
                     manager=MANAGER)
                 pos_x += 100
                 if pos_x > 900:
@@ -702,7 +732,7 @@ class PatrolScreen(Screens):
             print('no romance choices')
             return
         if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                and patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
+                and patrol.patrol_leader.ID not in patrol.patrol_random_cat.mate:
             patrol.patrol_event = self.normal_event_choice
             print('not a potential mate or current mate')
             return
@@ -716,7 +746,7 @@ class PatrolScreen(Screens):
         chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
         if get_personality_compatibility(patrol.patrol_leader,
-                                         patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
+                                         patrol.patrol_random_cat) is True or patrol.patrol_leader.ID in patrol.patrol_random_cat.mate:
             chance_of_romance_patrol -= 10
         else:
             chance_of_romance_patrol += 10
@@ -1041,7 +1071,7 @@ class PatrolScreen(Screens):
                 )
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                   pygame.transform.scale(cat.large_sprite, (100, 100))
+                                                                   pygame.transform.scale(cat.sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
             pos_x += 100
             if pos_x >= 600:
@@ -1058,7 +1088,7 @@ class PatrolScreen(Screens):
             i = 0
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                         pygame.transform.scale(cat.large_sprite,
+                                                                         pygame.transform.scale(cat.sprite,
                                                                                                 (100, 100)),
                                                                          cat_object=cat, manager=MANAGER)
                 pos_x += 150
@@ -1135,13 +1165,19 @@ class PatrolScreen(Screens):
         if 'cycle_app_mentor_right_button' in self.elements:
             self.elements['cycle_app_mentor_right_button'].kill()
             del self.elements['cycle_app_mentor_right_button']
+        if 'cycle_mate_left_button' in self.elements:
+            self.elements['cycle_mate_left_button'].kill()
+            del self.elements['cycle_mate_left_button']
+        if 'cycle_mate_right_button' in self.elements:
+            self.elements['cycle_mate_right_button'].kill()
+            del self.elements['cycle_mate_right_button']
 
         if self.selected_cat is not None:
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((640, 350), (300, 300))),
                                                                           pygame.transform.scale(
-                                                                              self.selected_cat.large_sprite,
+                                                                              self.selected_cat.sprite,
                                                                               (300, 300)),
                                                                           manager=MANAGER)
 
@@ -1169,19 +1205,21 @@ class PatrolScreen(Screens):
                                                                           manager=MANAGER)
 
             # Show Cat's Mate, if they have one
-            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
-                if self.selected_cat.mate is not None:
+            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice', 'mediator apprentice']:
+                if len(self.selected_cat.mate) > 0:
+                    if self.selected_mate_index > len(self.selected_cat.mate) - 1:
+                        self.selected_mare_index = 0
+                    self.mate = Cat.fetch_cat(self.selected_cat.mate[self.selected_mate_index])
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((280, 380), (332, 340))),
                         self.mate_frame)
-                    mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((300, 400), (200, 200))),
                         pygame.transform.scale(
-                            mate.large_sprite, (200, 200))
+                            self.mate.sprite, (200, 200))
                         , manager=MANAGER)
                     # Check for name length
-                    name = str(mate.name)  # get name
+                    name = str(self.mate.name)  # get name
                     if 10 <= len(name):  # check name length
                         short_name = name[0:9]
                         name = short_name + '..'
@@ -1196,8 +1234,24 @@ class PatrolScreen(Screens):
                     self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
                                                                  object_id="#patrol_select_button", manager=MANAGER)
                     # Disable mate_button if the cat is not able to go on a patrol
-                    if mate not in self.able_cats:
+                    if self.mate not in self.able_cats:
                         self.elements['mate_button'].disable()
+
+                    # Buttons to cycle between mates
+                    if len(self.selected_cat.mate) > 1:
+                        self.elements['cycle_mate_left_button'] = UIImageButton(
+                            scale(pygame.Rect((296, 780), (68, 68))),
+                            "",
+                            object_id="#arrow_left_button",
+                            manager=MANAGER)
+                        self.elements['cycle_mate_right_button'] = UIImageButton(
+                            scale(pygame.Rect((436, 780), (68, 68))),
+                            "",
+                            object_id="#arrow_right_button",
+                            manager=MANAGER)
+                        self.update_button()
+
+
             # Draw mentor or apprentice
             relation = "should not display"
             if self.selected_cat.status in ['medicine cat apprentice',
@@ -1237,7 +1291,7 @@ class PatrolScreen(Screens):
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((1100, 400), (200, 200))),
                         pygame.transform.scale(
-                            self.app_mentor.large_sprite,
+                            self.app_mentor.sprite,
                             (200, 200)), manager=MANAGER)
 
                     # Button to switch to that cat

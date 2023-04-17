@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.game_structure.windows import RelationshipLog
 
 
 class ChooseMentorScreen(Screens):
@@ -207,7 +208,7 @@ class ChooseMentorScreen(Screens):
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((1200, 300), (300, 300))),
             pygame.transform.scale(
-                self.the_cat.large_sprite,
+                self.the_cat.sprite,
                 (300, 300)),
             manager=MANAGER)
 
@@ -317,7 +318,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((100, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_mentor.large_sprite,
+                    self.selected_mentor.sprite,
                     (300, 300)), manager=MANAGER)
 
             info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
@@ -379,7 +380,7 @@ class ChooseMentorScreen(Screens):
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
-                cat.big_sprite, cat_object=cat, manager=MANAGER)
+                cat.sprite, cat_object=cat, manager=MANAGER)
             pos_x += 120
             if pos_x >= 1100:
                 pos_x = 0
@@ -571,7 +572,6 @@ class FamilyTreeScreen(Screens):
     def screen_switches(self):
         """Set up things that are always on the page"""
 
-        cat_profiles()
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
@@ -661,32 +661,27 @@ class FamilyTreeScreen(Screens):
         x_dim = 160
         y_dim = 180
 
-        self.parents = self.the_cat.get_parents()
+        self.parents = self.the_cat.inheritance.get_parents()
+        self.mates = self.the_cat.inheritance.get_mates()
+        self.kits = self.the_cat.inheritance.get_kits()
+        self.kits_mates = self.the_cat.inheritance.get_kits_mates()
+        self.siblings = self.the_cat.inheritance.get_siblings()
+        self.siblings_mates = self.the_cat.inheritance.get_siblings_mates()
+        self.siblings_kits = self.the_cat.inheritance.get_siblings_kits()
+        self.parents_siblings = self.the_cat.inheritance.get_parents_siblings()
+        self.cousins = self.the_cat.inheritance.get_cousins()
+        self.grandparents = self.the_cat.inheritance.get_grand_parents()
+        self.grandkits = self.the_cat.inheritance.get_grand_kits()
+
         # collect grandparents
         if self.parents:
             y_dim += 196
             y_pos += 196
-            for parent in self.parents:
-                _temp_ob = Cat.fetch_cat(parent)
-                self.grandparents.extend(_temp_ob.get_parents())
-                # collect parent siblings
-                self.parents_siblings.extend(_temp_ob.get_siblings())
-                # collect siblings
             if self.grandparents:
                 y_dim += 160
                 y_pos += 160
 
-            self.siblings.extend(self.the_cat.get_siblings())
             x_dim += 309
-            for sibling in self.siblings:
-                _temp_ob = Cat.fetch_cat(sibling)
-                # collect sibling mates
-                if not _temp_ob.faded:
-                    if _temp_ob.mate:
-                        self.siblings_mates.append(_temp_ob.mate)
-                    self.siblings_mates.extend(_temp_ob.previous_mates)
-                # collect sibling kits
-                self.siblings_kits.extend(_temp_ob.get_children())
             if self.siblings_mates:
                 x_dim += 417
             if self.siblings_kits:
@@ -698,20 +693,8 @@ class FamilyTreeScreen(Screens):
         if self.parents_siblings:
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
-            for sibling in self.parents_siblings:
-                _temp_ob = Cat.fetch_cat(sibling)
-                cousins = _temp_ob.get_children()
-                for cousin in cousins:
-                    if cousin in self.cousins:
-                        continue
-                    else:
-                        self.cousins.append(cousin)
+        
         # collect mates
-        if self.the_cat.mate:
-            self.mates = [self.the_cat.mate]
-        self.mates.extend(self.the_cat.previous_mates)
-
-        self.kits = self.the_cat.get_children()
         if self.mates or self.kits:
             x_pos += 276
             x_dim += 280
@@ -719,15 +702,6 @@ class FamilyTreeScreen(Screens):
         if self.kits:
             if not self.siblings_kits:
                 y_dim += 80
-            for kit in self.kits:
-                _temp_ob = Cat.fetch_cat(kit)
-                # collect kits mates
-                if not _temp_ob.faded:
-                    if _temp_ob.mate:
-                        self.kits_mates.append(_temp_ob.mate)
-                    self.kits_mates.extend(_temp_ob.previous_mates)
-                # collect grandkits
-                self.grandkits.extend(_temp_ob.get_children())
             if self.kits_mates:
                 x_pos += 202
                 x_dim += 202
@@ -883,13 +857,27 @@ class FamilyTreeScreen(Screens):
         i = 0
         for kitty in display_cats:
             _kitty = Cat.fetch_cat(kitty)
+            info_text = f"{str(_kitty.name)}"
+            additional_info = self.the_cat.inheritance.get_cat_info(kitty)
+            if len(additional_info["type"]) > 0: # types is always real
+                rel_types = [str(rel_type.value) for rel_type in additional_info["type"]]
+                rel_types = set(rel_types) # remove duplicates
+                if "" in rel_types: 
+                    rel_types.remove("")       # removes empty
+                if len(rel_types) > 0:
+                    info_text += "\n"
+                    info_text += ', '.join(rel_types)
+                if len(additional_info["additional"]) > 0:
+                    add_info = set(additional_info["additional"]) # remove duplicates
+                    info_text += "\n"
+                    info_text += ', '.join(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
-                _kitty.big_sprite,
+                _kitty.sprite,
                 cat_id=_kitty.ID,
                 manager=MANAGER,
-                tool_tip_text=str(_kitty.name)
+                tool_tip_text=info_text
             )
 
             pos_x += 100
@@ -1098,6 +1086,7 @@ class ChooseMateScreen(Screens):
     mate = None
     current_page = 1
     selected_cat = None
+    selected_mate_index = 0
 
     cat_list_buttons = {}
 
@@ -1119,6 +1108,8 @@ class ChooseMateScreen(Screens):
         self.mate_frame = None
         self.the_cat_frame = None
         self.info = None
+        self.cycle_mate_left_button = None
+        self.cycle_mate_right_button = None
         self.all_pages = []
 
     def handle_event(self, event):
@@ -1126,20 +1117,44 @@ class ChooseMateScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element in self.cat_list_buttons.values():
-                if self.the_cat.mate is None:
+                if len(self.the_cat.mate) < 1 or self.selected_mate_index == len(self.the_cat.mate):
                     self.selected_cat = event.ui_element.return_cat_object()
                     self.update_buttons()
                     self.update_choose_mate()
                 else:
                     # if the cat already has a mate, then it lists offspring instead. Take to profile.
                     game.switches['cat'] = event.ui_element.return_cat_object().ID
+                    self.update_buttons()
                     self.change_screen("profile screen")
             # return to profile screen
             elif event.ui_element == self.back_button:
+                self.selected_mate_index = 0
                 self.change_screen('profile screen')
 
-            if event.ui_element == self.toggle_mate:
-                if self.the_cat.mate is None:
+            # Check if mate cycle buttons are clicked.
+            if event.ui_element == self.cycle_mate_left_button:
+                self.selected_mate_index -= 1
+                if self.selected_mate_index < len(self.the_cat.mate):
+                    self.selected_cat = self.the_cat.mate[self.selected_mate_index]
+                    self.update_mate_screen()
+                else:
+                    self.selected_cat = None
+                    self.update_choose_mate()
+                self.update_current_cat_info()
+                self.update_buttons()
+            elif event.ui_element == self.cycle_mate_right_button:
+                self.selected_mate_index += 1
+                if self.selected_mate_index < len(self.the_cat.mate):
+                    self.selected_cat = self.the_cat.mate[self.selected_mate_index]
+                    self.update_mate_screen()
+                else:
+                    self.selected_cat = None
+                    self.update_choose_mate()
+                self.update_current_cat_info()
+                self.update_buttons()
+
+            elif event.ui_element == self.toggle_mate:
+                if self.selected_cat and self.selected_cat.ID not in self.the_cat.mate:
                     self.the_cat.set_mate(self.selected_cat)
                     self.update_mate_screen()
                 else:
@@ -1148,18 +1163,20 @@ class ChooseMateScreen(Screens):
                 self.update_cat_list()
             elif event.ui_element == self.previous_cat_button:
                 game.switches["cat"] = self.previous_cat
+                self.selected_mate_index = 0
                 self.update_current_cat_info()
                 self.update_buttons()
             elif event.ui_element == self.next_cat_button:
                 game.switches["cat"] = self.next_cat
+                self.selected_mate_index = 0
                 self.update_current_cat_info()
                 self.update_buttons()
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
-                self.update_cat_page()
+                self.update_cat_list()
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
-                self.update_cat_page()
+                self.update_cat_list()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1183,6 +1200,14 @@ class ChooseMateScreen(Screens):
                                                               "resources/images/choosing_cat2_frame_mate.png").convert_alpha(),
                                                           (532, 394)))
 
+        self.cycle_mate_left_button = UIImageButton(scale(pygame.Rect((1216, 616), (68, 68))),"",
+                            object_id="#arrow_left_button",
+                            manager=MANAGER)
+
+        self.cycle_mate_right_button = UIImageButton(scale(pygame.Rect((1416, 616), (68, 68))),"",
+                            object_id="#arrow_right_button",
+                            manager=MANAGER)
+
         self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
                                                  object_id="#previous_cat_button")
         self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "",
@@ -1205,14 +1230,13 @@ class ChooseMateScreen(Screens):
         self.kitten_message = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 666), (1200, 80))),
                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"))
         self.kitten_message.hide()
-        
-        self.all_pages = []
 
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
 
     def exit_screen(self):
+        self.selected_mate_index = 0
         for ele in self.current_cat_elements:
             self.current_cat_elements[ele].kill()
         self.current_cat_elements = {}
@@ -1247,7 +1271,11 @@ class ChooseMateScreen(Screens):
         del self.toggle_mate
         self.kitten_message.kill()
         del self.kitten_message
-        
+        self.cycle_mate_left_button.kill()
+        del self.cycle_mate_left_button
+        self.cycle_mate_right_button.kill()
+        del self.cycle_mate_right_button
+
         self.all_pages = []
 
     def update_current_cat_info(self):
@@ -1273,7 +1301,7 @@ class ChooseMateScreen(Screens):
 
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((100, 300), (300, 300))),
                                                                          pygame.transform.scale(
-                                                                             self.the_cat.large_sprite, (300, 300)))
+                                                                             self.the_cat.sprite, (300, 300)))
         name = str(self.the_cat.name)  # get name
         if 11 <= len(name):  # check name length
             short_name = str(name)[0:9]
@@ -1291,9 +1319,9 @@ class ChooseMateScreen(Screens):
                                                                           manager=MANAGER
                                                                           )
 
-        # Determine what to draw regarding the othe cat. If they have a mate, set the screen up for that.
+        # Determine what to draw regarding the other cat. If they have a mate, set the screen up for that.
         # if they don't, set the screen up to choose a mate.
-        if self.the_cat.mate is not None:
+        if len(self.the_cat.mate) > 0 and self.selected_mate_index < len(self.the_cat.mate):
             self.update_mate_screen()
         else:
             self.update_choose_mate()
@@ -1314,13 +1342,27 @@ class ChooseMateScreen(Screens):
         else:
             self.previous_cat_button.enable()
 
+        # allow also one index above the mate amount, to be able to select a new one
+        if len(self.the_cat.mate) <= 0:
+            self.cycle_mate_left_button.hide()
+            self.cycle_mate_right_button.hide()
+        else:
+            self.cycle_mate_left_button.show()
+            self.cycle_mate_right_button.show()
+            self.cycle_mate_left_button.enable()
+            self.cycle_mate_right_button.enable()
+            if self.selected_mate_index == len(self.the_cat.mate): 
+                self.cycle_mate_right_button.disable()
+            if self.selected_mate_index == 0:
+                self.cycle_mate_left_button.disable()
+
     def update_mate_screen(self):
         """Sets up the screen for a cat with a mate already."""
         for ele in self.mate_elements:
             self.mate_elements[ele].kill()
         self.mate_elements = {}
 
-        self.selected_cat = Cat.all_cats[self.the_cat.mate]
+        self.selected_cat = Cat.fetch_cat(self.the_cat.mate[self.selected_mate_index])
 
         self.draw_compatible_line_affection()
         self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(scale(pygame.Rect((600, 376), (400, 156))),
@@ -1331,7 +1373,7 @@ class ChooseMateScreen(Screens):
 
         self.mate_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1200, 300), (300, 300))),
                                                                   pygame.transform.scale(
-                                                                      self.selected_cat.large_sprite, (300, 300)))
+                                                                      self.selected_cat.sprite, (300, 300)))
         name = str(self.selected_cat.name)
         if 11 <= len(name):  # check name length
             short_name = str(name)[0:9]
@@ -1362,19 +1404,37 @@ class ChooseMateScreen(Screens):
             self.kitten_message.set_text("This pair has never had offspring.")
         self.kitten_message.show()
 
+        if len(self.the_cat.mate) <= 0:
+            self.cycle_mate_left_button.hide()
+            self.cycle_mate_right_button.hide()
+        else:
+            self.cycle_mate_left_button.show()
+            self.cycle_mate_right_button.show()
+            self.cycle_mate_left_button.enable()
+            self.cycle_mate_right_button.enable()
+            if self.selected_mate_index == len(self.the_cat.mate): 
+                self.cycle_mate_right_button.disable()
+            if self.selected_mate_index == 0:
+                self.cycle_mate_left_button.disable()
+
     def update_cat_list(self):
         """Gathers all the cats to list, then updates the page. Also 
             sets the current page to 1. This should not be called when
             switching the page, but only when a new list of cats needs
             to be displayed. """
-        
+
         # If the cat already has a mate, we display the children. If not, we display the possible mates
         self.all_pages = []
-        if self.selected_cat and self.the_cat.mate:
+        if self.selected_cat and self.selected_cat.ID in self.the_cat.mate:
             self.kittens = False
             for x in game.clan.clan_cats:
-                if self.the_cat.ID in Cat.all_cats[x].get_parents() and \
-                        self.selected_cat.ID in Cat.all_cats[x].get_parents():
+                if self.the_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ] and self.selected_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ]:
                     self.all_pages.append(Cat.all_cats[x])
                     self.kittens = True
         else:
@@ -1385,7 +1445,7 @@ class ChooseMateScreen(Screens):
         self.update_cat_page()
 
     def update_cat_page(self):
-         # If the number of pages becomes smaller than the number of our current page, set
+        # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.current_page > len(self.all_pages):
             self.current_page = max(len(self.all_pages), 1)
@@ -1423,13 +1483,12 @@ class ChooseMateScreen(Screens):
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
-                cat.big_sprite, cat_object=cat)
+                cat.sprite, cat_object=cat)
             pos_x += 120
             if pos_x >= 1100:
                 pos_x = 0
                 pos_y += 120
-            i += 1
-        
+            i += 1        
 
     def update_choose_mate(self, breakup=False):
         """This sets up the page for choosing a mate. Called when the current cat doesn't have a mate, or if
@@ -1457,7 +1516,7 @@ class ChooseMateScreen(Screens):
             self.mate_elements["image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((1200, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_cat.large_sprite, (300, 300)))
+                    self.selected_cat.sprite, (300, 300)))
 
             name = str(self.selected_cat.name)
             if 11 <= len(name):  # check name length
@@ -1621,26 +1680,13 @@ class ChooseMateScreen(Screens):
         """Get a list of valid mates for the current cat"""
         valid_mates = []
         for relevant_cat in Cat.all_cats_list:
-            invalid_age = relevant_cat.age not in ['newborn', 'kitten', 'adolescent']
-
-            # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
-            # don't want here.
-            direct_related = self.the_cat.is_sibling(relevant_cat) or self.the_cat.is_parent(relevant_cat) \
-                             or relevant_cat.is_parent(self.the_cat) or relevant_cat.is_grandparent(self.the_cat) \
-                             or self.the_cat.is_grandparent(relevant_cat)
-            indirect_related = self.the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(self.the_cat)
-
-            if not game.settings["first_cousin_mates"]:
-                indirect_related = indirect_related or relevant_cat.is_cousin(self.the_cat)
-
-            related = direct_related or indirect_related
-
-            not_available = (relevant_cat.dead != self.the_cat.dead) or (relevant_cat.outside != self.the_cat.outside) or relevant_cat.faded
-
-            if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
-                    and not not_available and relevant_cat.mate is None:
+            if relevant_cat.ID == self.the_cat.ID:
+                continue
+            if self.the_cat.is_potential_mate(
+                    relevant_cat,
+                    for_love_interest=False,
+                    age_restriction=False):
                 valid_mates.append(relevant_cat)
-
         return valid_mates
 
     def chunks(self, L, n):
@@ -1693,6 +1739,7 @@ class RelationshipScreen(Screens):
         self.back_button = None
         self.next_cat_button = None
         self.previous_cat_button = None
+        self.log_icon = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -1719,6 +1766,16 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
                 self.update_cat_page()
+            elif event.ui_element == self.log_icon:
+                if self.inspect_cat.ID not in self.the_cat.relationships:
+                    return
+                RelationshipLog(
+                    self.the_cat.relationships[self.inspect_cat.ID],
+                    [self.view_profile_button, self.switch_focus_button,\
+                        self.next_cat_button,self.previous_cat_button,self.next_page_button],
+                    [self.back_button, self.log_icon, self.checkboxes["show_dead"], self.checkboxes["show_empty"],\
+                     self.show_dead_text, self.show_empty_text]
+                )
             elif event.ui_element == self.checkboxes["show_dead"]:
                 if game.settings['show dead relation']:
                     game.settings['show dead relation'] = False
@@ -1737,7 +1794,6 @@ class RelationshipScreen(Screens):
                 self.update_cat_page()
 
     def screen_switches(self):
-        cat_profiles()
 
         self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
                                                  object_id="#previous_cat_button")
@@ -1752,6 +1808,7 @@ class RelationshipScreen(Screens):
                                                             object_id="#text_box_30_horizleft")
         self.show_empty_text = pygame_gui.elements.UITextBox("Show Empty", scale(pygame.Rect((220, 1100), (200, 60))),
                                                              object_id="#text_box_30_horizleft")
+
         # Draw the checkboxes
         self.update_checkboxes()
 
@@ -1769,6 +1826,10 @@ class RelationshipScreen(Screens):
         self.view_profile_button = UIImageButton(scale(pygame.Rect((170, 840), (272, 60))), "",
                                                  object_id="#view_profile_button")
         self.view_profile_button.disable()
+
+        self.log_icon = UIImageButton(scale(pygame.Rect((445, 808), (68, 68))), "",
+                                                 object_id="#log_icon")
+        self.log_icon.disable()
 
         # Updates all info for the currently focused cat.
         self.update_focus_cat()
@@ -1816,6 +1877,8 @@ class RelationshipScreen(Screens):
         del self.switch_focus_button
         self.view_profile_button.kill()
         del self.view_profile_button
+        self.log_icon.kill()
+        del self.log_icon
 
     def get_previous_next_cat(self):
         """Determines where the previous the next buttons should lead, and enables/diables them"""
@@ -1914,7 +1977,7 @@ class RelationshipScreen(Screens):
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_22_horizleft"))
         self.focus_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((50, 150), (100, 100))),
-                                                                       self.the_cat.big_sprite)
+                                                                       self.the_cat.sprite)
 
         self.get_previous_next_cat()
         self.apply_cat_filter(self.search_bar.get_text())
@@ -1946,12 +2009,13 @@ class RelationshipScreen(Screens):
             # Cat Image
             self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((150, 290), (300, 300))),
                                                                              pygame.transform.scale(
-                                                                                 self.inspect_cat.large_sprite,
+                                                                                 self.inspect_cat.sprite,
                                                                                  (300, 300)))
 
             related = False
             # Mate Heart
-            if self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
+            # TODO: UI UPDATE IS NEEDED
+            if len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(scale(pygame.Rect((90, 300), (44, 40))),
                                                                                 pygame.transform.scale(
                                                                                     image_cache.load_image(
@@ -1959,19 +2023,8 @@ class RelationshipScreen(Screens):
                                                                                     (44, 40)))
             else:
                 # Family Dot
-                # Only show family dot on cousins if first cousin mates are disabled.
-                if game.settings['first_cousin_mates']:
-                    check_cousins = False
-                else:
-                    check_cousins = self.inspect_cat.is_cousin(self.the_cat)
-
-                if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat) \
-                        or self.inspect_cat.is_grandparent(self.the_cat) or \
-                        self.the_cat.is_grandparent(self.inspect_cat) or \
-                        self.inspect_cat.is_parent(self.the_cat) or \
-                        self.the_cat.is_parent(self.inspect_cat) or \
-                        self.inspect_cat.is_sibling(self.the_cat) or check_cousins:
-                    related = True
+                related = self.the_cat.is_related(self.inspect_cat, game.settings["first_cousin_mates"])
+                if related:
                     self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((90, 300), (36, 36))),
                         pygame.transform.scale(
@@ -2016,9 +2069,9 @@ class RelationshipScreen(Screens):
             col2 = ""
 
             # Mate
-            if self.inspect_cat.mate is not None and self.the_cat.ID != self.inspect_cat.mate:
+            if len(self.inspect_cat.mate) > 0 and self.the_cat.ID not in self.inspect_cat.mate:
                 col2 += "has a mate\n"
-            elif self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
+            elif len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
                 col2 += f"{self.the_cat.name}'s mate\n"
             else:
                 col2 += "mate: none\n"
@@ -2063,12 +2116,15 @@ class RelationshipScreen(Screens):
             if self.inspect_cat.dead:
                 self.view_profile_button.enable()
                 self.switch_focus_button.disable()
+                self.log_icon.enable()
             else:
                 self.view_profile_button.enable()
                 self.switch_focus_button.enable()
+                self.log_icon.enable()
         else:
             self.view_profile_button.disable()
             self.switch_focus_button.disable()
+            self.log_icon.disable()
 
     def apply_cat_filter(self, search_text=""):
         # Filter for dead or empty cats
@@ -2149,7 +2205,7 @@ class RelationshipScreen(Screens):
         pos_y = pos[1]
 
         self.sprite_buttons["image" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x + 44, pos_y), (100, 100))),
-                                                               the_relationship.cat_to.big_sprite,
+                                                               the_relationship.cat_to.sprite,
                                                                cat_object=the_relationship.cat_to)
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
@@ -2159,8 +2215,8 @@ class RelationshipScreen(Screens):
             name = short_name + '...'
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x - 5, pos_y - 48),
-                                                                                         (215, 60))),
+                                                                                         (pos_x, pos_y - 48),
+                                                                                         (204, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
@@ -2184,7 +2240,7 @@ class RelationshipScreen(Screens):
 
         related = False
         # MATE
-        if self.the_cat.mate is not None and self.the_cat.mate != '' and the_relationship.cat_to.ID == self.the_cat.mate:
+        if len(self.the_cat.mate) > 0 and the_relationship.cat_to.ID in self.the_cat.mate:
 
             self.relation_list_elements['mate_icon' + str(i)] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((pos_x + 10, pos_y + 10),
@@ -2598,7 +2654,7 @@ class MediationScreen(Screens):
             self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x_value, 180), (300, 300))),
                 pygame.transform.scale(
-                    mediator.large_sprite, (300, 300)))
+                    mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
             if len(name) > 17:
@@ -2675,7 +2731,7 @@ class MediationScreen(Screens):
         y = 970
         for cat in self.all_cats[self.page - 1]:
             self.cat_buttons.append(
-                UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.big_sprite, cat_object=cat)
+                UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
             )
             x += 110
             if x > 1400:
@@ -2710,7 +2766,7 @@ class MediationScreen(Screens):
         self.selected_cat_elements["cat_image" + tag] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((x + 100, y + 14), (200, 200))),
             pygame.transform.scale(
-                cat.big_sprite, (200, 200)))
+                cat.sprite, (200, 200)))
 
         name = str(cat.name)
         if len(name) > 17:
@@ -2740,7 +2796,7 @@ class MediationScreen(Screens):
 
         related = False
         # MATE
-        if other_cat and cat.mate and cat.mate == other_cat.ID:
+        if other_cat and len(cat.mate) > 0 and other_cat.ID in cat.mate:
             self.selected_cat_elements['mate_icon' + tag] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x + 28, y + 28),
                                   (44, 40))),
@@ -2789,12 +2845,12 @@ class MediationScreen(Screens):
                                                                                  manager=MANAGER)
 
         mates = False
-        if cat.mate:
+        if len(cat.mate) > 0:
             col2 = "has a mate"
             if other_cat:
-                if cat.mate == other_cat.ID:
+                if other_cat.ID in cat.mate:
                     mates = True
-                    col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
+                    col2 = f"{other_cat.name}'s mate"
         else:
             col2 = "mate: none"
 

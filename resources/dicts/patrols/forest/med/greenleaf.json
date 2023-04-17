@@ -662,7 +662,7 @@
     "chance_of_success": 30,
     "exp": 10,
     "success_text": [
-            "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them",
+            "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
             "The bushes have responded to the sun's call with great enthusiasm, exploding outward in chaotic growth. p_l finds it heartening, seeing the goldenrod fight its own territorial battles against the plants next to it, bursting with health. The plant won't miss what they take, not even with so many here to carry off material for c_n's stores.",
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
@@ -1360,10 +1360,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c died before completing their medicine cat training, from accidentally eating deathberries."
-    ]
+    "history_text": {
+        "reg_death": "r_c died before completing their medicine cat training, from accidentally eating deathberries."
+    }
 },
 {
     "patrol_id": "fst_med_gatheringtansy_greenleaf1",

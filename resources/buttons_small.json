@@ -416,7 +416,11 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/back_hover.png"
-            }
+            },
+			"disabled_image":
+            {
+				"path": "resources/images/buttons/back_unavailable.png"
+			}
         }
     },
     "#exit_window_button":
@@ -4739,7 +4743,30 @@
                 "path":"resources/images/buttons/siblings.png"
             }
         }
-  }
+  },
+  "#log_icon":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/log_icon.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/log_icon_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/log_icon_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/log_icon_unavailable.png"
+            }
+        }
+    }
 }
 
 

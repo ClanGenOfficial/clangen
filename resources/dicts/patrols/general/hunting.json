@@ -17,9 +17,7 @@
         "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 3
     },
     {
         "patrol_id": "gen_hunt_mouse3",
@@ -404,10 +402,7 @@
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "win_trait": ["sneaky", "careful", "calm"],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": []
+        "max_cats": 6
 }
 
 ]

@@ -134,7 +134,8 @@ class Game():
         'favorite_sub_tab': None,
         'root_cat': None,
         'window_open': False,
-        'skip_conditions': []
+        'skip_conditions': [],
+        'show_history_moons': False,
     }
     all_screens = {}
     cur_events = {}
@@ -373,14 +374,13 @@ class Game():
                 "trait": inter_cat.trait,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
+                "adoptive_parents": inter_cat.adoptive_parents,
                 "mentor": inter_cat.mentor if inter_cat.mentor else None,
                 "former_mentor": [cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
-                "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
-                "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
                 "no_kits": inter_cat.no_kits,
                 "exiled": inter_cat.exiled,
@@ -397,6 +397,7 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
+                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
@@ -415,14 +416,8 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr for appr in inter_cat.apprentice],
                 "former_apprentices": [appr for appr in inter_cat.former_apprentices],
-                "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
-                "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
                 "outside": inter_cat.outside,
-                "corruption": inter_cat.corruption if inter_cat.corruption else 0,
-                "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
-                "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
-                "virtues": inter_cat.virtues if inter_cat.virtues else [],
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,
@@ -431,8 +426,12 @@ class Game():
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()
+            if inter_cat.history:
+                inter_cat.save_history(directory + '/history')
+                # after saving, dump the history info
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
+
         try:
             with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
@@ -456,9 +455,10 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if inter_cat.mate:
-                if inter_cat.mate in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.mate].mate = None
+            if len(inter_cat.mate):
+                for mate_id in inter_cat.mate:
+                    if mate_id in self.cat_class.all_cats:
+                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
 
             # If they have parents, add them to their parents "faded offspring" list:
             if inter_cat.parent1:

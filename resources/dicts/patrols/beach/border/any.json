@@ -26,11 +26,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/r_c/poss} patrol.",
+        "reg_death": "This cat was killed when rogues ambushed {PRONOUN/r_c/poss} patrol.",
+        "lead_death": "killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_rogue2",
@@ -42,7 +42,7 @@
     "chance_of_success": 10,
     "exp": 30,
     "success_text": [
-        "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/m_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
+        "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
         null,
         "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
         null
@@ -59,11 +59,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was killed when rogues ambushed them while on a solo patrol.",
-        "killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
+        "lead_death": "killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_rogue3",
@@ -92,11 +91,11 @@
     "max_cats": 6,
     "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
     "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
-    "history_text": [
-        "r_c was badly scarred when rogues attacked their patrol.",
-        "This cat was killed when rogues attacked their patrol.",
-        "killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues attacked their patrol.",
+        "reg_death": "This cat was killed when rogues attacked their patrol.",
+        "lead_death": "killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflood1",
@@ -125,11 +124,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflood2",
@@ -158,11 +156,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflood3",
@@ -191,11 +188,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was injured in a flood.",
-            "r_c was drowned by floodwaters.",
-            "drowned in floodwaters"
-    ]
+    "history_text": {
+        "scar": "r_c was injured in a flood.",
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflood4",
@@ -224,9 +221,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was injured in a flood."
-    ]
+    "history_text": {
+        "scar": "r_c was injured in a flood."
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue1",
@@ -256,11 +253,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-            "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue2",
@@ -290,11 +287,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-            "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue3",
@@ -322,11 +319,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-            "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue4",
@@ -356,9 +353,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue5",
@@ -388,9 +385,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue6",
@@ -418,10 +415,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue7",
@@ -478,10 +474,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "bch_bord_trackrogue9",

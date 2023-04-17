@@ -207,9 +207,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c was scarred after disappearing on patrol and being discovered injured."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-fall_solorat1",
@@ -319,9 +319,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting a swarm of rats."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting a swarm of rats."
+    }
     },
     {    
         "patrol_id": "fst_hunt_leaf-fall_ratking1",
@@ -359,9 +359,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-                "r_c was scarred fighting a rat king."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred fighting a rat king."
+    }
     },
     {    
         "patrol_id": "fst_hunt_leaf-fall_ratking2",
@@ -397,10 +397,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c died from their wounds after battling the rat king."
-        ]
+        "history_text": {
+        "reg_death": "r_c died from their wounds after battling the rat king."
+    }
     },
     {
         "patrol_id": "fst_hunt_leaf-fall_lillizard1",
@@ -531,10 +530,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_leaf-fallscavenge2",
@@ -599,9 +597,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_fox_leaf-fallscavenge3",
@@ -665,11 +663,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox.",
-        "died while fighting a fox"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died while fighting a fox"
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge1",
@@ -734,10 +732,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge2",
@@ -797,9 +794,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge3",
@@ -862,10 +859,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen7",
@@ -926,11 +922,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox.",
-        "died while fighting a vixen"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight.",
+        "reg_death": "r_c fell in battle with a fox.",
+        "lead_death": "died while fighting a vixen"
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen8",
@@ -987,9 +983,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a red fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_redvixen9",
@@ -1050,11 +1046,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a red vixen.",
-        "r_c fell in a solo battle with a red vixen.",
-        "died while fighting a vixen"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a red vixen.",
+        "lead_death": "died while fighting a vixen"
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen7",
@@ -1112,10 +1108,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen8",
@@ -1173,9 +1168,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a red fox fight."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
 },
 {
     "patrol_id": "fst_hunt_grayvixen9",
@@ -1232,9 +1227,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a gray vixen."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
 },
 {
     "patrol_id": "fst_hunt_mouse3",
@@ -1419,7 +1414,7 @@
     "success_text": [
         "You've got to take your opportunities as you can find them, so even though the static in the air makes their whiskers feel quivery, r_c heads out. They find a small f_tp_s and pin a f_mp_s down under a oak tree painted with leaf-fall's brilliant colors, heading back to camp well before the storm breaks.",
         "r_c puts the way their whiskers feel about the wind to one side, focusing on hunting around a blackberry bramble near camp. The prey is attracted to the berries like moths to fireflies, and it makes them reskless as they gorge themselves. A old f_tp_s and two f_tp_p fall to r_c before the forest creatures wise up to the hunter's presence.",
-        "Keen to be back in their nest before the storm breaks, s_c uses teh darkness of the thick gray clouds to their advantage. In the thick forest undergrowth, they quickly catch a f_mp_s and two f_tp_s, trotting back home with a sense of urgency in their steps.",
+        "Keen to be back in their nest before the storm breaks, s_c uses the darkness of the thick gray clouds to their advantage. In the thick forest undergrowth, they quickly catch a f_mp_s and two f_tp_s, trotting back home with a sense of urgency in their steps.",
         "Not keen to get caught out in any kind of storm, s_c hunts carefully rather than boldly, choosing a hunting ground with a clear quick path back to camp. There they manage to find a f_mp_s out on its own foraging trip, scooping it up with a clean bite to the throat and trotting home. On the way back to camp, a f_tp_s crosses the path in front of them, and s_c adds it to their collection in an undignified scramble, dropping the f_mp_s and throwing themselves after the f_tp_s."
     ],
     "fail_text": [

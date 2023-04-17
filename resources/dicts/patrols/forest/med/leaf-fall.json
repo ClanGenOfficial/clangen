@@ -1224,10 +1224,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c died before completing their medicine cat training, having accidentally eaten deathberries."
-    ]
+    "history_text": {
+        "reg_death": "r_c died before completing their medicine cat training, having accidentally eaten deathberries."
+    }
 },
 {
     "patrol_id": "fst_med_gatheringtansy_leaf-fall1",

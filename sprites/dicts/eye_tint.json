@@ -1,0 +1,42 @@
+{
+  "colour_groups":
+  {
+    "YELLOW": "yellow",
+    "AMBER": "brown",
+    "HAZEL": "brown", 
+    "PALEGREEN": "green", 
+    "GREEN": "green",
+    "BLUE": "blue",
+    "DARKBLUE": "blue",
+    "GREY": "monochrome", 
+    "CYAN": "blue",
+    "EMERALD": "green", 
+    "PALEBLUE": "blue", 
+    "PALEYELLOW": "yellow", 
+    "GOLD": "yellow", 
+    "HEATHERBLUE": "blue", 
+    "COPPER": "brown", 
+    "SAGE": "green", 
+    "COBALT": "blue", 
+    "SUNLITICE": "special",
+    "GREENYELLOW": "green", 
+    "BRONZE": "brown", 
+    "SILVER": "blue"
+  },
+  "possible_tints": {
+    "basic": ["orange", "blue", "green", "none", "none"],
+    "yellow": [],
+    "brown": [],
+    "green": [],
+    "blue": [],
+    "monochrome": [],
+    "special": []
+  },
+  "tint_colours":
+  {
+    "orange": [255, 230, 214],
+    "blue": [214, 230, 255],
+    "green": [214, 255, 224],
+    "none": null
+  }
+}
