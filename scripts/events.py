@@ -91,6 +91,10 @@ class Events():
                 for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
 
+        # age up the clan, set current season
+        game.clan.age += 1
+        get_current_season()
+        # print(game.clan.current_season)
         self.pregnancy_events.handle_pregnancy_age(game.clan)
 
         if game.clan.game_mode in ['expanded', 'cruel season'
@@ -217,10 +221,7 @@ class Events():
 
         self.check_clan_relations()
 
-        # age up the clan, set current season
-        game.clan.age += 1
-        get_current_season()
-        # print(game.clan.current_season)
+
 
         self.herb_destruction()
         self.herb_gather()
@@ -905,7 +906,6 @@ class Events():
                 game.clan.new_leader(game.clan.deputy)
                 game.clan.leader_lives = 9
                 text = ''
-                self.handle_leadership_ceremony(game.clan.deputy)
                 if game.clan.deputy.trait == 'bloodthirsty':
                     text = f'{game.clan.deputy.name} has become the new leader. ' \
                            f'They stare down at their Clanmates with unsheathed claws, ' \
@@ -1310,7 +1310,8 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
         
-        self.history.add_app_ceremony(cat, random_honor)
+        if cat.status in ["warrior", "medicine cat", "mediator"]:
+            self.history.add_app_ceremony(cat, random_honor)
         
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
@@ -1418,162 +1419,6 @@ class Events():
         self.ceremony_accessory = False
 
         return
-
-    def handle_leadership_ceremony(self, cat):
-        """
-        TODO: DOCS
-        """
-        queen = ""
-        warrior = ""
-        kit = ""
-        warrior2 = ""
-        app = ""
-        elder = ""
-        warrior3 = ""
-        med_cat = ""
-        prev_lead = ""
-        known = None
-        virtues = None
-        if len(cat.life_givers) == 0:
-            queen_virtues = [
-                "affection", "compassion", "empathy", "duty", "protection",
-                "pride"
-            ]
-            warrior_virtues = [
-                "acceptance", "bravery", "certainty", "clear judgement",
-                "confidence"
-            ]
-            kit_virtues = [
-                "adventure", "curiosity", "forgiveness", "hope", "perspective",
-                "protection"
-            ]
-            warrior2_virtues = [
-                "courage", "determination", "endurance", "sympathy"
-            ]
-            app_virtues = [
-                "happiness", "honesty", "humor", "justice", "mentoring",
-                "trust"
-            ]
-            elder_virtues = [
-                "empathy", "grace", "humility", "integrity", "persistence",
-                "resilience"
-            ]
-            warrior3_virtues = [
-                "farsightedness", "friendship", "instincts", "mercy",
-                "strength", "unity"
-            ]
-            med_cat_virtues = [
-                "clear sight", "devotion", "faith", "healing", "patience",
-                "selflessness", "wisdom"
-            ]
-            prev_lead_virtues = [
-                "endurance in the face of hardship",
-                "knowing when to fight and when to choose peace",
-                "leadership through the darkest times",
-                "loyalty to their Clan",
-                "the strength to overcome their fears", "tireless energy"
-            ]
-            virtues = [
-                random.choice(queen_virtues),
-                random.choice(warrior_virtues),
-                random.choice(kit_virtues),
-                random.choice(warrior2_virtues),
-                random.choice(app_virtues),
-                random.choice(elder_virtues),
-                random.choice(warrior3_virtues),
-                random.choice(med_cat_virtues),
-                random.choice(prev_lead_virtues)
-            ]
-            known = [
-                False, False, False, False, False, False, False, False, False
-            ]
-
-            for i in reversed(game.clan.starclan_cats):
-                c = Cat.all_cats[i]
-                if c.dead and not c.outside and not c.df:
-                    if not queen and c.status == 'queen':
-                        queen = str(c.name)
-                        known[0] = True
-                        continue
-                    elif not kit and c.status == 'kitten':
-                        kit = str(c.name)
-                        known[2] = True
-                        continue
-                    elif not app and c.status == 'apprentice':
-                        app = str(c.name)
-                        known[4] = True
-                        continue
-                    elif not prev_lead and c.status == 'leader':
-                        prev_lead = str(c.name)
-                        known[8] = True
-                        continue
-                    elif not elder and c.status == 'elder':
-                        elder = str(c.name)
-                        known[5] = True
-                        continue
-                    elif not warrior and c.status == 'warrior':
-                        warrior = str(c.name)
-                        known[1] = True
-                        continue
-                    elif not warrior2 and c.status == 'warrior':
-                        warrior2 = str(c.name)
-                        known[3] = True
-                        continue
-                    elif not warrior3 and c.status == 'warrior':
-                        warrior3 = str(c.name)
-                        known[6] = True
-                        continue
-                    elif not med_cat and (c.status == 'medicine cat'
-                                          or c.status
-                                          == 'medicine cat apprentice'):
-                        med_cat = str(c.name)
-                        known[7] = True
-                        continue
-                    if queen and warrior and kit and warrior2 and \
-                            app and elder and warrior3 and med_cat and prev_lead:
-                        break
-            if not queen:
-                queen = random.choice(names.names_dict["normal_prefixes"]) + \
-                        random.choice(names.names_dict["normal_suffixes"])
-            if not warrior:
-                warrior = random.choice(names.names_dict["normal_prefixes"]) + \
-                          random.choice(names.names_dict["normal_suffixes"])
-            if not kit:
-                kit = random.choice(
-                    names.names_dict["normal_prefixes"]) + "kit"
-            if not warrior2:
-                warrior2 = random.choice(names.names_dict["normal_prefixes"]) + \
-                           random.choice(names.names_dict["normal_suffixes"])
-            if not app:
-                app = random.choice(
-                    names.names_dict["normal_prefixes"]) + "paw"
-            if not elder:
-                elder = random.choice(names.names_dict["normal_prefixes"]) + \
-                        random.choice(names.names_dict["normal_suffixes"])
-            if not warrior3:
-                warrior3 = random.choice(names.names_dict["normal_prefixes"]) + \
-                           random.choice(names.names_dict["normal_suffixes"])
-            if not med_cat:
-                med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
-                          random.choice(names.names_dict["normal_suffixes"])
-            if not prev_lead:
-                prev_lead = random.choice(names.names_dict["normal_prefixes"]) + "star"
-            cat.life_givers.extend([
-                queen, warrior, kit, warrior2, app, elder, warrior3, med_cat,
-                prev_lead
-            ])
-            cat.known_life_givers.extend(known)
-            cat.virtues.extend(virtues)
-        else:
-            queen, warrior, kit, warrior2, app, elder = cat.life_givers[0], \
-                                                        cat.life_givers[1], \
-                                                        cat.life_givers[2], \
-                                                        cat.life_givers[3], \
-                                                        cat.life_givers[4], \
-                                                        cat.life_givers[5],
-            warrior3, med_cat, prev_lead = cat.life_givers[6], \
-                                           cat.life_givers[7], \
-                                           cat.life_givers[8]
 
     def handle_apprentice_EX(self, cat):
         """
