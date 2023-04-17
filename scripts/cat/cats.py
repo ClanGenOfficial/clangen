@@ -1434,11 +1434,15 @@ class Cat():
         chosen_outro = random.choice(possible_outros)
 
         if chosen_outro:
+            if life_givers:
+                giver = life_givers[-1]
+            else:
+                giver = None
             outro = random.choice(chosen_outro["text"])
             outro = leader_ceremony_text_adjust(Cat,
                                                 outro,
                                                 leader=self,
-                                                life_giver=life_givers[-1],
+                                                life_giver=giver,
                                                 )
         else:
             outro = 'this should not appear'
@@ -2593,7 +2597,9 @@ class Cat():
                 jealousy = 0
                 trust = 0
                 if game.settings['random relation']:
-                    if randint(1, 20) == 1 and romantic_love < 1:
+                    if the_cat == game.clan.instructor:
+                        pass
+                    elif randint(1, 20) == 1 and romantic_love < 1:
                         dislike = randint(10, 25)
                         jealousy = randint(5, 15)
                         if randint(1, 30) == 1:

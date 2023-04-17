@@ -198,7 +198,7 @@
       "tags": [],
       "lead_trait": [],
       "star_trait": [],
-      "rank": ["apprentice"],
+      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
           "text": "A young cat is next to give a life. Crimson gloom reflects off {PRONOUN/r_c/poss} youthful eyes. r_c stretches up to give a life for [virtue].",
@@ -211,7 +211,7 @@
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "star_trait": [],
-      "rank": ["apprentice"],
+      "rank": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
           "text": "A young cat is next to give a life. {PRONOUN/r_c/subject} {VERB/r_c/hesitate/hesitates}, before an older cat shoves {PRONOUN/r_c/object} forward, growling in {PRONOUN/r_c/poss} ear. r_c stretches up to give a life for [virtue].",

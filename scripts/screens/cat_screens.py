@@ -1245,7 +1245,7 @@ class ProfileScreen(Screens):
         beginning = self.history.get_beginning(self.the_cat)
         if beginning:
             if beginning['clan_born']:
-                text += " {PRONOUN/m_c/subject/CAP} were born on Moon" + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
+                text += " {PRONOUN/m_c/subject/CAP} were born on Moon " + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
             else:
                 text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
 
@@ -1380,15 +1380,15 @@ class ProfileScreen(Screens):
 
         graduation_history = ""
         if app_ceremony:
-            graduation_history = "When {PRONOUN/m_c/subject} graduated {PRONOUN/m_c/subject} {VERB/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
+            graduation_history = "When {PRONOUN/m_c/subject} graduated {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
                 graduation_history += " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at " + str(grad_age) + " moons old."
             elif int(grad_age) > 13:
-                graduation_history += " {PRONOUN/m_c/subject} graduated late at " + str(grad_age) + " moons old."
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated late at " + str(grad_age) + " moons old."
             else:
-                graduation_history += " {PRONOUN/m_c/subject} graduated at " + str(grad_age) + " moons old."
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated at " + str(grad_age) + " moons old."
 
             if game.switches['show_history_moons']:
                 graduation_history += f" (Moon {app_ceremony['moon']})"
