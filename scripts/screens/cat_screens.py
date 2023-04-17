@@ -1500,51 +1500,22 @@ class ProfileScreen(Screens):
                         if moons:
                             victim_names[name].append(victim["moon"])
 
-                for name in victim_names:
-                    if not moons:
-                        name_list.append(name)
-                    else:
-                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
-
-                if len(name_list) == 1:
-                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
-                elif len(victim_names) == 2:
-                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
-                else:
-                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
-
-            # don't think i need this anymore, but keeping till i'm sure
-            """if murderers:
-                print(murderers)
-                murderer_names = {}
-                name_list = []
-
-                for murderer in murderers:
-                    print(murderer)
-                    name = str(Cat.fetch_cat(murderer["murderer"]).name)
-                    print(name)
-                    if murderer["revealed"]:
-                        murderer_names[name] = []
-                        if moons:
-                            murderer_names[name].append(murderer["moon"])
-
-                if murderer_names:
-                    for name in murderer_names:
-                        print(murderer_names)
+                if victim_names:
+                    for name in victim_names:
                         if not moons:
                             name_list.append(name)
                         else:
-                            name_list.append(name + f" (Moon {', '.join(murderer_names[name])})")
+                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
                     if len(name_list) == 1:
-                        murdered_text = f"{self.the_cat.name} was murdered by {name_list[0]}."
-                    elif len(murderer_names) == 2:
-                        murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
+                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                    elif len(victim_names) == 2:
+                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
                     else:
-                        murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."""""
+                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-        print(victim_text, murdered_text)
-        return " ".join([victim_text, murdered_text])
+        print(victim_text)
+        return victim_text
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
