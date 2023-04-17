@@ -57,7 +57,7 @@
             "Finds it eerie that this place is so silent",
             "Wishes to hear songbirds once again",
             "Hates that the waters are so murky here",
-            "Insists that {PRONOUN/m_c/subject} were in the right"
+            "Insists that {PRONOUN/m_c/subject} {VERB/m_c/were/was} in the right"
         ]
     },
     {
