@@ -1331,45 +1331,28 @@
         "exp": 10,
         "success_text": [
             "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here.",
-            "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth.",
-            "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering."
-        ],
-        "fail_text": [
-            "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful."
-        ],
-        "win_skills": [
-            "keen eye"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
-        "patrol_id": "pln_med_gatheringmarigold_leaf-fall2",
-        "biome": "plains",
-        "season": "leaf-fall",
-        "tags": [
-            "herb_gathering",
-            "med_only",
-            "med_cat",
-            "herb",
-            "marigold",
-            "many_herbs1",
-            "many_herbs2",
-            "big_change",
-            "platonic",
-            "dislike",
-            "comfort",
-            "respect",
-            "trust",
-            "apprentice"
-        ],
-        "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores  with app1 before the plants wither and die off.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
-        "chance_of_success": 70,
-        "exp": 20,
-        "success_text": [
+            "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
+            "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering."
+],
+    "fail_text": [
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
+    ],
+    "win_skills": ["keen eye"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_gatheringmarigold_leaf-fall2",
+    "biome": "plains",
+    "season": "leaf-fall",
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with app1 before the plants wither and die off.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
             "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here, and the medicine cats work with urgency.",
             "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth, and app1 actually drops some of the leaves {PRONOUN/p_l/subject} {VERB/p_l/carry/carrys} on the way back to camp, a little over-ambitious with how much {PRONOUN/p_l/subject} can carry.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. app1 watches, trying to soak up {PRONOUN/s_c/poss} skills."

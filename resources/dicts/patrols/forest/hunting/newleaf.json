@@ -336,13 +336,15 @@
             "medium_prey0",
             "large_prey1",
             "large_prey2",
+            "rc_has_stat",
             "battle_injury"
         ],
-        "intro_text": "r_c calls the patrol to {PRONOUN/r_c/self} , explaining {PRONOUN/r_c/poss} plan. An abandoned Twoleg nest has been spotted on the territory by the border patrols, brimming with rats! It would be the perfect place for some newleaf hunting!",
+        "intro_text": "r_c calls the patrol to {PRONOUN/r_c/object}, explaining {PRONOUN/r_c/poss} plan. An abandoned Twoleg nest has been spotted on the territory by the border patrols, brimming with rats! It would be the perfect place for some newleaf hunting!",
         "success_text": [
-            "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall {PRONOUN/r_c/subject} {VERB/r_c/have/haves} so much it takes two trips to bring {PRONOUN/r_c/object} back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan.",
-            "r_c leads the patrol towards the nest, and {PRONOUN/r_c/subject} quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n.",
-            "Need skill success text here"
+            "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan.",
+            "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n.",
+            "s_c tells the others to flank the house and they go in carefully, quietly. With a flick of the tail to signal, {PRONOUN/s_c/subject} {VERB/s_c/leads/lead} the patrol in cornering the rats and picking them off as they try to flee, collecting quite a feast.",
+            "The patrol drives the rats back into the Twoleg nest, each cat guarding an escape route. p_l runs ahead, startling the rats into a scurry where s_c is ready to dispatch them. It's going to take a few trips to get all these rats home."
         ],
         "fail_text": [
             "r_c leads the cats to the abandoned Twoleg nest, but as the cats search and search, all {PRONOUN/r_c/subject} can find are abandoned rats nests. r_c is scolded for wasting the patrols valuable time.",
