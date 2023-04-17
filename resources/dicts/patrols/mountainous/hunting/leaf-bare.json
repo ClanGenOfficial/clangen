@@ -48,11 +48,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_eagleice2",
@@ -103,11 +103,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_eagleice3",
@@ -162,11 +162,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_eagleice4",
@@ -221,11 +221,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            "r_c was killed by an eagle, scrapping over food.",
-            "were killed by an eagle"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "were killed by an eagle"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_snowstorm1",
@@ -277,10 +277,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_snowstorm2",
@@ -321,11 +320,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            "r_c died trying to provide for c_n during leaf-bare.",
-            "died while hunting in the cold of leaf-bare"
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare.",
+        "reg_death": "r_c died trying to provide for c_n during leaf-bare.",
+        "lead_death": "died while hunting in the cold of leaf-bare"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_snowstorm3",
@@ -375,11 +374,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            "r_c froze to death while hunting in a storm.",
-            "died while hunting in the cold of leaf-bare"
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare.",
+        "reg_death": "r_c froze to death while hunting in a storm.",
+        "lead_death": "died while hunting in the cold of leaf-bare"
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_leaf-barescavenge1",
@@ -440,10 +439,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_leaf-barescavenge2",
@@ -504,9 +502,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "mtn_hunt_fox_leaf-barescavenge3",
@@ -566,11 +564,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "were killed in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "were killed in battle with a fox"
+    }
     },
     {
         "patrol_id": "mtn_hunt_leaf-bare_solosquirrel1",
@@ -804,9 +802,9 @@
         "max_cats":6,
         "antagonize_text":null,
         "antagonize_fail_text":null,
-        "history_text":[
-            "r_c got a scar underestimating a bluejay."
-        ]
+        "history_text": {
+        "scar": "r_c got a scar underestimating a bluejay."
+    }
     },
     {
         "patrol_id": "mtn_hunt_commonbuz_leafbare1",
@@ -882,11 +880,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-          "mistook a buzzard for a vulture and got pecked",
-          "was scared off a cliff by a large bird.",
-	      "after a run in with a large bird of prey, fell to their final death off of a high cliff"
-        ]
+        "history_text": {
+        "scar": "mistook a buzzard for a vulture and got pecked",
+        "reg_death": "was scared off a cliff by a large bird.",
+        "lead_death": "after a run in with a large bird of prey, fell to their final death off of a high cliff"
+    }
     },
     {
         "patrol_id": "mnt_hunt_raven_leaf-barecatcry1",
@@ -917,9 +915,8 @@
         "max_cats": 1,
         "antagonize_text": "p_l screams that this is c_n's territory and there's no help for anyone else. A large raven flies off.",
         "antagonize_fail_text": "p_l charges after the sound to attack the cat, only for a raven to scare them into a hungry wolf.",
-        "history_text": [
-            null,
-            "This cat found out why c_n despises ravens."
-        ]
+        "history_text": {
+        "reg_death": "This cat found out why c_n despises ravens."
+    }
 }
 ]

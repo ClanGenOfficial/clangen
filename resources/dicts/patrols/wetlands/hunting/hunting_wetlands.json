@@ -203,9 +203,9 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_solo2",
@@ -428,13 +428,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr2",
@@ -487,13 +481,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr3",
@@ -546,13 +534,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr4",
@@ -605,13 +587,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden1",
@@ -667,13 +643,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden2",
@@ -724,13 +694,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdencatdare1",
@@ -787,13 +751,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 2
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdenappdare1",
@@ -846,13 +804,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 2
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap1",
@@ -901,13 +853,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap2",
@@ -956,13 +902,7 @@
             "playful"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath1",
@@ -1014,11 +954,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "hit by a monster"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath2",
@@ -1071,11 +1011,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "deliberately hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "deliberately hit by a monster"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath3",
@@ -1127,10 +1067,10 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed."
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath4",
@@ -1183,10 +1123,10 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed."
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_heat1",
@@ -1213,13 +1153,7 @@
             null
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander1",
@@ -1252,13 +1186,7 @@
             "fantastic hunter"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander2",
@@ -1286,13 +1214,7 @@
             "The patrol is unable to catch the small amphibian quick enough and the little salamander lives another day."
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "wtlnd_hunt_leafbaresnowstorm1",
@@ -1341,10 +1263,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_leafbaresnowstorm2",
@@ -1379,10 +1300,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_leafbaresnowstorm3",
@@ -1427,10 +1347,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge1",
@@ -1493,10 +1412,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge4",
@@ -1560,9 +1478,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge3",
@@ -1624,10 +1542,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge5",
@@ -1687,10 +1605,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge6",
@@ -1750,9 +1667,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge8",
@@ -1810,11 +1727,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died fighting a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died fighting a fox"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge4",
@@ -1875,10 +1792,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge2",
@@ -1989,10 +1905,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen1",
@@ -2053,11 +1968,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen2",
@@ -2116,9 +2031,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen12",
@@ -2179,11 +2094,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen13",
@@ -2244,11 +2159,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen14",
@@ -2307,9 +2222,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen6",
@@ -2370,11 +2285,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen7",
@@ -2435,11 +2350,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen8",
@@ -2496,9 +2411,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen9",
@@ -2559,11 +2474,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a red vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a red vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen1",
@@ -2621,10 +2536,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen2",
@@ -2682,9 +2596,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen3",
@@ -2741,10 +2655,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen4",
@@ -2803,10 +2716,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen5",
@@ -2864,9 +2776,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen15",
@@ -2923,9 +2835,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen16",
@@ -2983,10 +2895,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen17",
@@ -3044,9 +2955,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen9",
@@ -3103,9 +3014,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal1",
@@ -3179,10 +3090,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal2",
@@ -3255,9 +3165,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal6",
@@ -3329,9 +3239,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal1",
@@ -3403,10 +3313,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal5",
@@ -3547,9 +3456,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_newleafscavenge3",
@@ -3668,11 +3577,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge3",
@@ -3791,11 +3700,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge1",
@@ -3914,11 +3823,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge3",
@@ -4037,11 +3946,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge1",
@@ -4206,10 +4115,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge7",
@@ -4269,9 +4177,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge10",
@@ -4329,11 +4237,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died fighting a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died fighting a fox"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge1",
@@ -4394,10 +4302,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_scavenge5",
@@ -4508,10 +4415,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen10",
@@ -4572,11 +4478,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen11",
@@ -4635,9 +4541,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen3",
@@ -4698,11 +4604,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen4",
@@ -4763,11 +4669,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen5",
@@ -4826,9 +4732,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen15",
@@ -4889,11 +4795,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen16",
@@ -4954,11 +4860,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a red vixen.",
-            "r_c fell in battle with a red fox.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen17",
@@ -5015,9 +4921,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redvixen18",
@@ -5078,11 +4984,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red vixen.",
-            "r_c fell in a solo battle with a red vixen.",
-            "died while fighting a red vixen"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a red vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen10",
@@ -5140,10 +5046,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen11",
@@ -5201,9 +5106,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen12",
@@ -5260,10 +5165,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen13",
@@ -5321,10 +5225,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen14",
@@ -5381,9 +5284,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen6",
@@ -5440,9 +5343,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen7",
@@ -5500,10 +5403,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen8",
@@ -5561,9 +5463,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_grayvixen18",
@@ -5620,9 +5522,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray vixen."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal4",
@@ -5696,10 +5598,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal5",
@@ -5772,9 +5673,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a red fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_steal3",
@@ -5847,9 +5748,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a red fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal4",
@@ -5921,10 +5822,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a gray fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_foxgray_steal2",
@@ -6065,9 +5965,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a gray fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_newleafscavenge1",
@@ -6186,11 +6086,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge1",
@@ -6309,11 +6209,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge3",
@@ -6432,11 +6332,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge1",
@@ -6555,11 +6455,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "taken by an alligator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "taken by an alligator"
+    }
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge3",

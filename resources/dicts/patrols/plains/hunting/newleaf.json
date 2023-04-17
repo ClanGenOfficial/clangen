@@ -57,10 +57,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "pln_hunt_redfox_newleafscavenge2",
@@ -120,9 +119,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "pln_hunt_redfox_newleafscavenge3",
@@ -180,11 +179,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died in battle with a fox"
+    }
     },
     {
         "patrol_id": "pln_hunt_newleaf_redvixen1",
@@ -245,11 +244,11 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            "r_c fell in battle with a fox.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight.",
+        "reg_death": "r_c fell in battle with a fox.",
+        "lead_death": "died in battle with a fox"
+    }
     },
     {
         "patrol_id": "pln_hunt_newleaf_redvixen2",
@@ -309,9 +308,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "pln_hunt_newleaf_redvixen3",
@@ -370,11 +369,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died in battle with a fox"
+    }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_newleafvixen1",
@@ -448,9 +447,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox."
+    }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_newleafscavenge1",
@@ -568,11 +567,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_newleaf_solosquirrel1",
@@ -698,9 +697,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred as an apprentice by an angry ground squirrel."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
+    }
     },
     {
         "patrol_id": "pln_hunt_newleaf_groupsquirrel1",

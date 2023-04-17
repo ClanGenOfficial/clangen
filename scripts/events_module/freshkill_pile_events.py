@@ -1,6 +1,7 @@
 import random
 from typing import Union
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
@@ -12,6 +13,7 @@ class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
 
     def __init__(self) -> None:
+        self.history = History()
         self.generate_events = GenerateEvents()
 
     def handle_nutrient(self, cat: Cat, nutrition_info: dict) -> None:
@@ -75,7 +77,7 @@ class Freshkill_Events():
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
             cat.die()
-            cat.died_by.append(history_text)
+            self.history.add_death_or_scars(cat, text=history_text, death=True)
 
             types = ["birth_death"]
             game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
@@ -321,20 +323,23 @@ class Freshkill_Events():
                 history_leader = event_text_adjust(Cat, event.history_text[2], cat, other_cat)
             
             if cat.status == "leader":
-                cat.possible_death = str(history_leader)
+                self.history.add_possible_death_or_scars(cat, event.injury, str(history_leader), other_cat, death=True)
             else:
-                cat.possible_scar = str(scar_text)
-                cat.possible_death = str(history_normal)
-        
+                self.history.add_possible_death_or_scars(cat, event.injury, str(history_normal), other_cat, death=True)
+
+            self.history.add_possible_death_or_scars(cat, event.injury, str(scar_text), other_cat, scar=True)
+
             cat.get_injured(event.injury, event_triggered=True)
             if "multi_injury" in event.tags and other_cat:
                 if other_cat.status == "leader":
-                    other_cat.possible_death = str(history_leader)
+                    self.history.add_possible_death_or_scars(other_cat, event.injury, str(history_leader), cat,
+                                                             death=True)
                 else:
-                    other_cat.possible_scar = str(scar_text)
-                    other_cat.possible_death = str(history_normal)
+                    self.history.add_possible_death_or_scars(other_cat, event.injury, str(history_normal), cat,
+                                                             death=True)
+                self.history.add_possible_death_or_scars(other_cat, event.injury, str(scar_text), cat, scar=True)
+
                 other_cat.get_injured(event.injury, event_triggered=True)
-            
 
         # if the length of the history text is 2, this means the event is a instant death event
         if "death" in event.tags or "multi_death" in event.tags:
@@ -347,17 +352,17 @@ class Freshkill_Events():
 
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
-                cat.died_by.append(history_leader)
+                self.history.add_death_or_scars(cat, other_cat, history_leader, death=True)
             else:
-                cat.died_by.append(history_normal)
+                self.history.add_death_or_scars(cat, other_cat, history_normal, death=True)
 
             cat.die()
             if "multi_death" in event.tags and other_cat:
                 if other_cat.status == "leader":
                     game.clan.leader_lives -= 1
-                    other_cat.died_by.append(history_leader)
+                    self.history.add_death_or_scars(other_cat, cat, history_leader, death=True)
                 else:
-                    other_cat.died_by.append(history_normal)
+                    self.history.add_death_or_scars(other_cat, cat, history_normal, death=True)
                 other_cat.die()
             if "multi_death" in event.tags and not other_cat:
                 print("WARNING: multi_death event in freshkill pile was triggered, but no other cat was given.")
