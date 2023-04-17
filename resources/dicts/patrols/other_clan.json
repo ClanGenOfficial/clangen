@@ -164,6 +164,10 @@
     null,
     "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is running their way. They force their fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. The warriors either don't hear them or don't care and they get in a good scratch before the medicine cat can retreat."
     ],
+    "history_text": {
+        "scar": "p_l was scarred when a o_c_n patrol attacked them.",
+        "reg_death": "p_l died from their wounds after a o_c_n patrol attacked them."
+    },
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
     "min_cats": 1,
     "max_cats": 1
