@@ -2,10 +2,10 @@
 {        
     "id": "general_kittypet_dead_thoughts",
     "thoughts": [
-        "Wonders how they ended up here",
-        "Traipses through the muck with a disgusted look on their face",
+        "Wonders how {PRONOUN/m_c/subject} ended up here",
+        "Traipses through the muck with a disgusted look on {PRONOUN/m_c/poss} face",
         "Growls at the shadows",
-        "Wonders if their housefolk are okay"
+        "Wonders if {PRONOUN/m_c/poss} housefolk are okay"
     ],
     "main_status_constraint": [
         "kittypet"
