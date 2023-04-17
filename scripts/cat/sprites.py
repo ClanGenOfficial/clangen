@@ -7,6 +7,7 @@ from scripts.game_structure.game_essentials import game
 class Sprites():
     cat_tints = {}
     white_patches_tints = {}
+    eye_tints = {}
 
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
@@ -30,6 +31,12 @@ class Sprites():
                 Sprites.white_patches_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading White Patches Tints")
+            
+        try:
+            with open("sprites/dicts/eye_tint.json", 'r') as read_file:
+                Sprites.eye_tints = ujson.loads(read_file.read())
+        except:
+            print("ERROR: Reading Eye Tints")
 
     def spritesheet(self, a_file, name):
         """
