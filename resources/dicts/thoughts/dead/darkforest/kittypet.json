@@ -5,7 +5,7 @@
         "Wonders how {PRONOUN/m_c/subject} ended up here",
         "Traipses through the muck with a disgusted look on {PRONOUN/m_c/poss} face",
         "Growls at the shadows",
-        "Wonders if {PRONOUN/m_c/poss} housefolk are okay"
+        "Wonders if {PRONOUN/m_c/poss} housefolk are okay",
         "Swears vengence for taking {PRONOUN/m_c/object} away from canned cat food"
     ],
     "main_status_constraint": [

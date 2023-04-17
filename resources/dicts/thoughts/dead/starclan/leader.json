@@ -4,10 +4,10 @@
         "thoughts": [
             "Watches c_n proudly",
             "Hopes they have been a good leader",
-            "Is contemplating their legacy"
-            "Wonders if {PRONOUN/m_c/poss}'s successor is good enough for {PRONOUN/m_c/poss} clan"
-            "Is happy to no longer be in charge"
-            "Is proud of the legacy {PRONOUN/m_c/subject} left behind"
+            "Is contemplating their legacy",
+            "Wonders if {PRONOUN/m_c/poss}'s successor is good enough for {PRONOUN/m_c/poss} Clan",
+            "Is happy to no longer be in charge",
+            "Is proud of the legacy {PRONOUN/m_c/subject} left behind",
             "Thinking about giving a medicine cat a vision"
         ]
     },
@@ -16,7 +16,12 @@
         "thoughts": [
             "Approves of r_c's leadership choices",
             "Walks in r_c's dreams to impart wisdom and guidance",
-            "Thinks r_c made some bad decisions lately"
+            "Thinks r_c made some bad decisions lately",
+            "Is happy to see r_c adapt to being the new leader",
+            "Is jealous of how well r_c is doing as leader",
+            "Is proud to see how strong r_c's leadership is",
+            "Wonders when {PRONOUN/m_c/object} will see r_c in Starclan",
+            "Feels r_c's struggles with being leader of a Clan"
         ],
         "random_status_constraint": [
             "leader"
