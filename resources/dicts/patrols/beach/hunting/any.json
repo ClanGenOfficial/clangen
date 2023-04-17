@@ -116,8 +116,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
-        }
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "bch_hunt_solo2",
@@ -232,8 +232,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
-        }
+        "scar": "p_l gained a scar from a fox."
+    }
     },
     {
         "patrol_id": "bch_hunt_noise2",
@@ -262,10 +262,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "{VERB/p_l/were/was} killed by a wolverine"
-        }
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "{VERB/p_l/were/was} killed by a wolverine"
+    }
     },
     {
         "patrol_id": "bch_hunt_noise3",
@@ -294,10 +294,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a dog while patrolling alone.",
-            "lead_death": "were killed while patrolling alone"
-        }
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a dog while patrolling alone.",
+        "lead_death": "were killed while patrolling alone"
+    }
     },
     {
         "patrol_id": "bch_hunt_gonetnr1",
@@ -325,9 +325,7 @@
         "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 3
     },
     {
         "patrol_id": "bch_hunt_gonetnr2",
@@ -355,9 +353,7 @@
         "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless","strict", "troublesome", "vengeful"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_gonetnr3",
@@ -385,9 +381,7 @@
         "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden1",
@@ -414,9 +408,7 @@
         "win_trait": [ "calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_gonetwolegden2",
@@ -442,9 +434,7 @@
         "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_twolegdencatdare1",
@@ -478,9 +468,7 @@
         "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 2
     },
     {
         "patrol_id": "bch_hunt_twolegdenappdare1",
@@ -506,9 +494,7 @@
         "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 2
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap1",
@@ -534,9 +520,7 @@
         "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "bch_hunt_gonetwolegtrap2",
@@ -562,9 +546,7 @@
         "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
         "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "bch_hunt_thunderpath1",
@@ -591,13 +573,11 @@
         "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
-        }
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "{VERB/r_c/were/was} hit by a monster"
+    }
     },
     {
         "patrol_id": "bch_hunt_thunderpath2",
@@ -625,13 +605,11 @@
         "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
-        }
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "{VERB/r_c/were/was} hit by a monster"
+    }
     },
     {
         "patrol_id": "bch_hunt_thunderpath3",
@@ -661,10 +639,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
-        }
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "{VERB/r_c/were/was} hit by a monster"
+    }
     },
     {
         "patrol_id": "bch_hunt_thunderpath4",
@@ -694,10 +672,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
-        }
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "{VERB/r_c/were/was} hit by a monster"
+    }
     },
     {
         "patrol_id": "bch_hunt_octopus1",
@@ -834,8 +812,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak."
-        }
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "bch_hunt_eagleswim2",
@@ -865,8 +843,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak."
-        }
+        "scar": "r_c carries a scar from an eagle's beak."
+    }
     },
     {
         "patrol_id": "bch_hunt_eagleswim3",
@@ -896,10 +874,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
-        }
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+    }
     },
     {
         "patrol_id": "bch_hunt_eagleswim4",
@@ -929,10 +907,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
-        }
+        "scar": "r_c carries a scar from an eagle's beak.",
+        "reg_death": "r_c was killed by an eagle, scrapping over food.",
+        "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge1",
@@ -965,8 +943,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
-        }
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge2",
@@ -999,8 +977,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
-        }
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_scavenge3",
@@ -1033,10 +1011,10 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
-            "lead_death": "died fighting a fox"
-        }
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died fighting a fox"
+    }
     },
     {
         "patrol_id": "bch_hunt_foxgray_scavenge1",
@@ -1069,8 +1047,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a gray fox fight."
-        }
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_foxgray_scavenge2",
@@ -1131,8 +1109,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray fox."
-        }
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal1",
@@ -1165,8 +1143,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a red fox fight."
-        }
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal2",
@@ -1199,8 +1177,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a red fox fight."
-        }
+        "scar": "r_c carries a scar from a red fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_redfox_steal3",
@@ -1233,8 +1211,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red fox."
-        }
+        "scar": "r_c carries a scar from a solo fight with a red fox."
+    }
     },
     {
         "patrol_id": "bch_hunt_foxgray_steal1",
@@ -1267,8 +1245,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a gray fox fight."
-        }
+        "scar": "r_c carries a scar from a gray fox fight."
+    }
     },
     {
         "patrol_id": "bch_hunt_foxgray_steal2",
@@ -1332,8 +1310,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray fox."
-        }
+        "scar": "r_c carries a scar from a solo fight with a gray fox."
+    }
     },
     {
         "patrol_id": "bch_hunting_patrol_dolphinofferings1",

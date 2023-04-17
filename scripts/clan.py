@@ -14,6 +14,7 @@ import os
 
 import pygame
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
@@ -53,6 +54,7 @@ class Clan():
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
+    darkforest_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -441,6 +443,7 @@ class Clan():
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf'):
+        self.history = History()
         if name != "":
             self.name = name
             self.leader = leader
@@ -576,9 +579,13 @@ class Clan():
         if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            if cat in self.darkforest_cats:
+                cat.df = False
+                self.darkforest_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
+            update_sprite(Cat.all_cats[str(cat)])
 
     def add_to_clan(self, cat):
         """
@@ -603,8 +610,10 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is False:
+        if cat.ID in Cat.all_cats and cat.dead:
             cat.df = True
+            self.darkforest_cats.append(cat.ID)
+            print('add to df')
             cat.thought = "Is distraught after being sent to the Place of No Stars"
             if cat in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
@@ -644,6 +653,7 @@ class Clan():
         TODO: DOCS
         """
         if leader:
+            self.history.add_lead_ceremony(leader)
             self.leader = leader
             Cat.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
@@ -1339,7 +1349,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(a)
+        self._reputation = int(self._reputation + a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

@@ -8,6 +8,7 @@ import pygame_gui
 from sys import exit
 from re import sub
 
+from scripts.cat.history import History
 from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
@@ -17,7 +18,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.update import self_update, UpdateChannel, get_latest_version_number
-from scripts.utility import scale, quit
+from scripts.utility import scale, quit, update_sprite
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.version import get_version_info
 
@@ -375,9 +376,14 @@ class ChangeCatName(UIWindow):
                 if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
                     self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
+                    self.the_cat.specsuffix_hidden = True
+                    self.the_cat.name.specsuffix_hidden = True
                 elif sub(r'[^A-Za-z0-9 ]+', '',
                          self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
                     self.name_changed.show()
+                else:
+                    self.the_cat.specsuffix_hidden = False
+                    self.the_cat.name.specsuffix_hidden = False
                 self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
             elif event.ui_element == self.random_prefix:
                 if self.suffix_entry_box.text:
@@ -390,7 +396,10 @@ class ChangeCatName(UIWindow):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern).prefix)
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
+                                                        "special_suffixes"])).prefix)
             elif event.ui_element == self.random_suffix:
                 if self.prefix_entry_box.text:
                     use_prefix = self.prefix_entry_box.text
@@ -402,10 +411,11 @@ class ChangeCatName(UIWindow):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern).suffix)
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
+                                                        "special_suffixes"])).suffix)
             elif event.ui_element == self.toggle_spec_block_on:
-                self.the_cat.specsuffix_hidden = True
-                self.the_cat.name.specsuffix_hidden = True
                 self.suffix_entry_box.enable()
                 self.random_suffix.enable()
                 self.toggle_spec_block_on.disable()
@@ -414,8 +424,6 @@ class ChangeCatName(UIWindow):
                 self.toggle_spec_block_off.show()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
             elif event.ui_element == self.toggle_spec_block_off:
-                self.the_cat.specsuffix_hidden = False
-                self.the_cat.name.specsuffix_hidden = False
                 self.random_suffix.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
@@ -488,6 +496,127 @@ class SpecifyCatGender(UIWindow):
                 self.kill()
 
 
+class KillCat(UIWindow):
+    """This window allows the user to specify the cat's gender"""
+
+    def __init__(self, cat):
+        super().__init__(scale(pygame.Rect((600, 400), (900, 400))),
+                         window_display_title='Kill Cat',
+                         object_id='#change_cat_gender_window',
+                         resizable=False)
+        self.history = History()
+        game.switches['window_open'] = True
+        self.the_cat = cat
+        self.take_all = False
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((840, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.heading = pygame_gui.elements.UITextBox(f"<b>-- How did this cat die? --</b>",
+                                                     scale(pygame.Rect((20, 20), (860, 150))),
+                                                     object_id="#text_box_30_horizcenter_spacing_95",
+                                                     manager=MANAGER,
+                                                     container=self)
+
+        self.one_life_check = UIImageButton(scale(pygame.Rect(
+            (50, 300), (68, 68))),
+            "",
+            object_id="#unchecked_checkbox",
+            tool_tip_text='If this is checked, the leader will lose all their lives',
+            manager=MANAGER,
+            container=self
+        )
+        self.all_lives_check = UIImageButton(scale(pygame.Rect(
+            (50, 300), (68, 68))),
+            "",
+            object_id="#checked_checkbox",
+            tool_tip_text='If this is checked, the leader will lose all their lives',
+            manager=MANAGER,
+            container=self
+        )
+
+        if self.the_cat.status == 'leader':
+            self.done_button = UIImageButton(scale(pygame.Rect((695, 305), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
+            self.prompt = 'This cat died when they...'
+            self.initial = 'were killed by something unknowable to even StarClan'
+
+            self.all_lives_check.hide()
+            self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
+                                                           scale(pygame.Rect((120, 295), (900, 80))),
+                                                           object_id="#text_box_30_horizleft",
+                                                           manager=MANAGER,
+                                                           container=self)
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
+                                                                  scale(pygame.Rect((50, 60), (900, 80))),
+                                                                  object_id="#text_box_30_horizleft",
+                                                                  manager=MANAGER,
+                                                                  container=self)
+
+            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 130), (800, 150))),
+                                                                      initial_text=self.initial,
+                                                                      object_id="text_entry_line",
+                                                                      manager=MANAGER,
+                                                                      container=self)
+
+        else:
+            self.initial = 'It was the will of something even mightier than StarClan that this cat died.'
+            self.prompt = None
+            self.all_lives_check.hide()
+            self.one_life_check.hide()
+
+            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 110), (800, 150))),
+                                                                      initial_text=self.initial,
+                                                                      object_id="text_entry_line",
+                                                                      manager=MANAGER,
+                                                                      container=self)
+
+            self.done_button = UIImageButton(scale(pygame.Rect((373, 305), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
+        self.set_blocking(True)
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.done_button:
+                if self.the_cat.status == 'leader':
+                    death_message = sub(r"[^A-Za-z0-9<->/()*'&#, ]+", "", self.death_entry_box.get_text())
+                    if self.take_all:
+                        game.clan.leader_lives -= 10
+                    else:
+                        game.clan.leader_lives -= 1
+                else:
+                    death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.death_entry_box.get_text())
+
+                self.the_cat.die()
+                self.history.add_death_or_scars(self.the_cat, text=death_message, death=True)
+                update_sprite(self.the_cat)
+                game.switches['window_open'] = False
+                game.all_screens['profile screen'].exit_screen()
+                game.all_screens['profile screen'].screen_switches()
+                self.kill()
+            elif event.ui_element == self.all_lives_check:
+                self.take_all = False
+                self.all_lives_check.hide()
+                self.one_life_check.show()
+            elif event.ui_element == self.one_life_check:
+                self.take_all = True
+                self.all_lives_check.show()
+                self.one_life_check.hide()
+            elif event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                game.all_screens['profile screen'].exit_screen()
+                game.all_screens['profile screen'].screen_switches()
+                self.kill()
+
+
 class UpdateWindow(UIWindow):
     def __init__(self, last_screen, announce_restart_callback):
         super().__init__(scale(pygame.Rect((500, 400), (600, 320))),
@@ -520,7 +649,7 @@ class UpdateWindow(UIWindow):
         )
 
         self.update_thread = threading.Thread(target=self_update, daemon=True, args=(
-        UpdateChannel(get_version_info().release_channel), self.progress_bar, announce_restart_callback))
+            UpdateChannel(get_version_info().release_channel), self.progress_bar, announce_restart_callback))
         self.update_thread.start()
 
         self.cancel_button = UIImageButton(
@@ -607,8 +736,10 @@ class UpdateAvailablePopup(UIWindow):
             container=self
         )
 
-        self.box_unchecked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#unchecked_checkbox", container=self)
-        self.box_checked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#checked_checkbox", container=self)
+        self.box_unchecked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#unchecked_checkbox",
+                                           container=self)
+        self.box_checked = UIImageButton(scale(pygame.Rect((15, 366), (68, 68))), "", object_id="#checked_checkbox",
+                                         container=self)
         self.box_text = UITextBoxTweaked(
             f"Don't ask again",
             scale(pygame.Rect((78, 370), (250, -1))),

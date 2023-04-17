@@ -39,9 +39,9 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"r_c got scarred training in the wetlands as an apprentice."
-		]
+		"history_text": {
+        "scar": "r_c got scarred training in the wetlands as an apprentice."
+    }
 	},
 	{
 		"patrol_id":"wtlnd_train_stuck1",
@@ -101,10 +101,10 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"wtlnd_train_stuck2",
@@ -164,10 +164,10 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"wtlnd_train_stuck3",
@@ -200,10 +200,10 @@
 		"max_cats":1,
 		"antagonize_text":null,
 		"antagonize_fail_text":null,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"wtlnd_train_soloapp1",
@@ -249,9 +249,9 @@
 		],
 		"min_cats":1,
 		"max_cats":1,
-		"history_text":[
-			"r_c got injured as an apprentice, exploring alone."
-		]
+		"history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 	},
 	{
 		"patrol_id":"wtlnd_train_solo2",
