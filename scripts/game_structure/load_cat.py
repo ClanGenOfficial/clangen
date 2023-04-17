@@ -467,7 +467,7 @@ def csv_load(all_cats):
             game.switches[
                 'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
                     inter_cat)
-            update_sprite(inter_cat)
+            #update_sprite(inter_cat)
         # generate the relationship if some is missing
         if not the_cat.dead:
             game.switches[

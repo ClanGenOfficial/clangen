@@ -976,7 +976,7 @@ def draw_big(cat, pos):
         new_pos[0] = screen_x / 2 - sprites.new_size / 2
     elif pos[0] < 0:
         new_pos[0] = screen_x + pos[0] - sprites.new_size
-    cat.used_screen.blit(cat.big_sprite, new_pos)
+    cat.used_screen.blit(cat.sprite, new_pos)
 
 
 def draw_large(cat, pos):
@@ -985,7 +985,7 @@ def draw_large(cat, pos):
         new_pos[0] = screen_x / 2 - sprites.size * 3 / 2
     elif pos[0] < 0:
         new_pos[0] = screen_x + pos[0] - sprites.size * 3
-    cat.used_screen.blit(cat.large_sprite, new_pos)
+    cat.used_screen.blit(cat.sprite, new_pos)
 
 
 def update_sprite(cat):
@@ -1141,6 +1141,10 @@ def update_sprite(cat):
                 temp = sprites.sprites['fadestarclan' + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+                
+        # reverse, if assigned so
+        if cat.reverse:
+            new_sprite = pygame.transform.flip(new_sprite, True, False)
 
     except (TypeError, KeyError):
         logger.exception("Failed to load sprite")
@@ -1153,16 +1157,8 @@ def update_sprite(cat):
     if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
         new_sprite = apply_opacity(new_sprite, cat.opacity)"""
 
-    # reverse, if assigned so
-    if cat.reverse:
-        new_sprite = pygame.transform.flip(new_sprite, True, False)
-
     # apply
     cat.sprite = new_sprite
-    cat.big_sprite = pygame.transform.scale(
-        new_sprite, (sprites.new_size, sprites.new_size))
-    cat.large_sprite = pygame.transform.scale(
-        cat.big_sprite, (sprites.size * 3, sprites.size * 3))
     # update class dictionary
     cat.all_cats[cat.ID] = cat
 
