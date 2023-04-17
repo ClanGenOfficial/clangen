@@ -40,14 +40,14 @@
 	},
 	"rejected":{
 		"m_c_mates": [
-			"After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but got rejected.",
-			"After a talk with {PRONOUN/m_c/poss} mates, m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but got rejected."
+			"After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected.",
+			"After a talk with {PRONOUN/m_c/poss} mates, m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
 		],
 		"r_c_mates": [
-			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but got rejected."
+			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
 		],
 		"both_mates": [
-			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but got rejected."
+			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
 		]
 	}
 }
