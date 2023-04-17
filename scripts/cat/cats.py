@@ -269,6 +269,7 @@ class Cat():
         self.white_patches_tint = None
         self.eye_colour = eye_colour
         self.eye_colour2 = None
+        self.eye_tint = None
         self.scars = []
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -525,10 +526,8 @@ class Cat():
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
-        # Sprite sizes
-        self.sprite = None
-        self.big_sprite = None
-        self.large_sprite = None
+        # Private Sprite
+        self._sprite = None
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -1671,7 +1670,6 @@ class Cat():
 
         if name == "paralyzed":
             self.paralyzed = True
-            update_sprite(self)
 
         new_perm_condition = PermanentCondition(
             name=name,
@@ -2606,8 +2604,6 @@ class Cat():
         file_name += ".png"
             
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
-        self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
-        self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
 
     @staticmethod
     def fetch_cat(cat_id: str):
@@ -2748,6 +2744,16 @@ class Cat():
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
             print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
+            
+    @property
+    def sprite(self):
+        #Update the sprite
+        update_sprite(self)        
+        return self._sprite
+    
+    @sprite.setter
+    def sprite(self, new_sprite):
+        self._sprite = new_sprite
 
 
 # ---------------------------------------------------------------------------- #
@@ -2773,7 +2779,7 @@ def create_example_cats():
             if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
     
-        update_sprite(game.choose_cats[a])
+        #update_sprite(game.choose_cats[a])
     
 
 
