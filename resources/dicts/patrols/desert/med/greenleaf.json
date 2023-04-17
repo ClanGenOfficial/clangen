@@ -35,7 +35,7 @@
         "exp": 10,
         "success_text": [
                 "p_l and r_c decide to search in the slot canyons, where the deep clefts may yet harbour water and plantlife. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat.",
-                "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warrior make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
         ],
         "fail_text": [
                 "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
