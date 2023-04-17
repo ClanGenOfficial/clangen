@@ -210,7 +210,7 @@
         "thoughts": [
             "Is pretending to be the medicine cat",
             "Plucks feathers from a fresh-kill bird to add to nests",
-            "Offers to leave camp to collect moss, but can't, because {PRONOUN/m_c/subject}{VERB/m_c/'re} a kit",
+            "Offers to leave camp to collect moss, but can't, because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a kit",
             "Compliments an older cat on how their fur looks today"
         ],
         "main_trait_constraint": [
