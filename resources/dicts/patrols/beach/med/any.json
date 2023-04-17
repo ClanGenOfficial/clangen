@@ -542,64 +542,83 @@
         ],
         "fail_text": [
             "They fail to interpret any signs, and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the ominous looking clouds springing up over the ocean."
-        ],
-        "min_cats": 2,
-        "max_cats": 2
-    },
-    {
-        "patrol_id": "bch_med_dwindleherbsgathering1",
-        "biome": "beach",
-        "season": "Any",
-        "tags": [
-            "random_herbs",
-            "med_cat",
-            "med_only",
-            "platonic",
-            "dislike",
-            "respect"
-        ],
-        "intro_text": "p_l and r_c take a look at {PRONOUN/r_c/poss} supply of herbs and decide to combine {PRONOUN/r_c/poss} efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
-        "chance_of_success": 50,
-        "exp": 10,
-        "success_text": [
-            "p_l and r_c decide to search near the Twoleg beach dens. As the sun sinks towards the horizon, {PRONOUN/r_c/subject} {VERB/r_c/return/returns} with {PRONOUN/r_c/poss} mouths stuffed full of herbs taken from the weirdly bountiful Twoleg territories.",
-            "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets teh warrior make about hunting prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/reunite/reunites} when the sun is going down and walk into camp purring and playfully shoving each other with both {PRONOUN/r_c/poss} mouths full of herbs."
-        ],
-        "fail_text": [
-            "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs {PRONOUN/r_c/subject} {VERB/r_c/fail/fails} to find even a single one. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp frustrated and irritated with each other.",
-            "Even though there should be many herbs {PRONOUN/r_c/subject} {VERB/r_c/fail/fails} to find anything. p_l blames r_c for distracting {PRONOUN/r_c/object} and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} into a huge argument."
-        ],
-        "min_cats": 2,
-        "max_cats": 2
-    },
-    {
-        "patrol_id": "bch_med_cobwebapps1",
-        "biome": "beach",
-        "season": "Any",
-        "tags": [
-            "herb_gathering",
-            "herb",
-            "cobwebs",
-            "apprentice",
-            "two_apprentices",
-            "many_herbs1",
-            "p_l_to_r_c",
-            "big_change",
-            "platonic",
-            "dislike",
-            "respect",
-            "romantic"
-        ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
-        "decline_text": "They're called back to camp, needed for other chores.",
-        "chance_of_success": 70,
-        "exp": 20,
-        "success_text": [
-            "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as {PRONOUN/app1/subject} {VERB/app1/collect/collects} cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
-        ],
-        "fail_text": [
+    ],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "bch_med_dwindleherbsgathering1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": [
+        "random_herbs",
+        "med_cat",
+        "med_only",
+        "platonic",
+        "dislike",
+        "respect"
+    ],
+    "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+    "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "p_l and r_c decide to search near the Twoleg beach dens. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the weirdly bountiful Twoleg territories.",
+        "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+    ],
+    "fail_text": [
+        "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+        "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
+    ],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "bch_med_cobwebapps1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": [
+        "herb_gathering",
+        "herb",
+        "cobwebs",
+        "apprentice",
+        "two_apprentices",
+        "many_herbs1",
+        "p_l_to_r_c",
+        "big_change",
+        "platonic",
+        "dislike",
+        "respect",
+        "romantic"
+    ],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "It makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+        "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
+    ],
+    "fail_text": [
+        "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "bch_med_cobwebapps2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+            "app3 ignores it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+    ],
+    "fail_text": [
             "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
         ],
         "min_cats": 2,
