@@ -6,7 +6,7 @@
             "Snoozes peacefully",
             "Wobbles around StarClan happily",
             "Is drinking milk from a StarClan queen",
-            "Tries opening their eyes to see the 'stars' everyone is talking about",
+            "Tries opening {PRONOUN/m_c/poss} eyes to see the 'stars' everyone is talking about",
             "Tries to practice walking to play with the other cats",
             "Attempts to snarl but can only manage a tiny mewl",
             "Rolls through the starry grass"
@@ -15,7 +15,7 @@
     {
         "id": "gen_dead_newborn_to_alive_parent",
         "thoughts":[
-            "Thinks they heard r_c's voice",
+            "Thinks {PRONOUN/m_c/subject} heard r_c's voice",
             "Is mewling for r_c",
             "Searches for r_c's scent",
             "Blindly reaches out for r_c"

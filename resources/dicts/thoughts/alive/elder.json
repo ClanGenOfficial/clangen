@@ -30,11 +30,11 @@
         "thoughts": [
             "Is complaining about {PRONOUN/m_c/poss} nest being too rough",
             "Is complaining about {PRONOUN/m_c/poss} aching joints",
-            "Is telling stories about when {PRONOUN/m_c/subject} {VERB/cat/were/was} young",
+            "Is telling stories about when {PRONOUN/m_c/subject} {VERB/m_c/were/was} young",
             "Is complaining about thorns in {PRONOUN/m_c/poss} nest",
             "Is thinking about how too many cats die young",
             "Is complaining about being cold",
-            "Is grateful {PRONOUN/m_c/subject} {VERB/cat/have/has} lived so long",
+            "Is grateful {PRONOUN/m_c/subject} {VERB/m_c/have/has} lived so long",
             "Is sharing {PRONOUN/m_c/poss} wisdom",
             "Is being pestered by fleas",
             "Is predicting rainy weather based on {PRONOUN/m_c/poss} aching bones",
@@ -44,9 +44,9 @@
             "Has been sleeping a lot more as of late",
             "Has been enjoying {PRONOUN/m_c/poss} old age",
             "Got lost outside of camp for a bit today",
-            "Doesn't like how times have changed since {PRONOUN/m_c/subject} {VERB/cat/were/was} young",
+            "Doesn't like how times have changed since {PRONOUN/m_c/subject} {VERB/m_c/were/was} young",
             "Is feeling rather cross today",
-            "Thinks that times have changed for the better since {PRONOUN/m_c/subject} {VERB/cat/were/was} young",
+            "Thinks that times have changed for the better since {PRONOUN/m_c/subject} {VERB/m_c/were/was} young",
             "Is recalling something no other cat remembers anymore",
             "Is grumbling about the weather"
         ],
@@ -121,10 +121,10 @@
     {
         "id": "gen_retired_disabled_thoughts",
         "thoughts": [
-            "Wants everyone to stop pitying {PRONOUN/m_c/object}, {PRONOUN/m_c/subject}{VERB/cat/'re/'s} fine!",
+            "Wants everyone to stop pitying {PRONOUN/m_c/object}, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine!",
             "Is glad {PRONOUN/m_c/subject} retired",
-            "Knows {PRONOUN/m_c/subject} {VERB/cat/are/is} helping the Clan more now",
-            "Feels like {PRONOUN/m_c/subject} {VERB/cat/are/is} missing out on adventures",
+            "Knows {PRONOUN/m_c/subject} {VERB/m_c/are/is} helping the Clan more now",
+            "Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} missing out on adventures",
             "Feels alone in {PRONOUN/m_c/poss} struggles",
             "Is becoming more confident in {PRONOUN/m_c/poss} position in the Clan",
             "Is enjoying {PRONOUN/m_c/poss} retirement under the sun"
@@ -200,7 +200,7 @@
     {
         "id": "paralyzed_gen_retired_shameless",
         "thoughts": [
-            "Makes up an excuse so {PRONOUN/m_c/subject} {VERB/cat/don't/doesn't} have to exercise today"
+            "Makes up an excuse so {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to exercise today"
         ],
         "perm_conditions": {
             "m_c": [
@@ -501,7 +501,7 @@
         "id": "missing_leg/tail_gen_retired_to_alive_gen",
         "thoughts": [
             "Is training {PRONOUN/m_c/poss} balance with r_c",
-            "Is heading to the medicine den because {PRONOUN/m_c/subject}{VERB/cat/'re/'s} starting to feel phantom pain"
+            "Is heading to the medicine den because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} starting to feel phantom pain"
         ],
         "perm_conditions": {
             "m_c": [
@@ -640,7 +640,7 @@
     {
         "id": "missing_tail_gen_retired_to_alive_kit",
         "thoughts": [
-            "Is being grumped at by a kit because {PRONOUN/m_c/subject} {VERB/cat/have/has} no tail to chomp on",
+            "Is being grumped at by a kit because {PRONOUN/m_c/subject} {VERB/m_c/have/has} no tail to chomp on",
             "Is being asked how {PRONOUN/m_c/subject} can balance by a kit"
         ],
         "perm_conditions": {
