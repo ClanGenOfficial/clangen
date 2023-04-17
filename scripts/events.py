@@ -1310,7 +1310,8 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
         
-        self.history.add_app_ceremony(cat, random_honor)
+        if cat.status in ["warrior", "medicine cat", "mediator"]:
+            self.history.add_app_ceremony(cat, random_honor)
         
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]

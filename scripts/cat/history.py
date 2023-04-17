@@ -201,7 +201,7 @@ class History:
 
     def add_possible_death_or_scars(self, cat, condition, text, other_cat=None, scar=False, death=False):
         """
-        this adds the possible death/scar the cat's history
+        this adds the possible death/scar to the cat's history
         :param cat: cat object
         :param other_cat: if another cat is mentioned in the history, include them here
         :param condition: the condition that is causing the death/scar

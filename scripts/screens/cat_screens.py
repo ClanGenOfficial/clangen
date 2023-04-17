@@ -1361,7 +1361,7 @@ class ProfileScreen(Screens):
                 influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to " + influenced_skill + "."
             elif influenced_trait and not influenced_skill:
                 if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                    influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to become more" + influenced_trait.lower() + "."
+                    influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to become more " + influenced_trait.lower() + "."
                 else:
                     influence_history = f"This cat's mentor was {mentor}."
             elif influenced_trait and influenced_skill:
@@ -1377,6 +1377,7 @@ class ProfileScreen(Screens):
                 influence_history = 'This cat has not finished training.'
 
         app_ceremony = self.history.get_app_ceremony(self.the_cat)
+        print(app_ceremony)
 
         graduation_history = ""
         if app_ceremony:
@@ -2040,6 +2041,8 @@ class ProfileScreen(Screens):
                 self.sub_tab_2.disable()
                 if self.history_text_box:
                     self.history_text_box.kill()
+                    self.no_moons.kill()
+                    self.show_moons.kill()
                 if self.save_text:
                     self.save_text.kill()
                 if self.notes_entry:

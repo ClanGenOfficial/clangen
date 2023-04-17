@@ -2025,6 +2025,10 @@ class Cat():
         else:
             self.also_got = False
 
+    def additional_injury(self, injury):
+        self.history_class.add_possible_death_or_scars(self, injury, )
+        self.get_injured(injury, event_triggered=True)
+
     def congenital_condition(self, cat):
         possible_conditions = []
 
@@ -2138,8 +2142,6 @@ class Cat():
 
         self.update_mentor()
 
-    def additional_injury(self, injury):
-        self.get_injured(injury, event_triggered=True)
 
     def is_ill(self):
         is_ill = True
