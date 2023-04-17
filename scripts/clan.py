@@ -509,12 +509,14 @@ class Clan():
         created in the 'clan created' screen, not every time
         the program starts
         """
-        self.instructor = Cat(status=choice(["warrior", "elder"]))
+        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
+                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+                              )
         self.instructor.dead = True
-        #update_sprite(self.instructor)
+        self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
+        self.add_to_starclan(self.instructor)
         self.all_clans = []
-        other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
