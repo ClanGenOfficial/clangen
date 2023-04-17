@@ -10,14 +10,6 @@
             "Closes {PRONOUN/m_c/poss} eyes, hoping to see the stars once they're opened",
             "Is terrified of the shadows surrounding {PRONOUN/m_c/object}",
             "Feels as if {PRONOUN/m_c/subject} {VERB/m_c/have/has} been abandoned"
-            "Misses the warmth of the nursery"
-            "Feels like {PRONOUN/m_c/possessive} innocent is gone"
-            "Wishes {PRONOUN/m_c/object} parent could comfort {PRONOUN/m_c/object}"
-            "Wishes chaos to the living"
-            "Wonders how {PRONOUN/m_c/possessive} bright future was taekn away"
-            "Wishes {PRONOUN/m_c/subject} could have lived longer to bring destruction to the clan"
-            "Has an evil look despite {PRONOUN/m_c/object} young age"
-            "Plays with the goop on {PRONOUN/m_c/possessive} paws"
         ]
     },
     {
@@ -26,10 +18,6 @@
             "Huddled up close to r_c",
             "Is comforting r_c despite {PRONOUN/m_c/poss} own fear",
             "Is being comforted by r_c"
-            "Is playing with r_c despite the dark surroundings"
-            "Follows r_c around with no real goal"
-            "Hides from a grown up with r_c"
-            "Clings onto r_c as the only other kit around"
         ],
         "random_living_status": [
             "darkforest"
@@ -43,13 +31,6 @@
         "thoughts": [
             "Is upset with r_c for leaving {PRONOUN/m_c/object} to the dark",
             "Wonders why stars shine in r_c's fur and not {PRONOUN/m_c/inposs}"
-            "Curses r_c for not being there for {PRONOUN/m_c/object}"
-            "Cries out in the darkness for r_c"
-            "Wails for hours for r_c"
-            "Screams about how much {PRONOUN/m_c/subject} hates m_c"
-            "Curses r_c for being a bad parent"
-            "Hates r_c for leaving {PRONOUN/m_c/possessive} to rot in this place"
-            "Doesn't understand why {PRONOUN/m_c/subject} can't see {PRONOUN/m_c/possessive} parent"
         ],
         "relationship_constraint": [
             "child/parent"
