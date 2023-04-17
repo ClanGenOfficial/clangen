@@ -6,7 +6,7 @@
         "Traipses through the muck with a disgusted look on {PRONOUN/m_c/poss} face",
         "Growls at the shadows",
         "Wonders if {PRONOUN/m_c/poss} housefolk are okay",
-        "Swears vengence for taking {PRONOUN/m_c/object} away from canned cat food"
+        "Swears vengeance for taking {PRONOUN/m_c/object} away from canned cat food"
     ],
     "main_status_constraint": [
         "kittypet"

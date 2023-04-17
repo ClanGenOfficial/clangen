@@ -48,7 +48,7 @@
             "Wails for hours for r_c",
             "Screams about how much {PRONOUN/m_c/subject} hates r_c",
             "Curses r_c for being a bad parent",
-            "Hates r_c for leaving {PRONOUN/m_c/poss} to rot in this place",
+            "Hates r_c for leaving {PRONOUN/m_c/subject} to rot in this place",
             "Doesn't understand why {PRONOUN/m_c/subject} can't see {PRONOUN/m_c/poss} parent"
         ],
         "relationship_constraint": [
