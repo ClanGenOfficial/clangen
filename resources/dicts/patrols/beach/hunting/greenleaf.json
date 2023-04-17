@@ -154,7 +154,7 @@
     "history_text": {
         "scar": "r_c carries a scar from a fight with a red vixen.",
         "reg_death": "r_c fell in battle with a red fox.",
-        "main_death": "died while fighting a red vixen"
+        "lead_death": "died while fighting a red vixen"
     }
 },
 {
@@ -224,7 +224,7 @@
     "history_text": {
         "scar": "r_c carries a scar from a solo fight with a red vixen.",
         "reg_death": "r_c fell in a solo battle with a vixen.",
-        "main_death": "died while fighting a red vixen"
+        "lead_death": "died while fighting a red vixen"
     }
 },
 
