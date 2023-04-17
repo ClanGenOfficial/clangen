@@ -2598,8 +2598,9 @@ class Cat():
                 jealousy = 0
                 trust = 0
                 if game.settings['random relation']:
-                    if the_cat == game.clan.instructor:
-                        pass
+                    if game.clan:
+                        if the_cat == game.clan.instructor:
+                            pass
                     elif randint(1, 20) == 1 and romantic_love < 1:
                         dislike = randint(10, 25)
                         jealousy = randint(5, 15)
