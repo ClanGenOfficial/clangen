@@ -105,7 +105,7 @@
         ],
         "fail_text": [
             "Hunting is poor, and while app1's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
-            "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/app1/object} empty pawed and exhausted. {PRONOUN/app1/poss/CAP} mentor is disappointed - {PRONOUN/app1/subject} clearly {VERB/app1/need/needs} more training.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training.",
             null,
             "While on the hunt, app1 tumbles right down into a rock pool while {PRONOUN/app1/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/app1/subject} {VERB/app1/return/returns} to camp."
         ],
