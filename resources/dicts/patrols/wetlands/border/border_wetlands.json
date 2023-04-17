@@ -11,20 +11,20 @@
             "BRIDGE"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious yowl, and then bring the prey back to c_n camp to report the incident to the deputy.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
-            "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl, and then bring the prey back to c_n camp to report the incident to the deputy.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} , and turns to follow the same marking path as {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} able to pick up on a lot of gossip about o_c_n through careful conversation.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and though no words are exchanged it's very tense.",
             null,
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused."
         ],
         "win_skills": [
             "good speaker",
@@ -74,20 +74,20 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
-            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees, with r_c hot on {PRONOUN/r_c/poss} trail, and when the apprentice crosses the border to hide behind {PRONOUN/r_c/poss} mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on {PRONOUN/s_c/poss} neighbors.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. {PRONOUN/s_c/poss/CAP} eyes go round and {PRONOUN/s_c/subject} {VERB/s_c/tuck/tucks} {PRONOUN/s_c/poss} paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
-            "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They don't return to camp.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and though no words are exchanged it's very tense.",
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/dos} n't return to camp.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -121,7 +121,7 @@
         "antagonize_fail_text": null,
         "history_text": [
             "r_c got injured patrolling on the border.",
-            "r_c lost their life in an ambush on the border."
+            "r_c lost {PRONOUN/r_c/poss} life in an ambush on the border."
         ]
     },
     {
@@ -138,20 +138,20 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
-            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees, with r_c hot on {PRONOUN/r_c/poss} trail, and when the apprentice crosses the border to hide behind {PRONOUN/r_c/poss} mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on {PRONOUN/s_c/poss} neighbors. Trust, but verify.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. {PRONOUN/s_c/poss/CAP} eyes go round and {PRONOUN/s_c/subject} {VERB/s_c/hide/hides} behind {PRONOUN/s_c/poss} mentor, but s_c manages to coax {PRONOUN/s_c/object} out, praising the little apprentice to {PRONOUN/s_c/poss} mentor, who purrs gratefully at the c_n leader's kindness."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
-            "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and though no words are exchanged it's very tense.",
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -201,20 +201,20 @@
             "deputy"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
-            "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/commiserate/commiserates} over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} and being led by {PRONOUN/s_c/poss} deputy. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with {PRONOUN/s_c/poss} new apprentice. {PRONOUN/s_c/poss/CAP} fellow deputy encourages {PRONOUN/s_c/poss} apprentice to quiz s_c, and s_c compliments {PRONOUN/s_c/object} both on how the young cat's training is progressing."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and have to return to camp and raise it with their leaders.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and have to return to camp and raise it with {PRONOUN/r_c/poss} leaders.",
             null,
             null,
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -253,20 +253,20 @@
             "leader"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
-            "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/commiserate/commiserates} over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with {PRONOUN/s_c/poss} leader. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the forest.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with {PRONOUN/s_c/poss} new apprentice. {PRONOUN/s_c/poss/CAP} fellow leader encourages {PRONOUN/s_c/poss} apprentice to quiz s_c, and s_c compliments {PRONOUN/s_c/object} both on how the young cat's training is progressing."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and agree to raise it next Gathering instead.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and agree to raise it next Gathering instead.",
             null,
             null,
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -302,18 +302,18 @@
             "no_app"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a stern warning, and then bring the prey back to c_n camp to report the incident to the deputy.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them, keen to catch up on what their ally has been up to.",
-            "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a stern warning, and then bring the prey back to c_n camp to report the incident to the deputy.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} , and turns to follow the same marking path as {PRONOUN/s_c/self} , keen to catch up on what {PRONOUN/s_c/poss} ally has been up to.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They immediately apologize to the o_c_n patrol for the diplomatic incident they've inadvertently caused.",
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! {PRONOUN/r_c/subject/CAP} immediately apologize to the o_c_n patrol for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
             null
         ],
         "win_skills": [
@@ -360,20 +360,20 @@
             "deputy"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Unimpressed, r_c brings them back to their border as the apprentice tries to melt into the ground in shame, handing them back to a mentor whose face goes slack with horror to see c_n's deputy.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, keen to catch up on what their ally has been up to. They send the patrol off with several friendly messages to pass on from different c_n cats, and an update from c_n's leader.",
-            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Unimpressed, r_c brings {PRONOUN/r_c/object} back to {PRONOUN/r_c/poss} border as the apprentice tries to melt into the ground in shame, handing {PRONOUN/r_c/object} back to a mentor whose face goes slack with horror to see c_n's deputy.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what {PRONOUN/s_c/poss} ally has been up to. {PRONOUN/s_c/subject/CAP} {VERB/s_c/send/sends} the patrol off with several friendly messages to pass on from different c_n cats, and an update from c_n's leader.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. {PRONOUN/s_c/poss/CAP} eyes go round and {PRONOUN/s_c/subject} {VERB/s_c/tuck/tucks} {PRONOUN/s_c/poss} paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
             null,
-            "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new fear in their heart - is o_c_n still their ally?"
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new fear in {PRONOUN/r_c/poss} heart - is o_c_n still {PRONOUN/r_c/poss} ally?"
         ],
         "win_skills": [
             "good speaker",
@@ -422,20 +422,20 @@
             "leader"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Unimpressed, r_c brings them back to their border as the apprentice tries to melt into the ground in shame, handing them back to a mentor who tucks their tail and starts to apologize profusely.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, keen to catch up on what their ally has been up to. The cats leave with several messages to pass on from both sides, and a refreshed sense of goodwill and trust between them.",
-            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Unimpressed, r_c brings {PRONOUN/r_c/object} back to {PRONOUN/r_c/poss} border as the apprentice tries to melt into the ground in shame, handing {PRONOUN/r_c/object} back to a mentor who tucks {PRONOUN/r_c/poss} tail and starts to apologize profusely.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} . {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what {PRONOUN/s_c/poss} ally has been up to. The cats leave with several messages to pass on from both sides, and a refreshed sense of goodwill and trust between {PRONOUN/s_c/self} .",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. {PRONOUN/s_c/poss/CAP} eyes go round and {PRONOUN/s_c/subject} {VERB/s_c/hide/hides} behind {PRONOUN/s_c/poss} mentor, but s_c manages to coax {PRONOUN/s_c/object} out, praising the little apprentice to {PRONOUN/s_c/poss} mentor, who purrs gratefully at the c_n leader's kindness."
         ],
         "fail_text": [
-            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
+            "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reachs} a section where the border is muddled, and have to give up and go home.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this.",
             null,
-            "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new fear in their heart - is o_c_n still their ally?"
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new fear in {PRONOUN/r_c/poss} heart - is o_c_n still {PRONOUN/r_c/poss} ally?"
         ],
         "win_skills": [
             "good speaker",
@@ -481,18 +481,18 @@
             "deputy"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. They commiserate and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both deputies finally getting the chance to lift stress from their shoulders and talk to an equal.",
-            "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/commiserate/commiserates} and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} and being led by {PRONOUN/s_c/poss} deputy. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both deputies finally getting the chance to lift stress from {PRONOUN/s_c/poss} shoulders and talk to an equal.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with {PRONOUN/s_c/poss} new apprentice. {PRONOUN/s_c/poss/CAP} fellow deputy encourages {PRONOUN/s_c/poss} apprentice to quiz s_c, and s_c compliments {PRONOUN/s_c/object} both on how the young cat's training is progressing."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and have to return to camp and raise it with their leaders.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and have to return to camp and raise it with {PRONOUN/r_c/poss} leaders.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
         ],
         "win_skills": [
             "good speaker",
@@ -525,18 +525,18 @@
             "leader"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They commiserate and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both leaders finally getting the chance to lift stress from their shoulders and talk to an equal.",
-            "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/commiserate/commiserates} and exchange news with each other, neither ally blaming the other for the innocent mistakes of apprentices.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with {PRONOUN/s_c/poss} leader. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into a venting session, both leaders finally getting the chance to lift stress from {PRONOUN/s_c/poss} shoulders and talk to an equal.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with {PRONOUN/s_c/poss} new apprentice. {PRONOUN/s_c/poss/CAP} fellow leader encourages {PRONOUN/s_c/poss} apprentice to quiz s_c, and s_c compliments {PRONOUN/s_c/object} both on how the young cat's training is progressing."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and agree to bring the subject up at next Gathering instead.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and agree to bring the subject up at next Gathering instead.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
         ],
         "win_skills": [
             "good speaker",
@@ -573,22 +573,22 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formal, but genuinely, grateful.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
-            "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that {PRONOUN/r_c/subject} didn't know! r_c gives them the benefit of the doubt and brings {PRONOUN/r_c/object} back to the frantic patrol looking for {PRONOUN/r_c/self} on the other side of the border, who are formal, but genuinely, grateful.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting {PRONOUN/s_c/object} . s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly {PRONOUN/s_c/poss} mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
         ],
         "fail_text": [
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious swipe of their claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious swipe of {PRONOUN/r_c/poss} claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
             null,
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused.",
-            "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
-            "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+            "s_c finds a o_c_n patrol out marking the same border, and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+            "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of {PRONOUN/s_c/self} at the border as a lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -639,22 +639,22 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
-            "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that {PRONOUN/r_c/subject} didn't know! r_c gives them the benefit of the doubt and brings {PRONOUN/r_c/object} back to the frantic patrol looking for {PRONOUN/r_c/self} on the other side of the border, who bow {PRONOUN/r_c/poss} heads to c_n's deputy in gratitude.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting {PRONOUN/s_c/object} . s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly {PRONOUN/s_c/poss} mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
         ],
         "fail_text": [
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
-            "r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-            "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
-            "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees, with r_c hot on {PRONOUN/r_c/poss} trail, and when the apprentice crosses the border to hide behind {PRONOUN/r_c/poss} mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} coldly, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/dos} n't return to camp.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding.",
+            "s_c finds a o_c_n patrol out marking the same border, and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+            "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of {PRONOUN/s_c/self} at the border as a lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -705,22 +705,22 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
-            "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that {PRONOUN/r_c/subject} didn't know! r_c gives them the benefit of the doubt and brings {PRONOUN/r_c/object} back to the frantic patrol looking for {PRONOUN/r_c/self} on the other side of the border, who crouch to the ground and thank r_c profusely.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting {PRONOUN/s_c/object} . s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly {PRONOUN/s_c/poss} mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
         ],
         "fail_text": [
-            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
-            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
-            "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
-            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-            "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
-            "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees, with r_c hot on {PRONOUN/r_c/poss} trail, and when the apprentice crosses the border to hide behind {PRONOUN/r_c/poss} mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
+            "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following {PRONOUN/s_c/poss} every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+            "r_c encounters a patrol from o_c_n on the border, and greets {PRONOUN/r_c/object} politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/subject} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/object} back to camp wounded and bleeding.",
+            "s_c finds a o_c_n patrol out marking the same border, and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+            "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of {PRONOUN/s_c/self} at the border as a lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -771,22 +771,22 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other deputy calls their warrior back, begrudgingly impressed.",
-            "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. s_c passes on a message from c_n's leader, and politely wishes the young apprentice well. The other deputy is begrudgingly impressed."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/'re/'res} carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} and being led by {PRONOUN/s_c/poss} deputy. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks {PRONOUN/s_c/subject} can take {PRONOUN/s_c/object} . The other deputy calls {PRONOUN/s_c/poss} warrior back, begrudgingly impressed.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with {PRONOUN/s_c/poss} new apprentice. s_c passes on a message from c_n's leader, and politely wishes the young apprentice well. The other deputy is begrudgingly impressed."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and it nearly comes to a fight.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and it nearly comes to a fight.",
             null,
             null,
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and it ends in a hissing fight.",
-            "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next Gathering.",
-            "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and it ends in a hissing fight.",
+            "s_c finds a o_c_n patrol out marking the same border, and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+            "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of {PRONOUN/s_c/self} at the border as a lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -827,22 +827,22 @@
             "death"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "A section of their border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-            "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
-            "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their Clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
+            "A section of {PRONOUN/r_c/poss} border with o_c_n has flooded under some recent rains, wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/'re/'res} carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/self} and being led by {PRONOUN/s_c/poss} Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks {PRONOUN/s_c/subject} can take {PRONOUN/s_c/object} . The other leader calls {PRONOUN/s_c/poss} warrior back, begrudgingly impressed.",
+            "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with {PRONOUN/s_c/poss} new apprentice. s_c passes on some important information affecting both {PRONOUN/s_c/poss} Clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
         ],
         "fail_text": [
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and storm off in a huff.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and storm off in a huff.",
             null,
             null,
-            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and it descends into a proper fight, claws out between them.",
-            "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
-            "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where {PRONOUN/r_c/subject} can't agree on the right border path, and it descends into a proper fight, claws out between {PRONOUN/r_c/self} .",
+            "s_c finds a o_c_n patrol out marking the same border, and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+            "s_c can't contain {PRONOUN/s_c/poss} hatred for o_c_n, not even meeting a patrol of {PRONOUN/s_c/self} at the border as a lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp bleeding."
         ],
         "win_skills": [
             "good speaker",
@@ -885,9 +885,9 @@
         "exp": 30,
         "success_text": [
             "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "It's just an odd loner singing to {PRONOUN/p_l/self} . When {PRONOUN/p_l/subject} {VERB/p_l/see/sees} the patrol {PRONOUN/p_l/subject} {VERB/p_l/invite/invites} {PRONOUN/p_l/object} to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/p_l/poss} current life.",
             "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
-            "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+            "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} {PRONOUN/p_l/poss} concerns about the unknown situation. And maybe {PRONOUN/p_l/subject} {VERB/p_l/'re/'res} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
         ],
         "fail_text": [
             null,
@@ -927,10 +927,10 @@
         "chance_of_success": 10,
         "exp": 30,
         "success_text": [
-            "It's just an odd loner singing to themselves. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
-            "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
-            "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+            "It's just an odd loner singing to {PRONOUN/r_c/self} . r_c greets {PRONOUN/r_c/object} , and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to {PRONOUN/p_l/self} . When {PRONOUN/p_l/subject} {VERB/p_l/see/sees} the patrol {PRONOUN/p_l/subject} {VERB/p_l/invite/invites} {PRONOUN/p_l/object} to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/p_l/poss} current life.",
+            "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+            "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject} {VERB/s_c/'re/'res} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         ],
         "fail_text": [
             null,
@@ -966,14 +966,14 @@
             "respect",
             "trust"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds in the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
             "The cats become wet from the rain but otherwise the patrol is successful.",
-            "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+            "s_c makes a careful judgment, and the patrol keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/object} through the trees as the rain begins to pour around {PRONOUN/s_c/self} .",
             "It's not worth the risk - s_c convinces the patrol to head for home."
         ],
         "fail_text": [
@@ -1011,14 +1011,14 @@
             "respect",
             "trust"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds in the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
             "The cats become wet from the rain but otherwise the patrol is successful.",
-            "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+            "s_c makes a careful judgment, and the patrol keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/object} through the trees as the rain begins to pour around {PRONOUN/s_c/self} .",
             "It's not worth the risk - s_c convinces the patrol to head for home."
         ],
         "fail_text": [
@@ -1054,21 +1054,21 @@
             "death",
             "injury"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds in the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
             "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+            "s_c makes a careful judgment, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/object} through the trees as the rain begins to pour around {PRONOUN/s_c/self} .",
             "It's not worth the risk - s_c heads for home."
         ],
         "fail_text": [
             null,
             null,
             "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
-            "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. Somehow, gasping for air and paddling desperately, r_c is able to remember enough of their training to keep an eye out for driftwood, and sinks their claws into the first piece that's swept past them. It saves their life."
+            "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. Somehow, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/self} . It saves {PRONOUN/r_c/poss} life."
         ],
         "win_skills": [
             "very smart",
@@ -1096,21 +1096,21 @@
             "border",
             "injury"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds in the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
             "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+            "s_c makes a careful judgment, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/object} through the trees as the rain begins to pour around {PRONOUN/s_c/self} .",
             "It's not worth the risk - s_c heads for home."
         ],
         "fail_text": [
             null,
             null,
             null,
-            "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, they nevertheless cling to safety as the floodwaters run their course."
+            "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. With the little warning {PRONOUN/r_c/subject} {VERB/r_c/have/haves} , {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, {PRONOUN/r_c/subject} nevertheless cling to safety as the floodwaters run {PRONOUN/r_c/poss} course."
         ],
         "win_skills": [
             "very smart",
@@ -1144,15 +1144,15 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "r_c leaps forward, dashing to the other side of the bog and up into the trees. They make it in time to watch the swamp get lost under a tide of water from inland.",
+            "r_c leaps forward, dashing to the other side of the bog and up into the trees. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the swamp get lost under a tide of water from inland.",
             null,
-            "s_c scrambles back the way they came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-            "s_c shrieks at the strange sound, paws digging into the mud as they turn and run for home. They are proven right when the swamp disappears under a flood of water from inland. Their caution saved their life."
+            "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+            "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and run for home. {PRONOUN/s_c/subject/CAP} are proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life."
         ],
         "fail_text": [
             null,
             null,
-            "r_c is in the middle of the bog when the flood hits them, freezing water rushing past and sweeping them straight out into the churning river, under it's ice.",
+            "r_c is in the middle of the bog when the flood hits {PRONOUN/r_c/object} , freezing water rushing past and sweeping {PRONOUN/r_c/object} straight out into the churning river, under it's ice.",
             null
         ],
         "win_skills": [
@@ -1191,14 +1191,14 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. r_c slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and drives them off c_n territory.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, and drives {PRONOUN/s_c/object} off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} alone.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/ares} n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/ares} . The trap fails, and the rogue wanders on.",
+            "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object} .",
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         ],
         "win_skills": [
             "good fighter",
@@ -1254,14 +1254,14 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. r_c slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/s_c/subject} 've been caught and trapped by c_n, and {PRONOUN/s_c/subject} 're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} alone.",
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} 'd like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
+            "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object} .",
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         ],
         "win_skills": [
             "smart",
@@ -1317,16 +1317,16 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "The pawprints lead to a trespassing rogue. app1 slips into the swamp and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
-            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            "The pawprints lead to a trespassing rogue. app1 slips into the swamp and sets up an ambush that lets {PRONOUN/app1/subject} pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/'re/'res} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
             null,
             null
         ],
         "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
-            "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+            "It turns out {PRONOUN/app1/subject} were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/'re/'res} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/dos} n't want to look dumb in front of other cats.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/s_c/object} completely.",
+            "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object} .",
+            "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/object} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         ],
         "fail_trait": [
             "ambitious",
@@ -1373,14 +1373,14 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/r_c/object} at the rogue, hissing furiously, and together with r_c drives {PRONOUN/r_c/object} off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/r_c/object} . Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by {PRONOUN/r_c/poss} confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/ares} n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/ares} . The trap fails, and the rogue wanders on.",
             null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
         ],
         "win_skills": [
             "good fighter",
@@ -1435,14 +1435,14 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/s_c/subject} 've been caught and trapped by c_n, and {PRONOUN/s_c/subject} 're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/r_c/object} . Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by {PRONOUN/r_c/poss} confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} 'd like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
             null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/object} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         ],
         "win_skills": [
             "smart",
@@ -1498,15 +1498,15 @@
         "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
-            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/'re/'res} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
             null,
             null
         ],
         "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
+            "It turns out {PRONOUN/app1/subject} were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/do/dos} n't want to look dumb in front of other cats.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             null,
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+            "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/object} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         ],
         "fail_trait": [
             "ambitious",
@@ -1550,12 +1550,12 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/r_c/object} at the rogue, hissing furiously, and together with r_c drives {PRONOUN/r_c/object} off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence and the number of cats, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/ares} n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/ares} . The trap fails, and the rogue wanders on.",
             null,
             null
         ],
@@ -1609,12 +1609,12 @@
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
-            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/s_c/subject} 've been caught and trapped by c_n, and {PRONOUN/s_c/subject} 're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence and the number of cats, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} 'd like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
             null,
             null
         ],
@@ -1669,13 +1669,13 @@
         "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol slips into the swamp and sets up an ambush, sending the rogue fleeing off c_n territory.",
-            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject} {VERB/app1/'re/'res} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon.",
             null,
             null
         ],
         "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
+            "It turns out {PRONOUN/app1/subject} were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/dos} n't want to look dumb in front of other cats.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object} . Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing {PRONOUN/s_c/object} up, leaves c_n territory.",
             null,
             null
         ],
@@ -1718,19 +1718,19 @@
             "rel_patrol",
             "patrol_to_r_c"
         ],
-        "intro_text": "On their way to mark the far corners of their swamps, r_c starts telling a story of their ancestors to keep every cat entertained.",
+        "intro_text": "On {PRONOUN/r_c/poss} way to mark the far corners of {PRONOUN/r_c/poss} swamps, r_c starts telling a story of {PRONOUN/r_c/poss} ancestors to keep every cat entertained.",
         "decline_text": "The patrol seems uninterested, so r_c drops the idea. ",
         "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "It keeps the cats' minds off their damp paws and muddy path. The patrol goes quickly and easily.",
             null,
-            "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
+            "s_c spins a story, vivid and engaging, telling the tale of a massive war {PRONOUN/s_c/poss} ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
             "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their Clanmates, and everyone ends the day feeling much closer to each other."
         ],
         "fail_text": [
-            "r_c skids on mud as they're getting to an exciting part, and has to stop the story to pay attention to the path. ",
-            "s_c takes r_c aside, and reminds them coldly to focus on their duties."
+            "r_c skids on mud as {PRONOUN/r_c/subject} {VERB/r_c/'re/'res} getting to an exciting part, and has to stop the story to pay attention to the path. ",
+            "s_c takes r_c aside, and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties."
         ],
         "win_skills": [
             "good speaker",
