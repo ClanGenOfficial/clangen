@@ -125,9 +125,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by a rattlesnake."
-            ]
+        "history_text": {
+        "scar": "r_c was scarred by a rattlesnake."
+    }
     },
     {
         "patrol_id": "bch_hunt_leaf-bare_groupsquirrel1",
@@ -208,10 +208,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c caught a chill while hunting in leaf-bare.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_hunt_leafbaresnowstorm2",
@@ -246,10 +245,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c caught a chill while hunting in leaf-bare.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_hunt_leafbaresnowstorm3",
@@ -296,9 +294,8 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c caught a chill while hunting in leaf-bare.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
 }
 ]

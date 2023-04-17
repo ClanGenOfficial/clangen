@@ -74,9 +74,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringblackberry_leaf-bare2",
@@ -103,9 +103,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringblackberry_leaf-bare3",
@@ -132,9 +132,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringburdock_leaf-bare1",
@@ -161,9 +161,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringburdock_leaf-bare2",
@@ -190,9 +190,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringburdock_leaf-bare3",
@@ -219,9 +219,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdaisy_leaf-bare1",
@@ -248,9 +248,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdaisy_leaf-bare2",
@@ -277,9 +277,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdaisy_leaf-bare3",
@@ -306,9 +306,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdandelion_leaf-bare1",
@@ -335,9 +335,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdandelion_leaf-bare2",
@@ -364,9 +364,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringdandelion_leaf-bare3",
@@ -393,9 +393,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringjuniper_leaf-bare1",
@@ -422,9 +422,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringjuniper_leaf-bare2",
@@ -451,9 +451,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringjuniper_leaf-bare3",
@@ -480,9 +480,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringwildgarlic_leaf-bare1",
@@ -509,9 +509,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringwildgarlic_leaf-bare2",
@@ -538,9 +538,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "bch_med_gatheringwildgarlic_leaf-bare3",
@@ -567,8 +567,8 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 }
 ]

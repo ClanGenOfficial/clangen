@@ -9,6 +9,8 @@ TODO: Docs
 from random import choice, choices, randint, random, sample
 import re
 import pygame
+
+from scripts.cat.history import History
 from scripts.cat.names import names
 
 import ujson
@@ -69,10 +71,11 @@ def get_alive_clan_queens(all_cats):
 
 def get_alive_kits(Cat):
     """
-    returns a list of all living kittens in the clan
+    returns a list of IDs for all living kittens in the clan
     """
     alive_kits = [i for i in Cat.all_cats.values() if
-                  i.age in ['kitten', 'newborn'] and not (i.dead or i.outside)]
+                  i.age in ['kitten', 'newborn'] and not i.dead and not i.outside]
+
     return alive_kits
 
 
@@ -184,6 +187,19 @@ def get_current_season():
     game.clan.current_season = game.clan.seasons[index]
 
     return game.clan.current_season
+
+
+def change_clan_reputation(difference=0):
+    """
+    will change the clan's reputation with outsider cats according to the difference parameter.
+    """
+    # grab rep
+    reputation = int(game.clan.reputation)
+    # ensure this is an int value
+    difference = int(difference)
+    # change rep
+    reputation += difference
+    game.clan.reputation = reputation
 
 
 def change_clan_relations(other_clan, difference=0):
@@ -391,6 +407,8 @@ def create_new_cat(Cat,
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
+        history = History()
+        history.add_beginning(new_cat)
 
         # create relationships
         new_cat.create_relationships_new_cat()
@@ -888,6 +906,36 @@ def event_text_adjust(Cat,
     adjust_text = process_text(text, cat_dict)
 
     return adjust_text
+
+
+def leader_ceremony_text_adjust(Cat,
+                                text,
+                                leader,
+                                life_giver=None,
+                                virtue=None,
+                                extra_lives=None,):
+    """
+    used to adjust the text for leader ceremonies
+    """
+    replace_dict = {
+        "m_c_star": (str(leader.name.prefix + "star"), choice(leader.pronouns)),
+        "m_c": (str(leader.name.prefix + leader.name.suffix), choice(leader.pronouns)),
+    }
+
+    if life_giver:
+        replace_dict["r_c"] = (str(Cat.fetch_cat(life_giver).name), choice(Cat.fetch_cat(life_giver).pronouns))
+
+    text = process_text(text, replace_dict)
+
+    if virtue:
+        text = text.replace("[virtue]", virtue)
+
+    if extra_lives:
+        text = text.replace('[life_num]', str(extra_lives))
+
+    text = text.replace("c_n", str(game.clan.name) + "Clan")
+
+    return text
 
 
 def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,

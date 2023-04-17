@@ -26,11 +26,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "fst_bord_flashflood2",
@@ -59,11 +58,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "fst_bord_flashflood3",
@@ -92,11 +90,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "fst_bord_flashflood4",
@@ -125,11 +122,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "fst_bord_flashflood5",
@@ -158,11 +154,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "fst_bord_flashflood6",
@@ -191,11 +186,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-        "drowned in floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned in floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_abandontwolegdis1",
@@ -224,11 +218,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
-        "were ambushed by rogues"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were ambushed by rogues"
+    }
 },
 {
     "patrol_id": "pln_bord_abandontwolegdis2",
@@ -257,11 +250,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
-        "were ambushed by rogues"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were ambushed by rogues"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood1",
@@ -290,11 +282,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood2",
@@ -323,11 +314,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-        "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood3",
@@ -356,11 +346,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-        "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood4",
@@ -389,11 +378,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood5",
@@ -422,11 +410,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "pln_bord_flashflood6",
@@ -455,11 +442,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood1",
@@ -488,11 +474,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood2",
@@ -521,11 +506,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood3",
@@ -554,11 +538,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood4",
@@ -587,11 +570,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood5",
@@ -620,11 +602,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "mtn_bord_flashflood6",
@@ -653,11 +634,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_abandontwolegdis1",
@@ -686,11 +666,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
-            "were ambushed by rogues"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were ambushed by rogues"
+    }
 },
 {
     "patrol_id": "bch_bord_abandontwolegdis2",
@@ -719,11 +698,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
-            "were ambushed by rogues"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were ambushed by rogues"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflooddis1",
@@ -752,11 +730,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflooddis2",
@@ -785,11 +762,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was drowned by floodwaters.",
-            "drowned by floodwaters"
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters.",
+        "lead_death": "drowned by floodwaters"
+    }
 },
 {
     "patrol_id": "bch_bord_flashflooddis3",
@@ -818,11 +794,10 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "This cat was swept out to sea by a flood.",
-            "were swept out to sea by a flood"
-    ]
+    "history_text": {
+        "reg_death": "This cat was swept out to sea by a flood.",
+        "lead_death": "were swept out to sea by a flood"
+    }
 },
 {
     "patrol_id": "wtlnd_bord_flashflooddis1",
@@ -863,10 +838,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was drowned by floodwaters."
-    ]
+    "history_text": {
+        "reg_death": "This cat was drowned by floodwaters."
+    }
 },
 {
     "patrol_id": "wtlnd_bord_flashflooddis2",
@@ -905,10 +879,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was drowned by floodwaters."
-    ]
+    "history_text": {
+        "reg_death": "r_c was drowned by floodwaters."
+    }
 },
 {
     "patrol_id": "wtlnd_bord_flashflooddis3",
@@ -950,10 +923,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was killed by a flood."
-    ]
+    "history_text": {
+        "reg_death": "This cat was killed by a flood."
+    }
 },
 {
     "patrol_id": "fst_bord_roguedis1",
@@ -982,11 +954,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "This cat was badly scarred when rogues ambushed their patrol.",
+        "reg_death": "This cat was killed when rogues ambushed their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "mtn_bord_roguedis1",
@@ -1015,11 +987,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues ambushed their patrol.",
+        "reg_death": "This cat was killed when rogues ambushed their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {    
     "patrol_id": "pln_bord_roguedis1",
@@ -1048,11 +1020,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues ambushed their patrol.",
+        "reg_death": "This cat was killed when rogues ambushed their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_roguedis1",
@@ -1081,10 +1053,10 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues ambushed their patrol.",
+        "reg_death": "This cat was killed when rogues ambushed their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 }
 ]
