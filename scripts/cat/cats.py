@@ -2026,7 +2026,6 @@ class Cat():
             self.also_got = False
 
     def additional_injury(self, injury):
-        self.history_class.add_possible_death_or_scars(self, injury, )
         self.get_injured(injury, event_triggered=True)
 
     def congenital_condition(self, cat):
@@ -2599,8 +2598,9 @@ class Cat():
                 jealousy = 0
                 trust = 0
                 if game.settings['random relation']:
-                    if the_cat == game.clan.instructor:
-                        pass
+                    if game.clan:
+                        if the_cat == game.clan.instructor:
+                            pass
                     elif randint(1, 20) == 1 and romantic_love < 1:
                         dislike = randint(10, 25)
                         jealousy = randint(5, 15)
