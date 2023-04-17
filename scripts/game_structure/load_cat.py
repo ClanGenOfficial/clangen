@@ -214,8 +214,8 @@ def json_load():
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
+            new_cat.eye_tint = cat["eye_tint"] if "eye_tint" in cat else "none"
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
-
             if "died_by" in cat:
                 new_cat.convert_history(
                     cat["mentor_influence"] if "mentor_influence" in cat else [],
@@ -472,7 +472,7 @@ def csv_load(all_cats):
             game.switches[
                 'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
                     inter_cat)
-            update_sprite(inter_cat)
+            #update_sprite(inter_cat)
         # generate the relationship if some is missing
         if not the_cat.dead:
             game.switches[

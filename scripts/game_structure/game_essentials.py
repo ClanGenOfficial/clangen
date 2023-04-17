@@ -397,6 +397,7 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
+                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
