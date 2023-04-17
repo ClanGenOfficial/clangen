@@ -1173,10 +1173,10 @@ class ChooseMateScreen(Screens):
                 self.update_buttons()
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
-                self.update_cat_page()
+                self.update_cat_list()
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
-                self.update_cat_page()
+                self.update_cat_list()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1230,8 +1230,6 @@ class ChooseMateScreen(Screens):
         self.kitten_message = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 666), (1200, 80))),
                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"))
         self.kitten_message.hide()
-        
-        self.all_pages = []
 
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
@@ -1430,8 +1428,13 @@ class ChooseMateScreen(Screens):
         if self.selected_cat and self.selected_cat.ID in self.the_cat.mate:
             self.kittens = False
             for x in game.clan.clan_cats:
-                if self.the_cat.ID in Cat.all_cats[x].get_parents() and \
-                        self.selected_cat.ID in Cat.all_cats[x].get_parents():
+                if self.the_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ] and self.selected_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ]:
                     self.all_pages.append(Cat.all_cats[x])
                     self.kittens = True
         else:
@@ -2212,8 +2215,8 @@ class RelationshipScreen(Screens):
             name = short_name + '...'
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x - 5, pos_y - 48),
-                                                                                         (215, 60))),
+                                                                                         (pos_x, pos_y - 48),
+                                                                                         (204, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment

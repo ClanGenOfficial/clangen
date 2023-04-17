@@ -22,11 +22,10 @@
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c mistook deathberries for something edible.",
-        "after eating deathberries"
-    ]
+    "history_text": {
+        "reg_death": "r_c mistook deathberries for something edible.",
+        "lead_death": "after eating deathberries"
+    }
 },
 {
     "patrol_id": "gen_train_berrybush2",
@@ -49,11 +48,10 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c mistook deathberries for something edible.",
-        "after eating deathberries"
-    ]
+    "history_text": {
+        "reg_death": "r_c mistook deathberries for something edible.",
+        "lead_death": "after eating deathberries"
+    }
 },
 {
     "patrol_id": "gen_train_berrybush3",
@@ -78,11 +76,10 @@
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c mistook deathberries for something edible.",
-        "after eating deathberries"
-    ]
+    "history_text": {
+        "reg_death": "r_c mistook deathberries for something edible.",
+        "lead_death": "after eating deathberries"
+    }
 },
 {
     "patrol_id": "gen_train_berrybush4",
@@ -105,11 +102,10 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c mistook deathberries for something edible.",
-        "after eating deathberries"
-    ]
+    "history_text": {
+        "reg_death": "r_c mistook deathberries for something edible.",
+        "lead_death": "after eating deathberries"
+    }
 },
 {
     "patrol_id": "gen_train_sunny1",
@@ -1171,9 +1167,9 @@
     "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
     "max_cats": 2,
-    "history_text": [
-        "This cat's back was broken after attempting to enter the forbidden tunnels."
-    ]
+    "history_text": {
+        "scar": "This cat's back was broken after attempting to enter the forbidden tunnels."
+    }
 },
 {
     "patrol_id": "gen_train_confidinginwarrior1",
