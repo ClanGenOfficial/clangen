@@ -1084,9 +1084,17 @@ def update_sprite(cat):
             new_sprite.blit(sprites.sprites['white' + cat.vitiligo + cat_sprite], (0, 0))
 
         # draw eyes & scars1
-        new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + cat_sprite], (0, 0))
+        eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
-            new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+            eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+        #Eye tint
+        if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
+                "tint_colours"]:
+            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
+            tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
+            eyes.blit(tint, (0,0), special_flags=pygame.BLEND_RGB_MULT)
+        new_sprite.blit(eyes, (0,0))
+        
         for scar in cat.scars:
             if scar in scars1:
                 new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))

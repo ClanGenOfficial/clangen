@@ -656,24 +656,52 @@ def init_tint(cat):
 
     # PELT TINT
     # Basic tints as possible for all colors.
-    possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
+    base_tints = Sprites.cat_tints["possible_tints"]["basic"]
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
         color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
-        possible_tints += Sprites.cat_tints["possible_tints"][color_group]
-        cat.tint = choice(possible_tints)
+        color_tints = Sprites.cat_tints["possible_tints"][color_group]
+    else:
+        color_tints = []
+    
+    if base_tints or color_tints:
+        cat.tint = choice(base_tints + color_tints)
     else:
         cat.tint = "none"
 
     # WHITE PATCHES TINT
     if cat.white_patches or cat.points:
         #Now for white patches
-        possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
+        base_tints = Sprites.white_patches_tints["possible_tints"]["basic"]
         if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
             color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
-            possible_tints += Sprites.white_patches_tints["possible_tints"][color_group]
-            cat.white_patches_tint = choice(possible_tints)
+            color_tints = Sprites.white_patches_tints["possible_tints"][color_group]
         else:
-            cat.white_patches_tint = "none"
+            color_tints = []
+        
+        if base_tints or color_tints:
+            cat.white_patches_tint = choice(base_tints + color_tints)
+        else:
+            cat.white_patches_tint = "none"    
     else:
         cat.white_patches_tint = "none"
+        
+    # EYE TINT:
+    base_tints = Sprites.eye_tints["possible_tints"]["basic"].copy()
+    if cat.eye_colour in Sprites.eye_tints["colour_groups"]:
+        color_group = Sprites.eye_tints["colour_groups"][cat.eye_colour]
+        color_tints = Sprites.eye_tints["possible_tints"][color_group].copy()
+        
+        #If this cat has a second eye color... 
+        if cat.eye_colour2 and cat.eye_colour2 in Sprites.eye_tints["colour_groups"]:
+            color_group = Sprites.eye_tints["colour_groups"][cat.eye_colour2]
+            _color_tints2 = set(Sprites.eye_tints["possible_tints"][color_group])
+            
+            color_tints = list(_color_tints2.intersection(set(color_tints)))
+    else:
+        color_tints = []
+    
+    if base_tints or color_tints:
+        cat.eye_tint = choice(base_tints + color_tints)
+    else:
+        cat.eye_tint = "none"
 
