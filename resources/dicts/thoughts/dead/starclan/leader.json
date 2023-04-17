@@ -3,8 +3,8 @@
         "id": "gen_dead_leader",
         "thoughts": [
             "Watches c_n proudly",
-            "Hopes they have been a good leader",
-            "Is contemplating their legacy"
+            "Hopes {PRONOUN/m_c/subject} have been a good leader",
+            "Is contemplating {PRONOUN/m_c/poss} legacy"
         ]
     },
     {

@@ -2,7 +2,7 @@
     {
         "id": "kit_dead_kit",
         "thoughts": [
-            "Is wondering if r_c would have been their friend"
+            "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend"
         ],
         "random_status_constraint": [
             "kitten"
@@ -26,28 +26,28 @@
     {
         "id": "gen_kit",
         "thoughts": [
-            "Plays moss ball by themselves",
-            "Wonders who their mentor will be",
+            "Plays moss ball by {PRONOUN/m_c/self}",
+            "Wonders who {PRONOUN/m_c/poss} mentor will be",
             "Wants to take a nap",
             "Tries to sneak out of camp",
             "Is rolling around on the ground",
-            "Is chasing their tail",
+            "Is chasing {PRONOUN/m_c/poss} tail",
             "Is playing with a stick",
-            "Is nervous for their apprentice ceremony",
-            "Is excited for their apprentice ceremony",
+            "Is nervous for {PRONOUN/m_c/poss} apprentice ceremony",
+            "Is excited for {PRONOUN/m_c/poss} apprentice ceremony",
             "Is scared after having a nightmare",
             "Wants to snuggle",
             "Is bouncing around in excitement",
             "Whines about being hungry",
             "Is whining for milk",
-            "Is whimpering in their sleep",
+            "Is whimpering in {PRONOUN/m_c/poss} sleep",
             "Is trying to growl menacingly",
-            "Is adamantly refusing to take their nap",
+            "Is adamantly refusing to take {PRONOUN/m_c/poss} nap",
             "Is batting pebbles across the camp clearing",
             "Is crying after rough-housing too hard with the older cats",
-            "Is regretting eating the bug that they caught",
+            "Is regretting eating the bug that {PRONOUN/m_c/subject} caught",
             "Recently took a tumble off of a log",
-            "Is busy mastering a battle move they are performing incorrectly",
+            "Is busy mastering a battle move {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} performing incorrectly",
             "Is hatching a plan to sneak out of camp and play",
             "Is running like a whirlwind around the camp",
             "Is pretending to be the Clan leader",
@@ -59,11 +59,11 @@
         "id": "kit_older_cats",
         "thoughts": [
             "Is asking older cats how kits are born",
-            "Wishes other cats would stop babying them",
+            "Wishes other cats would stop babying {PRONOUN/m_c/object}",
             "Is hiding from other cats",
             "Is annoying older cats",
             "Is asking the older cats about how kittens are made",
-            "Is pestering older cats to play with them"
+            "Is pestering older cats to play with {PRONOUN/m_c/object}"
         ],
         "random_age_constraint": [
             "adolescent",
@@ -76,7 +76,7 @@
     {
         "id": "kit_alive_med_cat",
         "thoughts": [
-            "Refuses to eat the herbs the medicine cat has given them for their tummy"
+            "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -106,10 +106,10 @@
     {
         "id": "charming_kit",
         "thoughts": [
-            "Is rolling around cutely while warriors look upon them",
+            "Is rolling around cutely while warriors look upon {PRONOUN/m_c/object}",
             "Is rubbing up against the warriors' legs",
-            "Is hoping the patrol will come back with a special gift for them like usual",
-            "Is trying to purr their way out of trouble with the medicine cat"
+            "Is hoping the patrol will come back with a special gift for {PRONOUN/m_c/object} like usual",
+            "Is trying to purr {PRONOUN/m_c/poss} way out of trouble with the medicine cat"
         ],
         "main_trait_constraint": [
             "charming"
@@ -127,9 +127,9 @@
     {
         "id": "daydreamer_kit",
         "thoughts": [
-            "Thinks they saw a StarClan cat in their dreams",
+            "Thinks {PRONOUN/m_c/subject} saw a StarClan cat in {PRONOUN/m_c/poss} dreams",
             "Is mesmerized by the night sky",
-            "Thinks they're the leader of their own Clan",
+            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the leader of {PRONOUN/m_c/poss} own Clan",
             "Bosses around imaginary cats as deputy",
             "Wonders what it would be like to be leader",
             "Sorts blades of grass like a medicine cat would",
@@ -172,22 +172,22 @@
         "id": "nervous_kit",
         "thoughts": [
             "Was startled by a croaking frog",
-            "Is doing their best not to get stepped on",
-            "Is trying to stop their paws from shaking",
-            "Is nervous about leaving their siblings",
+            "Is doing {PRONOUN/m_c/poss} best not to get stepped on",
+            "Is trying to stop {PRONOUN/m_c/poss} paws from shaking",
+            "Is nervous about leaving {PRONOUN/m_c/poss} siblings",
             "Doesn't want to be an apprentice yet",
-            "Is thinking about how nervous they are",
-            "Is worrying about their family and friends",
+            "Is thinking about how nervous {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
+            "Is worrying about {PRONOUN/m_c/poss} family and friends",
             "Is trying to be brave",
             "Is worried about making mistakes",
             "Is feeling shaky",
-            "Is worried that they won't do a good enough job",
+            "Is worried that {PRONOUN/m_c/subject} won't do a good enough job",
             "Is trying not to shake with nerves",
             "Is trying to stay calm",
-            "Wants to stay in their den a little longer",
-            "Is reminding themself that it will be okay",
+            "Wants to stay in {PRONOUN/m_c/poss} den a little longer",
+            "Is reminding {PRONOUN/m_c/self} that it will be okay",
             "Is scared of r_c",
-            "Recently jumped at the sight of their own shadow"
+            "Recently jumped at the sight of {PRONOUN/m_c/poss} own shadow"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -196,7 +196,10 @@
     {
         "id": "quiet_kit",
         "thoughts": [
-            "Is too good at playing hide-and-seek"
+            "Is too good at playing hide-and-seek",
+            "Is asked to speak up",
+            "Plays quietly alone with a feather in front of the nursery",
+            "Is very excited for {PRONOUN/m_c/poss} nap"
         ],
         "main_trait_constraint": [
             "quiet"
@@ -205,7 +208,10 @@
     {
         "id": "sweet_kit",
         "thoughts": [
-            "Is pretending to be the medicine cat"
+            "Is pretending to be the medicine cat",
+            "Plucks feathers from a fresh-kill bird to add to nests",
+            "Offers to leave camp to collect moss, but can't, because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a kit",
+            "Compliments an older cat on how their fur looks today"
         ],
         "main_trait_constraint": [
             "sweet"
@@ -215,7 +221,7 @@
         "id": "troublesome_kit",
         "thoughts": [
             "Is thinking about mischief",
-            "Is wondering what trouble they can create",
+            "Is wondering what trouble {PRONOUN/m_c/subject} can create",
             "Is wondering about the unknown",
             "Is planning to be naughty",
             "Is thinking about being in trouble",
@@ -224,7 +230,7 @@
             "Is thinking of how to cause trouble",
             "Is planning to annoy an elder",
             "Is trying very hard to look innocent",
-            "Is thinking about play-fighting with their littermates",
+            "Is thinking about play-fighting with {PRONOUN/m_c/poss} littermates",
             "Is putting thorns in r_c's bedding",
             "Is thinking about stealing herbs from the medicine den",
             "Is sneaking out of camp"

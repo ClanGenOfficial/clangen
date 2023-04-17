@@ -165,11 +165,11 @@
     "max_cats": 6,
     "antagonize_text": "p_l goes to check the bush and finds a kittypet cowering inside. p_l scratches its ears off and sends it on it's way.",
     "antagonize_fail_text": "p_l finds a gang of rogues in the bush! p_l has to turn tail and run, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n.",
-    "history_text": [
-            "p_l gained a scar after tussling with a rogue.",
-            "p_l was killed by a rogue.",
-            "were killed by a rogue"
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar after tussling with a rogue.",
+        "reg_death": "p_l was killed by a rogue.",
+        "lead_death": "were killed by a rogue"
+    }
 },
 {
     "patrol_id": "fst_hunt_twolegplacekittens1",

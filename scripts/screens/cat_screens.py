@@ -5,12 +5,13 @@ from random import choice
 
 import pygame
 
+from ..cat.history import History
 from ..datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
+from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY, process_text
 
 from .base_screens import Screens, cat_profiles
 
@@ -225,6 +226,9 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.show_moons = None
+        self.no_moons = None
+        self.history = History()
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -340,7 +344,6 @@ class ProfileScreen(Screens):
                         self.the_cat.prevent_fading = False
                     else:
                         self.the_cat.prevent_fading = True
-                    update_sprite(self.the_cat)  # This will remove the transparency on the cat.
                     self.clear_profile()
                     self.build_profile()
 
@@ -384,15 +387,7 @@ class ProfileScreen(Screens):
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
             if event.ui_element == self.kill_cat_button:
-                if self.the_cat.status == 'leader':
-                    game.clan.leader_lives -= 10
-                self.the_cat.die()
-                self.the_cat.died_by.append(
-                    f'It was the will of something even mightier than StarClan that this cat died.')
-                update_sprite(self.the_cat)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                KillCat(self.the_cat)
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
@@ -410,9 +405,6 @@ class ProfileScreen(Screens):
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
-
-                    # Update sprite in this situation.
-                    update_sprite(self.the_cat)
 
                 self.clear_profile()
                 self.build_profile()
@@ -450,6 +442,12 @@ class ProfileScreen(Screens):
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.edit_text:
                 self.editing_notes = True
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.no_moons:
+                game.switches["show_history_moons"] = True
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.show_moons:
+                game.switches["show_history_moons"] = False
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
@@ -506,7 +504,6 @@ class ProfileScreen(Screens):
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
-        cat_profiles()
         self.update_platform()
         if game.last_screen_forProfile == 'med den screen':
             self.toggle_conditions_tab()
@@ -627,8 +624,9 @@ class ProfileScreen(Screens):
 
         # Create cat image object
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
+                                                                         
                                                                          pygame.transform.scale(
-                                                                             self.the_cat.large_sprite,
+                                                                             self.the_cat.sprite,
                                                                              (300, 300)), manager=MANAGER)
         self.profile_elements["cat_image"].disable()
 
@@ -1090,13 +1088,15 @@ class ProfileScreen(Screens):
                 scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#fav_star",
-                tool_tip_text='un-favorite this tab', manager=MANAGER
+                tool_tip_text='un-favorite this sub tab',
+                manager=MANAGER
             )
             self.not_fav_tab = UIImageButton(
                 scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#not_fav_star",
-                tool_tip_text='favorite this tab', manager=MANAGER
+                tool_tip_text='favorite this sub tab - it will be the default sub tab displayed when History is viewed',
+                manager=MANAGER
             )
 
             if self.open_sub_tab != 'life events':
@@ -1105,6 +1105,19 @@ class ProfileScreen(Screens):
                 # This will be overwritten in update_disabled_buttons_and_text()
                 self.history_text_box = pygame_gui.elements.UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
                                                                       , manager=MANAGER)
+                self.no_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#unchecked_checkbox",
+                    tool_tip_text='Show the Moon that certain history events occurred on', manager=MANAGER
+                )
+                self.show_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#checked_checkbox",
+                    tool_tip_text='Stop showing the Moon that certain history events occurred on', manager=MANAGER
+                )
+
                 self.update_disabled_buttons_and_text()
 
     def toggle_user_notes_tab(self):
@@ -1116,7 +1129,8 @@ class ProfileScreen(Screens):
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             scale(pygame.Rect((200, 946), (1200, 298))),
             initial_text=self.user_notes,
-            object_id='#text_box_26_horizleft_pad_10_14', manager=MANAGER
+            object_id='#text_box_26_horizleft_pad_10_14',
+            manager=MANAGER
         )
 
         self.display_notes = UITextBoxTweaked(self.user_notes,
@@ -1188,175 +1202,321 @@ class ProfileScreen(Screens):
                 life_history = [str(self.get_backstory_text())]
             else:
                 life_history = []
-            body_history = []
 
-            # now get mentor influence history and add that if any exists
-            influence_history = self.get_influence_text()
-            if influence_history:
-                life_history.append(str(influence_history))
+            # now get apprenticeship history and add that if any exists
+            app_history = self.get_apprenticeship_text()
+            if app_history:
+                life_history.append(str(app_history))
 
             # now go get the scar history and add that if any exists
+            body_history = []
             scar_history = self.get_scar_text()
             if scar_history:
                 body_history.append(str(scar_history))
-
-            if self.the_cat.dead or (self.the_cat.status == 'leader' and game.clan.leader_lives < 9):
-                death_history = self.get_death_text()
-                if death_history:
-                    body_history.append(str(death_history))
-                else:
-                    body_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
-
+            death_history = self.get_death_text()
+            if death_history:
+                body_history.append(str(death_history))
             # join scar and death into one paragraph
             if body_history:
                 life_history.append(" ".join(body_history))
+
+            murder = self.get_murder_text()
+            if murder:
+                life_history.append(murder)
 
             # join together history list with line breaks
             output = '\n\n'.join(life_history)
         return output
 
     def get_backstory_text(self):
-        text = None
+        """
+        returns the backstory blurb
+        """
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         bs_blurb = bs_blurb_text(self.the_cat)
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = f"{self.the_cat.name} was born into the Clan where they currently reside."
+            text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
+
+        beginning = self.history.get_beginning(self.the_cat)
+        if beginning:
+            if beginning['clan_born']:
+                text += " {PRONOUN/m_c/subject/CAP} were born on Moon " + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
+            else:
+                text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
+
+        text = process_text(text, cat_dict)
         return text
 
     def get_scar_text(self):
-        scar_history = None
+        """
+        returns the adjusted scar text
+        """
+        scar_text = []
+        scar_history = self.history.get_death_or_scars(self.the_cat, scar=True)
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
 
-        if self.the_cat.scar_event:
-            scar_text = self.the_cat.scar_event
-            for x in range(len(self.the_cat.scar_event)):
-                # first event in the list will keep the cat's name, so we don't want to permanently change the text in
-                # the save else the name end up different later in the cat's life
-                if x == 0:
-                    scar_text[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
-                # however, for all other events we want to permanently alter the saved text as none of these events will
-                # use the cat's name, rather they'll use one of the provided sentence beginners.  We don't want this
-                # sentence beginning to change everytime this text is pulled, so we need to make it permanent.
-                else:
-                    self.the_cat.scar_event[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+        if scar_history:
+            i = 0
+            for scar in scar_history:
+                # base adjustment to get the cat's name and moons if needed
+                new_text = (event_text_adjust(Cat,
+                                              scar["text"],
+                                              self.the_cat,
+                                              scar["involved"]))
+                if moons:
+                    new_text += f" (Moon {scar['moon']})"
 
-                sentence_beginners = [
-                    "This cat",
-                    "Then they",
-                    "They also"
-                ]
+                # checking to see if we can throw out a duplicate
+                if new_text in scar_text:
+                    i += 1
+                    continue
 
-                # first event needs no adjustments, as it's keeping the cat's name. all other events are adjusted.
-                if x != 0:
+                # the first event keeps the cat's name, consecutive events get to switch it up a bit
+                if i != 0:
+                    sentence_beginners = [
+                        "This cat",
+                        "Then {PRONOUN/m_c/subject} were",
+                        "{PRONOUN/m_c/subject/CAP} were also",
+                        "Also, {PRONOUN/m_c/subject} were",
+                        "As well as",
+                        "{PRONOUN/m_c/subject/CAP} were then"
+                    ]
                     chosen = choice(sentence_beginners)
-                    self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name}',
-                                                                                         chosen, 1)
-                    if chosen != 'This cat':
-                        self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f' was ', ' were ', 1)
-                    scar_text[x] = self.the_cat.scar_event[x]
+                    if chosen == 'This cat':
+                        new_text = new_text.replace(str(self.the_cat.name), chosen, 1)
+                    else:
+                        new_text = new_text.replace(f"{self.the_cat.name} was", f"{chosen}", 1)
+                cat_dict = {
+                    "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+                }
+                new_text = process_text(new_text, cat_dict)
+                scar_text.append(new_text)
+                i += 1
+
             scar_history = ' '.join(scar_text)
 
         return scar_history
 
-    def get_influence_text(self):
-        influence_history = None
+    def get_apprenticeship_text(self):
+        """
+        returns adjusted apprenticeship history text (mentor influence and app ceremony)
+        """
         if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
-        # check if cat has any mentor influence, else assign None
-        if len(self.the_cat.mentor_influence) >= 1:
-            influenced_trait = str(self.the_cat.mentor_influence[0])
-            if len(self.the_cat.mentor_influence) >= 2:
-                influenced_skill = str(self.the_cat.mentor_influence[1])
+
+        mentor_influence = self.history.get_mentor_influence(self.the_cat)
+        influence_history = None
+
+        if mentor_influence:
+            if mentor_influence["mentor"]:
+                mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
-                influenced_skill = None
-        else:
-            game.switches['sub_tab_group'] = 'life sub tab'
-            influenced_trait = None
-            influenced_skill = None
+                mentor = None
+            influenced_trait = mentor_influence["trait"]
+            influenced_skill = mentor_influence["skill"]
 
-        # if they did have mentor influence, check if skill or trait influence actually happened and assign None
-        if influenced_skill in ['None', 'none']:
-            influenced_skill = None
-        if influenced_trait in ['None', 'none']:
-            influenced_trait = None
-
-        # if cat had mentor influence then write history text for those influences and append to history
-        # assign proper grammar to skills
-        vowels = ['e', 'a', 'i', 'o', 'u']
-        if influenced_skill in Cat.skill_groups.get('special'):
-            adjust_skill = f'unlock their abilities as a {influenced_skill}'
-            for y in vowels:
-                if influenced_skill.startswith(y):
-                    adjust_skill = adjust_skill.replace(' a ', ' an ')
-                    break
-            influenced_skill = adjust_skill
-        elif influenced_skill in Cat.skill_groups.get('star'):
-            adjust_skill = f'grow a {influenced_skill}'
-            influenced_skill = adjust_skill
-        elif influenced_skill in Cat.skill_groups.get('smart'):
-            adjust_skill = f'become {influenced_skill}'
-            influenced_skill = adjust_skill
-        else:
-            # for loop to assign proper grammar to all these groups
-            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
-            for x in become_group:
-                if influenced_skill in Cat.skill_groups.get(x):
-                    adjust_skill = f'become a {influenced_skill}'
+            if influenced_skill or influenced_trait:
+                vowels = ['e', 'a', 'i', 'o', 'u']
+                if influenced_skill in Cat.skill_groups.get('special'):
+                    adjust_skill = 'unlock {PRONOUN/m_c/poss} abilities as a ' + influenced_skill
                     for y in vowels:
                         if influenced_skill.startswith(y):
                             adjust_skill = adjust_skill.replace(' a ', ' an ')
                             break
                     influenced_skill = adjust_skill
-                    break
-        if self.the_cat.former_mentor:
-            former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
-            mentor = former_mentor_ob.name
-        else:
-            mentor = None
+                elif influenced_skill in Cat.skill_groups.get('star'):
+                    adjust_skill = f'grow a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('smart'):
+                    adjust_skill = f'become {influenced_skill}'
+                    influenced_skill = adjust_skill
+                else:
+                    # for loop to assign proper grammar to all these groups
+                    become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+                    for x in become_group:
+                        if influenced_skill in Cat.skill_groups.get(x):
+                            adjust_skill = f'become a {influenced_skill}'
+                            for y in vowels:
+                                if influenced_skill.startswith(y):
+                                    adjust_skill = adjust_skill.replace(' a ', ' an ')
+                                    break
+                            influenced_skill = adjust_skill
+                            break
 
-        # append influence blurb to history
-        if mentor is None:
-            influence_history = "This cat either did not have a mentor, or their mentor is unknown."
-            if self.the_cat.status == 'kitten':
-                influence_history = 'This cat has not begun training.'
-            if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
-                influence_history = 'This cat has not finished training.'
-        elif influenced_skill is not None and influenced_trait is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
-        elif influenced_skill is None and influenced_trait is not None:
-            if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
+            if not mentor:
+                influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
+                if self.the_cat.status in ['kitten', 'newborn']:
+                    influence_history = 'This cat has not begun training.'
+                if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                    influence_history = 'This cat has not finished training.'
+            elif influenced_skill and not influenced_trait:
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to " + influenced_skill + "."
+            elif influenced_trait and not influenced_skill:
+                if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
+                    influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to become more " + influenced_trait.lower() + "."
+                else:
+                    influence_history = f"This cat's mentor was {mentor}."
+            elif influenced_trait and influenced_skill:
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + "as well as " + influenced_skill + "."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
-        elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
-        else:
-            influence_history = f"This cat's mentor was {mentor}."
 
-        return influence_history
+        if not influence_history:
+            influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
+            if self.the_cat.status in ['kitten', 'newborn']:
+                influence_history = 'This cat has not begun training.'
+            if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                influence_history = 'This cat has not finished training.'
+
+        app_ceremony = self.history.get_app_ceremony(self.the_cat)
+        print(app_ceremony)
+
+        graduation_history = ""
+        if app_ceremony:
+            graduation_history = "When {PRONOUN/m_c/subject} graduated {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
+
+            grad_age = app_ceremony["graduation_age"]
+            if int(grad_age) < 11:
+                graduation_history += " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at " + str(grad_age) + " moons old."
+            elif int(grad_age) > 13:
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated late at " + str(grad_age) + " moons old."
+            else:
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated at " + str(grad_age) + " moons old."
+
+            if game.switches['show_history_moons']:
+                graduation_history += f" (Moon {app_ceremony['moon']})"
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
+        apprenticeship_history = influence_history + " " + graduation_history
+        apprenticeship_history = process_text(apprenticeship_history, cat_dict)
+        return apprenticeship_history
 
     def get_death_text(self):
+        """
+        returns adjusted death history text
+        """
         text = None
-        if self.the_cat.died_by:
-            if self.the_cat.status == 'leader':
-                insert2 = f"lost their lives"
-                if len(self.the_cat.died_by) > 2:
-                    insert = f"{', '.join(self.the_cat.died_by[0:-1])}, and {self.the_cat.died_by[-1]}"
-                elif len(self.the_cat.died_by) == 2:
-                    insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
+        death_history = self.history.get_death_or_scars(self.the_cat, death=True)
+        murder_history = self.history.get_murders(self.the_cat)
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
+
+        if death_history:
+            all_deaths = []
+            for death in death_history:
+                if murder_history:
+                    # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
+                    for event in murder_history["is_victim"]:
+                        if event["text"] == death["text"] and event["moon"] == death["moon"]:
+                            if event["revealed"] is True:
+                                text = event_text_adjust(Cat,
+                                                         event["text"],
+                                                         self.the_cat,
+                                                         Cat.fetch_cat(death["involved"]))
+                            else:
+                                text = event_text_adjust(Cat,
+                                                         event["unrevealed_text"],
+                                                         self.the_cat,
+                                                         Cat.fetch_cat(death["involved"]))
                 else:
-                    insert = f"{self.the_cat.died_by[0]}"
-                    if self.the_cat.dead:
-                        insert2 = f'lost all their lives'
-                    elif game.clan.leader_lives == 8:
-                        insert2 = f"lost a life"
-                    else:
-                        insert2 = f"lost lives"
-                text = f"{self.the_cat.name} {insert2} when they {insert}."
+                    text = event_text_adjust(Cat,
+                                             death["text"],
+                                             self.the_cat,
+                                             Cat.fetch_cat(death["involved"]))
+                if moons:
+                    text += f" (Moon {death['moon']})"
+                all_deaths.append(text)
+
+            death_number = len(all_deaths)
+
+            if self.the_cat.status == 'leader' or death_number > 1:
+
+                if death_number > 2:
+                    deaths = f"{','.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                elif death_number == 2:
+                    deaths = " and ".join(all_deaths)
+                else:
+                    deaths = all_deaths[0]
+
+                if self.the_cat.dead:
+                    insert = 'lost all {PRONOUN/m_c/poss} lives'
+                elif game.clan.leader_lives == 8:
+                    insert = 'lost a life'
+                else:
+                    insert = 'lost {PRONOUN/m_c/poss} lives'
+
+                text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
             else:
-                text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
+                text = all_deaths[0]
+            cat_dict = {
+                "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+            }
+            text = process_text(text, cat_dict)
         return text
+
+    def get_murder_text(self):
+        """
+        returns adjusted murder history text
+
+        """
+        murder_history = self.history.get_murders(self.the_cat)
+        victim_text = ""
+        murdered_text = ""
+
+        if game.switches['show_history_moons']:
+            moons = True
+        else:
+            moons = False
+        if murder_history:
+            if 'is_murderer' in murder_history:
+                victims = murder_history["is_murderer"]
+            else:
+                victims = []
+
+            #if "is_victim" in murder_history:
+            #    murderers = murder_history["is_victim"]
+            #else:
+            #    murderers = []
+
+            if victims:
+                victim_names = {}
+                name_list = []
+
+                for victim in victims:
+                    name = str(Cat.fetch_cat(victim["victim"]).name)
+
+                    if victim["revealed"]:
+                        victim_names[name] = []
+                        if moons:
+                            victim_names[name].append(victim["moon"])
+
+                if victim_names:
+                    for name in victim_names:
+                        if not moons:
+                            name_list.append(name)
+                        else:
+                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
+
+                    if len(name_list) == 1:
+                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                    elif len(victim_names) == 2:
+                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+                    else:
+                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+        print(victim_text)
+        return victim_text
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
@@ -1606,7 +1766,7 @@ class ProfileScreen(Screens):
                     text_list.append(f'is {complication}!')
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
-                text_list.append("They can't work with this condition")
+                text_list.append("Can't work with this condition")
 
         # collect details for illnesses
         if name in self.the_cat.illnesses:
@@ -1625,7 +1785,7 @@ class ProfileScreen(Screens):
                 text_list.append("infectious!")
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
-                text_list.append("They can't work with this condition")
+                text_list.append("Can't work with this condition")
 
         text = "<br><br>".join(text_list)
         return text
@@ -1716,7 +1876,7 @@ class ProfileScreen(Screens):
                 scale(pygame.Rect((1156, 972), (344, 72))),
                 "",
                 object_id="#kill_cat_button",
-                tool_tip_text='This cannot be reversed.',
+                tool_tip_text='This will open a confirmation window and allow you to input a death reason',
                 starting_height=2, manager=MANAGER
             )
 
@@ -1754,7 +1914,6 @@ class ProfileScreen(Screens):
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
-
 
         elif self.open_tab == "personal":
 
@@ -1858,11 +2017,32 @@ class ProfileScreen(Screens):
                                                          scale(pygame.Rect((200, 946), (1200, 298))),
                                                          object_id="#text_box_26_horizleft_pad_10_14",
                                                          line_spacing=1, manager=MANAGER)
+
+                self.no_moons.kill()
+                self.show_moons.kill()
+                self.no_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#unchecked_checkbox",
+                    tool_tip_text='Show the Moon that certain history events occurred on', manager=MANAGER
+                )
+                self.show_moons = UIImageButton(scale(pygame.Rect(
+                    (104, 1028), (68, 68))),
+                    "",
+                    object_id="#checked_checkbox",
+                    tool_tip_text='Stop showing the Moon that certain history events occurred on', manager=MANAGER
+                )
+                if game.switches["show_history_moons"]:
+                    self.no_moons.kill()
+                else:
+                    self.show_moons.kill()
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
                 if self.history_text_box:
                     self.history_text_box.kill()
+                    self.no_moons.kill()
+                    self.show_moons.kill()
                 if self.save_text:
                     self.save_text.kill()
                 if self.notes_entry:
@@ -1967,6 +2147,8 @@ class ProfileScreen(Screens):
             elif self.open_sub_tab == 'life events':
                 if self.history_text_box:
                     self.history_text_box.kill()
+                self.show_moons.kill()
+                self.no_moons.kill()
 
         elif self.open_tab == 'conditions':
             self.first_page.kill()
@@ -2035,10 +2217,20 @@ class ProfileScreen(Screens):
 # ---------------------------------------------------------------------------- #
 class CeremonyScreen(Screens):
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.back_button = None
+        self.text = None
+        self.scroll_container = None
+        self.life_text = None
+        self.history = History()
+        self.header = None
+        self.the_cat = None
+
     def screen_switches(self):
         self.hide_menu_buttons()
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
-        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
+        if self.the_cat.status == 'leader':
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
@@ -2046,10 +2238,12 @@ class CeremonyScreen(Screens):
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
-        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
-            self.life_text = self.handle_leadership_ceremony(self.the_cat)
+        if self.the_cat.status == 'leader' and not self.the_cat.dead:
+            self.life_text = self.history.get_lead_ceremony(self.the_cat)
+
         else:
             self.life_text = ""
+
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox(self.life_text,
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
@@ -2072,295 +2266,6 @@ class CeremonyScreen(Screens):
 
     def on_use(self):
         pass
-
-    def create_leadership_ceremony(self, cat):
-        queen = ""
-        warrior = ""
-        kit = ""
-        warrior2 = ""
-        app = ""
-        elder = ""
-        warrior3 = ""
-        med_cat = ""
-        prev_lead = ""
-        known = None
-        virtues = None
-        if len(cat.life_givers) == 0:
-            queen_virtues = ["affection", "compassion", "empathy", "duty", "protection", "pride"]
-            warrior_virtues = ["acceptance", "bravery", "certainty", "clear judgement", "confidence"]
-            kit_virtues = ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
-            warrior2_virtues = ["courage", "determination", "endurance", "sympathy"]
-            app_virtues = ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
-            elder_virtues = ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
-            warrior3_virtues = ["farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-            med_cat_virtues = ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
-            prev_lead_virtues = ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
-                                 "leadership through the darkest times", "loyalty to their Clan",
-                                 "the strength to overcome their fears", "tireless energy"]
-            virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues),
-                       choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues),
-                       choice(prev_lead_virtues)]
-            known = [False, False, False, False, False, False, False, False, False]
-
-            for i in reversed(game.clan.starclan_cats):
-                c = Cat.all_cats[i]
-                if c.dead and not c.outside and not c.df:
-                    if not queen and c.status == 'queen':
-                        queen = str(c.name)
-                        known[0] = True
-                        continue
-                    elif not kit and c.status == 'kitten':
-                        kit = str(c.name)
-                        known[2] = True
-                        continue
-                    elif not app and c.status == 'apprentice':
-                        app = str(c.name)
-                        known[4] = True
-                        continue
-                    elif not prev_lead and c.status == 'leader':
-                        prev_lead = str(c.name)
-                        known[8] = True
-                        continue
-                    elif not elder and c.status == 'elder':
-                        elder = str(c.name)
-                        known[5] = True
-                        continue
-                    elif not warrior and c.status == 'warrior':
-                        warrior = str(c.name)
-                        known[1] = True
-                        continue
-                    elif not warrior2 and c.status == 'warrior':
-                        warrior2 = str(c.name)
-                        known[3] = True
-                        continue
-                    elif not warrior3 and c.status == 'warrior':
-                        warrior3 = str(c.name)
-                        known[6] = True
-                        continue
-                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
-                        med_cat = str(c.name)
-                        known[7] = True
-                        continue
-                    if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
-                        break
-            if not queen:
-                queen = choice(names.names_dict["normal_prefixes"]) + \
-                        choice(names.names_dict["normal_suffixes"])
-            if not warrior:
-                warrior = choice(names.names_dict["normal_prefixes"]) + \
-                          choice(names.names_dict["normal_suffixes"])
-            if not kit:
-                kit = choice(names.names_dict["normal_prefixes"]) + "kit"
-            if not warrior2:
-                warrior2 = choice(names.names_dict["normal_prefixes"]) + \
-                           choice(names.names_dict["normal_suffixes"])
-            if not app:
-                app = choice(names.names_dict["normal_prefixes"]) + "paw"
-            if not elder:
-                elder = choice(names.names_dict["normal_prefixes"]) + \
-                        choice(names.names_dict["normal_suffixes"])
-            if not warrior3:
-                warrior3 = choice(names.names_dict["normal_prefixes"]) + \
-                           choice(names.names_dict["normal_suffixes"])
-            if not med_cat:
-                med_cat = choice(names.names_dict["normal_prefixes"]) + \
-                          choice(names.names_dict["normal_suffixes"])
-            if not prev_lead:
-                prev_lead = choice(names.names_dict["normal_prefixes"]) + "star"
-            cat.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
-            cat.known_life_givers.extend(known)
-            cat.virtues.extend(virtues)
-        else:
-            queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], \
-                                                                                      cat.life_givers[1], \
-                                                                                      cat.life_givers[2], \
-                                                                                      cat.life_givers[3], \
-                                                                                      cat.life_givers[4], \
-                                                                                      cat.life_givers[5], \
-                                                                                      cat.life_givers[6], \
-                                                                                      cat.life_givers[7], \
-                                                                                      cat.life_givers[8]
-
-    def handle_leadership_ceremony(self, cat):
-
-        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
-        if cat.trait == "bloodthirsty":
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
-        else:
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
-
-        # as of right now, chooses random starclan cats to give lives
-        # in the future, plan to have starclan cats with high relationships to give lives
-        # if not enough cats to give lives, generate a new random cat name to give a life
-        known = cat.known_life_givers
-        virtues = cat.virtues
-        if not known or not virtues:
-            self.create_leadership_ceremony(cat)
-        queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], \
-                                                                                  cat.life_givers[1], \
-                                                                                  cat.life_givers[2], \
-                                                                                  cat.life_givers[3], \
-                                                                                  cat.life_givers[4], \
-                                                                                  cat.life_givers[5], \
-                                                                                  cat.life_givers[6], \
-                                                                                  cat.life_givers[7], \
-                                                                                  cat.life_givers[8]
-        if known[0]:
-            if cat.trait == "bloodthirsty":
-                queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
-                             cat.virtues[
-                                 0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'
-            else:
-                queen_text = queen + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + \
-                             cat.virtues[0] + '.'
-        else:
-            if cat.trait == "bloodthirsty":
-                queen_text = 'A queen introduces themself as ' + queen + '. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
-                             cat.virtues[
-                                 0] + '. Their eyes are slightly narrowed as they step back, turning away as ' + dep_name + ' struggles to gain the new life.'
-            else:
-                queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
-                             cat.virtues[0] + '.'
-        if known[1]:
-            if cat.trait == "bloodthirsty":
-                warrior_text = warrior + ' walks up to ' + dep_name + ' next, giving them a life for ' + cat.virtues[
-                    1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
-            else:
-                warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
-        else:
-            if cat.trait == "bloodthirsty":
-                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
-                               cat.virtues[1] + '. There is a sad look in their eyes.'
-            else:
-                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
-                               cat.virtues[1] + '.'
-        if known[2]:
-            if cat.trait == "bloodthirsty":
-                kit_text = kit + ' hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
-                           cat.virtues[2] + '. They lash their tail and head back to make room for the next cat.'
-            else:
-                kit_text = kit + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
-                           cat.virtues[2] + '. They flick their tail and head back to make room for the next cat.'
-        else:
-            if cat.trait == "bloodthirsty":
-                kit_text = kit + ' introduces themself and hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
-                           cat.virtues[2] + '.'
-            else:
-                kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
-                           cat.virtues[2] + '.'
-        if known[3]:
-            if cat.trait == "bloodthirsty":
-                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
-                                cat.virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
-            else:
-                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
-                                cat.virtues[3] + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
-        else:
-            if cat.trait == "bloodthirsty":
-                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
-                                cat.virtues[
-                                    3] + '. Their pelt does not gleam with starlight; instead, a black ooze drips from their fur.'
-            else:
-                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
-                                cat.virtues[3] + '.'
-        if known[4]:
-            if cat.trait == "bloodthirsty":
-                app_text = 'A young cat is next to give a life. They hesitate, before an older cat nudges them forward, whispering something in their ear. ' + app + ' stretches up to give a life for ' + \
-                           cat.virtues[4] + '.'
-            else:
-                app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + app + ' stretches up to give a life for ' + \
-                           cat.virtues[4] + '.'
-        else:
-            if cat.trait == "bloodthirsty":
-                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
-                    4] + '. They start to growl something, but an older StarClan cat nudges them back into their ranks.'
-            else:
-                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
-                    4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
-        if known[5]:
-            if cat.trait == "bloodthirsty":
-                elder_text = elder + ' pads forward with a wary expression. They give a life for ' + \
-                             cat.virtues[5] + '.'
-            else:
-                elder_text = elder + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + \
-                             cat.virtues[5] + '.'
-        else:
-            if cat.trait == "bloodthirsty":
-                elder_text = 'An elder pads forward with a wary expression. They do not introduce themself. They give a life for ' + \
-                             cat.virtues[5] + '.'
-            else:
-                elder_text = elder + ', an elder, introduces themself and strides forward to give a new life for ' + \
-                             cat.virtues[5] + '.'
-        if known[6]:
-            if cat.trait == "bloodthirsty":
-                warrior3_text = warrior3 + ' approaches. Pain surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
-                                cat.virtues[6] + '. ' + warrior3 + ' watches dispassionately.'
-            else:
-                warrior3_text = warrior3 + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
-                                cat.virtues[6] + '. They reassure ' + dep_name + ' that they are almost done.'
-        else:
-            if cat.trait == "bloodthirsty":
-                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[
-                    6] + '. The cat hurries back to take their place back in StarClan, leaving room for the next cat to give a life.'
-            else:
-                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[
-                    6] + '. The cat turns around to take their place back in StarClan, leaving room for the next cat to give a life.'
-        if known[7]:
-            if cat.trait == "bloodthirsty":
-                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
-                               cat.virtues[7] + ', whispering to not lose their way.'
-            else:
-                med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + \
-                               cat.virtues[7] + ', whispering to take care of the Clan the best they can.'
-        else:
-            if cat.trait == "bloodthirsty":
-                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
-                               cat.virtues[7] + '.'
-            else:
-                med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + \
-                               cat.virtues[7] + '.'
-        if known[8]:
-            if cat.trait == "bloodthirsty":
-                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is a conflicted expression on their face when they step forward and stare into ' + dep_name + '\'s eyes. They give a life for ' + \
-                                 cat.virtues[8] + '.'
-            else:
-                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + \
-                                 cat.virtues[8] + '.'
-        else:
-            if cat.trait == "bloodthirsty":
-                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
-                                 cat.virtues[8] + '.'
-            else:
-                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
-                                 cat.virtues[8] + '.'
-        if known[8]:
-            if cat.trait == "bloodthirsty":
-                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
-                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                    game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
-                    cat.name.prefix) + "star stands, feeling a new strength within their body, and grins."
-            else:
-                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
-                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
-                    cat.name.prefix) + "star\'s name in support. " + str(
-                    cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
-
-        else:
-            if cat.trait == "bloodthirsty":
-                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
-                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                    game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
-                    cat.name.prefix) + "star stands, feeling a new strength within their body, and grins."
-            else:
-                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
-                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
-                    cat.name.prefix) + "star\'s name in support. " + str(
-                    cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
-
-        return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -2495,7 +2400,7 @@ class RoleScreen(Screens):
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((490, 80), (300, 300))),
             pygame.transform.scale(
-                self.the_cat.big_sprite, (300, 300)),
+                self.the_cat.sprite, (300, 300)),
             manager=MANAGER
         )
 

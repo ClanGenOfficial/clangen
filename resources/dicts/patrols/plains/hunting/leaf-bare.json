@@ -47,10 +47,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_snowstorm2",
@@ -87,10 +86,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare."
+    }
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_snowstorm3",
@@ -137,11 +135,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            "r_c froze to death while hunting in a storm.",
-            "froze to death while hunting"
-        ]
+        "history_text": {
+        "scar": "r_c caught a chill while hunting in leaf-bare.",
+        "reg_death": "r_c froze to death while hunting in a storm.",
+        "lead_death": "froze to death while hunting"
+    }
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge1",
@@ -201,10 +199,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge2",
@@ -264,9 +261,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fox fight."
+    }
     },
     {
         "patrol_id": "pln_hunt_redfox_leaf-barescavenge3",
@@ -324,11 +321,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a solo fox fight.",
+        "reg_death": "r_c fell in a solo battle with a fox.",
+        "lead_death": "died in battle with a fox"
+    }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_leaf-barescavenge1",
@@ -446,11 +443,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox.",
+        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_solosquirrel1",
@@ -576,9 +573,9 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred as an apprentice by an angry ground squirrel."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
+    }
     },
     {
         "patrol_id": "pln_hunt_leaf-bare_groupsquirrel1",
@@ -689,13 +686,13 @@
             "trust",
             "warrior"
         ],
-        "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in teh snow, until p_l indicates the snowdrift itself with a wave of their tail.",
+        "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in the snow, until p_l indicates the snowdrift itself with a wave of their tail.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling ungainly on top of the snowdrift and burying themselves in cold white fluff. Fox-dung! But p_l approaches them afterwards with a commiserating purr. Even though app1 missed their mouse, the commotion was enough to startle another into p_l's paws, so they don't return home without any prey.",
-            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into teh snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
+            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into the snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
         ],
         "fail_text": [
             "app1 tries to dive for the mouse in the snow, but the only thing they catch under their claws is a pebble. p_l curls around them to warm them up afterwards, instructing them on the delicate art of pouncing for prey you can't see."
