@@ -124,9 +124,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by a rattlesnake."
-            ]
+        "history_text": {
+        "scar": "r_c was scarred by a rattlesnake."
+    }
     },
     {
         "patrol_id": "bch_hunt_greenleaf_groupsquirrel1",
@@ -210,11 +210,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fight with a red vixen.",
-        "r_c fell in battle with a red fox.",
-        "died while fighting a red vixen"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen.",
+        "reg_death": "r_c fell in battle with a red fox.",
+        "lead_death": "died while fighting a red vixen"
+    }
 },
 {
     "patrol_id": "bch_hunt_redvixen5",
@@ -249,9 +249,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fight with a red vixen."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fight with a red vixen."
+    }
 },
 {
     "patrol_id": "bch_hunt_redvixen6",
@@ -286,11 +286,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a red vixen.",
-        "r_c fell in a solo battle with a vixen.",
-        "died while fighting a red vixen"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a red vixen.",
+        "reg_death": "r_c fell in a solo battle with a vixen.",
+        "lead_death": "died while fighting a red vixen"
+    }
 },
 
 {
@@ -349,10 +349,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fight with a gray vixen.",
-        null
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
 },
 {
     "patrol_id": "bch_hunt_grayvixen5",
@@ -410,9 +409,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fight with a gray vixen."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a fight with a gray vixen."
+    }
 },
 {
     "patrol_id": "bch_hunt_grayvixen6",
@@ -469,9 +468,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a gray vixen."
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from a solo fight with a gray vixen."
+    }
 },
 {
     "patrol_id": "bch_hunt_twolegsobject1",

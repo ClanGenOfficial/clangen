@@ -26,11 +26,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues ambushed their patrol.",
+        "reg_death": "This cat was killed when rogues ambushed their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },  
 {    
     "patrol_id": "mtn_bord_rogue2",
@@ -57,11 +57,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "This cat was killed when rogues ambushed them while on a solo patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat was killed when rogues ambushed them while on a solo patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {    
     "patrol_id": "mtn_bord_rogue3",
@@ -90,11 +89,11 @@
     "max_cats": 6,
     "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
     "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
-    "history_text": [
-    "r_c was badly scarred when rogues attacked their patrol.",
-    "This cat was killed when rogues attacked their patrol.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "scar": "r_c was badly scarred when rogues attacked their patrol.",
+        "reg_death": "This cat was killed when rogues attacked their patrol.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
 "patrol_id": "mtn_bord_story1",

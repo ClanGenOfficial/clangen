@@ -26,11 +26,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat is scarred from bravely defending the Clan against a dog.",
-        "This cat died to keep c_n safe from a large dog.",
-        "died to keep c_n safe from a large dog"
-    ]
+    "history_text": {
+        "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+        "reg_death": "This cat died to keep c_n safe from a large dog.",
+        "lead_death": "died to keep c_n safe from a large dog"
+    }
 },
 {
     "patrol_id": "dst_bord_dog2",
@@ -59,11 +59,11 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat is scarred from bravely defending the Clan against a dog.",
-        "This cat died to keep the Clan safe from a large dog.",
-        "died to keep c_n safe from a large dog"
-    ]
+    "history_text": {
+        "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+        "reg_death": "This cat died to keep the Clan safe from a large dog.",
+        "lead_death": "died to keep c_n safe from a large dog"
+    }
 },
 {
     "patrol_id": "dst_bord_dog3",
@@ -93,11 +93,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null, 
-    "history_text": [
-        "This cat is scarred from bravely defending the Clan against a dog.",
-        "This cat died to keep the Clan safe from a large dog.",
-        "died to keep c_n safe from a large dog"
-    ]
+    "history_text": {
+        "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+        "reg_death": "This cat died to keep the Clan safe from a large dog.",
+        "lead_death": "died to keep c_n safe from a large dog"
+    }
 },
 {
     "patrol_id": "dst_bord_smalldog1",
@@ -122,11 +122,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
-        "This cat was killed in a fight with a small dog, but they took the dog out with them.",
-        "killed in a fight with a small dog"
-    ]
+    "history_text": {
+        "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
+        "reg_death": "This cat was killed in a fight with a small dog, but they took the dog out with them.",
+        "lead_death": "killed in a fight with a small dog"
+    }
 },
 {
     "patrol_id": "dst_bord_smalldog2",
@@ -151,9 +151,9 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
-    ]
+    "history_text": {
+        "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+    }
 },
 {
     "patrol_id": "dst_bord_smalldog3",
@@ -179,9 +179,9 @@
     "win_skills": ["good fighter","great fighter","excellent fighter"],
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
-    ]
+    "history_text": {
+        "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+    }
 }
 
 ]

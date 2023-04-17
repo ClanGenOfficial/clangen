@@ -3,6 +3,7 @@ import ujson
 from random import choice, shuffle
 from copy import deepcopy
 
+from scripts.cat.history import History
 from scripts.utility import change_relationship_values, process_text
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
@@ -13,10 +14,10 @@ from scripts.cat_relations.relationship import Relationship
 class Group_Events():
 
     def __init__(self) -> None:
+        self.history = History()
         self.chosen_interaction = None
         self.abbreviations_cat_id = {}
         self.cat_abbreviations_counter = {}
-        pass
 
     def start_interaction(self, cat: Cat, interact_cats: list) -> list:
         """Start to define the possible group interactions.
@@ -530,14 +531,22 @@ class Group_Events():
                 print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
                 continue
             injured_cat = Cat.all_cats[self.abbreviations_cat_id[abbreviations]]
-            
+
+            injuries = []
             for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
+                injuries.append(inj)
 
-            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
-            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
             if injured_cat.status == "leader":
-                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+            if possible_scar:
+                for condition in injuries:
+                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
+            if possible_death:
+                for condition in injuries:
+                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
