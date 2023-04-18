@@ -1259,9 +1259,6 @@ class Cat():
                 life_givers.append(rel.cat_to)
                 i += 1
 
-        for giver in life_givers:
-            print(self.fetch_cat(giver).name)
-
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
             amount = 8 - len(life_givers)
@@ -1296,7 +1293,6 @@ class Cat():
                 # pick oldest leader in SC
                 ancient_leader = True
                 if starclan:
-                    print(game.clan.starclan_cats.reverse())
                     for kitty in reversed(game.clan.starclan_cats):
                         if self.fetch_cat(kitty).status == 'leader':
                             life_giving_leader = kitty
@@ -1334,13 +1330,10 @@ class Cat():
         lives = []
         used_lives = []
         used_virtues = []
-        print(life_givers)
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             life_list = []
-            print(giver)
             for life in possible_lives:
-                print('NEW LIFE', life)
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
 
@@ -1349,37 +1342,28 @@ class Cat():
 
                 if "guide" in tags and giver_cat != game.clan.instructor:
                     continue
-                print('guide pass')
                 if game.clan.age != 0 and "new_clan" in tags:
                     continue
                 elif game.clan.age == 0 and "new_clan" not in tags:
                     continue
-                print('new_clan pass')
                 if "old_leader" in tags and not ancient_leader:
                     continue
-                print('old_leader pass')
                 if "leader_parent" in tags and giver_cat.ID not in self.get_parents():
                     continue
                 elif "leader_child" in tags and giver_cat.ID not in self.get_children():
                     continue
                 elif "leader_mate" in tags and giver_cat.ID not in self.mate:
                     continue
-                print('relation pass')
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
                         continue
-                print('rank pass')
                 if possible_lives[life]["lead_trait"]:
                     if self.trait not in possible_lives[life]["lead_trait"]:
                         continue
-                print('lead_trait pass')
                 if possible_lives[life]["star_trait"]:
                     if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
-                print('star_trait pass')
-                print('PASSED')
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
-            print(life_list)
 
             i = 0
             chosen_life = {}
@@ -1467,7 +1451,6 @@ class Cat():
             outro = 'this should not appear'
 
         full_ceremony = "<br><br>".join([intro, all_lives, outro])
-        print(full_ceremony)
         return full_ceremony
 
     # ---------------------------------------------------------------------------- #
