@@ -187,7 +187,7 @@ disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
 debug_coords = pygame_gui.elements.UILabel(
-    pygame.Rect((0, 0), (300, 100)),
+    pygame.Rect((0, 0), (-1, -1)),
     "(0, 0)",
     object_id=get_text_box_theme()
 )
@@ -196,6 +196,7 @@ debug_coords.text_colour = (255, 0, 0)
 debug_coords.disable()
 debug_coords.rebuild()
 debug_coords.hide()
+
 
 while True:
     time_delta = clock.tick(30) / 1000.0
@@ -286,9 +287,12 @@ while True:
     if MANAGER.visual_debug_active:
         elements = MANAGER.ui_group.visible
         for surface in elements:
-            if surface[1].collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(screen, (0, 255, 0), surface[1], 1)
+            rect = surface[1]
+            if rect == debug_coords.rect:
+                continue
+            if rect.collidepoint(pygame.mouse.get_pos()):
+                pygame.draw.rect(screen, (0, 255, 0), rect, 1)
             else:
-                pygame.draw.rect(screen, (255, 0, 0), surface[1], 1)
+                pygame.draw.rect(screen, (255, 0, 0), rect, 1)
 
     pygame.display.update()
