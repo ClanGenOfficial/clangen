@@ -2061,7 +2061,7 @@ class RelationshipScreen(Screens):
             col1 += f"{self.inspect_cat.trait}\n"
 
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(col1,
-                                                                              scale(pygame.Rect((120, 650), (180, -1))),
+                                                                              scale(pygame.Rect((120, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 
@@ -2109,7 +2109,7 @@ class RelationshipScreen(Screens):
                     col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
-                                                                              scale(pygame.Rect((300, 650), (180, -1))),
+                                                                              scale(pygame.Rect((300, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 

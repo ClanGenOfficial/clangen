@@ -1365,7 +1365,7 @@ class ProfileScreen(Screens):
                 else:
                     influence_history = f"This cat's mentor was {mentor}."
             elif influenced_trait and influenced_skill:
-                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + "as well as " + influenced_skill + "."
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + " as well as " + influenced_skill + "."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
 

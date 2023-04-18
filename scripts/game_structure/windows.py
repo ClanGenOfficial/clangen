@@ -931,17 +931,17 @@ class RelationshipLog(UIWindow):
                                                      object_id="#text_box_30_horizleft",
                                                      manager=MANAGER,
                                                      container=self)
-            self.opp_heading = pygame_gui.elements.UITextBox("<u><b>OPPOSITE RELATIONSHIP</b></u>",
+            self.opp_heading = pygame_gui.elements.UITextBox("<u><b>OTHER PERSPECTIVE</b></u>",
                                                      scale(pygame.Rect((30, 550), (953, 560))),
                                                      object_id="#text_box_30_horizleft",
                                                      manager=MANAGER,
                                                      container=self)
+            self.opp_heading.disable()
             self.opp_log = pygame_gui.elements.UITextBox(opposite_log_string,
                                                      scale(pygame.Rect((30, 610), (953, 465))),
                                                      object_id="#text_box_30_horizleft",
                                                      manager=MANAGER,
                                                      container=self)
-
 
         self.set_blocking(True)
 
