@@ -1131,7 +1131,17 @@ class Cat():
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
         except:
-            self.history = History()
+            self.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
             print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
                   f'empty. Default history info was given. Close game without saving if you have save information '
                   f'you\'d like to preserve!')
@@ -1148,8 +1158,17 @@ class Cat():
                 history_file.write(json_string)
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")
-
-        self.history = History()
+            self.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
 
     def generate_lead_ceremony(self):
         """

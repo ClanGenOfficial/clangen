@@ -168,6 +168,7 @@ class History:
         :param trait: the personality group given by the mentor
         """
         self.check_load(cat)
+        mentor = mentor.ID
 
         if mentor:
             cat.history.mentor_influence["mentor"] = mentor if mentor else None
