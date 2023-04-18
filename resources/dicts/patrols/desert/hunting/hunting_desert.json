@@ -176,9 +176,9 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "dst_hunt_solo2",
@@ -391,13 +391,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "dst_hunt_gonetnr2",
@@ -449,13 +443,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "dst_hunt_gonetnr3",
@@ -507,13 +495,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_thunderpath1",
@@ -565,11 +547,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "dst_hunt_thunderpath2",
@@ -622,11 +604,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "dst_hunt_heat1",
@@ -675,11 +657,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            "r_c died from heatstroke.",
-            "died from heatstroke"
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol.",
+        "reg_death": "r_c died from heatstroke.",
+        "lead_death": "died from heatstroke"
+    }
     },
     {
         "patrol_id": "dst_hunt_heat2",
@@ -733,11 +715,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke.",
-            "died from heatstroke"
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol.",
+        "reg_death": "This cat died from heat stroke.",
+        "lead_death": "died from heatstroke"
+    }
     },
     {
         "patrol_id": "dst_hunt_heat3",
@@ -785,10 +767,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            null
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol."
+    }
     },
     {
         "patrol_id": "dst_hunt_heat4",
@@ -837,11 +818,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke.",
-            "died from heatstroke"
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol.",
+        "reg_death": "This cat died from heat stroke.",
+        "lead_death": "died from heatstroke"
+    }
     },
     {
         "patrol_id": "dst_hunt_heat5",
@@ -890,10 +871,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            null
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol."
+    }
     },
     {
         "patrol_id": "dst_hunt_heat6",
@@ -942,11 +922,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke.",
-            "died from heat stroke"
-        ]
+        "history_text": {
+        "scar": "This cat got heatstroke while on a patrol.",
+        "reg_death": "This cat died from heat stroke.",
+        "lead_death": "died from heat stroke"
+    }
     },
     {
         "patrol_id": "dst_hunt_leafbarerainstorm1",
@@ -987,13 +967,7 @@
             "loving"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_leafbarerainstorm2",
@@ -1020,13 +994,7 @@
             "fantastic hunter"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "dst_hunt_leafbarerainstorm3",
@@ -1065,13 +1033,7 @@
             "loving"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "dst_hunt_swiftfox_anysteal1",
@@ -1163,9 +1125,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox."
+    }
     },
     {
         "patrol_id": "dst_hunt_swiftfox_leaf-fallvixen1",
@@ -1242,9 +1204,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from fighting with a swift fox."
+    }
     },
     {
         "patrol_id": "dst_hunt_swiftfox_leaf-barevixen1",
@@ -1289,9 +1251,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+        "scar": "r_c was marked by a fight with a swift fox vixen."
+    }
     },
     {
         "patrol_id": "dst_hunt_swiftfox_leaf-barevixen2",
@@ -1335,9 +1297,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+        "scar": "r_c was marked by a fight with a swift fox vixen."
+    }
     },
     {
         "patrol_id": "dst_hunt_swiftfox_newleafvixen1",
@@ -1382,9 +1344,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+        "scar": "r_c was marked by a fight with a swift fox vixen."
+    }
     },
     {
         "patrol_id": "dst_hunt_swiftfox_newleafvixen2",
@@ -1428,9 +1390,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+        "scar": "r_c was marked by a fight with a swift fox vixen."
+    }
     },
     {
         "patrol_id": "dst_hunt_kitfox_scavenge1",
@@ -1598,11 +1560,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c fell when they were surprised by a peccary boar.",
-            "were gored and eaten by a peccary boar"
-        ]
+        "history_text": {
+        "reg_death": "r_c fell when they were surprised by a peccary boar.",
+        "lead_death": "were gored and eaten by a peccary boar"
+    }
     },
     {
         "patrol_id": "dst_hunt_kitfox_steal1",
@@ -1658,9 +1619,9 @@
         "max_cats": 4,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by a kit fox."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by a kit fox."
+    }
     },
     {
         "patrol_id": "dst_hunt_kitfox_steal2",
@@ -1715,10 +1676,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a kit fox.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a kit fox."
+    }
     },
     {
         "patrol_id": "dst_hunt_kitfox_steal3",

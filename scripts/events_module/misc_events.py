@@ -83,9 +83,9 @@ class MiscEvents():
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
-    def handle_relationship_changes(self, cat, death_cause, other_cat):
+    def handle_relationship_changes(self, cat, misc_event, other_cat):
 
-        n = 10
+        n = 5
         romantic = 0
         platonic = 0
         dislike = 0
@@ -93,44 +93,44 @@ class MiscEvents():
         comfortable = 0
         jealousy = 0
         trust = 0
-        if "rc_to_mc" in death_cause.tags:
+        if "rc_to_mc" in misc_event.tags:
             cat_to = [cat.ID]
             cat_from = [other_cat]
-        elif "mc_to_rc" in death_cause.tags:
+        elif "mc_to_rc" in misc_event.tags:
             cat_to = [other_cat.ID]
             cat_from = [cat]
-        elif "to_both" in death_cause.tags:
+        elif "to_both" in misc_event.tags:
             cat_to = [cat.ID, other_cat.ID]
             cat_from = [other_cat, cat]
         else:
             return
-        if "romantic" in death_cause.tags:
+        if "romantic" in misc_event.tags:
             romantic = n
-        elif "neg_romantic" in death_cause.tags:
+        elif "neg_romantic" in misc_event.tags:
             romantic = -n
-        if "platonic" in death_cause.tags:
+        if "platonic" in misc_event.tags:
             platonic = n
-        elif "neg_platonic" in death_cause.tags:
+        elif "neg_platonic" in misc_event.tags:
             platonic = -n
-        if "dislike" in death_cause.tags:
+        if "dislike" in misc_event.tags:
             dislike = n
-        elif "neg_dislike" in death_cause.tags:
+        elif "neg_dislike" in misc_event.tags:
             dislike = -n
-        if "respect" in death_cause.tags:
+        if "respect" in misc_event.tags:
             admiration = n
-        elif "neg_respect" in death_cause.tags:
+        elif "neg_respect" in misc_event.tags:
             admiration = -n
-        if "comfort" in death_cause.tags:
+        if "comfort" in misc_event.tags:
             comfortable = n
-        elif "neg_comfort" in death_cause.tags:
+        elif "neg_comfort" in misc_event.tags:
             comfortable = -n
-        if "jealousy" in death_cause.tags:
+        if "jealousy" in misc_event.tags:
             jealousy = n
-        elif "neg_jealousy" in death_cause.tags:
+        elif "neg_jealousy" in misc_event.tags:
             jealousy = -n
-        if "trust" in death_cause.tags:
+        if "trust" in misc_event.tags:
             trust = n
-        elif "neg_trust" in death_cause.tags:
+        elif "neg_trust" in misc_event.tags:
             trust = -n
         change_relationship_values(
             cat_to,

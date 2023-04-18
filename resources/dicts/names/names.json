@@ -21,7 +21,7 @@
     "crackle", "crash", "crawl", "creek", "crest", "cry", "curl", "current", "daisy", "dance", "dapple", "dart", "dash", "dawn", 
     "daze", "dazzle", "dew", "dream", "drift", "drizzle", "drop", "dusk", "dust", "eagle", "ear", "ears", "echo", "egg", "ember", 
     "eye", "eyes", "face", "falcon", "fall", "fang", "feather", "fern", "fin", "fire", "fish", "flake", "flame", "flare", "flash", 
-    "fleck", "flick", "flicker", "flight", "flip", "flit", "flood", "flow", "flower", "fluff", "fox", "freeze", "frost", "fruit", 
+    "fleck", "flick", "flicker", "flight", "flip", "flit", "flood", "flow", "flower", "fluff", "fog", "fox", "freeze", "frost", "fruit", 
     "fuzz", "gale", "gaze", "ghost", "glare", "gleam", "glide", "glint", "goose", "gorse", "grass", "growl", "hail", "hare", 
     "haven", "hawk", "haze", "heather", "hiss", "hollow", "holly", "honey", "hope", "howl", "husk", "ice", "iris", "ivy", "jaw", 
     "jay", "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", "leap", "leg", "leopard", 
@@ -35,7 +35,7 @@
     "spike", "spirit", "splash", "splinter", "spore", "spot", "spots", "spring", "sprout", "stalk", "stem", "step", "sting", "stone", 
     "storm", "streak", "stream", "strike", "stripe", "sun", "swarm", "swipe", "swoop", "talon", "tangle",
     "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "tiger", "timber", "toe", "tooth", "trail", "tree", 
-    "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "willow", "wind", "wing", "wish", "wisp", 
+    "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish", "wisp", 
     "zoom"
   ],
   "pelt_suffixes": {
@@ -159,6 +159,11 @@
     "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre",
     "Robin", "Berry", "Ochre", "Auburn", "Pumpkin", "Burnet"
     ],
+    "SIENNA": [
+    "Ginger", "Ginger", "Red", "Red", "Fire", "Flame", "Ember", "Oak", "Shade", "Russet", "Fuchsia", "Hollyhock",
+    "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre",
+    "Robin", "Berry", "Ochre", "Auburn", "Burnet"
+    ],
     "CREAM": [
     "Sand", "Sandy", "Yellow", "Pale", "Cream", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil",
     "Bone", "Daisy", "Branch", "Warm", "Robin", "Spindle", "Ivory", "Pale", "Bright", "Peach", "Egg"
@@ -168,11 +173,24 @@
     "Hazel", "Vole", "Branch", "Warm", "Robin", "Puma", "Umber",
     "Tree", "Root", "Bark"
     ],
+    "LILAC": [
+    "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet",
+    "Hazel", "Vole", "Branch", "Warm", "Robin", "Lilac", "Lavender", "Heather"
+    ],
     "BROWN": [
     "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag",
     "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow", "Ochre", "Auburn", "Burnet"
     ],
+    "GOLDEN-BROWN": [
+    "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag",
+    "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow", "Ochre", "Auburn", "Burnet",
+    "Thrasher", "Thrush"
+    ],
     "DARKBROWN": [
+    "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow",
+    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dust", "Mud", "Auburn", "Burnet"
+    ],
+    "CHOCOLATE": [
     "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow",
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dust", "Mud", "Auburn", "Burnet"
     ],
@@ -283,7 +301,7 @@
     "Abuko", "Abyss", "Acacia", "Ace", "Adaliz", "Adam", "Admiral", "Adora", "Aether", "Agatha", "Agent Smith", "Ah ha", "Ah",
     "Akila", "Akilah", "Alba", "Albedo", "Alcina", "Aldrich", "Alec", "Alexa", "Alfie", "Alfredo", "Algernon", "Alice", 
     "Alma", "Alonzo", "Alphonse", "Alphys", "Amani", "Amaretto", "Amari", "Amaya", "Amber", "Amelia", "Amethyst", "Amigo", "Amir", "Amity", 
-    "Amongus", "Amor", "Amy", "Andromeda", "Angel", "Anita", "Anju", "Ankha", "Anubis", "Anya", "Apple Cider", "April", "Apu", 
+    "Amongus", "Amor", "Amy", "Andromeda", "Angel", "Anita", "Anju", "Ankha", "Anubis", "Anya", "Apex", "Apple Cider", "April", "Apu", 
     "Aquarius", "Archie", "Aries", "Armageddon", "Armin", "Arusha", "Asgore", "Ash", "Askari", "Aspen", "Asriel", "Astrid", "Aurora", "Ava", "Avellana", "Axel", "Azizi", "Azula", "Azurite", "Baba Yaga", "Baby", "Badru", "Bagel", "Bagheera", "Bahati", "Bailey", 
     "Baisel", "Baja Blast", "Baliyo", "Baloo", "Bamboo", "Bandit", "Banshee", "Banzai", "Baobei", "Baojin", "Baphomet", "Barnaby", 
     "Basil", "Bastet", "Bean", "Beanie Baby", "Beanie", "Beans", "Beau", "Bebe", "Bede", "Beef Stroganoff", "Bella", "Belle", "Bellibolt", 
@@ -313,13 +331,13 @@
     "Evelyn", "Evie", "Evilface", "Ezra", "Faizah", "Fallow", "Fang", "Fauna", "Fawn", "Feather", "Felicette", "Felicity", 
     "Felix", "Feliz", "Fennekin", "Fern", "Ferret", "Ferry", "Fig", "Figaro", "Finch", "Finnian", "Fireball", "Firecracker", 
     "Firefly", "Fishleg", "Fishtail", "Fiver", "Flabby", "Flamenco", "Flower", 
-    "Fluffy", "Flurry", "Flutie", "Fork", "Foxtrot", "Frank", "Frankie", "Frannie", "Fred", "Freddy", "Free", "French Fry", 
+    "Fluffy", "Flurry", "Flutie", "Fork", "Foxtrot", "Fran Bow", "Frank", "Frankie", "Frannie", "Fred", "Freddy", "Free", "French Fry", 
     "French", "Freya", "Frisk", "Frita", "Frito", "Froggy", "Fruity Pebble", "Frumpkin", "Fry", "Frye", "Fudge", "Fuecoco", "Fuli", "Furby", "Fuzz Lightyear", 
     "Fuzzbo", "Fuzziwig", "Gabriel", "Gala", "Galahad", "Gamble", "Ganiru", "Garfield", "Gargoyle", "Garnet", "Gato", "Gayle", 
     "Gemelli", "Gemini", "General Erasmus Dickinson", "Genji", "Geode", "George", "Ghost", "Gibby", "Gible", 
-    "Gigabyte", "Gilded Lily", "Gingersnap", "Gir", "Girly Pop", "Gizmo", "Glameow", "Glass", "Glory", "Glutteny", "Gnocchi", "Gobi", "Gofrette", 
+    "Gigabyte", "Gilded Lily", "Gingersnap", "Gir", "Girly Pop", "Gizmo", "Glameow", "Glass", "Glory", "Gluttony", "Gnocchi", "Gobi", "Gofrette", 
     "Goldfish", "Good Sir", "Goose", "Goryo", "Grace", "Grain", "Grasshopper", "Grave", "Gravy", 
-    "Greed", "Grizabella", "Grizzly", "Growlithe", "Guillermo", "Guinness", "Gumbo", "Guppy", "Gus", "Gust", "Gwendoline", "Gwyndolin", "Gwynn", "Gyoza", "Habanero", "Habika", "Haiku", "Haku", "Halloween", "Hamburger", "Hantu", "Harlequin", "Haru", "Harvest", 
+    "Greed", "Grizabella", "Grizzly", "Growlithe", "Guillermo", "Guinness", "Gumbo", "Guppy", "Gus", "Gust", "Guzma", "Gwendoline", "Gwyndolin", "Gwynn", "Gyoza", "Habanero", "Habika", "Haiku", "Haku", "Halloween", "Hamburger", "Hantu", "Harlequin", "Haru", "Harvest", 
     "Harvey", "Havoc", "Hawkbit", "Hawkeye", "Hazel", "Heathcliff", "Heisenberg", "Henry", "Herbert", "Herc", "Hercules", "Hershey", 
     "Hex", "Hiccup", "Hickory", "Highness", "Himiko", "Hiyoko", "Hlao", "Hobbes", "Hobohime", "Hocus Pocus", "Holly", "Honda", 
     "Honeydew", "Honeysuckle", "Hop", "Hot Sauce", "Hotdog", "Howler", "Hubert", "Hughie", "Human", "Humphrey", "Hunter", "Hyeri", 
@@ -328,13 +346,13 @@
     "Jasper", "Jattelik", "Jattematt", "Jaxon", "Jay", "Jaylen", "Jeep Wrangler", "Jelly Jam", "Jellylorum", "Jemila", "Jenny", "Jennyanydots", "Jesse", "Jessica", 
     "Jester", "Jethro", "Jetta", "Jewel", "Jewels", "Jigsaw", "Jiminy Cricket", "Jimmy", "Jinn", "Jinx", "Jirachi", "Jitters", 
     "John", "Johnny", "Joker", "Jolly Rancher", "Jolly", "Joob", "Joy", "Jozi", "Jubie", "Judas", "Jude", "Judy", "Julie", "Juliet", "June", "Juno", "Jupiter", "KD", 
-    "Kabuki", "Kaede", "Kale", "Kaleb", "Kamari", "Kamau", "Kariba", "Karma", "Kasi", "Kate", "Katjie", "Katy", "Keanu", "Keiko", "Kellas", "Kelloggs", "Ken", "Kendra", "Kenny", "Kenya", "Kepler", "Kermit", "Kerry", "Ketchup", "Ketsl", "Kettlingur", "Keyboard", "Keziah", "Kianna", "Kiara", 
+    "Kabuki", "Kaede", "Kale", "Kaleb", "Kamari", "Kamau", "Karen", "Kariba", "Karma", "Kasi", "Kate", "Katjie", "Katy", "Keanu", "Keiko", "Kellas", "Kelloggs", "Ken", "Kendra", "Kenny", "Kenya", "Kepler", "Kermit", "Kerry", "Ketchup", "Ketsl", "Kettlingur", "Keyboard", "Keziah", "Kianna", "Kiara", 
     "Kibble", "Kid Cat", "Kiki", "Kimani", "Kimberly", "King", "Kingston", "Kion", "Kip", "Kipling", "Kisha", "Kitty Cat", 
     "Kitty Softpaws", "Kitty", "Kivu", "Kiwi", "Klee", "Klondike", "Knorrig", "Knox", "Koala", "Koba", "Kodi", "Kodiak", "Kokichi", "Kokomi", "Kokum", "Komaru", "Kong", "Kovu", 
     "Kramig", "Kudu", "Kushi", "Kyle", "Kyoko", "Kyu", "L", "Laburnum", "Lacy", "Lady Figment", "Lady Liberty", "Lady", "Ladybug", 
     "Laika", "Laila", "Lakota", "Laksha", "Laku", "Lapis", "Larch", "Larimar", "Lark", "Laszlo", "Lavender", "Lazarus", "Lazuli", "Leche", "Lee", "Leif", "Lemmy", "Lemon Boy", "Lemon", "Leo", "Leon", 
     "Lester", "Levi", "Levon", "Lex", "Libra", "Lil Baby", "Lilac", "Lilith", "Lilleplutt", "Lily", "Linden", "Linguine", "Linzhi", 
-    "Lionel", "Lishang", "Litten", "Little Lady", "Little Nicky", "Little One", "Livlig", "Loaf", "Lobo", "Lobster", "Loca", "Loki", "Lola", "Lollipop", "Lolly", "Lonardo", 
+    "Lionel", "Li Shang", "Litten", "Little Lady", "Little Nicky", "Little One", "Livlig", "Loaf", "Lobo", "Lobster", "Loca", "Loki", "Lola", "Lollipop", "Lolly", "Lonardo", 
     "London", "Loona", "Lora", "Lorado", "Louie", "Louis", "Lovebug", "Loyalty", "Luchasaurus", "Luci-Purr", "Lucia", "Luciel", 
     "Lucky", "Lucy", "Lugnut", "Luigi", "Lulu", "Lumine", "Luna", "Lupo", "Luxio", "Luz", "Lydia", "Mabel", "Mac", "Macaroon", "Macavity", "Maddy", "Madi", "Madoka", 
     "Maggie", "Magic", "Maiko", "Maize", "Majesty", "Makalu", "Makena", "Makini", "Mako", "Makoto", "Makula", "Makwa", "Malachite", "Maleficent", "Mali", "Malia", "Malik", "Malika", "Mamba", "Manda", "Mange", "Mango", "Mangosteen", "Mani", "Maomao", "Marathon", "Marcel", "Marceline", "Marcy", 
@@ -345,7 +363,7 @@
     "Minnie", "Mint", "Minty", "Mira", "Miriam", "Miso", "Miss Marple", "Missile Launcher", "Misty", "Mitaine", "Mitski", "Mitsubishi", "Mittens", 
     "Mitzi", "Mitzy Moo Moo", "Miyun", "Mizan", "Mizu", "Mocha", "Mochi", "Mojito", "Mojo", "Mollie", "Molly Murder Mittens", "Molly", "Monika", "Monster", 
     "Monte", "Monzi", "Moon", "Mooncake", "Mop", "Mora", "Morb", "Morbius", "Morel", "Morpeko", "Morphius", "Morrhar", "Mosaic", "Mowgli", "Moxie", 
-    "Mr. Anderson", "Mr. Kitty Whiskers", "Mr. Kitty", "Mr. Mistoffolees", "Mr. Oreo", "Mr. Princess", "Mr. Whiskers", "Mr. Wigglebottom", 
+    "Mr. Anderson", "Mr. Kitty Whiskers", "Mr. Kitty", "Mr. Midnight", "Mr. Mistoffolees", "Mr. Oreo", "Mr. Princess", "Mr. Whiskers", "Mr. Wigglebottom", 
     "Mucha", "Mufasa", "Muffet", "Muffy", "Mullido", "Mumbai", "Mungojerrie", "Munkustrap", "Murder", "Mushroom", "Myko", "Nabi", 
     "Nadia", "Nadja", "Nagi", "Nagito", "Nakala", "Nakeena", "Nala", "Namielle", "Namu", "Nandor", "Naomi", "Nari", "Neapolitan", "Neel", "Neil", "Nemo", "Neo", "Nephrite", "Nessie", "Nevaeh", 
     "Neytiri", "Nezuko", "Nibbles", "Nick", "Nightmare", "Nikki", "Nile", "Niles", "Nimbus", "Nine", "Ninja", "Nintendo", "Nirav", 
@@ -354,8 +372,8 @@
     "Oleander", "Olga", "Oliva", "Oliver", "Ollie", "Omelet", "Omen", "Onion", "Onyx", "Oops", "Oopsy Dazey", "Opal", "Ophelia", "Orchard", "Oregano", "Oreo", "Orion", "Orzo", 
     "Oscar", "Oshawott", "Osiris", "Otto", "Owen", "Pablo", "Pachirisu", "Padparadscha", "Paella", "Paimon", "Paloma", "Pancake", "Pancho", "Pandora", "Pango", "Pangur", "Panini", "Paprika", "Papyrus", "Paquito", "Patience", "Paul", "Paulina", "Pawmi", "Peach", "Peanut Wigglebutt", "Peanut", "Pear", "Pearl", 
     "Pecan", "Pekhult", "Peko", "Penny", "Peony", "Pepita", "Pepper", "Pepsi", "Pequeno", "Perdito", "Peridot", "Periwinkle", "Perrserker", 
-    "Perry", "Peter", "Petya", "Phantom", "Pichi", "Pichu", "Pickles", "Pierre", "Pietro", "Piggy", "Pikachu", "Pina Colada", "Ping Pong", "Ping", "Pinkie Pie", "Pinkie", 
-    "Pip", "Piper", "Pipkin", "Pipsqueak", "Pisces", "Pixel", "Plato", "Pochito", "Pocket", "Poe", "Poki", "Polly", "Pompompurin", 
+    "Perry", "Peter", "Petya", "Phantom", "Phasmo", "Pichi", "Pichu", "Pickles", "Pierre", "Pietro", "Piggy", "Pikachu", "Pina Colada", "Ping Pong", "Ping", "Pinkie Pie", "Pinkie", 
+    "Pip", "Piper", "Pipkin", "Pipsqueak", "Pisces", "Pixel", "Plato", "Plumeria", "Pochito", "Pocket", "Poe", "Poki", "Polly", "Pompompurin", 
     "Pong", "Ponyboy", "Poopy", "Porsche", "Potato", "Pouncival", "President", "Prickle", "Pride", "Princess", "Private Eye", "Pudding", "Puddles", 
     "Pumba", "Pumpernickel", "Pumpkin", "Punchy", "Punk", "Purdy", "Purri", "Purry", "Pushee", "Puzzle", "Qilian", "Quagmire", "Quake", "Quarter Pounder", "Quartz", "Qubo", "Queen", "Queenie", "Queeny", "Querida", "Quesadilla", "Queso Ruby", "Queso", "Quest", "Quickie", "Quimby", "Quinn", 
     "Quino", "Quinzee", "Rabiah", "Radar", "Rafael", "Rafiki", "Raja", "Ramble", "Ramen", "Randy", "Rani", "Raptor", "Rapunzel", 
@@ -364,13 +382,13 @@
     "Roman", "Roomba", "Rooster", "Rory", "Rose", "Roselie", "Rosewood", "Rowan", "Ruby", "Rudolph", "Rudy", "Rue", "Ruffnut", "Rufus", "Rukiya", "Rum Tum Tugger", "Rum",
     "Rumpleteazer", "Runt", "Russel", "Sable", "Sadie", "Sadiki", "Saeko", "Safari", "Saffron", "Safi", "Sagittarius", "Sagwa", 
     "Sahara", "Sahel", "Saidah", "Sailor", "Sakari", "Saki", "Sakura", "Salem", "Salmon", "Salt", "Sam", "Samantha", "Sambusa", "Samus", "Sanai", "Sandwich", "Sandy", 
-    "Sangria", "Sans", "Sanyu", "Sapphire", "Sarabi", "Sarafina", "Sarge", "Sarki", "Sasha", "Sashimi", "Sassy", "Sausage", "Savannah", "Savvy", "Scarecrow", "Schmidt", "Scorpio", "Scotch", "Scribble", "Scrooge", "Scrungle", "Seamus", "Sega", "Sekhmet", "Seok", "Seoli", "Seoul", "Serengeti", "Serenity", "Sergei", 
+    "Sangria", "Sans", "Santana", "Sanyu", "Sapphire", "Sarabi", "Sarafina", "Sarge", "Sarki", "Sasha", "Sashimi", "Sassy", "Sausage", "Savannah", "Savvy", "Scarecrow", "Schmidt", "Scorpio", "Scotch", "Scribble", "Scrooge", "Scrungle", "Seamus", "Sega", "Sekhmet", "Seok", "Seoli", "Seoul", "Serengeti", "Serenity", "Sergei", 
     "Sergio", "Seri", "Seven Of Nine", "Seven", "Shaka", "Shamash", "Shampoo", "Shamwow", "Shani", "Shari", "Shay", "Shenzi", 
-    "Shep", "Sherb", "Sherman", "Shilin", "Shiloh", "Shimmer", "Shino", "Shinx", "Shiver", "Shukura", "Shuvai", "Sillabub", "Silly", "Silva", "Silvally", "Silver", "Simba", "Simone", "Sriracha", 
+    "Shep", "Sherb", "Sherman", "Shilin", "Shiloh", "Shimmer", "Shino", "Shinx", "Shiver", "Shukura", "Shuvai", "Sillabub", "Silly", "Silva", "Silvally", "Silver", "Sim", "Simba", "Simone", "Sriracha", 
     "Siri", "Sirius", "Skimbleshanks", "Skittles", "Skitty", "Skrunkly", "Skylar", "Skyrim", "Slinky", "Sloane", "Sloth", "Slug", 
     "Slurpuff", "Slushie", "Smarty Pants", "Smoky", "Smoothie", "Smores", "Sneakers", "Snek", "Snom", "Snook", "Snoots", "Snotlout", "Snowball", "Snowbell", "Snuttig", "Socks", "Soda Pop", "Sofa", "Sofrito", 
     "Sol", "Soleil", "Sona", "Sonata", "Sonic", "Sonnet", "Sookie", "Sophie", "Sorbet", "Sotast", "Sox", "Spam", "Sparky", "Spatula", 
-    "Speedwell", "Spicy", "Spinach", "Spinel", "Spoon", "Spots", "Sprigatito", "Stan", "Star", "Starfish", "Static", "Stella", "Steve", "Steven", "Stink mink", "Stinkbutt", "Stinky", "Stitches", 
+    "Speedwell", "Spicy", "Spinach", "Spinel", "Spoon", "Spore", "Spots", "Sprigatito", "Stan", "Star", "Starfish", "Static", "Stella", "Steve", "Steven", "Stink Mink", "Stinkbutt", "Stinky", "Stitches", 
     "Stolas", "Strawberry", "Stripes", "Stuffie", "Subaru", "Sucrose", "Sueno", "Sugar", "Suhailah", "Summit", "Sundae", "Sunflower", 
     "Sunny", "Sunset", "Sushi", "Suya", "Sweet Creature", "Sweet Leon", "Sweet Marmalade", "Sweet", "Sweetie", "Sybil", "Sylvana", "Sylveon", "Sylvester", "Tabasco", "Tabatha", 
     "Tabby", "Tabbytha", "Taco Bell", "Taco", "Taffy", "Tahini", "Tahir", "Taihu", "Talia", "Tamagotchi", "Tamale", "Tammy", 

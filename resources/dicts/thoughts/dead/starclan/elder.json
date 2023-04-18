@@ -15,7 +15,7 @@
         "id": "dead_elder_to_dead_other",
         "thoughts": [
             "Is giving r_c unasked for advice",
-            "Is telling r_c about their glory days"
+            "Is telling r_c about {PRONOUN/m_c/poss} glory days"
         ],
         "random_living_status": [
             "starclan"
