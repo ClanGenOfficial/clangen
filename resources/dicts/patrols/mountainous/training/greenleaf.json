@@ -7,7 +7,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
@@ -31,7 +31,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
@@ -103,7 +103,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
@@ -126,7 +126,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",

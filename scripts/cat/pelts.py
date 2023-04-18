@@ -251,17 +251,19 @@ class Calico():
 
 # ATTRIBUTES, including non-pelt related
 pelt_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN',
-    'BLACK'
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'CHOCOLATE'
 ]
 pelt_c_no_white = [
-    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER', 'GOLDEN',
-    'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
+    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'CHOCOLATE'
 ]
 pelt_c_no_bw = [
-    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'PALEGINGER', 'GOLDEN', 'GINGER',
-    'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
+    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'CREAM', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'CHOCOLATE'
 ]
 
 tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR',
@@ -314,13 +316,14 @@ pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
 # SPRITE NAMES
 single_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+    'CHOCOLATE'
 ]
-ginger_colours = ['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']
+ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']
 black_colours = ['GREY', 'DARKGREY', 'GHOST', 'BLACK']
 white_colours = ['WHITE', 'PALEGREY', 'SILVER']
-brown_colours = ['LIGHTBROWN', 'BROWN', 'DARKBROWN']
+brown_colours = ['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']
 colour_categories = [ginger_colours, black_colours, white_colours, brown_colours]
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
@@ -342,8 +345,8 @@ vit = ['VITILIGO', 'VITILIGOTWO', 'MOON', 'PHANTOM', 'KARPATI', 'POWDER']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
-skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
-                'SALMON', 'PEACH', 'DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']
+skin_sprites = ['BLACK',  'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
+                'SALMON', 'PEACH', 'DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE', 'RED']
 
 
 # CHOOSING PELT
@@ -476,22 +479,34 @@ def describe_appearance(cat, short=False):
     # Define look-up dictionaries
     if short:
         renamed_colors = {
+            "white": "pale",
             "palegrey": "gray",
             "darkgrey": "gray",
+            "grey": "gray",
             "paleginger": "ginger",
             "darkginger": "ginger",
+            "sienna": "ginger",
             "lightbrown": "brown",
+            "lilac": "brown",
+            "golden-brown": "brown",
             "darkbrown": "brown",
+            "chocolate": "brown",
             "ghost": "black"
         }
     else:
         renamed_colors = {
+            "white": "pale",
             "palegrey": "pale gray",
+            "grey": "gray",
             "darkgrey": "dark gray",
             "paleginger": "pale ginger",
             "darkginger": "dark ginger",
+            "sienna": "dark ginger",
             "lightbrown": "light brown",
+            "lilac": "light brown",
+            "golden-brown": "golden brown",
             "darkbrown": "dark brown",
+            "chocolate": "dark brown",
             "ghost": "black"
         }
 

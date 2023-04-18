@@ -96,10 +96,10 @@
 		],
 		"min_cats":1,
 		"max_cats":1,
-		"history_text":[
-			"r_c was scarred by a badger.",
-			"r_c lost their life to a badger."
-		]
+		"history_text": {
+        "scar": "r_c was scarred by a badger.",
+        "reg_death": "r_c lost their life to a badger."
+    }
 	},
 	{
 		"patrol_id":"dst_train_sett2",
@@ -159,9 +159,9 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"This cat was scarred by a badger."
-		]
+		"history_text": {
+        "scar": "This cat was scarred by a badger."
+    }
 	},
 	{
 		"patrol_id":"dst_train_stuck1",
@@ -221,10 +221,10 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"dst_train_stuck2",
@@ -284,10 +284,10 @@
 		],
 		"min_cats":2,
 		"max_cats":6,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"dst_train_stuck3",
@@ -320,10 +320,10 @@
 		"max_cats":1,
 		"antagonize_text":null,
 		"antagonize_fail_text":null,
-		"history_text":[
-			"r_c carries a scar from being trapped on patrol",
-			"r_c tragically died after being trapped on patrol."
-		]
+		"history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol."
+    }
 	},
 	{
 		"patrol_id":"dst_train_soloapp1",
@@ -369,9 +369,9 @@
 		],
 		"min_cats":1,
 		"max_cats":1,
-		"history_text":[
-			"r_c got injured as an apprentice, exploring alone."
-		]
+		"history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 	},
 	{
 		"patrol_id":"dst_train_solo2",

@@ -2,9 +2,6 @@
     "id": "lost_kitten_thoughts",
     "thoughts": [
         "Misses playing moss ball",
-        "Is looking desperately for their parent"
-    ],
-    "main_status_constraint": [
-        "kitten"
+        "Is looking desperately for {PRONOUN/m_c/poss} parent"
     ]
 }

@@ -205,7 +205,7 @@ class StartScreen(Screens):
         try:
             global has_checked_for_update
             global update_available
-            if not get_version_info().is_source_build and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and game.settings['check_for_updates'] and not has_checked_for_update:
+            if not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and game.settings['check_for_updates'] and not has_checked_for_update:
                 if has_update(UpdateChannel(get_version_info().release_channel)):
                     update_available = True
                     show_popup = True
@@ -261,12 +261,16 @@ class StartScreen(Screens):
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'])))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches['traceback'].__traceback__)))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
+
+            if get_version_info().is_sandboxed:
+                self.open_data_directory_button.hide()
+
             self.closebtn.show()
 
         if game.clan is not None:
@@ -657,6 +661,9 @@ class SettingsScreen(Screens):
             tool_tip_text="Opens the data directory. "
             "This is where save files "
             "and logs are stored.")
+
+        if get_version_info().is_sandboxed:
+            self.open_data_directory_button.hide()
 
         self.update_save_button()
         self.main_menu_button = UIImageButton(scale(

@@ -85,7 +85,7 @@ class GenerateEvents:
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
                 event = ShortEvent(
-                    camp="any",
+                    camp=event["camp"] if "camp" in event else "any",
                     tags=event["tags"],
                     event_text=event_text,
                     history_text=event["history_text"] if "history_text" in event else {},
@@ -364,7 +364,7 @@ class GenerateEvents:
                 elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
-                if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:
+                if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
                     continue
                 elif "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
                     continue
@@ -399,7 +399,7 @@ class GenerateEvents:
                     continue
 
             # check for mate if the event requires one
-            if "mate" in event.tags and cat.mate is None:
+            if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
             # check cat trait and skill

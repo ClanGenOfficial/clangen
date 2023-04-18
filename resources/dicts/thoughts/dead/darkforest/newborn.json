@@ -6,8 +6,27 @@
             "Wobbles around the Dark Forest",
             "Is crying for milk to no avail",
             "Attempts to snarl but can only manage a tiny mewl",
-            "Is crying for their parents, but no one comforts them",
-            "Doesn't know why it's suddenly so cold"
+            "Is crying for {PRONOUN/m_c/poss} parents, but no one comforts {PRONOUN/m_c/object}",
+            "Doesn't know why it's suddenly so cold",
+            "Wishes to feel warmth at least once",
+            "Hears menacing whispers around {PRONOUN/m_c/object}",
+            "Is clouded in confusion and fear",
+            "Feels trapped in the sticky mud",
+            "Is feeling incredibly lonely"
+        ]
+    },
+    {
+        "id": "gen_dead_newborn_to_alive_parent",
+        "thoughts":[
+            "Desperately misses r_c",
+            "Misses the fleeting feeling of warmth at r_c's belly",
+            "Wishes that r_c could bathe {PRONOUN/m_c/object} again"
+        ],
+        "relationship_constraint": [
+            "child/parent"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

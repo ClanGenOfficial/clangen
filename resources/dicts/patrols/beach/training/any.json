@@ -6,7 +6,7 @@
     "tags": ["app_stat", "apprentice", "training", "scar", "QUILLCHUNK", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
     "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 20,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
@@ -26,9 +26,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "app1 got spiked by a sea urchin while training as an apprentice."
-    ]
+    "history_text": {
+        "scar": "app1 got spiked by a sea urchin while training as an apprentice."
+    }
 },
 {
     "patrol_id": "bch_train_stuck1",
@@ -37,7 +37,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "CHEEK", "no_change_fail", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 20,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -60,11 +60,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c carries a scar from being trapped on patrol.",
-            "r_c tragically died after being trapped on patrol.",
-            "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol.",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
         "patrol_id": "bch_train_stuck2",
@@ -94,11 +94,11 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from being trapped on patrol",
-            "r_c tragically died after being trapped on patrol.",
-            "died after being trapped on patrol"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
         "patrol_id": "bch_train_stuck3",
@@ -128,11 +128,11 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from being trapped on patrol",
-            "r_c tragically died after being trapped on patrol.",
-            "died after being trapped on patrol"
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "bch_train_stuck4",
@@ -160,11 +160,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol.",
-        "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol.",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 
 },
 {
@@ -174,7 +174,7 @@
     "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "RIGHTEAR"],
     "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes they've always found confusing.",
@@ -194,9 +194,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-    ]
+    "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 },
 {
     "patrol_id": "bch_train_solo2",
@@ -234,7 +234,7 @@
     "tags": ["training", "deputy"],
     "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
@@ -263,7 +263,7 @@
     "tags": ["training", "leader"],
     "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
@@ -292,7 +292,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 15,
     "success_text": [
             "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
@@ -316,7 +316,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 15,
     "success_text": [
             "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
@@ -388,7 +388,7 @@
     "tags": ["app_stat","training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
     "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "app2 wanders carefully up the cliff path, asking what app1 wanted to show them. app1 brings them to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
@@ -412,7 +412,7 @@
     "tags": ["app_stat","training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
     "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "app2 wanders carefully up the cliff path, asking what app1 wanted to show them. app1 brings them to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
@@ -436,7 +436,7 @@
     "tags": ["app_stat","training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "app1 and app2 wanders on a sandy beach near camp.",
     "decline_text": "The apprentices are called back to camp to help kitsit.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twoleg. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
@@ -460,7 +460,7 @@
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
     "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
     "decline_text": "r_c declines gently, explaining that they have too much work to do.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
@@ -485,7 +485,7 @@
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
     "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
     "decline_text": "r_c declines gently, explaining that they have too much work to do.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
@@ -510,7 +510,7 @@
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app", "no_change_fail"],
     "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notices sparkles of light where the waves break upon the shore.",
     "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "r_c pokes curiously at one of the little lights, bringing their face down to it. It's a tiny crab, less than the width of one of their claws! It fascinates them and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",

@@ -62,18 +62,94 @@
 	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 5,
-			"medium": 8,
-			"high": 10
+			"low": 8,
+			"medium": 12,
+			"high": 16
 		},
-		"compatibility_bonus": 3,
-		"passive_influence": 4,
-		"chance_for_neutral": 6,
-		"chance_of_special_group": 4,
+		"max_interaction": 5,
+		"max_interaction_special": 8,
+		"compatibility_effect": 5,
+		"passive_influence_div": 1.3,
+		"chance_for_neutral": 10,
+		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 10,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
+			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
+		]
+	},
+	"mates":{
+		"age_range": 40,
+		"chance_fulfilled_condition": 5,
+		"chance_friends_to_lovers": 300,
+		"confession": {
+			"make_confession" : {
+				"romantic": 30,
+				"platonic": 10,
+				"dislike": -15,
+				"admiration": 0,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 0
+			},
+			"accept_confession" : {
+				"romantic": 15,
+				"platonic": 10,
+				"dislike": -15,
+				"admiration": 0,
+				"comfortable": 15,
+				"jealousy": 0,
+				"trust": 0
+			}
+		},
+		"mate_condition": {
+			"romantic": 20,
+			"platonic": 30,
+			"dislike": -10,
+			"admiration": 0,
+			"comfortable": 20,
+			"jealousy": 0,
+			"trust": 0
+		},
+		"platonic_to_romantic": {
+			"romantic": 0,
+			"platonic": 40,
+			"dislike": -15,
+			"admiration": 0,
+			"comfortable": 25,
+			"jealousy": 0,
+			"trust": 0
+		},
+		"poly":{
+			"current_mate_condition": {
+				"romantic": 0,
+				"platonic": 0,
+				"dislike": 0,
+				"admiration": 0,
+				"comfortable": 15,
+				"jealousy": -15,
+				"trust": 15
+			},
+			"mates_to_each_other": {
+				"romantic": 0,
+				"platonic": 10,
+				"dislike": -15,
+				"admiration": 0,
+				"comfortable": 15,
+				"jealousy": -15,
+				"trust": 10
+			}
+		},
+		"comment":[
+			"chance_fulfilled_condition - 1/chance of becoming mates when the conditions are fulfilled",
+			"chance_friends_to_lovers - 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)",
+			"VALUES IN RELATIONSHIP DICT - 0: no condition; positive number: value has to be higher than number; negative number: value has to be lower than number",
+			"confession (make_confession) - if one cat has these feelings for another, they confess (if there are more, the highest romantic will be chosen)",
+			"confession (confess_acceptance) - if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject.",
+			"conditions for mates - both relationships have to fulfill this condition",
+			"poly (current_mate) - which conditions all current mate relationships has to have towards the main cat + vise versa",
+			"poly (each_other) - which conditions all current mate relationships haves to have towards the new possible mate + vise versa"
 		]
 	},
 	"new_cat": {
@@ -140,8 +216,8 @@
 		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
-		"primary_chance_mated": 50,
-		"primary_chance_unmated": 110,
+		"primary_chance_mated": 80,
+		"primary_chance_unmated": 130,
 		"random_affair_chance": 50,
 		"unmated_random_affair_chance": 10,
 		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
@@ -153,6 +229,8 @@
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
+			"primary mated - 1/chance for kits, relationship and other factors will influence this chance",
+			"primary unmated - 1/chance for kits, relationship and other factors will influence this chance",
 			"The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.",
 			"As in, your max kits number should probably be 5 more than the min kits number.",
 			"But that's not required - just makes more sense that way with how the litters are generated."
@@ -217,7 +295,7 @@
 		"win_stat_cat_modifier": 10,
 		"better_stat_modifier": 5,
 		"best_stat_modifier": 10,
-		"fail_stat_cat_modifier": -20,
+		"fail_stat_cat_modifier": -15,
 		"chance_of_romance_patrol": 16,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
@@ -257,18 +335,13 @@
 	"save_load": {
 		"load_integrity_checks": true
 	},
-
-
-	"lock_season": false, 
-	"comment": "Forces the season to be locked at the clan's starting_season",
-
-
-
 	"fun": {
 
 		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
 		"newborns_can_patrol": false
-	}
+	},
+	"lock_season": false, 
+	"comment": "Forces the season to be locked at the clan's starting_season"
 }

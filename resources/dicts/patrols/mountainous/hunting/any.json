@@ -24,9 +24,7 @@
             "fantastic hunter"
         ],
         "min_cats": 1,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 3
     },
     {
         "patrol_id": "mtn_hunt_strange1",
@@ -62,9 +60,7 @@
             "strange"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "mtn_hunt_strange2",
@@ -100,9 +96,7 @@
             "strange"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_huntassessment1",
@@ -161,11 +155,9 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "mtn_hunt_solo2",
@@ -219,9 +211,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_solo3",
@@ -276,9 +266,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_solo4",
@@ -333,9 +321,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_noise1",
@@ -376,11 +362,9 @@
         ],
         "min_cats": 5,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox."
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox."
+    }
     },
     {
         "patrol_id": "mtn_hunt_noise2",
@@ -422,13 +406,11 @@
         ],
         "min_cats": 2,
         "max_cats": 4,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine.",
-            "were killed by a wolverine"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "were killed by a wolverine"
+    }
     },
     {
         "patrol_id": "mtn_hunt_noise3",
@@ -471,13 +453,11 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine while patrolling alone.",
-            "were killed by a predator while patrolling alone"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine while patrolling alone.",
+        "lead_death": "were killed by a predator while patrolling alone"
+    }
     },
     {
         "patrol_id": "mtn_hunt_gonetnr1",
@@ -532,13 +512,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "mtn_hunt_gonetnr2",
@@ -592,13 +566,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "mtn_hunt_gonetnr3",
@@ -612,7 +580,7 @@
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
@@ -652,13 +620,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "mtn_hunt_thunderpath1",
@@ -674,7 +636,7 @@
         ],
         "intro_text": "The patrol comes across a Thunderpath running through the mountains.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the Thunderpath to hunt on the other side.",
@@ -707,13 +669,11 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "mtn_hunt_thunderpath2",
@@ -741,8 +701,8 @@
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
-            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
         ],
         "win_skills": [
             "smart",
@@ -763,12 +723,10 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     }
 ]

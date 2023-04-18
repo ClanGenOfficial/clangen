@@ -74,9 +74,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringblackberry_leaf-bare2",
@@ -103,9 +103,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringblackberry_leaf-bare3",
@@ -132,9 +132,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringburdock_leaf-bare1",
@@ -161,9 +161,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringburdock_leaf-bare2",
@@ -190,9 +190,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringburdock_leaf-bare3",
@@ -219,9 +219,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdaisy_leaf-bare1",
@@ -230,7 +230,7 @@
     "tags": ["herb_gathering", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy"],
     "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
-    "chance_of_success": 0,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from.",
@@ -248,9 +248,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdaisy_leaf-bare2",
@@ -259,7 +259,7 @@
     "tags": ["herb_gathering", "med_cat", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look? And is bringing app1 a good idea?",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
-    "chance_of_success": 0,
+    "chance_of_success": 20,
     "exp": 40,
     "success_text": [
             "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. They share an exhausted look of commiseration with app1.",
@@ -277,9 +277,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdaisy_leaf-bare3",
@@ -288,7 +288,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 10,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
@@ -306,9 +306,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdandelion_leaf-bare1",
@@ -335,9 +335,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdandelion_leaf-bare2",
@@ -364,9 +364,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringdandelion_leaf-bare3",
@@ -393,9 +393,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringjuniper_leaf-bare1",
@@ -422,9 +422,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringjuniper_leaf-bare2",
@@ -451,9 +451,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringjuniper_leaf-bare3",
@@ -480,9 +480,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare1",
@@ -509,9 +509,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare2",
@@ -538,9 +538,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 },
 {
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-bare3",
@@ -567,8 +567,8 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by frostbite from searching for herbs in leaf-bare."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+    }
 }
 ]

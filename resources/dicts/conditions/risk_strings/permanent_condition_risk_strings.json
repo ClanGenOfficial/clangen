@@ -1,162 +1,161 @@
 {
     "lost a leg": {
         "an infected wound": [
-            "The stump where m_c's leg used to be has become infected. r_c rubs paste into it, as m_c grits their teeth and tries not to yowl.",
+            "The stump where m_c's leg used to be has become infected. r_c rubs paste into it, as m_c grits {PRONOUN/m_c/poss} teeth and tries not to yowl.",
             "The stump where m_c's leg used to be has become infected.",
-            "Losing the leg was bad enough, but now it feels like there's fire in m_c's veins.  Something is definitely wrong with their stump."
+            "Losing the leg was bad enough, but now it feels like there's fire in m_c's veins.  Something is definitely wrong with {PRONOUN/m_c/poss} stump."
         ],
         "phantom pain": [
-            "m_c reports to r_c in the medicine den - they could swear their toes feel cramped and in spasm, but it's on the limb they don't have anymore.",
-            "Groaning, m_c lies in the sunshine as one of their friends massages the stump of their missing leg. They just don't understand how something that's not even there any more can hurt so much.",
-            "m_c sinks their claws into a branch, hoping that ripping something up will at least distract them from the sparking pain coming from the leg they don't even have any more."
+            "m_c reports to r_c in the medicine den - {PRONOUN/m_c/subject} could swear {PRONOUN/m_c/poss} toes feel cramped and in spasm, but it's on the limb {PRONOUN/m_c/subject} don't have anymore.",
+            "Groaning, m_c lies in the sunshine as one of {PRONOUN/m_c/poss} friends massages the stump of {PRONOUN/m_c/poss} missing leg. {PRONOUN/m_c/subject/CAP} just don't understand how something that's not even there any more can hurt so much.",
+            "m_c sinks {PRONOUN/m_c/poss} claws into a branch, hoping that ripping something up will at least distract {PRONOUN/m_c/object} from the sparking pain coming from the leg {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} even have any more."
         ],
         "sore": [
-            "While they've adapted well to life with a missing limb, the strain of walking with only three legs has left m_c feeling sore all over. r_c devises a list of exercises that will ease the pain, not helping m_c's mood.",
-            "m_c just hasn't been sleeping right, and feels bruised and tender on the side of their body where their limb used to be.",
+            "While {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} adapted well to life with a missing limb, the strain of walking with only three legs has left m_c feeling sore all over. r_c devises a list of exercises that will ease the pain, not helping m_c's mood.",
+            "m_c just hasn't been sleeping right, and feels bruised and tender on the side of {PRONOUN/m_c/poss} body where {PRONOUN/m_c/poss} limb used to be.",
             "The muscles in m_c's stump don't seem to understand they aren't connected to anything any more - m_c purrs gratefully when a Clanmate helps massage them."
 
         ]
     },
     "born without a leg": {
         "sore": [
-            "m_c reports to r_c with the ease of familiarity, asking for help sleeping at night - their missing limb is giving them a bit of pain on that side of their body.",
-            "m_c has spent their whole life with only three legs, but that doesn't mean they never feel the strain of moving in a way their body wasn't meant to.  This moon's activities have left m_c particularly sore."
+            "m_c reports to r_c with the ease of familiarity, asking for help sleeping at night - {PRONOUN/m_c/poss} missing limb is giving {PRONOUN/m_c/object} a bit of pain on that side of {PRONOUN/m_c/poss} body.",
+            "m_c has spent {PRONOUN/m_c/poss} whole life with only three legs, but that doesn't mean {PRONOUN/m_c/subject} never {VERB/m_c/feel/feels} the strain of moving in a way {PRONOUN/m_c/poss} body wasn't meant to.  This moon's activities have left m_c particularly sore."
 
         ],
         "joint pain": [
-            "m_c spends the morning with r_c, who helps them with a paste on their joints that'll reduce their pain.",
-            "m_c's joints are feeling the strain of their missing leg and they've been moving slower this moon."
+            "m_c spends the morning with r_c, who helps {PRONOUN/m_c/object} with a paste on {PRONOUN/m_c/poss} joints that'll reduce {PRONOUN/m_c/poss} pain.",
+            "m_c's joints are feeling the strain of {PRONOUN/m_c/poss} missing leg and {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been moving slower this moon."
         ]
     },
     "weak leg": {
         "sore": [
-            "r_c notices m_c limping from across the other side of the camp, and gives them some exercises to help strengthen their weak leg and reduce the pain.",
+            "r_c notices m_c limping from across the other side of the camp, and gives {PRONOUN/m_c/subject} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain.",
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
-            "m_c comes to r_c, feeling like their weak leg is going to collapse under them from the pain in its joints.",
-            "They must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
+            "m_c comes to r_c, feeling like {PRONOUN/m_c/poss} weak leg is going to collapse under {PRONOUN/m_c/object} from the pain in its joints.",
+            "{PRONOUN/m_c/subject/CAP} must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
         ]
     },
     "twisted leg": {
         "sore": [
-            "Seeing how m_c is slow to get up in the morning, r_c brings them pain relief herbs for their twisted leg.",
-            "m_c is finding it hard to be cheerful, with how sore their twisted leg is."
+            "Seeing how m_c is slow to get up in the morning, r_c brings {PRONOUN/m_c/object} pain relief herbs for {PRONOUN/m_c/poss} twisted leg.",
+            "m_c is finding it hard to be cheerful, with how sore {PRONOUN/m_c/poss} twisted leg is."
 
         ],
         "joint pain": [
-            "m_c slowly does their morning stretches, remembering r_c's promise that it'll help with the pain in their joints.",
-            "m_c just wants to sleep, very still and quiet, as they wait for the joint pain in their twisted leg to die down."
+            "m_c slowly does {PRONOUN/m_c/poss} morning stretches, remembering r_c's promise that it'll help with the pain in {PRONOUN/m_c/poss} joints.",
+            "m_c just wants to sleep, very still and quiet, as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the joint pain in {PRONOUN/m_c/poss} twisted leg to die down."
         ]
     },
     "lost their tail": {
         "an infected wound": [
-            "r_c drags m_c into the medicine cat den, to apply a herbal salve despite m_c's protests - they've begun to smell infection in the tail stump.",
+            "r_c drags m_c into the medicine cat den, to apply a herbal salve despite m_c's protests - {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} begun to smell infection in the tail stump.",
             "The stump where m_c's tail used to be has become infected."
         ],
         "phantom pain": [
-            "r_c can't give m_c answers - their tail is gone, and yet the pain in it remains.",
-            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving them insane."
+            "r_c can't give m_c answers - {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains.",
+            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
         ]
     },
     "paralyzed": {
         "an infected wound": [
-            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from them, but m_c hasn't noticed anything that could cause it.",
-            "It seems that m_c has gotten a scratch on the part of their body they can't feel. The wound went unnoticed until the stench of infection began to waft from it."
+            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it.",
+            "It seems that m_c has gotten a scratch on the part of {PRONOUN/m_c/poss} body {PRONOUN/m_c/subject} can't feel. The wound went unnoticed until the stench of infection began to waft from it."
         ],
         "joint pain": [
-            "m_c has been ordered by r_c to sit still and let their joints recover - it's the only way the joint pain in their front half will ease up.",
-            "The effort of dragging their paralyzed half across camp has left m_c's joints aching and sore."
+            "m_c has been ordered by r_c to sit still and let {PRONOUN/m_c/poss} joints recover - it's the only way the joint pain in {PRONOUN/m_c/poss} front half will ease up.",
+            "The effort of dragging {PRONOUN/m_c/poss} paralyzed half across camp has left m_c's joints aching and sore."
         ],
         "sore": [
-            "m_c stares, curious. They can't feel the spasms wracking their paralysed half, but r_c seems worried anyway, completely focused on massaging them out.",
-            "Despite all the work they've put into strengthening their front half, today m_c is sore and uncomfortable from the effort it takes to get anywhere."
+            "m_c stares, curious. {PRONOUN/m_c/subject/CAP} can't feel the spasms wracking {PRONOUN/m_c/poss} paralysed half, but r_c seems worried anyway, completely focused on massaging them out.",
+            "Despite all the work {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} put into strengthening {PRONOUN/m_c/poss} front half, today m_c is sore and uncomfortable from the effort it takes to get anywhere."
         ],
         "torn pelt": [
-            "m_c licks the scrape on their pelt fastidiously. They might not be able to feel it, but they've been warned of the danger of infection by r_c.",
-            "Rough ground in camp has torn m_c's pelt as they drag themselves around."
+            "m_c licks the scrape on {PRONOUN/m_c/poss} pelt fastidiously. {PRONOUN/m_c/subject/CAP} might not be able to feel it, but {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been warned of the danger of infection by r_c.",
+            "Rough ground in camp has torn m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/drag/drags} {PRONOUN/m_c/self} around."
         ]
     },
     "raspy lungs": {
         "whitecough": [
-            "r_c worst fears are realized, as whitecough has infected m_c with their weakened lungs.",
-            "m_c's weak lungs have left them coughing and wheezing this moon, unable to resist potential sickness."
+            "r_c worst fears are realized, as whitecough has infected m_c with {PRONOUN/m_c/poss} weakened lungs.",
+            "m_c's weak lungs have left {PRONOUN/m_c/subject} coughing and wheezing this moon, unable to resist potential sickness."
         ]
     },
     "wasting disease": {
         "running nose": [
-            "r_c feeds m_c disgusting herbs with their supper, concerned over their running nose. m_c thinks they should be more concerned with ruining their appetite!",
+            "r_c feeds m_c disgusting herbs with {PRONOUN/m_c/poss} supper, concerned over {PRONOUN/m_c/poss} running nose. m_c thinks {PRONOUN/r_c/subject} should be more concerned with ruining {PRONOUN/m_c/poss} appetite!",
             "m_c's nose has been running perpetually all moon."
         ],
         "yellowcough": [
-            "If only they had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
-            "m_c has been weak and fevered, only barely coherent, it seems they have yellowcough."
+            "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
+            "m_c has been weak and fevered, only barely coherent, it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
         ],
         "redcough": [
-            "r_c has quietly begun making m_c comfortable, or as comfortable as they can be hacking up so much blood.",
-            "m_c has been hacking up blood, their body growing weaker and weaker.  They may not last much longer."
+            "r_c has quietly begun making m_c comfortable, or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood.",
+            "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
         ]
     },
     "one bad eye": {
         "failing eyesight": [
-            "m_c wanders directly into a rock on their bad side, and r_c takes them aside. Softly, they tell m_c their bad vision is progressing.",
-            "m_c has noticed their vision growing blurrier and blurrier."
+            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side, and r_c takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is progressing.",
+            "m_c has noticed {PRONOUN/m_c/poss} vision growing blurrier and blurrier."
 
         ]
     },
     "failing eyesight": {
         "blind": [
-            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help them.",
+            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/object}.",
             "m_c's eyesight had only been getting worse and now it seems to have finally left altogether."
         ]
     },
     "partial hearing loss": {
         "deaf": [
-            "m_c explains to r_c with signs and body language that it doesn't seem like they're able to hear any details of the world anymore.",
-            "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems they've lost their hearing entirely."
-
+            "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore.",
+            "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lost {PRONOUN/m_c/poss} hearing entirely."
         ]
     },
     "constant joint pain": {
         "joint pain": [
-            "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since they've been able to have a good rest without the awful pain that's been so intense lately.",
-            "m_c's joint pain is worse than usual this moon, they find themselves barely able to get up out of their nest."
+            "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately.",
+            "m_c's joint pain is worse than usual this moon, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} barely able to get up out of {PRONOUN/m_c/poss} nest."
         ]
     },
     "seizure prone": {
         "seizure": [
-            "r_c spots the seizure coming, and brings m_c to their nest where it's always a little less upsetting to wake up.",
-            "m_c is exhausted and stressed, both the cause of and consequence of their seizures."
+            "r_c spots the seizure coming, and brings m_c to {PRONOUN/m_c/poss} nest where it's always a little less upsetting to wake up.",
+            "m_c is exhausted and stressed, both the cause of and consequence of {PRONOUN/m_c/poss} seizures."
         ]
     },
     "allergies": {
         "running nose": [
-            "r_c sighs to see m_c headed towards them, and goes to fix up their normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
+            "r_c sighs to see m_c headed towards {PRONOUN/r_c/object}, and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
             "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
         ]
     },
     "recurring shock": {
         "constant nightmares": [
-            "r_c sits with m_c, listening to their troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
-            "Haunted by the memories of their past, m_c gets so little sleep this month that they find themselves unable to function."
+            "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
+            "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
         ]
     },
     "lasting grief": {
         "grief stricken": [
-            "r_c presses themselves against m_c's side and purrs in the most comforting way they can. m_c remains still and staring, their eyes full of a deep sadness.",
-            "m_c stalks angrily from camp, the grief welling up in their throat feels like it will choke them and m_c can't help but find it unfair that this sadness won't go away.",
-            "m_c breathes deeply, trying not to let this sudden wave of grief overtake them, but it's hard and it never really goes away.",
-            "m_c wakes and nearly wails at the wave of grief that hits them. Today isn't starting well."
+            "r_c presses {PRONOUN/r_c/self} against m_c's side and purrs in the most comforting way {PRONOUN/r_c/subject} can. m_c remains still and staring, {PRONOUN/m_c/poss} eyes full of a deep sadness.",
+            "m_c stalks angrily from camp, the grief welling up in {PRONOUN/m_c/poss} throat feels like it will choke {PRONOUN/m_c/object} and m_c can't help but find it unfair that this sadness won't go away.",
+            "m_c breathes deeply, trying not to let this sudden wave of grief overtake {PRONOUN/m_c/object}, but it's hard and it never really goes away.",
+            "m_c wakes and nearly wails at the wave of grief that hits {PRONOUN/m_c/object}. Today isn't starting well."
         ]
     },
     "persistent headaches": {
         "headache": [
-            "m_c's headaches have plagued them particularly badly this moon, and r_c is running low on their pain-relieving mixture, having used so much up in keeping m_c feeling able.",
-            "m_c growls as another wave of head pain hits them. It's on-and-off, and herbs have been helping, but StarClan help them, having so many headaches gets annoying."
+            "m_c's headaches have plagued {PRONOUN/m_c/object} particularly badly this moon, and r_c is running low on {PRONOUN/r_c/poss} pain-relieving mixture, having used so much up in keeping m_c feeling able.",
+            "m_c growls as another wave of head pain hits {PRONOUN/m_c/object}. It's on-and-off, and herbs have been helping, but StarClan help {PRONOUN/m_c/object}, having so many headaches gets annoying."
         ],
         "severe headache": [
-            "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for them in the darkest, quietest corner possible.",
-            "m_c wakes up with pounding head pain and horrible light sensitivity. They curl up as tightly in their nest as they can, screwing their eyes shut and flattening their ears. There's no way they'll get work done today."
+            "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
+            "m_c wakes up with pounding head pain and horrible light sensitivity. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
         ]
     }
 }

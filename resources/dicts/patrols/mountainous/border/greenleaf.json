@@ -7,7 +7,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "death"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -28,11 +28,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue2",
@@ -41,7 +41,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "death"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -62,11 +62,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue3",
@@ -95,11 +95,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue4",
@@ -108,7 +108,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "warrior"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -129,10 +129,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue5",
@@ -141,7 +140,7 @@
     "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "comfort", "respect", "trust", "border", "warrior"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -160,12 +159,9 @@
     "fail_skills": ["good fighter"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue6",
@@ -174,7 +170,7 @@
     "tags": ["app_stat", "fighting", "battle_injury", "scar", "SNOUT", "border", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -192,12 +188,9 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue7",
@@ -224,9 +217,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue8",
@@ -235,7 +226,7 @@
     "tags": ["fighting", "comfort", "respect", "trust", "border"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 10,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
         "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
@@ -253,12 +244,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue9",
@@ -267,7 +253,7 @@
     "tags": ["app_stat", "fighting", "border", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 10,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",

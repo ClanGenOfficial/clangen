@@ -1,15 +1,15 @@
 {
   "general": {
     "body": [
-      "r_c had always looked up to m_c and the sight of their dead body doesn't feel real. Their vigil that night is numb and cold.",
-      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about them, their drive to help c_n. It's so strange and hard to comprehend, that they'll never see m_c do that again.",
-      "As the Clan sits vigil for m_c, swapping stories of their life, r_c speaks of what they admired about them, of how m_c inspired them."
+      "r_c had always looked up to m_c, and the sight of {PRONOUN/m_c/poss} dead body doesn't feel real. {PRONOUN/r_c/poss/CAP} vigil that night is numb and cold.",
+      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about {PRONOUN/m_c/object} - {PRONOUN/m_c/poss} drive to help c_n. It's so strange and hard to comprehend, that {PRONOUN/r_c/subject}'ll never see m_c do that again.",
+      "As the Clan sits vigil for m_c, swapping stories of {PRONOUN/m_c/poss} life, r_c speaks of what {PRONOUN/r_c/subject} admired about {PRONOUN/m_c/object}, of how m_c inspired {PRONOUN/r_c/object}."
 
     ],
     "no_body": [
-      "r_c had always looked up to m_c and the sight of their dead body doesn't feel real. Their vigil that night is numb and cold.",
-      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about them, their drive to help c_n. It's so strange and hard to comprehend, that they'll never see m_c do that again.",
-      "As the Clan sits vigil for m_c, swapping stories of their life, r_c speaks of what they admired about them, of how m_c inspired them."
+      "r_c had always looked up to m_c, and the sight of {PRONOUN/m_c/poss} dead body doesn't feel real. {PRONOUN/r_c/poss/CAP} vigil that night is numb and cold.",
+      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about {PRONOUN/m_c/object} - {PRONOUN/m_c/poss} drive to help c_n. It's so strange and hard to comprehend, that {PRONOUN/r_c/subject}'ll never see m_c do that again.",
+      "As the Clan sits vigil for m_c, swapping stories of {PRONOUN/m_c/poss} life, r_c speaks of what {PRONOUN/r_c/subject} admired about {PRONOUN/m_c/object}, of how m_c inspired {PRONOUN/r_c/object}."
     ]
   },
   "adventurous": {

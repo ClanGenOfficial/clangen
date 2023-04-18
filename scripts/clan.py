@@ -480,6 +480,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.inheritance = {}
             self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
@@ -508,12 +509,14 @@ class Clan():
         created in the 'clan created' screen, not every time
         the program starts
         """
-        self.instructor = Cat(status=choice(["warrior", "elder"]))
+        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
+                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+                              )
         self.instructor.dead = True
-        update_sprite(self.instructor)
+        self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
+        self.add_to_starclan(self.instructor)
         self.all_clans = []
-        other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -619,7 +622,7 @@ class Clan():
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
+            #update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
@@ -772,6 +775,8 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_pregnancy(game.clan)
+
         self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
@@ -942,7 +947,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -1037,7 +1042,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
@@ -1075,7 +1080,7 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        if game.clan.game_mode in ['expanded', 'cruel season']:
+        if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
         
@@ -1335,9 +1340,7 @@ class Clan():
                 json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
-            print(
-                "ERROR: Saving nutrition information of the freshkill pile didn't work."
-            )
+            print("ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
 
     ## Properties

@@ -11,7 +11,7 @@ from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
+from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY, process_text
 
 from .base_screens import Screens, cat_profiles
 
@@ -344,7 +344,6 @@ class ProfileScreen(Screens):
                         self.the_cat.prevent_fading = False
                     else:
                         self.the_cat.prevent_fading = True
-                    update_sprite(self.the_cat)  # This will remove the transparency on the cat.
                     self.clear_profile()
                     self.build_profile()
 
@@ -406,9 +405,6 @@ class ProfileScreen(Screens):
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
-
-                    # Update sprite in this situation.
-                    update_sprite(self.the_cat)
 
                 self.clear_profile()
                 self.build_profile()
@@ -508,7 +504,6 @@ class ProfileScreen(Screens):
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
-        cat_profiles()
         self.update_platform()
         if game.last_screen_forProfile == 'med den screen':
             self.toggle_conditions_tab()
@@ -629,8 +624,9 @@ class ProfileScreen(Screens):
 
         # Create cat image object
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
+                                                                         
                                                                          pygame.transform.scale(
-                                                                             self.the_cat.large_sprite,
+                                                                             self.the_cat.sprite,
                                                                              (300, 300)), manager=MANAGER)
         self.profile_elements["cat_image"].disable()
 
@@ -892,17 +888,42 @@ class ProfileScreen(Screens):
                 output += ' moons'
 
         # MATE
-        if the_cat.mate:
+        if len(the_cat.mate) > 0:
             # NEWLINE ----------
             output += "\n"
-            if the_cat.mate in Cat.all_cats:
-                mate_ob = Cat.fetch_cat(the_cat.mate)
-                if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
-                    output += 'former mate: ' + str(Cat.all_cats[the_cat.mate].name)
-                else:
-                    output += 'mate: ' + str(Cat.all_cats[the_cat.mate].name)
-            else:
-                output += 'Error: mate: ' + str(the_cat.mate) + " not found"
+            if len(the_cat.mate) > 0:
+                # collect all names
+                mates = []
+                prev_mates = []
+                for mate_id in the_cat.mate:
+                    if mate_id in Cat.all_cats:
+                        mate_ob = Cat.fetch_cat(mate_id)
+                        if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
+                            prev_mates.append(str(mate_ob.name))
+                        else:
+                            mates.append(str(mate_ob.name))
+                    else:
+                        output += 'Error: mate: ' + str(mate_id) + " not found"
+                for prev_mate_id in the_cat.previous_mates:
+                    if prev_mate_id in Cat.all_cats:
+                        mate_ob = Cat.fetch_cat(prev_mate_id)
+                        prev_mates.append(str(mate_ob.name))
+                    else:
+                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
+                # merge the names together for the output
+                if len(mates) > 0:
+                    if len(mates) > 1:
+                        output += 'mates: ' + str(', '.join(mates))
+                    else:
+                        output += 'mate: ' + mates[0]
+                if len(prev_mates) > 0:
+                    if len(mates) > 0:
+                        output += '\n'
+                    if len(prev_mates) > 1:
+                        output += 'former mates: ' + str(', '.join(prev_mates))
+                    else:
+                        output += 'former mate: ' + prev_mates[0]
+
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -1211,20 +1232,24 @@ class ProfileScreen(Screens):
         """
         returns the backstory blurb
         """
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         bs_blurb = bs_blurb_text(self.the_cat)
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = f"{self.the_cat.name} was born into the Clan where they currently reside."
+            text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
 
         beginning = self.history.get_beginning(self.the_cat)
         if beginning:
             if beginning['clan_born']:
-                text += f" They were born into the Clan on Moon {beginning['moon']} during {beginning['birth_season']}."
+                text += " {PRONOUN/m_c/subject/CAP} were born on Moon " + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
             else:
-                text += f" {self.the_cat.name} joined the Clan on Moon {beginning['moon']} at the age of {beginning['age']} Moons."
+                text += " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon " + str(beginning['moon']) + " at the age of " + str(beginning['age']) + " Moons."
 
+        text = process_text(text, cat_dict)
         return text
 
     def get_scar_text(self):
@@ -1258,17 +1283,21 @@ class ProfileScreen(Screens):
                 if i != 0:
                     sentence_beginners = [
                         "This cat",
-                        "Then they were",
-                        "They were also",
-                        "Also, they were",
+                        "Then {PRONOUN/m_c/subject} were",
+                        "{PRONOUN/m_c/subject/CAP} were also",
+                        "Also, {PRONOUN/m_c/subject} were",
                         "As well as",
-                        "They were then"
+                        "{PRONOUN/m_c/subject/CAP} were then"
                     ]
                     chosen = choice(sentence_beginners)
                     if chosen == 'This cat':
                         new_text = new_text.replace(str(self.the_cat.name), chosen, 1)
                     else:
                         new_text = new_text.replace(f"{self.the_cat.name} was", f"{chosen}", 1)
+                cat_dict = {
+                    "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+                }
+                new_text = process_text(new_text, cat_dict)
                 scar_text.append(new_text)
                 i += 1
 
@@ -1288,7 +1317,7 @@ class ProfileScreen(Screens):
 
         if mentor_influence:
             if mentor_influence["mentor"]:
-                mentor = Cat.fetch_cat(mentor_influence["mentor"]).name
+                mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
                 mentor = None
             influenced_trait = mentor_influence["trait"]
@@ -1297,7 +1326,7 @@ class ProfileScreen(Screens):
             if influenced_skill or influenced_trait:
                 vowels = ['e', 'a', 'i', 'o', 'u']
                 if influenced_skill in Cat.skill_groups.get('special'):
-                    adjust_skill = f'unlock their abilities as a {influenced_skill}'
+                    adjust_skill = 'unlock {PRONOUN/m_c/poss} abilities as a ' + influenced_skill
                     for y in vowels:
                         if influenced_skill.startswith(y):
                             adjust_skill = adjust_skill.replace(' a ', ' an ')
@@ -1323,49 +1352,52 @@ class ProfileScreen(Screens):
                             break
 
             if not mentor:
-                influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+                influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
                 if self.the_cat.status in ['kitten', 'newborn']:
                     influence_history = 'This cat has not begun training.'
                 if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                     influence_history = 'This cat has not finished training.'
             elif influenced_skill and not influenced_trait:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to " + influenced_skill + "."
             elif influenced_trait and not influenced_skill:
                 if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                    influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
+                    influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to become more " + influenced_trait.lower() + "."
                 else:
                     influence_history = f"This cat's mentor was {mentor}."
             elif influenced_trait and influenced_skill:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + "as well as " + influenced_skill + "."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
 
         if not influence_history:
-            influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+            influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
             if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                 influence_history = 'This cat has not finished training.'
 
         app_ceremony = self.history.get_app_ceremony(self.the_cat)
+        print(app_ceremony)
 
         graduation_history = ""
         if app_ceremony:
-            graduation_history = f"When {self.the_cat.name} graduated they were honored for their {app_ceremony['honor']}."
+            graduation_history = "When {PRONOUN/m_c/subject} graduated {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
-                graduation_history += f" Their training went so well that they graduated early at {grad_age} moons old."
+                graduation_history += " {PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at " + str(grad_age) + " moons old."
             elif int(grad_age) > 13:
-                graduation_history += f" They graduated late at {grad_age} moons old."
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated late at " + str(grad_age) + " moons old."
             else:
-                graduation_history += f" They graduated at {grad_age} moons old."
+                graduation_history += " {PRONOUN/m_c/subject/CAP} graduated at " + str(grad_age) + " moons old."
 
             if game.switches['show_history_moons']:
                 graduation_history += f" (Moon {app_ceremony['moon']})"
-
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         apprenticeship_history = influence_history + " " + graduation_history
-
+        apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
 
     def get_death_text(self):
@@ -1375,8 +1407,6 @@ class ProfileScreen(Screens):
         text = None
         death_history = self.history.get_death_or_scars(self.the_cat, death=True)
         murder_history = self.history.get_murders(self.the_cat)
-        print(death_history)
-        print(murder_history)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1390,13 +1420,11 @@ class ProfileScreen(Screens):
                     for event in murder_history["is_victim"]:
                         if event["text"] == death["text"] and event["moon"] == death["moon"]:
                             if event["revealed"] is True:
-                                print('event revealed')
                                 text = event_text_adjust(Cat,
                                                          event["text"],
                                                          self.the_cat,
                                                          Cat.fetch_cat(death["involved"]))
                             else:
-                                print('event unrevealed')
                                 text = event_text_adjust(Cat,
                                                          event["unrevealed_text"],
                                                          self.the_cat,
@@ -1422,16 +1450,19 @@ class ProfileScreen(Screens):
                     deaths = all_deaths[0]
 
                 if self.the_cat.dead:
-                    insert = 'lost all their lives'
+                    insert = 'lost all {PRONOUN/m_c/poss} lives'
                 elif game.clan.leader_lives == 8:
                     insert = 'lost a life'
                 else:
-                    insert = 'lost their lives'
+                    insert = 'lost {PRONOUN/m_c/poss} lives'
 
-                text = f"{self.the_cat.name} {insert} when they {deaths}."
+                text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
             else:
                 text = all_deaths[0]
-
+            cat_dict = {
+                "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+            }
+            text = process_text(text, cat_dict)
         return text
 
     def get_murder_text(self):
@@ -1470,52 +1501,22 @@ class ProfileScreen(Screens):
                         if moons:
                             victim_names[name].append(victim["moon"])
 
-                for name in victim_names:
-                    if not moons:
-                        name_list.append(name)
-                    else:
-                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
-
-                print(name_list)
-                if len(name_list) == 1:
-                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
-                elif len(victim_names) == 2:
-                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
-                else:
-                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
-
-            # don't think i need this anymore, but keeping till i'm sure
-            """if murderers:
-                print(murderers)
-                murderer_names = {}
-                name_list = []
-
-                for murderer in murderers:
-                    print(murderer)
-                    name = str(Cat.fetch_cat(murderer["murderer"]).name)
-                    print(name)
-                    if murderer["revealed"]:
-                        murderer_names[name] = []
-                        if moons:
-                            murderer_names[name].append(murderer["moon"])
-
-                if murderer_names:
-                    for name in murderer_names:
-                        print(murderer_names)
+                if victim_names:
+                    for name in victim_names:
                         if not moons:
                             name_list.append(name)
                         else:
-                            name_list.append(name + f" (Moon {', '.join(murderer_names[name])})")
+                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
                     if len(name_list) == 1:
-                        murdered_text = f"{self.the_cat.name} was murdered by {name_list[0]}."
-                    elif len(murderer_names) == 2:
-                        murdered_text = f"{self.the_cat.name} was murdered by {' and '.join(name_list)}."
+                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                    elif len(victim_names) == 2:
+                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
                     else:
-                        murdered_text = f"{self.the_cat.name} was murdered by {', '.join(name_list[:-1])}, and {name_list[-1]}."""""
+                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-        print(victim_text, murdered_text)
-        return " ".join([victim_text, murdered_text])
+        print(victim_text)
+        return victim_text
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
@@ -1765,7 +1766,7 @@ class ProfileScreen(Screens):
                     text_list.append(f'is {complication}!')
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
-                text_list.append("They can't work with this condition")
+                text_list.append("Can't work with this condition")
 
         # collect details for illnesses
         if name in self.the_cat.illnesses:
@@ -1784,7 +1785,7 @@ class ProfileScreen(Screens):
                 text_list.append("infectious!")
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
-                text_list.append("They can't work with this condition")
+                text_list.append("Can't work with this condition")
 
         text = "<br><br>".join(text_list)
         return text
@@ -2040,6 +2041,8 @@ class ProfileScreen(Screens):
                 self.sub_tab_2.disable()
                 if self.history_text_box:
                     self.history_text_box.kill()
+                    self.no_moons.kill()
+                    self.show_moons.kill()
                 if self.save_text:
                     self.save_text.kill()
                 if self.notes_entry:
@@ -2397,7 +2400,7 @@ class RoleScreen(Screens):
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((490, 80), (300, 300))),
             pygame.transform.scale(
-                self.the_cat.big_sprite, (300, 300)),
+                self.the_cat.sprite, (300, 300)),
             manager=MANAGER
         )
 

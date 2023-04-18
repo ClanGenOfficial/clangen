@@ -1,35 +1,34 @@
 [
-{
-    "patrol_id": "bch_bord_flashflood_tide4",
-    "biome": "beach",
-    "season": "leaf-bare",
-    "tags": ["border", "death", "large_prey", "no_body"],
-    "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
-    "decline_text": "r_c decides to head back early.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "success_text": [
-            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. They make it in time to watch the beach get lost under a tide of water from inland.",
-            null,
-            "s_c scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-            "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. They are proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
-    ],
-    "fail_text": [
-            null,
-            null,
-            "r_c is in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
-            null
-    ],
-    "win_skills": ["extremely smart"],
-    "win_trait": ["careful", "insecure", "nervous"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was swept out to sea by a flood.",
-            "were swept out to sea by a flood"
-    ]
-}
+        {
+            "patrol_id": "bch_bord_flashflood_tide2",
+            "biome": "beach",
+            "season": "newleaf",
+            "tags": ["border", "death", "large_prey", "no_body"],
+            "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+            "decline_text": "r_c decides to head back early.",
+            "chance_of_success": 30,
+            "exp": 20,
+            "success_text": [
+                    "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
+                    null,
+                    "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+                    "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life."
+            ],
+            "fail_text": [
+                    null,
+                    null,
+                    "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
+                    null
+            ],
+            "win_skills": ["extremely smart"],
+            "win_trait": ["careful", "insecure", "nervous"],
+            "min_cats": 1,
+            "max_cats": 1,
+            "antagonize_text": null,
+            "antagonize_fail_text": null,
+            "history_text": {
+        "reg_death": "r_c was swept out to sea by a flood.",
+        "lead_death": "were swept out to sea by a flood"
+    }
+        }
 ]

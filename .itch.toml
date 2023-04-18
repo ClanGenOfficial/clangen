@@ -1,0 +1,4 @@
+[[actions]]
+name = "play"
+path = "Clangen/Clangen.exe"
+args = ["--launched-through-itch"]
