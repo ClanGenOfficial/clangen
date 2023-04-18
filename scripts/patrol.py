@@ -1652,7 +1652,8 @@ class Patrol():
         :param scar: if you want the scar history added set this to True, default is False
         :param death: if you want the death history added set this to True, default is False
         """
-
+        if not self.patrol_event.history:
+            print(f"WARNING: No history found for {self.patrol_event.patrol_id}, it may not need one but double check please!")
         if scar and "scar" in self.patrol_event.history_text:
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))

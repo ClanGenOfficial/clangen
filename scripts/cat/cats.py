@@ -338,7 +338,7 @@ class Cat():
         self.specsuffix_hidden = specsuffix_hidden
         self.inheritance = None
 
-        self.history = History()
+        self.history = None
 
         # setting ID
         if ID is None:
@@ -1090,6 +1090,7 @@ class Cat():
         )
 
     def load_history(self):
+        print('load history')
         try:
             if game.switches['clan_name'] != '':
                 clanname = game.switches['clan_name']
@@ -1103,6 +1104,7 @@ class Cat():
         cat_history_directory = history_directory + self.ID + '_history.json'
 
         if not os.path.exists(cat_history_directory):
+            print('path did not exist')
             self.history = History(
                 beginning={},
                 mentor_influence={},
@@ -1116,6 +1118,7 @@ class Cat():
             )
             return
         try:
+            print('loaded history')
             with open(cat_history_directory, 'r') as read_file:
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
@@ -1131,17 +1134,7 @@ class Cat():
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
         except:
-            self.history = History(
-                beginning={},
-                mentor_influence={},
-                app_ceremony={},
-                lead_ceremony=None,
-                possible_death={},
-                died_by=[],
-                possible_scar={},
-                scar_events=[],
-                murder={},
-            )
+            self.history = None
             print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
                   f'empty. Default history info was given. Close game without saving if you have save information '
                   f'you\'d like to preserve!')
@@ -1151,8 +1144,9 @@ class Cat():
             os.makedirs(history_dir)
 
         history_dict = self.history_class.make_dict(self)
-
+        print(history_dict)
         try:
+            print('saved')
             with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
                 json_string = ujson.dumps(history_dict, indent=4)
                 history_file.write(json_string)
@@ -1274,6 +1268,7 @@ class Cat():
                 else:
                     extra_givers = random.sample(possible_sc_cats, k=amount)
             else:
+                print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     i not in life_givers and
                                     self.fetch_cat(i).status != 'leader']

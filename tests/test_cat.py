@@ -3,11 +3,14 @@ import unittest
 from unittest.mock import patch
 
 import os
+
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
+from scripts.cat.history import History
 
 
 class TestCreationAge(unittest.TestCase):
@@ -381,6 +384,17 @@ class TestStatusChange(unittest.TestCase):
         apprentice.skill = "???"
         mentor.apprentice.append(apprentice.ID)
         apprentice.mentor = mentor.ID
+        apprentice.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
 
         # when
         self.assertNotEqual(apprentice.mentor, None)
