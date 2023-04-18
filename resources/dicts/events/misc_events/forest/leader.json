@@ -1,4 +1,5 @@
-[{
+[
+    {
     "event": "War"
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
