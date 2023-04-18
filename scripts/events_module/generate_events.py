@@ -85,7 +85,7 @@ class GenerateEvents:
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
                 event = ShortEvent(
-                    camp="any",
+                    camp=event["camp"] if "camp" in event else "any",
                     tags=event["tags"],
                     event_text=event_text,
                     history_text=event["history_text"] if "history_text" in event else {},

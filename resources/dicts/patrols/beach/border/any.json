@@ -180,7 +180,7 @@
             null,
             null,
             "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/subject} life."
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/poss} life."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
