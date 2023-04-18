@@ -2,9 +2,9 @@
     "id": "general_formerclancat_dead_thoughts",
     "thoughts": [
         "Feels happy to be among StarClan",
-        "Wonders if any of their old Clan is here",
+        "Wonders if any of {PRONOUN/m_c/poss} old Clan is here",
         "Hunts in the starry meadows",
-        "Admires their starry fur"
+        "Admires {PRONOUN/m_c/poss} starry fur"
     ],
     "main_status_constraint": [
         "former Clancat"

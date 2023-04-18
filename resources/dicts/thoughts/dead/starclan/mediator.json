@@ -2,7 +2,7 @@
     {
         "id": "gen_dead_mediator",
         "thoughts": [
-            "Is proud of their work as c_n's mediator, and hopes that they leave behind a legacy of peace",
+            "Is proud of {PRONOUN/m_c/poss} work as c_n's mediator, and hopes that {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} behind a legacy of peace",
             "Is a bit exasperated upon watching c_n cats' arguments"
         ]
     }

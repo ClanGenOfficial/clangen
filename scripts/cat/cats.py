@@ -1131,7 +1131,17 @@ class Cat():
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
         except:
-            self.history = History()
+            self.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
             print(f'WARNING: There was an error reading the history file of cat #{self} or their history file was '
                   f'empty. Default history info was given. Close game without saving if you have save information '
                   f'you\'d like to preserve!')
@@ -1148,8 +1158,17 @@ class Cat():
                 history_file.write(json_string)
         except:
             print(f"WARNING: saving history of cat #{self.ID} didn't work")
-
-        self.history = History()
+            self.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
 
     def generate_lead_ceremony(self):
         """
@@ -1240,9 +1259,6 @@ class Cat():
                 life_givers.append(rel.cat_to)
                 i += 1
 
-        for giver in life_givers:
-            print(self.fetch_cat(giver).name)
-
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
             amount = 8 - len(life_givers)
@@ -1277,7 +1293,6 @@ class Cat():
                 # pick oldest leader in SC
                 ancient_leader = True
                 if starclan:
-                    print(game.clan.starclan_cats.reverse())
                     for kitty in reversed(game.clan.starclan_cats):
                         if self.fetch_cat(kitty).status == 'leader':
                             life_giving_leader = kitty
@@ -1315,13 +1330,10 @@ class Cat():
         lives = []
         used_lives = []
         used_virtues = []
-        print(life_givers)
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             life_list = []
-            print(giver)
             for life in possible_lives:
-                print('NEW LIFE', life)
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
 
@@ -1330,37 +1342,28 @@ class Cat():
 
                 if "guide" in tags and giver_cat != game.clan.instructor:
                     continue
-                print('guide pass')
                 if game.clan.age != 0 and "new_clan" in tags:
                     continue
                 elif game.clan.age == 0 and "new_clan" not in tags:
                     continue
-                print('new_clan pass')
                 if "old_leader" in tags and not ancient_leader:
                     continue
-                print('old_leader pass')
                 if "leader_parent" in tags and giver_cat.ID not in self.get_parents():
                     continue
                 elif "leader_child" in tags and giver_cat.ID not in self.get_children():
                     continue
                 elif "leader_mate" in tags and giver_cat.ID not in self.mate:
                     continue
-                print('relation pass')
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
                         continue
-                print('rank pass')
                 if possible_lives[life]["lead_trait"]:
                     if self.trait not in possible_lives[life]["lead_trait"]:
                         continue
-                print('lead_trait pass')
                 if possible_lives[life]["star_trait"]:
                     if self.fetch_cat(giver).trait not in possible_lives[life]["star_trait"]:
                         continue
-                print('star_trait pass')
-                print('PASSED')
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
-            print(life_list)
 
             i = 0
             chosen_life = {}
@@ -1448,7 +1451,6 @@ class Cat():
             outro = 'this should not appear'
 
         full_ceremony = "<br><br>".join([intro, all_lives, outro])
-        print(full_ceremony)
         return full_ceremony
 
     # ---------------------------------------------------------------------------- #
@@ -2026,7 +2028,6 @@ class Cat():
             self.also_got = False
 
     def additional_injury(self, injury):
-        self.history_class.add_possible_death_or_scars(self, injury, )
         self.get_injured(injury, event_triggered=True)
 
     def congenital_condition(self, cat):
@@ -2599,24 +2600,42 @@ class Cat():
                 jealousy = 0
                 trust = 0
                 if game.settings['random relation']:
-                    if the_cat == game.clan.instructor:
-                        pass
-                    elif randint(1, 20) == 1 and romantic_love < 1:
-                        dislike = randint(10, 25)
-                        jealousy = randint(5, 15)
-                        if randint(1, 30) == 1:
-                            trust = randint(1, 10)
+                    if game.clan:
+                        if the_cat == game.clan.instructor:
+                            pass
+                        elif randint(1, 20) == 1 and romantic_love < 1:
+                            dislike = randint(10, 25)
+                            jealousy = randint(5, 15)
+                            if randint(1, 30) == 1:
+                                trust = randint(1, 10)
+                        else:
+                            like = randint(0, 35)
+                            comfortable = randint(0, 25)
+                            trust = randint(0, 15)
+                            admiration = randint(0, 20)
+                            if randint(
+                                    1, 100 - like
+                            ) == 1 and self.moons > 11 and the_cat.moons > 11:
+                                romantic_love = randint(15, 30)
+                                comfortable = int(comfortable * 1.3)
+                                trust = int(trust * 1.2)
                     else:
-                        like = randint(0, 35)
-                        comfortable = randint(0, 25)
-                        trust = randint(0, 15)
-                        admiration = randint(0, 20)
-                        if randint(
-                                1, 100 - like
-                        ) == 1 and self.moons > 11 and the_cat.moons > 11:
-                            romantic_love = randint(15, 30)
-                            comfortable = int(comfortable * 1.3)
-                            trust = int(trust * 1.2)
+                        if randint(1, 20) == 1 and romantic_love < 1:
+                            dislike = randint(10, 25)
+                            jealousy = randint(5, 15)
+                            if randint(1, 30) == 1:
+                                trust = randint(1, 10)
+                        else:
+                            like = randint(0, 35)
+                            comfortable = randint(0, 25)
+                            trust = randint(0, 15)
+                            admiration = randint(0, 20)
+                            if randint(
+                                    1, 100 - like
+                            ) == 1 and self.moons > 11 and the_cat.moons > 11:
+                                romantic_love = randint(15, 30)
+                                comfortable = int(comfortable * 1.3)
+                                trust = int(trust * 1.2)
 
                 if are_parents and like < 60:
                     like = 60
