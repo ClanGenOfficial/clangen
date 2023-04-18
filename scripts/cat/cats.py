@@ -1268,6 +1268,7 @@ class Cat():
                 else:
                     extra_givers = random.sample(possible_sc_cats, k=amount)
             else:
+                print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     i not in life_givers and
                                     self.fetch_cat(i).status != 'leader']
