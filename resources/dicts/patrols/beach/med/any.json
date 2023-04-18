@@ -348,6 +348,9 @@
         null,
         "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
     ],
+    "history_text": {
+        "scar": "r_c was scarred after stepping on a thorn."
+    },
     "min_cats": 2,
     "max_cats": 2
 },
