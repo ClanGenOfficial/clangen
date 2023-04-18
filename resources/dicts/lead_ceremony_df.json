@@ -28,7 +28,7 @@
       "tags": ["new_clan"],
       "lead_trait": [],
       "text": [
-        "As m_c dreams that night, {PRONOUN/m_c/subject} find {PRONOUN/m_c/self walking through darkness, mud and muck sticking to {PRONOUN/m_c/poss} paws. The world around {PRONOUN/m_c/object}  is devoid of light and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
+        "As m_c dreams that night, {PRONOUN/m_c/subject} find {PRONOUN/m_c/self} walking through darkness, mud and muck sticking to {PRONOUN/m_c/poss} paws. The world around {PRONOUN/m_c/object} is devoid of light and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
       ]
     },
     "bloodthirsty": {

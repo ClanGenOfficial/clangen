@@ -1100,7 +1100,7 @@
       "rank": ["medicine cat"],
       "life_giving": [
         {
-          "text": "r_c approaches, a blank expression on {PRONOUN/r_c/poss} face. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], whispering to not lose {PRONOUN/m_c/} way.",
+          "text": "r_c approaches, a blank expression on {PRONOUN/r_c/poss} face. {PRONOUN/r_c/subject/CAP} {VERB/r_c/offer/offers} a life for [virtue], whispering to not lose {PRONOUN/m_c/poss} way.",
           "virtue": ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
         }
       ]
