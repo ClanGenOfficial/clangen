@@ -397,10 +397,12 @@ class ProfileScreen(Screens):
                 if self.the_cat.dead:
                     if self.the_cat.df is True:
                         self.the_cat.outside, self.the_cat.exiled = False, False
+                        self.the_cat.df = False
                         game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = "Is relieved to once again hunt in StarClan"
                     else:
                         self.the_cat.outside, self.the_cat.exiled = False, False
+                        self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
 
@@ -1363,7 +1365,7 @@ class ProfileScreen(Screens):
                 else:
                     influence_history = f"This cat's mentor was {mentor}."
             elif influenced_trait and influenced_skill:
-                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + "as well as " + influenced_skill + "."
+                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + " as well as " + influenced_skill + "."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
 
