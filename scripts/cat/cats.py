@@ -2423,7 +2423,7 @@ class Cat():
             return False
 
         # check exiled, outside, and dead cats
-        if self.dead or self.outside or other_cat.dead or other_cat.outside:
+        if (self.dead != other_cat.dead) or self.outside or other_cat.outside:
             return False
 
         # check for age
