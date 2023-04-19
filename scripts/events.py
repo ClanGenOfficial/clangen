@@ -34,6 +34,7 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
     get_living_clan_cat_count, adjust_list_text
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.game_structure.windows import SaveError
 
 
 class Events():
@@ -256,8 +257,12 @@ class Events():
 
         # autosave
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
-            game.save_cats()
-            game.clan.save_clan()
+            try:
+                game.save_cats()
+                game.clan.save_clan()
+                game.clan.save_pregnancy(game.clan)
+            except:
+                SaveError(traceback.format_exc())
 
     def mediator_events(self, cat):
         """ Check for mediator events """
