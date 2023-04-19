@@ -300,5 +300,13 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat"],
+        "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c.",
+        "history_text": [
+          "m_c was accidentally killed by r_c in battle.",
+          "was accidentally killed by r_c in the chaos of battle."],
     }
 ]

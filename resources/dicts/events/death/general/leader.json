@@ -606,5 +606,13 @@
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
         "other_cat_skill": null,
         "other_cat_negate_skill": ["extremely smart", "very smart"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat"],
+        "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c. m_c lost one life.",
+        "history_text": [
+          "m_c was accidentally attacked by m_c in battle.",
+          "were accidentally attacked by r_c in the chaos of battle."],
     }
 ]
