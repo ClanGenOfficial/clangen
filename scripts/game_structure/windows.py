@@ -964,3 +964,35 @@ class RelationshipLog(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.closing_buttons:
                 self.closing_process()
+                
+
+class SaveError(UIWindow):
+    def __init__(self, error_text):
+        super().__init__(scale(pygame.Rect((300, 300), (1000, 800))),
+                         window_display_title='Changelog',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.changelog_popup_title = pygame_gui.elements.UITextBox(
+            f"<strong>Saving Failed!</strong>\n\n{error_text}",
+            scale(pygame.Rect((40, 20), (890, 750))),
+            object_id="#text_box_30",
+            container=self
+        )
+
+        self.close_button = UIImageButton(
+            scale(pygame.Rect((940, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            starting_height=2,
+            container=self
+        )
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.close_button:
+                game.switches['window_open'] = False
+                self.kill()
