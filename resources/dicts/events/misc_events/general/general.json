@@ -20,7 +20,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy.",
+        "event_text": "m_c believes they are part of a new prophecy.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -29,7 +29,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c believes {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} meant for something greater.",
+        "event_text": "m_c believes they're meant for something greater.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -38,7 +38,7 @@
     {
         "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c tries to convince r_c to run away with {PRONOUN/m_c/object}.",
+        "event_text": "m_c tries to convince r_c to run away with them.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -56,7 +56,7 @@
     {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "to_both", "platonic", "comfort", "neg_dislike", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
+        "event_text": "r_c gives m_c something to adorn their pelt as congratulations.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -66,7 +66,7 @@
     {
         "camp": "any",
         "tags": ["ceremony", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
+        "event_text": "m_c decides to pick something to adorn their pelt as celebration.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -86,7 +86,7 @@
     {
         "camp": "any",
         "tags": ["other_cat", "to_both", "platonic", "comfort", "neg_dislike", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with them on their pelt.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -96,7 +96,7 @@
     {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "rc_to_mc", "jealousy", "neg_platonic", "neg_romantic", "neg_respect", "neg_comfort", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
+        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in their eyes.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -106,7 +106,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
+        "event_text": "m_c always seems to have acc_plural stuck in their fur.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -154,7 +154,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c mistepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet before {PRONOUN/m_c/subject} could dislocate something.",
+        "event_text": "m_c misstepped and slipped from a rock, but landed on their feet before they could dislocate something.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -163,7 +163,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c didn't look where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but twisted {PRONOUN/m_c/self} onto {PRONOUN/m_c/poss} back before {PRONOUN/m_c/object} could sprain a leg.",
+        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, but twisted themselves onto their back before they could sprain a leg.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -172,7 +172,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!",
+        "event_text": "m_c was trying to fluff up their nest when they saw a thorn inside of their bedding. Another prank, but it could not fool them!",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -181,7 +181,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c slipped on some rocks, but landed on {PRONOUN/m_c/poss} feet before {PRONOUN/m_c/subject} could dislocate something.",
+        "event_text": "m_c slipped on some rocks, but landed on their feet before they could dislocate something.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

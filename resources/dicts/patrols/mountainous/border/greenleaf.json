@@ -28,11 +28,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue2",
@@ -62,11 +62,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue3",
@@ -95,11 +95,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue.",
-        "were killed by an invading rogue"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue.",
+        "lead_death": "were killed by an invading rogue"
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue4",
@@ -129,10 +129,9 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue5",
@@ -160,12 +159,9 @@
     "fail_skills": ["good fighter"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue6",
@@ -192,12 +188,9 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
 },
 {
     "patrol_id": "mtn_bord_trackrogue7",
@@ -224,9 +217,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue8",
@@ -253,12 +244,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
     "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "mtn_bord_trackrogue9",

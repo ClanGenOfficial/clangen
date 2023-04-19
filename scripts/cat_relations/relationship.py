@@ -1,5 +1,7 @@
 import random
 from random import choice
+
+from scripts.cat.history import History
 from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility, process_text
@@ -22,6 +24,7 @@ class Relationship():
 
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0,
                  admiration=0, comfortable=0, jealousy=0, trust=0, log=None) -> None:
+        self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -126,6 +129,7 @@ class Relationship():
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries if the game mode is not classic
         if self.chosen_interaction.get_injuries and game_mode != 'classic':
+            injuries = []
             for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
                 if "injury_names" not in injury_dict:
                     print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
@@ -137,7 +141,19 @@ class Relationship():
                 
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
-        
+                    injuries.append(inj)
+
+                possible_scar = self.adjust_interaction_string(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+                possible_death = self.adjust_interaction_string(injury_dict["death_text"]) if "death_text" in injury_dict else None
+                if injured_cat.status == "leader":
+                    possible_death = self.adjust_interaction_string(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                if possible_scar:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
+                if possible_death:
+                    for condition in injuries:
+                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
+
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
@@ -167,6 +183,7 @@ class Relationship():
         }
 
         return process_text(string, cat_dict)
+
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.

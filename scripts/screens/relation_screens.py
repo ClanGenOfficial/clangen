@@ -208,7 +208,7 @@ class ChooseMentorScreen(Screens):
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((1200, 300), (300, 300))),
             pygame.transform.scale(
-                self.the_cat.large_sprite,
+                self.the_cat.sprite,
                 (300, 300)),
             manager=MANAGER)
 
@@ -318,7 +318,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((100, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_mentor.large_sprite,
+                    self.selected_mentor.sprite,
                     (300, 300)), manager=MANAGER)
 
             info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
@@ -380,7 +380,7 @@ class ChooseMentorScreen(Screens):
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
-                cat.big_sprite, cat_object=cat, manager=MANAGER)
+                cat.sprite, cat_object=cat, manager=MANAGER)
             pos_x += 120
             if pos_x >= 1100:
                 pos_x = 0
@@ -572,7 +572,6 @@ class FamilyTreeScreen(Screens):
     def screen_switches(self):
         """Set up things that are always on the page"""
 
-        cat_profiles()
         self.current_group = None
         self.current_group_name = None
         # prev/next and back buttons
@@ -875,7 +874,7 @@ class FamilyTreeScreen(Screens):
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
-                _kitty.big_sprite,
+                _kitty.sprite,
                 cat_id=_kitty.ID,
                 manager=MANAGER,
                 tool_tip_text=info_text
@@ -1174,10 +1173,10 @@ class ChooseMateScreen(Screens):
                 self.update_buttons()
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
-                self.update_cat_page()
+                self.update_cat_list()
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
-                self.update_cat_page()
+                self.update_cat_list()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1231,8 +1230,6 @@ class ChooseMateScreen(Screens):
         self.kitten_message = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 666), (1200, 80))),
                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"))
         self.kitten_message.hide()
-        
-        self.all_pages = []
 
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
@@ -1304,7 +1301,7 @@ class ChooseMateScreen(Screens):
 
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((100, 300), (300, 300))),
                                                                          pygame.transform.scale(
-                                                                             self.the_cat.large_sprite, (300, 300)))
+                                                                             self.the_cat.sprite, (300, 300)))
         name = str(self.the_cat.name)  # get name
         if 11 <= len(name):  # check name length
             short_name = str(name)[0:9]
@@ -1376,7 +1373,7 @@ class ChooseMateScreen(Screens):
 
         self.mate_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1200, 300), (300, 300))),
                                                                   pygame.transform.scale(
-                                                                      self.selected_cat.large_sprite, (300, 300)))
+                                                                      self.selected_cat.sprite, (300, 300)))
         name = str(self.selected_cat.name)
         if 11 <= len(name):  # check name length
             short_name = str(name)[0:9]
@@ -1431,8 +1428,13 @@ class ChooseMateScreen(Screens):
         if self.selected_cat and self.selected_cat.ID in self.the_cat.mate:
             self.kittens = False
             for x in game.clan.clan_cats:
-                if self.the_cat.ID in Cat.all_cats[x].get_parents() and \
-                        self.selected_cat.ID in Cat.all_cats[x].get_parents():
+                if self.the_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ] and self.selected_cat.ID in [
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
+                ]:
                     self.all_pages.append(Cat.all_cats[x])
                     self.kittens = True
         else:
@@ -1481,7 +1483,7 @@ class ChooseMateScreen(Screens):
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
-                cat.big_sprite, cat_object=cat)
+                cat.sprite, cat_object=cat)
             pos_x += 120
             if pos_x >= 1100:
                 pos_x = 0
@@ -1514,7 +1516,7 @@ class ChooseMateScreen(Screens):
             self.mate_elements["image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((1200, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_cat.large_sprite, (300, 300)))
+                    self.selected_cat.sprite, (300, 300)))
 
             name = str(self.selected_cat.name)
             if 11 <= len(name):  # check name length
@@ -1792,7 +1794,6 @@ class RelationshipScreen(Screens):
                 self.update_cat_page()
 
     def screen_switches(self):
-        cat_profiles()
 
         self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
                                                  object_id="#previous_cat_button")
@@ -1976,7 +1977,7 @@ class RelationshipScreen(Screens):
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_22_horizleft"))
         self.focus_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((50, 150), (100, 100))),
-                                                                       self.the_cat.big_sprite)
+                                                                       self.the_cat.sprite)
 
         self.get_previous_next_cat()
         self.apply_cat_filter(self.search_bar.get_text())
@@ -2008,7 +2009,7 @@ class RelationshipScreen(Screens):
             # Cat Image
             self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((150, 290), (300, 300))),
                                                                              pygame.transform.scale(
-                                                                                 self.inspect_cat.large_sprite,
+                                                                                 self.inspect_cat.sprite,
                                                                                  (300, 300)))
 
             related = False
@@ -2060,7 +2061,7 @@ class RelationshipScreen(Screens):
             col1 += f"{self.inspect_cat.trait}\n"
 
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(col1,
-                                                                              scale(pygame.Rect((120, 650), (180, -1))),
+                                                                              scale(pygame.Rect((120, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 
@@ -2108,7 +2109,7 @@ class RelationshipScreen(Screens):
                     col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
-                                                                              scale(pygame.Rect((300, 650), (180, -1))),
+                                                                              scale(pygame.Rect((300, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 
@@ -2204,7 +2205,7 @@ class RelationshipScreen(Screens):
         pos_y = pos[1]
 
         self.sprite_buttons["image" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x + 44, pos_y), (100, 100))),
-                                                               the_relationship.cat_to.big_sprite,
+                                                               the_relationship.cat_to.sprite,
                                                                cat_object=the_relationship.cat_to)
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
@@ -2214,8 +2215,8 @@ class RelationshipScreen(Screens):
             name = short_name + '...'
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x - 5, pos_y - 48),
-                                                                                         (215, 60))),
+                                                                                         (pos_x, pos_y - 48),
+                                                                                         (204, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
@@ -2653,7 +2654,7 @@ class MediationScreen(Screens):
             self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x_value, 180), (300, 300))),
                 pygame.transform.scale(
-                    mediator.large_sprite, (300, 300)))
+                    mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
             if len(name) > 17:
@@ -2730,7 +2731,7 @@ class MediationScreen(Screens):
         y = 970
         for cat in self.all_cats[self.page - 1]:
             self.cat_buttons.append(
-                UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.big_sprite, cat_object=cat)
+                UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
             )
             x += 110
             if x > 1400:
@@ -2765,7 +2766,7 @@ class MediationScreen(Screens):
         self.selected_cat_elements["cat_image" + tag] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((x + 100, y + 14), (200, 200))),
             pygame.transform.scale(
-                cat.big_sprite, (200, 200)))
+                cat.sprite, (200, 200)))
 
         name = str(cat.name)
         if len(name) > 17:

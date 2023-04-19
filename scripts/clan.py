@@ -14,6 +14,7 @@ import os
 
 import pygame
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
@@ -53,6 +54,7 @@ class Clan():
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
+    darkforest_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -441,6 +443,7 @@ class Clan():
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf'):
+        self.history = History()
         if name != "":
             self.name = name
             self.leader = leader
@@ -506,12 +509,14 @@ class Clan():
         created in the 'clan created' screen, not every time
         the program starts
         """
-        self.instructor = Cat(status=choice(["warrior", "elder"]))
+        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
+                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+                              )
         self.instructor.dead = True
-        update_sprite(self.instructor)
+        self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
+        self.add_to_starclan(self.instructor)
         self.all_clans = []
-        other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -573,12 +578,32 @@ class Clan():
         Places the dead cat into starclan.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
+        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats and cat.df is False:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            if cat.ID in self.darkforest_cats:
+                cat.df = False
+                self.darkforest_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
+            update_sprite(Cat.all_cats[str(cat)])
+    def add_to_darkforest(self, cat):  # Same as add_cat
+        """
+        Places the dead cat into the dark forest.
+        It should not be removed from the list of cats in the clan
+        """
+        if cat.ID in Cat.all_cats and cat.dead and cat.df is True:
+            cat.df = True
+            self.darkforest_cats.append(cat.ID)
+            cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat.ID in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
+            #update_sprite(Cat.all_cats[str(cat)])
+            # The dead-value must be set to True before the cat can go to starclan
 
     def add_to_clan(self, cat):
         """
@@ -598,21 +623,6 @@ class Clan():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
 
-    def add_to_darkforest(self, cat):  # Same as add_cat
-        """
-        Places the dead cat into the dark forest.
-        It should not be removed from the list of cats in the clan
-        """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is False:
-            cat.df = True
-            cat.thought = "Is distraught after being sent to the Place of No Stars"
-            if cat in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
-                self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
-            # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
         """
@@ -644,6 +654,7 @@ class Clan():
         TODO: DOCS
         """
         if leader:
+            self.history.add_lead_ceremony(leader)
             self.leader = leader
             Cat.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
@@ -935,7 +946,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -1030,7 +1041,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
@@ -1044,6 +1055,7 @@ class Clan():
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
+                game.clan.add_to_darkforest(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
 
@@ -1339,7 +1351,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(a)
+        self._reputation = int(self._reputation + a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

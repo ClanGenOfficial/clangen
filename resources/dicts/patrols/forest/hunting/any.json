@@ -50,11 +50,11 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol.",
-        "killed by a porcupine"
-    ],
+    "history_text": {
+        "scar": "r_c was scarred by a porcupine while on patrol.",
+        "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+        "lead_death": "killed by a porcupine"
+    },
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -102,11 +102,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol.",
-        "killed by a porcupine"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a porcupine while on patrol.",
+        "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+        "lead_death": "killed by a porcupine"
+    }
 },
 {
     "patrol_id": "fst_hunt_rabbitburrow1",
@@ -227,9 +227,9 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "history_text": [
-        "r_c gained a scar after trying to chase some squirrels up a tree."
-    ],
+    "history_text": {
+        "scar": "r_c gained a scar after trying to chase some squirrels up a tree."
+    },
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -269,9 +269,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred after an unfortunate encounter with a wolverine."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+    }
 },
 {
     "patrol_id": "fst_hunt_burrow2",
@@ -306,11 +306,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed after an unfortunate experience with a wolverine.",
-        "killed by a wolverine"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+        "lead_death": "killed by a wolverine"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl1",
@@ -364,11 +363,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl2",
@@ -423,11 +422,11 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl3",
@@ -478,11 +477,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl4",
@@ -537,11 +535,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a wolf protecting its scavenged meal.",
-        "r_c was killed by a wolf pack protecting its meal.",
-        "killed by a wolf pack"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a wolf protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a wolf pack protecting its meal.",
+        "lead_death": "killed by a wolf pack"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl5",
@@ -592,11 +590,10 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a wolf protecting its meal.",
-        "killed by a wolf"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a wolf protecting its meal.",
+        "lead_death": "killed by a wolf"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl6",
@@ -647,11 +644,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a wolf protecting its meal.",
-        "killed by a wolf"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a wolf protecting its meal.",
+        "lead_death": "killed by a wolf"
+    }
 },
 {
     "patrol_id": "fst_hunt_strange1",
@@ -786,9 +782,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured as an apprentice, exploring alone."
-    ]
+    "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 },
 {
     "patrol_id": "fst_hunt_solo2",
@@ -1010,9 +1006,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c gained a scar from a fox."
-    ]
+    "history_text": {
+        "scar": "r_c gained a scar from a fox."
+    }
 },
 {
     "patrol_id": "fst_hunt_noise2",
@@ -1059,11 +1055,11 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "p_l gained a scar from a fox.",
-        "p_l was killed by a wolverine.",
-        "killed by a wolverine"
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "killed by a wolverine"
+    }
 },
 {
     "patrol_id": "fst_hunt_gonetnr1",
@@ -1173,13 +1169,7 @@
         "wise"
     ],
     "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_gonetnr3",
@@ -1233,13 +1223,7 @@
         "wise"
     ],
     "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_gonetwolegden1",
@@ -1297,13 +1281,7 @@
         "wise"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_gonetwolegden2",
@@ -1356,13 +1334,7 @@
         "wise"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_twolegdencatdare1",
@@ -1421,13 +1393,7 @@
         "wise"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_twolegdenappdare1",
@@ -1483,13 +1449,7 @@
         "wise"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_gonetwolegtrap1",
@@ -1516,13 +1476,7 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_gonetwolegtrap2",
@@ -1571,13 +1525,7 @@
         "playful"
     ],
     "min_cats": 2,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_thunderpath1",
@@ -1627,13 +1575,11 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath2",
@@ -1684,13 +1630,11 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath3",
@@ -1743,13 +1687,11 @@
     ],
     "min_cats": 5,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "This cat was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath4",
@@ -1800,13 +1742,11 @@
     ],
     "min_cats": 5,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_fun1",
@@ -1834,13 +1774,7 @@
         "fantastic hunter"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_fun2",
@@ -1863,13 +1797,7 @@
         "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_fun3",
@@ -1901,9 +1829,7 @@
         "fantastic hunter"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_fun4",
@@ -1930,9 +1856,7 @@
         "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_lillizard1",

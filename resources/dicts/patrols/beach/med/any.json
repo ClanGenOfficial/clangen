@@ -348,6 +348,9 @@
         null,
         "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
     ],
+    "history_text": {
+        "scar": "r_c was scarred after stepping on a thorn."
+    },
     "min_cats": 2,
     "max_cats": 2
 },
@@ -388,7 +391,7 @@
     "exp": 10,
     "success_text": [
         "p_l and r_c decide to search near the Twoleg beach dens. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the weirdly bountiful Twoleg territories.",
-        "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets teh warrior make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+        "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
     ],
     "fail_text": [
         "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
