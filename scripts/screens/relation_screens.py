@@ -1685,7 +1685,8 @@ class ChooseMateScreen(Screens):
             if self.the_cat.is_potential_mate(
                     relevant_cat,
                     for_love_interest=False,
-                    age_restriction=False):
+                    age_restriction=False) and\
+                relevant_cat.ID not in self.the_cat.mate:
                 valid_mates.append(relevant_cat)
         return valid_mates
 
