@@ -121,8 +121,13 @@ class History:
         :param cat: cat object
         :return:
         """
+        print('check load')
         if not cat.history:
+            print('went to load')
             cat.load_history()
+        else:
+            print(cat.history)
+            print('had history')
 
     @staticmethod
     def make_dict(cat):
