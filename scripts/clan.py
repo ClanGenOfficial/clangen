@@ -578,7 +578,7 @@ class Clan():
         Places the dead cat into starclan.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
+        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats and cat.df is False:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
             if cat.ID in self.darkforest_cats:
@@ -593,7 +593,7 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead:
+        if cat.ID in Cat.all_cats and cat.dead and cat.df is True:
             cat.df = True
             self.darkforest_cats.append(cat.ID)
             cat.thought = "Is distraught after being sent to the Place of No Stars"
@@ -1055,6 +1055,7 @@ class Clan():
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
+                game.clan.add_to_darkforest(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
 
