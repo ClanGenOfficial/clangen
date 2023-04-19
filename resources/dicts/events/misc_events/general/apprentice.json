@@ -138,8 +138,8 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
-},
-{
+  },
+  {
   "camp": "any",
   "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "to_both", "platonic", "trust", "comfort", "neg_dislike"],
   "event_text": "m_c and r_c sneak out of camp to go bird watching.",
@@ -147,5 +147,22 @@
   "cat_skill": null,
   "other_cat_trait": null,
   "other_cat_skill": null
-}
+  },
+  {
+    "camp": "any",
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+    "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding them, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
+    "cat_trait": ["nervous", "lonesome", "playful", "careful", "compassionate", "loving", "insecure"]
+  },
+  {
+    "camp": "any",
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+    "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding them, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
+    "cat_trait": ["nervous", "lonesome", "playful", "careful", "compassionate", "loving", "insecure"]
+  },
+  {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c feels like they might be growing up too fast in the midst of war.",
+  }
 ]

@@ -215,5 +215,15 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence.",
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
     }
 ]

@@ -43,5 +43,20 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    }, 
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c feels burdened with the weight of their descisions, knowing that every choice they make could mean the difference between victory and defeat.",
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c's relationships with their clanmates are strained, with some questioning their decisions and others relying on them more heavily than ever.",
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c is forced to be a symbol of strength and unity for their clan, even in the face of their own doubts and fears.",
     }
 ]
