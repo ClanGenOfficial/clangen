@@ -121,8 +121,13 @@ class History:
         :param cat: cat object
         :return:
         """
+        print('check load')
         if not cat.history:
+            print('went to load')
             cat.load_history()
+        else:
+            print(cat.history)
+            print('had history')
 
     @staticmethod
     def make_dict(cat):
@@ -170,6 +175,7 @@ class History:
         self.check_load(cat)
 
         if mentor:
+            mentor = mentor.ID
             cat.history.mentor_influence["mentor"] = mentor if mentor else None
         if skill:
             cat.history.mentor_influence["skill"] = skill if skill else None

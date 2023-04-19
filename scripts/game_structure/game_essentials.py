@@ -429,6 +429,7 @@ class Game():
             if inter_cat.history:
                 inter_cat.save_history(directory + '/history')
                 # after saving, dump the history info
+                inter_cat.history = None
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
 
@@ -536,9 +537,6 @@ class Game():
                 "former_apprentices": {[appr for appr in inter_cat.former_apprentices]},
                 "df": {inter_cat.df},
                 "outside": {inter_cat.outside},
-                "life_givers": {inter_cat.life_givers if inter_cat.life_givers else []},
-                "known_life_givers": {inter_cat.known_life_givers if inter_cat.known_life_givers else []},
-                "virtues": {inter_cat.virtues if inter_cat.virtues else []},
                 "retired": {inter_cat.retired if inter_cat.retired else False},
                 "faded_offspring": {inter_cat.faded_offspring},
                 "opacity": {inter_cat.opacity},
