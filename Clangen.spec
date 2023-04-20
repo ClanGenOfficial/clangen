@@ -1,6 +1,9 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from os import getenv
 
+
+is_release = getenv('IS_RELEASE', '1') == '1'
 block_cipher = None
 
 a = Analysis(
@@ -37,7 +40,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=False,
-    console=False,
+    console=False if is_release else True,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
