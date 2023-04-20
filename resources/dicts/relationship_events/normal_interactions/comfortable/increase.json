@@ -143,7 +143,7 @@
 	{
 		"id": "comfortable_kit_inc_med3",
 		"interactions": [
-			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with rc.",
+			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
 			"m_c had a friendly argument with r_c about which prey tastes the best.",
 			"m_c takes a nap with r_c after a long day playing mossball."
 		],

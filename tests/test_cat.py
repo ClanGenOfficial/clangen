@@ -3,11 +3,14 @@ import unittest
 from unittest.mock import patch
 
 import os
+
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
+from scripts.cat.history import History
 
 
 class TestCreationAge(unittest.TestCase):
@@ -131,6 +134,10 @@ class TestPossibleMateFunction(unittest.TestCase):
 
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1))
 
+		# check for setting
+        self.assertFalse(senior_adult_cat1.is_potential_mate(young_adult_cat1,for_love_interest=False,age_restriction=True))
+        self.assertTrue(senior_adult_cat1.is_potential_mate(young_adult_cat1,for_love_interest=False,age_restriction=False))
+
         # check invalid constellations
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat2))
         self.assertFalse(kitten_cat1.is_potential_mate(adolescent_cat1))
@@ -163,7 +170,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(senior_adult_cat1.is_potential_mate(kitten_cat1))
         self.assertFalse(senior_adult_cat1.is_potential_mate(adolescent_cat1))
         self.assertFalse(senior_adult_cat1.is_potential_mate(young_adult_cat1))
-
+		
         # check valid constellations
         self.assertTrue(young_adult_cat1.is_potential_mate(young_adult_cat2))
         self.assertTrue(young_adult_cat1.is_potential_mate(adult_cat_in_range1))
@@ -381,6 +388,17 @@ class TestStatusChange(unittest.TestCase):
         apprentice.skill = "???"
         mentor.apprentice.append(apprentice.ID)
         apprentice.mentor = mentor.ID
+        apprentice.history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_death={},
+                died_by=[],
+                possible_scar={},
+                scar_events=[],
+                murder={},
+            )
 
         # when
         self.assertNotEqual(apprentice.mentor, None)

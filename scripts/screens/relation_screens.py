@@ -55,15 +55,21 @@ class ChooseMentorScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
             elif event.ui_element == self.next_cat_button:
-                game.switches['cat'] = self.next_cat
-                self.update_apprentice()
-                self.update_selected_cat()
-                self.update_buttons()
+                if Cat.fetch_cat(self.next_cat) is not None:
+                    game.switches['cat'] = self.next_cat
+                    self.update_apprentice()
+                    self.update_selected_cat()
+                    self.update_buttons()
+                else:
+                    print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
-                game.switches['cat'] = self.previous_cat
-                self.update_apprentice()
-                self.update_selected_cat()
-                self.update_buttons()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    game.switches['cat'] = self.previous_cat
+                    self.update_apprentice()
+                    self.update_selected_cat()
+                    self.update_buttons()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
                 self.update_cat_list()
@@ -492,15 +498,21 @@ class FamilyTreeScreen(Screens):
                 self.change_screen('profile screen')
                 game.switches['root_cat'] = None
             elif event.ui_element == self.previous_cat_button:
-                game.switches['cat'] = self.previous_cat
-                game.switches['root_cat'] = Cat.all_cats[self.previous_cat]
-                self.exit_screen()
-                self.screen_switches()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    game.switches['cat'] = self.previous_cat
+                    game.switches['root_cat'] = Cat.all_cats[self.previous_cat]
+                    self.exit_screen()
+                    self.screen_switches()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
-                game.switches['cat'] = self.next_cat
-                game.switches['root_cat'] = Cat.all_cats[self.next_cat]
-                self.exit_screen()
-                self.screen_switches()
+                if Cat.fetch_cat(self.next_cat) is not None:
+                    game.switches['cat'] = self.next_cat
+                    game.switches['root_cat'] = Cat.all_cats[self.next_cat]
+                    self.exit_screen()
+                    self.screen_switches()
+                else:
+                    print("invalid next cat", self.next_cat)
             elif event.ui_element == self.parents_button:
                 self.current_group = self.parents
                 self.current_group_name = "parents"
@@ -660,6 +672,9 @@ class FamilyTreeScreen(Screens):
         # these affect the size and positioning of the UIContainer holding the family tree
         x_dim = 160
         y_dim = 180
+
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
 
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()
@@ -1162,15 +1177,21 @@ class ChooseMateScreen(Screens):
                     self.update_choose_mate(breakup=True)
                 self.update_cat_list()
             elif event.ui_element == self.previous_cat_button:
-                game.switches["cat"] = self.previous_cat
-                self.selected_mate_index = 0
-                self.update_current_cat_info()
-                self.update_buttons()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    game.switches["cat"] = self.previous_cat
+                    self.selected_mate_index = 0
+                    self.update_current_cat_info()
+                    self.update_buttons()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
-                game.switches["cat"] = self.next_cat
-                self.selected_mate_index = 0
-                self.update_current_cat_info()
-                self.update_buttons()
+                if Cat.fetch_cat(self.next_cat) is not None:
+                    game.switches["cat"] = self.next_cat
+                    self.selected_mate_index = 0
+                    self.update_current_cat_info()
+                    self.update_buttons()
+                else:
+                    print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
                 self.update_cat_list()
@@ -1685,7 +1706,8 @@ class ChooseMateScreen(Screens):
             if self.the_cat.is_potential_mate(
                     relevant_cat,
                     for_love_interest=False,
-                    age_restriction=False):
+                    age_restriction=False) and\
+                relevant_cat.ID not in self.the_cat.mate:
                 valid_mates.append(relevant_cat)
         return valid_mates
 
@@ -1755,11 +1777,17 @@ class RelationshipScreen(Screens):
                 game.switches["cat"] = self.inspect_cat.ID
                 self.change_screen('profile screen')
             elif event.ui_element == self.next_cat_button:
-                game.switches["cat"] = self.next_cat
-                self.update_focus_cat()
+                if Cat.fetch_cat(self.next_cat) is not None:
+                    game.switches["cat"] = self.next_cat
+                    self.update_focus_cat()
+                else:
+                    print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
-                game.switches["cat"] = self.previous_cat
-                self.update_focus_cat()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    game.switches["cat"] = self.previous_cat
+                    self.update_focus_cat()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.previous_page_button:
                 self.current_page -= 1
                 self.update_cat_page()
@@ -2061,7 +2089,7 @@ class RelationshipScreen(Screens):
             col1 += f"{self.inspect_cat.trait}\n"
 
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(col1,
-                                                                              scale(pygame.Rect((120, 650), (180, -1))),
+                                                                              scale(pygame.Rect((120, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 
@@ -2109,7 +2137,7 @@ class RelationshipScreen(Screens):
                     col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
-                                                                              scale(pygame.Rect((300, 650), (180, -1))),
+                                                                              scale(pygame.Rect((300, 650), (180, 180))),
                                                                               object_id="#text_box_22_horizleft_spacing_95",
                                                                               manager=MANAGER)
 
