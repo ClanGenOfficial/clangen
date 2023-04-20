@@ -1363,7 +1363,7 @@ class Cat():
                 try:
                     chosen_life = random.choice(life_list)
                 except IndexError:
-                    print(f'WARNING: life list had no items for giver {giver.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    print(f'WARNING: life list had no items for giver {giver}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
                 if chosen_life not in used_lives and chosen_life not in attempted:
                     break
                 else:
