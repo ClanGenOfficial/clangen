@@ -100,7 +100,7 @@ class Patrol():
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
             self.patrol_statuses.append(cat.status)
-            self.patrol_traits.append(cat.trait)
+            self.patrol_traits.append(cat.personality.trait)
             self.patrol_total_experience += cat.experience
             self.experience_levels.append(cat.experience_level)
             if cat.status == 'apprentice' or cat.status == 'medicine cat apprentice':
@@ -719,7 +719,7 @@ class Patrol():
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
                 elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
-            if kitty.trait in self.patrol_event.win_trait:
+            if kitty.personality.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
@@ -757,7 +757,7 @@ class Patrol():
             outcome = 0
             if self.patrol_win_stat_cat:
                 if self.patrol_event.win_trait:
-                    if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
+                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait:
                         outcome = 3
                 if self.patrol_event.win_skills:
                     if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
