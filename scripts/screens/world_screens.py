@@ -119,6 +119,8 @@ class OutsideClanScreen(Screens):
             else:
                 self.menu_button_pressed(event)
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
             if event.key == pygame.K_LEFT:
                 self.change_screen("clan screen")
             elif event.key == pygame.K_RIGHT:
@@ -436,6 +438,8 @@ class UnknownResScreen(Screens):
                 self.menu_button_pressed(event)
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
             if event.key == pygame.K_LEFT:
                 self.change_screen("clan screen")
             elif event.key == pygame.K_RIGHT:
