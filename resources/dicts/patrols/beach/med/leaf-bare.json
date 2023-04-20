@@ -20,9 +20,9 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object}} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object} .",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}} . It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}} . It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+            "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
         ],
         "fail_text": [
             "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
@@ -63,9 +63,9 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/r_c/object} . It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}} . It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}} . It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+            "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/r_c/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
         ],
         "fail_text": [
             "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common.",
@@ -154,7 +154,7 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": [
-            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}} , though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}} .",
+            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}.",
             "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds {PRONOUN/p_l/poss} breath, hoping {PRONOUN/p_l/poss} mentor comes down unscathed.",
             "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns."
         ],
@@ -195,16 +195,16 @@
             "respect"
         ],
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in {PRONOUN/p_l/poss} stores, bringing along anyone who isn't busy with other work.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object} .",
+            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object}.",
             "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. The rest of the patrol gingerly follows {PRONOUN/p_l/poss} lead, and together {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} as decent a harvest as anyone can expect from leaf-bare.",
             "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} {PRONOUN/p_l/object} out to the members of the patrol from within the thicket, and {PRONOUN/p_l/poss} entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home."
         ],
         "fail_text": [
-            "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant. {PRONOUN/p_l/subject/CAP} 'll have to try a different blackberry bush on another day.",
+            "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant. {PRONOUN/p_l/subject/CAP}'ll have to try a different blackberry bush on another day.",
             "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
             "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
             "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
@@ -292,9 +292,9 @@
         ],
         "fail_text": [
             "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely come close.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable."
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable."
         ],
         "win_skills": [
             "keen eye"
@@ -327,7 +327,7 @@
             "respect"
         ],
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "exp": 10,
         "success_text": [
@@ -337,9 +337,9 @@
         ],
         "fail_text": [
             "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp without any burdock, prickling with frustration.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable.",
-            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} , empty-pawed and miserable."
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable.",
+            "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable."
         ],
         "win_skills": [
             "keen eye"
@@ -376,9 +376,9 @@
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -424,9 +424,9 @@
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -459,19 +459,19 @@
             "respect"
         ],
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look?",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "exp": 10,
         "success_text": [
-            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for {PRONOUN/p_l/object}} as p_l.",
+            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for {PRONOUN/p_l/object} as p_l.",
             "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} all back in {PRONOUN/p_l/poss} nice, warm nests.",
             "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -508,9 +508,9 @@
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -556,9 +556,9 @@
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -590,7 +590,7 @@
             "respect"
         ],
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} along a patrol of shivering Clanmates - more paws will make light work of digging through the snow.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "exp": 10,
         "success_text": [
@@ -600,9 +600,9 @@
         ],
         "fail_text": [
             "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject} 're left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+            "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         ],
         "win_skills": [
             "keen eye"
@@ -724,11 +724,11 @@
             "respect"
         ],
         "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, {PRONOUN/p_l/subject} reliably grow through the cold - but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "exp": 10,
         "success_text": [
-            "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object} , tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
+            "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object}, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
             "Sometimes, p_l finds {PRONOUN/p_l/object} near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare, and the warmth of having {PRONOUN/p_l/poss} Clanmates there to help {PRONOUN/p_l/subject} gather it.",
             "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         ],
@@ -860,8 +860,8 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, even with a patrol helping {PRONOUN/p_l/object} , but if {PRONOUN/p_l/subject} can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} 're stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, even with a patrol helping {PRONOUN/p_l/object}, but if {PRONOUN/p_l/subject} can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
