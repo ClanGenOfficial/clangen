@@ -20,8 +20,7 @@ class CanHaveKits(unittest.TestCase):
         cat.no_kits = True
 
         # then
-        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True))
-
+        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True, affair_setting=True))
 
 
 class Pregnancy(unittest.TestCase):
@@ -85,8 +84,8 @@ class Pregnancy(unittest.TestCase):
         cat1.no_kits = True
         cat2 = Cat(gender = 'male')
 
-        cat1.mate = cat2.ID
-        cat2.mate = cat1.ID
+        cat1.mate.append(cat2.ID)
+        cat2.mate.append(cat1.ID)
         relation1 = Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
         relation2 = Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
         cat1.relationships[cat2.ID] = relation1
@@ -119,7 +118,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_platonic_apprentice_mating(self):
         # given
@@ -139,7 +138,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_romantic_kitten_mating(self):
         # given
@@ -159,7 +158,7 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
 
     def test_romantic_apprentice_mating(self):
         # given
@@ -179,4 +178,4 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])

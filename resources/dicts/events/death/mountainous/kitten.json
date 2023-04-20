@@ -3,7 +3,9 @@
         "camp": "any",
         "tags": ["Leaf-bare"],
         "death_text": "m_c was found dead and cold in the snow.",
-        "history_text": ["m_c froze to death.", null],
+        "history_text": {
+            "reg_death": "m_c froze to death."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -13,7 +15,9 @@
         "camp": "any",
         "tags": ["Leaf-bare"],
         "death_text": "m_c froze to death during a harsh snowstorm.",
-        "history_text": ["m_c froze to death.", null],
+        "history_text": {
+            "reg_death": "m_c froze to death."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -22,8 +26,10 @@
     {
         "camp": "any",
         "tags": ["Leaf-bare"],
-        "death_text": "m_c disappeared from the nursery and was found dead not far from camp.",
-        "history_text": ["m_c froze to death.", null],
+        "death_text": "m_c disappeared from the nursery and was later found dead, not far from camp.",
+        "history_text": {
+            "reg_death": "m_c froze to death."
+        },
         "cat_trait": ["daring", "impulsive", "attention-seeker", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -32,8 +38,10 @@
     {
         "camp": "any",
         "tags": ["Leaf-bare"],
-        "death_text": "m_c was playing on the ice when the ice cracked and they fell in.",
-        "history_text": ["m_c froze to death after falling through ice.", null],
+        "death_text": "m_c was playing on the ice, when it cracked and they fell in.",
+        "history_text": {
+            "reg_death": "m_c froze to death after falling through ice."
+        },
         "cat_trait": ["daring", "attention-seeker", "impulsive"],
         "cat_skill": null,
         "other_cat_trait": null,

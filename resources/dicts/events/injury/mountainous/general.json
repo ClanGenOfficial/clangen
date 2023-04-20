@@ -10,11 +10,10 @@
             "TWO"
         ],
         "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
-        "history_text": [
-            "m_c was scarred after being grabbed by an eagle.",
-            "m_c died from their wounds after being grabbed by an eagle.",
-            "grabbed and dropped by an eagle"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred when an eagle grabbed them.",
+            "reg_death": "m_c died from their wounds after an eagle grabbed them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -29,11 +28,10 @@
             "SIDE"
         ],
         "event_text": "m_c thought they were walking on a snowdrift till it gave way and they fell down the mountain, breaking their leg.",
-        "history_text": [
-            "m_c was scarred after falling from a cliff.",
-            "m_c died after they fell from a cliff.",
-            "fell from a cliff"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred when they fell through a snowdrift and down the mountain.",
+            "reg_death": "m_c died from their wounds after falling down the mountain."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -48,16 +46,16 @@
             "MANLEG"
         ],
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking their leg.",
-        "history_text": [
-            "m_c was scarred after falling from a cliff.",
-            "m_c died after they fell from a cliff.",
-            "fell from a cliff"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred when they fell off a cliff.",
+            "reg_death": "m_c died from their wounds after falling off a cliff."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bruises",
         "tags": [
@@ -66,17 +64,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when they fell, luckily they were only bruised by the incident.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c was climbing a tree when they fell. Luckily, they were only bruised by the incident.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "torn pelt",
         "tags": [
@@ -86,16 +80,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "tags": [
@@ -107,16 +97,16 @@
             "ONE"
         ],
         "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
-        "history_text": [
-            "m_c was scarred by an eagle.",
-            "m_c died after an attack by an eagle.",
-            "attacked by an eagle"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by an eagle.",
+            "reg_death": "m_c died from their wounds after fighting an eagle."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "small cut",
         "tags": [
@@ -126,11 +116,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was climbing a tree and got a splinter from one of the branches.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -145,16 +130,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was moving some branches out of the way when they got a splinter.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "frostbite",
         "tags": [
@@ -164,16 +145,16 @@
             "FROSTMITT"
         ],
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
-        "history_text": [
-            "m_c was permanently scarred by frostbite.",
-            "m_c was killed by frostbite.",
-            "caught frostbite"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by frostbite.",
+            "reg_death": "m_c died after they got frostbite."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "water in their lungs",
         "tags": [
@@ -181,17 +162,16 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
-        "history_text": [
-            null,
-            "m_c died after they fell in the river and inhaled too much water.",
-            "fell into the river."
-        ],
+        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "history_text": {
+            "reg_death": "m_c died from water-inhalation after falling in the river."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "mangled tail",
         "tags": [
@@ -203,11 +183,10 @@
             "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by falling rocks.",
-        "history_text": [
-            "m_c was scarred by falling rocks.",
-            "m_c died after their tail was crushed by falling rocks.",
-            "their tail was crushed by falling rocks"
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by falling rocks.",
+            "reg_death": "m_c died from their wounds after rocks fell on them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

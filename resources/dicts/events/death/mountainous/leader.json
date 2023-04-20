@@ -3,7 +3,9 @@
         "camp": "any",
         "tags": ["Greenleaf", "Newleaf", "Leaf-fall"],
         "death_text": "m_c lost a life after falling into a river.",
-        "history_text": [null, "fell into a river."],
+        "history_text": {
+            "lead_death": "fell into the river"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -13,7 +15,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was grabbed and dropped by an eagle, losing a life.",
-        "history_text": [null, "were grabbed by an eagle."],
+        "history_text": {
+            "lead_death": "were grabbed by an eagle"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -23,7 +27,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf"],
         "death_text": "m_c lost a life after being swept away by a flood.",
-        "history_text": [null, "were swept away by a flood."],
+        "history_text": {
+            "lead_death": "were swept away by a flood"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -33,7 +39,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life when they fell from the top branches of a tree.",
-        "history_text": [null, "fell from a tall tree"],
+        "history_text": {
+            "lead_death": "fell from a tall tree"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -43,7 +51,9 @@
         "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from a hawk.",
-        "history_text": [null, "defended r_c from a hawk."],
+        "history_text": {
+            "lead_death": "defended r_c from a hawk"
+        },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -54,7 +64,9 @@
         "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from an eagle.",
-        "history_text": [null, "defended r_c from an eagle."],
+        "history_text": {
+            "lead_death": "defended r_c from an eagle"
+        },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -64,8 +76,10 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was carried off by an eagle and never seen again.",
-        "history_text": [null, "were carried away by an eagle."],
+        "death_text": "m_c was carried off by an eagle, never to be seen again.",
+        "history_text": {
+            "lead_death": "were carried away by an eagle"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -76,7 +90,9 @@
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "no_body"],
         "death_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
-        "history_text": [null, "were swept away by the river."],
+        "history_text": {
+            "lead_death": "were swept away by the river"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -85,8 +101,10 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was buried alive in an avalanche and lost all their lives.",
-        "history_text": [null, "were buried alive in an avalanche."],
+        "death_text": "m_c was buried alive in an avalanche, and lost all their lives.",
+        "history_text": {
+            "lead_death": "were buried alive in an avalanche"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -95,8 +113,10 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall"],
-        "death_text": "m_c was buried alive in an landslide and lost all their lives.",
-        "history_text": [null, "were buried alive in an landslide."],
+        "death_text": "m_c was buried alive in an landslide, and lost all their lives.",
+        "history_text": {
+            "lead_death": "were buried alive in a landslide"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -105,31 +125,39 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf"],
-        "death_text": "m_c was buried alive in an mudslide and lost all their lives.",
-        "history_text": [null, "were buried alive in an mudslide."],
+        "death_text": "m_c was buried alive in an mudslide, and lost all their lives.",
+        "history_text": {
+            "lead_death": "were buried alive in a mudslide"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "camp": "any",
-        "tags": ["all_lives", "other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "neg_platonic", "dislike", "neg_trust", "neg_comfort"],
-        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom and couldn't recover.",
-        "history_text": [null, "were pushed off a cliff."],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "sneaky"],
         "other_cat_skill": null
     },
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c slipped off a cliff onto the sharp rocks at the bottom and couldn't recover.",
-        "history_text": [null, "slipped off a cliff edge."],
+        "death_text": "m_c slipped off a cliff onto the sharp rocks at the bottom, and couldn't recover.",
+        "history_text": {
+            "lead_death": "slipped off the edge of a cliff"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+
+    {
+        "camp": "any",
+        "tags": ["all_lives", "other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "neg_platonic", "dislike", "neg_trust", "neg_comfort"],
+        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom, and couldn't recover.",
+        "history_text": {
+            "lead_death": "were shoved off a cliff by r_c",
+            "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "sneaky"],
         "other_cat_skill": null
     }
 ]

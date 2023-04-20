@@ -9,17 +9,17 @@
             "scar",
             "SNAKE"
         ],
-        "event_text": "m_c was bitten by a snake and miraculously survived!",
-        "history_text": [
-            "m_c was scarred by a snake bite.",
-            "m_c died after they were bit by a snake.",
-            "bit by a snake"
-        ],
+        "event_text": "m_c was bitten by a snake, and miraculously survived!",
+        "history_text": {
+            "scar": "m_c was scarred by a snake bite.",
+            "reg_death": "m_c died after they were bit by a snake."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bruises",
         "tags": [
@@ -28,17 +28,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c didn't look where they were going and tripped over a small trunk, gaining a few bruises.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, gaining a few bruises.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "dislocated joint",
         "tags": [
@@ -48,11 +44,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c misstepped and slipped from a rock, dislocating a joint.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -66,17 +57,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and their leg was dislocated.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c slipped on some rocks and dislocated their leg.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "sprain",
         "tags": [
@@ -85,12 +72,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and they twisted their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c slipped on some rocks and twisted their paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -105,11 +87,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c leapt from a rock, but they didn't land quite right.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -124,11 +101,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c misstepped and slipped from a rock, spraining their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -142,12 +114,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c didn't look where they were going and tripped over a small trunk, spraining their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, spraining their paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -162,16 +129,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c got their paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "cracked pads",
         "tags": [
@@ -181,11 +144,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c ran too fast over harsh ground and hurt their paws.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -196,12 +154,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "event_text": "The weather has been cold and dry, m_c's paw pads have cracked as a result.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "The weather has been cold and dry, and m_c's paw pads have cracked as a result.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -216,16 +169,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c helped to strengthen the camp walls, but scraped up their paw pads in the process.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["ambitious", "loyal", "responsible", "strict", "thoughtful", "wise"],
         "cat_skill": ["camp keeper", "den builder"],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "sore",
         "tags": [
@@ -234,17 +183,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overexerted themselves and is feeling extremely sore.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c overexerted themself, and is feeling extremely sore.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "torn pelt",
         "tags": [
@@ -254,11 +199,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was out on a walk alone when they heard a dog approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
         "cat_skill": ["smart", "very smart", "extremely smart"],
         "other_cat_trait": null,
@@ -273,16 +213,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was out on a walk alone when they heard a fox approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
         "cat_skill": ["smart", "very smart", "extremely smart"],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "tags": [
@@ -300,11 +236,10 @@
             "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for disobeying orders.",
-        "history_text": [
-            "m_c was hurt by r_c for disobeying orders.",
-            "m_c died from their wounds after r_c hurt them for disobeying.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c for disobeying orders.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c for disobeying them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -328,11 +263,10 @@
             "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for speaking out against them.",
-        "history_text": [
-            "m_c was hurt by r_c for speaking out against them.",
-            "m_c died from their wounds after r_c hurt them for their dissent.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c for speaking out against them.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c for their dissent."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful", "ambitious"],
@@ -358,16 +292,16 @@
             "ONE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
-        "history_text": [
-            "m_c was hurt by r_c to make an example out of them.",
-            "m_c died from their wounds after r_c hurt them to make them an example.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c to make an example out of them.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c to make an example out of them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null
     },
+
     {
         "injury": "mangled leg",
         "tags": [
@@ -378,12 +312,11 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c got their paw stuck in a Twoleg trap and while they eventually escaped, their leg is heavily injured.",
-        "history_text": [
-            "m_c was scarred by a Twoleg trap.",
-            "m_c died from their injuries caused by a Twoleg trap.",
-            null
-        ],
+        "event_text": "m_c got their paw stuck in a Twoleg trap, and while they eventually escaped, their leg is heavily injured.",
+        "history_text": {
+            "scar": "m_c was scarred by a Twoleg trap.",
+            "reg_death": "m_c died from their injuries caused by a Twoleg trap."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -408,17 +341,17 @@
             "MANLEG"
         ],
         "event_text": "m_c was maimed by r_c for questioning their leadership.",
-        "history_text": [
-            "m_c was maimed by r_c for questioning their leadership.",
-            "m_c died after r_c maimed them for questioning r_c's leadership.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was maimed by r_c for questioning their leadership.",
+            "reg_death": "m_c died from their wounds after being maimed by r_c for questioning their leadership."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null,
         "cat_negate_trait": ["loyal", "ambitious"]
     },
+
     {
         "injury": "mangled tail",
         "tags": [
@@ -430,11 +363,10 @@
             "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a dog.",
-        "history_text": [
-            "m_c was scarred by a dog.",
-            "m_c died from their wounds after they were hurt by a dog.",
-            "were hurt by a dog."
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by a dog.",
+            "reg_death": "m_c died from their wounds after they were hurt by a dog."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -452,17 +384,16 @@
             "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a fox.",
-        "history_text": [
-            "m_c was scarred by a fox.",
-            "m_c died from their wounds after they were hurt by a fox.",
-            "were hurt by a fox"
-        ],
-        "cat_trait": null,
+        "history_text": {
+            "scar": "m_c was scarred by a fox.",
+            "reg_death": "m_c died from their wounds after they were hurt by a fox."
+        },
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
+
     {
         "injury": "cat bite",
         "tags": [
@@ -480,11 +411,10 @@
             "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for disobeying orders.",
-        "history_text": [
-            "m_c was hurt by r_c for disobeying orders.",
-            "m_c died after r_c hurt them for disobeying orders.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c for disobeying orders.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c for disobeying them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -508,11 +438,10 @@
             "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for speaking out against them.",
-        "history_text": [
-            "m_c was hurt by r_c for speaking out against them.",
-            "m_c died after r_c hurt them for their dissent",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c for speaking out against them.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c for their dissent."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
@@ -538,16 +467,16 @@
             "CATBITE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
-        "history_text": [
-            "m_c was hurt by r_c to make an example out of them.",
-            "m_c died after r_c hurt them to make them an example.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred by r_c to make an example out of them.",
+            "reg_death": "m_c died from their wounds after being hurt by r_c to make an example out of them."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null
     },
+
     {
         "injury": "small cut",
         "camp": "any",
@@ -558,11 +487,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was helping reinforce the camp walls when they got a thorn stuck in their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -578,16 +502,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was trying to fluff up their nest when they discovered that they were the victim of a prank. Fox-dung! There's now a sharp thorn embedded in their paw.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bee sting",
         "camp": "any",
@@ -598,11 +518,10 @@
             "BRIDGE"
         ],
         "event_text": "m_c found a patch of flowering catmint! No one else is around, so they bend down and take a big bite-- Yowch! A bee! They come home with a swollen face...",
-        "history_text": [
-            "m_c tried eating a bee.",
-            "This cat died from complications caused by a bee sting.",
-            "after a bee sting"
-         ],
+        "history_text": {
+            "scar": "m_c, unbelievably, was scarred when they tried to eat a bee.",
+            "reg_death": "m_c died from complications caused by a bee sting."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -624,11 +543,10 @@
             "QUILLCHUNK"
         ],
         "event_text": "The day is so nice out today that m_c decided to sneak out of camp and go play in the flowers without anyone noticing. They come back with a swollen paw, having stepped on a bee.",
-        "history_text": [
-            "m_c found it unbelievable they got scarred by a bee.",
-            "This cat died from complications caused by a bee sting.",
-            "after a bee sting"
-         ],
+        "history_text": {
+            "scar": "m_c, unbelievably, was scarred when they tried to eat a bee.",
+            "reg_death": "m_c died from complications caused by a bee sting."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -650,11 +568,10 @@
             "BOTHBLIND"
         ],
         "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by their buzzing, m_c attacks them, and got swarmed by bees.",
-        "history_text": [
-            "This cat was attacked by bees.",
-            "This cat died from complications caused by a bee sting.",
-            "after a bee sting"
-         ],
+        "history_text": {
+            "scar": "m_c was scarred by a swarm of bees.",
+            "reg_death": "m_c died from complications caused by bee stings."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": [
@@ -673,50 +590,37 @@
         "backstory_constraint": null
      
      },
+
     {
-   "injury": "headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
-
-},
-{
-   "injury": "severe headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a splitting headache, and could not get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
-
-}
-
-     
+       "injury": "headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    },
+    {
+       "injury": "severe headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    }
 ]

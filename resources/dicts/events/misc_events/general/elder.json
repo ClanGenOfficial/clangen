@@ -11,7 +11,7 @@
       {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-        "event_text": "m_c calls the younger cats to their den to tell stories of the Clan's past.",
+        "event_text": "m_c calls the younger cats to {PRONOUN/m_c/poss} den to tell stories of the Clan's past.",
         "cat_trait": null,
         "cat_skill": ["good storyteller", "great storyteller", "fantastic storyteller"],
         "other_cat_trait": null,
@@ -22,7 +22,7 @@
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_leader"],
         "event_text": "m_c speaks to r_c about how to better defend the camp.",
         "cat_trait": null,
-        "cat_skill": ["smart tactician", "valueable tactician"],
+        "cat_skill": ["smart tactician", "valuable tactician"],
         "other_cat_trait": null,
         "other_cat_skill": null
       },
@@ -38,7 +38,7 @@
       {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-        "event_text": "m_c places small feathers and shining stones near the nest of each clanmate while they're on patrol.].",
+        "event_text": "m_c places small feathers and shining stones near the nest of each Clanmate while they're on patrol.",
         "cat_trait": null,
         "cat_skill": ["den builder"],
         "other_cat_trait": null,
@@ -56,7 +56,7 @@
       {
         "camp": "any",
         "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -66,7 +66,7 @@
       {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c woke up with multiple objects stacked on them, and the sound of giggling cats in the distance.",
+        "event_text": "m_c awakens with multiple objects stacked on them, and the sound of giggling cats in the distance.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

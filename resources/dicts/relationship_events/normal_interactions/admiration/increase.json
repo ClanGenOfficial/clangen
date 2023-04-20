@@ -54,11 +54,11 @@
 	{
 		"id": "admire_med_inc_medium1",
 		"interactions": [
-			"m_c watched r_c show kindness and compassion towards their patients.",
+			"m_c watched r_c show kindness and compassion towards {PRONOUN/r_c/poss} patients.",
 			"m_c caught a glimpse of r_c caring for a wounded warrior with confidence and grace.",
 			"m_c spent some time hanging out with r_c in the medicine den.",
-			"m_c hopes r_c knows how grateful they are to have them as a medicine cat.",
-			"m_c went to r_c for advice about a dream they had."
+			"m_c hopes r_c knows how grateful {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have {PRONOUN/r_c/object} as a medicine cat.",
+			"m_c went to r_c for advice about a dream {PRONOUN/m_c/poss} had."
 		],
 		"random_status_constraint": [
 			"medicine cat",
@@ -73,14 +73,14 @@
 	{
 		"id": "admire_med_inc_med2",
 		"interactions": [
-			"m_c escorted r_c so they could gather herbs.",
-			"m_c thought of r_c on the last patrol and brought an herb back with them.",
+			"m_c escorted r_c so {PRONOUN/r_c/subject} could gather herbs.",
+			"m_c thought of r_c on the last patrol and brought an herb back with {PRONOUN/m_c/poss}.",
 			"m_c notices that r_c is trying really hard to be a great medicine cat.",
 			"m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
 			"m_c thanks r_c for keeping the Clan healthy.",
-			"m_c watches r_c sort herbs as they chat about how their day has gone.",
-			"m_c lets r_c know that they're about to go out and asks if they need to watch for any herbs.",
-			"m_c asks r_c if there's any herbs they should look out for while they're out on patrol later."
+			"m_c watches r_c sort herbs as {PRONOUN/m_c/subject} {VERB/m_c/chat/chats} about how {PRONOUN/r_c/poss} day has gone.",
+			"m_c lets r_c know that {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} about to go out and asks if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to watch for any herbs.",
+			"m_c asks r_c if there's any herbs {PRONOUN/m_c/subject} should look out for while {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} out on patrol later."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -102,7 +102,7 @@
 		"interactions": [
 			"m_c wants to become just like r_c someday!",
 			"m_c is pretending to be r_c.",
-			"m_c always wants to play as r_c in their games of pretend."
+			"m_c always wants to play as r_c in {PRONOUN/m_c/poss} games of pretend."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -122,7 +122,7 @@
 	{
 		"id": "admeration_kit_inc_med2",
 		"interactions": [
-			"m_c tells r_c that they would like to be like them when they grows up."
+			"m_c tells r_c that {PRONOUN/m_c/subject} would like to be like {PRONOUN/r_c/object} when {PRONOUN/m_c/subject} grows up."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -173,7 +173,7 @@
 	{
 		"id": "admire_adult_odd_med1",
 		"interactions": [
-			"m_c feels like they'll never accomplish as much as r_c."
+			"m_c feels like {PRONOUN/m_c/subject}'ll never accomplish as much as r_c."
 		],
 		"relationship_constraint": [
 			"admiration_30"
@@ -195,7 +195,7 @@
 	{
 		"id": "admire_adult_odd_med1",
 		"interactions": [
-			"m_c thinks r_c is so much braver than them."
+			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}."
 		],
 		"relationship_constraint": [
 			"admiration_60"
@@ -223,7 +223,7 @@
 		"id": "admire_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c saw r_c show off a skill they never knew they had.",
+			"m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
 			"m_c is wowed by how bravely r_c fought the other day."
 		]
 	},
@@ -255,7 +255,7 @@
 		"id": "admire_kit_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c asks r_c if they're really going to be the leader someday."
+			"m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday."
 		],
 		"main_status_constraint": [
 			"kitten"

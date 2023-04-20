@@ -2,7 +2,7 @@
 	{
 		"id": "neutral_interaction1",
 		"interactions": [
-			"m_c saw r_c the other day but didn't get a chance to meow hello.",
+			"m_c saw r_c the other day, but didn't get a chance to meow hello.",
 			"m_c bickered about something trivial with r_c."
 		]
 	},
@@ -46,7 +46,7 @@
 	{
 		"id": "neutral_interaction5",
 		"interactions": [
-			"m_c challenged r_c to spar with them."
+			"m_c challenged r_c to spar with {PRONOUN/m_c/object}."
 		],
 		"main_trait_constraint": [
 			"bold"

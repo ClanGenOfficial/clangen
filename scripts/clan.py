@@ -14,6 +14,7 @@ import os
 
 import pygame
 
+from scripts.cat.history import History
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.datadir import get_save_dir
 
@@ -53,6 +54,7 @@ class Clan():
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
+    darkforest_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -268,7 +270,7 @@ class Clan():
         },
         "Mountainouscamp3": {
             'leader den': (956, 191),
-            'medicine den': (160, 220),
+            'medicine den': (70, 300),
             'nursery': (1378, 350),
             'clearing': (799, 500),
             'apprentice den': (77, 825),
@@ -441,6 +443,7 @@ class Clan():
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf'):
+        self.history = History()
         if name != "":
             self.name = name
             self.leader = leader
@@ -477,6 +480,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.inheritance = {}
             self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
@@ -505,12 +509,14 @@ class Clan():
         created in the 'clan created' screen, not every time
         the program starts
         """
-        self.instructor = Cat(status=choice(["warrior", "elder"]))
+        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
+                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+                              )
         self.instructor.dead = True
-        update_sprite(self.instructor)
+        self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
+        self.add_to_starclan(self.instructor)
         self.all_clans = []
-        other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -572,12 +578,32 @@ class Clan():
         Places the dead cat into starclan.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
+        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats and cat.df is False:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            if cat.ID in self.darkforest_cats:
+                cat.df = False
+                self.darkforest_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
+            update_sprite(Cat.all_cats[str(cat)])
+    def add_to_darkforest(self, cat):  # Same as add_cat
+        """
+        Places the dead cat into the dark forest.
+        It should not be removed from the list of cats in the clan
+        """
+        if cat.ID in Cat.all_cats and cat.dead and cat.df is True:
+            cat.df = True
+            self.darkforest_cats.append(cat.ID)
+            cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat.ID in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
+            #update_sprite(Cat.all_cats[str(cat)])
+            # The dead-value must be set to True before the cat can go to starclan
 
     def add_to_clan(self, cat):
         """
@@ -597,21 +623,6 @@ class Clan():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
 
-    def add_to_darkforest(self, cat):  # Same as add_cat
-        """
-        Places the dead cat into the dark forest.
-        It should not be removed from the list of cats in the clan
-        """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is False:
-            cat.df = True
-            cat.thought = "Is distraught after being sent to the Place of No Stars"
-            if cat in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
-                self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
-            # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
         """
@@ -643,6 +654,7 @@ class Clan():
         TODO: DOCS
         """
         if leader:
+            self.history.add_lead_ceremony(leader)
             self.leader = leader
             Cat.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
@@ -762,21 +774,16 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_pregnancy(game.clan)
+
         self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
-        with open(get_save_dir() + f'/{self.name}clan.json', 'w',
-                  encoding='utf-8') as write_file:
-            json_string = ujson.dumps(clan_data, indent=4)
-            write_file.write(json_string)
+        game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
         if os.path.exists(get_save_dir() + f'/{self.name}clan.txt'):
             os.remove(get_save_dir() + f'/{self.name}clan.txt')
-
-        with open(get_save_dir() + '/currentclan.txt', 'w',
-                  encoding='utf-8') as write_file:
-            write_file.write(self.name)
             
     def save_clan_settings(self):
         with open(get_save_dir() + f'/{self.name}/clan_settings.json', 'w',
@@ -932,7 +939,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -1027,7 +1034,7 @@ class Clan():
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            update_sprite(game.clan.instructor)
+            #update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
@@ -1041,6 +1048,7 @@ class Clan():
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
+                game.clan.add_to_darkforest(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
 
@@ -1065,7 +1073,7 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        if game.clan.game_mode in ['expanded', 'cruel season']:
+        if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
         
@@ -1111,13 +1119,8 @@ class Clan():
         """
         if not game.clan.name:
             return
-        file_path = get_save_dir() + f"/{game.clan.name}/herbs.json"
-        try:
-            with open(file_path, 'w', encoding='utf-8') as file:
-                json_string = ujson.dumps(clan.herbs, indent=4)
-                file.write(json_string)
-        except:
-            print("ERROR: Saving the herb data didn't work.")
+        
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/herbs.json", clan.herbs)
 
     def load_pregnancy(self, clan):
         """
@@ -1138,13 +1141,8 @@ class Clan():
         """
         if not game.clan.name:
             return
-        file_path = get_save_dir() + f"/{game.clan.name}/pregnancy.json"
-        try:
-            with open(file_path, 'w', encoding='utf-8') as file:
-                json_string = ujson.dumps(clan.pregnancy_data, indent=4)
-                file.write(json_string)
-        except:
-            print("ERROR: Saving the pregnancy data didn't work.")
+        
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data)
 
     def load_disaster(self, clan):
         """
@@ -1235,14 +1233,7 @@ class Clan():
         else:
             disaster = {}
 
-        try:
-            with open(file_path, 'w', encoding='utf-8') as rel_file:
-                json_string = ujson.dumps(disaster, indent=4)
-                rel_file.write(json_string)
-        except:
-            print("ERROR: Disaster file failed to save")
-
-        file_path = get_save_dir() + f"/{clan.name}/disasters/secondary.json"
+        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
 
         if clan.secondary_disaster:
             disaster = {
@@ -1260,12 +1251,7 @@ class Clan():
         else:
             disaster = {}
 
-        try:
-            with open(file_path, 'w', encoding='utf-8') as rel_file:
-                json_string = ujson.dumps(disaster, indent=4)
-                rel_file.write(json_string)
-        except:
-            print("ERROR: Disaster file failed to save")
+        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
 
     def load_freshkill_pile(self, clan):
         """
@@ -1302,33 +1288,17 @@ class Clan():
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        try:
-            with open(get_save_dir() + f"/{game.clan.name}/freshkill_pile.json",
-                      'w',
-                      encoding='utf-8') as rel_file:
-                json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
-                rel_file.write(json_string)
-        except:
-            print("ERROR: Saving the freshkill pile didn't work.")
+        game.safe_save(f"/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
 
-        try:
-            with open(get_save_dir() + f"/{game.clan.name}/nutrition_info.json",
-                      'w',
-                      encoding='utf-8') as rel_file:
-                data = {}
-                for k, nutr in clan.freshkill_pile.nutrition_info.items():
-                    data[k] = {
-                        "max_score": nutr.max_score,
-                        "current_score": nutr.current_score,
-                        "percentage": nutr.percentage,
-                    }
-                json_string = ujson.dumps(data, indent=4)
-                rel_file.write(json_string)
-        except:
-            print(
-                "ERROR: Saving nutrition information of the freshkill pile didn't work."
-            )
+        data = {}
+        for k, nutr in clan.freshkill_pile.nutrition_info.items():
+            data[k] = {
+                "max_score": nutr.max_score,
+                "current_score": nutr.current_score,
+                "percentage": nutr.percentage,
+            }
 
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
 
     ## Properties
     
@@ -1338,7 +1308,7 @@ class Clan():
     
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(a)
+        self._reputation = int(self._reputation + a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

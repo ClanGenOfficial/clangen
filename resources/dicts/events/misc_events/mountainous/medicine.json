@@ -20,7 +20,7 @@
   {
     "camp": "camp2",
     "tags": ["clan_kits", "Leaf-bare"],
-    "event_text": "Through the long cold night, m_c brings the young cats of the Clan with them. Their words paint an enchanting picture of the ancestors of o_c as they point out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
+    "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with them down the tunnels. Their words paint an enchanting picture of the ancestors of o_c as they point out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
     "cat_trait": null,
     "cat_skill": ["lore keeper"],
     "other_cat_trait": null,

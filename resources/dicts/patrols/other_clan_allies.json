@@ -25,8 +25,8 @@
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": "Despite considering them allies, these cats are no friends of c_n. Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
-    "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
-    "history_text": []
+    "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction."
+    
 },
 
 {
@@ -55,8 +55,8 @@
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": "Despite considering them allies, these cats are no friends of c_n. Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
-    "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
-    "history_text": []
+    "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction."
+    
 },
 
 {
@@ -85,8 +85,8 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
-    "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
-    "history_text": []
+    "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt."
+    
 },
 {
     "patrol_id": "gen_med_borderherb1",
@@ -140,11 +140,11 @@
     "max_cats": 6,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
-    "history_text": [
-        "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "gen_bord_scent_allies2",
@@ -153,7 +153,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "mangled tail", "injury", "scar", "TAILSCAR"],
     "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
     "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance.  Maybe an apprentice simply lost their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory.",
@@ -173,11 +173,11 @@
     "max_cats": 1,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell p_l off for so hastily jumping to conclusions. The other medicine cat was only looking to borrow some herbs.",
-    "history_text": [
-        "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "fst_bord_solo_allies1",
@@ -235,9 +235,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "fst_bord_solo_allies3",
@@ -267,9 +267,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "fst_bord_solo_allies4",
@@ -378,9 +378,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "pln_bord_solo_allies3",
@@ -410,9 +410,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "pln_bord_solo_allies4",
@@ -521,9 +521,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_solo_allies3",
@@ -553,9 +553,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "mtn_bord_solo_allies4",
@@ -664,9 +664,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "bch_bord_solo_allies3",
@@ -696,9 +696,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
 },
 {
     "patrol_id": "bch_bord_solo_allies4",

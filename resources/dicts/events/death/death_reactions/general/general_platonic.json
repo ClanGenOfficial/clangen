@@ -1,13 +1,13 @@
 {
   "general": {
     "body": [
-      "r_c wails when they see the body of m_c, still and cold in the clearing. They sit vigil that night as grief fills their heart.",
-      "r_c fusses gently with m_c's fur, hiding the evidence of what killed them. They want to remember them as they were in life, not like this.",
-      "As the Clan sits vigil, r_c's voice cracks with grief, talking about the time they had with m_c."
+      "r_c wails when {PRONOUN/r_c/subject} see the body of m_c, still and cold in the clearing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/sit/sits} vigil that night as grief fills {PRONOUN/r_c/poss} heart.",
+      "r_c fusses gently with m_c's fur, hiding the evidence of what killed {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/want/wants} to remember {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/were/was} in life, not like this.",
+      "As the Clan sits vigil, r_c's voice cracks with grief, talking about the time {PRONOUN/r_c/subject} had with m_c."
 
     ],
     "no_body": [
-      "As the Clan sits vigil, r_c's voice cracks with grief, talking about the time they had with m_c."
+      "As the Clan sits vigil, r_c's voice cracks with grief, talking about the time {PRONOUN/r_c/subject} had with m_c."
 
     ]
   },

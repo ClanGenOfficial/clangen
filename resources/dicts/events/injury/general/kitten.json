@@ -8,11 +8,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c tried to sneak out of the camp, but fell and got a bruise before they even left the safety of the camp walls.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -27,11 +22,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c snuck out of camp and returned a bit bruised, but brimming with pride despite the scolding they were given.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -46,16 +36,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c play-fought a bit too hard and got a bit bruised.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "bouncy", "bullying", "impulsive", "noisy", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "scrapes",
         "tags": [
@@ -65,11 +51,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c tried to sneak out of the camp, but fell and scraped their paw before they even left the safety of the camp walls.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -84,11 +65,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c snuck out of camp and returned scraped up, but brimming with pride despite the scolding they were given.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -103,57 +79,42 @@
             "Leaf-bare"
         ],
         "event_text": "m_c play-fought a bit too hard and scraped themselves up.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["daring", "bouncy", "bullying", "impulsive", "noisy", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-     {
-   "injury": "headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a mild headache, but got up and played with their littermates anyway, trying to ignore the nagging pain.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
 
-},
-{
-   "injury": "severe headache",
-   "camp": "any",
-   "tags": [
-       "Newleaf",
-       "Greenleaf",
-       "Leaf-fall",
-       "Leaf-bare"
-   ],
-   "event_text": "m_c woke up with a splitting headache, and could not get out of their nest. They spent the entire day curled up next to their parent, trying to avoid light and noise so that the throbbing pain could subside.",
-   "history_text": null,
-   "cat_trait": null,
-   "cat_skill": null,
-   "other_cat_trait": null,
-   "other_cat_skill": null,
-   "negate_cat_trait": null,
-   "negate_cat_skill": null,
-   "negate_other_cat_trait": null,
-   "negate_other_cat_skill": null,
-   "backstory_constraint": null
-}
+     {
+       "injury": "headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a mild headache, but got up to play anyways, trying to ignore the nagging pain.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    },
+    {
+       "injury": "severe headache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up in the nursery, trying to avoid light and noise so that the throbbing pain could subside.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    }
 ]

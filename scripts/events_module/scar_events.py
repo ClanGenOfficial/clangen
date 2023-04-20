@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.history import History
 from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.game_structure.game_essentials import game
 
@@ -13,16 +14,14 @@ class Scar_Events():
     """All events with a connection to conditions."""
 
     def __init__(self) -> None:
+        self.history = History()
         self.event_sums = 0
         self.had_one_event = False
-        pass
 
     def handle_scars(self, cat, injury_name):
         """ 
         This function handles the scars
         """
-        
-        scar_text = cat.possible_scar
 
         chance = int(random.random() * 13 - cat.injuries[injury_name]["moons_with"])
         if chance <= 0:
@@ -33,7 +32,10 @@ class Scar_Events():
         if len(cat.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text
-            cat.scar_event.append(scar_text)
+            self.history.add_death_or_scars(cat,
+                                            condition=injury_name,
+                                            scar=True
+                                            )
 
             specialty = None  # Scar to be set
 
@@ -190,12 +192,13 @@ class Scar_Events():
                     event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
                 scar_given = None
         else:
+            self.history.remove_possible_death_or_scars(cat, injury_name)
             if injury_name == "poisoned":
                 event_string = f"{cat.name} has recovered fully from the poison."
             else:
                 event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
+
             scar_given = None
 
-        cat.possible_scar = None  # reset potential scar text
         return event_string, scar_given
 

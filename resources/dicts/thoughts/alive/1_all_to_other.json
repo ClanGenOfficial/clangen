@@ -1,0 +1,112 @@
+{
+    "dead": {
+        "kitten": [
+            "Is hoping r_c is well in StarClan",
+            "Is wishing r_c could've lived to see today",
+            "Is listening to stories about r_c",
+            "Is learning more about r_c"
+        ],
+        "medicine cat apprentice": [
+            "Is mourning the lost potential of r_c",
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c"
+        ],
+        "apprentice": [
+            "Is mourning the lost potential of r_c",
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c"
+        ],
+        "warrior": [
+            "Is thinking about r_c",
+            "Is wishing to be more like r_c",
+            "Is sad they couldn't spend more time with r_c"
+        ],
+        "medicine cat": [
+            "Is listening to stories about r_c",
+            "Is hoping r_c will guide them",
+            "Is wondering if r_c is doing well in StarClan"
+        ],
+        "leader": [
+            "Is missing their late leader r_c", 
+            "Is wondering if r_c is proud of them",
+            "Is wondering if r_c approves from StarClan"
+        ],
+        "deputy": [
+            "Is thinking about r_c",
+            "Is trying to learn from r_c's legacy",
+            "Is sad they couldn't spend more time with r_c"
+        ],
+        "elder": [
+            "Is grateful for time spent with r_c",
+            "Is reminiscing about r_c",
+            "Is happy for their time spent with r_c"
+        ],
+        "mediator": [
+            "Is wondering what r_c would think of current conflicts in the Clan"
+        ],
+        "mediator apprentice": [],
+        "all": [
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c",
+            "Is wondering if r_c is doing well in StarClan",
+            "Is missing r_c"
+        ]
+    },
+    "alive": {
+        "kitten": [
+            "Is a bit cross with r_c",
+            "Is growing fond of r_c",
+            "Is wishing r_c would play more quietly",
+            "Is worried about r_c"
+        ],
+        "medicine cat apprentice": [
+            "Is grateful to r_c for their treatment",
+            "Is in awe of r_c's growth as a medicine cat apprentice",
+            "Thinks r_c will make a good medicine cat"
+        ],
+        "apprentice": [
+            "Is finding r_c annoying",
+            "Lectures r_c on the warrior code",
+            "Makes note of r_c's journey as an apprentice",
+            "Is wondering if r_c will be chosen for the next Gathering"
+        ],
+        "warrior": [
+            "Wants to go on patrol with r_c",
+            "Doesn't want to go on patrol with r_c"
+        ],
+        "medicine cat": [
+            "Is grateful to r_c for their treatment",
+            "Wonders if StarClan has given r_c any prophecies lately"
+        ],
+        "leader": [
+            "Is wondering what r_c is thinking",
+            "Is hoping r_c notices their improvement",
+            "Is in awe of r_c's leadership"
+        ],
+        "deputy": [
+            "Is hoping r_c assigns them to the next patrol",
+            "Is hoping r_c won't assign them to the next patrol"
+        ],
+        "elder": [
+            "Is hoping r_c will tell them a new story",
+            "Is annoyed at having to pick out r_c's ticks"
+        ],
+        "mediator": [
+            "Wants to speak to r_c about something"
+        ],
+        "mediator apprentice": [
+            "Wants to speak to r_c about something",
+            "Thinks r_c will make a good mediator",
+            "Is grateful to r_c for their mediation"
+        ],
+        "all": [
+            "Is eavesdropping on r_c",
+            "Wants to share tongues with r_c",
+            "Wants to get to know r_c better"
+        ]
+    },
+    "all":[]
+}

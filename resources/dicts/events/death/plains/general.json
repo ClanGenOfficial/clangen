@@ -3,7 +3,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c fell into a sinkhole and was never seen again.",
-        "history_text": ["m_c fell into a sinkhole.", null],
+        "history_text": {
+            "reg_death": "m_c fell into a sinkhole."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -13,7 +15,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c fell into a hidden burrow and was buried alive.",
-        "history_text": ["m_c fell into a hidden burrow.", null],
+        "history_text": {
+            "reg_death": "m_c fell into a hidden burrow."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -23,7 +27,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was buried alive when a burrow collapsed on them.",
-        "history_text": ["m_c was buried alive by a collapsing burrow.", null],
+        "history_text": {
+            "reg_death": "m_c was buried alive when a burrow collapsed."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -33,7 +39,9 @@
         "camp": "any",
         "tags": ["Greenleaf", "classic"],
         "death_text": "m_c died from dehydration and heat stroke.",
-        "history_text": ["m_c died from dehydration and heat stroke.", null],
+        "history_text": {
+            "reg_death": "m_c died of dehydration and heat stroke."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -43,7 +51,9 @@
         "camp": "any",
         "tags": ["Leaf-bare"],
         "death_text": "m_c froze to death during a harsh snowstorm.",
-        "history_text": ["m_c froze to death.", null],
+        "history_text": {
+            "reg_death": "m_c froze to death."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -53,7 +63,9 @@
         "camp": "any",
         "tags": ["Leaf-bare"],
         "death_text": "m_c was found dead and cold in the snow.",
-        "history_text": ["m_c froze to death.", null],
+        "history_text": {
+            "reg_death": "m_c froze to death."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -62,8 +74,10 @@
     {
         "camp": "any",
         "tags": ["Leaf-bare"],
-        "death_text": "m_c was walking on the ice when the ice cracked and they fell in.",
-        "history_text": ["m_c froze to death after falling through ice.", null],
+        "death_text": "m_c was walking on the ice, when it cracked and they fell in.",
+        "history_text": {
+            "reg_death": "m_c froze to death after falling through ice."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

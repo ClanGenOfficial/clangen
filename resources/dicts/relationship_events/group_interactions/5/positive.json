@@ -6,7 +6,7 @@
 	"intensity": "high",
 	"cat_amount": 5,
 	"interactions": [
-		"m_c, r_c1, and r_c2 decide they're going to get r_c3 and r_c4 together. They talk about how much r_c3 loves r_c4 in front of r_c4, and find the two talking later."
+		"m_c, r_c1, and r_c2 decide they're going to get r_c3 and r_c4 together. They talk about how much r_c3 loves r_c4 in front of r_c4, and, to their pleasure, find the two talking later."
 	],
 	"status_constraint": {
 		"m_c": ["warrior", "elder", "mediator"],

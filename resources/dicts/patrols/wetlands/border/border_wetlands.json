@@ -56,9 +56,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloneutral2",
@@ -119,10 +119,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c lost their life in an ambush on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost their life in an ambush on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloneutral3",
@@ -183,10 +183,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c lost a life in an ambush on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life in an ambush on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloneutral4",
@@ -236,9 +236,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloneutral5",
@@ -288,9 +288,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloally1",
@@ -405,9 +405,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloally3",
@@ -467,9 +467,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_soloally4",
@@ -620,10 +620,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c was killed by a hostile Clan."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_solohostile2",
@@ -686,10 +686,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c was killed by a hostile Clan."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_solohostile3",
@@ -752,10 +752,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c lost a life against a hostile Clan."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life against a hostile Clan."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_solohostile4",
@@ -808,10 +808,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c was killed by a hostile Clan."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_solohostile5",
@@ -864,10 +864,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured patrolling on the border.",
-            "r_c was killed by a hostile Clan."
-        ]
+        "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_abandontwoleg1",
@@ -907,10 +907,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "This cat died from being ambushed by rogues."
-        ]
+        "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_abandontwoleg2",
@@ -950,10 +949,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "This cat died from being ambushed by rogues."
-        ]
+        "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_flashflood1",
@@ -995,10 +993,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "This cat was drowned by floodwaters."
-        ]
+        "history_text": {
+        "reg_death": "This cat was drowned by floodwaters."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_flashflood2",
@@ -1040,10 +1037,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was drowned by floodwaters."
-        ]
+        "history_text": {
+        "reg_death": "r_c was drowned by floodwaters."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_flashflood3",
@@ -1083,10 +1079,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was drowned by floodwaters."
-        ]
+        "history_text": {
+        "reg_death": "r_c was drowned by floodwaters."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_flashflood4",
@@ -1125,10 +1120,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was drowned by floodwaters."
-        ]
+        "history_text": {
+        "reg_death": "r_c was drowned by floodwaters."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_flashflood5",
@@ -1167,10 +1161,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was killed by a flood."
-        ]
+        "history_text": {
+        "reg_death": "r_c was killed by a flood."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue1",
@@ -1230,10 +1223,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue2",
@@ -1293,10 +1286,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue3",
@@ -1350,10 +1343,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue.",
+        "reg_death": "r_c was killed by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue4",
@@ -1412,10 +1405,9 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue5",
@@ -1474,10 +1466,9 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue6",
@@ -1530,10 +1521,9 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue7",
@@ -1586,13 +1576,7 @@
             "smart"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue8",
@@ -1646,12 +1630,9 @@
         ],
         "min_cats": 3,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by an invading rogue.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by an invading rogue."
+    }
     },
     {
         "patrol_id": "wtlnd_bord_trackrogue9",
@@ -1698,13 +1679,7 @@
             "righteous"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "wtlnd_bord_story1",
@@ -1754,8 +1729,6 @@
             "wise"
         ],
         "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     }
 ]

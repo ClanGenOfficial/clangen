@@ -21,8 +21,8 @@
 		"interactions": [
 			"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
 			"m_c thinks r_c has a strange sense of humor.",
-			"m_c is frustrated that r_c won't take their actions more seriously.",
-			"m_c feels like r_c isn't taking their own personal health seriously."
+			"m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",
+			"m_c feels like r_c isn't taking {PRONOUN/r_c/poss} own personal health seriously."
 		]
 	},
 	{
@@ -37,7 +37,7 @@
 	{
 		"id": "admire_de_medium3",
 		"interactions": [
-			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat."
+			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat in the end."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
@@ -119,8 +119,8 @@
 		"id": "admire_de_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c had a difficult coversation with r_c and they both ended up resentful of each other.",
-			"m_c was distracted while r_c was telling a story."
+			"m_c had a difficult conversation with r_c, and they both ended up resentful of each other.",
+			"m_c was noticeably distracted while r_c was trying to tell a story."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"

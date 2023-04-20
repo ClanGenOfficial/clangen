@@ -1,9 +1,12 @@
 [
         {
             "camp": "any",
-            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
-            "death_text": "m_c was murdered by r_c in cold blood with the hope of taking their place.",
-            "history_text": ["m_c was murdered by r_c.", null],
+            "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
+            "death_text": "m_c was murdered by r_c in cold blood, with the hope of taking their place.",
+            "history_text": {
+                "reg_death": "m_c was murdered by r_c.",
+                "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
+        },
             "cat_trait": null,
             "cat_skill": null,
             "other_cat_trait": ["ambitious", "cold", "righteous", "loyal", "vengeful", "sneaky", "bloodthirsty"],
@@ -12,9 +15,12 @@
         },
         {
             "camp": "any",
-            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
-            "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take their place.",
-            "history_text": ["m_c was murdered by r_c.", null],
+            "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
+            "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident, and hopes to take their place.",
+            "history_text": {
+                "reg_death": "m_c was secretly murdered by r_c.",
+                "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
+        },
             "cat_trait": null,
             "cat_skill": null,
             "other_cat_trait": ["ambitious", "cold", "righteous", "loyal", "vengeful", "sneaky"],
