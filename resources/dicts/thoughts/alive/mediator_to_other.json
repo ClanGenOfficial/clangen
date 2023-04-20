@@ -1,0 +1,54 @@
+{
+    "dead": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [
+            "Wishes they could ask r_c for advice"
+        ],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [
+            "Had to fix an argument between the kits... again"
+        ],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [
+            "Is angry with the leader for a border dispute gone wrong",
+            "Mediated a meeting between senior warriors and the leader over recent Clan decisions"
+        ],
+        "deputy": [],
+        "elder": [
+            "Had to fix an argument between the elders... again"
+        ],
+        "mediator": [
+            "Is discussing conflict resolution strategies with r_c"
+        ],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "all": [
+        "Is feeling a sense of pride after mediating a difficult argument",
+        "Wishes their Clanmates would just talk to each other",
+        "Is upset at a recent negotiation with a rival Clan",
+        "Is negotiating trading herbs with a rival Clan",
+        "Is negotiating with a kittypet to make use of the herbs in their Twoleg garden",
+        "Is dismayed at how quickly their Clanmates get into arguments",
+        "Feels exhausted after mediating so many arguments",
+        "Feels pride for their mediator work",
+        "Is mediating a couple's relationship",
+        "Is mediating a long time friendship between two Clanmates",
+        "Is feeling frustrated after a failed negotiation",
+        "Is feeling exhausted from resolving petty arguments",
+        "Wants to solve a dispute with another Clan"
+    ]
+}

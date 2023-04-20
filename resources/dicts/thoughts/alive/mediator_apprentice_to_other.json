@@ -1,0 +1,49 @@
+{
+    "dead": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [
+            "Successfully solved an argument between their denmates",
+            "Tried to solve an argument between their denmates but only made it worse"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [
+            "Is amazed at how well r_c mediated a fight between Clanmates",
+            "Is amazed at how well r_c mediated a territory dispute",
+            "Is amazed at how r_c talked their way out of a potential war"
+        ],
+        "mediator apprentice": [
+            "Had an argument with another mediator apprentice"
+        ],
+        "all": []
+    },
+    "all": [
+        "Wonders if mediating is meant to be so draining",
+        "Is enjoying learning about mediating",
+        "Wonders if being a warrior would have been more fun",
+        "Is proud of how well they are doing at mediating",
+        "Accidentally made an argument worse",
+        "Is proud of getting through a difficult mediation session",
+        "Is learning how to deal with argumentative Clanmates",
+        "Is learning how to gently guide a cat into accepting a truth they don't like",
+        "Wishes they had learned to mediate arguments sooner",
+        "Wants their training to be completed already"
+    ]
+}

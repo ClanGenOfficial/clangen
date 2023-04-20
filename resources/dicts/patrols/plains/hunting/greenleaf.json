@@ -26,8 +26,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-        "scar": "This cat got heat exhaustion while on a patrol."
-    }
+            "scar": "This cat got heat exhaustion while on a patrol."
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_twolegsobject1",
@@ -55,6 +55,9 @@
             null,
             "As r_c pokes around the strange smelling whatever-it-is, they poke past a piece of metal that tears through their ear, sending them skittering backwards with a yelp."
         ],
+        "history_text": {
+            "scar": "r_c was scarred by a sharp piece of twoleg garbage. "
+        },
         "win_skills": [
             "smart",
             "very smart",
@@ -120,8 +123,8 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-        "scar": "r_c carries a scar from a fox fight."
-    }
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafleafscavenge2",
@@ -181,8 +184,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-        "scar": "r_c carries a scar from a fox fight."
-    }
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafscavenge3",
@@ -239,10 +242,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-        "scar": "r_c carries a scar from a solo fox fight.",
-        "reg_death": "r_c fell in a solo battle with a fox.",
-        "lead_death": "died in battle with a fox"
-    }
+            "scar": "r_c carries a scar from a solo fox fight.",
+            "reg_death": "r_c fell in a solo battle with a fox.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_redvixen5",
@@ -300,8 +303,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-        "scar": "r_c carries a scar from a fox fight."
-    }
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_redvixen6",
@@ -359,10 +362,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-        "scar": "r_c carries a scar from a solo fight with a vixen.",
-        "reg_death": "r_c fell in a solo battle with a vixen.",
-        "lead_death": "died in battle with a fox"
-    }
+            "scar": "r_c carries a scar from a solo fight with a vixen.",
+            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_redvixen4",
@@ -422,10 +425,10 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-        "scar": "r_c carries a scar from a fox fight.",
-        "reg_death": "r_c fell in battle with a fox.",
-        "lead_death": "died in battle with a fox"
-    }
+            "scar": "r_c carries a scar from a fox fight.",
+            "reg_death": "r_c fell in battle with a fox.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafvixen1",
@@ -467,8 +470,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-        "scar": "r_c was marked by a fight with a swift fox vixen."
-    }
+            "scar": "r_c was marked by a fight with a swift fox vixen."
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafvixen2",
@@ -509,8 +512,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-        "scar": "r_c was marked by a fight with a swift fox vixen."
-    }
+            "scar": "r_c was marked by a fight with a swift fox vixen."
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafscavenge1",
@@ -625,10 +628,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-        "scar": "r_c carries a scar from fighting with a swift fox.",
-        "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
-        "lead_death": "were killed by a predator"
-    }
+            "scar": "r_c carries a scar from fighting with a swift fox.",
+            "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+            "lead_death": "were killed by a predator"
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_solosquirrel1",
@@ -747,8 +750,8 @@
         "min_cats": 3,
         "max_cats": 3,
         "history_text": {
-        "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
-    }
+            "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
+        }
     },
     {
         "patrol_id": "pln_hunt_greenleaf_groupsquirrel1",

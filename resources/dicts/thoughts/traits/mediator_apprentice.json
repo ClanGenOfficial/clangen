@@ -1,0 +1,45 @@
+{
+    "adventurous": [],
+    "altruistic": [],
+    "ambitious": [],
+    "bloodthirsty": [],
+    "bold": [],
+    "calm": [],
+    "careful": [],
+    "charismatic": [],
+    "childish": [],
+    "cold": [],
+    "compassionate": [],
+    "confident": [],
+    "daring": [],
+    "empathetic": [],
+    "faithful": [],
+    "fierce": [],
+    "insecure": [
+        "Worries that they are not up for the such an important role",
+        "Is unsure that this is what they want to do"
+    ],
+    "lonesome": [],
+    "loving": [],
+    "loyal": [],
+    "nervous": [
+        "Worries that they are not up for the such an important role"
+    ],
+    "patient": [],
+    "playful": [],
+    "responsible": [],
+    "righteous": [
+        "Was scolded for taking sides in mediating arguments recently",
+        "Is being reminded to be neutral in mediation"
+    ],
+    "shameless": [],
+    "sneaky": [
+        "Is wondering if they can talk their way out of morning duties"
+    ],
+    "strange": [],
+    "strict": [],
+    "thoughtful": [],
+    "troublesome": [],
+    "vengeful": [],
+    "wise": []
+}

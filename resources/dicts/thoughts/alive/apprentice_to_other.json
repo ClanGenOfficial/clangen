@@ -1,0 +1,117 @@
+{
+    "dead": {
+        "kitten": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "medicine cat apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "warrior": [
+            "Wishes they could learn from r_c",
+            "Wants to be a great warrior, just like r_c"
+        ],
+        "medicine cat": [
+            "Remembers how r_c healed them"
+        ],
+        "leader": [
+            "Is wondering if r_c approves of them from StarClan"
+        ],
+        "deputy": [
+            "Is wondering if r_c approves of them from StarClan"
+        ],
+        "elder": [
+            "Is wishing r_c was still here to tell them stories",
+            "Is wondering who helps r_c with their ticks in StarClan"
+        ],
+        "mediator": [
+            ""
+        ],
+        "mediator apprentice": [
+            ""
+        ],
+        "all": []
+    },
+    "alive": {
+        "kitten": [
+            "Is awkwardly deflecting kits' questions about where kits come from",
+            "Was put on kit-sitting duty",
+            "Is showing off to the kits",
+            "Is telling off kits for being immature",
+            "Is rambling on to kits about the importance of respecting their elders",
+            "Makes fun of r_c for not being an apprentice yet"
+        ],
+        "medicine cat apprentice": [
+            "Wishes they could spend more time with r_c",
+            "Wants to visit r_c at the medicine cat den"
+        ],
+        "apprentice": [
+            "Is learning how to hunt with r_c",
+            "Teases r_c for missing an easy catch",
+            "Is happy that they are going to train with r_c",
+            "Is having a hunting contest with r_c",
+            "Helps r_c perfect a fighting pose"
+       ],
+        "warrior": [
+            "Is watching and learning from r_c",
+            "Is asking r_c questions about warrior life"
+        ],
+        "medicine cat": [
+            "Wants to help r_c gather fresh herbs",
+            "Is at the medicine cat den after a small injury"
+        ],
+        "leader": [
+            "Wants to make r_c proud",
+            "Wants r_c to notice them",
+            "Is paying extra attention to r_c's announcements"
+        ],
+        "deputy": [
+            "Wants r_c to assign them to the next patrol",
+            "Is watching and learning from r_c"
+        ],
+        "elder": [
+            "Was asked to gather fresh moss for the elders' bedding",
+            "Plans to visit the elders soon",
+            "Is checking in on the elder's den",
+            "Plans to help the elders with their ticks",
+            "Is helping to repair the elder's den"
+        ],
+        "mediator": [
+            "Is in awe of r_c's conflict resolution skills"
+        ],
+        "mediator apprentice": [
+            "Wishes they could train with r_c",
+            "Teases r_c for not training to be a warrior"
+        ],
+        "all": []
+    },
+    "all": [
+        "Is gossiping",
+        "Is acting angsty",
+        "Is dreading their apprentice duties",
+        "Fell into the nearby creek yesterday and is still feeling damp",
+        "Is making their mentor laugh",
+        "Is really bonding with their mentor",
+        "Is having a hard time keeping up with their training",
+        "Was tasked with lining nests with fresh moss today",
+        "Is dreaming of someday making their Clan proud",
+        "Is thinking about the time they caught a huge rabbit",
+        "Practices some battle moves",
+        "Is helping to reinforce the camp wall with brambles",
+        "Is daydreaming about having a mate and kits someday",
+        "Had quite the adventure today",
+        "Is thinking about how cool it will be when they are a warrior",
+        "Wants to become a fierce warrior someday",
+        "Wants to learn as many fighting techniques as they can",
+        "Wants to show their mentor that they are smart, skilled, and talented",
+        "Wants to earn their warrior name",
+        "Is determined to master a hunting technique by dusk",
+        "Can see how busy their mentor is",
+        "Wants to be taught an advanced hunting move",
+        "Has been training very hard recently",
+        "Is anxious about becoming a warrior",
+        "Had a very strange dream"
+    ]
+}

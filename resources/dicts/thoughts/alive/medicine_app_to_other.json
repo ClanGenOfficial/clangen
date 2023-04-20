@@ -1,0 +1,63 @@
+{
+    "dead": {
+        "kitten": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "medicine cat apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": [
+            "Wishes they could visit r_c in StarClan",
+            "Was given a prophecy by r_c",
+            "Was sent an omen by r_c",
+            "Is dreaming about r_c who gives them a message",
+            "Is visited by r_c",
+            "Senses r_c is nearby",
+            "Saw r_c in a dream, warning them about... something",
+            "Is asking for guidance from r_c",
+            "Is wondering desperately why r_c wasn't there when they needed them",
+            "Is sure that they saw r_c appear in the forest today... why?"
+        ]
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [
+            "Wonders if r_c would have been a better healer",
+            "Wishes they understood the apprentice's inside jokes"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "all": [
+        "Is gossiping",
+        "Is acting angsty",
+        "Is dreading their apprentice duties",
+        "Fell into the nearby creek yesterday and is still feeling damp",
+        "Is making their mentor laugh",
+        "Is really bonding with their mentor",
+        "Is having a hard time keeping up with their training",
+        "Was tasked with lining nests with fresh moss today",
+        "Is dreaming of someday making their Clan proud",
+        "Is wondering if they are good enough to become a medicine cat",
+        "Wishes the other apprentices could understand how they feel",
+        "Helps apply a poultice to a small wound",
+        "Is enjoying learning all of the herbs a medicine cat needs!"
+    ]
+}

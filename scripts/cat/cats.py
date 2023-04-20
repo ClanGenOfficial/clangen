@@ -1090,7 +1090,6 @@ class Cat():
         )
 
     def load_history(self):
-        print('load history')
         try:
             if game.switches['clan_name'] != '':
                 clanname = game.switches['clan_name']
@@ -1104,7 +1103,6 @@ class Cat():
         cat_history_directory = history_directory + self.ID + '_history.json'
 
         if not os.path.exists(cat_history_directory):
-            print('path did not exist')
             self.history = History(
                 beginning={},
                 mentor_influence={},
@@ -1118,7 +1116,6 @@ class Cat():
             )
             return
         try:
-            print('loaded history')
             with open(cat_history_directory, 'r') as read_file:
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
@@ -1144,9 +1141,7 @@ class Cat():
             os.makedirs(history_dir)
 
         history_dict = self.history_class.make_dict(self)
-        print(history_dict)
         try:
-            print('saved')
             with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
                 json_string = ujson.dumps(history_dict, indent=4)
                 history_file.write(json_string)
@@ -1221,7 +1216,7 @@ class Cat():
 
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
-            if (kitty).dead:
+            if kitty.dead:
                 # check where they reside
                 if starclan:
                     if kitty.ID not in game.clan.starclan_cats or kitty.outside:
@@ -1247,12 +1242,11 @@ class Cat():
             for rel in dead_relations:
                 if i == 8:
                     break
-                if self.fetch_cat(rel.cat_to).status == 'leader':
+                if rel.cat_to.status == 'leader':
                     life_giving_leader = rel.cat_to
                     continue
-                life_givers.append(rel.cat_to)
+                life_givers.append(rel.cat_to.ID)
                 i += 1
-
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
             amount = 8 - len(life_givers)
@@ -1260,9 +1254,11 @@ class Cat():
             if starclan:
                 # this part just checks how many SC cats are available, if there aren't enough to fill all the slots,
                 # then we just take however many are available
+
                 possible_sc_cats = [i for i in game.clan.starclan_cats if
                                     i not in life_givers and
                                     self.fetch_cat(i).status != 'leader']
+
                 if len(possible_sc_cats) - 1 < amount:
                     extra_givers = possible_sc_cats
                 else:
@@ -1364,7 +1360,10 @@ class Cat():
             chosen_life = {}
             while i < 10:
                 attempted = []
-                chosen_life = random.choice(life_list)
+                try:
+                    chosen_life = random.choice(life_list)
+                except IndexError:
+                    print(f'WARNING: life list had no items for giver {giver.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
                 if chosen_life not in used_lives and chosen_life not in attempted:
                     break
                 else:
@@ -2206,9 +2205,6 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        if not os.path.exists(condition_directory):
-            os.makedirs(condition_directory)
-
         if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
@@ -2225,12 +2221,7 @@ class Cat():
         if self.is_disabled():
             conditions["permanent conditions"] = self.permanent_condition
 
-        try:
-            with open(condition_file_path, 'w') as rel_file:
-                json_string = ujson.dumps(conditions, indent=4)
-                rel_file.write(json_string)
-        except:
-            print(f"WARNING: Saving conditions of cat #{self} didn't work.")
+        game.safe_save(condition_file_path, conditions)
 
     def load_conditions(self):
         if game.switches['clan_name'] != '':
@@ -2409,7 +2400,7 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          age_restriction: bool = False):
+                          age_restriction: bool = True):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
@@ -2423,11 +2414,11 @@ class Cat():
             return False
 
         # check exiled, outside, and dead cats
-        if self.dead or self.outside or other_cat.dead or other_cat.outside:
+        if (self.dead != other_cat.dead) or self.outside or other_cat.outside:
             return False
 
         # check for age
-        if not age_restriction:
+        if age_restriction:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
@@ -2652,8 +2643,6 @@ class Cat():
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
-        if not os.path.exists(relationship_dir):
-            os.makedirs(relationship_dir)
 
         rel = []
         for r in self.relationships.values():
@@ -2673,13 +2662,7 @@ class Cat():
             }
             rel.append(r_data)
 
-        try:
-            with open(relationship_dir + '/' + self.ID + '_relations.json',
-                      'w') as rel_file:
-                json_string = ujson.dumps(rel, indent=4)
-                rel_file.write(json_string)
-        except:
-            print(f"WARNING: Saving relationship of cat #{self.ID} didn't work.")
+        game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
