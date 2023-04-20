@@ -339,7 +339,7 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "r_c wanted to claw the silly smile right off of m_c's face. But {PRONOUN/cr_c/subject} made sure that {PRONOUN/r_c/poss} life for [virtue] is as painful as possible.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubborness", "authority"]
@@ -528,7 +528,7 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "Crooning in m_c's ear, r_c whispers how {PRONOUN/m_c/subject} qwill prove everyone in the Clan wrong about their weak-willed mentality. A dark chuckle escaped r_c's throat as {PRONOUN/r_c/subject} gives {PRONOUN/m_c/subject} a life for [virtue]",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubborness", "authority"]
