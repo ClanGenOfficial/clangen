@@ -215,5 +215,11 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
+        "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day."
+     }
+     
 ]
