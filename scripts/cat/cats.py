@@ -241,7 +241,7 @@ class Cat():
         self.backstory = backstory
         self.age = None
         self.skill = None
-        self.personality = None 
+        self.personality = Personality(kit_trait=self.age in ["newborn", "kitten"])
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
@@ -363,9 +363,6 @@ class Cat():
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
-        # personality trait and skill
-        self.personality = Personality(kit_trait=self.age in ["newborn", "kitten"])
-
         if self.skill is None or self.skill == '???':
             if self.moons <= 11:
                 self.skill = '???'
@@ -422,7 +419,7 @@ class Cat():
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]"""
-
+            
             # setting up sprites that might not be correct
             if self.pelt is not None:
                 if self.pelt.length == 'long':
@@ -3152,7 +3149,7 @@ class Personality():
         self._social = 0
         self._aggress = 0
         self._stable = 0
-        self.trait = ""
+        self.trait = None
         self.kit = kit_trait #If true, use kit trait. If False, use normal traits. 
         
         if self.kit:
@@ -3160,43 +3157,47 @@ class Personality():
         else:
             trait_type_dict = Personality.trait_ranges["normal_traits"]
         
+        _tr = None
         if trait and trait in trait_type_dict:
             # Trait-given init
             self.trait = trait
             _tr = trait_type_dict[self.trait]
+        
+        # Set Facet Values
+        # (1) The priority of is: Given value, from parameter. 
+        # (2) If a trait range is assigned, pick from trait range
+        # (3) Totally random. 
+        if lawful is not None:
+            self._law = Personality.adjust_to_range(lawful)
+        elif _tr:
             self._law = random.randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
+        else:
+            self._law = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if social is not None:
+            self._social = Personality.adjust_to_range(social)
+        elif _tr:
             self._social = random.randint(_tr["sociability"][0], _tr["sociability"][1])
+        else:
+            self._social = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if aggress is not None:
+            self._aggress = Personality.adjust_to_range(aggress)
+        elif _tr:
             self._aggress = random.randint(_tr["aggression"][0], _tr["aggression"][1])
+        else:
+            self._aggress = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if stable is not None:
+            self._stable = Personality.adjust_to_range(stable)
+        elif _tr:
             self._stable = random.randint(_tr["stability"][0], _tr["stability"][1])
         else:
-            # No-trait given init
-            if lawful:
-                self._law = Personality.adjust_to_range(lawful)
-            else:
-                self._law = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            self._stable = random.randint(Personality.facet_range[0], Personality.facet_range[1])
                 
-            if social:
-                self._social = Personality.adjust_to_range(social)
-            else:
-                self._social = random.randint(Personality.facet_range[0], Personality.facet_range[1])
-                
-            if aggress:
-                self._aggress = Personality.adjust_to_range(aggress)
-            else:
-                self._aggress = random.randint(Personality.facet_range[0], Personality.facet_range[1])
-                
-            if stable:
-                self._stable = Personality.adjust_to_range(stable)
-            else:
-                self._stable = random.randint(Personality.facet_range[0], Personality.facet_range[1])
-                
-            # Choose trait matching facets. 
-            if trait:
-                self.trait = trait
-                if not self.is_trait_valid():
-                    self.choose_trait()
-            else:
-                self.choose_trait()
+        # If trait is still empty, or if the trait is not valid with the facets, change it. 
+        if not self.trait or not self.is_trait_valid():
+            self.choose_trait()
                 
     def __repr__(self) -> str:
         """For debugging"""
@@ -3204,7 +3205,7 @@ class Personality():
     
     def get_facet_string(self):
         """For saving the facets to file."""
-        return f"{self.lawfulness},{self.aggression},{self.sociability},{self.stability}"
+        return f"{self.lawfulness},{self.sociability},{self.aggression},{self.stability}"
 
     # ---------------------------------------------------------------------------- #
     #                               PROPERTIES                                     #
