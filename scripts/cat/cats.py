@@ -634,7 +634,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.possible_death_reactions(family_relation, value, cat.personality.personality.trait,
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.personality.trait,
                                                                           body_status))
 
             if possible_strings:
@@ -878,15 +878,7 @@ class Cat():
         if self.status in ["warrior", "medicine cat", "mediator"]:
             mentor = None
             if self.former_mentor:
-                mentor = Cat.fetch_cat(self.former_mentor[-1])
-
-        #Temp change: add mentor inflence
-        facets = ["lawfulness", "sociability", "aggression", "stability"]
-        traits_changed = random.sample(facets, randint(0, 4))
-        for _tr in traits_changed:
-            self.facets[_tr] += randint(1, 4)
-        
-        self.personality.trait = Cat.choose_trait_from_facet(self.facets, self.age)
+                mentor = Cat.fetch_cat(self.former_mentor[-1])    
         
         return
         
@@ -3207,7 +3199,12 @@ class Personality():
                 self.choose_trait()
                 
     def __repr__(self) -> str:
+        """For debugging"""
         return f"{self.trait}: lawfulness {self.lawfulness}, aggression {self.aggression}, sociability {self.sociability}, stablity {self.stability}"
+    
+    def get_facet_string(self):
+        """For saving the facets to file."""
+        return f"{self.lawfulness},{self.aggression},{self.sociability},{self.stability}"
 
     # ---------------------------------------------------------------------------- #
     #                               PROPERTIES                                     #
