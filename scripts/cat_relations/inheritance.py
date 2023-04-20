@@ -194,6 +194,8 @@ class Inheritance():
         current_parent_ids = self.get_blood_parents()
         for relevant_id in current_parent_ids:
             relevant_cat = self.cat.fetch_cat(relevant_id)
+            if not relevant_cat:
+                continue
             self.parents[relevant_id] = {
                 "type": RelationType.BLOOD,
                 "additional": []
