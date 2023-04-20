@@ -1,5 +1,5 @@
 [
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c visits the other medicine cats.",
@@ -8,7 +8,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
         "event_text": "m_c visits o_c to converse with their medicine cats about an omen StarClan sent.",
@@ -17,7 +17,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
         "event_text": "m_c visits o_c to congratulate them on their new medicine cat.",
@@ -26,7 +26,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "other_cat_med", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "r_c presents m_c with acc_plural as a congratulations.",
@@ -36,7 +36,7 @@
         "other_cat_skill": null,
         "accessories": ["WILD", "PLANT"]
     },
-  {
+    {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "other_cat_med", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "r_c presents m_c with acc_plural as a congratulations.",
@@ -46,7 +46,7 @@
         "other_cat_skill": null,
         "accessories": ["WILD", "PLANT"]
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c always seems to have acc_plural stuck in their fur.",
@@ -65,7 +65,7 @@
       "other_cat_trait": null,
      "other_cat_skill": null
     },
-  {
+    {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_med"],
     "event_text": "m_c speaks to r_c about a potential omen and what it means.",
@@ -73,35 +73,26 @@
     "cat_skill": ["omen sight"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c walks into the dreams of their clanmates while everyone sleeps.",
+    "event_text": "m_c walks into the dreams of their Clanmates while everyone sleeps.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c correctly warns the leader of an ambush thanks to their clairvoyant nature.",
+    "event_text": "m_c correctly warns the leader of an ambush, thanks to their clairvoyant nature.",
     "cat_trait": null,
     "cat_skill": ["clairvoyant"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c correctly warns the leader of an ambush thanks to their clairvoyant nature.",
-    "cat_trait": null,
-    "cat_skill": ["clairvoyant"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
     "event_text": "m_c spends their day communing with StarClan, attempting to figure out a recent prophecy.",
@@ -109,25 +100,26 @@
     "cat_skill": ["prophet"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
+    },
+    {
+    "camp": "any",
     "tags": ["other_cat", "other_cat_elder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "event_text": "m_c has been worried that o_c will lose the knowledge r_c has gained through their long life, but by sitting with r_c and discussing their experiences, m_c will ensure the lessons learned in the past are never forgotten.",
     "cat_trait": null,
     "cat_skill": ["lore keeper"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c tosses in their sleep and their dreamself pads through the thoughts of their Clanmates, picking up snippets of dream_list. They blink slowly awake, wondering whose dreams they walked in.",
+    "event_text": "m_c tosses in their sleep as their dreamself pads through the thoughts of their Clanmates, picking up snippets of dream_list. They slowly blink awake, wondering whose dreams they walked in.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,
     "other_cat_skill": null
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
     "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
@@ -136,8 +128,8 @@
     "other_cat_trait": null,
     "other_cat_skill": null,
     "accessories": ["COLLAR"]
-  },
-  {
+    },
+    {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
     "event_text": "m_c was seen loudly bickering with the medicine cat of o_c.",
@@ -145,23 +137,23 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-  "event_text": "m_c was seen talking with a traveling loner healer on the border.",
-  "cat_trait": null,
-  "cat_skill": null,
-  "other_cat_trait": null,
-  "other_cat_skill": null
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-  "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
-  "cat_trait": null,
-  "cat_skill": null,
-  "other_cat_trait": null,
-  "other_cat_skill": null
-}
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+      "event_text": "m_c was seen talking with a traveling loner healer on the border.",
+      "cat_trait": null,
+      "cat_skill": null,
+      "other_cat_trait": null,
+      "other_cat_skill": null
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+      "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+      "cat_trait": null,
+      "cat_skill": null,
+      "other_cat_trait": null,
+      "other_cat_skill": null
+    }
 ]

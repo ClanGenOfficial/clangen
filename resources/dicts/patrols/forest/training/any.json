@@ -6,7 +6,7 @@
     "tags": ["app_stat", "apprentice", "training", "scar", "TOETRAP", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 1,
+    "chance_of_success": 60,
     "exp": 30,
     "success_text": [
         "app1 listens carefully as the proper techniques of tree climbing are explained.",
@@ -26,9 +26,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got scarred training in the forest as an apprentice."
-    ]
+    "history_text": {
+        "scar": "r_c got scarred training in the forest as an apprentice."
+    }
 },
 {
     "patrol_id": "fst_train_sett1",
@@ -37,7 +37,7 @@
     "tags": ["death", "scar", "BELLY", "training", "battle_injury", "trust", "respect", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 40,
     "success_text": [
         "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
@@ -58,11 +58,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a badger.",
-        "r_c lost their life to a badger.",
-        "were killed by a badger"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a badger.",
+        "reg_death": "r_c lost their life to a badger.",
+        "lead_death": "were killed by a badger"
+    }
 },
 {
     "patrol_id": "fst_train_sett2",
@@ -71,7 +71,7 @@
     "tags": ["scar", "THROAT", "battle_injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 40,
     "success_text": [
         "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? Eventually p_l comes up with a plan - stuffing bushes into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
@@ -92,9 +92,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "This cat was scarred by a badger."
-    ]
+    "history_text": {
+        "scar": "This cat was scarred by a badger."
+    }
 },
 {
     "patrol_id": "fst_train_stuck1",
@@ -103,7 +103,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "SIDE", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 20,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -126,11 +126,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol.",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol.",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "fst_train_stuck2",
@@ -160,11 +160,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "fst_train_stuck3",
@@ -194,11 +194,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "fst_train_stuck4",
@@ -226,11 +226,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol.",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol.",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 
 },
 {
@@ -240,7 +240,7 @@
     "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "LEFTEAR"],
     "intro_text": "r_c heads out into the forest alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "At least this is a good chance to learn the territory! r_c heads off to map out a thicket they've always found confusing.",
@@ -261,9 +261,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-    ]
+    "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 },
 {
     "patrol_id": "fst_train_solo2",
@@ -299,7 +299,7 @@
     "tags": ["training", "deputy"],
     "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
@@ -326,7 +326,7 @@
     "tags": ["training", "leader"],
     "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "r_c heads off to map out a thicket they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
@@ -353,7 +353,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 15,
     "success_text": [
             "app1 watches the big bushy lump of a creature with wide eyes, tail twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
@@ -377,7 +377,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 15,
     "success_text": [
             "app1 watches the big bushy lump of a creature with wide eyes, tail twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
@@ -401,7 +401,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
@@ -425,7 +425,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 15,
     "success_text": [
             "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
@@ -449,7 +449,7 @@
     "tags": ["adult_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of their tail keeps twitching in excitement.",
     "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, bounding after them with promises of getting them back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy.",
@@ -475,7 +475,7 @@
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
     "intro_text": "r_c approaches p_l, asking if they wouldn't mind showing r_c their hunting techniques, and perhaps doing some training with them?",
     "decline_text": "r_c declines gently, explaining that they have too much work to do.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The cats go out together in the late of the day, as the shadows stretch long under the trees. p_l goes through their tricks, showing r_c how they shift their balance to make less noise on leaf litter, as r_c watches with eyes that p_l notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",

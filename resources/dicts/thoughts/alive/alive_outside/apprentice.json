@@ -2,17 +2,14 @@
     {
         "id": "lost_apprentice_thoughts",
         "thoughts": [
-            "Is missing their mentor's guidance",
+            "Is missing {PRONOUN/m_c/poss} mentor's guidance",
             "Misses the elders stories",
-            "Wishes they could've become a warrior",
-            "Misses their friends deeply",
-            "Refuses to let themself relax for even a moment",
-            "Hopes they're going in the right direction",
-            "Wonders what their warrior name might have been",
-            "Tries to come up with a warrior name for themself"
-        ],
-        "main_status_constraint": [
-            "apprentice"
+            "Wishes {PRONOUN/m_c/subject} could've become a warrior",
+            "Misses {PRONOUN/m_c/poss} friends deeply",
+            "Refuses to let {PRONOUN/m_c/self} relax for even a moment",
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/'re/'s} going in the right direction",
+            "Wonders what {PRONOUN/m_c/poss} warrior name might have been",
+            "Tries to come up with a warrior name for {PRONOUN/m_c/self}"
         ]
     }
 ]

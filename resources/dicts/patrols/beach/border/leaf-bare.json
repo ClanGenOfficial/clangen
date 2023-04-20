@@ -6,18 +6,18 @@
     "tags": ["border", "death", "large_prey", "no_body", "no_fail_prey"],
     "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
     "decline_text": "r_c decides to head back early.",
-    "chance_of_success": 60,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
-            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. They make it in time to watch the beach get lost under a tide of water from inland.",
+            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
             null,
-            "s_c scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-            "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. They are proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
+            "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+            "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
     ],
     "fail_text": [
             null,
             null,
-            "r_c is in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
+            "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
             null
     ],
     "win_skills": ["extremely smart"],
@@ -26,11 +26,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            null,
-            "r_c was swept out to sea by a flood.",
-            "were swept out to sea by a flood"
-    ]
+    "history_text": {
+        "reg_death": "r_c was swept out to sea by a flood.",
+        "lead_death": "were swept out to sea by a flood"
+    }
 },
 {
         "patrol_id": "bch_bord_ocean_newcatkits1",
@@ -38,17 +37,17 @@
         "season": "leaf-bare",
         "tags": ["border", "new_cat_litter0_litter3_dead_orphaned6", "platonic", "comfort", "warrior", "shivering", "frostbite", "injure_all"],
         "intro_text": "p_l hears desperate mewling coming from the ocean. ",
-        "decline_text": "They decide that their imagination is just playing tricks on them and continue the patrol.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
         "chance_of_success": 20,
         "exp": 15,
         "success_text": [
         "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruff and handing them over to the rest of the patrol.",
         null,
         null,
-        "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. They use a piece of wood as a makeshift raft and paddle the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
+        "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
         ],
         "fail_text": [
-        "To the cat's horror they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
+        "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
         ],
         "win_skills": ["wise", "thoughtful"],
         "min_cats": 3,

@@ -298,11 +298,10 @@
     "max_cats": 1,
     "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
     "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
-    "history_text": [
-        null,
-        "This cat died in an ambush set by rogues.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat died in an ambush set by rogues.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "bch_bord_newcat_abandontwoleg2",
@@ -331,11 +330,10 @@
     "max_cats": 6,
     "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
     "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
-    "history_text": [
-        null,
-        "This cat died in an ambush set by rogues.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat died in an ambush set by rogues.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "fst_bord_noise2",
@@ -344,7 +342,7 @@
     "tags": ["border", "battle_injury", "scar", "BRIDGE", "reputation", "new_cat_apprentice"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-    "chance_of_success": 60,
+    "chance_of_success": 50,
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
@@ -363,9 +361,9 @@
     "max_cats": 6,
     "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and informs them there's no room in c_n.",
     "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
-    "history_text": [
-            "p_l gained a scar after tussling with a rogue."
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar after tussling with a rogue."
+    }
 },
 {
     "patrol_id": "pln_bord_abandontwoleg1",
@@ -374,7 +372,7 @@
     "tags": ["fighting", "border", "new_cat_elder_loner", "no_new_cat2", "no_new_cat3", "disaster"],
     "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
     "decline_text": "Your patrol decides not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
             "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
@@ -394,11 +392,10 @@
     "max_cats": 6,
     "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
     "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
-    "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
-            "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "pln_bord_abandontwoleg2",
@@ -427,11 +424,10 @@
     "max_cats": 1,
     "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
     "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
-    "history_text": [
-        null,
-        "This cat died from being ambushed by rogues.",
-        "were killed in a rogue ambush"
-    ]
+    "history_text": {
+        "reg_death": "This cat died from being ambushed by rogues.",
+        "lead_death": "were killed in a rogue ambush"
+    }
 },
 {
     "patrol_id": "fst_hunt_twolegplacekittens1",
@@ -444,7 +440,7 @@
     ],
     "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
     "decline_text": "The patrol decides to hunt elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "p_l hears r_c softly calling them through the bushes, and drops the idea of following mouse scent, hurrying to their mate's side. r_c, head poking into the nest's garden through a gap in the fense, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued.",
@@ -491,9 +487,9 @@
     "max_cats": 6,
     "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
     "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarassed, the patrol goes home.",
-    "history_text": [
-            "This cat gained a scar from a fight with an angry kittypet."
-    ]
+    "history_text": {
+        "scar": "This cat gained a scar from a fight with an angry kittypet."
+    }
 },
 {
     "patrol_id": "gen_bord_injuredcat2",
@@ -513,13 +509,38 @@
         "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
-    "antagonize_fail_text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tell no one of what they saw.",
-    "history_text": [
-            null
-    ]
+    "antagonize_fail_text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tell no one of what they saw."
+    
+},
+{
+    "patrol_id": "mnt_hunt_newcat_leaf-barecatcryneutral1",
+    "biome": "mountainous",
+    "season": "leaf-bare",
+    "tags": ["hunting", "new_cat_kittypet_injury", "nc_cold_injury", "apprentice"],
+    "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. They're by themselves when they hear a cat screaming for help.",
+    "decline_text": "Nope, not today, there's no way app1 is running after ghost cats, no thank you.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the pitious cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. They sigh, climbing down the slope and calling out in reassurance to the kittypet.",
+            "StarClan, but the cat they find is weird, they fur soft and thing, their cries desperate as they call in confusion. app1 comes down to them, starling the poor thing half out of their pelt, and ask if they need assistance - this cat clearly doesn't belong here.",
+            null,
+            "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces themselves cheerfully, and the desperate kittypet slowly loses a little of their fear as app1 guides them back to camp, sure that the Leader will know what to do with them."
+    ],
+    "fail_text": [
+            "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful.",
+            "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be."
+    ],
+    "win_skills": null,
+    "win_trait": ["adventurous", "playful", "strange", "childish", "shameless" ],
+    "fail_skills": null,
+    "fail_trait": ["troublesome", "bold", "daring", "ambitious"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from them, terrified of the echoing voice.",
+    "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl them right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
 }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "pln_hunt_heat1",
+        "patrol_id": "pln_hunt_greenleaf_heat1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -21,18 +21,16 @@
             "No way, it's too hot for this. They can try to hunt again later.",
             null,
             null,
-            "r_c collapses from heat exhaustion. p_l carries them back to camp."
+            "r_c collapses from heat exhaustion, and has to be carried back to camp."
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heat exhaustion while on a patrol."
-        ]
+        "history_text": {
+            "scar": "This cat got heat exhaustion while on a patrol."
+        }
     },
-  {
-        "patrol_id": "pln_hunt_twolegsobject1",
+    {
+        "patrol_id": "pln_hunt_greenleaf_twolegsobject1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -57,15 +55,16 @@
             null,
             "As r_c pokes around the strange smelling whatever-it-is, they poke past a piece of metal that tears through their ear, sending them skittering backwards with a yelp."
         ],
+        "history_text": {
+            "scar": "r_c was scarred by a sharp piece of twoleg garbage. "
+        },
         "win_skills": [
             "smart",
             "very smart",
             "extremely smart"
         ],
         "min_cats": 1,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafscavenge1",
@@ -84,7 +83,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -123,12 +122,9 @@
         ],
         "min_cats": 2,
         "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafleafscavenge2",
@@ -153,7 +149,7 @@
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
             null,
-            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
             "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         ],
         "fail_text": [
@@ -187,11 +183,9 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
         "patrol_id": "pln_hunt_redfox_greenleafscavenge3",
@@ -214,11 +208,11 @@
         "success_text": [
             "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
             null,
-            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the plains, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             null,
             "Fiercely, r_c throws themselves at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
             "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -247,16 +241,14 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fox fight.",
-            "r_c fell in a solo battle with a fox.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fox fight.",
+            "reg_death": "r_c fell in a solo battle with a fox.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
-        "patrol_id": "pln_hunt_redvixen5",
+        "patrol_id": "pln_hunt_greenleaf_redvixen5",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -275,7 +267,7 @@
         "chance_of_success": 10,
         "exp": 30,
         "success_text": [
-            "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
+            "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
             "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
             "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
@@ -284,7 +276,7 @@
             "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
             "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
             null,
-            "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
+            "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the plains.",
             null,
             "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
         ],
@@ -310,14 +302,12 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight."
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight."
+        }
     },
     {
-        "patrol_id": "pln_hunt_redvixen6",
+        "patrol_id": "pln_hunt_greenleaf_redvixen6",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -345,7 +335,7 @@
             null,
             null,
             "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
-            "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
+            "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, and barely able to escape further injury.",
             null,
             "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
         ],
@@ -371,16 +361,14 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a solo fight with a vixen.",
-            "r_c fell in a solo battle with a vixen.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a solo fight with a vixen.",
+            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
-        "patrol_id": "pln_hunt_redvixen4",
+        "patrol_id": "pln_hunt_greenleaf_redvixen4",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -406,8 +394,8 @@
             "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
         ],
         "fail_text": [
-            "The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+            "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains belong to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply, the rest of the patrol have to rescue them from the red vixen.",
             "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
             "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
             null,
@@ -436,13 +424,11 @@
         ],
         "min_cats": 2,
         "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fox fight.",
-            "r_c fell in battle with a fox.",
-            "died in battle with a fox"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from a fox fight.",
+            "reg_death": "r_c fell in battle with a fox.",
+            "lead_death": "died in battle with a fox"
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafvixen1",
@@ -460,18 +446,18 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 30,
         "success_text": [
             "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
             "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders.",
-            "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+            "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
         ],
         "fail_text": [
-            "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+            "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of speed that shows where the small carnivore gets its name.",
             null,
             null,
-            "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
+            "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and use the patrol switching to r_c's defence as their signal to flee."
         ],
         "win_skills": [
             "smart",
@@ -483,11 +469,9 @@
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+            "scar": "r_c was marked by a fight with a swift fox vixen."
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafvixen2",
@@ -512,7 +496,7 @@
             "s_c scents the air, following the milk scent of the mother swift fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat."
         ],
         "fail_text": [
-            "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+            "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of speed that shows where the small carnivore gets its name.",
             null,
             null,
             "As r_c descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee."
@@ -527,11 +511,9 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was marked by a fight with a swift fox vixen."
-        ]
+        "history_text": {
+            "scar": "r_c was marked by a fight with a swift fox vixen."
+        }
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafscavenge1",
@@ -546,7 +528,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
@@ -556,7 +538,7 @@
         ],
         "fail_text": [
             "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and uncomfortable.",
-            "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon."
+            "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon."
         ],
         "win_skills": [
             "smart",
@@ -584,9 +566,7 @@
             "shameless"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_swiftfox_greenleafscavenge2",
@@ -604,21 +584,21 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
-            "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+            "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
             null,
-            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "Watching the swift fox at the carcass, s_c notices it stripping meat from the calf and caching it in little holes, and starts to copy it. The bigger predators will return to claim the calf soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
+            "With great care, aware that the kill's original owner must be somewhere about, s_c snatches the first large scrap they find and leaves the swift fox to risk the wrath of the bigger predators."
         ],
         "fail_text": [
             "A coyote yip in the distance sends both the smaller predator species running before r_c can muscle in on the feeding opportunity.",
-            "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c dances out of the way, but hears the caw of ravens descending on the carcass, and knows it would be too dangerous to return.",
+            "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c dances out of the way, but hears the caw of ravens descending on the carcass, and knows it would be too dangerous to return.",
             "r_c happily tucks into the massive calf - there's more than enough room for both them and the small fox to feed. They hear a massive, outraged yowl, and a blow from behind sends them to StarClan with a single hit. They never saw what did it.",
             "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
             null,
-            "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth, sinking them into s_c and giving s_c a bigger concern than scavenging from the calf carcass."
+            "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth, sinking them into s_c and giving them bigger problems than scavenging from a carcass."
         ],
         "win_skills": [
             "good fighter",
@@ -647,12 +627,310 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from fighting with a swift fox.",
-            "While scavenging alone, r_c was killed by a predator they didn't see.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+            "scar": "r_c carries a scar from fighting with a swift fox.",
+            "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+            "lead_death": "were killed by a predator"
+        }
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_solosquirrel1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "no_app",
+            "medium_prey"
+        ],
+        "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, soaking up the warm sun.",
+        "decline_text": "p_l watches it for a moment, then turns away and leaves. There's easier, fatter prey elsewhere, they're sure of it.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "The wind shifts, but before the squirrel can react p_l acts fast and leaps, stopping it from shrieking an alarm call with a quick nip to the back of the neck.",
+            "The squirrel, thankfully still dozey from the sun, doesn't notice p_l stalking up to them.. that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
+            "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; they just walk right up behind it and take the kill."
+        ],
+        "fail_text": [
+            "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_soloappsquirrel1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "medium_prey",
+            "no_fail_prey"
+        ],
+        "intro_text": "app1 has snuck out of camp alone, hoping they'll find a squirrel grown lazy in the heat of greenleaf. Running through everything they've been taught in their head, they carefully scent the air and strain their ears, hoping for any hint of the burrowing critters.",
+        "decline_text": "They're focusing so hard, they don't notice a Clanmate is standing silently behind them, waiting for them to notice that they've been caught red-pawed. Oops!",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and they're pretty sure at one point it's long gone, but in the end they find and catch it!",
+            "app1 hears a quiet snuffling nearby, and slides into a hunting crouch. Slinking forward, they find the source is a squirrel, foraging for food! They stalk carefully and catch it while it's distracted, heading home with their head held high."
+        ],
+        "fail_text": [
+            "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed."
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_mentorsquirrel1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "warrior",
+            "apprentice",
+            "medium_prey",
+            "comfort",
+            "trust"
+        ],
+        "intro_text": "p_l and app1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance, blinking in the greenleaf sun!",
+        "decline_text": "p_l praises them and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though their paws are rather unpracticed, the basic knowledge is solid, and their hunt is a success!",
+            "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. They're nervous, of course, but their technique is pretty-near flawless, and they catch the squirrel easily!"
+        ],
+        "fail_text": [
+            "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in their excitement, app1 rustles the grass a little too hard; the squirrel shrieks at them and vanishes into the burrow."
+        ],
+        "min_cats": 2,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_squirrel_burrowbusiness1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "large_prey1",
+            "apprentice",
+            "three_apprentices",
+            "comfort",
+            "trust",
+            "platonic",
+            "injury",
+            "injure_all",
+            "non_lethal",
+            "scrapes",
+            "claw-wound",
+            "scar",
+            "SNOUT"
+        ],
+        "intro_text": "The trio is gathered around an isolated burrow, discussing their plan in hushed mews. This burrow is an abandoned rabbit's warren, but currently is home to ground squirrels. The three entrances seem just big enough for the apprentices to crawl inside, bringing the hunt right to the squirrels, who are hopefully warm, fat, and too lazy to react.",
+        "decline_text": "... On second thought, maybe this is too risky. app1 and app2 exchange nervous glances, and app3 shuffles their paws before suggesting they go home instead, to which the others gladly agree. Better to stick to what they know.",
+        "chance_of_success": 40,
+        "exp": 40,
+        "success_text": [
+            "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; the squirrels are awake, and some wriggle past, but when they emerge (covered in dirt and mud), it's with a good haul of squirrels to bring home!",
+            "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. It's easy pickings at that point; with the squirrels all asleep, the apprentices kill them quietly and without any fuss. It takes two trips for them to bring it all home!"
+        ],
+        "fail_text": [
+            "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the burrow is barren, not a single squirrel to be found, and the apprentices head home disappointed.",
+            null,
+            null,
+            "Slowly, carefully, the young cats enter the burrow. It's dark and cramped, but they fit fine, and are able to follow their noses to the heart of the den. Unfortunately, the squirrels are awake, and angry! They hiss and chitter in rage, swiping at their muzzles and driving the apprentices back out of the burrow, where they turn tail and run home."
+        ],
+        "min_cats": 3,
+        "max_cats": 3,
+        "history_text": {
+            "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
+        }
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_groupsquirrel1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "medium_prey",
+            "comfort",
+            "trust",
+            "platonic",
+            "respect"
+        ],
+        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
+        "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The patrol makes short work of locating the squirrels, spreading out into a loose formation to encircle their prey. Slowly, they move in, the circle getting tighter and tighter, until they're finally seen. The squirrels screech and scatter in different directions, but the circle cuts off their escape, and by the end of it they're fresh-kill.",
+            "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
+            "s_c murmurs instructions to their Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+        ],
+        "fail_text": [
+            "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_solomouse1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "no_app",
+            "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. The grass, growing thick and lush, could easily hide a hundred.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+            "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_soloappmouse1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. They lash they tail, wondering where in the tall grass the scent's owner could be.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "While checking in the tall grass for signs of their prey, the mouse bursts from cover. It runs nearly under app1's claws, and they don't pounce so much as fall on it! Still, no one else was around to see their inelegant kill, and app1 feels very mature, bringing in prey to the fresh-kill pile by themselves.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_mentormouse1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "small_prey",
+            "comfort",
+            "trust",
+            "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trodded into the dirt at the base of the grass stalks - that's what it'll try to use as an escape path.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "app1 sets themselves up in ambush, pouncing on the mouse with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 stalks the mouse to an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_mice_appshowoff1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "romantic",
+            "respect",
+            "rel_two_apps",
+            "apprentice",
+            "two_apprentices",
+            "medium_prey"
+        ],
+        "intro_text": "The patrol heads out near dawn, taking advantage of the cooler temperatures before the sun rises to it's full strength. However, app1 seems more focused on app2 than the pursuit of prey.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "While p_l was right - app1 definitely cares more about how they look to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out foraging in the greenleaf grass, and p_l indulgently makes sure to tell app1 their reaction speed was very good in front of app2.",
+            "While the way app1 tries to burst out of a bush on a rabbit was categorically silly, the mice that were startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
+            null,
+            "There is a time and a place for app1 to try their luck looking good in front of app2 - and that time is now! They trot back to camp at the front of the hunting patrol, carrying the mice they caught with slightly more than the right amount of pride."
+        ],
+        "fail_text": [
+            "app1 is so busy watching if app2 is watching <i>them</i> that they forget to watch their own paws - and falling into the cold river impressed nobody."
+        ],
+        "win_trait": [
+            "bold",
+            "charismatic",
+            "confident",
+            "daring",
+            "fierce",
+            "shameless",
+            "troublesome"
+        ],
+        "min_cats": 3,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "pln_hunt_greenleaf_groupmice1",
+        "biome": "plains",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "respect",
+            "patrol_to_r_c",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "r_c suggests the patrol walk out to one of the more distant, smaller rivers that flow through c_n territory. As far as they know, no one has hunted that area recently, and the prey won't be wary or on guard.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+            "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6
     }
 ]

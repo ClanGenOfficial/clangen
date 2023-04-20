@@ -78,7 +78,30 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/arrow_mns.png"
+                "path":"resources/images/buttons/arrow_mns_unavailable.png"
+            }
+        }
+    },
+	"#arrow_mns_closed_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/arrow_mns_closed.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/arrow_mns_closed_unavailable.png"
             }
         }
     },
@@ -220,7 +243,7 @@
             }
         }
     },
-	"#mns_image_leaffal": 
+	"#mns_image_leaffall": 
     {
         "prototype": "#image_button",
 		"images":
@@ -393,7 +416,11 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/back_hover.png"
-            }
+            },
+			"disabled_image":
+            {
+				"path": "resources/images/buttons/back_unavailable.png"
+			}
         }
     },
     "#exit_window_button":
@@ -4716,7 +4743,99 @@
                 "path":"resources/images/buttons/siblings.png"
             }
         }
-  }
+  },
+  "#log_icon":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/log_icon.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/log_icon_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/log_icon_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/log_icon_unavailable.png"
+            }
+        }
+    },
+  "#tumblr_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/tumblr.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/tumblr_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/tumblr_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/tumblr_unavailable.png"
+            }
+        }
+    },
+  "#twitter_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/twitter.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/twitter_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/twitter_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/twitter_unavailable.png"
+            }
+        }
+    },
+  "#discord_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/discord.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/discord_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/discord_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/discord_unavailable.png"
+            }
+        }
+    }
 }
 
 

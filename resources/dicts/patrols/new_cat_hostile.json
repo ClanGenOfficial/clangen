@@ -146,7 +146,7 @@
     "tags": ["border", "battle_injury", "scar", "BRIDGE", "death", "reputation"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "p_l goes to check the bush and finds a kittypet cowering inside. The pathetic thing looks terrified and after a quick hiss from p_l it goes scrambling back out of the territory.",
@@ -165,11 +165,11 @@
     "max_cats": 6,
     "antagonize_text": "p_l goes to check the bush and finds a kittypet cowering inside. p_l scratches its ears off and sends it on it's way.",
     "antagonize_fail_text": "p_l finds a gang of rogues in the bush! p_l has to turn tail and run, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n.",
-    "history_text": [
-            "p_l gained a scar after tussling with a rogue.",
-            "p_l was killed by a rogue.",
-            "were killed by a rogue"
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar after tussling with a rogue.",
+        "reg_death": "p_l was killed by a rogue.",
+        "lead_death": "were killed by a rogue"
+    }
 },
 {
     "patrol_id": "fst_hunt_twolegplacekittens1",
@@ -182,7 +182,7 @@
     ],
     "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
     "decline_text": "The patrol decides to hunt elsewhere.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 30,
     "success_text": [
         "p_l hears r_c softly calling them through the bushes, and drops the idea of following mouse scent, hurrying to their mate's side. r_c, head poking into the nest's garden through a gap in the fense, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden. Uneasily, the patrol leaves, but both cats' minds return to the young cats in the days that follow.",
@@ -333,5 +333,33 @@
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
     "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+},
+{
+    "patrol_id": "mnt_hunt_newcat_leaf-barecatcryhostile1",
+    "biome": "mountainous",
+    "season": "leaf-bare",
+    "tags": ["hunting", "new_cat_kittypet_injury", "nc_cold_injury", "apprentice"],
+    "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. They're by themselves when they hear a cat screaming for help.",
+    "decline_text": "Nope, not today, there's no way app1 is running after ghost cats, no thank you.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+            "It's probably dangerous. But curiousity leads app1 on, where they carefully peek over a ridge as the source of the cries. A pampered halpless kittypet runs back and forth over the thunderpath, pleading fearfully for Twolegs, again and again and again. It isn't until their voice has gone hoarse and scratchy that app1 leaps out to surprise them - those Twolegs aren't coming back, and the kittypet can either follow app1, or freeze.",
+            "StarClan, but the cat they find is weird, they fur soft and thin, their cries desperate as they call in confusion. app1 watches until their paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey, they just wail for help, quieter and quieter as they begin to lose their voice. Finally, app1 can't take it anyone - striding out, they tell the cat to follow them, the Leader will know what to do with this.",
+            null,
+            "app1 follows the sad cries to find a kittypet, lost and alone and cold. They watch from under a rock overhang, but no, actually the kittypet is <i>that stupid</i> and it really seems likely they'll freeze to death if app1 doesn't do something. Ugh. Fine, well app1 can bring them back to camp, and then it's the Leader's problem to deal with, not app1's."
+    ],
+    "fail_text": [
+            "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful.",
+            "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be."
+    ],
+    "win_skills": null,
+    "win_trait": ["adventurous", "playful", "strange", "childish", "shameless" ],
+    "fail_skills": null,
+    "fail_trait": ["troublesome", "bold", "daring", "ambitious"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from them, terrified of the echoing voice.",
+    "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl them right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
 }
 ]

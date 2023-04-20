@@ -1,33 +1,5 @@
 [
-{
-    "patrol_id": "fst_hunt_vole1",
-    "biome": "forest",
-    "season": "Any",
-    "tags": [
-        "hunting",
-        "medium_prey"
-    ],
-    "intro_text": "Your patrol comes across a vole nibbling at a seed.",
-    "success_text": [
-        "r_c drops into a crouch and lightly stalks towards the vole. They pause, waggling their haunches before pouncing. They catch the vole easily and deliver a killing bite to the back of its head.",
-        "r_c drops into a crouch and begins stalking forward. When they get close, the vole suddenly stops chewing and r_c takes the opportunity to pounce. They kill the prey quickly and lick the blood from their lips with satisfaction.",
-        "s_c drops into a crouch and has to consciously stop their tail from swaying in excitement as they stalk the prey. Once they think they're close enough, they give their haunches a little wiggle and leap. They catch the vole squarely between their paws and kill it quickly."
-    ],
-    "fail_text": [
-        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!"
-    ],
-    "decline_text": "Your patrol decides to look for other prey.",
-    "chance_of_success": 50,
-    "exp": 10,
-    "win_skills": [
-        "great hunter",
-        "fantastic hunter"
-    ],
-    "min_cats": 1,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
+
 {
     "patrol_id": "fst_hunt_porcupine1",
     "biome": "forest",
@@ -78,11 +50,11 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "history_text": [
-        "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol.",
-        "killed by a porcupine"
-    ],
+    "history_text": {
+        "scar": "r_c was scarred by a porcupine while on patrol.",
+        "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+        "lead_death": "killed by a porcupine"
+    },
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -97,8 +69,7 @@
         "scar",
         "QUILLSCRATCH",
         "death",
-        "huge_prey2",
-        "huge_prey3"
+        "huge_prey2"
     ],
     "intro_text": "r_c encounters a porcupine, bristling with quills.",
     "decline_text": "The patrol steers clear of the porcupine, they don't have enough cats to confront this creature safely.",
@@ -131,11 +102,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol.",
-        "killed by a porcupine"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a porcupine while on patrol.",
+        "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+        "lead_death": "killed by a porcupine"
+    }
 },
 {
     "patrol_id": "fst_hunt_rabbitburrow1",
@@ -256,9 +227,9 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "history_text": [
-        "r_c gained a scar after trying to chase some squirrels up a tree."
-    ],
+    "history_text": {
+        "scar": "r_c gained a scar after trying to chase some squirrels up a tree."
+    },
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -298,9 +269,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred after an unfortunate encounter with a wolverine."
-    ]
+    "history_text": {
+        "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+    }
 },
 {
     "patrol_id": "fst_hunt_burrow2",
@@ -335,11 +306,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed after an unfortunate experience with a wolverine.",
-        "killed by a wolverine"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+        "lead_death": "killed by a wolverine"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl1",
@@ -393,11 +363,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl2",
@@ -452,11 +422,11 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl3",
@@ -507,11 +477,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a coyote protecting its scavenged meal.",
-        "killed by a coyote"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+        "lead_death": "killed by a coyote"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl4",
@@ -566,11 +535,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was scarred by a wolf protecting its scavenged meal.",
-        "r_c was killed by a wolf pack protecting its meal.",
-        "killed by a wolf pack"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a wolf protecting its scavenged meal.",
+        "reg_death": "r_c was killed by a wolf pack protecting its meal.",
+        "lead_death": "killed by a wolf pack"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl5",
@@ -621,11 +590,10 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a wolf protecting its meal.",
-        "killed by a wolf"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a wolf protecting its meal.",
+        "lead_death": "killed by a wolf"
+    }
 },
 {
     "patrol_id": "fst_hunt_howl6",
@@ -676,11 +644,10 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c was killed by a wolf protecting its meal.",
-        "killed by a wolf"
-    ]
+    "history_text": {
+        "reg_death": "r_c was killed by a wolf protecting its meal.",
+        "lead_death": "killed by a wolf"
+    }
 },
 {
     "patrol_id": "fst_hunt_strange1",
@@ -769,7 +736,6 @@
         "LEFTEAR",
         "medium_prey0",
         "large_prey1",
-        "large_prey2",
         "large_prey3",
         "no_fail_prey"
     ],
@@ -816,9 +782,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured as an apprentice, exploring alone."
-    ]
+    "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 },
 {
     "patrol_id": "fst_hunt_solo2",
@@ -827,7 +793,7 @@
     "tags": [
         "hunting",
         "medium_prey0",
-        "medium_prey1",
+        "large_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -886,7 +852,7 @@
         "hunting",
         "deputy",
         "medium_prey0",
-        "medium_prey1",
+        "large_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -945,7 +911,7 @@
         "hunting",
         "leader",
         "medium_prey0",
-        "medium_prey1",
+        "large_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -1006,7 +972,6 @@
         "scar",
         "NECKBITE",
         "small_prey0",
-        "small_prey1",
         "medium_prey2"
     ],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
@@ -1014,7 +979,7 @@
     "chance_of_success": 20,
     "exp": 10,
     "success_text": [
-        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
+        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth. One more for the fresh-kill pile!",
         null,
         "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
@@ -1041,9 +1006,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c gained a scar from a fox."
-    ]
+    "history_text": {
+        "scar": "r_c gained a scar from a fox."
+    }
 },
 {
     "patrol_id": "fst_hunt_noise2",
@@ -1056,7 +1021,6 @@
         "NECKBITE",
         "death",
         "small_prey0",
-        "small_prey1",
         "medium_prey2"
     ],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
@@ -1091,11 +1055,11 @@
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "p_l gained a scar from a fox.",
-        "p_l was killed by a wolverine.",
-        "killed by a wolverine"
-    ]
+    "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "killed by a wolverine"
+    }
 },
 {
     "patrol_id": "fst_hunt_gonetnr1",
@@ -1104,8 +1068,8 @@
     "tags": [
         "hunting",
         "gone",
-        "small_prey0",
-        "small_prey1"
+        "medium_prey0",
+        "medium_prey1"
     ],
     "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
     "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -1205,13 +1169,7 @@
         "wise"
     ],
     "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_gonetnr3",
@@ -1265,13 +1223,7 @@
         "wise"
     ],
     "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_gonetwolegden1",
@@ -1288,7 +1240,7 @@
     ],
     "intro_text": "r_c decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -1329,13 +1281,7 @@
         "wise"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_gonetwolegden2",
@@ -1352,7 +1298,7 @@
     ],
     "intro_text": "app1 decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1388,13 +1334,7 @@
         "wise"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_twolegdencatdare1",
@@ -1406,12 +1346,13 @@
         "small_prey",
         "romantic",
         "platonic",
+        "p_l_to_r_c",
         "no_app",
         "medium_prey0"
     ],
     "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nests today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -1452,13 +1393,7 @@
         "wise"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_twolegdenappdare1",
@@ -1472,11 +1407,12 @@
         "romantic",
         "platonic",
         "two_apprentices",
+        "rel_two_apps",
         "medium_prey0"
     ],
     "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
     "decline_text": "On second thought, they decide to reline their nests today instead.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1513,13 +1449,7 @@
         "wise"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_gonetwolegtrap1",
@@ -1528,7 +1458,7 @@
     "tags": ["hunting", "gone"],
     "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
     "decline_text": "Turning their nose up at the temptation, they continue on their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
@@ -1546,13 +1476,7 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_gonetwolegtrap2",
@@ -1564,7 +1488,7 @@
     ],
     "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
     "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
@@ -1601,13 +1525,7 @@
         "playful"
     ],
     "min_cats": 2,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 6
 },
 {
     "patrol_id": "fst_hunt_thunderpath1",
@@ -1620,11 +1538,11 @@
         "retirement",
         "blunt_force_injury",
         "hunting",
-        "medium_prey"
+        "large_prey"
     ],
     "intro_text": "The patrol comes across a Thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "Your patrol crosses the Thunderpath and can hunt on the other side.",
@@ -1657,13 +1575,11 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath2",
@@ -1677,7 +1593,7 @@
         "blunt_force_injury",
         "hunting",
         "cruel_season",
-        "medium_prey"
+        "large_prey"
     ],
     "intro_text": "The patrol comes across a Thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
@@ -1714,13 +1630,11 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath3",
@@ -1773,13 +1687,11 @@
     ],
     "min_cats": 5,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "This cat was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_thunderpath4",
@@ -1793,7 +1705,7 @@
         "blunt_force_injury",
         "hunting",
         "cruel_season",
-        "medium_prey"
+        "large_prey"
     ],
     "intro_text": "The patrol comes across a Thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
@@ -1830,13 +1742,11 @@
     ],
     "min_cats": 5,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c was heavily injured by a monster, and carries the scars from it.",
-        "r_c was hit by a monster and killed.",
-        "were hit by a monster"
-    ]
+    "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
 },
 {
     "patrol_id": "fst_hunt_fun1",
@@ -1844,9 +1754,7 @@
     "season": "Any",
     "tags": [
         "hunting",
-        "small_prey0",
-        "small_prey1",
-        "medium_prey2"
+        "medium_prey"
     ],
     "intro_text": "As r_c tears through the forest, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1866,13 +1774,7 @@
         "fantastic hunter"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_fun2",
@@ -1881,7 +1783,7 @@
     "tags": [
         "hunting",
         "apprentice",
-        "small_prey"
+        "medium_prey"
     ],
     "intro_text": "As app1 tears through the forest, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1895,13 +1797,7 @@
         "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!"
     ],
     "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        null
-    ]
+    "max_cats": 1
 },
 {
     "patrol_id": "fst_hunt_fun3",
@@ -1913,9 +1809,7 @@
         "romantic",
         "platonic",
         "respect",
-        "small_prey0",
-        "small_prey1",
-        "medium_prey2"
+        "medium_prey"
     ],
     "intro_text": "As r_c tears through the forest with p_l, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1935,9 +1829,7 @@
         "fantastic hunter"
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_fun4",
@@ -1950,7 +1842,7 @@
         "platonic",
         "respect",
         "two_apprentices",
-        "small_prey"
+        "medium_prey"
     ],
     "intro_text": "As app1 tears through the forest with app2, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1964,9 +1856,7 @@
         "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
     ],
     "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 2
 },
 {
     "patrol_id": "fst_hunt_lillizard1",
@@ -1997,9 +1887,7 @@
         "fantastic hunter"
     ],
     "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 3
 },
 {
     "patrol_id": "fst_hunt_lillizard2",
@@ -2027,8 +1915,33 @@
         "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
     ],
     "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "max_cats": 3
+},
+{
+    "patrol_id": "fst_hunt_vole1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "medium_prey"
+    ],
+    "intro_text": "Your patrol comes across a vole nibbling at a seed.",
+    "success_text": [
+        "r_c drops into a crouch and lightly stalks towards the vole. They pause, waggling their haunches before pouncing. They catch the vole easily and deliver a killing bite to the back of its head.",
+        "r_c drops into a crouch and begins stalking forward. When they get close, the vole suddenly stops chewing and r_c takes the opportunity to pounce. They kill the prey quickly and lick the blood from their lips with satisfaction.",
+        "s_c drops into a crouch and has to consciously stop their tail from swaying in excitement as they stalk the prey. Once they think they're close enough, they give their haunches a little wiggle and leap. They catch the vole squarely between their paws and kill it quickly."
+    ],
+    "fail_text": [
+        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!"
+    ],
+    "decline_text": "Your patrol decides to look for other prey.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
 }
 ]

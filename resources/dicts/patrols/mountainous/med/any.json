@@ -117,7 +117,7 @@
 "tags": ["herb_gathering", "med_only", "herb", "cobwebs", "many_herbs1"],
 "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
 "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
-"chance_of_success": 80,
+"chance_of_success": 70,
 "exp": 20,
 "success_text": [
     "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. No cat will have the chance to bleed out - not now, with so many cobwebs to staunch their wounds!",
@@ -138,7 +138,7 @@
 "tags": ["herb_gathering", "med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
 "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
 "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
-"chance_of_success": 80,
+"chance_of_success": 70,
 "exp": 20,
 "success_text": [
     "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside them to gather as many as they can, their eyes glittering with joy and pride as they work.",
@@ -224,7 +224,7 @@
     "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
@@ -245,7 +245,7 @@
     "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
@@ -266,7 +266,7 @@
     "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
@@ -308,7 +308,7 @@
     "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "warrior_app", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
@@ -329,7 +329,7 @@
     "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "warrior_app", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
@@ -350,7 +350,7 @@
     "tags": ["herb_gathering", "med_cat", "herb", "cobwebs", "apprentice", "warrior_app", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
@@ -440,7 +440,7 @@
     "tags": ["herb_gathering", "med_cat", "moss", "herb"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 10,
     "success_text": [
         "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile - once they're satisfied, they take a moment to wrap their jaws around the heap, then make their way back to camp."
@@ -460,7 +460,7 @@
     "tags": ["herb_gathering", "med_cat", "apprentice", "herb", "moss", "big_change", "platonic", "dislike"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 10,
     "success_text": [
         "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
@@ -480,7 +480,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 10,
     "success_text": [
         "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
@@ -562,7 +562,7 @@
     "tags": ["herb_gathering", "warrior_app", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
@@ -604,7 +604,7 @@
     "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
@@ -625,7 +625,7 @@
     "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
@@ -646,7 +646,7 @@
     "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
@@ -667,7 +667,7 @@
     "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
@@ -688,7 +688,7 @@
     "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 10,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
@@ -747,6 +747,57 @@
     "min_cats": 2,
     "max_cats": 2,
 
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_discussion1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "random_herbs", "respect", "trust", "platonic", "med_only", "no_app"],
+    "intro_text": "p_l and r_c head into the deep valleys to look for herbs, discussing the latest news.",
+    "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "They have a good discussion while foraging under massive mountain cliffs and manage to come up with several ideas to discuss with c_n's leadership.",
+            "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and return to camp to discuss them with the leader and deputy."
+    ],
+    "fail_text": [
+            "They fail to interpret any signs, and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the discovery of ominous Twoleg things, piled in an abandoned, stinking heap."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_dwindleherbsgathering1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["random_herbs", "med_cat", "med_only", "platonic", "dislike", "respect"],
+    "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+    "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "p_l and r_c decide to search near mountain meadows that the warriors regularly use for hunting. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the little pockets of plenty.",
+            "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+    ],
+    "fail_text": [
+            "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+            "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

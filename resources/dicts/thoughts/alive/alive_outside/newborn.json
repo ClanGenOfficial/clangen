@@ -1,31 +1,9 @@
 [
     {
-        "id": "gen_newborn",
+        "id": "general_lost_newborn_thoughts",
         "thoughts": [
-            "Mewls pitifully for milk",
-            "Tries to figure out all of the smells around them",
-            "Snoozes peacefully",
-            "Tries to open their eyes, but it's all blurry"
-        ],
-        "main_age_constraint": [
-            "newborn"
-        ]
-    },
-    {
-        "id": "gen_newborn_to_parent",
-        "thoughts":[
-            "Snuggles closer to r_c",
-            "Smells r_c and immediately perks up",
-            "Mews at r_c as they shift in the nest"
-        ],
-        "main_age_constraint": [
-            "newborn"
-        ],
-        "relationship_constraint": [
-            "child/parent"
-        ],
-        "random_living_status": [
-            "living"
+            "Squirms because {PRONOUN/m_c/subject} can no longer smell the nursery",
+            "Is frightenly mewling because there is no familar scents around {PRONOUN/m_c/object}"
         ]
     }
 ]

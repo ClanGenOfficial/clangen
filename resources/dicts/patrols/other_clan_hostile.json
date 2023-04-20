@@ -6,7 +6,7 @@
     "tags": ["border", "other_clan", "battle_injury", "death", "scar", "CHEEK"],
     "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the c_n patrol.",
     "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "The patrol remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
@@ -28,11 +28,11 @@
     "max_cats": 6,
     "antagonize_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
     "antagonize_fail_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
-    "history_text": [
-        "r_c was scarred by an enemy warrior.",
-        "r_c was killed by an enemy warrior.",
-        "were killed by an enemy warrior"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an enemy warrior.",
+        "reg_death": "r_c was killed by an enemy warrior.",
+        "lead_death": "were killed by an enemy warrior"
+    }
 },
 {
     "patrol_id": "gen_bord_otherclan_hostile2",
@@ -41,13 +41,13 @@
     "tags": ["border", "other_clan", "battle_injury", "death", "scar", "BRIDGE"],
     "intro_text": "As your patrol is checking the border markings, a o_c_n patrol appears and begins jeering at the c_n patrol.",
     "decline_text": "Your patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The patrol remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
             null,
             "s_c postures right back at the o_c_n cats, drawing themselves up to their full height and baring their teeth. The other patrol backs down a bit, they seem to know of s_c's reputation in battle.  The o_c_n cats eventually leave, cowed by the display but with begrudging respect for s_c's strength.",
-            "s_c is quick to strike up conversation with the other patrol, playfully poking fun at both o_c_n and c_n. Their antics lighten the mood and make the other patrol cats laugh despite their previous aggression.  Situation successfully diffused and cats on both sides feeling surprisingly friendly toward each other, the two patrols part ways."
+            "s_c is quick to strike up conversation with the other patrol, playfully poking fun at both o_c_n and c_n. {PRONOUN/s_c/poss/CAP} antics lighten the mood and make the other patrol cats laugh despite their previous aggression.  Situation successfully diffused and cats on both sides feeling surprisingly friendly toward each other, the two patrols part ways."
     ],
     "fail_text": [
             "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for Clan relations.",
@@ -63,11 +63,11 @@
     "max_cats": 6,
     "antagonize_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
     "antagonize_fail_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
-    "history_text": [
-        "r_c was scarred by an enemy warrior.",
-        "r_c was killed by an enemy warrior.",
-        "were killed by an enemy warrior"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by an enemy warrior.",
+        "reg_death": "r_c was killed by an enemy warrior.",
+        "lead_death": "were killed by an enemy warrior"
+    }
 },
 {
     "patrol_id": "gen_bord_otherclan_hostile3",
@@ -76,7 +76,7 @@
     "tags": ["otherclan_nochangesuccess", "border", "other_clan", "hunting", "scar", "LEGBITE", "battle_injury", "death", "small_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on an enemy's territory.",
     "decline_text": "Your patrol decides that one rabbit isn't worth the potential fight.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
@@ -98,12 +98,11 @@
     "max_cats": 6,
     "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
     "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
-    "history_text": [
-        "r_c disrespected the border lines and was scarred by an enemy warrior for it.",
-        "r_c disrespected the border lines and was killed by an enemy warrior for it.",
-        "were killed by an enemy warrior"
-
-    ]
+    "history_text": {
+        "scar": "r_c disrespected the border lines and was scarred by an enemy warrior for it.",
+        "reg_death": "r_c disrespected the border lines and was killed by an enemy warrior for it.",
+        "lead_death": "were killed by an enemy warrior"
+    }
 },
 {
     "patrol_id": "gen_med_borderherb3",
@@ -112,7 +111,7 @@
     "tags": ["herb_gathering", "med_cat", "herb", "raspberry", "other_clan", "med_only", "battle_injury"],
     "intro_text": "p_l pads along, mouth open slightly as they scent for any traces of herbs. Oh! They can smell some raspberries nearby - but it seems that they're just over the border.",
     "decline_text": "They decide that trespassing isn't worth it in this case.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
@@ -139,7 +138,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "torn pelt", "injury", "scar", "BRIGHTHEART"],
     "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
     "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "After poking around a bit, your patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, they only lecture the apprentice on border lines before sending them back into o_c_n territory.",
@@ -160,11 +159,11 @@
     "max_cats": 6,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory.  The patrol is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
-    "history_text": [
-            "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-            "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "gen_bord_scent_hostile2",
@@ -173,7 +172,7 @@
     "tags": ["border", "other_clan", "death", "bite-wound", "mangled tail", "injury", "scar", "TAILSCAR"],
     "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
     "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
         "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border and while p_l is still suspicious of the situation, they only lecture the apprentice on border lines before sending them back into o_c_n territory.",
@@ -194,11 +193,11 @@
     "max_cats": 6,
     "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory. p_l is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
-    "history_text": [
-        "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog.",
-        "followed the scent of a trespassing cat and were killed by a dog"
-    ]
+    "history_text": {
+        "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
+        "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+    }
 },
 {
     "patrol_id": "fst_bord_solo1",
@@ -230,11 +229,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "fst_bord_solo2",
@@ -266,11 +265,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "fst_bord_solo3",
@@ -302,11 +301,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life against a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "fst_bord_solo4",
@@ -337,11 +336,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "fst_bord_solo5",
@@ -372,11 +371,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "pln_bord_solo1",
@@ -408,11 +407,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "pln_bord_solo2",
@@ -444,11 +443,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "pln_bord_solo3",
@@ -480,11 +479,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life against a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "pln_bord_solo4",
@@ -515,11 +514,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "pln_bord_solo5",
@@ -550,11 +549,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "mtn_bord_solo1",
@@ -586,11 +585,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "mtn_bord_solo2",
@@ -622,11 +621,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "mtn_bord_solo3",
@@ -658,11 +657,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life against a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "mtn_bord_solo4",
@@ -693,11 +692,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "mtn_bord_solo5",
@@ -728,11 +727,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "bch_bord_solo1",
@@ -764,11 +763,11 @@ null,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "bch_bord_solo2",
@@ -800,11 +799,11 @@ null,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "bch_bord_solo3",
@@ -836,11 +835,11 @@ null,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c lost a life against a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "bch_bord_solo4",
@@ -871,11 +870,11 @@ null,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 },
 {
     "patrol_id": "bch_bord_solo5",
@@ -906,11 +905,11 @@ null,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile Clan.",
-        "were killed by a hostile Clan"
-    ]
+    "history_text": {
+        "scar": "r_c got injured patrolling on the border.",
+        "reg_death": "r_c was killed by a hostile Clan.",
+        "lead_death": "were killed by a hostile Clan"
+    }
 }
 
 ]

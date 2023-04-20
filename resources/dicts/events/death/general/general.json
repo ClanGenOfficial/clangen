@@ -2,8 +2,11 @@
     {
         "camp": "any",
         "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
-        "death_text": "m_c was murdered.  The culprit is unknown.",
-        "history_text": ["m_c was murdered by an unknown killer.", null],
+        "death_text": "m_c was murdered. The culprit is unknown.",
+        "history_text": {
+            "reg_death": "m_c was secretly murdered by r_c.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["sneaky", "ambitious", "bloodthirsty", "cold", "fierce", "vengeful", "careful", "lonesome", "strange", "daring", "righteous", "patient"],
@@ -11,9 +14,12 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
-        "death_text": "m_c was murdered.  r_c stands over them, blood dripping from their pelt.",
-        "history_text": ["m_c was murdered by r_c.", null],
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "death_text": "m_c was murdered. r_c stands over them, blood dripping from their pelt.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "vengeful", "lonesome", "strange", "daring", "righteous"],
@@ -21,9 +27,110 @@
     },
     {
         "camp": "any",
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "death_text": "m_c was murdered by r_c in cold blood.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce"],
+        "other_cat_skill": ["great fighter", "excellent fighter"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
+        "death_text": "m_c was murdered by r_c in cold blood. r_c has made the death look accidental.",
+        "history_text": {
+            "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer, who made the death look accidental."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce", "sneaky"],
+        "other_cat_skill": ["great fighter", "excellent fighter", "extremely smart"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "death_text": "r_c killed m_c by feeding them deathberries.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c, who fed them deathberries.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer with deathberries."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "death_text": "r_c killed m_c by feeding them foxglove seeds.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c, who fed them foxglove seeds.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer with foxglove seeds."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "death_text": "r_c killed m_c by feeding them nightshade berries.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c, who fed them nightshade berries.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer with nightshade berries."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "death_text": "r_c killed m_c by feeding them water hemlock.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c, who fed them water hemlock.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer with water hemlock."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat_med", "murder", "revealed", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
+        "death_text": "r_c killed m_c by consciously giving them the wrong herbs.",
+        "history_text": {
+            "reg_death": "m_c was murdered by r_c, who purposefully fed them the wrong herbs.",
+            "reg_murder_unrevealed": "m_c was murdered by an unknown killer, by being fed incorrect herbs."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
+    },
+
+    {
+        "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was found dead near a fox den.",
-        "history_text": ["m_c was killed by a fox.", null],
+        "history_text": {
+            "reg_death": "m_c was killed by a fox."
+        },
         "cat_trait": ["daring", "adventurous", "bold", "fierce", "loyal", "lonesome", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -33,8 +140,10 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was bitten by a snake and succumbed to the venom.",
-        "history_text": ["m_c was killed by a snake.", null],
+        "death_text": "m_c was bitten by a snake, and succumbed to the venom.",
+        "history_text": {
+            "reg_death": "m_c was killed by a snake."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -44,18 +153,21 @@
         "camp": "any",
         "tags": ["clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c saved a kit from a snake, but was bitten in the process. The venom killed them.",
-        "history_text": ["m_c was killed by a snake while saving a kit.", null],
+        "history_text": {
+            "reg_death": "m_c was killed by a snake, while saving a kit."
+        },
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c went missing and was found dead.",
-        "history_text": ["m_c went missing and was found dead.", null],
+        "death_text": "m_c went missing, and was found dead out in the territory.",
+        "history_text": {
+            "reg_death": "m_c went missing, and was found dead."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -65,7 +177,9 @@
         "camp": "any",
         "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was found dead near the o_c border.",
-        "history_text": ["m_c was found dead near the o_c border.", null],
+        "history_text": {
+            "reg_death": "m_c was found dead near the o_c border."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -76,7 +190,9 @@
         "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "platonic", "neg_dislike", "trust", "respect"],
         "death_text": "m_c was burnt alive while trying to save r_c from a fire.",
-        "history_text": ["m_c was killed in a fire while trying to save r_c.", null],
+        "history_text": {
+            "reg_death": "m_c was killed in a fire while trying to save r_c."
+        },
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -84,86 +200,11 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
-        "death_text": "m_c was murdered by r_c in cold blood.",
-        "history_text": ["m_c was murdered by r_c.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce"],
-        "other_cat_skill": ["great fighter", "excellent fighter"],
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
-        "death_text": "m_c was murdered by r_c in cold blood. r_c has made the death look accidental.",
-        "history_text": ["m_c was murdered by r_c.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce", "sneaky"],
-        "other_cat_skill": ["great fighter", "excellent fighter", "extremely smart"],
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving them deathberries.",
-        "history_text": ["m_c was killed when r_c gave them deathberries.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
-        "cat_negate_skill": ["very smart", "extremely smart"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving them foxglove seeds.",
-        "history_text": ["m_c was killed when r_c gave them foxglove seeds.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
-        "cat_negate_skill": ["very smart", "extremely smart"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving them nightshade berries.",
-        "history_text": ["m_c was killed when r_c gave them nightshade berries.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
-        "cat_negate_skill": ["very smart", "extremely smart"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by giving them water hemlock.",
-        "history_text": ["m_c was killed when r_c gave them water hemlock.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
-        "cat_negate_skill": ["very smart", "extremely smart"]
-    },
-    {
-        "camp": "any",
-        "tags": ["other_cat_med", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_comfort", "dislike", "neg_platonic"],
-        "death_text": "r_c killed m_c by consciously giving them the wrong herbs.",
-        "history_text": ["m_c was killed when r_c consciously gave them the wrong herbs.", null],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
-        "cat_negate_skill": ["very smart", "extremely smart"]
-    },
-    {
-        "camp": "any",
         "tags": ["classic", "Leaf-bare"],
         "death_text": "m_c died after catching greencough.",
-        "history_text": ["m_c died from greencough.", null],
+        "history_text": {
+            "reg_death": "m_c died of greencough."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -173,17 +214,23 @@
         "camp": "any",
         "tags": ["classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c died from infected wounds.",
-        "history_text": ["m_c died from infected wounds.", null],
+        "history_text": {
+            "reg_death": "m_c died from infected wounds."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "camp": "any",
         "tags": ["multi_death", "classic", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c and r_c die from eating tainted prey.",
-        "history_text": ["m_c died from eating tainted prey.", "died from eating tainted prey"],
+        "history_text": {
+            "reg_death": "m_c died from eating tainted prey.",
+            "lead_death": "ate tainted prey"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -193,7 +240,10 @@
         "camp": "any",
         "tags": ["multi_death", "other_cat", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c fell into the river and r_c drowned alongside m_c while trying to rescue them.",
-        "history_text": ["m_c died from drowning.", "died from drowning"],
+        "history_text": {
+            "reg_death": "m_c drowned alongside a Clanmate.",
+            "lead_death": "drowned alongside a Clanmate"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
@@ -203,9 +253,10 @@
         "camp": "any",
         "tags": ["multi_death", "other_cat_adult", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c and r_c are killed by a gang of rogues.",
-        "history_text": [
-          "m_c was killed by a gang of rogues.",
-          "was killed by a gang of rogues"],
+        "history_text": {
+            "reg_death": "m_c was killed by a gang of rogues.",
+            "lead_death": "was killed by a gang of rogues"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -215,9 +266,10 @@
         "camp": "any",
         "tags": ["multi_death", "classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "r_c and m_c die of greencough.",
-        "history_text": [
-          "m_c died from greencough",
-          "died from greencough"],
+        "history_text": {
+            "reg_death": "m_c died of greencough.",
+            "lead_death": "died of greencough"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -227,9 +279,10 @@
         "camp": "any",
         "tags": ["multi_death", "classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "r_c and m_c die of yellowcough.",
-        "history_text": [
-          "m_c died from yellowcough",
-          "died from yellowcough"],
+        "history_text": {
+            "reg_death": "m_c died of yellowcough.",
+            "lead_death": "died of yellowcough"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -238,10 +291,11 @@
     {
         "camp": "any",
         "tags": ["multi_death", "classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "A bad case of greencough strikes, r_c and m_c die.",
-        "history_text": [
-          "m_c died from greencough",
-          "died from greencough"],
+        "death_text": "A bad case of greencough strikes the Clan, taking r_c and m_c's lives.",
+        "history_text": {
+            "reg_death": "m_c died of greencough.",
+            "lead_death": "died of greencough"
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

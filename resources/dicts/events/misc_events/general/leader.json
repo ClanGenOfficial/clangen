@@ -1,14 +1,14 @@
 [
-{
-        "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c thinks about retiring.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-  {
+    {
+            "camp": "any",
+            "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+            "event_text": "m_c thinks about retiring.",
+            "cat_trait": null,
+            "cat_skill": null,
+            "other_cat_trait": null,
+            "other_cat_skill": null
+        },
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c feels as though the responsibility of leadership is crushing them.",
@@ -17,7 +17,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c calls a Clan meeting to give an important announcement.",
@@ -26,16 +26,16 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["low_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c confesses they don't have many lives yet.",
+        "event_text": "m_c confesses they don't have many lives left.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c assesses r_c's progress.",

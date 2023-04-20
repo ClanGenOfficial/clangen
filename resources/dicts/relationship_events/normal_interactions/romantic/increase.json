@@ -5,7 +5,7 @@
 		"interactions": [
 			"m_c is developing a crush on r_c.",
 			"m_c might be reading a little too far into r_c's kindness.",
-			"m_c never realized how much they love spending time with r_c."
+			"m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c."
 		],
 		"relationship_constraint": [
 			"not_mates",
@@ -84,7 +84,7 @@
 		"id": "rom_inc_medium3",
 		"intensity": "medium",
 		"interactions": [
-			"m_c is hoping that r_c notices them.",
+			"m_c is hoping that r_c notices {PRONOUN/m_c/object}.",
 			"m_c wonders what r_c thinks about mates."
 		],
 		"relationship_constraint": [
@@ -101,13 +101,13 @@
 		"id": "rom_inc_medium4",
 		"intensity": "medium",
 		"interactions": [
-			"m_c imagines what their family with r_c would look like.",
-			"m_c would spend the entire day with r_c if they could.",
+			"m_c imagines what {PRONOUN/m_c/poss} family with r_c would look like.",
+			"m_c would spend the entire day with r_c if {PRONOUN/m_c/subject} could.",
 			"m_c keeps shyly glancing over at r_c as the Clan talks about mates",
-			"m_c doesn't want r_c to overwork themselves.",
-			"m_c catches themself staring at r_c a bit too often.",
-			"m_c gets flustered when r_c compliments their skill.",
-			"m_c feels their jaw drop when the sun catches just right on r_c's pelt.",
+			"m_c doesn't want r_c to overwork {PRONOUN/r_c/self}.",
+			"m_c catches {PRONOUN/m_c/self} staring at r_c a bit too often.",
+			"m_c gets flustered when r_c compliments {PRONOUN/m_c/poss} skill.",
+			"m_c feels {PRONOUN/m_c/poss} jaw drop when the sun catches just right on r_c's pelt.",
 			"m_c immediately thinks of r_c when the topic of mates is brought up.",
 			"m_c is nervous sitting next to r_c at the Clan meeting."
 		],
@@ -120,8 +120,8 @@
 		"id": "rom_inc_medium5",
 		"intensity": "medium",
 		"interactions": [
-			"m_c brushes against r_c while correcting their stance and looks away with a purr.",
-			"m_c left a gift in r_c's nest for them to find.",
+			"m_c brushes against r_c while correcting {PRONOUN/r_c/poss} stance and looks away with a purr.",
+			"m_c left a gift in r_c's nest for {PRONOUN/r_c/object} to find.",
 			"m_c picked out the best piece of prey to share with r_c.",
 			"m_c sees r_c stumble while hunting and thinks it's cute."
 		],
@@ -135,11 +135,11 @@
 		"id": "rom_inc_medium4",
 		"intensity": "medium",
 		"interactions": [
-			"m_c wants to confess their love to r_c.",
+			"m_c wants to confess {PRONOUN/m_c/poss} love to r_c.",
 			"m_c is wondering what it would be like to grow old with r_c.",
-			"m_c is the first cat that r_c thinks of when they get good news.",
-			"m_c realizes their heart always flutters whenever they see r_c.",
-			"m_c feels like no one understands them the way r_c does.",
+			"m_c is the first cat that r_c thinks of when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} good news.",
+			"m_c realizes {PRONOUN/m_c/poss} heart always flutters whenever {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
+			"m_c feels like no one understands {PRONOUN/m_c/object} the way r_c does.",
 			"m_c would give it all to make r_c's dreams come true."
 		],
 		"relationship_constraint": [
@@ -154,7 +154,7 @@
 			"m_c thinks r_c is the most beautiful cat in the Clan.",
 			"m_c can't stop thinking about r_c.",
 			"m_c feels giddy about getting on the same patrol as r_c.",
-			"m_c wants r_c to understand how crazy they are about them.",
+			"m_c wants r_c to understand how crazy {PRONOUN/m_c/subject} {VERB/m_c/are/is} about {PRONOUN/r_c/object}.",
 			"m_c thinks r_c has a lovely sense of humor."
 		],
 		"relationship_constraint": [
@@ -168,17 +168,17 @@
 			"m_c is spending a lot of time with r_c.",
 			"m_c enjoys the time with r_c and feels secure.",
 			"m_c wants to spend the entire day with r_c.",
-			"m_c saves a piece of prey for r_c because they know it's their favorite.",
-			"m_c brings r_c some fresh-kill, hoping that they remembered what r_c's favorite was.",
+			"m_c saves a piece of prey for r_c because {PRONOUN/m_c/subject} {VERB/m_c/know/knows} it's {PRONOUN/r_c/poss} favorite.",
+			"m_c brings r_c some fresh-kill, hoping that {PRONOUN/m_c/subject} remembered what r_c's favorite was.",
 			"m_c got stuck in the same tree with r_c for hours and realized how much they have in common.",
-			"m_c asks r_c to help them freshen up on some battle moves, and compliments them constantly during it.",
-			"m_c asks r_c to go fishing with them, but they keep on getting distracted by each other.",
-			"m_c gives r_c a beautiful feather they found, and hides behind their whiskers when thanked.",
-			"m_c gives r_c a wonderfully colored pebble they found, and hides behind their whiskers when thanked.",
-			"m_c gives r_c a circular Twoleg object they found, and hides behind their whiskers when thanked.",
-			"m_c compliments r_c on how well groomed their pelt is today.",
-			"m_c compliments r_c on how sharp their claws are today.",
-			"m_c compliments r_c on their catch during a hunting patrol, which causes them to purr."
+			"m_c asks r_c to help {PRONOUN/m_c/object} freshen up on some battle moves, and compliments {PRONOUN/r_c/object} constantly during it.",
+			"m_c asks r_c to go fishing with {PRONOUN/m_c/object}, but they keep on getting distracted by each other.",
+			"m_c gives r_c a beautiful feather {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+			"m_c gives r_c a wonderfully colored pebble {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+			"m_c gives r_c a circular Twoleg object {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+			"m_c compliments r_c on how well groomed {PRONOUN/r_c/poss} pelt is today.",
+			"m_c compliments r_c on how sharp {PRONOUN/r_c/poss} claws are today.",
+			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
@@ -195,9 +195,9 @@
 			"greenleaf"
 		],
 		"interactions": [
-			"m_c gave a pretty flower they found to r_c.",
+			"m_c gave a pretty flower {PRONOUN/m_c/subject} found to r_c.",
 			"m_c picks some fragrant flowers for r_c.",
-			"m_c decorates r_c's nest with flowers to surprise them!",
+			"m_c decorates r_c's nest with flowers to surprise {PRONOUN/r_c/object}!",
 			"m_c rolls around in some herbs after hearing r_c likes their smell."
 		],
 		"reaction_random_cat": {
@@ -231,11 +231,26 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c was caught enjoying a moonlit stroll with r_c last night...",
-			"m_c sneaks out at night to sleep in r_c's nest.",
-			"m_c purrs for a long time at one of r_c's lame jokes."
+			"m_c sneaks out at night to sleep in r_c's nest."
 		],
 		"relationship_constraint": [
 			"romantic_40",
+			"mates"
+		],
+		"reaction_random_cat": {
+			"romantic": "increase",
+			"dislike": "decrease",
+			"platonic": "increase",
+			"comfortable": "increase"
+		}
+	},
+	{
+		"id": "rom_inc_high4",
+		"intensity": "high",
+		"interactions": [
+			"m_c purrs for a long time at one of r_c's lame jokes."
+		],
+		"relationship_constraint": [
 			"mates"
 		],
 		"reaction_random_cat": {

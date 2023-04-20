@@ -6,7 +6,7 @@
     "tags": ["app_stat", "apprentice", "training", "scar", "RIGHTEAR", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "app1 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface.",
@@ -26,9 +26,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c got scarred tumbling off a cliff during apprentice training."
-    ]
+    "history_text": {
+        "scar": "r_c got scarred tumbling off a cliff during apprentice training."
+    }
 },
 {
     "patrol_id": "mtn_train_sett1",
@@ -37,7 +37,7 @@
     "tags": ["death", "scar", "ONE", "training", "battle_injury", "trust", "respect", "sacrificial", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 30,
     "success_text": [
     "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
@@ -58,11 +58,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "r_c was scarred by a badger.",
-    "r_c lost their life to a badger.",
-        "died to a badger"
-    ]
+    "history_text": {
+        "scar": "r_c was scarred by a badger.",
+        "reg_death": "r_c lost their life to a badger.",
+        "lead_death": "died to a badger"
+    }
 },
 {
     "patrol_id": "mtn_train_sett2",
@@ -71,7 +71,7 @@
     "tags": ["scar", "SIDE", "battle_injury", "training", "trust", "respect", "no_change_fail", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 30,
     "success_text": [
         "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan - pushing loose rocks in front of the sett's mouth. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
@@ -92,9 +92,9 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-    "This cat was scarred by a badger."
-    ]
+    "history_text": {
+        "scar": "This cat was scarred by a badger."
+    }
 },
 {
     "patrol_id": "mtn_train_stuck1",
@@ -126,11 +126,11 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol.",
-      	"died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "mnt_train_stuck2",
@@ -160,11 +160,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "mtn_train_stuck3",
@@ -194,11 +194,11 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol.",
-        "died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 },
 {
     "patrol_id": "mtn_train_stuck4",
@@ -226,11 +226,11 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol.",
-        "r_c tragically died after being trapped on patrol.",
-      	"died after being trapped on patrol"
-    ]
+    "history_text": {
+        "scar": "r_c carries a scar from being trapped on patrol.",
+        "reg_death": "r_c tragically died after being trapped on patrol.",
+        "lead_death": "died after being trapped on patrol"
+    }
 
 },
 {
@@ -260,9 +260,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-    ]
+    "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
 },
 {
     "patrol_id": "mtn_train_solo2",
@@ -378,7 +378,7 @@
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
     "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
     "decline_text": "r_c declines gently, explaining that they have too much work to do.",
-    "chance_of_success": 80,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The cats go out together in the late of the day, as the mountains catch the last of the light. r_c goes through their tricks, showing p_l how they shift their balance to make less noise on unstable scree slopes, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
@@ -404,7 +404,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz app1 on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side. p_l purrs, complimenting them on how much they've learned.",
@@ -427,7 +427,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz app1 on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side. p_l purrs, complimenting them on how much they've learned.",
@@ -496,7 +496,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "As app1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind them. They whirl around, finding a beady black eye and huge beak far far too close to them.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 80,
+	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
     	"app1 leaps backwards, falling in their haste and scrambling upright. Then in one of the weirdest moments of their young life, the green bird does the same thing, chattering as it leans sideways to tumble a little way down the slope. It's not broken, p_l grumbles, coming up to stand by app1. Kea are just, well, like that.",

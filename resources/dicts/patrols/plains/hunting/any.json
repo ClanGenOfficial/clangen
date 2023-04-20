@@ -85,7 +85,7 @@
         ],
         "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twolegs have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
         "decline_text": "The patrol decides to hunt elsewhere",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "exp": 10,
         "success_text": [
             "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable fresh-kill.  They manage to find some carcasses worth taking.",
@@ -120,7 +120,7 @@
         ],
         "intro_text": "The patrol finds a small burrow in the ground with a strange scent. They hesitate, unsure if this is worth checking.",
         "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "The patrol flushes a gopher out of the burrow! More fresh-kill!",
@@ -142,9 +142,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred after an unfortunate encounter with a wolverine."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+    }
     },
     {
         "patrol_id": "pln_hunt_burrow2",
@@ -179,11 +179,10 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            "r_c was killed after an unfortunate experience with a wolverine.",
-            "were killed by a wolverine"
-        ]
+        "history_text": {
+        "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+        "lead_death": "were killed by a wolverine"
+    }
     },
     {
         "patrol_id": "pln_hunt_strange1",
@@ -317,9 +316,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c got injured as an apprentice, exploring alone."
-        ]
+        "history_text": {
+        "scar": "r_c got injured as an apprentice, exploring alone."
+    }
     },
     {
         "patrol_id": "pln_hunt_solo2",
@@ -534,9 +533,9 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox."
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox."
+    }
     },
     {
         "patrol_id": "pln_hunt_noise2",
@@ -554,7 +553,7 @@
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -581,11 +580,11 @@
         "max_cats": 4,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_noise3",
@@ -630,11 +629,11 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine while patrolling alone.",
-            "were killed by a predator"
-        ]
+        "history_text": {
+        "scar": "p_l gained a scar from a fox.",
+        "reg_death": "p_l was killed by a wolverine while patrolling alone.",
+        "lead_death": "were killed by a predator"
+    }
     },
     {
         "patrol_id": "pln_hunt_gonetnr1",
@@ -648,7 +647,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected.",
@@ -688,13 +687,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 3
     },
     {
         "patrol_id": "pln_hunt_gonetnr2",
@@ -748,13 +741,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_gonetnr3",
@@ -808,13 +795,7 @@
             "wise"
         ],
         "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_gonetwolegden1",
@@ -828,7 +809,7 @@
         ],
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -869,13 +850,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_gonetwolegden2",
@@ -891,7 +866,7 @@
         ],
         "intro_text": "app1 decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -927,13 +902,7 @@
             "wise"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_twolegdencatdare1",
@@ -949,7 +918,7 @@
         ],
         "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
@@ -990,13 +959,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 2
     },
     {
         "patrol_id": "pln_hunt_twolegdenappdare1",
@@ -1014,7 +977,7 @@
         ],
         "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
@@ -1050,13 +1013,7 @@
             "wise"
         ],
         "min_cats": 2,
-        "max_cats": 2,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 2
     },
     {
         "patrol_id": "pln_hunt_gonetwolegtrap1",
@@ -1068,7 +1025,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
         "decline_text": "Turning their nose up at the temptation, they continue on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
@@ -1105,13 +1062,7 @@
             "playful"
         ],
         "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 1
     },
     {
         "patrol_id": "pln_hunt_gonetwolegtrap2",
@@ -1123,7 +1074,7 @@
         ],
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
         "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
@@ -1160,13 +1111,7 @@
             "playful"
         ],
         "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "max_cats": 6
     },
     {
         "patrol_id": "pln_hunt_thunderpath1",
@@ -1183,7 +1128,7 @@
         ],
         "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the Thunderpath and can hunt on the other side.",
@@ -1218,11 +1163,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath2",
@@ -1275,11 +1220,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath3",
@@ -1331,11 +1276,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "This cat was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
     {
         "patrol_id": "pln_hunt_thunderpath4",
@@ -1388,11 +1333,11 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed.",
-            "were hit by a monster"
-        ]
+        "history_text": {
+        "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+        "reg_death": "r_c was hit by a monster and killed.",
+        "lead_death": "were hit by a monster"
+    }
     },
 
 
@@ -1406,7 +1351,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
@@ -1457,7 +1402,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 70,
+        "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the fresh-kill pile.",
@@ -1496,10 +1441,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from a fight with a kit fox.",
-            null
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from a fight with a kit fox."
+    }
     },
     {
         "patrol_id": "pln_hunt_BIGFOX1",
@@ -1512,7 +1456,7 @@
         ],
         "intro_text": "As r_c jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
         "decline_text": "Not today, thank you - they'll go back to camp.",
-        "chance_of_success": 60,
+        "chance_of_success": 40,
         "exp": 20,
         "success_text": [
             "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
@@ -1594,9 +1538,9 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from irritating a maned wolf as an apprentice."
-        ]
+        "history_text": {
+        "scar": "r_c carries a scar from irritating a maned wolf as an apprentice."
+    }
     },
     {
         "patrol_id": "pln_hunt_BIGFOX3",
@@ -1707,8 +1651,8 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was scarred by a maned wolf, fighting over food."
-        ]
+        "history_text": {
+        "scar": "r_c was scarred by a maned wolf, fighting over food."
+    }
     }
 ]

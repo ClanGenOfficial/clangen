@@ -3,7 +3,7 @@
 		"id": "dislike_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c had r_c bump into them, and they didn't even apologize!"
+			"m_c had r_c bump into {PRONOUN/m_c/object}, and {PRONOUN/r_c/subject} didn't even apologize!"
 		]
 	},
 	{
@@ -37,8 +37,8 @@
 		"id": "dislike_inc_med3",
 		"interactions": [
 			"m_c had a disagreement with r_c while on patrol earlier.",
-			"m_c stole r_c's catch right out from under their claws.",
-			"m_c prays that they aren't on patrol with r_c tomorrow."
+			"m_c stole r_c's catch right out from under {PRONOUN/r_c/poss} claws.",
+			"m_c prays that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} on patrol with r_c tomorrow."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -59,7 +59,7 @@
 	{
 		"id": "dislike_inc_med4",
 		"interactions": [
-			"m_c is thinking about how r_c wronged them.",
+			"m_c is thinking about how r_c wronged {PRONOUN/m_c/object}.",
 			"m_c is watching r_c scornfully.",
 			"m_c is glaring daggers at r_c."
 		],
@@ -70,9 +70,9 @@
 	{
 		"id": "dislike_inc_med5",
 		"interactions": [
-			"r_c is asking m_c to tell them about how good they look.",
-			"r_c offends m_c with their brutal honesty.",
-			"r_c is boasting about their accomplishments to m_c, but m_c isn't impressed."
+			"r_c is asking m_c to tell {PRONOUN/r_c/object} about how good {PRONOUN/r_c/subject} {VERB/m_c/look/looks}.",
+			"r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
+			"r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed."
 		],
 		"random_trait_constraint": [
 			"shameless"
@@ -82,7 +82,7 @@
 		"id": "dislike_inc_med6",
 		"interactions": [
 			"r_c pulled a prank on m_c.",
-			"r_c blamed m_c for their own mistake.",
+			"r_c blamed m_c for {PRONOUN/r_c/poss} own mistake.",
 			"r_c won't stop bothering m_c."
 		],
 		"random_trait_constraint": [
@@ -103,8 +103,8 @@
 		"id": "dislike_kit_inc_med1",
 		"interactions": [
 			"m_c trips over r_c.",
-			"m_c had to nip r_c on the rump because they were being naughty.",
-			"m_c growls at r_c to get out from under their paws."
+			"m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
+			"m_c growls at r_c to get out from under {PRONOUN/m_c/poss} paws."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -235,8 +235,8 @@
 		"id": "dislike_inc_high7",
 		"intensity": "high",
 		"interactions": [
-			"m_c thinks they should be deputy instead of r_c.",
-			"m_c is tired from r_c putting them on so many patrols."
+			"m_c thinks {PRONOUN/m_c/subject} should be deputy instead of r_c.",
+			"m_c is tired from r_c putting {PRONOUN/m_c/object} on so many patrols."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -255,7 +255,7 @@
 	{
 		"id": "dislike_kit_de_med1",
 		"interactions": [
-			"m_c sticks their tongue out at r_c"
+			"m_c sticks {PRONOUN/m_c/poss} tongue out at r_c"
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -267,7 +267,7 @@
 	{
 		"id": "dislike_kit_de_med2",
 		"interactions": [
-			"m_c tried to have a discussion with r_c about what prey tastes best, but it turned into an argument."
+			"m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -282,8 +282,8 @@
 	{
 		"id": "dislike_kit_inc_med3",
 		"interactions": [
-			"m_c whines that r_c won't play with them, even though they're always around camp.",
-			"m_c doesn't understand why r_c won't let them play in the medicine cat den."
+			"m_c whines that r_c won't play with {PRONOUN/m_c/object}, even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} always around camp.",
+			"m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the medicine cat den."
 		],
 		"main_status_constraint": [
 			"kitten"

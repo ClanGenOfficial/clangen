@@ -17,11 +17,10 @@
             "TWO"
         ],
         "event_text": "m_c was grabbed by an eagle, but luckily r_c saves them! The kit is still left injured from the ordeal.",
-        "history_text": [
-            "m_c was scarred as a kit when an eagle tried to take them.",
-            "m_c died from their wounds after an eagle tried to take them.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred as a kit, when an eagle tried to carry them off.",
+            "reg_death": "m_c died from their wounds after an eagle tried to carry them off."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -45,16 +44,16 @@
             "TWO"
         ],
         "event_text": "m_c was grabbed by a hawk, but luckily r_c saves them! The kit is still left injured from the ordeal.",
-        "history_text": [
-            "m_c was scarred as a kit when a hawk tried to take them.",
-            "m_c died from their wounds after a hawk tried to take them.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred as a kit, when a hawk tried to carry them off.",
+            "reg_death": "m_c died from their wounds after a hawk tried to carry them off."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "frostbite",
         "tags": [
@@ -63,11 +62,10 @@
             "FROSTSOCK"
         ],
         "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
-        "history_text": [
-            "m_c was permanently scarred by frostbite.",
-            "m_c died from frostbite after sneaking out of camp.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred as a kit by frostbite.",
+            "reg_death": "m_c died after they got frostbite sneaking out of camp."
+        },
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,

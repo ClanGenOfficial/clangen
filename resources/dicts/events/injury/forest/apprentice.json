@@ -9,16 +9,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
         "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "broken bone",
         "camp": "any",
@@ -31,11 +27,10 @@
             "SIDE"
         ],
         "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
-        "history_text": [
-            "m_c was scarred after falling from a tree.",
-            "m_c died from their wounds after falling from a tree.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after falling from a tall tree.",
+            "reg_death": "m_c died from their wounds after falling from a tall tree."
+        },
         "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -53,16 +48,16 @@
             "SIDE"
         ],
         "event_text": "m_c was practicing their tree climbing skills when they slipped from a branch! Thankfully they survived, though badly injured.",
-        "history_text": [
-            "m_c was scarred after falling out of a tree.",
-            "m_c died from their injuries after falling from a tree",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after falling from a tree.",
+            "reg_death": "m_c died from their wounds after falling from a tree."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "camp": "any",
@@ -74,17 +69,17 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl! They're alive but with many a scratch as proof of their adventure.",
-        "history_text": [
-            "m_c was scarred after being grabbed by an owl.",
-            "m_c died after they were grabbed by an owl.",
-            null
-        ],
+        "event_text": "m_c was hunting on a night patrol, and nearly carried off by an owl! They're alive, but with many a scratch as proof of their adventure.",
+        "history_text": {
+            "scar": "m_c was scarred after an owl tried to carry them off.",
+            "reg_death": "m_c died from their wounds after an owl tried to carry them off."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "broken back",
         "camp": "any",
@@ -102,11 +97,9 @@
             "neg_platonic"
         ],
         "event_text": "r_c dares m_c to climb one of the tallest trees in the territory. m_c gets pretty high, but a branch breaks and it's a long way to the ground. r_c goes sprinting for camp to get help.",
-        "history_text": [
-            null,
-            "m_c died after falling from a tree and breaking their back.",
-            null
-        ],
+        "history_text": {
+            "reg_death": "m_c died from their wounds after falling from a tall tree and breaking their back."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["adventurous", "bold", "daring", "troublesome"],

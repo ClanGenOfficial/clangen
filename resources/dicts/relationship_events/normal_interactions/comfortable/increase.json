@@ -3,7 +3,7 @@
 		"id": "comfort_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c finds a bit of fluff that reminds them of r_c and thinks about giving it to them."
+			"m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest."
 		]
 	},
 	{
@@ -22,7 +22,7 @@
 		"id": "comfort_inc_low3",
 		"intensity": "low",
 		"interactions": [
-			"m_c is asking r_c to check them for ticks."
+			"m_c is asking r_c to check {PRONOUN/m_c/object} for ticks."
 		],
 		"main_status_constraint": [
 			"elder"
@@ -36,17 +36,17 @@
 	{
 		"id": "comfort_inc_med1",
 		"interactions": [
-			"m_c helps r_c pick burrs out of their fur."
+			"m_c helps r_c pick burrs out of {PRONOUN/r_c/poss} fur."
 		]
 	},
 	{
 		"id": "comfort_inc_med2",
 		"interactions": [
 			"m_c has snuggled up against r_c.",
-			"m_c chats with r_c about their day.",
+			"m_c chats with r_c about {PRONOUN/r_c/poss} day.",
 			"m_c basks in the sun with r_c.",
 			"m_c just told r_c a hilarious joke.",
-			"m_c settles near r_c to eat their fresh-kill.",
+			"m_c settles near r_c to eat {PRONOUN/m_c/poss} fresh-kill.",
 			"m_c bumps heads with r_c reassuringly."
 		],
 		"reaction_random_cat": {
@@ -56,10 +56,10 @@
 	{
 		"id": "comfort_inc_med3",
 		"interactions": [
-			"m_c is sharing the latest gossip they heard over the border with r_c.",
-			"m_c tells r_c they'll save them a piece of fresh-kill.",
+			"m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
+			"m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
 			"m_c playfully teases r_c for missing a catch.",
-			"m_c gives r_c some feathers from the bird they caught to line their nest."
+			"m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -79,7 +79,7 @@
 		"interactions": [
 			"r_c is listening to m_c's woes.",
 			"r_c is listening to m_c's troubles.",
-			"r_c noticed m_c was struggling, and offered to help them."
+			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}."
 		],
 		"random_trait_constraint": [
 			"empathetic"
@@ -88,9 +88,9 @@
 	{
 		"id": "comfort_inc_med5",
 		"interactions": [
-			"r_c gave m_c their favorite piece of prey.",
+			"r_c gave m_c {PRONOUN/m_c/poss} favorite piece of prey.",
 			"r_c is being quite considerate with m_c.",
-			"r_c took the time to help m_c work through a technique they are struggling with."
+			"r_c took the time to help m_c work through a technique {PRONOUN/m_c/subject} {VERB/m_c/are/is} struggling with."
 		],
 		"random_trait_constraint": [
 			"thoughtful"
@@ -102,7 +102,7 @@
 			"r_c curled around m_c to share warmth.",
 			"r_c lets m_c have the last piece of fresh-kill.",
 			"r_c is listening to m_c's problems.",
-			"r_c gives m_c an item they may like."
+			"r_c gives m_c an item {PRONOUN/m_c/subject} may like."
 		],
 		"random_trait_constraint": [
 			"compassionate"
@@ -131,7 +131,7 @@
 		"id": "comfortable_kit_inc_med2",
 		"interactions": [
 			"m_c wants to snuggle with r_c.",
-			"m_c is hiding under a bush from r_c, but they can't stop giggling."
+			"m_c is hiding under a bush from r_c, but {PRONOUN/m_c/subject} can't stop giggling."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -143,7 +143,7 @@
 	{
 		"id": "comfortable_kit_inc_med3",
 		"interactions": [
-			"m_c spent the whole day playing their favorite games with rc.",
+			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
 			"m_c had a friendly argument with r_c about which prey tastes the best.",
 			"m_c takes a nap with r_c after a long day playing mossball."
 		],
@@ -179,8 +179,8 @@
 	{
 		"id": "comfort_med_inc_medium1",
 		"interactions": [
-			"m_c thanks r_c for checking when they ask if they're feeling alright.",
-			"m_c drops into the medicine den to ask r_c if they've eaten yet."
+			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
+			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
 		],
 		"random_status_constraint": [
 			"medicine cat",
@@ -195,7 +195,7 @@
 		"id": "comfort_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c appreciates how r_c always seems to ask how they're doing."
+			"m_c appreciates how r_c always seems to ask how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing."
 		]
 	},
 	{
@@ -203,7 +203,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c is sharing tongues with r_c.",
-			"m_c offers to groom a hard-to-reach place for r_c, who thanks them earnestly."
+			"m_c offers to groom a hard-to-reach place for r_c, who thanks {PRONOUN/m_c/object} earnestly."
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase"
@@ -213,8 +213,8 @@
 		"id": "comfort_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c feels most like themself when they're around r_c.",
-			"m_c could recognize r_c just by the sound of their paw steps."
+			"m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
+			"m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps."
 		],
 		"relationship_constraint": [
 			"comfortable_30"
@@ -224,7 +224,7 @@
 		"id": "comfort_inc_high4",
 		"intensity": "high",
 		"interactions": [
-			"m_c helps r_c work through something difficult that happened to them.",
+			"m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
 			"m_c comforts r_c after a nightmare."
 		],
 		"relationship_constraint": [

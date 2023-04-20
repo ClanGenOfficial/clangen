@@ -1,6 +1,7 @@
 import os
 from math import floor
 from .game_essentials import game
+from ..cat.history import History
 from ..datadir import get_save_dir
 
 import ujson
@@ -11,8 +12,7 @@ from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
-
-from json import JSONDecodeError
+from scripts.cat_relations.inheritance import Inheritance
 
 def load_cats():
     try:
@@ -39,7 +39,7 @@ def json_load():
         game.switches['error_message'] = f'Can\t open {clan_cats_json_path}!'
         game.switches['traceback'] = e
         raise
-    except JSONDecodeError as e:
+    except ujson.JSONDecodeError as e:
         game.switches['error_message'] = f'{clan_cats_json_path} is malformed!'
         game.switches['traceback'] = e
         raise
@@ -62,8 +62,9 @@ def json_load():
                 elif cat["eye_colour"] == "BLUEGREEN":
                     cat["eye_colour2"] = "GREEN"
                 cat["eye_colour"] = "BLUE"
-            if cat["eye_colour2"] == "BLUE2":
-                new_cat.eye_colour2 = "COBALT"
+            if "eye_colour2" in cat:
+                if cat["eye_colour2"] == "BLUE2":
+                    new_cat.eye_colour2 = "COBALT"
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -76,6 +77,7 @@ def json_load():
                         eye_colour=cat["eye_colour"],
                         pelt=new_pelt,
                         loading_cat=True)
+            new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
             if new_cat.age == 'elder':
@@ -91,7 +93,6 @@ def json_load():
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
-            new_cat.mentor_influence = cat["mentor_influence"] if "mentor_influence" in cat else []
             new_cat.paralyzed = cat["paralyzed"]
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
@@ -126,7 +127,7 @@ def json_load():
                         new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            if cat["white_patches"] in old_creamy_patches:
+            if cat["white_patches"] in convert["old_creamy_patches"]:
                 new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
             else:
@@ -196,30 +197,35 @@ def json_load():
                     new_cat.scars.append(cat["specialty2"])
 
             new_cat.accessory = cat["accessory"]
-            new_cat.mate = cat["mate"]
+            new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
+            if None in new_cat.mate:
+                new_cat.mate = [i for i in new_cat.mate if i is not None]
             new_cat.previous_mates = cat["previous_mates"] if "previous_mates" in cat else []
             new_cat.dead = cat["dead"]
-            new_cat.died_by = cat["died_by"] if "died_by" in cat else []
-            new_cat.experience = cat["experience"]
             new_cat.dead_for = cat["dead_moons"]
+            new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
-            new_cat.possible_scar = cat["possible_scar"] if "possible_scar" in cat else None
-            new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
-            new_cat.death_event = cat["death_event"] if "death_event" in cat else []
             new_cat.df = cat["df"] if "df" in cat else False
-            new_cat.corruption = cat["corruption"] if "corruption" in cat else 0
-            new_cat.life_givers = cat["life_givers"] if "life_givers" in cat else []
-            new_cat.known_life_givers = cat["known_life_givers"] if "known_life_givers" in cat else []
-            new_cat.virtues = cat["virtues"] if "virtues" in cat else []
+
             new_cat.outside = cat["outside"] if "outside" in cat else False
             new_cat.retired = cat["retired"] if "retired" in cat else False
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
+            new_cat.eye_tint = cat["eye_tint"] if "eye_tint" in cat else "none"
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
+            if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
+                new_cat.convert_history(
+                    cat["mentor_influence"] if "mentor_influence" in cat else [],
+                    cat["died_by"] if "died_by" in cat else [],
+                    cat["scar_event"] if "scar_event" in cat else []
+                )
+
+            #new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
             all_cats.append(new_cat)
+
         except KeyError as e:
             if "ID" in cat:
                 key = f" ID #{cat['ID']} "
@@ -231,6 +237,7 @@ def json_load():
 
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
+
         cat.load_conditions()
 
         # this is here to handle paralyzed cats in old saves
@@ -282,11 +289,13 @@ def json_load():
         game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
+        cat.inheritance = Inheritance(cat)
         
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:
             save_check()
     
+
 
 def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
@@ -404,7 +413,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate = attr[31]
+                        the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
@@ -463,7 +472,7 @@ def csv_load(all_cats):
             game.switches[
                 'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
                     inter_cat)
-            update_sprite(inter_cat)
+            #update_sprite(inter_cat)
         # generate the relationship if some is missing
         if not the_cat.dead:
             game.switches[
@@ -483,15 +492,15 @@ def save_check():
         cat_ob = Cat.all_cats[cat]
         
         # Not-mutural mate relations
-        if cat_ob.mate:
-            _temp_ob = Cat.all_cats.get(cat_ob.mate)
-            if _temp_ob:
-                # Check if the mate's mate feild is set to none
-                if not _temp_ob.mate:
-                    _temp_ob.mate = cat_ob.ID 
-            else:
-                # Invalid mate
-                cat_ob.mate = None
+        #if cat_ob.mate:
+        #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
+        #    if _temp_ob:
+        #        # Check if the mate's mate feild is set to none
+        #        if not _temp_ob.mate:
+        #            _temp_ob.mate = cat_ob.ID 
+        #    else:
+        #        # Invalid mate
+        #        cat_ob.mate = None
                 
 def version_convert(version_info):
     """Does all save-convertion that require referencing the saved version number.

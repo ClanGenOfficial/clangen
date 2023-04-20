@@ -7,12 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp sore and bruised.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c had a bad fall while taking a walk through the territory, returning to camp sore and bruised.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -27,17 +22,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits and may have overdone it a bit, they'll be sore for the next few days.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "cat_trait": null,
         "cat_skill": ["good kitsitter", "great kitsitter", "excellent kitsitter"],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "sore",
         "tags": [
@@ -47,12 +38,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits and may have overdone it a bit, they'll be sore for the next few days.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "cat_trait": null,
         "cat_skill": ["good kitsitter", "great kitsitter", "excellent kitsitter"],
         "other_cat_trait": null,
@@ -66,12 +52,22 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp sore.",
-        "history_text": [
-            null,
-            null,
-            null
+        "event_text": "m_c had a bad fall while taking a walk through the territory, and comes back to camp quite sore.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+
+    {
+        "injury": "joint pain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
         ],
+        "event_text": "The weather has been bad lately, and m_c can feel it in their bones.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -85,12 +81,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "The weather has been bad lately and m_c can feel it in their bones.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c can feel their bones and joints aching. Bad weather must be on its way.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -104,12 +95,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c can feel their bones and joints aching, bad weather must be on its way.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c isn't as young as they used to be, and their aching joints are making that extremely clear.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -123,36 +109,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c isn't as young as they used to be and their joints are making that extremely clear.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "joint pain",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard, their joints are sore.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - their joints are now quite sore.",
         "cat_trait": null,
         "cat_skill": ["camp keeper", "den builder"],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "broken bone",
         "tags": [
@@ -164,16 +127,16 @@
             "TOETRAP"
         ],
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
-        "history_text": [
-            "m_c was scarred after a bad fall.",
-            "m_c died after they broke a bone while on a walk.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred after a bad fall.",
+            "reg_death": "m_c died from their wounds after taking a bad fall."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "dislocated joint",
         "tags": [
@@ -183,11 +146,21 @@
             "Leaf-bare"
         ],
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
-        "history_text": [
-            null,
-            null,
-            null
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+
+    {
+        "injury": "tick bites",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
         ],
+        "event_text": "m_c has collected quite a lot of ticks in their pelt, and grumbles about the itchy bites dotted through their pelt.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -201,31 +174,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has collected a lot of ticks in their pelt.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "tick bites",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "m_c has been yowling about their ticks for the better part of the day.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c has been yowling about their ticks for the better part of the day, the itchy bites maddening to them.",
         "cat_trait": ["cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bold"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -239,12 +188,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting their pelt.",
         "cat_trait": ["cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bold"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -258,17 +202,13 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles.",
-        "history_text": [
-            null,
-            null,
-            null
-        ],
+        "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles. Regardless, they're found out when someone spots them scratching at the bites.",
         "cat_trait": ["altruistic", "calm", "careful", "insecure", "lonesome", "nervous", "patient", "thoughtful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "claw-wound",
         "tags": [
@@ -286,12 +226,11 @@
             "scar",
             "CHEEK"
         ],
-        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates but r_c retaliated at the interruption.  m_c limps away, new clawmarks on their pelt.",
-        "history_text": [
-            "m_c was scarred by r_c.",
-            "m_c died after r_c hurt them during an argument.",
-            null
-        ],
+        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through their pelt.",
+        "history_text": {
+            "scar": "m_c was scarred by r_c.",
+            "reg_death": "m_c died from their wounds after r_c hurt them for trying to stop an argument."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "patient", "thoughtful", "wise"],
         "cat_skill": ["good mediator"],
         "other_cat_trait": ["bloodthirsty", "bold", "childish", "daring", "fierce", "insecure", "righteous", "shameless", "strict", "troublesome", "vengeful"],
@@ -315,11 +254,10 @@
             "ONE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from an enemy warrior.",
-            "m_c died from their wounds after saving r_c from an enemy warrior.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from an enemy warrior.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from an enemy warrior."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -343,16 +281,16 @@
             "TWO"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from a rogue.",
-            "m_c died from their wounds after saving r_c from a rogue.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from a rogue.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from a rogue."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
+
     {
         "injury": "bite-wound",
         "tags": [
@@ -371,11 +309,10 @@
             "LEGBITE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
-        "history_text": [
-            "m_c was scarred while trying to save r_c from a dog.",
-            "m_c died from their wounds after saving r_c from a dog.",
-            null
-        ],
+        "history_text": {
+            "scar": "m_c was scarred while trying to save r_c from a dog.",
+            "reg_death": "m_c died from their wounds after trying to save r_c from a dog."
+        },
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,

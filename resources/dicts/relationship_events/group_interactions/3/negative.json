@@ -32,7 +32,7 @@
 		"id": "group_3_negative_argument",
 		"cat_amount": 3,
 		"interactions": [
-			"m_c made r_c1 and r_c2 start an huge argument."
+			"m_c started a huge argument between r_c1 and r_c2."
 		],
 		"trait_constraint": {
 			"m_c": ["troublesome"]
@@ -44,7 +44,7 @@
 	{
 		"id": "group_3_leader_neg1",
 		"cat_amount": 3,
-		"interactions": ["After having r_c2 challenge them, m_c commands r_c1 to help them punish r_c2. Everyone ends up hurt, though m_c feels they can trust r_c1 more."],
+		"interactions": ["After having r_c2 challenge {PRONOUN/m_c/object}, m_c commands r_c1 to help {PRONOUN/m_c/object} punish r_c2. Everyone ends up hurt, though m_c feels {PRONOUN/m_c/subject} can trust r_c1 more."],
 		"get_injuries": {
 			"m_c": {
 				"injury_names": ["claw-wound"],
@@ -60,9 +60,9 @@
 			},
 			"r_c2": {
 				"injury_names": ["claw-wound", "bite-wound"],
-				"scar_text": "r_c2 challenged m_c, was punished by r_c1 and got a scar as memory of their actions.",
-				"death_text": "They challenged m_c, was punished by r_c1 and in the cause of their actions, r_c2 died.",
-				"death_leader_text": "after challenged m_c and got punished by r_c1"
+				"scar_text": "r_c2 challenged m_c, was punished by r_c1, and got a scar as memory of their actions.",
+				"death_text": "They challenged m_c, were punished by r_c1, and, due to their actions, r_c2 died.",
+				"death_leader_text": "after they challenged m_c and got punished by r_c1"
 			}
 		},
 		"status_constraint": {
@@ -118,7 +118,7 @@
 	{
 		"id": "group_3_leader_neg2",
 		"cat_amount": 3,
-		"interactions": ["m_c and r_c1 are where they should put their border marks that r_c2 overheards and disagrees with. m_c and r_c1 sneer at r_c2."],
+		"interactions": ["m_c and r_c1 discuss where they should be marking the border. r_c2 overhears, and disagrees with their decision, causing m_c and r_c1 to sneer at them in distaste."],
 		"status_constraint": {
 			"m_c": [
 				"leader"
