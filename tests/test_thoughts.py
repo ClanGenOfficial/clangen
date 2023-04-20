@@ -40,7 +40,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        print("Exiled Thoughts: " + thoughts)
+        print("Exiled Thoughts: " + str(thoughts))
 
     def test_lost_thoughts(self):
         # given
@@ -52,7 +52,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
-        print("Lost Thoughts: " + thoughts)
+        print("Lost Thoughts: " + str(thoughts))
 
 class TestFamilyThoughts(unittest.TestCase):
 
