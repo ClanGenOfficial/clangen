@@ -14,7 +14,7 @@ class RelationType(Enum):
 
     BLOOD = ''                  	# direct blood related - do not need a special print
     ADOPTIVE = 'adoptive'       	# not blood related but close (parents, kits, siblings)
-    HALF_BLOOD = 'half blood'   	# only one blood parent is the same (siblings only)
+    HALF_BLOOD = 'half sibling'   	# only one blood parent is the same (siblings only)
     NOT_BLOOD = 'not blood related'	# not blood related for parent siblings
     RELATED = 'blood related'   	# related by blood (different mates only)
 
