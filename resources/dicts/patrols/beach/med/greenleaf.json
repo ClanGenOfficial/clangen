@@ -707,7 +707,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, exchanging gossip and news as the smell of cut stems wreathes around {PRONOUN/p_l/object} ",
+            "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
             "The bushes have responded to the sun's call with great enthusiasm, exploding outward in chaotic growth. p_l finds it heartening, seeing the goldenrod fight its own territorial battles against the plants next to it, bursting with health. The plant won't miss what {PRONOUN/p_l/subject} {VERB/p_l/take/takes}, not even with so many here to carry off material for c_n's stores.",
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. {PRONOUN/s_c/subject/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
         ],
@@ -759,7 +759,7 @@
         "success_text": [
             "p_l and app1 find a healthy-looking juniper tree, collecting a decent amount of needles from it with minimal fuss.",
             "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to send app1 off with both heaps of praise and a little sprig of juniper, to bring its pleasant scent to {PRONOUN/p_l/poss} nest.",
-            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As {PRONOUN/s_c/subject} {VERB/s_c/work/works}, {PRONOUN/s_c/subject} {VERB/s_c/chat/chats} to app1 about juniper's calming effects. This is one of the few herbs {PRONOUN/s_c/poss} Clanmates compete to go on patrols to help collect, as everyone enjoys the scent."
+            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As {PRONOUN/s_c/subject} {VERB/s_c/work/works}, {PRONOUN/s_c/subject} {VERB/s_c/chat/chats} to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, as everyone enjoys the scent."
         ],
         "fail_text": [
             "p_l seems to have forgotten where to find a juniper tree, much to {PRONOUN/p_l/poss} own embarrassment and app1's shock."
@@ -782,12 +782,12 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to thank {PRONOUN/p_l/poss} team, and the warriors are sent off with a couple sprigs to carry pleasant scents to {PRONOUN/p_l/poss} dens.",
-            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. {PRONOUN/s_c/poss/CAP} patrol follows {PRONOUN/s_c/poss} lead, pulling twigs off, although a couple times s_c does need to remind {PRONOUN/s_c/object} that the carpet of dead needles on the ground wouldn't be useful for the herb stores.",
-            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. {PRONOUN/s_c/poss/CAP} patrol follows {PRONOUN/s_c/poss} lead, pulling twigs off, although a couple times s_c does need to remind {PRONOUN/s_c/object} that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
+            "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to thank {PRONOUN/p_l/poss} team, and the warriors are sent off with a couple sprigs to carry pleasant scents to their dens.",
+            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. {PRONOUN/s_c/poss/CAP} patrol follows {PRONOUN/s_c/poss} lead, pulling twigs off, although a couple times s_c does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores.",
+            "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. {PRONOUN/s_c/poss/CAP} patrol follows {PRONOUN/s_c/poss} lead, pulling twigs off, although a couple times s_c does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
         ],
         "fail_text": [
-            "The warriors are full of complaints about the sharp juniper needles spiking {PRONOUN/p_l/poss} poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
+            "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
         ],
         "win_skills": [
             "keen eye"
@@ -807,13 +807,13 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon {PRONOUN/p_l/object}. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} let out a yowl and stop to play with app1.",
-            "app1 listens intently as the hours drift slowly by in {PRONOUN/p_l/poss} intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/p_l/object} with praise, app1 feeling like {PRONOUN/p_l/subject} could burst with pride over {PRONOUN/p_l/poss} accomplishment.",
+            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} let out a yowl and stop to play with app1.",
+            "app1 listens intently as the hours drift slowly by in {PRONOUN/p_l/poss} intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/app1/object} with praise, app1 feeling like {PRONOUN/app1/subject} could burst with pride over {PRONOUN/app1/poss} accomplishment.",
             "It takes all of s_c's considerable talent for such things to hunt down the lungwort within {PRONOUN/s_c/poss} borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-            "Night falls, and still s_c insists {PRONOUN/s_c/subject} {VERB/s_c/keep/keeps} going. Lungwort is the only reliable cure for yellowcough, and {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until {PRONOUN/s_c/subject} finally find the precious, speckled leaves."
+            "Night falls, and still s_c insists {PRONOUN/s_c/subject} {VERB/s_c/keep/keeps} going. Lungwort is the only reliable cure for yellowcough, and {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
         ],
         "fail_text": [
-            "Not only do {PRONOUN/p_l/subject} not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back at camp p_l wants to screech."
+            "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back at camp p_l wants to screech."
         ],
         "win_skills": [
             "keen eye",
@@ -837,7 +837,7 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon {PRONOUN/p_l/object}. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
             "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to.",
             "It takes all of s_c's considerable talent for such things to hunt down the lungwort within {PRONOUN/s_c/poss} borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
             "Night falls, but still s_c insistently keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves."
@@ -870,13 +870,13 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": [
-            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon {PRONOUN/p_l/object}. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+            "It takes {PRONOUN/p_l/object} all day, but eventually, finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for, so crucial to harvest while the growing season is upon them. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
             "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jollily with {PRONOUN/p_l/poss} good mood.",
             "It takes all of s_c's considerable talent for such things to hunt down the lungwort within {PRONOUN/s_c/poss} borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
             "Night falls, but still s_c insistently keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves."
         ],
         "fail_text": [
-            "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+            "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
             "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
             "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
             "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
@@ -932,9 +932,9 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": [
-            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snip/snips} off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the hive might be to app1.",
-            "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes. app1 carefully fixes the location in {PRONOUN/p_l/poss} mind, to return to next year.",
-            "s_c has a good eye for these things, finding an excellent patch of mallow. As {PRONOUN/s_c/subject} do, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
+            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the hive might be to app1.",
+            "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes. app1 carefully fixes the location in {PRONOUN/app1/poss} mind, to return to next year.",
+            "s_c has a good eye for these things, finding an excellent patch of mallow. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
         ],
         "fail_text": [
             "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and app1 looks up at {PRONOUN/p_l/object} with disappointment."
@@ -957,7 +957,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snip/snips} off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, exchanging gossip and news as the smell of cut stems wreathes around {PRONOUN/p_l/object}.",
+            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
             "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes, not even with an entire patrol helping {PRONOUN/p_l/subject} cart away mallow.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. {PRONOUN/s_c/subject/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
         ],
@@ -1007,7 +1007,7 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": [
-            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretending to be small fern fronds from a distance, and more by {PRONOUN/app1/poss} explosively sunset-colored flowers. Sure enough, app1 has no trouble identifying {PRONOUN/app1/object}.",
+            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Sure enough, app1 has no trouble identifying them.",
             "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth, and app1 actually drops some of the leaves {PRONOUN/p_l/subject} {VERB/p_l/carry/carries} on the way back to camp, a little over-ambitious with how much {PRONOUN/p_l/subject} can carry.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. app1 watches, trying to soak up {PRONOUN/s_c/poss} skills."
         ],
