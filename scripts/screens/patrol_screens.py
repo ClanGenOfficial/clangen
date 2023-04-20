@@ -7,7 +7,7 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_omen_snippet_list, process_text, adjust_prey_abbr
+    get_omen_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
@@ -353,7 +353,6 @@ class PatrolScreen(Screens):
                         self.elements['cycle_mate_left_button'].hide()
                         self.elements['cycle_mate_right_button'].hide()
 
-
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
@@ -456,155 +455,6 @@ class PatrolScreen(Screens):
         self.update_cat_images_buttons()
         self.update_button()
 
-    def adjust_patrol_text(self, text, size=1):
-        """
-        set text parameter to whichever patrol text you want to change (i.e. intro_text, success_text, ect.)
-        always set size to patrol_size
-        """
-        vowels = ['A', 'E', 'I', 'O', 'U']
-        if not text:
-            text = 'This should not appear, report as a bug please!'
-
-        replace_dict = {
-            "p_l": (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
-        }
-
-        if patrol.patrol_random_cat:
-            replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
-                                   choice(patrol.patrol_random_cat.pronouns))
-        else:
-            replace_dict["r_c"] = (str(patrol.patrol_leader_name),
-                                   choice(patrol.patrol_leader.pronouns))
-
-        if len(patrol.patrol_other_cats) >= 1:
-            replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name),
-                                    choice(patrol.patrol_other_cats[0].pronouns))
-        if len(patrol.patrol_other_cats) >= 2:
-            replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name),
-                                    choice(patrol.patrol_other_cats[1].pronouns))
-        if len(patrol.patrol_other_cats) >= 3:
-            replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
-                                    choice(patrol.patrol_other_cats[2].pronouns))
-        if len(patrol.patrol_other_cats) == 4:
-            replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
-                                    choice(patrol.patrol_other_cats[3].pronouns))
-
-        if patrol.app1:
-            replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
-        if patrol.app2:
-            replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
-        if patrol.app3:
-            replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
-        if patrol.app4:
-            replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
-        if patrol.app5:
-            replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
-        if patrol.app6:
-            replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
-
-        stat_cat = None
-        if patrol.patrol_win_stat_cat:
-            stat_cat = patrol.patrol_win_stat_cat
-        elif patrol.patrol_fail_stat_cat:
-            stat_cat = patrol.patrol_fail_stat_cat
-        if stat_cat:
-            replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
-        else:
-            replace_dict['s_c'] = (str(patrol.patrol_leader_name),
-                                   choice(patrol.patrol_leader.pronouns))
-
-        text = process_text(text, replace_dict)
-        text = adjust_prey_abbr(text)
-
-        other_clan_name = patrol.other_clan.name
-        s = 0
-        for x in range(text.count('o_c_n')):
-            if 'o_c_n' in text:
-                for y in vowels:
-                    if str(other_clan_name).startswith(y):
-                        modify = text.split()
-                        pos = 0
-                        if 'o_c_n' in modify:
-                            pos = modify.index('o_c_n')
-                        if "o_c_n's" in modify:
-                            pos = modify.index("o_c_n's")
-                        if 'o_c_n.' in modify:
-                            pos = modify.index('o_c_n.')
-                        if modify[pos - 1] == 'a':
-                            modify.remove('a')
-                            modify.insert(pos - 1, 'an')
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
-
-        clan_name = game.clan.name
-        s = 0
-        pos = 0
-        for x in range(text.count('c_n')):
-            if 'c_n' in text:
-                for y in vowels:
-                    if str(clan_name).startswith(y):
-                        modify = text.split()
-                        if 'c_n' in modify:
-                            pos = modify.index('c_n')
-                        if "c_n's" in modify:
-                            pos = modify.index("c_n's")
-                        if 'c_n.' in modify:
-                            pos = modify.index('c_n.')
-                        if modify[pos - 1] == 'a':
-                            modify.remove('a')
-                            modify.insert(pos - 1, 'an')
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace('c_n', str(game.clan.name) + 'Clan')
-
-        # Prey lists for forest random prey patrols
-        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
-                                  'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
-                                  'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
-                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
-        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
-
-        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
-                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
-                               'sleepy dormice', 'chipmunks', 'woodrats', ]
-        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
-
-        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
-                                 'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
-                                 'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
-        text = text.replace('f_mp_s', str(fst_midprey_singlular))
-
-        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
-                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                              'red squirrels', 'gray squirrels', 'rats', ]
-        text = text.replace('f_mp_p', str(fst_midprey_plural))
-
-        sign_list = get_omen_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
-        sign = choice(sign_list)
-        s = 0
-        pos = 0
-        for x in range(text.count('a_sign')):
-            index = text.index('a_sign', s) or text.index('a_sign.', s)
-            for y in vowels:
-                if str(sign).startswith(y):
-                    modify = text.split()
-                    if 'a_sign' in modify:
-                        pos = modify.index('a_sign')
-                    if 'a_sign.' in modify:
-                        pos = modify.index('a_sign.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
-        text = text.replace('a_sign', str(sign))
-
-        return text
-
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
@@ -667,7 +517,7 @@ class PatrolScreen(Screens):
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
+        intro_text = adjust_patrol_text(patrol.patrol_event.intro_text, patrol)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
@@ -991,7 +841,7 @@ class PatrolScreen(Screens):
             display_text = "ERROR"
 
         # Adjust text for solo patrols
-        display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
+        display_text = adjust_patrol_text(display_text, patrol)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
