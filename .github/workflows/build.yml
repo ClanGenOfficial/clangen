@@ -36,8 +36,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -113,7 +120,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -210,8 +225,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -316,8 +338,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -422,8 +451,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -515,9 +551,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        # run: poetry run python3 -m PyInstaller Clangen.spec
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: python -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: python -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
       - name: Install appdmg

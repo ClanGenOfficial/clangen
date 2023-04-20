@@ -1293,6 +1293,8 @@ class Patrol():
                 patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
                 new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
             self.results_text.append(f"{new_cat.name} has joined the Clan.")
+            # update inheritance
+            new_cat.create_inheritance_new_cat()
             # for each cat increase the relationship towards all patrolling cats
             new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
             clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]

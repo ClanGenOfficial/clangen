@@ -2400,7 +2400,7 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          age_restriction: bool = False):
+                          age_restriction: bool = True):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
@@ -2414,11 +2414,11 @@ class Cat():
             return False
 
         # check exiled, outside, and dead cats
-        if self.dead or self.outside or other_cat.dead or other_cat.outside:
+        if (self.dead != other_cat.dead) or self.outside or other_cat.outside:
             return False
 
         # check for age
-        if not age_restriction:
+        if age_restriction:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
