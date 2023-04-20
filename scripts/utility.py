@@ -155,7 +155,8 @@ def get_free_possible_mates(cat, Relationship):
                 inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
-        if inter_cat.is_potential_mate(cat, for_love_interest= True) and cat.is_potential_mate(inter_cat, for_love_interest=True):
+        if inter_cat.is_potential_mate(cat, for_love_interest=True) and cat.is_potential_mate(inter_cat,
+                                                                                              for_love_interest=True):
             cats.append(inter_cat)
     return cats
 
@@ -891,7 +892,8 @@ def event_text_adjust(Cat,
         chosen_omens = get_omen_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
         cat_dict["omen_list"] = (chosen_omens, None)
     if "prophecy_list" in text:
-        chosen_prophecy = get_omen_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
+        chosen_prophecy = get_omen_snippet_list("prophecy_list", randint(2, 4),
+                                                sense_groups=["sight", "emotional", "touch"])
         cat_dict["prophecy_list"] = (chosen_prophecy, None)
     if "dream_list" in text:
         chosen_dream = get_omen_snippet_list("dream_list", randint(2, 4))
@@ -913,7 +915,7 @@ def leader_ceremony_text_adjust(Cat,
                                 leader,
                                 life_giver=None,
                                 virtue=None,
-                                extra_lives=None,):
+                                extra_lives=None, ):
     """
     used to adjust the text for leader ceremonies
     """
@@ -938,8 +940,15 @@ def leader_ceremony_text_adjust(Cat,
     return text
 
 
-def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,
-                         living_parents=(), dead_parents=()):
+def ceremony_text_adjust(Cat,
+                         text,
+                         cat,
+                         dead_mentor=None,
+                         mentor=None,
+                         previous_alive_mentor=None,
+                         random_honor=None,
+                         living_parents=(),
+                         dead_parents=()):
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
 
@@ -953,12 +962,12 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
         "m_c": (str(cat.name), choice(cat.pronouns)) if cat else ("cat_placeholder", None),
         "(mentor)": (str(mentor.name), choice(mentor.pronouns)) if mentor else ("mentor_placeholder", None),
         "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else (
-        "dead_mentor_name", None),
+            "dead_mentor_name", None),
         "(previous_mentor)": (
-        str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else (
-        "previous_mentor_name", None),
+            str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else (
+            "previous_mentor_name", None),
         "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else (
-        "leader_name", None),
+            "leader_name", None),
         "c_n": (clanname, None),
         "(prefix)": (prefix, None),
     }
@@ -985,6 +994,158 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
+
+
+def adjust_patrol_text(text, patrol):
+    """
+    this adjusts the patrol text
+    :param text: this is the text that is being adjusted
+    :param patrol: this is the full patrol object
+    """
+
+    vowels = ['A', 'E', 'I', 'O', 'U']
+    if not text:
+        text = 'This should not appear, report as a bug please!'
+
+    replace_dict = {
+        "p_l": (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
+    }
+
+    if patrol.patrol_random_cat:
+        replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
+                               choice(patrol.patrol_random_cat.pronouns))
+    else:
+        replace_dict["r_c"] = (str(patrol.patrol_leader_name),
+                               choice(patrol.patrol_leader.pronouns))
+
+    if len(patrol.patrol_other_cats) >= 1:
+        replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name),
+                                choice(patrol.patrol_other_cats[0].pronouns))
+    if len(patrol.patrol_other_cats) >= 2:
+        replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name),
+                                choice(patrol.patrol_other_cats[1].pronouns))
+    if len(patrol.patrol_other_cats) >= 3:
+        replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
+                                choice(patrol.patrol_other_cats[2].pronouns))
+    if len(patrol.patrol_other_cats) == 4:
+        replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
+                                choice(patrol.patrol_other_cats[3].pronouns))
+
+    if patrol.app1:
+        replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
+    if patrol.app2:
+        replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
+    if patrol.app3:
+        replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
+    if patrol.app4:
+        replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
+    if patrol.app5:
+        replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
+    if patrol.app6:
+        replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
+
+    stat_cat = None
+    if patrol.patrol_win_stat_cat:
+        stat_cat = patrol.patrol_win_stat_cat
+    elif patrol.patrol_fail_stat_cat:
+        stat_cat = patrol.patrol_fail_stat_cat
+    if stat_cat:
+        replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
+    else:
+        replace_dict['s_c'] = (str(patrol.patrol_leader_name),
+                               choice(patrol.patrol_leader.pronouns))
+
+    text = process_text(text, replace_dict)
+    text = adjust_prey_abbr(text)
+
+    other_clan_name = patrol.other_clan.name
+    s = 0
+    for x in range(text.count('o_c_n')):
+        if 'o_c_n' in text:
+            for y in vowels:
+                if str(other_clan_name).startswith(y):
+                    modify = text.split()
+                    pos = 0
+                    if 'o_c_n' in modify:
+                        pos = modify.index('o_c_n')
+                    if "o_c_n's" in modify:
+                        pos = modify.index("o_c_n's")
+                    if 'o_c_n.' in modify:
+                        pos = modify.index('o_c_n.')
+                    if modify[pos - 1] == 'a':
+                        modify.remove('a')
+                        modify.insert(pos - 1, 'an')
+                    text = " ".join(modify)
+                    break
+
+    text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
+
+    clan_name = game.clan.name
+    s = 0
+    pos = 0
+    for x in range(text.count('c_n')):
+        if 'c_n' in text:
+            for y in vowels:
+                if str(clan_name).startswith(y):
+                    modify = text.split()
+                    if 'c_n' in modify:
+                        pos = modify.index('c_n')
+                    if "c_n's" in modify:
+                        pos = modify.index("c_n's")
+                    if 'c_n.' in modify:
+                        pos = modify.index('c_n.')
+                    if modify[pos - 1] == 'a':
+                        modify.remove('a')
+                        modify.insert(pos - 1, 'an')
+                    text = " ".join(modify)
+                    break
+
+    text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+    # Prey lists for forest random prey patrols
+    fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
+                              'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
+                              'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                              'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+    text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
+
+    fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                           'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
+                           'sleepy dormice', 'chipmunks', 'woodrats', ]
+    text = text.replace('f_tp_p', str(fst_tinyprey_plural))
+
+    fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
+                             'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
+                             'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+    text = text.replace('f_mp_s', str(fst_midprey_singlular))
+
+    fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                          'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
+                          'red squirrels', 'gray squirrels', 'rats', ]
+    text = text.replace('f_mp_p', str(fst_midprey_plural))
+
+    sign_list = get_omen_snippet_list("omen_list", amount=randint(2, 4), return_string=False)
+    sign = choice(sign_list)
+    s = 0
+    pos = 0
+    for x in range(text.count('a_sign')):
+        index = text.index('a_sign', s) or text.index('a_sign.', s)
+        for y in vowels:
+            if str(sign).startswith(y):
+                modify = text.split()
+                if 'a_sign' in modify:
+                    pos = modify.index('a_sign')
+                if 'a_sign.' in modify:
+                    pos = modify.index('a_sign.')
+                if modify[pos - 1] == 'a':
+                    modify.remove('a')
+                    modify.insert(pos - 1, 'an')
+                text = " ".join(modify)
+                break
+        s += index + 3
+    text = text.replace('a_sign', str(sign))
+
+    return text
 
 
 # ---------------------------------------------------------------------------- #
@@ -1135,14 +1296,14 @@ def update_sprite(cat):
         eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
             eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
-        #Eye tint
+        # Eye tint
         if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
-                "tint_colours"]:
+            "tint_colours"]:
             tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
             tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
-            eyes.blit(tint, (0,0), special_flags=pygame.BLEND_RGB_MULT)
-        new_sprite.blit(eyes, (0,0))
-        
+            eyes.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+        new_sprite.blit(eyes, (0, 0))
+
         for scar in cat.scars:
             if scar in scars1:
                 new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
@@ -1197,7 +1358,7 @@ def update_sprite(cat):
                 temp = sprites.sprites['fadestarclan' + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
-                
+
         # reverse, if assigned so
         if cat.reverse:
             new_sprite = pygame.transform.flip(new_sprite, True, False)

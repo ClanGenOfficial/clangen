@@ -9,7 +9,7 @@ This file contains:
 
 
 
-""" # pylint: enable=line-too-long
+"""  # pylint: enable=line-too-long
 
 import platform
 import subprocess
@@ -27,7 +27,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir, get_cache_dir
@@ -41,6 +41,7 @@ logger = logging.getLogger(__name__)
 has_checked_for_update = False
 update_available = False
 
+
 class StartScreen(Screens):
     """
     TODO: DOCS
@@ -51,6 +52,7 @@ class StartScreen(Screens):
         self.warning_label = None
         self.bg = pygame.image.load("resources/images/menu.png").convert()
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
+        self.social_buttons = {}
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -91,6 +93,27 @@ class StartScreen(Screens):
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+            elif event.ui_element == self.social_buttons['discord_button']:
+                if platform.system() == 'Darwin':
+                    subprocess.Popen(["open", "-u", "https://discord.gg/clangen"])
+                elif platform.system() == 'Windows':
+                    os.system(f"start \"\" {'https://discord.gg/clangen'}")
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', "https://discord.gg/clangen"])
+            elif event.ui_element == self.social_buttons['tumblr_button']:
+                if platform.system() == 'Darwin':
+                    subprocess.Popen(["open", "-u", "https://officialclangen.tumblr.com/"])
+                elif platform.system() == 'Windows':
+                    os.system(f"start \"\" {'https://officialclangen.tumblr.com/'}")
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', "https://officialclangen.tumblr.com/"])
+            elif event.ui_element == self.social_buttons['twitter_button']:
+                if platform.system() == 'Darwin':
+                    subprocess.Popen(["open", "-u", "https://twitter.com/OfficialClangen"])
+                elif platform.system() == 'Windows':
+                    os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
 
     def on_use(self):
         """
@@ -113,6 +136,8 @@ class StartScreen(Screens):
         self.update_button.kill()
         self.quit.kill()
         self.closebtn.kill()
+        for btn in self.social_buttons:
+            self.social_buttons[btn].kill()
 
     def screen_switches(self):
         """
@@ -124,9 +149,9 @@ class StartScreen(Screens):
 
         self.continue_button = UIImageButton(scale(
             pygame.Rect((140, 620), (384, 70))),
-                                             "",
-                                             object_id="#continue_button",
-                                             manager=MANAGER)
+            "",
+            object_id="#continue_button",
+            manager=MANAGER)
         self.switch_clan_button = UIImageButton(
             scale(pygame.Rect((140, 710), (384, 70))),
             "",
@@ -134,19 +159,35 @@ class StartScreen(Screens):
             manager=MANAGER)
         self.new_clan_button = UIImageButton(scale(
             pygame.Rect((140, 800), (384, 70))),
-                                             "",
-                                             object_id="#new_clan_button",
-                                             manager=MANAGER)
+            "",
+            object_id="#new_clan_button",
+            manager=MANAGER)
         self.settings_button = UIImageButton(scale(
             pygame.Rect((140, 890), (384, 70))),
-                                             "",
-                                             object_id="#settings_button",
-                                             manager=MANAGER)
+            "",
+            object_id="#settings_button",
+            manager=MANAGER)
         self.quit = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))),
                                   "",
                                   object_id="#quit_button",
                                   manager=MANAGER)
 
+        self.social_buttons["twitter_button"] = UIImageButton(scale(pygame.Rect((25, 1295), (80, 80))),
+                                                              "",
+                                                              object_id="#twitter_button",
+                                                              manager=MANAGER,
+                                                              tool_tip_text='Check out our Twitter!')
+        self.social_buttons["tumblr_button"] = UIImageButton(scale(pygame.Rect((115, 1295), (80, 80))),
+                                                             "",
+                                                             object_id="#tumblr_button",
+                                                             manager=MANAGER,
+                                                             tool_tip_text='Check out our Tumblr!')
+
+        self.social_buttons["discord_button"] = UIImageButton(scale(pygame.Rect((205, 1295), (80, 80))),
+                                                              "",
+                                                              object_id="#discord_button",
+                                                              manager=MANAGER,
+                                                              tool_tip_text='Join our Discord!')
         errorimg = image_cache.load_image(
             'resources/images/errormsg.png').convert_alpha()
 
@@ -164,11 +205,10 @@ class StartScreen(Screens):
             manager=MANAGER,
             layer_starting_height=3)
 
-
         self.error_gethelp = pygame_gui.elements.UITextBox(
-            "Please join the Discord server and ask for technical support. " \
-            "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
-            '<br><a href="https://discord.gg/clangen">Discord</a>', # pylint: disable=line-too-long
+            "Please join the Discord server and ask for technical support. "
+            "We\'ll be happy to help! Please include the error message and the traceback below (if available). "
+            '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#text_box_22_horizleft",
             layer_starting_height=3,
@@ -180,11 +220,10 @@ class StartScreen(Screens):
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
-            starting_height=0, # Layer 0 so it's behind the error box
+            starting_height=0,  # Layer 0 so it's behind the error box
             tool_tip_text="Opens the data directory. "
-            "This is where save files "
-            "and logs are stored.")
-
+                          "This is where save files "
+                          "and logs are stored.")
 
         self.closebtn = UIImageButton(
             scale(pygame.Rect((1386, 430), (44, 44))),
@@ -199,13 +238,14 @@ class StartScreen(Screens):
         self.closebtn.hide()
 
         self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (382.5, 75))), "",
-                                             object_id="#update_button", manager=MANAGER)
+                                           object_id="#update_button", manager=MANAGER)
         self.update_button.visible = 0
 
         try:
             global has_checked_for_update
             global update_available
-            if not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and game.settings['check_for_updates'] and not has_checked_for_update:
+            if not get_version_info().is_source_build and not get_version_info().is_itch and get_version_info().upstream.lower() == "Thlumyn/clangen".lower() and \
+                    game.settings['check_for_updates'] and not has_checked_for_update:
                 if has_update(UpdateChannel(get_version_info().release_channel)):
                     update_available = True
                     show_popup = True
@@ -255,13 +295,14 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
-
         if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches['traceback'].__traceback__)))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(
+                    traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches[
+                        'traceback'].__traceback__)))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()
@@ -366,7 +407,8 @@ class SwitchClanScreen(Screens):
                                        object_id="#main_menu_button",
                                        manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
-            'Note: This will close the game.\n When you open it next, it should have the new clan.',  # pylint: disable=line-too-long
+            'Note: This will close the game.\n When you open it next, it should have the new clan.',
+            # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
@@ -395,9 +437,9 @@ class SwitchClanScreen(Screens):
             self.clan_buttons[-1].append(
                 pygame_gui.elements.UIButton(scale(
                     pygame.Rect((600, y_pos), (400, 78))),
-                                             clan + "Clan",
-                                             object_id="#saved_clan",
-                                             manager=MANAGER))
+                    clan + "Clan",
+                    object_id="#saved_clan",
+                    manager=MANAGER))
             self.delete_buttons[-1].append(
                 UIImageButton(scale(pygame.Rect((940, y_pos + 17), (44, 44))),
                               "",
@@ -416,9 +458,9 @@ class SwitchClanScreen(Screens):
 
         self.next_page_button = UIImageButton(scale(
             pygame.Rect((912, 1080), (68, 68))),
-                                              "",
-                                              object_id="#arrow_right_button",
-                                              manager=MANAGER)
+            "",
+            object_id="#arrow_right_button",
+            manager=MANAGER)
         self.previous_page_button = UIImageButton(
             scale(pygame.Rect((620, 1080), (68, 68))),
             "",
@@ -551,7 +593,11 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
-                game.save_settings()
+                try:
+                    game.save_settings()
+                except:
+                    SaveError(traceback.format_exc())
+                    self.change_screen("start screen")
                 self.settings_changed = False
                 self.update_save_button()
                 return
@@ -592,24 +638,25 @@ class SettingsScreen(Screens):
                         else:
                             print("Stopping Discord RPC")
                             game.rpc.close()
-                    
+
                     opens = {
                         "general": self.open_general_settings,
                         "language": self.open_lang_settings,
                         "relation": self.open_relation_settings
                     }
-                    
+
                     scroll_pos = None
                     if "container_general" in self.checkboxes_text and \
                             self.checkboxes_text["container_general"].vert_scroll_bar:
                         scroll_pos = self.checkboxes_text["container_general"].vert_scroll_bar.start_percentage
-                    
+
                     if self.sub_menu in opens:
                         opens[self.sub_menu]()
-                        
+
                     if scroll_pos is not None:
-                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(scroll_pos)
-                        
+                        self.checkboxes_text["container_general"].vert_scroll_bar.set_scroll_from_start_percentage(
+                            scroll_pos)
+
                     break
 
     def screen_switches(self):
@@ -630,14 +677,14 @@ class SettingsScreen(Screens):
             manager=MANAGER)
         self.info_button = UIImageButton(scale(
             pygame.Rect((800, 200), (300, 60))),
-                                         "",
-                                         object_id="#info_settings_button",
-                                         manager=MANAGER)
+            "",
+            object_id="#info_settings_button",
+            manager=MANAGER)
         self.language_button = UIImageButton(scale(
             pygame.Rect((1100, 200), (300, 60))),
-                                             "",
-                                             object_id="#lang_settings_button",
-                                             manager=MANAGER)
+            "",
+            object_id="#lang_settings_button",
+            manager=MANAGER)
         self.save_settings_button = UIImageButton(
             scale(pygame.Rect((654, 1100), (292, 60))),
             "",
@@ -650,8 +697,8 @@ class SettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             tool_tip_text="This will close the game. "
-            "When you reopen, fullscreen"
-            " will be toggled. ")
+                          "When you reopen, fullscreen"
+                          " will be toggled. ")
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
@@ -659,8 +706,8 @@ class SettingsScreen(Screens):
             object_id="#open_data_directory_button",
             manager=MANAGER,
             tool_tip_text="Opens the data directory. "
-            "This is where save files "
-            "and logs are stored.")
+                          "This is where save files "
+                          "and logs are stored.")
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -668,9 +715,9 @@ class SettingsScreen(Screens):
         self.update_save_button()
         self.main_menu_button = UIImageButton(scale(
             pygame.Rect((50, 50), (305, 60))),
-                                              "",
-                                              object_id="#main_menu_button",
-                                              manager=MANAGER)
+            "",
+            object_id="#main_menu_button",
+            manager=MANAGER)
         self.sub_menu = 'general'
         self.open_general_settings()
 
@@ -725,7 +772,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_general"] = pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['general'].items():
@@ -740,7 +787,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_general"].set_scrollable_area_dimensions(
-                (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y))
+            (1360 / 1600 * screen_x, (n * 78 + 80) / 1400 * screen_y))
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here",
@@ -764,7 +811,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text[
             "container_relation"] = pygame_gui.elements.UIScrollingContainer(
-                scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
+            scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
 
         n = 0
         for code, desc in settings_dict['relation'].items():

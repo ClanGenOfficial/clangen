@@ -23,7 +23,6 @@ class CanHaveKits(unittest.TestCase):
         self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True, affair_setting=True))
 
 
-
 class Pregnancy(unittest.TestCase):
     @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
     def test_single_cat_female(self, check_if_can_have_kits):

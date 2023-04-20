@@ -6,7 +6,12 @@ from scripts.version import get_version_info
 
 def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
-    os.makedirs(get_save_dir(), exist_ok=True)
+    try:
+        os.makedirs(get_save_dir(), exist_ok=True)
+        os.makedirs(get_temp_dir(), exist_ok=True)
+    except FileExistsError:
+        print("Macos ignored exist_ok=true for save or temp dict, continuing.")
+        pass
     os.makedirs(get_log_dir(), exist_ok=True)
     os.makedirs(get_cache_dir(), exist_ok=True)
 
@@ -40,3 +45,6 @@ def get_save_dir():
 
 def get_cache_dir():
     return get_data_dir() + '/cache'
+
+def get_temp_dir():
+    return get_data_dir() + '/~temp'
