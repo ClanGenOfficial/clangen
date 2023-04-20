@@ -673,6 +673,9 @@ class FamilyTreeScreen(Screens):
         x_dim = 160
         y_dim = 180
 
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
+
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()
         self.kits = self.the_cat.inheritance.get_kits()
@@ -1703,7 +1706,8 @@ class ChooseMateScreen(Screens):
             if self.the_cat.is_potential_mate(
                     relevant_cat,
                     for_love_interest=False,
-                    age_restriction=False):
+                    age_restriction=False) and\
+                relevant_cat.ID not in self.the_cat.mate:
                 valid_mates.append(relevant_cat)
         return valid_mates
 
