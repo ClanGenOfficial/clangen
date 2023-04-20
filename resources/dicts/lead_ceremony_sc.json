@@ -71,7 +71,7 @@
       "tags": [],
       "lead_trait": [],
       "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "r_c pads up to the new leader, softly touching {PRONOUN/r_c/poss} nose to m_c's head. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
@@ -364,7 +364,7 @@
       "tags": [],
       "lead_trait": ["cold"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -391,7 +391,7 @@
       "tags": [],
       "lead_trait": ["compassionate"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -418,7 +418,7 @@
       "tags": [],
       "lead_trait": ["confident"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -445,7 +445,7 @@
       "tags": [],
       "lead_trait": ["daring"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -472,7 +472,7 @@
       "tags": [],
       "lead_trait": ["faithful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "There was no doubt in r_c's eyes that StarClan made a good choice in leader. m_c had demonstrated {PRONOUN/m_c/poss} faith in StarClan time and time again, and it was {PRONOUN/r_c/poss} honor to give {PRONOUN/m_c/object} a life for [virtue].",
@@ -499,7 +499,7 @@
       "tags": [],
       "lead_trait": ["fierce"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -526,7 +526,7 @@
       "tags": [],
       "lead_trait": ["insecure"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -553,7 +553,7 @@
       "tags": [],
       "lead_trait": ["lonesome"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -580,7 +580,7 @@
       "tags": [],
       "lead_trait": ["loving"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -607,7 +607,7 @@
       "tags": [],
       "lead_trait": ["loyal"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -634,7 +634,7 @@
       "tags": [],
       "lead_trait": ["nervous"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -661,7 +661,7 @@
       "tags": [],
       "lead_trait": ["playful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -688,7 +688,7 @@
       "tags": [],
       "lead_trait": ["responsible"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -715,7 +715,7 @@
       "tags": [],
       "lead_trait": ["righteous"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -742,7 +742,7 @@
       "tags": [],
       "lead_trait": ["shameless"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -769,7 +769,7 @@
       "tags": [],
       "lead_trait": ["sneaky"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -796,7 +796,7 @@
       "tags": [],
       "lead_trait": ["strange"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -823,7 +823,7 @@
       "tags": [],
       "lead_trait": ["strict"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -850,7 +850,7 @@
       "tags": [],
       "lead_trait": ["thoughtful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -877,7 +877,7 @@
       "tags": [],
       "lead_trait": ["troublesome"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -904,7 +904,7 @@
       "tags": [],
       "lead_trait": ["vengeful"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
@@ -931,7 +931,7 @@
       "tags": [],
       "lead_trait": ["wise"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "leader", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
