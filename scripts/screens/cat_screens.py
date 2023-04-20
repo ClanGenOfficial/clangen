@@ -291,15 +291,21 @@ class ProfileScreen(Screens):
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
-                self.clear_profile()
-                game.switches['cat'] = self.previous_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    self.clear_profile()
+                    game.switches['cat'] = self.previous_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
-                self.clear_profile()
-                game.switches['cat'] = self.next_cat
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+                if Cat.fetch_cat(self.next_cat) is not None:
+                    self.clear_profile()
+                    game.switches['cat'] = self.next_cat
+                    self.build_profile()
+                    self.update_disabled_buttons_and_text()
+                else:
+                    print("invalid next cat", self.previous_cat)
             elif event.ui_element == self.relations_tab_button:
                 self.toggle_relations_tab()
             elif event.ui_element == self.roles_tab_button:
@@ -1157,14 +1163,8 @@ class ProfileScreen(Screens):
 
         new_notes = {str(self.the_cat.ID): notes}
 
-        try:
-            with open(notes_file_path, 'w') as rel_file:
-                json_string = ujson.dumps(new_notes, indent=2)
-                rel_file.write(json_string)
-
-        except:
-            print(f"WARNING: Saving notes of cat #{self.the_cat.ID} didn't work.")
-
+        game.safe_save(notes_file_path, new_notes)
+    
     def load_user_notes(self):
         """Loads user-entered notes. """
         clanname = game.clan.name
@@ -2286,11 +2286,15 @@ class RoleScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
+                
                 game.switches["cat"] = self.next_cat
                 self.update_selected_cat()
             elif event.ui_element == self.previous_cat_button:
-                game.switches["cat"] = self.previous_cat
-                self.update_selected_cat()
+                if Cat.fetch_cat(self.previous_cat) is not None:
+                    game.switches["cat"] = self.previous_cat
+                    self.update_selected_cat()
+                else:
+                    print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.promote_leader:
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
