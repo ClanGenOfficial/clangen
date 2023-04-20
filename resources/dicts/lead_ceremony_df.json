@@ -448,9 +448,15 @@
       "life_giving": [
         {
           "text": "r_c meets m_c's eyes with a smirk, sliding through the murk like a claw through freshkill to give a life of [virtue]. They hiss quiet praise to m_c's more reckless tendencies, encouraging the new leader to think with their claws, not their head.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
+        },
+        {
+          "text": "The forest is silent, no cat seeming to be approaching for the next life. Suddenly, r_c lunges forward, stopping their outstretched claws a whisker before m_c's face. They laugh sharply when they realize m_c had dared move to retaliate, even surrounded by the oppressive murk, and lightly touch their claws to their throat to bestow a life for [virtue] before leaving as suddenly as they had appeared.",
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
+        },
+        {
+          "text": "The forest is silent, no cat seeming to be approaching for the next life. Suddenly, r_c lunges forward, stopping their outstretched claws a whisker before m_c's face. They laugh sharply when they realize m_c had dared move to retaliate, even surrounded by the oppressive murk, and lightly touch their claws to their throat to bestow a life for [virtue] before leaving as suddenly as they had appeared.",
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
         }
       ]
     },
