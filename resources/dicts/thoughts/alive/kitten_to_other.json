@@ -1,0 +1,72 @@
+{
+    "dead": {
+        "kitten": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "medicine cat apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [
+            "Was nipped on the rump by an elder for being naughty"
+        ],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "all": [
+        "Plays mossball by themselves",
+        "Is annoying older cats",
+        "Wonders who their mentor will be",
+        "Wants to take a nap",
+        "Tries to sneak out of camp",
+        "Is rolling around on the ground",
+        "Is chasing their tail",
+        "Is playing with a stick",
+        "Is nervous for their apprentice ceremony",
+        "Is excited for their apprentice ceremony",
+        "Is scared after having a nightmare",
+        "Wants to snuggle",
+        "Is asking older cats how kits are born",
+        "Wishes other cats would stop babying them",
+        "Is hiding from other cats",
+        "Is bouncing around in excitement",
+        "Whines about being hungry",
+        "Is asking the older cats about how kittens are made",
+        "Is pestering older cats to play with them",
+        "Is whining for milk",
+        "Is whimpering in their sleep",
+        "Is trying to growl menacingly",
+        "Is adamantly refusing to take their nap",
+        "Is batting pebbles across the camp clearing",
+        "Is crying after rough-housing too hard with the older cats",
+        "Is regretting eating the bug that they caught",
+        "Recently took a tumble off of a log",
+        "Is busy mastering a battle move they are performing incorrectly",
+        "Refuses to eat the herbs the medicine cat has given them for their tummy",
+        "Is hatching a plan to sneak out of camp and play",
+        "Is running like a whirlwind around the camp",
+        "Is pretending to be the Clan leader",
+        "Doesn't want to grow up yet...",
+        "Got in trouble for bringing thorns into the nest"
+    ]
+}
