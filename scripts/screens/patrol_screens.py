@@ -841,7 +841,7 @@ class PatrolScreen(Screens):
             display_text = "ERROR"
 
         # Adjust text for solo patrols
-        display_text = adjust_patrol_text(display_text, len(patrol.patrol_cats))
+        display_text = adjust_patrol_text(display_text, patrol)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
