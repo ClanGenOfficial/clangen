@@ -345,13 +345,13 @@
       "stubborness", "authority"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "text": "Staring coldly from the murk, r_c prowls towards m_c and shoves {PRONOUN/m_c/object} into the dark goo surrounding them both. {PRONOUN/r_c/subject/CAP} growls out {PRONOUN/r_c/poss} life for [virtue], demanding that m_c stopped treating everything like a game.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubborness", "authority"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "text": "r_c bounds up to the new leader with a wicked grin. {PRONOUN/r_c/subject} places {PRONOUN/r_c/poss} nose agsinst m_c's head, jabbering quickly on about a life for [virtue] before asking what m_c's favorite game was. Another shadowy spirit shoved r_c aside for the next life giver before {PRONOUN/m_c/subject} could answer.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubborness", "authority"]

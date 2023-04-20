@@ -487,7 +487,7 @@
       "unity"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "text": "A serene smile graces r_c's maw, whispering how StarClan had never chosen wrong when m_c became the new deputy. {PRONOUN/r_c/subject/CAP} gives {PRONOUN/m_c/object} a life for [virtue] and give a last reminder to put  {PRONOUN/m_c/poss} faith in the stars.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength",
       "unity"]
