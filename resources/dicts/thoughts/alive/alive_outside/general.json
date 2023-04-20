@@ -48,7 +48,15 @@
             "Is sneezing"
         ],
         "main_status_constraint": [
-            "any"
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
         ]
     },
     {
@@ -118,10 +126,17 @@
             "Wonders who is mentoring the c_n kits that must be apprentices by now"
         ],
         "main_status_constraint": [
-           "any"
+            "warrior", 
+            "mediator", 
+            "medicine cat", 
+            "deputy", 
+            "leader", 
+            "elder"
         ],
         "random_status_constraint": [
-            "apprentices"
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
         ],
         "random_living_status": [
             "living"
