@@ -183,13 +183,13 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as they stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on their <i>>own</i> Clan, rather than the horizons, {PRONOUN/r_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
+          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as {PRONOUN/r_c/subject} stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on {PRONOUN/m_c/poss} <i>>own</i> Clan, rather than the horizons, {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
         },
         {
-          "text": "r_c places {PRONOUN/r_c/poss} muzzle against m_c, giving a harsh life for [virtue]. {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} with a whisper that the borders are not to be trusted.",
+          "text": "r_c places {PRONOUN/r_c/poss} muzzle against m_c, giving a harsh life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} with a whisper that the borders are not to be trusted.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -216,7 +216,7 @@
       "stubbornness", "authority"]
         },
         {
-          "text": "There is a proud gleam in r_c's eyes as {PRONOUN/r_c/subject} {VERB/m_c/approach/approaches} the new leader. {PRONOUN/r_c/subject/CAP} {VERB/m_c/give/gives} a life for [virtue], and encouragement to raise m_c's ambitions even higher than the stars themselves.",
+          "text": "There is a proud gleam in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} the new leader. {PRONOUN/r_c/subject/CAP} {VERB/m_c/give/gives} a life for [virtue], and encouragement to raise m_c's ambitions even higher than the stars themselves.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
