@@ -126,7 +126,7 @@
         "history_text": {
             "reg_death": "m_c was killed by a snake, while saving a kit."
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"]
     },
     {
         "camp": "any",
@@ -134,7 +134,7 @@
         "death_text": "m_c went missing, and was found dead out in the territory.",
         "history_text": {
             "reg_death": "m_c went missing, and was found dead."
-        },
+        }
     },
     {
         "camp": "any",
