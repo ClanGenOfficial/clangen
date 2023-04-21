@@ -1285,7 +1285,7 @@ class Clan():
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        game.safe_save(f"/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
 
         data = {}
         for k, nutr in clan.freshkill_pile.nutrition_info.items():
