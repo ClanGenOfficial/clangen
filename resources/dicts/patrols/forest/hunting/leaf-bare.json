@@ -1138,7 +1138,6 @@
             "p_l tries to demonstrate the right way to crouch and stalk in the snow, but app1, eager to prove themself, charges forward, bringing a flurry of snow with them. The starling in front of them freezes in terror as app1 bowls into it and emerges as the victor. p_l has never seen a hunting technique quite like that before, but hey, if it works, it works."],
         "fail_text": [
             "p_l tries to demonstrate the right way to crouch and stalk in the snow, but app1, not wanting to listen, charges forward in a flurry of snow and paws and leaps...onto nothing. The starling has flown away, and app1 is now covered in snow and colder than ever. Embarrassed, they slink back to camp with p_l, who stifles a laugh."],
-        "win_skills": null,
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -1170,8 +1169,6 @@
             null,
             "r_c follows the birdcall through the trees, but before long, can't make out the sounds of the prey from the whistling wind. Distraught and turned around, r_c has no choice but to try and burrow into the snow and pray to StarClan. Unfortunately, their prayers go unanswered, and their Clanmates find their frozen, snow-covered body the next day.",
             "r_c follows the birdcall through the trees, but before long, can't make out the sounds of the prey from the whistling wind. Distraught and turned around, r_c has no choice but to try and burrow into the snow and pray to StarClan until the storm passes. When the storm breaks by nightfall, the sound of their Clanmates' voices rouses them from sleep, and they're helped home, empty-pawed and frostbitten."],
-        "win_skills": null,
-        "win_traits": null,
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
