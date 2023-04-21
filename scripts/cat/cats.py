@@ -241,7 +241,8 @@ class Cat():
         self.backstory = backstory
         self.age = None
         self.skill = None
-        self.personality = Personality(kit_trait=self.age in ["newborn", "kitten"])
+        self.personality = Personality(trait="troublesome", lawful=0, aggress=0,
+                                       stable=0, social=0)
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
@@ -440,6 +441,9 @@ class Cat():
             init_eyes(self)
             init_pattern(self)
             init_tint(self)
+            
+            #Personality
+            self.personality = Personality(kit_trait=self.is_baby())
 
             # experience and current patrol status
             if self.age in ['young', 'newborn']:
@@ -875,8 +879,13 @@ class Cat():
         if self.status in ["warrior", "medicine cat", "mediator"]:
             mentor = None
             if self.former_mentor:
-                mentor = Cat.fetch_cat(self.former_mentor[-1])    
+                mentor = Cat.fetch_cat(self.former_mentor[-1])
+                
+        #Update kit trait stuff
+        self.personality.set_kit(self.is_baby())
+        self.personality.facet_wobble() #Slighly change the facet values
         
+    
         return
         
         """if self.status in ["warrior", "medicine cat", "mediator"]:
@@ -3122,6 +3131,13 @@ class Cat():
     @sprite.setter
     def sprite(self, new_sprite):
         self._sprite = new_sprite
+        
+    # ---------------------------------------------------------------------------- #
+    #                                  other                                       #
+    # ---------------------------------------------------------------------------- #
+    
+    def is_baby(self):
+        return self.age in ["kitten", "newborn"]
 
 
         
@@ -3129,6 +3145,9 @@ class Cat():
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
 
+# ---------------------------------------------------------------------------- #
+#                               PERSONALITY CLASS                              #
+# ---------------------------------------------------------------------------- #
 
 class Personality():
     """Hold personality information for a cat, and functions to deal with it """
@@ -3212,48 +3231,49 @@ class Personality():
     # ---------------------------------------------------------------------------- #
     
     @property
+    def lawfulness(self):
+        return self._law
+    
+    @lawfulness.setter
     def lawfulness(self, new_val):
         """Do not use property in init"""
         self._law = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
             
-    @lawfulness.getter
-    def lawfulness(self):
-        return self._law
-    
     @property
+    def sociability(self):
+        return self._social
+    
+    @sociability.setter
     def sociability(self, new_val):
         """Do not use property in init"""
         self._social = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
             
-    @sociability.getter
-    def sociability(self):
-        return self._social
-    
     @property
+    def aggression(self):
+        return self._aggress
+    
+    @aggression.setter
     def aggression(self, new_val):
         """Do not use property in init"""
         self._aggress = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
             
-    @aggression.getter
-    def aggression(self):
+    @property
+    def stability(self):
         return self._aggress
     
-    @property
+    @stability.setter
     def stability(self, new_val):
         """Do not use property in init"""
         self._stable = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
             
-    @stability.getter
-    def stability(self):
-        return self._aggress
 
     # ---------------------------------------------------------------------------- #
     #                               METHODS                                        #
@@ -3270,17 +3290,11 @@ class Personality():
         
         return val
     
-    def make_kit_trait(self):
-        """Switch the trait-type to kit, and re-determines trait based on 
-            facets"""
-        self.kit = True
-        self.choose_trait()
-    
-    def make_normal_trait(self):
-        """Switch trait-type to normal, and re-determines the trait based on
-            facets"""
-        self.kit = False
-        self.choose_trait()
+    def set_kit(self, kit:bool):
+        """Switch the trait-type. True for kit, False for normal"""
+        self.kit = kit
+        if not self.is_trait_valid():
+            self.choose_trait()
         
     def is_trait_valid(self) -> bool:
         """Return True if the current facets fit the trait ranges, false
@@ -3339,6 +3353,12 @@ class Personality():
             print("No possible traits! Using 'strange'")
             self.trait = "strange"
             
+    def facet_wobble(self, max=3):
+        """Makes a small adjusment to all the facets, and redetermines trait if needed."""        
+        self.lawfulness += randint(-max, max)
+        self.stability += randint(-max, max)
+        self.aggression += randint(-max, max)
+        self.sociability += randint(-max, max)
         
 
 # Twelve example cats
