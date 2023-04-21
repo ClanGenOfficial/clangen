@@ -2,7 +2,6 @@ from PyInstaller import __main__ as pyi
 import os
 import shutil
 import platform
-from platformdirs import user_data_dir
 
 directory = os.path.dirname(__file__)
 if directory:

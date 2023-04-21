@@ -198,7 +198,7 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run Build Script
-        run: poetry run python3 build.py
+        run: poetry run python build.py
         env:
           VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
           RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
@@ -300,7 +300,7 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run Build Script
-        run: poetry run python3 build.py
+        run: poetry run python build.py
         env:
           VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
           RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
@@ -402,7 +402,7 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run Build Script
-        run: poetry run python3 build.py
+        run: poetry run python build.py
         env:
           VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
           RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
