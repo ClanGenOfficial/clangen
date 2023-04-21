@@ -606,5 +606,24 @@
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
         "other_cat_skill": null,
         "other_cat_negate_skill": ["extremely smart", "very smart"]
+    },
+    {
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
+        "camp": "Any",
+        "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
+        "history_text": {
+            "reg_death": "This cat died from old age life.",
+            "lead_death": "lost all remaining lives from old age."
+        }
+    },
+    {
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "camp": "Any",
+        "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of the c_n, and what killed {PRONOUN/m_c/object}.",
+        "history_text": {
+            "reg_death": "Curiosity killed this cat.",
+            "lead_death": "lost a life because of curiosity."
+        },
+        "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
     }
 ]
