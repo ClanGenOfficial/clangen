@@ -22,7 +22,7 @@ if platform.system() == 'Windows':
         f.write(fr"""start %LocalAppData%\ClanGen\ClanGen{'Beta' if isDev else ''}""")
 elif platform.system() == 'Linux':
     with open('tmp/datadir.sh', 'w') as f:
-        f.write(f"""#!/bin/shs
+        f.write(f"""#!/bin/sh
 if [ -z "$XDG_DATA_HOME" ]; then
     xdg-open "$XDG_DATA_HOME/ClanGen/ClanGen{'Beta' if isDev else ''}"
 else
