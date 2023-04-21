@@ -2072,10 +2072,10 @@ class PatrolEvent():
         self.history_text = history_text if history_text else []
         self.chance_of_success = chance_of_success  # out of 100
         self.exp = exp
-        self.win_skills = win_skills
-        self.win_trait = win_trait
-        self.fail_skills = fail_skills
-        self.fail_trait = fail_trait
+        self.win_skills = win_skills if win_skills else []
+        self.win_trait = win_trait if win_trait else []
+        self.fail_skills = fail_skills if fail_skills else []
+        self.fail_trait = fail_trait if fail_trait else []
         self.min_cats = min_cats
         self.max_cats = max_cats
         self.antagonize_text = antagonize_text
