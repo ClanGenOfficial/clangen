@@ -50,7 +50,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c found themself staring at an odd shadow in the sea. One distracted paw slipped, and they fell into the waves where rows and rows of teeth swallowed them whole. ",
+        "death_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped, and {PRONOUN/m_c/subject} fell into the waves where rows and rows of teeth swallowed {PRONOUN/m_c/subject} whole. ",
         "history_text": ["m_c was swallowed by a sea creature.", null],
         "cat_trait": null,
         "cat_skill": null,
