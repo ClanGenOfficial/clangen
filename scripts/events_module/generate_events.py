@@ -53,6 +53,7 @@ class GenerateEvents:
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
+            events = None
             print(f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}.")
         return events
 
