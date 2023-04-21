@@ -1,0 +1,62 @@
+{
+    "dead": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [
+            "Is watching over the kits"
+        ],
+        "medicine cat apprentice": [],
+        "apprentice": [
+            "Has the apprentices very engaged in a very, very tall tale"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "all": [
+        "Wants to be chosen as the new deputy",
+        "Caught scent of a fox earlier",
+        "Caught scent of an enemy warrior earlier",
+        "Is helping to gather herbs",
+        "Is thinking about love",
+        "Is decorating their nest",
+        "Is reinforcing the camp with brambles",
+        "Caught a huge rabbit",
+        "Tries to set a good example for younger cats",
+        "Wants to go on a patrol",
+        "Wants to go on a hunting patrol",
+        "Is guarding the camp entrance",
+        "Is gossiping",
+        "Plans to visit the medicine cat",
+        "Is sharpening their claws",
+        "Is helping to escort the medicine cat to gather herbs",
+        "Is feeling sore",
+        "Is being pestered by flies",
+        "Feels overworked",
+        "Is exhausted from yesterday's patrol",
+        "Wants to have kits",
+        "Is sparring with some Clanmates",
+        "Fell into the nearby creek yesterday and is still feeling damp",
+        "Is guarding the camp entrance",
+        "Is helping to reinforce the nursery wall with brambles",
+        "Is assigned to the dawn patrol tomorrow",
+        "Is assigned to the hunting patrol today",
+        "Is thinking about kits"
+    ]
+}

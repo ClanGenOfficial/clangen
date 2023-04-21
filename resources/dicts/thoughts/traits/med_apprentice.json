@@ -1,0 +1,103 @@
+{
+    "adventurous": [
+        "Is trying to recruit other apprentices for a quick adventure"
+    ],
+    "altruistic": [
+        "Is thinking of giving their mentor a gift for their hard work",
+        "Made a suggestion to their mentor the other day"
+    ],
+    "ambitious": [
+        "Is asking the Clan leader how to help out around camp",
+        "Has been asking their mentor for more training",
+        "Tries to put on a brave face for their fellow apprentices",
+        "Is feeling proud of themselves",
+        "Made sure to wake up early to train",
+        "Is daydreaming about a Clan celebration in their honor"
+    ],
+    "bloodthirsty": [
+        "Starts a fight with another apprentice",
+        "Is hoping their medicine cat name will end in -claw"
+    ],
+    "bold": [
+        "Winked cheekily at another apprentice"
+    ],
+    "calm": [],
+    "careful": [
+        "Is asking if they need more training"
+    ],
+    "charismatic": [
+        "Winked playfully at another apprentice from across the clearing!",
+        "Is this moon's heartthrob to the other apprentices",
+        "Has recently given a wonderful speech to fellow apprentices, boosting morale"
+    ],
+    "childish": [],
+    "cold": [
+        "Is hoping their medicine cat name will end in -claw"
+    ],
+    "compassionate": [],
+    "confident": [],
+    "daring": [
+        "Is itching to go out and train"
+    ],
+    "empathetic": [
+        "Is doing extra apprentice tasks around camp, to help lighten the load"
+    ],
+    "faithful": [],
+    "fierce": [],
+    "insecure": [
+        "Is wondering if they are good enough to be a medicine cat",
+        "Wonders if the warrior life would have better suited them",
+        "Doesn't think that they have performing up to their mentor's standards lately..."
+    ],
+    "lonesome": [
+        "Is feeling cramped in the apprentice's den"
+    ],
+    "loving": [
+        "Is listening to another apprentice's troubles sympathetically"
+    ],
+    "loyal": [
+        "Is listening to their mentor intently",
+        "Proclaimed to their mentor their unwavering loyalty"
+    ],
+    "nervous": [
+        "Is hoping to not train with their mentor today...",
+        "Wishes they were back in the nursery",
+        "Has agreed to their mentor's orders recently, despite their own doubts",
+        "Is wondering if they are more suited for life as a warrior..."
+    ],
+    "patient": [],
+    "playful": [
+        "Won't stop making funny faces when their mentor's back is turned",
+        "Annoyed their mentor on accident the other day",
+        "Successfully lightened a dreary mood while out training"
+    ],
+    "responsible": [
+        "Is licking their chest in embarrassment after being praised by their mentor",
+        "Is asking their mentor what they can do to be helpful around camp today"
+    ],
+    "righteous": [
+        "Is refusing to follow their mentor's recent orders due to their own morals"
+    ],
+    "shameless": [
+        "Was found napping in the warrior's den!"
+    ],
+    "sneaky": [],
+    "strange": [],
+    "strict": [
+        "Is busy chastising fellow apprentices... but no cat is sure what for",
+        "Is participating in a rather rigorous training session"
+    ],
+    "thoughtful": [],
+    "troublesome": [
+        "Is ignoring their mentor's orders",
+        "Is making other apprentices laugh",
+        "Got in trouble for shirking their training the other day..."
+    ],
+    "vengeful": [
+        "Snaps at another apprentice"
+    ],
+    "wise": [
+        "Is giving somber advice to a fellow apprentice",
+        "Was sought out by another apprentice for their wisdom"
+    ]
+}

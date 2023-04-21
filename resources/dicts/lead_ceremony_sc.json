@@ -48,7 +48,7 @@
       "rank": [],
       "life_giving": [
         {
-          "text": "The starry cat approaches {PRONOUN/m_c/object} and, although the cat is unfamiliar, their meeting still feels like a reunion with an old friend. \"My name is r_c, you meet me tonight, but the cats under your care will all meet me one day when they join the stars. For now,\" the cat presses {PRONOUN/r_c/poss} nose to m_c's forehead, \"Take this gift, to help you [virtue].\"",
+          "text": "The starry cat approaches {PRONOUN/m_c/object} and, although the cat is unfamiliar, their meeting still feels like a reunion with an old friend. \"My name is r_c. You meet me tonight, but the cats under your care will all meet me one day when they join the stars. For now,\" the cat presses {PRONOUN/r_c/poss} nose to m_c's forehead, \"Take this gift, to help you [virtue].\"",
           "virtue": ["endure in the face of hardship", "know when to fight and when to choose peace", "have the strength to overcome your fears", "lead with tireless energy", "see the dawn behind the darkness", "find wisdom in desperate times"]
         }
       ]
@@ -974,7 +974,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "A tiny kit, r_c, runs up to m_c, stars twinkling in {PRONOUN/r_c/poss} eyes. {PRONOUN/r_c/subject/CAP} loudly and theatrically proclaim that {PRONOUN/r_c/subject}'ll be giving m_c a life for [virtue] before dashing back into line, looking very proud of {PRONOUN/r_c/self}.",
+          "text": "A tiny kit, r_c, runs up to m_c, stars twinkling in {PRONOUN/r_c/poss} eyes. {PRONOUN/r_c/subject/CAP} loudly and theatrically {VERB/r_c/proclaim/proclaims} that {PRONOUN/r_c/subject}'ll be giving m_c a life for [virtue] before dashing back into line, looking very proud of {PRONOUN/r_c/self}.",
           "virtue": ["excitement", "cheerfulness", "optimism", "friendship", "hope", "confidence", "pride"]
         }
       ]
@@ -987,7 +987,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "Emerging from the line comes r_c, a quiet calm to {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} small stature. {PRONOUN/r_c/subject} very carefully offer a life for [virtue], sounding as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying very hard to remember the right words to say. Once finished, {PRONOUN/r_c/subject} rush back to the line of starry pelts.",
+          "text": "Emerging from the line comes r_c, a quiet calm to {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} small stature. {PRONOUN/r_c/subject} very carefully {VERB/r_c/offer/offers} a life for [virtue], sounding as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying very hard to remember the right words to say. Once finished, {PRONOUN/r_c/subject} {VERB/r_c/rush/rushes} back to the line of starry pelts.",
           "virtue": ["caution", "love", "patience", "trust", "optimism", "friendship"]
         }
       ]
@@ -999,7 +999,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c nearly sprints out of the crowd, caught last moment by an older StarClan cat who gives a sharp, but endeared, whisper before setting {PRONOUN/r_c/object} back down. r_c continues towards m_c, but slower this time, barely containing {PRONOUN/r_c/poss} excitement. When {PRONOUN/r_c/subject} {VERB/give/gives} a life for [virtue] {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} tightly against m_c's legs before returning to the ranks of StarClan.",
+          "text": "r_c nearly sprints out of the crowd, caught last moment by an older StarClan cat who gives a sharp, but endeared, whisper before setting {PRONOUN/r_c/object} back down. r_c continues towards m_c, but slower this time, barely containing {PRONOUN/r_c/poss} excitement. When {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/press/presses} {PRONOUN/r_c/self} tightly against m_c's legs before returning to the ranks of StarClan.",
           "virtue": ["love", "patience", "trust", "optimism", "happiness", "courage", "protection", "resilience", "adventure", "curiosity", "forgiveness"]
         }
       ]
@@ -1113,7 +1113,7 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. There is pride in {PRONOUN/r_c/poss} gaze as {PRONOUN/r_c/subject} {VERB/r_c/stare/stares} into m_c's eyes. {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
+          "text": "Finally, r_c steps forward. There is pride in {PRONOUN/r_c/poss} gaze as {PRONOUN/r_c/subject} {VERB/r_c/stare/stares} into m_c's eyes. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
           "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]
@@ -1125,7 +1125,7 @@
       "rank": ["leader"],
       "life_giving": [
         {
-          "text": "Finally, r_c steps forward. There is a conflicted expression on {PRONOUN/r_c/poss} face when {PRONOUN/r_c/subject} {VERB/r_c/step/steps} forward and {VERB/r_c/stare/stares} into m_c's eyes. {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue].",
+          "text": "Finally, r_c steps forward. There is a conflicted expression on {PRONOUN/r_c/poss} face when {PRONOUN/r_c/subject} {VERB/r_c/step/steps} forward and {VERB/r_c/stare/stares} into m_c's eyes. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue].",
           "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to their Clan", "the strength to overcome their fears", "tireless energy"]
         }
       ]

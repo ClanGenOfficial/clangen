@@ -121,13 +121,8 @@ class History:
         :param cat: cat object
         :return:
         """
-        print('check load')
         if not cat.history:
-            print('went to load')
             cat.load_history()
-        else:
-            print(cat.history)
-            print('had history')
 
     @staticmethod
     def make_dict(cat):
@@ -299,14 +294,14 @@ class History:
         if condition:
             try:
                 if old_event_type == 'possible_scar':
-                    old_event = cat.history.possible_scar[condition]
+                    old_event = cat.history.possible_scar
                 else:
-                    old_event = cat.history.possible_death[condition]
-                other_cat = old_event["involved"]
-                text = old_event["text"]
+                    old_event = cat.history.possible_death
+                other_cat = old_event[condition]["involved"]
+                text = old_event[condition]["text"]
                 # and then remove from possible scar/death dict
-                if condition in cat.history[old_event_type]:
-                    cat.history[old_event_type].pop(condition)
+                if condition in old_event:
+                    old_event.pop(condition)
             except KeyError:
                 print(f"WARNING: could not find {condition} in cat's possible death/scar history,"
                       f" this maybe be due to an expected save conversion change.")
