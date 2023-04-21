@@ -27,7 +27,8 @@ def history_regex_helper(m):
         return ""
 
     dict_text = ujson.dumps(new_history_dict, indent=4)
-    dict_text = dict_text.replace("\/", "/") #ujson tries to escape "/", but doesn't end up doing a good job.
+    #ujson tries to escape "/", but it does it twice? Maybe?
+    dict_text = dict_text.replace("\/", "/") 
 
     #Add some indent
     dict_text = dict_text.split("\n")
@@ -39,7 +40,6 @@ def history_regex_helper(m):
     dict_text = '"history_text": ' + dict_text
     
     return dict_text
-
 
 def reformat_history_text(path):
     try:
@@ -61,6 +61,96 @@ def reformat_history_text(path):
     
     with open(path, "w") as write_file:
             write_file.write(patrols)
+
+
+def success_outcome_regex_helper(m):
+    capture_group = m.group(1)
+    inner_strings = re.findall(r'".*?"|null', capture_group)
+    new_success_dict = {}
+    new_labels = ["common", "uncommon", "skill", "trait"]
+    
+    for i, text in enumerate(inner_strings):
+        text = text.replace('"', "")
+        if text != "null":
+            if len(text) < 10:
+                print("there might be something wrong:", text, m.group(0))
+            try:
+                new_success_dict[new_labels[i]] = [text]
+            except IndexError:
+                print("oh no", m.group(0))
+                return m.group(0)
+            
+    if not new_success_dict:
+        return ""
+
+    dict_text = ujson.dumps(new_success_dict, indent=4)
+    #ujson tries to escape "/", but it does it twice for some reason. 
+    dict_text = dict_text.replace("\/", "/")
+
+    #Add some indent
+    dict_text = dict_text.split("\n")
+    for i in range(1, len(dict_text)):
+        dict_text[i] = "    " + dict_text[i]
+        
+    dict_text = "\n".join(dict_text)
+    #add history text:
+    dict_text = '"success_text": ' + dict_text
+    
+    return dict_text
+
+def fail_outcome_regex_helper(m):
+    capture_group = m.group(1)
+    inner_strings = re.findall(r'".*?"|null', capture_group)
+    new_fail_dict = {}
+    new_labels = ["unscathed", "unscathed_ts", "death", "injury", "death_ts", "injury_ts", "death_p_l"]
+    
+    for i, text in enumerate(inner_strings):
+        text = text.replace('"', "")
+        if text != "null":
+            if len(text) < 10:
+                print("there might be something wrong:", text, m.group(0))
+            if text != "null":
+                new_fail_dict[new_labels[i]] = [text]
+            
+    if not new_fail_dict:
+        return ""
+
+    dict_text = ujson.dumps(new_fail_dict, indent=4)
+    #ujson tries to escape "/", but it does it twice for some reason. 
+    dict_text = dict_text.replace("\/", "/")
+
+    #Add some indent
+    dict_text = dict_text.split("\n")
+    for i in range(1, len(dict_text)):
+        dict_text[i] = "    " + dict_text[i]
+        
+    dict_text = "\n".join(dict_text)
+    #add history text:
+    dict_text = '"fail_text": ' + dict_text
+    
+    return dict_text
+    
+def reformat_outcome_text(path):
+    try:
+        with open(path, "r") as read_file:
+            patrols = read_file.read()
+            patrol_ujson = ujson.loads(patrols)
+            
+    except:
+        print(f'Something went wrong with {path}')
+        
+    if not patrol_ujson:
+        return
+
+    if type(patrol_ujson[0]) != dict:
+        print(path, "is not in the correct patrol format. It may not be a patrol .json.")
+        return
+
+    patrols = re.sub(r'"success_text" ?\: ?\[(.*?)\]', success_outcome_regex_helper, patrols, flags=re.DOTALL)
+    patrols = re.sub(r'"fail_text" ?\: ?\[(.*?)\]', fail_outcome_regex_helper, patrols, flags=re.DOTALL)
+    
+    with open(path, "w") as write_file:
+            write_file.write(patrols)
                     
     
 
@@ -75,6 +165,7 @@ for dir_, _, files in os.walk(root_dir):
             file_set.add(rel_file)
 
 for pa in file_set:
-    reformat_history_text(pa)
-    
+    reformat_outcome_text(pa)
+
+
 
