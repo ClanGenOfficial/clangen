@@ -29,22 +29,12 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: poetry run build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -113,22 +103,12 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: poetry run build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -211,29 +191,18 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
       - name: Build self-updater binary
         shell: bash
         run: |
           cd self_updater
           cargo build --release
           cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: poetry run build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -319,13 +288,6 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -337,16 +299,12 @@ jobs:
           cd self_updater
           cargo build --release
           cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: poetry run build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -432,13 +390,6 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -450,16 +401,12 @@ jobs:
           cd self_updater
           cargo build --release
           cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: poetry run build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -544,22 +491,12 @@ jobs:
         run: |
           echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: python -m PyInstaller Clangen.spec
+      - name: Run Build Script
+        run: python build.py
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: python -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          RELEASE_CHANNEL: ${{ env.RELEASE_CHANNEL }}
+          UPSTREAM: ${{ github.repository }}
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
       - name: Install appdmg

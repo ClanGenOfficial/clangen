@@ -1,9 +1,9 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 from os import getenv
+import platform
 
-
-is_release = getenv('IS_RELEASE', '1') == '1'
+is_release = getenv('RELEASE_CHANNEL', 'stable') == 'stable'
 block_cipher = None
 
 a = Analysis(
@@ -25,9 +25,12 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
-a.datas += [ ('version.ini', './version.ini', 'DATA') ]
+a.datas += [ ('version.ini', './tmp/version.ini', 'DATA') ]
 a.datas += [ ('changelog.txt', './changelog.txt', 'DATA') ]
-a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
+if platform.system() == 'Linux' or platform.system() == 'Darwin':
+    a.datas += [ ('OpenDataDirectory.sh', './tmp/datadir.sh', 'DATA') ]
+elif platform.system() == 'Windows':
+    a.datas += [ ('OpenDataDirectory.bat', './tmp/datadir.bat', 'DATA') ]
 a.datas += [ ('.itch.toml', './.itch.toml', 'DATA') ]
 
 exe = EXE(
