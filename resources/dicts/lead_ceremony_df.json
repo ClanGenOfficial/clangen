@@ -20,7 +20,7 @@
       "tags": [],
       "lead_trait": [],
       "text": [
-        "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} shut {PRONOUN/m_c/poss} eyes and are immediately surrounded by {PRONOUN/m_c/poss} loved ones, friends, and Clanmates who have passed on. Murk and shadows cling to their pelts like frost, and their eyes gleam dangerously as they greet the new leader."
+        "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/shut/shuts} {PRONOUN/m_c/poss} eyes and {VERB/m_c/are/is} immediately surrounded by {PRONOUN/m_c/poss} loved ones, friends, and Clanmates who have passed on. Murk and shadows cling to their pelts like frost, and their eyes gleam dangerously as they greet the new leader."
 
       ]
     },
@@ -28,14 +28,14 @@
       "tags": ["new_clan"],
       "lead_trait": [],
       "text": [
-        "As m_c dreams that night, {PRONOUN/m_c/subject} find {PRONOUN/m_c/self} walking through darkness, mud and muck sticking to {PRONOUN/m_c/poss} paws. The world around {PRONOUN/m_c/object} is devoid of light and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
+        "As m_c dreams that night, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} walking through darkness, mud and muck sticking to {PRONOUN/m_c/poss} paws. The world around {PRONOUN/m_c/object} is devoid of light, and bare branches claw at the empty sky above. A single, foreboding cat sits within a clearing."
       ]
     },
     "bloodthirsty": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
       "text": [
-            "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} {VERB/r_c/shut/shuts} {PRONOUN/m_c/poss} eyes and awaken under an oppressing darkness, devoid of the stars {PRONOUN/m_c/poss} left behind. {PRONOUN/m_c/subject/CAP} {VERB/rc/turn/turns} around to see a shadowy group of cats approaching, triumph in their eyes."
+            "m_c leaves to speak with the Dark Forest. {PRONOUN/m_c/subject/CAP} {VERB/r_c/shut/shuts} {PRONOUN/m_c/poss} eyes and {VERB/m_c/awaken/awakens} under an oppressing darkness, devoid of the stars {PRONOUN/m_c/poss} left behind. {PRONOUN/m_c/subject/CAP} {VERB/rc/turn/turns} around to see a shadowy group of cats approaching, triumph in their eyes."
       ]
 
     }
@@ -91,7 +91,7 @@
       "life_giving": [
         {
           "text": "r_c stalks up to the new leader, eyes burning with the increasingly familiar Dark Forest ferocity. {PRONOUN/r_c/subject/CAP} {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. m_c reels back with the emotion of the life that courses through them.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "hunger for battle", "greed", "authority", "disdain for the weak-willed"]
+          "virtue": ["resilience", "harsh judgement", "brutality", "duty", "protection", "pride", "hunger for battle", "greed", "authority", "disdain for the weak-willed"]
 
         }
       ]
@@ -119,7 +119,7 @@
       "life_giving": [
         {
           "text": "r_c seemed to appear to m_c out of nowhere in the shadowy gloom of the Dark Forest, and quietly gives {PRONOUN/m_c/object} a life for [virtue]. As quickly as {PRONOUN/r_c/subject} appeared, r_c vanished when the life was given.",
-          "virtue": ["resiliance", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "level-headedness", "caution in the heat of battle", "the strength to carry on alone", "inspiring obedience", "independence"]
+          "virtue": ["resilience", "harsh judgement", "brutality", "duty", "protection", "pride", "loyalty to their ambitions", "level-headedness", "caution in the heat of battle", "the strength to carry on alone", "inspiring obedience", "independence"]
 
         }
       ]
@@ -142,7 +142,7 @@
       "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         },
         {
-          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/recieve/recieves} a life for [virtue]. {PRONOUN/r_c/subject} {VERB/r_c/spit/spits} at m_c that {PRONOUN/m_c/poss} pain is almost over.",
+          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. {PRONOUN/r_c/subject} {VERB/r_c/spit/spits} at m_c that {PRONOUN/m_c/poss} pain is almost over.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         }
@@ -159,19 +159,19 @@
           "text": "r_c walks up to m_c next, giving {PRONOUN/m_c/object} a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/growl/growls} a word of encouragement over the destruction of c_n's enemies before returning to the line of shadows.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "Another cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c yowls in pain as the life rushes into {PRONOUN/m_c/object}.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
-          "text": "r_c approaches. Pain surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/recieve/recieves} a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.",
+          "text": "r_c approaches. Pain surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. r_c watches with no sympathy, grunting to live with the wounds earned.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -183,22 +183,22 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as they stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on their -own- Clan than the horizons, {PRONOUN/r_c/subject} {VERB/m_c/recieve/recieves} a life for [virtue].",
+          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as {PRONOUN/r_c/subject} stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on {PRONOUN/m_c/poss} <i>>own</i> Clan, rather than the horizons, {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
-          "text": "r_c places {PRONOUN/r_c/poss} muzzle against m_c, giving a harsh life for [virtue]. {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} with a whisper that the borders are not to be trusted.",
+          "text": "r_c places {PRONOUN/r_c/poss} muzzle against m_c, giving a harsh life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} with a whisper that the borders are not to be trusted.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
-          "text": "r_c approaches next and growls under {PRONOUN/r_c/poss} breath about the soft-hearted kittypets stalking around the borders. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue] and hurridly steps away.",
+          "text": "r_c approaches next and growls under {PRONOUN/r_c/poss} breath about the soft-hearted kittypets stalking around the borders. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} a life for [virtue] and hurriedly steps away.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -213,13 +213,13 @@
           "text": "With a taunting laugh, r_c approaches and gives m_c a life for [virtue]. r_c asks if {PRONOUN/m_c/poss} ambition to lead the Clan was worth the pain, but leaves before m_c could answer.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
-          "text": "There is a proud gleam in r_c's eyes as {PRONOUN/r_c/subject} approach the new leader. {PRONOUN/r_c/subjec/CAP} {VERB/m_c/give/gives} a life for [virtue] and encouragement to raise m_c's ambitions even higher than the stars themselves.",
+          "text": "There is a proud gleam in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} the new leader. {PRONOUN/r_c/subject/CAP} {VERB/m_c/give/gives} a life for [virtue], and encouragement to raise m_c's ambitions even higher than the stars themselves.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -234,19 +234,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -261,19 +261,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -288,19 +288,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -315,19 +315,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -342,19 +342,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -369,19 +369,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -396,19 +396,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -423,19 +423,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -447,22 +447,16 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "r_c meets m_c's eyes with a smirk, sliding through the murk like a claw through freshkill to give a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} quiet praise to m_c's more reckless tendencies, encouraging the new leader to think with {PRONOUN/m_c/poss} claws, not {PRONOUN/m_c/poss} head.",
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "Suddenly, r_c lunges, stopping {PRONOUN/r_c/poss} claws a whisker before m_c's face. {PRONOUN/r_c/subject/CAP} {VERB/r_c/laugh/laughs} sharply when {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} m_c had moved to retaliate, even surrounded by the oppressive murk, and {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} claws to m_c's throat to bestow a life for [virtue] before leaving as suddenly as {PRONOUN/r_c/subject} appeared.",
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "r_c locks eyes with m_c through the darkness before striding forward, shadows and goop sticking strongly to {PRONOUN/r_c/poss} fur. m_c is the one who initiates the nose-touch, though r_c doesn't so much as blink, allowing the life of [virtue] to flow into m_c with a fanged grin.",
+          "virtue": ["ambition", "confidence", "courage", "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "unpredictability"]
         }
       ]
     },
@@ -474,22 +468,16 @@
       "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "r_c laughs at poor, pious m_c, so out of place in the gloom of the forest, and gives a life for [virtue]. As m_c staggers in pain, r_c mockingly asks if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still faithful to StarClan, even in this twisted wood, but {PRONOUN/r_c/subject} {VERB/r_c/bound/bounds} away before any answer can be given.",
+          "virtue": ["strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "cruelty"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "r_c slides {PRONOUN/r_c/poss} tail along m_c's side, asking softly if this is where {PRONOUN/m_c/subject} thought {PRONOUN/m_c/poss} faith would bring {PRONOUN/m_c/object}. Before m_c can answer, r_c bestows {PRONOUN/r_c/poss} life of [virtue], cackling at m_c's pained expression before sliding back into the shadows.",
+          "virtue": ["strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "cruelty"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+          "text": "r_c wastes no time in bestowing {PRONOUN/r_c/poss} life of [virtue]. m_c opens {PRONOUN/m_c/poss} mouth, perhaps to argue that {PRONOUN/m_c/subject} {VERB/r_c/don't/doesn't} belong here, that {PRONOUN/m_c/poss} faith still lies with Silverpelt, but a single look from the shadowy warrior quickly wrenches {PRONOUN/m_c/poss} mouth shut once more.",
+          "virtue": ["strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority", "cruelty"]
         }
       ]
     },
@@ -504,19 +492,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -531,19 +519,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -558,19 +546,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -585,19 +573,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -612,19 +600,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -639,19 +627,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -666,19 +654,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -693,19 +681,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -720,19 +708,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -747,19 +735,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -774,19 +762,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -801,19 +789,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -828,19 +816,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -855,19 +843,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -882,19 +870,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -909,19 +897,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -936,19 +924,19 @@
           "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         },
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubborness", "authority"]
+      "stubbornness", "authority"]
         }
       ]
     },
