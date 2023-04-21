@@ -3353,12 +3353,14 @@ class Personality():
             print("No possible traits! Using 'strange'")
             self.trait = "strange"
             
-    def facet_wobble(self, max=3):
+    def facet_wobble(self, max=5):
         """Makes a small adjusment to all the facets, and redetermines trait if needed."""        
+        print(self)
         self.lawfulness += randint(-max, max)
         self.stability += randint(-max, max)
         self.aggression += randint(-max, max)
         self.sociability += randint(-max, max)
+        print(self)
         
 
 # Twelve example cats
