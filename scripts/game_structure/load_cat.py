@@ -127,7 +127,7 @@ def json_load():
                         new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            if cat["white_patches"] in old_creamy_patches:
+            if cat["white_patches"] in convert["old_creamy_patches"]:
                 new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
             else:
