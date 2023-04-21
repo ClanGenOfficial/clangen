@@ -1330,7 +1330,7 @@ class ChooseMateScreen(Screens):
             object_id="#text_box_34_horizcenter")
 
         info = str(self.the_cat.moons) + " moons\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + "\n" + \
-               self.the_cat.trait
+               self.the_cat.personality.trait
         self.current_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
                                                                           scale(pygame.Rect((410, 380), (200, 200))),
                                                                           object_id="#text_box_22_horizcenter_spacing_95",
@@ -1402,7 +1402,7 @@ class ChooseMateScreen(Screens):
             object_id="#text_box_34_horizcenter")
 
         info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
-               self.selected_cat.genderalign + "\n" + self.selected_cat.trait
+               self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait
         self.mate_elements["info"] = pygame_gui.elements.UITextBox(info,
                                                                    scale(pygame.Rect((1000, 380), (200, 200))),
                                                                    object_id="#text_box_22_horizcenter_spacing_95",
@@ -1546,7 +1546,7 @@ class ChooseMateScreen(Screens):
                 object_id="#text_box_34_horizcenter")
 
             info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
-                   self.selected_cat.genderalign + "\n" + self.selected_cat.trait
+                   self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait
             self.mate_elements["info"] = pygame_gui.elements.UITextBox(info,
                                                                        scale(pygame.Rect((1000, 380), (200, 200))),
                                                                        object_id="#text_box_22_horizcenter_spacing_95",
