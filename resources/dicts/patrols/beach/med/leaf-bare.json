@@ -20,13 +20,13 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "Surprisingly, r_c actually starts up a conversation with {PRONOUN/r_c/object} about the herbs {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/r_c/poss} heart feel lighter getting to share {PRONOUN/r_c/poss} knowledge and skills with someone who respects {PRONOUN/r_c/object}.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+            "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
         ],
         "fail_text": [
-            "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
-            "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+            "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
+            "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         ],
         "win_skills": [
             "good speaker",
@@ -63,13 +63,13 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/r_c/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/p_l/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+            "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
         ],
         "fail_text": [
-            "It's an exhausting day. p_l starts chatting with r_c to pass the time, but {PRONOUN/r_c/subject} {VERB/r_c/have/haves} nothing in common.",
-            "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+            "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+            "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         ],
         "win_skills": [
             "good speaker",
@@ -106,7 +106,7 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": [
-            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can.",
+            "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can.",
             "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
             "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n."
         ],
@@ -154,7 +154,7 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": [
-            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}.",
+            "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}.",
             "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds {PRONOUN/p_l/poss} breath, hoping {PRONOUN/p_l/poss} mentor comes down unscathed.",
             "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns."
         ],
@@ -199,9 +199,9 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "While blackberries don't lose {PRONOUN/p_l/poss} leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object}.",
-            "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. The rest of the patrol gingerly follows {PRONOUN/p_l/poss} lead, and together {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} as decent a harvest as anyone can expect from leaf-bare.",
-            "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} {PRONOUN/p_l/object} out to the members of the patrol from within the thicket, and {PRONOUN/p_l/poss} entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home."
+            "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object}.",
+            "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. The rest of the patrol gingerly follows {PRONOUN/p_l/poss} lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
+            "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} them out to the members of the patrol from within the thicket, and {PRONOUN/p_l/poss} entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home."
         ],
         "fail_text": [
             "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant. {PRONOUN/p_l/subject/CAP}'ll have to try a different blackberry bush on another day.",
@@ -463,8 +463,8 @@
         "chance_of_success": 20,
         "exp": 10,
         "success_text": [
-            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for {PRONOUN/p_l/object} as p_l.",
-            "It feels nearly impossible, but the glimpse of soggy green stuff at the end of {PRONOUN/p_l/poss} cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} all back in {PRONOUN/p_l/poss} nice, warm nests.",
+            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from. {PRONOUN/p_l/poss/CAP} Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
+            "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
             "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
         ],
         "fail_text": [
@@ -550,7 +550,7 @@
         "chance_of_success": 40,
         "exp": 40,
         "success_text": [
-            "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, {PRONOUN/p_l/subject} heavily praise app1 as {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back home with {PRONOUN/p_l/poss} harvest - {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't uttered a single word of complaint about the miserable conditions, and p_l couldn't be prouder.",
+            "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, {PRONOUN/p_l/subject} heavily praise app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/have/has}n't uttered a single word of complaint about the miserable conditions, and p_l couldn't be prouder.",
             "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen app1's happiness when {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to uncover a couple good dandelion plants. Watching {PRONOUN/p_l/subject} find joy in safeguarding the Clan gives p_l a swoop of pride and affection for the apprentice. The path of a medicine cat suits the young cat well.",
             "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide eyed and impressed."
         ],
@@ -639,7 +639,7 @@
             "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         ],
         "fail_text": [
-            "p_l finds a couple of juniper trees with {PRONOUN/p_l/poss} evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
@@ -683,12 +683,12 @@
         "chance_of_success": 40,
         "exp": 40,
         "success_text": [
-            "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/p_l/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
+            "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/app1/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
             "Sometimes, p_l finds {PRONOUN/p_l/object} near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare. app1 gives them a weird look, though, prompting p_l to explain {PRONOUN/p_l/poss} wide smile.",
             "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         ],
         "fail_text": [
-            "p_l finds a couple of juniper trees with {PRONOUN/p_l/poss} evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
@@ -733,7 +733,7 @@
             "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         ],
         "fail_text": [
-            "p_l finds a couple of juniper trees with {PRONOUN/p_l/poss} evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard.",
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
@@ -770,8 +770,8 @@
         "exp": 30,
         "success_text": [
             "p_l returns to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of {PRONOUN/p_l/poss} bulbs for the herb stores.",
-            "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got {PRONOUN/s_c/object} now."
+            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
+            "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got them now."
         ],
         "fail_text": [
             "p_l searches and searches, but eventually {PRONOUN/p_l/subject} {VERB/p_l/have/haves} to admit defeat. {PRONOUN/p_l/subject/CAP} can't remember where the garlic grew when the world was warm.",
@@ -820,7 +820,7 @@
         "exp": 40,
         "success_text": [
             "p_l and app1 return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of {PRONOUN/p_l/poss} bulbs for the herb stores with app1.",
+            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
             "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got {PRONOUN/s_c/object} now."
         ],
         "fail_text": [
@@ -866,7 +866,7 @@
         "exp": 30,
         "success_text": [
             "p_l and the patrol return to camp with stone-cold paws and a new hatred for digging, but carrying bulbs of garlic.",
-            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of {PRONOUN/p_l/poss} bulbs for the herb stores with the patrol.",
+            "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
             "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. {PRONOUN/s_c/subject/CAP} {VERB/s_c/prove/proves} themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} got {PRONOUN/s_c/object} now."
         ],
         "fail_text": [

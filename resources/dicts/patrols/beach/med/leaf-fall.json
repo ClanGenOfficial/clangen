@@ -104,7 +104,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": [
-            "The betony plants are determined to enjoy the last of the sun's warmth, reaching up cheerfully to the sky as p_l gathers {PRONOUN/p_l/poss} leaves.",
+            "The betony plants are determined to enjoy the last of the sun's warmth, reaching up cheerfully to the sky as p_l gathers their leaves.",
             "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections.",
             "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores."
         ],
@@ -181,7 +181,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "The betony plants are determined to enjoy the last of the sun's warmth, reaching up cheerfully to the sky as p_l's patrol gathers {PRONOUN/p_l/poss} leaves.",
+            "The betony plants are determined to enjoy the last of the sun's warmth, reaching up cheerfully to the sky as p_l's patrol gathers their leaves.",
             "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l's patrol brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections.",
             "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/organise/organises} {PRONOUN/s_c/poss} patrol to bring back a great haul of betony for the herb stores."
         ],
@@ -1782,7 +1782,7 @@
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. It's difficult, but doable, if only just."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "smart",
@@ -1825,7 +1825,7 @@
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. It's difficult, but doable, if only just, and app1 is desperately grateful to learn the trick."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "smart",
@@ -1863,7 +1863,7 @@
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. Some of the warriors are too impatient to follow {PRONOUN/s_c/poss} lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "smart",
@@ -1972,7 +1972,7 @@
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
@@ -2013,7 +2013,7 @@
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 thankfully seems to be taking the appropriate amount of care harvesting it."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
@@ -2049,7 +2049,7 @@
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, which is extra helpful when gathering with {PRONOUN/s_c/poss} less-experienced Clanmates."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
@@ -2190,7 +2190,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
@@ -2231,7 +2231,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
@@ -2268,7 +2268,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for {PRONOUN/s_c/poss} patrol to harvest."
         ],
         "fail_text": [
-            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/haves} n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         ],
         "win_skills": [
             "keen eye"
