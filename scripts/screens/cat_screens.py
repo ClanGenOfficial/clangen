@@ -11,11 +11,11 @@ from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY, process_text
+from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text
 
-from .base_screens import Screens, cat_profiles
+from .base_screens import Screens
 
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, scale_dimentions
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
 from scripts.game_structure import image_cache
@@ -291,7 +291,7 @@ class ProfileScreen(Screens):
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
-                if Cat.fetch_cat(self.previous_cat) is not None:
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     game.switches['cat'] = self.previous_cat
                     self.build_profile()
@@ -299,13 +299,16 @@ class ProfileScreen(Screens):
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
-                if Cat.fetch_cat(self.next_cat) is not None:
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
                     game.switches['cat'] = self.next_cat
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid next cat", self.previous_cat)
+            elif event.ui_element == self.inspect_button:
+                self.close_current_tab()
+                self.change_screen("sprite inspect screen")
             elif event.ui_element == self.relations_tab_button:
                 self.toggle_relations_tab()
             elif event.ui_element == self.roles_tab_button:
@@ -480,6 +483,8 @@ class ProfileScreen(Screens):
                                                  , manager=MANAGER)
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
+        self.inspect_button = pygame_gui.elements.UIButton(scale(pygame.Rect((1436, 120),(64,64))), "", 
+                                                           manager=MANAGER)
         self.relations_tab_button = UIImageButton(scale(pygame.Rect((96, 840), (352, 60))), "",
                                                   object_id="#relations_tab_button", manager=MANAGER)
         self.roles_tab_button = UIImageButton(scale(pygame.Rect((448, 840), (352, 60))), "",
@@ -510,7 +515,6 @@ class ProfileScreen(Screens):
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
-        self.update_platform()
         if game.last_screen_forProfile == 'med den screen':
             self.toggle_conditions_tab()
 
@@ -540,6 +544,7 @@ class ProfileScreen(Screens):
         self.conditions_tab_button.kill()
         self.placeholder_tab_3.kill()
         self.placeholder_tab_4.kill()
+        self.inspect_button.kill()
         self.close_current_tab()
 
     def build_profile(self):
@@ -605,28 +610,12 @@ class ProfileScreen(Screens):
                                                                      line_spacing=0.95, manager=MANAGER)
 
         # Set the cat backgrounds.
-        self.update_platform()
         if game.settings['backgrounds']:
-            if game.clan.current_season == 'Newleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((110, 400), (480, 420))),
-                    self.newleaf_plt, manager=MANAGER)
-                self.profile_elements["background"].disable()
-            elif game.clan.current_season == 'Greenleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((110, 400), (480, 420))),
-                    self.greenleaf_plt, manager=MANAGER)
-                self.profile_elements["background"].disable()
-            elif game.clan.current_season == 'Leaf-bare':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((110, 400), (480, 420))),
-                    self.leafbare_plt, manager=MANAGER)
-                self.profile_elements["background"].disable()
-            elif game.clan.current_season == 'Leaf-fall':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((110, 400), (480, 420))),
-                    self.leaffall_plt, manager=MANAGER)
-                self.profile_elements["background"].disable()
+            self.profile_elements["background"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((110, 400), (480, 420))),
+                pygame.transform.scale(self.get_platform(), scale_dimentions((480, 420))), 
+                manager=MANAGER)
+            self.profile_elements["background"].disable()
 
         # Create cat image object
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
@@ -2162,7 +2151,7 @@ class ProfileScreen(Screens):
     # ---------------------------------------------------------------------------- #
     #                               cat platforms                                  #
     # ---------------------------------------------------------------------------- #
-    def update_platform(self):
+    def get_platform(self):
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor)
 
@@ -2184,29 +2173,40 @@ class ProfileScreen(Screens):
         
         order = ['beach', 'forest', 'mountainous', 'nest', 'plains', 'SC/DF']
 
+
+        biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+        
+        
         biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
         
         offset = 0
         if light_dark == "light":
             offset = 80
         
+        season_subsurfaces = {
+            "greenleaf": 0 + offset,
+            "leafbare": 160 + offset,
+            "leaffall": 320 + offset,
+            "newleaf": 480 + offset
+        }
+        
         if the_cat.df:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
         else:
-            self.greenleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
-            self.leafbare_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
-            self.leaffall_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70)), (240, 210))
-            self.newleaf_plt = pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(480 + offset, 0, 80, 70)), (240, 210))
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+            season_x = {
+                "greenleaf": 0 + offset,
+                "leafbare": 160 + offset,
+                "leaffall": 320 + offset,
+                "newleaf": 480 + offset
+            }
+            
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
+                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
 
     def on_use(self):
         pass
@@ -2274,6 +2274,9 @@ class CeremonyScreen(Screens):
         return
 
 
+# ---------------------------------------------------------------------------- #
+#                               Role Screen                                    #
+# ---------------------------------------------------------------------------- #
 class RoleScreen(Screens):
     the_cat = None
     selected_cat_elements = {}
@@ -2286,11 +2289,13 @@ class RoleScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
-                
-                game.switches["cat"] = self.next_cat
-                self.update_selected_cat()
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
+                    game.switches["cat"] = self.next_cat
+                    self.update_selected_cat()
+                else:
+                    print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
-                if Cat.fetch_cat(self.previous_cat) is not None:
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
                     self.update_selected_cat()
                 else:
@@ -2825,3 +2830,254 @@ class RoleScreen(Screens):
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
+
+# ---------------------------------------------------------------------------- #
+#                            SpriteInspectScreen                               #
+# ---------------------------------------------------------------------------- #
+
+class SpriteInspectScreen(Screens):
+    
+    def __init__(self, name=None):
+        self.back_button = None
+        self.previous_cat_button = None
+        self.previous_cat = None
+        self.next_cat_button = None
+        self.next_cat = None
+        self.the_cat = None
+        self.cat_elements = {}
+        self.platform_shown = None
+        super().__init__(name)
+    
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen("profile screen")
+            elif event.ui_element == self.next_cat_button:
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
+                    print(Cat.fetch_cat(self.next_cat))
+                    game.switches["cat"] = self.next_cat
+                    self.cat_setup()
+                else:
+                    print("invalid next cat", self.next_cat)
+            elif event.ui_element == self.previous_cat_button:
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
+                    game.switches["cat"] = self.previous_cat
+                    self.cat_setup()
+                else:
+                    print("invalid previous cat", self.previous_cat)
+        
+        return super().handle_event(event)
+    
+
+    def screen_switches(self):        
+        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
+                                             , manager=MANAGER)
+        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
+                                                 object_id="#previous_cat_button"
+                                                 , manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
+                                         , manager=MANAGER)
+        
+        self.platform_show = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "" ,
+                                           object_id = "#unchecked_checkbox")
+        self.platform_hide = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "", 
+                                           object_id="#checked_checkbox")
+        
+        if game.settings['backgrounds']:
+            self.platform_shown = True
+        else:
+            self.platform_shown = False
+        
+        self.cat_setup()
+        return super().screen_switches()
+
+    def cat_setup(self): 
+        for ele in self.cat_elements:
+            self.cat_elements[ele].kill()
+        self.cat_elements = {}
+        
+        self.the_cat = Cat.fetch_cat(game.switches['cat'])
+        
+        self.cat_elements["platform"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((240, 200), (1120, 980))),
+                pygame.transform.scale(self.get_platform(), scale_dimentions((1120, 701))), 
+                manager=MANAGER)
+        self.set_background_visablity()
+        
+        self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((450, 200),(700, 700))),
+            pygame.transform.scale(self.the_cat.sprite, scale_dimentions((700, 700)))
+        )
+        
+        cat_name = str(self.the_cat.name)  # name
+        if len(cat_name) >= 40:
+            cat_name = f"{cat_name[0:39]}..."
+        if self.the_cat.dead:
+            cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
+        
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                          scale(pygame.Rect((50, 120), (-1, 80))),
+                                                                          object_id=get_text_box_theme(
+                                                                              "#text_box_40_horizcenter"), manager=MANAGER)
+        name_text_size = self.cat_elements["cat_name"].get_relative_rect()
+
+        self.cat_elements["cat_name"].kill()
+
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+                                                                      scale(pygame.Rect(
+                                                                        (800 - name_text_size.width, 120),
+                                                                        (name_text_size.width * 2, 80))),
+                                                                       object_id=get_text_box_theme(
+                                                                        "#text_box_40_horizcenter"), manager=MANAGER)
+        
+        # Fullscreen
+        if game.settings['fullscreen']:
+            x_pos = 740 - int(name_text_size.width * 7 / 15)
+        else:
+            x_pos = 740 - name_text_size.width
+        # TODO: positioning is weird. closer to names on some, further on others
+        # this only happens on fullscreen :waaaaaaa:
+        self.cat_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
+                                                                ((x_pos, 127), (56, 56))),
+                                                              "",
+                                                              object_id="#fav_cat",
+                                                              manager=MANAGER,
+                                                              tool_tip_text='Remove favorite status',
+                                                              starting_height=2)
+
+        self.cat_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
+                                                                    ((x_pos, 127),
+                                                                        (56, 56))),
+                                                                 "",
+                                                                 object_id="#not_fav_cat",
+                                                                 manager=MANAGER,
+                                                                 tool_tip_text='Mark as favorite',
+                                                                 starting_height=2)
+        if self.the_cat.favourite:
+            self.cat_elements["favourite_button"].show()
+            self.cat_elements["not_favourite_button"].hide()
+        else:
+            self.cat_elements["favourite_button"].hide()
+            self.cat_elements["not_favourite_button"].show()
+        
+        self.determine_previous_and_next_cat()
+        self.update_disabled_buttons()
+        
+    def determine_previous_and_next_cat(self):
+        """'Determines where the next and previous buttons point too."""
+
+        is_instructor = False
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+            is_instructor = True
+
+        previous_cat = 0
+        next_cat = 0
+        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df and \
+                not (self.the_cat.outside or self.the_cat.exiled):
+            previous_cat = game.clan.instructor.ID
+
+        if is_instructor:
+            next_cat = 1
+
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
+                next_cat = 1
+            else:
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
+
+                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
+
+                elif int(next_cat) > 1:
+                    break
+
+        if next_cat == 1:
+            next_cat = 0
+
+        self.next_cat = next_cat
+        self.previous_cat = previous_cat
+    
+    def set_background_visablity(self):
+        if "platform" not in self.cat_elements:
+            return
+        
+        if self.platform_shown:
+            self.cat_elements["platform"].show()
+            self.cat_elements["platform"].disable()
+        else:
+            self.cat_elements["platform"].hide()
+    
+    def exit_screen(self):
+        self.back_button.kill()
+        self.back_button = None
+        self.previous_cat_button.kill()
+        self.previous_cat_button = None
+        self.next_cat_button.kill()
+        self.next_cat_button = None
+        for ele in self.cat_elements:
+            self.cat_elements[ele].kill()
+        self.cat_elements = {}
+        return super().exit_screen()
+    
+    def update_disabled_buttons(self):
+        # Previous and next cat button
+        if self.next_cat == 0:
+            self.next_cat_button.disable()
+        else:
+            self.next_cat_button.enable()
+
+        if self.previous_cat == 0:
+            self.previous_cat_button.disable()
+        else:
+            self.previous_cat_button.enable()
+    
+    def get_platform(self):
+        the_cat = Cat.all_cats.get(game.switches['cat'],
+                                   game.clan.instructor)
+
+        light_dark = "light"
+        if game.settings["dark mode"]:
+            light_dark = "dark"
+
+        available_biome = ['Forest', 'Mountainous', 'Plains', 'Beach']
+        biome = game.clan.biome
+
+        if biome not in available_biome:
+            biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
+
+        biome = biome.lower()
+
+        platformsheet = pygame.image.load('resources/images/platforms.png').convert_alpha()
+        
+        order = ['beach', 'forest', 'mountainous', 'nest', 'plains', 'SC/DF']
+        
+        offset = 0
+        if light_dark == "light":
+            offset = 80
+        
+        if the_cat.df:
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+        else:
+            biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
+            season_x = {
+                "greenleaf": 0 + offset,
+                "leafbare": 160 + offset,
+                "leaffall": 320 + offset,
+                "newleaf": 480 + offset
+            }
+            
+            
+            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
+                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
+    

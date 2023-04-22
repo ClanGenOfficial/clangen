@@ -531,7 +531,7 @@ class Cat():
             Cat.insert_cat(self)
 
     def __repr__(self):
-        return self.ID
+        return "CAT OBJECT:" + self.ID
 
     @property
     def mentor(self):
