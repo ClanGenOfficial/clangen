@@ -166,5 +166,10 @@
   "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
   "event_text": "m_c watches every little thing around them for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
   "cat_skill": ["omen sight"]
+},
+{
+  "camp": "any",
+  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+  "event_text": "m_c preps battle herbs into small bundles to rush to the battlefield in case of severe injuries.",
 }
 ]
