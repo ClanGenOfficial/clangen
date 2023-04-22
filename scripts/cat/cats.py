@@ -1265,7 +1265,7 @@ class Cat():
                     extra_givers = possible_sc_cats
                 else:
                     extra_givers = random.sample(possible_sc_cats, k=amount)
-            else:
+            else:  #example printdddd
                 print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     i not in life_givers and
@@ -1372,7 +1372,7 @@ class Cat():
                     attempted.append(chosen_life)
                 i += 1
             used_lives.append(chosen_life)
-            if chosen_life["virtue"]:
+            if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
                 if not poss_virtues:
                     poss_virtues = ['faith', 'friendship', 'love', 'strength']

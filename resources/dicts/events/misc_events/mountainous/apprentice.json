@@ -1,3 +1,7 @@
 [
-
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The apprentices of the Clan are taking special strength training to learn how to weaponize stones and boulders in the mountain landscape."
+    }
 ]

@@ -17,7 +17,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-  {
+    {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c travels to the other Clans to bring them an important message.",
@@ -25,5 +25,29 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+   },
+   {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "As the deputy, m_c is doing their best to prepare for leadership in the case that the worst happens."
+  },
+  {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat", "other_cat_leader", "mc_to_rc", "platonic", "respect", "trust"],
+      "event_text": "m_c is struggling to accept the fact that they may have to step up as leader if r_c loses their last life. How could they go on without their beloved leader? How difficult will it to be to lead in their stead?",
+      "cat_trait": ["insecure", "lonesome", "nervous"]
+  },
+  {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat", "other_cat_leader"],
+      "event_text": "m_c is struggling to accept the fact that they may have to step up as leader if r_c loses their last life.",
+      "cat_trait": ["insecure", "lonesome", "nervous"]
+  },
+  {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat", "other_cat_elder"],
+      "event_text": "m_c is heavily relying on the tactical advice and experience of the elders, namely r_c.",
+      "cat_trait": ["insecure", "lonesome", "nervous"],
+      "other_cat_skill": ["valuable tactician", "smart tactician", "fantastic teacher", "extremely smart", "camp keeper"]
+  }
 ]
