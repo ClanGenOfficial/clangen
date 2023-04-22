@@ -2,46 +2,41 @@
     {
             "camp": "any",
             "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-            "event_text": "m_c thinks about retiring.",
-            "cat_trait": null,
-            "cat_skill": null,
-            "other_cat_trait": null,
-            "other_cat_skill": null
+            "event_text": "m_c thinks about retiring."
         },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c feels as though the responsibility of leadership is crushing them.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "event_text": "m_c feels as though the responsibility of leadership is crushing them."
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c calls a Clan meeting to give an important announcement.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "event_text": "m_c calls a Clan meeting to give an important announcement."
     },
     {
         "camp": "any",
         "tags": ["low_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c confesses they don't have many lives left.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "event_text": "m_c confesses they don't have many lives left."
     },
     {
         "camp": "any",
         "tags": ["other_cat", "other_cat_app", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c assesses r_c's progress.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "event_text": "m_c assesses r_c's progress."
+    }, 
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c feels burdened with the weight of their descisions, knowing that every choice they make could mean the difference between victory and defeat."
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c's relationships with their clanmates are strained, with some questioning their decisions and others relying on them more heavily than ever."
+    },
+    {
+      "camp": "any",
+      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+      "event_text": "m_c is forced to be a symbol of strength and unity for their clan, even in the face of their own doubts and fears."
     }
 ]

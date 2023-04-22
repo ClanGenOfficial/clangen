@@ -1,12 +1,3 @@
 [
-    {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "War"],
-    "event_text": "m_c feels burdened with the weight of their descisions, knowing that every choice they make could mean the difference between victory and defeat.",
-    "cat_trait": null,
-    "cat_skill": null,
-    "other_cat_trait": null,
-    "other_cat_skill": null
-  }
-
+ 
 ]
