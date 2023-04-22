@@ -839,6 +839,19 @@ def get_omen_snippet_list(chosen_list, amount, sense_groups=None, return_string=
         return final_snippets
 
 
+def history_text_adjust(text,
+                        other_clan_name,
+                        clan):
+    """
+    we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
+    this is so that future pronoun changes or name changes will continue to be reflected in history
+    """
+    if "o_c" in text:
+        text = text.replace("o_c", other_clan_name)
+    if "c_n" in text:
+        text = text.replace("c_n", clan.name)
+    return text
+
 def event_text_adjust(Cat,
                       text,
                       cat,
@@ -865,6 +878,10 @@ def event_text_adjust(Cat,
     if not keep_m_c and cat:
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
+    if cat:
+        if cat.accessory:
+            cat_dict["acc_plural"] = (str(ACC_DISPLAY[cat.accessory]["plural"]), None)
+            cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
@@ -873,9 +890,15 @@ def event_text_adjust(Cat,
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
 
-    if cat.accessory:
-        cat_dict["acc_plural"] = (str(ACC_DISPLAY[cat.accessory]["plural"]), None)
-        cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
+    if "lead_name" in text:
+        kitty = Cat.fetch_cat(game.clan.leader)
+        cat_dict["lead_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "dep_name" in text:
+        kitty = Cat.fetch_cat(game.clan.deputy)
+        cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "med_name" in text:
+        kitty = choice(get_med_cats(Cat, working=False))
+        cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if clan:
         _tmp = str(clan.name)
