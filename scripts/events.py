@@ -1581,23 +1581,24 @@ class Events():
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/100
-        # chance to kill leader: 1/100
-        if not int(random.random() *
-                   100) and cat.status == 'leader' and not cat.not_working():
+        if not int(random.random() * game.config["death_related"]["leader_death_chance"]) and\
+            cat.status == 'leader' and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
                                             self.enemy_clan, alive_kits)
             return True
 
         # chance to die of old age
+        age_change = game.config["death_related"]["old_age_death_chance"]
+        age_start = game.config["death_related"]["old_age_death_start"]
         if cat.moons > int(
-                random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+                random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
                                             self.enemy_clan, alive_kits)
             return True
 
         # classic death chance
         if game.clan.game_mode == "classic" and not int(
-                random.random() * 500):  # 1/500
+                random.random() * game.config["death_related"]["classic_death_chance"]):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
                                             self.enemy_clan, alive_kits)
             return True
@@ -1609,8 +1610,11 @@ class Events():
                 return True
 
         # extra death chance and injuries in expanded & cruel season
-        if game.clan.game_mode != 'classic' and not int(
-                random.random() * 500) and not cat.not_working():  # 1/400
+        chance_number = game.config["death_related"]["expanded_death_chance"]
+        if game.clan.game_mode == "cruel season":
+            chance_number = game.config["death_related"]["cruel season_death_chance"]
+        if game.clan.game_mode != 'classic' and not int(random.random() * chance_number) and\
+                    not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war,
                                             self.enemy_clan, alive_kits)
             return True
