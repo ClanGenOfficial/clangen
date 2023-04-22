@@ -1372,7 +1372,7 @@ class Cat():
                     attempted.append(chosen_life)
                 i += 1
             used_lives.append(chosen_life)
-            if chosen_life["virtue"]:
+            if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
                 if not poss_virtues:
                     poss_virtues = ['faith', 'friendship', 'love', 'strength']
