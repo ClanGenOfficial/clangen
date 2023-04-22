@@ -829,11 +829,31 @@ class Events():
                   encoding="ascii") as read_file:
             self.WAR_TXT = ujson.loads(read_file.read())
 
-            game.config["death_related"]["leader_death_chance"] -= game.config["death_related"]["war_death_modifier"]
+        self.war_config_chances(True)
+
+    def war_config_chances(self, war):
+        """
+        set true to change the game config death and injury chances
+        set false to reset them to OG numbers
+        """
+        if war:
+            print('higher war chances')
+            game.config["death_related"]["leader_death_chance"] -= game.config["death_related"]["war_death_modifier_leader"]
             game.config["death_related"]["classic_death_chance"] -= game.config["death_related"]["war_death_modifier"]
             game.config["death_related"]["expanded_death_chance"] -= game.config["death_related"]["war_death_modifier"]
             game.config["death_related"]["cruel season_death_chance"] -= game.config["death_related"]["war_death_modifier"]
-            print(game.config["death_related"]["leader_death_chance"])
+            game.config["condition_related"]["classic_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
+            game.config["condition_related"]["expanded_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
+            game.config["condition_related"]["cruel season_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
+        else:
+            print('war chances reset')
+            game.config["death_related"]["leader_death_chance"] += game.config["death_related"]["war_death_modifier_leader"]
+            game.config["death_related"]["classic_death_chance"] += game.config["death_related"]["war_death_modifier"]
+            game.config["death_related"]["expanded_death_chance"] += game.config["death_related"]["war_death_modifier"]
+            game.config["death_related"]["cruel season_death_chance"] += game.config["death_related"]["war_death_modifier"]
+            game.config["condition_related"]["classic_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
+            game.config["condition_related"]["expanded_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
+            game.config["condition_related"]["cruel season_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
 
     def check_war(self):
         """
@@ -858,7 +878,6 @@ class Events():
             if not self.WAR_TXT:
                 self.load_war()
 
-
             for other_clan in game.clan.all_clans:
                 if other_clan.name == game.clan.war["enemy"]:
                     self.enemy_clan = other_clan
@@ -878,14 +897,18 @@ class Events():
                 game.clan.war["enemy"] = None
                 game.clan.war["duration"] = 0
                 self.enemy_clan.relations = 12
+                self.war_config_chances(False)
                 war_events = self.WAR_TXT["conclusion_events"]
+                self.WAR_TXT = None
             else:  # try to influence the relation with warring clan
                 game.clan.war["duration"] += 1
                 choice = random.choice(["rel_up", "neutral", "rel_down"])
                 war_events = self.WAR_TXT["progress_events"][choice]
+                if self.enemy_clan.relations < 0:
+                    self.enemy_clan.relations = 0
                 if choice == "rel_up":
                     self.enemy_clan.relations += 1
-                elif choice == "rel_down":
+                elif choice == "rel_down" and self.enemy_clan.relations > 1:
                     self.enemy_clan.relations -= 1
 
         else:  # try to start a war if no war in progress
@@ -1619,17 +1642,16 @@ class Events():
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/100
-        if not int(random.random() *
-                   game.config["death_related"]["leader_death_chance"]) and cat.status == 'leader' and not cat.not_working():
-            self.death_events.handle_deaths(cat, other_cat, self.at_war,
-                                            self.enemy_clan, alive_kits)
+        if not int(random.random() * game.config["death_related"]["leader_death_chance"]) \
+                and cat.status == 'leader' \
+                and not cat.not_working():
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             return True
 
         # chance to die of old age
-        if cat.moons > int(
-                random.random() * game.config["death_related"]["old_age_death_chance"]) + game.config["death_related"]["old_age_death_start"]:  # cat.moons > 150 <--> 200
-            self.death_events.handle_deaths(cat, other_cat, self.at_war,
-                                            self.enemy_clan, alive_kits)
+        if cat.moons > int(random.random() * game.config["death_related"]["old_age_death_chance"]) + \
+                game.config["death_related"]["old_age_death_start"]:  # cat.moons > 150 <--> 200
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             return True
 
         # disaster death chance
@@ -1638,15 +1660,14 @@ class Events():
                 self.handle_mass_extinctions(cat)
                 return True
 
-        # extra death chance and injuries in expanded & cruel season
-        if not int(random.random() * game.config["death_related"][f"{game.clan.game_mode}_death_chance"]):
-            self.death_events.handle_deaths(cat, other_cat, self.at_war,
-                                            self.enemy_clan, alive_kits)
+        # final death chance and then, if not triggered, head to injuries
+        if not int(random.random() * game.config["death_related"][f"{game.clan.game_mode}_death_chance"]) \
+                and not cat.not_working():  # 1/400
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             return True
         else:
-            triggered_death = self.condition_events.handle_injuries(
-                cat, other_cat, alive_kits, self.at_war, self.enemy_clan,
-                game.clan.current_season)
+            triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
+                                                                    self.enemy_clan, game.clan.current_season)
             return triggered_death
 
     def handle_murder(self, cat):

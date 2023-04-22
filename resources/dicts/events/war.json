@@ -1,4 +1,5 @@
 {
+  "comment": "use lead_name, med_name, and dep_name to insert the name of a cat with that rank",
   "event": "War",
   "trigger_events": [
     "The war with o_c has begun.",
@@ -11,11 +12,12 @@
       "but there are plenty of more complex/in-depth moon events that also affect the war."
     ],
     "rel_up": [
-      "Rumors are circulating the o_c wishes the war would end.",
-      "c_n hears a few rumors that o_c regrets the war.",
+      "Rumors are circulating that o_c wishes the war would end.",
       "Both c_n and o_c tire of the war, wishing for it to end.",
-      "Mutual exhaustion pushes both c_n and o_c to end the war.",
-      "Neither c_n nor o_c wishes to lose cats to the war, they seem to be considering peace."
+      "Mutual exhaustion pushes both c_n and o_c to consider ending the war.",
+      "Neither c_n nor o_c wishes to lose cats to the war, they seem to be considering peace.",
+      "Murmurings of peace between c_n and o_c permeated the last Gathering.",
+      "The other clan leaders pushed c_n and o_c to make peace at the last Gathering."
     ],
     "neutral": [
       "War continues to rage between c_n and o_c.",
@@ -28,7 +30,7 @@
     "rel_down": [
       "o_c has taken some of c_n's territory.",
       "c_n has taken some of o_c's territory",
-      "o_c attempted to break into your camp, but failed."
+      "War negotiations with o_c went badly at the last Gathering."
     ]
   },
   "conclusion_events": [

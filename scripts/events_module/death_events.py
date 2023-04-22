@@ -3,7 +3,8 @@ import random
 from scripts.cat.cats import Cat, INJURIES
 from scripts.cat.history import History
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, get_alive_kits, \
+    history_text_adjust
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -90,6 +91,8 @@ class Death_Events():
                     murder_unrevealed_history = death_cause.history_text.get("reg_murder_unrevealed")
                 revealed = False
 
+            death_history = history_text_adjust(death_history, other_clan_name, game.clan)
+            murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
             self.history.add_murders(cat, other_cat, revealed, death_history, murder_unrevealed_history)
 
         # check if the cat's body was retrievable
@@ -122,15 +125,12 @@ class Death_Events():
                 else:
                     game.clan.leader_lives -= 1
                     additional_event_text += cat.die(body)
-                death_history = event_text_adjust(Cat, death_history, cat, other_cat, other_clan_name,
-                                                  keep_m_c=True)
+                death_history = history_text_adjust(death_history, other_clan_name, game.clan)
+
             else:
                 additional_event_text += cat.die(body)
-                death_history = event_text_adjust(Cat, death_history, cat, other_cat, other_clan_name,
-                                                  keep_m_c=True)
-            if murder_unrevealed_history:
-                murder_unrevealed_history = event_text_adjust(Cat, murder_unrevealed_history, cat, other_cat, other_clan_name,
-                                                          keep_m_c=True)
+                death_history = history_text_adjust(death_history, other_clan_name, game.clan)
+
             self.history.add_death_or_scars(cat, other_cat, death_history, murder_unrevealed_history, death=True)
 
         # give death history to other cat and kill them if they die
@@ -145,13 +145,12 @@ class Death_Events():
                 else:
                     game.clan.leader_lives -= 1
                     additional_event_text += other_cat.die(body)
-                other_death_history = event_text_adjust(Cat,
-                                                        death_cause.history_text.get('lead_death'),
-                                                        other_cat, cat, other_clan_name, keep_m_c=True)
+                other_death_history = history_text_adjust(death_cause.history_text.get('lead_death'), other_clan_name, game.clan)
+
             else:
                 additional_event_text += other_cat.die(body)
-                other_death_history = event_text_adjust(Cat, death_cause.history_text.get('reg_death'),
-                                                        other_cat, cat, other_clan_name, keep_m_c=True)
+                other_death_history = history_text_adjust(death_cause.history_text.get('reg_death'), other_clan_name, game.clan)
+
             self.history.add_death_or_scars(other_cat, cat, other_death_history, death=True)
 
         # give injuries to other cat if tagged as such

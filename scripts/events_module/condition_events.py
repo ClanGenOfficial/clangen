@@ -6,7 +6,8 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations
+from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations, \
+    history_text_adjust
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
@@ -162,6 +163,7 @@ class Condition_Events():
                         involved_cats.append(other_cat.ID)
                         self.handle_relationship_changes(cat, injury_event, other_cat)
 
+                    print(text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     if game.clan.game_mode == "classic":
@@ -174,8 +176,8 @@ class Condition_Events():
                             # add scar history
                             if injury_event.history_text:
                                 if "scar" in injury_event.history_text:
-                                    history_text = event_text_adjust(Cat, injury_event.history_text['scar'], cat, other_cat,
-                                                                     other_clan_name, keep_m_c=True)
+                                    history_text = history_text_adjust(injury_event.history_text['scar'],
+                                                                              other_clan_name, game.clan)
                                     self.history.add_death_or_scars(cat, other_cat, history_text, scar=True)
                     else:
                         # record proper history text possibilities
@@ -183,14 +185,14 @@ class Condition_Events():
                             possible_scar = None
                             possible_death = None
                             if "scar" in injury_event.history_text:
-                                possible_scar = event_text_adjust(Cat, injury_event.history_text["scar"], cat,
-                                                                  other_cat, other_clan_name, keep_m_c=True)
+                                possible_scar = history_text_adjust(injury_event.history_text['scar'],
+                                                                   other_clan_name, game.clan)
                             if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
-                                possible_death = event_text_adjust(Cat, injury_event.history_text['lead_death'], cat,
-                                                                   other_cat, other_clan_name, keep_m_c=True)
+                                possible_death = history_text_adjust(injury_event.history_text['lead_death'],
+                                                                    other_clan_name, game.clan)
                             elif cat.status != 'leader' and 'reg_death' in injury_event.history_text:
-                                possible_death = event_text_adjust(Cat, injury_event.history_text['reg_death'], cat,
-                                                                   other_cat, other_clan_name, keep_m_c=True)
+                                possible_death = history_text_adjust(injury_event.history_text['reg_death'],
+                                                                    other_clan_name, game.clan)
 
                             if possible_scar:
                                 self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_scar,

@@ -839,6 +839,19 @@ def get_omen_snippet_list(chosen_list, amount, sense_groups=None, return_string=
         return final_snippets
 
 
+def history_text_adjust(text,
+                        other_clan_name,
+                        clan):
+    """
+    we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
+    this is so that future pronoun changes or name changes will continue to be reflected in history
+    """
+    if "o_c" in text:
+        text = text.replace("o_c", other_clan_name)
+    if "c_n" in text:
+        text = text.replace("c_n", clan.name)
+    return text
+
 def event_text_adjust(Cat,
                       text,
                       cat,
