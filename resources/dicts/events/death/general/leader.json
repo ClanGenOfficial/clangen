@@ -449,7 +449,11 @@
         "history_text": {
             "reg_death": "m_c was accidentally attacked by m_c in battle.",
             "lead_death": "{VERB/m_c/were/was} accidentally attacked by r_c in the chaos of battle"
-        }
+        },
+        "cat_negate_skill": ["excellent fighter"],
+        "other_cat_trait": ["vengeful", "bloodthirsty", "fierce", "daring", "bold"],
+        "other_cat_skill": ["good fighter", "great fighter"]
+
     },
     {
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
