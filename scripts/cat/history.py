@@ -174,6 +174,35 @@ class History:
         """
         self.check_load(cat)
 
+        # working under the impression that these blurbs will be preceeded by "more likely to"
+        influence_text = {
+            "lawfulness_raise": [
+                "follow rules", "follow the status quo", "heed their inner compass", "have strong inner morals"
+            ],
+            "lawfulness_lower": [
+                "bend the rules", "break away from the status quo", "break rules that don't suit them", "make their own rules"
+            ],
+            "sociability_raise": [
+                "be friendly towards others", "step out of their comfort zone", "interact with others", "put others at ease"
+            ],
+            "sociability_lower": [
+                "be cold towards others", "refrain from socializing", "bicker with others"
+            ],
+            "aggression_raise": [
+                "be ready for a fight", "start a fight", "defend their beliefs", "use teeth and claws over words", 
+                "resort to violence"
+            ],
+            "aggression_lower": [
+                "be slow to anger", "avoid a fight", "use words over teeth and claws", "try to avoid violence"
+            ],
+            "stability_raise": [
+                "stay collected", "think things through"
+            ],
+            "stability_lower": [
+                "behave erratically", "make impulsive decisions"
+            ]
+        }
+
         if mentor:
             mentor = mentor.ID
             cat.history.mentor_influence["mentor"] = mentor if mentor else None
