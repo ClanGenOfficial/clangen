@@ -27,7 +27,10 @@ class Death_Events():
         This function handles the deaths
         """
         involved_cats = [cat.ID]
-        other_clan = random.choice(game.clan.all_clans)
+        if war:
+            other_clan = enemy_clan
+        else:
+            other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
         current_lives = int(game.clan.leader_lives)
 
@@ -36,6 +39,7 @@ class Death_Events():
             other_clan_name = f'{other_clan.name}Clan'
 
         possible_short_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
+        print('death event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(possible_short_events, cat, other_cat, war,
                                                                          enemy_clan,
                                                                          other_clan, alive_kits, murder=murder)
@@ -52,6 +56,7 @@ class Death_Events():
         additional_event_text = ""
 
         # assign default history
+        print(death_cause.history_text)
         if cat.status == 'leader':
             death_history = death_cause.history_text.get("lead_death")
         else:
@@ -92,11 +97,6 @@ class Death_Events():
             body = False
         else:
             body = True
-
-        # handle war
-        if "war" in death_cause.tags and other_clan is not None and enemy_clan is not None:
-            other_clan = enemy_clan
-            other_clan_name = other_clan.name + "Clan"
 
         # handle other cat
         if "other_cat" and other_cat:
@@ -164,10 +164,10 @@ class Death_Events():
 
         # handle relationships with other clans
         if "rel_down" in death_cause.tags:
-            difference = -5
+            difference = -3
             change_clan_relations(other_clan, difference=difference)
         elif "rel_up" in death_cause.tags:
-            difference = 5
+            difference = 3
             change_clan_relations(other_clan, difference=difference)
 
         types = ["birth_death"]

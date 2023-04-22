@@ -237,10 +237,10 @@
             "other_cat"
         ],
         "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c.",
-        "history_text": [
-            "m_c was accidentally killed by r_c in battle.",
-            "was accidentally killed by r_c in the chaos of battle."
-        ]
+        "history_text": {
+            "reg_death": "m_c was accidentally killed by r_c in battle.",
+            "lead_death": "was accidentally killed by r_c in the chaos of battle."
+        }
     },
     {
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],

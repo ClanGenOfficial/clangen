@@ -865,6 +865,10 @@ def event_text_adjust(Cat,
     if not keep_m_c and cat:
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
+    if cat:
+        if cat.accessory:
+            cat_dict["acc_plural"] = (str(ACC_DISPLAY[cat.accessory]["plural"]), None)
+            cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
@@ -873,9 +877,15 @@ def event_text_adjust(Cat,
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
 
-    if cat.accessory:
-        cat_dict["acc_plural"] = (str(ACC_DISPLAY[cat.accessory]["plural"]), None)
-        cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
+    if "lead_name" in text:
+        kitty = Cat.fetch_cat(game.clan.leader)
+        cat_dict["lead_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "dep_name" in text:
+        kitty = Cat.fetch_cat(game.clan.deputy)
+        cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "med_name" in text:
+        kitty = choice(get_med_cats(Cat, working=False))
+        cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if clan:
         _tmp = str(clan.name)

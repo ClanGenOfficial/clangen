@@ -260,7 +260,17 @@ class GenerateEvents:
         major = []
         severe = []
 
+        if war and random.randint(1, 10) != 1 and other_clan == enemy_clan:
+            print('war event')
+            war_event = True
+        else:
+            print('not war event')
+            war_event = False
+
         for event in possible_events:
+
+            if war_event and "war" not in event.tags:
+                continue
 
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
@@ -452,8 +462,7 @@ class GenerateEvents:
                     final_events = severe
                 print(cat.status, severity_chosen[0])
 
-        if murder:
-            print(final_events)
+        print(final_events)
         return final_events
 
     def possible_ongoing_events(self, event_type=None, specific_event=None):

@@ -308,7 +308,8 @@
 		"old_age_death_chance": 51,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
-		"cruel season_death_chance": 300
+		"cruel season_death_chance": 300,
+		"war_death_modifier": 90
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,

@@ -25,7 +25,10 @@ class MiscEvents():
         This function handles the misc events
         """
         involved_cats = [cat.ID]
-        other_clan = random.choice(game.clan.all_clans)
+        if war:
+            other_clan = enemy_clan
+        else:
+            other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
@@ -39,8 +42,8 @@ class MiscEvents():
 
             acc_checked_events.append(event)
 
-        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war,
-                                                                   enemy_clan, other_clan,
+        print('misc event', cat.ID)
+        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
                                                                    alive_kits)
 
         # ---------------------------------------------------------------------------- #
@@ -51,10 +54,6 @@ class MiscEvents():
         except:
             print('ERROR: no misc events available for this cat')
             return
-
-        if "war" in misc_event.tags and other_clan is not None and enemy_clan is not None:
-            other_clan = enemy_clan
-            other_clan_name = other_clan.name + "Clan"
 
         if misc_event.accessories:
             self.handle_accessories(cat, misc_event.accessories)
@@ -67,11 +66,11 @@ class MiscEvents():
             other_cat = None
 
         if "rel_down" in misc_event.tags:
-            difference = -5
+            difference = -1
             change_clan_relations(other_clan, difference=difference)
 
         elif "rel_up" in misc_event.tags:
-            difference = 5
+            difference = 1
             change_clan_relations(other_clan, difference=difference)
 
         event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
