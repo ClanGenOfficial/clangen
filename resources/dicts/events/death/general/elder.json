@@ -130,5 +130,14 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
+        "camp": "Any",
+        "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
+        "history_text": {
+            "reg_death": "This cat died from old age life.",
+            "lead_death": "lost all remaining lives from old age."
+        }
     }
 ]

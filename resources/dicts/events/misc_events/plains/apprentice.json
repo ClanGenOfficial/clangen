@@ -1,3 +1,7 @@
 [
-
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The apprentices of the Clan are taking special training to learn how to survive in underground tunnels long-term, in the case of a siege conducted by o_c."
+    }
 ]
