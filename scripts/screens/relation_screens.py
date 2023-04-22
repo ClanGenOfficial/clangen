@@ -1175,6 +1175,7 @@ class ChooseMateScreen(Screens):
                 else:
                     self.the_cat.unset_mate(self.selected_cat, breakup=True)
                     self.update_choose_mate(breakup=True)
+                    self.update_current_cat_info()
                 self.update_cat_list()
             elif event.ui_element == self.previous_cat_button:
                 if Cat.fetch_cat(self.previous_cat) is not None:
@@ -1523,11 +1524,12 @@ class ChooseMateScreen(Screens):
             self.draw_compatible_line_affection()
 
             if breakup:
+                self.selected_mate_index = 0
                 self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((600, 376), (400, 156))),
                     pygame.transform.scale(
                         image_cache.load_image(
-                            "resources/images/heart_breakup.png").convert_alpha(), (400, 156)))
+                            "resources/images/heart_breakup.png").convert_alpha(), (400, 156)))   
             else:
                 self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((600, 376), (400, 156))),
