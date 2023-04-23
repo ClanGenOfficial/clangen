@@ -274,8 +274,11 @@
     },
     "emotional": {
       "general": [
-        ["a pervasive feeling of dread"]
-
+        ["a pervasive feeling of dread"],
+        ["the feeling of ants crawling through fur", "the drag of a claw through fur"],
+        ["the faint feeling of fangs on skin"],
+        ["the feeling of a hidden onlooker", "the oppressive feeling of eyes unseen"],
+        ["the stillness that comes before disaster"]
       ],
       "forest": [
 

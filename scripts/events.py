@@ -862,6 +862,9 @@ class Events():
         # if there are somehow no other clans, don't proceed
         if not game.clan.all_clans:
             return
+        # prevent wars from starting super early in the game
+        if game.clan.age <= 4:
+            return
 
         # check that the save dict has all the things we need
         if "at_war" not in game.clan.war:
@@ -888,7 +891,7 @@ class Events():
             if self.enemy_clan.temperament in ["mellow", "amiable", "gracious"]:
                 threshold = 3
 
-            threshold -= int(game.clan.war["duration"] / 2)
+            threshold -= int(game.clan.war["duration"] / 1.5)
             print('threshold', threshold)
 
             # check if war should conclude, if not, continue

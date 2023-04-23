@@ -92,7 +92,8 @@ class Death_Events():
                 revealed = False
 
             death_history = history_text_adjust(death_history, other_clan_name, game.clan)
-            murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
+            if murder_unrevealed_history:
+                murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
             self.history.add_murders(cat, other_cat, revealed, death_history, murder_unrevealed_history)
 
         # check if the cat's body was retrievable

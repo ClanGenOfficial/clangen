@@ -16,7 +16,10 @@
         "They gaze eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - they really could have used some guidance from StarClan."
     ],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "constraints": {
+        "skill": ["prophet"]
+    }
 },
 {
     "patrol_id": "fst_med_herblocation1",
