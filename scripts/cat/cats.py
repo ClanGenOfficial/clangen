@@ -1218,7 +1218,7 @@ class Cat():
 
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
-            if kitty.dead:
+            if kitty.dead and kitty.status != 'newborn':
                 # check where they reside
                 if starclan:
                     if kitty.ID not in game.clan.starclan_cats or kitty.outside:
@@ -1259,7 +1259,7 @@ class Cat():
 
                 possible_sc_cats = [i for i in game.clan.starclan_cats if
                                     i not in life_givers and
-                                    self.fetch_cat(i).status != 'leader']
+                                    self.fetch_cat(i).status not in ['leader', 'newborn']]
 
                 if len(possible_sc_cats) - 1 < amount:
                     extra_givers = possible_sc_cats
@@ -1269,7 +1269,7 @@ class Cat():
                 print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     i not in life_givers and
-                                    self.fetch_cat(i).status != 'leader']
+                                    self.fetch_cat(i).status not in ['leader', 'newborn']]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
                 else:

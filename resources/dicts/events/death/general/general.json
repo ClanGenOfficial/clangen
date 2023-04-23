@@ -273,16 +273,5 @@
             "lead_death": "lost a life because of curiosity."
         },
         "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
-    },
-    {
-        "camp": "Any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "comfort", "respect", "clan_kits"],
-        "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
-        "cat_skill": ["good storyteller", "great storyteller", "fantastic storyteller", "lore keeper"]
-    },
-    {
-        "camp": "Any",
-        "tags": ["Leaf-fall", "clan_kits", "other_cat", "other_cat_adult"],
-        "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
     }
 ]

@@ -240,9 +240,9 @@
     "fail_trait":["cold", "ambitious"],
     "min_cats": 2,
     "max_cats": 2,
-    "relationship_constraint": [
-        "parent/child"
-]
+    "constraints": {
+        "relationship": ["parent/child"]
+    }
 },
 {
     "patrol_id": "gen_train_argue1",

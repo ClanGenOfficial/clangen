@@ -198,7 +198,7 @@
   },
   {
     "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_clan"],
     "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding them, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
     "cat_trait": ["nervous", "lonesome", "playful", "careful", "compassionate", "loving", "insecure"]
   },

@@ -143,7 +143,6 @@ class Condition_Events():
                     other_clan_name = f'{other_clan.name}Clan'
 
                 possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "injury")
-                print('injury event', cat.ID)
                 final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
                                                                                  enemy_clan, other_clan, alive_kits)
 
@@ -163,7 +162,6 @@ class Condition_Events():
                         involved_cats.append(other_cat.ID)
                         self.handle_relationship_changes(cat, injury_event, other_cat)
 
-                    print(text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     if game.clan.game_mode == "classic":
