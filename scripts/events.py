@@ -862,6 +862,9 @@ class Events():
         # if there are somehow no other clans, don't proceed
         if not game.clan.all_clans:
             return
+        # prevent wars from starting super early in the game
+        if game.clan.age <= 4:
+            return
 
         # check that the save dict has all the things we need
         if "at_war" not in game.clan.war:
@@ -888,7 +891,7 @@ class Events():
             if self.enemy_clan.temperament in ["mellow", "amiable", "gracious"]:
                 threshold = 3
 
-            threshold -= int(game.clan.war["duration"] / 2)
+            threshold -= int(game.clan.war["duration"] / 1.5)
             print('threshold', threshold)
 
             # check if war should conclude, if not, continue
@@ -1599,7 +1602,7 @@ class Events():
         TODO: DOCS
         """
 
-        if random.randint(1, 40) != 1:
+        if int(random.random() * 40):
             return
 
         other_cat = random.choice(list(Cat.all_cats.values()))
@@ -1649,9 +1652,12 @@ class Events():
             return True
 
         # chance to die of old age
-        if cat.moons > int(random.random() * game.config["death_related"]["old_age_death_chance"]) + \
-                game.config["death_related"]["old_age_death_start"]:  # cat.moons > 150 <--> 200
-            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+        age_change = game.config["death_related"]["old_age_death_chance"]
+        age_start = game.config["death_related"]["old_age_death_start"]
+        if cat.moons > int(
+                random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
+            self.death_events.handle_deaths(cat, other_cat, self.at_war,
+                                            self.enemy_clan, alive_kits)
             return True
 
         # disaster death chance

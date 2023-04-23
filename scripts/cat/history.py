@@ -267,7 +267,7 @@ class History:
         :param cat: cat object
         :param other_cat: if another cat is involved in the event, add them here
         :param text: event history text
-        :param text: the second event string if one exists, this is for use with the murder reveal system
+        :param extra_text: the second event string if one exists, this is for use with the murder reveal system
         :param condition: if it was caused by a condition, add name here
         :param scar: set True if scar
         :param death: set True if death
@@ -278,6 +278,7 @@ class History:
 
         event_type = None
         old_event_type = None
+        other_cat_ID = None
         if scar:
             event_type = "scar_events"
             old_event_type = "possible_scar"
@@ -297,7 +298,7 @@ class History:
                     old_event = cat.history.possible_scar
                 else:
                     old_event = cat.history.possible_death
-                other_cat = old_event[condition]["involved"]
+                other_cat_ID = old_event[condition]["involved"]
                 text = old_event[condition]["text"]
                 # and then remove from possible scar/death dict
                 if condition in old_event:
@@ -315,10 +316,10 @@ class History:
         if other_cat:
             if str(other_cat.name) in text:
                 text = text.replace(str(other_cat.name), "r_c")
-            other_cat = other_cat.ID
+            other_cat_ID = other_cat.ID
 
         history_dict = {
-            "involved": other_cat,
+            "involved": other_cat_ID,
             "text": text,
             "moon": game.clan.age
         }

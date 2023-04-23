@@ -776,7 +776,7 @@ def adjust_prey_abbr(patrol_text):
     return patrol_text
 
 
-def get_omen_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
+def get_special_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
     """
     function to grab items from various lists in snippet_collections.json
     list options are:
@@ -839,6 +839,47 @@ def get_omen_snippet_list(chosen_list, amount, sense_groups=None, return_string=
         return final_snippets
 
 
+def find_special_list_types(text):
+    """
+    purely to identify which senses are being called for by a snippet abbreviation
+    returns adjusted text, sense list, and list type
+    """
+    senses = []
+    if "omen_list" in text:
+        list_type = "omen_list"
+    elif "prophecy_list" in text:
+        list_type = "prophecy_list"
+    elif "dream_list" in text:
+        list_type = "dream_list"
+    elif "clair_list" in text:
+        list_type = "clair_list"
+    elif "story_list" in text:
+        list_type = "story_list"
+    else:
+        return text, None, None
+
+    if "_sight" in text:
+        senses.append("sight")
+        text = text.replace("_sight", "")
+    if "_sound" in text:
+        senses.append("_sight")
+        text = text.replace("_sight", "")
+    if "_smell" in text:
+        text = text.replace("_smell", "")
+        senses.append("smell")
+    if "_emotional" in text:
+        text = text.replace("_emotional", "")
+        senses.append("emotional")
+    if "_touch" in text:
+        text = text.replace("_touch", "")
+        senses.append("touch")
+    if "_taste" in text:
+        text = text.replace("_taste", "")
+        senses.append("taste")
+
+    return text, senses, list_type
+
+
 def history_text_adjust(text,
                         other_clan_name,
                         clan):
@@ -851,6 +892,7 @@ def history_text_adjust(text,
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
     return text
+
 
 def event_text_adjust(Cat,
                       text,
@@ -878,12 +920,15 @@ def event_text_adjust(Cat,
     if not keep_m_c and cat:
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
-    if cat:
-        if cat.accessory:
-            cat_dict["acc_plural"] = (str(ACC_DISPLAY[cat.accessory]["plural"]), None)
-            cat_dict["acc_singular"] = (str(ACC_DISPLAY[cat.accessory]["singular"]), None)
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
+    if cat:
+        if cat.accessory:
+            if "acc_plural" in text:
+                text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
+            if "acc_singular" in text:
+                text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+
     if other_clan_name:
         cat_dict["o_c"] = (other_clan_name, None)
     if new_cat:
@@ -911,22 +956,10 @@ def event_text_adjust(Cat,
     cat_dict["c_n"] = (_tmp + "Clan", None)
 
     # Dreams and Omens
-    if "omen_list" in text:
-        chosen_omens = get_omen_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
-        cat_dict["omen_list"] = (chosen_omens, None)
-    if "prophecy_list" in text:
-        chosen_prophecy = get_omen_snippet_list("prophecy_list", randint(2, 4),
-                                                sense_groups=["sight", "emotional", "touch"])
-        cat_dict["prophecy_list"] = (chosen_prophecy, None)
-    if "dream_list" in text:
-        chosen_dream = get_omen_snippet_list("dream_list", randint(2, 4))
-        cat_dict["dream_list"] = (chosen_dream, None)
-    if "clair_list" in text:
-        chosen_clair = get_omen_snippet_list("clair_list", randint(2, 4))
-        cat_dict["clair_list"] = (chosen_clair, None)
-    if "story_list" in text:
-        chosen_story = get_omen_snippet_list("story_list", randint(1, 2))
-        cat_dict["story_list"] = (chosen_story, None)
+    text, senses, list_type = find_special_list_types(text)
+    if list_type:
+        chosen_items = get_special_snippet_list(list_type, randint(1, 3), sense_groups=senses)
+        text = text.replace(list_type, chosen_items)
 
     adjust_text = process_text(text, cat_dict)
 
@@ -1147,26 +1180,10 @@ def adjust_patrol_text(text, patrol):
                           'red squirrels', 'gray squirrels', 'rats', ]
     text = text.replace('f_mp_p', str(fst_midprey_plural))
 
-    sign_list = get_omen_snippet_list("omen_list", amount=randint(2, 4), return_string=False)
-    sign = choice(sign_list)
-    s = 0
-    pos = 0
-    for x in range(text.count('a_sign')):
-        index = text.index('a_sign', s) or text.index('a_sign.', s)
-        for y in vowels:
-            if str(sign).startswith(y):
-                modify = text.split()
-                if 'a_sign' in modify:
-                    pos = modify.index('a_sign')
-                if 'a_sign.' in modify:
-                    pos = modify.index('a_sign.')
-                if modify[pos - 1] == 'a':
-                    modify.remove('a')
-                    modify.insert(pos - 1, 'an')
-                text = " ".join(modify)
-                break
-        s += index + 3
-    text = text.replace('a_sign', str(sign))
+    text, senses, list_type = find_special_list_types(text)
+    if list_type:
+        sign_list = get_special_snippet_list(list_type, amount=randint(1, 3), sense_groups=senses)
+        text = text.replace(list_type, str(sign_list))
 
     return text
 

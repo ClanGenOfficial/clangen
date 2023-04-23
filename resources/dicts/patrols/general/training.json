@@ -204,7 +204,7 @@
     "exp": 20,
     "success_text": [
         "p_l smiles, inviting app1 to sit down. The apprentice is a little stiff at first, unsure how to act in front of the warrior, but that's actually what p_l wants to work on here. c_n contains cats of all ages, skills, and talents - it's important to work on being comfortable with everyone, just as important as working on respecting them. They're all c_n, after all.",
-        "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certianly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
+        "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certainly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
         null,
         "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. They've seen how hard app1 has been working, and commend them for it, but it'll do the Clan no good if app1 burns themself out. All things in their time."
     ],
@@ -240,9 +240,9 @@
     "fail_trait":["cold", "ambitious"],
     "min_cats": 2,
     "max_cats": 2,
-    "relationship_constraint": [
-        "parent/child"
-]
+    "constraints": {
+        "relationship": ["parent/child"]
+    }
 },
 {
     "patrol_id": "gen_train_argue1",
@@ -304,7 +304,7 @@
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
         "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
         "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "This is unlike app1. s_c stops in their tracks, sitting their butt down in the middle of the path and refusing to move until app1 tells them what's bothering them. No, what's <i>actually</i> bothering them."
@@ -331,7 +331,7 @@
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
         "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
         "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "s_c has taken valuable time out of their day to personally help app1 with their studies, and this is completely juvenile behaviour. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. "
@@ -1028,7 +1028,7 @@
     "exp": 10,
     "success_text": [
         "As p_l and r_c run around c_n's territory, theoretically training, r_c feels wild and free and like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} going to burst with unexpected happiness! {PRONOUN/r_c/subject/CAP} {VERB/r_c/turn/turns} and {VERB/r_c/pounce/pounces} on p_l, starting a little play fight with their mock-prey.",
-        "As r_c creeps forward, practising {PRONOUN/r_c/poss} stalk, p_l notices {PRONOUN/r_c/poss} butt wiggling in excitement. {PRONOUN/p_l/subject/CAP} {VERB/p_l/laugh/laughs} to {PRONOUN/p_l/self} softly, and {VERB/p_l/pad/pads} over to give r_c a head's up about the bad habit.",
+        "As r_c creeps forward, practicing {PRONOUN/r_c/poss} stalk, p_l notices {PRONOUN/r_c/poss} butt wiggling in excitement. {PRONOUN/p_l/subject/CAP} {VERB/p_l/laugh/laughs} to {PRONOUN/p_l/self} softly, and {VERB/p_l/pad/pads} over to give r_c a head's up about the bad habit.",
         "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence and admiration for each other growing."
     ],
     "fail_text": [

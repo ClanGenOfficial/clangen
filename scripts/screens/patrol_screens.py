@@ -7,7 +7,7 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_omen_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text
+    get_special_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat

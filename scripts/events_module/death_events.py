@@ -57,7 +57,6 @@ class Death_Events():
         additional_event_text = ""
 
         # assign default history
-        print(death_cause.history_text)
         if cat.status == 'leader':
             death_history = death_cause.history_text.get("lead_death")
         else:
@@ -69,8 +68,6 @@ class Death_Events():
         if murder:
             if "kit_manipulated" in death_cause.tags:
                 kit = Cat.fetch_cat(random.choice(get_alive_kits(Cat)))
-                print(get_alive_kits(Cat))
-                print(kit)
                 involved_cats.append(kit.ID)
                 change_relationship_values([other_cat.ID],
                                            [kit],
@@ -92,7 +89,8 @@ class Death_Events():
                 revealed = False
 
             death_history = history_text_adjust(death_history, other_clan_name, game.clan)
-            murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
+            if murder_unrevealed_history:
+                murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
             self.history.add_murders(cat, other_cat, revealed, death_history, murder_unrevealed_history)
 
         # check if the cat's body was retrievable
