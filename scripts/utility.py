@@ -845,36 +845,38 @@ def find_special_list_types(text):
     returns adjusted text, sense list, and list type
     """
     senses = []
-    list_type = None
     if "omen_list" in text:
         list_type = "omen_list"
-    if "prophecy_list" in text:
+    elif "prophecy_list" in text:
         list_type = "prophecy_list"
-    if "dream_list" in text:
+    elif "dream_list" in text:
         list_type = "dream_list"
-    if "clair_list" in text:
+    elif "clair_list" in text:
         list_type = "clair_list"
-    if "story_list" in text:
+    elif "story_list" in text:
         list_type = "story_list"
+    else:
+        return text, None, None
 
     if "_sight" in text:
         senses.append("sight")
-        text.remove("_sight")
+        text = text.replace("_sight", "")
     if "_sound" in text:
-        senses.append("sound")
-        text.remove("_sound")
+        senses.append("_sight")
+        text = text.replace("_sight", "")
     if "_smell" in text:
-        text.remove("_smell")
+        text = text.replace("_smell", "")
         senses.append("smell")
     if "_emotional" in text:
-        text.remove("_emotional")
+        text = text.replace("_emotional", "")
         senses.append("emotional")
     if "_touch" in text:
-        text.remove("_touch")
+        text = text.replace("_touch", "")
         senses.append("touch")
     if "_taste" in text:
-        text.remove("_taste")
+        text = text.replace("_taste", "")
         senses.append("taste")
+
     return text, senses, list_type
 
 
@@ -1180,8 +1182,8 @@ def adjust_patrol_text(text, patrol):
 
     text, senses, list_type = find_special_list_types(text)
     if list_type:
-        sign_list = get_special_snippet_list(list_type, amount=randint(1, 2), sense_groups=senses)
-        text = text.replace('omen_list', str(sign_list))
+        sign_list = get_special_snippet_list(list_type, amount=randint(1, 3), sense_groups=senses)
+        text = text.replace(list_type, str(sign_list))
 
     return text
 

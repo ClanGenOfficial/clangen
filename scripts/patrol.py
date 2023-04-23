@@ -282,12 +282,18 @@ class Patrol():
         keep = False
         if "relationship" in patrol.constraints:
             keep = self.filter_relationship(patrol)
+        else:
+            keep = True
         if "skill" in patrol.constraints:
             if self.patrol_leader.skill in patrol.constraints["skill"]:
                 keep = True
+        else:
+            keep = True
         if "trait" in patrol.constraints:
             if self.patrol_leader.trait in patrol.constraints["skill"]:
                 keep = True
+        else:
+            keep = True
         return keep
 
     def filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):

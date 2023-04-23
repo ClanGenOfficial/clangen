@@ -57,7 +57,6 @@ class Death_Events():
         additional_event_text = ""
 
         # assign default history
-        print(death_cause.history_text)
         if cat.status == 'leader':
             death_history = death_cause.history_text.get("lead_death")
         else:
@@ -69,8 +68,6 @@ class Death_Events():
         if murder:
             if "kit_manipulated" in death_cause.tags:
                 kit = Cat.fetch_cat(random.choice(get_alive_kits(Cat)))
-                print(get_alive_kits(Cat))
-                print(kit)
                 involved_cats.append(kit.ID)
                 change_relationship_values([other_cat.ID],
                                            [kit],

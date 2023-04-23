@@ -1602,7 +1602,7 @@ class Events():
         TODO: DOCS
         """
 
-        if random.randint(1, 40) != 1:
+        if int(random.random() * 40):
             return
 
         other_cat = random.choice(list(Cat.all_cats.values()))
