@@ -147,6 +147,44 @@
     },
     {
         "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "multi_death"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "history_text": {
+            "reg_death": "This cat died when o_c tried to break into camp.",
+            "lead_death": "tried to defend the Clan from o_c"
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c died defending the nursery, r_c huddled beneath {PRONOUN/m_c/poss} cooling body.",
+        "history_text": {
+            "reg_death": "m_c died defending r_c from o_c warriors."
+        },
+        "cat_trait": ["vengeful", "bloodthirsty", "loving", "bold", "confident", "daring", "faithful", "fierce", "loyal", "responsible", "righteous"]
+    },
+    {
+        "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "platonic", "neg_dislike", "trust", "respect"],
         "death_text": "m_c was burnt alive while trying to save r_c from a fire.",
         "history_text": {
@@ -225,22 +263,6 @@
             "reg_death": "m_c died of greencough.",
             "lead_death": "died of greencough"
         }
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "war",
-            "other_cat"
-        ],
-        "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c.",
-        "history_text": [
-            "m_c was accidentally killed by r_c in battle.",
-            "was accidentally killed by r_c in the chaos of battle."
-        ]
     },
     {
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
