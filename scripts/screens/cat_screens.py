@@ -1443,18 +1443,18 @@ class ProfileScreen(Screens):
             if self.the_cat.status == 'leader' or death_number > 1:
 
                 if death_number > 2:
-                    deaths = f"{','.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                    deaths = f"{', '.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
                 elif death_number == 2:
                     deaths = " and ".join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 
                 if self.the_cat.dead:
-                    insert = 'lost all {PRONOUN/m_c/poss} lives'
+                    insert = ' lost all {PRONOUN/m_c/poss} lives'
                 elif game.clan.leader_lives == 8:
-                    insert = 'lost a life'
+                    insert = ' lost a life'
                 else:
-                    insert = 'lost {PRONOUN/m_c/poss} lives'
+                    insert = ' lost {PRONOUN/m_c/poss} lives'
 
                 text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
             else:
