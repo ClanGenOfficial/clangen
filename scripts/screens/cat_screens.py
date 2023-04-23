@@ -2846,6 +2846,8 @@ class SpriteInspectScreen(Screens):
         self.the_cat = None
         self.cat_elements = {}
         self.platform_shown = None
+        self.platform_show = None
+        self.platform_hide = None
         super().__init__(name)
     
     def handle_event(self, event):
@@ -2878,15 +2880,21 @@ class SpriteInspectScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
         
+        self.previous_life_state = UIImageButton()
+        
+        self.next_life_stage = UIImageButton
+        
         self.platform_show = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "" ,
                                            object_id = "#unchecked_checkbox")
         self.platform_hide = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "", 
                                            object_id="#checked_checkbox")
         
+        
+        
         if game.settings['backgrounds']:
-            self.platform_shown = True
+            self.is_platform_shown = True
         else:
-            self.platform_shown = False
+            self.is_platform_shown = False
         
         self.cat_setup()
         return super().screen_switches()
@@ -3006,7 +3014,7 @@ class SpriteInspectScreen(Screens):
         if "platform" not in self.cat_elements:
             return
         
-        if self.platform_shown:
+        if self.is_platform_shown:
             self.cat_elements["platform"].show()
             self.cat_elements["platform"].disable()
         else:
@@ -3019,6 +3027,10 @@ class SpriteInspectScreen(Screens):
         self.previous_cat_button = None
         self.next_cat_button.kill()
         self.next_cat_button = None
+        self.platform_hide.kill()
+        self.platform_hide = None
+        self.platform_show.kill()
+        self.platform_show = None
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()
         self.cat_elements = {}
