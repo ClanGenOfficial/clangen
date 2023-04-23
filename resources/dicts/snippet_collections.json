@@ -146,7 +146,7 @@
       "general": [
         ["the excitement of an apprentice", "an apprentice's vigor", "the naivety of an apprentice"],
         ["the strength of a warrior", "the steadfastness of a warrior", "a warrior's loyalty"],
-        ["the ache in an elder's bones", "the wisdom of an elder"],
+        ["the ache of an elder's bones", "the wisdom of an elder"],
         ["the sensation of falling"],
         ["the feeling of flight"],
         ["a half-remembered promise"],
@@ -274,8 +274,11 @@
     },
     "emotional": {
       "general": [
-        ["a pervasive feeling of dread"]
-
+        ["a pervasive feeling of dread"],
+        ["the feeling of ants crawling through fur", "the drag of a claw through fur"],
+        ["the faint feeling of fangs on skin"],
+        ["the feeling of a hidden onlooker", "the oppressive feeling of eyes unseen"],
+        ["the stillness that comes before disaster"]
       ],
       "forest": [
 
@@ -409,21 +412,20 @@
         ["a story half-remembered"],
         ["the excitement of an apprentice", "an apprentice's vigor", "the naivety of an apprentice"],
         ["the strength of a warrior", "the steadfastness of a warrior", "a warrior's loyalty"],
-        ["the ache in an elder's bones", "an elder's wisdom"],
+        ["the ache of an elder's bones", "an elder's wisdom"],
         ["drowning"],
         ["lingering grief", "grief's sharp impact"],
-        ["a newborn's innocence"],
+        ["a newborn's innocence","the loss of innocence"],
         ["a memory being forgotten", "a fading memory", "a memory long lost"],
         ["forgetting something important", "forgetting a secret once precious"],
         ["wishing for something now missing", "longing for a long lost possession"],
-        ["hatred of a dear friend"],
+        ["hatred for a dear friend"],
         ["knowing a secret that can never be revealed"],
         ["a truth unbelieved", "a truth concealed", "a truth never revealed"],
         ["a weakness in their legs"],
         ["a belly so empty they feel nauseous"],
-        ["the loss of innocence"],
         ["a home no longer welcoming", "a home long lost", "a home once forgotten"],
-        ["the ooze of corruption"]
+        ["oozing corruption"]
       ],
       "forest": [
 
@@ -440,19 +442,17 @@
     },
     "touch": {
       "general": [
-        ["deathly still air", "the heat of a fire unseen"],
-        ["the trembling of stones"],
-        ["falling through the air","flying through the air"],
-        ["the warmth of a parent","the embrace of a family","the warmth of family and love in the darkness before a kit's eyes open"],
-        ["a tail twining with their own","wet fur against their own","the brush of a pelt against their own",
-        "teeth snapping against their hide", "claws against their scruff"],
-        ["the touch of a mentor to an apprentice's forehead"],
-        ["slipping on muddy earth despite the dry ground beneath them", "sinking into muddy earth"],
-        ["the burning of limbs still whole"],
-        ["their paws damp with water", "their paws damp with blood", "their paws heavy with blood"],
-        ["another cat shoving against them"],
-        ["of sharpening one's claws against stone"],
-        ["wind whipping through their fur"]
+        ["deathly still air", "an unseen fire's heat"],
+        ["trembling stones"],
+        ["falling through the air", "flying through the air"],
+        ["the warmth of a parent", "the embrace of a family","the warmth of family in the darkness before a kit's eyes open"],
+        ["tails entwining", "the slip of wet fur", "teeth snapping against fur", "claws against a scruff"],
+        ["a mentor's touch to an apprentice's forehead"],
+        ["slipping on muddy earth despite the dry ground", "sinking into muddy earth"],
+        ["paws damp with water", "paws damp with blood", "paws heavy with blood"],
+        ["another cat's violent shove"],
+        ["sharpening one's claws against stone"],
+        ["wind whipping through fur"]
       ],
       "forest": [
 
@@ -497,15 +497,17 @@
       ["The Thieving Fox"],
       ["The Tenacious Rabbit", "The Rabbit Prince"],
       ["The Hare King", "The Witch Hare"],
-      ["The Lion's Promise","How The Tiger Got It's Stripes","The Leopard's Spots","The Cougar's Claws"],
-      ["The Place of No Stars", "The Stars of Silverpelt"]
+      ["The Lion's Promise", "How The Tiger Got It's Stripes","The Leopard's Spots","The Cougar's Claws"],
+      ["The Place of No Stars", "The Stars of Silverpelt"],
+      ["The Great Tail-Chaser"],
+      ["The Hole In The Sky"]
     ],
     "forest": [
       ["The Cat Who Became a Porcupine", "The Cat Who Carried the Sun", "The Cat Who Grew Into an Oak", "The Willow Cat",
         "The Badger Who Befriended a Cat","The Cats Made of Light"],
       ["The Old Forests of the Ancestors", "The Forest's Origin", "The First Seed","The Squirrel Who Planted the Forest"],
       ["The Star Bugs"],
-      ["The Sun-down Place"]
+      ["The Sun-drown Place"]
 
     ],
     "plains": [
@@ -514,7 +516,8 @@
       ["the Thunderbeasts"],
       ["How The Great Sytowers Came To Be"],
       ["The Metal Trees of the Twolegs"],
-      ["The Weasel's Lie"]
+      ["The Weasel's Lie"],
+      ["The Sun-drown Place"]
 
     ],
     "beach": [
@@ -530,7 +533,8 @@
       ["The Mountain's Shadow"],
       ["The Hummingbird's Feather"],
       ["The Betrayal of the Ravens"],
-      ["The Dancing Sky"]
+      ["The Dancing Sky"],
+      ["The Sun-drown Place"]
 
     ]
   }

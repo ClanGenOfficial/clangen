@@ -489,6 +489,7 @@ class Clan():
                 self.freshkill_pile = None
             self.primary_disaster = None
             self.secondary_disaster = None
+            self.war = {}
 
             self.faded_ids = [
             ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
@@ -769,6 +770,7 @@ class Clan():
             [str(i.relations) for i in self.all_clans])
         clan_data["other_clan_temperament"] = ",".join(
             [str(i.temperament) for i in self.all_clans])
+        clan_data["war"] = self.war
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
@@ -1049,6 +1051,8 @@ class Clan():
                 game.clan.add_to_darkforest(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
+        if "war" in clan_data:
+            game.clan.war = clan_data["war"]
 
         if "faded_cats" in clan_data:
             if clan_data["faded_cats"].strip():  # Check for empty string
