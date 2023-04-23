@@ -456,9 +456,9 @@
     "max_cats": 2,
     "antagonize_text": "A kittypet kitten approaches the patrol, yowling furiously. p_l bats it aside as the warrior continue hunting, unruffled.",
     "antagonize_fail_text": "The kittypet kittens trying furiously to defend their territory ruin all the hunting to be had, and the patrol returns home, irritated but impressed by the kittens' bravery.",
-    "relationship_constraint": [
-        "mates"
-]
+    "constraints": {
+        "relationship": ["mates"]
+    }
 },
 {
     "patrol_id": "gen_bord_curiouskittypet2",

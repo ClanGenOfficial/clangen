@@ -25,12 +25,14 @@
       "c_n warriors plan new battle strategies for the war against o_c",
       "c_n wishes the war with o_c would end.",
       "c_n cats reinforce the camp walls in anticipation of o_c attacks.",
-      "c_n warriors evaluate their battle strategies for coming battles against o_c."
+      "c_n warriors evaluate their battle strategies for coming battles against o_c.",
+      "The war with o_c is disrupting the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves."
     ],
     "rel_down": [
       "o_c has taken some of c_n's territory.",
       "c_n has taken some of o_c's territory",
-      "War negotiations with o_c went badly at the last Gathering."
+      "War negotiations with o_c went badly at the last Gathering.",
+      "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence."
     ]
   },
   "conclusion_events": [
