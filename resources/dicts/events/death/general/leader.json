@@ -442,21 +442,25 @@
             "Leaf-fall",
             "Leaf-bare",
             "war",
-            "other_cat"
+            "other_cat",
+            "other_cat_adult"
         ],
         "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c. m_c lost one life.",
-        "history_text": [
-            "m_c was accidentally attacked by m_c in battle.",
-            "were accidentally attacked by r_c in the chaos of battle."
-        ]
+        "history_text": {
+            "reg_death": "m_c was accidentally attacked by m_c in battle.",
+            "lead_death": "{VERB/m_c/were/was} accidentally attacked by r_c in the chaos of battle"
+        },
+        "cat_negate_skill": ["excellent fighter"],
+        "other_cat_trait": ["vengeful", "bloodthirsty", "fierce", "daring", "bold"],
+        "other_cat_skill": ["good fighter", "great fighter"]
+
     },
     {
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
         "camp": "Any",
         "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
         "history_text": {
-            "reg_death": "This cat died from old age life.",
-            "lead_death": "lost all remaining lives from old age."
+            "lead_death": "died of old age"
         }
     },
     {
@@ -464,9 +468,46 @@
         "camp": "Any",
         "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of the c_n, and what killed {PRONOUN/m_c/object}.",
         "history_text": {
-            "reg_death": "Curiosity killed this cat.",
-            "lead_death": "lost a life because of curiosity."
+            "lead_death": "became a bit too curious"
         },
         "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c died defending the nursery, r_c left hidden beneath {PRONOUN/m_c/poss} cooling body.",
+        "history_text": {
+            "lead_death": "defended r_c from o_c warriors"
+        },
+        "cat_trait": ["vengeful", "bloodthirsty", "loving", "bold", "confident", "daring", "faithful", "fierce", "loyal", "responsible", "righteous"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_warrior",
+            "multi_death"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "history_text": {
+            "lead_death": "tried to defend the Clan from o_c"
+        }
     }
 ]
