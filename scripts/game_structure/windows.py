@@ -820,14 +820,17 @@ class UpdateAvailablePopup(UIWindow):
 
 
 class LogsWindow(UIWindow):
-    def __init__(self, last_screen, token, callback):
+    def callback(self, output):
+        self.kill()
+        print(output)
+    def __init__(self, last_screen, token):
         super().__init__(scale(pygame.Rect((500, 400), (600, 320))),
                          window_display_title='Sending logs',
                          object_id='#game_over_window',
                          resizable=False)
         self.last_screen = last_screen
         self.update_message = UITextBoxTweaked(
-            f"Sending logs...",
+            "Sending logs...",
             scale(pygame.Rect((40, 20), (520, -1))),
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
@@ -841,14 +844,8 @@ class LogsWindow(UIWindow):
             object_id="#text_box_30_horizcenter",
             container=self
         )
-        self.progress_bar = UIUpdateProgressBar(
-            scale(pygame.Rect((40, 130), (520, 70))),
-            self.step_text,
-            object_id="progress_bar",
-            container=self,
-        )
 
-        self.request_thread = threading.Thread(target=send_logs, daemon=True, args=(token, self.progress_bar, callback))
+        self.request_thread = threading.Thread(target=send_logs, daemon=True, args=(token, self.step_text, self.callback))
         self.request_thread.start()
 
         self.cancel_button = UIImageButton(
@@ -866,6 +863,7 @@ class LogsWindow(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.cancel_button:
                 self.kill()
+    
 
 
 
@@ -950,7 +948,7 @@ class SendLogsPopup(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 game.switches['window_open'] = False
-                self.x = LogsWindow(game.switches['cur_screen'], self.tokenEntry.get_text(), self.callback)
+                self.x = LogsWindow(game.switches['cur_screen'], self.tokenEntry.get_text())
                 self.kill()
             elif event.ui_element == self.close_button or event.ui_element == self.cancel_button:
                 game.switches['window_open'] = False
@@ -963,12 +961,6 @@ class SendLogsPopup(UIWindow):
             else:
                 #self.continue_button.disable()
                 self.tokeninvalid.show()
-
-
-    def callback(self):
-        self.x.kill()
-        y = AnnounceRestart(game.switches['cur_screen'])
-        y.update(1)
 
 
 
