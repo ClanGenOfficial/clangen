@@ -103,7 +103,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 20,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -240,7 +240,7 @@
     "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "CHEEK"],
     "intro_text": "app1 heads out into the grasslands alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "app1 turns back to camp, deciding that this is a bad idea.",
-    "chance_of_success": 50,
+    "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "At least this is a good chance to learn the territory! app1 heads off to map out a thick field of tall grass they've always found confusing.",

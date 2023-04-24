@@ -106,7 +106,7 @@
     "tags": ["fighting", "scar", "LEGBITE", "death", "small_bite_injury", "border", "respect", "trust"],
     "intro_text": "Your patrol comes across a small dog.",
     "decline_text": "The patrol decides not to pursue the dog.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?", 
@@ -135,7 +135,7 @@
     "tags": ["fighting", "scar", "LEGBITE", "small_bite_injury", "border", "respect", "trust", "comfort", "no_change_fail"],
     "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
     "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
         "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.", 

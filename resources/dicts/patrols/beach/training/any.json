@@ -340,7 +340,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 40,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
             "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
@@ -364,7 +364,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 40,
+    "chance_of_success": 50,
     "exp": 15,
     "success_text": [
             "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
