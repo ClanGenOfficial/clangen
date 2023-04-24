@@ -377,9 +377,7 @@ class Cat():
                 self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
-            elif status == 'apprentice':
-                self.age = 'adolescent'
-            elif status == 'medicine cat apprentice':
+            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
