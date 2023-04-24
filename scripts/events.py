@@ -891,7 +891,7 @@ class Events():
             if self.enemy_clan.temperament in ["mellow", "amiable", "gracious"]:
                 threshold = 3
 
-            threshold -= int(game.clan.war["duration"] / 1.5)
+            threshold -= int(game.clan.war["duration"])
             print('threshold', threshold)
 
             # check if war should conclude, if not, continue
