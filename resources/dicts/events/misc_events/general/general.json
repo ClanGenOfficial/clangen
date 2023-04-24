@@ -140,6 +140,10 @@
     {
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
         "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day."
+    },
+    {
+        "camp": "Any",
+        "tags": ["Leaf-fall", "clan_kits", "other_cat", "other_cat_adult"],
+        "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
     }
-    
 ]
