@@ -251,5 +251,69 @@
             "lead_death": "lost a life because of curiosity."
         },
         "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war",
+            "other_cat"
+        ],
+        "death_text": "m_c sacrificed themself for r_c in a battle with o_c.",
+        "history_text": [
+            "m_c sacrificed themself for r_c in battle.",
+            "sacrificed themself for r_c in battle."
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war",
+            "other_cat"
+        ],
+        "death_text": "m_c threw themself in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
+        "history_text": [
+            "m_c sacrificed themself for r_c in battle.",
+            "sacrificed themself for r_c in battle."
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war",
+            "other_cat"
+        ],
+        "death_text": "m_c intentionally stayed behind and fought a losing battle to give r_c time to escape.",
+        "history_text": [
+            "m_c sacrificed themself for r_c in battle.",
+            "sacrificed themself for r_c in battle."
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war",
+            "other_cat"
+        ],
+        "death_text": "When traveling together near the border of c_n territory, m_c used their own body to shield r_c from a surprise o_c ambush, even though it meant certain death.",
+        "history_text": [
+            "m_c sacrificed themself for r_c in an ambush.",
+            "sacrificed themself for r_c in an ambush."
+        ]
     }
 ]    
