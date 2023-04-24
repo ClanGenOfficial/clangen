@@ -945,9 +945,9 @@ class Patrol():
         # setting the defaults
         new_name = choice([True, False])
         kit_backstory = None
-        if "new_cat_tom" in tags:
+        if "_tom" in tags:
             gender = 'male'
-        elif "new_cat_female" in tags:
+        elif "_female" in tags:
             gender = 'female'
         else:
             gender = None
@@ -964,24 +964,30 @@ class Patrol():
         loner = False
         kittypet = False
         other_clan = None
-        cat_type = None
 
-        if ("kittypet" or "loner" or "clancat" or "rogue") not in attribute_list:
+        if "kittypet" in attribute_list:
+            cat_type = "kittypet"
+        elif "loner" in attribute_list:
+            cat_type = "loner"
+        elif "clancat" in attribute_list:
+            cat_type = "former_clancat"
+        elif "rogue" in attribute_list:
+            cat_type = "rogue"
+        else:
             cat_type = choice(['kittypet', 'loner', 'former_clancat'])
-        if cat_type == 'kittypet' or "kittypet" in attribute_list:
+
+        if cat_type == 'kittypet':
             kittypet = True
             new_name = choice([True, False])
             chosen_backstory = Cat.backstory_categories["kittypet_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
-            if "abandonedkittypet" in self.patrol_event.patrol_id:
-                chosen_backstory = ['kittypet4', 'kittypet4']
             if not success:
                 outsider = create_outside_cat(Cat, "kittypet", backstory=choice(chosen_backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
-        elif cat_type == 'loner' or "loner" in attribute_list:
+        elif cat_type == 'loner':
             loner = True
             new_name = choice([True, False])
             chosen_backstory = Cat.backstory_categories["loner_backstories"]
@@ -992,7 +998,7 @@ class Patrol():
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(chosen_backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
-        elif cat_type == 'rogue' or 'rogue' in attribute_list:
+        elif cat_type == 'rogue':
             loner = True
             new_name = choice([True, False])
             chosen_backstory = Cat.backstory_categories["rogue_backstories"]
@@ -1003,7 +1009,7 @@ class Patrol():
                 outsider = create_outside_cat(Cat, "rogue", backstory=choice(chosen_backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
-        elif cat_type == 'clancat' or "clancat" in attribute_list:
+        elif cat_type == 'clancat':
             other_clan = self.other_clan
             new_name = False
             chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
