@@ -4,6 +4,7 @@ import pygame
 from math import ceil
 from random import choice
 import pygame_gui
+import traceback
 from copy import deepcopy
 
 from .base_screens import Screens, cat_profiles
@@ -15,6 +16,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from .cat_screens import ProfileScreen
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from scripts.game_structure.windows import SaveError
 
 
 class ClanScreen(Screens):
@@ -51,14 +53,18 @@ class ClanScreen(Screens):
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
-                self.save_button_saving_state.show()
-                self.save_button.disable()
-                game.save_cats()
-                game.clan.save_clan()
-                game.clan.save_pregnancy(game.clan)
-                game.save_settings()
-                game.switches['saved_clan'] = True
-                self.update_buttons_and_text()
+                try:
+                    self.save_button_saving_state.show()
+                    self.save_button.disable()
+                    game.save_cats()
+                    game.clan.save_clan()
+                    game.clan.save_pregnancy(game.clan)
+                    game.save_settings()
+                    game.switches['saved_clan'] = True
+                    self.update_buttons_and_text()
+                except RuntimeError:
+                    SaveError(traceback.format_exc())
+                    self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
@@ -74,7 +80,6 @@ class ClanScreen(Screens):
                 self.menu_button_pressed(event)
 
     def screen_switches(self):
-        cat_profiles()
         self.update_camp_bg()
         game.switches['cat'] = None
         if game.clan.biome + game.clan.camp_bg in game.clan.layouts:
@@ -105,7 +110,7 @@ class ClanScreen(Screens):
                 try:
                     self.cat_buttons.append(
                         UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
-                                       Cat.all_cats[x].big_sprite,
+                                       Cat.all_cats[x].sprite,
                                        cat_id=x,
                                        starting_height=i)
                     )
@@ -509,7 +514,6 @@ class StarClanScreen(Screens):
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
-        cat_profiles()
         self.get_dead_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
@@ -661,7 +665,7 @@ class StarClanScreen(Screens):
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
-                                   cat.big_sprite,
+                                   cat.sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
 
@@ -841,7 +845,6 @@ class DFScreen(Screens):
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
-        cat_profiles()
         self.get_dead_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
@@ -992,7 +995,7 @@ class DFScreen(Screens):
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
-                                   cat.big_sprite,
+                                   cat.sprite,
                                    cat.ID,
                                    starting_height=1))
 
@@ -1151,7 +1154,6 @@ class ListScreen(Screens):
 
     def screen_switches(self):
         # Determine the living, non-exiled cats.
-        cat_profiles()
         self.get_living_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
@@ -1340,7 +1342,7 @@ class ListScreen(Screens):
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
-                                   cat.big_sprite,
+                                   cat.sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
 
@@ -1382,8 +1384,8 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
-                                                     scale(pygame.Rect((60, 280), (800, 80))),
-                                                     object_id=get_text_box_theme("#text_box_34_horizleft")
+                                                     scale(pygame.Rect((390, 230), (800, 80))),
+                                                     object_id=get_text_box_theme("#text_box_34_horizcenter")
                                                      , manager=MANAGER)
 
         # Set Menu Buttons.
@@ -1393,7 +1395,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 380), (1430, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
                                                                          , manager=MANAGER)
         
         self.ranks_boxes = []
@@ -1969,7 +1971,7 @@ class MedDenScreen(Screens):
         for cat in self.display_med:
             self.med_cat = UISpriteButton(scale(pygame.Rect
                                                 ((870, 330), (300, 300))),
-                                          cat.large_sprite,
+                                          cat.sprite,
                                           cat_object=cat, manager=MANAGER)
             name = str(cat.name)
             if len(name) >= 20:
@@ -2056,7 +2058,7 @@ class MedDenScreen(Screens):
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
                                                                          ((pos_x, pos_y), (100, 100))),
-                                                                   cat.big_sprite,
+                                                                   cat.sprite,
                                                                    cat_object=cat,
                                                                    manager=MANAGER,
                                                                    tool_tip_text=conditions)

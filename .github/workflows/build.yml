@@ -36,8 +36,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -47,6 +54,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -66,6 +74,13 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -105,7 +120,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -115,6 +138,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -134,6 +158,13 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -194,8 +225,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -207,6 +245,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -227,6 +266,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win32.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push Clangen_Win32.zip sablesteel/clan-gen-fan-edit:win32 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -292,8 +338,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -305,6 +358,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -325,6 +379,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64.zip sablesteel/clan-gen-fan-edit:win64 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -390,8 +451,15 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
@@ -403,6 +471,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -423,6 +492,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -475,9 +551,15 @@ jobs:
           echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
-        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        # run: poetry run python3 -m PyInstaller Clangen.spec
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: python -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 0
+      - name: Run PyInstaller
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: python -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: 1
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
       - name: Install appdmg
@@ -491,6 +573,7 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
@@ -511,6 +594,13 @@ jobs:
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_macOS64.dmg sablesteel/clan-gen-fan-edit:osx64 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')

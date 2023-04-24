@@ -1,11 +1,13 @@
 import pygame
 import pygame_gui
 
-from scripts.datadir import get_save_dir
+from scripts.datadir import get_save_dir, get_temp_dir
 
 import ujson
 import os
+from shutil import move as shutil_move
 from ast import literal_eval
+import traceback
 
 pygame.init()
 
@@ -134,7 +136,8 @@ class Game():
         'favorite_sub_tab': None,
         'root_cat': None,
         'window_open': False,
-        'skip_conditions': []
+        'skip_conditions': [],
+        'show_history_moons': False,
     }
     all_screens = {}
     cur_events = {}
@@ -191,6 +194,49 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
+        
+    @staticmethod
+    def safe_save(path: str, write_data, max_attempts: int=15):
+        """ Attempt to safely safe a file.
+            If write_data is not a string, assumes you want this
+            in json format. 
+            Raises a RunTimeError is 
+            the file is nullied too many times. """
+
+        # If write_data is not a string, 
+        if type(write_data) is not str:
+            _data = ujson.dumps(write_data, indent=4)
+        else:
+            _data = write_data
+
+        dir_name, file_name = os.path.split(path)
+        
+        if not file_name:
+            raise RuntimeError(f"Safe_Save: No file name was found in {path}")
+
+        temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
+        i = 0
+        while True:
+             # Attempt to write to temp file
+            with open(temp_file_path, "w") as write_file:
+                write_file.write(_data)
+
+            # Read the entire file back in 
+            with open(temp_file_path, 'r') as read_file:
+                _read_data = read_file.read()
+
+            if _data != _read_data:
+                i += 1
+                if i > max_attempts:
+                    print(f"Safe_Save ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
+                    raise RuntimeError(f"Safe_Save: {file_name} was unable to properly save {i} times!")
+                print(f"Safe_Save: {file_name} was incorrectly saved. Trying again.")
+                continue
+
+            # This section is reached is the file was not nullied. Move the file and return True
+            os.makedirs(dir_name, exist_ok=True)
+            shutil_move(temp_file_path, path)
+            return
 
     def read_clans(self):
         '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
@@ -263,8 +309,7 @@ class Game():
         if loaded_clan:
             if os.path.exists(get_save_dir() + '/clanlist.txt'):
                 os.remove(get_save_dir() + '/clanlist.txt')  # we don't need clanlist.txt anymore
-            with open(get_save_dir() + '/currentclan.txt', 'w') as f:
-                f.write(loaded_clan)
+            game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + '/currentclan.txt'):
                 os.remove(get_save_dir() + '/currentclan.txt')
@@ -274,9 +319,8 @@ class Game():
         data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
-        with open(get_save_dir() + '/settings.txt', 'w') as write_file:
-            write_file.write(data)
         self.settings_changed = False
+        game.safe_save(get_save_dir() + '/settings.txt', data)
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
@@ -294,14 +338,17 @@ class Game():
                     ":")  # first part is setting name, second is value
                 # Turn value into right type (int types stay string and will be turned into int when needed)
                 # And put it into game settings
-                if parts[1] in ['True', 'True ', 'true', ' True']:
-                    self.settings[parts[0]] = True
-                elif parts[1] in ['False', 'False ', 'false', ' False']:
-                    self.settings[parts[0]] = False
-                elif parts[1] in ['None', 'None ', 'none', ' None']:
-                    self.settings[parts[0]] = None
-                else:
-                    self.settings[parts[0]] = parts[1]
+                try:
+                    if parts[1] in ['True', 'True ', 'true', ' True']:
+                        self.settings[parts[0]] = True
+                    elif parts[1] in ['False', 'False ', 'false', ' False']:
+                        self.settings[parts[0]] = False
+                    elif parts[1] in ['None', 'None ', 'none', ' None']:
+                        self.settings[parts[0]] = None
+                    else:
+                        self.settings[parts[0]] = parts[1]
+                except IndexError:
+                    print("error loading setting:", parts)
 
         self.switches['language'] = self.settings['language']
         self.switches['game_mode'] = self.settings['game_mode']
@@ -373,14 +420,13 @@ class Game():
                 "trait": inter_cat.trait,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
+                "adoptive_parents": inter_cat.adoptive_parents,
                 "mentor": inter_cat.mentor if inter_cat.mentor else None,
                 "former_mentor": [cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
-                "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
-                "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
                 "no_kits": inter_cat.no_kits,
                 "exiled": inter_cat.exiled,
@@ -397,6 +443,7 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
+                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
@@ -415,14 +462,8 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr for appr in inter_cat.apprentice],
                 "former_apprentices": [appr for appr in inter_cat.former_apprentices],
-                "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
-                "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
                 "outside": inter_cat.outside,
-                "corruption": inter_cat.corruption if inter_cat.corruption else 0,
-                "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
-                "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
-                "virtues": inter_cat.virtues if inter_cat.virtues else [],
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,
@@ -431,14 +472,14 @@ class Game():
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()
+            if inter_cat.history:
+                inter_cat.save_history(directory + '/history')
+                # after saving, dump the history info
+                inter_cat.history = None
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat(directory + '/relationships')
-        try:
-            with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
-                json_string = ujson.dumps(clan_cats, indent=4)
-                write_file.write(json_string)
-        except:
-            print("ERROR: Saving cats didn't work.")
+
+        self.safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
 
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
@@ -456,9 +497,10 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if inter_cat.mate:
-                if inter_cat.mate in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.mate].mate = None
+            if len(inter_cat.mate):
+                for mate_id in inter_cat.mate:
+                    if mate_id in self.cat_class.all_cats:
+                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
 
             # If they have parents, add them to their parents "faded offspring" list:
             if inter_cat.parent1:
@@ -497,11 +539,9 @@ class Game():
                 "mentor": {inter_cat.mentor if inter_cat.mentor else None},
                 "former_mentor": {[cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else []},
                 "patrol_with_mentor": {inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0},
-                "mentor_influence": {inter_cat.mentor_influence if inter_cat.mentor_influence else []},
                 "mate": {inter_cat.mate},
                 "previous_mates": {inter_cat.previous_mates},
                 "dead": {inter_cat.dead},
-                "died_by": {inter_cat.died_by if inter_cat.died_by else []},
                 "paralyzed": {inter_cat.paralyzed},
                 "no_kits": {inter_cat.no_kits},
                 "exiled": {inter_cat.exiled},
@@ -536,14 +576,8 @@ class Game():
                 "dead_moons": {inter_cat.dead_for},
                 "current_apprentice": {[appr for appr in inter_cat.apprentice]},
                 "former_apprentices": {[appr for appr in inter_cat.former_apprentices]},
-                "possible_scar": {inter_cat.possible_scar if inter_cat.possible_scar else None},
-                "scar_event": {inter_cat.scar_event if inter_cat.scar_event else []},
                 "df": {inter_cat.df},
                 "outside": {inter_cat.outside},
-                "corruption": {inter_cat.corruption if inter_cat.corruption else 0},
-                "life_givers": {inter_cat.life_givers if inter_cat.life_givers else []},
-                "known_life_givers": {inter_cat.known_life_givers if inter_cat.known_life_givers else []},
-                "virtues": {inter_cat.virtues if inter_cat.virtues else []},
                 "retired": {inter_cat.retired if inter_cat.retired else False},
                 "faded_offspring": {inter_cat.faded_offspring},
                 "opacity": {inter_cat.opacity},
@@ -562,13 +596,8 @@ class Game():
                 "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
-            try:
-
-                with open(get_save_dir() + '/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
-                    json_string = ujson.dumps(cat_data, indent=4)
-                    write_file.write(json_string)
-            except:
-                print("ERROR: Something went wrong while saving a faded cat")
+            
+            self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
 
             self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
 
@@ -596,9 +625,7 @@ class Game():
 
         cat_info["faded_offspring"].append(offspring)
 
-        with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
-            json_string = ujson.dumps(cat_info, indent=4)
-            write_file.write(json_string)
+        self.safe_save(f"{get_save_dir()}/{self.clan.name}/faded_cats/{parent}.json", cat_info)
 
         return True
 

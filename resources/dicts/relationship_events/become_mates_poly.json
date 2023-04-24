@@ -1,0 +1,53 @@
+{
+	"high_romantic": {
+		"m_c_mates": [
+			"After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, and they have become mates.",
+			"After a talk with {PRONOUN/m_c/poss} mates, m_c confessed {PRONOUN/m_c/poss} feelings to r_c, and they have become mates."
+		],
+		"r_c_mates": [
+			"m_c asked r_c out, after {PRONOUN/m_c/subject} talked with [r_c_mates]. m_c and r_c have become mates.",
+			"m_c asked r_c out, after {PRONOUN/m_c/subject} talked with {PRONOUN/m_c/poss} mates. m_c and r_c have become mates."
+		],
+		"both_mates": [
+			"m_c and r_c talked with their mates, and happily announced that m_c and r_c are now mates."
+		]
+	},
+	"low_romantic":{
+		"m_c_mates": [
+			"After m_c talked about {PRONOUN/m_c/poss} feelings for r_c with [m_c_mates], m_c and r_c have become mates.",
+			"After m_c talked about {PRONOUN/m_c/poss} feelings for r_c with {PRONOUN/m_c/poss} mates, m_c and r_c have become mates."
+		],
+		"r_c_mates": [
+			"After r_c talked with [r_c_mates] about {PRONOUN/m_c/poss} feelings for m_c, m_c and r_c have become mates.",
+			"After r_c talked with {PRONOUN/m_c/poss} mates about {PRONOUN/m_c/poss} feelings for m_c, m_c and r_c have become mates."
+		],
+		"both_mates": [
+			"m_c and r_c talked with their mates, and announced that they are now mates."
+		]
+	},
+	"platonic_to_romantic":{
+		"m_c_mates": [
+			"m_c talked with [m_c_mates], that {PRONOUN/m_c/subject} sees r_c in a different light, and m_c and r_c have become mates.",
+			"m_c talked with {PRONOUN/m_c/poss} mates, that {PRONOUN/m_c/subject} sees r_c in a different light, and m_c and r_c have become mates."
+		],
+		"r_c_mates": [
+			"m_c and r_c see each other in a different light; after r_c talked with [r_c_mates], m_c and r_c have become mates.",
+			"m_c and r_c see each other in a different light; after r_c talked with {PRONOUN/m_c/poss} mates, they have become mates."
+		],
+		"both_mates": [
+			"m_c and r_c talked with their mates, and announced that they are now mates."
+		]
+	},
+	"rejected":{
+		"m_c_mates": [
+			"After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected.",
+			"After a talk with {PRONOUN/m_c/poss} mates, m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
+		],
+		"r_c_mates": [
+			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
+		],
+		"both_mates": [
+			"m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was rejected."
+		]
+	}
+}

@@ -53,6 +53,7 @@ class GenerateEvents:
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
+            events = None
             print(f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}.")
         return events
 
@@ -85,21 +86,21 @@ class GenerateEvents:
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
                 event = ShortEvent(
-                    camp="any",
+                    camp=event["camp"] if "camp" in event else "any",
                     tags=event["tags"],
                     event_text=event_text,
-                    history_text=event["history_text"] if "history_text" in event else None,
-                    cat_trait=event["cat_trait"],
-                    cat_skill=event["cat_skill"],
-                    other_cat_trait=event["other_cat_trait"],
-                    other_cat_skill=event["other_cat_skill"],
-                    cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
-                    cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
+                    history_text=event["history_text"] if "history_text" in event else {},
+                    cat_trait=event["cat_trait"] if "cat_negate_trait" in event else [],
+                    cat_skill=event["cat_skill"] if "cat_negate_trait" in event else [],
+                    other_cat_trait=event["other_cat_trait"] if "cat_negate_trait" in event else [],
+                    other_cat_skill=event["other_cat_skill"] if "cat_negate_trait" in event else [],
+                    cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else [],
+                    cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else [],
                     other_cat_negate_trait=event[
-                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else [],
                     other_cat_negate_skill=event[
-                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-                    backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
+                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else [],
+                    backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else [],
 
                     # injury event only
                     injury=event["injury"] if "injury" in event else None,
@@ -177,47 +178,99 @@ class GenerateEvents:
 
     def possible_short_events(self, cat_type=None, age=None, event_type=None):
         event_list = []
+        biome = None
+
+        excluded_from_general = []
+        warrior_adjacent_ranks = []
+
+        if event_type == 'death':
+            warrior_adjacent_ranks.extend(["deputy", "apprentice"])
+            excluded_from_general.extend(["kitten", "leader", "newborn"])
+        elif event_type in ['injury', 'nutrition', 'misc', 'new_cat']:
+            warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
+            excluded_from_general.extend(["kitten", "leader", "newborn"])
+
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
         elif cat_type in ["mediator", "mediator apprentice"]:
             cat_type = "mediator"
 
-        biome = None
-        if event_type != "nutrition":
-            biome = game.clan.biome.lower()
-
-            event_list.extend(
-                self.generate_short_events(event_type, cat_type, "general"))
-
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
             print(
-                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
+                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in "
+                f"clan.py?")
 
         elif game.clan.biome not in game.clan.BIOME_TYPES:
             print(
-                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
+                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
+                f"in clan.py?")
 
-        else:
-            event_list.extend(self.generate_short_events(event_type, cat_type, biome))
+        # NUTRITION this needs biome to be None so is handled separately
+        elif event_type == 'nutrition':
+            event_list.extend(
+                self.generate_short_events(event_type, cat_type, biome))
 
-            if cat_type in ["apprentice", "deputy", "leader"]:
+            if cat_type in warrior_adjacent_ranks:
                 event_list.extend(
                     self.generate_short_events(event_type, "warrior", biome))
 
-            if cat_type not in ["kitten", "leader", "newborn"]:
-                if event_type != "nutrition":
-                    event_list.extend(self.generate_short_events(event_type, "general", "general"))
+            if cat_type not in excluded_from_general:
+                event_list.extend(
+                    self.generate_short_events(event_type, "general", biome))
 
-                event_list.extend(self.generate_short_events(event_type, "general", biome))
+        else:
+            biome = game.clan.biome.lower()
+
+            # RANK SPECIFIC
+            # biome specific rank specific events
+            event_list.extend(
+                self.generate_short_events(event_type, cat_type, biome))
+
+            # any biome rank specific events
+            event_list.extend(
+                self.generate_short_events(event_type, cat_type, "general"))
+
+            # WARRIOR-LIKE
+            if cat_type in warrior_adjacent_ranks:
+                # biome specific warrior events for "warrior-like" ranks
+                event_list.extend(
+                    self.generate_short_events(event_type, "warrior", biome))
+
+                # any biome warrior events for "warrior-like" ranks
+                event_list.extend(
+                    self.generate_short_events(event_type, "warrior", "general"))
+
+            # GENERAL
+            if cat_type not in excluded_from_general:
+                # biome specific general rank events
+                event_list.extend(
+                    self.generate_short_events(event_type, "general", biome))
+
+                # any biome general rank events
+                event_list.extend(
+                    self.generate_short_events(event_type, "general", "general"))
 
         return event_list
 
-    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
+    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False):
         final_events = []
-        murder_events = []
+
+        minor = []
+        major = []
+        severe = []
+
+        if war and random.randint(1, 10) != 1 and other_clan == enemy_clan:
+            war_event = True
+        else:
+            war_event = False
 
         for event in possible_events:
+
+            if war_event and ("war" not in event.tags and "hostile" not in event.tags):
+                continue
+            if not war and "war" in event.tags:
+                continue
 
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
@@ -227,6 +280,11 @@ class GenerateEvents:
                 continue
 
             if event.backstory_constraint and cat.backstory not in event.backstory_constraint:
+                continue
+
+            if murder and "murder" not in event.tags:
+                continue
+            if not murder and "murder" in event.tags:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
@@ -258,37 +316,8 @@ class GenerateEvents:
                 elif 71 <= reputation <= 100 and "welcoming" not in event.reputation:
                     continue
 
-            # check hate and jealousy before allowing murder
-            if "murder" in event.tags and other_cat:
-                hate = False
-                relationships = other_cat.relationships.values()
-                dislike_relation = [i for i in relationships if i.dislike > 50]
-                jealous_relation = [i for i in relationships if i.jealousy > 50]
-                for y in range(len(dislike_relation)):
-                    cat_to = dislike_relation[y].cat_to
-                    if cat_to == cat:
-                        hate = True
-                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
-                        break
-                for y in range(len(jealous_relation)):
-                    cat_to = jealous_relation[y].cat_to
-                    if cat_to == cat:
-                        hate = True
-                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
-                        break
-                if not hate:
-                    continue
-                else:
-                    murder_events.append(event)
-
-            # roll chance to get an injury of certain severity and check that injury is possible
+            # check that injury is possible
             if event.injury in INJURIES:
-                injury = INJURIES[event.injury]
-                severity = injury['severity']
-                if cat.status in INJURY_DISTRIBUTION:
-                    severity_chance = INJURY_DISTRIBUTION[cat.status][severity]
-                    if int(random.random() * severity_chance):
-                        continue
 
                 if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
                     continue
@@ -321,7 +350,7 @@ class GenerateEvents:
             if "old_age" in event.tags and cat.moons < 150:
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
-            if "old_age" not in event.tags and cat.moons < 150:
+            if "old_age" not in event.tags and cat.moons > 150:
                 if not int(random.random() * 2):
                     continue
 
@@ -346,7 +375,7 @@ class GenerateEvents:
                 elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
-                if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:
+                if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
                     continue
                 elif "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
                     continue
@@ -359,16 +388,20 @@ class GenerateEvents:
                     continue
 
                 # check other_cat trait and skill
+                had_trait = False
                 if event.other_cat_trait:
                     if other_cat.trait not in event.other_cat_trait and int(random.random() * 15):
                         continue
-                if event.other_cat_skill:
+                    had_trait = True
+                if event.other_cat_skill and not had_trait:
                     if other_cat.skill not in event.other_cat_skill and int(random.random() * 15):
                         continue
+                had_trait = True
                 if event.other_cat_negate_trait:
                     if other_cat.trait in event.other_cat_negate_trait and int(random.random() * 15):
                         continue
-                if event.other_cat_negate_skill:
+                    had_trait = False
+                if event.other_cat_negate_skill and had_trait:
                     if other_cat.skill in event.other_cat_negate_skill and int(random.random() * 15):
                         continue
 
@@ -377,28 +410,58 @@ class GenerateEvents:
                     continue
 
             # check for mate if the event requires one
-            if "mate" in event.tags and cat.mate is None:
+            if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
             # check cat trait and skill
+            had_trait = False
             if event.cat_trait:
                 if cat.trait not in event.cat_trait and int(random.random() * 15):
                     continue
-            if event.cat_skill:
+                had_trait = True
+            if event.cat_skill and not had_trait:
                 if cat.skill not in event.cat_skill and int(random.random() * 15):
                     continue
+
+            had_trait = True
             if event.cat_negate_trait:
                 if cat.trait in event.cat_negate_trait and int(random.random() * 15):
                     continue
-            if event.cat_negate_skill:
+                had_trait = False
+            if event.cat_negate_skill and had_trait:
                 if cat.skill in event.cat_negate_skill and int(random.random() * 15):
                     continue
 
-            final_events.append(event)
+            # determine injury severity chance
+            if event.injury:
+                injury = INJURIES[event.injury]
+                severity = injury['severity']
 
-        if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
-            # print('WE KILL TONIGHT')
-            return murder_events
+                if severity == 'minor':
+                    minor.append(event)
+                elif severity == 'major':
+                    major.append(event)
+                else:
+                    severe.append(event)
+
+            else:
+                final_events.append(event)
+
+        # determine which injury severity list will be used
+        if minor or major or severe:
+            if cat.status in INJURY_DISTRIBUTION:
+                minor_chance = INJURY_DISTRIBUTION[cat.status]['minor']
+                major_chance = INJURY_DISTRIBUTION[cat.status]['major']
+                severe_chance = INJURY_DISTRIBUTION[cat.status]['severe']
+                severity_chosen = random.choices(["minor", "major", "severe"], [minor_chance, major_chance, severe_chance], k=1)
+                if severity_chosen[0] == 'minor':
+                    final_events = minor
+                elif severity_chosen[0] == 'major':
+                    final_events = major
+                else:
+                    final_events = severe
+                print(cat.status, severity_chosen[0])
+
         return final_events
 
     def possible_ongoing_events(self, event_type=None, specific_event=None):

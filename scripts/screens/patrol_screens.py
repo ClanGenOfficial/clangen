@@ -7,7 +7,7 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_snippet_list, process_text
+    get_special_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
@@ -35,6 +35,7 @@ class PatrolScreen(Screens):
     cat_buttons = {}  # Hold cat image sprites.
     selected_cat = None  # Holds selected cat.
     selected_apprentice_index = 0
+    selected_mate_index = 0
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -57,10 +58,10 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
 
             # Checking if the mentor or mate selection buttons are clicked. This must be separate, because
-            # these buttons may not exist. 
+            # these buttons may not exist.
             if "mate_button" in self.elements:
                 if event.ui_element == self.elements['mate_button']:
-                    self.selected_cat = Cat.all_cats[self.selected_cat.mate]
+                    self.selected_cat = self.mate
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
@@ -87,6 +88,21 @@ class PatrolScreen(Screens):
                     self.update_selected_cat()
                     self.update_button()
 
+            # Check if mate cycle buttons are clicked.
+            if "cycle_mate_left_button" in self.elements:
+                if event.ui_element == self.elements['cycle_mate_left_button']:
+                    self.selected_mate_index -= 1
+                    self.mate = self.selected_cat.mate[self.selected_mate_index]
+                    self.update_selected_cat()
+                    self.update_button()
+
+            if "cycle_mate_right_button" in self.elements:
+                if event.ui_element == self.elements['cycle_mate_right_button']:
+                    self.selected_mate_index += 1
+                    self.mate = self.selected_cat.mate[self.selected_mate_index]
+                    self.update_selected_cat()
+                    self.update_button()
+
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
             self.selected_cat = choice(self.able_cats)
@@ -106,7 +122,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) == 0:
                     able_no_med = self.able_cats
                 self.selected_cat = choice(able_no_med)
@@ -116,7 +133,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) < 3:
                     able_no_med = self.able_cats
                 self.current_patrol += sample(able_no_med, k=3)
@@ -124,7 +142,8 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                able_no_med = [cat for cat in self.able_cats if
+                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
                 if len(able_no_med) < 6:
                     able_no_med = self.able_cats
                 self.current_patrol += sample(able_no_med, k=6)
@@ -195,7 +214,6 @@ class PatrolScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
         self.open_choose_cats_screen()
-        cat_profiles()
 
     def update_button(self):
         """" Updates button availabilities. """
@@ -277,7 +295,8 @@ class PatrolScreen(Screens):
                 self.elements['claws'].hide()
                 self.elements['herb'].hide()
 
-            able_no_med = [cat for cat in self.able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+            able_no_med = [cat for cat in self.able_cats if
+                           cat.status not in ['medicine cat', 'medicine cat apprentice']]
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
             if len(self.current_patrol) >= 6 or len(able_no_med) < 1:
@@ -319,11 +338,25 @@ class PatrolScreen(Screens):
                         self.elements['cycle_app_mentor_left_button'].hide()
                         self.elements['cycle_app_mentor_right_button'].hide()
 
+                if 'cycle_mate_right_button' in self.elements and 'cycle_mate_left_button' in self.elements:
+                    if self.selected_mate_index == len(self.selected_cat.mate) - 1:
+                        self.elements['cycle_mate_right_button'].disable()
+                    else:
+                        self.elements['cycle_mate_left_button'].enable()
+
+                    if self.selected_mate_index == 0:
+                        self.elements['cycle_mate_left_button'].disable()
+                    else:
+                        self.elements['cycle_mate_left_button'].enable()
+
+                    if len(self.selected_cat.mate) <= 0:
+                        self.elements['cycle_mate_left_button'].hide()
+                        self.elements['cycle_mate_right_button'].hide()
+
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
         self.clear_cat_buttons()
-        cat_profiles()
 
         self.current_patrol = []
         self.current_page = 1
@@ -422,154 +455,6 @@ class PatrolScreen(Screens):
         self.update_cat_images_buttons()
         self.update_button()
 
-    def adjust_patrol_text(self, text, size=1):
-        """
-        set text parameter to whichever patrol text you want to change (i.e. intro_text, success_text, ect.)
-        always set size to patrol_size
-        """
-        vowels = ['A', 'E', 'I', 'O', 'U']
-        if not text:
-            text = 'This should not appear, report as a bug please!'
-        
-        replace_dict = {
-            "p_l" : (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
-        }
-        
-        if patrol.patrol_random_cat:
-            replace_dict["r_c"] = (str(patrol.patrol_random_cat.name), 
-                                   choice(patrol.patrol_random_cat.pronouns))
-        else:
-            replace_dict["r_c"] = (str(patrol.patrol_leader_name), 
-                                   choice(patrol.patrol_leader.pronouns))
-        
-        if len(patrol.patrol_other_cats) >= 1:
-            replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name), 
-                                        choice(patrol.patrol_other_cats[0].pronouns))
-        if len(patrol.patrol_other_cats) >= 2:
-            replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name), 
-                                        choice(patrol.patrol_other_cats[1].pronouns))
-        if len(patrol.patrol_other_cats) >= 3:
-            replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
-                                        choice(patrol.patrol_other_cats[2].pronouns))
-        if len(patrol.patrol_other_cats) == 4:
-            replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
-                                        choice(patrol.patrol_other_cats[3].pronouns))
-
-        if patrol.app1:
-            replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
-        if patrol.app2:
-            replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
-        if patrol.app3:
-            replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
-        if patrol.app4:
-            replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
-        if patrol.app5:
-            replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
-        if patrol.app6:
-            replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
-
-        stat_cat = None
-        if patrol.patrol_win_stat_cat:
-            stat_cat = patrol.patrol_win_stat_cat
-        elif patrol.patrol_fail_stat_cat:
-            stat_cat = patrol.patrol_fail_stat_cat
-        if stat_cat:
-            replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
-        else:
-            replace_dict['s_c'] = (str(patrol.patrol_leader_name), 
-                                   choice(patrol.patrol_leader.pronouns))
-
-        text = process_text(text, replace_dict)
-
-        other_clan_name = patrol.other_clan.name
-        s = 0
-        for x in range(text.count('o_c_n')):
-            if 'o_c_n' in text:
-                for y in vowels:
-                    if str(other_clan_name).startswith(y):
-                        modify = text.split()
-                        pos = 0
-                        if 'o_c_n' in modify:
-                            pos = modify.index('o_c_n')
-                        if "o_c_n's" in modify:
-                            pos = modify.index("o_c_n's")
-                        if 'o_c_n.' in modify:
-                            pos = modify.index('o_c_n.')
-                        if modify[pos - 1] == 'a':
-                            modify.remove('a')
-                            modify.insert(pos - 1, 'an')
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
-
-        clan_name = game.clan.name
-        s = 0
-        pos = 0
-        for x in range(text.count('c_n')):
-            if 'c_n' in text:
-                for y in vowels:
-                    if str(clan_name).startswith(y):
-                        modify = text.split()
-                        if 'c_n' in modify:
-                            pos = modify.index('c_n')
-                        if "c_n's" in modify:
-                            pos = modify.index("c_n's")
-                        if 'c_n.' in modify:
-                            pos = modify.index('c_n.')
-                        if modify[pos - 1] == 'a':
-                            modify.remove('a')
-                            modify.insert(pos - 1, 'an')
-                        text = " ".join(modify)
-                        break
-         
-        text = text.replace('c_n', str(game.clan.name) + 'Clan')
-
-        # Prey lists for forest random prey patrols
-        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
-                                  'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
-                                  'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
-                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
-        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
-
-        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
-                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
-                               'sleepy dormice', 'chipmunks', 'woodrats', ]
-        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
-
-        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
-                                 'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
-                                 'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
-        text = text.replace('f_mp_s', str(fst_midprey_singlular))
-
-        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
-                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                              'red squirrels', 'gray squirrels', 'rats', ]
-        text = text.replace('f_mp_p', str(fst_midprey_plural))
-
-        sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
-        sign = choice(sign_list)
-        s = 0
-        pos = 0
-        for x in range(text.count('a_sign')):
-            index = text.index('a_sign', s) or text.index('a_sign.', s)
-            for y in vowels:
-                if str(sign).startswith(y):
-                    modify = text.split()
-                    if 'a_sign' in modify:
-                        pos = modify.index('a_sign')
-                    if 'a_sign.' in modify:
-                        pos = modify.index('a_sign.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
-        text = text.replace('a_sign', str(sign))
-
-        return text
-
     def open_patrol_event_screen(self):
         """Open the patrol event screen. This sets up the patrol starting"""
         self.clear_page()
@@ -632,7 +517,7 @@ class PatrolScreen(Screens):
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
+        intro_text = adjust_patrol_text(patrol.patrol_event.intro_text, patrol)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
@@ -668,7 +553,7 @@ class PatrolScreen(Screens):
             if u < len(patrol.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
                     scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                    patrol.patrol_cats[u].big_sprite,
+                    patrol.patrol_cats[u].sprite,
                     manager=MANAGER)
                 pos_x += 100
                 if pos_x > 900:
@@ -697,7 +582,7 @@ class PatrolScreen(Screens):
             print('no romance choices')
             return
         if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                and patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
+                and patrol.patrol_leader.ID not in patrol.patrol_random_cat.mate:
             patrol.patrol_event = self.normal_event_choice
             print('not a potential mate or current mate')
             return
@@ -711,7 +596,7 @@ class PatrolScreen(Screens):
         chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
         if get_personality_compatibility(patrol.patrol_leader,
-                                         patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
+                                         patrol.patrol_random_cat) is True or patrol.patrol_leader.ID in patrol.patrol_random_cat.mate:
             chance_of_romance_patrol -= 10
         else:
             chance_of_romance_patrol += 10
@@ -813,7 +698,8 @@ class PatrolScreen(Screens):
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
                 print('counting')
-                if patrol.patrol_random_cat in (patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
+                if patrol.patrol_random_cat in (
+                patrol.patrol_win_stat_cat, patrol.patrol_fail_stat_cat, patrol.patrol_leader):
                     if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
@@ -840,12 +726,10 @@ class PatrolScreen(Screens):
     def get_patrol_art(self):
         """
         grabs art for the patrol based on the patrol_id
-
         -first checks for image file with exact patrol_id
         -then checks for image file with the patrol_id minus any numbers
         -then checks for image file with the patrol_id minus any numbers and with 'gen' replacing biome indicator
         -if none of those are available, then uses placeholder patrol type image
-
         if you are adding art and the art has gore or blood, add it's exact patrol id to the explicit_patrol_art.json
         """
         path = "resources/images/patrol_art/"
@@ -957,7 +841,7 @@ class PatrolScreen(Screens):
             display_text = "ERROR"
 
         # Adjust text for solo patrols
-        display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
+        display_text = adjust_patrol_text(display_text, patrol)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
@@ -1037,7 +921,7 @@ class PatrolScreen(Screens):
                 )
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                   pygame.transform.scale(cat.large_sprite, (100, 100))
+                                                                   pygame.transform.scale(cat.sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
             pos_x += 100
             if pos_x >= 600:
@@ -1054,7 +938,7 @@ class PatrolScreen(Screens):
             i = 0
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                         pygame.transform.scale(cat.large_sprite,
+                                                                         pygame.transform.scale(cat.sprite,
                                                                                                 (100, 100)),
                                                                          cat_object=cat, manager=MANAGER)
                 pos_x += 150
@@ -1131,13 +1015,19 @@ class PatrolScreen(Screens):
         if 'cycle_app_mentor_right_button' in self.elements:
             self.elements['cycle_app_mentor_right_button'].kill()
             del self.elements['cycle_app_mentor_right_button']
+        if 'cycle_mate_left_button' in self.elements:
+            self.elements['cycle_mate_left_button'].kill()
+            del self.elements['cycle_mate_left_button']
+        if 'cycle_mate_right_button' in self.elements:
+            self.elements['cycle_mate_right_button'].kill()
+            del self.elements['cycle_mate_right_button']
 
         if self.selected_cat is not None:
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((640, 350), (300, 300))),
                                                                           pygame.transform.scale(
-                                                                              self.selected_cat.large_sprite,
+                                                                              self.selected_cat.sprite,
                                                                               (300, 300)),
                                                                           manager=MANAGER)
 
@@ -1155,27 +1045,31 @@ class PatrolScreen(Screens):
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.trait) +
                                                                           "\n" + str(self.selected_cat.skill) +
-                                                                          "\n" + str(self.selected_cat.experience_level) +
-                                                                          (f' ({str(self.selected_cat.experience)})' if game.settings['showxp'] else ''),
+                                                                          "\n" + str(
+                self.selected_cat.experience_level) +
+                                                                          (f' ({str(self.selected_cat.experience)})' if
+                                                                           game.settings['showxp'] else ''),
                                                                           scale(pygame.Rect((600, 700), (400, 150))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_22_horizcenter_spacing_95"),
                                                                           manager=MANAGER)
 
             # Show Cat's Mate, if they have one
-            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
-                if self.selected_cat.mate is not None:
+            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice', 'mediator apprentice']:
+                if len(self.selected_cat.mate) > 0:
+                    if self.selected_mate_index > len(self.selected_cat.mate) - 1:
+                        self.selected_mare_index = 0
+                    self.mate = Cat.fetch_cat(self.selected_cat.mate[self.selected_mate_index])
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((280, 380), (332, 340))),
                         self.mate_frame)
-                    mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((300, 400), (200, 200))),
                         pygame.transform.scale(
-                            mate.large_sprite, (200, 200))
+                            self.mate.sprite, (200, 200))
                         , manager=MANAGER)
                     # Check for name length
-                    name = str(mate.name)  # get name
+                    name = str(self.mate.name)  # get name
                     if 10 <= len(name):  # check name length
                         short_name = name[0:9]
                         name = short_name + '..'
@@ -1190,8 +1084,24 @@ class PatrolScreen(Screens):
                     self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
                                                                  object_id="#patrol_select_button", manager=MANAGER)
                     # Disable mate_button if the cat is not able to go on a patrol
-                    if mate not in self.able_cats:
+                    if self.mate not in self.able_cats:
                         self.elements['mate_button'].disable()
+
+                    # Buttons to cycle between mates
+                    if len(self.selected_cat.mate) > 1:
+                        self.elements['cycle_mate_left_button'] = UIImageButton(
+                            scale(pygame.Rect((296, 780), (68, 68))),
+                            "",
+                            object_id="#arrow_left_button",
+                            manager=MANAGER)
+                        self.elements['cycle_mate_right_button'] = UIImageButton(
+                            scale(pygame.Rect((436, 780), (68, 68))),
+                            "",
+                            object_id="#arrow_right_button",
+                            manager=MANAGER)
+                        self.update_button()
+
+
             # Draw mentor or apprentice
             relation = "should not display"
             if self.selected_cat.status in ['medicine cat apprentice',
@@ -1231,7 +1141,7 @@ class PatrolScreen(Screens):
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((1100, 400), (200, 200))),
                         pygame.transform.scale(
-                            self.app_mentor.large_sprite,
+                            self.app_mentor.sprite,
                             (200, 200)), manager=MANAGER)
 
                     # Button to switch to that cat

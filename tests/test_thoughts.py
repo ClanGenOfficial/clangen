@@ -29,7 +29,32 @@ class TestsGetStatusThought(unittest.TestCase):
         # when
         function_thoughts = thoughts
 
+    def test_exiled_thoughts(self):
+        # given
+        cat = Cat(status="exiled", moons=40)
+        cat.exiled = True
+        cat.outside = True
+        biome = "Forest"
+        season = "Newleaf"
+        camp = "camp2"
 
+        # load thoughts
+        thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
+        """Prints can be turned back on if testing is needed"""
+        #print("Exiled Thoughts: " + str(thoughts))
+
+    def test_lost_thoughts(self):
+        # given
+        cat = Cat(status="warrior", moons=40)
+        cat.outside = True
+        biome = "Forest"
+        season = "Newleaf"
+        camp = "camp2"
+
+        # load thoughts
+        thoughts = Thoughts.load_thoughts(cat, None, "expanded", biome, season, camp)
+        """Prints can be turned back on if testing is needed"""
+        #print("Lost Thoughts: " + str(thoughts))
 
 class TestFamilyThoughts(unittest.TestCase):
 

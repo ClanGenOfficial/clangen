@@ -2,7 +2,7 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, their sleep anything but restful. They keep seeing flashes of prophecy_list. They wake with a shiver, wondering what their dreams mean for the Clan.",
+    "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, their sleep anything but restful. They keep seeing flashes of prophecy_list_sight. They wake with a shiver, wondering what their dreams mean for the Clan.",
     "cat_trait": null,
     "cat_skill": ["prophet"],
     "other_cat_trait": null,
@@ -11,7 +11,7 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "The things they saw today, omen_list... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
+    "event_text": "The things they saw today, omen_list_sight... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
     "cat_trait": null,
     "cat_skill": ["omen sight"],
     "other_cat_trait": null,
@@ -20,7 +20,7 @@
   {
     "camp": "camp2",
     "tags": ["clan_kits", "Leaf-bare"],
-    "event_text": "Through the long cold night, m_c brings the young cats of the Clan with them. Their words paint an enchanting picture of the ancestors of o_c as they point out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
+    "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with them down the tunnels. Their words paint an enchanting picture of the ancestors of o_c as they point out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
     "cat_trait": null,
     "cat_skill": ["lore keeper"],
     "other_cat_trait": null,

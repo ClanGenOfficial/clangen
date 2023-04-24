@@ -1,7 +1,7 @@
 {
   "general": {
     "body": [
-      "r_c can hardly process the sight of m_c's body before them. Somehow the world feels colder and crueler now.",
+      "r_c can hardly process the sight of m_c's body before {PRONOUN/r_c/object}. Somehow, the world feels colder and crueler now.",
       "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives.",
       "It just doesn't feel real. r_c stares at m_c's body blankly, waiting for this horrible nightmare to end."
     ],

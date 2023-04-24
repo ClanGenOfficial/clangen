@@ -87,13 +87,13 @@
       "m_c wasn't expecting this birth to be so intensely painful.",
       "Everyone says giving birth is difficult, but m_c feels like this one has been worse than most.",
       "This will all be worth it, m_c groans, promising {PRONOUN/m_c/self} that as the pains of afterbirth rock {PRONOUN/m_c/poss} exhausted and bleeding body.",
-      "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subect} {VERB/m_c/need/need} them to stop the blood loss. "
+      "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/need} them to stop the blood loss. "
     ],
 	"outside_alone": [
-		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
+		"Rumors reach the Clan that m_c gave birth to a {insert}."
 	],
 	"outside_in_clan":[
-		"r_c heard a rumour, that m_c had a litter.",
+		"r_c heard a rumor that m_c had a litter.",
 		"r_c thinks that m_c should have had {PRONOUN/m_c/poss} litter by now."
 	],
 	"outside_death": [
