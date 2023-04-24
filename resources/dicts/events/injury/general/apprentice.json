@@ -556,7 +556,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
+        "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarrassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
      "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "ambitious", "troublesome", "insecure", "lonesome", "nervous", "sneaky"]
      },
      {
