@@ -27,8 +27,6 @@ a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
 a.datas += [ ('version.ini', './tmp/version.ini', 'DATA') ]
 a.datas += [ ('changelog.txt', './changelog.txt', 'DATA') ]
-if platform.system() == 'Linux' or platform.system() == 'Darwin':
-    a.datas += [ ('OpenDataDirectory.sh', './tmp/datadir.sh', 'DATA') ]
 elif platform.system() == 'Windows':
     a.datas += [ ('OpenDataDirectory.bat', './tmp/datadir.bat', 'DATA') ]
 a.datas += [ ('.itch.toml', './.itch.toml', 'DATA') ]
