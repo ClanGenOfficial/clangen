@@ -184,7 +184,7 @@
     }
 },
 {
-    "patrol_id": "gen_bord_abandonedkittypet1",
+    "patrol_id": "gen_bord_abandonedkittypet1_kittypet4",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_injury", "new_cat_kittypet", "nc_sickness",  "respect", "warrior"],

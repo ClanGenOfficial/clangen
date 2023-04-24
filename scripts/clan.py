@@ -55,6 +55,7 @@ class Clan():
     clan_cats = []
     starclan_cats = []
     darkforest_cats = []
+    unknown_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -584,6 +585,8 @@ class Clan():
             self.starclan_cats.append(cat.ID)
             if cat.ID in self.darkforest_cats:
                 self.darkforest_cats.remove(cat.ID)
+            if cat.ID in self.unknown_cats:
+                self.unknown_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
@@ -594,16 +597,33 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is True:
+        if cat.ID in Cat.all_cats and cat.dead and cat.df:
             self.darkforest_cats.append(cat.ID)
-            cat.thought = "Is distraught after being sent to the Place of No Stars"
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.unknown_cats:
+                self.unknown_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
             # update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
+
+    def add_to_unknown(self, cat):
+        """
+        Places dead cat into the unknown residence.
+        It should not be removed from the list of cats in the clan
+        :param cat: cat object
+        """
+        if cat.ID in Cat.all_cats and cat.dead and cat.outside:
+            self.unknown_cats.append(cat.ID)
+            if cat.ID in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.darkforest_cats:
+                self.darkforest_cats.remove(cat.ID)
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
 
     def add_to_clan(self, cat):
         """
@@ -1049,6 +1069,7 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
                 game.clan.add_to_darkforest(Cat.all_cats[cat])
+                game.clan.add_to_unknown(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
         if "war" in clan_data:
