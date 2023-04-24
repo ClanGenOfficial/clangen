@@ -68,7 +68,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcatkittypetsolo3",
+    "patrol_id": "gen_bord_newcatkittypet4",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_warrior_kittypet_litter1", "reputation", "kits", "meeting"],
@@ -114,7 +114,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcatthunderpathsolo2",
+    "patrol_id": "gen_bord_newcatthunderpath6",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
@@ -160,7 +160,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newkitsolo3",
+    "patrol_id": "gen_bord_newkit4",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],

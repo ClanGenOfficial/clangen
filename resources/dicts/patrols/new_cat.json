@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcatsolo1",
+    "patrol_id": "gen_bord_newcat3",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_loner_warrior_litter1", "reputation", "meeting"],
@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcatkittypetsolo2",
+    "patrol_id": "gen_bord_newcatkittypet6",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_warrior_kittypet_litter1", "reputation", "meeting"],
@@ -115,7 +115,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcatthunderpathsolo3",
+    "patrol_id": "gen_bord_newcatthunderpath4",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_warrior", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
@@ -161,7 +161,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newkitsolo2",
+    "patrol_id": "gen_bord_newkit6",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],
@@ -206,7 +206,7 @@
     "max_cats": 6
 },
 {
-    "patrol_id": "gen_bord_healersolo1",
+    "patrol_id": "gen_bord_healer4",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_medcat_loner_litter1", "reputation", "meeting"],
