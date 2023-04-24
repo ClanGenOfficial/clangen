@@ -1,17 +1,27 @@
 from scripts.game_structure.image_button import UITextBoxTweaked
 import requests
 import os
+import time
 from scripts.datadir import get_log_dir
+import ujson
 
-def send_logs(token: str, progress: UITextBoxTweaked, callback: callable):
+def send_logs(token: str, progress: UITextBoxTweaked, callback: callable) -> None:
+    """
+    main log upload function
+    """
     if not verify_token(token):
+        progress.set_text("Invalid token, please try again.")
+        time.sleep(5)
         callback("BADTOKEN")
         return
-    
+
     upload_logs(token, progress, callback)
 
 
 def verify_token(token: str) -> bool:
+    """
+    verifies the token is valid
+    """
     with requests.get("https://bot.luna.clangen.io/logtoken/" + token) as response:
         if response.status_code == 200:
             return True
@@ -19,20 +29,25 @@ def verify_token(token: str) -> bool:
             return False
 
 def upload_logs(token: str, progress: UITextBoxTweaked, callback: callable):
-
+    """
+    actually uploads the logs
+    """
     progress.set_text("Uploading logs...")
-    
+
     logs = os.listdir(get_log_dir())
     files = {}
 
     for log in logs:
-        with open(os.path.join(get_log_dir(), log), 'rb') as f:
+        with open(os.path.join(get_log_dir(), log), 'r') as f:
             files[log] = f.read()
 
 
-    req = requests.post("https://bot.luna.clangen.io/logs/", data=files, headers={'token': token})
-    
+    req = requests.post("https://bot.luna.clangen.io/logs/", data=ujson.dumps(files), headers={'Content-Type': 'application/json', 'token': token})
+
     if req.status_code == 200:
-        callback("SUCCESS")
+        progress.set_text("Logs uploaded successfully!")
     else:
-        callback("ERROR")
+        progress.set_text("Failed to upload logs, please try again.")
+
+    time.sleep(5)
+    callback("DONE")
