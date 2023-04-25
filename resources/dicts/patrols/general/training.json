@@ -204,7 +204,7 @@
     "exp": 20,
     "success_text": [
         "p_l smiles, inviting app1 to sit down. The apprentice is a little stiff at first, unsure how to act in front of the warrior, but that's actually what p_l wants to work on here. c_n contains cats of all ages, skills, and talents - it's important to work on being comfortable with everyone, just as important as working on respecting them. They're all c_n, after all.",
-        "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certianly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
+        "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certainly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
         null,
         "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. They've seen how hard app1 has been working, and commend them for it, but it'll do the Clan no good if app1 burns themself out. All things in their time."
     ],
@@ -226,23 +226,23 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "p_l smiles, inviting app1 to sit down. A little embarassed, app1 looks like they're going to object - but not, they're the only two cats around. They lie down, and p_l curls around them, settling down to ash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",
+        "p_l smiles, inviting app1 to sit down. A little embarrassed, app1 looks like they're going to object - but no, they're the only two cats around. They lie down, and p_l curls around them, settling down to ash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",
         "Settling down, p_l wants to know how app1 is finding their training. It turns into a lovely conversation, a perfect moment spent with one another, time that's been so rare since app1 became a paw. Not that p_l regrets that, of course, app1 is going to be a wonderful warrior.",
         null,
-        "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recnetly until app1 is puffed up with embarassed, thrilled pride."
+        "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recnetly until app1 is puffed up with embarrassed, thrilled pride."
     ],
     "fail_text": [
-        "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarassment.",
-        "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critquing things, pointing out where they need to improve. Strangely, the apprentice doesn't seem thrilled with the topic."
+        "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarrassment.",
+        "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critiquing things, pointing out where they need to improve. Strangely, the apprentice doesn't seem thrilled with the topic."
     ],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "fail_trait":["cold", "ambitious"],
     "min_cats": 2,
     "max_cats": 2,
-    "relationship_constraint": [
-        "parent/child"
-]
+    "constraints": {
+        "relationship": ["parent/child"]
+    }
 },
 {
     "patrol_id": "gen_train_argue1",
@@ -304,7 +304,7 @@
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
         "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
         "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "This is unlike app1. s_c stops in their tracks, sitting their butt down in the middle of the path and refusing to move until app1 tells them what's bothering them. No, what's <i>actually</i> bothering them."
@@ -331,7 +331,7 @@
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
         "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
         "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "s_c has taken valuable time out of their day to personally help app1 with their studies, and this is completely juvenile behaviour. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. "
@@ -490,7 +490,7 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOIUN/app1/poss} little transgression.",
+        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         null,
         null,
         "Whatever, it's not a big deal, and s_c's hungry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/polish/polishes} off the little snack, and {VERB/s_c/keep/keeps} working on {PRONOUN/s_c/poss} pounce."
@@ -514,7 +514,7 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOIUN/app1/poss} little transgression.",
+        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         null,
         null,
         "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack."
@@ -538,14 +538,14 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOIUN/app1/poss} little transgression.",
+        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         null,
         null,
         "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat {PRONOUN/s_c/poss} afternoon snack under cover."
     ],
     "fail_text": [
         "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it."
+        "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it."
     ],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
@@ -562,7 +562,7 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOIUN/app1/poss} little transgression.",
+        "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         null,
         null,
         "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan."
@@ -1028,7 +1028,7 @@
     "exp": 10,
     "success_text": [
         "As p_l and r_c run around c_n's territory, theoretically training, r_c feels wild and free and like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} going to burst with unexpected happiness! {PRONOUN/r_c/subject/CAP} {VERB/r_c/turn/turns} and {VERB/r_c/pounce/pounces} on p_l, starting a little play fight with their mock-prey.",
-        "As r_c creeps forward, practising {PRONOUN/r_c/poss} stalk, p_l notices {PRONOUN/r_c/poss} butt wiggling in excitement. {PRONOUN/p_l/subject/CAP} {VERB/p_l/laugh/laughs} to {PRONOUN/p_l/self} softly, and {VERB/p_l/pad/pads} over to give r_c a head's up about the bad habit.",
+        "As r_c creeps forward, practicing {PRONOUN/r_c/poss} stalk, p_l notices {PRONOUN/r_c/poss} butt wiggling in excitement. {PRONOUN/p_l/subject/CAP} {VERB/p_l/laugh/laughs} to {PRONOUN/p_l/self} softly, and {VERB/p_l/pad/pads} over to give r_c a head's up about the bad habit.",
         "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence and admiration for each other growing."
     ],
     "fail_text": [
@@ -1091,7 +1091,7 @@
     "exp": 10,
     "success_text": [
         "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
-        "r_c talks about how, sometimes, often even, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} tripping over {PRONOUN/r_c/poss} own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! {PRONOUn/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want r_c to change.",
+        "r_c talks about how, sometimes, often even, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} tripping over {PRONOUN/r_c/poss} own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want r_c to change.",
         "s_c talks about how choosing the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
     ],
     "fail_text": [
@@ -1133,7 +1133,7 @@
     "exp": 10,
     "success_text": [
         "It is easy to wonder why StarClan place their paws on some cats and not others. r_c is comforted to know p_l feels that too sometimes, and they end up spending the afternoon discussing it together, both cats feeling validated and reassured.",
-        "p_l tells r_c that one day StarClan will call on {PRONOUN/r_c/object}, for all {PRONOUN/r_c/poss} many talents and {PRONOUN/r_c/poss} drive and determination to help c_n. r_c ducks {PRONOUN/r_c/poss} head, embarassed and pleased.",
+        "p_l tells r_c that one day StarClan will call on {PRONOUN/r_c/object}, for all {PRONOUN/r_c/poss} many talents and {PRONOUN/r_c/poss} drive and determination to help c_n. r_c ducks {PRONOUN/r_c/poss} head, embarrassed and pleased.",
         "s_c knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c/object}. With r_c, {PRONOUN/s_c/subject} {VERB/s_c/go/goes} to a quiet area near camp and show {PRONOUN/r_c/object} how to breath, to feel connected to the world around {PRONOUN/r_c/object}, and let {PRONOUN/r_c/poss} worries evaporate from {PRONOUN/r_c/poss} pelt."
     ],
     "fail_text": [
@@ -1148,8 +1148,8 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["two_apprentices", "rel_two_apps", "big_change", "trust",  "scar", "TAILBASE", "injury", "broken back", "app_only", "training"],
-    "intro_text": "app1 and app2 while exploring the territory come across the forbidden tunnels.",
-    "decline_text": "They don't want to get into trouble and they have a lot more territory to explore anyway.",
+    "intro_text": "app1 and app2, while exploring the territory, come across the forbidden tunnels.",
+    "decline_text": "They don't want to get into trouble, and they have a lot more territory to explore anyway.",
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
@@ -1157,12 +1157,12 @@
         "app1 expected a little hesitation. but app2 defies that expectation and darts right into the tunnels. playfully batting at {PRONOUN/app1/object} as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp."
     ],
     "fail_text": [
-        "As app1 and app2 begin to make their way into the tunnels they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment from their leader, though they feel like they should fear their mentors' punishments more...", 
+        "As app1 and app2 begin to make their way into the tunnels, they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment, though they feel like they should fear their mentors' anger more...", 
         null,
         null,
         null,
         null,
-        "s_c boasts to app2 that {PRONOUN/s_c/subject} {VERB/s_c/go/goes} into the tunnels allllllll the time, {PRONOUN/s_c/poss} head and tail held high as {PRONOUN/s_c/subject} {VERB/s_c/do/does} so. app2 seems to be unconvinced, so s_c crawls into the narrow opening of the tunnel and exclaims that there is nothing to it. Just at that moment the tunnel makes an ominous rumble and collapses. They both scream in absolute terror, and app2 runs back to camp, praying to StarClan that {PRONOUN/app2/subject} can find help and soon. As {PRONOUN/app2/subject} {VERB/app2/return/returns} with help, {PRONOUN/app2/subject} can only hear the heartbroken wail of s_c that {PRONOUN/s_c/subject} can't feel {PRONOUN/s_c/poss} legs anymore."
+        "s_c boasts that {PRONOUN/s_c/subject} {VERB/s_c/go/goes} into the tunnels <i>all</i> the time. app2 is unconvinced, so s_c crawls in with a smug look back... just as the tunnel rumbles and collapses. With a terrified screech, app2 runs back to camp, praying {PRONOUN/app2/subject} can find help fast. As they hurry back, {PRONOUN/app2/subject} can only hear s_c wail that {PRONOUN/s_c/subject} can't feel {PRONOUN/s_c/poss} legs."
     ],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
@@ -1176,16 +1176,16 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["one_apprentice", "warrior", "p_l_to_r_c", "platonic", "comfort", "respect", "trust", "training"],
-    "intro_text": "app1 is not acting like {PRONOUN/app1/poss} usual self.",
+    "intro_text": "app1 isn't acting like {PRONOUN/app1/poss} usual self.",
     "decline_text": "p_l has no time today to get to the bottom of it.",
     "chance_of_success": 60,
     "exp": 5,
     "success_text": [
-        "p_l guides app1 to {PRONOUN/app1/poss} favorite place and softly asks {PRONOUN/app1/object} what's wrong. app1 whispers that {PRONOUN/app1/subject} {VERB/app1/feel/feels} like a failure and that {PRONOUN/app1/subject} {VERB/app1/are/is} not doing good enough. p_l gently tugs {PRONOUN/app1/object} closer and tells {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/are/is} not just {PRONOUN/app1/poss} failures. Failure hurts, that's true, but {PRONOUN/app1/subject} can learn so much from it. All {PRONOUN/app1/subject} can do is go out there and ensure that {PRONOUN/s_c/subject} won't make the same mistake twice. app1 looks at p_l with shiny eyes and cuddles even closer.", 
-        "p_l gently asks them what's wrong and app1 breaks down, crying that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing good enough even though {PRONOUN/app1/subject}{VERB/app1/'re/'s} really trying. p_l pulls {PRONOUN/app1/object} into a hug, purring softly. {PRONOUN/p_l/subject/CAP} {VERB/p_l/tell/tells} app1 a story of {PRONOUN/p_l/poss} own apprentice days and how {PRONOUN/p_l/subject} also made a lot of mistakes. app1 looks up, disbelieving. p_l chuckles at the look on {PRONOUN/app1/poss} face and promises {PRONOUN/app1/object} that nobody but {PRONOUN/app1/self} will remember those mistakes."
+        "p_l guides app1 to sit, gently asking what's wrong. app1, cuddled close to p_l's side, whispers that {PRONOUN/app1/subject} {VERB/app1/feel/feels} like a failure, and that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing good enough. p_l gently tugs {PRONOUN/app1/object} close, murmuring that app1's more than {PRONOUN/app1/poss} failures. Failure hurts, yes, but with it comes a chance to learn. All {PRONOUN/app1/subject} can do is try not to make the same mistake twice.", 
+        "p_l gently asks what's wrong and app1 breaks down, wailing that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing good enough even though {PRONOUN/app1/subject}{VERB/app1/'re/'s} <i>really</i> trying. p_l curls around {PRONOUN/app1/object}, purring softly, and tells a story of {PRONOUN/p_l/poss} own apprentice days, and {PRONOUN/p_l/poss} own mistakes. p_l chuckles at the look on {PRONOUN/app1/poss} face, promising that nobody but {PRONOUN/app1/self} will remember {PRONOUN/app1/poss} mistakes."
     ],
     "fail_text": [
-        "p_l decides to ask app1 if there's something {PRONOUN/p_l/subject} can help {PRONOUN/app1/object} with, or if {PRONOUN/app1/subject} {VERB/app1/want/wants} to talk about it. Unfortunately, app1 immediately shuts down and asks p_l if they could just please continue walking to the training grounds."
+        "p_l tries to ask app1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/app1/subject} {VERB/app1/want/wants} to talk about it. Unfortunately, app1 immediately shuts down, muttering a request to please just keep the patrol focused on training."
     ],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 2,
@@ -1195,14 +1195,14 @@
     "patrol_id": "gen_train_mosstraining1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["herb", "moss", "apprentice", "warrior", "rel_patrol", "respect", "disrespect", "trust", "training"],
+    "tags": ["herb", "moss", "apprentice", "warrior", "rel_patrol", "respect", "disrespect", "trust", "training", "no_leader"],
     "intro_text": "p_l takes app1 out of camp to gather moss.",
     "decline_text": "Before they even leave the camp, r_c's expertise is required in another matter.",
     "chance_of_success": 40,
     "exp": 5,
     "success_text": [
-        "p_l patiently shows app1 the best places to gather moss. {PRONOUN/p_l/subject/CAP} {VERB/p_l/show/shows} {PRONOUN/app1/object} how to gather it, and explain to app1 that by doing this {PRONOUN/app1/subject} will gain the muscles and strength necessary to be a great warrior.",
-        "p_l notices app1's distracted face. Taking a more paws-on approach, {PRONOUN/p_l/subject} {VERB/p_l/show/shows} app1 the strength {PRONOUN/p_l/subject} gained from gathering the moss and the control {PRONOUUN/p_l/subject} learned from not shredding it. app1 seems awed and impressed."
+        "p_l patiently shows app1 the best places to gather moss, and how to gather it, explaining to app1 that by doing this {PRONOUN/app1/subject} will gain the muscles and strength necessary to be a great warrior.",
+        "p_l notices app1's eyes flitting about distractedly. Taking a more paws-on approach, {PRONOUN/p_l/subject} {VERB/p_l/show/shows} app1 the strength {PRONOUN/p_l/subject} gained from gathering the moss, and the control {PRONOUN/p_l/subject} learned from not shredding it. app1 seems awed and impressed."
     ],
     "fail_text": [
         "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp."

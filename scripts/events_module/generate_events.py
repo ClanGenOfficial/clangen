@@ -269,6 +269,8 @@ class GenerateEvents:
 
             if war_event and ("war" not in event.tags and "hostile" not in event.tags):
                 continue
+            if not war and "war" in event.tags:
+                continue
 
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
