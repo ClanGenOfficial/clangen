@@ -855,7 +855,7 @@
             "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
             "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a corpse of trees so thick and overgrown that their branches have protected the leaf litter beneath them from the snowfall. If they can find prey anywhere, it'll be there.",
             null,
-            "p_l, leading the search for s_c, spots tracks headed away form the path. Confused, they signal the rest of the patrol over, only for r_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
+            "p_l, leading the search for r_c, spots tracks headed away form the path. Confused, they signal the rest of the patrol over, only for r_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
         ],
         "fail_text": [
             "p_l is silently furious at r_c when they find them. A snow storm is no time to go haring off by themselves, and it's destroyed the patrol's hunting chances.",

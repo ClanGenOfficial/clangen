@@ -203,7 +203,7 @@ class StartScreen(Screens):
             scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#text_box_22_horizleft",
             manager=MANAGER,
-            layer_starting_height=3)
+            starting_height=3)
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. "
@@ -211,7 +211,7 @@ class StartScreen(Screens):
             '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#text_box_22_horizleft",
-            layer_starting_height=3,
+            starting_height=3,
             manager=MANAGER
         )
 
