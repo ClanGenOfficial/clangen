@@ -884,8 +884,8 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": [
-            "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
             "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
         ],
@@ -926,8 +926,8 @@
         "chance_of_success": 10,
         "exp": 30,
         "success_text": [
-            "It's just an odd loner singing to themselves. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
             "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         ],

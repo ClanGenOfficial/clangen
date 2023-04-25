@@ -377,9 +377,7 @@ class Cat():
                 self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
-            elif status == 'apprentice':
-                self.age = 'adolescent'
-            elif status == 'medicine cat apprentice':
+            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
@@ -594,6 +592,7 @@ class Cat():
             game.clan.add_to_starclan(self)
         elif game.clan.instructor.df is True:
             self.df = True
+            self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
             game.clan.add_to_darkforest(self)
 
         if game.clan.game_mode != 'classic':
@@ -601,6 +600,9 @@ class Cat():
 
         if not self.outside:
             Cat.dead_cats.append(self)
+        else:
+            self.thought = "Is fascinated by the new ghostly world they've stumbled into"
+            game.clan.add_to_unknown(self)
 
         return text
 
@@ -1221,10 +1223,10 @@ class Cat():
             if kitty.dead and kitty.status != 'newborn':
                 # check where they reside
                 if starclan:
-                    if kitty.ID not in game.clan.starclan_cats or kitty.outside:
+                    if kitty.ID not in game.clan.starclan_cats:
                         continue
                 else:
-                    if kitty.ID not in game.clan.darkforest_cats or kitty.outside:
+                    if kitty.ID not in game.clan.darkforest_cats:
                         continue
                 # guides aren't allowed here
                 if kitty == game.clan.instructor:
@@ -1265,7 +1267,7 @@ class Cat():
                     extra_givers = possible_sc_cats
                 else:
                     extra_givers = random.sample(possible_sc_cats, k=amount)
-            else:  #example printdddd
+            else:
                 print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     i not in life_givers and

@@ -476,7 +476,7 @@ class EventsScreen(Screens):
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),
                                                                                                object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                                                                container=self.event_container,
-                                                                                               layer_starting_height=2,
+                                                                                               starting_height=2,
                                                                                                manager=MANAGER)
                 self.display_events_elements["event" + str(i)].disable()
                 # Find the next y-height by finding the height of the text box, and adding 35 for the cats button
