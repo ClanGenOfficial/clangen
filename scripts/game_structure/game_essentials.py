@@ -194,9 +194,9 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-        
+
     @staticmethod
-    def safe_save(path: str, write_data, max_attempts: int=15):
+    def safe_save(path: str, write_data, max_attempts: int = 15):
         """ Attempt to safely safe a file.
             If write_data is not a string, assumes you want this
             in json format. 
@@ -210,14 +210,14 @@ class Game():
             _data = write_data
 
         dir_name, file_name = os.path.split(path)
-        
+
         if not file_name:
             raise RuntimeError(f"Safe_Save: No file name was found in {path}")
 
         temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
         i = 0
         while True:
-             # Attempt to write to temp file
+            # Attempt to write to temp file
             with open(temp_file_path, "w") as write_file:
                 write_file.write(_data)
 
@@ -411,7 +411,7 @@ class Game():
                 "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
-                #"pronouns": inter_cat.pronouns,
+                # "pronouns": inter_cat.pronouns,
                 "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
                 "backstory": inter_cat.backstory if inter_cat.backstory else None,
@@ -455,7 +455,19 @@ class Game():
                 "tortie_pattern": inter_cat.tortiepattern,
                 "skin": inter_cat.skin,
                 "tint": inter_cat.tint,
-                "skill": inter_cat.skill,
+                "skill_dict": {
+                    "primary": {
+                        "path": inter_cat.skills.primary_path,
+                        "tier": inter_cat.skills.primary_tier,
+                        "points": inter_cat.skills.primary_points,
+                    },
+                    "secondary": {
+                        "path": inter_cat.skills.secondary_path,
+                        "tier": inter_cat.skills.secondary_tier,
+                        "points": inter_cat.skills.secondary_points
+                    },
+                    "hidden": inter_cat.skills.hidden
+                },
                 "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,
                 "experience": inter_cat.experience,
@@ -596,7 +608,7 @@ class Game():
                 "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
-            
+
             self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
 
             self.clan.remove_cat(cat)  # Remove the cat from the active cats lists

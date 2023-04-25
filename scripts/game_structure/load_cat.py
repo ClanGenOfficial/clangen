@@ -1,13 +1,15 @@
 import os
+import random
 from math import floor
 from .game_essentials import game
 from ..cat.history import History
+from ..cat.skills import Skills
 from ..datadir import get_save_dir
 
 import ujson
 
 from re import sub
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, SKILLS
 from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
@@ -186,7 +188,12 @@ def json_load():
             elif cat["pattern"] == "MINIMAL4":
                 new_cat.pattern = "MINIMALFOUR"
             new_cat.skin = cat["skin"]
-            new_cat.skill = cat["skill"]
+
+            if "skill" in cat:
+                cat.convert_old_skills(cat["skill"])
+            else:
+                new_cat.skill_dict = cat["skill_dict"]
+
             new_cat.scars = cat["scars"] if "scars" in cat else []
 
             # converting old specialty saves into new scar parameter
@@ -503,8 +510,8 @@ def save_check():
         #        cat_ob.mate = None
                 
 def version_convert(version_info):
-    """Does all save-convertion that require referencing the saved version number.
-    This is a seperate function, since the version info is stored in clan.json, but most converson needs to be 
+    """Does all save-conversion that require referencing the saved version number.
+    This is a separate function, since the version info is stored in clan.json, but most conversion needs to be
     done on the cats. Clan data is loaded in after cats, however. """
     
     if version_info is None:
@@ -515,9 +522,11 @@ def version_convert(version_info):
         return
     
     if version_info["version_name"] is None:
-        # Save was made before version number stoage was implemented. 
+        # Save was made before version number storage was implemented.
         # (ie, save file version 0)
         # This means the EXP must be adjusted. 
         for c in Cat.all_cats.values():
             c.experience = c.experience * 3.2
+
+
     

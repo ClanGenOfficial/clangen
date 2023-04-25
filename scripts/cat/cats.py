@@ -1,11 +1,11 @@
 from __future__ import annotations
-from random import choice, randint, sample
+from random import choice, randint, sample, random, choices, getrandbits, randrange
 from typing import Dict, List, Any
-import random
 import os.path
 import itertools
 
 from .history import History
+from .skills import Skills
 from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
@@ -94,44 +94,6 @@ class Cat():
     ]
 
     gender_tags = {'female': 'F', 'male': 'M'}
-
-    skills = [
-        'good hunter', 'great hunter', 'fantastic hunter', 'smart',
-        'very smart', 'extremely smart', 'good fighter', 'great fighter',
-        'excellent fighter', 'good speaker', 'great speaker',
-        'excellent speaker', 'strong connection to StarClan', 'good teacher',
-        'great teacher', 'fantastic teacher'
-    ]
-    med_skills = [
-        'good healer', 'great healer', 'fantastic healer', 'omen sight',
-        'dream walker', 'strong connection to StarClan', 'lore keeper',
-        'good teacher', 'great teacher', 'fantastic teacher', 'keen eye',
-        'smart', 'very smart', 'extremely smart', 'good mediator',
-        'great mediator', 'excellent mediator', 'clairvoyant', 'prophet'
-    ]
-    elder_skills = [
-        'good storyteller', 'great storyteller', 'fantastic storyteller',
-        'smart tactician', 'valuable tactician', 'valuable insight',
-        'good mediator', 'great mediator', 'excellent mediator',
-        'good teacher', 'great teacher', 'fantastic teacher',
-        'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
-        'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
-    ]
-
-    skill_groups = {
-        'special': ['omen sight', 'dream walker', 'clairvoyant', 'prophet', 'lore keeper', 'keen eye'],
-        'star': ['strong connection to StarClan'],
-        'heal': ['good healer', 'great healer', 'fantastic healer'],
-        'teach': ['good teacher', 'great teacher', 'fantastic teacher'],
-        'mediate': ['good mediator', 'great mediator', 'excellent mediator'],
-        'smart': ['smart', 'very smart', 'extremely smart'],
-        'hunt': ['good hunter', 'great hunter', 'fantastic hunter'],
-        'fight': ['good fighter', 'great fighter', 'excellent fighter'],
-        'speak': ['good speaker', 'great speaker', 'excellent speaker'],
-        'story': ['good storyteller', 'great storyteller', 'fantastic storyteller'],
-        'tactician': ['smart tactician', 'valuable tactician', 'valuable insight'],
-        'home': ['good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder']
-    }
 
     backstories = [
         "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
@@ -222,8 +184,9 @@ class Cat():
                  **kwargs
                  ):
 
-        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         self.history_class = History()
+        self.skill_class = Skills()
+        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         if faded:
             self.ID = ID
             self.name = Name(status, prefix=prefix, suffix=suffix)
@@ -262,7 +225,7 @@ class Cat():
         self.status = status
         self.backstory = backstory
         self.age = None
-        self.skill = None
+        self.skills = None
         self.trait = None
         self.parent1 = parent1
         self.parent2 = parent2
@@ -340,6 +303,10 @@ class Cat():
 
         self.history = None
 
+        # skill related
+        self.skill_dict = None
+        self.skills = None
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -381,7 +348,7 @@ class Cat():
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
-            self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # personality trait and skill
         if self.trait is None:
@@ -393,20 +360,15 @@ class Cat():
         if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
             self.trait = choice(self.traits)
 
-        if self.skill is None or self.skill == '???':
-            if self.moons <= 11:
-                self.skill = '???'
-            elif self.status == 'warrior':
-                self.skill = choice(self.skills)
-            elif self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
-                self.skill = choice(self.elder_skills)
-            elif self.status == 'medicine cat':
-                self.skill = choice(self.med_skills)
+        if self.skills is None:
+            if self.skill_dict:
+                self.skills = Skills(self.skill_dict)
             else:
-                self.skill = choice(self.skills)
+                self.skills = Skills()
+                self.skill_class.generate_cat_skill(self)
 
         # backstory
-        if self.backstory == None:
+        if self.backstory is None:
             if self.skill == 'formerly a loner':
                 backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
                 self.backstory = backstory
@@ -479,7 +441,7 @@ class Cat():
                 self.experience = 0
                 while m > Cat.age_moons['adolescent'][0]:
                     ran = game.config["graduation"]["base_app_timeskip_ex"]
-                    exp = random.choice(
+                    exp = choice(
                         list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
                     self.experience += exp + 3
                     m -= 1
@@ -682,14 +644,14 @@ class Cat():
                     weights = [1, 3]
                 if "rosemary" in game.clan.herbs:  # decrease major grief chance if grave herbs are used
                     weights = [1, 6]
-                    amount_used = random.choice([1, 2])
+                    amount_used = choice([1, 2])
                     game.clan.herbs["rosemary"] -= amount_used
                     if game.clan.herbs["rosemary"] <= 0:
                         game.clan.herbs.pop("rosemary")
                     if f"Rosemary was used for {self.name}'s body." not in game.herb_events_list:
                         game.herb_events_list.append(f"Rosemary was used for {self.name}'s body.")
 
-                severity = random.choices(['major', 'minor'], weights=weights, k=1)
+                severity = choices(['major', 'minor'], weights=weights, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
                 if severity == 'major':
@@ -1041,6 +1003,21 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
+    def convert_old_skills(self, old_skill):
+        random_path = None
+        random_skill = None
+        if old_skill in SKILLS["conversion"]:
+            old_skill = SKILLS["conversion"][old_skill]
+            for path in SKILLS["paths"]:
+                if old_skill in SKILLS["paths"][path]:
+                    random_path = path
+                    random_skill = SKILLS["paths"][path].index(old_skill)
+        else:
+            random_path = choice([i for i in SKILLS["paths"]])
+            random_skill = choice([1, 2, 3])
+
+        self.skills = Skills(random_path, random_skill)
+
     def convert_history(self, mentor_influence, died_by, scar_events):
         """
         this is to handle old history save conversions
@@ -1198,9 +1175,9 @@ class Cat():
             possible_intros.append(all_intros[intro])
 
         # choose and adjust text
-        chosen_intro = random.choice(possible_intros)
+        chosen_intro = choice(possible_intros)
         if chosen_intro:
-            intro = random.choice(chosen_intro["text"])
+            intro = choice(chosen_intro["text"])
             intro = leader_ceremony_text_adjust(Cat,
                                                 intro,
                                                 self,
@@ -1266,7 +1243,7 @@ class Cat():
                 if len(possible_sc_cats) - 1 < amount:
                     extra_givers = possible_sc_cats
                 else:
-                    extra_givers = random.sample(possible_sc_cats, k=amount)
+                    extra_givers = sample(possible_sc_cats, k=amount)
             else:
                 print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
@@ -1275,7 +1252,7 @@ class Cat():
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
                 else:
-                    extra_givers = random.sample(possible_df_cats, k=amount)
+                    extra_givers = sample(possible_df_cats, k=amount)
 
             life_givers.extend(extra_givers)
 
@@ -1283,7 +1260,7 @@ class Cat():
         ancient_leader = False
         if not life_giving_leader:
             # choosing if the life giving leader will be oldest leader or previous leader
-            coin_flip = random.randint(1, 2)
+            coin_flip = randint(1, 2)
             if coin_flip == 1:
                 # pick oldest leader in SC
                 ancient_leader = True
@@ -1365,7 +1342,7 @@ class Cat():
             while i < 10:
                 attempted = []
                 try:
-                    chosen_life = random.choice(life_list)
+                    chosen_life = choice(life_list)
                 except IndexError:
                     print(f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
                 if chosen_life not in used_lives and chosen_life not in attempted:
@@ -1402,7 +1379,7 @@ class Cat():
                         continue
                 possible_blessing.append(possible_lives[life])
             chosen_blessing = choice(possible_blessing)
-            chosen_text = random.choice(chosen_blessing["life_giving"])
+            chosen_text = choice(chosen_blessing["life_giving"])
             lives.append(leader_ceremony_text_adjust(Cat,
                                                      chosen_text["text"],
                                                      leader=self,
@@ -1432,14 +1409,14 @@ class Cat():
                     continue
             possible_outros.append(all_outros[outro])
 
-        chosen_outro = random.choice(possible_outros)
+        chosen_outro = choice(possible_outros)
 
         if chosen_outro:
             if life_givers:
                 giver = life_givers[-1]
             else:
                 giver = None
-            outro = random.choice(chosen_outro["text"])
+            outro = choice(chosen_outro["text"])
             outro = leader_ceremony_text_adjust(Cat,
                                                 outro,
                                                 leader=self,
@@ -1479,11 +1456,11 @@ class Cat():
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
-        other_cat = random.choice(list(all_cats.keys()))
+        other_cat = choice(list(all_cats.keys()))
         game_mode = game.switches['game_mode']
         biome = game.switches['biome']
         camp = game.switches['camp_bg']
-        dead_chance = random.getrandbits(4)
+        dead_chance = getrandbits(4)
         try:
             season = game.clan.current_season
         except:
@@ -1678,7 +1655,7 @@ class Cat():
             if mortality == 0:
                 mortality = 1
 
-        if mortality and not int(random.random() * mortality):
+        if mortality and not int(random() * mortality):
             if self.status == "leader":
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
@@ -1723,7 +1700,7 @@ class Cat():
             if mortality == 0:
                 mortality = 1
 
-        if mortality and not int(random.random() * mortality):
+        if mortality and not int(random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
@@ -1778,7 +1755,7 @@ class Cat():
             if mortality == 0:
                 mortality = 1
 
-        if mortality and not int(random.random() * mortality):
+        if mortality and not int(random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
@@ -1893,7 +1870,7 @@ class Cat():
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
         if severity != 'minor':
-            duration += random.randrange(-1, 1)
+            duration += randrange(-1, 1)
         if duration == 0:
             duration = 1
 
@@ -1956,7 +1933,7 @@ class Cat():
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)):
             duration = med_duration
         if severity != 'minor':
-            duration += random.randrange(-1, 1)
+            duration += randrange(-1, 1)
         if duration == 0:
             duration = 1
 
@@ -1995,7 +1972,7 @@ class Cat():
                 "event_triggered": new_injury.new
             }
 
-        if len(new_injury.also_got) > 0 and not int(random.random() * 5):
+        if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
             if 'blood loss' in new_injury.also_got and len(get_med_cats(Cat)) != 0:
                 clan_herbs = set()
@@ -2007,7 +1984,7 @@ class Cat():
 
                 if usable_herbs:
                     # deplete the herb
-                    herb_used = random.choice(usable_herbs)
+                    herb_used = choice(usable_herbs)
                     game.clan.herbs[herb_used] -= 1
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
@@ -2190,7 +2167,7 @@ class Cat():
                             f"WARNING: injury {self.injuries[y]['name']} has lowered chance of {illness_name} infection to {rate}")
                         rate = 1
 
-            if not random.random() * rate:
+            if not random() * rate:
                 text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
                 # game.health_events_list.append(text)
                 game.cur_events_list.append(Single_Event(text, "health", [self.ID, cat.ID]))
@@ -2784,7 +2761,7 @@ class Cat():
                 chance -= 5
 
         # Determine chance to fail, turing sabotage into mediate and mediate into sabotage
-        if not int(random.random() * chance):
+        if not int(random() * chance):
             apply_bonus = False
             if sabotage:
                 output += "Sabotage Failed!\n"
@@ -2815,7 +2792,7 @@ class Cat():
                 mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
         if mediator.status == "mediator apprentice":
-            mediator.experience += max(random.randint(1, 6), 1)
+            mediator.experience += max(randint(1, 6), 1)
 
         no_romantic_mentor = False
         if not game.settings['romantic with former mentor']:
@@ -3171,7 +3148,7 @@ class Cat():
 
 # Twelve example cats
 def create_example_cats():
-    e = random.sample(range(12), 3)
+    e = sample(range(12), 3)
     not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
@@ -3201,28 +3178,25 @@ game.cat_class = cat_class
 
 resource_directory = "resources/dicts/conditions/"
 
-ILLNESSES = None
 with open(f"{resource_directory}illnesses.json", 'r') as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
-INJURIES = None
 with open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())
 
-PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
 
-MINOR_MAJOR_REACTION = None
 with open(f"{resource_directory}minor_major.json", 'r') as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-LEAD_CEREMONY_SC = None
 with open(f"resources/dicts/lead_ceremony_sc.json", 'r') as read_file:
     LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-LEAD_CEREMONY_DF = None
 with open(f"resources/dicts/lead_ceremony_df.json", 'r') as read_file:
     LEAD_CEREMONY_DF = ujson.loads(read_file.read())
+
+with open(f"resources/dicts/skills.json", 'r') as read_file:
+    SKILLS = ujson.loads(read_file.read())
