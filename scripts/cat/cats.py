@@ -5,7 +5,7 @@ import os.path
 import itertools
 
 from .history import History
-from .skills import Skills
+from .skills import CatSkills
 from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
@@ -185,7 +185,7 @@ class Cat():
                  ):
 
         self.history_class = History()
-        self.skill_class = Skills()
+        self.skill_class = CatSkills()
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         if faded:
             self.ID = ID
@@ -362,21 +362,14 @@ class Cat():
 
         if self.skills is None:
             if self.skill_dict:
-                self.skills = Skills(self.skill_dict)
+                self.skills = CatSkills(self.skill_dict)
             else:
-                self.skills = Skills()
+                self.skills = CatSkills()
                 self.skill_class.generate_cat_skill(self)
 
         # backstory
         if self.backstory is None:
-            if self.skill == 'formerly a loner':
-                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
-                self.backstory = backstory
-            elif self.skill == 'formerly a kittypet':
-                backstory = choice(['kittypet1', 'kittypet2'])
-                self.backstory = backstory
-            else:
-                self.backstory = 'clanborn'
+            self.backstory = 'clanborn'
         else:
             self.backstory = self.backstory
 
@@ -1016,7 +1009,7 @@ class Cat():
             random_path = choice([i for i in SKILLS["paths"]])
             random_skill = choice([1, 2, 3])
 
-        self.skills = Skills(random_path, random_skill)
+        self.skills = CatSkills(random_path, random_skill)
 
     def convert_history(self, mentor_influence, died_by, scar_events):
         """
@@ -1549,6 +1542,7 @@ class Cat():
     def update_skill(self):
         """Checks for skill and replaces empty skill if cat is old enough
         # also adds a chance for cat to take a skill similar to their mentor"""
+
 
         if self.skill == '???':
             skill_influence = None

@@ -3,7 +3,7 @@ import random
 from math import floor
 from .game_essentials import game
 from ..cat.history import History
-from ..cat.skills import Skills
+from ..cat.skills import CatSkills
 from ..datadir import get_save_dir
 
 import ujson
@@ -190,7 +190,16 @@ def json_load():
             new_cat.skin = cat["skin"]
 
             if "skill" in cat:
-                cat.convert_old_skills(cat["skill"])
+                if new_cat.backstory is None:
+                    if new_cat.skill == 'formerly a loner':
+                        backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
+                        new_cat.backstory = backstory
+                    elif new_cat.skill == 'formerly a kittypet':
+                        backstory = choice(['kittypet1', 'kittypet2'])
+                        new_cat.backstory = backstory
+                    else:
+                        new_cat.backstory = 'clanborn'
+                new_cat.convert_old_skills(cat["skill"])
             else:
                 new_cat.skill_dict = cat["skill_dict"]
 
