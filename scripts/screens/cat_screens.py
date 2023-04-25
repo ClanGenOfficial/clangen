@@ -1269,7 +1269,7 @@ class ProfileScreen(Screens):
                 new_text = (event_text_adjust(Cat,
                                               scar["text"],
                                               self.the_cat,
-                                              scar["involved"]))
+                                              Cat.fetch_cat(scar["involved"])))
                 if moons:
                     new_text += f" (Moon {scar['moon']})"
 
