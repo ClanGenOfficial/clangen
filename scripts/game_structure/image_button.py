@@ -148,7 +148,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
                  manager = None,
                  line_spacing = 1,
                  wrap_to_height: bool = False,
-                 layer_starting_height: int = 1,
+                 starting_height: int = 1,
                  container=None,
                  parent_element=None,
                  object_id=None,
@@ -162,7 +162,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
         self.line_spaceing = line_spacing
 
         super().__init__(html_text, relative_rect, manager=manager, container=container,
-                         layer_starting_height=layer_starting_height,
+                         starting_height=starting_height,
                          wrap_to_height=wrap_to_height,
                          parent_element=parent_element,
                          anchors=anchors,
@@ -228,7 +228,7 @@ class UIImageTextBox():
                  manager=None,
                  line_spacing=1.25,
                  wrap_to_height: bool = False,
-                 layer_starting_height: int = 1,
+                 starting_height: int = 1,
                  container=None,
                  object_id=None,
                  anchors=None,
@@ -252,7 +252,7 @@ class UIImageTextBox():
                                                  visible=visible)
             
         self.text_box = UITextBoxTweaked(html_text, relative_rect, object_id=object_id,
-                                         layer_starting_height=layer_starting_height,
+                                         starting_height=starting_height,
                                          container=container, anchors=anchors, visible=visible, text_kwargs=text_kwargs,
                                          allow_split_dashes=allow_split_dashes, wrap_to_height=wrap_to_height,
                                          line_spacing=line_spacing,
