@@ -190,7 +190,7 @@ def get_current_season():
     return game.clan.current_season
 
 
-def change_clan_reputation(difference=0):
+def change_clan_reputation(difference):
     """
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
@@ -203,7 +203,7 @@ def change_clan_reputation(difference=0):
     game.clan.reputation = reputation
 
 
-def change_clan_relations(other_clan, difference=0):
+def change_clan_relations(other_clan, difference):
     """
     will change the clan's relation with other clans according to the difference parameter.
     """
@@ -214,8 +214,13 @@ def change_clan_relations(other_clan, difference=0):
     clan_relations = int(game.clan.all_clans[y].relations)
     # change the value
     clan_relations += difference
+    # making sure it doesn't exceed the bounds
+    if clan_relations > 30:
+        clan_relations = 30
+    elif clan_relations < 0:
+        clan_relations = 0
+    # setting it in the clan save
     game.clan.all_clans[y].relations = clan_relations
-
 
 def create_new_cat(Cat,
                    Relationship,

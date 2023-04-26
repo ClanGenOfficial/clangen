@@ -14,33 +14,28 @@ keywords = ["warriorcats", "fanedit", "game", "pygame"]
 
 [tool.poetry.dependencies]
 python = ">=3.7.2,<3.12"
-pygame = "2.2.0"
-ujson = "5.7.0"
-pygame-gui = "0.6.8"
-platformdirs = "=3.1.0"
-pypresence = {version = "4.2.1", optional = true}
+pygame-ce = "^2.2.1"
+ujson = "^5.7.0"
+pygame-gui = "0.6.9"
+platformdirs = "^3.3.0"
+pypresence = {version = "^4.2.1", optional = true}
 pgpy = "^0.6.0"
 requests = "^2.28.2"
 strenum = "^0.4.10"
 
+
+[tool.poetry.group.test]
+optional = true
 [tool.poetry.group.test.dependencies]
-pylint = "^2.17.0"
+pylint = "^2.17.3"
 
 [tool.poetry.group.build]
 optional = true
 [tool.poetry.group.build.dependencies]
-pyinstaller = "^5.9.0"
-pillow = "^9.4.0"
-setuptools = "^67.6.0"
+pyinstaller = "^5.10.1"
+pillow = "^9.5.0"
+setuptools = "^67.7.2"
 wheel = "^0.40.0"
-
-[tool.poetry.group.dev.dependencies]
-pypresence = "^4.2.1"
-pyinstaller = "^5.9.0"
-pillow = "^9.4.0"
-setuptools = "^67.6.0"
-wheel = "^0.40.0"
-pylint = "^2.17.0"
 
 
 [tool.poetry.extras]

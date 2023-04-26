@@ -2592,7 +2592,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(mentor)/don't/doesn't) care if there's no leader, (previous_mentor) knows that (prefix)paw is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(mentor)/gather/gathers} the Clan to hold a ceremony for (prefix)paw, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't) care if there's no leader, (previous_mentor) knows that (prefix)paw is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (prefix)paw, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_54": [
     [
