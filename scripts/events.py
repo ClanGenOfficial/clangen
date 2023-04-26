@@ -924,7 +924,7 @@ class Events():
                 if other_clan.temperament in ["mellow", "amiable", "gracious"]:
                     threshold = 3
 
-                if int(other_clan.relations) <= threshold:
+                if int(other_clan.relations) <= threshold and not int(random.random() * int(other_clan.relations)):
                     self.enemy_clan = other_clan
                     game.clan.war["at_war"] = True
                     game.clan.war["enemy"] = other_clan.name
