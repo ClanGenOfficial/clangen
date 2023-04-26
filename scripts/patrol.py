@@ -1864,7 +1864,7 @@ class Patrol():
             else:
                 insert = "worsened"
             change_clan_relations(other_clan, difference)
-            print(f"Relations with {other_clan} have {insert} {difference}.")
+            #print(f"Relations with {other_clan} have {insert} {difference}.")
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
 
     def handle_mentor_app_pairing(self):
@@ -1885,7 +1885,7 @@ class Patrol():
             insert = "remained neutral"
         else:
             insert = "worsened"
-        print("REP: " + int(game.clan.reputation))
+        #print("REP: " + int(game.clan.reputation))
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
 
     def handle_relationships(self):
