@@ -214,9 +214,7 @@ class Patrol():
         # chance for each kind of loner event to occur
         if not other_clan:
             other_clan_chance = 0
-        if clan_size > 20:
-            small_clan = False
-        else:
+        if clan_size < 20:
             small_clan = True
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
@@ -781,13 +779,12 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
-                for tag in self.patrol_event.tags:
-                    if "new_cat" in tag:
-                        if antagonize:
-                            self.handle_reputation(-20)
-                        else:
-                            self.handle_reputation(10)
-                        break
+                if "new_cat" in self.patrol_event.tags:
+                    if antagonize:
+                        self.handle_reputation(-20)
+                    else:
+                        self.handle_reputation(10)
+                        
 
             self.handle_mentor_app_pairing()
             self.handle_relationships()
@@ -1867,6 +1864,7 @@ class Patrol():
             else:
                 insert = "worsened"
             change_clan_relations(other_clan, difference)
+            print(f"Relations with {other_clan} have {insert} {difference}.")
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
 
     def handle_mentor_app_pairing(self):
@@ -1887,6 +1885,7 @@ class Patrol():
             insert = "remained neutral"
         else:
             insert = "worsened"
+        print("REP: " + int(game.clan.reputation))
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
 
     def handle_relationships(self):
