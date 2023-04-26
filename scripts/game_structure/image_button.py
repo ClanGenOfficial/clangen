@@ -72,11 +72,12 @@ class UISpriteButton():
 
         # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(relative_rect, pygame.transform.scale(sprite, relative_rect.size),
-                                                 visible=visible, manager=manager, container=container)
+                                                 visible=visible, manager=manager, container=container,
+                                                 )
         self.image.disable()
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
         self.button = CatButton(relative_rect, visible=visible, cat_id=cat_id, cat_object=cat_object,
-                                starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text)
+                                starting_height=starting_height+1, manager=manager, tool_tip_text=tool_tip_text)
 
     def return_cat_id(self):
         return self.button.return_cat_id()
