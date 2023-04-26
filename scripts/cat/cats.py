@@ -180,6 +180,7 @@ class Cat():
                  moons=None,
                  example=False,
                  faded=False,
+                 skill_dict=None,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -361,11 +362,11 @@ class Cat():
             self.trait = choice(self.traits)
 
         if self.skills is None:
-            if self.skill_dict:
-                self.skills = CatSkills(self.skill_dict)
+            if skill_dict:
+                self.skills = CatSkills(skill_dict=self.skill_dict)
             else:
                 self.skills = CatSkills()
-                self.skill_class.generate_cat_skill(self)
+                self.skills.generate_cat_skill(self)
 
         # backstory
         if self.backstory is None:

@@ -55,158 +55,159 @@ class CatSkills:
 
             self.hidden_skill = hidden_skill
 
-    @staticmethod
-    def update_skill(the_cat):
+    def update_skill(self):
         """
         this function just refreshes the cat's primary and secondary skills, use after changing tiers
         """
-        if the_cat.skills.primary_path != '???':
-            the_cat.skills.primary_skill = the_cat.skills.all_paths[the_cat.skills.primary_path][
-                the_cat.skills.primary_tier]
+        if self.primary_path != '???':
+            self.primary_skill = self.all_paths[self.primary_path][self.primary_tier]
         else:
-            the_cat.skills.primary_skill = None
-        if the_cat.skills.secondary_path:
-            the_cat.skills.secondary_skill = the_cat.skills.all_paths[the_cat.skills.secondary_path][
-                the_cat.skills.secondary_tier]
+            self.primary_skill = None
+        if self.secondary_path:
+            self.secondary_skill = self.all_paths[self.secondary_path][self.secondary_tier]
         else:
-            the_cat.skills.secondary_skill = None
+            self.secondary_skill = None
 
-    def influence_skill(self, Cat, the_cat):
+    def influence_skill(self, status, mentor):
         """
         this function handles mentor influence on the cat's skill
+        :param status: the cat's status
+        :param mentor: the mentor's cat object
         """
         # non apprentices and mentor-less babies not allowed
-        if "apprentice" not in the_cat.status or the_cat.mentor is None:
+        if "apprentice" not in status or mentor is None:
             return
 
-        mentor = Cat.fetch_cat(the_cat.mentor)
         influence_groups = SKILLS["influence_groups"][mentor.skills.primary_path]
-        if the_cat.skills.primary_path in influence_groups and the_cat.skills.secondary_path in influence_groups:
+        if self.primary_path in influence_groups and self.secondary_path in influence_groups:
             if random.randint(1, 2) == 1:
-                the_cat.skills.primary_points += 1
+                self.primary_points += 1
             else:
-                the_cat.skills.secondary_points += 1
-        elif the_cat.skills.primary_path in influence_groups:
-            the_cat.skills.primary_points += 1
-        elif the_cat.skills.secondary_path in influence_groups:
-            the_cat.skills.secondary_points += 1
+                self.secondary_points += 1
+        elif self.primary_path in influence_groups:
+            self.primary_points += 1
+        elif self.secondary_path in influence_groups:
+            self.secondary_points += 1
 
-    def progress_skill(self, Cat, the_cat):
+    def progress_skill(self, status, age, moons, mentor, parent1, parent2):
         """
         this function should be run every moon for every cat to progress their skills accordingly
+        :param status: the cat's status
+        :param age: the cat's age
+        :param moons: the cat's moon int
+        :param mentor: the cat object for mentor
+        :param parent1: the cat object for parent1
+        :param parent2: the cat object for parent2
         """
-        if the_cat.status == 'newborn':
+        if status == 'newborn':
             pass
-        elif the_cat.status == 'kitten':
+        elif status == 'kitten':
             # if the the_cat has skills, check if they get any points this moon
-            if the_cat.skills.primary_skill and the_cat.skills.secondary_skill:
+            if self.primary_skill and self.secondary_skill:
                 if not int(random.random() * 4):
                     if random.randint(1, 2) == 1:
-                        the_cat.skills.primary_points += 1
+                        self.primary_points += 1
                     else:
-                        the_cat.skills.secondary_points += 1
-            elif the_cat.skills.primary_skill:
+                        self.secondary_points += 1
+            elif self.primary_skill:
                 if not int(random.random() * 4):
-                    the_cat.skills.primary_points += 1
+                    self.primary_points += 1
 
                 # if there's no secondary skill, try to give one!
-                if not the_cat.secondary_skill and not int(random.random() * 6):
-                    the_cat.skills.secondary_path = random.choice(
-                        [path for path in self.all_paths if path != the_cat.skills.primary_path])
-                    the_cat.skills.secondary_tier = 0
-                    the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
+                if not self.secondary_skill and not int(random.random() * 6):
+                    self.secondary_path = random.choice(
+                        [path for path in self.all_paths if path != self.primary_path])
+                    self.secondary_tier = 0
+                    self.secondary_skill = self.secondary_path[self.secondary_tier]
 
             # give a path if kit is still pathless
             else:
                 # collect the parent's skill paths
                 parental_paths = []
-                if the_cat.parent1:
-                    parent1 = Cat.fetch_the_cat(the_cat.parent1)
+                if parent1:
                     parental_paths.append(parent1.skills.primary_path)
-                if the_cat.parent2:
-                    parent2 = Cat.fetch_the_cat(the_cat.parent2)
+                if parent2:
                     parental_paths.append(parent2.skills.primary_path)
 
                 # if parental paths were available, try to assign one
                 if parental_paths and not int(random.random() * 4):
-                    the_cat.skills.primary_path = random.choice(parental_paths)
+                    self.primary_path = random.choice(parental_paths)
                 # else assign a random primary path
                 else:
-                    the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.primary_tier = 0
-                the_cat.skills.primary_skill = the_cat.skills.secondary_path[the_cat.secondary_tier]
+                    self.primary_path = random.choice([path for path in self.all_paths])
+                self.primary_tier = 0
+                self.primary_skill = self.secondary_path[self.secondary_tier]
 
-        elif 'apprentice' in the_cat.status or the_cat.age == 'adolescent':
-            # if the cat can work, try to increase a point in either skill path
-            if the_cat.skills.primary_skill and the_cat.skills.secondary_skill and not the_cat.not_working():
+        elif 'apprentice' in status or age == 'adolescent':
+            # try to increase a point in either skill path
+            if self.primary_skill and self.secondary_skill:
                 if not int(random.random() * 4):
                     if random.randint(1, 2) == 1:
-                        the_cat.skills.primary_points += 1
+                        self.primary_points += 1
                     else:
-                        the_cat.skills.secondary_points += 1
-            elif the_cat.skills.primary_skill and not the_cat.not_working():
+                        self.secondary_points += 1
+            elif self.primary_skill:
                 if not int(random.random() * 4):
-                    the_cat.skills.primary_points += 1
+                    self.primary_points += 1
 
             # check if they got a secondary skill, if not then try to give one
-            if not the_cat.secondary_skill and not int(random.random() * 2):
+            if not self.secondary_skill and not int(random.random() * 2):
                 # if they have a mentor, give them a matching path to the mentor
-                if the_cat.mentor:
-                    mentor = Cat.fetch_the_cat(the_cat.mentor)
-                    the_cat.skills.secondary_path = mentor.skills.primary_path
+                if mentor:
+                    self.secondary_path = mentor.skills.primary_path
                 else:
-                    the_cat.skills.secondary_path = random.choice(
-                        [path for path in self.all_paths if path != the_cat.skills.primary_path])
-                the_cat.skills.secondary_tier = 0
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
+                    self.secondary_path = random.choice(
+                        [path for path in self.all_paths if path != self.primary_path])
+                self.secondary_tier = 0
+                self.secondary_skill = self.secondary_path[self.secondary_tier]
 
-        elif the_cat.age in ['young adult', 'adult', 'senior adult']:
+        elif age in ['young adult', 'adult', 'senior adult']:
             # if they haven't specialized yet, then give them a specialization
-            if the_cat.skills.primary_tier == 0:
-                if the_cat.skills.primary_skill and the_cat.skills.secondary_skill:
+            if self.primary_tier == 0:
+                if self.primary_skill and self.secondary_skill:
                     # pick which skill is specialized
                     chosen_special = random.choices(["primary", "secondary"],
-                                                    [the_cat.skills.primary_points, the_cat.skills.secondary_points])
+                                                    [self.primary_points, self.secondary_points])
                     if chosen_special[0] == 'secondary':
-                        new_secondary_path = the_cat.skills.primary_path
-                        the_cat.skills.primary_path = the_cat.skills.secondary_path
-                        the_cat.skills.secondary_path = new_secondary_path
+                        new_secondary_path = self.primary_path
+                        self.primary_path = self.secondary_path
+                        self.secondary_path = new_secondary_path
                     # now check if they get to have a secondary at all
                     if int(random.random() * 10):
-                        the_cat.skills.secondary_path = None
+                        self.secondary_path = None
 
                     # set tiers and reset points
-                    the_cat.skills.primary_tier = 1
-                    the_cat.skills.primary_points = 0
-                    the_cat.skills.secondary_path = 1
-                    the_cat.skills.secondary_points = 0
+                    self.primary_tier = 1
+                    self.primary_points = 0
+                    self.secondary_path = 1
+                    self.secondary_points = 0
                 else:
-                    the_cat.skills.primary_tier = 1
-                    the_cat.skills.primary_points = 0
+                    self.primary_tier = 1
+                    self.primary_points = 0
 
                 # refresh the the_cat's skills to match new tier
-                self.update_skill(the_cat)
+                self.update_skill()
 
             # attempt to add points to the skill:
-            elif the_cat.skills.primary_points < 10:
+            elif self.primary_points < 10:
                 # the_cat will have, on average, 20 skill improvements before hitting senior (100 moons / 5)
                 if not int(random.random() * 5):
                     # they have a 1/45 chance of hitting the 10, which jumps them up a tier immediately
                     # keep in mind that points over the 10 total don't roll over to the next tier
                     # majority of the_cats should be getting to 2nd or 3rd around senior adult
                     amount_improved = random.choices([1, 2, 3, 10], [25, 15, 4, 1])
-                    the_cat.skills.primary_points += amount_improved
+                    self.primary_points += amount_improved
             # check if they need to jump to the next tier
-            elif the_cat.skills.primary_points >= 10 and the_cat.skills.primary_tier != 3:
-                the_cat.skills.primary_tier += 1
-                self.update_skill(the_cat)
+            elif self.primary_points >= 10 and self.primary_tier != 3:
+                self.primary_tier += 1
+                self.update_skill()
 
         else:
             # for old cats, we want to check if the skills start to degrade at all, age is the great equalizer
-            if not int(random.random() * 300 - the_cat.moons):  # chance increases as the_cat ages
-                if the_cat.skills.primary_tier != 1:
-                    the_cat.skills.primary_tier -= 1
-                    self.update_skill(the_cat)
+            if not int(random.random() * 300 - moons):  # chance increases as the_cat ages
+                if self.primary_tier != 1:
+                    self.primary_tier -= 1
+                    self.update_skill()
 
     def generate_cat_skill(self, the_cat):
         """
