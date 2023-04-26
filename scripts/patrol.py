@@ -303,7 +303,7 @@ class Patrol():
 
         # filtering - relationship status
         # check if all are siblings
-        if "siblings" in patrol.relationship_constraint:
+        if "siblings" in patrol.constraints["relationship"]:
             test_cat = self.patrol_cats[0]
             testing_cats = [cat for cat in self.patrol_cats if cat.ID != test_cat.ID]
 
@@ -312,7 +312,7 @@ class Patrol():
                 return False
 
         # check if the cats are mates
-        if "mates" in patrol.relationship_constraint:
+        if "mates" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "mate" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -326,7 +326,7 @@ class Patrol():
                     return False
 
         # check if the cats are in a parent/child relationship
-        if "parent/child" in patrol.relationship_constraint:
+        if "parent/child" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "parent/child" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -335,7 +335,7 @@ class Patrol():
                 return False
 
         # check if the cats are in a child/parent relationship
-        if "child/parent" in patrol.relationship_constraint:
+        if "child/parent" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "child/parent" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -350,7 +350,7 @@ class Patrol():
         for v_type in value_types:
             patrol_id = patrol.patrol_id
             # first get all tags for the current value type
-            tags = [constraint for constraint in patrol.relationship_constraint if v_type in constraint]
+            tags = [constraint for constraint in patrol.constraints["relationship"] if v_type in constraint]
 
             # there is not such a tag for the current value type, check the next one
             if len(tags) == 0:

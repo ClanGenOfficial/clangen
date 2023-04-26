@@ -13,11 +13,12 @@ This file contains:
 
 import platform
 import subprocess
-import pygame
 import os
 import traceback
 import logging
 from html import escape
+
+import pygame
 
 from .base_screens import Screens
 
