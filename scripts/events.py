@@ -31,7 +31,7 @@ from scripts.events_module.disaster_events import DisasterEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season, \
-    get_living_clan_cat_count, adjust_list_text, event_text_adjust
+    get_living_clan_cat_count, adjust_list_text, event_text_adjust, ongoing_event_text_adjust
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -837,7 +837,6 @@ class Events():
         set false to reset them to OG numbers
         """
         if war:
-            print('higher war chances')
             game.config["death_related"]["leader_death_chance"] -= game.config["death_related"]["war_death_modifier_leader"]
             game.config["death_related"]["classic_death_chance"] -= game.config["death_related"]["war_death_modifier"]
             game.config["death_related"]["expanded_death_chance"] -= game.config["death_related"]["war_death_modifier"]
@@ -845,8 +844,8 @@ class Events():
             game.config["condition_related"]["classic_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
             game.config["condition_related"]["expanded_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
             game.config["condition_related"]["cruel season_injury_chance"] -= game.config["condition_related"]["war_injury_modifier"]
+
         else:
-            print('war chances reset')
             game.config["death_related"]["leader_death_chance"] += game.config["death_related"]["war_death_modifier_leader"]
             game.config["death_related"]["classic_death_chance"] += game.config["death_related"]["war_death_modifier"]
             game.config["death_related"]["expanded_death_chance"] += game.config["death_related"]["war_death_modifier"]
@@ -892,10 +891,11 @@ class Events():
                 threshold = 3
 
             threshold -= int(game.clan.war["duration"])
-            print('threshold', threshold)
+            if self.enemy_clan.relations < 0:
+                self.enemy_clan.relations = 0
 
             # check if war should conclude, if not, continue
-            if self.enemy_clan.relations > threshold and game.clan.war["duration"] > 1:
+            if self.enemy_clan.relations >= threshold and game.clan.war["duration"] > 1:
                 game.clan.war["at_war"] = False
                 game.clan.war["enemy"] = None
                 game.clan.war["duration"] = 0
@@ -905,12 +905,12 @@ class Events():
                 self.WAR_TXT = None
             else:  # try to influence the relation with warring clan
                 game.clan.war["duration"] += 1
-                choice = random.choice(["rel_up", "neutral", "rel_down"])
+                choice = random.choice(["rel_up", "rel_up", "neutral", "rel_down"])
                 war_events = self.WAR_TXT["progress_events"][choice]
                 if self.enemy_clan.relations < 0:
                     self.enemy_clan.relations = 0
                 if choice == "rel_up":
-                    self.enemy_clan.relations += 1
+                    self.enemy_clan.relations += 2
                 elif choice == "rel_down" and self.enemy_clan.relations > 1:
                     self.enemy_clan.relations -= 1
 
@@ -924,12 +924,11 @@ class Events():
                 if other_clan.temperament in ["mellow", "amiable", "gracious"]:
                     threshold = 3
 
-                if int(other_clan.relations) <= threshold:
+                if int(other_clan.relations) <= threshold and not int(random.random() * int(other_clan.relations)):
                     self.enemy_clan = other_clan
                     game.clan.war["at_war"] = True
                     game.clan.war["enemy"] = other_clan.name
                     war_events = self.WAR_TXT["trigger_events"]
-                    other_clan.relations -= 2
 
         # if nothing happened, return
         if not war_events or not self.enemy_clan:
@@ -945,9 +944,8 @@ class Events():
                     war_events.remove(event)
 
         self.at_war = game.clan.war["at_war"]
-        print(self.enemy_clan.relations)
         event = random.choice(war_events)
-        event = event_text_adjust(Cat, event, cat=None, other_clan_name=f"{self.enemy_clan.name}Clan", clan=game.clan)
+        event = ongoing_event_text_adjust(Cat, event, other_clan_name=f"{self.enemy_clan.name}Clan", clan=game.clan)
         game.cur_events_list.append(
             Single_Event(event, "other_clans"))
 

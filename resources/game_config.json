@@ -246,6 +246,16 @@
 		"vit_chance": 10,
 		"random_point_chance": 6
 	},
+	"cat_name_controls": {
+		"always_name_after_appearance": false,
+		"allow_eye_names": true,
+		"comment": [
+			"Set always_name_after_appearance to true if you always want cats named after the color of their pelt.",
+			"This overrides the chances of it otherwise. If cats can't find a pelt color, they will choose from normal_prefixes",
+			"So as not to cause an error - false by default",
+			"allow_eye_names allows cats to be named after the color of their eyes - true by default"
+		]
+	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
 		"med_modifier": -80,

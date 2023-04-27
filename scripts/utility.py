@@ -190,7 +190,7 @@ def get_current_season():
     return game.clan.current_season
 
 
-def change_clan_reputation(difference=0):
+def change_clan_reputation(difference):
     """
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
@@ -203,7 +203,7 @@ def change_clan_reputation(difference=0):
     game.clan.reputation = reputation
 
 
-def change_clan_relations(other_clan, difference=0):
+def change_clan_relations(other_clan, difference):
     """
     will change the clan's relation with other clans according to the difference parameter.
     """
@@ -214,8 +214,13 @@ def change_clan_relations(other_clan, difference=0):
     clan_relations = int(game.clan.all_clans[y].relations)
     # change the value
     clan_relations += difference
+    # making sure it doesn't exceed the bounds
+    if clan_relations > 30:
+        clan_relations = 30
+    elif clan_relations < 0:
+        clan_relations = 0
+    # setting it in the clan save
     game.clan.all_clans[y].relations = clan_relations
-
 
 def create_new_cat(Cat,
                    Relationship,
@@ -893,13 +898,49 @@ def history_text_adjust(text,
         text = text.replace("c_n", clan.name)
     return text
 
+def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
+    """
+    This function is for adjusting the text of ongoing events
+    :param Cat: the cat class
+    :param text: the text to be adjusted
+    :param clan: the name of the clan
+    :param other_clan_name: the other clan's name if another clan is involved
+    """
+    cat_dict = {}
+    if "lead_name" in text:
+        kitty = Cat.fetch_cat(game.clan.leader)
+        cat_dict["lead_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "dep_name" in text:
+        kitty = Cat.fetch_cat(game.clan.deputy)
+        cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
+    if "med_name" in text:
+        kitty = choice(get_med_cats(Cat, working=False))
+        print('med', kitty)
+        cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
+
+    if cat_dict:
+        text = process_text(text, cat_dict)
+
+    if other_clan_name:
+        text = text.replace("o_c", other_clan_name)
+    if clan:
+        clan_name = str(clan.name)
+    else:
+        if game.clan is None:
+            clan_name = game.switches["clan_list"][0]
+        else:
+            clan_name = str(game.clan.name)
+
+    text = text.replace("c_n", clan_name + "Clan")
+
+    return text
+
 
 def event_text_adjust(Cat,
                       text,
                       cat,
                       other_cat=None,
                       other_clan_name=None,
-                      keep_m_c=False,
                       new_cat=None,
                       clan=None):
     """
@@ -909,7 +950,6 @@ def event_text_adjust(Cat,
     :param cat: The cat taking the place of m_c
     :param other_cat: The cat taking the place of r_c
     :param other_clan_name: The other clan involved in the event
-    :param keep_m_c: set True if you don't want m_c to be replaced with the name - this is only currently important for history text
     :param new_cat: The cat taking the place of n_c
     :param clan: The player's Clan
     :return: the adjusted text
@@ -917,43 +957,32 @@ def event_text_adjust(Cat,
 
     cat_dict = {}
 
-    if not keep_m_c and cat:
+    if cat:
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
+        if "acc_plural" in text:
+            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
+        if "acc_singular" in text:
+            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
-    if cat:
-        if cat.accessory:
-            if "acc_plural" in text:
-                text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
-            if "acc_singular" in text:
-                text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
 
-    if other_clan_name:
-        cat_dict["o_c"] = (other_clan_name, None)
     if new_cat:
         cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
         cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
 
-    if "lead_name" in text:
-        kitty = Cat.fetch_cat(game.clan.leader)
-        cat_dict["lead_name"] = (str(kitty.name), choice(kitty.pronouns))
-    if "dep_name" in text:
-        kitty = Cat.fetch_cat(game.clan.deputy)
-        cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
-    if "med_name" in text:
-        kitty = choice(get_med_cats(Cat, working=False))
-        cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
-
+    if other_clan_name:
+        text = text.replace("o_c", other_clan_name)
     if clan:
-        _tmp = str(clan.name)
+        clan_name = str(clan.name)
     else:
         if game.clan is None:
-            _tmp = game.switches["clan_list"][0] + 'Clan'
+            clan_name = game.switches["clan_list"][0]
         else:
-            _tmp = str(game.clan.name)
+            clan_name = str(game.clan.name)
 
-    cat_dict["c_n"] = (_tmp + "Clan", None)
+    text = text.replace("c_n", clan_name + "Clan")
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
