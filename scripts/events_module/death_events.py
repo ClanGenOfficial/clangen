@@ -54,6 +54,7 @@ class Death_Events():
             print('WARNING: no death events found for', cat.name)
             return
         death_text = event_text_adjust(Cat, death_cause.event_text, cat, other_cat, other_clan_name)
+        print(death_text)
         additional_event_text = ""
 
         # assign default history
