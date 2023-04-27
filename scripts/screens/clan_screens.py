@@ -78,6 +78,22 @@ class ClanScreen(Screens):
                 self.change_screen('med den screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_RIGHT:
+                self.change_screen('starclan screen')
+            elif event.key == pygame.K_LEFT:
+                self.change_screen('events screen')
+            elif event.key == pygame.K_SPACE:
+                self.save_button_saving_state.show()
+                self.save_button.disable()
+                game.save_cats()
+                game.clan.save_clan()
+                game.clan.save_pregnancy(game.clan)
+                game.save_settings()
+                game.switches['saved_clan'] = True
+                self.update_buttons_and_text()
+
 
     def screen_switches(self):
         self.update_camp_bg()
@@ -479,6 +495,15 @@ class StarClanScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
+
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -809,6 +834,13 @@ class DFScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1145,6 +1177,12 @@ class ListScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen('patrol screen')
 
     def get_living_cats(self):
         self.living_cats = []

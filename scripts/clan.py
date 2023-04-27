@@ -1330,7 +1330,7 @@ class Clan():
 
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(self._reputation + a)
+        self._reputation = int(a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

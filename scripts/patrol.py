@@ -212,11 +212,10 @@ class Patrol():
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
+        small_clan = False
         if not other_clan:
             other_clan_chance = 0
-        if clan_size > 20:
-            small_clan = False
-        else:
+        if clan_size < 20:
             small_clan = True
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
@@ -305,7 +304,7 @@ class Patrol():
 
         # filtering - relationship status
         # check if all are siblings
-        if "siblings" in patrol.relationship_constraint:
+        if "siblings" in patrol.constraints["relationship"]:
             test_cat = self.patrol_cats[0]
             testing_cats = [cat for cat in self.patrol_cats if cat.ID != test_cat.ID]
 
@@ -314,7 +313,7 @@ class Patrol():
                 return False
 
         # check if the cats are mates
-        if "mates" in patrol.relationship_constraint:
+        if "mates" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "mate" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -328,7 +327,7 @@ class Patrol():
                     return False
 
         # check if the cats are in a parent/child relationship
-        if "parent/child" in patrol.relationship_constraint:
+        if "parent/child" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "parent/child" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -337,7 +336,7 @@ class Patrol():
                 return False
 
         # check if the cats are in a child/parent relationship
-        if "child/parent" in patrol.relationship_constraint:
+        if "child/parent" in patrol.constraints["relationship"]:
             # it should be exactly two cats for a "child/parent" patrol
             if len(self.patrol_cats) != 2:
                 return False
@@ -352,7 +351,7 @@ class Patrol():
         for v_type in value_types:
             patrol_id = patrol.patrol_id
             # first get all tags for the current value type
-            tags = [constraint for constraint in patrol.relationship_constraint if v_type in constraint]
+            tags = [constraint for constraint in patrol.constraints["relationship"] if v_type in constraint]
 
             # there is not such a tag for the current value type, check the next one
             if len(tags) == 0:
@@ -781,13 +780,12 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
-                for tag in self.patrol_event.tags:
-                    if "new_cat" in tag:
-                        if antagonize:
-                            self.handle_reputation(-20)
-                        else:
-                            self.handle_reputation(10)
-                        break
+                if any("new_cat" in ptrltag for ptrltag in self.patrol_event.tags):
+                    if antagonize:
+                        self.handle_reputation(-20)
+                    else:
+                        self.handle_reputation(10)
+                        
 
             self.handle_mentor_app_pairing()
             self.handle_relationships()
@@ -894,7 +892,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
-                elif "new_cat" in self.patrol_event.tags:
+                elif any("new_cat" in ptrltag for ptrltag in self.patrol_event.tags):
                     if antagonize:
                         self.handle_reputation(-10)
                     else:
@@ -1867,6 +1865,7 @@ class Patrol():
             else:
                 insert = "worsened"
             change_clan_relations(other_clan, difference)
+            #print(f"Relations with {other_clan} have {insert} {difference}.")
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
 
     def handle_mentor_app_pairing(self):
@@ -1887,6 +1886,7 @@ class Patrol():
             insert = "remained neutral"
         else:
             insert = "worsened"
+        #print("REP: " + int(game.clan.reputation))
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
 
     def handle_relationships(self):

@@ -108,7 +108,7 @@
         "id": "lost_thoughts_to_random_cat",
         "thoughts": [
             "Is missing r_c",
-            "Thought spotted r_c while wandering around earlier"
+            "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
         ],
         "main_status_constraint": [
            "any"

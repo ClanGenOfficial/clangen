@@ -79,7 +79,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB}/m_c/worry/worries} that {PRONOUN/m_c/subject} do badly in a real fight against o_c."
+        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c."
     },
     {
         "injury": "mangled leg",
