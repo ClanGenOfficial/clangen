@@ -923,6 +923,7 @@ class SendLogsPopup(UIWindow):
             object_id="#continue_button_small",
             container=self
         )
+        self.continue_button.disable()
 
         self.cancel_button = UIImageButton(
             scale(pygame.Rect((374, 370), (156, 60))),
@@ -959,7 +960,7 @@ class SendLogsPopup(UIWindow):
                 self.continue_button.enable()
                 self.tokeninvalid.hide()
             else:
-                #self.continue_button.disable()
+                self.continue_button.disable()
                 self.tokeninvalid.show()
 
 
