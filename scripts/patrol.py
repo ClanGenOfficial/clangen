@@ -955,7 +955,7 @@ class Patrol():
         alive = True
         outside = False
 
-        # figure out what type of cat they are and set default backstories - this can be overwritten if need be
+        # figure out what type of cat they are and set default backstories.json - this can be overwritten if need be
         loner = False
         kittypet = False
         other_clan = None
@@ -1114,7 +1114,7 @@ class Patrol():
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
 
-            # giving specified backstories if any were specified
+            # giving specified backstories.json if any were specified
             possible_backstories = []
             for backstory in Cat.backstories:
                 if f'{backstory}{outcome}' in attribute_list:
@@ -1127,7 +1127,7 @@ class Patrol():
 
             backstory = chosen_backstory
         else:
-            # giving specified backstories if any were specified
+            # giving specified backstories.json if any were specified
             possible_backstories = []
             for backstory in Cat.backstories:
                 if backstory in attribute_list:

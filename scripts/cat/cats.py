@@ -12,7 +12,7 @@ from ..events_module.generate_events import GenerateEvents
 import ujson
 
 from .pelts import describe_appearance
-from .names import Name, names
+from .names import Name
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -26,7 +26,6 @@ from .appearance_utility import (
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
-import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
     leader_ceremony_text_adjust
@@ -35,7 +34,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance, RelationType
+from scripts.cat_relations.inheritance import Inheritance
 
 
 class Cat():
@@ -156,7 +155,6 @@ class Cat():
         }
     ]
 
-
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -186,7 +184,6 @@ class Cat():
                  ):
 
         self.history_class = History()
-        self.skill_class = CatSkills()
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         if faded:
             self.ID = ID
@@ -305,7 +302,7 @@ class Cat():
         self.history = None
 
         # skill related
-        self.skill_dict = None
+        self.skill_dict = skill_dict
         self.skills = None
 
         # setting ID
@@ -361,12 +358,11 @@ class Cat():
         if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
             self.trait = choice(self.traits)
 
-        if self.skills is None:
-            if skill_dict:
-                self.skills = CatSkills(skill_dict=self.skill_dict)
-            else:
-                self.skills = CatSkills()
-                self.skills.generate_cat_skill(self)
+        if self.skill_dict:
+            self.skills = CatSkills(skill_dict=self.skill_dict)
+        else:
+            self.skills = CatSkills()
+            self.skills.generate_cat_skill(self.status, self.moons)
 
         # backstory
         if self.backstory is None:
@@ -400,7 +396,7 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
-                
+
             """if self.genderalign in ["female", "trans female"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
@@ -471,9 +467,10 @@ class Cat():
                              self.tortiepattern,
                              biome=biome,
                              specsuffix_hidden=self.specsuffix_hidden,
-                             load_existing_name = loading_cat)
+                             load_existing_name=loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
+                             load_existing_name=loading_cat)
 
         # Private Sprite
         self._sprite = None
@@ -722,7 +719,8 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def add_to_clan(self):
-        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
+        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be
+        assigned a mentor. """
         self.outside = False
 
         if self.status in ['leader', 'deputy']:
@@ -997,21 +995,6 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
-    def convert_old_skills(self, old_skill):
-        random_path = None
-        random_skill = None
-        if old_skill in SKILLS["conversion"]:
-            old_skill = SKILLS["conversion"][old_skill]
-            for path in SKILLS["paths"]:
-                if old_skill in SKILLS["paths"][path]:
-                    random_path = path
-                    random_skill = SKILLS["paths"][path].index(old_skill)
-        else:
-            random_path = choice([i for i in SKILLS["paths"]])
-            random_skill = choice([1, 2, 3])
-
-        self.skills = CatSkills(random_path, random_skill)
-
     def convert_history(self, mentor_influence, died_by, scar_events):
         """
         this is to handle old history save conversions
@@ -1208,7 +1191,8 @@ class Cat():
         # sort relations by the strength of their relationship
 
         dead_relations.sort(
-            key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust, reverse=True)
+            key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust,
+            reverse=True)
         for rel in dead_relations:
             print(self.fetch_cat(rel.cat_to).name)
         # if we have relations, then make sure we only take the top 8
@@ -1338,7 +1322,8 @@ class Cat():
                 try:
                     chosen_life = choice(life_list)
                 except IndexError:
-                    print(f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    print(
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
                 if chosen_life not in used_lives and chosen_life not in attempted:
                     break
                 else:
@@ -1447,6 +1432,8 @@ class Cat():
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
 
+        self.skills.update_skill()
+
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
@@ -1508,7 +1495,7 @@ class Cat():
 
         # get chosen thought
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
-        
+
         chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
 
         # insert thought
@@ -1539,99 +1526,6 @@ class Cat():
             relevant_relationship.cat_to.contact_with_ill_cat(self)
         if relevant_relationship.cat_to.is_ill():
             self.contact_with_ill_cat(relevant_relationship.cat_to)
-
-    def update_skill(self):
-        """Checks for skill and replaces empty skill if cat is old enough
-        # also adds a chance for cat to take a skill similar to their mentor"""
-
-
-        if self.skill == '???':
-            skill_influence = None
-            # assign skill to new medicine cat
-            if self.status == 'medicine cat' and self.skill not in self.med_skills:
-                # skill groups they can take from
-                possible_groups = ['special', 'heal', 'star', 'mediate', 'smart', 'teach']
-                # check if they had a mentor
-                if self.former_mentor:
-                    chance = randint(0, 9) + int(self.patrol_with_mentor)
-                    mentor = Cat.fetch_cat(self.former_mentor[-1])
-                    if not mentor:
-                        print("WARNING: mentor not found")
-                        return
-                    # give skill from mentor
-                    if chance >= 9:
-                        for x in possible_groups:
-                            if mentor.skill in self.skill_groups[x]:
-                                possible_skill = self.skill_groups.get(x)
-                                self.skill = choice(possible_skill)
-                                skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-                                return
-
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-
-                # Will only be reached if a mentor skill was not applied.
-                self.skill = choice(self.med_skills)
-
-            # assign skill to new warrior
-            elif self.status == 'warrior':
-                # possible skill groups they can take from
-                possible_groups = ['star', 'smart', 'teach', 'hunt', 'fight', 'speak']
-                # check if they had a mentor
-                if self.former_mentor:
-                    chance = randint(0, 9) + int(self.patrol_with_mentor)
-                    mentor = Cat.fetch_cat(self.former_mentor[-1])
-                    if not mentor:
-                        print("WARNING: mentor not found")
-                        return
-                    # give skill from mentor
-                    if chance >= 9:
-                        for x in possible_groups:
-                            if mentor.skill in self.skill_groups[x]:
-                                possible_skill = self.skill_groups.get(x)
-                                self.skill = choice(possible_skill)
-                                skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-                                return
-
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-
-                self.skill = choice(self.skills)
-
-            elif self.status == 'mediator':
-                possible_groups = ['star', 'smart', 'teach', 'speak', 'mediate']
-                if self.former_mentor:
-                    chance = randint(0, 12)
-                    mentor = Cat.fetch_cat(self.former_mentor[-1])
-                    if not mentor:
-                        print("WARNING: mentor not found")
-                        return
-                    # give skill from mentor
-                    if chance >= 9:
-                        for x in possible_groups:
-                            if mentor.skill in self.skill_groups[x]:
-                                possible_skill = self.skill_groups.get(x)
-                                self.skill = choice(possible_skill)
-                                skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-                                return
-
-                    all_skills = []
-                    for x in possible_groups:
-                        all_skills.extend(self.skill_groups[x])
-                    self.skill = choice(all_skills)
-
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
-
-
-            # assign new skill to elder
-            elif self.status == 'elder':
-                self.skill = choice(self.elder_skills)
-
-            # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
-            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice',
-                                                             'mediator apprentice', 'kitten', 'newborn']:
-                self.skill = choice(self.skills)
 
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
@@ -1794,12 +1688,13 @@ class Cat():
         if not self.inheritance:
             self.inheritance = Inheritance(self)
         return other_cat.ID in self.inheritance.siblings.keys()
-    
+
     def is_littermate(self, other_cat: Cat):
         """Check if the cats are littermates."""
         if other_cat.ID not in self.inheritance.siblings.keys():
             return False
-        litter_mates = [key for key, value in self.inheritance.siblings.items() if "litter mates" in value["additional"]]
+        litter_mates = [key for key, value in self.inheritance.siblings.items() if
+                        "litter mates" in value["additional"]]
         return other_cat.ID in litter_mates
 
     def is_uncle_aunt(self, other_cat):
@@ -1821,7 +1716,7 @@ class Cat():
             return other_cat.ID in self.inheritance.all_but_cousins
         return other_cat.ID in self.inheritance.all_involved
 
-    def get_relatives(self, cousin_allowed = True) -> list:
+    def get_relatives(self, cousin_allowed=True) -> list:
         """Returns a list of ids of all nearly related ancestors."""
         if not self.inheritance:
             self.inheritance = Inheritance(self)
@@ -2097,7 +1992,6 @@ class Cat():
         self.status = 'elder'
         self.name.status = 'elder'
         self.update_traits()
-        self.update_skill()
 
         if old_status == 'leader':
             game.clan.leader_lives = 0
@@ -2112,7 +2006,6 @@ class Cat():
                 game.clan.deputy_predecessors += 1
 
         self.update_mentor()
-
 
     def is_ill(self):
         is_ill = True
@@ -2451,8 +2344,8 @@ class Cat():
 
         self.mate.remove(other_cat.ID)
         other_cat.mate.remove(self.ID)
-        
-        #Handle previous mates:
+
+        # Handle previous mates:
         if other_cat.ID not in self.previous_mates:
             self.previous_mates.append(other_cat.ID)
         if self.ID not in other_cat.previous_mates:
@@ -3125,13 +3018,13 @@ class Cat():
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
             print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
-            
+
     @property
     def sprite(self):
-        #Update the sprite
-        update_sprite(self)        
+        # Update the sprite
+        update_sprite(self)
         return self._sprite
-    
+
     @sprite.setter
     def sprite(self, new_sprite):
         self._sprite = new_sprite
@@ -3159,9 +3052,9 @@ def create_example_cats():
         for scar in game.choose_cats[a].scars:
             if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
-    
-        #update_sprite(game.choose_cats[a])
-    
+
+        # update_sprite(game.choose_cats[a])
+
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
@@ -3193,5 +3086,5 @@ with open(f"resources/dicts/lead_ceremony_sc.json", 'r') as read_file:
 with open(f"resources/dicts/lead_ceremony_df.json", 'r') as read_file:
     LEAD_CEREMONY_DF = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/skills.json", 'r') as read_file:
-    SKILLS = ujson.loads(read_file.read())
+with open(f"resources/dicts/backstories.json", 'r') as read_file:
+    BACKSTORIES = ujson.loads(read_file.read())

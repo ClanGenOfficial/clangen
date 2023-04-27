@@ -247,7 +247,7 @@ def create_new_cat(Cat,
     :param kit: set True if the cat is a lone kitten - default: False
     :param litter: set True if a litter of kittens needs to be generated - default: False
     :param other_clan: if new cat(s) are from a neighboring clan, pass the name of their home Clan - default: None
-    :param backstory: a list of possible backstories for the new cat(s) - default: None
+    :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)

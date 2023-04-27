@@ -1,7 +1,6 @@
 import random
 
-from scripts.cat.cats import SKILLS
-
+import ujson
 
 class CatSkills:
     """
@@ -9,12 +8,10 @@ class CatSkills:
     the path is the group that the skill belongs to
     the tier is the index of the skill within the path with 0 being an Interest and 3 being the highest tier of that path
     the points are the "experience" of the skill, skills with 10 points get moved up to the next tier
-
-    cat.skills returns a list of all the cat's skills
     """
 
     def __init__(self,
-                 primary_path='???',
+                 primary_path=None,
                  primary_tier=None,
                  primary_points=0,
                  secondary_path=None,
@@ -33,16 +30,6 @@ class CatSkills:
             self.secondary_tier = skill_dict["secondary"]["tier"]
             self.secondary_points = skill_dict["secondary"]["points"]
 
-            # these are not saved in the skill dict to make it easy for us to change skill names in the future
-            if self.primary_path != '???':
-                self.primary_skill = self.all_paths[self.primary_path][self.primary_tier]
-            else:
-                self.primary_skill = None
-            if self.secondary_path:
-                self.secondary_skill = self.all_paths[self.secondary_path][self.secondary_tier]
-            else:
-                self.secondary_skill = None
-
             self.hidden_skill = skill_dict["hidden"]
         else:
             self.primary_path = primary_path
@@ -55,14 +42,19 @@ class CatSkills:
 
             self.hidden_skill = hidden_skill
 
+        self.primary_skill = '???'
+        self.secondary_skill = None
+
+        self.update_skill()
+
     def update_skill(self):
         """
         this function just refreshes the cat's primary and secondary skills, use after changing tiers
         """
-        if self.primary_path != '???':
+        if self.primary_path:
             self.primary_skill = self.all_paths[self.primary_path][self.primary_tier]
         else:
-            self.primary_skill = None
+            self.primary_skill = '???'
         if self.secondary_path:
             self.secondary_skill = self.all_paths[self.secondary_path][self.secondary_tier]
         else:
@@ -209,58 +201,63 @@ class CatSkills:
                     self.primary_tier -= 1
                     self.update_skill()
 
-    def generate_cat_skill(self, the_cat):
+    def convert_old_skills(self, old_skill, the_cat):
+        if old_skill in SKILLS["conversion"]:
+            print(the_cat.ID, 'converted')
+            new_skill = SKILLS["conversion"][old_skill]
+            for path in SKILLS["paths"]:
+                if new_skill in SKILLS["paths"][path]:
+                    self.primary_path = path
+                    self.primary_tier = SKILLS["paths"][path].index(new_skill)
+        else:
+            self.generate_cat_skill(the_cat.status, the_cat.moons)
+
+        self.update_skill()
+
+    def generate_cat_skill(self, status, moons):
         """
         this handles giving newly generated the_cats a skill - will not give hidden skills
         """
-        if the_cat.moons == 0:
+        print('generate skill')
+        if moons == 0:
             pass
-        elif the_cat.status == 'kitten':
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = 0
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
-        elif the_cat.status == 'apprentice':
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = 0
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
+        elif status == 'kitten':
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = 0
+        elif status == 'apprentice':
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = 0
             if random.randint(1, 2) == 1:
-                the_cat.skills.secondary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.secondary_tier = 0
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
-        elif the_cat.moons < 50:
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = 1
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
+                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_tier = 0
+        elif moons < 50:
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = 1
             if random.randint(1, 3) == 1:
-                the_cat.skills.secondary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.secondary_tier = 1
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
-        elif the_cat.moons < 100:
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = random.randint(1, 3)
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
+                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_tier = 1
+        elif moons < 100:
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = random.randint(1, 3)
             if random.randint(1, 3) == 1:
-                the_cat.skills.secondary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.secondary_tier = 1
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
-        elif the_cat.moons < 150:
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = random.randint(2, 3)
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
+                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_tier = 1
+        elif moons < 150:
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = random.randint(2, 3)
             if random.randint(1, 3) == 1:
-                the_cat.skills.secondary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.secondary_tier = 1
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
+                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_tier = 1
         else:
-            the_cat.skills.primary_path = random.choice([path for path in self.all_paths])
-            the_cat.skills.primary_tier = random.randint(1, 2)
-            the_cat.skills.primary_skill = the_cat.skills.primary_path[the_cat.skills.primary_tier]
+            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_tier = random.randint(1, 2)
             if random.randint(1, 3) == 1:
-                the_cat.skills.secondary_path = random.choice([path for path in self.all_paths])
-                the_cat.skills.secondary_tier = 1
-                the_cat.skills.secondary_skill = the_cat.skills.secondary_path[the_cat.skills.secondary_tier]
+                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_tier = 1
 
-    def __repr__(self):
+        self.update_skill()
+
+    def skill_list(self):
         if self.secondary_skill and self.hidden_skill:
             return [self.primary_skill, self.secondary_skill, self.hidden_skill]
         elif self.secondary_skill:
@@ -269,3 +266,7 @@ class CatSkills:
             return [self.primary_skill, self.hidden_skill]
         else:
             return [self.primary_skill]
+
+
+with open(f"resources/dicts/skills.json", 'r') as read_file:
+    SKILLS = ujson.loads(read_file.read())

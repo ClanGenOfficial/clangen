@@ -466,7 +466,7 @@ class Game():
                         "tier": inter_cat.skills.secondary_tier,
                         "points": inter_cat.skills.secondary_points
                     },
-                    "hidden": inter_cat.skills.hidden
+                    "hidden": inter_cat.skills.hidden_skill
                 },
                 "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,

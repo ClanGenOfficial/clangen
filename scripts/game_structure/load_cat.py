@@ -9,7 +9,7 @@ from ..datadir import get_save_dir
 import ujson
 
 from re import sub
-from scripts.cat.cats import Cat, SKILLS
+from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
@@ -66,9 +66,6 @@ def json_load():
                 elif cat["eye_colour"] == "BLUEGREEN":
                     cat["eye_colour2"] = "GREEN"
                 cat["eye_colour"] = "BLUE"
-            if "eye_colour2" in cat:
-                if cat["eye_colour2"] == "BLUE2":
-                    new_cat.eye_colour2 = "COBALT"
             new_cat = Cat(ID=cat["ID"],
                           prefix=cat["name_prefix"],
                           suffix=cat["name_suffix"],
@@ -80,8 +77,12 @@ def json_load():
                           moons=cat["moons"],
                           eye_colour=cat["eye_colour"],
                           pelt=new_pelt,
-                          skill_dict=cat["skills_dict"] if "skills_dict" in cat else None,
+                          skill_dict=cat["skill_dict"] if "skill_dict" in cat else None,
                           loading_cat=True)
+            if "eye_colour2" in cat:
+                if cat["eye_colour2"] == "BLUE2":
+                    new_cat.eye_colour2 = "COBALT"
+
             new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
@@ -89,6 +90,8 @@ def json_load():
                 new_cat.age = 'senior'
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
+            if new_cat.backstory in BACKSTORIES["conversion"]:
+                new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
             if cat["trait"] in ["clever", "patient", "empathetic", "altruistic"]:
@@ -196,18 +199,24 @@ def json_load():
             new_cat.skin = cat["skin"]
 
             if "skill" in cat:
+                print('skill in cat')
                 if new_cat.backstory is None:
-                    if new_cat.skill == 'formerly a loner':
+                    if "skill" == 'formerly a loner':
                         backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
                         new_cat.backstory = backstory
-                    elif new_cat.skill == 'formerly a kittypet':
+                    elif "skill" == 'formerly a kittypet':
                         backstory = choice(['kittypet1', 'kittypet2'])
                         new_cat.backstory = backstory
                     else:
                         new_cat.backstory = 'clanborn'
-                new_cat.convert_old_skills(cat["skill"])
-            else:
-                new_cat.skill_dict = cat["skill_dict"]
+                new_cat.skills.convert_old_skills(cat["skill"], new_cat)
+
+            if new_cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
+                new_cat.skills.hidden_skill = "loner's knowledge"
+            elif new_cat.backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
+                new_cat.skills.hidden_skill = "rogue's knowledge"
+            elif new_cat.backstory in BACKSTORIES["backstory_categories"]["kittypet_backstories"]:
+                new_cat.skills.hidden_skill = "kittypet's knowledge"
 
             new_cat.scars = cat["scars"] if "scars" in cat else []
 
