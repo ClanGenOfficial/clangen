@@ -779,7 +779,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
-                if "new_cat" in self.patrol_event.tags:
+                if any("new_cat" in ptrltag for ptrltag in self.patrol_event.tags):
                     if antagonize:
                         self.handle_reputation(-20)
                     else:
@@ -891,7 +891,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
-                elif "new_cat" in self.patrol_event.tags:
+                elif any("new_cat" in ptrltag for ptrltag in self.patrol_event.tags):
                     if antagonize:
                         self.handle_reputation(-10)
                     else:
