@@ -87,6 +87,12 @@ class PatrolScreen(Screens):
                     self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
                     self.update_selected_cat()
                     self.update_button()
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_LEFT:
+                self.change_screen("starclan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('list screen')
 
             # Check if mate cycle buttons are clicked.
             if "cycle_mate_left_button" in self.elements:
