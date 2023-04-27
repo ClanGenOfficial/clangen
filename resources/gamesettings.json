@@ -36,6 +36,11 @@
             "The cursor will be replaced with a cat paw.",
             false
         ],
+        "keybinds": [
+            "Keybinds",
+            "Enables certian keybinds to be used throughout the menus for quick navigation.",
+            false
+        ],
         "backgrounds": [
             "Enable Clan page background",
             "Even with this off, the camp you choose will still affect the events you encounter.",
