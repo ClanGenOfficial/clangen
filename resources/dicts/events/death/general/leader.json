@@ -507,6 +507,7 @@
         ],
         "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
         "history_text": {
+            "reg_death": "This cat died when o_c tried to break into camp.",
             "lead_death": "tried to defend the Clan from o_c"
         }
     }
