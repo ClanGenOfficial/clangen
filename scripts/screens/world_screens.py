@@ -462,8 +462,7 @@ class UnknownResScreen(Screens):
     def get_dead_cats(self):
         self.dead_cats = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.faded \
-            and (the_cat.outside):
+            if the_cat.ID in game.clan.unknown_cats:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):

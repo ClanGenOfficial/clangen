@@ -9,16 +9,16 @@
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
-            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
-            null,
-            "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-            "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
+        "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
+        null,
+        "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+        "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss} caution saved {PRONOUN/s_c/poss} life."
     ],
     "fail_text": [
-            null,
-            null,
-            "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
-            null
+        null,
+        null,
+        "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
+        null
     ],
     "win_skills": ["extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
@@ -28,31 +28,31 @@
     "antagonize_fail_text": null,
     "history_text": {
         "reg_death": "r_c was swept out to sea by a flood.",
-        "lead_death": "were swept out to sea by a flood"
+        "lead_death": "{VERB/p_l/were/was} swept out to sea by a flood"
     }
 },
 {
-        "patrol_id": "bch_bord_ocean_newcatkits1",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": ["border", "new_cat_litter0_litter3_dead_orphaned6", "platonic", "comfort", "warrior", "shivering", "frostbite", "injure_all"],
-        "intro_text": "p_l hears desperate mewling coming from the ocean. ",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
-        "chance_of_success": 20,
-        "exp": 15,
-        "success_text": [
-        "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruff and handing them over to the rest of the patrol.",
+    "patrol_id": "bch_bord_ocean_newcatkits1",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["border", "new_cat_litter0_litter3_dead_orphaned6", "platonic", "comfort", "warrior", "shivering", "frostbite", "injure_all"],
+    "intro_text": "p_l hears desperate mewling coming from the ocean. ",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
+    "chance_of_success": 20,
+    "exp": 15,
+    "success_text": [
+        "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
         null,
         null,
         "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
         ],
-        "fail_text": [
-        "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
+    "fail_text": [
+        "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, and the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
         ],
-        "win_skills": ["wise", "thoughtful"],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+    "win_skills": ["wise", "thoughtful"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": "Hissing to {PRONOUN/p_l/self}, p_l turns and stalks off to continue the patrol, deliberately ignoring the mewls. It must be a trick of the wind, {PRONOUN/p_l/subject} {VERB/p_l/inform/informs} {PRONOUN/p_l/poss} companions, and no cat dares to argue.",
+    "antagonize_fail_text": "The cats argue with each other about whether or not they should check out the source of the mewling. By the time they've decided what to do, the sound has already faded away."
 }
 ]
