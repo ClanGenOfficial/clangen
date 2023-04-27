@@ -251,19 +251,19 @@ class Calico():
 
 # ATTRIBUTES, including non-pelt related
 pelt_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
-    'CHOCOLATE'
+'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+'CHOCOLATE', 'SHELL'
 ]
 pelt_c_no_white = [
-    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
-    'CHOCOLATE'
+'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+'CHOCOLATE', 'SHELL'
 ]
 pelt_c_no_bw = [
-    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'CREAM', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
-    'CHOCOLATE'
+'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'CREAM', 'PALEGINGER',
+'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA' 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+'CHOCOLATE', 'SHELL'
 ]
 
 tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR',
@@ -318,9 +318,9 @@ pelt_categories = [tabbies, spotted, plain, exotic, torties]
 single_colours = [
     'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
     'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
-    'CHOCOLATE'
+    'CHOCOLATE', 'SHELL'
 ]
-ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']
+ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'SHELL']
 black_colours = ['GREY', 'DARKGREY', 'GHOST', 'BLACK']
 white_colours = ['WHITE', 'PALEGREY', 'SILVER']
 brown_colours = ['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']
@@ -507,7 +507,8 @@ def describe_appearance(cat, short=False):
             "golden-brown": "golden brown",
             "darkbrown": "dark brown",
             "chocolate": "dark brown",
-            "ghost": "black"
+            "ghost": "black",
+            "shell": "pale golden"
         }
 
     pattern_des = {

@@ -195,9 +195,12 @@
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dust", "Mud", "Auburn", "Burnet"
     ],
     "BLACK": [
-    "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
+    "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle",
     "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky",
     "Char", "Charred", "Mulberry", "Night", "Evening", "Dark", "Murk", "Ghost"
+    ],
+    "SHELL": [
+    "Shell", "Shell", "Shell", "Dove", "Dove", "Moth", "Moth", "Warbler", "Warbler", "Parula", "Thrush", "Finch", "King", "Sparrow", "Thrasher", "Sand", "Wolf", "Owl"
     ]
   },
 
