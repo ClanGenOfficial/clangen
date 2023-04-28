@@ -15,7 +15,7 @@
     ],
     "altruistic": [
         "Declines to eat when prey is low",
-        "Helped a cat from outside the clan",
+        "Helps a cat from outside the clan",
         "Offers to watch the kits for a little while"
     ],
     "ambitious": [
@@ -47,21 +47,21 @@
     ],
     "bold": [
         "Decides to try a new herb as treatment for an injury",
-        "Tried to sneak into a hunting patrol"
+        "Tries to sneak into a hunting patrol"
     ],
     "calm": [
         "Stays composed when treating a severe injury",
         "Didn’t flinch at the smell of a rotting wound",
-        "Reassured r_c that {PRONOUN/r_c/subject/optional_tags} {VERB/r_c/are/is} perfectly fine",
+        "Reassures r_c that {PRONOUN/r_c/subject/optional_tags} {VERB/r_c/are/is} perfectly fine",
         "Is telling a story to keep a hurt kitten calm while {PRONOUN/m_c/subject/optional_tags} {VERB/m_c/are/is} treating the kitten’s wounds"
     ],
     "careful": [
         "Counts and recounts the poppy seeds",
-        "Overdid it on cleaning a wound"
+        "Overdid it on cleaning a wound again"
     ],
     "charismatic": [
         "Is doing {PRONOUN/m_c/poss/optional_tags} daily checkup on the elders",
-        "Made r_c feel better with m_c’s jokes"
+        "Makes r_c feel better with m_c’s jokes"
     ],
     "childish": [
         "Bounces excitedly at the half-moon meeting",
