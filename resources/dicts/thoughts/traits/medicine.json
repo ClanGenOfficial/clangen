@@ -41,7 +41,7 @@
         "Refused to treat anyone today",
         "Is upset that {PRONOUN/m_c/subject} can't fight alongside the warriors",
         "Wishes to fight alongside the warriors",
-        "Thinks {PRONOUN/m_c/subject}’d be an amazing leader",
+        "Thinks {PRONOUN/m_c/subject}'d be an amazing leader",
         "Talks to the leader and deputy about war",
         "Ignores the low herb stocks, instead practicing battle moves"
     ],
@@ -126,7 +126,7 @@
         "Gives herbs to an injured loner"
     ],
     "shameless": [
-        "Refuses to groom "{PRONOUN/m_c/self}"
+        "Refuses to groom {PRONOUN/m_c/self}"
     ],
     "sneaky": [
         "Seems to be hiding something in the medicine {PRONOUN/m_c/subject} {VERB/m_c/give/gives} to the leader"
