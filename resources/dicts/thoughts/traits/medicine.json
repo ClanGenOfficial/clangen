@@ -32,7 +32,7 @@
         "Is ripping some leaves to shreds",
         "Debates becoming a warrior",
         "Gives the wrong herbs to a warrior on purpose",
-        "Wishes {PRONOUN/m_c/subject} weren't confined to this life",
+        "Wishes {PRONOUN/m_c/subject} {VERB/m_c/wasn't/weren't} confined to this life",
         "Is stocking up on deathberries",
         "Is stocking up on yew berries",
         "Is stocking up on nightshade",
@@ -53,7 +53,7 @@
         "Stays composed when treating a severe injury",
         "Didn’t flinch at the smell of a rotting wound",
         "Reassures r_c that {PRONOUN/r_c/subject} {VERB/r_c/are/is} perfectly fine",
-        "Is telling a story to keep a hurt kitten calm while {PRONOUN/m_c/subject} {VERB/m_c/are/is} treating the kitten’s wounds"
+        "Is telling a story to keep a hurt kitten calm while {PRONOUN/m_c/subject} {VERB/m_c/are/is} treating the kitten's wounds"
     ],
     "careful": [
         "Counts and recounts the poppy seeds",
@@ -68,7 +68,7 @@
         "Is using silly names for the herbs again"
     ],
     "cold": [
-        "Threatens to make a kit sick when they won’t stay still"
+        "Threatens to make a kit sick when they won't stay still"
     ],
     "compassionate": [
         "Works long into the night taking care of the Clan"
@@ -89,7 +89,7 @@
         "Insists on joining battle training once a moon"
     ],
     "insecure": [
-        "Is saying that {PRONOUN/m_c/subject} don't deserve their full name"
+        "Is saying that {PRONOUN/m_c/subject} {VERB/r_c/doesn't/don't} deserve {PRONOUN/m_c/poss} full name"
     ],
     "lonesome": [
         "Is wishing they could have a mate and kits",
