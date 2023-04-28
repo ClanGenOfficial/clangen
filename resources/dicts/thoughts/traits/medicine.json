@@ -51,7 +51,7 @@
     ],
     "calm": [
         "Stays composed when treating a severe injury",
-        "Didn’t flinch at the smell of a rotting wound",
+        "Didn't flinch at the smell of a rotting wound",
         "Reassures r_c that {PRONOUN/r_c/subject} {VERB/r_c/are/is} perfectly fine",
         "Is telling a story to keep a hurt kitten calm while {PRONOUN/m_c/subject} {VERB/m_c/are/is} treating the kitten's wounds"
     ],
