@@ -339,11 +339,11 @@ class Inheritance():
             siblings = True
             if inter_cat.moons + inter_cat.dead_for == self.cat.moons + self.cat.dead_for:
                 additional_info.append("litter mates")
-        elif len(blood_parent_overlap) == 1 and len(inter_parent_ids) == 1 and len(inter_parent_ids) == 1:
+        elif len(blood_parent_overlap) == 1 and len(inter_parent_ids) == 1 and len(current_parent_ids) == 1:
             siblings = True
             if inter_cat.moons + inter_cat.dead_for == self.cat.moons + self.cat.dead_for:
                 additional_info.append("litter mates")
-        elif len(blood_parent_overlap) == 1 and (len(inter_parent_ids) > 1 or len(inter_parent_ids) > 1):
+        elif len(blood_parent_overlap) == 1 and (len(inter_parent_ids) > 1 or len(current_parent_ids) > 1):
             siblings = True
             rel_type = RelationType.HALF_BLOOD
         elif len(adoptive_overlap1) > 0 or len(adoptive_overlap2) > 0 or len(adoptive_overlap3) > 0:

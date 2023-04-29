@@ -1478,7 +1478,7 @@ class AllegiancesScreen(Screens):
                     output += "\n      APPRENTICE: "
                 else:
                     output += "\n      APPRENTICES: "     
-                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice])
+                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
 
             return output
 
@@ -1511,7 +1511,7 @@ class AllegiancesScreen(Screens):
         for cat in living_kits.copy():
             parents = cat.get_parents()
             #Fetch parent object, only alive and not outside. 
-            parents = [Cat.fetch_cat(i) for i in parents if not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
+            parents = [Cat.fetch_cat(i) for i in parents if Cat.fetch_cat(i) and not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
             if not parents:
                 continue
             
@@ -1533,6 +1533,8 @@ class AllegiancesScreen(Screens):
         # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists. 
         for q in queen_dict:
             queen = Cat.fetch_cat(q)
+            if not queen:
+                continue
             if queen in living_warriors:
                 living_warriors.remove(queen)
             elif queen in living_elders:
@@ -1607,6 +1609,8 @@ class AllegiancesScreen(Screens):
             all_entries = []
             for q in queen_dict:
                 queen = Cat.fetch_cat(q)
+                if not queen:
+                    continue
                 kittens = []
                 for k in queen_dict[q]:
                     kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
