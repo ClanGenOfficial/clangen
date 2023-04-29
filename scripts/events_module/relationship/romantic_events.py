@@ -214,7 +214,7 @@ class Romantic_Events():
             become_mate = True
             mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
         else:
-            mate_string = self.get_mate_string("reject", poly, cat_from, cat_to)
+            mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
 
         mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
         game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
