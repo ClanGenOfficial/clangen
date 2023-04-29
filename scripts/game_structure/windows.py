@@ -903,7 +903,7 @@ class SendLogsPopup(UIWindow):
 
         self.tokenEntry = pygame_gui.elements.UITextEntryLine(
             scale(pygame.Rect((50, 250), (700, 50))),
-            placeholder_text="00000000-0000-0000-0000-00000000000",
+            placeholder_text="0000000",
             manager=MANAGER,
             container=self)
         
