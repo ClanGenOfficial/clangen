@@ -118,6 +118,13 @@ class OutsideClanScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
 
     def get_living_cats(self):
         self.living_cats = []
@@ -433,6 +440,15 @@ class UnknownResScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
+
 
     def exit_screen(self):
         self.hide_menu_buttons()
