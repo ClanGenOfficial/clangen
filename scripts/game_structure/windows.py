@@ -923,7 +923,6 @@ class SendLogsPopup(UIWindow):
             object_id="#continue_button_small",
             container=self
         )
-        self.continue_button.disable()
 
         self.cancel_button = UIImageButton(
             scale(pygame.Rect((374, 370), (156, 60))),
@@ -939,7 +938,7 @@ class SendLogsPopup(UIWindow):
             container=self
         )
 
-        self.continue_button.enable()
+        self.continue_button.disable()
         self.cancel_button.enable()
         self.close_button.enable()
 
@@ -955,8 +954,7 @@ class SendLogsPopup(UIWindow):
                 game.switches['window_open'] = False
                 self.kill()
         elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
-            regex = r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
-            if match(regex, self.tokenEntry.get_text()):
+            if match(r"^[0-9a-f]{7}$", self.tokenEntry.get_text()):
                 self.continue_button.enable()
                 self.tokeninvalid.hide()
             else:
