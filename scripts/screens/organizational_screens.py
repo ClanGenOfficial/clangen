@@ -734,6 +734,15 @@ class SettingsScreen(Screens):
             tool_tip_text="Opens the data directory. "
                           "This is where save files "
                           "and logs are stored.")
+        
+        self.log_button = UIImageButton(
+            scale(pygame.Rect((1234, 1290), (316, 60))),
+            "",
+            object_id="#open_data_directory_button",
+            manager=MANAGER,
+            tool_tip_text="This will allow you to"
+                          " send your logs to the"
+                          " Clangen team.")
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
