@@ -879,9 +879,9 @@ class SendLogsPopup(UIWindow):
         self.last_screen = last_screen
 
         self.begin_update_title = UIImageButton(
-            scale(pygame.Rect((195, 30), (400, 81))),
+            scale(pygame.Rect((236.5, 30), (327, 90))),
             "",
-            object_id="#send_logs_button",
+            object_id="#send_logs_button2",
             container=self
         )
 

@@ -28,7 +28,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError, SendLogsPopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir, get_cache_dir
@@ -66,6 +66,8 @@ class StartScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if game.switches['window_open']:
+                return
             screens = {
                 self.continue_button: 'clan screen',
                 self.switch_clan_button: 'switch clan screen',
@@ -82,12 +84,23 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
+            elif event.ui_element == self.send_logs_button:
+                self.error_box.kill()
+                self.error_label.kill()
+                self.error_gethelp.kill()
+                self.closebtn.kill()
+                self.open_data_directory_button.kill()
+                self.send_logs_button.kill()
+                game.switches['error_message'] = ''
+                game.switches['traceback'] = ''
+                SendLogsPopup(game.switches['last_screen'])
             elif event.ui_element == self.closebtn:
                 self.error_box.kill()
                 self.error_label.kill()
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
+                self.send_logs_button.kill()
                 game.switches['error_message'] = ''
                 game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
@@ -219,6 +232,17 @@ class StartScreen(Screens):
             manager=MANAGER
         )
 
+        self.send_logs_button = UIImageButton(
+            scale(pygame.Rect((1040, 1070), (218, 60))),
+            "",
+            object_id="#send_logs_button",
+            manager=MANAGER,
+            starting_height=0,  # Layer 0 so it's behind the error box
+            tool_tip_text="This will allow you to"
+                          " send your logs to the"
+                          " Clangen team.")
+
+
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((1040, 1020), (320, 60))),
             "",
@@ -239,6 +263,7 @@ class StartScreen(Screens):
         self.error_label.hide()
         self.error_gethelp.hide()
         self.open_data_directory_button.hide()
+        self.send_logs_button.hide()
         self.closebtn.hide()
 
         self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (382.5, 75))), "",
@@ -312,6 +337,7 @@ class StartScreen(Screens):
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
+            self.send_logs_button.show()
 
             if get_version_info().is_sandboxed:
                 self.open_data_directory_button.hide()
@@ -599,6 +625,9 @@ class SettingsScreen(Screens):
                     except OSError:
                         logger.exception("Failed to call to xdg-open.")
                 return
+            elif event.ui_element == self.send_logs_button:
+                self.change_screen('start screen')
+                SendLogsPopup(game.switches['last_screen'])
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 try:
@@ -735,14 +764,15 @@ class SettingsScreen(Screens):
                           "This is where save files "
                           "and logs are stored.")
         
-        self.log_button = UIImageButton(
-            scale(pygame.Rect((1234, 1290), (316, 60))),
+        self.send_logs_button = UIImageButton(
+            scale(pygame.Rect((1332, 1290), (218, 60))),
             "",
-            object_id="#open_data_directory_button",
+            object_id="#send_logs_button",
             manager=MANAGER,
             tool_tip_text="This will allow you to"
                           " send your logs to the"
-                          " Clangen team.")
+                          " Clangen team.",
+            starting_height=5)
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -790,6 +820,8 @@ class SettingsScreen(Screens):
         del self.fullscreen_toggle
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
+        self.send_logs_button.kill()
+        del self.send_logs_button
 
         game.settings = self.settings_at_open
 
