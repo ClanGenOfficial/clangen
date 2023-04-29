@@ -2836,6 +2836,7 @@ class RoleScreen(Screens):
 # ---------------------------------------------------------------------------- #
 
 class SpriteInspectScreen(Screens):
+    cat_life_stages = ["newborn", "kitten", "adult", "senior"]
     
     def __init__(self, name=None):
         self.back_button = None
@@ -2882,7 +2883,9 @@ class SpriteInspectScreen(Screens):
         
         self.previous_life_state = UIImageButton()
         
-        self.next_life_stage = UIImageButton
+        self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_right_fancy")
+        
+        self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_left_fancy")
         
         self.platform_show = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "" ,
                                            object_id = "#unchecked_checkbox")
