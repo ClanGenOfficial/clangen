@@ -2,13 +2,13 @@ import os
 from math import floor
 from .game_essentials import game
 from ..cat.history import History
-from ..datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir
 
 import ujson
 
 from re import sub
 from scripts.cat.cats import Cat
-from scripts.version import SAVE_VERSION_NUMBER
+from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice

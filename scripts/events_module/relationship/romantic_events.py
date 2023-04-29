@@ -222,11 +222,6 @@ class Romantic_Events():
         if become_mate:
             cat_from.set_mate(cat_to)
 
-        if poly:
-            print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
-            print(cat_from.mate)
-            print(cat_to.mate)
-
         return become_mate
 
     # ---------------------------------------------------------------------------- #
