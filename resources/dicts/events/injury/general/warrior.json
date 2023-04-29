@@ -14,6 +14,44 @@
         "other_cat_skill": null
     },
     {
+        "injury": "claw-wound",
+        "tags": [
+            "other_clan",
+            "war",
+            "rel_down",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "SIDE"
+        ],
+        "event_text": "A brutal battle against o_c leaves m_c injured.",
+        "history_text": {
+            "scar": "m_c was scarred in a fight against o_c.",
+            "reg_death": "m_c died from their wounds after a battle with o_c."
+        }
+    },
+    {
+        "injury": "cat bite",
+        "tags": [
+            "other_clan",
+            "war",
+            "rel_down",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "SIDE"
+        ],
+        "event_text": "m_c came out worse for wear after a border scrimage with o_c.",
+        "history_text": {
+            "scar": "m_c was scarred in a fight against o_c.",
+            "reg_death": "m_c died from their wounds after a battle with o_c."
+        }
+    },
+    {
         "injury": "bruises",
         "tags": [
             "Newleaf",
@@ -558,8 +596,6 @@
         "tags": [
             "other_cat",
             "other_cat_leader",
-            "other_clan",
-            "rel_down",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",

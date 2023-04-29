@@ -55,6 +55,7 @@ class Clan():
     clan_cats = []
     starclan_cats = []
     darkforest_cats = []
+    unknown_cats = []
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -489,6 +490,7 @@ class Clan():
                 self.freshkill_pile = None
             self.primary_disaster = None
             self.secondary_disaster = None
+            self.war = {}
 
             self.faded_ids = [
             ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
@@ -583,6 +585,8 @@ class Clan():
             self.starclan_cats.append(cat.ID)
             if cat.ID in self.darkforest_cats:
                 self.darkforest_cats.remove(cat.ID)
+            if cat.ID in self.unknown_cats:
+                self.unknown_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
@@ -593,16 +597,33 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df is True:
+        if cat.ID in Cat.all_cats and cat.dead and cat.df:
             self.darkforest_cats.append(cat.ID)
-            cat.thought = "Is distraught after being sent to the Place of No Stars"
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.unknown_cats:
+                self.unknown_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
             # update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
+
+    def add_to_unknown(self, cat):
+        """
+        Places dead cat into the unknown residence.
+        It should not be removed from the list of cats in the clan
+        :param cat: cat object
+        """
+        if cat.ID in Cat.all_cats and cat.dead and cat.outside:
+            self.unknown_cats.append(cat.ID)
+            if cat.ID in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
+            if cat.ID in self.darkforest_cats:
+                self.darkforest_cats.remove(cat.ID)
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
 
     def add_to_clan(self, cat):
         """
@@ -769,6 +790,7 @@ class Clan():
             [str(i.relations) for i in self.all_clans])
         clan_data["other_clan_temperament"] = ",".join(
             [str(i.temperament) for i in self.all_clans])
+        clan_data["war"] = self.war
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
@@ -1047,8 +1069,11 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
                 game.clan.add_to_darkforest(Cat.all_cats[cat])
+                game.clan.add_to_unknown(Cat.all_cats[cat])
             else:
                 print('WARNING: Cat not found:', cat)
+        if "war" in clan_data:
+            game.clan.war = clan_data["war"]
 
         if "faded_cats" in clan_data:
             if clan_data["faded_cats"].strip():  # Check for empty string
@@ -1285,7 +1310,7 @@ class Clan():
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        game.safe_save(f"/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/freshkill_pile.json", clan.freshkill_pile.pile)
 
         data = {}
         for k, nutr in clan.freshkill_pile.nutrition_info.items():
@@ -1305,7 +1330,7 @@ class Clan():
 
     @reputation.setter
     def reputation(self, a: int):
-        self._reputation = int(self._reputation + a)
+        self._reputation = int(a)
         if self._reputation > 100:
             self._reputation = 100
         elif self._reputation < 0:

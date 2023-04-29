@@ -157,5 +157,10 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "clan_kits", "other_cat", "other_cat_parent", "mc_to_rc", "comfort"],
+        "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c cats."
     }
 ]

@@ -48,10 +48,12 @@
         "other_cat_skill": null
     },
     {
-        "camp": "any",
+        "camp": "camp3",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped, and {PRONOUN/m_c/subject} fell into the waves where rows and rows of teeth swallowed {PRONOUN/m_c/object} whole. ",
-        "history_text": ["m_c was swallowed by a sea creature.", null],
+        "death_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss. ",
+        "history_text": {
+            "reg_death": "m_c was taken by a mysterious sea creature."
+        },
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

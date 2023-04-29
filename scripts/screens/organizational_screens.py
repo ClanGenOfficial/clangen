@@ -13,11 +13,12 @@ This file contains:
 
 import platform
 import subprocess
-import pygame
 import os
 import traceback
 import logging
 from html import escape
+
+import pygame
 
 from .base_screens import Screens
 
@@ -114,6 +115,9 @@ class StartScreen(Screens):
                     os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
+                self.change_screen('clan screen')
 
     def on_use(self):
         """
@@ -203,7 +207,7 @@ class StartScreen(Screens):
             scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#text_box_22_horizleft",
             manager=MANAGER,
-            layer_starting_height=3)
+            starting_height=3)
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. "
@@ -211,7 +215,7 @@ class StartScreen(Screens):
             '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#text_box_22_horizleft",
-            layer_starting_height=3,
+            starting_height=3,
             manager=MANAGER
         )
 
@@ -359,6 +363,10 @@ class SwitchClanScreen(Screens):
                         game.clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
+                        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
 
     def exit_screen(self):
         """
@@ -614,6 +622,24 @@ class SettingsScreen(Screens):
                 self.open_lang_settings()
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
+            elif event.key == pygame.K_RIGHT:
+                if self.sub_menu == 'general':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'relation':
+                    self.open_info_screen()
+                elif self.sub_menu == 'info':
+                    self.open_lang_settings()
+            elif event.key == pygame.K_LEFT:
+                if self.sub_menu == 'relation':
+                    self.open_general_settings()
+                elif self.sub_menu == 'info':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'language':
+                    self.open_info_screen()
 
     def handle_checkbox_events(self, event):
         """

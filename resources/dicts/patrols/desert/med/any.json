@@ -22,7 +22,10 @@
 		"They gaze into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because they really could have used some guidance from StarClan."
 	],
 	"min_cats":1,
-	"max_cats":1
+	"max_cats":1,
+	"constraints": {
+		"skill": ["prophet"]
+	}
 },
 {
 	"patrol_id":"dst_med_app_herblocation1",

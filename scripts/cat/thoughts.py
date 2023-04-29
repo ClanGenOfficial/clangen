@@ -19,6 +19,9 @@ class Thoughts():
 
         if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
+        
+        if "littermates" in constraint and not main_cat.is_littermate(random_cat):
+            return False
 
         if "mates" in constraint and main_cat.mate != random_cat.ID:
             return False

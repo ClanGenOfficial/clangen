@@ -353,6 +353,25 @@ class ProfileScreen(Screens):
                     self.clear_profile()
                     self.build_profile()
 
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if game.switches['window_open']:
+                pass
+
+            elif event.key == pygame.K_LEFT:
+                self.clear_profile()
+                game.switches['cat'] = self.previous_cat
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            elif event.key == pygame.K_RIGHT:
+                self.clear_profile()
+                game.switches['cat'] = self.next_cat
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            
+            elif event.key == pygame.K_ESCAPE:
+                self.close_current_tab()
+                self.change_screen(game.last_screen_forProfile)
+
     def handle_tab_events(self, event):
         # Relations Tab
         if self.open_tab == 'relations':
@@ -904,6 +923,8 @@ class ProfileScreen(Screens):
                 for mate_id in the_cat.mate:
                     if mate_id in Cat.all_cats:
                         mate_ob = Cat.fetch_cat(mate_id)
+                        if not mate_ob:
+                            continue
                         if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
                             prev_mates.append(str(mate_ob.name))
                         else:
@@ -913,6 +934,8 @@ class ProfileScreen(Screens):
                 for prev_mate_id in the_cat.previous_mates:
                     if prev_mate_id in Cat.all_cats:
                         mate_ob = Cat.fetch_cat(prev_mate_id)
+                        if not mate_ob:
+                            continue
                         prev_mates.append(str(mate_ob.name))
                     else:
                         output += 'Error: mate: ' + str(prev_mate_id) + " not found"
@@ -929,7 +952,6 @@ class ProfileScreen(Screens):
                         output += 'former mates: ' + str(', '.join(prev_mates))
                     else:
                         output += 'former mate: ' + prev_mates[0]
-
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -963,16 +985,17 @@ class ProfileScreen(Screens):
         # Only shows up if the cat has a mentor.
         if the_cat.mentor:
             mentor_ob = Cat.fetch_cat(the_cat.mentor)
-            output += "mentor: " + str(mentor_ob.name) + "\n"
+            if mentor_ob:
+                output += "mentor: " + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
-            if app_count == 1:
+            if app_count == 1 and Cat.fetch_cat(the_cat.apprentice[0]):
                 output += 'apprentice: ' + str(Cat.fetch_cat(the_cat.apprentice[0]).name)
             elif app_count > 1:
-                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice])
+                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice if Cat.fetch_cat(i)])
 
             # NEWLINE ----------
             output += "\n"
@@ -982,13 +1005,13 @@ class ProfileScreen(Screens):
         if len(the_cat.former_apprentices
                ) != 0 and the_cat.former_apprentices[0] is not None:
 
-            if len(the_cat.former_apprentices) == 1:
+            if len(the_cat.former_apprentices) == 1 and Cat.fetch_cat(the_cat.former_apprentices[0]):
                 output += 'former apprentice: ' + str(
                     Cat.fetch_cat(the_cat.former_apprentices[0]).name)
 
             elif len(the_cat.former_apprentices) > 1:
                 output += 'former apprentices: ' + ", ".join(
-                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices])
+                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices if Cat.fetch_cat(i)])
 
             # NEWLINE ----------
             output += "\n"
@@ -1270,7 +1293,7 @@ class ProfileScreen(Screens):
                 new_text = (event_text_adjust(Cat,
                                               scar["text"],
                                               self.the_cat,
-                                              scar["involved"]))
+                                              Cat.fetch_cat(scar["involved"])))
                 if moons:
                     new_text += f" (Moon {scar['moon']})"
 
@@ -1316,7 +1339,7 @@ class ProfileScreen(Screens):
         influence_history = None
 
         if mentor_influence:
-            if mentor_influence["mentor"]:
+            if mentor_influence["mentor"] and Cat.fetch_cat(mentor_influence["mentor"]):
                 mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
                 mentor = None
@@ -1443,18 +1466,18 @@ class ProfileScreen(Screens):
             if self.the_cat.status == 'leader' or death_number > 1:
 
                 if death_number > 2:
-                    deaths = f"{','.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                    deaths = f"{', '.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
                 elif death_number == 2:
                     deaths = " and ".join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 
                 if self.the_cat.dead:
-                    insert = 'lost all {PRONOUN/m_c/poss} lives'
+                    insert = ' lost all {PRONOUN/m_c/poss} lives'
                 elif game.clan.leader_lives == 8:
-                    insert = 'lost a life'
+                    insert = ' lost a life'
                 else:
-                    insert = 'lost {PRONOUN/m_c/poss} lives'
+                    insert = ' lost {PRONOUN/m_c/poss} lives'
 
                 text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
             else:
@@ -1494,6 +1517,8 @@ class ProfileScreen(Screens):
                 name_list = []
 
                 for victim in victims:
+                    if not Cat.fetch_cat(victim["victim"]):
+                        continue 
                     name = str(Cat.fetch_cat(victim["victim"]).name)
 
                     if victim["revealed"]:
@@ -1995,7 +2020,7 @@ class ProfileScreen(Screens):
                     starting_height=2, manager=MANAGER)
                 self.exile_cat_button.disable()
 
-            if not self.the_cat.dead and not self.the_cat.exiled and not self.the_cat.outside:
+            if not self.the_cat.dead:
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
@@ -2268,8 +2293,14 @@ class CeremonyScreen(Screens):
         pass
 
     def handle_event(self, event):
+        if game.switches['window_open']:
+            pass
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
                 self.change_screen('profile screen')
         return
 
@@ -2330,6 +2361,16 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator_app:
                 self.the_cat.status_change("mediator apprentice", resort=True)
+                self.update_selected_cat()
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen("profile screen")
+            elif event.key == pygame.K_RIGHT:
+                game.switches["cat"] = self.next_cat
+                self.update_selected_cat()
+            elif event.key == pygame.K_LEFT:
+                game.switches["cat"] = self.previous_cat
                 self.update_selected_cat()
 
     def screen_switches(self):
@@ -2400,6 +2441,8 @@ class RoleScreen(Screens):
         self.selected_cat_elements = {}
 
         self.the_cat = Cat.fetch_cat(game.switches['cat'])
+        if not self.the_cat:
+            return
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((490, 80), (300, 300))),

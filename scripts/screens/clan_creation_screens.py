@@ -126,6 +126,16 @@ class MakeClanScreen(Screens):
                 self.handle_choose_background_event(event)
             elif self.sub_screen == 'saved screen':
                 self.handle_saved_clan_event(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.sub_screen == 'game mode':
+                self.handle_game_mode_key(event)
+            elif self.sub_screen == 'name clan':
+                self.handle_name_clan_key(event)
+            elif self.sub_screen == 'choose camp':
+                self.handle_choose_background_key(event)
+            elif self.sub_screen == 'saved screen' and (event.key == pygame.K_RETURN or event.key == pygame.K_RIGHT):
+                self.change_screen('start screen')
 
     def handle_game_mode_event(self, event):
         """Handle events for the game mode screen"""
@@ -143,6 +153,27 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
             self.open_name_clan()
+    
+    def handle_game_mode_key(self, event):
+        if event.key == pygame.K_ESCAPE:
+            self.change_screen('start screen')
+        elif event.key == pygame.K_DOWN:
+            if self.game_mode == 'classic':
+                self.game_mode = 'expanded'
+            elif self.game_mode == 'expanded':
+                self.game_mode = 'cruel'
+            self.refresh_text_and_buttons()
+        elif event.key == pygame.K_UP:
+            if self.game_mode == 'cruel':
+                self.game_mode = 'expanded'
+            elif self.game_mode == 'expanded':
+                self.game_mode = 'classic'
+            self.refresh_text_and_buttons()
+
+        elif event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
+            if self.elements['next_step'].is_enabled:
+                game.settings['game_mode'] = self.game_mode
+                self.open_name_clan()
 
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
@@ -164,6 +195,39 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
             self.open_game_mode()
+    
+    def handle_name_clan_key(self, event):
+        if event.key == pygame.K_ESCAPE:
+            self.change_screen('start screen')
+        elif event.key == pygame.K_LEFT:
+            if not self.elements['name_entry'].is_focused:
+                self.clan_name = ""
+                self.open_game_mode()
+        elif event.key == pygame.K_RIGHT:
+            if not self.elements['name_entry'].is_focused:
+                new_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
+                if not new_name:
+                    self.elements["error"].set_text("Your Clan's name cannot be empty")
+                    self.elements["error"].show()
+                    return
+                if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
+                    self.elements["error"].set_text("A clan with that name already exists.")
+                    self.elements["error"].show()
+                    return
+                self.clan_name = new_name
+                self.open_choose_leader()
+        elif event.key == pygame.K_RETURN:
+            new_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
+            if not new_name:
+                self.elements["error"].set_text("Your Clan's name cannot be empty")
+                self.elements["error"].show()
+                return
+            if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
+                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].show()
+                return
+            self.clan_name = new_name
+            self.open_choose_leader()
 
     def handle_choose_leader_event(self, event):
         if event.ui_element in [self.elements['roll1'], self.elements['roll2'], self.elements['roll3'],
@@ -304,6 +368,44 @@ class MakeClanScreen(Screens):
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['done_button']:
+            self.save_clan()
+            self.open_clan_saved_screen()
+    
+    def handle_choose_background_key(self, event):
+        if event.key == pygame.K_RIGHT:
+            if self.biome_selected is None:
+                self.biome_selected = "Forest"
+            elif self.biome_selected == "Forest":
+                self.biome_selected = "Mountainous"
+            elif self.biome_selected == "Mountainous":
+                self.biome_selected = "Plains"
+            elif self.biome_selected == "Plains":
+                self.biome_selected = "Beach"
+            self.selected_camp_tab = 1
+            self.refresh_text_and_buttons()
+        elif event.key == pygame.K_LEFT:
+            if self.biome_selected is None:
+                self.biome_selected = "Beach"
+            elif self.biome_selected == "Beach":
+                self.biome_selected = "Plains"
+            elif self.biome_selected == "Plains":
+                self.biome_selected = "Mountainous"
+            elif self.biome_selected == "Mountainous":
+                self.biome_selected = "Forest"
+            self.selected_camp_tab = 1
+            self.refresh_text_and_buttons()
+        elif event.key == pygame.K_UP and self.biome_selected is not None:
+            if self.selected_camp_tab > 1:
+                self.selected_camp_tab -= 1
+                self.refresh_selected_camp()
+        elif event.key == pygame.K_DOWN and self.biome_selected is not None:
+            if self.biome_selected != 'Plains' and self.selected_camp_tab < 3:
+                self.selected_camp_tab += 1
+                self.refresh_selected_camp()
+            elif self.biome_selected == 'Plains' and self.selected_camp_tab < 2:
+                self.selected_camp_tab += 1
+                self.refresh_selected_camp()
+        elif event.key == pygame.K_RETURN:
             self.save_clan()
             self.open_clan_saved_screen()
 

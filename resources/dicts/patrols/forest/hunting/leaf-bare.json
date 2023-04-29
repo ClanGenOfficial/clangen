@@ -855,7 +855,7 @@
             "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
             "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a corpse of trees so thick and overgrown that their branches have protected the leaf litter beneath them from the snowfall. If they can find prey anywhere, it'll be there.",
             null,
-            "p_l, leading the search for s_c, spots tracks headed away form the path. Confused, they signal the rest of the patrol over, only for r_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
+            "p_l, leading the search for r_c, spots tracks headed away form the path. Confused, they signal the rest of the patrol over, only for r_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
         ],
         "fail_text": [
             "p_l is silently furious at r_c when they find them. A snow storm is no time to go haring off by themselves, and it's destroyed the patrol's hunting chances.",
@@ -941,7 +941,7 @@
         ],
         "intro_text": "p_l and app1 stand near the frozen stream, watching two rats fighting for the last bit of seed strewn along the edge.",
         "success_text": [
-            "p_l and app1 dash out at the climax of the fight, taking down the two rats with a triumphant yowl!."
+            "p_l and app1 dash out at the climax of the fight, taking down the two rats with a triumphant yowl!"
         ],
         "fail_text": [
             "app1 and p_l attempt to chase the rats, but the snow banks are much deeper than they appear! The rats run away as the two dug themselves out of the snow, shivering and hungry."
@@ -1007,7 +1007,7 @@
         ],
         "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-        "chance_of_success": 30,
+        "chance_of_success": 20,
         "exp": 30,
         "success_text": [
             "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
@@ -1040,11 +1040,12 @@
             "medium_prey0",
             "large_prey1",
             "large_prey2",
-            "multi_death"
+            "multi_deaths",
+            "some_lives"
     ],
         "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing cant exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-        "chance_of_success": 30,
+        "chance_of_success": 20,
         "exp": 30,
         "success_text": [
             "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and bring back a feast of small rats.",

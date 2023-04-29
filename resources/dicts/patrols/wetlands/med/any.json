@@ -18,8 +18,9 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "constraints": {
+        "skill": ["prophet"]
+    }
 },
 {
     "patrol_id": "wtlnd_med_herblocation1",
