@@ -1,4 +1,4 @@
-from scripts.noop_writer import NoopWriter
+from scripts.housekeeping.noop_writer import NoopWriter
 
 
 class BufferedStreamDuplexer:

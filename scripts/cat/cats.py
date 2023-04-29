@@ -6,7 +6,7 @@ import os.path
 import itertools
 
 from .history import History
-from ..datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
 import ujson
@@ -1360,7 +1360,15 @@ class Cat():
                     continue
                 elif "leader_child" in tags and giver_cat.ID not in self.get_children():
                     continue
+                elif "leader_sibling" in tags and giver_cat.ID not in self.get_siblings():
+                    continue
                 elif "leader_mate" in tags and giver_cat.ID not in self.mate:
+                    continue
+                elif "leader_former_mate" in tags and giver_cat.ID not in self.previous_mates:
+                    continue
+                if "leader_mentor" in tags and giver_cat.ID not in self.former_mentor:
+                    continue
+                if "leader_apprentice" in tags and giver_cat.ID not in self.former_apprentices:
                     continue
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
