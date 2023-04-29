@@ -668,7 +668,7 @@ class PatrolScreen(Screens):
                     break
         if event.win_trait and not patrol.patrol_win_stat_cat:
             for kitty in possible_stat_cats:
-                if kitty.trait in event.win_trait:
+                if kitty.personality.trait in event.win_trait:
                     patrol.patrol_win_stat_cat = kitty
                     break
         if event.fail_skills:
@@ -678,7 +678,7 @@ class PatrolScreen(Screens):
                     break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
             for kitty in possible_stat_cats:
-                if kitty.trait in event.fail_trait:
+                if kitty.personality.trait in event.fail_trait:
                     patrol.patrol_fail_stat_cat = kitty
                     break
 
@@ -1049,7 +1049,7 @@ class PatrolScreen(Screens):
                                                                            manager=MANAGER)
 
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
-                                                                          "\n" + str(self.selected_cat.trait) +
+                                                                          "\n" + str(self.selected_cat.personality.trait) +
                                                                           "\n" + str(self.selected_cat.skill) +
                                                                           "\n" + str(
                 self.selected_cat.experience_level) +

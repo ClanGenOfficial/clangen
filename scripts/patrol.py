@@ -290,7 +290,7 @@ class Patrol():
         else:
             keep = True
         if "trait" in patrol.constraints:
-            if self.patrol_leader.trait in patrol.constraints["skill"]:
+            if self.patrol_leader.personality.trait in patrol.constraints["skill"]:
                 keep = True
         else:
             keep = True
@@ -721,11 +721,11 @@ class Patrol():
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
                 elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
-            if kitty.personality.personality.trait in self.patrol_event.win_trait:
+            if kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
-            if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
+            if self.patrol_event.fail_trait and kitty.personality.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
@@ -1869,6 +1869,9 @@ class Patrol():
         for cat in self.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
+                affect = cat.personality.mentor_inflence(Cat.fetch_cat(cat.mentor))
+                History.add_facet_mentor_inflence(cat, affect[0], affect[1], affect[2])
+                print(affect)
 
     def handle_reputation(self, difference):
         """

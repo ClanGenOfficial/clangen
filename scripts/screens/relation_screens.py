@@ -219,7 +219,7 @@ class ChooseMentorScreen(Screens):
             manager=MANAGER)
 
         info = self.the_cat.age + "\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + \
-               "\n" + self.the_cat.trait + "\n" + self.the_cat.skill
+               "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skill
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
             scale(pygame.Rect((980, 325), (210, 250))),
@@ -328,7 +328,7 @@ class ChooseMentorScreen(Screens):
                     (300, 300)), manager=MANAGER)
 
             info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
-                   self.selected_mentor.genderalign + "\n" + self.selected_mentor.trait + "\n" + \
+                   self.selected_mentor.genderalign + "\n" + self.selected_mentor.personality.trait + "\n" + \
                    self.selected_mentor.skill
             if len(self.selected_mentor.former_apprentices) >= 1:
                 info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"

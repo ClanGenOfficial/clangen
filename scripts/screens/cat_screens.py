@@ -228,7 +228,6 @@ class ProfileScreen(Screens):
         super().__init__(name)
         self.show_moons = None
         self.no_moons = None
-        self.history = History()
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -1265,7 +1264,7 @@ class ProfileScreen(Screens):
         else:
             text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
 
-        beginning = self.history.get_beginning(self.the_cat)
+        beginning = History.get_beginning(self.the_cat)
         if beginning:
             if beginning['clan_born']:
                 text += " {PRONOUN/m_c/subject/CAP} were born on Moon " + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
@@ -1280,7 +1279,7 @@ class ProfileScreen(Screens):
         returns the adjusted scar text
         """
         scar_text = []
-        scar_history = self.history.get_death_or_scars(self.the_cat, scar=True)
+        scar_history = History.get_death_or_scars(self.the_cat, scar=True)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1335,7 +1334,7 @@ class ProfileScreen(Screens):
         if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
 
-        mentor_influence = self.history.get_mentor_influence(self.the_cat)
+        mentor_influence = History.get_mentor_influence(self.the_cat)
         influence_history = None
 
         if mentor_influence:
@@ -1399,7 +1398,7 @@ class ProfileScreen(Screens):
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                 influence_history = 'This cat has not finished training.'
 
-        app_ceremony = self.history.get_app_ceremony(self.the_cat)
+        app_ceremony = History.get_app_ceremony(self.the_cat)
         print(app_ceremony)
 
         graduation_history = ""
@@ -1428,8 +1427,8 @@ class ProfileScreen(Screens):
         returns adjusted death history text
         """
         text = None
-        death_history = self.history.get_death_or_scars(self.the_cat, death=True)
-        murder_history = self.history.get_murders(self.the_cat)
+        death_history = History.get_death_or_scars(self.the_cat, death=True)
+        murder_history = History.get_murders(self.the_cat)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1493,7 +1492,7 @@ class ProfileScreen(Screens):
         returns adjusted murder history text
 
         """
-        murder_history = self.history.get_murders(self.the_cat)
+        murder_history = History.get_murders(self.the_cat)
         victim_text = ""
         murdered_text = ""
 
@@ -2248,7 +2247,6 @@ class CeremonyScreen(Screens):
         self.text = None
         self.scroll_container = None
         self.life_text = None
-        self.history = History()
         self.header = None
         self.the_cat = None
 
@@ -2264,7 +2262,7 @@ class CeremonyScreen(Screens):
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
-            self.life_text = self.history.get_lead_ceremony(self.the_cat)
+            self.life_text = History.get_lead_ceremony(self.the_cat)
 
         else:
             self.life_text = ""
