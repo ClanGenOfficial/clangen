@@ -78,6 +78,22 @@ class ClanScreen(Screens):
                 self.change_screen('med den screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_RIGHT:
+                self.change_screen('starclan screen')
+            elif event.key == pygame.K_LEFT:
+                self.change_screen('events screen')
+            elif event.key == pygame.K_SPACE:
+                self.save_button_saving_state.show()
+                self.save_button.disable()
+                game.save_cats()
+                game.clan.save_clan()
+                game.clan.save_pregnancy(game.clan)
+                game.save_settings()
+                game.switches['saved_clan'] = True
+                self.update_buttons_and_text()
+
 
     def screen_switches(self):
         self.update_camp_bg()
@@ -479,6 +495,15 @@ class StarClanScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
+
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -809,6 +834,13 @@ class DFScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1145,6 +1177,12 @@ class ListScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen('patrol screen')
 
     def get_living_cats(self):
         self.living_cats = []
@@ -1440,7 +1478,7 @@ class AllegiancesScreen(Screens):
                     output += "\n      APPRENTICE: "
                 else:
                     output += "\n      APPRENTICES: "     
-                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice])
+                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
 
             return output
 
@@ -1473,7 +1511,7 @@ class AllegiancesScreen(Screens):
         for cat in living_kits.copy():
             parents = cat.get_parents()
             #Fetch parent object, only alive and not outside. 
-            parents = [Cat.fetch_cat(i) for i in parents if not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
+            parents = [Cat.fetch_cat(i) for i in parents if Cat.fetch_cat(i) and not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
             if not parents:
                 continue
             
@@ -1495,6 +1533,8 @@ class AllegiancesScreen(Screens):
         # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists. 
         for q in queen_dict:
             queen = Cat.fetch_cat(q)
+            if not queen:
+                continue
             if queen in living_warriors:
                 living_warriors.remove(queen)
             elif queen in living_elders:
@@ -1569,6 +1609,8 @@ class AllegiancesScreen(Screens):
             all_entries = []
             for q in queen_dict:
                 queen = Cat.fetch_cat(q)
+                if not queen:
+                    continue
                 kittens = []
                 for k in queen_dict[q]:
                     kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
