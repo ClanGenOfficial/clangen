@@ -189,18 +189,11 @@ def get_current_season():
 
     return game.clan.current_season
 
-
 def change_clan_reputation(difference):
     """
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
-    # grab rep
-    reputation = int(game.clan.reputation)
-    # ensure this is an int value
-    difference = int(difference)
-    # change rep
-    reputation += difference
-    game.clan.reputation = reputation
+    game.clan.reputation += difference
 
 
 def change_clan_relations(other_clan, difference):
