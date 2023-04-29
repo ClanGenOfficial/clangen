@@ -52,7 +52,7 @@
     "heat stroke": [
         "m_c is no longer suffering from heat stroke.",
         "m_c has recovered from heat stroke.",
-        "m_c is feeling much better, {PRONOUN/m_c/poss}{VERB/m_c/'ve/'s} recovered from the heat stroke."
+        "m_c is feeling much better, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} recovered from the heat stroke."
     ],
     "heat exhaustion": [
         "m_c has recovered from the heat exhaustion.",

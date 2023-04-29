@@ -137,23 +137,34 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
-    },
-    {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-      "event_text": "m_c was seen talking with a traveling loner healer on the border.",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-    },
-    {
-      "camp": "any",
-      "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-      "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
-      "cat_trait": null,
-      "cat_skill": null,
-      "other_cat_trait": null,
-      "other_cat_skill": null
-    }
+},
+{
+  "camp": "any",
+  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+  "event_text": "m_c was seen talking with a traveling loner healer on the border.",
+  "cat_trait": null,
+  "cat_skill": null,
+  "other_cat_trait": null,
+  "other_cat_skill": null
+},
+{
+  "camp": "any",
+  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+  "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+  "cat_trait": null,
+  "cat_skill": null,
+  "other_cat_trait": null,
+  "other_cat_skill": null
+},
+{
+  "camp": "any",
+  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+  "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war."
+},
+{
+  "camp": "any",
+  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+  "event_text": "m_c watches every little thing around them for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
+  "cat_skill": ["omen sight"]
+}
 ]

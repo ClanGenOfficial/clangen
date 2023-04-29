@@ -19,7 +19,86 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_clan",
+            "war",
+            "rel_down",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "SIDE"
+        ],
+        "event_text": "A brutal battle against o_c leaves m_c injured.",
+        "history_text": {
+            "scar": "m_c was scarred in a fight against o_c.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c."
+        }
+    },
+    {
+        "injury": "cat bite",
+        "tags": [
+            "other_clan",
+            "war",
+            "rel_down",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "SIDE"
+        ],
+        "event_text": "m_c came out worse for wear after a border scrimage with o_c.",
+        "history_text": {
+            "scar": "m_c was scarred in a fight against o_c.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c."
+        }
+    },
+    {
+        "injury": "sore",
+        "tags": [
+            "other_clan",
+            "war",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Heightened battle training has left m_c sore and tired."
+    },
+    {
+        "injury": "bruises",
+        "tags": [
+            "other_clan",
+            "war",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c."
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "other_clan",
+            "war",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "MANLEG"
+        ],
+        "event_text": "A horrible battle between c_n and o_c patrols after the two patrols traded insults at the border. m_c is left badly injured.",
+        "history_text": {
+            "scar": "m_c was scarred after a fight with o_c cats.",
+            "reg_death": "m_c died from their wounds after fighting with o_c cats."
+        }
+    },
     {
         "injury": "cat bite",
         "tags": [
@@ -477,7 +556,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
+        "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarrassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
      "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "ambitious", "troublesome", "insecure", "lonesome", "nervous", "sneaky"]
      },
      {

@@ -7,8 +7,6 @@
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["sneaky", "ambitious", "bloodthirsty", "cold", "fierce", "vengeful", "careful", "lonesome", "strange", "daring", "righteous", "patient"],
         "other_cat_skill": ["smart", "very smart", "extremely smart"]
     },
@@ -20,8 +18,6 @@
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "vengeful", "lonesome", "strange", "daring", "righteous"],
         "other_cat_skill": ["great fighter", "excellent fighter"]
     },
@@ -33,8 +29,6 @@
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce"],
         "other_cat_skill": ["great fighter", "excellent fighter"],
         "cat_negate_skill": ["great fighter", "excellent fighter"]
@@ -47,8 +41,6 @@
             "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, who made the death look accidental."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce", "sneaky"],
         "other_cat_skill": ["great fighter", "excellent fighter", "extremely smart"],
         "cat_negate_skill": ["great fighter", "excellent fighter"]
@@ -61,10 +53,7 @@
             "reg_death": "m_c was murdered by r_c, who fed them deathberries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with deathberries."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
         "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
@@ -75,10 +64,7 @@
             "reg_death": "m_c was murdered by r_c, who fed them foxglove seeds.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with foxglove seeds."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
         "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
@@ -89,10 +75,7 @@
             "reg_death": "m_c was murdered by r_c, who fed them nightshade berries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with nightshade berries."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
         "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
@@ -103,10 +86,7 @@
             "reg_death": "m_c was murdered by r_c, who fed them water hemlock.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with water hemlock."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
         "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
@@ -117,10 +97,7 @@
             "reg_death": "m_c was murdered by r_c, who purposefully fed them the wrong herbs.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, by being fed incorrect herbs."
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null,
         "cat_negate_skill": ["very smart", "extremely smart"]
     },
 
@@ -132,9 +109,6 @@
             "reg_death": "m_c was killed by a fox."
         },
         "cat_trait": ["daring", "adventurous", "bold", "fierce", "loyal", "lonesome", "troublesome"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -143,11 +117,7 @@
         "death_text": "m_c was bitten by a snake, and succumbed to the venom.",
         "history_text": {
             "reg_death": "m_c was killed by a snake."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -156,10 +126,7 @@
         "history_text": {
             "reg_death": "m_c was killed by a snake, while saving a kit."
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"]
     },
     {
         "camp": "any",
@@ -167,11 +134,7 @@
         "death_text": "m_c went missing, and was found dead out in the territory.",
         "history_text": {
             "reg_death": "m_c went missing, and was found dead."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -180,11 +143,45 @@
         "history_text": {
             "reg_death": "m_c was found dead near the o_c border."
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "multi_death"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "history_text": {
+            "reg_death": "This cat died when o_c tried to break into camp.",
+            "lead_death": "tried to defend the Clan from o_c"
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c died defending the nursery, r_c huddled beneath {PRONOUN/m_c/poss} cooling body.",
+        "history_text": {
+            "reg_death": "m_c died defending r_c from o_c warriors."
+        },
+        "cat_trait": ["vengeful", "bloodthirsty", "loving", "bold", "confident", "daring", "faithful", "fierce", "loyal", "responsible", "righteous"]
     },
     {
         "camp": "any",
@@ -193,10 +190,7 @@
         "history_text": {
             "reg_death": "m_c was killed in a fire while trying to save r_c."
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"]
     },
     {
         "camp": "any",
@@ -204,11 +198,7 @@
         "death_text": "m_c died after catching greencough.",
         "history_text": {
             "reg_death": "m_c died of greencough."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -216,11 +206,7 @@
         "death_text": "m_c died from infected wounds.",
         "history_text": {
             "reg_death": "m_c died from infected wounds."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
 
     {
@@ -230,11 +216,7 @@
         "history_text": {
             "reg_death": "m_c died from eating tainted prey.",
             "lead_death": "ate tainted prey"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -244,10 +226,7 @@
             "reg_death": "m_c drowned alongside a Clanmate.",
             "lead_death": "drowned alongside a Clanmate"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "other_cat_skill": null
+        "other_cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"]
     },
     {
         "camp": "any",
@@ -256,11 +235,7 @@
         "history_text": {
             "reg_death": "m_c was killed by a gang of rogues.",
             "lead_death": "was killed by a gang of rogues"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -269,11 +244,7 @@
         "history_text": {
             "reg_death": "m_c died of greencough.",
             "lead_death": "died of greencough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -282,11 +253,7 @@
         "history_text": {
             "reg_death": "m_c died of yellowcough.",
             "lead_death": "died of yellowcough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -295,10 +262,16 @@
         "history_text": {
             "reg_death": "m_c died of greencough.",
             "lead_death": "died of greencough"
+        }
+    },
+    {
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "camp": "Any",
+        "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of the c_n, and what killed {PRONOUN/m_c/object}.",
+        "history_text": {
+            "reg_death": "Curiosity killed this cat.",
+            "lead_death": "lost a life because of curiosity."
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
     }
 ]

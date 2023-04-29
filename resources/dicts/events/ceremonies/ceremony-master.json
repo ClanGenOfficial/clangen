@@ -697,7 +697,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} called m_c for the first time, p1 and p2's voices can be heard the loudest as the Clan welcomes the new apprentice."
+    "(prefix)kit runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, p1 and p2's voices can be heard the loudest as the Clan welcomes the new apprentice."
   ],
   "app_56": [
     [
@@ -2592,7 +2592,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(mentor)/don't/doesn't) care if there's no leader, (previous_mentor) knows that (prefix)paw is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(mentor)/gather/gathers} the Clan to hold a ceremony for (prefix)paw, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't) care if there's no leader, (previous_mentor) knows that (prefix)paw is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (prefix)paw, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_54": [
     [

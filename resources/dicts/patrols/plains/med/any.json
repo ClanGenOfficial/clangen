@@ -19,6 +19,32 @@
     "max_cats": 1
 },
 {
+    "patrol_id": "pln_med_clair1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": [
+        "herb_gathering",
+        "random_herbs"
+    ],
+    "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random patch of grass {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} on doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional. What could this mean?",
+    "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
+    "chance_of_success": 45,
+    "exp": 10,
+    "success_text": [
+        "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to linger. This might be important for the future, or it could simply be the left-over feelings of an event long past... either way, p_l doesn't stay too long before returning to herb collecting.",
+        "These feelings could prove important, they have in the past, at least. p_l makes {PRONOUN/p_l/self} comfortable on the patch, letting the feelings wash over {PRONOUN/p_l/object} and carry {PRONOUN/p_l/object} away. Eventually {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to herb collecting, content in the new knowledge and understanding {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gained."
+    ],
+    "fail_text": [
+        "This is nothing short of disconcerting. p_l does {PRONOUN/p_l/poss} best to shake off the feeling and hurry away from the area. Even so, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/poss} mind occupied with the memory and can't manage to concentrate on herb gathering."
+    ],
+    "win_trait": ["wise"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "constraints": {
+        "skill": ["clairvoyant"]
+    }
+},
+{
     "patrol_id": "pln_med_herblocation1",
     "biome": "plains",
     "season": "Any",

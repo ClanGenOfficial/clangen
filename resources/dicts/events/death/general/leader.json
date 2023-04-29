@@ -5,11 +5,7 @@
         "death_text": "Lightning struck in camp, and m_c lost a life.",
         "history_text": {
             "lead_death": "were struck by lightning"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -18,10 +14,6 @@
         "history_text": {
             "lead_death": "were wounded by a fox"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": [
             "great fighter", "excellent fighter"
         ]
@@ -33,10 +25,6 @@
         "history_text": {
             "lead_death": "were mauled by a dog"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -46,10 +34,6 @@
         "history_text": {
             "lead_death": "were killed by a badger"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -59,10 +43,6 @@
         "history_text": {
             "lead_death": "fought a rogue"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -71,11 +51,7 @@
         "death_text": "m_c was bit by a venomous spider, and lost a life.",
         "history_text": {
             "lead_death": "were bit by a venomous spider"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -83,11 +59,7 @@
         "death_text": "m_c was bit by a venomous snake, and lost a life.",
         "history_text": {
             "lead_death": "were bit by a venomous snake"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -95,11 +67,7 @@
         "death_text": "m_c ate tainted fresh-kill, and lost a life.",
         "history_text": {
             "lead_death": "ate tainted fresh-kill"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -108,10 +76,6 @@
         "history_text": {
             "lead_death": "failed to interpret a warning from StarClan"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["extremely smart", "very smart", "strong connection to StarClan"]
     },
     {
@@ -122,9 +86,6 @@
             "lead_death": "defended r_c from a dog"
         },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -135,9 +96,6 @@
             "lead_death": "defended r_c from a badger"
         },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -148,9 +106,6 @@
             "lead_death": "defended r_c from a fox"
         },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -160,10 +115,7 @@
         "history_text": {
             "lead_death": "saved r_c from drowning"
         },
-        "cat_trait": ["altruistic", "bold", "compassionate", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "compassionate", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"]
     },
     {
         "camp": "any",
@@ -172,10 +124,7 @@
         "history_text": {
             "lead_death": "saved r_c from a monster"
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"]
     },
     {
         "camp": "any",
@@ -184,10 +133,7 @@
         "history_text": {
             "lead_death": "saved r_c from a snake"
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"]
     },
     {
         "camp": "any",
@@ -197,9 +143,6 @@
             "lead_death": "defended the kits from o_c warriors"
         },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -210,9 +153,6 @@
             "lead_death": "defended r_c from o_c warriors"
         },
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -222,10 +162,6 @@
         "history_text": {
             "lead_death": "fought an apprentice from o_c"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["good fighter", "great fighter", "excellent fighter"]
     },
     {
@@ -236,9 +172,6 @@
             "lead_death": "saved an apprentice from o_c"
         },
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -248,10 +181,6 @@
         "history_text": {
             "lead_death": "fought a warrior from o_c"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -262,9 +191,6 @@
             "lead_death": "saved a warrior from o_c"
         },
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -274,10 +200,6 @@
         "history_text": {
             "lead_death": "fought the o_c leader"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -288,9 +210,6 @@
             "lead_death": "saved the o_c leader"
         },
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -300,10 +219,6 @@
         "history_text": {
             "lead_death": "fought the o_c deputy"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -314,9 +229,6 @@
             "lead_death": "saved the o_c deputy"
         },
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -325,11 +237,7 @@
         "death_text": "m_c lost some lives to their old age.",
         "history_text": {
             "lead_death": "succumbed to old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -337,11 +245,7 @@
         "death_text": "m_c's body just couldn't continue forward - they've lost all of their remaining lives to old age.",
         "history_text": {
             "lead_death": "succumbed to old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -350,10 +254,6 @@
         "history_text": {
             "lead_death": "were brutally attacked by a rogue"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -363,10 +263,6 @@
         "history_text": {
             "lead_death": "were mauled by dogs"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -376,10 +272,7 @@
         "history_text": {
             "lead_death": "were killed in a fire trying to save their Clanmates"
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"]
     },
     {
         "camp": "any",
@@ -388,10 +281,6 @@
         "history_text": {
             "lead_death": "were brutally murdered by a warrior from o_c"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -401,10 +290,6 @@
         "history_text": {
             "lead_death": "were brutally murdered by the leader of o_c"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["excellent fighter"]
     },
     {
@@ -414,10 +299,6 @@
         "history_text": {
             "lead_death": "were brutally murdered by the deputy of o_c"
         },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
@@ -426,11 +307,7 @@
         "death_text": "m_c lost a life to greencough.",
         "history_text": {
             "lead_death": "contracted greencough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -438,11 +315,7 @@
         "death_text": "m_c caught greencough, and died more than once, despite the efforts of StarClan.",
         "history_text": {
             "lead_death": "contracted greencough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -450,11 +323,7 @@
         "death_text": "m_c lost a life to whitecough.",
         "history_text": {
             "lead_death": "contracted whitecough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -462,11 +331,7 @@
         "death_text": "m_c caught whitecough, and died more than once, despite the efforts of StarClan.",
         "history_text": {
             "lead_death": "contracted whitecough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -474,11 +339,7 @@
         "death_text": "m_c lost a life to yellowcough.",
         "history_text": {
             "lead_death": "contracted yellowcough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -486,11 +347,7 @@
         "death_text": "m_c caught yellowcough, and died more than once, despite the efforts of StarClan.",
         "history_text": {
             "lead_death": "contracted yellowcough"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -498,11 +355,7 @@
         "death_text": "m_c lost a life to infected wounds.",
         "history_text": {
             "lead_death": "killed by infected wounds"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -510,11 +363,7 @@
         "death_text": "m_c lost lives to old age, their body slowly becoming more and more frail.",
         "history_text": {
             "lead_death": "died of old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -522,11 +371,7 @@
         "death_text": "m_c collapses in the midst of camp, losing their remaining lives to old age.",
         "history_text": {
             "lead_death": "died of old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -534,11 +379,7 @@
         "death_text": "One day, the deputy finds m_c dead in the leader's den. Seems they lost a life to old age.",
         "history_text": {
             "lead_death": "died of old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -546,11 +387,7 @@
         "death_text": "One day, m_c is found dead in the leader's den, never to rise again. Seems they lost the rest of their lives to old age.",
         "history_text": {
             "lead_death": "died of old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
     {
         "camp": "any",
@@ -558,11 +395,7 @@
         "death_text": "Despite StarClan's efforts, m_c's body just couldn't continue. Their remaining lives were taken by old age.",
         "history_text": {
             "lead_death": "died of old age"
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
+        }
     },
 
     {
@@ -574,9 +407,7 @@
             "lead_murder_unrevealed": "were pushed under a monster"
         },
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "sneaky"],
-        "other_cat_skill": null
+        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "sneaky"]
     },
     {
         "camp": "any",
@@ -586,8 +417,6 @@
             "lead_death": "were murdered by r_c",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
         "other_cat_skill": ["great fighter", "excellent fighter"],
         "cat_negate_skill": ["great fighter", "excellent fighter"]
@@ -601,10 +430,85 @@
             "lead_death": "were murdered by r_c in an attempt to usurp their lead",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
-        "cat_trait": null,
         "cat_skill": ["great fighter", "excellent fighter"],
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
-        "other_cat_skill": null,
         "other_cat_negate_skill": ["extremely smart", "very smart"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war",
+            "other_cat",
+            "other_cat_adult"
+        ],
+        "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c. m_c lost one life.",
+        "history_text": {
+            "reg_death": "m_c was accidentally attacked by m_c in battle.",
+            "lead_death": "{VERB/m_c/were/was} accidentally attacked by r_c in the chaos of battle"
+        },
+        "cat_negate_skill": ["excellent fighter"],
+        "other_cat_trait": ["vengeful", "bloodthirsty", "fierce", "daring", "bold"],
+        "other_cat_skill": ["good fighter", "great fighter"]
+
+    },
+    {
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
+        "camp": "Any",
+        "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
+        "history_text": {
+            "lead_death": "died of old age"
+        }
+    },
+    {
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "camp": "Any",
+        "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of the c_n, and what killed {PRONOUN/m_c/object}.",
+        "history_text": {
+            "lead_death": "became a bit too curious"
+        },
+        "backstory_constraint": ["abandoned1", "abandoned2", "abandoned3"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c died defending the nursery, r_c left hidden beneath {PRONOUN/m_c/poss} cooling body.",
+        "history_text": {
+            "lead_death": "defended r_c from o_c warriors"
+        },
+        "cat_trait": ["vengeful", "bloodthirsty", "loving", "bold", "confident", "daring", "faithful", "fierce", "loyal", "responsible", "righteous"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_warrior",
+            "multi_death"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "history_text": {
+            "reg_death": "This cat died when o_c tried to break into camp.",
+            "lead_death": "tried to defend the Clan from o_c"
+        }
     }
 ]
