@@ -70,7 +70,7 @@ logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
 
 
-prune_logs(logs_to_keep=10, retain_empty_logs=False)
+prune_logs(logs_to_keep=5, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):
@@ -171,8 +171,8 @@ else:
 
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
-        scale(pygame.Rect((1050, 1321), (600, 100))),
-        "Dev Build:",
+        scale(pygame.Rect((990, 1321), (600, 100))),
+        "Disablilty Mod:",
         object_id="#dev_watermark"
     )
 
