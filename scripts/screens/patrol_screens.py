@@ -87,12 +87,6 @@ class PatrolScreen(Screens):
                     self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
                     self.update_selected_cat()
                     self.update_button()
-        
-        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
-            if event.key == pygame.K_LEFT:
-                self.change_screen("starclan screen")
-            elif event.key == pygame.K_RIGHT:
-                self.change_screen('list screen')
 
             # Check if mate cycle buttons are clicked.
             if "cycle_mate_left_button" in self.elements:
@@ -108,6 +102,12 @@ class PatrolScreen(Screens):
                     self.mate = self.selected_cat.mate[self.selected_mate_index]
                     self.update_selected_cat()
                     self.update_button()
+
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_LEFT:
+                self.change_screen("starclan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('list screen')
 
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
@@ -1061,51 +1061,50 @@ class PatrolScreen(Screens):
                                                                           manager=MANAGER)
 
             # Show Cat's Mate, if they have one
-            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice', 'mediator apprentice']:
-                if len(self.selected_cat.mate) > 0:
-                    if self.selected_mate_index > len(self.selected_cat.mate) - 1:
-                        self.selected_mare_index = 0
-                    self.mate = Cat.fetch_cat(self.selected_cat.mate[self.selected_mate_index])
-                    self.elements['mate_frame'] = pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((280, 380), (332, 340))),
-                        self.mate_frame)
-                    self.elements['mate_image'] = pygame_gui.elements.UIImage(
-                        scale(pygame.Rect((300, 400), (200, 200))),
-                        pygame.transform.scale(
-                            self.mate.sprite, (200, 200))
-                        , manager=MANAGER)
-                    # Check for name length
-                    name = str(self.mate.name)  # get name
-                    if 10 <= len(name):  # check name length
-                        short_name = name[0:9]
-                        name = short_name + '..'
-                    self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
-                        scale(pygame.Rect((306, 600), (190, 60))),
-                        name,
-                        object_id=get_text_box_theme())
-                    self.elements['mate_info'] = pygame_gui.elements.UITextBox(
-                        "mate",
-                        scale(pygame.Rect((300, 650), (200, 60))),
-                        object_id=get_text_box_theme("#text_box_22_horizcenter"))
-                    self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
-                                                                 object_id="#patrol_select_button", manager=MANAGER)
-                    # Disable mate_button if the cat is not able to go on a patrol
-                    if self.mate not in self.able_cats:
-                        self.elements['mate_button'].disable()
+            if len(self.selected_cat.mate) > 0:
+                if self.selected_mate_index > len(self.selected_cat.mate) - 1:
+                    self.selected_mate_index = 0
+                self.mate = Cat.fetch_cat(self.selected_cat.mate[self.selected_mate_index])
+                self.elements['mate_frame'] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((280, 380), (332, 340))),
+                    self.mate_frame)
+                self.elements['mate_image'] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((300, 400), (200, 200))),
+                    pygame.transform.scale(
+                        self.mate.sprite, (200, 200))
+                    , manager=MANAGER)
+                # Check for name length
+                name = str(self.mate.name)  # get name
+                if 10 <= len(name):  # check name length
+                    short_name = name[0:9]
+                    name = short_name + '..'
+                self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
+                    scale(pygame.Rect((306, 600), (190, 60))),
+                    name,
+                    object_id=get_text_box_theme())
+                self.elements['mate_info'] = pygame_gui.elements.UITextBox(
+                    "mate",
+                    scale(pygame.Rect((300, 650), (200, 60))),
+                    object_id=get_text_box_theme("#text_box_22_horizcenter"))
+                self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
+                                                             object_id="#patrol_select_button", manager=MANAGER)
+                # Disable mate_button if the cat is not able to go on a patrol
+                if self.mate not in self.able_cats:
+                    self.elements['mate_button'].disable()
 
-                    # Buttons to cycle between mates
-                    if len(self.selected_cat.mate) > 1:
-                        self.elements['cycle_mate_left_button'] = UIImageButton(
-                            scale(pygame.Rect((296, 780), (68, 68))),
-                            "",
-                            object_id="#arrow_left_button",
-                            manager=MANAGER)
-                        self.elements['cycle_mate_right_button'] = UIImageButton(
-                            scale(pygame.Rect((436, 780), (68, 68))),
-                            "",
-                            object_id="#arrow_right_button",
-                            manager=MANAGER)
-                        self.update_button()
+                # Buttons to cycle between mates
+                if len(self.selected_cat.mate) > 1:
+                    self.elements['cycle_mate_left_button'] = UIImageButton(
+                        scale(pygame.Rect((296, 780), (68, 68))),
+                        "",
+                        object_id="#arrow_left_button",
+                        manager=MANAGER)
+                    self.elements['cycle_mate_right_button'] = UIImageButton(
+                        scale(pygame.Rect((436, 780), (68, 68))),
+                        "",
+                        object_id="#arrow_right_button",
+                        manager=MANAGER)
+                    self.update_button()
 
 
             # Draw mentor or apprentice

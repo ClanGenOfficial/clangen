@@ -2,7 +2,7 @@ import random
 import os
 import ujson
 
-from scripts.datadir import get_save_dir
+from scripts.housekeeping.datadir import get_save_dir
 
 from scripts.game_structure.game_essentials import game
 

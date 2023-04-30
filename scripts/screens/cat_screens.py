@@ -6,7 +6,7 @@ from random import choice
 import pygame
 
 from ..cat.history import History
-from ..datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
@@ -923,6 +923,8 @@ class ProfileScreen(Screens):
                 for mate_id in the_cat.mate:
                     if mate_id in Cat.all_cats:
                         mate_ob = Cat.fetch_cat(mate_id)
+                        if not mate_ob:
+                            continue
                         if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
                             prev_mates.append(str(mate_ob.name))
                         else:
@@ -932,6 +934,8 @@ class ProfileScreen(Screens):
                 for prev_mate_id in the_cat.previous_mates:
                     if prev_mate_id in Cat.all_cats:
                         mate_ob = Cat.fetch_cat(prev_mate_id)
+                        if not mate_ob:
+                            continue
                         prev_mates.append(str(mate_ob.name))
                     else:
                         output += 'Error: mate: ' + str(prev_mate_id) + " not found"
@@ -981,16 +985,17 @@ class ProfileScreen(Screens):
         # Only shows up if the cat has a mentor.
         if the_cat.mentor:
             mentor_ob = Cat.fetch_cat(the_cat.mentor)
-            output += "mentor: " + str(mentor_ob.name) + "\n"
+            if mentor_ob:
+                output += "mentor: " + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
-            if app_count == 1:
+            if app_count == 1 and Cat.fetch_cat(the_cat.apprentice[0]):
                 output += 'apprentice: ' + str(Cat.fetch_cat(the_cat.apprentice[0]).name)
             elif app_count > 1:
-                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice])
+                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice if Cat.fetch_cat(i)])
 
             # NEWLINE ----------
             output += "\n"
@@ -1000,13 +1005,13 @@ class ProfileScreen(Screens):
         if len(the_cat.former_apprentices
                ) != 0 and the_cat.former_apprentices[0] is not None:
 
-            if len(the_cat.former_apprentices) == 1:
+            if len(the_cat.former_apprentices) == 1 and Cat.fetch_cat(the_cat.former_apprentices[0]):
                 output += 'former apprentice: ' + str(
                     Cat.fetch_cat(the_cat.former_apprentices[0]).name)
 
             elif len(the_cat.former_apprentices) > 1:
                 output += 'former apprentices: ' + ", ".join(
-                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices])
+                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices if Cat.fetch_cat(i)])
 
             # NEWLINE ----------
             output += "\n"
@@ -1334,7 +1339,7 @@ class ProfileScreen(Screens):
         influence_history = None
 
         if mentor_influence:
-            if mentor_influence["mentor"]:
+            if mentor_influence["mentor"] and Cat.fetch_cat(mentor_influence["mentor"]):
                 mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
                 mentor = None
@@ -1512,6 +1517,8 @@ class ProfileScreen(Screens):
                 name_list = []
 
                 for victim in victims:
+                    if not Cat.fetch_cat(victim["victim"]):
+                        continue 
                     name = str(Cat.fetch_cat(victim["victim"]).name)
 
                     if victim["revealed"]:
@@ -2434,6 +2441,8 @@ class RoleScreen(Screens):
         self.selected_cat_elements = {}
 
         self.the_cat = Cat.fetch_cat(game.switches['cat'])
+        if not self.the_cat:
+            return
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((490, 80), (300, 300))),

@@ -355,8 +355,7 @@ class Patrol():
 
             # there is not such a tag for the current value type, check the next one
             if len(tags) == 0:
-                return False
-
+                continue
 
             # there should be only one value constraint for each value type
             elif len(tags) > 1:
@@ -683,8 +682,6 @@ class Patrol():
                 antagonize_text=patrol["antagonize_text"] if "antagonize_text" in patrol else None,
                 antagonize_fail_text=patrol["antagonize_fail_text"] if "antagonize_fail_text" in patrol else None,
                 history_text=patrol["history_text"] if "history_text" in patrol else [],
-                relationship_constraint=patrol[
-                    "relationship_constraint"] if "relationship_constraint" in patrol else [],
                 constraints=patrol["constraints"] if "constraints" in patrol else {},
                 other_clan=patrol["other_clan"] if "other_clan" in patrol else None
             )
@@ -2072,7 +2069,6 @@ class PatrolEvent:
                  antagonize_text="",
                  antagonize_fail_text="",
                  history_text=None,
-                 relationship_constraint=None,
                  constraints=None,
                  other_clan=None):
         self.patrol_id = patrol_id
@@ -2095,7 +2091,6 @@ class PatrolEvent:
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
         self.other_clan = other_clan
-        self.relationship_constraint = relationship_constraint if relationship_constraint else []
         self.constraints = constraints if constraints else {}
 
 
