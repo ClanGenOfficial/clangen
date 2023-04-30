@@ -21,7 +21,7 @@
         "bloodthirsty": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],
-            "aggression": [11, 16],
+            "aggression": [12, 16],
             "stability": [0, 8]
         },
         "cold": {
@@ -119,6 +119,66 @@
             "sociability": [6, 14],
             "aggression": [0, 5],
             "stability": [9, 16]
+        },
+        "careful": {
+            "lawfulness": [10, 16],
+            "sociability": [4, 12],
+            "aggression": [0, 6],
+            "stability": [10, 16]
+        },
+        "faithful": {
+            "lawfulness": [10, 16],
+            "sociability": [5, 11],
+            "aggression": [0, 6],
+            "stability": [3, 13]
+        },
+        "loving": {
+            "lawfulness": [6, 13],
+            "sociability": [9, 16],
+            "aggression": [0, 8],
+            "stability": [5, 14]
+        },
+        "loyal": {
+            "lawfulness": [10, 16],
+            "sociability": [5, 16],
+            "aggression": [5, 13],
+            "stability": [5, 13]
+        },
+        "responsible": {
+            "lawfulness": [8, 16],
+            "sociability": [5, 16],
+            "aggression": [0, 7],
+            "stability": [4, 10]
+        },
+        "shameless": {
+            "lawfulness": [0, 7],
+            "sociability": [4, 14],
+            "aggression": [7, 12],
+            "stability": [9, 16]
+        },
+        "sneaky": {
+            "lawfulness": [0, 7],
+            "sociability": [0, 7],
+            "aggression": [6, 12],
+            "stability": [8, 16]
+        },
+        "strange": {
+            "lawfulness": [5, 10],
+            "sociability": [0, 8],
+            "aggression": [5, 10],
+            "stability": [5, 10]
+        },
+        "vengeful": {
+            "lawfulness": [0, 7],
+            "sociability": [0, 7],
+            "aggression": [8, 14],
+            "stability": [0, 4]
+        },
+        "wise": {
+            "lawfulness": [8, 16],
+            "sociability": [4, 16],
+            "aggression": [0, 6],
+            "stability": [8, 16]
         }
     },
     "kit_traits": {
