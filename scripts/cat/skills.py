@@ -60,40 +60,45 @@ class CatSkills:
         else:
             self.secondary_skill = None
 
-    def influence_skill(self, status, mentor):
+    def influence_skill(self, the_cat, mentor):
         """
         this function handles mentor influence on the cat's skill
-        :param status: the cat's status
+        :param the_cat: the cat object
         :param mentor: the mentor's cat object
         """
         # non apprentices and mentor-less babies not allowed
-        if "apprentice" not in status or mentor is None:
+        if "apprentice" not in the_cat.status or the_cat.mentor is None:
             return
 
+        influenced = False
         influence_groups = SKILLS["influence_groups"][mentor.skills.primary_path]
         if self.primary_path in influence_groups and self.secondary_path in influence_groups:
+            influenced = True
             if random.randint(1, 2) == 1:
                 self.primary_points += 1
             else:
                 self.secondary_points += 1
         elif self.primary_path in influence_groups:
+            influenced = True
             self.primary_points += 1
         elif self.secondary_path in influence_groups:
+            influenced = True
             self.secondary_points += 1
+        if influenced:
+            the_cat.history.add_mentor_influence(the_cat, mentor)
 
-    def progress_skill(self, status, age, moons, mentor, parent1, parent2):
+
+    def progress_skill(self, the_cat, mentor, parent1, parent2):
         """
         this function should be run every moon for every cat to progress their skills accordingly
-        :param status: the cat's status
-        :param age: the cat's age
-        :param moons: the cat's moon int
+        :param the_cat: the cat object for affected cat
         :param mentor: the cat object for mentor
         :param parent1: the cat object for parent1
         :param parent2: the cat object for parent2
         """
-        if status == 'newborn':
+        if the_cat.status == 'newborn':
             pass
-        elif status == 'kitten':
+        elif the_cat.status == 'kitten':
             # if the the_cat has skills, check if they get any points this moon
             if self.primary_skill and self.secondary_skill:
                 if not int(random.random() * 4):
@@ -130,7 +135,7 @@ class CatSkills:
                 self.primary_tier = 0
                 self.primary_skill = self.secondary_path[self.secondary_tier]
 
-        elif 'apprentice' in status or age == 'adolescent':
+        elif 'apprentice' in the_cat.status or the_cat.age == 'adolescent':
             # try to increase a point in either skill path
             if self.primary_skill and self.secondary_skill:
                 if not int(random.random() * 4):
@@ -149,11 +154,11 @@ class CatSkills:
                     self.secondary_path = mentor.skills.primary_path
                 else:
                     self.secondary_path = random.choice(
-                        [path for path in self.all_paths if path != self.primary_path])
+                        [path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 0
                 self.secondary_skill = self.secondary_path[self.secondary_tier]
 
-        elif age in ['young adult', 'adult', 'senior adult']:
+        elif the_cat.age in ['young adult', 'adult', 'senior adult']:
             # if they haven't specialized yet, then give them a specialization
             if self.primary_tier == 0:
                 if self.primary_skill and self.secondary_skill:
@@ -179,6 +184,7 @@ class CatSkills:
 
                 # refresh the the_cat's skills to match new tier
                 self.update_skill()
+                the_cat.history.add_mentor_influence(self, the_cat, self.primary_skill, self.secondary_skill)
 
             # attempt to add points to the skill:
             elif self.primary_points < 10:
@@ -192,11 +198,12 @@ class CatSkills:
             # check if they need to jump to the next tier
             elif self.primary_points >= 10 and self.primary_tier != 3:
                 self.primary_tier += 1
+                self.primary_points = 0
                 self.update_skill()
 
         else:
             # for old cats, we want to check if the skills start to degrade at all, age is the great equalizer
-            if not int(random.random() * 300 - moons):  # chance increases as the_cat ages
+            if not int(random.random() * 300 - the_cat.moons):  # chance increases as the_cat ages
                 if self.primary_tier != 1:
                     self.primary_tier -= 1
                     self.update_skill()
@@ -222,37 +229,37 @@ class CatSkills:
         if moons == 0:
             pass
         elif status == 'kitten':
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = 0
         elif status == 'apprentice':
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = 0
             if random.randint(1, 2) == 1:
-                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_path = random.choice([path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 0
         elif moons < 50:
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = 1
             if random.randint(1, 3) == 1:
-                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_path = random.choice([path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 1
         elif moons < 100:
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = random.randint(1, 3)
             if random.randint(1, 3) == 1:
-                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_path = random.choice([path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 1
         elif moons < 150:
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = random.randint(2, 3)
             if random.randint(1, 3) == 1:
-                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_path = random.choice([path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 1
         else:
-            self.primary_path = random.choice([path for path in self.all_paths])
+            self.primary_path = random.choice([path for path in self.all_paths if path != 'hidden'])
             self.primary_tier = random.randint(1, 2)
             if random.randint(1, 3) == 1:
-                self.secondary_path = random.choice([path for path in self.all_paths])
+                self.secondary_path = random.choice([path for path in self.all_paths if path not in ['hidden', self.primary_path]])
                 self.secondary_tier = 1
 
         self.update_skill()
@@ -263,7 +270,7 @@ class CatSkills:
         elif self.secondary_skill:
             return [self.primary_skill, self.secondary_skill]
         elif self.hidden_skill:
-            return [self.primary_skill, self.hidden_skill]
+            return [self.primary_skill, None, self.hidden_skill]
         else:
             return [self.primary_skill]
 

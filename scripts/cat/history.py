@@ -159,21 +159,24 @@ class History:
             "moon": game.clan.age
         }
 
-    def add_mentor_influence(self, cat, mentor, skill, trait):
+    def add_mentor_influence(self, cat, mentor=None, skill=None, second_skill=None, trait=None):
         """
         adds mentor influence to the cat's history save
         :param cat: cat object
         :param mentor: the ID of the mentor who influenced the cat
         :param skill: the skill that was given by the mentor
+        :param second_skill: the second skill that was acquired, if there was one
         :param trait: the personality group given by the mentor
         """
         self.check_load(cat)
 
         if mentor:
             mentor = mentor.ID
-            cat.history.mentor_influence["mentor"] = mentor if mentor else None
+            cat.history.mentor_influence["mentor"] = "mentor" if "mentor" in cat.history.mentor_influence else mentor if mentor else None
         if skill:
             cat.history.mentor_influence["skill"] = skill if skill else None
+        if second_skill:
+            cat.history.mentor_influence["second_skill"] = second_skill if second_skill else None
         if trait:
             cat.history.mentor_influence["trait"] = trait if trait else None
 
@@ -181,6 +184,8 @@ class History:
             cat.history.mentor_influence["mentor"] = None
         if "skill" not in cat.history.mentor_influence:
             cat.history.mentor_influence["skill"] = None
+        if "second_skill" not in cat.history.mentor_influence:
+            cat.history.mentor_influence["second_skill"] = None
         if "trait" not in cat.history.mentor_influence:
             cat.history.mentor_influence["trait"] = None
 
@@ -397,6 +402,7 @@ class History:
         "mentor_influence":{
             "mentor": ID
             "skill": skill
+            "second_skill": second skill
             "trait": trait
             },
 

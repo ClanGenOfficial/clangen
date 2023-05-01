@@ -6,7 +6,7 @@
     "fantastic healer": "fantastic healer",
     "good teacher": "good teacher",
     "great teacher": "great teacher",
-    "fantastic teacher": "fantastic teacher",
+    "fantastic teacher": "excellent teacher",
     "good mediator": "good mediator",
     "great mediator": "great mediator",
     "excellent mediator": "skilled mediator",
@@ -15,16 +15,16 @@
     "extremely smart": "incredibly clever",
     "good hunter": "good hunter",
     "great hunter": "great hunter",
-    "fantastic hunter": "fantastic hunter",
+    "fantastic hunter": "renowned hunter",
     "good fighter": "good fighter",
-    "great fighter": "great fighter",
-    "excellent fighter": "formidable fighter",
+    "great fighter": "formidable fighter",
+    "excellent fighter": "unusually strong fighter",
     "good speaker": "good speaker",
     "great speaker": "great speaker",
     "excellent speaker": "eloquent speaker",
     "good storyteller": "good storyteller",
     "great storyteller": "great storyteller",
-    "fantastic storyteller": "fantastic storyteller",
+    "fantastic storyteller": "masterful storyteller",
     "smart tactician": "helpful insight",
     "valuable tactician": "valuable insight",
     "valuable insight": "trusted advisor",
@@ -46,37 +46,37 @@
       "quick to help",
       "good teacher",
       "great teacher",
-      "fantastic teacher"
+      "excellent teacher"
     ],
     "hunter": [
       "moss-ball hunter",
       "good hunter",
       "great hunter",
-      "fantastic hunter"
+      "renowned hunter"
     ],
     "fighter": [
       "avid play-fighter",
       "good fighter",
-      "great fighter",
-      "formidable fighter"
+      "formidable fighter",
+      "unusually strong fighter"
     ],
     "runner": [
       "never sits still",
-      "quick runner",
+      "fast runner",
       "incredible runner",
-      "unbelievably fast"
+      "wind runner"
     ],
     "climber": [
       "constantly climbing",
       "good climber",
       "great climber",
-      "excellent climber"
+      "impressive climber"
     ],
     "swimmer": [
       "splashes in puddles",
       "good swimmer",
       "talented swimmer",
-      "incredible swimmer"
+      "fish-like swimmer"
     ],
     "speaker": [
       "confident with words",
@@ -118,11 +118,11 @@
       "lover of stories",
       "good storyteller",
       "great storyteller",
-      "fantastic storyteller"
+      "masterful storyteller"
     ],
     "lore": [
-      "interested in clan history",
-      "lore listener",
+      "interested in Clan history",
+      "learner of lore",
       "lore keeper",
       "lore master"
     ],
@@ -152,7 +152,7 @@
     ],
     "dream": [
       "restless sleeper",
-      "odd dreams",
+      "strange dreamer",
       "dream walker",
       "dream shaper"
     ],
@@ -191,7 +191,8 @@
       "swimmer",
       "speaker",
       "mediator",
-      "storyteller",
+      "kit",
+      "story",
       "camp",
       "healer",
       "lore"
