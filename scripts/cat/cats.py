@@ -575,6 +575,8 @@ class Cat():
         self.exiled = True
         self.outside = True
         self.status = 'exiled'
+        self.injuries.clear()
+        self.illnesses.clear()
         if self.trait == 'vengeful':
             self.thought = "Swears their revenge for being exiled"
         else:
@@ -1877,7 +1879,12 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
+        # remove the ID_conditions.json if the cat has no conditions or is dead
+        # remove injuries/illnesses if cat is outside
+        if self.outside or self.dead:
+            self.injuries.clear()
+            self.illnesses.clear()
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
