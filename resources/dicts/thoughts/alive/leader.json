@@ -97,6 +97,17 @@
             "strange"
         ]
     }
+    ,
+    {
+        "id": "charismatic_leader",
+        "thoughts": [
+            "Gives a particularly rousing speech at a Clan meeting",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    }
 ]
 
 
