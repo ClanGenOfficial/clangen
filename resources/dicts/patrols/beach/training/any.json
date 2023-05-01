@@ -12,7 +12,7 @@
             "minor_injury",
             "warrior"
         ],
-        "intro_text": "The patrol wants to hold a training session for app1. {PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to focus on how best to navigate the rocky tide pools.",
+        "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
         "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "exp": 20,
@@ -66,23 +66,23 @@
             "patrol_to_p_l",
             "patrol_to_r_c"
         ],
-        "intro_text": "Trailing behind the patrol, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object}} and the world goes dark.",
+        "intro_text": "Trailing behind the patrol, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}} .",
-            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}} .",
-            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}} .",
-            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}} ."
+            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}.",
+            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}.",
+            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}.",
+            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/s_c/object} calm as the patrol carefully digs down to {PRONOUN/s_c/object}."
         ],
         "fail_text": [
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-            "Even though s_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} , and blame r_c. r_c denies it and says {PRONOUN/r_c/subject} should get s_c back to camp to get {PRONOUN/r_c/poss} injury looked at."
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at.",
+            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at."
         ],
         "win_skills": [
             "very smart",
@@ -138,15 +138,15 @@
             "patrol_to_p_l",
             "patrol_to_r_c"
         ],
-        "intro_text": "Trailing behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object}} and the world goes dark.",
+        "intro_text": "Trailing behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation."
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
         ],
         "fail_text": [
             "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
@@ -209,15 +209,15 @@
             "patrol_to_p_l",
             "patrol_to_r_c"
         ],
-        "intro_text": "Trailing behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object}} and the world goes dark.",
+        "intro_text": "Trailing behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}} . r_c blinks up at {PRONOUN/r_c/object}} , holding on to {PRONOUN/r_c/poss} presence in the scary situation."
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation."
         ],
         "fail_text": [
             "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
@@ -273,14 +273,14 @@
             "scar",
             "ONE"
         ],
-        "intro_text": "r_c is training alone out on the coast when suddenly, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing on shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object}} and the world goes dark.",
+        "intro_text": "r_c is training alone out on the coast when suddenly, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing on shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}} , but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
+            "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
             null,
-            "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}} , but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
+            "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
             null
         ],
         "fail_text": [
@@ -363,7 +363,7 @@
             "training",
             "warrior"
         ],
-        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self} .",
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
@@ -412,7 +412,7 @@
             "training",
             "deputy"
         ],
-        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self} .",
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
@@ -461,7 +461,7 @@
             "training",
             "leader"
         ],
-        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self} .",
+        "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
@@ -782,18 +782,18 @@
             "comfort",
             "no_app"
         ],
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object}} ?",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object} ?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/haves} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
         ],
         "fail_text": [
-            "r_c spots p_l looking at {PRONOUN/r_c/object}} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
+            "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
         ],
         "win_skills": [
             "fantastic hunter"
@@ -825,15 +825,15 @@
             "comfort",
             "no_app"
         ],
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object}} ?",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object} ?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/haves} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self} . s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so.",
+            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
         ],
         "fail_text": [
             "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off."
@@ -874,10 +874,10 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches} , quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder.",
-            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches} , quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder.",
+            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches}, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder.",
+            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches}, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder.",
             null,
-            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches} , quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder."
+            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches}, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder."
         ],
         "fail_text": [
             "They continue on their way, not stopping to see the sights."
