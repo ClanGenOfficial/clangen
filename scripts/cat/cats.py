@@ -1879,8 +1879,8 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        # remove the ID_conditions.json if the cat has no conditions or is dead
-        # remove injuries/illnesses if cat is outside
+        # remove the ID_conditions.json if the cat has no conditions
+        # remove injuries/illnesses if cat is outside/dead
         if self.outside or self.dead:
             self.injuries.clear()
             self.illnesses.clear()
