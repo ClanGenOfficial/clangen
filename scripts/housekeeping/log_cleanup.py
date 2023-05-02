@@ -1,6 +1,6 @@
 import os
 
-from scripts.datadir import get_log_dir
+from scripts.housekeeping.datadir import get_log_dir
 
 
 def prune_logs(logs_to_keep: int, retain_empty_logs: bool):

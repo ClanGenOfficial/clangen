@@ -118,6 +118,13 @@ class OutsideClanScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
 
     def get_living_cats(self):
         self.living_cats = []
@@ -433,6 +440,15 @@ class UnknownResScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.search_bar.is_focused:
+                return
+            if event.key == pygame.K_LEFT:
+                self.change_screen("clan screen")
+            elif event.key == pygame.K_RIGHT:
+                self.change_screen('patrol screen')
+
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -462,8 +478,7 @@ class UnknownResScreen(Screens):
     def get_dead_cats(self):
         self.dead_cats = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.faded \
-            and (the_cat.outside):
+            if the_cat.ID in game.clan.unknown_cats:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
