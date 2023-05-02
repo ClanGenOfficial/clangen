@@ -199,10 +199,10 @@ class History:
                     "be slow to anger", "avoid a fight", "use words over teeth and claws", "try to avoid violence"
                 ],
                 "stability_raise": [
-                    "stay collected", "think things through"
+                    "stay collected", "think things through", "be resilient", "have a positive outlook", "be consistent", "adapt easily"
                 ],
                 "stability_lower": [
-                    "behave erratically", "make impulsive decisions"
+                    "behave erratically", "make impulsive decisions", "have trouble adapting", "dwell on things"
                 ]
             }
         
