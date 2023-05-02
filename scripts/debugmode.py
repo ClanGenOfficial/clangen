@@ -10,7 +10,7 @@ from scripts.utility import get_text_box_theme
 class debugConsole(pygame_gui.windows.UIConsoleWindow):
     def __init__(self, rect, manager, debug_class):
         self.debug_class = debug_class
-        super().__init__(rect, manager)
+        super().__init__(rect, manager, window_title="Debug Console", object_id="#debug_console", visible=0)
     
     def process_event(self, event):
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
@@ -20,31 +20,35 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 
 
             if command == "help":
-                print("Available commands:")
-                print("help")
-                print("toggle <setting>")
-                print("set <setting> <value>")
+                self.add_output_line_to_log("Available commands:")
+                self.add_output_line_to_log("help")
+                self.add_output_line_to_log("toggle <setting>")
+                self.add_output_line_to_log("set <setting> <value>")
+                self.add_output_line_to_log("")
+                self.add_output_line_to_log("Available settings:")
+                for setting in self.debug_class.settings:
+                    self.add_output_line_to_log(setting)
 
             if command == "toggle":
                 for arg in args:
                     if arg in self.debug_class.settings:
                         self.debug_class.settings[arg] = not self.debug_class.settings[arg]
-                        print(f"{arg} {'enabled' if self.debug_class.settings[arg] else 'disabled'}")
+                        self.add_output_line_to_log(f"{arg} {'enabled' if self.debug_class.settings[arg] else 'disabled'}")
                     else:
-                        print(f"Unknown setting {arg}")
+                        self.add_output_line_to_log(f"Unknown setting {arg}")
 
             if command == "set":
                 if len(args) == 2:
                     if args[0] in self.debug_class.settings:
                         try:
                             self.debug_class.settings[args[0]] = literal_eval(args[1])
-                            print(f"{args[0]} set to {args[1]}")
+                            self.add_output_line_to_log(f"{args[0]} set to {args[1]}")
                         except:
-                            print(f"Invalid value {args[1]}")
+                            self.add_output_line_to_log(f"Invalid value {args[1]}")
                     else:
-                        print(f"Unknown setting {args[0]}")
+                        self.add_output_line_to_log(f"Unknown setting {args[0]}")
                 else:
-                    print("Invalid syntax")
+                    self.add_output_line_to_log("Invalid syntax")
         
         return super().process_event(event)
 
@@ -75,9 +79,8 @@ class debugMode:
 
 
 
-        self.console = debugConsole(pygame.Rect((0, 0), (400, 400)), MANAGER, self)
+        self.console = debugConsole(pygame.Rect((0, 0), (1600, 300)), MANAGER, self)
 
-        self.console.hide()
 
         self.coords_display.text_colour = (255, 0, 0)
         self.coords_display.disable()
