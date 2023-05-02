@@ -260,7 +260,17 @@ class GenerateEvents:
         major = []
         severe = []
 
+        if war and random.randint(1, 10) != 1 and other_clan == enemy_clan:
+            war_event = True
+        else:
+            war_event = False
+
         for event in possible_events:
+
+            if war_event and ("war" not in event.tags and "hostile" not in event.tags):
+                continue
+            if not war and "war" in event.tags:
+                continue
 
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
@@ -340,7 +350,7 @@ class GenerateEvents:
             if "old_age" in event.tags and cat.moons < 150:
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
-            if "old_age" not in event.tags and cat.moons < 150:
+            if "old_age" not in event.tags and cat.moons > 150:
                 if not int(random.random() * 2):
                     continue
 
@@ -452,8 +462,6 @@ class GenerateEvents:
                     final_events = severe
                 print(cat.status, severity_chosen[0])
 
-        if murder:
-            print(final_events)
         return final_events
 
     def possible_ongoing_events(self, event_type=None, specific_event=None):

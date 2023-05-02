@@ -164,9 +164,7 @@ scripts/__pycache__/**
 .vscode/**
 
 .vscode/launch.json
-.idea/clan_gen_working.iml
-.idea/misc.xml
-.idea/workspace.xml
+.idea/
 
 
 saves/currentclan.txt

@@ -1241,9 +1241,9 @@
             "newborn": 3,
             "kitten": 5,
             "adolescent": 25,
-            "young adult": 40,
-            "adult": 40,
-            "senior adult": 30,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 25,
             "senior": 10
         },
         "illness_infectiousness": [

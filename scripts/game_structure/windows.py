@@ -12,15 +12,15 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
-from scripts.datadir import get_save_dir, get_cache_dir
+from scripts.housekeeping.datadir import get_save_dir, get_cache_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
-from scripts.progress_bar_updater import UIUpdateProgressBar
-from scripts.update import self_update, UpdateChannel, get_latest_version_number
+from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
+from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
 from scripts.utility import scale, quit, update_sprite
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.version import get_version_info
+from scripts.housekeeping.version import get_version_info
 
 
 class SaveCheck(UIWindow):

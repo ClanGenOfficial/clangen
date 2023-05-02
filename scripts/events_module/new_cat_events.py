@@ -29,7 +29,10 @@ class NewCatEvents:
         """ 
         This function handles the new cats
         """
-        other_clan = random.choice(game.clan.all_clans)
+        if war:
+            other_clan = enemy_clan
+        else:
+            other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
         if other_clan_name == 'None':
@@ -203,17 +206,12 @@ class NewCatEvents:
                         injury = random.choice(major_injuries)
                         new_cat.get_injured(injury)
 
-        # handle other clan shenanigans
-        if "war" in new_cat_event.tags and other_clan is not None and enemy_clan is not None:
-            other_clan = enemy_clan
-            other_clan_name = other_clan.name + "clan"
-
         if "rel_down" in new_cat_event.tags:
-            difference = -5
+            difference = -1
             change_clan_relations(other_clan, difference=difference)
 
         elif "rel_up" in new_cat_event.tags:
-            difference = 5
+            difference = 1
             change_clan_relations(other_clan, difference=difference)
 
         event_text = event_text_adjust(Cat, new_cat_event.event_text, cat, other_cat, other_clan_name,

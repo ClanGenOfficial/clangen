@@ -147,6 +147,44 @@
     },
     {
         "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "multi_death"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "history_text": {
+            "reg_death": "This cat died when o_c tried to break into camp.",
+            "lead_death": "tried to defend the Clan from o_c"
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
+        ],
+        "death_text": "o_c attempted to break into the camp. m_c died defending the nursery, r_c huddled beneath {PRONOUN/m_c/poss} cooling body.",
+        "history_text": {
+            "reg_death": "m_c died defending r_c from o_c warriors."
+        },
+        "cat_trait": ["vengeful", "bloodthirsty", "loving", "bold", "confident", "daring", "faithful", "fierce", "loyal", "responsible", "righteous"]
+    },
+    {
+        "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "platonic", "neg_dislike", "trust", "respect"],
         "death_text": "m_c was burnt alive while trying to save r_c from a fire.",
         "history_text": {
@@ -227,22 +265,6 @@
         }
     },
     {
-        "camp": "any",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "war",
-            "other_cat"
-        ],
-        "death_text": "In the chaos of battle and the throes of a war, it's nearly impossible to tell friend from foe. Blinded by blood, r_c accidentally kills m_c.",
-        "history_text": [
-            "m_c was accidentally killed by r_c in battle.",
-            "was accidentally killed by r_c in the chaos of battle."
-        ]
-    },
-    {
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "camp": "Any",
         "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of the c_n, and what killed {PRONOUN/m_c/object}.",
@@ -313,7 +335,6 @@
         "death_text": "When traveling together near the border of c_n territory, m_c used their own body to shield r_c from a surprise o_c ambush, even though it meant certain death.",
         "history_text": [
             "m_c sacrificed themself for r_c in an ambush.",
-            "sacrificed themself for r_c in an ambush."
-        ]
+            "sacrificed themself for r_c in an ambush."]
     }
 ]    

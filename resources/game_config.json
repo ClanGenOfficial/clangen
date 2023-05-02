@@ -246,6 +246,16 @@
 		"vit_chance": 10,
 		"random_point_chance": 6
 	},
+	"cat_name_controls": {
+		"always_name_after_appearance": false,
+		"allow_eye_names": true,
+		"comment": [
+			"Set always_name_after_appearance to true if you always want cats named after the color of their pelt.",
+			"This overrides the chances of it otherwise. If cats can't find a pelt color, they will choose from normal_prefixes",
+			"So as not to cause an error - false by default",
+			"allow_eye_names allows cats to be named after the color of their eyes - true by default"
+		]
+	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
 		"med_modifier": -80,
@@ -308,15 +318,18 @@
 		"old_age_death_chance": 51,
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
-		"cruel season_death_chance": 300
+		"cruel season_death_chance": 300,
+		"war_death_modifier_leader": 95,
+		"war_death_modifier": 250
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,
 		"cruel season_illness_chance": 200,
 		"classic_injury_chance": 250,
 		"expanded_injury_chance": 200,
-		"cruel season_death_chance": 150,
-		"permanent_condition_chance": 20
+		"cruel season_injury_chance": 150,
+		"permanent_condition_chance": 20,
+		"war_injury_modifier": 100
 	},
 	"clan_creation": {
 		"rerolls": 3,
