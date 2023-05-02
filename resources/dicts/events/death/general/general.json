@@ -315,5 +315,44 @@
             "m_c sacrificed themself for r_c in an ambush.",
             "sacrificed themself for r_c in an ambush."
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "death_text": "m_c sacrificed themselves by taking on the role of a messenger, delivering important information that could save their Clan. They were killed while investigating enemy territory.",
+        "history_text": [
+            "m_c was killed investigating enemy territory.",
+            "was killed investigating enemy territory."
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "death_text": "m_c drowned in a river while trying to escape from a sudden o_c attack.",
+        "history_text": {
+            "reg_death": "m_c drowned in a river attempting to escape an enemy attack.",
+            "lead_death": "drowned in a river attempting to escape an enemy attack."}
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "death_text": "m_c fell into a pit trap set by o_c's warriors.",
+        "history_text": {
+            "reg_death": "m_c fell into a pit trap set by an enemy Clan.",
+            "lead_death": "fell into a pit trap set by an enemy Clan."}
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "death_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c warriors.",
+        "history_text": {
+            "reg_death": "m_c was hit by a monster.",
+            "lead_death": "was hit by a monster."}
     }
 ]    
