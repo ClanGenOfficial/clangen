@@ -68,5 +68,16 @@
         "main_trait_constraint": [
             "strange"
         ]
+    },
+    {  
+        "id":"insecure_deputy",
+        "thoughts": [
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right",
+            "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
+            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place"
+        ],
+        "main_trait_constraint":[
+            "insecure"
+        ]
     }
 ]

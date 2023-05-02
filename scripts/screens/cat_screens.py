@@ -6,7 +6,7 @@ from random import choice
 import pygame
 
 from ..cat.history import History
-from ..datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
