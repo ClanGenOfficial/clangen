@@ -70,6 +70,14 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
             elif command == "understandrisks":
                 self.add_output_line_to_log("You have disabled the warning for the eval command. Any code you run is your responsibility.")
                 self.accepted_eval_warning = True
+        
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_TAB:
+            cmds = ["help", "toggle", "set", "eval", "understandrisks"]
+            if len(self.command_entry.text) != 0:
+                for cmd in cmds:
+                    if cmd.startswith(self.command_entry.text):
+                        self.command_entry.set_text(f"{cmd}")
+                        break
 
         
         return super().process_event(event)
