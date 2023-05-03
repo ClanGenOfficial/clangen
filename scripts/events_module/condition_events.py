@@ -510,8 +510,6 @@ class Condition_Events():
                 triggered = True
                 scar_given = None
 
-                self.history.remove_possible_death_or_scars(cat, injury)
-
                 # only try to give a scar if the event gave possible scar history
                 if self.history.get_possible_death_or_scars(cat, injury, scar=True):
                     event, scar_given = self.scar_events.handle_scars(cat, injury)
@@ -528,7 +526,8 @@ class Condition_Events():
                         event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
-
+                    
+                self.history.remove_possible_death_or_scars(cat, injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
 
