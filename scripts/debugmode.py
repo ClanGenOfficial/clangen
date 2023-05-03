@@ -18,6 +18,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
             args = command[1:]
             command = command[0]
 
+            # TODO: Use a switch statement here once we phase out python 3.7
 
             if command == "help":
                 self.add_output_line_to_log("Available commands:")
@@ -29,7 +30,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 for setting in self.debug_class.settings:
                     self.add_output_line_to_log(setting)
 
-            if command == "toggle":
+            elif command == "toggle":
                 for arg in args:
                     if arg in self.debug_class.settings:
                         self.debug_class.settings[arg] = not self.debug_class.settings[arg]
@@ -37,7 +38,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                     else:
                         self.add_output_line_to_log(f"Unknown setting {arg}")
 
-            if command == "set":
+            elif command == "set":
                 if len(args) == 2:
                     if args[0] in self.debug_class.settings:
                         try:
