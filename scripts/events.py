@@ -1628,7 +1628,7 @@ class Events():
         # check if clan has kits, if True then clan has kits
         alive_kits = get_alive_kits(Cat)
 
-        # chance to kill leader: 1/100
+        # chance to kill leader: 1/125 by default
         if not int(random.random() * game.config["death_related"]["leader_death_chance"]) \
                 and cat.status == 'leader' \
                 and not cat.not_working():
