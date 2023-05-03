@@ -1,44 +1,618 @@
 from __future__ import annotations
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Union,
+    Dict,
+    Tuple,
+    List,
+    MutableSet
+)
+from numpy import random as nrandom
 from random import choice, randint, sample
-from typing import Dict, List, Any
 import random
 import os.path
 import itertools
-
-from .history import History
-from ..housekeeping.datadir import get_save_dir
-from ..events_module.generate_events import GenerateEvents
-
 import ujson
-
-from .pelts import describe_appearance
-from .names import Name, names
-from .appearance_utility import (
-    init_pelt,
-    init_tint,
-    init_sprite,
-    init_scars,
-    init_accessories,
-    init_white_patches,
-    init_eyes,
-    init_pattern,
-)
-from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
-    medical_cats_condition_fulfilled
 import bisect
 import pygame
 
-from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite, \
-    leader_ceremony_text_adjust
-from scripts.game_structure.game_essentials import game, screen
-from scripts.cat_relations.relationship import Relationship
-from scripts.game_structure import image_cache
-from scripts.event_class import Single_Event
+from .names import Name, names
+from .history import History
+from .sprites import Sprites
+from .pelts import (
+    Pelt, 
+    describe_appearance, 
+    choose_pelt,
+    black_colours,
+    blue_eyes,
+    brown_colours,
+    choose_pelt,
+    colour_categories,
+    exotic,
+    eye_colours,
+    ginger_colours,
+    green_eyes,
+    high_white,
+    little_white,
+    mid_white,
+    mostly_white,
+    pelt_categories,
+    pelt_length,
+    plain,
+    plant_accessories,
+    point_markings,
+    scars1,
+    scars3,
+    skin_sprites,
+    spotted,
+    tabbies,
+    tortiebases,
+    torties,
+    vit,
+    white_colours,
+    wild_accessories,
+    yellow_eyes,
+    pelt_colours,
+    tortiepatterns,
+)
+
+from .. import utility
+
+from ..housekeeping.datadir import get_save_dir
+from ..events_module.generate_events import GenerateEvents
+
+from ..conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
+    medical_cats_condition_fulfilled
+
+from ..game_structure.game_essentials import game, screen
+from ..cat_relations.relationship import Relationship
+from ..game_structure import image_cache
+from ..event_class import Single_Event
 from .thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance, RelationType
+from ..cat_relations.inheritance import Inheritance, RelationType
+
+MISSING = 0
 
 
-class Cat():
+class Appearance(object):
+    __slots__ = (
+        "ref",
+    )
+
+    @classmethod
+    def from_cat(cls, cat: Cat, /, chances: List[int] = None) -> Appearance:
+        """Return Appearance obj that has called Appearance.expand on itself"""
+        obj = cls(cat)
+        obj.expand(chances=chances)
+        return obj
+    
+    
+    def __init__(self, refer: Cat, /) -> None:
+        self.ref = refer
+
+
+    def fix(cat: Union[Appearance, Cat], /) -> bool:
+        """Attempt to correct any logic errors in Cat. Returns True if any changes were made"""
+        changed = False
+        if isinstance(cat, Appearance):
+            cat = cat.ref
+
+        if 'NOTAIL' in cat.scars and 'HALFTAIL' in cat.scars:
+            cat.scars.remove('HALFTAIL')
+            changed = True
+ 
+
+    def expand(cat: Union[Appearance, Cat], /, chances: List[int] = None) -> None:
+        """Generate the sprite configuration for a Cat obj"""
+        if isinstance(cat, Appearance):
+            cat = cat.ref
+        all_cats = cat.all_cats
+        par1, par2 = cat.birth_parents
+        par1 = all_cats[par1] if par1 in all_cats else None
+        par2 = all_cats[par2] if par2 in all_cats else None
+        birth_parents = (par1, par2)
+        
+        chances   = chances or cat.generate_chances(29, 1, 1000000)
+        cat_stage = (
+            0 if cat.age in ['kitten', 'adolescent'] else
+            1 if cat.age in ['young adult', 'adult'] else
+            2 
+        )
+
+        #region init_pelt
+        if cat.pelt is None:
+            if par1 or par2:
+                Appearance.pelt_inheritance(cat, birth_parents)
+            else:
+                Appearance.randomize_pelt(cat)
+        #endregion
+
+        #region init_sprite
+        if cat.cat_sprites == cat.default_cat_sprites:
+            cat.cat_sprites = {
+                'newborn':    20,
+                'kitten':     int(chances[0] % 3),
+                'adolescent': int(chances[1] % 3 + 3),
+                'senior':     int(chances[2] % 3 + 12),
+                'sick_young': 19,
+                'sick_adult': 18
+            }
+            cat.reverse = bool(chances[3] % 2)
+            cat.skin = skin_sprites[chances[4] % len(skin_sprites)]
+            if cat.pelt.length != 'long':
+                cat.cat_sprites['adult'] = int(chances[5] % 3 + 6)
+                cat.cat_sprites['para_adult'] = 16
+            else:
+                cat.cat_sprites['adult'] = int(chances[5] % 3 + 9)
+                cat.cat_sprites['para_adult'] = 15
+            cat.cat_sprites['young adult'] = cat.cat_sprites['adult']
+            cat.cat_sprites['senior adult'] = cat.cat_sprites['adult']
+        #endregion
+
+        #region init_scars
+        if not cat.scars:
+            if cat.age != 'newborn':
+                if cat_stage == 0:
+                    scar_choice = chances[6] % 50
+                elif cat_stage == 1:
+                    scar_choice = chances[6] % 20
+                else:
+                    scar_choice = chances[6] % 15
+                if scar_choice == 0:
+                    if chances[7] % 2:
+                        cat.scars.append(scars1[chances[9] % len(scars1)])
+                    else:
+                        cat.scars.append(scars3[chances[9] % len(scars3)])
+        #endregion
+
+        #region init_accessories
+        if getattr(cat, "acc_display", MISSING) != MISSING:
+            if cat_stage == 0:
+                acc_display_choice = chances[8] % 15
+            elif cat_stage == 1:    
+                acc_display_choice = chances[8] % 50
+            else:
+                acc_display_choice = chances[8] % 35
+            if acc_display_choice == 0:
+                if chances[9] % 2:
+                    cat.acc_display = plant_accessories[chances[10] % len(plant_accessories)]
+                else:
+                    cat.acc_display = wild_accessories[chances[10] % len(wild_accessories)]
+            else:
+                cat.acc_display = None
+        #endregion
+
+        #region init_white_patches
+        if cat.vitiligo is None:
+            par_vit = [p.vitiligo for p in birth_parents if hasattr(p, "vitiligo")]
+            
+            vit_chance = max(game.config["cat_generation"]["vit_chance"] - len(par_vit), 0)
+            if not chances[11] % (1 << vit_chance):
+                cat.vitiligo = vit[chances[12] % len(vit)]
+
+        if (cat.white_patches or cat.points) is None:
+            if cat.pelt.white: # If the cat was rolled previously to have white patches, then determine the patch they will have these functions also handle points. 
+                if par1 or par2:
+                    Appearance.white_patches_inheritance(cat, birth_parents)
+                else:
+                    Appearance.randomize_white_patches(cat)
+        #endregion
+
+        #region init_eyes
+        if not cat.eye_colour:
+            eye_colour = eye_colours[chances[13] % len(eye_colours)]
+            eye_chance = chances[14] % 3
+            if eye_chance == 0:
+                cat.eye_colour = getattr(par1, "eye_colour", eye_colour)
+            elif eye_chance == 1:
+                cat.eye_colour = getattr(par2, "eye_colour", getattr(par1, "eye_colour", eye_colour))
+            else:
+                cat.eye_colour = eye_colour
+            hetchrome = game.config["cat_generation"]["base_heterochromia"]
+            if cat.white_patches in [high_white, mostly_white, 'FULLWHITE'] or cat.pelt.colour == 'WHITE':
+                hetchrome = hetchrome - 90
+
+            qualifiers = (
+                cat.white_patches == 'FULLWHITE' or cat.pelt.colour == 'WHITE',
+                getattr(par1, "eye_colour2", None) is not None, getattr(par2, "eye_colour2", None) is not None
+            )
+            if any(qualifiers):
+                hetchrome = (hetchrome - 10 * sum(qualifiers)) + 1
+
+            if hetchrome <= 0 or chances[15] % hetchrome == 0:
+                if cat.eye_colour in yellow_eyes:
+                    eye_choice = [blue_eyes, green_eyes]
+                elif cat.eye_colour in blue_eyes:
+                    eye_choice = [yellow_eyes, green_eyes]
+                elif cat.eye_colour in green_eyes:
+                    eye_choice = [yellow_eyes, blue_eyes]
+                eye_choice = eye_choice[chances[16] % 2]
+                cat.eye_colour2 = eye_choice[chances[17] % len(eye_choice)]
+        #endregion
+
+        #region init_pattern
+        if cat.tortiecolour is None or cat.tortiebase is None or cat.pattern is None:
+            if cat.pelt.name in torties:
+                wildcard_chance = (1 << game.config["cat_generation"]["wildcard_tortie"]) # This is the "wildcard" chance, where you can get funky combinations
+                wildcard_chance = (1 << 0)
+                if not cat.tortiebase:
+                    cat.tortiebase = tortiebases[chances[18] % len(tortiebases)]
+                if not cat.pattern:
+                    cat.pattern = tortiepatterns[chances[19] % len(tortiepatterns)]
+
+                if cat.pelt.colour:
+                    if chances[20] % wildcard_chance == 0:
+                        cat.tortiepattern = tortiebases[chances[21] % len(tortiebases)]
+
+                        possible_colors = pelt_colours.copy()
+                        possible_colors.remove(cat.pelt.colour)
+                        cat.tortiecolour  = possible_colors[chances[22] % len(possible_colors)]
+                    else:
+                        if cat.tortiebase in ['singlestripe', 'smoke', 'single']: # Normal generation
+                            cat.tortiepattern = ['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti', 'ticked'][chances[23] % 7]
+                        else:
+                            cat.tortiepattern = 'single' if chances[23] % 100 < 3 else cat.tortiebase
+
+                        if cat.pelt.colour == 'WHITE':
+                            cat.pelt.colour = white_colours[1 + chances[24] % (len(white_colours)-1)]
+
+                        if (cat.pelt.colour in black_colours) or (cat.pelt.colour in white_colours): # Ginger is often duplicated to increase its chances
+                            tortiecolour = (ginger_colours * 2) + brown_colours
+                            cat.tortiecolour = tortiecolour[chances[25] % len(tortiecolour)]
+                        elif cat.pelt.colour in ginger_colours:
+                            tortiecolour = brown_colours + black_colours * 2
+                            cat.tortiecolour = tortiecolour[chances[25] % len(tortiecolour)]
+                        elif cat.pelt.colour in brown_colours:
+                            possible_colors = brown_colours.copy()
+                            possible_colors.remove(cat.pelt.colour)
+                            possible_colors.extend(black_colours + (ginger_colours * 2))
+                            cat.tortiecolour = possible_colors[chances[25] % len(possible_colors)]
+                        else:
+                            cat.tortiecolour = "GOLDEN"
+
+                else:
+                    cat.tortiecolour = "GOLDEN"
+            else:
+                cat.tortiebase = None
+                cat.tortiepattern = None
+                cat.tortiecolour = None
+                cat.pattern = None
+        #endregion
+
+        #region init_tint #TODO optimise init_tint
+        if cat.tint is None: # BASIC TINT
+            if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+                color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
+                color_tints = Sprites.cat_tints["possible_tints"][color_group]
+            else:
+                color_tints = []
+
+            base_tints = Sprites.cat_tints["possible_tints"]["basic"]
+            
+            if base_tints or color_tints:
+                tint = base_tints + color_tints
+                cat.tint = tint[chances[26] % len(tint)]
+            else:
+                cat.tint = "none"
+        if cat.white_patches_tint is None: # WHITE PATCHES TINT
+            if cat.white_patches or cat.points:
+                #Now for white patches
+                base_tints = Sprites.white_patches_tints["possible_tints"]["basic"]
+                if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+                    color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
+                    color_tints = Sprites.white_patches_tints["possible_tints"][color_group]
+                else:
+                    color_tints = []
+                
+                if base_tints or color_tints:
+                    white_patches_tint = base_tints + color_tints
+                    cat.white_patches_tint = white_patches_tint[chances[27] % len(white_patches_tint)]
+                else:
+                    cat.white_patches_tint = "none"    
+            else:
+                cat.white_patches_tint = "none"
+        if cat.eye_tint is None: # EYE TINT
+            base_tints = Sprites.eye_tints["possible_tints"]["basic"]
+            if cat.eye_colour in Sprites.eye_tints["colour_groups"]:
+                color_group = Sprites.eye_tints["colour_groups"][cat.eye_colour]
+                color_tints = Sprites.eye_tints["possible_tints"][color_group]
+                
+                #If this cat has a second eye color... 
+                if cat.eye_colour2 and cat.eye_colour2 in Sprites.eye_tints["colour_groups"]:
+                    color_group = Sprites.eye_tints["colour_groups"][cat.eye_colour2]
+                    _color_tints2 = set(Sprites.eye_tints["possible_tints"][color_group])
+                    
+                    color_tints = list(_color_tints2.intersection(set(color_tints)))
+            else:
+                color_tints = []
+            
+            if base_tints or color_tints:
+                eye_tint = base_tints + color_tints
+                cat.eye_tint = eye_tint[chances[28] % len(eye_tint)]
+            else:
+                cat.eye_tint = "none"
+        #endregion
+
+        Appearance.fix(cat)
+
+    @staticmethod
+    def white_patches_inheritance(cat: Cat, birth_parents: Tuple[Cat, Cat], /, chances: List[int] = None) -> None:
+        chances = chances or cat.generate_chances(5)
+        par_whitepatches = {None}
+        par_points = []
+        for p in birth_parents:
+            if p:
+                if p.white_patches:
+                    par_whitepatches.add(p.white_patches)
+                if p.points:
+                    par_points.append(p.points)
+
+        pelt_name = cat.pelt.name
+        
+        # Direct inheritance will only work if at least one parent has white patches, otherwise continue on.
+        if par_whitepatches and not chances[0] % (game.config["cat_generation"]["direct_inheritance"]+1):
+            # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
+            if pelt_name == "Tortie":
+                _temp = [
+                    w for w in list(par_whitepatches) if not (w in high_white or w in mostly_white or w == "FULLWHITE")
+                ]
+            elif pelt_name == "Calico":
+                _temp = [
+                    w for w in list(par_whitepatches) if not (w in little_white or w in mid_white)
+                ]
+            else:
+                _temp = False
+            if _temp: # Only proceed with the direct inheritance if there are white patches that match the pelt.
+                cat.white_patches = _temp[chances[1] % len(_temp)]
+                if par_points and pelt_name != "Tortie": # Direct inheritance also effect the point marking.
+                    cat.points = par_points[chances[2] % len(par_points)]
+                else:
+                    cat.points = None
+                return
+
+        chance = 10 - len(par_points) if par_points else 40
+        if cat.pelt != "Tortie" and not ((chances[1] % 1000) * chance):
+            cat.points = point_markings[chances[2] % len(point_markings)]
+        else:
+            cat.points = None
+
+        white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
+        weights = []  # Same order as white_list
+        for p_ in par_whitepatches:
+            if p_ in little_white:
+                weights.extend((40, 20, 15, 5, 0))
+            elif p_ in mid_white:
+                weights.extend((10, 40, 15, 10, 0))
+            elif p_ in high_white:
+                weights.extend((15, 20, 40, 10, 1))
+            elif p_ in mostly_white:
+                weights.extend((5, 15, 20, 40, 5))
+            elif p_ == "FULLWHITE":
+                weights.extend((0, 5, 15, 40, 10))
+        weights = [sum(weights[i::5]) for i in range(5)]
+
+        if weights == [0, 0, 0, 0, 0]:
+            if not all(birth_parents):  # If any of the parents are None (unknown), use the following distribution:
+                weights = [20, 10, 10, 5, 0]
+            else:
+                # Otherwise, all parents are known and don't have any white patches. Focus distribution on little_white.
+                weights = [50, 5, 0, 0, 0]
+        if pelt_name == "Tortie": # Adjust weights for torties, since they can't have anything greater than mid_white
+            weights[2:] = [0, 0, 0]
+            if weights == [0, 0, 0, 0, 0]:
+                weights = [2, 1, 0, 0, 0]
+        elif pelt_name == "Calico":
+            weights[:2] = [0, 0, 0] 
+            if weights == [0, 0, 0, 0, 0]:
+                weights = [2, 1, 0, 0, 0]
+
+        chosen_white_patches = cat.rng(chances[3]).choices(white_list, weights=weights, k=1)[0]
+        chosen_white_patches = chosen_white_patches[chances[4] % len(chosen_white_patches)]
+
+        if cat.points and chosen_white_patches in [high_white, mostly_white, 'FULLWHITE']:
+            cat.points = None
+        cat.white_patches = chosen_white_patches
+
+    @staticmethod
+    def pelt_inheritance(cat: Cat, birth_parents: Tuple[Cat, Cat], /, chances: List[int] = None) -> None:
+        #We are using a set, since we don't need this to be ordered, and sets deal with removing duplicates.
+        chances = chances or cat.generate_chances(9)
+        par_peltlength:  MutableSet[str] = {None}
+        par_peltcolours: MutableSet[str] = {None}
+        par_peltnames:   MutableSet[str] = {None}
+        par_pelts:       List[Pelt]      = []
+        par_white:       List[bool]      = []
+
+        for i, parent in enumerate(birth_parents):
+            if parent:
+                par_peltcolours.add(parent.pelt.colour)
+                par_peltlength.add(parent.pelt.length)
+                if parent.pelt.name in torties:
+                    par_peltnames.add(parent.tortiebase.capitalize())
+                else:
+                    par_peltnames.add(parent.pelt.name)
+                par_pelts.append(parent.pelt)
+                par_white.append(parent.pelt.white)
+            else:
+                par_white.append(bool(chances[0+i] % 2))
+
+        if not par_peltcolours:
+            Appearance.randomize_pelt(cat)
+            return
+        if not chances[2] % game.config["cat_generation"]["direct_inheritance"]:
+            selected = par_pelts[chances[3] % len(par_pelts)]
+            cat.pelt = choose_pelt(cat, selected.colour, selected.white, selected.name, selected.length)
+            return
+        rng = cat.rng(chances[3])
+        
+        weights = [] # (tabbies, spotted, plain, exotic)
+        for p_ in par_peltnames:
+            if p_ in tabbies:
+                weights.extend((50, 10, 5, 7))
+            elif p_ in spotted:
+                weights.extend((10, 50, 5, 5))
+            elif p_ in plain:
+                weights.extend((5, 5, 50, 0))
+            elif p_ in exotic:
+                weights.extend((15, 15, 1, 45))
+            elif p_ is None:
+                weights.extend((35, 20, 30, 15))
+        weights = [sum(weights[i::4]) for i in range(4)] + [0,]
+        if not any(weights):
+            weights = (1, 1, 1, 1, 0)
+
+        chosen_pelt = rng.choices(pelt_categories, weights)[0]
+        chosen_pelt = chosen_pelt[chances[4] % len(chosen_pelt)]
+
+        tortie_chance_f = game.config["cat_generation"]["base_female_tortie"]
+        tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
+        for p_ in par_pelts:
+            if p_.name in torties:
+                tortie_chance_f = int(tortie_chance_f / 2)
+                tortie_chance_m = tortie_chance_m - 1
+                break
+        if cat.gender == "female":
+            torbie = chances[5] % (1 << tortie_chance_f)
+        else:
+            torbie = chances[5] % (1 << tortie_chance_m)
+
+        if torbie == 0:
+            if chosen_pelt in ["TwoColour", "SingleColour"]:
+                chosen_tortie_base = "single"
+            else:
+                chosen_tortie_base = chosen_pelt.lower()
+            chosen_pelt = torties[chances[6] % len(torties)]
+        else:
+            chosen_tortie_base = None
+
+        weights = [] # (ginger_colours, black_colours, white_colours, brown_colours)
+        for p_ in par_peltcolours:
+            if p_ in ginger_colours:
+                weights.extend((40, 0, 0, 10))
+            elif p_ in black_colours:
+                weights.extend((0, 40, 2, 5))
+            elif p_ in white_colours:
+                weights.extend((0, 5, 40, 0))
+            elif p_ in brown_colours:
+                weights.extend((10, 5, 0, 35))
+            elif p_ is None:
+                weights.extend((40, 40, 40, 40))
+        weights = [sum(weights[i::4]) for i in range(4)]
+        if not any(weights):
+            weights = (1, 1, 1, 1)
+
+        chosen_pelt_color = rng.choices(colour_categories, weights)[0]
+        chosen_pelt_color = chosen_pelt_color[chances[7] % len(chosen_pelt_color)]
+
+        weights = [] # (short, medium, long)
+        for p_ in par_peltlength:
+            if p_ == "short":
+                weights.extend((50, 10, 2))
+            elif p_ == "medium":
+                weights.extend((25, 50, 25))
+            elif p_ == "long":
+                weights.extend((2, 10, 50))
+            elif p_ is None:
+                weights.extend((10, 10, 10))
+        weights = [sum(weights[i::3]) for i in range(3)]
+        if not any(weights):
+            weights = (1, 1, 1)
+
+        chosen_pelt_length = rng.choices(pelt_length, weights)[0]
+        # There is 94 percentage points that can be added by parents having white. If we have more than two, this will keep that the same.
+        percentage_add_per_parent = int(94 / len(par_white))
+        chance = 3
+        for p_ in par_white:
+            if p_:
+                chance = chance + percentage_add_per_parent
+
+        chosen_white = (chances[8] % 100) < chance
+        if chosen_white:
+            if chosen_pelt == "SingleColour":
+                chosen_pelt = "TwoColour"
+        else:
+            if chosen_pelt == "TwoColour":
+                chosen_pelt = "SingleColour"
+            elif chosen_pelt == "Calico":
+                chosen_pelt = "Tortie"
+
+        cat.pelt = choose_pelt(cat, chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
+        cat.tortiebase = chosen_tortie_base  
+
+    @staticmethod
+    def randomize_white_patches(cat: Cat, /, seed: int = None) -> None:
+        seed = seed or cat.seed
+        if cat.pelt.name != "Tortie" and not seed % (1 << game.config["cat_generation"]["random_point_chance"]):
+            cat.points = point_markings[seed % len(point_markings)]
+        else:
+            cat.points = None
+        # Adjust weights for torties, since they can't have anything greater than mid_white:
+        if cat.pelt.name == "Tortie":
+            weights = (2, 1, 0, 0, 0)
+        elif cat.pelt.name == "Calico":
+            weights = (0, 0, 20, 15, 1)
+        else:
+            weights = (10, 10, 10, 10, 1)
+
+        white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
+        chosen_white_patches = cat.rng(seed).choices(white_list, weights=weights, k=1)[0]
+        chosen_white_patches = chosen_white_patches[seed % len(chosen_white_patches)]
+
+        if cat.points and chosen_white_patches in [high_white, mostly_white, 'FULLWHITE']:
+            cat.points = None
+        cat.white_patches = chosen_white_patches
+
+    @staticmethod
+    def randomize_pelt(cat: Cat, /, seed: int = None) -> None:
+        seed = seed or cat.seed
+        rng = cat.rng(seed)
+        chosen_pelt = rng.choices(pelt_categories, weights=(35, 20, 30, 15, 0), k=1)[0]
+        chosen_pelt = chosen_pelt[seed % len(chosen_pelt)]
+
+        # Tortie chance
+        # There is a default chance for female tortie, slightly increased for completely random generation.
+        tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
+        tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
+        if cat.gender == "female":
+            torbie = seed % (1 << tortie_chance_f)
+        else:
+            torbie = seed % (1 << tortie_chance_m)
+
+        chosen_tortie_base = None
+        if torbie == 0:
+            # If it is tortie, the chosen pelt above becomes the base pelt.
+            if chosen_pelt in ["TwoColour", "SingleColour"]:
+                chosen_tortie_base = "single"
+            else:
+                chosen_tortie_base = chosen_pelt.lower()
+            chosen_pelt = torties[seed % len(torties)]
+        else:
+            chosen_tortie_base = None
+
+        chosen_pelt_color = rng.choices(colour_categories, k=1)[0]
+        chosen_pelt_color = chosen_pelt_color[seed % len(chosen_pelt_color)]
+        
+
+        chosen_pelt_length = pelt_length[seed % len(pelt_length)]
+        chosen_white = (seed % 100) < 40
+
+        # Adjustments to pelt chosen based on if the pelt has white in it or not.
+        if chosen_pelt in ["TwoColour", "SingleColour"]:
+            if chosen_white:
+                chosen_pelt = "TwoColour"
+            else:
+                chosen_white = "SingleColour"
+        elif chosen_pelt == "Calico":
+            if not chosen_white:
+                chosen_pelt = "Tortie"
+
+        cat.pelt = choose_pelt(cat, chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
+        cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
+
+
+
+class Cat(object):
     dead_cats = []
     used_screen = screen
     traits = [
@@ -64,21 +638,28 @@ class Cat():
         'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
                      'strange', 'daydreamer', 'quiet'],
     }
-    ages = [
-        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
-        'senior'
-    ]
     age_moons = {
-        'newborn': game.config["cat_ages"]["newborn"],
-        'kitten': game.config["cat_ages"]["kitten"],
-        'adolescent': game.config["cat_ages"]["adolescent"],
-        'young adult': game.config["cat_ages"]["young adult"],
-        'adult': game.config["cat_ages"]["adult"],
+        'newborn':      game.config["cat_ages"]["newborn"],
+        'kitten':       game.config["cat_ages"]["kitten"],
+        'adolescent':   game.config["cat_ages"]["adolescent"],
+        'young adult':  game.config["cat_ages"]["young adult"],
+        'adult':        game.config["cat_ages"]["adult"],
         'senior adult': game.config["cat_ages"]["senior adult"],
-        'senior': game.config["cat_ages"]["senior"]
+        'senior':       game.config["cat_ages"]["senior"]
     }
+    ages = [
+        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'senior'
+    ]
+    infant_ages = [
+        'newborn', 'kitten'
+    ]
+    adolescent_ages = [
+        'apprentice', 'mediator apprentice', 'medicine cat apprentice'
+    ]
+    adult_ages = [
+        'young adult', 'adult', 'adult', 'senior adult'
+    ]
 
-    # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
         "newborn",
         "kitten",
@@ -93,7 +674,11 @@ class Cat():
         "leader"
     ]
 
-    gender_tags = {'female': 'F', 'male': 'M'}
+    gender_tags = {
+        'female': 'F', 
+        'male': 'M'
+    }
+    genders = list(gender_tags)
 
     skills = [
         'good hunter', 'great hunter', 'fantastic hunter', 'smart',
@@ -194,359 +779,379 @@ class Cat():
         }
     ]
 
+    default_cat_sprites = {
+        "newborn": 20,
+        "kitten": None,
+        "adolescent": None,
+        "young adult": None,
+        "adult": None,
+        "senior adult": None,
+        "senior": None,
+        "para_young": 17,
+        "para_adult": None,
+        "sick_adult": 18,
+        "sick_young": 19
+    }
 
-    all_cats: Dict[str, Cat] = {}  # ID: object
-    outside_cats: Dict[str, Cat] = {}  # cats outside the clan
-    id_iter = itertools.count()
 
-    all_cats_list: List[Cat] = []
+    all_cats:         Dict[int, Cat] = {} 
+    all_cats_reverse: Dict[Cat, int] = {}
+    all_cats_list:    List[Cat]      = []
+
+    outside_cats:     Dict[str, Cat] = {}
+    dead_cats = []
+
+    next_id = itertools.count()
 
     grief_strings = {}
 
-    def __init__(self,
-                 prefix=None,
-                 gender=None,
-                 status="newborn",
-                 backstory="clanborn",
-                 parent1=None,
-                 parent2=None,
-                 pelt=None,
-                 eye_colour=None,
-                 suffix=None,
-                 specsuffix_hidden=False,
+    @property
+    def parent1(self, /):
+        return self.birth_parents[0]
+    @parent1.setter
+    def parent1(self, __value: Any, /):
+        self.birth_parents[0] = __value
+
+    @property
+    def parent2(self, /):
+        return self.birth_parents[1]
+    @parent2.setter
+    def parent2(self, __value: Any, /):
+        self.birth_parents[1] = __value
+
+    @property
+    def adoptive_parents(self, /):
+        adoptive = []
+        for parent in self.parents:
+            if parent not in self.birth_parents and parent is not None:
+                adoptive.append(parent)
+        return adoptive
+    
+    @property
+    def prefix(self, /):
+        if isinstance(self.name, tuple):
+            return self.name[0]
+    @property
+    def suffix(self, /):
+        if isinstance(self.name, tuple):
+            return self.name[1]
+
+    @property
+    def mentor(self, /):
+        """Return managed attribute '__mentor', which is the ID of the cat's mentor."""
+        return self.__mentor
+    @mentor.setter
+    def mentor(self, mentor_id: Any, /):
+        """Makes sure Cat.mentor can only be None (no mentor) or a int (mentor ID)."""
+        if mentor_id is None or mentor_id in self.all_cats:
+            self.__mentor = mentor_id
+        else:
+            print(f"Mentor ID {mentor_id} of type {type(mentor_id)} isn't valid :("
+                  "\nCat.mentor has to be either None (no mentor) or the mentor's ID as a string.")
+            
+    def rng(self, seed: int = None, /) -> random.Random:
+        return random.Random(int(seed or self.seed))
+    
+    def generate_chances(self: Union[Cat, int], /, size: int = 10, low: int = 1, high: int = 1000000) -> List[int]:
+        try:
+            return list(nrandom.RandomState(self.seed).randint(low, high, size=(size,)))
+        except AttributeError:
+            return list(nrandom.RandomState(int(self)).randint(low, high, size=(size,)))
+            
+    def __str__(self, /) -> str:
+        return self.ID
+    def __repr__(self, /) -> str:
+        return f"<Cat{self.ID}>"
+
+    def __init__(self, /,
                  ID=None,
-                 moons=None,
+                 seed=None,
+                 name=None,
+                 prefix: str = None, #here to ensure nothing breaks much
+                 suffix: str = None, #here to ensure nothing breaks much
+                 gender =None,
+                 pronouns=None,
+                 status ="newborn",
+                 backstory="clanborn",
+                 moons: float = .0,
+                 skill = None,
+                 trait = None,
+                 birth_parents = (None, None),
+                 parents = [None, None],
+                 parent1 = None, #here to ensure nothing breaks much
+                 parent2 = None, #here to ensure nothing breaks much
+                 df = False,
+                 pelt: Pelt = None,
+                 eye_colour = None,
+
+                 biome = None,
+
+                 specsuffix_hidden=False,
                  example=False,
                  faded=False,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
-                 **kwargs
                  ):
 
-        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
-        self.history_class = History()
-        if faded:
-            self.ID = ID
-            self.name = Name(status, prefix=prefix, suffix=suffix)
-            self.parent1 = None
-            self.parent2 = None
-            self.adoptive_parents = []
-            self.mate = []
-            self.status = status
-            self.moons = moons
-            if "df" in kwargs:
-                self.df = kwargs["df"]
-            else:
-                self.df = False
-            if moons > 300:
-                # Out of range, always elder
-                self.age = 'senior'
-            else:
-                # In range
-                for key_age in self.age_moons.keys():
-                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
-                        self.age = key_age
+        self.__mentor     = None
+        self.__experience = None
+        self.__moons      = None
 
-            self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
+        self.ID               = ID
+        self.seed             = seed or randint(0, 7e8)
+        self.name             = (prefix, suffix) if prefix or suffix else name
+        self.pronouns         = pronouns or [self.default_pronouns[0].copy()]
+        self.genderalign      = None
+        self.gender           = gender
+        self.g_tag            = None
+        self.status           = status
+        self.backstory        = backstory
+        self.age              = None
+        self.moons            = moons
+        self.experience_level = None
+        self.thought          = ""
+        self.skill            = skill
+        self.trait            = trait
+        self.birth_parents    = (parent1, parent2) if parent1 or parent2 else birth_parents
+        self.parents          = parents
 
-            return
-
-        self.generate_events = GenerateEvents()
-
-        # Private attributes
-        self._mentor = None  # plz
-        self._experience = None
-        self._moons = None
-
-        # Public attributes
-        self.gender = gender
-        self.status = status
-        self.backstory = backstory
-        self.age = None
-        self.skill = None
-        self.trait = None
-        self.parent1 = parent1
-        self.parent2 = parent2
-        self.adoptive_parents = []
-        self.pelt = pelt
-        self.tint = None
+        self.looks              = None
+        self.pelt               = pelt
+        self.tint               = None
+        self.pattern            = None
+        self.tortiepattern      = None
+        self.tortiebase         = None
+        self.tortiecolour       = None
+        self.eye_colour         = eye_colour
+        self.eye_colour2        = None
+        self.eye_tint           = None
+        self.white_patches      = None
         self.white_patches_tint = None
-        self.eye_colour = eye_colour
-        self.eye_colour2 = None
-        self.eye_tint = None
+        self.vitiligo           = None
+        self.points             = None
+        self.skin               = None
+        self.accessory = None
         self.scars = []
-        self.former_mentor = []
-        self.patrol_with_mentor = 0
+
         self.apprentice = []
         self.former_apprentices = []
-        self.relationships = {}
+        self.former_mentor = []
+        self.patrol_with_mentor = 0
+
         self.mate = []
         self.previous_mates = []
-        self.pronouns = [self.default_pronouns[0].copy()]
-        self.placement = None
-        self.example = example
-        self.dead = False
-        self.exiled = False
-        self.outside = False
-        self.dead_for = 0  # moons
-        self.thought = ''
-        self.genderalign = None
-        self.tortiebase = None
-        self.pattern = None
-        self.tortiepattern = None
-        self.tortiecolour = None
-        self.white_patches = None
-        self.vitiligo = None
-        self.points = None
-        self.accessory = None
-        self.birth_cooldown = 0
+        self.relationships = {}
         self.siblings = []
         self.children = []
+        self.no_kits = False
+
+        self.retired = False
+        self.paralyzed = False
+
+        self.leader_death_heal = None
+        self.birth_cooldown = 0
+        self.permanent_condition = {}
+        self.healed_condition = None
         self.illnesses = {}
         self.injuries = {}
-        self.healed_condition = None
-        self.leader_death_heal = None
-        self.also_got = False
-        self.permanent_condition = {}
-        self.retired = False
-        self.df = False
-        self.experience_level = None
-        self.no_kits = False
-        self.paralyzed = False
-        self.cat_sprites = {
-            "newborn": 20,
-            "kitten": None,
-            "adolescent": None,
-            "young adult": None,
-            "adult": None,
-            "senior adult": None,
-            "senior": None,
-            "para_young": 17,
-            "para_adult": None,
-            "sick_adult": 18,
-            "sick_young": 19
-        }
 
-        self.opacity = 100
-        self.prevent_fading = False  # Prevents a cat from fading.
-        self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
+        self.biome = biome or getattr(game.clan, "biome", None)
+        self.outside = False
+        self.exiled = False
+        self.dead     = False
+        self.dead_for = 0
 
-        self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
-        # the next save.
-
-        self.favourite = False
-
-        self.specsuffix_hidden = specsuffix_hidden
+        self.history_class = History()
+        self.history = None
+        self.generate_events = GenerateEvents()
         self.inheritance = None
 
-        self.history = None
+        self.df = df
+        self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until the next save
+        self.faded_offspring = []
+        self.prevent_fading = False
+        self.opacity = 100
 
-        # setting ID
-        if ID is None:
-            potential_id = str(next(Cat.id_iter))
+        self.loading_cat = loading_cat
+        self.also_got = False
+        self.example = example
+        self.placement = None
+        self.in_camp = 1
+        self.reverse = None
 
-            if game.clan:
-                faded_cats = game.clan.faded_ids
-            else:
-                faded_cats = []
+        self.favourite = False
+        self.specsuffix_hidden = specsuffix_hidden
 
-            while potential_id in self.all_cats or potential_id in faded_cats:
-                potential_id = str(next(Cat.id_iter))
-            self.ID = potential_id
+        self.cat_sprites = self.default_cat_sprites.copy()
+        self._sprite = None
+
+        if faded:
+            self.set_faded()
+
+        if not isinstance(ID, int):
+            try:
+                ID = int(ID)
+            except TypeError:
+                ID = next(self.next_id)
+                
+        while ID is None or ID < 0 or ID in self.all_cats:
+            ID = next(self.next_id)
+        self.ID = str(ID) #temporary so i can find all the places where the ID datatype matters
+
+        chances = self.generate_chances(100)
+        self.expand(chances=chances)
+
+        if self not in self.all_cats_reverse:
+            self.all_cats[self.ID]      = self
+            self.all_cats_reverse[self] = self.ID
         else:
-            self.ID = ID
+            self.ID = self.all_cats_reverse[self]
+            self.all_cats[self.ID]      = self
+            self.all_cats_reverse[self] = self.ID
 
-        # age and status
-        if status is None and moons is None:
-            self.age = choice(self.ages)
-        elif moons is not None:
-            self.moons = moons
-            if moons > 300:
-                # Out of range, always elder
-                self.age = 'senior'
-            elif moons == 0:
-                self.age = 'newborn'
-            else:
-                # In range
-                for key_age in self.age_moons.keys():
-                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+        if self.ID is not None and self.ID != 0:
+            Cat.insert_cat(self)
+
+    def expand(self: Cat, /, chances: List[int] = None):
+        chances = chances or self.generate_chances(100)
+        status  = self.status
+        moons   = self.moons
+        name    = self.name
+        pelt    = self.pelt
+
+        if isinstance(name, tuple):
+            prefix, suffix = name
+        else:
+            prefix, suffix = (None, None)
+
+        if status is None:
+            if moons is None:
+                self.age = self.ages[chances[2] % len(self.ages)]
+                lower_age, upper_age = self.age_moons[self.age]
+                self.moons = float(lower_age + chances[3] % (upper_age - lower_age + 1))
+            elif 0 < moons < 301:
+                for key_age in self.age_moons:
+                    lower_age, upper_age = self.age_moons[key_age]
+                    if lower_age <= moons <= upper_age:
                         self.age = key_age
+                        break
+            else:
+                self.age = 'newborn' if moons == 0 else 'senior'
         else:
-            if status == 'newborn':
-                self.age = 'newborn'
-            elif status == 'kitten':
-                self.age = 'kitten'
+            if status in self.infant_ages:
+                self.age = status
             elif status == 'elder':
                 self.age = 'senior'
-            elif status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
+            elif status in self.adolescent_ages:
                 self.age = 'adolescent'
             else:
-                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
-            self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+                self.age = self.adult_ages[chances[2] % len(self.adult_ages)]
 
-        # personality trait and skill
-        if self.trait is None:
-            if self.status not in ['newborn', 'kitten']:
-                self.trait = choice(self.traits)
+            lower_age, upper_age = self.age_moons[self.age]
+            if lower_age != upper_age:
+                self.moons = float(lower_age + chances[3] % (upper_age - lower_age + 1))
             else:
-                self.trait = choice(self.kit_traits)
+                self.moons = lower_age
 
+        if self.trait is None:
+            if self.status not in self.infant_ages:
+                self.trait = self.traits[chances[4] % len(self.traits)]
+            else:
+                self.trait = self.kit_traits[chances[4] % len(self.kit_traits)]
         if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
-            self.trait = choice(self.traits)
+            self.trait = self.kit_traits[chances[4] % len(self.kit_traits)]
 
         if self.skill is None or self.skill == '???':
             if self.moons <= 11:
                 self.skill = '???'
             elif self.status == 'warrior':
-                self.skill = choice(self.skills)
+                self.skill = self.skills[chances[5] % len(self.skills)]
             elif self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
-                self.skill = choice(self.elder_skills)
+                self.skill = self.elder_skills[chances[5] % len(self.elder_skills)]
             elif self.status == 'medicine cat':
-                self.skill = choice(self.med_skills)
+                self.skill = self.med_skills[chances[5] % len(self.med_skills)]
             else:
-                self.skill = choice(self.skills)
+                self.skill = self.skills[chances[5] % len(self.skills)]
 
-        # backstory
-        if self.backstory == None:
+        if self.backstory is None:
             if self.skill == 'formerly a loner':
-                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
-                self.backstory = backstory
+                self.backstory = ['loner1', 'loner2', 'rogue1', 'rogue2'][chances[6] % 4]
             elif self.skill == 'formerly a kittypet':
-                backstory = choice(['kittypet1', 'kittypet2'])
-                self.backstory = backstory
+                self.backstory = ['kittypet1', 'kittypet2'][chances[6] % 2]
             else:
                 self.backstory = 'clanborn'
-        else:
-            self.backstory = self.backstory
 
-        # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
-        self.g_tag = self.gender_tags[self.gender]
-
-        # These things should only run when generating a new cat, rather than loading one in.
-        if not loading_cat:
-            # trans cat chances
-            trans_chance = randint(0, 50)
-            nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
-                if trans_chance == 1:
-                    self.genderalign = "trans male"
-                elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
-                else:
-                    self.genderalign = self.gender
-            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
-                if trans_chance == 1:
-                    self.genderalign = "trans female"
-                elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
-                else:
-                    self.genderalign = self.gender
+            self.gender = self.genders[chances[1] % len(self.genders)]
+        if self.gender in ["female", "male"] and not self.status in self.infant_ages:
+            if chances[7] % 50 == 0:
+                self.genderalign = "trans %s" % self.gender
+            elif chances[7] % 75 == 0:
+                self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-                
-            """if self.genderalign in ["female", "trans female"]:
-                self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = [self.default_pronouns[2].copy()]"""
-
-            # setting up sprites that might not be correct
-            if self.pelt is not None:
-                if self.pelt.length == 'long':
-                    if self.cat_sprites['adult'] not in [9, 10, 11]:
-                        self.cat_sprites['adult'] = choice([9, 10, 11])
-                        self.cat_sprites['young adult'] = self.cat_sprites['adult']
-                        self.cat_sprites['senior adult'] = self.cat_sprites['adult']
-                        self.cat_sprites['para_adult'] = 16
-                else:
-                    self.cat_sprites['para_adult'] = 15
-
-            # APPEARANCE
-            init_pelt(self)
-            init_sprite(self)
-            init_scars(self)
-            init_accessories(self)
-            init_white_patches(self)
-            init_eyes(self)
-            init_pattern(self)
-            init_tint(self)
-
-            # experience and current patrol status
-            if self.age in ['young', 'newborn']:
-                self.experience = 0
-            elif self.age in ['adolescent']:
-                m = self.moons
-                self.experience = 0
-                while m > Cat.age_moons['adolescent'][0]:
-                    ran = game.config["graduation"]["base_app_timeskip_ex"]
-                    exp = random.choice(
-                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
-                    self.experience += exp + 3
-                    m -= 1
-            elif self.age in ['young adult', 'adult']:
-                self.experience = randint(Cat.experience_levels_range["prepared"][0],
-                                          Cat.experience_levels_range["proficient"][1])
-            elif self.age in ['senior adult']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                          Cat.experience_levels_range["expert"][1])
-            elif self.age in ['senior']:
-                self.experience = randint(Cat.experience_levels_range["competent"][0],
-                                          Cat.experience_levels_range["master"][1])
-            else:
-                self.experience = 0
-
-        # In camp status
-        self.in_camp = 1
-        if "biome" in kwargs:
-            biome = kwargs["biome"]
-        elif game.clan is not None:
-            biome = game.clan.biome
         else:
-            biome = None
-        # NAME
-        # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
+            self.genderalign = self.gender
+        self.g_tag = self.gender_tags[self.gender]
+            
+        """if self.genderalign in ["female", "trans female"]:
+            self.pronouns = [self.default_pronouns[1].copy()]
+        elif self.genderalign in ["male", "trans male"]:
+            self.pronouns = [self.default_pronouns[2].copy()]"""
+
+        if pelt is not None:
+            if pelt.length == 'long':
+                if self.cat_sprites['adult'] not in [9, 10, 11]:
+                    adult_chance =  9 + chances[8] % 3
+                    self.cat_sprites['adult']        = adult_chance
+                    self.cat_sprites['young adult']  = adult_chance
+                    self.cat_sprites['senior adult'] = adult_chance
+                    self.cat_sprites['para_adult']   = 16
+            else:
+                self.cat_sprites['para_adult'] = 15
+
+        if self.age in ['young', 'newborn']:
+            self.experience = 0
+        elif self.age in ['adolescent']:
+            self.experience = 0
+
+            while moons > Cat.age_moons['adolescent'][0]:
+                ran = game.config["graduation"]["base_app_timeskip_ex"]
+                exp = list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1))
+                exp = exp[chances[9] % len(exp)]
+                self.experience = self.experience + exp + 3
+                moons = moons - 1
+        elif self.age in ['young adult', 'adult']:
+            lower, upper = Cat.experience_levels_range["prepared"][0], Cat.experience_levels_range["proficient"][1]
+            diff = (upper - lower)
+            self.experience = lower + chances[10] % diff
+        elif self.age in ['senior adult']:
+            lower, upper = Cat.experience_levels_range["competent"][0], Cat.experience_levels_range["expert"][1]
+            diff = (upper - lower)
+            self.experience = lower + chances[10] % diff
+        elif self.age in ['senior']:
+            lower, upper = Cat.experience_levels_range["competent"][0], Cat.experience_levels_range["master"][1]
+            diff = (upper - lower)
+            self.experience = lower + chances[10] % diff
+        else:
+            self.experience = 0
+
+        if self.looks is None:
+            self.looks = Appearance.from_cat(self)
+
         if self.pelt is not None:
+            pelt = self.pelt
             self.name = Name(status,
                              prefix,
                              suffix,
-                             self.pelt.colour,
+                             pelt.colour,
                              self.eye_colour,
-                             self.pelt.name,
+                             pelt.__class__.__name__,
                              self.tortiepattern,
-                             biome=biome,
+                             biome=self.biome,
                              specsuffix_hidden=self.specsuffix_hidden,
-                             load_existing_name = loading_cat)
+                             load_existing_name = self.loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
-
-        # Private Sprite
-        self._sprite = None
-
-        # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
-        self.all_cats[self.ID] = self
-
-        if self.ID not in ["0", None]:
-            Cat.insert_cat(self)
-
-    def __repr__(self):
-        return self.ID
-
-    @property
-    def mentor(self):
-        """Return managed attribute '_mentor', which is the ID of the cat's mentor."""
-        return self._mentor
-
-    @mentor.setter
-    def mentor(self, mentor_id: Any):
-        """Makes sure Cat.mentor can only be None (no mentor) or a string (mentor ID)."""
-        if mentor_id is None or isinstance(mentor_id, str):
-            self._mentor = mentor_id
-        else:
-            print(f"Mentor ID {mentor_id} of type {type(mentor_id)} isn't valid :("
-                  "\nCat.mentor has to be either None (no mentor) or the mentor's ID as a string.")
-
-    def is_alive(self):
-        return not self.dead
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = self.loading_cat)
 
     def die(self, body: bool = True):
         """
@@ -561,8 +1166,7 @@ class Cat():
         """
         self.injuries.clear()
         self.illnesses.clear()
-        # print('DEATH', self.name)
-        # Deal with leader death
+
         text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
@@ -729,7 +1333,7 @@ class Cat():
                 # adjust and append text to grief string list
                 # print(text)
                 text = ' '.join(text)
-                text = event_text_adjust(Cat, text, self, cat)
+                text = utility.event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
                 possible_strings.clear()
                 text = None
@@ -1206,7 +1810,7 @@ class Cat():
         chosen_intro = random.choice(possible_intros)
         if chosen_intro:
             intro = random.choice(chosen_intro["text"])
-            intro = leader_ceremony_text_adjust(Cat,
+            intro = utility.leader_ceremony_text_adjust(Cat,
                                                 intro,
                                                 self,
                                                 )
@@ -1404,7 +2008,7 @@ class Cat():
             else:
                 virtue = None
 
-            lives.append(leader_ceremony_text_adjust(Cat,
+            lives.append(utility.leader_ceremony_text_adjust(Cat,
                                                      chosen_life["text"],
                                                      leader=self,
                                                      life_giver=giver,
@@ -1424,7 +2028,7 @@ class Cat():
                 possible_blessing.append(possible_lives[life])
             chosen_blessing = choice(possible_blessing)
             chosen_text = random.choice(chosen_blessing["life_giving"])
-            lives.append(leader_ceremony_text_adjust(Cat,
+            lives.append(utility.leader_ceremony_text_adjust(Cat,
                                                      chosen_text["text"],
                                                      leader=self,
                                                      virtue=chosen_text["virtue"],
@@ -1461,7 +2065,7 @@ class Cat():
             else:
                 giver = None
             outro = random.choice(chosen_outro["text"])
-            outro = leader_ceremony_text_adjust(Cat,
+            outro = utility.leader_ceremony_text_adjust(Cat,
                                                 outro,
                                                 leader=self,
                                                 life_giver=giver,
@@ -1559,7 +2163,7 @@ class Cat():
         # get chosen thought
         chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
         
-        chosen_thought = event_text_adjust(Cat, chosen_thought, self, other_cat)
+        chosen_thought = utility.event_text_adjust(Cat, chosen_thought, self, other_cat)
 
         # insert thought
         self.thought = str(chosen_thought)
@@ -2018,7 +2622,7 @@ class Cat():
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             avoided = False
-            if 'blood loss' in new_injury.also_got and len(get_med_cats(Cat)) != 0:
+            if 'blood loss' in new_injury.also_got and len(utility.get_med_cats(Cat)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -2795,7 +3399,7 @@ class Cat():
         else:
             chance = 40
 
-        compat = get_personality_compatibility(cat1, cat2)
+        compat = utility.get_personality_compatibility(cat1, cat2)
         if compat is True:
             chance += 10
         elif compat is False:
@@ -2803,9 +3407,9 @@ class Cat():
 
         # Cat's compatablity with mediator also has an effect on success chance.
         for cat in [cat1, cat2]:
-            if get_personality_compatibility(cat, mediator) is True:
+            if utility.get_personality_compatibility(cat, mediator) is True:
                 chance += 5
-            elif get_personality_compatibility(cat, mediator) is False:
+            elif utility.get_personality_compatibility(cat, mediator) is False:
                 chance -= 5
 
         # Determine chance to fail, turing sabotage into mediate and mediate into sabotage
@@ -3182,7 +3786,7 @@ class Cat():
     @property
     def sprite(self):
         #Update the sprite
-        update_sprite(self)        
+        utility.update_sprite(self)        
         return self._sprite
     
     @sprite.setter
@@ -3214,7 +3818,6 @@ def create_example_cats():
                 game.choose_cats[a].scars.remove(scar)
     
         #update_sprite(game.choose_cats[a])
-    
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
