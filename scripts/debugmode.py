@@ -10,6 +10,7 @@ from scripts.utility import get_text_box_theme
 class debugConsole(pygame_gui.windows.UIConsoleWindow):
     def __init__(self, rect, manager, debug_class):
         self.debug_class = debug_class
+        self.accepted_eval_warning = False
         super().__init__(rect, manager, window_title="Debug Console", object_id="#debug_console", visible=0)
     
     def process_event(self, event):
@@ -25,6 +26,8 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 self.add_output_line_to_log("help")
                 self.add_output_line_to_log("toggle <setting>")
                 self.add_output_line_to_log("set <setting> <value>")
+                self.add_output_line_to_log("eval <code>")
+                self.add_output_line_to_log("understandrisks")
                 self.add_output_line_to_log("")
                 self.add_output_line_to_log("Available settings:")
                 for setting in self.debug_class.settings:
@@ -50,6 +53,24 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                         self.add_output_line_to_log(f"Unknown setting {args[0]}")
                 else:
                     self.add_output_line_to_log("Invalid syntax")
+            
+            elif command == "eval":
+                if not self.accepted_eval_warning:
+                    self.add_output_line_to_log("WARNING: This command can be used to run code in your game. Only use this if you know what you're doing.")
+                    self.add_output_line_to_log("If you have been told to use this by anyone other than the official clangen discord contributors, BLOCK THEM IMMEDIATELY.")
+                    self.add_output_line_to_log("If you are not sure what this means, DO NOT USE THIS COMMAND.")
+                    self.add_output_line_to_log("To disable this warning, type \"understandrisks\".")
+                    self.accepted_eval_warning = True
+                else:
+                    try:
+                        output = eval(" ".join(args))
+                        self.add_output_line_to_log(output)
+                    except Exception as e:
+                        self.add_output_line_to_log("Eval failed: " + str(e))
+            elif command == "understandrisks":
+                self.add_output_line_to_log("You have disabled the warning for the eval command. Any code you run is your responsibility.")
+                self.accepted_eval_warning = True
+
         
         return super().process_event(event)
 
