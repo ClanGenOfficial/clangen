@@ -19,7 +19,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
             args = command[1:]
             command = command[0]
 
-            # TODO: Use a switch statement here once we phase out python 3.7
+            # TODO: Use a switch statement here once we phase out python 3.7    pylint: disable=fixme
 
             if command == "help":
                 self.add_output_line_to_log("Available commands:")
@@ -63,7 +63,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                     self.accepted_eval_warning = True
                 else:
                     try:
-                        output = eval(" ".join(args))
+                        output = eval(" ".join(args)) # pylint: disable=eval-used
                         self.add_output_line_to_log(output)
                     except Exception as e:
                         self.add_output_line_to_log("Eval failed: " + str(e))
