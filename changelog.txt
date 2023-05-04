@@ -1,3 +1,6 @@
+<strong>v0.8.6</strong>
+- Fixed a bug that prevented the game from starting
+
 <strong>v0.8.5</strong>
 - Adjusted the difficulty of patrols
 - Classic Mode cats will no longer gain shock from the 'large amount of death' moon events
