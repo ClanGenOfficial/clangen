@@ -80,7 +80,6 @@ jobs:
         with:
           files: |
             Clangen_Linux64_glibc2.31+.tar.xz
-            Clangen_Linux64_glibc2.31+.deb
           
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
@@ -158,7 +157,6 @@ jobs:
         with:
           files: |
             Clangen_Linux64_glibc2.35+.tar.xz
-            Clangen_Linux64_glibc2.35+.deb
           
   build_win32:
     runs-on: windows-2019
