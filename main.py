@@ -26,7 +26,6 @@ from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info, VERSION_NAME
 
-from scripts.debugmode import debugmode
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -119,6 +118,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
+from scripts.debugmode import debugmode
 import pygame_gui
 import pygame
 
