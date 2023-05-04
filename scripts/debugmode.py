@@ -14,6 +14,10 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
         self.debug_class = debug_class
         self.accepted_eval_warning = False
         super().__init__(rect, manager, window_title="Debug Console", object_id="#debug_console", visible=0)
+
+        # Force it to print help txt
+        ev = pygame.event.Event(pygame_gui.UI_CONSOLE_COMMAND_ENTERED, {"command": "help"})
+        self.process_event(ev)
     
     def process_event(self, event):
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
@@ -41,17 +45,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 self.add_output_line_to_log("fps <value>")
                 self.add_output_line_to_log("clear")
                 self.add_output_line_to_log("")
-                self.add_output_line_to_log("Available settings:")
-                for setting in self.debug_class.settings:
-                    self.add_output_line_to_log(setting)
-                self.add_output_line_to_log("")
-                self.add_output_line_to_log("Available gamesettings:")
-                for setting in game.settings:
-                    self.add_output_line_to_log(setting)
-                self.add_output_line_to_log("")
-                self.add_output_line_to_log("Available switches:")
-                for setting in game.switches:
-                    self.add_output_line_to_log(setting)
+                self.add_output_line_to_log("You can obtain a list of all settings by typing \"get\", \"get game\", and \"get switch\".")
                 self.add_output_line_to_log("")
                 self.add_output_line_to_log("Note: You can use tab to autocomplete commands, up/down to scroll through history, in eval scripts you can use \\n to create a new line.")
 
@@ -277,7 +271,7 @@ class debugMode:
 
 
 
-        self.console = debugConsole(pygame.Rect((0, 0), (1600, 300)), MANAGER, self)
+        self.console = debugConsole(pygame.Rect((0, 0), (pygame.display.get_surface().get_width(), pygame.display.get_surface().get_height())), MANAGER, self)
 
 
         self.coords_display.text_colour = (255, 0, 0)
