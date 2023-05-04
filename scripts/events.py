@@ -28,6 +28,7 @@ from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.disaster_events import DisasterEvents
+from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season, \
@@ -65,6 +66,7 @@ class Events():
         self.death_events = Death_Events()
         self.freshkill_events = Freshkill_Events()
         self.new_cat_events = NewCatEvents()
+        self.outsider_events = OutsiderEvents()
         self.misc_events = MiscEvents()
         self.CEREMONY_TXT = None
         self.WAR_TXT = None
@@ -693,23 +695,7 @@ class Events():
             cat.age = 'senior'
 
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-
-        # killing outside cats
-        if cat.outside:
-            if random.getrandbits(6) == 1 and not cat.dead:
-                cat.dead = True
-                if cat.exiled:
-                    text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                elif cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
-                    text = f'Rumors reach your Clan that the {cat.status} ' \
-                           f'{cat.name} has died recently.'
-                else:
-                    cat.outside = False
-                    text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
-                           f"but as they drift away, they hope to see " \
-                           f"familiar starry fur on the other side."
-                game.cur_events_list.append(
-                    Single_Event(text, "birth_death", cat.ID))
+        self.outsider_events.killing_outsiders(cat)
 
     def one_moon_cat(self, cat):
         """
@@ -1642,7 +1628,7 @@ class Events():
         # check if clan has kits, if True then clan has kits
         alive_kits = get_alive_kits(Cat)
 
-        # chance to kill leader: 1/100
+        # chance to kill leader: 1/125 by default
         if not int(random.random() * game.config["death_related"]["leader_death_chance"]) \
                 and cat.status == 'leader' \
                 and not cat.not_working():

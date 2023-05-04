@@ -6,7 +6,7 @@ import os.path
 import itertools
 
 from .history import History
-from ..datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
 import ujson

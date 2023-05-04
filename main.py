@@ -22,9 +22,9 @@ import time
 import os
 
 from scripts.housekeeping.log_cleanup import prune_logs
-from scripts.stream_duplexer import UnbufferedStreamDuplexer
-from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info, VERSION_NAME
+from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
+from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
+from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
 directory = os.path.dirname(__file__)
 if directory:
