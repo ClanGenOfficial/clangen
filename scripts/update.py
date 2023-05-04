@@ -128,7 +128,7 @@ def self_update(
 
     platform_name = determine_platform_name()
 
-    response = configured_get_request(f"{get_update_url()}/v1/Update/Channels/{update_channel}/Releases/Latest/Artifacts/{platform_name}")
+    response = configured_get_request(f"{get_update_url()}/v1/Update/Channels/{update_channel}/Releases/Latest/Artifacts/{platform_name}", stream=True)
 
     encoded_signature = response.headers['x-gpg-signature']
 
@@ -137,12 +137,21 @@ def self_update(
     length = response.headers.get('Content-Length')
 
     progress_bar.set_steps(int(length) / 1024, "Downloading update...", False, " MB", 1 / 1000 / 1000)
+
+    progress_bar_updated = False
+
     progress_bar.maximum_progress = int(length)
 
     with open("download.tmp", 'wb') as fd:
-        for chunk in response.iter_content(chunk_size=1024):
+        for chunk in response.iter_content(819200):
+            if not progress_bar_updated:
+                progress_bar.set_steps(int(length) / len(chunk), "Downloading update...", False, " MB", 1 / 1000 / 1000)
+                progress_bar_updated = True
+
             fd.write(chunk)
             progress_bar.advance()
+
+    return
 
     progress_bar.set_steps(9, "Verifying update...")
 
