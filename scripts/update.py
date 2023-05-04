@@ -151,8 +151,6 @@ def self_update(
             fd.write(chunk)
             progress_bar.advance()
 
-    return
-
     progress_bar.set_steps(9, "Verifying update...")
 
     decoded_signature = urllib.parse.unquote(encoded_signature)

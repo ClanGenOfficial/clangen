@@ -1,3 +1,6 @@
+<strong>v0.8.7</strong>
+- Fixed a bug that prevented the game from installing the update
+
 <strong>v0.8.6</strong>
 - Fixed a bug that prevented the game from starting
 
