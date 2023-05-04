@@ -150,7 +150,6 @@ def self_update(
 
             fd.write(chunk)
             progress_bar.advance()
-            print(f"{progress_bar.step_count} | {progress_bar.steps_taken}")
 
     return
 
