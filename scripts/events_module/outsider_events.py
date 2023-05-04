@@ -42,3 +42,9 @@ class OutsiderEvents:
         this will be for lost cats becoming kittypets/loners/etc
         TODO: need to make a unique backstory for these cats so they still have thoughts related to their clan
         """
+        if random.getrandbits(7) == 1 and not cat.dead:
+            self.become_kittypet(cat)
+
+    def become_kittypet(self, cat: Cat):
+        cat.status = 'kittypet'
+        
