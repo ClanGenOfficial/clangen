@@ -313,7 +313,7 @@
 		]
 	},
 	"death_related": {
-		"leader_death_chance": 100,
+		"leader_death_chance": 125,
 		"old_age_death_start": 150,
 		"old_age_death_chance": 51,
 		"classic_death_chance": 500,
