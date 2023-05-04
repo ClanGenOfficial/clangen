@@ -38,23 +38,6 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
-      - name: Prepare deb files
-        run: |
-          mkdir .debpkg/opt
-          cp dist/Clangen -r .debpkg/opt/clangen
-          mkdir -p .debpkg/usr/local/bin
-          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
-          sed -i "s/{glibc}/2.31/g" .debpkg/DEBIAN/control
-          chmod 755 .debpkg/DEBIAN
-      - name: Create deb package
-        run: |
-          dpkg-deb --build .debpkg
-          mv .debpkg.deb Clangen_Linux64_glibc2.31+.deb
-      - name: Upload deb package
-        uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Linux64_glibc2.31+.deb
-          path: Clangen_Linux64_glibc2.31+.deb
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -90,9 +73,7 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: |
-          butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
-          butler push Clangen_Linux64_glibc2.31+.deb sablesteel/clan-gen-fan-edit:linux64_glibc_231_debian --userversion "${{ env.VERSION_NUMBER }}"
+        run: butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -135,23 +116,6 @@ jobs:
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
-      - name: Prepare deb files
-        run: |
-          mkdir .debpkg/opt
-          cp dist/Clangen -r .debpkg/opt/clangen
-          mkdir -p .debpkg/usr/local/bin
-          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
-          sed -i "s/{glibc}/2.35/g" .debpkg/DEBIAN/control
-          chmod 755 .debpkg/DEBIAN
-      - name: Create deb package
-        run: |
-          dpkg-deb --build .debpkg
-          mv .debpkg.deb Clangen_Linux64_glibc2.35+.deb
-      - name: Upload deb package
-        uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Linux64_glibc2.35+.deb
-          path: Clangen_Linux64_glibc2.35+.deb
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -187,9 +151,7 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: |
-          butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
-          butler push Clangen_Linux64_glibc2.35+.deb sablesteel/clan-gen-fan-edit:linux64_glibc_235_debian --userversion "${{ env.VERSION_NUMBER }}"
+        run: butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
