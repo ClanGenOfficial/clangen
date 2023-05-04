@@ -4,6 +4,15 @@
 - Fixed the save conversion for BLUE2 eyes and ANY2CREAMY patches
 - Attempted fix for game refusing to open on binary builds when a save traceback needs to be displayed
 - Fixed injury, illness and perm condition thoughts from showing up where they shouldn't belong
+- Fixed outside cats not having perm conditions
+- Added safeguards to protect against files being saved incorrectly
+- Minor UI alignment fixes.
+- Fixed sick and permanent conditions thoughts being assigned incorrectly
+- Fixed a crash that occurs with very old cats
+- Fixed the download progress bar being stuck
+- Fixed the download being slow
+- Added a debug menu
+- Other minor bugfixes
 
 <strong>v0.8.4</strong>
 - Fixed a crash when there was only one cat left in the clan
