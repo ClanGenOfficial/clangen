@@ -26,6 +26,8 @@ from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info, VERSION_NAME
 
+from scripts.debugmode import debugmode
+
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
@@ -227,10 +229,7 @@ while True:
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F2:
-                if not MANAGER.visual_debug_active:
-                    MANAGER.set_visual_debug_mode(True)
-                else:
-                    MANAGER.set_visual_debug_mode(False)
+                debugmode.toggle_console()
 
         MANAGER.process_events(event)
 
@@ -244,7 +243,10 @@ while True:
         game.switch_screens = False
 
 
+    debugmode.update1(clock)
     # END FRAME
     MANAGER.draw_ui(screen)
+    debugmode.update2(screen)
+
 
     pygame.display.update()
