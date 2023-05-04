@@ -1,6 +1,6 @@
 name: PyInstaller build
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build_ubuntu_20_04:
@@ -38,6 +38,23 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
+      - name: Prepare deb files
+        run: |
+          mkdir .debpkg/opt
+          cp dist/Clangen -r .debpkg/opt/clangen
+          mkdir -p .debpkg/usr/local/bin
+          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
+          sed -i "s/{glibc}/2.31/g" .debpkg/DEBIAN/control
+          chmod 755 .debpkg/DEBIAN
+      - name: Create deb package
+        run: |
+          dpkg-deb --build .debpkg
+          mv .debpkg.deb Clangen_Linux64_glibc2.31+.deb
+      - name: Upload deb package
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Linux64_glibc2.31+.deb
+          path: Clangen_Linux64_glibc2.31+.deb
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -47,10 +64,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
@@ -65,11 +84,22 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: |
+          butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
+          butler push Clangen_Linux64_glibc2.31+.deb sablesteel/clan-gen-fan-edit:linux64_glibc_231_debian --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_Linux64_glibc2.31+.tar.xz
+          files: |
+            Clangen_Linux64_glibc2.31+.tar.xz
+            Clangen_Linux64_glibc2.31+.deb
           
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
@@ -105,6 +135,23 @@ jobs:
           echo "upstream=${{ github.repository }}" >> version.ini
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
+      - name: Prepare deb files
+        run: |
+          mkdir .debpkg/opt
+          cp dist/Clangen -r .debpkg/opt/clangen
+          mkdir -p .debpkg/usr/local/bin
+          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
+          sed -i "s/{glibc}/2.35/g" .debpkg/DEBIAN/control
+          chmod 755 .debpkg/DEBIAN
+      - name: Create deb package
+        run: |
+          dpkg-deb --build .debpkg
+          mv .debpkg.deb Clangen_Linux64_glibc2.35+.deb
+      - name: Upload deb package
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Linux64_glibc2.35+.deb
+          path: Clangen_Linux64_glibc2.35+.deb
       - name: Create archive (.tar.xz)
         run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -114,10 +161,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
@@ -132,11 +181,22 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: |
+          butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
+          butler push Clangen_Linux64_glibc2.35+.deb sablesteel/clan-gen-fan-edit:linux64_glibc_235_debian --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_Linux64_glibc2.35+.tar.xz
+          files: |
+            Clangen_Linux64_glibc2.35+.tar.xz
+            Clangen_Linux64_glibc2.35+.deb
           
   build_win32:
     runs-on: windows-2019
@@ -205,10 +265,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
@@ -224,6 +286,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win32.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push Clangen_Win32.zip sablesteel/clan-gen-fan-edit:win32 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -302,10 +371,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
@@ -321,6 +392,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64.zip sablesteel/clan-gen-fan-edit:win64 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -399,10 +477,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
@@ -418,6 +498,13 @@ jobs:
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -486,10 +573,12 @@ jobs:
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
         run: |
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
@@ -505,6 +594,13 @@ jobs:
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: jdno/setup-butler@v1
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push Clangen_macOS64.dmg sablesteel/clan-gen-fan-edit:osx64 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
