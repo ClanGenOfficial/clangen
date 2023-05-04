@@ -37,6 +37,9 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 self.add_output_line_to_log("get switch <setting>")
                 self.add_output_line_to_log("eval <code>")
                 self.add_output_line_to_log("understandrisks")
+                self.add_output_line_to_log("fps")
+                self.add_output_line_to_log("fps <value>")
+                self.add_output_line_to_log("clear")
                 self.add_output_line_to_log("")
                 self.add_output_line_to_log("Available settings:")
                 for setting in self.debug_class.settings:
@@ -199,7 +202,26 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
             elif command == "understandrisks":
                 self.add_output_line_to_log("You have disabled the warning for the eval command. Any code you run is your responsibility.")
                 self.accepted_eval_warning = True
+
+
             
+            elif command == "fps":
+                if len(args) == 1:
+                    try:
+                        game.switches['fps'] = int(args[0])
+                        self.add_output_line_to_log(f"FPS set to {args[0]}")
+                    except:
+                        self.add_output_line_to_log(f"Invalid value {args[0]}")
+                elif len(args) == 0:
+                    self.add_output_line_to_log(f"FPS is {game.switches['fps']}")
+                else:
+                    self.add_output_line_to_log("Invalid syntax")
+                    self.add_output_line_to_log("Usage:")
+                    self.add_output_line_to_log("fps")
+                    self.add_output_line_to_log("fps <value>")
+
+            elif command == "clear":
+                self.clear_log()
 
             else:
                 self.add_output_line_to_log(f"Unknown command {command}")
@@ -215,7 +237,9 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 "get game",
                 "get switch",
                 "eval",
-                "understandrisks"
+                "understandrisks",
+                "fps",
+                "clear"
                 ]
             if len(self.command_entry.text) != 0:
                 for cmd in cmds:
@@ -265,6 +289,7 @@ class debugMode:
     def toggle_console(self):
         if self.console.visible == 0:
             self.console.show()
+            self.console.command_entry.focus()
             self.console.set_blocking(True)
             game.switches['window_open'] = True
         else:
