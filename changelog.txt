@@ -10,7 +10,7 @@
 - Fixed sick and permanent conditions thoughts being assigned incorrectly
 - Fixed a crash that occurs with very old cats
 - Fixed the download progress bar being stuck
-- Fixed the downloda being slow
+- Fixed the download being slow
 - Added a debug menu
 - Other minor bugfixes
 
