@@ -29,5 +29,8 @@
     },
 	"#relationship_log_window": {
         "prototype": "#window_base_theme"
-	}
+	},
+    "#debug_console": {
+        "prototype": "#window_base_theme"
+    }
 }
