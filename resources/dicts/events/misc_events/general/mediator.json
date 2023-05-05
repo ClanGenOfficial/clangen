@@ -37,7 +37,7 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader" ],
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
         "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
         "cat_trait": null,
         "cat_skill": null,
@@ -45,7 +45,7 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader" ],
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
         "event_text": "m_c is conversing with r_c about ways to potentially end this war- but not without bloodshed.",
         "cat_trait": null,
         "cat_skill": null,
@@ -53,7 +53,7 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader" ],
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
         "event_text": "m_c is giving r_c bad war advice on purpose.",
         "cat_trait": null,
         "cat_skill": null,

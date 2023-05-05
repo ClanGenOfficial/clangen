@@ -284,10 +284,10 @@
             "war",
             "other_cat"
         ],
-        "death_text": "m_c sacrificed themself for r_c in a battle with o_c.",
+        "death_text": "m_c sacrificed {PRONOUN/m_c/self} for r_c in a battle with o_c.",
         "history_text": [
-            "m_c sacrificed themself for r_c in battle.",
-            "sacrificed themself for r_c in battle."
+            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
         ]
     },
     {
@@ -300,10 +300,10 @@
             "war",
             "other_cat"
         ],
-        "death_text": "m_c threw themself in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
+        "death_text": "m_c threw {PRONOUN/m_c/self} in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
         "history_text": [
-            "m_c sacrificed themself for r_c in battle.",
-            "sacrificed themself for r_c in battle."
+            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
         ]
     },
     {
@@ -318,8 +318,8 @@
         ],
         "death_text": "m_c intentionally stayed behind and fought a losing battle to give r_c time to escape.",
         "history_text": [
-            "m_c sacrificed themself for r_c in battle.",
-            "sacrificed themself for r_c in battle."
+            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
         ]
     },
     {
@@ -332,10 +332,10 @@
             "war",
             "other_cat"
         ],
-        "death_text": "When traveling together near the border of c_n territory, m_c used their own body to shield r_c from a surprise o_c ambush, even though it meant certain death.",
+        "death_text": "When traveling together near the border of c_n territory, m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c ambush, even though it meant certain death.",
         "history_text": [
-            "m_c sacrificed themself for r_c in an ambush.",
-            "sacrificed themself for r_c in an ambush."
+            "m_c sacrificed {PRONOUN/m_c/self} for r_c in an ambush.",
+            "sacrificed {PRONOUN/m_c/self} for r_c in an ambush."
         ]
     },
     {
@@ -347,7 +347,7 @@
             "Leaf-bare",
             "war"
         ],
-        "death_text": "m_c sacrificed themselves by taking on the role of a messenger, delivering important information that could save their Clan. They were killed while investigating enemy territory.",
+        "death_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject} were killed while investigating enemy territory.",
         "history_text": [
             "m_c was killed investigating enemy territory.",
             "was killed investigating enemy territory."
