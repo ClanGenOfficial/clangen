@@ -31,7 +31,7 @@
         "medicine cat apprentice": [
         "Is testing r_c on the herbs they saw together on patrol",
         "Is confident in r_c's talent as a medicine cat",
-        "Hopes r_c {VERB/r_c/like/likes} {PRONOUN/r_c/poss} training as a medicine cat"
+        "Hopes r_c likes {PRONOUN/r_c/poss} training as a medicine cat"
         ],
         "apprentice": [],
         "warrior": [],
