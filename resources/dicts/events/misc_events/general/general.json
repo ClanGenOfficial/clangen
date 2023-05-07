@@ -167,7 +167,7 @@
      {
         "camp": "any",
         "tags": ["Leaf-fall", "other_cat", "other_cat_mate", "to_both", "platonic", "romantic"],
-        "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.",
+        "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride much to r_c's joy.",
         "accessories": ["MAPLE LEAF"]
      },
      {
