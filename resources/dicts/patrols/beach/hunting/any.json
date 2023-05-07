@@ -597,7 +597,7 @@
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUn/r_c/object} deliberately, killing them instantly.",
+            "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": ["smart", "very smart", "extremely smart"

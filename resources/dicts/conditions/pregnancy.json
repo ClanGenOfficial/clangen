@@ -90,10 +90,10 @@
       "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/need} them to stop the blood loss. "
     ],
 	"outside_alone": [
-		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
+		"Rumors reach the Clan that m_c gave birth to a {insert}."
 	],
 	"outside_in_clan":[
-		"r_c heard a rumour, that m_c had a litter.",
+		"r_c heard a rumor that m_c had a litter.",
 		"r_c thinks that m_c should have had {PRONOUN/m_c/poss} litter by now."
 	],
 	"outside_death": [

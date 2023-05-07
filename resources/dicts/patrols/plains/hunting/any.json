@@ -1356,7 +1356,7 @@
         "success_text": [
             "Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
             "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol.",
-            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it their until they're very sure it will never dare sneak across c_n's borders again.",
+            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it there until they're very sure it will never dare sneak across c_n's borders again.",
             "s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind."
         ],
         "fail_text": [
@@ -1565,7 +1565,7 @@
             "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         ],
         "fail_text": [
-            "The patrol tries, they do, but they can't get a good look as the distorted red foxish creature, and eventually have to return to camp to give a rather unsatisfatory report about it. The cats stalk off to do their own things, feeling like they should've been able to do better.",
+            "The patrol tries, they do, but they can't get a good look at the distorted red foxish creature, and eventually have to return to camp to give a rather unsatisfatory report about it. The cats stalk off to do their own things, feeling like they should've been able to do better.",
             "s_c's stressed nerves can't handle this weird monster, and they beg to go back homeinstead of confronting it."
         ],
         "win_skills": [

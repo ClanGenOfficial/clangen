@@ -258,5 +258,29 @@
         "main_trait_constraint": [
             "ambitious"
         ]
-    } 
+    }, 
+    {
+        "id": "childish_apprentice",
+        "thoughts": [
+            "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
+            "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",
+            "Asks if {PRONOUN/m_c/subject} can chase pretty bugs instead of prey"
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    { "id": "childish_apprentice_elder",
+        "thoughts": [
+            "Pouts about being asked to check the elders for ticks"
+        ],
+        "main_trait_constraint":[
+            "childish"
+        ],
+        "random_status_constraint":[
+            "elder"
+        ]
+    }
+           
+    
 ]

@@ -102,7 +102,7 @@ class Relation_Events():
 
             # new mates
             if not self.had_one_event:
-                if cat_to.is_potential_mate(cat):
+                if cat_to.is_potential_mate(cat) and cat.ID not in cat.mate:
                     self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
 
             # breakup and new mate

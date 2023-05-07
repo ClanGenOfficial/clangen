@@ -499,7 +499,9 @@
     ],
     "win_trait": ["loving"],
     "fail_trait": ["lonesome", "insecure"],
-    "relationship_constraint": ["siblings", "platonic_20"],
+    "constraints": {
+        "relationship": ["siblings", "platonic_20"]
+    },
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -527,7 +529,9 @@
     "win_skills": ["keen eye"],
     "win_trait": ["loving"],
     "fail_trait": ["lonesome", "insecure"],
-    "relationship_constraint": ["siblings", "platonic_20"],
+    "constraints": {
+        "relationship": ["siblings", "platonic_20"]
+    },
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,

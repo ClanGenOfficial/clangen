@@ -40,7 +40,7 @@
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c slipped off a cliff onto the sharp rocks at the bottom.",
         "history_text": {
-            "reg_death": "m_c off the edge of a cliff."
+            "reg_death": "m_c slipped off the edge of a cliff."
         },
         "cat_trait": ["playful", "childish"],
         "cat_skill": null,

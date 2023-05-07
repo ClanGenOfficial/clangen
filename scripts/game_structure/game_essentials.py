@@ -1,7 +1,7 @@
 import pygame
 import pygame_gui
 
-from scripts.datadir import get_save_dir, get_temp_dir
+from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
 import ujson
 import os
@@ -138,6 +138,7 @@ class Game():
         'window_open': False,
         'skip_conditions': [],
         'show_history_moons': False,
+        'fps': 30
     }
     all_screens = {}
     cur_events = {}
