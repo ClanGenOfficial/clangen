@@ -825,14 +825,14 @@
             "comfort",
             "no_app"
         ],
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object} ?",
-        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/haves} too much work to do.",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
             "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
-            "It's a long but satisfying training session, with both cats having an in depth chance to test {PRONOUN/r_c/object} and work on {PRONOUN/r_c/poss} skills. It ends with {PRONOUN/r_c/object} both sitting on a little outlook, watching the sun go down and catching the last of its rays on {PRONOUN/r_c/poss} pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
-            "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/p_l/subject/CAP} {VERB/p_l/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of {PRONOUN/p_l/poss} hidey-holes.",
+            "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
+            "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
             "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
         ],
         "fail_text": [
@@ -869,15 +869,15 @@
             "no_app",
             "no_change_fail"
         ],
-        "intro_text": "As p_l and r_c wander across the beach with only the stars to light {PRONOUN/r_c/poss} way, {PRONOUN/r_c/subject} notices sparkles of light where the waves break upon the shore.",
+        "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notices sparkles of light where the waves break upon the shore.",
         "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "r_c pokes curiously at one of the little lights, bringing {PRONOUN/r_c/poss} face down to it. It's a tiny crab, less than the width of one of {PRONOUN/r_c/poss} claws! It fascinates {PRONOUN/r_c/object} and p_l, and {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} hours on the beach, lapping up mouthfuls of light crabs and crushing {PRONOUN/r_c/object} between {PRONOUN/r_c/poss} teeth, laughing with each other as {PRONOUN/r_c/poss} mouths start glowing too.",
-            "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, {PRONOUN/r_c/poss} pelts keeping each other warm as {PRONOUN/r_c/subject} {VERB/r_c/take/takes} in the magic of the sea.",
+            "r_c pokes curiously at one of the little lights, bringing {PRONOUN/r_c/poss} face down to it. It's a tiny crab, less than the width of one of {PRONOUN/r_c/poss} claws! It fascinates {PRONOUN/r_c/object} and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",
+            "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
             null,
-            "As {PRONOUN/r_c/subject} {VERB/r_c/watch/watches}, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, {PRONOUN/r_c/poss} hearts full of wonder."
+            "As they watch, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, their hearts full of wonder."
         ],
         "fail_text": [
             "They continue on their way, not stopping to see the sights."
@@ -918,8 +918,8 @@
         "chance_of_success": 75,
         "exp": 5,
         "success_text": [
-            "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of {PRONOUN/p_l/object}. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at {PRONOUN/p_l/poss} death when it came.",
-            "p_l tells the apprentices about the red and white cat that was saved by the dolphins, {PRONOUN/p_l/subject} managed to keep afloat long enough for {PRONOUN/p_l/subject} to be saved by relaxing {PRONOUN/p_l/poss} entire body and floating on the waves."
+            "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
+            "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
         ],
         "fail_text": [
             "A sudden storm cuts off p_l's words and the patrol sprints back to camp to get warm and dry."
