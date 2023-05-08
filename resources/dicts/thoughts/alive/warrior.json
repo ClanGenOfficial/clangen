@@ -11,7 +11,8 @@
             "Somehow got roped up in watching r_c for the day",
             "Theatrically dies after r_c slays them",
             "Has to pretend to be a captured warrior for r_c's games",
-            "Is pretending to be a big, evil warrior for r_c"
+            "Is pretending to be a big, evil warrior for r_c",
+            "Gave a badger ride to r_c, and is now begged by more kittens to do the same"
         ],
         "random_status_constraint": [
             "kitten"
@@ -42,7 +43,8 @@
         "id": "warrior_gen_dead_df_kits",
         "thoughts": [
             "Wonders how r_c deals with being in the Dark Forest",
-            "Wishes that r_c may walk among the stars"
+            "Wishes that r_c may walk among the stars",
+            "Is surprised of StarClan's cruelty towards r_c"
         ],
         "random_status_constraint": [
             "kitten"

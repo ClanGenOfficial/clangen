@@ -28,7 +28,11 @@
             "Is teaching kits about what plants to stay away from",
             "Chased kits out of their den"
         ],
-        "medicine cat apprentice": [],
+        "medicine cat apprentice": [
+        "Is testing r_c on the herbs they saw together on patrol",
+        "Is confident in r_c's talent as a medicine cat",
+        "Hopes r_c likes {PRONOUN/r_c/poss} training as a medicine cat"
+        ],
         "apprentice": [],
         "warrior": [],
         "medicine cat": [],

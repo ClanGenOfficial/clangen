@@ -1,6 +1,8 @@
 {
     "dead": {
-        "kitten": [],
+        "kitten": [
+               "Thinks having too many lives is unfair, compared to r_c who left too young" 
+        ],
         "medicine cat apprentice": [],
         "apprentice": [],
         "warrior": [],
@@ -11,7 +13,8 @@
         "mediator": [],
         "mediator apprentice": [],
         "all": [
-            "Wishes they could visit r_c in StarClan"
+            "Wishes they could visit r_c in StarClan",
+            "Wishes {PRONOUN/m_c/subject} could have gave r_c a life before it was too late"
         ]
     },
     "alive": {
