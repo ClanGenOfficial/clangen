@@ -1431,24 +1431,14 @@ def update_sprite(cat):
         # Placeholder image
         new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
 
-    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
-    """# Apply opacity
+    # Apply opacity
     if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
+        new_sprite.set_alpha(int(cat.opacity * 2.55))
 
     # apply
     cat.sprite = new_sprite
     # update class dictionary
     cat.all_cats[cat.ID] = cat
-
-
-def apply_opacity(surface, opacity):
-    for x in range(surface.get_width()):
-        for y in range(surface.get_height()):
-            pixel = list(surface.get_at((x, y)))
-            pixel[3] = int(pixel[3] * opacity / 100)
-            surface.set_at((x, y), tuple(pixel))
-    return surface
 
 
 # ---------------------------------------------------------------------------- #
