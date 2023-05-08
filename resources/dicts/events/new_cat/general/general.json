@@ -329,7 +329,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
         "reputation": ["hostile"],
-        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/m_c/subject} have decided to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
         "other_clan": true,
         "backstory": ["otherclan2", "disgraced", "refugee1", "tragedy_survivor1"],
         "new_name": false
@@ -338,7 +338,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "reputation": ["hostile"],
-        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/m_c/subject} have decided to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
         "other_clan": true,
         "backstory": ["otherclan2", "disgraced", "refugee1", "tragedy_survivor1", "otherclan2"],
         "new_name": false
@@ -347,7 +347,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
         "reputation": ["hostile"],
-        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} decide to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
         "other_clan": true,
         "backstory": ["otherclan1", "disgraced", "refugee1", "tragedy_survivor1"],
         "new_name": false
@@ -356,7 +356,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "medicine_cat"],
         "reputation": ["hostile"],
-        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} decide to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
         "other_clan": true,
         "backstory": ["medicine_cat", "otherclan1", "disgraced", "refugee1", "tragedy_survivor1"],
         "new_name": false
