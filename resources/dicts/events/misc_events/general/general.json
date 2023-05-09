@@ -128,6 +128,7 @@
         "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves."
     },
     {
+        "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
         "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day."
      },
@@ -151,21 +152,17 @@
      },
      {
         "camp": "any",
-        "tags": ["Leaf-bare", "other_cat", "other_cat_mate", "to_both", "platonic", "romantic"],
         "tags": ["Leaf-bare", "other_cat",  "other_cat_mate", "to_both", "platonic", "romantic"],
         "event_text": "m_c and r_c are so cuddled up and cozy in their nest they almost miss the dawn patrol."
      },
      {
         "camp": "any",
-        "tags": ["Leaf-fall", "other_cat", "other_cat_mate", "to_both", "platonic", "romantic"],
-        "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride much to r_c's joy.",
         "tags": ["Leaf-fall", "other_cat",  "other_cat_mate", "to_both", "platonic", "romantic"],
         "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.",
         "accessories": ["MAPLE LEAF"]
      },
      {
         "camp": "any",
-        "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
         "tags": ["Greenleaf", "other_cat",  "other_cat_mate", "to_both", "platonic"],
         "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.",
         "accessories": ["CICADA WINGS"]
@@ -173,7 +170,6 @@
      {
         "camp": "any",
         "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
-        "tags": ["Greenleaf", "other_cat",  "other_cat_mate", "to_both", "platonic"],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."
      },
     {
