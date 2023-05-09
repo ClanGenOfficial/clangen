@@ -1422,7 +1422,7 @@ def update_sprite(cat):
                 
         if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]
             new_sprite.set_alpha(int(cat.opacity * 2.55))
-            faded_sprite = Surface((spriteSize, spriteSize), pygame.HWSURFACE | pygame.SRCALPHA).convert_alpha()
+            faded_sprite = pygame.Surface((spriteSize, spriteSize), pygame.HWSURFACE | pygame.SRCALPHA).convert_alpha()
             faded_sprite.blit(new_sprite, (0, 0))
             
             if cat.df:
