@@ -163,7 +163,7 @@
      },
     {
         "camp": "Any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "comfort", "respect", "clan_kits"],
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "comfort", "respect", "clan_kits"],
         "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
         "cat_skill": ["good storyteller", "great storyteller", "fantastic storyteller", "lore keeper"]
     },
@@ -186,7 +186,7 @@
      {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall"],
-        "event_text": "m_c considers, as {PRONOUN/m_c/subject} look out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} they belong.",
+        "event_text": "m_c considers, as {PRONOUN/m_c/subject} look out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} belong.",
        "cat_trait": ["adventurous", "daring", "insecure", "nervous"]
      }
 ]

@@ -226,10 +226,10 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "p_l smiles, inviting app1 to sit down. A little embarrassed, app1 looks like they're going to object - but no, they're the only two cats around. They lie down, and p_l curls around them, settling down to ash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",
+        "p_l smiles, inviting app1 to sit down. A little embarrassed, app1 looks like they're going to object - but no, they're the only two cats around. They lie down, and p_l curls around them, settling down to wash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",
         "Settling down, p_l wants to know how app1 is finding their training. It turns into a lovely conversation, a perfect moment spent with one another, time that's been so rare since app1 became a paw. Not that p_l regrets that, of course, app1 is going to be a wonderful warrior.",
         null,
-        "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recnetly until app1 is puffed up with embarrassed, thrilled pride."
+        "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recently until app1 is puffed up with embarrassed, thrilled pride."
     ],
     "fail_text": [
         "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarrassment.",

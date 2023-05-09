@@ -2122,7 +2122,7 @@
       "general_backstory",
       "careful"
     ],
-    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/subject} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+    "(prefix)paw sits neatly in front of l_n as {PRONOUN/l_n/subject} {VERB/l_n/talk/talks} about how well (prefix)paw did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_15": [
     [
