@@ -1411,7 +1411,6 @@ def update_sprite(cat):
 
             new_sprite.blit(sprites.sprites['fademask' + stage + cat_sprite],
                             (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-
             if cat.df:
                 temp = sprites.sprites['fadedf' + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
@@ -1420,6 +1419,17 @@ def update_sprite(cat):
                 temp = sprites.sprites['fadestarclan' + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+                
+        if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading]
+            new_sprite.set_alpha(int(looks.opacity * 2.55))
+            faded_sprite = Surface((spriteSize, spriteSize), pygame.HWSURFACE | pygame.SRCALPHA).convert_alpha()
+            faded_sprite.blit(new_sprite, (0, 0))
+            
+            if cat.df:
+                faded_sprite.blit(sprites.sprites[f"lineartdf{cat_sprite}"], (0, 0))
+            elif cat.dead:
+                faded_sprite.blit(sprites.sprites[f"lineartdead{cat_sprite}"], (0, 0))
+            new_sprite = faded_sprite
 
         # reverse, if assigned so
         if cat.reverse:
@@ -1430,10 +1440,6 @@ def update_sprite(cat):
 
         # Placeholder image
         new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
-
-    # Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite.set_alpha(int(cat.opacity * 2.55))
 
     # apply
     cat.sprite = new_sprite
