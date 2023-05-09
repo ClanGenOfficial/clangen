@@ -215,7 +215,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
 
             elif command == "fps":
                 if len(args) == 1:
-                    if args[0] in ['None', 'none', '0']:
+                    if args[0].lower() in ['none', 'null', '0'] or args[0].is_integer() and int(args[0]) <= 0:
                         game.switches['fps'] = 0
                         self.add_output_line_to_log("FPS cap removed")
                     elif args[0].is_integer():
