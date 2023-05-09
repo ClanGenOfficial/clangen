@@ -22,7 +22,7 @@
     {
       "camp": "any",
       "tags": ["other_cat", "other_cat_app", "romantic", "comfort", "respect", "trust", "neg_jealousy", "to_both"],
-      "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned they liked the smell of wild fruit. m_c decides to wear acc_plural on their pelt, hopping that r_c notices them.",
+      "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hopping that r_c notices {PRONOUN/m_c/object}.",
 
       "accessories": ["BLUE BERRIES", "HOLLY"]
    },
@@ -35,7 +35,7 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_app", "dislike", "jealousy"],
-    "event_text": "m_c, for the umpteenth time, hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} finish cleaning the elders' den and got an idea. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
+    "event_text": "m_c, for the umpteenth time, hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} {VERB/r_c/finish/finishes} cleaning the elders' den and got an idea. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
     "accessories": ["RYE STALK"]
    },
    {
@@ -88,7 +88,7 @@
   {
       "camp": "any",
       "tags": ["Leaf-bare", "other_cat", "other_cat_app"],
-      "event_text": "m_c encourages r_c to play in the snow with them during a patrol.",
+      "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
       "cat_trait": "playful"
   },
   {
@@ -99,7 +99,7 @@
   {
       "camp": "any",
       "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-      "event_text": "m_c was seen racing along the border with their rival from o_c."
+      "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c."
   },
   {
       "camp": "any",
@@ -199,12 +199,12 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_clan"],
-    "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding them, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
+    "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding {PRONOUN/m_c/object}, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
     "cat_trait": ["nervous", "lonesome", "playful", "careful", "compassionate", "loving", "insecure"]
   },
   {
       "camp": "any",
       "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-      "event_text": "m_c feels like they might be growing up too fast in the midst of war."
+      "event_text": "m_c feels like {PRONOUN/m_c/subject} might be growing up too fast in the midst of war."
   }
 ]
