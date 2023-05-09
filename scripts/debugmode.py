@@ -96,7 +96,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                 if len(args) == 2:
                     if args[0] in self.debug_class.settings:
                         try:
-                            if args[1] in ['true', 'false']:
+                            if args[1].lower() in ['true', 'false']:
                                 args[1] = args[1].capitalize()
                             self.debug_class.settings[args[0]] = literal_eval(args[1])
                             self.add_output_line_to_log(f"{args[0]} set to {args[1]}")
@@ -105,7 +105,7 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                     else:
                         self.add_output_line_to_log(f"Unknown setting {args[0]}")
                 elif len(args) == 3:
-                    if args[2] in ['true', 'false']:
+                    if args[2].lower() in ['true', 'false']:
                         args[2] = args[2].capitalize()
                     if args[0] == 'game':
                         if args[1] in game.settings:
