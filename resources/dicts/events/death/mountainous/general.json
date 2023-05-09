@@ -14,7 +14,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall"],
-        "death_text": "m_c was buried alive in an landslide.",
+        "death_text": "m_c was buried alive in a landslide.",
         "history_text": {
             "reg_death": "m_c was buried alive in a landslide."
         },
@@ -26,7 +26,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf"],
-        "death_text": "m_c was buried alive in an mudslide.",
+        "death_text": "m_c was buried alive in a mudslide.",
         "history_text": {
             "reg_death": "m_c was buried alive in a mudslide."
         },

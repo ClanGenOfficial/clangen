@@ -1,7 +1,7 @@
 import os
 import platform
 
-from scripts.version import get_version_info
+from scripts.housekeeping.version import get_version_info
 
 
 def setup_data_dir():
