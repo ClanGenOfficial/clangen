@@ -320,7 +320,7 @@
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. The one catmint plant they successfully find ends up with their helpers rolling around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "min_cats": 3,
+    "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null

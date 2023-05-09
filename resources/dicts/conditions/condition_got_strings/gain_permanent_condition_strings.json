@@ -59,9 +59,9 @@
     },
     "mangled tail":{
         "lost their tail": [
-            "r_c helps m_c bury {VERB/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure to the trauma of losing it.",
+            "r_c helps m_c bury {PRONOUN/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure to the trauma of losing it.",
             "When m_c wakes up, r_c has to explain to {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} removed m_c's tail as a last resort. The damage was too great.",
-            "It's okay, m_c tells {VERB/m_c/self}. A tail isn't the worst thing to lose, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be fine! But {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} its absence no matter how hard {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to force it from {PRONOUN/m_c/poss} mind.",
+            "It's okay, m_c tells {PRONOUN/m_c/self}. A tail isn't the worst thing to lose, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be fine! But {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} its absence no matter how hard {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to force it from {PRONOUN/m_c/poss} mind.",
             "m_c has healed from {PRONOUN/m_c/poss} mangled tail, but unfortunately the tail itself is gone."
 
         ]
