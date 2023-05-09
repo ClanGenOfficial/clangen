@@ -1420,14 +1420,14 @@ def update_sprite(cat):
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
                 
-        if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading]
-            new_sprite.set_alpha(int(looks.opacity * 2.55))
+        if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]
+            new_sprite.set_alpha(int(cat.opacity * 2.55))
             faded_sprite = Surface((spriteSize, spriteSize), pygame.HWSURFACE | pygame.SRCALPHA).convert_alpha()
             faded_sprite.blit(new_sprite, (0, 0))
             
             if cat.df:
                 faded_sprite.blit(sprites.sprites[f"lineartdf{cat_sprite}"], (0, 0))
-            elif cat.dead:
+            else:
                 faded_sprite.blit(sprites.sprites[f"lineartdead{cat_sprite}"], (0, 0))
             new_sprite = faded_sprite
 
