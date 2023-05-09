@@ -1427,7 +1427,7 @@ def update_sprite(cat):
             
             if cat.df:
                 faded_sprite.blit(sprites.sprites[f"lineartdf{cat_sprite}"], (0, 0))
-            else:
+            elif cat.dead:
                 faded_sprite.blit(sprites.sprites[f"lineartdead{cat_sprite}"], (0, 0))
             new_sprite = faded_sprite
 
