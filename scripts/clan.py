@@ -443,7 +443,8 @@ class Clan():
                  camp_bg=None,
                  game_mode='classic',
                  starting_members=[],
-                 starting_season='Newleaf'):
+                 starting_season='Newleaf',
+                 temperament='stoic'):
         self.history = History()
         if name != "":
             self.name = name
@@ -491,6 +492,7 @@ class Clan():
             self.primary_disaster = None
             self.secondary_disaster = None
             self.war = {}
+            self.temperament = temperament
 
             self.faded_ids = [
             ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
@@ -744,6 +746,7 @@ class Clan():
             "reputation": self.reputation,
             "mediated": game.mediated,
             "starting_season": self.starting_season,
+            "temperament": self.temperament,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build
@@ -1039,6 +1042,7 @@ class Clan():
         game.clan.starting_season = clan_data[
             "starting_season"] if "starting_season" in clan_data else 'Newleaf'
         get_current_season()
+        game.clan.temperament = clan_data["temperament"] if "temperament" in clan_data else 'stoic'
 
         game.clan.leader_lives = leader_lives
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
