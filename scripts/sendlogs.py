@@ -2,7 +2,7 @@ from scripts.game_structure.image_button import UITextBoxTweaked
 import requests
 import os
 import time
-from scripts.datadir import get_log_dir
+from scripts.housekeeping.datadir import get_log_dir
 import ujson
 
 def send_logs(token: str, progress: UITextBoxTweaked, callback: callable) -> None:
