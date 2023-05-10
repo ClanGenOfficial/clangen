@@ -2133,20 +2133,22 @@ class PatrolEvent:
 
 # ! Patrol Notes
 """
--- success/fail outcomes -- 
-    Success[0] is the most common
-    Success[1] is slightly rarer
-    Success[2] is if win skill is applicable
-    Success[3] is if win trait is applicable
+-- success outcomes -- 
+    "unscathed_common": 
+    "unscathed_rare":
+    "stat_skill": 
+    "stat_trait":
 
-    Fail text[0] is unscathed fail 1
-    Fail text[1] is unscathed 2, fail skill or fail traits
-    Fail text[2] is death
-    Fail text[3] is scar/injury
-    Fail text[4] is death for s_c
-    fail text[5] is scar/injury for s_c
-    fail text[6] is alt leader death
+-- fail outcomes -- 
+    "unscathed_common": 
+    "unscathed_stat": 
+    "death": 
+    "injury": 
+    "stat_death": 
+    "stat_injury": 
+    "leader_death":
 
+-- history text -- 
     History text[0] is scar text
     History text[1] is death text for normal cats
     History text[2] is death text for leaders
