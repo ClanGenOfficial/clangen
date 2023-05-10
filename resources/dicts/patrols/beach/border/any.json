@@ -13,12 +13,10 @@
         "stat_skill": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "stat_trait": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, with only a couple managing to escape the slaughter.",
-        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and r_c is badly wounded, forcing the patrol to retreat."
-    ],
+    "fail_text": {
+        "death": "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, with only a couple managing to escape the slaughter.",
+        "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and r_c is badly wounded, forcing the patrol to retreat."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 4,
@@ -44,12 +42,10 @@
         "unscathed_common": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
         "stat_skill": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
     },
-    "fail_text": [
-        null,
-        "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. The shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed.",
-        "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold.",
-        null
-    ],
+    "fail_text": {
+        "unscathed_stat": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. The shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed.",
+        "death": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold."
+    },
     "win_skills": ["excellent fighter"],
     "fail_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 1,
@@ -76,12 +72,10 @@
         "stat_skill": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
         "stat_trait": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, with only a couple managing to escape the slaughter.",
-        "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and r_c is badly injured, forcing the patrol to retreat."
-    ],
+    "fail_text": {
+        "death": "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, with only a couple managing to escape the slaughter.",
+        "injury": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and r_c is badly injured, forcing the patrol to retreat."
+    },
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["bold", "confident", "charming"],
     "min_cats": 4,
@@ -109,12 +103,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -141,12 +132,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -173,12 +161,10 @@
         "stat_skill": "s_c makes a careful judgment, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain begins to pour around {PRONOUN/s_c/object}.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/poss} life."
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+        "injury": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/poss} life."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -206,12 +192,9 @@
         "stat_skill": "s_c makes a careful judgment, and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain begins to pour around {PRONOUN/s_c/object}.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-        null,
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning {PRONOUN/r_c/subject} {VERB/r_c/have/has}, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/r_c/subject} nevertheless {VERB/r_c/cling/clings} to safety as the floodwaters run their course."
-    ],
+    "fail_text": {
+        "injury": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning {PRONOUN/r_c/subject} {VERB/r_c/have/has}, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/r_c/subject} nevertheless {VERB/r_c/cling/clings} to safety as the floodwaters run their course."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -237,12 +220,12 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and drives {PRONOUN/r_c/object} off c_n territory.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+        "death": "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+        "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
+    },
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
@@ -271,12 +254,12 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
-            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/haul/hauls} {PRONOUN/s_c/self} to {PRONOUN/s_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
+        "death": "Nose to the ground following the trail, r_c doesn't see the blow that kills {PRONOUN/r_c/object}.",
+        "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/haul/hauls} {PRONOUN/s_c/self} to {PRONOUN/s_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
+    },
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
@@ -303,12 +286,12 @@
         "unscathed_common": "The pawprints lead to a trespassing rogue. app1 quickly hides {PRONOUN/app1/self} in the grass on the sand dunes, and sets up an ambush that lets {PRONOUN/app1/object} pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
         "unscathed_rare": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon."
     },
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/app1/object} completely.",
-            "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+        "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/app1/object} completely.",
+        "death": "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
+        "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
+    },
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -335,12 +318,11 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
-            null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
+        "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
+    },
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
@@ -367,12 +349,11 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
-            "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
-            null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
+        "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
+    },
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
@@ -397,12 +378,11 @@
         "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
         "unscathed_rare": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon."
     },
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-             "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
-            null,
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
+        "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
+        "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
+    },
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
@@ -427,12 +407,10 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} to {PRONOUN/r_c/poss} feet confidence and the number of cats, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
-            null,
-            null
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+    },
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
@@ -456,10 +434,10 @@
         "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
         "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
     },
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+        "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
+    },
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
@@ -484,12 +462,10 @@
         "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
         "unscathed_rare": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon."
     },
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
-             "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
-            null,
-            null
-    ],
+    "fail_text": {
+        "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
+        "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory."
+    },
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 3,
     "max_cats": 6,

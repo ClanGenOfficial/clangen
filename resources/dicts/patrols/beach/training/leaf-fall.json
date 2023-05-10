@@ -14,11 +14,10 @@
                 "s_c laughs! The ginger cat statues are Twoleg objects; they spin a tale almost unbelievable, but they swear it's true! The ginger cat statues used to live on something called a \"boat\".",
                 "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for whatever reason, Twolegs worship the ginger cat so much that they made statues they threw into the ocean."
         ],
-        "fail_text": [
-                "There is no way r_c is staying around here. They tear off back to camp at the sight of a broken ginger cat statue.",
-                "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd...",
-                null
-        ],
+        "fail_text": {
+        "unscathed_common": "There is no way r_c is staying around here. They tear off back to camp at the sight of a broken ginger cat statue.",
+        "unscathed_stat": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd..."
+    },
         "win_skills": ["good storyteller", "great storyteller", "fantastic storyteller","excellent speaker"],
         "win_trait": ["adventurous"],
         "fail_trait": ["sneaky", "strange"],
@@ -42,10 +41,9 @@
                 "There are green and black lizards! s_c realizes they're not real immediatelty and decided to come back to this loaction to collect fake lizards for future pranks on clanmates.",
                 "s_c remembers seeing these green and black lizards being shown to them by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior."
         ],
-        "fail_text": [
-                "It's a beach full of lizards! p_l tears back to camp before they can get bitten.",
-                null
-        ],
+        "fail_text": {
+        "unscathed_common": "It's a beach full of lizards! p_l tears back to camp before they can get bitten."
+    },
         "win_trait": ["adventurous", "shameless", "sneaky", "strange", "troublesome", "chilish."],
         "min_cats": 1,
         "max_cats": 1,

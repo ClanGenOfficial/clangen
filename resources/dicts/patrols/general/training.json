@@ -13,12 +13,10 @@
         "unscathed_rare": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     },
-    "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
-        null,
-        null,
-        "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and are rushed back to camp for deathberry poisoning."
-    ],
+    "fail_text": {
+        "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+        "injury": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and are rushed back to camp for deathberry poisoning."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
@@ -40,12 +38,11 @@
         "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "unscathed_rare": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     },
-    "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
-        null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
-    ],
+    "fail_text": {
+        "unscathed_common": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+        "death": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+        "injury": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
+    },
     "min_cats": 3,
     "max_cats": 6,
     "history_text": {
@@ -67,12 +64,10 @@
         "unscathed_rare": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     },
-    "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
-        null,
-        null,
-        "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning."
-    ],
+    "fail_text": {
+        "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+        "injury": "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
@@ -94,12 +89,11 @@
         "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "unscathed_rare": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     },
-    "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
-        null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
-    ],
+    "fail_text": {
+        "unscathed_common": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+        "death": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+        "injury": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
+    },
     "min_cats": 3,
     "max_cats": 6,
     "history_text": {
@@ -121,9 +115,9 @@
         "unscathed_rare": "The sunlight energizes the cats for a training session, and soon everyone puts that energy to good use!",
         "stat_trait": "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their training."
     },
-    "fail_text": [
-        "The patrol doesn't get much done, lazing about and snapping at each other irritably."
-    ],
+    "fail_text": {
+        "unscathed_common": "The patrol doesn't get much done, lazing about and snapping at each other irritably."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 3,
@@ -141,9 +135,9 @@
     "success_text": {
         "unscathed_common": "The sunlight energizes r_c for a solo training session. They know just what to work on!"
     },
-    "fail_text": [
-        "r_c doesn't get much done, soaking up the heat. They did mean to do some training, but... it's so nice to stop for a bit."
-    ],
+    "fail_text": {
+        "unscathed_common": "r_c doesn't get much done, soaking up the heat. They did mean to do some training, but... it's so nice to stop for a bit."
+    },
     "min_cats": 1,
     "max_cats": 1
 },
@@ -161,9 +155,9 @@
         "unscathed_rare": "The sunlight energizes the cats for a training session, and soon everyone puts that energy to good use!",
         "stat_trait": "s_c makes sure r_c gets a good basking spot as the cats pause for a little break before resuming their training."
     },
-    "fail_text": [
-            "The patrol doesn't get much done, lazing about and snapping at each other irritably."
-    ],
+    "fail_text": {
+        "unscathed_common": "The patrol doesn't get much done, lazing about and snapping at each other irritably."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 2,
@@ -183,9 +177,9 @@
         "unscathed_rare": "app1 and app2 end up napping for far longer than they intended, curled up together with their tails brushing up against each other.",
         "stat_trait": "s_c courteously offers app2 the better basking spot, making {PRONOUN/app2/object} blush."
     },
-    "fail_text": [
-            "The patrol doesn't get much done, lazing about and snapping at each other irritably."
-    ],
+    "fail_text": {
+        "unscathed_common": "The patrol doesn't get much done, lazing about and snapping at each other irritably."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 2,
     "max_cats": 2
@@ -204,9 +198,9 @@
         "unscathed_rare": "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certainly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
         "stat_trait": "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. They've seen how hard app1 has been working, and commend them for it, but it'll do the Clan no good if app1 burns themself out. All things in their time."
     },
-    "fail_text": [
-            "While the pair do bask together, app1 is too stiff and polite for it to be considered bonding time. p_l will have to try something else."
-    ],
+    "fail_text": {
+        "unscathed_common": "While the pair do bask together, app1 is too stiff and polite for it to be considered bonding time. p_l will have to try something else."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 2,
@@ -226,10 +220,10 @@
         "unscathed_rare": "Settling down, p_l wants to know how app1 is finding their training. It turns into a lovely conversation, a perfect moment spent with one another, time that's been so rare since app1 became a paw. Not that p_l regrets that, of course, app1 is going to be a wonderful warrior.",
         "stat_trait": "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recnetly until app1 is puffed up with embarrassed, thrilled pride."
     },
-    "fail_text": [
-        "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarrassment.",
-        "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critiquing things, pointing out where they need to improve. Strangely, the apprentice doesn't seem thrilled with the topic."
-    ],
+    "fail_text": {
+        "unscathed_common": "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarrassment.",
+        "unscathed_stat": "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critiquing things, pointing out where they need to improve. Strangely, the apprentice doesn't seem thrilled with the topic."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "fail_trait":["cold", "ambitious"],
@@ -254,10 +248,10 @@
         "stat_skill": "Talking everyone down, p_l encourages the patrol to focus on their work collecting nesting material.",
         "stat_trait": "p_l nods sympathetically, hearing out every side to the argument, and with {PRONOUN/p_l/poss} help the patrol feels comfortable, even with their differences."
     },
-    "fail_text": [
-        "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
-        "p_l rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
+        "unscathed_stat": "p_l rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens."
+    },
     "win_skills": ["great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
@@ -279,10 +273,10 @@
         "stat_skill": "Talking everyone down, p_l encourages the patrol to focus on their work.",
         "stat_trait": "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     },
-    "fail_text": [
-        "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
-        "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return home, the quarrel continues."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l stutters; {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think {PRONOUN/p_l/subject} {VERB/p_l/are/is} fit to lead the patrol.",
+        "unscathed_stat": "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return home, the quarrel continues."
+    },
     "win_skills": ["great speaker", "excellent speaker"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
@@ -304,10 +298,10 @@
         "stat_skill": "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "stat_trait": "This is unlike app1. s_c stops in their tracks, sitting their butt down in the middle of the path and refusing to move until app1 tells them what's bothering them. No, what's <i>actually</i> bothering them."
     },
-    "fail_text": [
-        "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
-        "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
+        "unscathed_stat": "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
+    },
     "win_skills": ["great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise", "inquisitive"],
@@ -331,10 +325,10 @@
         "stat_skill": "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
         "stat_trait": "s_c has taken valuable time out of their day to personally help app1 with their studies, and this is completely juvenile behaviour. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. "
     },
-    "fail_text": [
-        "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
-        "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
+        "unscathed_stat": "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
+    },
     "win_skills": ["great speaker", "excellent speaker"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
                     "troublesome", "vengeful"],
@@ -357,10 +351,10 @@
         "unscathed_rare": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
         "stat_skill": "s_c chooses to train with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}."
     },
-    "fail_text": [
-        "No one can make sense of the vision.",
-        "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
-    ],
+    "fail_text": {
+        "unscathed_common": "No one can make sense of the vision.",
+        "unscathed_stat": "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
+    },
     "win_skills": ["strong connection to starclan"],
     "min_cats": 3,
     "max_cats": 6
@@ -379,9 +373,9 @@
         "unscathed_rare": "Somehow training brings r_c to almost a meditative state, and not only {VERB/r_c/are/is} {PRONOUN/r_c/subject} fairly confident of {PRONOUN/r_c/poss} next steps having been given this vision, but {PRONOUN/r_c/subject} also {VERB/r_c/take/takes} the opportunity to improve on a skill they think they're weak at.",
         "stat_skill": "s_c often feels like StarClan walks with them, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a hard day's training done, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at."
     },
-    "fail_text": [
-            "r_c can't make sense of the vision."
-    ],
+    "fail_text": {
+        "unscathed_common": "r_c can't make sense of the vision."
+    },
     "win_skills": ["strong connection to starclan"],
     "min_cats": 1,
     "max_cats": 1
@@ -399,9 +393,9 @@
         "unscathed_common": "It's alright, app1 assures app2. It wasn't on purpose - maybe {PRONOUN/app2/subject} could head to the medicine den after this, there are heaps of herbs to help app2 sleep, and this totally explains why {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been yawning so much during training.",
         "unscathed_rare": "That's kinda odd. app1 hastens to add that that doesn't mean it's bad, but maybe {PRONOUN/app2/subject} should tell {PRONOUN/app2/poss} mentors about this. Maybe it's something to do with StarClan?"
     },
-    "fail_text": [
-        "That's super weird, app1 tells {PRONOUN/app2/object}. Does app2's mentor know that {PRONOUN/app2/subject}{VERB/app2/'re/'s} so weird?"
-    ],
+    "fail_text": {
+        "unscathed_common": "That's super weird, app1 tells {PRONOUN/app2/object}. Does app2's mentor know that {PRONOUN/app2/subject}{VERB/app2/'re/'s} so weird?"
+    },
     "min_cats": 2,
     "max_cats": 2
 },
@@ -420,10 +414,10 @@
         "stat_skill": "s_c listens to app1 talk was a deep sense of deja vu, in addition to their shock. This sounds like the trouble they had, when they were young, plagued by contact with StarClan regardless of whether they wanted it or not, and they immediately take app1 aside to give them their full attention and support.",
         "stat_trait": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but they can't believe their Clanmate has been going through so much without anybody noticing. Wrapping their tail around app1's shoulders, they tell app1 this will all be alright - they're going to make sure that app1 doesn't have to shoulder this burden alone."
     },
-    "fail_text": [
-        "app1 isn't a kit anymore, and though p_l tries to be gentle about it, they make it clear that it's app1's responsibility to make sure they're well rested and attentive for their training.",
-        "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how they should use this unexpected ability."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 isn't a kit anymore, and though p_l tries to be gentle about it, they make it clear that it's app1's responsibility to make sure they're well rested and attentive for their training.",
+        "unscathed_stat": "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how they should use this unexpected ability."
+    },
     "win_skills": ["strong connection to starclan"],
     "win_trait": ["calm", "compassionate", "empathetic", "faithful", "strange"],
     "fail_trait":["ambitious", "cold", "righteous"],
@@ -444,9 +438,9 @@
         "unscathed_rare": "r_c spins a thrilling tale, and the patrol shivers with exciting, thrilled fear.",
         "stat_skill": "s_c sees the patrol competing to scare each other, and derails it completely. Instead {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear {PRONOUN/s_c/poss} words are, it's almost like {PRONOUN/s_c/subject} {VERB/s_c/know/knows} the StarClan cat, even though that's impossible."
     },
-    "fail_text": [
-            "A branch snaps, and the whole patrol runs back to camp. Later an argument starts about what caused the noise."
-    ],
+    "fail_text": {
+        "unscathed_common": "A branch snaps, and the whole patrol runs back to camp. Later an argument starts about what caused the noise."
+    },
     "win_skills": ["strong connection to StarClan"],
     "min_cats": 3,
     "max_cats": 6
@@ -465,10 +459,10 @@
         "unscathed_rare": "app1 wonders aloud if one of the ghost stories is true... the other cats gather close and comfort {PRONOUN/app1/object}. Time for the silly game to end, before someone actually gets upset.",
         "stat_trait": "s_c looks around, and with a deep breath, shakes off the tense vibe. Instead {PRONOUN/s_c/subject} {VERB/s_c/start/starts} telling tall tales of long ago cats, completely disregarding anything approaching truth, so that the other cats on patrol start laughing and purring again."
     },
-    "fail_text": [
-        "app1 tries to look brave in front of the other cats, but hears a rustle behind {PRONOUN/app1/object} and startles so badly {PRONOUN/app1/subject} {VERB/app1/fall/falls} over.",
-        "s_c makes fun of app1 for being so scared."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 tries to look brave in front of the other cats, but hears a rustle behind {PRONOUN/app1/object} and startles so badly {PRONOUN/app1/subject} {VERB/app1/fall/falls} over.",
+        "unscathed_stat": "s_c makes fun of app1 for being so scared."
+    },
     "win_trait": ["charismatic", "childish", "confident", "playful", "shameless", "strange"],
     "fail_trait": ["ambitious", "bloodthirsty", "childish", "cold", "confident", "fierce", "insecure","troublesome"],
     "min_cats": 3,
@@ -487,10 +481,10 @@
         "unscathed_common": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         "stat_trait": "Whatever, it's not a big deal, and s_c's hungry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/polish/polishes} off the little snack, and {VERB/s_c/keep/keeps} working on {PRONOUN/s_c/poss} pounce."
     },
-    "fail_text": [
-        "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "s_c freezes in indecision, and eventually a warrior spots {PRONOUN/s_c/object} sitting under cover with {PRONOUN/s_c/poss} prey and accuses app1 of eating it anyway."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "unscathed_stat": "s_c freezes in indecision, and eventually a warrior spots {PRONOUN/s_c/object} sitting under cover with {PRONOUN/s_c/poss} prey and accuses app1 of eating it anyway."
+    },
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "min_cats": 1,
@@ -509,10 +503,10 @@
         "unscathed_common": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         "stat_trait": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack."
     },
-    "fail_text": [
-        "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day..",
-        "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day..",
+        "unscathed_stat": "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code."
+    },
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 1,
@@ -531,10 +525,10 @@
         "unscathed_common": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         "stat_trait": "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat {PRONOUN/s_c/poss} afternoon snack under cover."
     },
-    "fail_text": [
-        "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "unscathed_stat": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it."
+    },
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
@@ -553,10 +547,10 @@
         "unscathed_common": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
         "stat_trait": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan."
     },
-    "fail_text": [
-        "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots s_c eating doesn't seem to agree, and a surly s_c is brought back to camp for a lecture."
-    ],
+    "fail_text": {
+        "unscathed_common": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "unscathed_stat": "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots s_c eating doesn't seem to agree, and a surly s_c is brought back to camp for a lecture."
+    },
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "min_cats": 1,
@@ -575,9 +569,9 @@
         "unscathed_common": "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     },
-    "fail_text": [
-            "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 3,
     "max_cats": 6
@@ -595,9 +589,9 @@
         "unscathed_common": "Both cats have a nice practice session, and their trust and coordination with each other grows stronger.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
     "max_cats": 2
@@ -615,9 +609,9 @@
         "unscathed_common": "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     },
-    "fail_text": [
-            "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
+    },
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 3,
     "max_cats": 6
@@ -635,9 +629,9 @@
         "unscathed_common": "Both cats have a nice practice session and their coordination with each other grows stronger. p_l really helps app1 gain confidence working with other cats.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     },
-    "fail_text": [
-            "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
+    },
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
     "max_cats": 2
@@ -656,9 +650,9 @@
         "unscathed_rare": "This isn't what teamwork is supposed to be used for, p_l admonishes them, but neither apprentice can take them seriously while {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} upside down.",
         "stat_skill": "s_c notices the apprentices', err, enthusiasm, and gently redirects them. They end up having a marvelous afternoon, feeling mature and just as skilled as the warriors around them."
     },
-    "fail_text": [
-            "Unfortunately, p_l sees their whispers and separates the two apprentices, preventing their plot."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, p_l sees their whispers and separates the two apprentices, preventing their plot."
+    },
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 4,
     "max_cats": 6
@@ -676,9 +670,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing their stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -696,9 +690,9 @@
         "unscathed_common": "Both cats have a nice practice session, swapping their best tips and tricks with each other.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence in each other growing."
     },
-    "fail_text": [
-            "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2
@@ -716,9 +710,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -736,9 +730,9 @@
         "unscathed_common": "Both cats have a nice practice session, with app1 soaking up all p_l's best tips and tricks.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2
@@ -756,9 +750,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -776,9 +770,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -796,9 +790,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -816,9 +810,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6
@@ -836,9 +830,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -856,9 +850,9 @@
         "unscathed_common": "Both cats have a nice practice session, swapping their best tips and tricks with each other.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 2,
     "max_cats": 2
@@ -876,9 +870,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -896,9 +890,9 @@
         "unscathed_common": "Both cats have a nice practice session, with app1 soaking up all p_l's best tips and tricks.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 2,
     "max_cats": 2
@@ -916,9 +910,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -936,9 +930,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -956,9 +950,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -976,9 +970,9 @@
         "unscathed_common": "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for {PRONOUN/app1/poss} focus and enthusiasm.",
         "stat_skill": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     },
-    "fail_text": [
-        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6
@@ -997,9 +991,9 @@
         "unscathed_rare": "As r_c creeps forward, practicing {PRONOUN/r_c/poss} stalk, p_l notices {PRONOUN/r_c/poss} butt wiggling in excitement. {PRONOUN/p_l/subject/CAP} {VERB/p_l/laugh/laughs} to {PRONOUN/p_l/self} softly, and {VERB/p_l/pad/pads} over to give r_c a head's up about the bad habit.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence and admiration for each other growing."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2
@@ -1018,9 +1012,9 @@
         "unscathed_rare": "r_c takes p_l down with a fantastic pounce, and p_l hits the ground with an audible gasp, shocked and impressed.",
         "stat_skill": "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork."
     },
-    "fail_text": [
-        "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
-    ],
+    "fail_text": {
+        "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    },
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "min_cats": 2,
     "max_cats": 2
@@ -1039,9 +1033,9 @@
         "unscathed_rare": "Maybe it's a stupid idea, this vague plan r_c has been thinking about for getting more fresh-kill. But p_l reassures {PRONOUN/r_c/object}, making {PRONOUN/r_c/object} feel listened to and valued, and the cats work on the idea, evolving it together.",
         "stat_skill": "s_c knows just what to do, and the smile on r_c's face when {PRONOUN/s_c/subject} {VERB/s_c/present/presents} {PRONOUN/s_c/poss} solution makes all the effort of solving things worth it."
     },
-    "fail_text": [
-            "p_l refuses, saying they have no time to talk. r_c accepts that answer, crestfallen, with tail drooping."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l refuses, saying they have no time to talk. r_c accepts that answer, crestfallen, with tail drooping."
+    },
     "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 2,
     "max_cats": 2
@@ -1060,9 +1054,9 @@
         "unscathed_rare": "r_c talks about how, sometimes, often even, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} tripping over {PRONOUN/r_c/poss} own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want r_c to change.",
         "stat_skill": "s_c talks about how choosing the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
     },
-    "fail_text": [
-        "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."
-    ],
+    "fail_text": {
+        "unscathed_common": "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."
+    },
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "min_cats": 2,
     "max_cats": 2
@@ -1081,9 +1075,9 @@
         "unscathed_rare": "r_c talks about how {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to get better at mentoring and helping c_n's apprentices. p_l really admires {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} determination to always improve upon {PRONOUN/r_c/self}.",
         "stat_skill": "s_c describes {PRONOUN/s_c/poss} personal approach to teaching other cats, and r_c admires {PRONOUN/s_c/object} for how much thought {PRONOUN/s_c/subject} {VERB/s_c/put/puts} into it - it's a whole lot of work!"
     },
-    "fail_text": [
-        "The conversation dies off awkwardly as p_l refuses to give r_c an answer."
-    ],
+    "fail_text": {
+        "unscathed_common": "The conversation dies off awkwardly as p_l refuses to give r_c an answer."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
     "max_cats": 2
@@ -1102,9 +1096,9 @@
         "unscathed_rare": "p_l tells r_c that one day StarClan will call on {PRONOUN/r_c/object}, for all {PRONOUN/r_c/poss} many talents and {PRONOUN/r_c/poss} drive and determination to help c_n. r_c ducks {PRONOUN/r_c/poss} head, embarrassed and pleased.",
         "stat_skill": "s_c knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c/object}. With r_c, {PRONOUN/s_c/subject} {VERB/s_c/go/goes} to a quiet area near camp and show {PRONOUN/r_c/object} how to breath, to feel connected to the world around {PRONOUN/r_c/object}, and let {PRONOUN/r_c/poss} worries evaporate from {PRONOUN/r_c/poss} pelt."
     },
-    "fail_text": [
-        "p_l tells r_c {PRONOUN/r_c/subject} should be glad to escape StarClan's attention, and r_c pads away, disappointed."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l tells r_c {PRONOUN/r_c/subject} should be glad to escape StarClan's attention, and r_c pads away, disappointed."
+    },
     "win_skills": ["strong connection to starclan"],
     "min_cats": 2,
     "max_cats": 2
@@ -1122,14 +1116,10 @@
         "unscathed_common": "app1 and app2 have a wonderful time exploring the forbidden tunnels. They return to camp sharing a mysterious smile, swearing not to speak of this to anyone.",
         "unscathed_rare": "app1 expected a little hesitation. but app2 defies that expectation and darts right into the tunnels. playfully batting at {PRONOUN/app1/object} as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp."
     },
-    "fail_text": [
-        "As app1 and app2 begin to make their way into the tunnels, they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment, though they feel like they should fear their mentors' anger more...", 
-        null,
-        null,
-        null,
-        null,
-        "s_c boasts that {PRONOUN/s_c/subject} {VERB/s_c/go/goes} into the tunnels <i>all</i> the time. app2 is unconvinced, so s_c crawls in with a smug look back... just as the tunnel rumbles and collapses. With a terrified screech, app2 runs back to camp, praying {PRONOUN/app2/subject} can find help fast. As they hurry back, {PRONOUN/app2/subject} can only hear s_c wail that {PRONOUN/s_c/subject} can't feel {PRONOUN/s_c/poss} legs."
-    ],
+    "fail_text": {
+        "unscathed_common": "As app1 and app2 begin to make their way into the tunnels, they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment, though they feel like they should fear their mentors' anger more...",
+        "stat_injury": "s_c boasts that {PRONOUN/s_c/subject} {VERB/s_c/go/goes} into the tunnels <i>all</i> the time. app2 is unconvinced, so s_c crawls in with a smug look back... just as the tunnel rumbles and collapses. With a terrified screech, app2 runs back to camp, praying {PRONOUN/app2/subject} can find help fast. As they hurry back, {PRONOUN/app2/subject} can only hear s_c wail that {PRONOUN/s_c/subject} can't feel {PRONOUN/s_c/poss} legs."
+    },
     "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
     "max_cats": 2,
@@ -1150,9 +1140,9 @@
         "unscathed_common": "p_l guides app1 to sit, gently asking what's wrong. app1, cuddled close to p_l's side, whispers that {PRONOUN/app1/subject} {VERB/app1/feel/feels} like a failure, and that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing good enough. p_l gently tugs {PRONOUN/app1/object} close, murmuring that app1's more than {PRONOUN/app1/poss} failures. Failure hurts, yes, but with it comes a chance to learn. All {PRONOUN/app1/subject} can do is try not to make the same mistake twice.",
         "unscathed_rare": "p_l gently asks what's wrong and app1 breaks down, wailing that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing good enough even though {PRONOUN/app1/subject}{VERB/app1/'re/'s} <i>really</i> trying. p_l curls around {PRONOUN/app1/object}, purring softly, and tells a story of {PRONOUN/p_l/poss} own apprentice days, and {PRONOUN/p_l/poss} own mistakes. p_l chuckles at the look on {PRONOUN/app1/poss} face, promising that nobody but {PRONOUN/app1/self} will remember {PRONOUN/app1/poss} mistakes."
     },
-    "fail_text": [
-        "p_l tries to ask app1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/app1/subject} {VERB/app1/want/wants} to talk about it. Unfortunately, app1 immediately shuts down, muttering a request to please just keep the patrol focused on training."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l tries to ask app1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/app1/subject} {VERB/app1/want/wants} to talk about it. Unfortunately, app1 immediately shuts down, muttering a request to please just keep the patrol focused on training."
+    },
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 2,
     "max_cats": 2
@@ -1170,9 +1160,9 @@
         "unscathed_common": "p_l patiently shows app1 the best places to gather moss, and how to gather it, explaining to app1 that by doing this {PRONOUN/app1/subject} will gain the muscles and strength necessary to be a great warrior.",
         "unscathed_rare": "p_l notices app1's eyes flitting about distractedly. Taking a more paws-on approach, {PRONOUN/p_l/subject} {VERB/p_l/show/shows} app1 the strength {PRONOUN/p_l/subject} gained from gathering the moss, and the control {PRONOUN/p_l/subject} learned from not shredding it. app1 seems awed and impressed."
     },
-    "fail_text": [
-        "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp."
+    },
     "win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
     "max_cats": 2

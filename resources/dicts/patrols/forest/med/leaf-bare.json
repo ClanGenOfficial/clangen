@@ -12,10 +12,10 @@
         "unscathed_common": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
         "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     },
-    "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
-        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-    ],
+    "fail_text": {
+        "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
+        "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+    },
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
@@ -37,10 +37,10 @@
         "unscathed_common": "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     },
-    "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-    ],
+    "fail_text": {
+        "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+    },
     "win_skills": ["good speaker", "great speaker", "excellent speaker", "good mediator", "great mediator", "excellent mediator"],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
@@ -62,12 +62,10 @@
         "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
         "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n."
     },
-    "fail_text": [
-            "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant.",
-            null,
-            null,
-            "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
-    ],
+    "fail_text": {
+        "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant.",
+        "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -91,12 +89,10 @@
         "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds their breath, hoping their mentor comes down unscathed.",
         "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They leave app1 outside, not wanting to risk their apprentice in the snow and thorns."
     },
-    "fail_text": [
-            "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
-            null,
-            null,
-            "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
-    ],
+    "fail_text": {
+        "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
+        "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -120,12 +116,10 @@
         "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. The rest of the patrol gingerly follows their lead, and together they manage as decent a harvest as anyone can expect from leaf-bare.",
         "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. They pass them out to the members of the patrol from within the thicket, and their entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home."
     },
-    "fail_text": [
-            "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant. They'll have to try a different blackberry bush on another day.",
-            null,
-            null,
-            "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
-    ],
+    "fail_text": {
+        "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. They note with growing concern that leaf-bare might have killed the plant. They'll have to try a different blackberry bush on another day.",
+        "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,
@@ -149,12 +143,10 @@
         "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home.",
         "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     },
-    "fail_text": [
-            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
-            null,
-            null,
-            "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
-    ],
+    "fail_text": {
+        "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
+        "injury": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -178,12 +170,10 @@
         "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
         "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     },
-    "fail_text": [
-            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
-            null,
-            null,
-            "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
-    ],
+    "fail_text": {
+        "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
+        "injury": "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -207,12 +197,10 @@
         "unscathed_rare": "It's very difficult, especially with the plant's leafy top-half gone until newleaf, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
         "stat_skill": "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     },
-    "fail_text": [
-            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
-            null,
-            null,
-            "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
-    ],
+    "fail_text": {
+        "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
+        "injury": "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,
@@ -236,12 +224,10 @@
         "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nest.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -265,12 +251,10 @@
         "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're back in their nice warm nests, and app1 has been a real trooper today.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -294,12 +278,10 @@
         "unscathed_rare": "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once everyone is back in their nice, warm nests.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any daisies under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,
@@ -323,12 +305,10 @@
         "unscathed_rare": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -352,12 +332,10 @@
         "unscathed_rare": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen app1's happiness when they manage to uncover a couple good dandelion plants. Watching them find joy in safeguarding the Clan gives p_l a swoop of pride and affection for the apprentice. The path of a medicine cat suits the young cat well.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -381,12 +359,10 @@
         "unscathed_rare": "It's a truly miserable, gray day, but even the colds of leaf-bare can't dampen p_l's joy when they manage to uncover a couple good dandelion plants. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
         "stat_skill": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
     },
-    "fail_text": [
-            "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            null,
-            null,
-            "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
-    ],
+    "fail_text": {
+        "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+        "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,
@@ -410,12 +386,10 @@
         "unscathed_rare": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
         "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare."
     },
-    "fail_text": [
-            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            null,
-            null,
-            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+        "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -439,12 +413,10 @@
         "unscathed_rare": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, though app1 gives them a weird look, which prompts p_l to explain their wide smile.",
         "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk themselves climbing in leaf-bare."
     },
-    "fail_text": [
-            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            null,
-            null,
-            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+        "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -468,12 +440,10 @@
         "unscathed_rare": "Sometimes p_l finds themselves nearly giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
         "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare."
     },
-    "fail_text": [
-            "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
-            null,
-            null,
-            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
+        "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,
@@ -497,12 +467,10 @@
         "unscathed_rare": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
         "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
     },
-    "fail_text": [
-            "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            null,
-            null,
-            "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+        "injury": "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 1,
     "max_cats": 1,
@@ -526,12 +494,10 @@
         "unscathed_rare": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
         "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
     },
-    "fail_text": [
-            "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            null,
-            null,
-            "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+        "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 2,
     "max_cats": 2,
@@ -555,12 +521,10 @@
         "unscathed_rare": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
         "stat_skill": "s_c knows exactly where to go - there was a thick patch of wild garlic that grew in an exposed area. They prove themself right, and it's only an utter and complete pain to dig out the bulbs. Well, at least they've got them now."
     },
-    "fail_text": [
-            "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
-            null,
-            null,
-            "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
-    ],
+    "fail_text": {
+        "unscathed_common": "p_l searches and searches, but eventually they have to admit defeat. They can't remember where the garlic grew when the world was warm.",
+        "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
+    },
     "win_skills": ["keen eye"],
     "min_cats": 3,
     "max_cats": 6,

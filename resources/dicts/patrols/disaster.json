@@ -14,12 +14,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -46,12 +43,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -78,12 +72,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -110,12 +101,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -142,12 +130,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -174,12 +159,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -205,12 +187,9 @@
         "stat_skill": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
         "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
     },
-    "fail_text": [
-            null,
-            null,
-            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
-            null
-    ],
+    "fail_text": {
+        "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -237,12 +216,9 @@
         "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
         "stat_trait": "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
     },
-    "fail_text": [
-            null,
-            null,
-            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
-            null
-    ],
+    "fail_text": {
+        "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -269,12 +245,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay far from the riverbanks as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -301,12 +274,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -333,12 +303,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -365,12 +332,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -397,12 +361,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -429,12 +390,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -461,12 +419,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -493,12 +448,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -525,12 +477,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -557,12 +506,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -589,12 +535,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -621,12 +564,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -653,12 +593,9 @@
         "stat_skill": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
         "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
     },
-    "fail_text": [
-            null,
-            null,
-            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
-            null
-    ],
+    "fail_text": {
+        "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -685,12 +622,9 @@
         "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
         "stat_trait": "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
     },
-    "fail_text": [
-            null,
-            null,
-            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
-            null
-    ],
+    "fail_text": {
+        "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -717,12 +651,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -749,12 +680,9 @@
         "stat_skill": "s_c makes a careful judgment and keeps going, but they stick to the clifftops, avoiding the low beaches as the rain pours down around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-            null,
-            null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
-            null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away."
+    },
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
@@ -780,12 +708,9 @@
         "stat_skill": "s_c shouts to get back! The patrol scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
         "stat_trait": "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the beach disappears under a flood of water from inland. They've saved them all."
     },
-    "fail_text": [
-            null,
-            null,
-            "The cats are in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
-            null
-    ],
+    "fail_text": {
+        "death": "The cats are in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean."
+    },
     "win_skills": ["extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
@@ -817,12 +742,9 @@
         "stat_skill": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c convinces the patrol to head for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away."
+    },
     "win_skills": [
         "very smart",
         "extremely smart"
@@ -858,12 +780,9 @@
         "stat_skill": "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
         "stat_trait": "It's not worth the risk - s_c heads for home."
     },
-    "fail_text": [
-        null,
-        null,
-        "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
-        null
-    ],
+    "fail_text": {
+        "death": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away."
+    },
     "win_skills": [
         "very smart",
         "extremely smart"
@@ -902,12 +821,9 @@
         "stat_skill": "s_c shouts to get back! The patrol scrambles back the way they came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
         "stat_trait": "s_c shrieks at the strange sound, paws digging into the mud as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the swamp disappears under a flood of water from inland. They've saved them all."
     },
-    "fail_text": [
-        null,
-        null,
-        "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under it's ice.",
-        null
-    ],
+    "fail_text": {
+        "death": "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under it's ice."
+    },
     "win_skills": [
         "extremely smart"
     ],
@@ -938,12 +854,10 @@
         "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
-        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
-    ],
+    "fail_text": {
+        "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
+        "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,
@@ -970,12 +884,10 @@
         "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
-        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
-    ],
+    "fail_text": {
+        "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
+        "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,
@@ -1002,12 +914,10 @@
         "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
-        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
-    ],
+    "fail_text": {
+        "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
+        "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,
@@ -1034,12 +944,10 @@
         "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     },
-    "fail_text": [
-        null,
-        null,
-        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
-        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
-    ],
+    "fail_text": {
+        "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
+        "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
+    },
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,

@@ -12,11 +12,9 @@
         "unscathed_common": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
         "stat_trait": "They keep going, responsibly, although instead of leaping the little stream r_c wades through it, letting the water cool their paws pleasantly."
     },
-    "fail_text": [
-            "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done.",
-            null, 
-            null, 
-            null],
+    "fail_text": {
+        "unscathed_common": "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
+    },
     "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
     "min_cats": 1,
     "max_cats": 1,

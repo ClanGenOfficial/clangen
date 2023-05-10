@@ -14,9 +14,9 @@
         "stat_skill": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk vs the comparatively smaller females.",
         "stat_trait": "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals, and that if the cats don't bother them, they won't bother the cats."
     },
-    "fail_text": [
-            "When one of the boulders abruptly starts roaring, app1 shrieks and runs. It takes the rest of the patrol to find them, and the teaching moment is forgotten as the cats gather to comfort them."
-    ],
+    "fail_text": {
+        "unscathed_common": "When one of the boulders abruptly starts roaring, app1 shrieks and runs. It takes the rest of the patrol to find them, and the teaching moment is forgotten as the cats gather to comfort them."
+    },
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 3,
@@ -37,10 +37,10 @@
         "unscathed_common": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, their slicked fur clinging to their muscles, r_c can't help but admire p_l for their strength. With the way r_c's heart is fluttering, it may not just be p_l's strength they admire. They brush it aside and plunge in after them.",
         "unscathed_rare": "Silence meets their question, and just as p_l is about to turn and ask again, r_c shoves them bodily into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though they mean it, captivated by the sound of r_c's joyous laughter, the sunlight catching on their pelt in just the right way."
     },
-    "fail_text": [
-        "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with them instead.",
-        "s_c tries their best to show off their swimming skills, but their companion just isn't paying attention, too focused on their own swimming to notice. Eventually, s_c gives up for now, discouraged."
-    ],
+    "fail_text": {
+        "unscathed_common": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with them instead.",
+        "unscathed_stat": "s_c tries their best to show off their swimming skills, but their companion just isn't paying attention, too focused on their own swimming to notice. Eventually, s_c gives up for now, discouraged."
+    },
     "fail_trait": ["ambitious", "childish", "insecure", "lonesome"],
     "min_cats": 2,
     "max_cats": 2,
