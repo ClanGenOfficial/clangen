@@ -22,9 +22,10 @@ import time
 import os
 
 from scripts.housekeeping.log_cleanup import prune_logs
-from scripts.stream_duplexer import UnbufferedStreamDuplexer
-from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info, VERSION_NAME
+from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
+from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
+from scripts.housekeeping.version import get_version_info, VERSION_NAME
+
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -117,6 +118,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
+from scripts.debugmode import debugmode
 import pygame_gui
 import pygame
 
@@ -186,20 +188,11 @@ cursor = pygame.cursors.Cursor((9,0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
-debug_coords = pygame_gui.elements.UILabel(
-    pygame.Rect((0, 0), (-1, -1)),
-    "(0, 0)",
-    object_id=get_text_box_theme()
-)
 
-debug_coords.text_colour = (255, 0, 0)
-debug_coords.disable()
-debug_coords.rebuild()
-debug_coords.hide()
 
 
 while True:
-    time_delta = clock.tick(30) / 1000.0
+    time_delta = clock.tick(game.switches['fps']) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
             screen.fill((57, 50, 36))
@@ -247,29 +240,10 @@ while True:
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F2:
-                if not MANAGER.visual_debug_active:
-                    MANAGER.set_visual_debug_mode(True)
-                else:
-                    MANAGER.set_visual_debug_mode(False)
+                debugmode.toggle_console()
 
         MANAGER.process_events(event)
     
-    if MANAGER.visual_debug_active:
-        if debug_coords.visible == 0:
-            debug_coords.show()
-        
-        _ = pygame.mouse.get_pos()
-        if game.settings['fullscreen']:
-            debug_coords.set_text(f"({_[0]}, {_[1]})")
-        else:
-            debug_coords.set_text(f"({_[0]*2}, {_[1]*2})")
-        debug_coords.set_position(_)
-        del _
-    else:
-        if debug_coords.visible == 1:
-            debug_coords.hide()
-            debug_coords.set_text("(0, 0)")
-            debug_coords.set_position((0, 0))
 
     MANAGER.update(time_delta)
 
@@ -281,18 +255,10 @@ while True:
         game.switch_screens = False
 
 
+    debugmode.update1(clock)
     # END FRAME
     MANAGER.draw_ui(screen)
+    debugmode.update2(screen)
 
-    if MANAGER.visual_debug_active:
-        elements = MANAGER.ui_group.visible
-        for surface in elements:
-            rect = surface[1]
-            if rect == debug_coords.rect:
-                continue
-            if rect.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(screen, (0, 255, 0), rect, 1)
-            else:
-                pygame.draw.rect(screen, (255, 0, 0), rect, 1)
 
     pygame.display.update()
