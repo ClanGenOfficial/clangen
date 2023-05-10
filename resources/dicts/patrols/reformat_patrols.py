@@ -1,4 +1,4 @@
-import ujson
+import json as ujson
 import collections
 import os
 from os.path import exists as file_exists
@@ -139,4 +139,3 @@ for dir_, _, files in os.walk(root_dir):
 
 for pa in file_set:
     reformat_success_text(pa)
-
