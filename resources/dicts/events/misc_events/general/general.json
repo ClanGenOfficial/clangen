@@ -118,12 +118,23 @@
         "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in."
     },
     {
-        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
-        "event_text": "m_c and r_c watch the Clan's kits play and daydream about having {PRONOUN/m_c/poss} own one day."
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The tension between c_n and o_c is palpable, with even the smallest actions potentially leading to violence."
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "event_text": "The war with o_c is beginning to disrupt the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves."
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
+        "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day."
      },
      {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate"],
+        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate"],
         "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as their mate.",
         "other_cat_trait": ["compassionate", "loving", "thoughtful"],
         "negate_cat_trait": ["bloodthirsty", "cold", "fierce", "troublesome", "vengeful"],
@@ -131,7 +142,7 @@
      },
      {
         "camp": "any",
-        "tags": ["Newleaf", "other_cat_mate", "to_both", "platonic"],
+        "tags": ["Newleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
         "event_text": "m_c sits still as r_c helps remove some leftover Leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck."
      },
      {
@@ -158,7 +169,7 @@
      },
      {
         "camp": "any",
-        "tags": ["Greenleaf", "other_cat",  "other_cat_mate", "to_both", "platonic"],
+        "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."
      },
     {
