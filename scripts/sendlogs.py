@@ -22,7 +22,7 @@ def verify_token(token: str) -> bool:
     """
     verifies the token is valid
     """
-    with requests.get("https://bot.luna.clangen.io/logtoken/" + token) as response:
+    with requests.get("https://silverpelt.lvna.me/logtoken/" + token) as response:
         if response.status_code == 200:
             return True
         else:
@@ -42,7 +42,7 @@ def upload_logs(token: str, progress: UITextBoxTweaked, callback: callable):
             files[log] = f.read()
 
 
-    req = requests.post("https://bot.luna.clangen.io/logs/", data=ujson.dumps(files), headers={'Content-Type': 'application/json', 'token': token})
+    req = requests.post("https://silverpelt.lvna.me/logs/", data=ujson.dumps(files), headers={'Content-Type': 'application/json', 'token': token})
 
     if req.status_code == 200:
         progress.set_text("Logs uploaded successfully!")
