@@ -174,7 +174,7 @@ else:
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
         scale(pygame.Rect((990, 1321), (600, 100))),
-        "Disablilty Mod:",
+        "Dev Build:",
         object_id="#dev_watermark"
     )
 
