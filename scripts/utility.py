@@ -1387,12 +1387,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
             eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
-        # Eye tint
-        if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
-            "tint_colours"]:
-            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
-            eyes.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
         new_sprite.blit(eyes, (0, 0))
 
         if not scars_hidden:

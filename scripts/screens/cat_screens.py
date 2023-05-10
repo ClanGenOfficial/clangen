@@ -15,7 +15,7 @@ from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text
 
 from .base_screens import Screens
 
-from scripts.utility import get_text_box_theme, scale_dimentions
+from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
 from scripts.game_structure import image_cache
@@ -2888,10 +2888,21 @@ class SpriteInspectScreen(Screens):
         self.next_cat_button = None
         self.next_cat = None
         self.the_cat = None
+        self.cat_image = None
         self.cat_elements = {}
+        self.checkboxes = {}
+        
+
+        
+        
+        #Image Settings: 
         self.platform_shown = None
-        self.platform_show = None
-        self.platform_hide = None
+        self.lifestage = None
+        self.scars_hidden = False
+        self.always_living = False
+        self.acc_hidden = False
+        self.no_not_working = False
+        
         super().__init__(name)
     
     def handle_event(self, event):
@@ -2900,7 +2911,6 @@ class SpriteInspectScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    print(Cat.fetch_cat(self.next_cat))
                     game.switches["cat"] = self.next_cat
                     self.cat_setup()
                 else:
@@ -2924,17 +2934,11 @@ class SpriteInspectScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
         
-        self.previous_life_state = UIImageButton()
+        #self.previous_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_right_fancy")
         
-        self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_right_fancy")
+        #self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_left_fancy")
         
-        self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_left_fancy")
-        
-        self.platform_show = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "" ,
-                                           object_id = "#unchecked_checkbox")
-        self.platform_hide = UIImageButton(scale(pygame.Rect((700, 1100),(128, 128))), "", 
-                                           object_id="#checked_checkbox")
-        
+        # Toggle Texts:
         
         
         if game.settings['backgrounds']:
@@ -2942,10 +2946,17 @@ class SpriteInspectScreen(Screens):
         else:
             self.is_platform_shown = False
         
+        self.lifestage = None
+        self.scars_hidden = False
+        self.always_living = False
+        self.acc_hidden = False
+        self.no_not_working = False
+        
         self.cat_setup()
         return super().screen_switches()
 
     def cat_setup(self): 
+        """Sets up all the elements related to the cat """
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()
         self.cat_elements = {}
@@ -2958,10 +2969,15 @@ class SpriteInspectScreen(Screens):
                 manager=MANAGER)
         self.set_background_visablity()
         
-        self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((450, 200),(700, 700))),
-            pygame.transform.scale(self.the_cat.sprite, scale_dimentions((700, 700)))
-        )
+        #Reset all the toggles
+        self.lifestage = None
+        self.scars_hidden = None
+        self.override_dead_lineart = None
+        self.acc_hidden = None
+        self.override_not_working = None
+        
+        # Make the cat image
+        self.make_cat_image()
         
         cat_name = str(self.the_cat.name)  # name
         if len(cat_name) >= 40:
@@ -3014,9 +3030,61 @@ class SpriteInspectScreen(Screens):
             self.cat_elements["favourite_button"].hide()
             self.cat_elements["not_favourite_button"].show()
         
+        
+        # Write the checkboxes. The text is set up in switch_screens.  
+        self.update_checkboxes()
+        
+        
         self.determine_previous_and_next_cat()
         self.update_disabled_buttons()
+    
+    def update_checkboxes(self):
+        for ele in self.checkboxes:
+            self.checkboxes[ele].kill()
+        self.checkboxes = {}
         
+        
+        self.make_one_checkbox((200, 1100), "platform_shown", self.platform_shown)
+        
+        self.make_one_checkbox((300, 1100), "scars_hidden", self.scars_hidden, self.the_cat.scars)
+        
+        self.make_one_checkbox((400, 1100), "acc_hidden", self.acc_hidden, self.the_cat.accessory)
+        
+        self.make_one_checkbox((500, 1100), "override_dead_lineart", self.override_dead_lineart, not self.the_cat.dead)
+        
+        self.make_one_checkbox((600, 1100), "override_not_working", self.override_not_working, not self.the_cat.not_working())
+        
+    
+    def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True):
+        """Makes a single checkbox. So I don't have to copy and paste this 5 times. 
+            if cat_value_to_allow evalates to False, then the unchecked checkbox is always used the the checkbox 
+            is disabled"""
+        
+        if not cat_value_to_allow:
+            self.checkboxes[name] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
+                                                            object_id = "#unchecked_checkbox")
+            self.checkboxes[name].disable()
+        elif stored_bool:
+            self.checkboxes["scars_hidden"] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
+                                                            object_id = "#unchecked_checkbox")
+        else:
+            self.checkboxes["scars_hidden"] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
+                                                            object_id = "#checked_checkbox")
+    
+    def make_cat_image(self):
+        """Makes the cat image """
+        if "cat_image" in self.cat_elements:
+            self.cat_elements["cat_image"].kill()
+        
+        self.cat_image = generate_sprite(self.the_cat, life_state=self.lifestage, scars_hidden=self.scars_hidden,
+                                         acc_hidden=self.acc_hidden, always_living=self.always_living, 
+                                         no_not_working=self.no_not_working)
+        
+        self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((450, 200),(700, 700))),
+            pygame.transform.scale(self.cat_image, scale_dimentions((700, 700)))
+        )
+      
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
 
@@ -3073,13 +3141,12 @@ class SpriteInspectScreen(Screens):
         self.previous_cat_button = None
         self.next_cat_button.kill()
         self.next_cat_button = None
-        self.platform_hide.kill()
-        self.platform_hide = None
-        self.platform_show.kill()
-        self.platform_show = None
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()
         self.cat_elements = {}
+        for ele in self.checkboxes:
+            self.checkboxes[ele].kill()
+        self.checkboxes = {}
         return super().exit_screen()
     
     def update_disabled_buttons(self):
