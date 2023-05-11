@@ -102,14 +102,13 @@
         "tags": ["clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c gathered up the kits to tell them stories of story_list.",
         "cat_trait": null,
-        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter","good storyteller", "great storyteller", "fantastic storyteller"]
+        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter", "good storyteller", "great storyteller", "fantastic storyteller"]
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c spends the evening regaling the Clan with stories of story_list.",
-        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter",
-            "good storyteller", "great storyteller", "fantastic storyteller"
+        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter", "good storyteller", "great storyteller", "fantastic storyteller"]
     },
     {
         "camp": "any",
