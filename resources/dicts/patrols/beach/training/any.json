@@ -782,7 +782,7 @@
             "comfort",
             "no_app"
         ],
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object} ?",
+        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps doing some training with {PRONOUN/r_c/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/haves} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
