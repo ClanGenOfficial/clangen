@@ -143,14 +143,14 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} each other.",
+            "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
             "p_l digs through the loose sand, helping r_c clear it away enough for the other cat to scramble free.",
-            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/r_c/poss} Clanmate. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation."
+            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
         ],
         "fail_text": [
             "p_l works all day to free r_c and gets nothing else done.",
-            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/r_c/object} harshly that {PRONOUN/r_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that {PRONOUN/s_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
             "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
             "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         ],
@@ -216,12 +216,12 @@
         "success_text": [
             "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
             "p_l digs through the loose soil, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
-            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/r_c/poss} Clanmate. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/subject} seeing s_c in a different light.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/r_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/r_c/object}, holding on to {PRONOUN/r_c/poss} presence in the scary situation."
+            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
         ],
         "fail_text": [
             "p_l works all day to free r_c and gets nothing else done.",
-            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/r_c/object} harshly that {PRONOUN/r_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/p_l/object} harshly that {PRONOUN/p_l/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
             "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
             "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         ],
@@ -284,7 +284,7 @@
             null
         ],
         "fail_text": [
-            "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} yowl until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees {PRONOUN/r_c/poss} hapless Clanmate.",
+            "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} yowl until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
             null,
             "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} {VERB/r_c/succumb/succumbs} to {PRONOUN/r_c/poss} injuries and drift to StarClan alone.",
             "r_c eventually manages to pull {PRONOUN/r_c/object} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some beach grass to shelter in through the night out on the shore until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den."
@@ -515,7 +515,7 @@
             "dislike",
             "warrior"
         ],
-        "intro_text": "p_l takes {PRONOUN/p_l/object} both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "exp": 15,
@@ -525,7 +525,7 @@
             "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster, with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/s_c/subject} can see how it could be a sea cat."
         ],
         "fail_text": [
-            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/p_l/subject} to take the training session seriously."
+            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously."
         ],
         "win_skills": [
             "good speaker",
@@ -550,7 +550,7 @@
             "dislike",
             "warrior"
         ],
-        "intro_text": "p_l takes {PRONOUN/p_l/object} both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "exp": 15,
@@ -586,7 +586,7 @@
             "two_apprentices",
             "warrior"
         ],
-        "intro_text": "p_l takes {PRONOUN/p_l/object} out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 40,
         "exp": 20,
@@ -596,7 +596,7 @@
             "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and frighteningly {PRONOUN/s_c/subject} can see how it could be a sea cat."
         ],
         "fail_text": [
-            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/p_l/subject} to take the training session seriously. {PRONOUN/p_l/subject/CAP} {VERB/p_l/distract/distracts} app2 as well, and eventually p_l has to give up on teaching."
+            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching."
         ],
         "win_skills": [
             "good speaker",
@@ -622,7 +622,7 @@
             "two_apprentices",
             "warrior"
         ],
-        "intro_text": "p_l takes {PRONOUN/p_l/object} out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+        "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 40,
         "exp": 15,
@@ -663,10 +663,10 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app1/object}. app1 brings {PRONOUN/app1/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
-            "When app2 arrives, app1 spots {PRONOUN/app1/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of {PRONOUN/app1/object} gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
+            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
+            "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
             null,
-            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. {PRONOUN/s_c/subject/CAP} {VERB/s_c/watch/watches} the storm together, quietly thrilled."
+            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
         ],
         "fail_text": [
             "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the rain."
@@ -705,10 +705,10 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app1/object}. app1 brings {PRONOUN/app1/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
-            "When app2 arrives, app1 spots {PRONOUN/app1/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of {PRONOUN/app1/object} gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
+            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
+            "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
             null,
-            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. {PRONOUN/s_c/subject/CAP} {VERB/s_c/watch/watches} the storm together, quietly thrilled."
+            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
         ],
         "fail_text": [
             "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2."
@@ -747,13 +747,13 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-            "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed, and proclaims {PRONOUN/app1/subject} clothed like a Twoleg. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} after app1, who's not as keen to get seaweed slime all over {PRONOUN/app1/self}, and the two young cats play on the safe sands all afternoon.",
-            "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until {PRONOUN/app1/subject} finally get bored to escape.",
+            "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed, and proclaims {PRONOUN/app1/subject} clothed like a Twoleg. {PRONOUN/app2/subject/CAP} {VERB/app2/chase/chases} after app1, who's not as keen to get seaweed slime all over {PRONOUN/app1/self}, and the two young cats play on the safe sands all afternoon.",
+            "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until {PRONOUN/app1/subject} finally get bored to escape.",
             null,
-            "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly present it to app2, wondering if app2 might like it for {PRONOUN/app1/poss} nest. Blushing to the tips of {PRONOUN/app1/poss} ears, app2 accepts {PRONOUN/app1/poss} gift."
+            "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly present it to app2, wondering if app2 might like it for {PRONOUN/app2/poss} nest. Blushing to the tips of {PRONOUN/app2/poss} ears, app2 accepts {PRONOUN/app1/poss} gift."
         ],
         "fail_text": [
-            "app1 tries to give app2 a shell, but {PRONOUN/app1/subject} don't want it, and the crestfallen apprentice slinks off sadly."
+            "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} don't want it, and the crestfallen apprentice slinks off sadly."
         ],
         "win_trait": [
             "altruistic",
