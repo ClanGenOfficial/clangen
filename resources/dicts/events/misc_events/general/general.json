@@ -134,13 +134,12 @@
      {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate"],
-        "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {CAP/PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate.",
+        "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {CAP/PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate."
      },
      {
         "camp": "any"
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate"],
         "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as their mate.",
-       
         "other_cat_trait": ["compassionate", "loving", "thoughtful"],
         "negate_cat_trait": ["bloodthirsty", "cold", "fierce", "troublesome", "vengeful"],
         "negate_other_cat_trait": ["bloodthirsty", "cold", "fierce", "troublesome", "vengeful"]
