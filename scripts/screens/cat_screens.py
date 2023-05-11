@@ -1423,6 +1423,16 @@ class ProfileScreen(Screens):
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
 
+    def get_text_for_murder_event(self, event, death):
+        if event["text"] == death["text"] and event["moon"] == death["moon"]:
+            if event["revealed"] is True:
+                return event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            else:
+                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+        return None
+
+
+
     def get_death_text(self):
         """
         returns adjusted death history text
@@ -1437,55 +1447,58 @@ class ProfileScreen(Screens):
 
         if death_history:
             all_deaths = []
-            for death in death_history:
+            death_number = len(death_history)
+            for index, death in enumerate(death_history):
+                found_murder = False  # Add this line to track if a matching murder event is found
                 if murder_history:
-                    # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
                     for event in murder_history["is_victim"]:
-                        if event["text"] == death["text"] and event["moon"] == death["moon"]:
-                            if event["revealed"] is True:
-                                text = event_text_adjust(Cat,
-                                                         event["text"],
-                                                         self.the_cat,
-                                                         Cat.fetch_cat(death["involved"]))
-                            else:
-                                text = event_text_adjust(Cat,
-                                                         event["unrevealed_text"],
-                                                         self.the_cat,
-                                                         Cat.fetch_cat(death["involved"]))
-                else:
-                    text = event_text_adjust(Cat,
-                                             death["text"],
-                                             self.the_cat,
-                                             Cat.fetch_cat(death["involved"]))
-                if moons:
-                    text += f" (Moon {death['moon']})"
-                all_deaths.append(text)
+                        text = self.get_text_for_murder_event(event, death)
+                        if text is not None:
+                            found_murder = True  # Update the flag if a matching murder event is found
+                            break
 
-            death_number = len(all_deaths)
+                if found_murder and text is not None and not event["revealed"]:
+                    text = event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                elif not found_murder:
+                    text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+
+
+                if index == death_number - 1 and self.the_cat.dead:
+                    if death_number == 9:
+                        life_text = "lost their final life"
+                    else:
+                        life_text = "lost their final lives"
+                else:
+                    life_text = "lost a life"
+
+                if text:
+                    text = f"{life_text} when {{PRONOUN/m_c/subject}} {text}"
+
+                    if moons:
+                        text += f" (Moon {death['moon']})"
+                    all_deaths.append(text)
 
             if self.the_cat.status == 'leader' or death_number > 1:
-
                 if death_number > 2:
-                    deaths = f"{', '.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                    filtered_deaths = [death for death in all_deaths if death is not None]
+                    deaths = f"{', '.join(filtered_deaths[0:-1])}, and {filtered_deaths[-1]}"
                 elif death_number == 2:
                     deaths = " and ".join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 
-                if self.the_cat.dead:
-                    insert = ' lost all {PRONOUN/m_c/poss} lives'
-                elif game.clan.leader_lives == 8:
-                    insert = ' lost a life'
-                else:
-                    insert = ' lost {PRONOUN/m_c/poss} lives'
-
-                text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
+                text = str(self.the_cat.name) + " " + deaths
             else:
                 text = all_deaths[0]
+
+            if text and text[-1] not in {".", "!", "?"}:
+                text += "."
+
             cat_dict = {
                 "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
             }
             text = process_text(text, cat_dict)
+
         return text
 
     def get_murder_text(self):
