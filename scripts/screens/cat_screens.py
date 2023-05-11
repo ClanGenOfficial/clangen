@@ -6,7 +6,7 @@ from random import choice
 import pygame
 
 from ..cat.history import History
-from ..housekeeping.datadir import get_save_dir
+from ..housekeeping.datadir import get_save_dir, get_saved_images_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
 
 import ujson
@@ -2879,7 +2879,7 @@ class RoleScreen(Screens):
 # ---------------------------------------------------------------------------- #
 
 class SpriteInspectScreen(Screens):
-    cat_life_stages = ["newborn", "kitten", "adult", "senior"]
+    cat_life_stages = ["newborn", "kitten", "adolescent", "adult", "senior"]
     
     def __init__(self, name=None):
         self.back_button = None
@@ -2892,16 +2892,14 @@ class SpriteInspectScreen(Screens):
         self.cat_elements = {}
         self.checkboxes = {}
         
-
-        
+        self.platform_shown = None
         
         #Image Settings: 
-        self.platform_shown = None
-        self.lifestage = None
-        self.scars_hidden = False
-        self.always_living = False
-        self.acc_hidden = False
-        self.no_not_working = False
+        self.displayed_lifestage = None
+        self.scars_shown = True
+        self.override_dead_lineart = False
+        self.acc_shown = True
+        self.override_not_working = False
         
         super().__init__(name)
     
@@ -2921,10 +2919,61 @@ class SpriteInspectScreen(Screens):
                     self.cat_setup()
                 else:
                     print("invalid previous cat", self.previous_cat)
+            elif event.ui_element == self.next_life_stage:
+                self.displayed_life_stage = min(self.displayed_life_stage + 1, 
+                                                len(self.valid_life_stages) - 1)
+                self.update_disabled_buttons()
+                self.make_cat_image()
+            elif event.ui_element == self.save_image_button:
+                self.save_image()
+            elif event.ui_element == self.previous_life_stage:
+                self.displayed_life_stage = max(self.displayed_life_stage - 1, 
+                                                0)
+                self.update_disabled_buttons()
+                self.make_cat_image()
+            elif event.ui_element == self.checkboxes["platform_shown"]:
+                if self.platform_shown:
+                    self.platform_shown = False
+                else:
+                    self.platform_shown = True
+                
+                self.set_background_visablity()
+                self.update_checkboxes()
+            elif event.ui_element == self.checkboxes["scars_shown"]:
+                if self.scars_shown:
+                    self.scars_shown = False
+                else:
+                    self.scars_shown = True
+                
+                self.make_cat_image()
+                self.update_checkboxes()
+            elif event.ui_element == self.checkboxes["acc_shown"]:
+                if self.acc_shown:
+                    self.acc_shown = False
+                else:
+                    self.acc_shown = True
+                
+                self.make_cat_image()
+                self.update_checkboxes()
+            elif event.ui_element == self.checkboxes["override_dead_lineart"]:
+                if self.override_dead_lineart:
+                    self.override_dead_lineart = False
+                else:
+                    self.override_dead_lineart = True
+                
+                self.make_cat_image()
+                self.update_checkboxes()
+            elif event.ui_element == self.checkboxes["override_not_working"]:
+                if self.override_not_working:
+                    self.override_not_working = False
+                else:
+                    self.override_not_working = True
+                
+                self.make_cat_image()
+                self.update_checkboxes()
         
         return super().handle_event(event)
     
-
     def screen_switches(self):        
         self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
                                              , manager=MANAGER)
@@ -2934,23 +2983,41 @@ class SpriteInspectScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
         
-        #self.previous_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_right_fancy")
+        self.previous_life_stage = UIImageButton(scale(pygame.Rect((150, 550), (76, 100))), "", object_id="#arrow_right_fancy",
+                                                 starting_height=2)
         
-        #self.next_life_stage = UIImageButton(scale(pygame.Rect((), ())), "", object_id="#arrow_left_fancy")
+        self.next_life_stage = UIImageButton(scale(pygame.Rect((1374, 550), (76, 100))), "", object_id="#arrow_left_fancy",
+                                             starting_height=2)
         
-        # Toggle Texts:
+        self.save_image_button = pygame_gui.elements.UIButton(scale(pygame.Rect((1244, 150),(250, 100))), "Save as image")
+        
+        # Toggle Text:
+        self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform", scale(pygame.Rect((310, 1160), (290, 100))),
+                                                                 object_id=get_text_box_theme(
+                                                                              "#text_box_34_horizcenter"), 
+                                                                 starting_height=2)
+        self.scars_shown_text = pygame_gui.elements.UITextBox("Show Scar(s)", scale(pygame.Rect((710, 1160), (290, 100))),
+                                                              object_id=get_text_box_theme(
+                                                                              "#text_box_34_horizcenter"), 
+                                                                 starting_height=2)
+        self.acc_shown_text = pygame_gui.elements.UITextBox("Show Accessory", scale(pygame.Rect((1100, 1160), (290, 100))),
+                                                            object_id=get_text_box_theme(
+                                                                              "#text_box_34_horizcenter"), 
+                                                            starting_height=2)
+        self.override_dead_lineart_text = pygame_gui.elements.UITextBox("Show as Living", scale(pygame.Rect((510, 1260), (290, 100))),
+                                                                        object_id=get_text_box_theme(
+                                                                              "#text_box_34_horizcenter"), 
+                                                                        starting_height=2)
+        self.platform_shown_text = pygame_gui.elements.UITextBox("Show as Healthy", scale(pygame.Rect((910, 1260), (290, 100))),
+                                                                 object_id=get_text_box_theme(
+                                                                              "#text_box_34_horizcenter"), 
+                                                                 starting_height=2)
         
         
         if game.settings['backgrounds']:
-            self.is_platform_shown = True
+            self.platform_shown = True
         else:
-            self.is_platform_shown = False
-        
-        self.lifestage = None
-        self.scars_hidden = False
-        self.always_living = False
-        self.acc_hidden = False
-        self.no_not_working = False
+            self.platform_shown = False
         
         self.cat_setup()
         return super().screen_switches()
@@ -2969,12 +3036,30 @@ class SpriteInspectScreen(Screens):
                 manager=MANAGER)
         self.set_background_visablity()
         
+        # Gather list of current and previous life states
+        # "young adult", "adult", and "senior adult" all look the same: collape to adult
+        # This is not the best way to do it, so if we make them have difference apperences, this will
+        # need to be changed/removed. 
+        if self.the_cat.age in ["young adult", "adult", "senior adult"]:
+            current_life_stage = "adult"
+        else:
+            current_life_stage = self.the_cat.age
+        
+        self.valid_life_stages = []
+        for life_stage in SpriteInspectScreen.cat_life_stages:
+            self.valid_life_stages.append(life_stage)
+            if life_stage == current_life_stage:
+                break
+        
+        #Store the index of the currently displayed life stage. 
+        self.displayed_life_stage = len(self.valid_life_stages) - 1
+        
         #Reset all the toggles
         self.lifestage = None
-        self.scars_hidden = None
-        self.override_dead_lineart = None
-        self.acc_hidden = None
-        self.override_not_working = None
+        self.scars_shown = True
+        self.override_dead_lineart = False
+        self.acc_shown = True
+        self.override_not_working = False
         
         # Make the cat image
         self.make_cat_image()
@@ -3043,42 +3128,53 @@ class SpriteInspectScreen(Screens):
             self.checkboxes[ele].kill()
         self.checkboxes = {}
         
+        # "Show Platform"
+        self.make_one_checkbox((200, 1150), "platform_shown", self.platform_shown)
         
-        self.make_one_checkbox((200, 1100), "platform_shown", self.platform_shown)
+        # "Show Scars"
+        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.scars)
         
-        self.make_one_checkbox((300, 1100), "scars_hidden", self.scars_hidden, self.the_cat.scars)
+        # "Show accessories"
+        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.accessory)
         
-        self.make_one_checkbox((400, 1100), "acc_hidden", self.acc_hidden, self.the_cat.accessory)
+        # "Show as living"
+        self.make_one_checkbox((400, 1250), "override_dead_lineart", self.override_dead_lineart, self.the_cat.dead,
+                               disabled_object_id="#checked_checkbox")
         
-        self.make_one_checkbox((500, 1100), "override_dead_lineart", self.override_dead_lineart, not self.the_cat.dead)
-        
-        self.make_one_checkbox((600, 1100), "override_not_working", self.override_not_working, not self.the_cat.not_working())
+        # "Show as healthy"
+        self.make_one_checkbox((800, 1250), "override_not_working", self.override_not_working, self.the_cat.not_working(),
+                               disabled_object_id="#checked_checkbox")
         
     
-    def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True):
+    def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True,
+                          disabled_object_id = "#unchecked_checkbox"):
         """Makes a single checkbox. So I don't have to copy and paste this 5 times. 
             if cat_value_to_allow evalates to False, then the unchecked checkbox is always used the the checkbox 
             is disabled"""
         
         if not cat_value_to_allow:
-            self.checkboxes[name] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
-                                                            object_id = "#unchecked_checkbox")
+            self.checkboxes[name] = UIImageButton(scale(pygame.Rect(location, (102, 102))), "" ,
+                                                            object_id = disabled_object_id,
+                                                            starting_height=2)
             self.checkboxes[name].disable()
         elif stored_bool:
-            self.checkboxes["scars_hidden"] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
-                                                            object_id = "#unchecked_checkbox")
+            self.checkboxes[name] = UIImageButton(scale(pygame.Rect(location, (102, 102))), "" ,
+                                                            object_id = "#checked_checkbox",
+                                                            starting_height=2)
         else:
-            self.checkboxes["scars_hidden"] = UIImageButton(scale(pygame.Rect(location, (64, 64))), "" ,
-                                                            object_id = "#checked_checkbox")
+            self.checkboxes[name] = UIImageButton(scale(pygame.Rect(location, (102, 102))), "" ,
+                                                            object_id = "#unchecked_checkbox",
+                                                            starting_height=2)
     
     def make_cat_image(self):
         """Makes the cat image """
         if "cat_image" in self.cat_elements:
             self.cat_elements["cat_image"].kill()
         
-        self.cat_image = generate_sprite(self.the_cat, life_state=self.lifestage, scars_hidden=self.scars_hidden,
-                                         acc_hidden=self.acc_hidden, always_living=self.always_living, 
-                                         no_not_working=self.no_not_working)
+        self.cat_image = generate_sprite(self.the_cat, life_state=self.valid_life_stages[self.displayed_life_stage], 
+                                         scars_hidden=not self.scars_shown,
+                                         acc_hidden=not self.acc_shown, always_living=self.override_dead_lineart, 
+                                         no_not_working=self.override_not_working)
         
         self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((450, 200),(700, 700))),
@@ -3128,7 +3224,7 @@ class SpriteInspectScreen(Screens):
         if "platform" not in self.cat_elements:
             return
         
-        if self.is_platform_shown:
+        if self.platform_shown:
             self.cat_elements["platform"].show()
             self.cat_elements["platform"].disable()
         else:
@@ -3141,6 +3237,13 @@ class SpriteInspectScreen(Screens):
         self.previous_cat_button = None
         self.next_cat_button.kill()
         self.next_cat_button = None
+        self.previous_life_stage.kill()
+        self.previous_life_stage = None
+        self.next_life_stage.kill()
+        self.next_life_stage = None
+        self.save_image_button.kill()
+        self.save_image_button = None
+        
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()
         self.cat_elements = {}
@@ -3160,7 +3263,17 @@ class SpriteInspectScreen(Screens):
             self.previous_cat_button.disable()
         else:
             self.previous_cat_button.enable()
-    
+            
+        if self.displayed_life_stage >= len(self.valid_life_stages) - 1:
+            self.next_life_stage.disable()
+        else:
+            self.next_life_stage.enable()
+            
+        if self.displayed_life_stage <= 0:
+            self.previous_life_stage.disable()
+        else:
+            self.previous_life_stage.enable()
+        
     def get_platform(self):
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor)
@@ -3205,4 +3318,17 @@ class SpriteInspectScreen(Screens):
             
             return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
                 season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
-    
+            
+    def save_image(self):
+
+        file_name = str(self.the_cat.name)
+        file_number = ""
+        i = 0
+        while True:
+            if os.path.isfile(f"{get_saved_images_dir()}/{file_name + file_number}.png"):
+                i += 1
+                file_number = f"_{i}"
+            else:
+                break
+        
+        pygame.image.save(self.cat_image, f"{get_saved_images_dir()}/{file_name + file_number}.png")

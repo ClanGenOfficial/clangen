@@ -1843,6 +1843,10 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/checkmark_on_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/checkmark_on_unavailable.png"
             }
         }
     },
@@ -1862,6 +1866,10 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/checkmark_off_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/checkmark_off_unavailable.png"
             }
         }
     },
