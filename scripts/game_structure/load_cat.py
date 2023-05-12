@@ -14,6 +14,9 @@ from scripts.utility import update_sprite, is_iterable
 from random import choice
 from scripts.cat_relations.inheritance import Inheritance
 
+import logging
+logger = logging.getLogger(__name__)
+
 def load_cats():
     try:
         json_load()
@@ -247,17 +250,18 @@ def json_load():
             cat.paralyzed = True
 
         # load the relationships
-        if not cat.dead:
-            game.switches[
-                'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                    cat)
-            cat.load_relationship_of_cat()
-            game.switches[
-                'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
-            if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.init_all_relationships()
-        else:
-            cat.relationships = {}
+        try:
+            if not cat.dead:
+                cat.load_relationship_of_cat()
+                if cat.relationships is not None and len(cat.relationships) < 1:
+                    cat.init_all_relationships()
+            else:
+                cat.relationships = {}
+        except Exception as e:
+            logger.exception(f'There was an error loading relationships for cat #{cat}.')
+            game.switches['error_message'] = f'There was an error loading relationships for cat #{cat}.'
+            game.switches['traceback'] = e
+            raise
 
         # get all the siblings ids and save them
         siblings = list(
@@ -286,11 +290,16 @@ def json_load():
         # Add faded children
         cat.children.extend(cat.faded_offspring)
         
-        game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
-        # initialization of thoughts
-        cat.thoughts()
-        cat.inheritance = Inheritance(cat)
-        
+        try:
+            # initialization of thoughts
+            cat.thoughts()
+            cat.inheritance = Inheritance(cat)
+        except Exception as e:
+            logger.exception(f'There was an error when thoughts for cat #{cat} are created.')
+            game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
+            game.switches['traceback'] = e
+            raise
+
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:
             save_check()
