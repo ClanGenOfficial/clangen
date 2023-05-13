@@ -166,7 +166,8 @@ class Thoughts():
             else:
                 if outside_status and outside_status != 'clancat' and len(r_c_in) > 0:
                     return False
-
+            
+            #makes sure thought is valid for game mode
             if game_mode == "classic" and ('has_injuries' in thought or "perm_conditions" in thought):
                 return False
             else:
