@@ -6,8 +6,8 @@ from random import choice
 import pygame
 
 from ..cat.history import History
-from ..housekeeping.datadir import get_save_dir, get_saved_images_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat
+from ..housekeeping.datadir import get_save_dir
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, SaveAsImage
 
 import ujson
 
@@ -502,8 +502,9 @@ class ProfileScreen(Screens):
                                                  , manager=MANAGER)
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.inspect_button = pygame_gui.elements.UIButton(scale(pygame.Rect((1436, 120),(64,64))), "", 
-                                                           manager=MANAGER)
+        self.inspect_button = UIImageButton(scale(pygame.Rect((1482, 120),(68,68))), "", 
+                                            object_id="#magnify_button",
+                                            manager=MANAGER)
         self.relations_tab_button = UIImageButton(scale(pygame.Rect((96, 840), (352, 60))), "",
                                                   object_id="#relations_tab_button", manager=MANAGER)
         self.roles_tab_button = UIImageButton(scale(pygame.Rect((448, 840), (352, 60))), "",
@@ -2891,10 +2892,15 @@ class SpriteInspectScreen(Screens):
         self.cat_image = None
         self.cat_elements = {}
         self.checkboxes = {}
-        
-        self.platform_shown = None
+        self.platform_shown_text = None
+        self.scars_shown = None
+        self.acc_shown_text = None
+        self.override_dead_lineart_text = None
+        self.override_not_working_text = None
+        self.save_image_button = None
         
         #Image Settings: 
+        self.platform_shown = None
         self.displayed_lifestage = None
         self.scars_shown = True
         self.override_dead_lineart = False
@@ -2904,6 +2910,10 @@ class SpriteInspectScreen(Screens):
         super().__init__(name)
     
     def handle_event(self, event):
+        # Don't handle the events if a window is open.     
+        if game.switches['window_open']:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen("profile screen")
@@ -2925,7 +2935,7 @@ class SpriteInspectScreen(Screens):
                 self.update_disabled_buttons()
                 self.make_cat_image()
             elif event.ui_element == self.save_image_button:
-                self.save_image()
+                SaveAsImage(self.generate_image_to_save(), str(self.the_cat.name))
             elif event.ui_element == self.previous_life_stage:
                 self.displayed_life_stage = max(self.displayed_life_stage - 1, 
                                                 0)
@@ -2971,7 +2981,15 @@ class SpriteInspectScreen(Screens):
                 
                 self.make_cat_image()
                 self.update_checkboxes()
-        
+            elif event.ui_element == self.cat_elements["favourite_button"]:
+                self.the_cat.favourite = False
+                self.cat_elements["favourite_button"].hide()
+                self.cat_elements["not_favourite_button"].show()
+            elif event.ui_element == self.cat_elements["not_favourite_button"]:
+                self.the_cat.favourite = True
+                self.cat_elements["favourite_button"].show()
+                self.cat_elements["not_favourite_button"].hide()
+    
         return super().handle_event(event)
     
     def screen_switches(self):        
@@ -2989,7 +3007,7 @@ class SpriteInspectScreen(Screens):
         self.next_life_stage = UIImageButton(scale(pygame.Rect((1374, 550), (76, 100))), "", object_id="#arrow_left_fancy",
                                              starting_height=2)
         
-        self.save_image_button = pygame_gui.elements.UIButton(scale(pygame.Rect((1244, 150),(250, 100))), "Save as image")
+        self.save_image_button = UIImageButton(scale(pygame.Rect((50, 190),(270, 60))), "", object_id="#save_image_button")
         
         # Toggle Text:
         self.platform_shown_text = pygame_gui.elements.UITextBox("Show Platform", scale(pygame.Rect((310, 1160), (290, 100))),
@@ -3008,7 +3026,7 @@ class SpriteInspectScreen(Screens):
                                                                         object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                         starting_height=2)
-        self.platform_shown_text = pygame_gui.elements.UITextBox("Show as Healthy", scale(pygame.Rect((910, 1260), (290, 100))),
+        self.override_not_working_text = pygame_gui.elements.UITextBox("Show as Healthy", scale(pygame.Rect((910, 1260), (290, 100))),
                                                                  object_id=get_text_box_theme(
                                                                               "#text_box_34_horizcenter"), 
                                                                  starting_height=2)
@@ -3107,7 +3125,7 @@ class SpriteInspectScreen(Screens):
                                                                  object_id="#not_fav_cat",
                                                                  manager=MANAGER,
                                                                  tool_tip_text='Mark as favorite',
-                                                                 starting_height=2)
+                                                                 starting_height=2)  
         if self.the_cat.favourite:
             self.cat_elements["favourite_button"].show()
             self.cat_elements["not_favourite_button"].hide()
@@ -3145,7 +3163,6 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox((800, 1250), "override_not_working", self.override_not_working, self.the_cat.not_working(),
                                disabled_object_id="#checked_checkbox")
         
-    
     def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True,
                           disabled_object_id = "#unchecked_checkbox"):
         """Makes a single checkbox. So I don't have to copy and paste this 5 times. 
@@ -3243,6 +3260,16 @@ class SpriteInspectScreen(Screens):
         self.next_life_stage = None
         self.save_image_button.kill()
         self.save_image_button = None
+        self.platform_shown_text.kill()
+        self.platform_shown_text = None
+        self.scars_shown_text.kill()
+        self.scars_shown = None
+        self.acc_shown_text.kill()
+        self.acc_shown_text = None
+        self.override_dead_lineart_text.kill()
+        self.override_dead_lineart_text = None
+        self.override_not_working_text.kill()
+        self.override_not_working_text = None
         
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()
@@ -3274,6 +3301,7 @@ class SpriteInspectScreen(Screens):
         else:
             self.previous_life_stage.enable()
         
+        
     def get_platform(self):
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor)
@@ -3302,10 +3330,10 @@ class SpriteInspectScreen(Screens):
         
         if the_cat.df:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
+            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
-            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70)), (240, 210))
+            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
         else:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
             season_x = {
@@ -3316,19 +3344,14 @@ class SpriteInspectScreen(Screens):
             }
             
             
-            return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
-                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
+            return biome_platforms.subsurface(pygame.Rect(
+                season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70))
             
-    def save_image(self):
-
-        file_name = str(self.the_cat.name)
-        file_number = ""
-        i = 0
-        while True:
-            if os.path.isfile(f"{get_saved_images_dir()}/{file_name + file_number}.png"):
-                i += 1
-                file_number = f"_{i}"
-            else:
-                break
-        
-        pygame.image.save(self.cat_image, f"{get_saved_images_dir()}/{file_name + file_number}.png")
+    def generate_image_to_save(self):
+        """Generates the image to save, with platform if needed. """
+        if self.platform_shown:
+            full_image = self.get_platform()
+            full_image.blit(self.cat_image, (15, 0))
+            return full_image
+        else:
+            return self.cat_image

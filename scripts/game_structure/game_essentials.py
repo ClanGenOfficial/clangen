@@ -683,7 +683,7 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/text_boxes_small.json')
         manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/windows_small.json')
         manager.get_theme().load_theme('resources/tool_tips_small.json')
 
         manager.preload_fonts([
