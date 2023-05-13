@@ -101,7 +101,6 @@
         "camp": "any",
         "tags": ["clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c gathered up the kits to tell them stories of story_list.",
-        "cat_trait": null,
         "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter", "good storyteller", "great storyteller", "fantastic storyteller"]
     },
     {
@@ -136,7 +135,7 @@
         "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {CAP/PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate."
      },
      {
-        "camp": "any"
+        "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate"],
         "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as their mate.",
         "other_cat_trait": ["compassionate", "loving", "thoughtful"],
@@ -175,7 +174,7 @@
         "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."
      },
-    {
+     {
         "camp": "Any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "comfort", "respect", "clan_kits"],
         "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
@@ -185,7 +184,7 @@
         "camp": "Any",
         "tags": ["Leaf-fall", "clan_kits", "other_cat", "other_cat_adult"],
         "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
-    },
+     },
      {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall"],
