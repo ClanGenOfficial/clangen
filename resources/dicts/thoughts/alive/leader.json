@@ -75,6 +75,16 @@
         ]
     },
     {
+        "id": "bold_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
         "id": "bloodthirsty_leader",
         "thoughts": [
             "Encourages warriors to start fights on border patrols",
@@ -83,6 +93,17 @@
         ],
         "main_trait_constraint": [
             "bloodthirsty"
+        ]
+    }
+    ,
+    {
+        "id": "charismatic_leader",
+        "thoughts": [
+            "Gives a particularly rousing speech at a Clan meeting",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
         ]
     },
     {
@@ -97,17 +118,7 @@
             "strange"
         ]
     }
-    ,
-    {
-        "id": "charismatic_leader",
-        "thoughts": [
-            "Gives a particularly rousing speech at a Clan meeting",
-            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
-        ],
-        "main_trait_constraint": [
-            "charismatic"
-        ]
-    }
+   
 ]
 
 
