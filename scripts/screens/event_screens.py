@@ -54,6 +54,8 @@ class EventsScreen(Screens):
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
 
+        self.first_opened = False
+
     def handle_event(self, event):
         if game.switches['window_open']:
             pass
@@ -417,6 +419,12 @@ class EventsScreen(Screens):
             
 
     def screen_switches(self):
+        # On first open, update display events list
+        if not self.first_opened:
+            self.first_opened = True
+            self.update_display_events_list()
+            self.display_events = self.all_events
+
         self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
                                                      "Clan",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
