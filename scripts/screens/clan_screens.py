@@ -59,6 +59,7 @@ class ClanScreen(Screens):
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
+                    game.save_events()
                     game.save_settings()
                     game.switches['saved_clan'] = True
                     self.update_buttons_and_text()
@@ -90,6 +91,7 @@ class ClanScreen(Screens):
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_events()
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
