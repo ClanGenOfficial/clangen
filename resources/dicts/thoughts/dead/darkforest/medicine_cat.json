@@ -1,3 +1,16 @@
-[
-    
+[    {
+        "id": "dark_forest_medcat_to_living_other_medcat",
+        "thoughts": [
+            "Is indicating r_c to the closer bush of deathberries",
+            "Is deliberately whispering contradicting herbs in r_c’s ears so {PRONOUN/r_c/subject}’ll make a mistake."
+        ],
+            "random_status_constraint": [
+                "medicine cat",
+                "medicine cat apprentice"
+        ],
+             "random_living_status": [
+                "living"
+        ]
+     
+    }
 ]
