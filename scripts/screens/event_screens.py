@@ -422,7 +422,7 @@ class EventsScreen(Screens):
         # On first open, update display events list
         if not self.first_opened:
             self.first_opened = True
-            self.update_display_events_list()
+            self.update_display_events_lists()
             self.display_events = self.all_events
 
         self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
@@ -742,7 +742,7 @@ class EventsScreen(Screens):
                 ele.kill()
             self.cat_profile_buttons = []
 
-    def update_display_events_list(self):
+    def update_display_events_lists(self):
         """
         Categorize events from game.cur_events_list into display categories for screen
         """
