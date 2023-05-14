@@ -272,7 +272,6 @@ class Cat():
         self.white_patches_tint = None
         self.eye_colour = eye_colour
         self.eye_colour2 = None
-        self.eye_tint = None
         self.scars = []
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -529,7 +528,7 @@ class Cat():
             Cat.insert_cat(self)
 
     def __repr__(self):
-        return self.ID
+        return "CAT OBJECT:" + self.ID
 
     @property
     def mentor(self):
@@ -1242,8 +1241,8 @@ class Cat():
         # sort relations by the strength of their relationship
         dead_relations.sort(
             key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust, reverse=True)
-        for rel in dead_relations:
-            print(self.fetch_cat(rel.cat_to).name)
+        #for rel in dead_relations:
+        #    print(self.fetch_cat(rel.cat_to).name)
 
         # if we have relations, then make sure we only take the top 8
         if dead_relations:
@@ -1274,7 +1273,7 @@ class Cat():
                 else:
                     extra_givers = random.sample(possible_sc_cats, k=amount)
             else:
-                print(game.clan.darkforest_cats)
+                #print(game.clan.darkforest_cats)
                 possible_df_cats = [i for i in game.clan.darkforest_cats if
                                     self.fetch_cat(i) and
                                     i not in life_givers and
