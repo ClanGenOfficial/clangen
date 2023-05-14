@@ -79,7 +79,10 @@
         "thoughts": [
             "Encourages warriors to start fights on border patrols",
             "Is debating if they should declare a war with another Clan",
-            "Is wondering if they could hold apprentice ceremonies at 4 moons old instead"
+            "Is wondering if they could hold apprentice ceremonies at 4 moons old instead",
+            "Is hoping to postpone the retirement of {PRONOUN/m_c/poss} clanmates",
+            "Is asking the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
+            "Doesn't understand StarClan's silence towards {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
