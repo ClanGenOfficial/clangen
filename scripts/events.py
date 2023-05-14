@@ -2114,7 +2114,7 @@ def load_events():
             event_obj = Single_Event.from_dict(event_dict)
             if event_obj:
                 game.cur_events_list.append(event_obj)
-    except FileExistsError:
+    except FileNotFoundError:
         pass
     except (PermissionError, ujson.JSONDecodeError) as e:
         traceback.format_exc()
