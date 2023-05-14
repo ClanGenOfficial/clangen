@@ -1270,16 +1270,42 @@ def update_sprite(cat):
         init_pelt(cat)
         # THE SPRITE UPDATE
     # draw colour & style
-    new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
+    # apply
+    cat.sprite = generate_sprite(cat)
+    # update class dictionary
+    cat.all_cats[cat.ID] = cat
+
+
+def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, always_living=False, 
+                    no_not_working=False) -> pygame.Surface:
+    """Generates the sprite for a cat, with optional arugments that will override certain things. 
+        life_stage: sets the age life_stage of the cat, overriding the one set by it's age. Set to string. 
+        scar_hidden: If True, doesn't display the cat's scars. If False, display cat scars. 
+        acc_hidden: If True, hide the accessory. If false, show the accessory.
+        always_living: If True, always show the cat with living lineart
+        no_not_working: If true, never use the not_working lineart.
+                        If false, use the cat.not_working() to determine the no_working art. 
+        """
+    
+    if life_state is not None:
+        age = life_state
+    else:
+        age = cat.age
+    
+    if always_living:
+        dead = False
+    else:
+        dead = cat.dead
+    
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.not_working() and cat.age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
-        if cat.age in ['kitten', 'adolescent']:
+    if not no_not_working and cat.not_working() and age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
+        if age in ['kitten', 'adolescent']:
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
-    elif cat.paralyzed and cat.age != 'newborn':
-        if cat.age in ['kitten', 'adolescent']:
+    elif cat.paralyzed and age != 'newborn':
+        if age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
@@ -1287,12 +1313,15 @@ def update_sprite(cat):
             else:
                 cat_sprite = str(15)
     else:
-        if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
-            cat.age = 'senior'
+        if age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
+            age = 'senior'
+        
         if game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(cat.cat_sprites['newborn'])
         else:
-            cat_sprite = str(cat.cat_sprites[cat.age])
+            cat_sprite = str(cat.cat_sprites[age])
+
+    new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # generating the sprite
     try:
@@ -1358,30 +1387,25 @@ def update_sprite(cat):
         eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
             eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
-        # Eye tint
-        if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
-            "tint_colours"]:
-            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
-            eyes.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
         new_sprite.blit(eyes, (0, 0))
 
-        for scar in cat.scars:
-            if scar in scars1:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
-            if scar in scars3:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+        if not scars_hidden:
+            for scar in cat.scars:
+                if scar in scars1:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+                if scar in scars3:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
 
         # draw line art
-        if game.settings['shaders'] and not cat.dead:
+        if game.settings['shaders'] and not dead:
             new_sprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
 
-        if not cat.dead:
+        if not dead:
             new_sprite.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
         elif cat.df:
             new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
-        elif cat.dead:
+        elif dead:
             new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
@@ -1390,13 +1414,14 @@ def update_sprite(cat):
             if scar in scars2:
                 new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
-        # draw accessories        
-        if cat.accessory in plant_accessories:
-            new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
-        elif cat.accessory in wild_accessories:
-            new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
-        elif cat.accessory in collars:
-            new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
+        # draw accessories
+        if not acc_hidden:        
+            if cat.accessory in plant_accessories:
+                new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
+            elif cat.accessory in wild_accessories:
+                new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
+            elif cat.accessory in collars:
+                new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
@@ -1431,16 +1456,7 @@ def update_sprite(cat):
         # Placeholder image
         new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
 
-    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
-    """# Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
-
-    # apply
-    cat.sprite = new_sprite
-    # update class dictionary
-    cat.all_cats[cat.ID] = cat
-
+    return new_sprite
 
 def apply_opacity(surface, opacity):
     for x in range(surface.get_width()):

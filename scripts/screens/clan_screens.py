@@ -392,6 +392,7 @@ class ClanScreen(Screens):
             self.med_den_label.hide()
             self.elder_den_label.hide()
 
+
 class StarClanScreen(Screens):
     list_page = 1
     display_cats = []
