@@ -136,10 +136,19 @@
     {
         "id": "childish_leader",
         "thoughts": [
-            "ASDHGASDPranks r_c by switching their fresh-kill with crowfood"
+            "Pranks r_c by switching their fresh-kill with crowfood"
         ],
         "main_trait_constraint": [
             "childish"
+        ]
+    },
+    {
+        "id": "cold_leader",
+        "thoughts": [
+            "Rolls {PRONOUN/m_c/poss} eyes as r_c suggests sharing their fresh-kill with other clans"
+        ],
+        "main_trait_constraint": [
+            "cold"
         ]
     },
     {
