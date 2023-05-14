@@ -83,6 +83,7 @@ class EventsScreen(Screens):
 
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
+                self.update_display_events_lists()
 
                 self.ceremonies_events_button.enable()
                 if self.ceremony_alert:
