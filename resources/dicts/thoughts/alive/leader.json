@@ -82,7 +82,7 @@
             "Is wondering if they could hold apprentice ceremonies at 4 moons old instead",
             "Is hoping to postpone the retirement of {PRONOUN/m_c/poss} clanmates",
             "Is asking the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
-            "Doesn't understand StarClan's silence towards {PRONOUN/m_c/object}"
+            "Doesn't understand StarClan's resentment towards {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
