@@ -615,6 +615,9 @@ class Game():
         game.cat_to_fade = []
 
     def save_events(self):
+        """
+        Save current events list to events.json
+        """
         events_list = []
         for event in game.cur_events_list:
             events_list.append(event.to_dict())

@@ -2100,6 +2100,10 @@ class Events():
                     0, Single_Event(f"{game.clan.name}Clan has no deputy!"))
 
 def load_events():
+    """
+    Load events from events.json and place into game.cur_events_list.
+    """
+
     clanname = game.clan.name
     events_path = f'{get_save_dir()}/{clanname}/events.json'
     events_list = []

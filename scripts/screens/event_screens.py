@@ -743,6 +743,10 @@ class EventsScreen(Screens):
             self.cat_profile_buttons = []
 
     def update_display_events_list(self):
+        """
+        Categorize events from game.cur_events_list into display categories for screen
+        """
+
         self.all_events = [x for x in game.cur_events_list if "interaction" not in x.types]
         self.ceremony_events = [x for x in game.cur_events_list if "ceremony" in x.types]
         self.birth_death_events = [x for x in game.cur_events_list if "birth_death" in x.types]
