@@ -908,7 +908,6 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
         kitty = choice(get_med_cats(Cat, working=False))
-        print('med', kitty)
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
