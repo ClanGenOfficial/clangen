@@ -75,6 +75,16 @@
         ]
     },
     {
+        "id": "ambitious_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Makes sure all cats are battle ready"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
         "id": "bold_leader",
         "thoughts": [
             "Considers expanding the borders",
@@ -94,8 +104,25 @@
         "main_trait_constraint": [
             "bloodthirsty"
         ]
-    }
-    ,
+    },
+    {
+        "id": "calm_leader",
+        "thoughts": [
+            "Stays composed when a cat comes to them in a panic"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_leader",
+        "thoughts": [
+            "Reminds a patrol not to stray over the border"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
     {
         "id": "charismatic_leader",
         "thoughts": [
@@ -104,6 +131,15 @@
         ],
         "main_trait_constraint": [
             "charismatic"
+        ]
+    },
+    {
+        "id": "childish_leader",
+        "thoughts": [
+            "ASDHGASDPranks r_c by switching their fresh-kill with crowfood"
+        ],
+        "main_trait_constraint": [
+            "childish"
         ]
     },
     {
