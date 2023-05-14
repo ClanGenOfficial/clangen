@@ -152,6 +152,16 @@
         ]
     },
     {
+        "id": "insecure_leader",
+        "thoughts": [
+            "Thinks they don't deserve StarClan's blessing of 9 lives",
+            "Wonders if cats like {PRONOUN/m_c/object} as a leader"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
         "id": "strange_leader",
         "thoughts": [
             "No thoughts, head empty",
