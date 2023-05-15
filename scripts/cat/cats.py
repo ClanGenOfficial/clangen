@@ -3323,15 +3323,14 @@ class Personality():
         self.aggression += randint(-max, max)
         self.sociability += randint(-max, max)
         
-    def mentor_inflence(self, mentor:Cat):
-        """applies mentor inflence after the pair go on a patrol together 
+    def mentor_influence(self, mentor:Cat):
+        """applies mentor influence after the pair go on a patrol together 
             returns history information in the form (mentor_id, facet_affected, amount_affected)"""
         mentor_personality = mentor.personality
         
         #Get possible facet values
         possible_facets = {i: mentor_personality[i] - self[i] for i in 
                            Personality.facet_types if mentor_personality[i] - self[i] != 0}
-        
         
         if possible_facets:
             # Choice trait to effect, weighted by the abs of the difference (higher difference = more likely to effect)
@@ -3342,8 +3341,7 @@ class Personality():
             return (mentor.ID, facet_affected, amount_affected)
         else:
             #This will only trigger if they have the same personality. 
-            return None    
-        
+            return None
 
 # Twelve example cats
 def create_example_cats():

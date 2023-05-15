@@ -217,7 +217,7 @@ class History:
                         cat.history.mentor_influence["trait"][_ment]["strings"].append(random.choice(influence_text[_fac + "_lower"]))
 
     @staticmethod
-    def add_facet_mentor_inflence(cat, mentor_id, facet, amount):
+    def add_facet_mentor_influence(cat, mentor_id, facet, amount):
         """Adds the history infomation for a single mentor facet change, that occurs after a patrol. """
         
         History.check_load(cat)
@@ -228,7 +228,7 @@ class History:
         cat.history.mentor_influence["trait"][mentor_id][facet] += amount
     
     @staticmethod
-    def add_skill_mentor_inflence(cat, skill_influence):
+    def add_skill_mentor_influence(cat, skill_influence):
         
         History.check_load(cat)
         cat.history.mentor_influence["skill"] = skill_influence
