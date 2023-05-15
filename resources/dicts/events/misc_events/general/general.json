@@ -12,17 +12,17 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c believes they are part of a new prophecy."
+        "event_text": "m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy."
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c believes they're meant for something greater."
+        "event_text": "m_c believes {PRONOUN/m_c/subject}'{VERB/m_c/re/s} meant for something greater."
     },
     {
         "camp": "any",
         "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c tries to convince r_c to run away with them."
+        "event_text": "m_c tries to convince r_c to run away with {PRONOUN/m_c/object}."
     },
     {
         "camp": "any",
@@ -32,13 +32,13 @@
     {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "to_both", "platonic", "comfort", "neg_dislike", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "r_c gives m_c something to adorn their pelt as congratulations.",
+        "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
         "accessories": ["WILD", "PLANT"]
     },
     {
         "camp": "any",
         "tags": ["ceremony", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c decides to pick something to adorn their pelt as celebration.",
+        "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
         "accessories": ["WILD", "PLANT"]
     },
     {
@@ -50,19 +50,19 @@
     {
         "camp": "any",
         "tags": ["other_cat", "to_both", "platonic", "comfort", "neg_dislike", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with them on their pelt.",
+        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": ["WILD", "PLANT"]
     },
     {
         "camp": "any",
         "tags": ["ceremony", "other_cat", "rc_to_mc", "jealousy", "neg_platonic", "neg_romantic", "neg_respect", "neg_comfort", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in their eyes.",
+        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
         "accessories": ["WILD", "PLANT"]
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c always seems to have acc_plural stuck in their fur.",
+        "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
         "accessories": ["HERBS", "PETALS", "DRY HERBS", "RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]
     },
     {
@@ -90,27 +90,24 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, but came out of it with only their pride bruised."
+        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised."
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when they saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool them!"
+        "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!"
     },
     {
         "camp": "any",
         "tags": ["clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c gathered up the kits to tell them stories of story_list.",
-        "cat_trait": null,
-        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter","good storyteller", "great storyteller", "fantastic storyteller"]
+        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter", "good storyteller", "great storyteller", "fantastic storyteller"]
     },
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c spends the evening regaling the Clan with stories of story_list.",
-        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter",
-            "good storyteller", "great storyteller", "fantastic storyteller"
-        ]
+        "cat_skill": ["lore keeper", "good kitsitter", "great kitsitter", "excellent kitsitter", "good storyteller", "great storyteller", "fantastic storyteller"]
     },
     {
         "camp": "any",
@@ -131,6 +128,11 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat", "other_cat_mate", "clan_kits", "to_both", "platonic", "romantic"],
         "event_text": "m_c and r_c watch the Clan's kits play and daydream about having their own one day."
+     },
+     {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall", "other_cat_mate"],
+        "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {CAP/PRONOUN/m_c/subject} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate."
      },
      {
         "camp": "any",
@@ -172,7 +174,7 @@
         "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."
      },
-    {
+     {
         "camp": "Any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "comfort", "respect", "clan_kits"],
         "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
@@ -182,7 +184,7 @@
         "camp": "Any",
         "tags": ["Leaf-fall", "clan_kits", "other_cat", "other_cat_adult"],
         "event_text": "The older cats look fondly upon the kits who are dashing in and out of leaf piles at the edge of camp."
-    },
+     },
      {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-bare", "Leaf-fall"],

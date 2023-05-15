@@ -444,7 +444,6 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
-                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
@@ -684,7 +683,7 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/text_boxes_small.json')
         manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/windows_small.json')
         manager.get_theme().load_theme('resources/tool_tips_small.json')
 
         manager.preload_fonts([
