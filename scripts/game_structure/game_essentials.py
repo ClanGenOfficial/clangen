@@ -613,6 +613,15 @@ class Game():
 
         game.cat_to_fade = []
 
+    def save_events(self):
+        """
+        Save current events list to events.json
+        """
+        events_list = []
+        for event in game.cur_events_list:
+            events_list.append(event.to_dict())
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/events.json", events_list)
+
     def add_faded_offspring_to_faded_cat(self, parent, offspring):
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
