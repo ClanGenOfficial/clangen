@@ -28,7 +28,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError, SendLogsPopup
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError, SendLogsPopup, SendSavesPopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -237,7 +237,7 @@ class StartScreen(Screens):
             "",
             object_id="#send_logs_button",
             manager=MANAGER,
-            starting_height=0,  # Layer 0 so it's behind the error box
+            starting_height=0,
             tool_tip_text="This will allow you to"
                           " send your logs to the"
                           " Clangen team.")
@@ -628,6 +628,9 @@ class SettingsScreen(Screens):
             elif event.ui_element == self.send_logs_button:
                 self.change_screen('start screen')
                 SendLogsPopup(game.switches['last_screen'])
+            elif event.ui_element == self.send_saves_button:
+                self.change_screen('start screen')
+                SendSavesPopup(game.switches['last_screen'])
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 try:
@@ -773,6 +776,16 @@ class SettingsScreen(Screens):
                           " send your logs to the"
                           " Clangen team.",
             starting_height=5)
+    
+        self.send_saves_button = UIImageButton(
+            scale(pygame.Rect((1332, 1220), (218, 60))),
+            "",
+            object_id="#send_logs_button",
+            manager=MANAGER,
+            starting_height=5,
+            tool_tip_text="This will allow you to"
+                          " send your saves to the"
+                          " Clangen discord!")
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -822,6 +835,8 @@ class SettingsScreen(Screens):
         del self.open_data_directory_button
         self.send_logs_button.kill()
         del self.send_logs_button
+        self.send_saves_button.kill()
+        del self.send_saves_button
 
         game.settings = self.settings_at_open
 

@@ -21,6 +21,7 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
 from scripts.sendlogs import send_logs
+from scripts.sendclan import send_clan
 from scripts.utility import scale, quit, update_sprite
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
@@ -949,6 +950,150 @@ class SendLogsPopup(UIWindow):
             if event.ui_element == self.continue_button:
                 game.switches['window_open'] = False
                 self.x = LogsWindow(game.switches['cur_screen'], self.tokenEntry.get_text())
+                self.kill()
+            elif event.ui_element == self.close_button or event.ui_element == self.cancel_button:
+                game.switches['window_open'] = False
+                self.kill()
+        elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            if match(r"^[0-9a-f]{7}$", self.tokenEntry.get_text()):
+                self.continue_button.enable()
+                self.tokeninvalid.hide()
+            else:
+                self.continue_button.disable()
+                self.tokeninvalid.show()
+
+
+
+class ShareSavesWindow(UIWindow):
+    def callback(self, output):
+        self.kill()
+        print(output)
+    def __init__(self, last_screen, token):
+        super().__init__(scale(pygame.Rect((500, 400), (600, 320))),
+                         window_display_title='Sending Saves',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.last_screen = last_screen
+        self.update_message = UITextBoxTweaked(
+            "Sending Saves...",
+            scale(pygame.Rect((40, 20), (520, -1))),
+            line_spacing=1,
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+
+        self.step_text = UITextBoxTweaked(
+            f"Verifying token...",
+            scale(pygame.Rect((40, 80), (520, -1))),
+            line_spacing=1,
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+
+        self.request_thread = threading.Thread(target=send_clan, daemon=True, args=(token, self.step_text, self.callback))
+        self.request_thread.start()
+
+        self.cancel_button = UIImageButton(
+            scale(pygame.Rect((400, 230), (156, 60))),
+            "",
+            object_id="#cancel_button",
+            container=self
+        )
+
+        self.cancel_button.enable()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.cancel_button:
+                self.kill()
+    
+
+
+
+
+class SendSavesPopup(UIWindow):
+    def __init__(self, last_screen, show_checkbox: bool = False):
+        super().__init__(scale(pygame.Rect((400, 400), (800, 460))),
+                         window_display_title='Sending Logs',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.last_screen = last_screen
+
+        self.begin_update_title = UIImageButton(
+            scale(pygame.Rect((236.5, 30), (327, 90))),
+            "",
+            object_id="#send_logs_button2",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"<strong>Please enter the token given by tech support</strong>",
+            scale(pygame.Rect((20, 160), (800, -1))),
+            line_spacing=.8,
+            object_id="#update_popup_title",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"Do not share this token with anyone else",
+            scale(pygame.Rect((22, 200), (800, -1))),
+            line_spacing=.8,
+            object_id="#text_box_current_version",
+            container=self
+        )
+
+        self.tokenEntry = pygame_gui.elements.UITextEntryLine(
+            scale(pygame.Rect((50, 250), (700, 50))),
+            placeholder_text="0000000",
+            manager=MANAGER,
+            container=self)
+        
+        self.tokeninvalid = UITextBoxTweaked(
+            f"Invalid Token",
+            scale(pygame.Rect((50, 300), (800, -1))),
+            line_spacing=.8,
+            object_id="#text_box_current_version",
+            container=self
+        )
+
+        self.tokeninvalid.hide()
+
+        self.continue_button = UIImageButton(
+            scale(pygame.Rect((556, 370), (204, 60))),
+            "",
+            object_id="#continue_button_small",
+            container=self
+        )
+
+        self.cancel_button = UIImageButton(
+            scale(pygame.Rect((374, 370), (156, 60))),
+            "",
+            object_id="#cancel_button",
+            container=self
+        )
+
+        self.close_button = UIImageButton(
+            scale(pygame.Rect((740, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+
+        self.continue_button.disable()
+        self.cancel_button.enable()
+        self.close_button.enable()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.continue_button:
+                game.switches['window_open'] = False
+                self.x = ShareSavesWindow(game.switches['cur_screen'], self.tokenEntry.get_text())
                 self.kill()
             elif event.ui_element == self.close_button or event.ui_element == self.cancel_button:
                 game.switches['window_open'] = False
