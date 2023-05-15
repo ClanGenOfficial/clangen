@@ -3,7 +3,8 @@ import requests
 import os
 import zipfile
 import time
-from scripts.housekeeping.datadir import get_log_dir, get_save_dir, get_temp_dir
+from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
+from scripts.game_structure.game_essentials import game
 import ujson
 
 def send_clan(token: str, progress: UITextBoxTweaked, callback: callable) -> None:
@@ -36,7 +37,7 @@ def upload_save(token: str, progress: UITextBoxTweaked, callback: callable):
     progress.set_text("Uploading save...")
 
     # zip up the current save
-    with zipfile.ZipFile(os.path.join(get_temp_dir(), "save.zip"), 'w') as savezip:
+    with zipfile.ZipFile(os.path.join(get_temp_dir(), game.clan.name, "save.zip"), 'w') as savezip:
         for root, dirs, files in os.walk(get_save_dir()):
             for file in files:
                 savezip.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), get_save_dir()))
