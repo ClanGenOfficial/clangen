@@ -46,7 +46,9 @@
         "id": "apprentice_alive_deputy",
         "thoughts": [
             "Wants r_c to assign {PRONOUN/m_c/object} to the next patrol",
-            "Is watching and learning from r_c"
+            "Is watching and learning from r_c",
+            "Wishes r_c would let {PRONOUN/m_c/object} sleep, instead of assigning {PRONOUN/m_c/object} to the dawn patrol",
+            "Would like to become as great as r_c one day"
         ],
         "random_status_constraint": [
             "deputy"
@@ -102,7 +104,7 @@
             "Is picking ticks off of r_c",
             "Listens to a story from r_c",
             "Is making sure the elders are comfortable",
-            "Is asking r_c how things have changed since {PRONOUN/m_c/subject} {VERB/m_c/were/was} a 'paw",
+            "Is asking r_c how things have changed since {PRONOUN/m_c/subject} {VERB/m_c/were/was} a 'paw'",
             "Appreciates r_c's words of wisdom"
         ],
         "random_status_constraint":[

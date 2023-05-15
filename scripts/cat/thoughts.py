@@ -273,7 +273,8 @@ class Thoughts():
         if main_cat.age == 'newborn':
             loaded_thoughts = THOUGHTS
         else:
-            loaded_thoughts = THOUGHTS + GENTHOUGHTS
+            loaded_thoughts = THOUGHTS 
+            loaded_thoughts += GENTHOUGHTS
         final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp)
 
         return final_thoughts

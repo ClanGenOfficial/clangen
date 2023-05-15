@@ -220,7 +220,7 @@ class StartScreen(Screens):
         )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1040, 1020), (320, 60))),
+            scale(pygame.Rect((1040, 1020), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
