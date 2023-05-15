@@ -9,7 +9,6 @@ TODO: Docs
 # pylint: enable=line-too-long
 import random
 import traceback
-import statistics
 
 from scripts.cat.history import History
 from scripts.patrol import Patrol
@@ -86,6 +85,8 @@ class Events():
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
+        
+        print(game.clan.temperament)
 
         if any(
                 str(cat.status) in {
@@ -101,7 +102,6 @@ class Events():
         get_current_season()
         # print(game.clan.current_season)
         self.pregnancy_events.handle_pregnancy_age(game.clan)
-        self.determine_temperament()
         self.check_war()
 
         if game.clan.game_mode in ['expanded', 'cruel season'
@@ -810,70 +810,6 @@ class Events():
         self.handle_murder(cat)
 
         game.switches['skip_conditions'].clear()
-
-    def determine_temperament(self):
-        sociability = []
-        aggression = []
-        deputy_soc = 1
-        deputy_agg = 1
-        leader_soc = 1
-        leader_agg = 1
-        temperament = game.clan.temperament
-        if game.clan:
-            all_others = Cat.all_cats_list
-            if game.clan.leader:
-                leader = Cat.all_cats[str(Cat.fetch_cat(game.clan.leader))]
-                lid = Cat.all_cats_list.index(leader)
-                all_others.pop(lid)
-                leader_soc = int(leader.personality.sociability)
-                leader_agg = int(leader.personality.aggression)
-            if game.clan.deputy:
-                deputy = Cat.all_cats[str(Cat.fetch_cat(game.clan.deputy))]
-                did = Cat.all_cats_list.index(deputy)
-                all_others.pop(did)
-                deputy_soc = int(deputy.personality.sociability)
-                deputy_agg = int(deputy.personality.aggression)                
-            
-            for id in all_others:
-                soc = Cat.all_cats[str(id)].personality.sociability
-                agg = Cat.all_cats[str(id)].personality.aggression
-                sociability.append(soc)
-                aggression.append(agg)
-
-            soc_median = statistics.median(sociability)
-            agg_median = statistics.median(aggression)
-            weight = .3
-
-            clan_sociability = int(statistics.mean([leader_soc, deputy_soc]) * weight + soc_median * (1 - weight))
-            clan_aggression = int(statistics.mean([leader_agg, deputy_agg]) * weight + agg_median * (1 - weight))
-
-            high = [12, 13, 14, 15, 16]
-            medium = [5, 6, 7, 8, 9, 10, 11]
-            low = [0, 1, 2, 3, 4]
-
-            if clan_sociability in high:
-                if clan_aggression in high:
-                    temperament = 'bloodthirsty'
-                elif clan_aggression in medium:
-                    temperament = 'proud'
-                elif clan_aggression in low:
-                    temperament = 'cunning'
-            elif clan_sociability in medium:
-                if clan_aggression in high:
-                    temperament = 'amiable'
-                elif clan_aggression in medium:
-                    temperament = 'stoic'
-                elif clan_aggression in low:
-                    temperament = 'wary'
-            elif clan_sociability in low:
-                if clan_aggression in high:
-                    temperament = 'gracious'
-                elif clan_aggression in medium:
-                    temperament = 'mellow'
-                elif clan_aggression in low:
-                    temperament = 'logical'
-            
-            game.clan.temperament = temperament
 
     def load_war(self):
         resource_dir = "resources/dicts/events/"

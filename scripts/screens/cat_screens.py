@@ -1335,7 +1335,9 @@ class ProfileScreen(Screens):
             return ""
 
         mentor_influence = History.get_mentor_influence(self.the_cat)
-        influence_history = None
+        influence_history = ""
+        
+        # First, do the facet/personality effect
 
         if mentor_influence:
             if mentor_influence["mentor"] and Cat.fetch_cat(mentor_influence["mentor"]):

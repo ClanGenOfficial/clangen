@@ -453,10 +453,14 @@ class History:
         Returns mentor influence dict, example of structure:
 
         "mentor_influence":{
-            "mentor": ID
-            "skill": skill
-            "trait": trait
+            "trait": {
+                "mentor_id":
+                    "lawfulness": 0,
+                    ...
+                    "strings": []
             },
+            "skill": skill
+        }
 
         if mentor influence is empty, a NoneType is returned
         """
