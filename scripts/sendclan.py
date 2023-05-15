@@ -37,10 +37,12 @@ def upload_save(token: str, progress: UITextBoxTweaked, callback: callable):
     progress.set_text("Uploading save...")
 
     # zip up the current save
-    with zipfile.ZipFile(os.path.join(get_temp_dir(), game.clan.name, "save.zip"), 'w') as savezip:
-        for root, dirs, files in os.walk(get_save_dir()):
+    with zipfile.ZipFile(os.path.join(get_temp_dir(), "save.zip"), 'w') as savezip:
+        for root, dirs, files in os.walk(os.path.join(get_save_dir(), game.clan.name)):
             for file in files:
                 savezip.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), get_save_dir()))
+        savezip.write(os.path.join(get_save_dir(), f"{game.clan.name}clan.json"), f"{game.clan.name}clan.json")
+        savezip.write(os.path.join(get_save_dir(), "currentclan.txt"), "currentclan.txt")
             
     # upload the save
     with open(os.path.join(get_temp_dir(), "save.zip"), 'rb') as f:
