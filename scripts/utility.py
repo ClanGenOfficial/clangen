@@ -908,7 +908,6 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
         kitty = choice(get_med_cats(Cat, working=False))
-        print('med', kitty)
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
@@ -1410,9 +1409,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
         new_sprite.blit(sprites.sprites['skin' + cat.skin + cat_sprite], (0, 0))
-        for scar in cat.scars:
-            if scar in scars2:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
+        
+        if not scars_hidden:
+            for scar in cat.scars:
+                if scar in scars2:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
         # draw accessories
         if not acc_hidden:        
