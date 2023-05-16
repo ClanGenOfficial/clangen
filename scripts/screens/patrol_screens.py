@@ -963,8 +963,8 @@ class PatrolScreen(Screens):
             for x in self.current_patrol:
                 if x.skill not in patrol_skills:
                     patrol_skills.append(x.skill)
-                if x.trait not in patrol_traits:
-                    patrol_traits.append(x.trait)
+                if x.personality.trait not in patrol_traits:
+                    patrol_traits.append(x.personality.trait)
 
         self.elements["skills_box"].set_text(
             f"Current Patrol Skills: {', '.join(patrol_skills)}\nCurrent Patrol Traits: {', '.join(patrol_traits)}"

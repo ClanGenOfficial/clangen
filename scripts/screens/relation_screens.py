@@ -2002,7 +2002,7 @@ class RelationshipScreen(Screens):
                                                                               "#text_box_34_horizleft"))
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(self.the_cat.genderalign + " - " + \
                                                                            str(self.the_cat.moons) + " moons - " + \
-                                                                           self.the_cat.trait,
+                                                                           self.the_cat.personality.trait,
                                                                            scale(pygame.Rect((160, 210), (800, 60))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_22_horizleft"))
@@ -2694,7 +2694,7 @@ class MediationScreen(Screens):
                 name,
                 object_id=get_text_box_theme())
 
-            text = mediator.trait + "\n" + mediator.experience_level
+            text = mediator.personality.trait + "\n" + mediator.experience_level
 
             if mediator.not_working():
                 text += "\nThis cat isn't able to work"
@@ -2863,10 +2863,10 @@ class MediationScreen(Screens):
             col1 += " moon"
         else:
             col1 += " moons"
-        if len(cat.trait) > 15:
-            _t = cat.trait[:13] + ".."
+        if len(cat.personality.trait) > 15:
+            _t = cat.personality.trait[:13] + ".."
         else:
-            _t = cat.trait
+            _t = cat.personality.trait
         col1 += "\n" + _t
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
