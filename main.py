@@ -117,6 +117,7 @@ from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
+from scripts.events import load_events
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
 from scripts.debugmode import debugmode
 import pygame_gui
@@ -139,6 +140,7 @@ if clan_list:
     try:
         load_cats()
         version_info = clan_class.load_clan()
+        load_events()
         version_convert(version_info)
     except Exception as e:
         logging.exception("File failed to load")

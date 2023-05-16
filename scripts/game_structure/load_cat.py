@@ -7,12 +7,15 @@ from ..housekeeping.datadir import get_save_dir
 import ujson
 
 from re import sub
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, Personality
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
 from scripts.cat_relations.inheritance import Inheritance
+
+import logging
+logger = logging.getLogger(__name__)
 
 def load_cats():
     try:
@@ -86,10 +89,17 @@ def json_load():
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
-            if cat["trait"] in ["clever", "patient", "empathetic", "altruistic"]:
-                new_cat.trait = "compassionate"
+            
+            
+            if "facets" in cat:
+                facets = [int(i) for i in cat["facets"].split(",")]
+                new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"],
+                                              lawful=facets[0], social=facets[1], 
+                                              aggress=facets[2], stable=facets[3])
             else:
-                new_cat.trait = cat["trait"]
+                new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"])
+                
+                
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
@@ -246,17 +256,18 @@ def json_load():
             cat.paralyzed = True
 
         # load the relationships
-        if not cat.dead:
-            game.switches[
-                'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                    cat)
-            cat.load_relationship_of_cat()
-            game.switches[
-                'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
-            if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.init_all_relationships()
-        else:
-            cat.relationships = {}
+        try:
+            if not cat.dead:
+                cat.load_relationship_of_cat()
+                if cat.relationships is not None and len(cat.relationships) < 1:
+                    cat.init_all_relationships()
+            else:
+                cat.relationships = {}
+        except Exception as e:
+            logger.exception(f'There was an error loading relationships for cat #{cat}.')
+            game.switches['error_message'] = f'There was an error loading relationships for cat #{cat}.'
+            game.switches['traceback'] = e
+            raise
 
         # get all the siblings ids and save them
         siblings = list(
@@ -285,11 +296,16 @@ def json_load():
         # Add faded children
         cat.children.extend(cat.faded_offspring)
         
-        game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
-        # initialization of thoughts
-        cat.thoughts()
-        cat.inheritance = Inheritance(cat)
-        
+        try:
+            # initialization of thoughts
+            cat.thoughts()
+            cat.inheritance = Inheritance(cat)
+        except Exception as e:
+            logger.exception(f'There was an error when thoughts for cat #{cat} are created.')
+            game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
+            game.switches['traceback'] = e
+            raise
+
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:
             save_check()
