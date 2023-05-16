@@ -105,7 +105,7 @@ class Patrol():
             self.experience_levels.append(cat.experience_level)
             if cat.status == 'apprentice' or cat.status == 'medicine cat apprentice':
                 self.patrol_apprentices.append(cat)
-            game.patrolled.append(cat)
+            game.patrolled.append(cat.ID)
 
         # sets medcat as leader if they're in the patrol
         self.patrol_leader = None
