@@ -590,7 +590,6 @@ class Clan():
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
-            update_sprite(Cat.all_cats[str(cat)])
 
     def add_to_darkforest(self, cat):  # Same as add_cat
         """

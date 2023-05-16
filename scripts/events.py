@@ -36,7 +36,7 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
-
+from scripts.housekeeping.datadir import get_save_dir
 
 class Events():
     """
@@ -262,6 +262,7 @@ class Events():
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_events()
             except:
                 SaveError(traceback.format_exc())
 
@@ -2098,5 +2099,24 @@ class Events():
                 game.cur_events_list.insert(
                     0, Single_Event(f"{game.clan.name}Clan has no deputy!"))
 
+def load_events():
+    """
+    Load events from events.json and place into game.cur_events_list.
+    """
+
+    clanname = game.clan.name
+    events_path = f'{get_save_dir()}/{clanname}/events.json'
+    events_list = []
+    try:
+        with open(events_path, 'r') as f:
+            events_list = ujson.loads(f.read())
+        for event_dict in events_list:
+            event_obj = Single_Event.from_dict(event_dict)
+            if event_obj:
+                game.cur_events_list.append(event_obj)
+    except FileNotFoundError:
+        pass
+    except (PermissionError, ujson.JSONDecodeError) as e:
+        traceback.format_exc()
 
 events_class = Events()
