@@ -418,7 +418,8 @@ class Game():
                 "backstory": inter_cat.backstory if inter_cat.backstory else None,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
-                "trait": inter_cat.trait,
+                "trait": inter_cat.personality.trait,
+                "facets": inter_cat.personality.get_facet_string(),
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
                 "adoptive_parents": inter_cat.adoptive_parents,
@@ -444,7 +445,6 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
-                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
@@ -534,7 +534,9 @@ class Game():
                 "backstory": {inter_cat.backstory if inter_cat.backstory else None},
                 "age": {inter_cat.age},
                 "moons": {inter_cat.moons},
-                "trait": {inter_cat.trait},
+                "trait": {inter_cat.personality.trait},
+                "facets": {[inter_cat.personality.lawfulness, inter_cat.personality.sociality,
+                           inter_cat.personality.aggression, inter_cat.personality.stablity]},
                 "parent1": {inter_cat.parent1},
                 "parent2": {inter_cat.parent2},
                 "mentor": {inter_cat.mentor if inter_cat.mentor else None},
@@ -614,6 +616,15 @@ class Game():
 
         game.cat_to_fade = []
 
+    def save_events(self):
+        """
+        Save current events list to events.json
+        """
+        events_list = []
+        for event in game.cur_events_list:
+            events_list.append(event.to_dict())
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/events.json", events_list)
+
     def add_faded_offspring_to_faded_cat(self, parent, offspring):
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
@@ -684,7 +695,7 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/text_boxes_small.json')
         manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/windows_small.json')
         manager.get_theme().load_theme('resources/tool_tips_small.json')
 
         manager.preload_fonts([
