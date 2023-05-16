@@ -19,6 +19,7 @@ from scripts.events_module.generate_events import OngoingEvent
 from scripts.housekeeping.datadir import get_save_dir
 
 import ujson
+import statistics
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -415,19 +416,6 @@ class Clan():
         },
     }
 
-    places_vacant = {
-        'leader': [False, False, False],
-        'medicine': [False, False, False, False, False],
-        'nursery': [
-            False, False, False, False, False, False, False, False, False,
-            False, False
-        ],
-        'clearing': [False, False, False, False, False, False, False],
-        'apprentice': [False, False, False, False, False, False],
-        'warrior': [False, False, False, False, False, False, False, False],
-        'elder': [False, False, False, False, False]
-    }
-
     age = 0
     current_season = 'Newleaf'
     all_clans = []
@@ -743,6 +731,7 @@ class Clan():
             "reputation": self.reputation,
             "mediated": game.mediated,
             "starting_season": self.starting_season,
+            "temperament": self.temperament,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build
@@ -1334,6 +1323,49 @@ class Clan():
             self._reputation = 100
         elif self._reputation < 0:
             self._reputation = 0
+            
+    @property
+    def temperament(self):
+        """Temperment is determined whenever it's accessed. This makes sure it's always accurate to the 
+            current cats in the clan. However, determining clan temperment is slow! 
+            Clan temperment should be used as sparcely as possible, since
+            it's pretty resource-intensive to determine it. """
+        
+        all_cats = [i for i in Cat.all_cats_list if 
+                    i.status not in ["leader", "deputy"] and
+                    not i.dead and 
+                    not i.outside]
+        leader = Cat.fetch_cat(self.leader) if isinstance(Cat.fetch_cat(self.leader), Cat) else None 
+        deputy = Cat.fetch_cat(self.deputy) if isinstance(Cat.fetch_cat(self.deputy), Cat) else None
+        
+        weight = 0.3
+        clan_sociability = round(weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
+            (1-weight) *  statistics.median([i.personality.sociability for i in all_cats]))
+        clan_aggression = round(weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
+            (1-weight) *  statistics.median([i.personality.aggression for i in all_cats]))
+        
+        # temperment = ['high_agress', 'med_agress', 'low agress' ]
+        if 12 <= clan_sociability:
+            _temperament = ['gracious', 'mellow', 'logical']
+        elif 5 <= clan_sociability:
+            _temperament = ['amiable', 'stoic', 'wary']
+        else:
+            _temperament = ['cunning', 'proud', 'bloodthirsty']
+            
+        if 12 <= clan_aggression:
+            _temperament = _temperament[2]
+        elif 5 <= clan_aggression:
+            _temperament = _temperament[1] 
+        else:
+            _temperament = _temperament[0] 
+        
+        return _temperament
+    
+    @temperament.setter
+    def temperament(self, val):
+        print("Clan temperment set by member personality --> you can not set it externally.", val)
+        return
+            
 
 
 class OtherClan():

@@ -100,7 +100,7 @@ class Patrol():
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
             self.patrol_statuses.append(cat.status)
-            self.patrol_traits.append(cat.trait)
+            self.patrol_traits.append(cat.personality.trait)
             self.patrol_total_experience += cat.experience
             self.experience_levels.append(cat.experience_level)
             if cat.status == 'apprentice' or cat.status == 'medicine cat apprentice':
@@ -290,7 +290,7 @@ class Patrol():
         else:
             keep = True
         if "trait" in patrol.constraints:
-            if self.patrol_leader.trait in patrol.constraints["skill"]:
+            if self.patrol_leader.personality.trait in patrol.constraints["skill"]:
                 keep = True
         else:
             keep = True
@@ -721,11 +721,11 @@ class Patrol():
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
                 elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
-            if kitty.trait in self.patrol_event.win_trait:
+            if kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
-            if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
+            if self.patrol_event.fail_trait and kitty.personality.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
@@ -756,18 +756,17 @@ class Patrol():
             self.patrol_fail_stat_cat = None
 
             # default is outcome 0
-            outcome = 0
+            outcome = "unscathed_common"
             if self.patrol_win_stat_cat:
                 if self.patrol_event.win_trait:
-                    if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
-                        outcome = 3
+                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait:
+                        outcome = "stat_trait"
                 if self.patrol_event.win_skills:
                     if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
-                        outcome = 2
+                        outcome = "stat_skill"
             else:
-                if rare and len(success_text) >= 2:
-                    if success_text[1]:
-                        outcome = 1
+                if rare and success_text.get("unscathed_rare"):
+                    outcome = "unscathed_rare"
 
             if not antagonize:
                 self.add_new_cats(outcome, self.success)
@@ -782,7 +781,6 @@ class Patrol():
                         self.handle_reputation(-20)
                     else:
                         self.handle_reputation(10)
-                        
 
             self.handle_mentor_app_pairing()
             self.handle_relationships()
@@ -793,7 +791,7 @@ class Patrol():
             try:
                 self.final_success = self.patrol_event.success_text[outcome]
             except IndexError:
-                self.final_success = self.patrol_event.success_text[0]
+                self.final_success = self.patrol_event.success_text["unscathed_common"]
 
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -814,69 +812,51 @@ class Patrol():
                 unscathed = False
                 print("Unscathed false")
 
-            outcome = 0  # unscathed and common outcome, the default failure
+            outcome = "unscathed_common"  # unscathed and common outcome, the default failure
 
             # first we check for a fail stat outcome
             if self.patrol_fail_stat_cat is not None:
                 print("Fail stat cat")
                 # safe, just failed
-                if unscathed and len(fail_text) >= 2:
-                    if fail_text[1]:
-                        outcome = 1
+                if unscathed and fail_text.get("unscathed_stat"):
+                    outcome = "unscathed_stat"
                 # injured
-                elif not unscathed and common and len(fail_text) >= 5:
-                    if fail_text[4]:
-                        outcome = 4
+                elif not unscathed and common and fail_text.get("stat_injury"):
+                    outcome = "stat_injury"
                 # dead
-                elif not unscathed and rare and len(fail_text) >= 6:
-                    if fail_text[5]:
-                        outcome = 5
+                elif not unscathed and rare and fail_text.get("stat_death"):
+                    outcome = "stat_death"
 
             # if no fail stat cat or outcomes, then onto the injured/dead outcomes
             if not unscathed:
                 # injured
-                if common and len(fail_text) >= 4:
-                    if fail_text[3]:
-                        outcome = 3
+                if common and fail_text.get("injury"):
+                    outcome = "injury"
                 # if the leader is present and a cat /would/ die, then the leader sacrifices themselves
-                elif rare and len(fail_text) >= 7 and self.patrol_leader == game.clan.leader:
-                    if fail_text[6]:
-                        outcome = 6
+                elif rare and fail_text.get("leader_death") and self.patrol_leader == game.clan.leader:
+                    outcome = "leader_death"
                 # dead
-                elif rare and len(fail_text) >= 3:
-                    if fail_text[2]:
-                        outcome = 2
-                # making sure unscathed fail is always unscathed
-                if outcome == 0:
-                    if len(fail_text) >= 4:
-                        if fail_text[3]:
-                            outcome = 3
-                        elif fail_text[2]:
-                            outcome = 2
-                    elif len(fail_text) >= 3:
-                        if fail_text[2]:
-                            outcome = 2
-                    else:
-                        outcome = 0
+                elif rare and fail_text.get("death"):
+                    outcome = "death"
 
             # if /still/ no outcome is picked then double check that an outcome 0 is available,
             # if it isn't, then try to injure and then kill the cat
-            if not fail_text[0]:
+            if not fail_text.get("unscathed_common"):
                 # attempt death outcome
-                if fail_text[2]:
-                    outcome = 2
+                if fail_text.get("death"):
+                    outcome = "death"
                 # attempt injure outcome
-                elif fail_text[3]:
-                    outcome = 3
+                elif fail_text.get("injury"):
+                    outcome = "injury"
 
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
-                if outcome == 2:
+                if outcome == "death":
                     self.handle_deaths_and_gone(self.patrol_random_cat)
-                elif outcome == 4:
+                elif outcome == "stat_death":
                     self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-                elif outcome == 6:
+                elif outcome == "leader_death":
                     self.handle_deaths_and_gone(self.patrol_leader)
-                elif outcome == 3 or outcome == 5:
+                elif outcome == "injury" or outcome == "stat_injury":
                     if game.clan.game_mode == 'classic':
                         self.handle_scars(outcome)
                     else:
@@ -1560,14 +1540,13 @@ class Patrol():
         lethal = True
 
         # get the cat to injure
-        if outcome == 3:
+        if "stat" in outcome:
+            cat = self.patrol_fail_stat_cat
+        else:
             if "apprentice" in patrol.patrol_event.tags:
                 cat = self.patrol_apprentices[0]
             else:
                 cat = self.patrol_random_cat
-
-        elif outcome == 5:
-            cat = self.patrol_fail_stat_cat
 
         if self.patrol_event.tags:
             # here we check if a specific condition has been tagged for, excluding shock, and add it to possible
@@ -1637,9 +1616,9 @@ class Patrol():
         if self.patrol_event.tags is not None:
             print('getting scar')
             if "scar" in self.patrol_event.tags:
-                if outcome == 3:
+                if "stat" not in outcome:
                     cat = self.patrol_random_cat
-                elif outcome == 5:
+                elif "stat" in outcome:
                     cat = self.patrol_fail_stat_cat
                 else:
                     return
@@ -1869,6 +1848,9 @@ class Patrol():
         for cat in self.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
+                affect = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
+                History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
+                print(affect)
 
     def handle_reputation(self, difference):
         """
@@ -2130,20 +2112,22 @@ class PatrolEvent:
 
 # ! Patrol Notes
 """
--- success/fail outcomes -- 
-    Success[0] is the most common
-    Success[1] is slightly rarer
-    Success[2] is if win skill is applicable
-    Success[3] is if win trait is applicable
+-- success outcomes -- 
+    "unscathed_common": 
+    "unscathed_rare":
+    "stat_skill": 
+    "stat_trait":
 
-    Fail text[0] is unscathed fail 1
-    Fail text[1] is unscathed 2, fail skill or fail traits
-    Fail text[2] is death
-    Fail text[3] is scar/injury
-    Fail text[4] is death for s_c
-    fail text[5] is scar/injury for s_c
-    fail text[6] is alt leader death
+-- fail outcomes -- 
+    "unscathed_common": 
+    "unscathed_stat": 
+    "death": 
+    "injury": 
+    "stat_death": 
+    "stat_injury": 
+    "leader_death":
 
+-- history text -- 
     History text[0] is scar text
     History text[1] is death text for normal cats
     History text[2] is death text for leaders

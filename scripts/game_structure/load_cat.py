@@ -7,7 +7,7 @@ from ..housekeeping.datadir import get_save_dir
 import ujson
 
 from re import sub
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, Personality
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
@@ -86,10 +86,17 @@ def json_load():
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
-            if cat["trait"] in ["clever", "patient", "empathetic", "altruistic"]:
-                new_cat.trait = "compassionate"
+            
+            
+            if "facets" in cat:
+                facets = [int(i) for i in cat["facets"].split(",")]
+                new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"],
+                                              lawful=facets[0], social=facets[1], 
+                                              aggress=facets[2], stable=facets[3])
             else:
-                new_cat.trait = cat["trait"]
+                new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"])
+                
+                
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0

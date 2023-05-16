@@ -41,29 +41,7 @@ from scripts.cat_relations.inheritance import Inheritance, RelationType
 class Cat():
     dead_cats = []
     used_screen = screen
-    traits = [
-        'adventurous', 'ambitious', 'bloodthirsty', 'bold',
-        'calm', 'careful', 'charismatic', 'childish', 'cold', 'compassionate',
-        'confident', 'daring', 'faithful', 'fierce', 'insecure',
-        'lonesome', 'loving', 'loyal', 'nervous', 'playful',
-        'responsible', 'righteous', 'shameless', 'sneaky', 'strange', 'strict',
-        'thoughtful', 'troublesome', 'vengeful', 'wise'
-    ]
-    kit_traits = [
-        'attention-seeker', 'bossy', 'bouncy', 'bullying', 'charming',
-        'daring', 'daydreamer', 'impulsive', 'inquisitive', 'insecure',
-        'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
-    ]
-    personality_groups = {
-        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring',
-                     'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
-        'Benevolent': ['faithful', 'loving', 'responsible', 'thoughtful', 'wise', 'inquisitive',
-                       'polite', 'sweet'],
-        'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
-                     'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
-        'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
-                     'strange', 'daydreamer', 'quiet'],
-    }
+    
     ages = [
         'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
         'senior'
@@ -223,7 +201,7 @@ class Cat():
                  ):
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
-        self.history_class = History()
+        self.history = None
         if faded:
             self.ID = ID
             self.name = Name(status, prefix=prefix, suffix=suffix)
@@ -263,7 +241,8 @@ class Cat():
         self.backstory = backstory
         self.age = None
         self.skill = None
-        self.trait = None
+        self.personality = Personality(trait="troublesome", lawful=0, aggress=0,
+                                       stable=0, social=0)
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
@@ -382,16 +361,6 @@ class Cat():
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
-        # personality trait and skill
-        if self.trait is None:
-            if self.status not in ['newborn', 'kitten']:
-                self.trait = choice(self.traits)
-            else:
-                self.trait = choice(self.kit_traits)
-
-        if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
-            self.trait = choice(self.traits)
-
         if self.skill is None or self.skill == '???':
             if self.moons <= 11:
                 self.skill = '???'
@@ -448,7 +417,7 @@ class Cat():
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]"""
-
+            
             # setting up sprites that might not be correct
             if self.pelt is not None:
                 if self.pelt.length == 'long':
@@ -469,6 +438,9 @@ class Cat():
             init_eyes(self)
             init_pattern(self)
             init_tint(self)
+            
+            #Personality
+            self.personality = Personality(kit_trait=self.is_baby())
 
             # experience and current patrol status
             if self.age in ['young', 'newborn']:
@@ -613,7 +585,7 @@ class Cat():
         self.exiled = True
         self.outside = True
         self.status = 'exiled'
-        if self.trait == 'vengeful':
+        if self.personality.trait == 'vengeful':
             self.thought = "Swears their revenge for being exiled"
         else:
             self.thought = "Is shocked that they have been exiled"
@@ -670,7 +642,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.possible_death_reactions(family_relation, value, cat.trait,
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.personality.trait,
                                                                           body_status))
 
             if possible_strings:
@@ -679,9 +651,9 @@ class Cat():
 
                 # check if the cat will get Major or Minor severity for grief
                 weights = [1, 1]
-                if cat.trait in grief_major:
+                if cat.personality.trait in grief_major:
                     weights = [3, 1]
-                if cat.trait in grief_minor:
+                if cat.personality.trait in grief_minor:
                     weights = [1, 3]
                 if "rosemary" in game.clan.herbs:  # decrease major grief chance if grave herbs are used
                     weights = [1, 6]
@@ -717,7 +689,7 @@ class Cat():
                         if cat_to == self:
                             family_relation = self.familial_grief(living_cat=cat)
                             possible_strings.extend(
-                                self.generate_events.possible_death_reactions(family_relation, value, cat.trait,
+                                self.generate_events.possible_death_reactions(family_relation, value, cat.personality.trait,
                                                                               body_status))
 
                 if possible_strings:
@@ -909,91 +881,21 @@ class Cat():
         if game.sort_type == "rank" and resort:
             Cat.sort_cats()
 
+    
     def update_traits(self):
-        """Updates the traits of a cat upon ageing up.  """
-        if self.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
-            chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
-            if chance == 0:
-                self.trait = choice(self.traits)
+        """Updates the trait to grab from the correct list, and wobbles the facets
+            Also handles mentor inflence """  
+        self.personality.set_kit(self.is_baby()) #Update kit trait stuff
+        if self.status in ["warrior", "medicine cat", "mediator"]:
+            History.add_mentor_influence_strings(self)
+            # Smaller facet wobble if there was mentor inflenece
+            if History.get_mentor_influence(self).get("trait"):
+                self.personality.facet_wobble(max = 2)
             else:
-                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
-                for x in possible_groups:
-                    if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
-                        else:
-                            self.trait = chosen_trait
-        elif self.status in ["warrior", "medicine cat", "mediator"]:
-            mentor = None
-            if self.mentor:
-                mentor = Cat.fetch_cat(self.mentor)
-            elif not self.mentor and len(self.former_mentor) != 0:
-                if len(self.former_mentor) > 1:
-                    mentor = Cat.fetch_cat(self.former_mentor[-1])
-                else:
-                    mentor = Cat.fetch_cat(self.former_mentor[0])
-
-            influence_trait = None
-
-            chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
-
-            # choose random trait, no influence
-            if chance == 0:
-                self.trait = choice(self.traits)
-
-            # choose related trait, no influence
-            elif 1 <= chance <= 6:
-                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
-                for x in possible_groups:
-                    if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        if chosen_trait in self.kit_traits:
-                            self.trait = self.trait
-                        else:
-                            self.trait = chosen_trait
-
-            # chose influence trait
-            elif chance >= 7:
-                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
-                for x in possible_groups:
-                    if mentor and mentor.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-
-                        if x == 'Abrasive' and chance >= 12:
-                            possible_trait = self.personality_groups.get('Reserved')
-                            influence_trait = "Reserved"
-                        chosen_trait = choice(possible_trait)
-
-                        if chosen_trait in self.kit_traits:
-                            chosen_group = choice(possible_groups)
-                            possible_traits = [i for i in self.personality_groups[chosen_group] if
-                                               i not in self.kit_traits]
-                            self.trait = choice(possible_traits)
-                            influence_trait = None
-                        else:
-                            self.trait = chosen_trait
-                            if not influence_trait:
-                                influence_trait = x
-
-            self.history_class.add_mentor_influence(self, mentor, skill=None, trait=influence_trait)
-
-        elif self.status in ["elder"]:
-            chance = randint(0, 7)  # chance for cat to gain new trait or keep old
-            if chance == 0:
-                self.trait = choice(self.traits)
-            elif chance == 1:
-                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
-                for x in possible_groups:
-                    if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
-                        else:
-                            self.trait = chosen_trait
+                self.personality.facet_wobble()
+        else:
+            self.personality.facet_wobble()
+        return
 
     def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
@@ -1148,7 +1050,7 @@ class Cat():
         if not os.path.exists(history_dir):
             os.makedirs(history_dir)
 
-        history_dict = self.history_class.make_dict(self)
+        history_dict = History.make_dict(self)
         try:
             with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
                 json_string = ujson.dumps(history_dict, indent=4)
@@ -1197,7 +1099,7 @@ class Cat():
                 continue
 
             if all_intros[intro]["lead_trait"]:
-                if self.trait not in all_intros[intro]["lead_trait"]:
+                if self.personality.trait not in all_intros[intro]["lead_trait"]:
                     continue
             possible_intros.append(all_intros[intro])
 
@@ -1373,10 +1275,10 @@ class Cat():
                     if rank not in possible_lives[life]["rank"]:
                         continue
                 if possible_lives[life]["lead_trait"]:
-                    if self.trait not in possible_lives[life]["lead_trait"]:
+                    if self.personality.trait not in possible_lives[life]["lead_trait"]:
                         continue
                 if possible_lives[life]["star_trait"]:
-                    if giver_cat.trait not in possible_lives[life]["star_trait"]:
+                    if giver_cat.personality.trait not in possible_lives[life]["star_trait"]:
                         continue
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
 
@@ -1418,7 +1320,7 @@ class Cat():
                     continue
 
                 if possible_lives[life]["lead_trait"]:
-                    if self.trait not in possible_lives[life]["lead_trait"]:
+                    if self.personality.trait not in possible_lives[life]["lead_trait"]:
                         continue
                 possible_blessing.append(possible_lives[life])
             chosen_blessing = choice(possible_blessing)
@@ -1448,7 +1350,7 @@ class Cat():
                 continue
 
             if all_outros[outro]["lead_trait"]:
-                if self.trait not in all_outros[outro]["lead_trait"]:
+                if self.personality.trait not in all_outros[outro]["lead_trait"]:
                     continue
             possible_outros.append(all_outros[outro])
 
@@ -1613,10 +1515,8 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                                History.add_skill_mentor_influence(self, skill_influence)
                                 return
-
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
 
                 # Will only be reached if a mentor skill was not applied.
                 self.skill = choice(self.med_skills)
@@ -1639,10 +1539,8 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                                History.add_skill_mentor_influence(self, skill_influence)
                                 return
-
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
 
                 self.skill = choice(self.skills)
 
@@ -1661,7 +1559,7 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 skill_influence = self.skill
-                                self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                                History.add_mentor_influence(self, mentor, skill_influence, trait=None)
                                 return
 
                     all_skills = []
@@ -1669,7 +1567,7 @@ class Cat():
                         all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
 
-                    self.history_class.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                    History.add_mentor_influence(self, mentor, skill_influence, trait=None)
 
 
             # assign new skill to elder
@@ -3138,7 +3036,7 @@ class Cat():
             return cat.dead_for
         else:
             return cat.moons
-
+        
     # ---------------------------------------------------------------------------- #
     #                                  properties                                  #
     # ---------------------------------------------------------------------------- #
@@ -3187,11 +3085,262 @@ class Cat():
     @sprite.setter
     def sprite(self, new_sprite):
         self._sprite = new_sprite
+        
+    # ---------------------------------------------------------------------------- #
+    #                                  other                                       #
+    # ---------------------------------------------------------------------------- #
+    
+    def is_baby(self):
+        return self.age in ["kitten", "newborn"]
 
 
+        
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
+
+# ---------------------------------------------------------------------------- #
+#                               PERSONALITY CLASS                              #
+# ---------------------------------------------------------------------------- #
+
+class Personality():
+    """Hold personality information for a cat, and functions to deal with it """
+    facet_types = ["lawfulness", "sociability", "aggression", "stability"]
+    facet_range = [0, 16]
+    
+    with open("resources/dicts/traits/trait_ranges.json", "r") as read_file:
+        trait_ranges = ujson.loads(read_file.read())
+    
+    def __init__(self, trait:str=None, kit_trait:bool=False, lawful:int=None, social:int=None, aggress:int=None, 
+                 stable:int=None) -> Personality:
+        """If trait is given, it will randomize facets within the range of the trait. It will ignore any facets given. 
+            If facets are given and no trait, it will find a trait that matches the facets. NOTE: you can give
+            only some facets: It will randomize any you don't specify.
+            If both facets and trait are given, it will use the trait if it matched the facets. Otherwise it will
+            find a new trait."""
+        self._law = 0
+        self._social = 0
+        self._aggress = 0
+        self._stable = 0
+        self.trait = None
+        self.kit = kit_trait #If true, use kit trait. If False, use normal traits. 
+        
+        if self.kit:
+            trait_type_dict = Personality.trait_ranges["kit_traits"]
+        else:
+            trait_type_dict = Personality.trait_ranges["normal_traits"]
+        
+        _tr = None
+        if trait and trait in trait_type_dict:
+            # Trait-given init
+            self.trait = trait
+            _tr = trait_type_dict[self.trait]
+        
+        # Set Facet Values
+        # The priority of is: 
+        # (1) Given value, from parameter. 
+        # (2) If a trait range is assigned, pick from trait range
+        # (3) Totally random. 
+        if lawful is not None:
+            self._law = Personality.adjust_to_range(lawful)
+        elif _tr:
+            self._law = random.randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
+        else:
+            self._law = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if social is not None:
+            self._social = Personality.adjust_to_range(social)
+        elif _tr:
+            self._social = random.randint(_tr["sociability"][0], _tr["sociability"][1])
+        else:
+            self._social = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if aggress is not None:
+            self._aggress = Personality.adjust_to_range(aggress)
+        elif _tr:
+            self._aggress = random.randint(_tr["aggression"][0], _tr["aggression"][1])
+        else:
+            self._aggress = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            
+        if stable is not None:
+            self._stable = Personality.adjust_to_range(stable)
+        elif _tr:
+            self._stable = random.randint(_tr["stability"][0], _tr["stability"][1])
+        else:
+            self._stable = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+                
+        # If trait is still empty, or if the trait is not valid with the facets, change it. 
+        if not self.trait or not self.is_trait_valid():
+            self.choose_trait()
+                
+    def __repr__(self) -> str:
+        """For debugging"""
+        return f"{self.trait}: lawfulness {self.lawfulness}, aggression {self.aggression}, sociability {self.sociability}, stablity {self.stability}"
+    
+    def get_facet_string(self):
+        """For saving the facets to file."""
+        return f"{self.lawfulness},{self.sociability},{self.aggression},{self.stability}"
+    
+    def __getitem__(self, key):
+        """Alongside __setitem__, Allows you to treat this like a dictionary if you want. """
+        return getattr(self, key)
+    
+    def __setitem__(self, key, newval):
+        """Alongside __getitem__, Allows you to treat this like a dictionary if you want. """
+        setattr(self, key, newval)
+
+    # ---------------------------------------------------------------------------- #
+    #                               PROPERTIES                                     #
+    # ---------------------------------------------------------------------------- #
+    
+    @property
+    def lawfulness(self):
+        return self._law
+    
+    @lawfulness.setter
+    def lawfulness(self, new_val):
+        """Do not use property in init"""
+        self._law = Personality.adjust_to_range(new_val)
+        if not self.is_trait_valid():
+            self.choose_trait()
+            
+    @property
+    def sociability(self):
+        return self._social
+    
+    @sociability.setter
+    def sociability(self, new_val):
+        """Do not use property in init"""
+        self._social = Personality.adjust_to_range(new_val)
+        if not self.is_trait_valid():
+            self.choose_trait()
+            
+    @property
+    def aggression(self):
+        return self._aggress
+    
+    @aggression.setter
+    def aggression(self, new_val):
+        """Do not use property in init"""
+        self._aggress = Personality.adjust_to_range(new_val)
+        if not self.is_trait_valid():
+            self.choose_trait()
+            
+    @property
+    def stability(self):
+        return self._aggress
+    
+    @stability.setter
+    def stability(self, new_val):
+        """Do not use property in init"""
+        self._stable = Personality.adjust_to_range(new_val)
+        if not self.is_trait_valid():
+            self.choose_trait()
+            
+
+    # ---------------------------------------------------------------------------- #
+    #                               METHODS                                        #
+    # ---------------------------------------------------------------------------- #
+
+    @staticmethod
+    def adjust_to_range(val:int) -> int:
+        """Take an integer and adjust it to be in the trait-range """
+        
+        if val < Personality.facet_range[0]:
+            val = Personality.facet_range[0]
+        elif val > Personality.facet_range[1]:
+            val = Personality.facet_range[1]
+        
+        return val
+    
+    def set_kit(self, kit:bool):
+        """Switch the trait-type. True for kit, False for normal"""
+        self.kit = kit
+        if not self.is_trait_valid():
+            self.choose_trait()
+        
+    def is_trait_valid(self) -> bool:
+        """Return True if the current facets fit the trait ranges, false
+        if it doesn't. Also returns false if the trait is not in the trait dict.  """
+        
+        if self.kit:
+            trait_type_dict = Personality.trait_ranges["kit_traits"]
+        else:
+            trait_type_dict = Personality.trait_ranges["normal_traits"]
+        
+        if self.trait not in trait_type_dict:
+            return False
+        
+        trait_range = trait_type_dict[self.trait]
+        
+        if not (trait_range["lawfulness"][0] <= self.lawfulness 
+                <= trait_range["lawfulness"][1]):
+            return False
+        if not (trait_range["sociability"][0] <= self.sociability 
+                <= trait_range["sociability"][1]):
+            return False
+        if not (trait_range["aggression"][0] <= self.aggression 
+                <= trait_range["aggression"][1]):
+            return False
+        if not (trait_range["stability"][0] <= self.stability 
+                <= trait_range["stability"][1]):
+            return False
+        
+        return True
+    
+    def choose_trait(self):
+        """Chooses trait based on the facets """
+        
+        if self.kit:
+            trait_type_dict = Personality.trait_ranges["kit_traits"]
+        else:
+            trait_type_dict = Personality.trait_ranges["normal_traits"]
+        
+        possible_traits = []
+        for trait, fac in trait_type_dict.items():
+            if not (fac["lawfulness"][0] <= self.lawfulness <= fac["lawfulness"][1]):
+                continue
+            if not (fac["sociability"][0] <= self.sociability <= fac["sociability"][1]):
+                continue
+            if not (fac["aggression"][0] <= self.aggression <= fac["aggression"][1]):
+                continue
+            if not (fac["stability"][0] <= self.stability <= fac["stability"][1]):
+                continue
+            
+            possible_traits.append(trait)
+            
+        if possible_traits:
+            self.trait = random.choice(possible_traits)
+        else:
+            print("No possible traits! Using 'strange'")
+            self.trait = "strange"
+            
+    def facet_wobble(self, max=5):
+        """Makes a small adjusment to all the facets, and redetermines trait if needed."""        
+        self.lawfulness += randint(-max, max)
+        self.stability += randint(-max, max)
+        self.aggression += randint(-max, max)
+        self.sociability += randint(-max, max)
+        
+    def mentor_influence(self, mentor:Cat):
+        """applies mentor influence after the pair go on a patrol together 
+            returns history information in the form (mentor_id, facet_affected, amount_affected)"""
+        mentor_personality = mentor.personality
+        
+        #Get possible facet values
+        possible_facets = {i: mentor_personality[i] - self[i] for i in 
+                           Personality.facet_types if mentor_personality[i] - self[i] != 0}
+        
+        if possible_facets:
+            # Choice trait to effect, weighted by the abs of the difference (higher difference = more likely to effect)
+            facet_affected = random.choices([i for i in possible_facets], weights=[abs(i) for i in possible_facets.values()], k=1)[0]
+            # stupid python with no sign() function by default. 
+            amount_affected = int(possible_facets[facet_affected]/abs(possible_facets[facet_affected]) * random.randint(1, 2))
+            self[facet_affected] += amount_affected
+            return (mentor.ID, facet_affected, amount_affected)
+        else:
+            #This will only trigger if they have the same personality. 
+            return None
 
 # Twelve example cats
 def create_example_cats():

@@ -99,11 +99,11 @@ class Thoughts():
                 return False
 
         if 'main_trait_constraint' in thought:
-            if main_cat.trait not in thought['main_trait_constraint']:
+            if main_cat.personality.trait not in thought['main_trait_constraint']:
                 return False
             
         if 'random_trait_constraint' in thought and random_cat:
-            if random_cat.trait not in thought['random_trait_constraint']:
+            if random_cat.personality.trait not in thought['random_trait_constraint']:
                 return False
 
         if 'main_skill_constraint' in thought:

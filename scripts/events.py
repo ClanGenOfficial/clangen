@@ -85,6 +85,8 @@ class Events():
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
+        
+        print(game.clan.temperament)
 
         if any(
                 str(cat.status) in {
@@ -960,7 +962,7 @@ class Events():
                 game.clan.new_leader(game.clan.deputy)
                 game.clan.leader_lives = 9
                 text = ''
-                if game.clan.deputy.trait == 'bloodthirsty':
+                if game.clan.deputy.personality.trait == 'bloodthirsty':
                     text = f'{game.clan.deputy.name} has become the new leader. ' \
                            f'They stare down at their Clanmates with unsheathed claws, ' \
                            f'promising a new era for the Clans.'
@@ -1062,7 +1064,7 @@ class Events():
                     elif has_med:
                         chance = int(chance * 2.22)
 
-                    if cat.trait in [
+                    if cat.personality.trait in [
                         'altruistic', 'compassionate', 'empathetic',
                         'wise', 'faithful'
                     ]:
@@ -1092,7 +1094,7 @@ class Events():
                                 break
 
                         chance = game.config["roles"]["mediator_app_chance"]
-                        if cat.trait in [
+                        if cat.personality.trait in [
                             'charismatic', 'empathetic', 'responsible',
                             'wise', 'thoughtful'
                         ]:
@@ -1345,7 +1347,7 @@ class Events():
 
             temp.update(
                 possible_ceremonies.intersection(
-                    self.ceremony_id_by_tag[cat.trait]))
+                    self.ceremony_id_by_tag[cat.personality.trait]))
 
             possible_ceremonies = temp
         except Exception as ex:
@@ -1360,7 +1362,7 @@ class Events():
                       encoding="ascii") as read_file:
                 TRAITS = ujson.loads(read_file.read())
             try:
-                random_honor = random.choice(TRAITS[cat.trait])
+                random_honor = random.choice(TRAITS[cat.personality.trait])
             except KeyError:
                 random_honor = "hard work"
         
@@ -1445,13 +1447,13 @@ class Events():
             chance += acc_chances["baby_modifier"]
         elif cat.age in ['senior adult', 'senior']:
             chance += acc_chances["elder_modifier"]
-        if cat.trait in [
+        if cat.personality.trait in [
             "adventurous", "childish", "confident", "daring", "playful",
             "attention-seeker", "bouncy", "sweet", "troublesome",
             "impulsive", "inquisitive", "strange", "shameless"
         ]:
             chance += acc_chances["happy_trait_modifier"]
-        elif cat.trait in [
+        elif cat.personality.trait in [
             "cold", "strict", "bossy", "bullying", "insecure", "nervous"
         ]:
             chance += acc_chances["grumpy_trait_modifier"]
@@ -1685,7 +1687,7 @@ class Events():
 
             # this next part is probably temporary, since the personality rework is coming up so
             # TODO: when personality rework is out, make sure this is changed to take the rework into account
-            if cat.trait in ["vengeful", "bloodthirsty", "cold"]:
+            if cat.personality.trait in ["vengeful", "bloodthirsty", "cold"]:
                 kill_chance -= 30
                 print('TRAIT MODIFIER', kill_chance)
 
@@ -2013,7 +2015,7 @@ class Events():
 
                     if leader_status == "here" and deputy_status == "not_here":
 
-                        if random_cat.trait == 'bloodthirsty':
+                        if random_cat.personality.trait == 'bloodthirsty':
                             text = f"{random_cat.name} has been chosen as the new deputy. " \
                                    f"They look at the Clan leader with an odd glint in their eyes."
                             # No additional involved cats
