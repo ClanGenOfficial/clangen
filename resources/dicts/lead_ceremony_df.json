@@ -393,19 +393,19 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "One of the core philosophy of the Dark Forest is that Compassion was a weakness. And as pain arched through m_c's body from r_c's life for [virtue], that harsh lesson burned through {PRONOUN/m_c/poss} body like a raging inferno.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "text": "A sneer crossed r_c's face as {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} m_c. Cruely pressing {PRONOUN/m_c/poss} nose against the new leader's head, {PRONOUN/car_ct/subject} {VERB/r_c/snarl/snarls} our a life for [virtue]. Perhaps that would keep m_c from beuing too friendly with the other Clans.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "text": "r_c's tired gaze watches m_c. Whispering how m_c's compassionate nature will only hurt c_n in the end, r_c presses {PRONOUN/r_c/poss} nose against the new leader and sighs out a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
