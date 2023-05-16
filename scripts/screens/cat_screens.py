@@ -2472,7 +2472,7 @@ class RoleScreen(Screens):
                                                                              name,
                                                                              object_id=get_text_box_theme())
 
-        text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.trait}\n"
+        text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.personality.trait}\n"
 
         text += f"{self.the_cat.moons} "
 
