@@ -13,13 +13,13 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
-        "unscathed_common": "The wind suddenly shifts, and the squirrel jerks its head up in alarm. r_c thinks fast, bolting to cut off its escape before delivering the killing blow.",
-        "unscathed_rare": "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
-        "stat_skill": "r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
-    },
+            "unscathed_common": "The wind suddenly shifts, and the squirrel jerks its head up in alarm. r_c thinks fast, bolting to cut off its escape before delivering the killing blow.",
+            "unscathed_rare": "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
+            "stat_skill": "r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
+        },
         "fail_text": {
-        "unscathed_common": "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
-    },
+            "unscathed_common": "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+        },
         "win_skills": [
             "good hunter",
             "great hunter",
