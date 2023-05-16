@@ -2088,7 +2088,7 @@ class RelationshipScreen(Screens):
             col1 += f"{self.inspect_cat.moons} moons\n"
 
             # Trait
-            col1 += f"{self.inspect_cat.trait}\n"
+            col1 += f"{self.inspect_cat.personality.trait}\n"
 
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(col1,
                                                                               scale(pygame.Rect((120, 650), (180, 180))),
