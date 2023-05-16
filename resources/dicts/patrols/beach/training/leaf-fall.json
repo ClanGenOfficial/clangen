@@ -19,9 +19,9 @@
             "stat_trait": "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for whatever reason, Twolegs worship the ginger cat so much that they made statues they threw into the ocean."
         },
         "fail_text": {
-        "unscathed_common": "There is no way r_c is staying around here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tear/tears} off back to camp at the sight of a broken ginger cat statue.",
-        "unscathed_stat": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd..."
-    },
+            "unscathed_common": "There is no way r_c is staying around here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tear/tears} off back to camp at the sight of a broken ginger cat statue.",
+            "unscathed_stat": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd..."
+        },
         "win_skills": [
             "good storyteller",
             "great storyteller",
@@ -58,8 +58,8 @@
             "stat_trait": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior."
         },
         "fail_text": {
-        "unscathed_common": "It's a beach full of lizards! p_l tears back to camp before {PRONOUN/p_l/subject} can get bitten."
-    },
+            "unscathed_common": "It's a beach full of lizards! p_l tears back to camp before {PRONOUN/p_l/subject} can get bitten."
+        },
         "win_trait": [
             "adventurous",
             "shameless",
