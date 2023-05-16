@@ -186,6 +186,7 @@ def pelt_inheritance(cat, parents: tuple):
         torbie = random.getrandbits(tortie_chance_f) == 1
     else:
         torbie = random.getrandbits(tortie_chance_m) == 1
+        print("Male tortie!")
 
     chosen_tortie_base = None
     if torbie:
@@ -440,6 +441,8 @@ def init_pattern(cat):
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
+                # people are fans of the print message so I'm putting it back
+                print("Wildcard tortie!")
 
                 # Allow any pattern:
                 cat.tortiepattern = choice(tortiebases)

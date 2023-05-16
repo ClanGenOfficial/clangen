@@ -137,5 +137,6 @@ for dir_, _, files in os.walk(root_dir):
         if os.path.splitext(rel_file)[-1].lower() == ".json":
             file_set.add(rel_file)
 
+print(file_set)
 for pa in file_set:
     reformat_success_text(pa)

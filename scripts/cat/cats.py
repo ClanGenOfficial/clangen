@@ -1559,7 +1559,7 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 skill_influence = self.skill
-                                History.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                                History.add_skill_mentor_influence(self, mentor, skill_influence, trait=None)
                                 return
 
                     all_skills = []
@@ -1567,7 +1567,7 @@ class Cat():
                         all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
 
-                    History.add_mentor_influence(self, mentor, skill_influence, trait=None)
+                    History.add_skill_mentor_influence(self, mentor, skill_influence, trait=None)
 
 
             # assign new skill to elder

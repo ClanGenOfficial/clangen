@@ -85,8 +85,6 @@ class Events():
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
-        
-        print(game.clan.temperament)
 
         if any(
                 str(cat.status) in {
