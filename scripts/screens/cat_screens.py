@@ -1329,7 +1329,7 @@ class ProfileScreen(Screens):
         
         # First, do the facet/personality effect
         trait_influence = []
-        if "trait" in mentor_influence:
+        if "trait" in mentor_influence and mentor_influence["trait"] != None:
             for _mentor in mentor_influence["trait"]:
                 #If the strings are not set (empty list), continue. 
                 if not mentor_influence["trait"][_mentor].get("strings"):
@@ -1348,7 +1348,7 @@ class ProfileScreen(Screens):
                     
                 
                 trait_influence.append(str(ment_obj.name) + ", as {PRONOUN/m_c/poss} mentor, " +  \
-                                       " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+                                       "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
 
         if trait_influence:
             influence_history = " ".join(trait_influence)
@@ -1403,7 +1403,7 @@ class ProfileScreen(Screens):
 
         graduation_history = ""
         if app_ceremony:
-            graduation_history = "When {PRONOUN/m_c/subject} graduated {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
+            graduation_history = "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} " +  app_ceremony['honor'] + "."
 
             grad_age = app_ceremony["graduation_age"]
             if int(grad_age) < 11:
@@ -2472,7 +2472,7 @@ class RoleScreen(Screens):
                                                                              name,
                                                                              object_id=get_text_box_theme())
 
-        text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.trait}\n"
+        text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.personality.trait}\n"
 
         text += f"{self.the_cat.moons} "
 

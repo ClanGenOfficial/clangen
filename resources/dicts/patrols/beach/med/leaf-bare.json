@@ -20,14 +20,14 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
-        "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
-        "unscathed_rare": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-        "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
-    },
+            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+            "unscathed_rare": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+        },
         "fail_text": {
-        "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
-        "unscathed_stat": "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-    },
+            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
+            "unscathed_stat": "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+        },
         "win_skills": [
             "good speaker",
             "great speaker",
@@ -63,14 +63,14 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
-        "unscathed_common": "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
-        "unscathed_rare": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
-        "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
-    },
+            "unscathed_common": "The ground is slippery with frost, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+            "unscathed_rare": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
+        },
         "fail_text": {
-        "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-        "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
-    },
+            "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+        },
         "win_skills": [
             "good speaker",
             "great speaker",
@@ -106,16 +106,16 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {
-        "unscathed_common": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can.",
-        "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
-        "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n."
-    },
+            "unscathed_common": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can.",
+            "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
+            "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n."
+        },
         "fail_text": {
-        "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant.",
-        "unscathed_stat": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
-        "death": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
-        "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
-    },
+            "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant.",
+            "unscathed_stat": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
+            "death": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
+            "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
+        },
         "win_skills": [
             "keen eye"
         ],
@@ -154,16 +154,16 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": {
-        "unscathed_common": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}.",
-        "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds {PRONOUN/p_l/poss} breath, hoping {PRONOUN/p_l/poss} mentor comes down unscathed.",
-        "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns."
-    },
+            "unscathed_common": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject} {VERB/p_l/stay/stays} cognizant that the younger cat can't be out in the cold as long as {PRONOUN/p_l/object}.",
+            "unscathed_rare": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant. app1 holds {PRONOUN/p_l/poss} breath, hoping {PRONOUN/p_l/poss} mentor comes down unscathed.",
+            "stat_skill": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns."
+        },
         "fail_text": {
-        "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
-        "unscathed_stat": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
-        "death": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
-        "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
-    },
+            "unscathed_common": "The blackberry bramble has died back, withered and dry, and p_l can't get any fresh leaves from this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/note/notes} with growing concern that leaf-bare might have killed the plant, exchanging a worried glance with app1.",
+            "unscathed_stat": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+            "death": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+            "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
+        },
         "win_skills": [
             "keen eye"
         ],

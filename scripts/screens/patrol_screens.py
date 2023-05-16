@@ -870,8 +870,9 @@ class PatrolScreen(Screens):
         self.able_cats = []
 
         # ASSIGN TO ABLE CATS
+        print(game.patrolled)
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
+            if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
                 'elder', 'kitten', 'mediator', 'mediator apprentice'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
@@ -963,8 +964,8 @@ class PatrolScreen(Screens):
             for x in self.current_patrol:
                 if x.skill not in patrol_skills:
                     patrol_skills.append(x.skill)
-                if x.trait not in patrol_traits:
-                    patrol_traits.append(x.trait)
+                if x.personality.trait not in patrol_traits:
+                    patrol_traits.append(x.personality.trait)
 
         self.elements["skills_box"].set_text(
             f"Current Patrol Skills: {', '.join(patrol_skills)}\nCurrent Patrol Traits: {', '.join(patrol_traits)}"
