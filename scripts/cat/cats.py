@@ -817,10 +817,10 @@ class Cat():
         if old_status == "medicine cat":
             game.clan.remove_med_cat(self)
 
-        for app in self.apprentice.copy():
-            fetched_cat = Cat.fetch_cat(app)
-            if fetched_cat:
-                fetched_cat.update_med_mentor()
+            for app in self.apprentice.copy():
+                fetched_cat = Cat.fetch_cat(app)
+                if fetched_cat:
+                    fetched_cat.update_med_mentor()
 
         # updates mentors
         if self.status == 'apprentice':
