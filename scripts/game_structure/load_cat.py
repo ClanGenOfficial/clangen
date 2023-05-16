@@ -214,7 +214,6 @@ def json_load():
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
-            new_cat.eye_tint = cat["eye_tint"] if "eye_tint" in cat else "none"
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(

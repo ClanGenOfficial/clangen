@@ -157,9 +157,9 @@ class GenerateEvents:
                 event = None
                 for event in events_dict:
                     if event["event"] != specific_event:
-                        print(event["event"], 'is not', specific_event)
+                        #print(event["event"], 'is not', specific_event)
                         continue
-                    print(event["event"], "is", specific_event)
+                    #print(event["event"], "is", specific_event)
                     event = OngoingEvent(
                         event=event["event"],
                         camp=event["camp"],
@@ -173,7 +173,7 @@ class GenerateEvents:
                         collateral_damage=event["collateral_damage"]
                     )
                     break
-                print(event)
+                #print(event)
                 return event
 
     def possible_short_events(self, cat_type=None, age=None, event_type=None):
@@ -460,7 +460,7 @@ class GenerateEvents:
                     final_events = major
                 else:
                     final_events = severe
-                print(cat.status, severity_chosen[0])
+                #print(cat.status, severity_chosen[0])
 
         return final_events
 
@@ -482,7 +482,7 @@ class GenerateEvents:
                 )"""
                 return event_list
             else:
-                print(specific_event)
+                #print(specific_event)
                 event = (
                     self.generate_ongoing_events(event_type, biome, specific_event)
                 )

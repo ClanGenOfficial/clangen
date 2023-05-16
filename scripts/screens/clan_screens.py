@@ -59,6 +59,7 @@ class ClanScreen(Screens):
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
+                    game.save_events()
                     game.save_settings()
                     game.switches['saved_clan'] = True
                     self.update_buttons_and_text()
@@ -90,6 +91,7 @@ class ClanScreen(Screens):
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_events()
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
@@ -391,6 +393,7 @@ class ClanScreen(Screens):
             self.leader_den_label.hide()
             self.med_den_label.hide()
             self.elder_den_label.hide()
+
 
 class StarClanScreen(Screens):
     list_page = 1
