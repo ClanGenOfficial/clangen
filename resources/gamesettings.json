@@ -36,6 +36,11 @@
             "The cursor will be replaced with a cat paw.",
             false
         ],
+        "custom font": [
+            "Custom font",
+            "The font will be replaced with a custom clangen font. THIS WILL ONLY TAKE EFFECT AFTER YOU CLOSE AND REOPEN THE APP",
+            false
+        ],
         "keybinds": [
             "Keybinds",
             "Enables certian keybinds to be used throughout the menus for quick navigation.",

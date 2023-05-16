@@ -652,12 +652,18 @@ else:
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
     manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
+    #notosans font path
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',
         bold_path='resources/fonts/NotoSans-ExtraBold.ttf',
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
+    )
+    #clangen font path
+    manager.add_font_paths(
+        font_name='clangen',
+        regular_path='resources/fonts/clangen.ttf'
     )
 
     if res[0] > 800:
@@ -675,6 +681,7 @@ def load_manager(res: tuple):
             {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
             {'name': 'notosans', 'point_size': 26, 'style': 'bold'},
             {'name': 'notosans', 'point_size': 22, 'style': 'bold'},
+            {'name': 'clangen', 'point_size': 22, 'style': 'bold'},
         ])
 
 
@@ -692,7 +699,8 @@ def load_manager(res: tuple):
             {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
             {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
             {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
-            {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
+            {'name': 'notosans', 'point_size': 15, 'style': 'italic'},
+            {'name': 'clangen', 'point_size': 15, 'style': 'bold'},
         ])
 
     return manager
