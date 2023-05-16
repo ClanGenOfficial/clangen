@@ -529,6 +529,8 @@ def get_personality_compatibility(cat1, cat2):
     personality2 = cat2.personality.trait
 
     if personality1 == personality2:
+        if personality1 == None:
+            return None
         return True
 
     if personality1 in PERSONALITY_COMPATIBILITY:
