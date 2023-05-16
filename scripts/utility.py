@@ -525,10 +525,12 @@ def get_personality_compatibility(cat1, cat2):
         False - if personalities have a negative compatibility
         None - if personalities have a neutral compatibility
     """
-    personality1 = cat1.trait
-    personality2 = cat2.trait
+    personality1 = cat1.personality.trait
+    personality2 = cat2.personality.trait
 
-    if personality1 == personality2 and personality1 in game.cat_class.traits:
+    if personality1 == personality2:
+        if personality1 == None:
+            return None
         return True
 
     if personality1 in PERSONALITY_COMPATIBILITY:

@@ -14,9 +14,9 @@
             null,
             "They keep going, responsibly, although r_c wades through the watering hole as they do, letting the water cool their paws pleasantly."
     ],
-    "fail_text": [
-            "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
-    ],
+    "fail_text": {
+        "unscathed_common": "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
+    },
     "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
     "min_cats": 1,
     "max_cats": 1,

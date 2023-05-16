@@ -228,7 +228,6 @@ class ProfileScreen(Screens):
         super().__init__(name)
         self.show_moons = None
         self.no_moons = None
-        self.history = History()
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -1007,7 +1006,7 @@ class ProfileScreen(Screens):
             output += "\n"
 
         # CHARACTER TRAIT
-        output += the_cat.trait
+        output += the_cat.personality.trait
         # NEWLINE ----------
         output += "\n"
 
@@ -1255,7 +1254,7 @@ class ProfileScreen(Screens):
         else:
             text = str(self.the_cat.name) + " was born into the Clan where {PRONOUN/m_c/subject} currently reside."
 
-        beginning = self.history.get_beginning(self.the_cat)
+        beginning = History.get_beginning(self.the_cat)
         if beginning:
             if beginning['clan_born']:
                 text += " {PRONOUN/m_c/subject/CAP} were born on Moon " + str(beginning['moon']) + " during " + str(beginning['birth_season']) + "."
@@ -1270,7 +1269,7 @@ class ProfileScreen(Screens):
         returns the adjusted scar text
         """
         scar_text = []
-        scar_history = self.history.get_death_or_scars(self.the_cat, scar=True)
+        scar_history = History.get_death_or_scars(self.the_cat, scar=True)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1325,10 +1324,45 @@ class ProfileScreen(Screens):
         if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
 
-        mentor_influence = self.history.get_mentor_influence(self.the_cat)
-        influence_history = None
+        mentor_influence = History.get_mentor_influence(self.the_cat)
+        influence_history = ""
+        
+        # First, do the facet/personality effect
+        trait_influence = []
+        if "trait" in mentor_influence:
+            for _mentor in mentor_influence["trait"]:
+                #If the strings are not set (empty list), continue. 
+                if not mentor_influence["trait"][_mentor].get("strings"):
+                    continue
+                
+                ment_obj = Cat.fetch_cat(_mentor)
+                #Continue of the mentor is invalid too.
+                if not isinstance(ment_obj, Cat):
+                    continue
+                
+                if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
+                    string_snippet = ", ".join(mentor_influence["trait"][_mentor].get("strings")[:-1]) + \
+                        " and " + mentor_influence["trait"][_mentor].get("strings")[-1]
+                else:
+                    string_snippet = mentor_influence["trait"][_mentor].get("strings")[0]
+                    
+                
+                trait_influence.append(str(ment_obj.name) + ", as {PRONOUN/m_c/poss} mentor, " +  \
+                                       " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
 
-        if mentor_influence:
+        if trait_influence:
+            influence_history = " ".join(trait_influence)
+        else:
+            influence_history = ""
+            if self.the_cat.status in ['kitten', 'newborn']:
+                influence_history = 'This cat has not begun training.'
+            elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                influence_history = 'This cat has not finished training.'
+            elif not self.the_cat.former_mentor:
+                influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
+        
+        #TODO: Write Skill History
+        """if mentor_influence:
             if mentor_influence["mentor"] and Cat.fetch_cat(mentor_influence["mentor"]):
                 mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
             else:
@@ -1362,34 +1396,9 @@ class ProfileScreen(Screens):
                                     adjust_skill = adjust_skill.replace(' a ', ' an ')
                                     break
                             influenced_skill = adjust_skill
-                            break
+                            break"""
 
-            if not mentor:
-                influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
-                if self.the_cat.status in ['kitten', 'newborn']:
-                    influence_history = 'This cat has not begun training.'
-                if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
-                    influence_history = 'This cat has not finished training.'
-            elif influenced_skill and not influenced_trait:
-                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to " + influenced_skill + "."
-            elif influenced_trait and not influenced_skill:
-                if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                    influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor + ", caused this cat to become more " + influenced_trait.lower() + "."
-                else:
-                    influence_history = f"This cat's mentor was {mentor}."
-            elif influenced_trait and influenced_skill:
-                influence_history = "The influence of {PRONOUN/m_c/poss} mentor, " + mentor +", caused this cat to become more " + influenced_trait.lower() + " as well as " + influenced_skill + "."
-            else:
-                influence_history = f"This cat's mentor was {mentor}."
-
-        if not influence_history:
-            influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
-            if self.the_cat.status in ['kitten', 'newborn']:
-                influence_history = 'This cat has not begun training.'
-            if self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
-                influence_history = 'This cat has not finished training.'
-
-        app_ceremony = self.history.get_app_ceremony(self.the_cat)
+        app_ceremony = History.get_app_ceremony(self.the_cat)
         print(app_ceremony)
 
         graduation_history = ""
@@ -1418,8 +1427,8 @@ class ProfileScreen(Screens):
         returns adjusted death history text
         """
         text = None
-        death_history = self.history.get_death_or_scars(self.the_cat, death=True)
-        murder_history = self.history.get_murders(self.the_cat)
+        death_history = History.get_death_or_scars(self.the_cat, death=True)
+        murder_history = History.get_murders(self.the_cat)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1483,7 +1492,7 @@ class ProfileScreen(Screens):
         returns adjusted murder history text
 
         """
-        murder_history = self.history.get_murders(self.the_cat)
+        murder_history = History.get_murders(self.the_cat)
         victim_text = ""
         murdered_text = ""
 
@@ -2249,7 +2258,6 @@ class CeremonyScreen(Screens):
         self.text = None
         self.scroll_container = None
         self.life_text = None
-        self.history = History()
         self.header = None
         self.the_cat = None
 
@@ -2265,7 +2273,7 @@ class CeremonyScreen(Screens):
                                                         scale(pygame.Rect((200, 180), (1200, -1))),
                                                         object_id=get_text_box_theme(), manager=MANAGER)
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
-            self.life_text = self.history.get_lead_ceremony(self.the_cat)
+            self.life_text = History.get_lead_ceremony(self.the_cat)
 
         else:
             self.life_text = ""
