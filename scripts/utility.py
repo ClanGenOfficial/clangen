@@ -42,30 +42,32 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
 
-def get_alive_clan_queens(all_cats):
+def get_alive_clan_queens(cat_cls):
     """
     Returns a list with all cats with the 'status' queen.
     """
     queens = []
-    for inter_cat in all_cats.values():
-        if inter_cat.dead:
+    for inter_cat in cat_cls.all_cats.values():
+        if inter_cat.dead or inter_cat.outside:
             continue
         if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
             continue
 
-        parent_1 = all_cats[inter_cat.parent1]
-        parent_2 = None
-        if inter_cat.parent2:
-            parent_2 = all_cats[inter_cat.parent2]
+        
+        alive_parents = [cat_cls.fetch_cat(i) for i in inter_cat.get_parents() if 
+                   isinstance(cat_cls.fetch_cat(i), cat_cls) and not 
+                   (cat_cls.fetch_cat(i).dead or cat_cls.fetch_cat(i).outside)]
 
-        if parent_1.gender == 'male':
-            if (parent_2 is None or parent_2.gender == 'male') and \
-                    not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-                queens.append(parent_1)
-            elif parent_2 and not parent_2.dead and not parent_2.exiled and not parent_2.outside:
-                queens.append(parent_2)
-        elif not parent_1.dead and not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-            queens.append(parent_1)
+        if len(alive_parents) == 1:
+            queens.append(alive_parents[0])
+        elif len(alive_parents) == 2:
+            if alive_parents[0].gender == "female":
+                queens.append(alive_parents[0])
+            elif alive_parents[1].gender == "female":
+                queens.append(alive_parents[1])
+            else:
+                queens.append(alive_parents[0])
+                
     return queens
 
 
