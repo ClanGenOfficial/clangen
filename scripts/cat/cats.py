@@ -3228,7 +3228,7 @@ class Personality():
             
     @property
     def stability(self):
-        return self._aggress
+        return self._stable
     
     @stability.setter
     def stability(self, new_val):
