@@ -135,7 +135,7 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queens = get_alive_clan_queens(Cat.all_cats)
+        queens = get_alive_clan_queens(Cat)
         relevant_queens = []
         for queen in queens:
             kits = queen.get_children()
@@ -172,7 +172,7 @@ class Freshkill_Pile():
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queens = get_alive_clan_queens(Cat.all_cats)
+        queens = get_alive_clan_queens(Cat)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
         needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])

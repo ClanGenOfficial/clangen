@@ -125,6 +125,7 @@ class SaveCheck(UIWindow):
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
+                    game.save_events()
                     self.save_button_saving_state.hide()
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:

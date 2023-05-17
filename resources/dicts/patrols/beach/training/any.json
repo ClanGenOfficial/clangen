@@ -16,18 +16,16 @@
         "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
         "exp": 20,
-        "success_text": [
-            "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
-            "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels within.",
-            null,
-            "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools with not an ounce of hesitation in {PRONOUN/s_c/poss} movements."
-        ],
-        "fail_text": [
-            "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
-            "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
-            null,
-            "app1 tries to poke around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home."
-        ],
+        "success_text": {
+        "unscathed_common": "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
+        "unscathed_rare": "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels within.",
+        "stat_trait": "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools with not an ounce of hesitation in {PRONOUN/s_c/poss} movements."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
+        "unscathed_stat": "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+        "injury": "app1 tries to poke around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home."
+    },
         "win_trait": [
             "adventurous",
             "bold",
@@ -70,20 +68,20 @@
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
-        "success_text": [
-            "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
-            "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
-            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
-            "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}."
-        ],
-        "fail_text": [
-            "The patrol works all day to free r_c and gets nothing else done.",
-            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
-            "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
-            "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
-            "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
-            "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at."
-        ],
+        "success_text": {
+        "unscathed_common": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+        "unscathed_rare": "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
+        "stat_skill": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out stable footing for the patrol to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+        "stat_trait": "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}."
+    },
+        "fail_text": {
+        "unscathed_common": "The patrol works all day to free r_c and gets nothing else done.",
+        "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+        "death": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+        "injury": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
+        "stat_death": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+        "stat_injury": "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at."
+    },
         "win_skills": [
             "very smart",
             "extremely smart"
@@ -142,18 +140,18 @@
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
-        "success_text": [
-            "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
-            "p_l digs through the loose sand, helping r_c clear it away enough for the other cat to scramble free.",
-            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
-        ],
-        "fail_text": [
-            "p_l works all day to free r_c and gets nothing else done.",
-            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that {PRONOUN/s_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
-            "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
-            "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
-        ],
+        "success_text": {
+            "unscathed_common": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+            "unscathed_rare": "p_l digs through the loose sand, helping r_c clear it away enough for the other cat to scramble free.",
+            "stat_skill": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
+            "stat_trait": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
+    },
+        "fail_text": {
+        "unscathed_common": "p_l works all day to free r_c and gets nothing else done.",
+        "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that {PRONOUN/s_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+        "death": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+        "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
+    },
         "win_skills": [
             "very smart",
             "extremely smart"
@@ -213,18 +211,18 @@
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 50,
         "exp": 20,
-        "success_text": [
-            "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
-            "p_l digs through the loose soil, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
-            "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
-            "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
-        ],
-        "fail_text": [
-            "p_l works all day to free r_c and gets nothing else done.",
-            "As s_c rarely has patience for other cats, r_c tells {PRONOUN/p_l/object} harshly that {PRONOUN/p_l/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
-            "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
-            "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
-        ],
+        "success_text": {
+            "unscathed_common": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+            "unscathed_rare": "p_l digs through the loose soil, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
+            "stat_skill": "Without letting {PRONOUN/r_c/subject} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} stable footing to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay. r_c finds {PRONOUN/r_c/self} seeing s_c in a different light.",
+            "stat_trait": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully dig down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation."
+        },
+        "fail_text": {
+        "unscathed_common": "p_l works all day to free r_c and gets nothing else done.",
+        "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/p_l/object} harshly that {PRONOUN/p_l/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+        "death": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+        "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
+    },
         "win_skills": [
             "very smart",
             "extremely smart"
@@ -277,18 +275,15 @@
         "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
         "chance_of_success": 40,
         "exp": 20,
-        "success_text": [
-            "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
-            null,
-            "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive.",
-            null
-        ],
-        "fail_text": [
-            "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} yowl until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
-            null,
-            "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} {VERB/r_c/succumb/succumbs} to {PRONOUN/r_c/poss} injuries and drift to StarClan alone.",
-            "r_c eventually manages to pull {PRONOUN/r_c/object} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some beach grass to shelter in through the night out on the shore until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den."
-        ],
+        "success_text": {
+            "unscathed_common": "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
+            "stat_skill": "s_c tries to remain calm, clawing sand away from {PRONOUN/s_c/poss} muzzle so {PRONOUN/s_c/subject} can breathe. As the shock wears off, {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c/poss} body. With a surge of energy, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c/object}, but at least {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} alive."
+        },
+        "fail_text": {
+        "unscathed_common": "r_c tries {PRONOUN/r_c/poss} best, but unfortunately, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} only able to work {PRONOUN/r_c/poss} head free. {PRONOUN/r_c/subject/CAP} yowl until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
+        "death": "Hurt and wheezing, r_c does {PRONOUN/r_c/poss} best to hang on and wait for a patrol, but {PRONOUN/r_c/subject} {VERB/r_c/succumb/succumbs} to {PRONOUN/r_c/poss} injuries and drift to StarClan alone.",
+        "injury": "r_c eventually manages to pull {PRONOUN/r_c/object} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some beach grass to shelter in through the night out on the shore until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den."
+    },
         "win_skills": [
             "smart",
             "very smart",
@@ -320,18 +315,16 @@
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 40,
         "exp": 20,
-        "success_text": [
-            "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing.",
-            "r_c clambers over a rise in the ground and stumbles across a tiny, perfect waterfall!",
-            null,
-            "There's nothing to worry about! s_c pads confidently through c_n territory, assured in {PRONOUN/s_c/poss} safety by the strength of c_n borders."
-        ],
-        "fail_text": [
-            "r_c gets lost in the territory and doesn't learn anything.",
-            "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp.",
-            null,
-            "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
-        ],
+        "success_text": {
+            "unscathed_common": "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing.",
+            "unscathed_rare": "r_c clambers over a rise in the ground and stumbles across a tiny, perfect waterfall!",
+            "stat_trait": "There's nothing to worry about! s_c pads confidently through c_n territory, assured in {PRONOUN/s_c/poss} safety by the strength of c_n borders."
+        },
+        "fail_text": {
+        "unscathed_common": "r_c gets lost in the territory and doesn't learn anything.",
+        "unscathed_stat": "s_c shivers a little, imagining what could be out there... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp.",
+        "injury": "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
+    },
         "win_trait": [
             "adventurous",
             "bold",
@@ -367,18 +360,16 @@
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
-        "success_text": [
-            "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
-            "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
-            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
-            "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
-        ],
-        "fail_text": [
-            "r_c gets lost in the territory. Somehow.",
-            "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp.",
-            null,
-            null
-        ],
+        "success_text": {
+            "unscathed_common": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
+            "unscathed_rare": "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
+            "stat_skill": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
+            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
+        },
+        "fail_text": {
+        "unscathed_common": "r_c gets lost in the territory. Somehow.",
+        "unscathed_stat": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp."
+    },
         "win_skills": [
             "smart",
             "very smart",
@@ -416,18 +407,16 @@
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
-        "success_text": [
-            "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
-            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
-            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
-            "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
-        ],
-        "fail_text": [
-            "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally return, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
-            "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp.",
-            null,
-            null
-        ],
+        "success_text": {
+            "unscathed_common": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+            "unscathed_rare": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "stat_skill": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
+        },
+        "fail_text": {
+        "unscathed_common": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally return, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
+        "unscathed_stat": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp."
+    },
         "win_skills": [
             "smart",
             "very smart",
@@ -465,18 +454,16 @@
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
         "exp": 20,
-        "success_text": [
-            "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
-            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
-            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
-            "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
-        ],
-        "fail_text": [
-            "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally return, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
-            "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp.",
-            null,
-            null
-        ],
+        "success_text": {
+            "unscathed_common": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+            "unscathed_rare": "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "stat_skill": "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+            "stat_trait": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} {VERB/s_c/last/lasts} passed this way."
+        },
+        "fail_text": {
+        "unscathed_common": "r_c gets lost in the territory. Somehow. {PRONOUN/r_c/poss/CAP} pelt is burning with shame by the time {PRONOUN/r_c/subject} finally return, sneaking back to {PRONOUN/r_c/poss} den to avoid any embarrassing questions.",
+        "unscathed_stat": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp."
+    },
         "win_skills": [
             "smart",
             "very smart",
@@ -519,14 +506,14 @@
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "exp": 15,
-        "success_text": [
-            "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
-            "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
-            "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster, with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/s_c/subject} can see how it could be a sea cat."
-        ],
-        "fail_text": [
-            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously."
-        ],
+        "success_text": {
+        "unscathed_common": "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+        "unscathed_rare": "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+        "stat_skill": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster, with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/s_c/subject} can see how it could be a sea cat."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously."
+    },
         "win_skills": [
             "good speaker",
             "great speaker",
@@ -554,14 +541,14 @@
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
         "exp": 15,
-        "success_text": [
-            "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
-            "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
-            "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of."
-        ],
-        "fail_text": [
-            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. "
-        ],
+        "success_text": {
+        "unscathed_common": "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+        "unscathed_rare": "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+        "stat_skill": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. "
+    },
         "win_skills": [
             "good teacher",
             "great teacher",
@@ -590,14 +577,14 @@
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 40,
         "exp": 20,
-        "success_text": [
-            "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
-            "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to wavily swaying like harmless kelp.",
-            "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and frighteningly {PRONOUN/s_c/subject} can see how it could be a sea cat."
-        ],
-        "fail_text": [
-            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching."
-        ],
+        "success_text": {
+        "unscathed_common": "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+        "unscathed_rare": "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to wavily swaying like harmless kelp.",
+        "stat_skill": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and frighteningly {PRONOUN/s_c/subject} can see how it could be a sea cat."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching."
+    },
         "win_skills": [
             "good speaker",
             "great speaker",
@@ -626,14 +613,14 @@
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 40,
         "exp": 15,
-        "success_text": [
-            "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
-            "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
-            "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
-        ],
-        "fail_text": [
-            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling."
-        ],
+        "success_text": {
+        "unscathed_common": "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+        "unscathed_rare": "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+        "stat_skill": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling."
+    },
         "win_skills": [
             "good teacher",
             "great teacher",
@@ -662,15 +649,14 @@
         "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
-            "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
-            null,
-            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
-        ],
-        "fail_text": [
-            "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the rain."
-        ],
+        "success_text": {
+        "unscathed_common": "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
+        "unscathed_rare": "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
+        "stat_trait": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
+    },
+        "fail_text": {
+        "unscathed_common": "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the rain."
+    },
         "win_trait": [
             "adventurous",
             "bold",
@@ -704,15 +690,14 @@
         "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
-            "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
-            null,
-            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
-        ],
-        "fail_text": [
-            "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2."
-        ],
+        "success_text": {
+        "unscathed_common": "app2 wanders carefully up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
+        "unscathed_rare": "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
+        "stat_trait": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to go on a... date? app2 looks away with a purr and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
+    },
+        "fail_text": {
+        "unscathed_common": "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2."
+    },
         "win_trait": [
             "adventurous",
             "bold",
@@ -746,15 +731,14 @@
         "decline_text": "The apprentices are called back to camp to help kitsit.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed, and proclaims {PRONOUN/app1/subject} clothed like a Twoleg. {PRONOUN/app2/subject/CAP} {VERB/app2/chase/chases} after app1, who's not as keen to get seaweed slime all over {PRONOUN/app1/self}, and the two young cats play on the safe sands all afternoon.",
-            "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until {PRONOUN/app1/subject} finally get bored to escape.",
-            null,
-            "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly present it to app2, wondering if app2 might like it for {PRONOUN/app2/poss} nest. Blushing to the tips of {PRONOUN/app2/poss} ears, app2 accepts {PRONOUN/app1/poss} gift."
-        ],
-        "fail_text": [
-            "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} don't want it, and the crestfallen apprentice slinks off sadly."
-        ],
+        "success_text": {
+        "unscathed_common": "app2 drapes {PRONOUN/app1/object} with a bunch of seaweed, and proclaims {PRONOUN/app1/subject} clothed like a Twoleg. {PRONOUN/app2/subject/CAP} {VERB/app2/chase/chases} after app1, who's not as keen to get seaweed slime all over {PRONOUN/app1/self}, and the two young cats play on the safe sands all afternoon.",
+        "unscathed_rare": "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until {PRONOUN/app1/subject} finally get bored to escape.",
+        "stat_trait": "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly present it to app2, wondering if app2 might like it for {PRONOUN/app2/poss} nest. Blushing to the tips of {PRONOUN/app2/poss} ears, app2 accepts {PRONOUN/app1/poss} gift."
+    },
+        "fail_text": {
+        "unscathed_common": "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} don't want it, and the crestfallen apprentice slinks off sadly."
+    },
         "win_trait": [
             "altruistic",
             "compassionate",
@@ -786,15 +770,15 @@
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/haves} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
-            "It's a long but satisfying training session, with both cats having an in depth chance to test {PRONOUN/r_c/object} and work on {PRONOUN/r_c/poss} skills. It ends with {PRONOUN/r_c/object} both sitting on a little outlook, watching the sun go down and catching the last of its rays on {PRONOUN/r_c/poss} pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
-            "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/p_l/subject/CAP} {VERB/p_l/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of {PRONOUN/p_l/poss} hidey-holes.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
-        ],
-        "fail_text": [
-            "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
-        ],
+        "success_text": {
+        "unscathed_common": "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
+        "unscathed_rare": "It's a long but satisfying training session, with both cats having an in depth chance to test {PRONOUN/r_c/object} and work on {PRONOUN/r_c/poss} skills. It ends with {PRONOUN/r_c/object} both sitting on a little outlook, watching the sun go down and catching the last of its rays on {PRONOUN/r_c/poss} pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
+        "stat_skill": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/p_l/subject/CAP} {VERB/p_l/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of {PRONOUN/p_l/poss} hidey-holes.",
+        "stat_trait": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+    },
+        "fail_text": {
+        "unscathed_common": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
+    },
         "win_skills": [
             "fantastic hunter"
         ],
@@ -829,15 +813,15 @@
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
-            "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
-            "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
-            "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
-        ],
-        "fail_text": [
-            "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off."
-        ],
+        "success_text": {
+        "unscathed_common": "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through {PRONOUN/r_c/poss} tricks, showing p_l how {PRONOUN/r_c/subject} {VERB/r_c/use/uses} the direction of the sun to avoid casting a shadow on pools as {PRONOUN/r_c/subject} {VERB/r_c/fish/fishes}, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. {PRONOUN/r_c/subject/CAP} {VERB/r_c/smirk/smirks}, showing off a little.",
+        "unscathed_rare": "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching {PRONOUN/r_c/object} instead of the sun, and smiles.",
+        "stat_skill": "s_c is a fantastic hunter, and p_l isn't shy about telling {PRONOUN/p_l/object} so. {PRONOUN/s_c/subject/CAP} {VERB/s_c/blush/blushes}, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
+        "stat_trait": "p_l marvels at the opportunity to have s_c's time to {PRONOUN/p_l/self}. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+    },
+        "fail_text": {
+        "unscathed_common": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off."
+    },
         "win_skills": [
             "fantastic hunter"
         ],
@@ -873,15 +857,14 @@
         "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
         "chance_of_success": 60,
         "exp": 10,
-        "success_text": [
-            "r_c pokes curiously at one of the little lights, bringing {PRONOUN/r_c/poss} face down to it. It's a tiny crab, less than the width of one of {PRONOUN/r_c/poss} claws! It fascinates {PRONOUN/r_c/object} and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",
-            "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
-            null,
-            "As they watch, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, their hearts full of wonder."
-        ],
-        "fail_text": [
-            "They continue on their way, not stopping to see the sights."
-        ],
+        "success_text": {
+        "unscathed_common": "r_c pokes curiously at one of the little lights, bringing {PRONOUN/r_c/poss} face down to it. It's a tiny crab, less than the width of one of {PRONOUN/r_c/poss} claws! It fascinates {PRONOUN/r_c/object} and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",
+        "unscathed_rare": "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
+        "stat_trait": "As they watch, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, their hearts full of wonder."
+    },
+        "fail_text": {
+        "unscathed_common": "They continue on their way, not stopping to see the sights."
+    },
         "win_trait": [
             "calm",
             "careful",
@@ -917,13 +900,13 @@
         "decline_text": "The weather is turning rough and p_l makes the decision to teach the apprentices about the dolphins another day. ",
         "chance_of_success": 75,
         "exp": 5,
-        "success_text": [
-            "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
-            "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
-        ],
-        "fail_text": [
-            "A sudden storm cuts off p_l's words and the patrol sprints back to camp to get warm and dry."
-        ],
+        "success_text": {
+            "unscathed_common": "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
+            "unscathed_rare": "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
+        },
+        "fail_text": {
+        "unscathed_common": "A sudden storm cuts off p_l's words and the patrol sprints back to camp to get warm and dry."
+    },
         "win_skills": [
             "None"
         ],
