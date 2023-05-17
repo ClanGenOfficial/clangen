@@ -196,7 +196,7 @@ class NewCatEvents:
             major_injuries = []
             if "major_injury" in new_cat_event.tags:
                 for injury in INJURIES:
-                    if INJURIES[injury]["severity"] == "major" and injury != 'pregnant':
+                    if INJURIES[injury]["severity"] == "major" and injury not in ["pregnant", "recovering from birth"]:
                         major_injuries.append(injury)
             for new_cat in created_cats:
                 for tag in new_cat_event.tags:

@@ -390,7 +390,7 @@ class GenerateEvents:
                 # check other_cat trait and skill
                 had_trait = False
                 if event.other_cat_trait:
-                    if other_cat.trait not in event.other_cat_trait and int(random.random() * 15):
+                    if other_cat.personality.trait not in event.other_cat_trait and int(random.random() * 15):
                         continue
                     had_trait = True
                 if event.other_cat_skill and not had_trait:
@@ -398,7 +398,7 @@ class GenerateEvents:
                         continue
                 had_trait = True
                 if event.other_cat_negate_trait:
-                    if other_cat.trait in event.other_cat_negate_trait and int(random.random() * 15):
+                    if other_cat.personality.trait in event.other_cat_negate_trait and int(random.random() * 15):
                         continue
                     had_trait = False
                 if event.other_cat_negate_skill and had_trait:
@@ -416,7 +416,7 @@ class GenerateEvents:
             # check cat trait and skill
             had_trait = False
             if event.cat_trait:
-                if cat.trait not in event.cat_trait and int(random.random() * 15):
+                if cat.personality.trait not in event.cat_trait and int(random.random() * 15):
                     continue
                 had_trait = True
             if event.cat_skill and not had_trait:
@@ -425,7 +425,7 @@ class GenerateEvents:
 
             had_trait = True
             if event.cat_negate_trait:
-                if cat.trait in event.cat_negate_trait and int(random.random() * 15):
+                if cat.personality.trait in event.cat_negate_trait and int(random.random() * 15):
                     continue
                 had_trait = False
             if event.cat_negate_skill and had_trait:

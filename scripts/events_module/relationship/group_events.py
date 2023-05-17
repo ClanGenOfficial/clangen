@@ -137,7 +137,7 @@ class Group_Events():
                     continue
 
             if len(interact.trait_constraint) >= 1 and "m_c" in interact.trait_constraint:
-                if main_cat.trait not in interact.trait_constraint["m_c"]:
+                if main_cat.personality.trait not in interact.trait_constraint["m_c"]:
                     continue
 
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
@@ -248,7 +248,7 @@ class Group_Events():
                     skill_ids = [cat.ID for cat in interact_cats]
 
                 if abbreviation in interact.trait_constraint:
-                    trait_ids = [cat.ID for cat in interact_cats if cat.trait in interact.trait_constraint[abbreviation]]
+                    trait_ids = [cat.ID for cat in interact_cats if cat.personality.trait in interact.trait_constraint[abbreviation]]
                 else:
                     trait_ids = [cat.ID for cat in interact_cats]
 
@@ -382,7 +382,7 @@ class Group_Events():
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-            if relevant_cat.trait not in constraint:
+            if relevant_cat.personality.trait not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
             return False

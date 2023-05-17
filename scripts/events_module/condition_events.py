@@ -115,17 +115,17 @@ class Condition_Events():
             # EVENTS
 
             if not triggered and \
-                    cat.trait in ["adventurous",
-                                  "bold",
-                                  "daring",
-                                  "confident",
-                                  "ambitious",
-                                  "bloodthirsty",
-                                  "fierce",
-                                  "strict",
-                                  "troublesome",
-                                  "vengeful",
-                                  "impulsive"] and \
+                    cat.personality.trait in ["adventurous",
+                                            "bold",
+                                            "daring",
+                                            "confident",
+                                            "ambitious",
+                                            "bloodthirsty",
+                                            "fierce",
+                                            "strict",
+                                            "troublesome",
+                                            "vengeful",
+                                            "impulsive"] and \
                     random_number <= 15:
                 triggered = True
             elif not triggered and random_number <= 5:
