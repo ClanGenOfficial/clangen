@@ -108,7 +108,8 @@
     {
         "id": "calm_leader",
         "thoughts": [
-            "Stays composed when a cat comes to them in a panic"
+            "Stays composed when a cat comes to them in a panic",
+            "Watches over all the cats"
         ],
         "main_trait_constraint": [
             "calm"

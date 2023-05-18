@@ -17,7 +17,8 @@
     {
         "id": "kit_alive_elder",
         "thoughts": [
-            "Was nipped on the rump by an elder for being naughty"
+            "Was nipped on the rump by an elder for being naughty",
+            "Was hissed at by r_c for being too noisy"
         ],
         "random_status_constraint": [
             "elder"
@@ -76,7 +77,8 @@
     {
         "id": "kit_alive_med_cat",
         "thoughts": [
-            "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy"
+            "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy",
+            "Hides in the medicine cat's herb stores"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -118,7 +120,8 @@
     {
         "id": "daring_kit",
         "thoughts": [
-            "Is attempting to pounce on the tail of r_c"
+            "Is attempting to pounce on the tail of r_c",
+            "Tries to sneak out of camp with a patrol"
         ],
         "main_trait_constraint": [
             "daring"
