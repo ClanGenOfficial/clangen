@@ -168,7 +168,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Clangen_${{ env.OS_STRING }}
-          path: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+          path: dist/
       - name: Upload Artifact
         if: matrix.os != 'windows-latest'
         uses: actions/upload-artifact@v3
@@ -326,14 +326,12 @@ jobs:
         run: |
           cp dist/Clangen/.itch.toml dist/
           tar.exe -a -c -f Clangen_${{ env.OS_STRING }}.zip -C dist Clangen .itch.toml
-          echo "FILE_EXTENSION=zip" >> "$GITHUB_ENV"
-          echo "GITHUB_FILE_EXTENSION=zip" >> "$GITHUB_ENV"
       
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Clangen_${{ env.OS_STRING }}
-          path: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+          path: dist/
       
       - name: Import GPG key
         id: import_gpg
@@ -345,7 +343,7 @@ jobs:
       
       - name: Sign archive
         if: github.repository == 'Thlumyn/clangen'
-        run: gpg --output Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }}.sig --detach-sig -a Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }}
+        run: gpg --output Clangen_${{ env.OS_STRING }}.zip.sig --detach-sig -a Clangen_${{ env.OS_STRING }}.zip
       
       - name: Upload artifact to API
         if: github.repository == 'Thlumyn/clangen'
@@ -359,8 +357,8 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }};type=application/zip' \
-            -F 'fileBundle=@Clangen_${{ env.OS_STRING}}.${{ env.FILE_EXTENSION }}.sig' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING }}.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING}}.zip.sig' \
             --http1.1
       
       - name: Setup butler
@@ -372,13 +370,13 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/') && github.repository == 'Thlumyn/clangen' && env.BUTLER_API_KEY != ''
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        run: butler push Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }} sablesteel/clan-gen-fan-edit:${{ env.BUTLER_STR }} --userversion "${{ env.VERSION_NUMBER }}"
+        run: butler push Clangen_${{ env.OS_STRING }}.zip sablesteel/clan-gen-fan-edit:${{ env.BUTLER_STR }} --userversion "${{ env.VERSION_NUMBER }}"
       
       - name: Upload to GitHub
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+          files: Clangen_${{ env.OS_STRING }}.zip
       
       
       - name: Reset working tree
