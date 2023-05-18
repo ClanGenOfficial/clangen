@@ -157,12 +157,8 @@ cython_debug/
 
 /saves/**
 *.png~
-.vscode/settings.json
 scripts/__pycache__/**
 /__pycache__/
-.vscode/**
-
-.vscode/launch.json
 .idea/clan_gen_working.iml
 .idea/misc.xml
 .idea/workspace.xml

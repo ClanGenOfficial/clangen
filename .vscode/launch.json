@@ -16,6 +16,13 @@
             "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": false
+        },
+        {
+            "name": "Build and run",
+            "preLaunchTask": "${defaultBuildTask}",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "dist/Clangen/Clangen.exe"
         }
     ]
 }

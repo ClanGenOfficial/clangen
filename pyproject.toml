@@ -36,7 +36,7 @@ wheel = "^0.40.0"
 
 [tool.poetry.group.dev.dependencies]
 pypresence = "^4.2.1"
-pyinstaller = "^5.9.0"
+PyInstaller = {path = "./pyinstaller", develop = true}
 pillow = "^9.4.0"
 setuptools = "^67.6.0"
 wheel = "^0.40.0"

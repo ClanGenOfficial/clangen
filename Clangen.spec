@@ -1,6 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
+is_release = getenv('IS_RELEASE', 'true') == 'true'
 block_cipher = None
 
 a = Analysis(
@@ -37,7 +37,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=False,
-    console=False,
+    console=not is_release,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,

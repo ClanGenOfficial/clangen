@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pyinstaller Build",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} -m PyInstaller Clangen.spec -y",
+            "options": {
+                "env": {
+                    "IS_RELEASE": "0"
+                }
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
