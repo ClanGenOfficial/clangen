@@ -1095,7 +1095,7 @@ class FamilyTreeScreen(Screens):
 
 class ChooseMateScreen(Screens):
     list_frame = pygame.transform.scale(image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
-                                        (1300 / 1600 * screen_x, 452 / 1400 * screen_y))
+                                        (1300 / 1600 * screen_x, 388 / 1400 * screen_y))
     current_cat_elements = {}
     mate_elements = {}
     mate = None
@@ -1125,6 +1125,17 @@ class ChooseMateScreen(Screens):
         self.info = None
         self.cycle_mate_left_button = None
         self.cycle_mate_right_button = None
+        
+        self.mates_tab_button = None
+        self.offspring_tab_button = None
+        self.potential_mates_button = None
+        
+        # Keep track of the open tab
+        # Can be "potential" for the potential mates tab, "offspring"
+        # for the offspring tab, and "mates" for the mate tab. 
+        self.open_tab = "potential" 
+        self.tab_buttons = {}
+        
         self.all_pages = []
 
     def handle_event(self, event):
@@ -1199,6 +1210,18 @@ class ChooseMateScreen(Screens):
             elif event.ui_element == self.next_page_button:
                 self.current_page += 1
                 self.update_cat_list()
+            elif event.ui_element == self.tab_buttons.get("mates"):
+                for x in self.tab_buttons:
+                    self.tab_buttons[x].enable()
+                self.tab_buttons["mates"].disable()
+            elif event.ui_element == self.tab_buttons.get("offspring"):
+                for x in self.tab_buttons:
+                    self.tab_buttons[x].enable()
+                self.tab_buttons["offspring"].disable()
+            elif event.ui_element == self.tab_buttons.get("potential"):
+                for x in self.tab_buttons:
+                    self.tab_buttons[x].enable()
+                self.tab_buttons["potential"].disable()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1241,7 +1264,7 @@ class ChooseMateScreen(Screens):
         self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
                                               object_id="#relation_list_next")
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((698, 1160), (204, 68))),
-                                                         object_id=get_text_box_theme())
+                                                         object_id=get_text_box_theme("#text_box_30_horizcenter"))
 
         # This may be deleted and changed later.
         self.toggle_mate = UIImageButton(scale(pygame.Rect((646, 620), (306, 60))), "",
@@ -1364,6 +1387,8 @@ class ChooseMateScreen(Screens):
         else:
             self.previous_cat_button.enable()
 
+        self.draw_tab_button()
+        
         # allow also one index above the mate amount, to be able to select a new one
         if len(self.the_cat.mate) <= 0:
             self.cycle_mate_left_button.hide()
@@ -1377,6 +1402,28 @@ class ChooseMateScreen(Screens):
                 self.cycle_mate_right_button.disable()
             if self.selected_mate_index == 0:
                 self.cycle_mate_left_button.disable()
+
+    def draw_tab_button(self):
+        button_x = 200
+        for x in self.tab_buttons:
+            self.tab_buttons[x].kill()
+        self.tab_buttons = {}
+        
+        if len(self.the_cat.mate) > 1:
+            self.tab_buttons["mates"] = UIImageButton(scale(pygame.Rect((button_x, 722), (306, 78))), "", 
+                                                      object_id="#mates_tab_button",
+                                                      starting_height=2)
+            button_x += 320
+        
+        if self.the_cat.mate:
+            self.tab_buttons["offspring"] = UIImageButton(scale(pygame.Rect((button_x, 722), (306, 78))), "",
+                                                          object_id="#offspring_tab_button",
+                                                          starting_height=2)
+            button_x += 320
+            
+        self.tab_buttons["potential"] = UIImageButton(scale(pygame.Rect((button_x, 722), (306, 78))), "",
+                                                      object_id="#potential_mates_tab_button",
+                                                      starting_height=2)
 
     def update_mate_screen(self):
         """Sets up the screen for a cat with a mate already."""
@@ -1697,7 +1744,7 @@ class ChooseMateScreen(Screens):
     def on_use(self):
 
         # Due to a bug in pygame, any image with buttons over it must be blited
-        screen.blit(self.list_frame, (150 / 1600 * screen_x, 720 / 1400 * screen_y))
+        screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
