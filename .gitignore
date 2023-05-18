@@ -101,6 +101,10 @@ logs/
 ~temp/
 ~temp\
 
+# Saved Images
+saved_images/
+saved_images\
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
@@ -164,9 +168,7 @@ scripts/__pycache__/**
 .vscode/**
 
 .vscode/launch.json
-.idea/clan_gen_working.iml
-.idea/misc.xml
-.idea/workspace.xml
+.idea/
 
 
 saves/currentclan.txt

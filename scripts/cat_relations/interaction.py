@@ -270,11 +270,11 @@ def cats_fulfill_single_interaction_constraints(main_cat, random_cat, interactio
             return False
 
     if len(interaction.main_trait_constraint) >= 1:
-        if main_cat.trait not in interaction.main_trait_constraint:
+        if main_cat.personality.trait not in interaction.main_trait_constraint:
             return False
 
     if len(interaction.random_trait_constraint) >= 1:
-        if random_cat.trait not in interaction.random_trait_constraint:
+        if random_cat.personality.trait not in interaction.random_trait_constraint:
             return False
 
     if len(interaction.main_skill_constraint) >= 1:

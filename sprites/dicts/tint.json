@@ -13,20 +13,21 @@
     "GOLDEN": "warm",
     "GINGER": "warm",
     "DARKGINGER": "warm",
-    "SIENNA": "warm",
-    "LIGHTBROWN": "warm",
-    "LILAC": "warm",
-    "BROWN": "warm",
-    "GOLDEN-BROWN": "warm",
-    "DARKBROWN": "warm",
-    "CHOCOLATE": "warm"
+    "SIENNA": "brown",
+    "LIGHTBROWN": "brown",
+    "LILAC": "brown",
+    "BROWN": "brown",
+    "GOLDEN-BROWN": "brown",
+    "DARKBROWN": "brown",
+    "CHOCOLATE": "brown"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "black", "orange", "none"],
+    "basic": ["pink", "gray", "red", "orange", "none"],
     "warm": ["yellow", "purple"],
-    "cool": ["blue", "purple"],
+    "cool": ["blue", "purple", "black"],
     "white": ["yellow"],
-    "monochrome": ["blue"]
+    "monochrome": ["blue", "black"],
+    "brown": ["yellow", "purple", "black"]
   },
   "tint_colours":
   {

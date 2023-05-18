@@ -13,11 +13,12 @@ This file contains:
 
 import platform
 import subprocess
-import pygame
 import os
 import traceback
 import logging
 from html import escape
+
+import pygame
 
 from .base_screens import Screens
 
@@ -30,12 +31,12 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
-from ..datadir import get_data_dir, get_cache_dir
-from ..update import has_update, UpdateChannel, get_latest_version_number
+from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 
 import ujson
 
-from ..version import get_version_info
+from ..housekeeping.version import get_version_info
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -114,6 +115,9 @@ class StartScreen(Screens):
                     os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
+                self.change_screen('clan screen')
 
     def on_use(self):
         """
@@ -216,7 +220,7 @@ class StartScreen(Screens):
         )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1040, 1020), (320, 60))),
+            scale(pygame.Rect((1040, 1020), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
@@ -359,6 +363,10 @@ class SwitchClanScreen(Screens):
                         game.clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
+                        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
 
     def exit_screen(self):
         """
@@ -614,6 +622,24 @@ class SettingsScreen(Screens):
                 self.open_lang_settings()
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('start screen')
+            elif event.key == pygame.K_RIGHT:
+                if self.sub_menu == 'general':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'relation':
+                    self.open_info_screen()
+                elif self.sub_menu == 'info':
+                    self.open_lang_settings()
+            elif event.key == pygame.K_LEFT:
+                if self.sub_menu == 'relation':
+                    self.open_general_settings()
+                elif self.sub_menu == 'info':
+                    self.open_relation_settings()
+                elif self.sub_menu == 'language':
+                    self.open_info_screen()
 
     def handle_checkbox_events(self, event):
         """

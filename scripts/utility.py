@@ -42,30 +42,32 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
 
-def get_alive_clan_queens(all_cats):
+def get_alive_clan_queens(cat_cls):
     """
     Returns a list with all cats with the 'status' queen.
     """
     queens = []
-    for inter_cat in all_cats.values():
-        if inter_cat.dead:
+    for inter_cat in cat_cls.all_cats.values():
+        if inter_cat.dead or inter_cat.outside:
             continue
         if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
             continue
 
-        parent_1 = all_cats[inter_cat.parent1]
-        parent_2 = None
-        if inter_cat.parent2:
-            parent_2 = all_cats[inter_cat.parent2]
+        
+        alive_parents = [cat_cls.fetch_cat(i) for i in inter_cat.get_parents() if 
+                   isinstance(cat_cls.fetch_cat(i), cat_cls) and not 
+                   (cat_cls.fetch_cat(i).dead or cat_cls.fetch_cat(i).outside)]
 
-        if parent_1.gender == 'male':
-            if (parent_2 is None or parent_2.gender == 'male') and \
-                    not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-                queens.append(parent_1)
-            elif parent_2 and not parent_2.dead and not parent_2.exiled and not parent_2.outside:
-                queens.append(parent_2)
-        elif not parent_1.dead and not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-            queens.append(parent_1)
+        if len(alive_parents) == 1:
+            queens.append(alive_parents[0])
+        elif len(alive_parents) == 2:
+            if alive_parents[0].gender == "female":
+                queens.append(alive_parents[0])
+            elif alive_parents[1].gender == "female":
+                queens.append(alive_parents[1])
+            else:
+                queens.append(alive_parents[0])
+                
     return queens
 
 
@@ -189,18 +191,11 @@ def get_current_season():
 
     return game.clan.current_season
 
-
 def change_clan_reputation(difference):
     """
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
-    # grab rep
-    reputation = int(game.clan.reputation)
-    # ensure this is an int value
-    difference = int(difference)
-    # change rep
-    reputation += difference
-    game.clan.reputation = reputation
+    game.clan.reputation += difference
 
 
 def change_clan_relations(other_clan, difference):
@@ -532,10 +527,12 @@ def get_personality_compatibility(cat1, cat2):
         False - if personalities have a negative compatibility
         None - if personalities have a neutral compatibility
     """
-    personality1 = cat1.trait
-    personality2 = cat2.trait
+    personality1 = cat1.personality.trait
+    personality2 = cat2.personality.trait
 
-    if personality1 == personality2 and personality1 in game.cat_class.traits:
+    if personality1 == personality2:
+        if personality1 == None:
+            return None
         return True
 
     if personality1 in PERSONALITY_COMPATIBILITY:
@@ -898,48 +895,15 @@ def history_text_adjust(text,
         text = text.replace("c_n", clan.name)
     return text
 
-
-def event_text_adjust(Cat,
-                      text,
-                      cat,
-                      other_cat=None,
-                      other_clan_name=None,
-                      keep_m_c=False,
-                      new_cat=None,
-                      clan=None):
+def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     """
-    This function takes the given text and returns it with the abbreviations replaced appropriately
-    :param Cat: Always give the Cat class
-    :param text: The text that needs to be changed
-    :param cat: The cat taking the place of m_c
-    :param other_cat: The cat taking the place of r_c
-    :param other_clan_name: The other clan involved in the event
-    :param keep_m_c: set True if you don't want m_c to be replaced with the name - this is only currently important for history text
-    :param new_cat: The cat taking the place of n_c
-    :param clan: The player's Clan
-    :return: the adjusted text
+    This function is for adjusting the text of ongoing events
+    :param Cat: the cat class
+    :param text: the text to be adjusted
+    :param clan: the name of the clan
+    :param other_clan_name: the other clan's name if another clan is involved
     """
-
     cat_dict = {}
-
-    if not keep_m_c and cat:
-        cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
-        cat_dict["p_l"] = cat_dict["m_c"]
-    if other_cat:
-        cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
-    if cat:
-        if cat.accessory:
-            if "acc_plural" in text:
-                text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
-            if "acc_singular" in text:
-                text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
-
-    if other_clan_name:
-        cat_dict["o_c"] = (other_clan_name, None)
-    if new_cat:
-        cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
-        cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
-
     if "lead_name" in text:
         kitty = Cat.fetch_cat(game.clan.leader)
         cat_dict["lead_name"] = (str(kitty.name), choice(kitty.pronouns))
@@ -950,15 +914,71 @@ def event_text_adjust(Cat,
         kitty = choice(get_med_cats(Cat, working=False))
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
+    if cat_dict:
+        text = process_text(text, cat_dict)
+
+    if other_clan_name:
+        text = text.replace("o_c", other_clan_name)
     if clan:
-        _tmp = str(clan.name)
+        clan_name = str(clan.name)
     else:
         if game.clan is None:
-            _tmp = game.switches["clan_list"][0] + 'Clan'
+            clan_name = game.switches["clan_list"][0]
         else:
-            _tmp = str(game.clan.name)
+            clan_name = str(game.clan.name)
 
-    cat_dict["c_n"] = (_tmp + "Clan", None)
+    text = text.replace("c_n", clan_name + "Clan")
+
+    return text
+
+
+def event_text_adjust(Cat,
+                      text,
+                      cat,
+                      other_cat=None,
+                      other_clan_name=None,
+                      new_cat=None,
+                      clan=None):
+    """
+    This function takes the given text and returns it with the abbreviations replaced appropriately
+    :param Cat: Always give the Cat class
+    :param text: The text that needs to be changed
+    :param cat: The cat taking the place of m_c
+    :param other_cat: The cat taking the place of r_c
+    :param other_clan_name: The other clan involved in the event
+    :param new_cat: The cat taking the place of n_c
+    :param clan: The player's Clan
+    :return: the adjusted text
+    """
+
+    cat_dict = {}
+
+    if cat:
+        cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
+        cat_dict["p_l"] = cat_dict["m_c"]
+        if "acc_plural" in text:
+            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
+        if "acc_singular" in text:
+            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+
+    if other_cat:
+        cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
+
+    if new_cat:
+        cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
+        cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
+
+    if other_clan_name:
+        text = text.replace("o_c", other_clan_name)
+    if clan:
+        clan_name = str(clan.name)
+    else:
+        if game.clan is None:
+            clan_name = game.switches["clan_list"][0]
+        else:
+            clan_name = str(game.clan.name)
+
+    text = text.replace("c_n", clan_name + "Clan")
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
@@ -1253,16 +1273,42 @@ def update_sprite(cat):
         init_pelt(cat)
         # THE SPRITE UPDATE
     # draw colour & style
-    new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
+    # apply
+    cat.sprite = generate_sprite(cat)
+    # update class dictionary
+    cat.all_cats[cat.ID] = cat
+
+
+def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, always_living=False, 
+                    no_not_working=False) -> pygame.Surface:
+    """Generates the sprite for a cat, with optional arugments that will override certain things. 
+        life_stage: sets the age life_stage of the cat, overriding the one set by it's age. Set to string. 
+        scar_hidden: If True, doesn't display the cat's scars. If False, display cat scars. 
+        acc_hidden: If True, hide the accessory. If false, show the accessory.
+        always_living: If True, always show the cat with living lineart
+        no_not_working: If true, never use the not_working lineart.
+                        If false, use the cat.not_working() to determine the no_working art. 
+        """
+    
+    if life_state is not None:
+        age = life_state
+    else:
+        age = cat.age
+    
+    if always_living:
+        dead = False
+    else:
+        dead = cat.dead
+    
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.not_working() and cat.age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
-        if cat.age in ['kitten', 'adolescent']:
+    if not no_not_working and cat.not_working() and age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
+        if age in ['kitten', 'adolescent']:
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
-    elif cat.paralyzed and cat.age != 'newborn':
-        if cat.age in ['kitten', 'adolescent']:
+    elif cat.paralyzed and age != 'newborn':
+        if age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
@@ -1270,12 +1316,15 @@ def update_sprite(cat):
             else:
                 cat_sprite = str(15)
     else:
-        if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
-            cat.age = 'senior'
+        if age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
+            age = 'senior'
+        
         if game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(cat.cat_sprites['newborn'])
         else:
-            cat_sprite = str(cat.cat_sprites[cat.age])
+            cat_sprite = str(cat.cat_sprites[age])
+
+    new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # generating the sprite
     try:
@@ -1341,45 +1390,43 @@ def update_sprite(cat):
         eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
         if cat.eye_colour2 != None:
             eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
-        # Eye tint
-        if cat.eye_tint != "none" and cat.eye_tint in Sprites.eye_tints[
-            "tint_colours"]:
-            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.eye_tints["tint_colours"][cat.eye_tint]))
-            eyes.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
         new_sprite.blit(eyes, (0, 0))
 
-        for scar in cat.scars:
-            if scar in scars1:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
-            if scar in scars3:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+        if not scars_hidden:
+            for scar in cat.scars:
+                if scar in scars1:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+                if scar in scars3:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
 
         # draw line art
-        if game.settings['shaders'] and not cat.dead:
+        if game.settings['shaders'] and not dead:
             new_sprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
 
-        if not cat.dead:
+        if not dead:
             new_sprite.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
         elif cat.df:
             new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
-        elif cat.dead:
+        elif dead:
             new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
         new_sprite.blit(sprites.sprites['skin' + cat.skin + cat_sprite], (0, 0))
-        for scar in cat.scars:
-            if scar in scars2:
-                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
+        
+        if not scars_hidden:
+            for scar in cat.scars:
+                if scar in scars2:
+                    new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
-        # draw accessories        
-        if cat.accessory in plant_accessories:
-            new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
-        elif cat.accessory in wild_accessories:
-            new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
-        elif cat.accessory in collars:
-            new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
+        # draw accessories
+        if not acc_hidden:        
+            if cat.accessory in plant_accessories:
+                new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
+            elif cat.accessory in wild_accessories:
+                new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
+            elif cat.accessory in collars:
+                new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
@@ -1414,16 +1461,7 @@ def update_sprite(cat):
         # Placeholder image
         new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
 
-    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
-    """# Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
-
-    # apply
-    cat.sprite = new_sprite
-    # update class dictionary
-    cat.all_cats[cat.ID] = cat
-
+    return new_sprite
 
 def apply_opacity(surface, opacity):
     for x in range(surface.get_width()):

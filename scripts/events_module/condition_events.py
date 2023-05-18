@@ -115,17 +115,17 @@ class Condition_Events():
             # EVENTS
 
             if not triggered and \
-                    cat.trait in ["adventurous",
-                                  "bold",
-                                  "daring",
-                                  "confident",
-                                  "ambitious",
-                                  "bloodthirsty",
-                                  "fierce",
-                                  "strict",
-                                  "troublesome",
-                                  "vengeful",
-                                  "impulsive"] and \
+                    cat.personality.trait in ["adventurous",
+                                            "bold",
+                                            "daring",
+                                            "confident",
+                                            "ambitious",
+                                            "bloodthirsty",
+                                            "fierce",
+                                            "strict",
+                                            "troublesome",
+                                            "vengeful",
+                                            "impulsive"] and \
                     random_number <= 15:
                 triggered = True
             elif not triggered and random_number <= 5:
@@ -162,7 +162,7 @@ class Condition_Events():
                         involved_cats.append(other_cat.ID)
                         self.handle_relationship_changes(cat, injury_event, other_cat)
 
-                    print(injury_event.event_text)
+                    #print(injury_event.event_text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     if game.clan.game_mode == "classic":
@@ -510,8 +510,6 @@ class Condition_Events():
                 triggered = True
                 scar_given = None
 
-                self.history.remove_possible_death_or_scars(cat, injury)
-
                 # only try to give a scar if the event gave possible scar history
                 if self.history.get_possible_death_or_scars(cat, injury, scar=True):
                     event, scar_given = self.scar_events.handle_scars(cat, injury)
@@ -520,7 +518,7 @@ class Condition_Events():
                     try:
                         # gather potential event strings for gotten condition
                         possible_string_list = INJURY_HEALED_STRINGS[injury]
-                        random_index = int(random.random() * len(possible_string_list))
+                        random_index = random.randrange(0, len(possible_string_list))
                         event = possible_string_list[random_index]
                     except KeyError:
                         print(
@@ -528,7 +526,8 @@ class Condition_Events():
                         event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
-
+                    
+                self.history.remove_possible_death_or_scars(cat, injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
 
@@ -540,18 +539,22 @@ class Condition_Events():
                     possible_string_list = PERMANENT_CONDITION_GOT_STRINGS[injury][condition_got]
 
                     # choose event string and ensure clan's med cat number aligns with event text
-                    random_index = int(random.random() * len(possible_string_list))
+                    random_index = random.randrange(0, len(possible_string_list))
+                    
                     med_list = get_med_cats(Cat)
-                    med_cat = None
-                    if len(med_list) == 0:
-                        if random_index == 0 or random_index == 1:
-                            random_index = 2
-                        else:
-                            med_cat = None
-                    else:
+                    #If the cat is a med cat, don't conister them as one for the event. 
+                    if cat in med_list:
+                        med_list.remove(cat)
+                    
+                    #Choose med cat, if you can
+                    if med_list:
                         med_cat = random.choice(med_list)
-                        if med_cat == cat:
-                            random_index = 2
+                    else:
+                        med_cat = None
+                    
+                    if not med_cat and random_index < 2 and len(possible_string_list) >= 3:
+                        random_index = 2
+        
                     event = possible_string_list[random_index]
                     event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 if event is not None:
