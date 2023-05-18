@@ -1,586 +1,181 @@
-name: PyInstaller build
+name: Pyinstaller Build
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
-  build_ubuntu_20_04:
-    runs-on: ubuntu-20.04
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      GITHUB_FILE_EXTENSION: ''
+      FILE_EXTENSION: ''
+      OS_STRING: ''
+      API_STRING: ''
+      BUTLER_STR: ''
+      VERSION_NUMBER: ''
+      RELEASE_CHANNEL: ''
+      IS_RELEASE: ''
     steps:
+      - name: Setup env ubuntu-20.04
+        if: matrix.os == 'ubuntu-20.04'
+        shell: bash
+        run: |
+          echo "OS_STRING=Linux64_glibc2.31+" >> "$GITHUB_ENV"
+          echo "API_STRING=linux2.31" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=linux64_glibc_231" >> "$GITHUB_ENV"
+      - name: Setup env ubuntu-22.04
+        if: matrix.os == 'ubuntu-22.04'
+        shell: bash
+        run: |
+          echo "OS_STRING=Linux64_glibc2.35+" >> "$GITHUB_ENV"
+          echo "API_STRING=linux2.35" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=linux64_glibc_235" >> "$GITHUB_ENV"
+      - name: Setup env windows-latest
+        if: matrix.os == 'windows-latest'
+        shell: bash
+        run: |
+          echo "OS_STRING=Win64_Windows10+" >> "$GITHUB_ENV"
+          echo "API_STRING=win10+" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=win64_10" >> "$GITHUB_ENV"
+      - name: Setup env macos-latest
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          echo "OS_STRING=macOS64" >> "$GITHUB_ENV"
+          echo "API_STRING=macOS" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=osx64" >> "$GITHUB_ENV"
       - uses: actions/checkout@v3
       - name: Install poetry
+        if: matrix.os != 'macos-latest'
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.4.1
-      - name: Setup Python 3.11 x64
+      - name: Install python
+        if: matrix.os != 'macos-latest'
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-          architecture: 'x64'
-          cache: 'poetry'
-      - name: Clone Pyinstaller
-        run: git clone https://github.com/clangen-devs/pyinstaller
-      - name: install dependencies
-        run: poetry install --with build -E discord
-      - name: Configure dev
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
-      - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Linux64_glibc2.31+.tar.xz
-          path: Clangen_Linux64_glibc2.31+.tar.xz
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
-        with:
-          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
-          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
-        run: |
-          gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.31' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
-            --http1.1
-      - name: Set up butler
-        uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Clangen_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: Clangen_Linux64_glibc2.31+.tar.xz
-          
-  build_ubuntu_22_04:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
-      - name: Setup Python 3.11 x64
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          architecture: 'x64'
-          cache: 'poetry'
-      - name: Clone Pyinstaller
-        run: git clone https://github.com/clangen-devs/pyinstaller
-      - name: install dependencies
-        run: poetry install --with build -E discord
-      - name: Configure dev
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
-      - name: Create archive (.tar.xz)
-        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Linux64_glibc2.35+.tar.xz
-          path: Clangen_Linux64_glibc2.35+.tar.xz
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
-        with:
-          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
-          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
-        run: |
-          gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/linux2.35' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
-            --http1.1
-      - name: Set up butler
-        uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Clangen_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: Clangen_Linux64_glibc2.35+.tar.xz
-          
-  build_win32:
-    runs-on: windows-2019
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
-      - name: Setup Python 3.8 x86
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8' # 3.8 to support older versions of Windows
-          architecture: 'x86'
-          cache: 'poetry'
-      - name: Set up cargo cache
-        uses: actions/cache@v3
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-cargo-
-      - name: Clone Pyinstaller
-        run: git clone https://github.com/clangen-devs/pyinstaller
-      - name: install dependencies
-        run: poetry install --with build -E discord
-      - name: Configure dev
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        shell: bash
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Build self-updater binary
-        shell: bash
-        run: |
-          cd self_updater
-          cargo build --release
-          cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
-      - name: Create archive (.zip)
-        run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Win32
-          path: dist/
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
-        with:
-          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
-          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
-        shell: bash
-        run: |
-          gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win32' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win32.zip.sig' \
-            --http1.1
-      - name: Set up butler
-        uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        run: butler push Clangen_Win32.zip sablesteel/clan-gen-fan-edit:win32 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: Clangen_Win32.zip    
-          
-  build_win64:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
-      - name: Setup Python 3.8 x64
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8' # 3.8 to support older versions of Windows
-          architecture: 'x64'
-          cache: 'poetry'
-      - name: Set up cargo cache
-        uses: actions/cache@v3
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-cargo-
-      - name: Clone Pyinstaller
-        run: git clone https://github.com/clangen-devs/pyinstaller
-      - name: install dependencies
-        run: poetry install --with build -E discord
-      - name: Configure dev
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        shell: bash
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
-      #- name: Setup UPX 
-      #  run: |
-      #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
-      #    tar.exe -x -v -f upx-4.0.0-win64.zip
-      - name: Build self-updater binary
-        shell: bash
-        run: |
-          cd self_updater
-          cargo build --release
-          cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
-      - name: Create archive (.zip)
-        run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Win64
-          path: dist/
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
-        with:
-          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
-          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
-        shell: bash
-        run: |
-          gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win64' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win64.zip.sig' \
-            --http1.1
-      - name: Set up butler
-        uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Clangen_Win64.zip sablesteel/clan-gen-fan-edit:win64 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: Clangen_Win64.zip   
-          
-  build_win64_py311:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
-      - name: Setup Python 3.11 x64
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          architecture: 'x64'
-          cache: 'poetry'
-      - name: Set up cargo cache
-        uses: actions/cache@v3
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-cargo-
-      - name: Clone Pyinstaller
-        run: git clone https://github.com/clangen-devs/pyinstaller
-      - name: install dependencies
-        run: poetry install --with build -E discord
-      - name: Configure dev
-        shell: bash
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        shell: bash
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
-        shell: bash
-        run: |
-          echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
-          echo "upstream=${{ github.repository }}" >> version.ini
-      # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
-      #- name: Setup UPX 
-      #  run: |
-      #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
-      #    tar.exe -x -v -f upx-4.0.0-win64.zip
-      - name: Build self-updater binary
-        shell: bash
-        run: |
-          cd self_updater
-          cargo build --release
-          cp target/release/self_updater.exe ../resources/
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
-      - name: Create archive (.zip)
-        run: |
-          cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Clangen_Win64_Windows10+
-          path: dist/
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5
-        if: github.repository == 'Thlumyn/clangen'
-        with:
-          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
-          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        if: github.repository == 'Thlumyn/clangen'
-        shell: bash
-        run: |
-          gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/win10+' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
-            --http1.1
-      - name: Set up butler
-        uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Clangen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: Clangen_Win64_Windows10+.zip
-          
-  build_macos64:
-    # For commits to the original mac build action see:
-    # https://github.com/Thlumyn/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
-    runs-on: macos-latest
-    defaults:
-      run:
-        shell: bash -l {0}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python 3.11 x64
+          python-version: "3.11"
+          architecture: x64
+          cache: poetry
+      - name: Install miniconda
+        if: matrix.os == 'macos-latest'
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "3.11"
-      # - name: Install poetry
-      #   uses: abatilo/actions-poetry@v2
-      #   with:
-      #     poetry-version: 1.4.1
-      # - name: install dependencies
-      #   run: poetry install --with build -E discord
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pyinstaller
+      - name: Setup cargo cache
+        if: matrix.os == 'windows-latest'
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: Install Dependencies
+        if: matrix.os == 'macos-latest'
+        shell: bash -l {0}
         run: |
-          pip install pyinstaller
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Configure dev
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade setuptools wheel
+          python -m pip install -r requirements.txt
+          python -m pip install --upgrade Pillow PyInstaller
+          npm i -g appdmg
+      - name: Install Dependencies
+        if: matrix.os != 'macos-latest'
+        run: |
+          git clone https://github.com/clangen-devs/pyinstaller
+          poetry install --with build -E discord
+      - name: Write version file for dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
-      - name: Configure release
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
-      - name: Write version file
+        shell: bash
         run: |
           echo "[DEFAULT]" > version.ini
-          echo "version_number=${{ env.VERSION_NUMBER }}" >> version.ini
-          echo "release_channel=${{ env.RELEASE_CHANNEL }}" >> version.ini
+          echo "version_number=${{ github.sha }}" >> version.ini
+          echo "VERSION_NUMBER=${{ github.sha }}" >> "$GITHUB_ENV"
+          echo "release_channel=development" >> version.ini
+          echo "RELEASE_CHANNEL=development" >> "$GITHUB_ENV"
           echo "upstream=${{ github.repository }}" >> version.ini
-      - name: Run PyInstaller
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      - name: Write version file for release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ github.ref_name }}" >> version.ini
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> "$GITHUB_ENV"
+          echo "release_channel=stable" >> version.ini
+          echo "RELEASE_CHANNEL=stable" >> "$GITHUB_ENV"
+          echo "upstream=${{ github.repository }}" >> version.ini
+      
+      - name: Build self-updater
+        if: matrix.os == 'windows-latest'
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
+
+      - name: Run Pyinstaller
+        if: matrix.os != 'macos-latest' && matrix.os != 'windows-latest'
+        run: poetry run python3 -m PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }}
+      - name: Run Pyinstaller for Windows
+        if: matrix.os == 'windows-latest'
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }}
+      - name: Run Pyinstaller for macos
+        if: matrix.os == 'macos-latest'
+        shell: bash -l {0}
         run: python -m PyInstaller Clangen.spec
         env:
-          IS_RELEASE: 0
-      - name: Run PyInstaller
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: python -m PyInstaller Clangen.spec
-        env:
-          IS_RELEASE: 1
+          IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }}
+      
+
+      - name: Create archive (.zip)
+        if: matrix.os == 'windows-latest'
+        shell: bash
+        run: |
+          cp dist/Clangen/.itch.toml dist/
+          tar.exe -a -c -f Clangen_${{ env.OS_STRING }}.zip -C dist Clangen .itch.toml
+          echo "FILE_EXTENSION=zip" >> "$GITHUB_ENV"
+          echo "GITHUB_FILE_EXTENSION=zip" >> "$GITHUB_ENV"
       - name: Create archive (.tar.xz)
-        run: rm -r dist/Clangen
-      - name: Install appdmg
-        run: "npm install -g appdmg"
-      - name: Generate .dmg
-        run: "appdmg appdmg.json Clangen_macOS64.dmg"
-      - uses: actions/upload-artifact@v3
+        if: contains(fromJson('["ubuntu-20.04", "ubuntu-22.04"]'), matrix.os)
+        shell: bash
+        run: |
+          tar -caf Clangen_${{ env.OS_STRING }}.tar.xz -C dist Clangen
+          echo "FILE_EXTENSION=tar.xz" >> "$GITHUB_ENV"
+          echo "GITHUB_FILE_EXTENSION=tar.xz" >> "$GITHUB_ENV"
+      - name: Create archive (.dmg)
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          rm -r dist/Clangen
+          appdmg appdmg.json Clangen_${{ env.OS_STRING }}.dmg
+          zip Clangen_${{ env.OS_STRING }}.dmg.zip Clangen_${{ env.OS_STRING }}.dmg
+          echo "FILE_EXTENSION=dmg.zip" >> "$GITHUB_ENV"
+          echo "GITHUB_FILE_EXTENSION=dmg" >> "$GITHUB_ENV"
+      
+      - name: Upload Artifact
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v3
         with:
-          name: Clangen_macOS64.dmg
-          path: Clangen_macOS64.dmg
+          name: Clangen_${{ env.OS_STRING }}
+          path: dist/
+      - name: Upload Artifact
+        if: matrix.os != 'windows-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+          path: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+      
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -588,55 +183,225 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      
+      - name: Sign archive
+        if: github.repository == 'Thlumyn/clangen'
+        run: gpg --output Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }}.sig --detach-sig -a Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }}
+      
       - name: Upload artifact to API
         if: github.repository == 'Thlumyn/clangen'
         run: |
-          zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
-          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
           curl -X 'POST' \
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/macOS' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/${{ env.API_STRING }}' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING }}.${{ env.FILE_EXTENSION }};type=application/zip' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING}}.${{ env.FILE_EXTENSION }}.sig' \
             --http1.1
-      - name: Set up butler
+      
+      - name: Setup butler
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'Thlumyn/clangen' && env.BUTLER_API_KEY != ''
         uses: jdno/setup-butler@v1
-      - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Clangen_macOS64.dmg sablesteel/clan-gen-fan-edit:osx64 --userversion "${{ env.VERSION_NUMBER }}"
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - name: Upload to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'Thlumyn/clangen' && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }} sablesteel/clan-gen-fan-edit:${{ env.BUTLER_STR }} --userversion "${{ env.VERSION_NUMBER }}"
+      
+      - name: Upload to GitHub
         if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
         with:
-          files: Clangen_macOS64.dmg
-  confirm_release_ubuntu_22_04:
+          files: Clangen_${{ env.OS_STRING }}.${{ env.GITHUB_FILE_EXTENSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      
+      - name: Reset working tree
+        run: git reset --hard
+
+
+  build-python3-8:
+    strategy:
+      matrix:
+        bits: [32, 64]
+    runs-on: windows-2019
+    env:
+      GITHUB_FILE_EXTENSION: ''
+      FILE_EXTENSION: ''
+      OS_STRING: ''
+      API_STRING: ''
+      BUTLER_STR: ''
+      VERSION_NUMBER: ''
+      RELEASE_CHANNEL: ''
+      IS_RELEASE: ''
+      BITNESS: ''
+    steps:
+      - name: Setup env 32b
+        if: matrix.bits == 32
+        shell: bash
+        run: |
+          echo "OS_STRING=Win32" >> "$GITHUB_ENV"
+          echo "API_STRING=win32" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=win32" >> "$GITHUB_ENV"
+          echo "BITNESS=x86" >> "$GITHUB_ENV"
+      - name: Setup env 64b
+        if: matrix.bits == 64
+        shell: bash
+        run: |
+          echo "OS_STRING=Win64" >> "$GITHUB_ENV"
+          echo "API_STRING=win64" >> "$GITHUB_ENV"
+          echo "BUTLER_STR=win64" >> "$GITHUB_ENV"
+          echo "BITNESS=x64" >> "$GITHUB_ENV"
+
+      - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          architecture: ${{ env.BITNESS }}
+          cache: poetry
+      - name: Setup cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: Install Dependencies
+        run: |
+          git clone https://github.com/clangen-devs/pyinstaller
+          poetry install --with build -E discord
+      - name: Write version file for dev
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ github.sha }}" >> version.ini
+          echo "VERSION_NUMBER=${{ github.sha }}" >> "$GITHUB_ENV"
+          echo "release_channel=development" >> version.ini
+          echo "RELEASE_CHANNEL=development" >> "$GITHUB_ENV"
+          echo "upstream=${{ github.repository }}" >> version.ini
+      - name: Write version file for release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          echo "[DEFAULT]" > version.ini
+          echo "version_number=${{ github.ref_name }}" >> version.ini
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> "$GITHUB_ENV"
+          echo "release_channel=stable" >> version.ini
+          echo "RELEASE_CHANNEL=stable" >> "$GITHUB_ENV"
+          echo "upstream=${{ github.repository }}" >> version.ini
+      
+      - name: Build self-updater
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
+
+      - name: Run Pyinstaller
+        run: poetry run PyInstaller Clangen.spec
+        env:
+          IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }}
+      
+
+      - name: Create archive (.zip)
+        shell: bash
+        run: |
+          cp dist/Clangen/.itch.toml dist/
+          tar.exe -a -c -f Clangen_${{ env.OS_STRING }}.zip -C dist Clangen .itch.toml
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_${{ env.OS_STRING }}
+          path: dist/
+      
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        if: github.repository == 'Thlumyn/clangen'
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      
+      - name: Sign archive
+        if: github.repository == 'Thlumyn/clangen'
+        run: gpg --output Clangen_${{ env.OS_STRING }}.zip.sig --detach-sig -a Clangen_${{ env.OS_STRING }}.zip
+      
+      - name: Upload artifact to API
+        if: github.repository == 'Thlumyn/clangen'
+        run: |
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Artifacts/${{ env.API_STRING }}' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING }}.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_${{ env.OS_STRING}}.zip.sig' \
+            --http1.1
+      
+      - name: Setup butler
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'Thlumyn/clangen' && env.BUTLER_API_KEY != ''
+        uses: jdno/setup-butler@v1
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      - name: Upload to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'Thlumyn/clangen' && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push Clangen_${{ env.OS_STRING }}.zip sablesteel/clan-gen-fan-edit:${{ env.BUTLER_STR }} --userversion "${{ env.VERSION_NUMBER }}"
+      
+      - name: Upload to GitHub
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Clangen_${{ env.OS_STRING }}.zip
+      
+      
+      - name: Reset working tree
+        run: git reset --hard
+    
+
+  confirm_release:
     runs-on: ubuntu-22.04
     needs:
-      - build_ubuntu_20_04
-      - build_ubuntu_22_04
-      - build_win32
-      - build_win64
-      - build_win64_py311
-      - build_macos64
+      - build
+      - build-python3-8
+    env:
+      VERSION_NUMBER: ''
+      RELEASE_CHANNEL: ''
     steps:
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          echo "VERSION_NUMBER=${{ github.sha }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=development" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.sha }}" >> "$GITHUB_ENV"
+          echo "RELEASE_CHANNEL=development" >> "$GITHUB_ENV"
       - name: Configure release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION_NUMBER=${{ github.ref_name }}" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=stable" >> $GITHUB_ENV
+          echo "VERSION_NUMBER=${{ github.ref_name }}" >> "$GITHUB_ENV"
+          echo "RELEASE_CHANNEL=stable" >> "$GITHUB_ENV"
       - name: Confirm release
         run: |
           curl -X 'POST' \

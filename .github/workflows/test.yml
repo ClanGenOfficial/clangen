@@ -26,7 +26,9 @@ jobs:
         with:
           poetry-version: 1.4.1
       - name: install dependencies
-        run: poetry install
+        run: |
+          git clone https://github.com/clangen-devs/pyinstaller
+          poetry install
       - name: Run unit tests
         env:
           SDL_VIDEODRIVER: "dummy"
@@ -82,6 +84,8 @@ jobs:
         with:
           poetry-version: 1.4.1
       - name: install dependencies
-        run: poetry install
+        run: |
+          poetry install
+          git clone https://github.com/clangen-devs/pyinstaller
       - name: Check json validity
         run: poetry run python3 tests/test_json.py
