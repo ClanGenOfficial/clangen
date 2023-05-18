@@ -671,11 +671,6 @@ def load_manager(res: tuple):
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
     )
-    #clangen font path
-    manager.add_font_paths(
-        font_name='clangen',
-        regular_path='resources/fonts/clangen.ttf'
-    )
 
     if res[0] > 800:
         manager.get_theme().load_theme('resources/defaults.json')

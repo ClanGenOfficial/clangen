@@ -144,7 +144,8 @@
     {
         "id": "formerly_a_rogue_warrior_apprentice",
         "thoughts": [
-            "Got scolded for eating what {PRONOUN/m_c/subject} caught"
+            "Got scolded for eating what {PRONOUN/m_c/subject} caught",
+            "Has some trouble adjusting"
         ],
         "backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
@@ -153,7 +154,8 @@
     {
         "id": "thoughtful_apprentice",
         "thoughts": [
-            "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor"
+            "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
+            "Wants to gather moss for the elder's den"
         ],
         "main_trait_constraint": [
             "thoughtful"
@@ -195,7 +197,8 @@
     {
         "id": "confident_warrior_apprentice",
         "thoughts": [
-            "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon"
+            "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon",
+            "Thinks that {PRONOUN/m_c/subject} will be the strongest warrior to ever live"
         ],
         "main_trait_constraint": [
             "confident"
@@ -234,7 +237,8 @@
         "thoughts": [
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
-            "Drew blood during {PRONOUN/m_c/poss} battle training"
+            "Drew blood during {PRONOUN/m_c/poss} battle training",
+            "Sinks {PRONOUN/m_c/poss} into prey, pretending its another cat's pelt"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -243,7 +247,8 @@
     {
         "id": "ambitious_warrior_apprentice",
         "thoughts": [
-            "Begs to be made a warrior early"
+            "Begs to be made a warrior early",
+            "Wants to go on both a border and hunting patrol"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -252,7 +257,8 @@
     {
         "id": "ambitious_warrior_apprentice_to_other_apps",
         "thoughts": [
-            "Has been catching the most prey out of all the apprentices"
+            "Has been catching the most prey out of all the apprentices",
+            "Is confident that {PRONOUN/m_c/subject} could beat the otheer apprentices"
         ],
         "random_status_constraint": [
             "apprentice"
