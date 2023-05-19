@@ -1327,39 +1327,48 @@ class ProfileScreen(Screens):
         mentor_influence = History.get_mentor_influence(self.the_cat)
         influence_history = ""
         
-        # First, do the facet/personality effect
-        trait_influence = []
-        if "trait" in mentor_influence and mentor_influence["trait"] != None:
-            for _mentor in mentor_influence["trait"]:
-                #If the strings are not set (empty list), continue. 
-                if not mentor_influence["trait"][_mentor].get("strings"):
-                    continue
-                
-                ment_obj = Cat.fetch_cat(_mentor)
-                #Continue of the mentor is invalid too.
-                if not isinstance(ment_obj, Cat):
-                    continue
-                
-                if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
-                    string_snippet = ", ".join(mentor_influence["trait"][_mentor].get("strings")[:-1]) + \
-                        " and " + mentor_influence["trait"][_mentor].get("strings")[-1]
-                else:
-                    string_snippet = mentor_influence["trait"][_mentor].get("strings")[0]
-                    
-                
-                trait_influence.append(str(ment_obj.name) + ", as {PRONOUN/m_c/poss} mentor, " +  \
-                                       "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
-
-        if trait_influence:
-            influence_history = " ".join(trait_influence)
-        else:
-            influence_history = ""
-            if self.the_cat.status in ['kitten', 'newborn']:
+        #First, just list the mentors:
+        if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
-            elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
-                influence_history = 'This cat has not finished training.'
-            elif not self.the_cat.former_mentor:
-                influence_history = "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown."
+        elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+            influence_history = 'This cat has not finished training.'
+        else:
+            valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
+                                    isinstance(Cat.fetch_cat(i), Cat)]
+            if valid_formor_mentors:
+                influence_history += "{PRONOUN/m_c/subject/CAP} was mentored by "
+                if len(valid_formor_mentors) > 1:
+                    influence_history += ", ".join([str(i.name) for i in valid_formor_mentors[:-1]]) + " and " + \
+                        str(valid_formor_mentors[-1].name) + ". "
+                else:
+                    influence_history += str(valid_formor_mentors[0].name) + ". "
+            else:
+                influence_history += "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. "
+            
+            # Seocnd, do the facet/personality effect
+            trait_influence = []
+            if "trait" in mentor_influence and mentor_influence["trait"] != None:
+                for _mentor in mentor_influence["trait"]:
+                    #If the strings are not set (empty list), continue. 
+                    if not mentor_influence["trait"][_mentor].get("strings"):
+                        continue
+                    
+                    ment_obj = Cat.fetch_cat(_mentor)
+                    #Continue of the mentor is invalid too.
+                    if not isinstance(ment_obj, Cat):
+                        continue
+                    
+                    if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
+                        string_snippet = ", ".join(mentor_influence["trait"][_mentor].get("strings")[:-1]) + \
+                            " and " + mentor_influence["trait"][_mentor].get("strings")[-1]
+                    else:
+                        string_snippet = mentor_influence["trait"][_mentor].get("strings")[0]
+                        
+                    
+                    trait_influence.append(str(ment_obj.name) +  \
+                                        "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+
+            influence_history += " ".join(trait_influence)
         
         #TODO: Write Skill History
         """if mentor_influence:
@@ -1399,7 +1408,7 @@ class ProfileScreen(Screens):
                             break"""
 
         app_ceremony = History.get_app_ceremony(self.the_cat)
-        print(app_ceremony)
+        #print(app_ceremony)
 
         graduation_history = ""
         if app_ceremony:

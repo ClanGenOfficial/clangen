@@ -186,7 +186,6 @@ def pelt_inheritance(cat, parents: tuple):
         torbie = random.getrandbits(tortie_chance_f) == 1
     else:
         torbie = random.getrandbits(tortie_chance_m) == 1
-        print("Male tortie!")
 
     chosen_tortie_base = None
     if torbie:
