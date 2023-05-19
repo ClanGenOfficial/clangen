@@ -1,5 +1,3 @@
-[MASTER]
-ignore-paths=^pyinstaller/.*$
 [MAIN]
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
@@ -48,7 +46,8 @@ fail-under=10
 #from-stdin=
 
 # Files or directories to be skipped. They should be base names, not paths.
-ignore=CVS
+ignore=CVS,
+       pyinstaller
 
 # Add files or directories matching the regular expressions patterns to the
 # ignore-list. The regex matches against paths and can be in Posix or Windows
