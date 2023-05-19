@@ -7,12 +7,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04, windows-latest, windows-2019, macos-latest]
-        bits: [32, 64]
+        bits: [32b, 64b]
         exclude:
-          - bits: 32
+          - bits: 32b
         include:
-          - bits: 32
-            os: windows-2019
+          - os: windows-2019
+            bits: 32b
     runs-on: ${{ matrix.os }}
     env:
       GITHUB_FILE_EXTENSION: ''
@@ -47,7 +47,7 @@ jobs:
           echo "API_STRING=win10+" >> "$GITHUB_ENV"
           echo "BUTLER_STR=win64_10" >> "$GITHUB_ENV"
       - name: Setup env windows-2019 32b
-        if: matrix.os == 'windows-2019' && matrix.bits == '32'
+        if: matrix.os == 'windows-2019' && matrix.bits == '32b'
         shell: bash
         run: |
           echo "OS_STRING=Win32" >> "$GITHUB_ENV"
@@ -55,7 +55,7 @@ jobs:
           echo "BUTLER_STR=win32" >> "$GITHUB_ENV"
           echo "BITNESS=x86" >> "$GITHUB_ENV"
       - name: Setup env windows-2019 64b
-        if: matrix.os == 'windows-2019' && matrix.bits == '64'
+        if: matrix.os == 'windows-2019' && matrix.bits == '64b'
         shell: bash
         run: |
           echo "OS_STRING=Win64" >> "$GITHUB_ENV"
