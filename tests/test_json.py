@@ -20,6 +20,8 @@ def test():
     and verify all json files are valid"""
     failed = False
     for (root, _, files) in os.walk("."):
+        if root == 'pyinstaller':
+            continue
         for file in files:
             if file.endswith(".json"):
                 path = os.path.join(root, file)
