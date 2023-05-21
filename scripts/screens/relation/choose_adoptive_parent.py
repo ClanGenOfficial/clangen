@@ -95,8 +95,8 @@ class ChooseAdoptiveParentScreen(Screens):
                 else:
                     self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
                     self.the_cat.create_inheritance_new_cat()
-                    # TODO: add the ID to the 'not automated' adoptive_parents list
-                    self.update_choose_adoptive_parent(breakup=True)
+                    self.add_cat_to_no_adoptive_parent_dict()
+                    self.update_choose_adoptive_parent()
                     self.update_current_cat_info()
                 self.update_cat_list()
             elif event.ui_element == self.previous_cat_button:
@@ -437,10 +437,8 @@ class ChooseAdoptiveParentScreen(Screens):
                 pos_y += 120
             i += 1        
 
-    def update_choose_adoptive_parent(self, breakup=False):
-        """This sets up the page for choosing a mate. Called when the current cat doesn't have a mate, or if
-            you broke then and their mate up. If 'breakup' is set to true, it will display the break-up
-            center heart. """
+    def update_choose_adoptive_parent(self):
+        """This sets up the page for adding one or more adoptive parents."""
         for ele in self.parent_elements:
             self.parent_elements[ele].kill()
         self.parent_elements = {}
@@ -512,12 +510,12 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.next_cat = 1
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
@@ -541,9 +539,20 @@ class ChooseAdoptiveParentScreen(Screens):
                 continue
             if self.the_cat.ID not in self.the_cat.adoptive_parents and\
                 self.the_cat.ID not in [relevant_cat.parent1, relevant_cat.parent2] and\
-                self.the_cat.moons < relevant_cat.moons and relevant_cat.moons > 15:
+                self.the_cat.moons < relevant_cat.moons and relevant_cat.moons > 14:
+                # 14 moons is for the minimal age of a cat to be a parent
                 valid_parents.append(relevant_cat)
         return valid_parents
+
+    def add_cat_to_no_adoptive_parent_dict(self):
+        """
+        Add the selected cat to the no-adoptive parent dictionary for the 'main' cat.
+        This will stop the cat from showing up in the family tree, even the blood parent has the selected cat as mate.
+        """
+        if self.the_cat.ID in game.clan.no_auto_adoptive:
+            game.clan.no_auto_adoptive[self.the_cat.ID].append(self.selected_cat.ID)
+        else:
+            game.clan.no_auto_adoptive[self.the_cat.ID] = [self.selected_cat.ID]
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
