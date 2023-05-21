@@ -1957,6 +1957,29 @@
             }
         }
     },
+    "#cat_toggles_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_toggles.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_toggles_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/cat_toggles_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/cat_toggles_unavailable.png"
+            }
+        }
+    },
     "#info_settings_button": 
     {
         "prototype": "#image_button",

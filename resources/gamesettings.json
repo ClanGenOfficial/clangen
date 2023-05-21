@@ -159,6 +159,13 @@
             true
         ]
     },
+    "cat_toggles":{
+        "random med cat":[
+            "allow med cat to be randomly selected on patrol",
+            "med cats can be selected with the patrol buttons +1 and +3",
+            true
+        ]
+    },
 
 
     "..": "these are special. they do not have a display name or a tooltip",

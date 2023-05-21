@@ -618,9 +618,11 @@ class SettingsScreen(Screens):
             elif event.ui_element == self.info_button:
                 self.open_info_screen()
                 return
+            elif event.ui_element ==self.cat_toggles_button:
+                self.open_cat_toggles_settings()
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu in ['general', 'relation', 'language']:
+            if self.sub_menu in ['general', 'relation', 'language','cat_toggles']:
                 self.handle_checkbox_events(event)
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
@@ -631,11 +633,15 @@ class SettingsScreen(Screens):
                     self.open_relation_settings()
                 elif self.sub_menu == 'relation':
                     self.open_info_screen()
+                elif self.sub_menu=='cat_toggles':
+                    self.open_cat_toggles_settings()
                 elif self.sub_menu == 'info':
                     self.open_lang_settings()
             elif event.key == pygame.K_LEFT:
                 if self.sub_menu == 'relation':
                     self.open_general_settings()
+                elif self.sub_menu=='cat_toggles':
+                    self.open_cat_toggles_settings()
                 elif self.sub_menu == 'info':
                     self.open_relation_settings()
                 elif self.sub_menu == 'language':
@@ -668,6 +674,7 @@ class SettingsScreen(Screens):
                     opens = {
                         "general": self.open_general_settings,
                         "language": self.open_lang_settings,
+                        "cat_toggles": self.open_cat_toggles_settings,
                         "relation": self.open_relation_settings
                     }
 
@@ -701,13 +708,18 @@ class SettingsScreen(Screens):
             "",
             object_id="#relation_settings_button",
             manager=MANAGER)
+        self.cat_toggles_button = UIImageButton(
+            scale(pygame.Rect((800, 200), (300, 60))),
+            "",
+            object_id="#cat_toggles_button",
+            manager=MANAGER)
         self.info_button = UIImageButton(scale(
-            pygame.Rect((800, 200), (300, 60))),
+            pygame.Rect((1100, 200), (300, 60))),
             "",
             object_id="#info_settings_button",
             manager=MANAGER)
         self.language_button = UIImageButton(scale(
-            pygame.Rect((1100, 200), (300, 60))),
+            pygame.Rect((1400, 200), (300, 60))),
             "",
             object_id="#lang_settings_button",
             manager=MANAGER)
@@ -771,6 +783,8 @@ class SettingsScreen(Screens):
         del self.relation_settings_button
         self.info_button.kill()
         del self.info_button
+        self.cat_toggles_button.kill()
+        del self.cat_toggles_button
         self.language_button.kill()
         del self.language_button
         self.save_settings_button.kill()
@@ -858,6 +872,37 @@ class SettingsScreen(Screens):
 
         self.refresh_checkboxes()
 
+    def open_cat_toggles_settings(self):
+        """Opens and draws cat toggles settings"""
+        self.enable_all_menu_buttons()
+        self.cat_toggles_button.disable()
+        self.clear_sub_settings_buttons_and_text()
+        self.sub_menu = 'cat_toggles'
+        self.save_settings_button.show()
+
+        self.checkboxes_text["container_cat_toggles"] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((0, 440), (1400, 600))), manager=MANAGER)
+
+        n = 0
+        for code, desc in settings_dict['cat_toggles'].items():
+            self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
+                desc[0],
+                scale(pygame.Rect((450, n * 78), (1000, 778))),
+                container=self.checkboxes_text["container_cat_toggles"],
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
+                manager=MANAGER)
+            self.checkboxes_text[code].disable()
+            n += 1
+
+        self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
+            "Change the cat toggles settings of your game here",
+            scale(pygame.Rect((200, 320), (1200, 100))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER)
+
+        self.refresh_checkboxes()
+
+
     def open_info_screen(self):
         """Open's info screen"""
         self.enable_all_menu_buttons()
@@ -904,7 +949,7 @@ class SettingsScreen(Screens):
             i += 1
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
             (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
-
+        
     def open_lang_settings(self):
         """Open Language Settings"""
         self.enable_all_menu_buttons()
@@ -989,6 +1034,7 @@ class SettingsScreen(Screens):
         self.general_settings_button.enable()
         self.relation_settings_button.enable()
         self.info_button.enable()
+        self. cat_toggles_button.enable()
         self.language_button.enable()
 
     def on_use(self):

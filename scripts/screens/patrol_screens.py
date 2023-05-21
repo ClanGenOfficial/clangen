@@ -128,31 +128,32 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
             if len(self.current_patrol) < 6:
-                able_no_med = [cat for cat in self.able_cats if
-                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
-                if len(able_no_med) == 0:
-                    able_no_med = self.able_cats
-                self.selected_cat = choice(able_no_med)
+                able_cats = self.able_cats
+                if not game.settings['random med cat']:
+                    able_cats = [cat for cat in able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                self.selected_cat = choice(able_cats)
                 self.update_selected_cat()
                 self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
             if len(self.current_patrol) <= 3:
-                able_no_med = [cat for cat in self.able_cats if
-                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
-                if len(able_no_med) < 3:
-                    able_no_med = self.able_cats
-                self.current_patrol += sample(able_no_med, k=3)
+                able_cats = self.able_cats
+                if not game.settings['random med cat']:
+                    able_cats = [cat for cat in able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                if len(able_cats) < 3:
+                    able_cats = self.able_cats
+                self.current_patrol += sample(able_cats, k=3)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
             if len(self.current_patrol) == 0:
-                able_no_med = [cat for cat in self.able_cats if
-                               cat.status not in ['medicine cat', 'medicine cat apprentice']]
-                if len(able_no_med) < 6:
-                    able_no_med = self.able_cats
-                self.current_patrol += sample(able_no_med, k=6)
+                able_cats = self.able_cats
+                if not game.settings['random med cat']:
+                    able_cats = [cat for cat in able_cats if cat.status not in ['medicine cat', 'medicine cat apprentice']]
+                if len(able_cats) < 6:
+                    able_cats = self.able_cats
+                self.current_patrol += sample(able_cats, k=6)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['remove_all']:
@@ -313,6 +314,12 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) > 0 or len(able_no_med) < 6:
                 self.elements['add_six'].disable()
 
+            if game.settings['random med cat']:
+                if any(cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.able_cats):
+                    self.elements['add_one'].enable()
+                    self.elements['add_three'].enable()
+                    self.elements['add_six'].enable()
+                    self.elements["random"].enable()
                 # Update the availability of the tab buttons
             if self.patrol_screen == 'patrol_cats':
                 self.elements['patrol_tab'].disable()
