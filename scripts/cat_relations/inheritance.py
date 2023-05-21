@@ -8,6 +8,7 @@ This class will be used to check for relations while mating and for the display 
 
 """  # pylint: enable=line-too-long
 from enum import Enum  # pylint: disable=no-name-in-module
+from scripts.game_structure.game_essentials import game
 
 class RelationType(Enum):
     """An enum representing the possible age groups of a cat"""
@@ -237,6 +238,13 @@ class Inheritance():
 
         # update the adoptive parents of the current cat
         for new_adoptive_parent_id in new_adoptive_parents:
+            # if all variables are loaded
+            if game and game.clan and game.clan.no_auto_adoptive:
+                # but only if the relevant cats are not in the no_auto_adoptive dict
+                if self.cat.ID in game.clan.no_auto_adoptive and\
+                    new_adoptive_parent_id in game.clan.no_auto_adoptive[self.cat.ID]:
+                    continue
+
             if new_adoptive_parent_id not in self.cat.adoptive_parents:
                 self.cat.adoptive_parents.append(new_adoptive_parent_id)
 

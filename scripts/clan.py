@@ -1323,7 +1323,23 @@ class Clan():
         file_path = get_save_dir() + f"/{game.clan.name}/no_auto_adoptive.json"
         if os.path.exists(file_path):
             with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
-                clan.not_auto_adoptive = ujson.load(read_file)
+                clan.no_auto_adoptive = ujson.load(read_file)
+
+            # the inheritance of the cats is already build, so we need to build it again with the additional information
+            # but only for the mentioned cats in this dictionary
+            for cat_id, value in clan.no_auto_adoptive.items():
+                cat = Cat.fetch_cat(cat_id)
+                if cat:
+                    # remove all adoptive parents which should not be there
+                    for no_adoptive_parent_id in value:
+                        if no_adoptive_parent_id in cat.adoptive_parents:
+                            cat.adoptive_parents.remove(no_adoptive_parent_id)
+                        # update the inheritance of the former adoptive parent
+                        adoptive_parent = Cat.fetch_cat(no_adoptive_parent_id)
+                        if adoptive_parent:
+                            adoptive_parent.create_inheritance_new_cat()
+                    # create the inheritance new after all not wanted adoptive parents are removed
+                    cat.create_inheritance_new_cat()
         else:
             clan.no_auto_adoptive = {}
 
