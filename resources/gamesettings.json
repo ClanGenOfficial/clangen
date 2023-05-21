@@ -125,6 +125,21 @@
             "Display changelog on startup",
             "Shows the changelog of the latest release on startup",
             true
+        ],
+        "random med cat":[
+            "allow med cat to be randomly selected on patrol",
+            "med cats can be selected with the patrol buttons +1 and +3",
+            true
+        ],
+        "no adoption":[
+            "Disable adoption",
+            "NOT IMPLEMENTED",
+            false
+        ],
+        "disable random mating":[
+            "disbale random mating",
+            "NOT IMPLEMENTED",
+            false
         ]
     },
     "relation": {
@@ -156,13 +171,6 @@
         "first_cousin_mates": [
             "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates",
-            true
-        ]
-    },
-    "cat_toggles":{
-        "random med cat":[
-            "allow med cat to be randomly selected on patrol",
-            "med cats can be selected with the patrol buttons +1 and +3",
             true
         ]
     },
