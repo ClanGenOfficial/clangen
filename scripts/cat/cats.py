@@ -188,7 +188,6 @@ class Cat():
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
-                 pelt=None,
                  eye_colour=None,
                  suffix=None,
                  specsuffix_hidden=False,
@@ -246,12 +245,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
-        self.pelt = pelt
-        self.tint = None
-        self.white_patches_tint = None
-        self.eye_colour = eye_colour
-        self.eye_colour2 = None
-        self.scars = []
+        self.pelt = None
         self.former_mentor = []
         self.patrol_with_mentor = 0
         self.apprentice = []
@@ -268,14 +262,6 @@ class Cat():
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
-        self.tortiebase = None
-        self.pattern = None
-        self.tortiepattern = None
-        self.tortiecolour = None
-        self.white_patches = None
-        self.vitiligo = None
-        self.points = None
-        self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
         self.children = []
@@ -289,22 +275,7 @@ class Cat():
         self.df = False
         self.experience_level = None
         self.no_kits = False
-        self.paralyzed = False
-        self.cat_sprites = {
-            "newborn": 20,
-            "kitten": None,
-            "adolescent": None,
-            "young adult": None,
-            "adult": None,
-            "senior adult": None,
-            "senior": None,
-            "para_young": 17,
-            "para_adult": None,
-            "sick_adult": 18,
-            "sick_young": 19
-        }
-
-        self.opacity = 100
+        
         self.prevent_fading = False  # Prevents a cat from fading.
         self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
 
