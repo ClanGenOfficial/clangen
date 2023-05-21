@@ -345,7 +345,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         # Display message
         if self.kittens:
-            self.kitten_message.set_text("The offsprings of the shown adoptive parent / adoptive siblings:")
+            self.kitten_message.set_text("The offsprings of the shown adoptive parent:")
         else:
             self.kitten_message.set_text("The adoptive parent has no offsprings.")
         self.kitten_message.show()
@@ -553,6 +553,10 @@ class ChooseAdoptiveParentScreen(Screens):
             game.clan.no_auto_adoptive[self.the_cat.ID].append(self.selected_cat.ID)
         else:
             game.clan.no_auto_adoptive[self.the_cat.ID] = [self.selected_cat.ID]
+
+        # update the inheritance of the cats
+        self.selected_cat.create_inheritance_new_cat()
+        self.the_cat.create_inheritance_new_cat()
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
