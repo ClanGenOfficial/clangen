@@ -1743,7 +1743,7 @@ class Patrol():
             game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
             self.results_text.append(f"{insert.capitalize()} gathered during this patrol.")
 
-    def handle_prey(self, outcome_nr):
+    def handle_prey(self, outcome_key):
         """Handle the amount of prey which was caught and add it to the fresh-kill pile of the clan."""
         if not "hunting" in patrol.patrol_event.tags:
             return
@@ -1785,16 +1785,21 @@ class Patrol():
         prey_amount_per_cat = 0
         total_amount = 0
 
+        # after the patrol format changed, the tag's have to be adapted
+        number_translation = {}
+        idx = 0
+        for k in self.patrol_event.success_text.keys():
+            number_translation[k] = idx
+            idx += 1
+
         # check what kind of prey type this succeeded patrol event has
         prey_size = None
-        print("OUNTCOME NR ", outcome_nr)
         for prey_type, amount in prey_types.items():
-            current_tag = prey_type + str(outcome_nr)
-            if not outcome_nr:
-                current_tag = prey_type + '0'
+            current_tag = prey_type + str(number_translation[outcome_key])
+            if not outcome_key:
+                current_tag = prey_type + '_0'
             prey_size = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
-                print("Current prey tag: ", current_tag)
                 prey_amount_per_cat = amount
                 break
         print(" -- FRESHKILL: amount per cat ", prey_amount_per_cat)
