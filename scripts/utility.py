@@ -1429,7 +1429,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
-        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
+        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"] and dead:
 
             stage = "0"
             if 80 >= cat.opacity > 45:
