@@ -127,19 +127,9 @@
             true
         ],
         "random med cat":[
-            "allow med cat to be randomly selected on patrol",
-            "med cats can be selected with the patrol buttons +1 and +3",
+            "Allow med cat to be randomly selected on patrol",
+            "Med cats can be selected with the patrol buttons +1, +3,+6",
             true
-        ],
-        "no adoption":[
-            "Disable adoption",
-            "NOT IMPLEMENTED",
-            false
-        ],
-        "disable random mating":[
-            "disbale random mating",
-            "NOT IMPLEMENTED",
-            false
         ]
     },
     "relation": {
