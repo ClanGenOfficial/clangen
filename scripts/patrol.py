@@ -1787,19 +1787,23 @@ class Patrol():
 
         # check what kind of prey type this succeeded patrol event has
         prey_size = None
+        print("OUNTCOME NR ", outcome_nr)
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
             if not outcome_nr:
                 current_tag = prey_type + '0'
             prey_size = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
+                print("Current prey tag: ", current_tag)
                 prey_amount_per_cat = amount
                 break
+        print(" -- FRESHKILL: amount per cat ", prey_amount_per_cat)
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
             # add bonus of certain skills
             if cat.skill in Cat.skill_groups["hunt"]:
+                print(" -- FRESHKILL: hunter bonus")
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
 
         # add additional bonus of certain skills
@@ -1811,6 +1815,7 @@ class Patrol():
             total_amount = int(total_amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
 
         if game.clan.game_mode != "classic":
+            print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
                 if len(patrol.patrol_cats) == 1:

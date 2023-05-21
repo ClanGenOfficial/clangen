@@ -105,8 +105,8 @@ class Events():
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
-            # print(f" -- FRESHKILL: clan needs {needed_amount} prey")
+            print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
+            print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
                 filter(
@@ -127,7 +127,7 @@ class Events():
                     Single_Event(
                         f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                     ))
-            # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
+            print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
@@ -325,6 +325,7 @@ class Events():
                     1]
 
             prey_amount += random.randint(lower_value, upper_value)
+        print(f" -- FRESHKILL: added {prey_amount} monthly prey")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
