@@ -1756,9 +1756,9 @@ class Patrol():
             basic_amount += ADDITIONAL_PREY
         prey_types = {
             "small_prey": basic_amount,
-            "medium_prey": basic_amount * 2,
-            "large_prey": basic_amount * 3,
-            "huge_prey": basic_amount * 4
+            "medium_prey": basic_amount * 1.5,
+            "large_prey": basic_amount * 2,
+            "huge_prey": basic_amount * 3
         }
 
         if not self.success and "hunting" in patrol.patrol_event.tags:
@@ -1793,12 +1793,12 @@ class Patrol():
             idx += 1
 
         # check what kind of prey type this succeeded patrol event has
-        prey_size = None
+        amount_text = None
         for prey_type, amount in prey_types.items():
-            current_tag = prey_type + str(number_translation[outcome_key])
-            if not outcome_key:
-                current_tag = prey_type + '_0'
-            prey_size = prey_type.split('_')[0]
+            current_tag = prey_type
+            if outcome_key in number_translation:
+                current_tag = current_tag + str(number_translation[outcome_key])
+            amount_text = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
@@ -1823,10 +1823,22 @@ class Patrol():
             print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
+                amount_text = "medium"
+                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 2:
+                    amount_text = "small"
+                elif total_amount < game.clan.freshkill_pile.amount_food_needed():
+                    amount_text = "decent"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+                    amount_text = "huge"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+                    amount_text = "large"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
+                    amount_text = "good"
+
                 if len(patrol.patrol_cats) == 1:
-                    self.results_text.append(f"{patrol.patrol_leader_name} brings back a {prey_size} amount of prey.")
+                    self.results_text.append(f"{patrol.patrol_leader_name} brings back a {amount_text} amount of prey.")
                 else:
-                    self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
+                    self.results_text.append(f"The patrol brings back a {amount_text} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize, outcome):
         """
