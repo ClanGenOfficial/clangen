@@ -713,6 +713,7 @@ class MakeClanScreen(Screens):
                 self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
                     game.choose_cats[u].sprite,
+                    tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u], manager=MANAGER)
         for u in range(6, 12):
             if "cat" + str(u) in self.elements:
@@ -732,7 +733,13 @@ class MakeClanScreen(Screens):
                 self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
                     game.choose_cats[u].sprite,
+                    tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u], manager=MANAGER)
+
+    def _get_cat_tooltip_string(self, cat: Cat):
+        """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
+
+        return f"<b>{cat.name}</b><br>{cat.gender}<br>{cat.age}<br>{cat.personality.trait}"
 
     def open_game_mode(self):
         # Clear previous screen
