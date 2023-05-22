@@ -56,7 +56,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.trait = "calm"
+        main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")
@@ -77,7 +77,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.trait = "calm"
+        main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")

@@ -138,6 +138,7 @@ class Game():
         'window_open': False,
         'skip_conditions': [],
         'show_history_moons': False,
+        'fps': 30
     }
     all_screens = {}
     cur_events = {}
@@ -196,47 +197,52 @@ class Game():
         self.keyspressed = []
         
     @staticmethod
-    def safe_save(path: str, write_data, max_attempts: int=15):
-        """ Attempt to safely safe a file.
-            If write_data is not a string, assumes you want this
-            in json format. 
-            Raises a RunTimeError is 
-            the file is nullied too many times. """
+    def safe_save(path: str, write_data, check_integrity=False, max_attempts: int=15):
+        """ If write_data is not a string, assumes you want this
+            in json format. If check_integrity is true, it will read back the file
+            to check that the correct data has been written to the file. 
+            If not, it will simply write the data to the file with no other
+            checks. """
 
         # If write_data is not a string, 
         if type(write_data) is not str:
             _data = ujson.dumps(write_data, indent=4)
         else:
             _data = write_data
-
+        
         dir_name, file_name = os.path.split(path)
         
-        if not file_name:
-            raise RuntimeError(f"Safe_Save: No file name was found in {path}")
+        if check_integrity:
+            if not file_name:
+                raise RuntimeError(f"Safe_Save: No file name was found in {path}")
 
-        temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
-        i = 0
-        while True:
-             # Attempt to write to temp file
-            with open(temp_file_path, "w") as write_file:
-                write_file.write(_data)
+            temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
+            i = 0
+            while True:
+                # Attempt to write to temp file
+                with open(temp_file_path, "w") as write_file:
+                    write_file.write(_data)
 
-            # Read the entire file back in 
-            with open(temp_file_path, 'r') as read_file:
-                _read_data = read_file.read()
+                # Read the entire file back in 
+                with open(temp_file_path, 'r') as read_file:
+                    _read_data = read_file.read()
 
-            if _data != _read_data:
-                i += 1
-                if i > max_attempts:
-                    print(f"Safe_Save ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
-                    raise RuntimeError(f"Safe_Save: {file_name} was unable to properly save {i} times!")
-                print(f"Safe_Save: {file_name} was incorrectly saved. Trying again.")
-                continue
+                if _data != _read_data:
+                    i += 1
+                    if i > max_attempts:
+                        print(f"Safe_Save ERROR: {file_name} was unable to properly save {i} times. Saving Failed.")
+                        raise RuntimeError(f"Safe_Save: {file_name} was unable to properly save {i} times!")
+                    print(f"Safe_Save: {file_name} was incorrectly saved. Trying again.")
+                    continue
 
-            # This section is reached is the file was not nullied. Move the file and return True
+                # This section is reached is the file was not nullied. Move the file and return True
+                
+                shutil_move(temp_file_path, path)
+                return
+        else:
             os.makedirs(dir_name, exist_ok=True)
-            shutil_move(temp_file_path, path)
-            return
+            with open(path, 'w') as write_file:
+                write_file.write(_data)
 
     def read_clans(self):
         '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
@@ -417,7 +423,8 @@ class Game():
                 "backstory": inter_cat.backstory if inter_cat.backstory else None,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
-                "trait": inter_cat.trait,
+                "trait": inter_cat.personality.trait,
+                "facets": inter_cat.personality.get_facet_string(),
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
                 "adoptive_parents": inter_cat.adoptive_parents,
@@ -443,7 +450,6 @@ class Game():
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
-                "eye_tint": inter_cat.eye_tint,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "vitiligo": inter_cat.vitiligo,
@@ -533,7 +539,9 @@ class Game():
                 "backstory": {inter_cat.backstory if inter_cat.backstory else None},
                 "age": {inter_cat.age},
                 "moons": {inter_cat.moons},
-                "trait": {inter_cat.trait},
+                "trait": {inter_cat.personality.trait},
+                "facets": {[inter_cat.personality.lawfulness, inter_cat.personality.sociality,
+                           inter_cat.personality.aggression, inter_cat.personality.stablity]},
                 "parent1": {inter_cat.parent1},
                 "parent2": {inter_cat.parent2},
                 "mentor": {inter_cat.mentor if inter_cat.mentor else None},
@@ -613,6 +621,15 @@ class Game():
 
         game.cat_to_fade = []
 
+    def save_events(self):
+        """
+        Save current events list to events.json
+        """
+        events_list = []
+        for event in game.cur_events_list:
+            events_list.append(event.to_dict())
+        game.safe_save(f"{get_save_dir()}/{game.clan.name}/events.json", events_list)
+
     def add_faded_offspring_to_faded_cat(self, parent, offspring):
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
@@ -683,7 +700,7 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/text_boxes_small.json')
         manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/windows_small.json')
         manager.get_theme().load_theme('resources/tool_tips_small.json')
 
         manager.preload_fonts([

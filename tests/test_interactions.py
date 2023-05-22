@@ -131,9 +131,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_trait(self):
         # given
         calm = Cat()
-        calm.trait = "calm"
+        calm.personality.trait = "calm"
         troublesome = Cat()
-        troublesome.trait = "troublesome"
+        troublesome.personality.trait = "troublesome"
 
         # when
         calm_to_all = Single_Interaction("test")

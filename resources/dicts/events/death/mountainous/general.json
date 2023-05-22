@@ -14,7 +14,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall"],
-        "death_text": "m_c was buried alive in an landslide.",
+        "death_text": "m_c was buried alive in a landslide.",
         "history_text": {
             "reg_death": "m_c was buried alive in a landslide."
         },
@@ -26,7 +26,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf"],
-        "death_text": "m_c was buried alive in an mudslide.",
+        "death_text": "m_c was buried alive in a mudslide.",
         "history_text": {
             "reg_death": "m_c was buried alive in a mudslide."
         },
@@ -111,5 +111,13 @@
         "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "righteous", "cold", "patient"],
         "other_cat_skill": ["fantastic hunter", "great fighter", "excellent fighter"],
         "cat_negate_skill": ["prophet", "omen sight", "excellent fighter"]
-    }
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "death_text": "m_c was killed by a falling boulder pushed from a cliff above them by o_c warriors.",
+        "history_text": {
+            "reg_death": "m_c was squished by a falling boulder.",
+            "lead_death": "was squished by a falling boulder."}
+    }  
 ]

@@ -7,7 +7,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c feels as though the responsibility of leadership is crushing them."
+        "event_text": "m_c feels as though the responsibility of leadership is crushing {PRONOUN/m_c/object}."
     },
     {
         "camp": "any",
@@ -17,7 +17,7 @@
     {
         "camp": "any",
         "tags": ["low_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c confesses they don't have many lives left."
+        "event_text": "m_c confesses {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have many lives left."
     },
     {
         "camp": "any",
@@ -27,16 +27,16 @@
     {
       "camp": "any",
       "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-      "event_text": "m_c feels burdened with the weight of their descisions, knowing that every choice they make could mean the difference between victory and defeat."
+      "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice they make could mean the difference between victory and defeat."
     },
     {
       "camp": "any",
       "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-      "event_text": "m_c's relationships with their clanmates are strained, with some questioning their decisions and others relying on them more heavily than ever."
+      "event_text": "m_c's relationships with {PRONOUN/m_c/poss} clanmates are strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever."
     },
     {
       "camp": "any",
       "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-      "event_text": "m_c is forced to be a symbol of strength and unity for their clan, even in the face of their own doubts and fears."
+      "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears."
     }
 ]
