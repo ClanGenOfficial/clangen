@@ -247,9 +247,16 @@ class MakeClanScreen(Screens):
                     event.ui_element.disable()
 
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            self.selected_cat = event.ui_element.return_cat_object()
-            self.refresh_cat_images_and_info(self.selected_cat)
-            self.refresh_text_and_buttons()
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.leader = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_deputy()
+            else:
+                self.selected_cat = event.ui_element.return_cat_object()
+                self.refresh_cat_images_and_info(self.selected_cat)
+                self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['select_cat']:
             self.leader = self.selected_cat
             self.selected_cat = None
@@ -264,7 +271,13 @@ class MakeClanScreen(Screens):
             self.selected_cat = None
             self.open_choose_leader()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            if event.ui_element.return_cat_object() != self.leader:
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.deputy = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_med_cat()
+            elif event.ui_element.return_cat_object() != self.leader:
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
@@ -279,7 +292,13 @@ class MakeClanScreen(Screens):
             self.selected_cat = None
             self.open_choose_deputy()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            if event.ui_element.return_cat_object():
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.med_cat = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_members()
+            elif event.ui_element.return_cat_object():
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
@@ -301,9 +320,16 @@ class MakeClanScreen(Screens):
                 self.refresh_text_and_buttons()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if event.ui_element.return_cat_object():
-                self.selected_cat = event.ui_element.return_cat_object()
-                self.refresh_cat_images_and_info(self.selected_cat)
-                self.refresh_text_and_buttons()
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT and len(self.members) < 7:
+                    clicked_cat = event.ui_element.return_cat_object()
+                    self.members.append(clicked_cat)
+                    self.selected_cat = None
+                    self.refresh_cat_images_and_info(None)
+                    self.refresh_text_and_buttons()
+                else:
+                    self.selected_cat = event.ui_element.return_cat_object()
+                    self.refresh_cat_images_and_info(self.selected_cat)
+                    self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['select_cat']:
             self.members.append(self.selected_cat)
             self.selected_cat = None
