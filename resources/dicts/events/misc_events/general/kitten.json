@@ -162,5 +162,11 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "clan_kits", "other_cat", "other_cat_parent", "mc_to_rc", "comfort"],
         "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c cats."
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf"],
+        "event_text": "m_c caught a moth while sneaking outside of the camp and wears proudly its wings as a trophy of {PRONOUN/m_c/poss} journey.",
+        "accessories": ["MOTH WINGS"]
     }
 ]
