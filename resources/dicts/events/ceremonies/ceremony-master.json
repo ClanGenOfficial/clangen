@@ -283,7 +283,7 @@
       "abandoned",
       "all_traits"
     ],
-    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who gave {PRONOUN/m_c/object} to this Clan, the parent who should've been here chanting {PRONOUN/m_c/poss} name."
+    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who gave {PRONOUN/m_c/object} to this Clan, the parent who should've been here chanting {PRONOUN/m_c/poss} name."
   ],
   "app_20": [
     [
@@ -518,7 +518,7 @@
       "confident",
       "strange"
     ],
-    "As {PRONOUN/m_c/poss} mentor is about to be chosen, m_c interrupts and announces {PRONOUN/m_c/subject} want {PRONOUN/m_c/poss} mentor to be (mentor). {PRONOUN/m_c/subject} stride forward with confidence to {VERB/m_c/touch/touches} noses with (mentor) when it's allowed."
+    "As {PRONOUN/m_c/poss} mentor is about to be chosen, m_c interrupts and announces {PRONOUN/m_c/subject} want {PRONOUN/m_c/poss} mentor to be (mentor). {PRONOUN/m_c/subject/CAP} stride forward with confidence to {VERB/m_c/touch/touches} noses with (mentor) when it's allowed."
   ],
   "app_41": [
     [
@@ -662,7 +662,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/poss} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
+    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/poss/CAP} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why dead_par1 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_53": [
     [
@@ -791,7 +791,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit, like every young kit, had dreams of becoming a warrior from a young age. However, as {PRONOUN/m_c/subject} grew older, {PRONOUN/m_c/subject} knew that {PRONOUN/m_c/poss} destiny lay in the medicine den. {PRONOUN/m_c/subject} happily {VERB/m_c/take/takes} up {PRONOUN/m_c/poss} new place as a medicine cat apprentice - looking forward to healing {PRONOUN/m_c/poss} Clanmates for many moons to come."
+    "(prefix)kit, like every young kit, had dreams of becoming a warrior from a young age. However, as {PRONOUN/m_c/subject} grew older, {PRONOUN/m_c/subject} knew that {PRONOUN/m_c/poss} destiny lay in the medicine den. {PRONOUN/m_c/subject/CAP} happily {VERB/m_c/take/takes} up {PRONOUN/m_c/poss} new place as a medicine cat apprentice - looking forward to healing {PRONOUN/m_c/poss} Clanmates for many moons to come."
   ],
   "med_app_1": [
     [
@@ -990,7 +990,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject} {VERB/m_c/are/is} greeted by many StarClan cats, one of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, one of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
   "med_app_19": [
     [
@@ -1012,7 +1012,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject} {VERB/m_c/are/is} greeted by many StarClan cats, two of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1 and dead_par2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, two of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1 and dead_par2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
   "med_app_21": [
     [
@@ -1171,7 +1171,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c has always been interested in helping {PRONOUN/m_c/poss} Clan but was never good with herbs or fighting: {PRONOUN/m_c/subject/CAP} found {PRONOUN/m_c/poss} calling as a mediator apprentice under (mentor), where m_c can serve with {PRONOUN/m_c/poss} words."
+    "m_c has always been interested in helping {PRONOUN/m_c/poss} Clan but was never good with herbs or fighting: {PRONOUN/m_c/subject} found {PRONOUN/m_c/poss} calling as a mediator apprentice under (mentor), where m_c can serve with {PRONOUN/m_c/poss} words."
   ],
   "mediator_app_7": [
     [
