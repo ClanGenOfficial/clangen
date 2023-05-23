@@ -1366,7 +1366,7 @@ class ProfileScreen(Screens):
                         
                     
                     trait_influence.append(str(ment_obj.name) +  \
-                                        "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+                                        " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
 
             influence_history += " ".join(trait_influence)
         
