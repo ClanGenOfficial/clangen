@@ -1681,7 +1681,7 @@ class Events():
             print('JEALOUS MODIFIER', kill_chance)
 
             if cat.personality.aggression < 10:
-                kill_chance = (kill_chance + int(cat.personality.aggression)) - 10
+                kill_chance = (kill_chance - int(cat.personality.aggression))
             if cat.personality.stability < 10:
                 kill_chance = (kill_chance + int(cat.personality.stability)) - 10
             if cat.personality.lawfulness < 10:
