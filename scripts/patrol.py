@@ -790,7 +790,7 @@ class Patrol():
 
             try:
                 self.final_success = self.patrol_event.success_text[outcome]
-            except IndexError:
+            except KeyError:
                 self.final_success = self.patrol_event.success_text["unscathed_common"]
 
             if antagonize:

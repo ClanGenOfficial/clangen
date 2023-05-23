@@ -103,7 +103,7 @@
     {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {CAP/PRONOUN/m_c/subject} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
+    "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,

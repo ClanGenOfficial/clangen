@@ -285,10 +285,10 @@
             "other_cat"
         ],
         "death_text": "m_c sacrificed {PRONOUN/m_c/self} for r_c in a battle with o_c.",
-        "history_text": [
-            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
-        ]
+        "history_text": {
+            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+        }
     },
     {
         "camp": "any",
@@ -301,10 +301,10 @@
             "other_cat"
         ],
         "death_text": "m_c threw {PRONOUN/m_c/self} in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
-        "history_text": [
-            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
-        ]
+        "history_text": {
+            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+        }
     },
     {
         "camp": "any",
@@ -317,10 +317,10 @@
             "other_cat"
         ],
         "death_text": "m_c intentionally stayed behind and fought a losing battle to give r_c time to escape.",
-        "history_text": [
-            "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "sacrificed {PRONOUN/m_c/self} for r_c in battle."
-        ]
+        "history_text": {
+            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+        }
     },
     {
         "camp": "any",
@@ -333,10 +333,10 @@
             "other_cat"
         ],
         "death_text": "When traveling together near the border of c_n territory, m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c ambush, even though it meant certain death.",
-        "history_text": [
-            "m_c sacrificed {PRONOUN/m_c/self} for r_c in an ambush.",
-            "sacrificed {PRONOUN/m_c/self} for r_c in an ambush."
-        ]
+        "history_text": {
+            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in an ambush.",
+            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in an ambush."
+        }
     },
     {
         "camp": "any",
@@ -348,10 +348,10 @@
             "war"
         ],
         "death_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject} {VERB/were/was} killed while investigating enemy territory.",
-        "history_text": [
-            "m_c was killed investigating enemy territory.",
-            "was killed investigating enemy territory."
-        ]
+        "history_text": {
+            "reg_death": "m_c was killed investigating enemy territory.",
+            "lead_death": "was killed investigating enemy territory."
+        }
     },
     {
         "camp": "any",
