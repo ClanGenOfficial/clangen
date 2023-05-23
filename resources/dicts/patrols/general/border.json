@@ -376,7 +376,7 @@
         "success_text": {
               "unscathed_common": "p_l is not willing to let any cat die to a badger. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol to continue on while {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} on an o_c_n patrol to come by, and to give them a warning about the badger.",
               "unscathed_rare": "As luck would have it, p_l smells an o_c_n patrol approaching. {PRONOUN/p_l/subject/CAP} {VERB/p_l/call/calls} out to the patrol and tells them about the badger and where {PRONOUN/p_l/subject} saw it making a den. The o_c_n patrol is grateful and return to camp immediately to report the badger to their leader.",
-            "stat_skill": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n their camp. {PRONOUN/p_l/subject} {VERB/p_l/is/are} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/is/are} doing there. {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border.",
+            "stat_skill": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n their camp. {PRONOUN/p_l/subject} {VERB/p_l/is/are} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/is/are} doing there. {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border."
         },
         "fail_text": {
                "unscathed_common": "The patrol waits patiently at the border for any o_c_n cat to appear but they are out of luck that day. p_l decides to continue the patrol as {PRONOUN/p_l/subject} {VERB/p_l/has/have} tried waiting long enough."
@@ -387,14 +387,14 @@
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} {PRONOUN/p_l/object} patrol and sometime later an o_c_n patrol calls out to their patrol and asks if they have seen anything suspicious. p_l tells them coldly that {PRONOUN/p_l/poss} clan doesn't owe them anything and continues {PRONOUN/p_l/poss} patrol.",
-        "antagonize_fail_text": "An o_c_n patrol approaches and asks if they have seen anything odd. At the same time that p_l says no, r_c tells the o_c_n cats about the huge badger {PRONOUN/r_c/subject} saw. The o_c_n patrols thanks r_c for {PRONOUN/r_c/poss} honesty, looking angrily at p_l at the same time.",
+        "antagonize_fail_text": "An o_c_n patrol approaches and asks if they have seen anything odd. At the same time that p_l says no, r_c tells the o_c_n cats about the huge badger {PRONOUN/r_c/subject} saw. The o_c_n patrols thanks r_c for {PRONOUN/r_c/poss} honesty, looking angrily at p_l at the same time."
 },
 
 {
         "patrol_id": "gen_border_trainingapprentices1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "apprentice", "two_apprentices". "warrior", "rel_patrol", "respect", "disrespect", "dislike"],
+        "tags": ["border", "apprentice", "two_apprentices", "warrior", "rel_patrol", "respect", "disrespect", "dislike"],
         "intro_text": "p_l is showing several apprentices the border, and points out some good spots to keep watch on specific parts of it.",
         "decline_text": "p_l has no patience for the rowdy apprentices that day, and orders them all back to camp. ",
         "chance_of_success": 65,
