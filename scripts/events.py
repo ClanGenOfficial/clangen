@@ -1680,11 +1680,12 @@ class Events():
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            # this next part is probably temporary, since the personality rework is coming up so
-            # TODO: when personality rework is out, make sure this is changed to take the rework into account
-            if cat.personality.trait in ["vengeful", "bloodthirsty", "cold"]:
-                kill_chance -= 30
-                print('TRAIT MODIFIER', kill_chance)
+            if cat.personality.aggression < 10:
+                kill_chance = (kill_chance + int(cat.personality.aggression)) - 10
+            if cat.personality.stability < 10:
+                kill_chance = (kill_chance + int(cat.personality.stability)) - 10
+            if cat.personality.lawfulness < 10:
+                kill_chance = (kill_chance + int(cat.personality.lawfulness)) - 10
 
             if kill_chance < 1:
                 kill_chance = 1
