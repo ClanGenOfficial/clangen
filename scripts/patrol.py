@@ -898,6 +898,17 @@ class Patrol():
         :param success: success bool
         """
         tags = self.patrol_event.tags
+
+        # converting outcomes
+        outcomes = {
+            "unscathed_common": 0,
+            "unscathed_rare": 1,
+            "stat_skill": 2,
+            "stat_trait": 3
+        }
+        outcome_number = outcomes[outcome]
+        outcome = outcome_number
+
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
@@ -1679,6 +1690,16 @@ class Patrol():
         no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
         many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
         patrol_size_modifier = int(len(self.patrol_cats) * .5)
+
+        # converting outcomes
+        outcomes = {
+            "unscathed_common": 0,
+            "unscathed_rare": 1,
+            "stat_skill": 2,
+            "stat_trait": 3
+        }
+        outcome_number = outcomes[outcome]
+        outcome = outcome_number
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
