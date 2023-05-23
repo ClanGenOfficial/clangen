@@ -759,10 +759,10 @@ class Patrol():
             outcome = "unscathed_common"
             if self.patrol_win_stat_cat:
                 if self.patrol_event.win_trait:
-                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait:
+                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait and success_text.get("stat_trait"):
                         outcome = "stat_trait"
                 if self.patrol_event.win_skills:
-                    if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
+                    if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills and success_text.get("stat_skill"):
                         outcome = "stat_skill"
             else:
                 if rare and success_text.get("unscathed_rare"):
