@@ -15,9 +15,7 @@ from scripts.patrol import Patrol
 
 import ujson
 
-from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import collars
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -31,8 +29,8 @@ from scripts.events_module.disaster_events import DisasterEvents
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season, \
-    get_living_clan_cat_count, adjust_list_text, event_text_adjust, ongoing_event_text_adjust
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, \
+    get_current_season, adjust_list_text, ongoing_event_text_adjust
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -356,7 +354,6 @@ class Events():
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
                     for herb in herbs_found:
-                        # TODO: need to add bee sting events so that this herb is relevant.
                         if herb in ['blackberry']:
                             continue
                         if game.clan.current_season in [
@@ -1683,11 +1680,12 @@ class Events():
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            # this next part is probably temporary, since the personality rework is coming up so
-            # TODO: when personality rework is out, make sure this is changed to take the rework into account
-            if cat.personality.trait in ["vengeful", "bloodthirsty", "cold"]:
-                kill_chance -= 30
-                print('TRAIT MODIFIER', kill_chance)
+            if cat.personality.aggression < 10:
+                kill_chance = (kill_chance + int(cat.personality.aggression)) - 10
+            if cat.personality.stability < 10:
+                kill_chance = (kill_chance + int(cat.personality.stability)) - 10
+            if cat.personality.lawfulness < 10:
+                kill_chance = (kill_chance + int(cat.personality.lawfulness)) - 10
 
             if kill_chance < 1:
                 kill_chance = 1
