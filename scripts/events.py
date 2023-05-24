@@ -1661,6 +1661,13 @@ class Events():
     def handle_murder(self, cat):
         relationships = cat.relationships.values()
         targets = []
+        kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+        random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
+
+        # if this cat is unstable and aggressive, we lower the random murder chance
+        murder_modifier = round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
+        final_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
+        #print(str(cat.name) + " Murder Chance: " + str(final_murder_chance) + "/" + str(2**(random_murder_chance - murder_modifier)))
 
         # first we grab all hate and resentment relationships, if any
         hate_relation = [i for i in relationships if i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
@@ -1669,10 +1676,13 @@ class Events():
         targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
-        if targets:
-            chosen_target = random.choice(targets)
+        if targets or final_murder_chance == 1:
+            if targets:
+                chosen_target = random.choice(targets)
+            else:
+                relations = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                chosen_target = random.choice(relations)
             print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
-            kill_chance = 120
 
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
@@ -1680,12 +1690,16 @@ class Events():
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            if cat.personality.aggression < 10:
-                kill_chance = (kill_chance - int(cat.personality.aggression))
-            if cat.personality.stability < 10:
-                kill_chance = (kill_chance + int(cat.personality.stability)) - 10
-            if cat.personality.lawfulness < 10:
-                kill_chance = (kill_chance + int(cat.personality.lawfulness)) - 10
+            facet_modifiers = (0 + int(cat.personality.aggression)) + \
+                (16 - int(cat.personality.stability)) + (16 - int(cat.personality.lawfulness))
+            
+            kill_chance = kill_chance - facet_modifiers
+            print('Kill chance after facets', kill_chance)
+
+            # this adds a bit of randomness
+            randomness_modifier = (random.getrandbits(10) * .001)
+            kill_chance = kill_chance - randomness_modifier
+            print("Final kill chance: " + str(kill_chance))
 
             if kill_chance < 1:
                 kill_chance = 1
