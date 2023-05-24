@@ -548,11 +548,11 @@ def get_personality_compatibility(cat1, cat2):
     aggression_diff = abs(cat_1_aggression - cat_2_aggression)
     stability_diff = abs(cat_1_stability - cat_2_stability)
 
-    if 4 >= lawfulness_diff >= sociability_diff >= aggression_diff >= stability_diff >= 0:
+    if all(4 >= diff_value and diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return True
-    elif 7 >= lawfulness_diff >= sociability_diff >= aggression_diff >= stability_diff >= 5:
+    elif all(7 >= diff_value and diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return None
-    elif 17 > lawfulness_diff >= sociability_diff >= aggression_diff >= stability_diff >= 8:
+    elif all(17 > diff_value and diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return False
 
     return None
