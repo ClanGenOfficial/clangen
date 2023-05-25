@@ -1348,6 +1348,9 @@ class ProfileScreen(Screens):
             # Seocnd, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and mentor_influence["trait"] != None:
+                if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
+                    mentor_influence["trait"] = None
+                    return
                 for _mentor in mentor_influence["trait"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["trait"][_mentor].get("strings"):
@@ -1366,7 +1369,7 @@ class ProfileScreen(Screens):
                         
                     
                     trait_influence.append(str(ment_obj.name) +  \
-                                        "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+                                        " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
 
             influence_history += " ".join(trait_influence)
         

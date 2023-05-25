@@ -12,7 +12,7 @@ from ..events_module.generate_events import GenerateEvents
 import ujson
 
 from .pelts import describe_appearance
-from .names import Name, names
+from .names import Name
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -35,7 +35,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance, RelationType
+from scripts.cat_relations.inheritance import Inheritance
 
 
 class Cat():

@@ -58,5 +58,12 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
+        "death_text": "m_c drowned after being pushed out to sea by o_c warriors.",
+        "history_text": {
+            "reg_death": "m_c was pushed out to sea by enemy warriors."}
+    }  
 ]

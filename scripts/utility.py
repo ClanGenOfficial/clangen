@@ -527,21 +527,33 @@ def get_personality_compatibility(cat1, cat2):
         False - if personalities have a negative compatibility
         None - if personalities have a neutral compatibility
     """
+    cat_1_lawfulness = cat1.personality.lawfulness
+    cat_1_sociability = cat1.personality.sociability
+    cat_1_aggression = cat1.personality.aggression
+    cat_1_stability = cat1.personality.stability
+    cat_2_lawfulness = cat2.personality.lawfulness
+    cat_2_sociability = cat2.personality.sociability
+    cat_2_aggression = cat2.personality.aggression
+    cat_2_stability = cat2.personality.stability
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
 
     if personality1 == personality2:
-        if personality1 == None:
+        if personality1 is None:
             return None
         return True
 
-    if personality1 in PERSONALITY_COMPATIBILITY:
-        if personality2 in PERSONALITY_COMPATIBILITY[personality1]:
-            return PERSONALITY_COMPATIBILITY[personality1][personality2]
+    lawfulness_diff = abs(cat_1_lawfulness - cat_2_lawfulness)
+    sociability_diff = abs(cat_1_sociability - cat_2_sociability)
+    aggression_diff = abs(cat_1_aggression - cat_2_aggression)
+    stability_diff = abs(cat_1_stability - cat_2_stability)
 
-    if personality2 in PERSONALITY_COMPATIBILITY:
-        if personality1 in PERSONALITY_COMPATIBILITY[personality2]:
-            return PERSONALITY_COMPATIBILITY[personality2][personality1]
+    if all(4 >= diff_value and diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+        return True
+    elif all(7 >= diff_value and diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+        return None
+    elif all(17 > diff_value and diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+        return False
 
     return None
 
