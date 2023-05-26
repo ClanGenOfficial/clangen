@@ -374,7 +374,7 @@ class Pelt():
             selected = choice(par_pelts)
             self.name = selected.name
             self.length = selected.length
-            self.colour = selected.color
+            self.colour = selected.colour
             self.tortiebase = selected.tortiebase
             return selected.white
 
@@ -652,7 +652,7 @@ class Pelt():
         
         acc_display_choice = random.randint(0, 35)
         if age in ['kitten', 'adolescent']:
-            acc_display_choice = random.randintrandint(0, 15)
+            acc_display_choice = random.randint(0, 15)
         elif age in ['young adult', 'adult']:    
             acc_display_choice = random.randint(0, 50)
         
