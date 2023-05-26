@@ -12,6 +12,7 @@ import pygame
 
 from scripts.cat.history import History
 from scripts.cat.names import names
+from scripts.cat.pelts import Pelt
 
 import ujson
 import logging
@@ -25,16 +26,7 @@ from scripts.game_structure import image_cache
 from sys import exit as sys_exit
 
 from scripts.cat.sprites import sprites, Sprites, spriteSize
-from scripts.cat.appearance_utility import init_pelt
-from scripts.cat.pelts import (
-    choose_pelt,
-    scars1,
-    scars2,
-    scars3,
-    plant_accessories,
-    wild_accessories,
-    collars,
-)
+
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
@@ -311,7 +303,7 @@ def create_new_cat(Cat,
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
-                    accessory = choice(collars)
+                    accessory = choice(Pelt.collars)
             elif loner and choice([1, 2]) == 1:  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -349,7 +341,7 @@ def create_new_cat(Cat,
 
         # give em a collar if they got one
         if accessory:
-            new_cat.accessory = accessory
+            new_cat.pelt.accessory = accessory
 
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
@@ -358,9 +350,9 @@ def create_new_cat(Cat,
         # Remove disabling scars, if they generated.
         not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
                        'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
-        for scar in new_cat.scars:
+        for scar in new_cat.pelt.scars:
             if scar in not_allowed:
-                new_cat.scars.remove(scar)
+                new_cat.pelt.scars.remove(scar)
 
         # chance to give the new cat a permanent condition, higher chance for found kits and litters
         if game.clan.game_mode != 'classic':
@@ -393,9 +385,9 @@ def create_new_cat(Cat,
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
-                        new_cat.scars.append('NOPAW')
+                        new_cat.pelt.scars.append('NOPAW')
                     elif chosen_condition in ['lost their tail', 'born without a tail']:
-                        new_cat.scars.append("NOTAIL")
+                        new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
@@ -443,7 +435,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
                   gender=choice(['female', 'male']),
                   backstory=backstory)
     if status == 'kittypet':
-        new_cat.accessory = choice(collars)
+        new_cat.pelt.accessory = choice(Pelt.collars)
     new_cat.outside = True
 
     if not alive:
@@ -957,9 +949,9 @@ def event_text_adjust(Cat,
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
         if "acc_plural" in text:
-            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
+            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.pelt.accessory]["plural"]))
         if "acc_singular" in text:
-            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
@@ -1329,7 +1321,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
     # generating the sprite
     try:
         if cat.pelt.name not in ['Tortie', 'Calico']:
-            new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites[cat.pelt.get_sprites_name() + cat.pelt.colour + cat_sprite], (0, 0))
         else:
             # Base Coat
             new_sprite.blit(
@@ -1388,7 +1380,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
         # draw eyes & scars1
         eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
-        if cat.eye_colour2 != None:
+        if cat.pelt.eye_colour2 != None:
             eyes.blit(sprites.sprites['eyes2' + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
         new_sprite.blit(eyes, (0, 0))
 
@@ -1396,7 +1388,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.scars1:
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
-                if scar in scars3:
+                if scar in cat.pelt.scars3:
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
 
         # draw line art
@@ -1412,7 +1404,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
-        new_sprite.blit(sprites.sprites['skin' + cat.skin + cat_sprite], (0, 0))
+        new_sprite.blit(sprites.sprites['skin' + cat.pelt.skin + cat_sprite], (0, 0))
         
         if not scars_hidden:
             for scar in cat.pelt.scars:
@@ -1432,10 +1424,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         if cat.pelt.opacity <= 97 and not cat.prevent_fading and game.settings["fading"] and dead:
 
             stage = "0"
-            if 80 >= cat.opacity > 45:
+            if 80 >= cat.pelt.opacity > 45:
                 # Stage 1
                 stage = "1"
-            elif cat.opacity <= 45:
+            elif cat.pelt.opacity <= 45:
                 # Stage 2
                 stage = "2"
 

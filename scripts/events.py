@@ -17,7 +17,6 @@ import ujson
 
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import collars
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -1423,7 +1422,7 @@ class Events():
             return
 
         # check if cat already has acc
-        if cat.accessory:
+        if cat.pelt.accessory:
             self.ceremony_accessory = False
             return
 

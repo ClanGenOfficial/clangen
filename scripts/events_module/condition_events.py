@@ -4,7 +4,7 @@ from copy import deepcopy
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.cat.pelts import scars1, scars2, scars3
+from scripts.cat.pelts import Pelt
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations, \
     history_text_adjust
@@ -168,9 +168,9 @@ class Condition_Events():
                     if game.clan.game_mode == "classic":
                         if "scar" in injury_event.tags and len(cat.scars) < 4:
                             # add tagged scar
-                            for scar in scars1 + scars2 + scars3:
+                            for scar in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
                                 if scar in injury_event.tags:
-                                    cat.scars.append(scar)
+                                    cat.pelt.scars.append(scar)
 
                             # add scar history
                             if injury_event.history_text:

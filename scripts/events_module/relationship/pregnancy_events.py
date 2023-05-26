@@ -531,7 +531,7 @@ class Pregnancy_Events():
             all_kitten.append(kit)
 
             # remove scars
-            kit.scars.clear()
+            kit.pelt.scars.clear()
 
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
@@ -540,9 +540,9 @@ class Pregnancy_Events():
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':
-                        kit.scars.append('NOPAW')
+                        kit.pelt.scars.append('NOPAW')
                     elif kit.permanent_condition[condition] == 'born without a tail':
-                        kit.scars.append('NOTAIL')
+                        kit.pelt.scars.append('NOTAIL')
                 self.condition_events.handle_already_disabled(kit)
 
             # create and update relationships
@@ -571,7 +571,7 @@ class Pregnancy_Events():
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
                     kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
             # remove accessory
-            kit.accessory = None
+            kit.pelt.accessory = None
             clan.add_cat(kit)
 
             # give history
