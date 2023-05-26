@@ -63,7 +63,7 @@
         "nervous": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
-            "aggression": [0, 4],
+            "aggression": [0, 8],
             "stability": [0, 8]
         },
         "righteous": {
@@ -100,7 +100,7 @@
             "lawfulness": [8, 16],
             "sociability": [8, 16],
             "aggression": [8, 16],
-            "stability": [6, 10]
+            "stability": [0, 8]
         },
         "confident": {
             "lawfulness": [8, 16],
