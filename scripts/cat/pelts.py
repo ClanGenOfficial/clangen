@@ -191,7 +191,7 @@ class Pelt():
         self.skin = skin
 
     @staticmethod
-    def generate_new_pelt(gender:str="female", parents:tuple | list=(), age:str="adult"):
+    def generate_new_pelt(gender:str="female", parents:tuple=(), age:str="adult"):
         new_pelt = Pelt()
         
         pelt_white = new_pelt.init_pattern_color(parents, gender)
@@ -730,7 +730,7 @@ class Pelt():
             if p:
                 if p.pelt.white_patches:
                     par_whitepatches.add(p.pelt.white_patches)
-                if p.points:
+                if p.pelt.points:
                     par_points.append(p.pelt.points)
 
         if not parents:
