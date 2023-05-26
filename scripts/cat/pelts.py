@@ -728,7 +728,7 @@ class Pelt():
         par_points = []
         for p in parents:
             if p:
-                if p.white_patches:
+                if p.pelt.white_patches:
                     par_whitepatches.add(p.pelt.white_patches)
                 if p.points:
                     par_points.append(p.pelt.points)

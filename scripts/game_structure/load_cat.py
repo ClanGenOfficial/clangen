@@ -370,7 +370,7 @@ def csv_load(all_cats):
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
-                        the_cat.cat_sprites['dead'] = attr[33]
+                        the_cat.pelt.cat_sprites['dead'] = attr[33]
                 game.switches[
                     'error_message'] = '13There was an error loading cat # ' + str(
                         attr[0])
@@ -385,7 +385,7 @@ def csv_load(all_cats):
                     'error_message'] = '15There was an error loading cat # ' + str(
                         attr[0])
                 if len(attr) > 37:
-                    the_cat.paralyzed = bool(attr[37])
+                    the_cat.pelt.paralyzed = bool(attr[37])
                 if len(attr) > 38:
                     the_cat.no_kits = bool(attr[38])
                 if len(attr) > 39:

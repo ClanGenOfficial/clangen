@@ -163,7 +163,7 @@ class Scar_Events():
                 if "NOLEFTEAR" in cat.pelt.scars and specialty == 'NORIGHTEAR':
                     cat.pelt.scars.remove("NOLEFTEAR")
                     specialty = 'NOEAR'
-                elif "NORIGHTEAR" in cat.scars and specialty == 'NOLEFTEAR':
+                elif "NORIGHTEAR" in cat.pelt.scars and specialty == 'NOLEFTEAR':
                     cat.pelt.scars.remove("NORIGHTEAR")
                     specialty = 'NOEAR'
 
