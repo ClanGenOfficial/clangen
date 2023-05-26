@@ -184,6 +184,7 @@ class Cat():
                  moons=None,
                  example=False,
                  faded=False,
+                 pelt:Pelt=None,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -234,7 +235,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
-        self.pelt = Pelt()
+        self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
         self.apprentice = []

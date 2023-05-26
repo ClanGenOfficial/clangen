@@ -857,7 +857,7 @@ class Pelt():
         par_vit = []
         for p in parents:
             if p:
-                if p.vitiligo:
+                if p.pelt.vitiligo:
                     par_vit.append(p.pelt.vitiligo)
         
         vit_chance = max(game.config["cat_generation"]["vit_chance"] - len(par_vit), 0)

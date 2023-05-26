@@ -281,8 +281,12 @@ def csv_load(all_cats):
                 game.switches[
                     'error_message'] = '1There was an error loading cat # ' + str(
                         attr[0])
-                the_pelt = choose_pelt(attr[2], attr[10], attr[11], attr[9],
-                                       attr[12], True)
+                the_pelt = Pelt(
+                    colour=attr[2],
+                    name = attr[11],
+                    length=attr[9],
+                    eye_color=attr[17]
+                )
                 game.switches[
                     'error_message'] = '2There was an error loading cat # ' + str(
                         attr[0])
@@ -294,7 +298,9 @@ def csv_load(all_cats):
                               pelt=the_pelt,
                               parent1=attr[6],
                               parent2=attr[7],
-                              eye_colour=attr[17])
+                            )
+                
+                
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
                         attr[0])
@@ -302,32 +308,32 @@ def csv_load(all_cats):
                 game.switches[
                     'error_message'] = '4There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.cat_sprites['kitten'], the_cat.cat_sprites[
+                the_cat.pelt.cat_sprites['kitten'], the_cat.pelt.cat_sprites[
                     'adolescent'] = int(attr[13]), int(attr[14])
                 game.switches[
                     'error_message'] = '5There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.cat_sprites['adult'], the_cat.cat_sprites[
+                the_cat.pelt.cat_sprites['adult'], the_cat.pelt.cat_sprites[
                     'elder'] = int(attr[15]), int(attr[16])
                 game.switches[
                     'error_message'] = '6There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.cat_sprites['young adult'], the_cat.cat_sprites[
+                the_cat.pelt.cat_sprites['young adult'], the_cat.pelt.cat_sprites[
                     'senior adult'] = int(attr[15]), int(attr[15])
                 game.switches[
                     'error_message'] = '7There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[
+                the_cat.pelt.reverse, the_cat.pelt.white_patches, the_cat.pelt.pattern = attr[
                     18], attr[19], attr[20]
                 game.switches[
                     'error_message'] = '8There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.tortiebase, the_cat.tortiepattern, the_cat.tortiecolour = attr[
+                the_cat.pelt.tortiebase, the_cat.pelt.tortiepattern, the_cat.pelt.tortiecolour = attr[
                     21], attr[22], attr[23]
                 game.switches[
                     'error_message'] = '9There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[
+                the_cat.trait, the_cat.pelt.skin, the_cat.specialty = attr[5], attr[
                     24], attr[27]
                 game.switches[
                     'error_message'] = '10There was an error loading cat # ' + str(
