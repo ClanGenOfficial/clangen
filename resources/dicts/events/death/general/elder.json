@@ -139,5 +139,13 @@
             "reg_death": "This cat died from old age life.",
             "lead_death": "lost all remaining lives from old age."
         }
+    },
+    {
+        "camp": "any",
+        "tags": ["war", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
+        "history_text": {
+            "reg_death": "m_c died of a heart attack due to stress."
+        }
     }
 ]
