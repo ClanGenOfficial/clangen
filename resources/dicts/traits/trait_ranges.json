@@ -63,7 +63,7 @@
         "nervous": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
-            "aggression": [0, 8],
+            "aggression": [0, 4],
             "stability": [0, 8]
         },
         "righteous": {
@@ -100,7 +100,7 @@
             "lawfulness": [8, 16],
             "sociability": [8, 16],
             "aggression": [8, 16],
-            "stability": [0, 8]
+            "stability": [6, 10]
         },
         "confident": {
             "lawfulness": [8, 16],
@@ -121,7 +121,7 @@
             "stability": [9, 16]
         },
         "careful": {
-            "lawfulness": [10, 16],
+            "lawfulness": [8, 12],
             "sociability": [4, 12],
             "aggression": [0, 6],
             "stability": [10, 16]
@@ -179,6 +179,60 @@
             "sociability": [4, 16],
             "aggression": [0, 6],
             "stability": [8, 16]
+        },
+        "arrogant": {
+            "lawfulness": [5, 8],
+            "sociability": [8, 16],
+            "aggression": [7, 12],
+            "stability": [0, 5]
+        },
+        "competitive": {
+            "lawfulness": [6, 12],
+            "sociability": [12, 16],
+            "aggression": [6, 12],
+            "stability": [8, 16]
+        },
+        "grumpy": {
+            "lawfulness": [0, 16],
+            "sociability": [0, 5],
+            "aggression": [5, 9],
+            "stability": [0, 7]
+        },
+        "cunning": {
+            "lawfulness": [0, 5],
+            "sociability": [8, 16],
+            "aggression": [0, 6],
+            "stability": [8, 16]
+        },
+        "oblivious": {
+            "lawfulness": [6, 12],
+            "sociability": [10, 16],
+            "aggression": [0, 6],
+            "stability": [6, 12]
+        },
+        "gloomy": {
+            "lawfulness": [6, 12],
+            "sociability": [0, 5],
+            "aggression": [0, 6],
+            "stability": [0, 8]
+        },
+        "sincere": {
+            "lawfulness": [12, 16],
+            "sociability": [6, 12],
+            "aggression": [0, 5],
+            "stability": [12, 16]
+        },
+        "flamboyant": {
+            "lawfulness": [6, 10],
+            "sociability": [13, 16],
+            "aggression": [6, 12],
+            "stability": [10, 16]
+        },
+        "rebellious": {
+            "lawfulness": [0, 4],
+            "sociability": [0, 16],
+            "aggression": [6, 10],
+            "stability": [10, 16]
         }
     },
     "kit_traits": {

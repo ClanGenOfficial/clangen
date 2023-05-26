@@ -11,7 +11,7 @@ from ..events_module.generate_events import GenerateEvents
 
 import ujson
 
-from .names import Name, names
+from .names import Name
 from .pelts import Pelt
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
@@ -25,7 +25,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
-from scripts.cat_relations.inheritance import Inheritance, RelationType
+from scripts.cat_relations.inheritance import Inheritance
 
 
 class Cat():

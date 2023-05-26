@@ -21,7 +21,6 @@ class Death_Events():
         self.had_one_event = False
         self.generate_events = GenerateEvents()
         self.history = History()
-        pass
 
     def handle_deaths(self, cat, other_cat, war, enemy_clan, alive_kits, murder=False):
         """ 
@@ -157,7 +156,7 @@ class Death_Events():
             for tag in death_cause.tags:
                 if tag in INJURIES:
                     other_cat.get_injured(tag)
-                    # TODO: consider how best to handle history for this (aka fix it later cus i don't wanna rn ;-;
+                    #TODO: consider how best to handle history for this (aka fix it later cus i don't wanna rn ;-;
                     #  and it's not being used by any events yet anyways)
 
         # handle relationships with other clans

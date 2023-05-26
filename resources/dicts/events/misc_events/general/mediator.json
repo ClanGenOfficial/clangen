@@ -34,5 +34,37 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise", "inquisitive", "childish", "playful"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war- but not without bloodshed.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bold", "charismatic", "confident", "daring", "righteous", "ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "sneaky", "strange"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader", "other_cat"],
+        "event_text": "m_c is giving r_c bad war advice on purpose.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bold", "charismatic", "confident", "daring", "righteous", "ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "sneaky", "strange"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war", "other_cat_leader" ],
+        "event_text": "m_c is checking in on every cat in the camp to make sure everyone is staying healthy in the midst of war.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "compassionate", "faithful", "loving", "responsible", "thoughtful", "wise", "inquisitive", "childish", "playful"]
     }
 ]
