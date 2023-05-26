@@ -1340,9 +1340,10 @@ class Events():
             temp = possible_ceremonies.intersection(
                 self.ceremony_id_by_tag["all_traits"])
 
-            temp.update(
-                possible_ceremonies.intersection(
-                    self.ceremony_id_by_tag[cat.personality.trait]))
+            if cat.personality.trait in self.ceremony_id_by_tag:
+                temp.update(
+                    possible_ceremonies.intersection(
+                        self.ceremony_id_by_tag[cat.personality.trait]))
 
             possible_ceremonies = temp
         except Exception as ex:
@@ -1666,7 +1667,7 @@ class Events():
 
         # if this cat is unstable and aggressive, we lower the random murder chance
         murder_modifier = round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
-        final_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
+        facet_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
         #print(str(cat.name) + " Murder Chance: " + str(final_murder_chance) + "/" + str(2**(random_murder_chance - murder_modifier)))
 
         # first we grab all hate and resentment relationships, if any
@@ -1676,11 +1677,13 @@ class Events():
         targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
-        if targets or final_murder_chance == 1:
+        if targets or facet_murder_chance == 1:
             if targets:
                 chosen_target = random.choice(targets)
             else:
                 relations = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                if not relations:
+                    return
                 chosen_target = random.choice(relations)
             print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
