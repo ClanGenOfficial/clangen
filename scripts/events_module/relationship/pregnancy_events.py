@@ -518,6 +518,15 @@ class Pregnancy_Events():
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
+                
+				# all current mates are adoptive parents
+                kit.adoptive_parents = cat.mate + other_cat.mate
+
+                # remove blood parents from adoptive parents
+                if cat.ID in kit.adoptive_parents:
+                    kit.adoptive_parents.remove(cat.ID)
+                if other_cat.ID in kit.adoptive_parents:
+                    kit.adoptive_parents.remove(other_cat.ID)
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
@@ -526,6 +535,7 @@ class Pregnancy_Events():
                 else:
                     backstory = backstory_choice_2
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
+                kit.adoptive_parents = cat.mates
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             all_kitten.append(kit)
