@@ -67,5 +67,16 @@
         "main_trait_constraint": [
             "righteous"
         ]
+    },
+    {
+        "id": "vengeful_mediator_apprentice",
+        "thoughts": [
+            "Takes the opposite side of a cat that was rude to them",
+            "Considers letting an argument continue after being so rudely blown off"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
     }
+    
 ]

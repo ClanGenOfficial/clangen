@@ -18,6 +18,7 @@
         "id": "kit_alive_elder",
         "thoughts": [
             "Was nipped on the rump by an elder for being naughty",
+            "Was hissed at by r_c for being too noisy",
             "Asks r_c what it is like to be so old",
             "Hopes r_c has a new story to tell {PRONOUN/m_c/object}",
             "Hopes {PRONOUN/m_c/subject} don't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
@@ -89,6 +90,7 @@
         "id": "kit_alive_med_cat",
         "thoughts": [
             "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy",
+            "Hides in the medicine cat's herb stores",
             "Is asking the medicine cat about StarClan",
             "Is asking the medicine cat why all the herbs have to be stinky and gross",
             "Wants to follow the medicine cat everywhere"
@@ -167,6 +169,7 @@
         "id": "daring_kit",
         "thoughts": [
             "Is attempting to pounce on the tail of r_c",
+            "Tries to sneak out of camp with a patrol",
             "Is boldly walking out of camp",
             "Is taking the biggest piece of fresh-kill",
             "Demands to be on the next border patrol",

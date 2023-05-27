@@ -12,6 +12,7 @@ import pygame
 
 from scripts.cat.history import History
 from scripts.cat.names import names
+from scripts.cat.pelts import Pelt
 
 import ujson
 import logging
@@ -25,16 +26,7 @@ from scripts.game_structure import image_cache
 from sys import exit as sys_exit
 
 from scripts.cat.sprites import sprites, Sprites, spriteSize
-from scripts.cat.appearance_utility import init_pelt
-from scripts.cat.pelts import (
-    choose_pelt,
-    scars1,
-    scars2,
-    scars3,
-    plant_accessories,
-    wild_accessories,
-    collars,
-)
+
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
@@ -311,7 +303,7 @@ def create_new_cat(Cat,
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
-                    accessory = choice(collars)
+                    accessory = choice(Pelt.collars)
             elif loner and choice([1, 2]) == 1:  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -349,7 +341,7 @@ def create_new_cat(Cat,
 
         # give em a collar if they got one
         if accessory:
-            new_cat.accessory = accessory
+            new_cat.pelt.accessory = accessory
 
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
@@ -358,9 +350,9 @@ def create_new_cat(Cat,
         # Remove disabling scars, if they generated.
         not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
                        'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
-        for scar in new_cat.scars:
+        for scar in new_cat.pelt.scars:
             if scar in not_allowed:
-                new_cat.scars.remove(scar)
+                new_cat.pelt.scars.remove(scar)
 
         # chance to give the new cat a permanent condition, higher chance for found kits and litters
         if game.clan.game_mode != 'classic':
@@ -393,9 +385,9 @@ def create_new_cat(Cat,
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
-                        new_cat.scars.append('NOPAW')
+                        new_cat.pelt.scars.append('NOPAW')
                     elif chosen_condition in ['lost their tail', 'born without a tail']:
-                        new_cat.scars.append("NOTAIL")
+                        new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
@@ -443,7 +435,7 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
                   gender=choice(['female', 'male']),
                   backstory=backstory)
     if status == 'kittypet':
-        new_cat.accessory = choice(collars)
+        new_cat.pelt.accessory = choice(Pelt.collars)
     new_cat.outside = True
 
     if not alive:
@@ -969,9 +961,9 @@ def event_text_adjust(Cat,
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
         if "acc_plural" in text:
-            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
+            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.pelt.accessory]["plural"]))
         if "acc_singular" in text:
-            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
@@ -1280,12 +1272,6 @@ def update_sprite(cat):
         # Don't update the sprite if the cat is faded.
         return
 
-    # First make pelt, if it wasn't possible before
-    if cat.pelt is None:
-        init_pelt(cat)
-        # THE SPRITE UPDATE
-    # draw colour & style
-
     # apply
     cat.sprite = generate_sprite(cat)
     # update class dictionary
@@ -1319,7 +1305,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
-    elif cat.paralyzed and age != 'newborn':
+    elif cat.pelt.paralyzed and age != 'newborn':
         if age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
@@ -1332,83 +1318,83 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             age = 'senior'
         
         if game.config['fun']['all_cats_are_newborn']:
-            cat_sprite = str(cat.cat_sprites['newborn'])
+            cat_sprite = str(cat.pelt.cat_sprites['newborn'])
         else:
-            cat_sprite = str(cat.cat_sprites[age])
+            cat_sprite = str(cat.pelt.cat_sprites[age])
 
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # generating the sprite
     try:
         if cat.pelt.name not in ['Tortie', 'Calico']:
-            new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites[cat.pelt.get_sprites_name() + cat.pelt.colour + cat_sprite], (0, 0))
         else:
             # Base Coat
             new_sprite.blit(
-                sprites.sprites[cat.tortiebase + cat.pelt.colour + cat_sprite],
+                sprites.sprites[cat.pelt.tortiebase + cat.pelt.colour + cat_sprite],
                 (0, 0))
 
             # Create the patch image
-            if cat.tortiepattern == "Single":
+            if cat.pelt.tortiepattern == "Single":
                 tortie_pattern = "SingleColour"
             else:
-                tortie_pattern = cat.tortiepattern
+                tortie_pattern = cat.pelt.tortiepattern
 
             patches = sprites.sprites[
-                tortie_pattern + cat.tortiecolour + cat_sprite].copy()
-            patches.blit(sprites.sprites["tortiemask" + cat.pattern + cat_sprite], (0, 0),
+                tortie_pattern + cat.pelt.tortiecolour + cat_sprite].copy()
+            patches.blit(sprites.sprites["tortiemask" + cat.pelt.pattern + cat_sprite], (0, 0),
                          special_flags=pygame.BLEND_RGBA_MULT)
 
             # Add patches onto cat.
             new_sprite.blit(patches, (0, 0))
 
         # TINTS
-        if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
+        if cat.pelt.tint != "none" and cat.pelt.tint in Sprites.cat_tints["tint_colours"]:
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
             tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.tint]))
+            tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
         # draw white patches
-        if cat.white_patches is not None:
-            white_patches = sprites.sprites['white' + cat.white_patches + cat_sprite].copy()
+        if cat.pelt.white_patches is not None:
+            white_patches = sprites.sprites['white' + cat.pelt.white_patches + cat_sprite].copy()
 
             # Apply tint to white patches.
-            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
                 "tint_colours"]:
                 tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
+                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
             new_sprite.blit(white_patches, (0, 0))
 
         # draw vit & points
 
-        if cat.points:
-            points = sprites.sprites['white' + cat.points + cat_sprite].copy()
-            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
+        if cat.pelt.points:
+            points = sprites.sprites['white' + cat.pelt.points + cat_sprite].copy()
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
                 "tint_colours"]:
                 tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
+                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 points.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(points, (0, 0))
 
-        if cat.vitiligo:
-            new_sprite.blit(sprites.sprites['white' + cat.vitiligo + cat_sprite], (0, 0))
+        if cat.pelt.vitiligo:
+            new_sprite.blit(sprites.sprites['white' + cat.pelt.vitiligo + cat_sprite], (0, 0))
 
         # draw eyes & scars1
-        eyes = sprites.sprites['eyes' + cat.eye_colour + cat_sprite].copy()
-        if cat.eye_colour2 != None:
-            eyes.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+        eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
+        if cat.pelt.eye_colour2 != None:
+            eyes.blit(sprites.sprites['eyes2' + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
         new_sprite.blit(eyes, (0, 0))
 
         if not scars_hidden:
-            for scar in cat.scars:
-                if scar in scars1:
+            for scar in cat.pelt.scars:
+                if scar in cat.pelt.scars1:
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
-                if scar in scars3:
+                if scar in cat.pelt.scars3:
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
 
         # draw line art
@@ -1424,30 +1410,30 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
-        new_sprite.blit(sprites.sprites['skin' + cat.skin + cat_sprite], (0, 0))
+        new_sprite.blit(sprites.sprites['skin' + cat.pelt.skin + cat_sprite], (0, 0))
         
         if not scars_hidden:
-            for scar in cat.scars:
-                if scar in scars2:
+            for scar in cat.pelt.scars:
+                if scar in cat.pelt.scars2:
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
         # draw accessories
         if not acc_hidden:        
-            if cat.accessory in plant_accessories:
-                new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
-            elif cat.accessory in wild_accessories:
-                new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
-            elif cat.accessory in collars:
-                new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
+            if cat.pelt.accessory in cat.pelt.plant_accessories:
+                new_sprite.blit(sprites.sprites['acc_herbs' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.wild_accessories:
+                new_sprite.blit(sprites.sprites['acc_wild' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.collars:
+                new_sprite.blit(sprites.sprites['collars' + cat.pelt.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
-        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"] and dead:
+        if cat.pelt.opacity <= 97 and not cat.prevent_fading and game.settings["fading"] and dead:
 
             stage = "0"
-            if 80 >= cat.opacity > 45:
+            if 80 >= cat.pelt.opacity > 45:
                 # Stage 1
                 stage = "1"
-            elif cat.opacity <= 45:
+            elif cat.pelt.opacity <= 45:
                 # Stage 2
                 stage = "2"
 
@@ -1464,7 +1450,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 new_sprite = temp
 
         # reverse, if assigned so
-        if cat.reverse:
+        if cat.pelt.reverse:
             new_sprite = pygame.transform.flip(new_sprite, True, False)
 
     except (TypeError, KeyError):

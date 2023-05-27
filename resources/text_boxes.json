@@ -53,7 +53,6 @@
             "size": "26"
         }
     },
-
     "#text_box": {
         "colours": {
             "dark_bg": "#FFFF0000",
@@ -70,7 +69,6 @@
             "shadow_width": "0"
         }
     },
-
     "#text_box_14": {
         "prototype": "#text_box",
         "font": {
@@ -84,7 +82,6 @@
             "text_horiz_alignment": "left"
         }
     },
-
     "#text_box_22": {
         "prototype": "#text_box",
         "font": {
@@ -138,7 +135,6 @@
             "line_spacing": "0.95"
         }
     },
-
     "#text_box_26": {
         "prototype": "#text_box",
         "font": {
@@ -175,7 +171,6 @@
             "text_vert_alignment_padding": "10"
         }
     },
-
     "#text_box_30": {
         "prototype": "#text_box",
         "font": {
@@ -262,7 +257,7 @@
             "text_horiz_alignment": "left"
         }
     },
-	"#text_box_30_horizleft_light": {
+    "#text_box_30_horizleft_light": {
         "prototype": "#text_box_30_horizleft",
         "colours": {
             "normal_text": "#EFE5CE"
@@ -292,8 +287,6 @@
             "padding": "40,40"
         }
     },
-
-
     "#text_box_34": {
         "prototype": "#text_box",
         "font": {
@@ -319,7 +312,6 @@
             "text_horiz_alignment": "left"
         }
     },
-
     "#text_box_40": {
         "prototype": "#text_box",
         "font": {
@@ -334,5 +326,3 @@
         }
     }
 }
-
-
