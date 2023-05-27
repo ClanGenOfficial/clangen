@@ -319,10 +319,10 @@ class GenerateEvents:
             # check that injury is possible
             if event.injury in INJURIES:
 
-                if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
+                if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
                     continue
 
-                if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
+                if event.injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
                     continue
 
             # check meddie tags

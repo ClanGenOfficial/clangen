@@ -17,7 +17,7 @@ from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import collars, wild_accessories
+from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
@@ -31,13 +31,13 @@ from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def accessory_display_name(cat):
-    accessory = cat.accessory
+    accessory = cat.pelt.accessory
 
     if accessory is None:
         return ''
     acc_display = accessory.lower()
 
-    if accessory in collars:
+    if accessory in Pelt.collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan',
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow',
                          'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink',
@@ -52,7 +52,7 @@ def accessory_display_name(cat):
             else:
                 acc_display = collar_colors[collar_color] + ' collar'
 
-    elif accessory in wild_accessories:
+    elif accessory in Pelt.wild_accessories:
         if acc_display == 'blue feathers':
             acc_display = 'crow feathers'
         elif acc_display == 'red feathers':
@@ -839,8 +839,8 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        if the_cat.accessory:
-            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+        if the_cat.pelt.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------
             output += "\n"
 
@@ -3167,10 +3167,10 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox((200, 1150), "platform_shown", self.platform_shown)
         
         # "Show Scars"
-        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.scars)
+        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.pelt.scars)
         
         # "Show accessories"
-        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.accessory)
+        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.pelt.accessory)
         
         # "Show as living"
         self.make_one_checkbox((400, 1250), "override_dead_lineart", self.override_dead_lineart, self.the_cat.dead,
