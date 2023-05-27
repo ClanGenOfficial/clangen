@@ -149,7 +149,8 @@
     {
         "id": "loving_mediator",
         "thoughts": [
-            "Wonders why everyone can't just get along"
+            "Wonders why everyone can't just get along",
+            "Sees all sides of the argument"
         ],
         "main_trait_constraint": [
             "loving"
@@ -177,7 +178,8 @@
     {
         "id": "troublesome_mediator",
         "thoughts": [
-            "Is looking for a pair to sabotage, out of boredom"
+            "Is looking for a pair to sabotage, out of boredom",
+            "Solves problems by starting them"
         ],
         "main_trait_constraint": [
             "troublesome"

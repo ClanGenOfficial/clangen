@@ -1,5 +1,5 @@
 {
-    "text": [ 
+    "text": [
         "<b>Welcome to Warrior Cats clan generator!</b>",
         "",
         "This is a fan-made generator for the Warrior Cats -book series by Erin Hunter.",
@@ -79,6 +79,6 @@
         "Ronfaure": "Writing contributions, medicine cat patrols, misc moon events (Scandalous!)",
         "chrnakry": "User interface, bug fixes, cat names code, misc. code",
         "Reaus": "UR Background ",
-		"Archanyhm": "Contributed Auto-Updater, Update-API, macOS fixes, changelog display"
+        "Archanyhm": "Contributed Auto-Updater, Update-API, macOS fixes, changelog display"
     }
 }

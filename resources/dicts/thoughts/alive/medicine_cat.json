@@ -23,7 +23,8 @@
         "id": "ambitious_medicine_cat",
         "thoughts": [
             "Insists on taking on more tasks",
-            "Spends all day gathering herbs"
+            "Spends all day gathering herbs",
+            "Can't wait until StarClan sends an omen"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -76,7 +77,8 @@
     {
         "id": "careful_medicine_cat",
         "thoughts": [
-            "Counts and recounts the poppy seeds"
+            "Counts and recounts the poppy seeds",
+            "Makes sure none of the herbs get mixed up"
         ],
         "main_trait_constraint": [
             "careful"
@@ -94,7 +96,8 @@
     {
         "id": "childish_medicine_cat",
         "thoughts": [
-            "Bounces excitedly at the half-moon meeting"
+            "Bounces excitedly at the half-moon meeting",
+            "Plays with some wind-swept catmint"
         ],
         "main_trait_constraint": [
             "childish"
@@ -103,7 +106,8 @@
     {
         "id": "cold_medicine_cat",
         "thoughts": [
-            "Grumbles as a warrior asks for herbs for a simple bellyache"
+            "Grumbles as a warrior asks for herbs for a simple bellyache",
+            "Has better things to do than pull splinters out of paws"
         ],
         "main_trait_constraint": [
             "cold"
@@ -124,7 +128,8 @@
     {
         "id": "confident_medicine_cat",
         "thoughts": [
-            "Is proud of their ability to care for their Clanmates"
+            "Is proud of their ability to care for their Clanmates",
+            "Does not doubt themselves while treating a cat"
         ],
         "main_trait_constraint": [
             "confident"
@@ -214,7 +219,8 @@
     {
         "id": "playful_medicine_cat",
         "thoughts": [
-            "Excitedly teaches the kits about basic herbs"
+            "Excitedly teaches the kits about basic herbs",
+            "Indulges the kits as they play hide and seek around the medicine den."
         ],
         "main_trait_constraint": [
             "playful"
@@ -223,7 +229,8 @@
     {
         "id": "responsible_medicine_cat",
         "thoughts": [
-            "Ensures that all of their duties are taken care of"
+            "Ensures that all of their duties are taken care of",
+            "Ignores the rumbling in their stomach in favor of treating cats"
         ],
         "main_trait_constraint": [
             "responsible"

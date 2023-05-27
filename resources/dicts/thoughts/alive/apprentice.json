@@ -186,6 +186,7 @@
         "id": "formerly_a_rogue_warrior_apprentice",
         "thoughts": [
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
+            "Has some trouble adjusting",
             "Forgets the Warrior Code sometimes",
             "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Wants to prove to the clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a good warrior",
@@ -201,6 +202,7 @@
         "id": "thoughtful_apprentice",
         "thoughts": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
+            "Wants to gather moss for the elder's den",
             "Is making sure there's nothing around camp that needs to be done",
             "Asks r_c if {PRONOUN/r_c/subject} need anything before going on patrol",
             "Asks r_c if {PRONOUN/r_c/subject} need anything before going hunting",
@@ -273,6 +275,7 @@
         "id": "confident_warrior_apprentice",
         "thoughts": [
             "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon",
+            "Thinks that {PRONOUN/m_c/subject} will be the strongest warrior to ever live",
             "Isn't worried about anything",
             "Is planning on bringing a lot of fresh-kill back from patrol",
             "Wants to lead the next dawn patrol",
@@ -328,6 +331,7 @@
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
             "Drew blood during {PRONOUN/m_c/poss} battle training",
+            "Sinks {PRONOUN/m_c/poss} into prey, pretending its another cat's pelt",
             "Is caught playing with {PRONOUN/m_c/poss} prey instead of hunting",
             "Is cleaning blood from {PRONOUN/m_c/poss} claws",
             "Is hissing defiantly at r_c",
@@ -337,6 +341,7 @@
             "Is clawing up moss for fun",
             "Is asking what deathberries look like... for safety reasons of course",
             "Hopes to get a scar from battle"
+
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -346,6 +351,7 @@
         "id": "ambitious_warrior_apprentice",
         "thoughts": [
             "Begs to be made a warrior early",
+            "Wants to go on both a border and hunting patrol",
             "Is asking for extra, extra training",
             "Wants to be made a warrior so {PRONOUN/m_c/subject} can hurry up and get {PRONOUN/m_c/poss} own apprentice",
             "Is staying out late to hunt",
@@ -362,6 +368,7 @@
         "id": "ambitious_warrior_apprentice_to_other_apps",
         "thoughts": [
             "Has been catching the most prey out of all the apprentices",
+            "Is confident that {PRONOUN/m_c/subject} could beat the other apprentices",
             "Wants to be the most promising apprentice",
             "Is trying to outshine the other apprentices",
             "Wants to be made a warrior before r_c"
