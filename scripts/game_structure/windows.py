@@ -643,27 +643,8 @@ class ExileCat(UIWindow):
                                                      manager=MANAGER,
                                                      container=self)
 
-        self.one_life_check = UIImageButton(scale(pygame.Rect(
-            (50, 300), (68, 68))),
-            "",
-            object_id="#unchecked_checkbox",
-            tool_tip_text='If this is checked, the leader will lose all their lives',
-            manager=MANAGER,
-            container=self
-        )
-        self.all_lives_check = UIImageButton(scale(pygame.Rect(
-            (50, 300), (68, 68))),
-            "",
-            object_id="#checked_checkbox",
-            tool_tip_text='If this is checked, the leader will lose all their lives',
-            manager=MANAGER,
-            container=self
-        )
-
         self.initial = 'It was the decision of the clan to exile this cat.'
         self.prompt = None
-        self.all_lives_check.hide()
-        self.one_life_check.hide()
 
         self.exile_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 110), (800, 150))),
                                                                       initial_text=self.initial,
@@ -684,10 +665,9 @@ class ExileCat(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 exile_reason = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.exile_entry_box.get_text())
-                self.the_cat.exile_reason = exile_reason
+                #self.the_cat.exile_reason = exile_reason
                 self.the_cat.exile()
-                if self.the_cat.history:
-                    self.the_cat.history.add_exile(self.the_cat, reason=exile_reason)
+                self.history.add_death_or_scars(self.the_cat, text=exile_reason,exile=True)
                 update_sprite(self.the_cat)
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()

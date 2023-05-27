@@ -1236,6 +1236,10 @@ class ProfileScreen(Screens):
             murder = self.get_murder_text()
             if murder:
                 life_history.append(murder)
+                
+            exile_history = self.get_exile_text()
+            if exile_history:
+                life_history.append(str(exile_history))
 
             # join together history list with line breaks
             output = '\n\n'.join(life_history)
@@ -1317,6 +1321,22 @@ class ProfileScreen(Screens):
             scar_history = ' '.join(scar_text)
 
         return scar_history
+    
+    def get_exile_text(self):
+        """
+        Returns the exile reason for the cat.
+        """
+        exile_reason = None
+        exile_history = History.get_death_or_scars(self.the_cat, exile=True)
+
+        if exile_history:
+            # Only consider the first exile event for the cat
+            first_exile = exile_history[0]
+            # Adjust the exile reason text
+            exile_reason = event_text_adjust(Cat, first_exile["text"], self.the_cat, Cat.fetch_cat(first_exile["involved"]))
+
+        return exile_reason
+
 
     def get_apprenticeship_text(self):
         """

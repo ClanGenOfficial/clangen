@@ -594,9 +594,9 @@ class Cat():
             if fetched_cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
-        if self.history:
-            self.history.add_exile(self, reason=self.exile_reason)
-        self.exile_reason = None
+        #if self.history:
+          #  self.history.add_exile(self, reason=self.exile_reason)
+        #self.exile_reason = None
 
     def grief(self, body: bool):
         """
@@ -950,7 +950,7 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
-    def convert_history(self, mentor_influence, died_by, scar_events):
+    def convert_history(self, mentor_influence, died_by, scar_events,exile_events):
         """
         this is to handle old history save conversions
         """
@@ -996,10 +996,22 @@ class Cat():
                         "moon": "?"
                     }
                 )
+        exiles = []
+        if exile_events:
+            for exile in exile_events:
+                exiles.append(
+                    {
+                        "involved": None,
+                        "text": exile,
+                        "moon": "?"
+                    }
+                )
+               
         self.history = History(
             mentor_influence=mentor_influence,
             died_by=deaths,
             scar_events=scars,
+            exile_events=exiles,
         )
 
     def load_history(self):
@@ -1026,6 +1038,8 @@ class Cat():
                 possible_scar={},
                 scar_events=[],
                 murder={},
+                possible_exile={},
+                exile_events=[],
             )
             return
         try:
@@ -1040,7 +1054,9 @@ class Cat():
                     possible_death=history_data['possible_death'] if "possible_death" in history_data else {},
                     died_by=history_data['died_by'] if "died_by" in history_data else [],
                     possible_scar=history_data['possible_scar'] if "possible_scar" in history_data else {},
+                    possible_exile=history_data['possible_exile'] if "possible_exile" in history_data else {},
                     scar_events=history_data['scar_events'] if "scar_events" in history_data else [],
+                    exile_events=history_data['exile_events'] if "exile_events" in history_data else [],
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
         except:
@@ -1068,7 +1084,9 @@ class Cat():
                 possible_death={},
                 died_by=[],
                 possible_scar={},
+                possible_exile={},
                 scar_events=[],
+                exile_events=[],
                 murder={},
             )
 

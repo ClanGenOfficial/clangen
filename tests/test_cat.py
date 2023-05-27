@@ -395,6 +395,8 @@ class TestStatusChange(unittest.TestCase):
                 lead_ceremony=None,
                 possible_death={},
                 died_by=[],
+                exile_events=[],
+                possible_exile={},
                 possible_scar={},
                 scar_events=[],
                 murder={},

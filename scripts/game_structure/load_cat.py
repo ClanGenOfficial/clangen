@@ -225,11 +225,12 @@ def json_load():
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
-            if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
+            if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat or "exile_event" in cat:
                 new_cat.convert_history(
                     cat["mentor_influence"] if "mentor_influence" in cat else [],
                     cat["died_by"] if "died_by" in cat else [],
-                    cat["scar_event"] if "scar_event" in cat else []
+                    cat["scar_event"] if "scar_event" in cat else [],
+                    cat["exile_events"] if "exile_events" in cat else [],
                 )
 
             #new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]

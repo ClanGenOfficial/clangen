@@ -18,6 +18,8 @@ class History:
                  died_by=None,
                  possible_scar=None,
                  scar_events=None,
+                 possible_exile=None,
+                 exile_events=None,
                  murder=None
                  ):
         self.beginning = beginning if beginning else {}
@@ -28,6 +30,8 @@ class History:
         self.died_by = died_by if died_by else []
         self.possible_scar = possible_scar if possible_scar else {}
         self.scar_events = scar_events if scar_events else []
+        self.possible_exile = possible_exile if possible_exile else {}
+        self.exile_events = exile_events if exile_events else []
         self.murder = murder if murder else {}
 
         """
@@ -139,6 +143,8 @@ class History:
             "possible_scar": cat.history.possible_scar,
             "scar_events": cat.history.scar_events,
             "murder": cat.history.murder,
+            "possible_exile": cat.history.possible_exile,
+            "exile_events": cat.history.exile_events,
         }
         return history_dict
 
@@ -256,9 +262,9 @@ class History:
         }
 
     @staticmethod
-    def add_possible_death_or_scars(cat, condition, text, other_cat=None, scar=False, death=False):
+    def add_possible_death_or_scars(cat, condition, text, other_cat=None, scar=False, death=False, exile=False):
         """
-        this adds the possible death/scar to the cat's history
+        this adds the possible death/scar to the cat's history 
         :param cat: cat object
         :param other_cat: if another cat is mentioned in the history, include them here
         :param condition: the condition that is causing the death/scar
@@ -273,6 +279,8 @@ class History:
             event_type = "possible_scar"
         elif death:
             event_type = "possible_death"
+        elif exile:
+            event_type = "possible_exile"
 
         if not event_type:
             print('WARNING: event type was not specified during possible scar/death history writing, '
@@ -298,6 +306,11 @@ class History:
                 "involved": other_cat.ID if other_cat else None,
                 "text": text
             }
+        elif event_type == 'possible_exile':
+            cat.history.possible_exile[condition] = {
+                "involved": other_cat.ID if other_cat else None,
+                "text":text
+            }
 
     @staticmethod
     def remove_possible_death_or_scars(cat, condition):
@@ -315,9 +328,11 @@ class History:
             cat.history.possible_scar.pop(condition)
         if condition in cat.history.possible_death:
             cat.history.possible_death.pop(condition)
+        if condition in cat.history.possible_exile:
+            cat.history.possible_exile.pop(condition)
 
     @staticmethod
-    def add_death_or_scars(cat, other_cat=None, text=None, extra_text=None, condition=None, scar=False, death=False):
+    def add_death_or_scars(cat, other_cat=None, text=None, extra_text=None, condition=None, scar=False, death=False, exile=False):
         """
         this adds death or scar events to the cat's history, if the condition
          was already in possible death/scars then it's info is moved to this list
@@ -343,6 +358,9 @@ class History:
         elif death:
             event_type = "died_by"
             old_event_type = "possible_death"
+        elif exile:
+            event_type="exile_events"
+            old_event_type = "possible_exile"
 
         if not event_type or not old_event_type:
             print('WARNING: event type was not specified during scar/death history writing, '
@@ -354,8 +372,11 @@ class History:
             try:
                 if old_event_type == 'possible_scar':
                     old_event = cat.history.possible_scar
-                else:
+                elif old_event_type == 'possible_death':
                     old_event = cat.history.possible_death
+                elif old_event_type == 'possible_exile':
+                    old_event = cat.history.possible_exile
+            
                 other_cat_ID = old_event[condition]["involved"]
                 text = old_event[condition]["text"]
                 # and then remove from possible scar/death dict
@@ -386,6 +407,8 @@ class History:
             cat.history.scar_events.append(history_dict)
         elif event_type == 'died_by':
             cat.history.died_by.append(history_dict)
+        elif event_type == 'exile_events':
+            cat.history.exile_events.append(history_dict)
 
     @staticmethod
     def add_murders(cat, other_cat, revealed, text=None, unrevealed_text=None):
@@ -499,7 +522,7 @@ class History:
         return str(cat.history.lead_ceremony)
 
     @staticmethod
-    def get_possible_death_or_scars(cat, condition=None, death=False, scar=False):
+    def get_possible_death_or_scars(cat, condition=None, death=False, scar=False, exile=False):
         """
         Returns the asked for death/scars dict, example of single event structure:
 
@@ -534,6 +557,8 @@ class History:
             event_type = "possible_scar"
         elif death:
             event_type = "possible_death"
+        elif exile:
+            event_type = "possibe_exile"
 
         if not event_type:
             print('WARNING: event type was not specified during possible scar/death history retrieval, '
@@ -547,16 +572,21 @@ class History:
             elif event_type == 'possible_death':
                 if condition in cat.history.possible_death:
                     return cat.history.possible_death[condition]
+            elif event_type == 'possible_exile':
+                if condition in cat.history.possible_exile:
+                    return cat.history.possible_exile[condition]
             else:
                 return None
 
         if event_type == 'possible_scar':
             return cat.history.possible_scar
-        else:
+        elif event_type == 'possible_death':
             return cat.history.possible_death
-
+        elif event_type == 'possibe_exile':
+            return cat.history.possible_exile
+        
     @staticmethod
-    def get_death_or_scars(cat, death=False, scar=False):
+    def get_death_or_scars(cat, death=False, scar=False, exile=False):
         """
         This returns the death/scar history list for the cat.  example of list structure:
 
@@ -586,6 +616,8 @@ class History:
             event_type = "scar_events"
         elif death:
             event_type = "died_by"
+        elif exile:
+            event_type="exile_events"
 
         if not event_type:
             print('WARNING: event type was not specified during scar/death history retrieval, '
@@ -594,8 +626,10 @@ class History:
 
         if event_type == 'scar_events':
             return cat.history.scar_events
-        else:
+        elif event_type == 'died_by':
             return cat.history.died_by
+        elif event_type == 'exile_events':
+            return cat.history.exile_events
 
     @staticmethod
     def get_murders(cat):
