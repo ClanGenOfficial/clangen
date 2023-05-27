@@ -389,20 +389,6 @@ class ProfileScreen(Screens):
                 self.change_screen('role screen')
             elif event.ui_element == self.change_mentor_button:
                 self.change_screen('choose mentor screen')
-            elif event.ui_element == self.retire:
-                self.the_cat.status_change("elder", resort=True)
-                # Since you can't "unretire" a cat, apply the skill and trait change here:
-                self.the_cat.update_skill()
-                self.the_cat.update_traits()
-                # Refresh the information column and disable the retire button:
-                self.profile_elements["cat_info_column2"].kill()
-                self.profile_elements["cat_info_column2"] = UITextBoxTweaked(self.generate_column2(self.the_cat),
-                                                                     scale(pygame.Rect((980, 460), (460, 360))),
-                                                                     object_id=get_text_box_theme(
-                                                                         "#text_box_22_horizleft"),
-                                                                     line_spacing=0.95, manager=MANAGER)
-                self.retire.disable()
-
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -1856,8 +1842,7 @@ class ProfileScreen(Screens):
             self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
                                                    starting_height=2, object_id="#see_family_button", manager=MANAGER)
             self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
-                                                          starting_height=2, object_id="#see_relationships_button"
-                                                          , manager=MANAGER)
+                                                          starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
@@ -1880,13 +1865,7 @@ class ProfileScreen(Screens):
                                               starting_height=2
                                               , manager=MANAGER)
             self.change_mentor_button = UIImageButton(scale(pygame.Rect((452, 972), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
-                                                      , manager=MANAGER)
-            self.retire = UIImageButton(scale(pygame.Rect((452, 1044), (344, 72))), "",
-                                    starting_height=2, object_id="#retire_button",
-                                    tool_tip_text="If a cat is retired, you will be "
-                                                  "unable to switch them to warrior status. ",
-                                    manager=MANAGER)
+                                                      starting_height=2, object_id="#change_mentor_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1956,22 +1935,18 @@ class ProfileScreen(Screens):
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()
-        
+
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.dead or self.the_cat.outside:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice',
-                                           'mediator apprentice'] or self.the_cat.dead or self.the_cat.outside:
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+                                            or self.the_cat.dead or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
                 self.change_mentor_button.enable()
-            if self.the_cat.status not in ['leader', 'deputy', 'warrior', 'medicine cat',
-                                       'mediator'] or self.the_cat.dead or self.the_cat.outside:
-                self.retire.disable()
-            else: self.retire.enable()
 
         elif self.open_tab == "personal":
 
@@ -2174,7 +2149,6 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'roles':
             self.manage_roles.kill()
             self.change_mentor_button.kill()
-            self.retire.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
@@ -2392,6 +2366,13 @@ class RoleScreen(Screens):
             elif event.ui_element == self.switch_med_cat:
                 self.the_cat.status_change("medicine cat", resort=True)
                 self.update_selected_cat()
+            elif event.ui_element == self.retire:
+                self.the_cat.status_change("elder", resort=True)
+                # Since you can't "unretire" a cat, apply the skill and trait change
+                # here
+                self.the_cat.update_skill()
+                self.the_cat.update_traits()
+                self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)
                 self.update_selected_cat()
@@ -2452,6 +2433,11 @@ class RoleScreen(Screens):
         self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
                                             object_id="#switch_warrior_button",
                                             manager=MANAGER)
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
+                                    object_id="#retire_button",
+                                    tool_tip_text="If a cat is retired, you will be "
+                                                  "unable to switch them to warrior status. ",
+                                    manager=MANAGER)
         self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
                                             object_id="#switch_med_cat_button",
                                             manager=MANAGER)
@@ -2593,6 +2579,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.enable()
@@ -2614,6 +2601,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
+            self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2631,6 +2619,7 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2648,6 +2637,7 @@ class RoleScreen(Screens):
                 self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.enable()
+            self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2672,6 +2662,7 @@ class RoleScreen(Screens):
                 self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.disable()
+            self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2685,6 +2676,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
+            self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2698,6 +2690,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2711,6 +2704,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.enable()
@@ -2727,6 +2721,7 @@ class RoleScreen(Screens):
                 self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2740,6 +2735,7 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
@@ -2881,6 +2877,8 @@ class RoleScreen(Screens):
         del self.switch_med_cat
         self.switch_mediator.kill()
         del self.switch_mediator
+        self.retire.kill()
+        del self.retire
         self.switch_med_app.kill()
         del self.switch_med_app
         self.switch_warrior_app.kill()
