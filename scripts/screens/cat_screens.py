@@ -383,12 +383,12 @@ class ProfileScreen(Screens):
                 self.change_screen('relationship screen')
             elif event.ui_element == self.choose_mate_button:
                 self.change_screen('choose mate screen')
-            elif event.ui_element == self.change_mentor_button:
-                self.change_screen('choose mentor screen')
         # Roles Tab
         elif self.open_tab == 'roles':
             if event.ui_element == self.manage_roles:
                 self.change_screen('role screen')
+            elif event.ui_element == self.change_mentor_button:
+                self.change_screen('choose mentor screen')
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -1842,13 +1842,9 @@ class ProfileScreen(Screens):
             self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
                                                    starting_height=2, object_id="#see_family_button", manager=MANAGER)
             self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
-                                                          starting_height=2, object_id="#see_relationships_button"
-                                                          , manager=MANAGER)
+                                                          starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
-            self.change_mentor_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
-                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1868,6 +1864,8 @@ class ProfileScreen(Screens):
                                               "", object_id="#manage_roles_button",
                                               starting_height=2
                                               , manager=MANAGER)
+            self.change_mentor_button = UIImageButton(scale(pygame.Rect((452, 972), (344, 72))), "",
+                                                      starting_height=2, object_id="#change_mentor_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1938,18 +1936,17 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice',
-                                           'mediator apprentice'] or self.the_cat.dead \
-                    or self.the_cat.outside:
-                self.change_mentor_button.disable()
-            else:
-                self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.dead or self.the_cat.outside:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+                                            or self.the_cat.dead or self.the_cat.outside:
+                self.change_mentor_button.disable()
+            else:
+                self.change_mentor_button.enable()
 
         elif self.open_tab == "personal":
 
@@ -2149,9 +2146,9 @@ class ProfileScreen(Screens):
             self.see_family_button.kill()
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
-            self.change_mentor_button.kill()
         elif self.open_tab == 'roles':
             self.manage_roles.kill()
+            self.change_mentor_button.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
