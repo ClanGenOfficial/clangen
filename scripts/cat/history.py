@@ -176,6 +176,10 @@ class History:
         
         if not cat.history.mentor_influence["trait"]:
             return
+        
+        if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in cat.history.mentor_influence["trait"]:
+            cat.history.mentor_influence["trait"] = None
+            return
 
         # working under the impression that these blurbs will be preceeded by "more likely to"
         influence_text = {

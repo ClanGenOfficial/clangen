@@ -493,13 +493,15 @@ class GenerateEvents:
         # grab general events first, since they'll always exist
         events = self.get_death_reaction_dicts("general", rel_value)
         possible_events.extend(events["general"][body_status])
-        possible_events.extend(events[trait][body_status])
+        if trait in events:
+            possible_events.extend(events[trait][body_status])
 
         # grab family events if they're needed
         if family_relation != 'general':
             events = self.get_death_reaction_dicts(family_relation, rel_value)
             possible_events.extend(events["general"][body_status])
-            possible_events.extend(events[trait][body_status])
+            if trait in events:
+                possible_events.extend(events[trait][body_status])
 
         # print(possible_events)
 
