@@ -125,11 +125,11 @@ class ChooseAdoptiveParentScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         self.info = pygame_gui.elements.UITextBox(
-            "If a cat is set as an adoptive parent, they will be handled like blood parents and "
-            "children of the adoptive parent are also tracked in the family tree and handled like blood related siblings. "
+            "If a cat is added as an adoptive parent, they will be displayed on the family page and considered in relation-tracking. "
+            "For relatedness tracking, adoptive and blood parents treated the same, this also applies to siblings. "
             "Adoptive parents are only set automatically at the birth of the cat. All mates from the blood parents at "
             "the time of the birth are considered as adoptive parents.",
-            scale(pygame.Rect((400, 120), (800, 200))),
+            scale(pygame.Rect((400, 100), (800, 250))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95")
         )
 
