@@ -29,7 +29,7 @@ class Scar_Events():
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 3
-        if len(cat.scars) < 4 and chance <= 6:
+        if len(cat.pelt.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text
             self.history.add_death_or_scars(cat,
@@ -111,7 +111,7 @@ class Scar_Events():
             elif injury_name == "quilled by porcupine":
                 scar_pool = quill_scars
 
-            for scar in cat.scars:
+            for scar in cat.pelt.scars:
                 if scar:
                     try:
                         if scar in scar_pool:
@@ -156,27 +156,27 @@ class Scar_Events():
             if len(scar_pool) > 0:
                 specialty = random.choice(scar_pool)
                 if specialty in ["NOTAIL", "HALFTAIL"]:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
+                    if cat.pelt.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.pelt.accessory = None
 
                 # combining left/right variations into the both version
-                if "NOLEFTEAR" in cat.scars and specialty == 'NORIGHTEAR':
-                    cat.scars.remove("NOLEFTEAR")
+                if "NOLEFTEAR" in cat.pelt.scars and specialty == 'NORIGHTEAR':
+                    cat.pelt.scars.remove("NOLEFTEAR")
                     specialty = 'NOEAR'
-                elif "NORIGHTEAR" in cat.scars and specialty == 'NOLEFTEAR':
-                    cat.scars.remove("NORIGHTEAR")
+                elif "NORIGHTEAR" in cat.pelt.scars and specialty == 'NOLEFTEAR':
+                    cat.pelt.scars.remove("NORIGHTEAR")
                     specialty = 'NOEAR'
 
-                if 'RIGHTBLIND' in cat.scars and specialty == 'LEFTBLIND':
-                    cat.scars.remove("LEFTBLIND")
+                if 'RIGHTBLIND' in cat.pelt.scars and specialty == 'LEFTBLIND':
+                    cat.pelt.scars.remove("LEFTBLIND")
                     specialty = 'BOTHBLIND'
-                elif 'LEFTBLIND' in cat.scars and specialty == 'RIGHTBLIND':
-                    cat.scars.remove("RIGHTBLIND")
+                elif 'LEFTBLIND' in cat.pelt.scars and specialty == 'RIGHTBLIND':
+                    cat.pelt.scars.remove("RIGHTBLIND")
                     specialty = 'BOTHBLIND'
 
                 if specialty:
-                    if len(cat.scars) < 4:
-                        cat.scars.append(specialty)
+                    if len(cat.pelt.scars) < 4:
+                        cat.pelt.scars.append(specialty)
 
                 scar_gain_strings = [
                     f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the incident on their pelt.",

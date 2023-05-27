@@ -19,7 +19,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.pelts import collars, scars1, scars2, scars3
+from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
@@ -1633,12 +1633,12 @@ class Patrol():
                     cat = self.patrol_fail_stat_cat
                 else:
                     return
-                if len(self.patrol_random_cat.scars) < 4:
+                if len(self.patrol_random_cat.pelt.scars) < 4:
                     for tag in self.patrol_event.tags:
                         print(tag)
-                        if tag in scars1 + scars2 + scars3:
+                        if tag in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
                             print('gave scar')
-                            cat.scars.append(tag)
+                            cat.pelt.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
                     self.handle_history(cat, scar=True)
 
