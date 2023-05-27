@@ -95,7 +95,6 @@ class ChooseAdoptiveParentScreen(Screens):
                 else:
                     self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
                     self.the_cat.create_inheritance_new_cat()
-                    self.add_cat_to_no_adoptive_parent_dict()
                     self.update_choose_adoptive_parent()
                     self.update_current_cat_info()
                 self.update_cat_list()
@@ -543,20 +542,6 @@ class ChooseAdoptiveParentScreen(Screens):
                 # 14 moons is for the minimal age of a cat to be a parent
                 valid_parents.append(relevant_cat)
         return valid_parents
-
-    def add_cat_to_no_adoptive_parent_dict(self):
-        """
-        Add the selected cat to the no-adoptive parent dictionary for the 'main' cat.
-        This will stop the cat from showing up in the family tree, even the blood parent has the selected cat as mate.
-        """
-        if self.the_cat.ID in game.clan.no_auto_adoptive:
-            game.clan.no_auto_adoptive[self.the_cat.ID].append(self.selected_cat.ID)
-        else:
-            game.clan.no_auto_adoptive[self.the_cat.ID] = [self.selected_cat.ID]
-
-        # update the inheritance of the cats
-        self.selected_cat.create_inheritance_new_cat()
-        self.the_cat.create_inheritance_new_cat()
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

@@ -189,8 +189,6 @@ class Inheritance():
 
     def init_parents(self):
         """Initial the class, with the focus of the parent relation."""
-        new_adoptive_parents = []
-
         # by blood
         current_parent_ids = self.get_blood_parents()
         for relevant_id in current_parent_ids:
@@ -217,18 +215,6 @@ class Inheritance():
             }
             self.all_involved.append(relevant_id)
             self.all_but_cousins.append(relevant_id)
-
-        # update the adoptive parents of the current cat
-        for new_adoptive_parent_id in new_adoptive_parents:
-            # if all variables are loaded
-            if game and game.clan and game.clan.no_auto_adoptive:
-                # but only if the relevant cats are not in the no_auto_adoptive dict
-                if self.cat.ID in game.clan.no_auto_adoptive and\
-                    new_adoptive_parent_id in game.clan.no_auto_adoptive[self.cat.ID]:
-                    continue
-
-            if new_adoptive_parent_id not in self.cat.adoptive_parents:
-                self.cat.adoptive_parents.append(new_adoptive_parent_id)
 
     def init_mates(self):
         """Initial the class, with the focus of the mates relation."""

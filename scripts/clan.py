@@ -783,7 +783,6 @@ class Clan():
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
         self.save_pregnancy(game.clan)
-        self.save_no_auto_adoptive(game.clan)
 
         self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
@@ -1085,7 +1084,6 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        self.load_no_auto_adoptive(game.clan)
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
@@ -1311,48 +1309,6 @@ class Clan():
             }
 
         game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
-
-    def load_no_auto_adoptive(self, clan):
-        """
-        Load the information, which auto adoptive parents are disabled for which cat.
-        This will prevent the cats to show up in the family tree.
-        """
-        if not game.clan.name:
-            return
-        
-        file_path = get_save_dir() + f"/{game.clan.name}/no_auto_adoptive.json"
-        if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
-                clan.no_auto_adoptive = ujson.load(read_file)
-
-            # the inheritance of the cats is already build, so we need to build it again with the additional information
-            # but only for the mentioned cats in this dictionary
-            for cat_id, value in clan.no_auto_adoptive.items():
-                cat = Cat.fetch_cat(cat_id)
-                if cat:
-                    # remove all adoptive parents which should not be there
-                    for no_adoptive_parent_id in value:
-                        if no_adoptive_parent_id in cat.adoptive_parents:
-                            cat.adoptive_parents.remove(no_adoptive_parent_id)
-                        # update the inheritance of the former adoptive parent
-                        adoptive_parent = Cat.fetch_cat(no_adoptive_parent_id)
-                        if adoptive_parent:
-                            adoptive_parent.create_inheritance_new_cat()
-                    # create the inheritance new after all not wanted adoptive parents are removed
-                    cat.create_inheritance_new_cat()
-        else:
-            clan.no_auto_adoptive = {}
-
-    def save_no_auto_adoptive(self, clan):
-        """
-        Saves the information about which cat will not be automatically an adoptive parent for which cat.
-        """
-
-        if not game.clan.name:
-            return
-        
-        game.safe_save(f"{get_save_dir()}/{game.clan.name}/no_auto_adoptive.json", clan.no_auto_adoptive)
-
 
     ## Properties
 
