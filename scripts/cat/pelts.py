@@ -191,7 +191,7 @@ class Pelt():
         self.skin = skin
 
     @staticmethod
-    def generate_new_pelt(gender:str="female", parents:tuple=(), age:str="adult"):
+    def generate_new_pelt(gender:str, parents:tuple=(), age:str="adult"):
         new_pelt = Pelt()
         
         pelt_white = new_pelt.init_pattern_color(parents, gender)

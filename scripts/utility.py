@@ -1272,12 +1272,6 @@ def update_sprite(cat):
         # Don't update the sprite if the cat is faded.
         return
 
-    """# First make pelt, if it wasn't possible before
-    if cat.pelt is None:
-        cat.pelt = P
-        # THE SPRITE UPDATE
-    # draw colour & style"""
-
     # apply
     cat.sprite = generate_sprite(cat)
     # update class dictionary
