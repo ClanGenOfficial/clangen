@@ -128,7 +128,7 @@ class ChooseAdoptiveParentScreen(Screens):
             "If a cat will be set as an adoptive parent, they will be handled like blood parents and "
             "children of the adoptive parent are also tracked in the family tree and handled like blood related siblings. "
             "Adoptive parents are set automatically if one of the blood parents gets a new mate. "
-            "If someone manually unset the adoptive parent, they will never be <b>automatically</b> set as one again.",
+            "If someone manually unset the adoptive parent, they will never be <b>automatically</b> set as an adoptive parent again.",
             scale(pygame.Rect((390, 100), (820, 230))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95")
         )
@@ -145,10 +145,10 @@ class ChooseAdoptiveParentScreen(Screens):
                                                           (562, 394)))
 
         
-        self.mentor_icon = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 320), (343, 228))),
+        self.mentor_icon = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 320), (342, 266))),
                                                        pygame.transform.scale(
                                                            image_cache.load_image(
-                                                               "resources/images/mentor.png").convert_alpha(),
+                                                               "resources/images/adoption_flip.png").convert_alpha(),
                                                            (343, 228)), manager=MANAGER)
         
         self.cycle_parent_left_button = UIImageButton(scale(pygame.Rect((1216, 616), (68, 68))),"",
@@ -173,8 +173,8 @@ class ChooseAdoptiveParentScreen(Screens):
                                                          object_id=get_text_box_theme())
 
         # This may be deleted and changed later.
-        self.toggle_parent = UIImageButton(scale(pygame.Rect((646, 620), (306, 60))), "",
-                                         object_id="#confirm_mate_button")
+        self.toggle_parent = UIImageButton(scale(pygame.Rect((607, 620), (384, 60))), "",
+                                         object_id="#set_adoptive_parent")
 
         # The text will be changed as needed. This is used for both the "this pair can't have
         # offspring" message, header for the kittens section for adoptive parent.
@@ -337,9 +337,9 @@ class ChooseAdoptiveParentScreen(Screens):
                                                                    manager=MANAGER
                                                                    )
 
-        # Set the button to say "break-up"
+        # Set the button to say "unset adoptive parent"
         self.toggle_parent.kill()
-        self.toggle_parent = UIImageButton(scale(pygame.Rect((646, 620), (306, 60))), "", object_id="#break_up_button")
+        self.toggle_parent = UIImageButton(scale(pygame.Rect((607, 620), (384, 60))), "", object_id="#unset_adoptive_parent")
 
         self.update_cat_list()
 
@@ -480,8 +480,8 @@ class ChooseAdoptiveParentScreen(Screens):
         self.update_cat_list()
 
         self.toggle_parent.kill()
-        self.toggle_parent = UIImageButton(scale(pygame.Rect((646, 620), (306, 60))), "",
-                                         object_id="#confirm_mate_button")
+        self.toggle_parent = UIImageButton(scale(pygame.Rect((607, 620), (384, 60))), "",
+                                         object_id="#set_adoptive_parent")
 
         self.update_buttons()
 

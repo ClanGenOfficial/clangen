@@ -1853,7 +1853,7 @@ class ProfileScreen(Screens):
                                                       starting_height=2, object_id="#change_mentor_button"
                                                       , manager=MANAGER)
             self.change_adoptive_parent_button = UIImageButton(scale(pygame.Rect((100, 1188), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
+                                                      starting_height=2, object_id="#adoptive_parents"
                                                       , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
