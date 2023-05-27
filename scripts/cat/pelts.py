@@ -198,7 +198,7 @@ class Pelt():
         new_pelt.init_white_patches(pelt_white, parents)
         new_pelt.init_sprite()
         new_pelt.init_scars(age)
-        #self.init_accessories(age)
+        new_pelt.init_accessories(age)
         new_pelt.init_eyes(parents)
         new_pelt.init_pattern()
         new_pelt.init_tint()
@@ -650,11 +650,11 @@ class Pelt():
             self.accessory = None
             return
         
-        acc_display_choice = random.randint(0, 35)
+        acc_display_choice = random.randint(0, 80)
         if age in ['kitten', 'adolescent']:
-            acc_display_choice = random.randint(0, 15)
+            acc_display_choice = random.randint(0, 180)
         elif age in ['young adult', 'adult']:    
-            acc_display_choice = random.randint(0, 50)
+            acc_display_choice = random.randint(0, 100)
         
         if acc_display_choice == 1:
             self.accessory = choice([
