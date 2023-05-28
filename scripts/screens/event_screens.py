@@ -21,7 +21,7 @@ class EventsScreen(Screens):
     health_events = ""
     other_clans_events = ""
     misc_events = ""
-    display_text = "<center> Check this page to see which events are currently happening in the Clan.</center>"
+    display_text = "<center>See which events are currently happening in the Clan.</center>"
     display_events = ""
 
     def __init__(self, name=None):
@@ -246,7 +246,7 @@ class EventsScreen(Screens):
                 self.menu_button_pressed(event)
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
-                self.change_screen('clan screen')
+                self.change_screen('camp screen')
             elif event.key == pygame.K_UP:
                 if self.event_display_type == 'ceremony events':
                     self.event_display_type = "all events"
@@ -426,8 +426,7 @@ class EventsScreen(Screens):
             self.update_display_events_lists()
             self.display_events = self.all_events
 
-        self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
-                                                     "Clan",
+        self.heading = pygame_gui.elements.UITextBox("See which events are currently happening in the Clan.",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                      manager=MANAGER)
