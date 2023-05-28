@@ -1003,9 +1003,8 @@ class Cat():
                 mentor_influence={},
                 app_ceremony={},
                 lead_ceremony=None,
-                possible_death={},
+                possible_history={},
                 died_by=[],
-                possible_scar={},
                 scar_events=[],
                 murder={},
             )
