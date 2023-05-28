@@ -17,7 +17,7 @@ from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import collars, wild_accessories
+from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
@@ -31,13 +31,13 @@ from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def accessory_display_name(cat):
-    accessory = cat.accessory
+    accessory = cat.pelt.accessory
 
     if accessory is None:
         return ''
     acc_display = accessory.lower()
 
-    if accessory in collars:
+    if accessory in Pelt.collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan',
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow',
                          'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink',
@@ -52,7 +52,7 @@ def accessory_display_name(cat):
             else:
                 acc_display = collar_colors[collar_color] + ' collar'
 
-    elif accessory in wild_accessories:
+    elif accessory in Pelt.wild_accessories:
         if acc_display == 'blue feathers':
             acc_display = 'crow feathers'
         elif acc_display == 'red feathers':
@@ -383,12 +383,12 @@ class ProfileScreen(Screens):
                 self.change_screen('relationship screen')
             elif event.ui_element == self.choose_mate_button:
                 self.change_screen('choose mate screen')
-            elif event.ui_element == self.change_mentor_button:
-                self.change_screen('choose mentor screen')
         # Roles Tab
         elif self.open_tab == 'roles':
             if event.ui_element == self.manage_roles:
                 self.change_screen('role screen')
+            elif event.ui_element == self.change_mentor_button:
+                self.change_screen('choose mentor screen')
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -839,8 +839,8 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        if the_cat.accessory:
-            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+        if the_cat.pelt.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------
             output += "\n"
 
@@ -1842,13 +1842,9 @@ class ProfileScreen(Screens):
             self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
                                                    starting_height=2, object_id="#see_family_button", manager=MANAGER)
             self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
-                                                          starting_height=2, object_id="#see_relationships_button"
-                                                          , manager=MANAGER)
+                                                          starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
-            self.change_mentor_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
-                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1868,6 +1864,8 @@ class ProfileScreen(Screens):
                                               "", object_id="#manage_roles_button",
                                               starting_height=2
                                               , manager=MANAGER)
+            self.change_mentor_button = UIImageButton(scale(pygame.Rect((452, 972), (344, 72))), "",
+                                                      starting_height=2, object_id="#change_mentor_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1938,18 +1936,17 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice',
-                                           'mediator apprentice'] or self.the_cat.dead \
-                    or self.the_cat.outside:
-                self.change_mentor_button.disable()
-            else:
-                self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.dead or self.the_cat.outside:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+                                            or self.the_cat.dead or self.the_cat.outside:
+                self.change_mentor_button.disable()
+            else:
+                self.change_mentor_button.enable()
 
         elif self.open_tab == "personal":
 
@@ -2149,9 +2146,9 @@ class ProfileScreen(Screens):
             self.see_family_button.kill()
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
-            self.change_mentor_button.kill()
         elif self.open_tab == 'roles':
             self.manage_roles.kill()
+            self.change_mentor_button.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
@@ -3170,10 +3167,10 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox((200, 1150), "platform_shown", self.platform_shown)
         
         # "Show Scars"
-        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.scars)
+        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.pelt.scars)
         
         # "Show accessories"
-        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.accessory)
+        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.pelt.accessory)
         
         # "Show as living"
         self.make_one_checkbox((400, 1250), "override_dead_lineart", self.override_dead_lineart, self.the_cat.dead,

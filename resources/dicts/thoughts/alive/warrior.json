@@ -98,7 +98,8 @@
     {
         "id": "gen_older_warrior",
         "thoughts": [
-            "Tries to set a good example for younger cats"
+            "Tries to set a good example for younger cats",
+            "Feels their bones creak as they walk"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -1050,13 +1051,28 @@
     ]
 },
 {
-    "id": "twise_warrior_to_living_apprentices",
+    "id": "wise_warrior_to_living_apprentices",
     "thoughts": [
         "Is telling stories to a very interested bunch of apprentices",
         "Instills their wisdom into some rowdy apprentices" 
     ],
     "random_status_constraint": [
         "apprentice"
+    ],
+    "main_trait_constraint": [
+        "wise"
+    ],
+    "random_living_status": [
+        "living"
+    ]
+},
+{
+    "id": "wise_warrior_to_living_elder",
+    "thoughts": [
+        "Asks r_c for some advice" 
+    ],
+    "random_status_constraint": [
+        "elder"
     ],
     "main_trait_constraint": [
         "wise"

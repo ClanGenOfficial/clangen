@@ -125,6 +125,11 @@
             "Display changelog on startup",
             "Shows the changelog of the latest release on startup",
             true
+        ],
+        "random med cat":[
+            "Allow medicine cats to be randomly selected on patrol",
+            "Med cats can be selected with the patrol buttons +1, +3,+6",
+            true
         ]
     },
     "relation": {

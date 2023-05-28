@@ -11,18 +11,8 @@ from ..events_module.generate_events import GenerateEvents
 
 import ujson
 
-from .pelts import describe_appearance
 from .names import Name
-from .appearance_utility import (
-    init_pelt,
-    init_tint,
-    init_sprite,
-    init_scars,
-    init_accessories,
-    init_white_patches,
-    init_eyes,
-    init_pattern,
-)
+from .pelts import Pelt
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
@@ -188,14 +178,13 @@ class Cat():
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
-                 pelt=None,
-                 eye_colour=None,
                  suffix=None,
                  specsuffix_hidden=False,
                  ID=None,
                  moons=None,
                  example=False,
                  faded=False,
+                 pelt:Pelt=None,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -246,12 +235,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.adoptive_parents = []
-        self.pelt = pelt
-        self.tint = None
-        self.white_patches_tint = None
-        self.eye_colour = eye_colour
-        self.eye_colour2 = None
-        self.scars = []
+        self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
         self.apprentice = []
@@ -268,14 +252,6 @@ class Cat():
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
-        self.tortiebase = None
-        self.pattern = None
-        self.tortiepattern = None
-        self.tortiecolour = None
-        self.white_patches = None
-        self.vitiligo = None
-        self.points = None
-        self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
         self.children = []
@@ -289,22 +265,7 @@ class Cat():
         self.df = False
         self.experience_level = None
         self.no_kits = False
-        self.paralyzed = False
-        self.cat_sprites = {
-            "newborn": 20,
-            "kitten": None,
-            "adolescent": None,
-            "young adult": None,
-            "adult": None,
-            "senior adult": None,
-            "senior": None,
-            "para_young": 17,
-            "para_adult": None,
-            "sick_adult": 18,
-            "sick_young": 19
-        }
-
-        self.opacity = 100
+        
         self.prevent_fading = False  # Prevents a cat from fading.
         self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
 
@@ -417,27 +378,9 @@ class Cat():
                 self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
                 self.pronouns = [self.default_pronouns[2].copy()]"""
-            
-            # setting up sprites that might not be correct
-            if self.pelt is not None:
-                if self.pelt.length == 'long':
-                    if self.cat_sprites['adult'] not in [9, 10, 11]:
-                        self.cat_sprites['adult'] = choice([9, 10, 11])
-                        self.cat_sprites['young adult'] = self.cat_sprites['adult']
-                        self.cat_sprites['senior adult'] = self.cat_sprites['adult']
-                        self.cat_sprites['para_adult'] = 16
-                else:
-                    self.cat_sprites['para_adult'] = 15
 
             # APPEARANCE
-            init_pelt(self)
-            init_sprite(self)
-            init_scars(self)
-            init_accessories(self)
-            init_white_patches(self)
-            init_eyes(self)
-            init_pattern(self)
-            init_tint(self)
+            self.pelt = Pelt.generate_new_pelt(self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
             
             #Personality
             self.personality = Personality(kit_trait=self.is_baby())
@@ -481,14 +424,14 @@ class Cat():
                              prefix,
                              suffix,
                              self.pelt.colour,
-                             self.eye_colour,
+                             self.pelt.eye_colour,
                              self.pelt.name,
-                             self.tortiepattern,
+                             self.pelt.tortiepattern,
                              biome=biome,
                              specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
+            self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden, load_existing_name = loading_cat)
 
         # Private Sprite
         self._sprite = None
@@ -900,7 +843,7 @@ class Cat():
     def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
         the allegiances. If short is true, it will generate a very short one, with the minimal amount of information. """
-        output = describe_appearance(self, short)
+        output = Pelt.describe_appearance(self, short)
         # Add "a" or "an"
         if output[0].lower() in "aiou":
             output = f"an {output}"
@@ -910,8 +853,8 @@ class Cat():
         return output
 
     def describe_eyes(self):
-        colour = str(self.eye_colour).lower()
-        colour2 = str(self.eye_colour2).lower()
+        colour = str(self.pelt.eye_colour).lower()
+        colour2 = str(self.pelt.eye_colour2).lower()
 
         if colour == 'palegreen':
             colour = 'pale green'
@@ -929,7 +872,7 @@ class Cat():
             colour = 'sunlit ice'
         elif colour == 'greenyellow':
             colour = 'green-yellow'
-        if self.eye_colour2:
+        if self.pelt.eye_colour2:
             if colour2 == 'palegreen':
                 colour2 = 'pale green'
             if colour2 == 'darkblue':
@@ -1856,9 +1799,9 @@ class Cat():
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 
-        if name == 'mangled tail' and 'NOTAIL' in self.scars:
+        if name == 'mangled tail' and 'NOTAIL' in self.pelt.scars:
             return
-        if name == 'torn ear' and 'NOEAR' in self.scars:
+        if name == 'torn ear' and 'NOEAR' in self.pelt.scars:
             return
 
         injury = INJURIES[name]
@@ -1957,9 +1900,9 @@ class Cat():
         new_condition = choice(possible_conditions)
 
         if new_condition == "born without a leg":
-            cat.scars.append('NOPAW')
+            cat.pelt.scars.append('NOPAW')
         elif new_condition == "born without a tail":
-            cat.scars.append('NOTAIL')
+            cat.pelt.scars.append('NOTAIL')
 
         self.get_permanent_condition(new_condition, born_with=True)
 
@@ -1969,10 +1912,10 @@ class Cat():
             return
 
         # remove accessories if need be
-        if 'NOTAIL' in self.scars and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
-            self.accessory = None
-        if 'HALFTAIL' in self.scars and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
-            self.accessory = None
+        if 'NOTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+            self.pelt.accessory = None
+        if 'HALFTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+            self.pelt.accessory = None
 
         condition = PERMANENT[name]
         new_condition = False
@@ -3092,6 +3035,83 @@ class Cat():
     
     def is_baby(self):
         return self.age in ["kitten", "newborn"]
+    
+    def get_save_dict(self, faded=False):
+        if faded:
+            return {
+                "ID": self.ID,
+                "name_prefix": self.name.prefix,
+                "name_suffix": self.name.suffix,
+                "status": self.status,
+                "moons": self.moons,
+                "parent1": self.parent1,
+                "parent2": self.parent2,
+                "df": self.df,
+                "faded_offspring": self.faded_offspring
+            }
+        else:
+            return {
+                "ID": self.ID,
+                "name_prefix": self.name.prefix,
+                "name_suffix": self.name.suffix,
+                "specsuffix_hidden": self.name.specsuffix_hidden,
+                "gender": self.gender,
+                "gender_align": self.genderalign,
+                #"pronouns": self.pronouns,
+                "birth_cooldown": self.birth_cooldown,
+                "status": self.status,
+                "backstory": self.backstory if self.backstory else None,
+                "moons": self.moons,
+                "trait": self.personality.trait,
+                "facets": self.personality.get_facet_string(),
+                "parent1": self.parent1,
+                "parent2": self.parent2,
+                "adoptive_parents": self.adoptive_parents,
+                "mentor": self.mentor if self.mentor else None,
+                "former_mentor": [cat for cat in self.former_mentor] if self.former_mentor else [],
+                "patrol_with_mentor": self.patrol_with_mentor if self.patrol_with_mentor else 0,
+                "mate": self.mate,
+                "previous_mates": self.previous_mates,
+                "dead": self.dead,
+                "paralyzed": self.pelt.paralyzed,
+                "no_kits": self.no_kits,
+                "exiled": self.exiled,
+                "pelt_name": self.pelt.name,
+                "pelt_color": self.pelt.colour,
+                "pelt_length": self.pelt.length,
+                "sprite_kitten": self.pelt.cat_sprites['kitten'],
+                "sprite_adolescent": self.pelt.cat_sprites['adolescent'],
+                "sprite_adult": self.pelt.cat_sprites['adult'],
+                "sprite_senior": self.pelt.cat_sprites['senior'],
+                "sprite_para_adult": self.pelt.cat_sprites['para_adult'],
+                "eye_colour": self.pelt.eye_colour,
+                "eye_colour2": self.pelt.eye_colour2 if self.pelt.eye_colour2 else None,
+                "reverse": self.pelt.reverse,
+                "white_patches": self.pelt.white_patches,
+                "vitiligo": self.pelt.vitiligo,
+                "points": self.pelt.points,
+                "white_patches_tint": self.pelt.white_patches_tint,
+                "pattern": self.pelt.pattern,
+                "tortie_base": self.pelt.tortiebase,
+                "tortie_color": self.pelt.tortiecolour,
+                "tortie_pattern": self.pelt.tortiepattern,
+                "skin": self.pelt.skin,
+                "tint": self.pelt.tint,
+                "skill": self.skill,
+                "scars": self.pelt.scars if self.pelt.scars else [],
+                "accessory": self.pelt.accessory,
+                "experience": self.experience,
+                "dead_moons": self.dead_for,
+                "current_apprentice": [appr for appr in self.apprentice],
+                "former_apprentices": [appr for appr in self.former_apprentices],
+                "df": self.df,
+                "outside": self.outside,
+                "retired": self.retired if self.retired else False,
+                "faded_offspring": self.faded_offspring,
+                "opacity": self.pelt.opacity,
+                "prevent_fading": self.prevent_fading,
+                "favourite": self.favourite,
+            }
 
 
         
@@ -3357,9 +3377,9 @@ def create_example_cats():
             game.choose_cats[a].moons = choice(range(120, 155))
         elif game.choose_cats[a].moons == 0:
             game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
-        for scar in game.choose_cats[a].scars:
+        for scar in game.choose_cats[a].pelt.scars:
             if scar in not_allowed:
-                game.choose_cats[a].scars.remove(scar)
+                game.choose_cats[a].pelt.scars.remove(scar)
     
         #update_sprite(game.choose_cats[a])
     
