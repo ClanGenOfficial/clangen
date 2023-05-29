@@ -936,7 +936,7 @@ class ProfileScreen(Screens):
                 if len(the_cat.mate) - 2 > 1:
                     output += " others"
                 else:
-                    outpit += " other"
+                    output += " other"
 
         if not the_cat.dead:
             # NEWLINE ----------
