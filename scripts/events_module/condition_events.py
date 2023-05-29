@@ -166,7 +166,7 @@ class Condition_Events():
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     if game.clan.game_mode == "classic":
-                        if "scar" in injury_event.tags and len(cat.scars) < 4:
+                        if "scar" in injury_event.tags and len(cat.pelt.scars) < 4:
                             # add tagged scar
                             for scar in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
                                 if scar in injury_event.tags:
@@ -177,7 +177,7 @@ class Condition_Events():
                                 if "scar" in injury_event.history_text:
                                     history_text = history_text_adjust(injury_event.history_text['scar'],
                                                                               other_clan_name, game.clan)
-                                    self.history.add_death_or_scars(cat, other_cat, history_text, scar=True)
+                                    self.history.add_scar(cat, history_text, other_cat=other_cat)
                     else:
                         # record proper history text possibilities
                         if injury_event.history_text:
@@ -193,12 +193,10 @@ class Condition_Events():
                                 possible_death = history_text_adjust(injury_event.history_text['reg_death'],
                                                                     other_clan_name, game.clan)
 
-                            if possible_scar:
-                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_scar,
-                                                                         other_cat, scar=True)
-                            elif possible_death:
-                                self.history.add_possible_death_or_scars(cat, injury_event.injury, possible_death,
-                                                                         other_cat, death=True)
+                            if possible_scar or possible_death:
+                                self.history.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
+                                                                  death_text=possible_death)
+                            
                         cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
@@ -396,13 +394,13 @@ class Condition_Events():
                 # clear event list to get rid of any healed or risk event texts from other illnesses
                 event_list.clear()
                 event_list.append(event)
-                self.history.add_death_or_scars(cat, text=event, death=True)
+                self.history.add_death(cat, event)
                 game.herb_events_list.append(event)
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
             elif cat.dead and cat.status == 'leader':
-                self.history.add_death_or_scars(cat, text=f"died to {illness}", death=True)
+                self.history.add_death(cat, f"died to {illness}")
                 break
 
             elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
@@ -410,7 +408,7 @@ class Condition_Events():
 
             # heal the cat
             elif cat.healed_condition is True:
-                self.history.remove_possible_death_or_scars(cat, illness)
+                self.history.remove_possible_history(cat, illness)
                 game.switches['skip_conditions'].append(illness)
                 # gather potential event strings for healed illness
                 possible_string_list = ILLNESS_HEALED_STRINGS[illness]
@@ -495,10 +493,10 @@ class Condition_Events():
 
                 if cat.status == 'leader':
                     history_text = event.replace(cat.name, " ")
-                    self.history.add_death_or_scars(cat, condition=injury, text=history_text.strip(), death=True)
+                    self.history.add_death(cat, condition=injury, death_text=history_text.strip())
                     event = event.replace('.', ', losing a life.')
                 else:
-                    self.history.add_death_or_scars(cat, condition=injury, text=event, death=True)
+                    self.history.add_death(cat, condition=injury, death_text=event)
 
                 # clear event list first to make sure any heal or risk events from other injuries are not shown
                 event_list.clear()
@@ -510,24 +508,11 @@ class Condition_Events():
                 triggered = True
                 scar_given = None
 
-                # only try to give a scar if the event gave possible scar history
-                if self.history.get_possible_death_or_scars(cat, injury, scar=True):
-                    event, scar_given = self.scar_events.handle_scars(cat, injury)
-                    game.herb_events_list.append(event)
-                else:
-                    try:
-                        # gather potential event strings for gotten condition
-                        possible_string_list = INJURY_HEALED_STRINGS[injury]
-                        random_index = random.randrange(0, len(possible_string_list))
-                        event = possible_string_list[random_index]
-                    except KeyError:
-                        print(
-                            f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
-                        event = "m_c's injury has healed."
-                    event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
-                    game.herb_events_list.append(event)
+                # Try to give a scar
+                event, scar_given = self.scar_events.handle_scars(cat, injury)
+                game.herb_events_list.append(event)
                     
-                self.history.remove_possible_death_or_scars(cat, injury)
+                self.history.remove_possible_history(cat, injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
 
@@ -602,9 +587,9 @@ class Condition_Events():
                 event_list.append(event)
 
                 if cat.status != 'leader':
-                    self.history.add_death_or_scars(cat, text=event, death=True)
+                    self.history.add_death(cat, death_text=event)
                 else:
-                    self.history.add_death_or_scars(cat, text=f"killed by complications caused by {condition}", death=True)
+                    self.history.add_death(cat, death_text=f"killed by complications caused by {condition}")
 
                 game.herb_events_list.append(event)
                 break

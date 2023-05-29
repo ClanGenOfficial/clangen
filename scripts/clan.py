@@ -1339,10 +1339,20 @@ class Clan():
         deputy = Cat.fetch_cat(self.deputy) if isinstance(Cat.fetch_cat(self.deputy), Cat) else None
         
         weight = 0.3
-        clan_sociability = round(weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
-            (1-weight) *  statistics.median([i.personality.sociability for i in all_cats]))
-        clan_aggression = round(weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
-            (1-weight) *  statistics.median([i.personality.aggression for i in all_cats]))
+
+        if (leader or deputy) and all_cats:
+            clan_sociability = round(weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
+                (1-weight) *  statistics.median([i.personality.sociability for i in all_cats]))
+            clan_aggression = round(weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
+                (1-weight) *  statistics.median([i.personality.aggression for i in all_cats]))
+        elif (leader or deputy):
+            clan_sociability = round(statistics.mean([i.personality.sociability for i in [leader, deputy] if i]))
+            clan_aggression = round(statistics.mean([i.personality.aggression for i in [leader, deputy] if i]))
+        elif all_cats:
+            clan_sociability = round(statistics.median([i.personality.sociability for i in all_cats]))
+            clan_aggression = round(statistics.median([i.personality.aggression for i in all_cats]))
+        else:
+            return "stoic"
         
         # temperment = ['high_agress', 'med_agress', 'low agress' ]
         if 12 <= clan_sociability:
