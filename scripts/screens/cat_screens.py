@@ -1438,8 +1438,8 @@ class ProfileScreen(Screens):
         returns adjusted death history text
         """
         text = None
-        death_history = self.history.get_death_or_scars(self.the_cat, death=True)
-        murder_history = self.history.get_murders(self.the_cat)
+        death_history = self.the_cat.history.get_death_or_scars(self.the_cat, death=True)
+        murder_history = self.the_cat.history.get_murders(self.the_cat)
         if game.switches['show_history_moons']:
             moons = True
         else:
