@@ -151,7 +151,7 @@ class OutsideClanScreen(Screens):
                                                  object_id="#to_dead_button", manager=MANAGER,
                                                 tool_tip_text='view cats in the afterlife')
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((625, 1190), (68, 68))), "",
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter"),
