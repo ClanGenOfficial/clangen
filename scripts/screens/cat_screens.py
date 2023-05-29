@@ -1449,7 +1449,7 @@ class ProfileScreen(Screens):
         if death_history:
             all_deaths = []
             for death in death_history:
-                if murder_history:
+                if murder_history.get("is_victim"):
                     # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
                     for event in murder_history["is_victim"]:
                         if event["text"] == death["text"] and event["moon"] == death["moon"]:
@@ -1551,7 +1551,7 @@ class ProfileScreen(Screens):
                     else:
                         victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-        print(victim_text)
+        #print(victim_text)
         return victim_text
 
     def toggle_conditions_tab(self):
