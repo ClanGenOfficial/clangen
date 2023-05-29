@@ -508,8 +508,17 @@ class Condition_Events():
                 triggered = True
                 scar_given = None
 
-                # Try to give a scar
+                # Try to give a scar, and get the event text to be displayed
                 event, scar_given = self.scar_events.handle_scars(cat, injury)
+                # If a scar was not given, we need to grab a seperate healed event
+                if not scar_given:
+                    try:
+                        event = random.choice(INJURY_HEALED_STRINGS[injury])
+                    except KeyError:
+                        print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
+                        event = f"m_c's injury {injury} has healed"
+                event = event_text_adjust(Cat, event, cat, other_cat=None)
+                
                 game.herb_events_list.append(event)
                     
                 self.history.remove_possible_history(cat, injury)
