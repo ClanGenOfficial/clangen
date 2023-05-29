@@ -1001,6 +1001,7 @@ class SaveError(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+               
                 
 class SaveAsImage(UIWindow):
     def __init__(self, image_to_save, file_name):
