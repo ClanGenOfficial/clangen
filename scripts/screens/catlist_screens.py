@@ -562,7 +562,8 @@ class StarClanScreen(Screens):
         self.to_living_button = UIImageButton(scale(pygame.Rect((560, 270), (134, 68))), "",
                                                 object_id="#to_living_button", manager=MANAGER,
                                                 tool_tip_text='view living cats')
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", manager=MANAGER)
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", 
+                                              object_id="#arrow_right_button", manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
