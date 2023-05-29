@@ -440,13 +440,14 @@ class History:
         return str(cat.history.lead_ceremony)
 
     @staticmethod
-    def get_possible_history(cat, condition=None, death=False, scar=False):
+    def get_possible_history(cat, condition=None):
         """
         Returns the asked for death/scars dict, example of single event structure:
 
         {
         "involved": ID
-        "text": text
+        "death_text": text
+        "scar_text": text
         },
 
         example of multi event structure:
@@ -454,19 +455,19 @@ class History:
         {
         "condition name": {
             "involved": ID
-            "text": text
+            "death_text": text
+            "scar_text": text
             },
         "condition name": {
             "involved": ID
-            "text": text
+            "death_text": text
+            "scar_text": text
             },
         },
 
         if possible scar/death is empty, a NoneType is returned
         :param cat: cat object
         :param condition: the name of the condition that caused the death/scar (if looking for specific event, else leave None to get all events)
-        :param death: set True to get deaths
-        :param scar: set True to get scars
         """
         History.check_load(cat)
 
