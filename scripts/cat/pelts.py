@@ -988,7 +988,7 @@ class Pelt():
                 # If using short, don't add describe the colors of calicos and torties. Just call them calico, tortie, or mottled. 
                 # If using short, don't describe the colors of calicos and torties. Just call them calico, tortie, or mottled. 
                 if cat.pelt.colour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours and \
-                    cat.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
+                    cat.pelt.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
                     color_name = "mottled"
                 else:
                     color_name = cat.pelt.name.lower()

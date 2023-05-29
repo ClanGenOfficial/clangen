@@ -903,44 +903,40 @@ class ProfileScreen(Screens):
 
         # MATE
         if len(the_cat.mate) > 0:
-            # NEWLINE ----------
             output += "\n"
-            if len(the_cat.mate) > 0:
-                # collect all names
-                mates = []
-                prev_mates = []
-                for mate_id in the_cat.mate:
-                    if mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(mate_id)
-                        if not mate_ob:
-                            continue
-                        if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
-                            prev_mates.append(str(mate_ob.name))
-                        else:
-                            mates.append(str(mate_ob.name))
+            
+            
+            mate_names = []
+            # Grab the names of only the first two, since that's all we will display
+            for _m in the_cat.mate[:2]:
+                mate_ob = Cat.fetch_cat(_m)
+                if not isinstance(mate_ob, Cat):
+                    continue
+                if mate_ob.dead != self.the_cat.dead:
+                    if the_cat.dead:
+                        former_indicate = "(living)"
                     else:
-                        output += 'Error: mate: ' + str(mate_id) + " not found"
-                for prev_mate_id in the_cat.previous_mates:
-                    if prev_mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(prev_mate_id)
-                        if not mate_ob:
-                            continue
-                        prev_mates.append(str(mate_ob.name))
-                    else:
-                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
-                # merge the names together for the output
-                if len(mates) > 0:
-                    if len(mates) > 1:
-                        output += 'mates: ' + str(', '.join(mates))
-                    else:
-                        output += 'mate: ' + mates[0]
-                if len(prev_mates) > 0:
-                    if len(mates) > 0:
-                        output += '\n'
-                    if len(prev_mates) > 1:
-                        output += 'former mates: ' + str(', '.join(prev_mates))
-                    else:
-                        output += 'former mate: ' + prev_mates[0]
+                        former_indicate = "(dead)"
+                    
+                    mate_names.append(f"{str(mate_ob.name)} {former_indicate}")
+                elif mate_ob.outside != self.the_cat.outside:
+                    mate_names.append(f"{str(mate_ob.name)} (away)")
+                else:
+                    mate_names.append(f"{str(mate_ob.name)}")
+                    
+            if len(the_cat.mate) == 1:
+                output += "mate: " 
+            else:
+                output += "mates: "
+            
+            output += ", ".join(mate_names)
+            
+            if len(the_cat.mate) > 2:
+                output += f", and {len(the_cat.mate) - 2}"
+                if len(the_cat.mate) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -991,16 +987,23 @@ class ProfileScreen(Screens):
 
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
-
-            if len(the_cat.former_apprentices) == 1 and Cat.fetch_cat(the_cat.former_apprentices[0]):
-                output += 'former apprentice: ' + str(
-                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
-
-            elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join(
-                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices if Cat.fetch_cat(i)])
+        if the_cat.former_apprentices:
+            
+            apprentices = [Cat.fetch_cat(i) for i in the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+            
+            if len(apprentices) > 2:
+                output += 'former apprentices: ' + ", ".join([str(i.name) for i in apprentices[:2]]) + \
+                    ", and " + str(len(apprentices) - 2) 
+                if len(apprentices) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
+            else:
+                if len(apprentices) > 1:
+                    output += 'former apprentices: '
+                else:
+                    output += 'former apprentice: '
+                output += ", ".join(str(i.name) for i in apprentices)
 
             # NEWLINE ----------
             output += "\n"
@@ -1218,16 +1221,21 @@ class ProfileScreen(Screens):
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
             if app_history:
-                life_history.append(str(app_history))
+                life_history.append(app_history)
+                
+            #Get mentorshif text if it exists
+            mentor_history = self.get_mentorship_text()
+            if mentor_history:
+                life_history.append(mentor_history)
 
             # now go get the scar history and add that if any exists
             body_history = []
             scar_history = self.get_scar_text()
             if scar_history:
-                body_history.append(str(scar_history))
+                body_history.append(scar_history)
             death_history = self.get_death_text()
             if death_history:
-                body_history.append(str(death_history))
+                body_history.append(death_history)
             # join scar and death into one paragraph
             if body_history:
                 life_history.append(" ".join(body_history))
@@ -1433,6 +1441,34 @@ class ProfileScreen(Screens):
         apprenticeship_history = influence_history + " " + graduation_history
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
+
+    def get_mentorship_text(self):
+        """
+        
+        returns full list of previously mentored apprentices. 
+        
+        """
+        
+        text = ""
+        # Doing this is two steps 
+        all_real_apprentices = [Cat.fetch_cat(i) for i in self.the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+        if all_real_apprentices:
+            text = "{PRONOUN/m_c/subject/CAP} mentored "
+            if len(all_real_apprentices) > 2:
+                text += ', '.join([str(i.name) for i in all_real_apprentices[:-1]]) + ", and " + str(all_real_apprentices[-1].name) + "."
+            elif len(all_real_apprentices) == 2:
+                text += str(all_real_apprentices[0].name) + " and " + str(all_real_apprentices[1].name) + "."
+            elif len(all_real_apprentices) == 1:
+                text += str(all_real_apprentices[0].name) + "."
+            
+            cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+            }   
+            
+            text = process_text(text, cat_dict)
+        
+        return text
+        
 
     def get_death_text(self):
         """
