@@ -1485,7 +1485,7 @@ class ProfileScreen(Screens):
         if death_history:
             all_deaths = []
             for death in death_history:
-                if murder_history:
+                if murder_history.get("is_victim"):
                     # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
                     for event in murder_history["is_victim"]:
                         if event["text"] == death["text"] and event["moon"] == death["moon"]:

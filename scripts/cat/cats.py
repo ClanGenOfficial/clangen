@@ -961,9 +961,8 @@ class Cat():
                 mentor_influence={},
                 app_ceremony={},
                 lead_ceremony=None,
-                possible_death={},
+                possible_history={},
                 died_by=[],
-                possible_scar={},
                 scar_events=[],
                 murder={},
             )
@@ -977,9 +976,8 @@ class Cat():
                         'mentor_influence'] if "mentor_influence" in history_data else {},
                     app_ceremony=history_data['app_ceremony'] if "app_ceremony" in history_data else {},
                     lead_ceremony=history_data['lead_ceremony'] if "lead_ceremony" in history_data else None,
-                    possible_death=history_data['possible_death'] if "possible_death" in history_data else {},
+                    possible_history=history_data['possible_history'] if "possible_history" in history_data else {},
                     died_by=history_data['died_by'] if "died_by" in history_data else [],
-                    possible_scar=history_data['possible_scar'] if "possible_scar" in history_data else {},
                     scar_events=history_data['scar_events'] if "scar_events" in history_data else [],
                     murder=history_data['murder'] if "murder" in history_data else {},
                 )
@@ -1005,9 +1003,8 @@ class Cat():
                 mentor_influence={},
                 app_ceremony={},
                 lead_ceremony=None,
-                possible_death={},
+                possible_history={},
                 died_by=[],
-                possible_scar={},
                 scar_events=[],
                 murder={},
             )

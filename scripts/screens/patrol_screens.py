@@ -222,7 +222,7 @@ class PatrolScreen(Screens):
         if event.ui_element == self.elements['patrol_again']:
             self.open_choose_cats_screen()
         elif event.ui_element == self.elements["clan_return"]:
-            self.change_screen('clan screen')
+            self.change_screen('camp screen')
 
     def screen_switches(self):
         self.set_disabled_menu_buttons(["patrol_screen"])
