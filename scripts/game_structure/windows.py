@@ -399,9 +399,9 @@ class ChangeCatName(UIWindow):
                                                     None,
                                                     use_suffix,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).prefix)
@@ -414,9 +414,9 @@ class ChangeCatName(UIWindow):
                                                     use_prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).suffix)
