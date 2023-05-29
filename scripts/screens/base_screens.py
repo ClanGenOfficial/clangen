@@ -24,17 +24,17 @@ class Screens():
             manager=MANAGER,
             object_id="#events_menu_button"
         ),
-        "clan_screen": UIImageButton(
+        "camp_screen": UIImageButton(
             scale(pygame.Rect((656, 120), (116, 60))),
             "",
             visible=False,
             manager=MANAGER,
-            object_id="#clan_menu_button"),
-        "starclan_screen": UIImageButton(
+            object_id="#camp_menu_button"),
+        "catlist_screen": UIImageButton(
             scale(pygame.Rect((772, 120), (176, 60))),
             "",
             visible=False,
-            object_id="#starclan_menu_button"),
+            object_id="#catlist_menu_button"),
         "patrol_screen": UIImageButton(
             scale(pygame.Rect((948, 120), (160, 60))),
             "",
@@ -47,12 +47,6 @@ class Screens():
             visible=False,
             manager=MANAGER,
             object_id="#main_menu_button"),
-        "list_screen": UIImageButton(
-            scale(pygame.Rect((1352, 120), (198, 60))),
-            "",
-            visible=False,
-            manager=MANAGER,
-            object_id="#list_button"),
         "allegiances": UIImageButton(
             scale(pygame.Rect((1314, 50), (236, 60))),
             "",
@@ -60,7 +54,7 @@ class Screens():
             manager=MANAGER,
             object_id="#allegiances_button"),
         "stats": UIImageButton(
-            scale(pygame.Rect((50, 120), (162, 60))),
+            scale(pygame.Rect((1388, 120), (162, 60))),
             "",
             visible=False,
             manager=MANAGER,
@@ -99,7 +93,7 @@ class Screens():
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ['clan screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
+        if self.name in ['camp screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
                          'med den screen']:
             game.last_screen_forProfile = self.name
 
@@ -172,16 +166,14 @@ class Screens():
             pass
         elif event.ui_element == self.menu_buttons["events_screen"]:
             self.change_screen('events screen')
-        elif event.ui_element == self.menu_buttons["clan_screen"]:
-            self.change_screen('clan screen')
-        elif event.ui_element == self.menu_buttons["starclan_screen"]:
-            self.change_screen('starclan screen')
+        elif event.ui_element == self.menu_buttons["camp_screen"]:
+            self.change_screen('camp screen')
+        elif event.ui_element == self.menu_buttons["catlist_screen"]:
+            self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
-        elif event.ui_element == self.menu_buttons["list_screen"]:
-            self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["allegiances"]:
             self.change_screen('allegiances screen')
         elif event.ui_element == self.menu_buttons["stats"]:
@@ -197,13 +189,9 @@ class Screens():
         """Updates the menu heading text"""
         self.menu_buttons['heading'].set_text(text)        
     
-    # Update stats button position if moons and seasons UI is on
+    # Update if moons and seasons UI is on
     def update_mns(self):
         if game.settings["moons and seasons"]:
-            self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((1388, 190))
-            self.menu_buttons['stats']._rect = scale(pygame.Rect(1388, 190, 162, 60))
-            self.menu_buttons['stats'].blit_data[1] = scale(pygame.Rect(1388, 190, 162, 60))
-            self.menu_buttons['stats'].rebuild()
             self.menu_buttons['moons_n_seasons_arrow'].kill()
             self.menu_buttons['moons_n_seasons'].kill()
             if game.settings['mns open']:
@@ -216,10 +204,6 @@ class Screens():
         else:
             self.menu_buttons['moons_n_seasons'].hide()
             self.menu_buttons['moons_n_seasons_arrow'].hide()
-            self.menu_buttons['stats'].dynamic_dimensions_orig_top_left = scale_dimentions((50, 120))
-            self.menu_buttons['stats']._rect = scale(pygame.Rect(50, 120, 162, 60))
-            self.menu_buttons['stats'].blit_data[1] = scale(pygame.Rect(50, 120, 162, 60))
-            self.menu_buttons['stats'].rebuild()
     
     # open moons and seasons UI (AKA wide version)    
     def mns_open(self):
