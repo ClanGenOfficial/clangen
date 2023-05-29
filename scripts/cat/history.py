@@ -258,9 +258,9 @@ class History:
         # Use a default is none is provided.
         # Will probally sound weird, but it's better than nothing
         if not death_text:
-            death_text = f"m_c died from {condition}"
+            death_text = f"m_c died from an injury or illness ({condition})."
         if not scar_text:
-            scar_text = f"m_c was scarred from {condition}"        
+            scar_text = f"m_c was scarred from an injury or illness ({condition})."        
         
         cat.history.possible_history[condition] = {
             "death_text": death_text,

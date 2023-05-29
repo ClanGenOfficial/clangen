@@ -35,7 +35,7 @@ class Scar_Events():
 
             # move potential scar text into displayed scar text
             self.history.add_scar(cat,
-                                  f"m_c was scarred from an injury ({injury_name})",
+                                  f"m_c was scarred from an injury ({injury_name}).",
                                   condition=injury_name)
 
             specialty = None  # Scar to be set
