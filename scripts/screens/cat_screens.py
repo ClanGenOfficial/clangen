@@ -1463,16 +1463,22 @@ class ProfileScreen(Screens):
                     text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
 
 
-                if index == death_number - 1 and self.the_cat.dead:
-                    if death_number == 9:
-                        life_text = "lost their final life"
+                if self.the_cat.status == 'leader':
+                    if index == death_number - 1 and self.the_cat.dead:
+                        if death_number == 9:
+                            life_text = "lost their final life"
+                        else:
+                            life_text = "lost their final lives"
                     else:
-                        life_text = "lost their final lives"
+                        life_text = "lost a life"
                 else:
-                    life_text = "lost a life"
+                    life_text = ""
 
                 if text:
-                    text = f"{life_text} when {{PRONOUN/m_c/subject}} {text}"
+                    if life_text:
+                        text = f"{life_text} when {{PRONOUN/m_c/subject}} {text}"
+                    else:
+                        text = f"{text}"
 
                     if moons:
                         text += f" (Moon {death['moon']})"
