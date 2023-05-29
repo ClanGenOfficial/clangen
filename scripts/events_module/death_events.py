@@ -129,7 +129,7 @@ class Death_Events():
                 additional_event_text += cat.die(body)
                 death_history = history_text_adjust(death_history, other_clan_name, game.clan)
 
-            self.history.add_death_or_scars(cat, other_cat, death_history, murder_unrevealed_history, death=True)
+            self.history.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
 
         # give death history to other cat and kill them if they die
         if "other_cat_death" in death_cause.tags or "multi_death" in death_cause.tags:
@@ -149,7 +149,7 @@ class Death_Events():
                 additional_event_text += other_cat.die(body)
                 other_death_history = history_text_adjust(death_cause.history_text.get('reg_death'), other_clan_name, game.clan)
 
-            self.history.add_death_or_scars(other_cat, cat, other_death_history, death=True)
+            self.history.add_death(other_cat, other_death_history, other_cat=cat)
 
         # give injuries to other cat if tagged as such
         if "other_cat_injured" in death_cause.tags:

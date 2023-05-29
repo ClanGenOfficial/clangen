@@ -1658,32 +1658,26 @@ class Patrol():
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             if possible:
-                self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                         scar=True)
+                self.history.add_possible_history(cat, condition, scar_text=adjust_text)
             else:
-                self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                scar=True)
+                self.history.add_scar(cat, adjust_text)
         if death:
             if cat.status == 'leader':
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
             else:
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
@@ -1870,8 +1864,9 @@ class Patrol():
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
                 affect = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
-                print(affect)
+                if affect:
+                    History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
+                    print(affect)
 
     def handle_reputation(self, difference):
         """

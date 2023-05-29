@@ -22,20 +22,21 @@ class Scar_Events():
         """ 
         This function handles the scars
         """
-
-        chance = int(random.random() * 13 - cat.injuries[injury_name]["moons_with"])
-        if chance <= 0:
-            chance = 1
+    
+        
+        chance = max(int(8 - cat.injuries[injury_name]["moons_with"]), 1)
+        if cat.injuries[injury_name]["severity"] == "minor":
+            chance += 8
+        
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 3
-        if len(cat.pelt.scars) < 4 and chance <= 6:
+        if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
 
             # move potential scar text into displayed scar text
-            self.history.add_death_or_scars(cat,
-                                            condition=injury_name,
-                                            scar=True
-                                            )
+            self.history.add_scar(cat,
+                                  f"m_c was scarred from an injury ({injury_name}).",
+                                  condition=injury_name)
 
             specialty = None  # Scar to be set
 
@@ -192,7 +193,7 @@ class Scar_Events():
                     event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
                 scar_given = None
         else:
-            self.history.remove_possible_death_or_scars(cat, injury_name)
+            self.history.remove_possible_history(cat, injury_name)
             if injury_name == "poisoned":
                 event_string = f"{cat.name} has recovered fully from the poison."
             else:

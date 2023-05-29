@@ -742,7 +742,7 @@ def name_repl(m, cat_dict):
 
 def process_text(text, cat_dict):
     """ Add the correct name and pronouns into a string. """
-    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_dict), text)
+    adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict), text)
 
     name_patterns = [re.escape(l) for l in cat_dict]
 
@@ -1237,33 +1237,6 @@ def scale_dimentions(dim):
     dim = tuple(dim)
 
     return dim
-
-
-def draw(cat, pos):
-    new_pos = list(pos)
-    if pos[0] == 'center':
-        new_pos[0] = screen_x / 2 - sprites.size / 2
-    elif pos[0] < 0:
-        new_pos[0] = screen_x + pos[0] - sprites.size
-    cat.used_screen.blit(cat.sprite, new_pos)
-
-
-def draw_big(cat, pos):
-    new_pos = list(pos)
-    if pos[0] == 'center':
-        new_pos[0] = screen_x / 2 - sprites.new_size / 2
-    elif pos[0] < 0:
-        new_pos[0] = screen_x + pos[0] - sprites.new_size
-    cat.used_screen.blit(cat.sprite, new_pos)
-
-
-def draw_large(cat, pos):
-    new_pos = list(pos)
-    if pos[0] == 'center':
-        new_pos[0] = screen_x / 2 - sprites.size * 3 / 2
-    elif pos[0] < 0:
-        new_pos[0] = screen_x + pos[0] - sprites.size * 3
-    cat.used_screen.blit(cat.sprite, new_pos)
 
 
 def update_sprite(cat):

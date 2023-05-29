@@ -308,7 +308,7 @@ class Pregnancy_Events():
             else:
                 cat.die()
                 death_event = (f"{cat.name} died while kitting.")
-            self.history.add_death_or_scars(cat, text=death_event, death=True)
+            self.history.add_death(cat, death_text=death_event)
         elif clan.game_mode != 'classic' and not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
@@ -316,7 +316,7 @@ class Pregnancy_Events():
                     death_event = (f" died after a harsh kitting.")
                 else:
                     death_event = (f"{cat.name} after a harsh kitting.")
-                self.history.add_possible_death_or_scars(cat, 'blood loss', death_event, death=True)
+                self.history.add_possible_history(cat, 'blood loss', death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
                 meds = get_med_cats(Cat, working=False)
