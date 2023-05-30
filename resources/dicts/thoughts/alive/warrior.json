@@ -9,7 +9,7 @@
             "Somehow has a gaggle of kits following {PRONOUN/m_c/object}",
             "Is being begged by r_c to teach {PRONOUN/r_c/poss} a few moves, despite r_c being a kit",
             "Somehow got roped up in watching r_c for the day",
-            "Theatrically dies after r_c slays them",
+            "Theatrically dies after r_c slays {PRONOUN/m_c/object}",
             "Has to pretend to be a captured warrior for r_c's games",
             "Is pretending to be a big, evil warrior for r_c",
             "Gave a badger ride to r_c, and is now begged by more kittens to do the same"
@@ -99,7 +99,7 @@
         "id": "gen_older_warrior",
         "thoughts": [
             "Tries to set a good example for younger cats",
-            "Feels {PRONOUN/m_c/poss} bones creak as they walk"
+            "Feels {PRONOUN/m_c/poss} bones creak as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks}"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -706,7 +706,7 @@
         "Counts every cat in the Clan to make sure nobody's missing",
         "Stumbles over {PRONOUN/m_c/poss} words, never quite able to get it right",
         "Got scared by a mouse while hunting",
-        "Keeps {PRONOUN/m_c/poss} eyes on the skies, afraid an eagle could come get them",
+        "Keeps {PRONOUN/m_c/poss} eyes on the skies, afraid an eagle could come get {PRONOUN/m_c/object}",
         "Tries to breathe deeply to no avail"
     ],
     "main_trait_constraint": [
@@ -945,7 +945,7 @@
         "Is offering helpful advice to a gloomy Clanmate",
         "Brought back a much-needed herb to the medicine cat after a hunting patrol",
         "Prepares the perfect gift for a friend",
-        "Notices a Clanmate is tired and offer to take their chores",
+        "Notices a Clanmate is tired and offers to take their chores",
         "Gets an injured Clanmate a piece of fresh-kill",
         "Spends some time helping out the medicine cat today",
         "Reassures an apprentice who's nervous to go on patrol"
@@ -1017,7 +1017,7 @@
     "id": "wise_warrior",
     "thoughts": [
         "Has a suggestion for the Clan leader",
-        "Is grooming themselves thoughtfully",
+        "Is grooming {PRONOUN/m_c/self} thoughtfully",
         "Tells some kits a thing or two about growing older",
         "Solves a problem by thinking back to another time the exact same thing happened",
         "Feels completely at peace",
@@ -1031,7 +1031,7 @@
     "id": "wise_warrior_to_living_apprentices",
     "thoughts": [
         "Is telling stories to a very interested bunch of apprentices",
-        "Instills their wisdom into some rowdy apprentices" 
+        "Instills {PRONOUN/m_c/poss} wisdom into some rowdy apprentices" 
     ],
     "random_status_constraint": [
         "apprentice"
