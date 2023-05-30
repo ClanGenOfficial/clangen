@@ -540,27 +540,6 @@
     ]
 },
 {
-    "id": "faithful_warrior",
-    "thoughts": [
-        "Is giving thanks to StarClan",
-        "Is assuring some worried Clanmates that StarClan will guide them",
-        "Is pondering their warrior ancestors, and the protections they grant the Clan",
-        "Would follow their Clanmates to the ends of the earth",
-        "Feels safe within the walls of the camp",
-        "Is promising to always serve StarClan",
-        "Is hoping that StarClan protects their loved ones...",
-        "Thanked StarClan for their catch out on a hunting patrol today",
-        "Prays to StarClan that next season will be a good one",
-        "Rolls their eyes at the kits laughing about spirits not being real",
-        "Goes to the medicine cat to ask for spiritual advice",
-        "Wonders if StarClan can hear them",
-        "Leaves fresh-kill at the grave of a dead loved one"
-    ],
-    "main_trait_constraint": [
-        "faithful"
-    ]
-},
-{
     "id": "fierce_warrior",
     "thoughts": [
         "Isn't scared of anything today!",
