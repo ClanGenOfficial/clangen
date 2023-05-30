@@ -228,7 +228,7 @@
         "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
         "Draws blood when training with another warrior and coldly says it was an accident",
         "Wonders how easy it'd be to attack the leader from where they lay",
-        "Daydreams about slaughtering every cat {PRONOUN/m_c/subject}{VERB/m_c/despise/despises}"
+        "Daydreams about slaughtering every cat {PRONOUN/m_c/subject} {VERB/m_c/despise/despises}"
     ],
     "main_trait_constraint": [
         "bloodthirsty"
@@ -240,9 +240,9 @@
         "Is getting some looks after speaking out of turn at the last Clan meeting",
         "Spoke out of turn at the last Clan meeting",
         "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
-        "Runs out of their den into 'battle', only to find that it was just a storm",
-        "Prances around with their tail up high, ready for anything",
-        "Promises the kits they'll protect them when the time comes",
+        "Runs out of {PRONOUN/m_c/poss} den into 'battle', only to find that it was just a storm",
+        "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
+        "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes",
         "Is not afraid of anything"
     ],
     "main_trait_constraint": [
@@ -253,23 +253,23 @@
     "id": "calm_warrior",
     "thoughts": [
         "Is taking a moment to appreciate some peace and quiet",
-        "Looks on as the camp buzzes around them",
+        "Looks on as the camp buzzes around {PRONOUN/m_c/object}",
         "Is basking in the gentle sunlight around camp",
         "Is meditating upon a sun-warmed rock",
-        "Is humming a soothing tune to themselves as they work",
+        "Is humming a soothing tune to {PRONOUN/m_c/self} as {PRONOUN/m_c/subject} {VERB/m_c/work/works}",
         "Is out on a peaceful stroll",
         "Is remembering simpler days with fondness",
         "Is offering gentle advice to a frustrated Clanmate",
-        "Is lining their nest with lavender",
+        "Is lining {PRONOUN/m_c/poss} nest with lavender",
         "Smells sweet, like lavender",
-        "Never fails to offer comfort to their Clanmates",
-        "Is taking their sweet time eating their meal",
+        "Never fails to offer comfort to {PRONOUN/m_c/poss} Clanmates",
+        "Is taking {PRONOUN/m_c/poss} sweet time eating {PRONOUN/m_c/poss} meal",
         "Is purring quietly",
         "Has been reaching meditative states while sunbathing",
         "Calmly takes the lead while some Clanmates argue over this and that",
         "Is unable to be scared, no matter how much the kits try",
         "Knows everything will be okay in the end",
-        "Takes a deep breath and doesn't let a mean comment get to them"
+        "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}"
     ],
     "main_trait_constraint": [
         "calm"
@@ -278,9 +278,9 @@
 {
     "id": "careful_warrior",
     "thoughts": [
-        "Is double-checking their nest for burrs",
+        "Is double-checking {PRONOUN/m_c/poss} nest for burrs",
         "Is getting a small scratch checked out by the medicine cat",
-        "Is slowly and methodically grooming themselves",
+        "Is slowly and methodically grooming {PRONOUN/m_c/self}",
         "Is chiding a younger cat for being so reckless",
         "Is padding back and forth, across the camp",
         "Is dutifully standing guard outside of camp",
@@ -288,7 +288,7 @@
         "Is helping to reinforce the camp walls",
         "Is patching up a hole in the camp wall",
         "Is helping to reinforce the walls of the elders' den",
-        "Is going back to check on an old fox burrow they discovered yesterday, just to be safe",
+        "Is going back to check on an old fox burrow {PRONOUN/m_c/subject} discovered yesterday, just to be safe",
         "Fortifies the camp walls for the fourth time this week",
         "Asks the deputy about sending out some more hunting patrols- just to be sure",
         "Feels at peace",
@@ -302,7 +302,7 @@
 {
     "id": "charismatic_warrior",
     "thoughts": [
-        "Is smiling warmly at their Clanmates",
+        "Is smiling warmly at {PRONOUN/m_c/poss} Clanmates",
         "Is making everyone laugh with a very funny quip",
         "Always manages to turn the mood into a lighter one",
         "Is laughing with friends",
@@ -311,18 +311,18 @@
         "Has received several invitations to share tongues... and is deciding which to take",
         "Is basking in a sunray in the camp clearing",
         "Plans to go on a stroll with some cat today",
-        "Is swishing their tail back and forth in a laid back manner",
-        "Is grooming their already silky soft coat",
+        "Is swishing {PRONOUN/m_c/poss} tail back and forth in a laid back manner",
+        "Is grooming {PRONOUN/m_c/poss} already silky soft coat",
         "Is purring warmly",
         "Is purring loudly",
         "Is purring sweetly",
         "Is this moon's heartthrob",
         "Has recently given a wonderful speech to fellow Clanmates, boosting morale",
         "Spends all day chatting and laughing with some other warriors",
-        "Forgot where they put something, and every other warrior offers to help them find it",
-        "Is a little exhausted from how many cats come to them for things",
-        "Feels happy knowing they're someone other's can talk to",
-        "Carefully curates their appearance to be dazzling, but not too dazzling"
+        "Forgot where {PRONOUN/m_c/subject} put something, and every other warrior offers to help {PRONOUN/m_c/object} find it",
+        "Is a little exhausted from how many cats come to {PRONOUN/m_c/object} for things",
+        "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone other's can talk to",
+        "Carefully curates {PRONOUN/m_c/poss} appearance to be dazzling, but not too dazzling"
     ],
     "main_trait_constraint": [
         "charismatic"
@@ -332,11 +332,11 @@
     "id": "childish_warrior",
     "thoughts": [
         "Is chasing a butterfly around the camp",
-        "Is playing with their food",
+        "Is playing with {PRONOUN/m_c/poss} food",
         "Is giggling about Clan drama with friends",
-        "Is crunching leaves with their paws",
+        "Is crunching leaves with {PRONOUN/m_c/poss} paws",
         "Is whining about Clan duties",
-        "Is distracted by a shiny Twoleg trinket they found",
+        "Is distracted by a shiny Twoleg trinket {PRONOUN/m_c/subject} found",
         "Is gnawing on a small bone busily",
         "Is batting at a ball of moss",
         "Is preoccupied playing an important game of hide and seek",
@@ -344,7 +344,7 @@
         "Splashes in a puddle of water during a patrol",
         "Jumps around while on patrol",
         "Gets in an argument over something utterly trivial",
-        "Stuck their tongue out at a mouse that escaped their pounce",
+        "Stuck {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
         "Makes immature jokes all day, leaving everyone else rolling their eyes",
         "Doesn't want to share a piece of fresh-kill",
         "Has felt bad all day about stepping on a bug"
