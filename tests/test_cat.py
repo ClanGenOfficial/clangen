@@ -385,7 +385,7 @@ class TestStatusChange(unittest.TestCase):
         apprentice = Cat()
         mentor = Cat()
         apprentice.status = "apprentice"
-        apprentice.skill = "???"
+        apprentice.skills.primary_skill = "???"
         mentor.apprentice.append(apprentice.ID)
         apprentice.mentor = mentor.ID
         apprentice.history = History(
@@ -402,7 +402,6 @@ class TestStatusChange(unittest.TestCase):
         # when
         self.assertNotEqual(apprentice.mentor, None)
         apprentice.status_change("warrior")
-        apprentice.update_skill()
         apprentice.update_traits()
         
         # then

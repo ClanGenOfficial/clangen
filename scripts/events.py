@@ -1501,7 +1501,7 @@ class Events:
             else:
                 mentor_modifier = 1
                 cat_ob = Cat.fetch_cat(cat.mentor)
-                if cat_ob.skill in ['fantastic teacher']:
+                if cat_ob.skills.primary_skill in ['fantastic teacher']:
                     mentor_skill_modifier = 1
                 else:
                     mentor_skill_modifier = 0

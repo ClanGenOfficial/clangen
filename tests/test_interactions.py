@@ -159,9 +159,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_skill(self):
         # given
         hunter = Cat()
-        hunter.skill = "good hunter"
+        hunter.skills.primary_skill = "good hunter"
         fighter = Cat()
-        fighter.skill = "good fighter"
+        fighter.skills.primary_skill = "good fighter"
 
         # when
         hunter_to_all = Single_Interaction("test")
