@@ -75,6 +75,26 @@
         ]
     },
     {
+        "id": "ambitious_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Makes sure all cats are battle ready"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "bold_leader",
+        "thoughts": [
+            "Considers expanding the borders",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
         "id": "bloodthirsty_leader",
         "thoughts": [
             "Encourages warriors to start fights on border patrols",
@@ -89,6 +109,63 @@
         ]
     },
     {
+        "id": "calm_leader",
+        "thoughts": [
+            "Stays composed when a cat comes to them in a panic",
+            "Watches over all the cats"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_leader",
+        "thoughts": [
+            "Reminds a patrol not to stray over the border"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
+    {
+        "id": "charismatic_leader",
+        "thoughts": [
+            "Gives a particularly rousing speech at a Clan meeting",
+            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id": "childish_leader",
+        "thoughts": [
+            "Pranks r_c by switching their fresh-kill with crowfood"
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    {
+        "id": "cold_leader",
+        "thoughts": [
+            "Rolls {PRONOUN/m_c/poss} eyes as r_c suggests sharing their fresh-kill with other clans"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "insecure_leader",
+        "thoughts": [
+            "Thinks they don't deserve StarClan's blessing of 9 lives",
+            "Wonders if cats like {PRONOUN/m_c/object} as a leader"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
         "id": "strange_leader",
         "thoughts": [
             "No thoughts, head empty",
@@ -100,18 +177,9 @@
             "strange"
         ]
     }
-    ,
-    {
-        "id": "charismatic_leader",
-        "thoughts": [
-            "Gives a particularly rousing speech at a Clan meeting",
-            "Feels confident that the Clan admires {PRONOUN/m_c/object}"
-        ],
-        "main_trait_constraint": [
-            "charismatic"
-        ]
-    }
+   
 ]
 
 
 
+ 

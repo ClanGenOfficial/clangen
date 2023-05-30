@@ -18,7 +18,7 @@ from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.pelts import collars, wild_accessories
+from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
@@ -26,6 +26,190 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.cat.names import names, Name
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
+
+
+# ---------------------------------------------------------------------------- #
+#             change how accessory info displays on cat profiles               #
+# ---------------------------------------------------------------------------- #
+def accessory_display_name(cat):
+    accessory = cat.pelt.accessory
+
+    if accessory is None:
+        return ''
+    acc_display = accessory.lower()
+
+    if accessory in Pelt.collars:
+        collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan',
+                         'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow',
+                         'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink',
+                         'purple': 'purple', 'multi': 'multi', 'indigo': 'indigo'}
+        collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
+
+        if collar_color:
+            if acc_display.endswith('bow') and not collar_color == 'rainbow':
+                acc_display = collar_colors[collar_color] + ' bow'
+            elif acc_display.endswith('bell'):
+                acc_display = collar_colors[collar_color] + ' bell collar'
+            else:
+                acc_display = collar_colors[collar_color] + ' collar'
+
+    elif accessory in Pelt.wild_accessories:
+        if acc_display == 'blue feathers':
+            acc_display = 'crow feathers'
+        elif acc_display == 'red feathers':
+            acc_display = 'cardinal feathers'
+
+    return acc_display
+
+
+# ---------------------------------------------------------------------------- #
+#               assigns backstory blurbs to the backstory                      #
+# ---------------------------------------------------------------------------- #
+def bs_blurb_text(cat):
+    backstory = cat.backstory
+    backstory_text = {
+        None: "This cat was born into the Clan where they currently reside.",
+        'clan_founder': "This cat is one of the founding members of the Clan.",
+        'clanborn': "This cat was born into the Clan where they currently reside.",
+        'halfclan1': "This cat was born into the Clan, but one of their parents resides in another Clan.",
+        'halfclan2': "This cat was born in another Clan, but chose to come to this Clan to be with their other parent.",
+        'outsider_roots1': "This cat was born into the Clan, but one of their parents is an outsider that belongs to no Clan.",
+        'outsider_roots2': "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age.",
+        'loner1': "This cat joined the Clan by choice after living life as a loner.",
+        'loner2': "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife might be an interesting change of pace.",
+        'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
+        'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
+        'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
+        'kittypet4': "This cat used to be a kittypet. One day, they got sick, and their Twolegs brought them into the belly of a monster. The Twolegs then left them to fend for themselves.",
+        'rogue1': "This cat joined the Clan by choice after living life as a rogue.",
+        'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
+        'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
+        'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
+        'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
+        'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
+        'abandoned4': "This cat was found and taken in after being abandoned by their Twolegs as a kit.",
+        'medicine_cat': "This cat was once a medicine cat in another Clan.",
+        'otherclan': "This cat was born into another Clan, but came to this Clan by choice.",
+        'otherclan2': "This cat was unhappy in their old Clan and decided to come here instead.",
+        'otherclan3': "This cat's Clan stayed with the Clan after a disaster struck their old one, and This cat decided to stay after the rest of their Clan returned home.",
+        'ostracized_warrior': "This cat was ostracized from their old Clan, but no one really knows why.",
+        'disgraced': "This cat was cast out of their old Clan for some transgression that they're not keen on talking about.",
+        'retired_leader': "This cat used to be the leader of another Clan before deciding they needed a change of scenery after leadership became too much. They returned their nine lives and let their deputy take over before coming here.",
+        'refugee': "This cat came to this Clan after fleeing from their former Clan and the tyrannical leader that had taken over.",
+        'refugee2': "This cat used to live as a loner, but after another cat chased them from their home, they took refuge in the Clan.",
+        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel Twoleg.",
+        'refugee4': "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
+        'tragedy_survivor': "Something horrible happened to this cat's previous Clan. They refuse to speak about it.",
+        'tragedy_survivor2': "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
+        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their Twolegs.",
+        'tragedy_survivor4': "This cat used to be a loner, but joined the Clan after something terrible made them leave their old home behind.",
+        'orphaned': "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where they came from.",
+        'orphaned2': "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they really came from.",
+        'wandering_healer1': "This cat used to wander, helping those where they could, and eventually found the Clan.",
+        'wandering_healer2': "This cat used to live in a specific spot, offering help to all who wandered by, but eventually found their way to the Clan.",
+        'guided1': "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their whispers to the Clan.",
+        'guided2': "This cat used to live a rough life as a rogue. While wandering, they found a set of starry pawprints, and followed them to the Clan.",
+        'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan.",
+        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave.",
+        'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
+        'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
+        'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
+        'orphaned6': "This cat was found flailing in the ocean as a teeny kitten, no parent in sight.",
+        'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
+        'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
+        'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
+        'outsider': "This cat was born outside of a Clan.",
+        'outsider2': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan.",
+        'outsider3': "This cat was born outside of a Clan, while their parent was lost.",
+    }
+    
+    if backstory != None and backstory in backstory_text:
+        return backstory_text.get(backstory, "")
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+            return f"This cat is a {cat.status} and currently resides outside of the Clans."
+    
+    return backstory_text.get(backstory, "")
+
+
+# ---------------------------------------------------------------------------- #
+#             change how backstory info displays on cat profiles               #
+# ---------------------------------------------------------------------------- #
+def backstory_text(cat):
+    backstory = cat.backstory
+    if backstory is None:
+        return ''
+    bs_display = backstory
+
+    backstory_map = {
+        'clanborn': 'Clanborn',
+        'clan_founder': 'Clan founder',
+        'halfclan1': 'half-Clan',
+        'halfclan2': 'half-Clan',
+        'outsider_roots1': 'outsider roots',
+        'outsider_roots2': 'outsider roots',
+        'loner1': 'formerly a loner',
+        'loner2': 'formerly a loner',
+        'refugee2': 'formerly a loner',
+        'tragedy_survivor4': 'formerly a loner',
+        'guided3': 'formerly a loner',
+        'wandering_healer2': 'formerly a loner',
+        'kittypet1': 'formerly a kittypet',
+        'kittypet2': 'formerly a kittypet',
+        'kittypet3': 'formerly a kittypet',
+        'kittypet4': 'formerly a kittypet',
+        'refugee3': 'formerly a kittypet',
+        'tragedy_survivor3': 'formerly a kittypet',
+        'guided1': 'formerly a kittypet',
+        'rogue1': 'formerly a rogue',
+        'rogue2': 'formerly a rogue',
+        'rogue3': 'formerly a rogue',
+        'refugee4': 'formerly a rogue',
+        'tragedy_survivor2': 'formerly a rogue',
+        'guided2': 'formerly a rogue',
+        'wandering_healer1': 'formerly a rogue',
+        'abandoned1': 'formerly abandoned',
+        'abandoned2': 'formerly abandoned',
+        'abandoned3': 'formerly abandoned',
+        'abandoned4': 'formerly abandoned',
+        'medicine_cat': 'formerly a medicine cat',
+        'otherclan': 'formerly from another Clan',
+        'otherclan2': 'formerly from another Clan',
+        'otherclan3': 'formerly from another Clan',
+        'refugee5': 'formerly from another Clan',
+        'other_clan1': 'formerly from another Clan',
+        'guided4': 'formerly from another Clan',
+        'ostracized_warrior': 'ostracized warrior',
+        'disgraced': 'disgraced',
+        'disgraced2': 'disgraced',
+        'disgraced3': 'disgraced',
+        'retired_leader': 'retired leader',
+        'refugee': 'refugee',
+        'tragedy_survivor': 'survivor of a tragedy',
+        'orphaned': 'orphaned',
+        'orphaned2': 'orphaned',
+        'orphaned3': 'orphaned',
+        'orphaned4': 'orphaned',
+        'orphaned5': 'orphaned',
+        'outsider': 'outsider',
+        'outsider2': 'outsider',
+        'outsider3': 'outsider',
+    }
+
+    if bs_display in backstory_map:
+        bs_display = backstory_map[bs_display]
+
+    if bs_display == "disgraced":
+        if cat.status == 'medicine cat':
+            bs_display = 'disgraced medicine cat'
+        elif cat.status in ['warrior', 'elder', "deputy", "leader", "mediator"]:
+            bs_display = 'disgraced deputy'
+    if bs_display is None:
+        bs_display = None
+    else:
+        return bs_display
+
+    return bs_display
 
 
 # ---------------------------------------------------------------------------- #
@@ -200,12 +384,12 @@ class ProfileScreen(Screens):
                 self.change_screen('relationship screen')
             elif event.ui_element == self.choose_mate_button:
                 self.change_screen('choose mate screen')
-            elif event.ui_element == self.change_mentor_button:
-                self.change_screen('choose mentor screen')
         # Roles Tab
         elif self.open_tab == 'roles':
             if event.ui_element == self.manage_roles:
                 self.change_screen('role screen')
+            elif event.ui_element == self.change_mentor_button:
+                self.change_screen('choose mentor screen')
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -658,8 +842,8 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        if the_cat.accessory:
-            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+        if the_cat.pelt.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------
             output += "\n"
 
@@ -722,44 +906,40 @@ class ProfileScreen(Screens):
 
         # MATE
         if len(the_cat.mate) > 0:
-            # NEWLINE ----------
             output += "\n"
-            if len(the_cat.mate) > 0:
-                # collect all names
-                mates = []
-                prev_mates = []
-                for mate_id in the_cat.mate:
-                    if mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(mate_id)
-                        if not mate_ob:
-                            continue
-                        if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
-                            prev_mates.append(str(mate_ob.name))
-                        else:
-                            mates.append(str(mate_ob.name))
+            
+            
+            mate_names = []
+            # Grab the names of only the first two, since that's all we will display
+            for _m in the_cat.mate[:2]:
+                mate_ob = Cat.fetch_cat(_m)
+                if not isinstance(mate_ob, Cat):
+                    continue
+                if mate_ob.dead != self.the_cat.dead:
+                    if the_cat.dead:
+                        former_indicate = "(living)"
                     else:
-                        output += 'Error: mate: ' + str(mate_id) + " not found"
-                for prev_mate_id in the_cat.previous_mates:
-                    if prev_mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(prev_mate_id)
-                        if not mate_ob:
-                            continue
-                        prev_mates.append(str(mate_ob.name))
-                    else:
-                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
-                # merge the names together for the output
-                if len(mates) > 0:
-                    if len(mates) > 1:
-                        output += 'mates: ' + str(', '.join(mates))
-                    else:
-                        output += 'mate: ' + mates[0]
-                if len(prev_mates) > 0:
-                    if len(mates) > 0:
-                        output += '\n'
-                    if len(prev_mates) > 1:
-                        output += 'former mates: ' + str(', '.join(prev_mates))
-                    else:
-                        output += 'former mate: ' + prev_mates[0]
+                        former_indicate = "(dead)"
+                    
+                    mate_names.append(f"{str(mate_ob.name)} {former_indicate}")
+                elif mate_ob.outside != self.the_cat.outside:
+                    mate_names.append(f"{str(mate_ob.name)} (away)")
+                else:
+                    mate_names.append(f"{str(mate_ob.name)}")
+                    
+            if len(the_cat.mate) == 1:
+                output += "mate: " 
+            else:
+                output += "mates: "
+            
+            output += ", ".join(mate_names)
+            
+            if len(the_cat.mate) > 2:
+                output += f", and {len(the_cat.mate) - 2}"
+                if len(the_cat.mate) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -811,16 +991,23 @@ class ProfileScreen(Screens):
 
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
-
-            if len(the_cat.former_apprentices) == 1 and Cat.fetch_cat(the_cat.former_apprentices[0]):
-                output += 'former apprentice: ' + str(
-                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
-
-            elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join(
-                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices if Cat.fetch_cat(i)])
+        if the_cat.former_apprentices:
+            
+            apprentices = [Cat.fetch_cat(i) for i in the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+            
+            if len(apprentices) > 2:
+                output += 'former apprentices: ' + ", ".join([str(i.name) for i in apprentices[:2]]) + \
+                    ", and " + str(len(apprentices) - 2) 
+                if len(apprentices) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
+            else:
+                if len(apprentices) > 1:
+                    output += 'former apprentices: '
+                else:
+                    output += 'former apprentice: '
+                output += ", ".join(str(i.name) for i in apprentices)
 
             # NEWLINE ----------
             output += "\n"
@@ -1049,16 +1236,21 @@ class ProfileScreen(Screens):
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
             if app_history:
-                life_history.append(str(app_history))
+                life_history.append(app_history)
+                
+            #Get mentorshif text if it exists
+            mentor_history = self.get_mentorship_text()
+            if mentor_history:
+                life_history.append(mentor_history)
 
             # now go get the scar history and add that if any exists
             body_history = []
             scar_history = self.get_scar_text()
             if scar_history:
-                body_history.append(str(scar_history))
+                body_history.append(scar_history)
             death_history = self.get_death_text()
             if death_history:
-                body_history.append(str(death_history))
+                body_history.append(death_history)
             # join scar and death into one paragraph
             if body_history:
                 life_history.append(" ".join(body_history))
@@ -1238,6 +1430,9 @@ class ProfileScreen(Screens):
             # Seocnd, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and mentor_influence["trait"] != None:
+                if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
+                    mentor_influence["trait"] = None
+                    return
                 for _mentor in mentor_influence["trait"]:
                     #If the strings are not set (empty list), continue. 
                     if not mentor_influence["trait"][_mentor].get("strings"):
@@ -1256,7 +1451,7 @@ class ProfileScreen(Screens):
                         
                     
                     trait_influence.append(str(ment_obj.name) +  \
-                                        "influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+                                        " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
 
             influence_history += " ".join(trait_influence)
         
@@ -1324,6 +1519,34 @@ class ProfileScreen(Screens):
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
 
+    def get_mentorship_text(self):
+        """
+        
+        returns full list of previously mentored apprentices. 
+        
+        """
+        
+        text = ""
+        # Doing this is two steps 
+        all_real_apprentices = [Cat.fetch_cat(i) for i in self.the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+        if all_real_apprentices:
+            text = "{PRONOUN/m_c/subject/CAP} mentored "
+            if len(all_real_apprentices) > 2:
+                text += ', '.join([str(i.name) for i in all_real_apprentices[:-1]]) + ", and " + str(all_real_apprentices[-1].name) + "."
+            elif len(all_real_apprentices) == 2:
+                text += str(all_real_apprentices[0].name) + " and " + str(all_real_apprentices[1].name) + "."
+            elif len(all_real_apprentices) == 1:
+                text += str(all_real_apprentices[0].name) + "."
+            
+            cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+            }   
+            
+            text = process_text(text, cat_dict)
+        
+        return text
+        
+
     def get_death_text(self):
         """
         returns adjusted death history text
@@ -1339,7 +1562,7 @@ class ProfileScreen(Screens):
         if death_history:
             all_deaths = []
             for death in death_history:
-                if murder_history:
+                if murder_history.get("is_victim"):
                     # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
                     for event in murder_history["is_victim"]:
                         if event["text"] == death["text"] and event["moon"] == death["moon"]:
@@ -1441,7 +1664,7 @@ class ProfileScreen(Screens):
                     else:
                         victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-        print(victim_text)
+        #print(victim_text)
         return victim_text
 
     def toggle_conditions_tab(self):
@@ -1732,13 +1955,9 @@ class ProfileScreen(Screens):
             self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
                                                    starting_height=2, object_id="#see_family_button", manager=MANAGER)
             self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
-                                                          starting_height=2, object_id="#see_relationships_button"
-                                                          , manager=MANAGER)
+                                                          starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
-            self.change_mentor_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
-                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1758,6 +1977,8 @@ class ProfileScreen(Screens):
                                               "", object_id="#manage_roles_button",
                                               starting_height=2
                                               , manager=MANAGER)
+            self.change_mentor_button = UIImageButton(scale(pygame.Rect((452, 972), (344, 72))), "",
+                                                      starting_height=2, object_id="#change_mentor_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1828,18 +2049,17 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice',
-                                           'mediator apprentice'] or self.the_cat.dead \
-                    or self.the_cat.outside:
-                self.change_mentor_button.disable()
-            else:
-                self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.dead or self.the_cat.outside:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+                                            or self.the_cat.dead or self.the_cat.outside:
+                self.change_mentor_button.disable()
+            else:
+                self.change_mentor_button.enable()
 
         elif self.open_tab == "personal":
 
@@ -2039,9 +2259,9 @@ class ProfileScreen(Screens):
             self.see_family_button.kill()
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
-            self.change_mentor_button.kill()
         elif self.open_tab == 'roles':
             self.manage_roles.kill()
+            self.change_mentor_button.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
@@ -3059,10 +3279,10 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox((200, 1150), "platform_shown", self.platform_shown)
         
         # "Show Scars"
-        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.scars)
+        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.pelt.scars)
         
         # "Show accessories"
-        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.accessory)
+        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.pelt.accessory)
         
         # "Show as living"
         self.make_one_checkbox((400, 1250), "override_dead_lineart", self.override_dead_lineart, self.the_cat.dead,

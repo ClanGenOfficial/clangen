@@ -19,7 +19,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.pelts import collars, scars1, scars2, scars3
+from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
@@ -759,10 +759,10 @@ class Patrol():
             outcome = "unscathed_common"
             if self.patrol_win_stat_cat:
                 if self.patrol_event.win_trait:
-                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait:
+                    if self.patrol_win_stat_cat.personality.trait in self.patrol_event.win_trait and success_text.get("stat_trait"):
                         outcome = "stat_trait"
                 if self.patrol_event.win_skills:
-                    if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
+                    if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills and success_text.get("stat_skill"):
                         outcome = "stat_skill"
             else:
                 if rare and success_text.get("unscathed_rare"):
@@ -898,6 +898,17 @@ class Patrol():
         :param success: success bool
         """
         tags = self.patrol_event.tags
+
+        # converting outcomes
+        outcomes = {
+            "unscathed_common": 0,
+            "unscathed_rare": 1,
+            "stat_skill": 2,
+            "stat_trait": 3
+        }
+        outcome_number = outcomes[outcome]
+        outcome = outcome_number
+
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
@@ -1622,12 +1633,12 @@ class Patrol():
                     cat = self.patrol_fail_stat_cat
                 else:
                     return
-                if len(self.patrol_random_cat.scars) < 4:
+                if len(self.patrol_random_cat.pelt.scars) < 4:
                     for tag in self.patrol_event.tags:
                         print(tag)
-                        if tag in scars1 + scars2 + scars3:
+                        if tag in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
                             print('gave scar')
-                            cat.scars.append(tag)
+                            cat.pelt.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
                     self.handle_history(cat, scar=True)
 
@@ -1647,38 +1658,42 @@ class Patrol():
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             if possible:
-                self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                         scar=True)
+                self.history.add_possible_history(cat, condition, scar_text=adjust_text)
             else:
-                self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                scar=True)
+                self.history.add_scar(cat, adjust_text)
         if death:
             if cat.status == 'leader':
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
             else:
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
         no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
         many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
         patrol_size_modifier = int(len(self.patrol_cats) * .5)
+
+        # converting outcomes
+        outcomes = {
+            "unscathed_common": 0,
+            "unscathed_rare": 1,
+            "stat_skill": 2,
+            "stat_trait": 3
+        }
+        outcome_number = outcomes[outcome]
+        outcome = outcome_number
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
@@ -1849,8 +1864,9 @@ class Patrol():
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
                 affect = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
-                print(affect)
+                if affect:
+                    History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
+                    print(affect)
 
     def handle_reputation(self, difference):
         """
