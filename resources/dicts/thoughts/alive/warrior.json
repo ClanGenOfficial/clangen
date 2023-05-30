@@ -1000,14 +1000,14 @@
         "Seems to be plotting something",
         "Is definitely plotting something",
         "Is glaring daggers across the camp clearing",
-        "Swears that they will get their revenge... but for what?",
+        "Swears that {PRONOUN/m_c/subject} will get {PRONOUN/m_c/poss} revenge... but for what?",
         "Is angrily clawing up the ground, lost in deep thought",
         "Is shredding the grass underpaw",
         "Hisses at a certain cat when they walk by",
-        "Is laughing because a cat they don't like got hurt",
+        "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt",
         "Daydreams all day about an elaborate plot to make a Clanmate disappear",
-        "Has to bite their tongue, even though they really want the last word",
-        "Hopes that everyone who hurt them is suffering in the Place of No Stars"   
+        "Has to bite {PRONOUN/m_c/poss} tongue, even though {PRONOUN/m_c/subject} really {VERB/m_c/want/wants} the last word",
+        "Hopes that everyone who hurt {PRONOUN/m_c/object} is suffering in the Place of No Stars"   
     ],
     "main_trait_constraint": [
         "vengeful"
