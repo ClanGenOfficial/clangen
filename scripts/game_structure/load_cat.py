@@ -142,9 +142,27 @@ def json_load():
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
-            new_cat.skill = cat["skill"]
 
-           
+            if "skill" in cat:
+                print('skill in cat')
+                if new_cat.backstory is None:
+                    if "skill" == 'formerly a loner':
+                        backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
+                        new_cat.backstory = backstory
+                    elif "skill" == 'formerly a kittypet':
+                        backstory = choice(['kittypet1', 'kittypet2'])
+                        new_cat.backstory = backstory
+                    else:
+                        new_cat.backstory = 'clanborn'
+                new_cat.skills.convert_old_skills(cat["skill"], new_cat)
+
+            if new_cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
+                new_cat.skills.hidden_skill = "loner's knowledge"
+            elif new_cat.backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
+                new_cat.skills.hidden_skill = "rogue's knowledge"
+            elif new_cat.backstory in BACKSTORIES["backstory_categories"]["kittypet_backstories"]:
+                new_cat.skills.hidden_skill = "kittypet's knowledge"
+
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.mate:
                 new_cat.mate = [i for i in new_cat.mate if i is not None]

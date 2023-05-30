@@ -1019,11 +1019,7 @@ class ProfileScreen(Screens):
 
         # CAT SKILLS
         print(str(the_cat.skills.skill_list()))
-        skills = the_cat.skills.skill_list()
-        output += skills[0]
-        if len(skills) > 1:
-            if skills[1]:
-                output += f" + {skills[1]}"
+        output += the_cat.skills.skill_string()
         # NEWLINE ----------
         output += "\n"
 

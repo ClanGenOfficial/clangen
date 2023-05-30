@@ -273,6 +273,15 @@ class CatSkills:
             return [self.primary_skill, None, self.hidden_skill]
         else:
             return [self.primary_skill]
+        
+    def skill_string(self):
+        output = None
+        skills = self.skill_list()
+        output = skills[0]
+        if len(skills) > 1:
+            if skills[1]:
+                output += f" + {skills[1]}"
+        return output
 
 
 with open(f"resources/dicts/skills.json", 'r') as read_file:

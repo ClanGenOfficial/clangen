@@ -671,7 +671,7 @@ class PatrolScreen(Screens):
 
         if event.win_skills:
             for kitty in possible_stat_cats:
-                if kitty.skill in event.win_skills:
+                if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in event.win_skills:
                     patrol.patrol_win_stat_cat = kitty
                     break
         if event.win_trait and not patrol.patrol_win_stat_cat:
@@ -681,7 +681,7 @@ class PatrolScreen(Screens):
                     break
         if event.fail_skills:
             for kitty in possible_stat_cats:
-                if kitty.skill in event.fail_skills:
+                if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in event.fail_skills:
                     patrol.patrol_fail_stat_cat = kitty
                     break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
@@ -1059,7 +1059,7 @@ class PatrolScreen(Screens):
 
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.personality.trait) +
-                                                                          "\n" + str(self.selected_cat.skill) +
+                                                                          "\n" + str(self.selected_cat.skills.skill_string()) +
                                                                           "\n" + str(
                 self.selected_cat.experience_level) +
                                                                           (f' ({str(self.selected_cat.experience)})' if

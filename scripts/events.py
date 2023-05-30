@@ -16,6 +16,7 @@ from scripts.patrol import Patrol
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
+from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -1187,7 +1188,6 @@ class Events:
         """
         # ceremony = []
         cat.status_change(promoted_to)
-        cat.update_skill()
         cat.update_traits()
 
         involved_cats = [

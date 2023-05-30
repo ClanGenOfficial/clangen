@@ -171,24 +171,6 @@ class History:
             cat.history.mentor_influence["trait"] = None
             return
 
-        if mentor:
-            mentor = mentor.ID
-            cat.history.mentor_influence["mentor"] = "mentor" if "mentor" in cat.history.mentor_influence else mentor if mentor else None
-        if skill:
-            cat.history.mentor_influence["skill"] = skill if skill else None
-        if second_skill:
-            cat.history.mentor_influence["second_skill"] = second_skill if second_skill else None
-        if trait:
-            cat.history.mentor_influence["trait"] = trait if trait else None
-
-        if "mentor" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["mentor"] = None
-        if "skill" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["skill"] = None
-        if "second_skill" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["second_skill"] = None
-        if "trait" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["trait"] = None
         # working under the impression that these blurbs will be preceeded by "more likely to"
         influence_text = {
                 "lawfulness_raise": [

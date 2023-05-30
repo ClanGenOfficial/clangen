@@ -98,7 +98,11 @@ class Patrol():
             self.patrol_names.append(str(cat.name))
             if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
-            self.patrol_skills.append(cat.skill)
+            self.patrol_skills.append(cat.skills.primary_skill)
+            if cat.skills.secondary_skill:
+                self.patrol_skills.append(cat.skills.secondary_skill)
+            if cat.skills.hidden_skill:
+                self.patrol_skills.append(cat.skills.hidden_skill)
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.personality.trait)
             self.patrol_total_experience += cat.experience
@@ -285,12 +289,13 @@ class Patrol():
         else:
             keep = True
         if "skill" in patrol.constraints:
-            if self.patrol_leader.skill in patrol.constraints["skill"]:
+            if (self.patrol_leader.skills.primary_skill or self.patrol_leader.skills.secondary_skill)\
+            in patrol.constraints["skill"]:
                 keep = True
         else:
             keep = True
         if "trait" in patrol.constraints:
-            if self.patrol_leader.personality.trait in patrol.constraints["skill"]:
+            if self.patrol_leader.personality.trait in patrol.constraints["trait"]:
                 keep = True
         else:
             keep = True
@@ -715,15 +720,16 @@ class Patrol():
         print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
         for kitty in self.patrol_cats:
-            if kitty.skill in self.patrol_event.win_skills:
+            skill_string = kitty.skills.skill_string()
+            if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                if "great" in kitty.skill or "very" in kitty.skill:
+                if "great" in skill_string or "very" in skill_string:
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
-                elif "fantastic" in kitty.skill or "excellent" in kitty.skill or "extremely" in kitty.skill:
+                elif "fantastic" in skill_string or "excellent" in skill_string or "extremely" in skill_string:
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
             if kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-            if kitty.skill in self.patrol_event.fail_skills:
+            if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
             if self.patrol_event.fail_trait and kitty.personality.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]

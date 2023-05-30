@@ -287,16 +287,7 @@ class Cat():
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
-        # personality trait and skill
-        if self.trait is None:
-            if self.status not in ['newborn', 'kitten']:
-                self.trait = choice(self.traits)
-            else:
-                self.trait = choice(self.kit_traits)
-
-        if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
-            self.trait = choice(self.traits)
-
+        # skill
         if self.skill_dict:
             self.skills = CatSkills(skill_dict=self.skill_dict)
         else:
@@ -2972,7 +2963,19 @@ class Cat():
                 "tortie_pattern": self.pelt.tortiepattern,
                 "skin": self.pelt.skin,
                 "tint": self.pelt.tint,
-                "skill": self.skill,
+                "skill_dict": {
+                    "primary": {
+                        "path": self.skills.primary_path,
+                        "tier": self.skills.primary_tier,
+                        "points": self.skills.primary_points,
+                    },
+                    "secondary": {
+                        "path": self.skills.secondary_path,
+                        "tier": self.skills.secondary_tier,
+                        "points": self.skills.secondary_points
+                    },
+                    "hidden": self.skills.hidden_skill
+                },
                 "scars": self.pelt.scars if self.pelt.scars else [],
                 "accessory": self.pelt.accessory,
                 "experience": self.experience,
@@ -3039,30 +3042,30 @@ class Personality():
         if lawful is not None:
             self._law = Personality.adjust_to_range(lawful)
         elif _tr:
-            self._law = random.randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
+            self._law = randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
         else:
-            self._law = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            self._law = randint(Personality.facet_range[0], Personality.facet_range[1])
             
         if social is not None:
             self._social = Personality.adjust_to_range(social)
         elif _tr:
-            self._social = random.randint(_tr["sociability"][0], _tr["sociability"][1])
+            self._social = randint(_tr["sociability"][0], _tr["sociability"][1])
         else:
-            self._social = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            self._social = randint(Personality.facet_range[0], Personality.facet_range[1])
             
         if aggress is not None:
             self._aggress = Personality.adjust_to_range(aggress)
         elif _tr:
-            self._aggress = random.randint(_tr["aggression"][0], _tr["aggression"][1])
+            self._aggress = randint(_tr["aggression"][0], _tr["aggression"][1])
         else:
-            self._aggress = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            self._aggress = randint(Personality.facet_range[0], Personality.facet_range[1])
             
         if stable is not None:
             self._stable = Personality.adjust_to_range(stable)
         elif _tr:
-            self._stable = random.randint(_tr["stability"][0], _tr["stability"][1])
+            self._stable = randint(_tr["stability"][0], _tr["stability"][1])
         else:
-            self._stable = random.randint(Personality.facet_range[0], Personality.facet_range[1])
+            self._stable = randint(Personality.facet_range[0], Personality.facet_range[1])
                 
         # If trait is still empty, or if the trait is not valid with the facets, change it. 
         if not self.trait or not self.is_trait_valid():
@@ -3205,7 +3208,7 @@ class Personality():
             possible_traits.append(trait)
             
         if possible_traits:
-            self.trait = random.choice(possible_traits)
+            self.trait = choice(possible_traits)
         else:
             print("No possible traits! Using 'strange'")
             self.trait = "strange"
@@ -3228,9 +3231,9 @@ class Personality():
         
         if possible_facets:
             # Choice trait to effect, weighted by the abs of the difference (higher difference = more likely to effect)
-            facet_affected = random.choices([i for i in possible_facets], weights=[abs(i) for i in possible_facets.values()], k=1)[0]
+            facet_affected = choices([i for i in possible_facets], weights=[abs(i) for i in possible_facets.values()], k=1)[0]
             # stupid python with no sign() function by default. 
-            amount_affected = int(possible_facets[facet_affected]/abs(possible_facets[facet_affected]) * random.randint(1, 2))
+            amount_affected = int(possible_facets[facet_affected]/abs(possible_facets[facet_affected]) * randint(1, 2))
             self[facet_affected] += amount_affected
             return (mentor.ID, facet_affected, amount_affected)
         else:
