@@ -1,10 +1,12 @@
-{
-    "id": "lost_kitten_thoughts",
-    "thoughts": [
-        "Misses playing moss ball",
-        "Is looking desperately for their parent"
-    ],
-    "main_status_constraint": [
-        "kitten"
-    ]
-}
+[
+    {
+        "id": "lost_kitten_thoughts",
+        "thoughts": [
+            "Misses playing moss ball",
+            "Is looking desperately for their parent"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ]
+    }
+]
