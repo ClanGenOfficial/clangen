@@ -502,16 +502,16 @@
     "thoughts": [
         "Is racing through camp, accidentally knocking into Clanmates",
         "Suffered a bellyache after being dared to swallow a beetle",
-        "Is challenging any Clanmate they can to a sparring match... with minimal recruiting success",
+        "Is challenging any Clanmate {PRONOUN/m_c/subject} can to a sparring match... with minimal recruiting success",
         "Is challenging some Clanmates to a sparring match, two-on-one!",
-        "Is twitching their tail in excitement about something",
+        "Is twitching {PRONOUN/m_c/poss} tail in excitement about something",
         "Batted at a snake on a patrol recently and fled",
         "Is leaping from boulder to boulder out in the forest",
         "Is climbing to the top of a very tall tree!",
         "Is walking along the edge of a very tall cliff",
-        "Recently avoided a monster on the Thunderpath by the skin of their teeth!",
+        "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!",
         "Challenges a Clanmate to a friendly spar",
-        "Wishes there were more opportunities to show their skills",
+        "Wishes there were more opportunities to show {PRONOUN/m_c/poss} skills",
         "Defended a Clanmate in an argument"
     ],
     "main_trait_constraint": [
@@ -523,16 +523,16 @@
     "thoughts": [
         "Is giving thanks to StarClan",
         "Is assuring some worried Clanmates that StarClan will guide them",
-        "Is pondering their warrior ancestors, and the protections they grant the Clan",
-        "Would follow their Clanmates to the ends of the earth",
+        "Is pondering {PRONOUN/m_c/poss} warrior ancestors, and the protections they grant the Clan",
+        "Would follow {PRONOUN/m_c/poss} Clanmates to the ends of the earth",
         "Feels safe within the walls of the camp",
         "Is promising to always serve StarClan",
-        "Is hoping that StarClan protects their loved ones...",
-        "Thanked StarClan for their catch out on a hunting patrol today",
+        "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
+        "Thanked StarClan for {PRONOUN/m_c/poss} catch out on a hunting patrol today",
         "Prays to StarClan that next season will be a good one",
-        "Rolls their eyes at the kits laughing about spirits not being real",
+        "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real",
         "Goes to the medicine cat to ask for spiritual advice",
-        "Wonders if StarClan can hear them",
+        "Wonders if StarClan can hear {PRONOUN/m_c/object}",
         "Leaves fresh-kill at the grave of a dead loved one"
     ],
     "main_trait_constraint": [
