@@ -45,6 +45,7 @@ class ChooseAdoptiveParentScreen(Screens):
         self.cycle_parent_left_button = None
         self.cycle_parent_right_button = None
         self.all_pages = []
+        self.help_button = None
 
     def handle_event(self, event):
         """ Handles events. """
@@ -124,13 +125,21 @@ class ChooseAdoptiveParentScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         self.info = pygame_gui.elements.UITextBox(
-            "If a cat is added as an adoptive parent, they will be displayed on the family page and considered in relation-tracking. "
-            "For relatedness tracking, adoptive and blood parents treated the same, this also applies to siblings. "
-            "Adoptive parents are only set automatically at the birth of the cat. All mates from the blood parents at "
-            "the time of the birth are considered as adoptive parents.",
-            scale(pygame.Rect((400, 100), (800, 250))),
+            "If a cat is added as an adoptive parent, they will be displayed on the family page and considered a full relative. "
+            "Adoptive and blood parents will be treated the same, this also applies to siblings. ",
+            scale(pygame.Rect((400, 120), (800, 200))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95")
         )
+
+        self.help_button = UIImageButton(scale(pygame.Rect(
+                (1450, 140), (68, 68))),
+                "",
+                object_id="#help_button", manager=MANAGER,
+                tool_tip_text=  "Automatically adoptive parents for a cat are set when the cat is born. "
+                                "Any cats that are mates with the parents at the time of birth are considered adoptive parents."
+                                "<br><br>"
+                                "To be a possible adoptive parent, the cat has to be 14 moons older than the child.",
+            )
 
         self.the_cat_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((80, 226), (562, 394))),
                                                          pygame.transform.scale(
@@ -227,6 +236,8 @@ class ChooseAdoptiveParentScreen(Screens):
         del self.cycle_parent_left_button
         self.cycle_parent_right_button.kill()
         del self.cycle_parent_right_button
+        self.help_button.kill()
+        del self.help_button
 
         self.all_pages = []
 
@@ -538,7 +549,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 continue
             if self.the_cat.ID not in self.the_cat.adoptive_parents and\
                 self.the_cat.ID not in [relevant_cat.parent1, relevant_cat.parent2] and\
-                self.the_cat.moons < relevant_cat.moons and relevant_cat.moons > 14:
+                self.the_cat.moons < relevant_cat.moons and relevant_cat.moons - self.the_cat.moons >= 14:
                 # 14 moons is for the minimal age of a cat to be a parent
                 valid_parents.append(relevant_cat)
         return valid_parents
