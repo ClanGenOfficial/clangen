@@ -77,7 +77,7 @@ class Freshkill_Events():
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
             cat.die()
-            self.history.add_death_or_scars(cat, text=history_text, death=True)
+            self.history.add_death(cat, history_text)
 
             types = ["birth_death"]
             game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
@@ -323,21 +323,21 @@ class Freshkill_Events():
                 history_leader = event_text_adjust(Cat, event.history_text[2], cat, other_cat)
             
             if cat.status == "leader":
-                self.history.add_possible_death_or_scars(cat, event.injury, str(history_leader), other_cat, death=True)
+                self.history.add_possible_history(cat, event.injury, death_text=history_leader, scar_text=scar_text,
+                                                  other_cat=other_cat)
             else:
-                self.history.add_possible_death_or_scars(cat, event.injury, str(history_normal), other_cat, death=True)
+                self.history.add_possible_history(cat, event.injury, death_text=history_normal, scar_text=scar_text,
+                                                  other_cat=other_cat)
 
-            self.history.add_possible_death_or_scars(cat, event.injury, str(scar_text), other_cat, scar=True)
 
             cat.get_injured(event.injury, event_triggered=True)
             if "multi_injury" in event.tags and other_cat:
                 if other_cat.status == "leader":
-                    self.history.add_possible_death_or_scars(other_cat, event.injury, str(history_leader), cat,
-                                                             death=True)
+                    self.history.add_possible_history(other_cat, event.injury, death_text=history_leader, 
+                                                      scar_text=scar_text, other_cat=cat)
                 else:
-                    self.history.add_possible_death_or_scars(other_cat, event.injury, str(history_normal), cat,
-                                                             death=True)
-                self.history.add_possible_death_or_scars(other_cat, event.injury, str(scar_text), cat, scar=True)
+                    self.history.add_possible_history(other_cat, event.injury, death_text=history_normal, 
+                                                      scar_text=scar_text, other_cat=cat)
 
                 other_cat.get_injured(event.injury, event_triggered=True)
 
@@ -352,17 +352,17 @@ class Freshkill_Events():
 
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
-                self.history.add_death_or_scars(cat, other_cat, history_leader, death=True)
+                self.history.add_death(cat, history_leader, other_cat=other_cat)
             else:
-                self.history.add_death_or_scars(cat, other_cat, history_normal, death=True)
+                self.history.add_death(cat, history_normal, other_cat=other_cat)
 
             cat.die()
             if "multi_death" in event.tags and other_cat:
                 if other_cat.status == "leader":
                     game.clan.leader_lives -= 1
-                    self.history.add_death_or_scars(other_cat, cat, history_leader, death=True)
+                    self.history.add_death(other_cat, history_leader, other_cat=cat)
                 else:
-                    self.history.add_death_or_scars(other_cat, cat, history_normal, death=True)
+                    self.history.add_death(other_cat, history_normal, other_cat=cat)
                 other_cat.die()
             if "multi_death" in event.tags and not other_cat:
                 print("WARNING: multi_death event in freshkill pile was triggered, but no other cat was given.")

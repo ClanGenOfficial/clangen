@@ -490,49 +490,49 @@
         }
         
     },
-    "#clan_menu_button":
+    "#camp_menu_button":
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/clan.png"
+                "path": "resources/images/buttons/camp.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/clan_hover.png"
+                "path": "resources/images/buttons/camp_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/clan_hover.png"
+                "path": "resources/images/buttons/camp_hover.png"
             },
             "disabled_image":
             {
-				"path": "resources/images/buttons/clan_unavailable.png"
+				"path": "resources/images/buttons/camp_unavailable.png"
 			}
         }
     },
-    "#starclan_menu_button":
+    "#catlist_menu_button":
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/starclan.png"
+                "path": "resources/images/buttons/catlist.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/starclan_hover.png"
+                "path": "resources/images/buttons/catlist_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/starclan_hover.png"
+                "path": "resources/images/buttons/catlist_hover.png"
             },
             "disabled_image":
             {
-				"path": "resources/images/buttons/starclan_unavailable.png"
+				"path": "resources/images/buttons/catlist_unavailable.png"
 			}
         }
     },
@@ -625,29 +625,6 @@
             "disabled_image":
             {
 				"path": "resources/images/buttons/allegiances_unavailable.png"
-			}
-        }
-    },
-    "#list_button":
-    {
-        "prototype": "#image_button",
-		"images":
-        {
-            "normal_image":
-            {
-                "path": "resources/images/buttons/list_cats.png"
-            },
-			"hovered_image":
-            {
-                "path": "resources/images/buttons/list_cats_hover.png"
-            },
-			"selected_image":
-            {
-                "path": "resources/images/buttons/list_cats_hover.png"
-            },
-            "disabled_image":
-            {
-				"path": "resources/images/buttons/list_cats_unavailable.png"
 			}
         }
     },
@@ -970,6 +947,52 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/arrow_left_unavailable.png"
+            }
+        }
+    },
+    "#to_living_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/to_living.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/to_living_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/to_living_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/to_living_unavailable.png"
+            }
+        }
+    },
+    "#to_dead_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/to_dead.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/to_dead_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/to_dead_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/to_dead_unavailable.png"
             }
         }
     },
