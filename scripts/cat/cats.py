@@ -240,10 +240,6 @@ class Cat():
 
         self.history = None
 
-        # skill related
-        self.skill_dict = skill_dict
-        self.skills = None
-
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -288,11 +284,10 @@ class Cat():
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # skill
-        if self.skill_dict:
-            self.skills = CatSkills(skill_dict=self.skill_dict)
+        if skill_dict:
+            self.skills = CatSkills(skill_dict=skill_dict)
         else:
-            self.skills = CatSkills()
-            self.skills.generate_cat_skill(self.status, self.moons)
+            self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
 
         # backstory
         if self.backstory is None:
@@ -1294,7 +1289,7 @@ class Cat():
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
 
-        self.skills.progress_skill(self, self.fetch_cat(self.mentor), self.parent1, self.parent2)
+        self.skills.progress_skill(self)
 
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
@@ -2963,19 +2958,7 @@ class Cat():
                 "tortie_pattern": self.pelt.tortiepattern,
                 "skin": self.pelt.skin,
                 "tint": self.pelt.tint,
-                "skill_dict": {
-                    "primary": {
-                        "path": self.skills.primary_path,
-                        "tier": self.skills.primary_tier,
-                        "points": self.skills.primary_points,
-                    },
-                    "secondary": {
-                        "path": self.skills.secondary_path,
-                        "tier": self.skills.secondary_tier,
-                        "points": self.skills.secondary_points
-                    },
-                    "hidden": self.skills.hidden_skill
-                },
+                "skill_dict": self.skills.get_skill_dict(),
                 "scars": self.pelt.scars if self.pelt.scars else [],
                 "accessory": self.pelt.accessory,
                 "experience": self.experience,

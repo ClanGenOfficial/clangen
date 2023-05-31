@@ -3,6 +3,7 @@ import random
 import ujson
 
 from scripts.game_structure.game_essentials import game
+from scripts.cat.skills import PathEnum
 
 
 class History:
@@ -39,12 +40,18 @@ class History:
             },
         "mentor_influence":{
             "trait": {
-                "mentor_id":
+                "mentor_id": {
                     "lawfulness": 0
                     ...
                     "strings": []
+                }
             },
-            "skill": skill
+            "skill": {
+                "mentor_id": {
+                    "path": 0,
+                    string: []
+                }
+            }
         "app_ceremony": {
             "honor": honor,
             "graduation_age": age,
@@ -217,64 +224,42 @@ class History:
         if not cat.history.mentor_influence["skill"]:
             return
 
-        # working under the impression that these blurbs will be preceeded by "more likely to"
+        # working under the impression that these blurbs will be preceeded by "better at"
         skill_influence_text = {
-                "teacher": [
-                    
-                ],
-                "hunter": [
-                    
-                ],
-                "fighter": [
-                    
-                ],
-                "runner": [
-                    
-                ],
-                "climber": [
-                    
-                ],
-                "swimmer": [
-                ],
-                "speaker": [
-                    
-                ],
-                "mediator": [
-                    
-                ],
-                "clever": [
-                    
-                ],
-                "insightful": [
-
-                ],
-                "sense": [
-
-                ],
-                "kit": [
-
-                ],
-                "story": [
-
-                ],
-                "lore": [],
-                "camp": [],
-                "healer": [],
-                "star": [],
-                "omen": [],
-                "dream": [],
-                "clairvoyant": [],
-                "prophet": [],
-                "ghost": []
+                PathEnum.TEACHER: [ "" ],
+                PathEnum.HUNTER: [ "" ],
+                PathEnum.FIGHTER: [ "" ],
+                PathEnum.RUNNER: [ "" ],
+                PathEnum.CLIMBER: [ "" ],
+                PathEnum.SWIMMER: [ "" ],
+                PathEnum.SPEAKER: [ "" ],
+                PathEnum.MEDIATOR: [ "" ],
+                PathEnum.CLEVER: [ "" ],
+                PathEnum.INSIGHTFUL: [ "" ],
+                PathEnum.SENSE: [ "" ],
+                PathEnum.KIT: [ "" ],
+                PathEnum.STORY: [ "" ],
+                PathEnum.LORE: [ "" ],
+                PathEnum.CAMP: [ "" ],
+                PathEnum.HEALER: [ "" ],
+                PathEnum.STAR: [ "" ],
+                PathEnum.OMEN: [ "" ],
+                PathEnum.DREAM: [ "" ],
+                PathEnum.CLAIRVOYANT: [ "" ],
+                PathEnum.PROPHET: [ "" ],
+                PathEnum.GHOST: [ "" ],
             }
         
         for _ment in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][_ment]["strings"] = []
             for _path in cat.history.mentor_influence["skill"][_ment]:
                 #Check to make sure nothing weird got in there. 
-                if _path in cat.skills.all_paths:
-                    if cat.history.mentor_influence["skill"][_ment][_path] > 0:
-                        cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[_path]))
+                try:
+                    if PathEnum[_path] in cat.skills.all_paths:
+                        if cat.history.mentor_influence["skill"][_ment][_path] > 0:
+                            cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[_path]))
+                except ValueError:
+                    pass
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
@@ -291,10 +276,11 @@ class History:
     def add_skill_mentor_influence(cat, mentor_id, path, amount):
         
         History.check_load(cat)
+        
         if mentor_id not in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][mentor_id] = {}
-        if path not in cat.history.mentor_influence["skill"][mentor_id]:
-            cat.history.mentor_influence["skill"][mentor_id][path] = 0
+        if path.name not in cat.history.mentor_influence["skill"][mentor_id]:
+            cat.history.mentor_influence["skill"][mentor_id][path.name] = 0
         cat.history.mentor_influence["trait"][mentor_id][path] += amount
         
     @staticmethod

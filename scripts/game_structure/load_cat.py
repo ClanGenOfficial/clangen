@@ -143,7 +143,9 @@ def json_load():
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
 
-            if "skill" in cat:
+            if "skill_dict" in cat:
+                new_cat.skills = CatSkills(cat["skill_dict"])
+            elif "skill" in cat:
                 print('skill in cat')
                 if new_cat.backstory is None:
                     if "skill" == 'formerly a loner':
@@ -154,7 +156,7 @@ def json_load():
                         new_cat.backstory = backstory
                     else:
                         new_cat.backstory = 'clanborn'
-                new_cat.skills.convert_old_skills(cat["skill"], new_cat)
+                new_cat.skills.get_skills_from_old(cat["skill"])
 
             if new_cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
                 new_cat.skills.hidden_skill = "loner's knowledge"

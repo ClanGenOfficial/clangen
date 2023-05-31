@@ -6,7 +6,6 @@ from random import choice
 import pygame
 
 from ..cat.history import History
-from ..cat.skills import SKILLS
 from ..housekeeping.datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, SaveAsImage
 
@@ -1018,7 +1017,6 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # CAT SKILLS
-        print(str(the_cat.skills.skill_list()))
         output += the_cat.skills.skill_string()
         # NEWLINE ----------
         output += "\n"
