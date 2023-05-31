@@ -135,7 +135,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 (1450, 140), (68, 68))),
                 "",
                 object_id="#help_button", manager=MANAGER,
-                tool_tip_text=  "Automatically adoptive parents for a cat are set when the cat is born. "
+                tool_tip_text=  "A cat's adoptive parents are set automatically when the cat is born. "
                                 "Any cats that are mates with the parents at the time of birth are considered adoptive parents."
                                 "<br><br>"
                                 "To be a possible adoptive parent, the cat has to be 14 moons older than the child.",
