@@ -71,21 +71,21 @@ class CatSkills:
             return
 
         influenced = False
-        influence_groups = SKILLS["influence_groups"][mentor.skills.primary_path]
+        influence_groups = SKILLS["influence groups"][mentor.skills.primary_path]
         if self.primary_path in influence_groups and self.secondary_path in influence_groups:
             influenced = True
             if random.randint(1, 2) == 1:
-                self.primary_points += 1
+                path = self.primary_path
             else:
-                self.secondary_points += 1
+                path = self.secondary_path
         elif self.primary_path in influence_groups:
             influenced = True
-            self.primary_points += 1
+            path = self.primary_path
         elif self.secondary_path in influence_groups:
             influenced = True
-            self.secondary_points += 1
+            path = self.secondary_path
         if influenced:
-            the_cat.history.add_mentor_influence(the_cat, mentor)
+            return (mentor, path, 1)
 
 
     def progress_skill(self, the_cat, mentor, parent1, parent2):
@@ -194,7 +194,7 @@ class CatSkills:
                     # keep in mind that points over the 10 total don't roll over to the next tier
                     # majority of the_cats should be getting to 2nd or 3rd around senior adult
                     amount_improved = random.choices([1, 2, 3, 10], [25, 15, 4, 1])
-                    self.primary_points += amount_improved
+                    self.primary_points = self.primary_points + random.choice(amount_improved)
             # check if they need to jump to the next tier
             elif self.primary_points >= 10 and self.primary_tier != 3:
                 self.primary_tier += 1

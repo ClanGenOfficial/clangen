@@ -153,14 +153,10 @@ class History:
         }
 
     @staticmethod
-    def add_mentor_influence_strings(cat):
+    def add_mentor_facet_influence_strings(cat):
         """
         adds mentor influence to the cat's history save
         :param cat: cat object
-        :param mentor: the ID of the mentor who influenced the cat
-        :param skill: the skill that was given by the mentor
-        :param second_skill: the second skill that was acquired, if there was one
-        :param trait: the personality group given by the mentor
         """
         History.check_load(cat)
         
@@ -172,7 +168,7 @@ class History:
             return
 
         # working under the impression that these blurbs will be preceeded by "more likely to"
-        influence_text = {
+        facet_influence_text = {
                 "lawfulness_raise": [
                     "follow rules", "follow the status quo", "heed their inner compass", "have strong inner morals"
                 ],
@@ -206,9 +202,79 @@ class History:
                 #Check to make sure nothing weird got in there. 
                 if _fac in cat.personality.facet_types:
                     if cat.history.mentor_influence["trait"][_ment][_fac] > 0:
-                        cat.history.mentor_influence["trait"][_ment]["strings"].append(random.choice(influence_text[_fac + "_raise"]))
+                        cat.history.mentor_influence["trait"][_ment]["strings"].append(random.choice(facet_influence_text[_fac + "_raise"]))
                     elif cat.history.mentor_influence["trait"][_ment][_fac] < 0:
-                        cat.history.mentor_influence["trait"][_ment]["strings"].append(random.choice(influence_text[_fac + "_lower"]))
+                        cat.history.mentor_influence["trait"][_ment]["strings"].append(random.choice(facet_influence_text[_fac + "_lower"]))
+
+    @staticmethod
+    def add_mentor_skill_influence_strings(cat):
+        """
+        adds mentor influence to the cat's history save
+        :param cat: cat object
+        """
+        History.check_load(cat)
+        
+        if not cat.history.mentor_influence["skill"]:
+            return
+
+        # working under the impression that these blurbs will be preceeded by "more likely to"
+        skill_influence_text = {
+                "teacher": [
+                    
+                ],
+                "hunter": [
+                    
+                ],
+                "fighter": [
+                    
+                ],
+                "runner": [
+                    
+                ],
+                "climber": [
+                    
+                ],
+                "swimmer": [
+                ],
+                "speaker": [
+                    
+                ],
+                "mediator": [
+                    
+                ],
+                "clever": [
+                    
+                ],
+                "insightful": [
+
+                ],
+                "sense": [
+
+                ],
+                "kit": [
+
+                ],
+                "story": [
+
+                ],
+                "lore": [],
+                "camp": [],
+                "healer": [],
+                "star": [],
+                "omen": [],
+                "dream": [],
+                "clairvoyant": [],
+                "prophet": [],
+                "ghost": []
+            }
+        
+        for _ment in cat.history.mentor_influence["skill"]:
+            cat.history.mentor_influence["skill"][_ment]["strings"] = []
+            for _path in cat.history.mentor_influence["skill"][_ment]:
+                #Check to make sure nothing weird got in there. 
+                if _path in cat.skills.all_paths:
+                    if cat.history.mentor_influence["skill"][_ment][_path] > 0:
+                        cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[_path]))
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
@@ -222,10 +288,14 @@ class History:
         cat.history.mentor_influence["trait"][mentor_id][facet] += amount
     
     @staticmethod
-    def add_skill_mentor_influence(cat, skill_influence):
+    def add_skill_mentor_influence(cat, mentor_id, path, amount):
         
         History.check_load(cat)
-        cat.history.mentor_influence["skill"] = skill_influence
+        if mentor_id not in cat.history.mentor_influence["skill"]:
+            cat.history.mentor_influence["skill"][mentor_id] = {}
+        if path not in cat.history.mentor_influence["skill"][mentor_id]:
+            cat.history.mentor_influence["skill"][mentor_id][path] = 0
+        cat.history.mentor_influence["trait"][mentor_id][path] += amount
         
     @staticmethod
     def add_app_ceremony(cat, honor):

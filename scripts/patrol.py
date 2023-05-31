@@ -1869,10 +1869,14 @@ class Patrol():
         for cat in self.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
-                affect = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                if affect:
-                    History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
-                    print(affect)
+                affect_personality = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
+                affect_skills = cat.skills.influence_skill(cat, Cat.fetch_cat(cat.mentor))
+                if affect_personality:
+                    History.add_facet_mentor_influence(cat, affect_personality[0], affect_personality[1], affect_personality[2])
+                    print(affect_personality)
+                if affect_skills:
+                    History.add_skill_mentor_influence(cat, affect_skills[0], affect_skills[1], affect_skills[2])
+                    print(affect_personality)
 
     def handle_reputation(self, difference):
         """

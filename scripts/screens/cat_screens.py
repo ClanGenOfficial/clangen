@@ -1452,43 +1452,44 @@ class ProfileScreen(Screens):
             influence_history += " ".join(trait_influence)
             skill_influence = []
             if "skill" in mentor_influence and mentor_influence["skill"] is not None:
-                if mentor_influence["mentor"] and Cat.fetch_cat(mentor_influence["mentor"]):
-                    mentor = str(Cat.fetch_cat(mentor_influence["mentor"]).name)
-                else:
-                    influenced = False
-                    mentor = str(Cat.fetch_cat(self.the_cat.former_mentor[-1]).name)
-                influenced_skill = mentor_influence["skill"]
-                second_skill = mentor_influence["second_skill"] if "second_skill" in mentor_influence else None
+                for _mentor in mentor_influence["skill"]:
+                    #If the strings are not set (empty list), continue. 
+                    if not mentor_influence["skill"][_mentor].get("path"):
+                        continue
+                    
+                    ment_obj = Cat.fetch_cat(_mentor)
+                    #Continue of the mentor is invalid too.
+                    if not isinstance(ment_obj, Cat):
+                        continue
 
-                if influenced_skill or second_skill:
-                    vowels = ['e', 'a', 'i', 'o', 'u']
-                    if influenced_skill in Cat.skill_groups.get('special'):
-                        adjust_skill = 'unlock {PRONOUN/m_c/poss} abilities as a ' + influenced_skill
-                        for y in vowels:
-                            if influenced_skill.startswith(y):
-                                adjust_skill = adjust_skill.replace(' a ', ' an ')
-                                break
-                        influenced_skill = adjust_skill
-                    elif influenced_skill in Cat.skill_groups.get('star'):
-                        adjust_skill = f'grow a {influenced_skill}'
-                        influenced_skill = adjust_skill
-                    elif influenced_skill in Cat.skill_groups.get('smart'):
-                        adjust_skill = f'become {influenced_skill}'
-                        influenced_skill = adjust_skill
+                    '''if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
+                        string_snippet = ", ".join(mentor_influence["skill"][_mentor].get("strings")[:-1]) + \
+                            " and " + mentor_influence["skill"][_mentor].get("strings")[-1]
+                    else:
+                        string_snippet = mentor_influence["skill"][_mentor].get("strings")[0]'''
+                    
+                    string_snippet = str(mentor_influence["skill"])
+
+                    if string_snippet in Cat.skill_groups.get('special'):
+                        skill_influence.append(str(ment_obj.name) +  \
+                                        " helped {PRONOUN/m_c/object} unlock {PRONOUN/m_c/poss} abilities as a " + string_snippet + ".")
+                    elif string_snippet in Cat.skill_groups.get('star'):
+                        skill_influence.append(str(ment_obj.name) +  \
+                                        " helped {PRONOUN/m_c/object} grow a " + string_snippet + ".")
+                    elif string_snippet in Cat.skill_groups.get('smart'):
+                        skill_influence.append(str(ment_obj.name) +  \
+                                        " influenced {PRONOUN/m_c/object} to become " + string_snippet + ".")
                     else:
                         # for loop to assign proper grammar to all these groups
                         become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
                         for x in become_group:
-                            if influenced_skill in Cat.skill_groups.get(x):
-                                adjust_skill = f'become a {influenced_skill}'
-                                for y in vowels:
-                                    if influenced_skill.startswith(y):
-                                        adjust_skill = adjust_skill.replace(' a ', ' an ')
-                                        break
-                                influenced_skill = adjust_skill
+                            if string_snippet in Cat.skill_groups.get(x):
+                                adjust_skill = f'become a {string_snippet}'
+                                string_snippet = adjust_skill
                                 break
-                    skill_influence.append(adjust_skill)
-            influence_history += " ".join(skill_influence)
+                        skill_influence.append(str(ment_obj.name) +  \
+                                        " influenced {PRONOUN/m_c/object} to " + string_snippet + ".")
+                influence_history += " ".join(skill_influence)
 
         app_ceremony = History.get_app_ceremony(self.the_cat)
         #print(app_ceremony)

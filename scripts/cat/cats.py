@@ -785,7 +785,7 @@ class Cat():
             Also handles mentor inflence """  
         self.personality.set_kit(self.is_baby()) #Update kit trait stuff
         if self.status in ["warrior", "medicine cat", "mediator"]:
-            History.add_mentor_influence_strings(self)
+            History.add_mentor_facet_influence_strings(self)
             # Smaller facet wobble if there was mentor inflenece
             if History.get_mentor_influence(self).get("trait"):
                 self.personality.facet_wobble(max = 2)
@@ -1294,7 +1294,7 @@ class Cat():
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
 
-        self.skills.update_skill()
+        self.skills.progress_skill(self, self.fetch_cat(self.mentor), self.parent1, self.parent2)
 
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
