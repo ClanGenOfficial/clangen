@@ -171,7 +171,7 @@ class Death_Events():
         types = ["birth_death"]
         if "other_clan" in death_cause.tags:
             types.append("other_clans")
-        game.cur_events_list.append(Single_Event(death_text + " " + additional_event_text, types, involved_cats))
+        # game.cur_events_list.append(Single_Event(death_text + " " + additional_event_text, types, involved_cats))
 
     def handle_witness(self, cat, other_cat):
         """

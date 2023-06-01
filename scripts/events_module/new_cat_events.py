@@ -58,7 +58,7 @@ class NewCatEvents:
                     event_text = event_text + f" They decide to take a new name, {outside_cat.name}."
                 outside_cat.thought = "Is looking around the camp with wonder"
                 involved_cats = [outside_cat.ID]
-                game.cur_events_list.append(Single_Event(event_text, ["misc"], involved_cats))
+                # game.cur_events_list.append(Single_Event(event_text, ["misc"], involved_cats))
 
                 # add them 
                 for the_cat in outside_cat.all_cats.values():
@@ -220,7 +220,7 @@ class NewCatEvents:
         types = ["misc"]
         if "other_clan" in new_cat_event.tags:
             types.append("other_clans")
-        game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+        # game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
         return created_cats
 

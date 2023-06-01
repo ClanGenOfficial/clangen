@@ -10,6 +10,8 @@ from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver
+import ujson
+import random
 
 
 class EventsScreen(Screens):
@@ -23,7 +25,7 @@ class EventsScreen(Screens):
     misc_events = ""
     display_text = "<center> Check this page to see which events are currently happening in the Clan.</center>"
     display_events = ""
-
+    
     def __init__(self, name=None):
         super().__init__(name)
         self.misc_alert = None
@@ -50,6 +52,7 @@ class EventsScreen(Screens):
         self.involved_cat_buttons = []
         self.cat_profile_buttons = {}
         self.scroll_height = {}
+        self.CEREMONY_TXT = None
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -614,9 +617,9 @@ class EventsScreen(Screens):
 
         self.season.set_text(f'Current season: {game.clan.current_season}')
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Clan age: {game.clan.age} moon')
+            self.clan_age.set_text(f'Your age: {game.clan.age} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
+            self.clan_age.set_text(f'Your age: {game.clan.age} moons')
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
@@ -746,13 +749,16 @@ class EventsScreen(Screens):
         """
         Categorize events from game.cur_events_list into display categories for screen
         """
-
+        
         self.all_events = [x for x in game.cur_events_list if "interaction" not in x.types]
         self.ceremony_events = [x for x in game.cur_events_list if "ceremony" in x.types]
         self.birth_death_events = [x for x in game.cur_events_list if "birth_death" in x.types]
         self.relation_events = [x for x in game.cur_events_list if "relation" in x.types]
         self.other_clans_events = [x for x in game.cur_events_list if "other_clans" in x.types]
         self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
+
+    
+        
 
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""

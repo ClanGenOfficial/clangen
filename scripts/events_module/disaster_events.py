@@ -73,7 +73,7 @@ class DisasterEvents():
         # display trigger event
         event = self.disaster_text(chosen_disaster.trigger_events)
         event.replace("c_n", f"{game.clan.name}Clan")
-        game.cur_events_list.append(Single_Event(event, "misc"))
+        # game.cur_events_list.append(Single_Event(event, "misc"))
 
     def handle_current_primary_disaster(self):
         """
@@ -88,16 +88,16 @@ class DisasterEvents():
         # triggering conclusion if duration reaches 0
         if game.clan.primary_disaster.current_duration >= game.clan.primary_disaster.duration:
             event = self.disaster_text(game.clan.primary_disaster.conclusion_events)
-            game.cur_events_list.append(
-                Single_Event(event, "misc"))
+            # game.cur_events_list.append(
+            #     Single_Event(event, "misc"))
             game.clan.primary_disaster = None
             return
         else:
             # giving a progression event
             event_list = game.clan.primary_disaster.progress_events[f"moon{game.clan.primary_disaster.current_duration}"]
             event = self.disaster_text(event_list)
-            game.cur_events_list.append(
-                Single_Event(event, "misc"))
+            # game.cur_events_list.append(
+            #     Single_Event(event, "misc"))
 
             # checking if a secondary disaster is triggered
             if game.clan.primary_disaster.secondary_disasters:
@@ -125,8 +125,8 @@ class DisasterEvents():
                     secondary_disaster = random.choice(picked_disasters)
                     print("chosen secondary", secondary_disaster)
                     event = self.disaster_text(secondary_disaster["trigger_events"])
-                    game.cur_events_list.append(
-                        Single_Event(event, "misc"))
+                    # game.cur_events_list.append(
+                    #     Single_Event(event, "misc"))
 
                     # now grab all the disaster's info and save it
                     secondary_disaster = self.generate_events.possible_ongoing_events(
@@ -147,16 +147,16 @@ class DisasterEvents():
         # triggering conclusion if duration reaches 0
         if game.clan.secondary_disaster.current_duration >= game.clan.secondary_disaster.duration:
             event = self.disaster_text(game.clan.secondary_disaster.conclusion_events)
-            game.cur_events_list.append(
-                Single_Event(event, "misc"))
+            # game.cur_events_list.append(
+            #     Single_Event(event, "misc"))
             game.clan.secondary_disaster = None
             return
         else:
             # giving a progression event
             event_list = game.clan.secondary_disaster.progress_events[f"moon{game.clan.secondary_disaster.current_duration}"]
             event = self.disaster_text(event_list)
-            game.cur_events_list.append(
-                Single_Event(event, "misc"))
+            # game.cur_events_list.append(
+            #     Single_Event(event, "misc"))
 
         return
 

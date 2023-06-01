@@ -93,9 +93,9 @@ class Group_Events():
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
 
-        game.cur_events_list.append(Single_Event(
-            interaction_str, relevant_event_tabs, ids
-        ))
+        # game.cur_events_list.append(Single_Event(
+        #     interaction_str, relevant_event_tabs, ids
+        # ))
         return ids
 
     # ---------------------------------------------------------------------------- #

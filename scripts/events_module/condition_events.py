@@ -77,7 +77,7 @@ class Condition_Events():
             types = ["health"]
             if cat.dead:
                 types.append("birth_death")
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            # game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
             # game.health_events_list.append(event_string)
 
         # just double-checking that trigger is only returned True if the cat is dead
@@ -214,7 +214,7 @@ class Condition_Events():
                 types.append("birth_death")
             if has_other_clan:
                 types.append("other_clans")
-            game.cur_events_list.append(Single_Event(text, types, involved_cats))
+            # game.cur_events_list.append(Single_Event(text, types, involved_cats))
 
         return triggered
 
@@ -676,7 +676,7 @@ class Condition_Events():
 
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
-            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
+            # game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
         return
 
     def determine_retirement(self, cat, event_list, event_types, triggered):

@@ -25,6 +25,7 @@ class Game():
     mediated = []  # Keep track of which couples have been mediated this moon.
 
     cur_events_list = []
+    your_events_list = []
     ceremony_events_list = []
     birth_death_events_list = []
     relation_events_list = []

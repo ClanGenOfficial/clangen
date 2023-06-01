@@ -171,9 +171,9 @@ class Relationship():
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
-        game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
-        ))
+        # game.cur_events_list.append(Single_Event(
+        #     interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+        # ))
 
     def adjust_interaction_string(self, string):
 

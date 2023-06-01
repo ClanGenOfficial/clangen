@@ -204,7 +204,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("A clan with that name already exists.")
                 self.elements["error"].show()
                 return
-            self.clan_name = new_name
+            self.your_cat.name.prefix = new_name
             self.open_choose_background()
     
     def handle_create_other_cats(self):
@@ -711,6 +711,7 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_allowed_characters(
             list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- "))
         self.elements["name_entry"].set_text_length_limit(11)
+    
         self.elements["clan"] = pygame_gui.elements.UITextBox("-kit",
                                                               scale(pygame.Rect((820, 1005), (200, 50))),
                                                               object_id="#default_light",
@@ -944,6 +945,7 @@ class MakeClanScreen(Screens):
                          self.game_mode, self.members, your_cat = self.your_cat,
                          starting_season=self.selected_season,
                          )
+        game.clan.your_cat.moons = 0
         game.clan.create_clan()
         #game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
