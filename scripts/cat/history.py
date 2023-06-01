@@ -315,7 +315,7 @@ class History:
         History.check_load(cat)
         
         if other_cat is not None:
-            other_cat = other_cat.id
+            other_cat = other_cat.ID
         if condition in cat.history.possible_history:
             if cat.history.possible_history[condition]["scar_text"]:
                 scar_text = cat.history.possible_history[condition]["scar_text"]

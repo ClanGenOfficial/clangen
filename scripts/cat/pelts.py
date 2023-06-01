@@ -300,7 +300,7 @@ class Pelt():
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)
         else:
-            self.eye_colours = choice([i.pelt.eye_colour for i in parents] + [choice(Pelt.eye_colours)])
+            self.eye_colour = choice([i.pelt.eye_colour for i in parents] + [choice(Pelt.eye_colours)])
         
         #White patches must be initalized before eye color. 
         num = game.config["cat_generation"]["base_heterochromia"]

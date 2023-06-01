@@ -24,6 +24,7 @@ from .base_screens import Screens
 
 from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
+from scripts.clan import Clan
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
@@ -88,8 +89,8 @@ class StartScreen(Screens):
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
-                game.switches['error_message'] = ''
-                game.switches['traceback'] = ''
+                #game.switches['error_message'] = ''
+                #game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
@@ -286,17 +287,15 @@ class StartScreen(Screens):
             object_id="#default_dark",
             manager=MANAGER)
 
+        
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
-            if len(game.switches['clan_list']) > 1:
-                self.switch_clan_button.enable()
-            else:
-                self.switch_clan_button.disable()
-        elif game.clan is not None and game.switches['error_message']:
-            self.continue_button.disable()
-            self.switch_clan_button.enable()
         else:
             self.continue_button.disable()
+        
+        if len(game.switches['clan_list']) > 1:
+            self.switch_clan_button.enable()
+        else:
             self.switch_clan_button.disable()
 
         if game.switches['error_message']:
@@ -360,7 +359,7 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
-                        game.clan.switch_clans(
+                        Clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
                         
