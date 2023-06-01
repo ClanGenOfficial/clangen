@@ -426,8 +426,6 @@ class Clan():
                  deputy=None,
                  medicine_cat=None,
                  biome='Forest',
-                 world_seed=6616,
-                 camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
                  starting_members=[],
@@ -464,8 +462,6 @@ class Clan():
             self.instructor = None
             # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
-            self.world_seed = world_seed
-            self.camp_site = camp_site
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
@@ -706,7 +702,8 @@ class Clan():
                     else:
                         game.clan.medicine_cat = None
 
-    def switch_clans(self, clan):
+    @staticmethod
+    def switch_clans(clan):
         """
         TODO: DOCS
         """
@@ -723,9 +720,6 @@ class Clan():
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
-            "worldseed": self.world_seed,
-            "camp_site_1": self.camp_site[0],
-            "camp_site_2": self.camp_site[1],
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
