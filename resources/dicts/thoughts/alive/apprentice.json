@@ -245,7 +245,7 @@
             "Is worried to lose in a real fight",
             "Is worrying about something",
             "Says sorry more often than {PRONOUN/m_c/subject} need to",
-            "Is hiding after compliment a compliment",
+            "Is hiding after receiving a compliment",
             "Is avoiding everyone today"
         ],
         "main_trait_constraint": [
