@@ -2054,16 +2054,8 @@ class Patrol():
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
             # add bonus of certain skills
-            if cat.skill in Cat.skill_groups["hunt"]:
+            if cat.skills.meets_skill_requirement(SkillPath.HUNTER.name):
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
-
-        # add additional bonus of certain skills
-        if "fantastic hunter" in self.patrol_skills:
-            total_amount = int(total_amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
-        elif "great hunter" in self.patrol_skills:
-            total_amount = int(total_amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
-        elif "good hunter" in self.patrol_skills:
-            total_amount = int(total_amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
 
         if game.clan.game_mode != "classic":
             game.clan.freshkill_pile.add_freshkill(total_amount)

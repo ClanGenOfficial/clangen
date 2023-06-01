@@ -190,7 +190,7 @@ class Cat():
         self.status = status
         self.backstory = backstory
         self.age = None
-        self.skills = None
+        self.skills = CatSkills(skill_dict=skill_dict)
         self.personality = Personality(trait="troublesome", lawful=0, aggress=0,
                                        stable=0, social=0)
         self.parent1 = parent1
@@ -283,12 +283,6 @@ class Cat():
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
-        # skill
-        if skill_dict:
-            self.skills = CatSkills(skill_dict=skill_dict)
-        else:
-            self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
-
         # backstory
         if self.backstory is None:
             self.backstory = 'clanborn'
@@ -356,6 +350,9 @@ class Cat():
                                           Cat.experience_levels_range["master"][1])
             else:
                 self.experience = 0
+                
+            if not skill_dict:
+                self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
 
         # In camp status
         self.in_camp = 1
@@ -2882,8 +2879,7 @@ class Cat():
                 self.age = "elder"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
-            print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
-
+            
     @property
     def sprite(self):
         # Update the sprite
