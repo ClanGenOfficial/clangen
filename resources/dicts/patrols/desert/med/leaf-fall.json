@@ -23,15 +23,11 @@
         "fail_text": {
             "unscathed_common": "They fail to interpret any signs, and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the ominous looking clouds springing up over the horizon."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "win_trait": [
             "None"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "None"
         ],
@@ -66,15 +62,11 @@
             "unscathed_stat": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument.",
             "death": "As the medicine cats search deep within the slot canyons for the precious herbs that will keep c_n going, a light rainshower falls. Water, on any other day good news, instead spells doom. The rushing water sweeps through the canyon in a flash flood. r_c hears it coming, shoving r_c2 towards the canyon walls, but they can't both fit on the little ledge, and r_c loses their grip on the rock, falling beneath the rushing water."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "win_trait": [
             "None"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "None"
         ],

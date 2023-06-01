@@ -18,8 +18,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -210,8 +209,7 @@
             "unscathed_stat": "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -247,8 +245,7 @@
             "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -345,9 +342,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -402,9 +397,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -459,9 +452,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -515,9 +506,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -561,9 +550,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -609,9 +596,7 @@
             "injury": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -653,7 +638,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -704,7 +689,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -755,7 +740,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -807,9 +792,7 @@
             "injury": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -913,9 +896,7 @@
             "death": "Carelessly, r_c is seen by Twolegs, and taken from c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1016,9 +997,7 @@
             "death": "r_c is caught in a trap hidden in the earth and is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1063,9 +1042,7 @@
             "death": "r_c is caught in a trap hidden in the earth! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1116,9 +1093,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1172,9 +1147,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1226,9 +1199,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1282,9 +1253,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1330,9 +1299,7 @@
             "unscathed_common": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1382,9 +1349,7 @@
             "injury": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1433,12 +1398,8 @@
             "unscathed_stat": "r_c doesn't know what that monster is, and isn't sticking around to find out! They run home, tail between their legs."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "CLEVER,1",
+            "TEACHER,1"
         ],
         "fail_trait": [
             "childish",
@@ -1532,12 +1493,8 @@
             "unscathed_stat": "s_c's stressed nerves can't handle this weird monster, and they beg to go back homeinstead of confronting it."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "CLEVER,1",
+            "TEACHER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1591,12 +1548,8 @@
             "stat_injury": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save their tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets them go, its a serious wound."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "fail_trait": [
             "adventurous",

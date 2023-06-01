@@ -18,8 +18,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 4,
@@ -105,8 +104,7 @@
             "unscathed_stat": "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -202,9 +200,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp, empty-pawed and prickling with frustration."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -256,9 +252,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and {VERB/s_c/return/returns} to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -310,9 +304,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and {VERB/s_c/return/returns} to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -366,9 +358,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -412,9 +402,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -460,9 +448,7 @@
             "injury": "r_c  heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -504,7 +490,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/s_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c/object} away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -555,7 +541,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/s_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/s_c/object} away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -606,7 +592,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? {PRONOUN/s_c/subject/CAP} {VERB/s_c/wander/wanders} closer, drawing more of the patrol in with {PRONOUN/s_c/object}. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -662,9 +648,7 @@
             "injury": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that a broken window is just wide enough to push {PRONOUN/r_c/self} out to safety through, but the glass leaves {PRONOUN/r_c/object} bleeding as {PRONOUN/r_c/subject} {VERB/r_c/run/runs} back to c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -771,9 +755,7 @@
             "death": "Carelessly, r_c is seen by Twolegs, and taken from c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -874,9 +856,7 @@
             "death": "r_c is caught in a trap hidden in the sand and is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -921,9 +901,7 @@
             "death": "r_c is caught in a trap hidden in the sand! There's nothing the patrol is able to do to help {PRONOUN/r_c/object}, and r_c is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -974,9 +952,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1028,9 +1004,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1080,9 +1054,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1136,9 +1108,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1187,10 +1157,8 @@
             "unscathed_stat": "s_c pounces on the octopus enthusiastically. It thwacks its tentacles around {PRONOUN/s_c/poss} head, trying to avoid {PRONOUN/s_c/poss} snapping muzzle, and s_c skitters backwards, uncoordinated flailing about until the rest of the patrol is able to help {PRONOUN/s_c/object}. The octopus escapes."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter",
-            "very smart",
-            "extremely smart"
+            "HUNTER,2",
+            "CLEVER,2"
         ],
         "win_trait": [
             "charismatic",
@@ -1352,7 +1320,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -1397,7 +1365,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -1445,7 +1413,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -1495,7 +1463,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -1540,9 +1508,7 @@
             "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1598,9 +1564,7 @@
             "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1657,8 +1621,7 @@
             "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -1718,9 +1681,7 @@
             "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1773,9 +1734,7 @@
             "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1830,8 +1789,7 @@
             "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the gray fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -1889,12 +1847,8 @@
             "stat_injury": "The patrol tracks down a red fox, and spots that it's holding fresh-kill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -1961,12 +1915,8 @@
             "stat_injury": "The patrol tracks down a red fox, and spots that it's holding fresh-kill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -2032,12 +1982,8 @@
             "stat_injury": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the red fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} recklessly {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. But the fox is as desperate to keep its meal as s_c is to win it. Bleeding, s_c has to retreat as the fox trots off with its dinner."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -2105,11 +2051,8 @@
             "stat_injury": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, it makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help {PRONOUN/s_c/object} back to the medicine den."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -2177,11 +2120,8 @@
             "stat_injury": "The patrol tracks down a gray fox trespassing on c_n land, but s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, it makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and leaves the patrol needing to help {PRONOUN/s_c/object} back to the medicine den."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -2242,12 +2182,8 @@
             "stat_injury": "s_c hones in on the scent, and as soon as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the gray fox with a dead fish hanging from its jaws, {PRONOUN/s_c/subject} recklessly {VERB/s_c/throw/throws} {PRONOUN/s_c/self} to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat, bleeding."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "HUNTER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
