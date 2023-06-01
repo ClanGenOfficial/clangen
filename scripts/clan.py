@@ -874,8 +874,6 @@ class Clan():
                              Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
-                             world_seed=int(general[4]),
-                             camp_site=(int(general[5]), int(general[6])),
                              game_mode=general[7])
             game.clan.reputation = general[8]
         elif len(general) == 8:
@@ -892,8 +890,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
                 game_mode=general[7],
             )
         elif len(general) == 7:
@@ -908,8 +904,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
             )
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
@@ -1011,8 +1005,6 @@ class Clan():
                          med_cat,
                          biome=clan_data["biome"],
                          camp_bg=clan_data["camp_bg"],
-                         camp_site=(int(clan_data["camp_site_1"]),
-                                    int(clan_data["camp_site_2"])),
                          game_mode=clan_data["gamemode"])
 
         game.clan.reputation = int(clan_data["reputation"])
