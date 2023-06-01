@@ -219,7 +219,7 @@ class ChooseMentorScreen(Screens):
             manager=MANAGER)
 
         info = self.the_cat.age + "\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + \
-               "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skill
+               "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skills.skill_string()
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
             scale(pygame.Rect((980, 325), (210, 250))),
@@ -329,7 +329,7 @@ class ChooseMentorScreen(Screens):
 
             info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
                    self.selected_mentor.genderalign + "\n" + self.selected_mentor.personality.trait + "\n" + \
-                   self.selected_mentor.skill
+                   self.selected_mentor.skills.skill_string()
             if len(self.selected_mentor.former_apprentices) >= 1:
                 info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
             if len(self.selected_mentor.apprentice) >= 1:
@@ -2535,7 +2535,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
                 game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
-                game.patrolled.append(self.mediators[self.selected_mediator])
+                game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic)
@@ -2544,7 +2544,7 @@ class MediationScreen(Screens):
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
                 game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
-                game.patrolled.append(self.mediators[self.selected_mediator])
+                game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic,
@@ -3116,7 +3116,7 @@ class MediationScreen(Screens):
             if self.mediators[self.selected_mediator].not_working():
                 invalid_mediator = True
                 error_message += "This mediator can't work this moon. "
-            elif self.mediators[self.selected_mediator] in game.patrolled:
+            elif self.mediators[self.selected_mediator].ID in game.patrolled:
                 invalid_mediator = True
                 error_message += "This mediator has already worked this moon. "
         else:

@@ -21,9 +21,7 @@
             "unscathed_common": "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -114,9 +112,7 @@
             "injury": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it, but doesn't anticipate it turning on {PRONOUN/r_c/object} instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -151,9 +147,7 @@
             "unscathed_common": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -195,7 +189,7 @@
             "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -210,9 +204,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -256,7 +247,7 @@
             "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -271,9 +262,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -315,7 +303,7 @@
             "stat_injury": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -330,9 +318,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -375,7 +360,7 @@
             "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -390,9 +375,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -433,7 +415,7 @@
             "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -448,9 +430,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -489,7 +468,7 @@
             "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -504,9 +483,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -538,9 +514,7 @@
             "injury": "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, r_c sprains a leg."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,

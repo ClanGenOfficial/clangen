@@ -277,11 +277,14 @@ class History:
         
         History.check_load(cat)
         
+        if not isinstance(path, SkillPath):
+            path = SkillPath[path]
+        
         if mentor_id not in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][mentor_id] = {}
         if path.name not in cat.history.mentor_influence["skill"][mentor_id]:
             cat.history.mentor_influence["skill"][mentor_id][path.name] = 0
-        cat.history.mentor_influence["trait"][mentor_id][path] += amount
+        cat.history.mentor_influence["skill"][mentor_id][path.name] += amount
         
     @staticmethod
     def add_app_ceremony(cat, honor):

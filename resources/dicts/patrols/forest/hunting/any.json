@@ -29,10 +29,8 @@
             "injury": "The porcupine whips around, digging the quills of its tail into r_c! The patrol bolts away and returns to camp, r_c with a nose full of quills."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter",
-            "very smart",
-            "extremely smart"
+            "HUNTER,2",
+            "CLEVER,2"
         ],
         "win_trait": [
             "calm",
@@ -86,8 +84,8 @@
             "injury": "The porcupine whips around, digging the quills of its tail into r_c! r_c returns to camp with a nose full of quills and a wounded pride."
         },
         "win_skills": [
-            "fantastic hunter",
-            "extremely smart"
+            "HUNTER,3",
+            "CLEVER,3"
         ],
         "win_trait": [
             "calm",
@@ -126,8 +124,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 6,
@@ -213,9 +210,7 @@
             "injury": "r_c tries to climb up after them but slips and falls, twisting their paw."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -340,7 +335,7 @@
             "injury": "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "careful",
@@ -398,8 +393,7 @@
             "injury": "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -453,8 +447,7 @@
             "death": "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, proves to be fiercely protective of its meal.  They doesn't move fast enough and with no Clanmates to save them, r_c is quickly killed."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -511,8 +504,7 @@
             "injury": "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -566,8 +558,7 @@
             "death": "The patrol finds a wolf pack at the source of the noise. The wolves are busy eating from the carcass of a deer, and upon seeing the cats, prove to be fiercely protective of their meal.  The patrol doesn't move fast enough and r_c is killed before they can run."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -620,8 +611,7 @@
             "death": "r_c finds a wolf pack at the source of the noise. The pack is tearing into a deer carcass and upon seeing the cat, prove to be fiercely protective of their meal. r_c doesn't move fast enough and with no Clanmates to save them, is quickly killed."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -672,8 +662,7 @@
             "unscathed_stat": "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -708,8 +697,7 @@
             "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -807,9 +795,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -864,9 +850,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -921,9 +905,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -979,9 +961,7 @@
             "None"
         ],
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -1027,9 +1007,7 @@
             "None"
         ],
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -1071,7 +1049,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -1124,7 +1102,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -1175,7 +1153,7 @@
             "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -1230,9 +1208,7 @@
             "injury": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1340,9 +1316,7 @@
             "death": "Carelessly, r_c is seen by Twolegs, and taken from c_n."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1445,9 +1419,7 @@
             "death": "r_c is caught in a trap hidden in the bushes and is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1492,9 +1464,7 @@
             "death": "r_c is caught in a trap hidden in the bushes! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1545,9 +1515,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1599,9 +1567,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1654,9 +1620,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1708,9 +1672,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -1753,9 +1715,7 @@
             "unscathed_common": "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1
@@ -1808,9 +1768,7 @@
             "unscathed_common": "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1866,9 +1824,7 @@
             "unscathed_stat": "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 3
@@ -1922,8 +1878,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3

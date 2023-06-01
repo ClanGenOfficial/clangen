@@ -22,7 +22,7 @@
             "death": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "careful",

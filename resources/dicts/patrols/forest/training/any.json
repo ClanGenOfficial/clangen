@@ -73,9 +73,7 @@
             "injury": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "patient",
@@ -142,9 +140,7 @@
             "injury": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "patient",
@@ -216,8 +212,7 @@
             "stat_injury": "Even though s_c made it out, they swear someone pushed them, and blame r_c. r_c denies it and says they should get s_c back to camp to get their injury looked at."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -285,8 +280,7 @@
             "injury": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -356,8 +350,7 @@
             "injury": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -417,9 +410,7 @@
             "injury": "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a bush to shelter under through the night in the cold forest until a patrol finds them the next morning and helps them to the medicine den."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -503,9 +494,7 @@
             "unscathed_stat": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -550,9 +539,7 @@
             "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -597,9 +584,7 @@
             "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -647,9 +632,7 @@
             "unscathed_common": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -682,9 +665,7 @@
             "unscathed_common": "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -718,9 +699,7 @@
             "unscathed_common": "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -754,9 +733,7 @@
             "unscathed_common": "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -832,7 +809,7 @@
             "unscathed_stat": "p_l spots r_c looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -877,12 +854,8 @@
             "unscathed_stat": "Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "SPEAKER,1",
+            "TEACHER,1"
         ],
         "fail_trait": [
             "troublesome"

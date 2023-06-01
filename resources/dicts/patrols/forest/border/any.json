@@ -27,8 +27,7 @@
             "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "bloodthirsty",
@@ -72,8 +71,7 @@
             "death": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. Their body is discovered the next day, covered in wounds and cold."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -122,9 +120,7 @@
             "injury": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "bold",
@@ -167,8 +163,7 @@
             "injury": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "patient",
@@ -236,9 +231,7 @@
             "injury": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "patient",
@@ -303,9 +296,7 @@
             "injury": "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "patient",
@@ -369,9 +360,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -392,7 +381,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -433,9 +422,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -456,7 +443,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -553,9 +540,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -576,7 +561,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -615,9 +600,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -638,7 +621,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -726,9 +709,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -749,7 +730,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -782,9 +763,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -805,7 +784,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -888,9 +867,7 @@
             "unscathed_stat": "s_c takes p_l aside, and reminds them coldly to focus on their duties."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "charismatic",

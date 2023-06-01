@@ -26,9 +26,7 @@
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -89,9 +87,7 @@
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -153,9 +149,7 @@
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -214,9 +208,7 @@
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -264,9 +256,7 @@
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -311,9 +301,7 @@
             "unscathed_stat": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They immediately apologize to the o_c_n patrol for the diplomatic incident they've inadvertently caused."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -369,9 +357,7 @@
             "injury": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new fear in their heart - is o_c_n still their ally?"
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -430,9 +416,7 @@
             "injury": "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new fear in their heart - is o_c_n still their ally?"
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -487,9 +471,7 @@
             "unscathed_stat": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -531,9 +513,7 @@
             "unscathed_stat": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -582,9 +562,7 @@
             "stat_injury": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -648,9 +626,7 @@
             "stat_injury": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -714,9 +690,7 @@
             "stat_injury": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -778,9 +752,7 @@
             "stat_injury": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -832,9 +804,7 @@
             "stat_injury": "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -880,7 +850,7 @@
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "careful",
@@ -919,7 +889,7 @@
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "careful",
@@ -959,8 +929,7 @@
             "death": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -1000,8 +969,7 @@
             "death": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol are able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -1040,8 +1008,7 @@
             "injury": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. Somehow, gasping for air and paddling desperately, r_c is able to remember enough of their training to keep an eye out for driftwood, and sinks their claws into the first piece that's swept past them. It saves their life."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -1078,8 +1045,7 @@
             "injury": "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, they nevertheless cling to safety as the floodwaters run their course."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -1116,7 +1082,7 @@
             "death": "r_c is in the middle of the bog when the flood hits them, freezing water rushing past and sweeping them straight out into the churning river, under it's ice."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "careful",
@@ -1160,9 +1126,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1183,7 +1147,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1223,9 +1187,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1246,7 +1208,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1339,9 +1301,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1362,7 +1322,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1399,9 +1359,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1422,7 +1380,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1507,9 +1465,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1530,7 +1486,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1558,9 +1514,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -1581,7 +1535,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1658,9 +1612,7 @@
             "unscathed_stat": "s_c takes r_c aside, and reminds them coldly to focus on their duties."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "charismatic",

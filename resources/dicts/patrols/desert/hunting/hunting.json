@@ -19,9 +19,7 @@
         "chance_of_success": 60,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -78,8 +76,7 @@
             "unscathed_common": "Your patrol misses the rat, and their confidence is shaken."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -106,7 +103,7 @@
             "unscathed_common": "Your patrol narrowly misses the hare."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -133,8 +130,7 @@
         "chance_of_success": 50,
         "exp": 15,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -161,9 +157,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -190,8 +184,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -218,9 +211,7 @@
             "unscathed_common": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -250,9 +241,7 @@
         "chance_of_success": 40,
         "exp": 10,
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 6,
@@ -282,8 +271,7 @@
             "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 6,
@@ -314,9 +302,7 @@
             "unscathed_common": "No one can make sense of the vision.",
             "unscathed_stat": "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -343,9 +329,7 @@
         "fail_text": {
             "unscathed_common": "r_c can't make sense of the vision."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
