@@ -159,11 +159,11 @@ def json_load():
                 new_cat.skills.get_skills_from_old(cat["skill"])
 
             if new_cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
-                new_cat.skills.hidden_skill = "loner's knowledge"
+                new_cat.skills.hidden.skill = "loner's knowledge"
             elif new_cat.backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
-                new_cat.skills.hidden_skill = "rogue's knowledge"
+                new_cat.skills.hidden.skill = "rogue's knowledge"
             elif new_cat.backstory in BACKSTORIES["backstory_categories"]["kittypet_backstories"]:
-                new_cat.skills.hidden_skill = "kittypet's knowledge"
+                new_cat.skills.hidden.skill = "kittypet's knowledge"
 
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.mate:

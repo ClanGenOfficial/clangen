@@ -385,7 +385,7 @@ class TestStatusChange(unittest.TestCase):
         apprentice = Cat()
         mentor = Cat()
         apprentice.status = "apprentice"
-        apprentice.skills.primary_skill = "???"
+        apprentice.skills.primary.skill = "???"
         mentor.apprentice.append(apprentice.ID)
         apprentice.mentor = mentor.ID
         apprentice.history = History(

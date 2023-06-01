@@ -394,7 +394,7 @@ class GenerateEvents:
                         continue
                     had_trait = True
                 if event.other_cat_skill and not had_trait:
-                    if (other_cat.skills.primary_skill or other_cat.skills.secondary_skill) not in event.other_cat_skill and int(random.random() * 15):
+                    if (other_cat.skills.primary.skill or other_cat.skills.secondary.skill) not in event.other_cat_skill and int(random.random() * 15):
                         continue
                 had_trait = True
                 if event.other_cat_negate_trait:
@@ -402,7 +402,7 @@ class GenerateEvents:
                         continue
                     had_trait = False
                 if event.other_cat_negate_skill and had_trait:
-                    if (other_cat.skills.primary_skill or other_cat.skills.secondary_skill) in event.other_cat_negate_skill and int(random.random() * 15):
+                    if (other_cat.skills.primary.skill or other_cat.skills.secondary.skill) in event.other_cat_negate_skill and int(random.random() * 15):
                         continue
 
             else:
@@ -420,7 +420,7 @@ class GenerateEvents:
                     continue
                 had_trait = True
             if event.cat_skill and not had_trait:
-                if (cat.skills.primary_skill or cat.skills.secondary_skill) not in event.cat_skill and int(random.random() * 15):
+                if (cat.skills.primary.skill or cat.skills.secondary.skill) not in event.cat_skill and int(random.random() * 15):
                     continue
 
             had_trait = True
@@ -429,7 +429,7 @@ class GenerateEvents:
                     continue
                 had_trait = False
             if event.cat_negate_skill and had_trait:
-                if (cat.skills.primary_skill or cat.skills.secondary_skill) in event.cat_negate_skill and int(random.random() * 15):
+                if (cat.skills.primary.skill or cat.skills.secondary.skill) in event.cat_negate_skill and int(random.random() * 15):
                     continue
 
             # determine injury severity chance

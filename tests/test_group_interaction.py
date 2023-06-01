@@ -99,7 +99,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.skills.primary_skill = "good hunter"
+        main_cat.skills.primary.skill = "good hunter"
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")

@@ -35,14 +35,14 @@ def medical_cats_condition_fulfilled(all_cats,
         total_exp += cat.experience * .003
     for cat in medicine_apprentices:
         total_exp += cat.experience * .003
-    good_healer = len([i for i in medicine_cats if i.skills.primary_skill == 'good healer' or i.skills.secondary_skill == 'good healer']) * 1.5
-    great_healer = len([i for i in medicine_cats if i.skills.primary_skill == 'great healer' or i.skills.secondary_skill == 'great healer']) * 1.75
-    fantastic_healer = len([i for i in medicine_cats if i.skills.primary_skill == 'fantastic healer']) * 2
+    good_healer = len([i for i in medicine_cats if i.skills.primary.skill == 'good healer' or i.skills.secondary.skill == 'good healer']) * 1.5
+    great_healer = len([i for i in medicine_cats if i.skills.primary.skill == 'great healer' or i.skills.secondary.skill == 'great healer']) * 1.75
+    fantastic_healer = len([i for i in medicine_cats if i.skills.primary.skill == 'fantastic healer']) * 2
     normal_meds = float(
         len(
             list(
                 filter(
-                    lambda c: c.skills.primary_skill not in
+                    lambda c: c.skills.primary.skill not in
                     ['good healer', 'great healer', 'fantastic healer'],
                     medicine_cats))))
 
