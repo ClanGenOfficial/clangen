@@ -272,9 +272,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "FIGHTER,1"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
@@ -326,9 +323,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -388,9 +382,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 3,

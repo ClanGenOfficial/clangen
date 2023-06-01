@@ -205,9 +205,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "FIGHTER,1"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -266,9 +263,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "FIGHTER,1"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -324,9 +318,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -385,9 +376,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "FIGHTER,1"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -443,9 +431,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "FIGHTER,1"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -498,9 +483,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
