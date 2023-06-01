@@ -496,8 +496,22 @@ class CatSkills:
             if not int(random.random() * 4):
                 self.primary.points += 1
 
-    def meets_skill_requirement(self, path:SkillPath, min_teir:int) -> bool:
+    def meets_skill_requirement(self, path:str, min_teir:int) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
+        
+        try: 
+            path = SkillPath[path]
+        except KeyError:
+            try:
+                path = HiddenSkillEnum[path]
+            except KeyError:
+                print("non valid path", path)
+                return False
+        
+        if isinstance(path, HiddenSkillEnum):
+            if path == self.hidden:
+                return True
+        
         if self.primary:
             if path == self.primary.path and self.primary.tier >= min_teir:
                 return True

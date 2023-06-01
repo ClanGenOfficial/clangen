@@ -484,7 +484,7 @@ class Patrol():
                     skill_break = _skill.split(",")
                     
                     try:
-                        if kitty.skills.meets_skill_requirement(SkillPath[skill_break[0]],
+                        if kitty.skills.meets_skill_requirement(skill_break[0],
                                                                 int(skill_break[1])):
                              win_stat_cats.append(kitty)
                     except (KeyError, IndexError):
@@ -934,14 +934,30 @@ class Patrol():
 
         print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
+        
+        
+        # Skill and trait stuff
         for kitty in self.patrol_cats:
-            skill_string = kitty.skills.skill_string()
-            if (kitty.skills.primary.skill or kitty.skills.secondary.skill or kitty.skills.hidden_skill) in self.patrol_event.win_skills:
-                success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                if "great" in skill_string or "very" in skill_string:
-                    success_chance += game.config["patrol_generation"]["better_stat_modifier"]
-                elif "fantastic" in skill_string or "excellent" in skill_string or "extremely" in skill_string:
-                    success_chance += game.config["patrol_generation"]["best_stat_modifier"]
+            for _skill in self.patrol_event.win_skills:
+                spli = _skill.split(",")
+                
+                if len(spli) < 2:
+                    print("Incorrectly formatted skill", _skill)
+                    continue
+                
+                if kitty.skills.meets_skill_requirement(spli[0], int(spli[1])):
+                    success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
+                    
+            for _skill in self.patrol_event.fail_skills:
+                spli = _skill.split(",")
+                
+                if len(spli) < 2:
+                    print("Incorrectly formatted skill", _skill)
+                    continue
+                
+                if kitty.skills.meets_skill_requirement(spli[0], int(spli[1])):
+                    success_chance -= game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            
             if kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if (kitty.skills.primary.skill or kitty.skills.secondary.skill or kitty.skills.hidden_skill) in self.patrol_event.fail_skills:
