@@ -86,7 +86,7 @@ patrol_screen = PatrolScreen('patrol screen')
 
 choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
-choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adaptive parent screen')
+choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adoptive parent screen')
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")

@@ -384,7 +384,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.choose_mate_button:
                 self.change_screen('choose mate screen')
             elif event.ui_element == self.change_adoptive_parent_button:
-                self.change_screen('choose adaptive parent screen')
+                self.change_screen('choose adoptive parent screen')
 
         # Roles Tab
         elif self.open_tab == 'roles':
