@@ -941,8 +941,9 @@ class MakeClanScreen(Screens):
                          self.med_cat,
                          self.biome_selected, game.switches['world_seed'],
                          game.switches['camp_site'], convert_camp[self.selected_camp_tab],
-                         self.game_mode, self.members,
-                         starting_season=self.selected_season)
+                         self.game_mode, self.members, your_cat = self.your_cat,
+                         starting_season=self.selected_season,
+                         )
         game.clan.create_clan()
         #game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
