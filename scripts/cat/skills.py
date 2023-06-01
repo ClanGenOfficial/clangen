@@ -1,7 +1,7 @@
 import random
 from enum import Enum, Flag, auto
 
-class PathEnum(Enum):
+class SkillPath(Enum):
     TEACHER = (
         "quick to help",
         "good teacher",
@@ -139,16 +139,16 @@ class PathEnum(Enum):
     def get_random(exclude:list=()):
         """Get a random path, with more uncommon paths being less common"""
         
-        uncommon_paths = [i for i in [PathEnum.GHOST, PathEnum.PROPHET, 
-                          PathEnum.CLAIRVOYANT, PathEnum.DREAM,
-                          PathEnum.OMEN, PathEnum.STAR, PathEnum.HEALER]
+        uncommon_paths = [i for i in [SkillPath.GHOST, SkillPath.PROPHET, 
+                          SkillPath.CLAIRVOYANT, SkillPath.DREAM,
+                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER]
                           if i not in exclude]
         
         
         if not (random.random() * 20):
-            return random.hoice(uncommon_paths)
+            return random.choice(uncommon_paths)
         else:
-            common_paths = [i for i in list(PathEnum) if 
+            common_paths = [i for i in list(SkillPath) if 
                            i not in exclude and i not in uncommon_paths]
             return random.choice(common_paths)
 
@@ -171,7 +171,7 @@ class Skill():
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
     
-    def __init__(self, path:PathEnum, points:int=0, interest_only:bool=False):
+    def __init__(self, path:SkillPath, points:int=0, interest_only:bool=False):
         
         self.path = path
         self.interest_only = interest_only
@@ -193,10 +193,10 @@ class Skill():
         else:
             interest = False
         
-        return Skill(PathEnum[split_values[0]], int(split_values[1]), interest)
+        return Skill(SkillPath[split_values[0]], int(split_values[1]), interest)
     
     @staticmethod
-    def get_random_skill(points:int = 0, point_tier:int = None, exclude:list=(), interest_only=False):
+    def get_random_skill(points:int = None, point_tier:int = None, exclude=(), interest_only=False):
         """Generates a random skill. If wanted, you can specify a teir for the points
         value to be randomized within. """
         
@@ -207,7 +207,11 @@ class Skill():
         else:
             points = random.randint(Skill.point_range[0], Skill.point_range[1])
         
-        return Skill(PathEnum.get_random(exclude=exclude), points, interest_only)
+        
+        if isinstance(exclude, SkillPath):
+            exclude = [exclude]
+
+        return Skill(SkillPath.get_random(exclude), points, interest_only)
     
     @property
     def points(self):
@@ -224,10 +228,7 @@ class Skill():
         
     @property
     def skill(self):
-        if self.interest_only:
-            return self.path.value[0]
-        else:
-            return self.path.value[self.tier]
+        return self.path.value[self.tier]
         
     @skill.setter
     def skill(self):
@@ -237,8 +238,7 @@ class Skill():
     @property
     def tier(self):
         if self.interest_only:
-            return 0
-        
+            return 0 
         for _ran, i in zip(Skill.tier_ranges, range(1, 4)):
                 if _ran[0] <= self.points <= _ran[1]:
                     return i
@@ -272,35 +272,35 @@ class CatSkills:
     
     #Mentor Inflence groups. 
     influence_flags = {
-        PathEnum.TEACHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL, 
-        PathEnum.HUNTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
-        PathEnum.FIGHTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
-        PathEnum.RUNNER: SkillTypeFlag.AGILE,
-        PathEnum.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
-        PathEnum.SWIMMER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
-        PathEnum.SPEAKER: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
-        PathEnum.MEDIATOR: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
-        PathEnum.CLEVER: SkillTypeFlag.SMART,
-        PathEnum.INSIGHTFUL: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
-        PathEnum.SENSE: SkillTypeFlag.OBSERVANT,
-        PathEnum.KIT: SkillTypeFlag.SOCIAL,
-        PathEnum.STORY: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
-        PathEnum.LORE: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
-        PathEnum.CAMP: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        PathEnum.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        PathEnum.STAR: SkillTypeFlag.SUPERNATURAL,
-        PathEnum.OMEN: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
-        PathEnum.DREAM: SkillTypeFlag.SUPERNATURAL,
-        PathEnum.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
-        PathEnum.PROPHET: SkillTypeFlag.SUPERNATURAL,
-        PathEnum.GHOST: SkillTypeFlag.SUPERNATURAL
+        SkillPath.TEACHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL, 
+        SkillPath.HUNTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
+        SkillPath.FIGHTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.RUNNER: SkillTypeFlag.AGILE,
+        SkillPath.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.SWIMMER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.SPEAKER: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
+        SkillPath.MEDIATOR: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
+        SkillPath.CLEVER: SkillTypeFlag.SMART,
+        SkillPath.INSIGHTFUL: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.SENSE: SkillTypeFlag.OBSERVANT,
+        SkillPath.KIT: SkillTypeFlag.SOCIAL,
+        SkillPath.STORY: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
+        SkillPath.LORE: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
+        SkillPath.CAMP: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
+        SkillPath.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
+        SkillPath.STAR: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.OMEN: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
+        SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
+        SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL
     }
     
     def __init__(self,
                  skill_dict=None,
-                 primary_path:PathEnum = None,
+                 primary_path:SkillPath = None,
                  primary_points:int = 0,
-                 secondary_path: PathEnum = None,
+                 secondary_path: SkillPath = None,
                  secondary_points:int = 0,
                  hidden_skill:HiddenSkillEnum = None,
                  interest_only=False):
@@ -336,23 +336,23 @@ class CatSkills:
         elif status == 'apprentice':
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=1, interest_only=True)
+                new_skill.secondary = Skill.get_random_skill(point_tier=1, interest_only=True, exclude=new_skill.primary.path)
         elif moons < 50:
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(1, 2))
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 2))
+                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 2), exclude=new_skill.primary.path)
         elif moons < 100:
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(1, 3))
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 3))
+                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 3), exclude=new_skill.primary.path)
         elif moons < 150:
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(2, 3))
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(2, 3))
+                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(2, 3), exclude=new_skill.primary.path)
         else:
             new_skill.primary = Skill.get_random_skill(point_tier=1)
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=1)
+                new_skill.secondary = Skill.get_random_skill(point_tier=1, exclude=new_skill.primary.path)
         
         return new_skill
             
@@ -436,14 +436,6 @@ class CatSkills:
                 self.primary = Skill.get_random_skill(points=0, interest_only=True if the_cat in ["apprentice", "kitten"] else False)
         
         if the_cat.status == 'kitten':
-            # Give them a primary path if they don't have one already
-            if not self.primary:
-                parents = [the_cat.fetch_cat(i) for i in [self.the_cat.parent1, self.the_cat.parent2] + the_cat.adoptive_parents if 
-                           type(the_cat) == type(the_cat.fetch_cat(i))]
-                parental_paths = [i.skill.primary.path for i in parents if i.skill.primary] + [i.skill.secondary.path for i in parents if i.skill.secondary]
-                
-               
-            
             # Check to see if the cat gains a secondary
             if not self.secondary and not int(random.random() * 6):
                 # if there's no secondary skill, try to give one!
@@ -510,45 +502,45 @@ class CatSkills:
         new_skill = CatSkills()
         
         conversion = {
-            "strong connection to StarClan": (PathEnum.STAR, 2), 
-            "good healer": (PathEnum.HEALER, 1),
-            "great healer": (PathEnum.HEALER, 2),
-            "fantastic healer": (PathEnum.HEALER, 3),
-            "good teacher": (PathEnum.TEACHER, 1),
-            "great teacher": (PathEnum.TEACHER, 2),
-            "fantastic teacher": (PathEnum.TEACHER, 3),
-            "good mediator": (PathEnum.MEDIATOR, 1),
-            "great mediator": (PathEnum.MEDIATOR, 2),
-            "excellent mediator": (PathEnum.MEDIATOR, 3),
-            "smart": (PathEnum.CLEVER, 1),
-            "very smart": (PathEnum.CLEVER, 2),
-            "extremely smart": (PathEnum.CLEVER, 3),
-            "good hunter": (PathEnum.HUNTER, 1),
-            "great hunter": (PathEnum.HUNTER, 2),
-            "fantastic hunter": (PathEnum.HUNTER, 3),
-            "good fighter": (PathEnum.FIGHER, 1),
-            "great fighter": (PathEnum.FIGHER, 2),
-            "excellent fighter": (PathEnum.FIGHER, 3),
-            "good speaker": (PathEnum.SPEAKER, 1),
-            "great speaker": (PathEnum.SPEAKER, 2),
-            "excellent speaker": (PathEnum.SPEAKER, 3),
-            "good storyteller": (PathEnum.STORY, 1),
-            "great storyteller": (PathEnum.STORY, 2),
-            "fantastic storyteller": (PathEnum.STORY, 3),
-            "smart tactician": (PathEnum.INSIGHTFUL, 1),
-            "valuable tactician": (PathEnum.INSIGHTFUL, 2),
-            "valuable insight": (PathEnum.INSIGHTFUL, 3),
-            "good kitsitter": (PathEnum.KIT, 1),
-            "great kitsitter": (PathEnum.KIT, 2),
-            "beloved kitsitter": (PathEnum.KIT, 3),
-            "camp keeper": (PathEnum.CAMP, 3),
-            "den builder": (PathEnum.CAMP, 2),
-            "omen sight": (PathEnum.OMEN, 3),
-            "dream walker": (PathEnum.DREAM, 2),
-            "clairvoyant": (PathEnum.CLAIRVOYANT, 2),
-            "prophet": (PathEnum.PROPHET, 3),
-            "lore keeper": (PathEnum.LORE, 2),
-            "keen eye": (PathEnum.SENSE, 2),
+            "strong connection to StarClan": (SkillPath.STAR, 2), 
+            "good healer": (SkillPath.HEALER, 1),
+            "great healer": (SkillPath.HEALER, 2),
+            "fantastic healer": (SkillPath.HEALER, 3),
+            "good teacher": (SkillPath.TEACHER, 1),
+            "great teacher": (SkillPath.TEACHER, 2),
+            "fantastic teacher": (SkillPath.TEACHER, 3),
+            "good mediator": (SkillPath.MEDIATOR, 1),
+            "great mediator": (SkillPath.MEDIATOR, 2),
+            "excellent mediator": (SkillPath.MEDIATOR, 3),
+            "smart": (SkillPath.CLEVER, 1),
+            "very smart": (SkillPath.CLEVER, 2),
+            "extremely smart": (SkillPath.CLEVER, 3),
+            "good hunter": (SkillPath.HUNTER, 1),
+            "great hunter": (SkillPath.HUNTER, 2),
+            "fantastic hunter": (SkillPath.HUNTER, 3),
+            "good fighter": (SkillPath.FIGHTER, 1),
+            "great fighter": (SkillPath.FIGHTER, 2),
+            "excellent fighter": (SkillPath.FIGHTER, 3),
+            "good speaker": (SkillPath.SPEAKER, 1),
+            "great speaker": (SkillPath.SPEAKER, 2),
+            "excellent speaker": (SkillPath.SPEAKER, 3),
+            "good storyteller": (SkillPath.STORY, 1),
+            "great storyteller": (SkillPath.STORY, 2),
+            "fantastic storyteller": (SkillPath.STORY, 3),
+            "smart tactician": (SkillPath.INSIGHTFUL, 1),
+            "valuable tactician": (SkillPath.INSIGHTFUL, 2),
+            "valuable insight": (SkillPath.INSIGHTFUL, 3),
+            "good kitsitter": (SkillPath.KIT, 1),
+            "great kitsitter": (SkillPath.KIT, 2),
+            "beloved kitsitter": (SkillPath.KIT, 3),
+            "camp keeper": (SkillPath.CAMP, 3),
+            "den builder": (SkillPath.CAMP, 2),
+            "omen sight": (SkillPath.OMEN, 3),
+            "dream walker": (SkillPath.DREAM, 2),
+            "clairvoyant": (SkillPath.CLAIRVOYANT, 2),
+            "prophet": (SkillPath.PROPHET, 3),
+            "lore keeper": (SkillPath.LORE, 2),
+            "keen eye": (SkillPath.SENSE, 2),
         },
         
         if old_skill in conversion:
