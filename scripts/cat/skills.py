@@ -496,6 +496,18 @@ class CatSkills:
             if not int(random.random() * 4):
                 self.primary.points += 1
 
+    def meets_skill_requirement(self, path:SkillPath, min_teir:int) -> bool:
+        """Checks both primary and seconday, to see if cat matches skill restaint"""
+        if self.primary:
+            if path == self.primary.path and self.primary.tier >= min_teir:
+                return True
+        
+        if self.secondary:
+            if path == self.secondary.path and self.secondary.tier >= min_teir:
+                return True
+        
+        return False
+        
     @staticmethod
     def get_skills_from_old(old_skill):
         """Generates a CatSkill object"""

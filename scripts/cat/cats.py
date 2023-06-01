@@ -1593,6 +1593,9 @@ class Cat():
         severity = leave 'default' to keep default severity, otherwise set to the desired severity
                    ('minor', 'major', 'severe')
         """
+        if game.clan.game_mode == "classic":
+            return
+        
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1655,6 +1658,9 @@ class Cat():
             }
 
     def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
+        if game.clan.game_mode == "classic":
+            return
+        
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
