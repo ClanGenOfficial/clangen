@@ -98,11 +98,11 @@ class Patrol():
             self.patrol_names.append(str(cat.name))
             if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
-            self.patrol_skills.append(cat.skills.primary_skill)
-            if cat.skills.secondary_skill:
-                self.patrol_skills.append(cat.skills.secondary_skill)
-            if cat.skills.hidden_skill:
-                self.patrol_skills.append(cat.skills.hidden_skill)
+            self.patrol_skills.append(cat.skills.primary.skill)
+            if cat.skills.secondary:
+                self.patrol_skills.append(cat.skills.secondary.skill)
+            if cat.skills.hidden:
+                self.patrol_skills.append(cat.skills.hidden.skill)
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.personality.trait)
             self.patrol_total_experience += cat.experience
@@ -289,7 +289,7 @@ class Patrol():
         else:
             keep = True
         if "skill" in patrol.constraints:
-            if (self.patrol_leader.skills.primary_skill or self.patrol_leader.skills.secondary_skill)\
+            if (self.patrol_leader.skills.primary.skill or self.patrol_leader.skills.secondary.skill)\
             in patrol.constraints["skill"]:
                 keep = True
         else:
@@ -721,7 +721,7 @@ class Patrol():
         skill_updates = ""
         for kitty in self.patrol_cats:
             skill_string = kitty.skills.skill_string()
-            if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in self.patrol_event.win_skills:
+            if (kitty.skills.primary.skill or kitty.skills.secondary.skill or kitty.skills.hidden_skill) in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
                 if "great" in skill_string or "very" in skill_string:
                     success_chance += game.config["patrol_generation"]["better_stat_modifier"]
@@ -729,7 +729,7 @@ class Patrol():
                     success_chance += game.config["patrol_generation"]["best_stat_modifier"]
             if kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-            if (kitty.skills.primary_skill or kitty.skills.secondary_skill or kitty.skills.hidden_skill) in self.patrol_event.fail_skills:
+            if (kitty.skills.primary.skill or kitty.skills.secondary.skill or kitty.skills.hidden_skill) in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
             if self.patrol_event.fail_trait and kitty.personality.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
@@ -1870,7 +1870,7 @@ class Patrol():
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
                 affect_personality = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                affect_skills = cat.skills.influence_skill(cat, Cat.fetch_cat(cat.mentor))
+                affect_skills = cat.skills.mentor_influence(cat, Cat.fetch_cat(cat.mentor))
                 if affect_personality:
                     History.add_facet_mentor_influence(cat, affect_personality[0], affect_personality[1], affect_personality[2])
                     print(affect_personality)
