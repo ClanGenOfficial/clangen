@@ -1870,7 +1870,7 @@ class Patrol():
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
                 affect_personality = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                affect_skills = cat.skills.influence_skill(cat, Cat.fetch_cat(cat.mentor))
+                affect_skills = cat.skills.mentor_influence(cat, Cat.fetch_cat(cat.mentor))
                 if affect_personality:
                     History.add_facet_mentor_influence(cat, affect_personality[0], affect_personality[1], affect_personality[2])
                     print(affect_personality)

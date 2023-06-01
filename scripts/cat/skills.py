@@ -14,7 +14,7 @@ class PathEnum(Enum):
         "great hunter",
         "renowned hunter"
     )
-    FIGHER = (
+    FIGHTER = (
         "avid play-fighter",
         "good fighter",
         "formidable fighter",
@@ -274,7 +274,7 @@ class CatSkills:
     influence_flags = {
         PathEnum.TEACHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL, 
         PathEnum.HUNTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
-        PathEnum.FIGHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        PathEnum.FIGHTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
         PathEnum.RUNNER: SkillTypeFlag.AGILE,
         PathEnum.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
         PathEnum.SWIMMER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
