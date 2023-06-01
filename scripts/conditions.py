@@ -19,6 +19,9 @@ def medical_cats_condition_fulfilled(all_cats,
 
     set give_clanmembers_covered to True to return the int of clanmembers that the meds can treat
     """
+    print("Reminder: medical_cats_condition_fulfilled for skill rework")
+    return True
+    
     fulfilled = False
 
     medicine_apprentices = list(

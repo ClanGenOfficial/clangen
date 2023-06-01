@@ -762,6 +762,7 @@ class Events:
         self.handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
         # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
         self.perform_ceremonies(cat)
+        cat.skills.progress_skill(cat) # This must be done after ceremonies. 
 
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():

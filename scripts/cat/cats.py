@@ -1289,8 +1289,6 @@ class Cat():
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
 
-        self.skills.progress_skill(self)
-
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats

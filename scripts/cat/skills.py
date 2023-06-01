@@ -145,7 +145,8 @@ class SkillPath(Enum):
                           if i not in exclude]
         
         
-        if not (random.random() * 20):
+        if not int(random.random() * 20):
+            print("uncommon")
             return random.choice(uncommon_paths)
         else:
             common_paths = [i for i in list(SkillPath) if 
@@ -344,11 +345,11 @@ class CatSkills:
         elif moons < 100:
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(1, 3))
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 3), exclude=new_skill.primary.path)
+                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 2), exclude=new_skill.primary.path)
         elif moons < 150:
             new_skill.primary = Skill.get_random_skill(point_tier=random.randint(2, 3))
             if random.randint(1, 2) == 1:
-                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(2, 3), exclude=new_skill.primary.path)
+                new_skill.secondary = Skill.get_random_skill(point_tier=random.randint(1, 2), exclude=new_skill.primary.path)
         else:
             new_skill.primary = Skill.get_random_skill(point_tier=1)
             if random.randint(1, 2) == 1:
@@ -427,13 +428,13 @@ class CatSkills:
         if not self.primary:
             parents = [the_cat.fetch_cat(i) for i in [the_cat.parent1, the_cat.parent2] + the_cat.adoptive_parents if 
                     type(the_cat) == type(the_cat.fetch_cat(i))]
-            parental_paths = [i.skill.primary.path for i in parents if i.skill.primary] + [i.skill.secondary.path for i in parents if i.skill.secondary]
+            parental_paths = [i.skills.primary.path for i in parents if i.skills.primary] + [i.skills.secondary.path for i in parents if i.skills.secondary]
                     
              # If there are parental paths, flip a coin to determine if they will get a parents path
-            if parental_paths and random.random(0, 1):
-                self.primary = Skill(random.choice(parental_paths), points=0, interest_only=True if the_cat in ["apprentice", "kitten"] else False)
+            if parental_paths and random.randint(0, 1):
+                self.primary = Skill(random.choice(parental_paths), points=0, interest_only=True if the_cat.status in ["apprentice", "kitten"] else False)
             else:
-                self.primary = Skill.get_random_skill(points=0, interest_only=True if the_cat in ["apprentice", "kitten"] else False)
+                self.primary = Skill.get_random_skill(points=0, interest_only=True if the_cat.status in ["apprentice", "kitten"] else False)
         
         if the_cat.status == 'kitten':
             # Check to see if the cat gains a secondary
