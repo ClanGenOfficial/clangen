@@ -3,7 +3,7 @@ import random
 import ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.cat.skills import PathEnum
+from scripts.cat.skills import SkillPath
 
 
 class History:
@@ -226,28 +226,28 @@ class History:
 
         # working under the impression that these blurbs will be preceeded by "better at"
         skill_influence_text = {
-                PathEnum.TEACHER: [ "" ],
-                PathEnum.HUNTER: [ "" ],
-                PathEnum.FIGHTER: [ "" ],
-                PathEnum.RUNNER: [ "" ],
-                PathEnum.CLIMBER: [ "" ],
-                PathEnum.SWIMMER: [ "" ],
-                PathEnum.SPEAKER: [ "" ],
-                PathEnum.MEDIATOR: [ "" ],
-                PathEnum.CLEVER: [ "" ],
-                PathEnum.INSIGHTFUL: [ "" ],
-                PathEnum.SENSE: [ "" ],
-                PathEnum.KIT: [ "" ],
-                PathEnum.STORY: [ "" ],
-                PathEnum.LORE: [ "" ],
-                PathEnum.CAMP: [ "" ],
-                PathEnum.HEALER: [ "" ],
-                PathEnum.STAR: [ "" ],
-                PathEnum.OMEN: [ "" ],
-                PathEnum.DREAM: [ "" ],
-                PathEnum.CLAIRVOYANT: [ "" ],
-                PathEnum.PROPHET: [ "" ],
-                PathEnum.GHOST: [ "" ],
+                SkillPath.TEACHER: [ "" ],
+                SkillPath.HUNTER: [ "" ],
+                SkillPath.FIGHTER: [ "" ],
+                SkillPath.RUNNER: [ "" ],
+                SkillPath.CLIMBER: [ "" ],
+                SkillPath.SWIMMER: [ "" ],
+                SkillPath.SPEAKER: [ "" ],
+                SkillPath.MEDIATOR: [ "" ],
+                SkillPath.CLEVER: [ "" ],
+                SkillPath.INSIGHTFUL: [ "" ],
+                SkillPath.SENSE: [ "" ],
+                SkillPath.KIT: [ "" ],
+                SkillPath.STORY: [ "" ],
+                SkillPath.LORE: [ "" ],
+                SkillPath.CAMP: [ "" ],
+                SkillPath.HEALER: [ "" ],
+                SkillPath.STAR: [ "" ],
+                SkillPath.OMEN: [ "" ],
+                SkillPath.DREAM: [ "" ],
+                SkillPath.CLAIRVOYANT: [ "" ],
+                SkillPath.PROPHET: [ "" ],
+                SkillPath.GHOST: [ "" ],
             }
         
         for _ment in cat.history.mentor_influence["skill"]:
@@ -255,7 +255,7 @@ class History:
             for _path in cat.history.mentor_influence["skill"][_ment]:
                 #Check to make sure nothing weird got in there. 
                 try:
-                    if PathEnum[_path] in cat.skills.all_paths:
+                    if SkillPath[_path] in cat.skills.all_paths:
                         if cat.history.mentor_influence["skill"][_ment][_path] > 0:
                             cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[_path]))
                 except ValueError:
