@@ -129,7 +129,7 @@
         "id": "confident_medicine_cat",
         "thoughts": [
             "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
-            "Does not doubt themselves while treating a cat"
+            "Does not doubt {PRONOUN/m_c/self} while treating a cat"
         ],
         "main_trait_constraint": [
             "confident"
