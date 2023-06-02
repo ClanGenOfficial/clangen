@@ -679,7 +679,7 @@ class Events:
         # aging the cat
         cat.one_moon()
         cat.moons += 1
-        cat.update_traits()
+        cat.manage_outside_trait()
         if cat.moons == 1:
             cat.age = "kitten"
             if cat.status not in [

@@ -516,43 +516,37 @@ class CatSkills:
                 else:
                     self.primary = Skill.get_random_skill(points=0, interest_only=True if the_cat.status in ["apprentice", "kitten"] else False)
             
-            if self.age not in ["kitten", "adolescent"]:
-                #If they are still in "interest" stage, there is a change to swap primary and secondary
-                if self.primary.interest_only and self.secondary:
-                    flip = random.choices([False, True], [max(self.primary.points, 1), 
-                                                        max(self.secondary.points, 1)])[0]
-                    if flip:
-                        _temp = self.primary
-                        self.primary = self.secondary
-                        self.secondary = _temp
-                
+            # For outside cats, don't worry about secondary skill. 
+            if the_cat.age not in ["kitten", "adolescent"]:
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False
 
-    def meets_skill_requirement(self, path:str, min_teir:int=0) -> bool:
+    def meets_skill_requirement(self, path:str|SkillPath|HiddenSkillEnum, min_teir:int=0) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
         
-        try: 
-            path = SkillPath[path]
-        except KeyError:
+        if isinstance(path, str):
+            # Try to conter to Skillpath or HiddenSkillEnum
             try:
-                path = HiddenSkillEnum[path]
+                path = SkillPath[path]
             except KeyError:
-                print("non valid path", path)
-                return False
+                try:
+                    path = HiddenSkillEnum[path]
+                except KeyError:
+                    print(f"{path} is not a real skill path")
+                    return False
         
         if isinstance(path, HiddenSkillEnum):
             if path == self.hidden:
                 return True
-        
-        if self.primary:
-            if path == self.primary.path and self.primary.tier >= min_teir:
-                return True
-        
-        if self.secondary:
-            if path == self.secondary.path and self.secondary.tier >= min_teir:
-                return True
+        elif isinstance(path, SkillPath):
+            if self.primary:
+                if path == self.primary.path and self.primary.tier >= min_teir:
+                    return True
+            
+            if self.secondary:
+                if path == self.secondary.path and self.secondary.tier >= min_teir:
+                    return True
         
         return False
         

@@ -774,7 +774,8 @@ class Cat():
     
     def update_traits(self):
         """Updates the trait to grab from the correct list, and wobbles the facets
-            Also handles mentor inflence """  
+            Also handles mentor inflenence. 
+            Only to be run upon ceremony. """  
         self.personality.set_kit(self.is_baby()) #Update kit trait stuff
         if self.status in ["warrior", "medicine cat", "mediator"]:
             History.add_mentor_facet_influence_strings(self)
@@ -786,6 +787,15 @@ class Cat():
         else:
             self.personality.facet_wobble()
         return
+
+    def manage_outside_trait(self):
+        """To be run every moon on outside cats
+            to keep trait and skills making sense."""
+        if not (self.outside or self.exiled):
+            return
+        
+        self.personality.set_kit(self.is_baby()) #Update kit trait stuff
+        
 
     def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
