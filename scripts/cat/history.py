@@ -224,41 +224,44 @@ class History:
         if not cat.history.mentor_influence["skill"]:
             return
 
-        # working under the impression that these blurbs will be preceeded by "better at"
+        # working under the impression that these blurbs will be preceeded by "become better at"
         skill_influence_text = {
-                SkillPath.TEACHER: [ "" ],
-                SkillPath.HUNTER: [ "" ],
-                SkillPath.FIGHTER: [ "" ],
-                SkillPath.RUNNER: [ "" ],
-                SkillPath.CLIMBER: [ "" ],
-                SkillPath.SWIMMER: [ "" ],
-                SkillPath.SPEAKER: [ "" ],
-                SkillPath.MEDIATOR: [ "" ],
-                SkillPath.CLEVER: [ "" ],
-                SkillPath.INSIGHTFUL: [ "" ],
-                SkillPath.SENSE: [ "" ],
-                SkillPath.KIT: [ "" ],
-                SkillPath.STORY: [ "" ],
-                SkillPath.LORE: [ "" ],
-                SkillPath.CAMP: [ "" ],
-                SkillPath.HEALER: [ "" ],
-                SkillPath.STAR: [ "" ],
-                SkillPath.OMEN: [ "" ],
-                SkillPath.DREAM: [ "" ],
-                SkillPath.CLAIRVOYANT: [ "" ],
-                SkillPath.PROPHET: [ "" ],
-                SkillPath.GHOST: [ "" ],
+                SkillPath.TEACHER: [ "teaching" ],
+                SkillPath.HUNTER: [ "hunting" ],
+                SkillPath.FIGHTER: [ "fighting" ],
+                SkillPath.RUNNER: [ "running" ],
+                SkillPath.CLIMBER: [ "climbing" ],
+                SkillPath.SWIMMER: [ "swimming" ],
+                SkillPath.SPEAKER: [ "aruging" ],
+                SkillPath.MEDIATOR: [ "resolving arugments" ],
+                SkillPath.CLEVER: [ "solving problems" ],
+                SkillPath.INSIGHTFUL: [ "providing insight" ],
+                SkillPath.SENSE: [ "noticing small details" ],
+                SkillPath.KIT: [ "caring for kittens" ],
+                SkillPath.STORY: [ "storytelling" ],
+                SkillPath.LORE: [ "remembering lore" ],
+                SkillPath.CAMP: [ "caring for camp" ],
+                SkillPath.HEALER: [ "healing" ],
+                SkillPath.STAR: [ "connecting to starclan" ],
+                SkillPath.OMEN: [ "finding omens" ],
+                SkillPath.DREAM: [ "understanding dreams" ],
+                SkillPath.CLAIRVOYANT: [ "predicting the furture" ],
+                SkillPath.PROPHET: [ "understanding prophecies" ],
+                SkillPath.GHOST: [ "connecting to the afterlife" ],
             }
         
         for _ment in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][_ment]["strings"] = []
             for _path in cat.history.mentor_influence["skill"][_ment]:
                 #Check to make sure nothing weird got in there. 
+                if _path == "strings":
+                    continue
+                
                 try:
-                    if SkillPath[_path] in cat.skills.all_paths:
-                        if cat.history.mentor_influence["skill"][_ment][_path] > 0:
-                            cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[_path]))
-                except ValueError:
+                    if cat.history.mentor_influence["skill"][_ment][_path] > 0:
+                        cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[SkillPath[_path]]))
+                except KeyError:
+                    print("issue", _path)
                     pass
 
     @staticmethod

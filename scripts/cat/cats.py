@@ -772,12 +772,23 @@ class Cat():
             Cat.sort_cats()
 
     
-    def update_traits(self):
-        """Updates the trait to grab from the correct list, and wobbles the facets
-            Also handles mentor inflenence. 
-            Only to be run upon ceremony. """  
+    def rank_change_traits_skill(self, mentor):
+        """Updates trait and skill upon ceremony"""  
         self.personality.set_kit(self.is_baby()) #Update kit trait stuff
         if self.status in ["warrior", "medicine cat", "mediator"]:
+            # Give a couple doses of mentor inflence:
+            if mentor:
+                for i in range(0, randint(0, 2)):
+                    affect_personality = self.personality.mentor_influence(Cat.fetch_cat(mentor))
+                    affect_skills = self.skills.mentor_influence(Cat.fetch_cat(mentor))
+                    if affect_personality:
+                        History.add_facet_mentor_influence(self, affect_personality[0], affect_personality[1], affect_personality[2])
+                        print(affect_personality)
+                    if affect_skills:
+                        History.add_skill_mentor_influence(self, affect_skills[0], affect_skills[1], affect_skills[2])
+                        print(affect_skills)
+            
+            History.add_mentor_skill_influence_strings(self)
             History.add_mentor_facet_influence_strings(self)
             # Smaller facet wobble if there was mentor inflenece
             if History.get_mentor_influence(self).get("trait"):
@@ -1859,7 +1870,7 @@ class Cat():
         self.retired = True
         self.status = 'elder'
         self.name.status = 'elder'
-        self.update_traits()
+        #self.update_traits()
 
         if old_status == 'leader':
             game.clan.leader_lives = 0

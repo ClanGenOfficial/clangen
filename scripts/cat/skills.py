@@ -376,14 +376,14 @@ class CatSkills:
         else:
             return " + ".join(output) 
 
-    def mentor_influence(self, the_cat, mentor):
+    def mentor_influence(self, mentor):
         """
         this function handles mentor influence on the cat's skill
         :param the_cat: the cat object
         :param mentor: the mentor's cat object
         """
-        # non apprentices and mentor-less babies not allowed
-        if "apprentice" not in the_cat.status or the_cat.mentor is None:
+
+        if not mentor:
             return
         
         # Determine if any skills can be effected
