@@ -347,10 +347,10 @@
         "thoughts": [
             "Is visited by r_c",
             "Senses r_c is nearby",
-            "Thought they heard a low rumbling behind them, but nothing was there",
+            "Thought {PRONOUN/m_c/subject} heard a low rumbling behind {PRONOUN/m_c/object}, but nothing was there",
             "Received an ominous and dark message from r_c",
             "Has been hearing the voices of Dark Forest cats...",
-            "Debates whether or not to ask r_c for guidance, knowing where they are"
+            "Debates whether or not to ask r_c for guidance, knowing where {PRONOUN/r_c/subject} {VERB/r_c/are/is}"
         ],
         "random_living_status": [
             "darkforest"
@@ -368,7 +368,7 @@
             "Is feeling stressed taking care of the Clan",
             "Is tending growing herbs",
             "Is making new nests",
-            "Wishes they had an extra set of paws",
+            "Wishes {PRONOUN/m_c/subject} had an extra set of paws",
             "Is reciting the names of herbs aloud",
             "Was startled awake in the wee hours by a vivid dream",
             "Is running low on mouse bile",
@@ -378,10 +378,10 @@
             "Is helping organize the herb stores",
             "Made a mess of the herbs and is panicking",
             "Has been hearing the voices of StarClan cats...",
-            "Has the foul taste of bitter herbs in their mouth",
-            "Is wondering if they could borrow some catmint from the other Clans",
-            "Is happy that they chose life as a medicine cat",
-            "Is proud of their ability to care for their Clanmates"
+            "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
+            "Is wondering if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
+            "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
         ]
     },
     {
