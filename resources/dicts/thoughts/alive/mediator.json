@@ -97,9 +97,9 @@
     {
         "id": "bloodthirsty_mediator",
         "thoughts": [
-            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
-            "Chuckles to themself after sabotaging another relationship"
+            "Chuckles to {PRONOUN/m_c/self} after sabotaging another relationship"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -140,7 +140,7 @@
         "id": "insecure_mediator",
         "thoughts": [
             "Finds mediating emotionally draining",
-            "Is worried they may have made things worse"
+            "Is worried {PRONOUN/m_c/subject} may have made things worse"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -188,7 +188,7 @@
     {
         "id": "vengeful_mediator",
         "thoughts": [
-            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey dovey couple",
             "Is sitting back and watching an argument take place"
         ],
