@@ -248,7 +248,7 @@
     {
         "id": "shameless_medicine_cat",
         "thoughts": [
-            "Refuses to groom themselves"
+            "Refuses to groom {PRONOUN/m_c/self}"
         ],
         "main_trait_constraint": [
             "shameless"
@@ -257,7 +257,7 @@
     {
         "id": "sneaky_medicine_cat",
         "thoughts": [
-            "Seems to be hiding something in the medicine they give to the leader"
+            "Seems to be hiding something in the medicine {PRONOUN/m_c/subject} {VERB/m_c/give/gives} to the leader"
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -278,7 +278,7 @@
     {
         "id": "strict_medicine_cat",
         "thoughts": [
-            "Forbids anyone from disturbing them when working"
+            "Forbids anyone from disturbing {PRONOUN/m_c/object} when working"
         ],
         "main_trait_constraint": [
             "strict"
@@ -305,7 +305,7 @@
     {
         "id": "vengeful_medicine_cat",
         "thoughts": [
-            "Refuses to treat a cat that once bullied them"
+            "Refuses to treat a cat that once bullied {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -323,16 +323,16 @@
     {
         "id": "med_cat_dead_SC_gen",
         "thoughts": [
-            "Wishes they could visit r_c in StarClan",
+            "Wishes {PRONOUN/m_c/subject} could visit r_c in StarClan",
             "Was given a prophecy by r_c",
             "Was sent an omen by r_c",
-            "Is dreaming about r_c who gives them a message",
+            "Is dreaming about r_c who gives {PRONOUN/m_c/object} a message",
             "Is visited by r_c",
             "Senses r_c is nearby",
-            "Saw r_c in a dream, warning them about... something",
+            "Saw r_c in a dream, warning {PRONOUN/m_c/object} about... something",
             "Is asking for guidance from r_c",
-            "Is wondering desperately why r_c wasn't there when they needed them",
-            "Is sure that they saw r_c appear in the forest today... why?"
+            "Is wondering desperately why r_c wasn't there when {PRONOUN/m_c/subject} needed {PRONOUN/r_c/object}",
+            "Is sure that {PRONOUN/m_c/subject} saw r_c appear in the forest today... why?"
         ],
         "main_status_constraint": [
             "medicine cat",
