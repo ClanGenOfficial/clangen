@@ -377,7 +377,7 @@ class ProfileScreen(Screens):
     def handle_tab_events(self, event):
         # Relations Tab
         if self.open_tab == 'relations':
-            if event.ui_element == self.see_family_button:
+            if event.ui_element == self.family_tree_button:
                 self.change_screen('see kits screen')
             elif event.ui_element == self.see_relationships_button:
                 self.change_screen('relationship screen')
@@ -1878,15 +1878,14 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'relations'
-            self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
-                                                   starting_height=2, object_id="#see_family_button", manager=MANAGER)
-            self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
+            self.family_tree_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
+                                                   starting_height=2, object_id="#family_tree_button", manager=MANAGER)
+            self.change_adoptive_parent_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
+                                                      starting_height=2, object_id="#adoptive_parents", manager=MANAGER)
+            self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                           starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
-            self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
+            self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
-            self.change_adoptive_parent_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
-                                                      starting_height=2, object_id="#adoptive_parents"
-                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -2185,7 +2184,7 @@ class ProfileScreen(Screens):
         if self.open_tab is None:
             pass
         elif self.open_tab == 'relations':
-            self.see_family_button.kill()
+            self.family_tree_button.kill()
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
             self.change_adoptive_parent_button.kill()
