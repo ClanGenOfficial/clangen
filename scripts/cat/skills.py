@@ -168,6 +168,7 @@ class SkillTypeFlag(Flag):
     SOCIAL = auto()
     
 class Skill():
+    '''Skills handling functions mostly'''
     
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
@@ -185,6 +186,7 @@ class Skill():
     
     @staticmethod
     def generate_from_save_string(save_string:str):
+        '''Generates the skill from the save string in the cat data'''
         if not save_string:
             return None
         
@@ -229,27 +231,28 @@ class Skill():
         
     @property
     def skill(self):
+        '''Skill property'''
         return self.path.value[self.tier]
         
     @skill.setter
     def skill(self):
+        '''Can't set the skill directly with this setter'''
         print("Can't set skill directly")
-        return
     
     @property
     def tier(self):
+        '''Returns the tier level of the skill'''
         if self.interest_only:
             return 0 
         for _ran, i in zip(Skill.tier_ranges, range(1, 4)):
-                if _ran[0] <= self.points <= _ran[1]:
-                    return i
+            if _ran[0] <= self.points <= _ran[1]:
+                return i
                 
         return 1
     
     @tier.setter
-    def tier(self, val):
+    def tier(self):
         print("Can't set tier directly")
-        return
     
     def set_points_to_tier(self, tier:int):
         """This is seperate from the tier setter, since it will booonly allow you
@@ -264,17 +267,18 @@ class Skill():
         self.points = Skill.tier_ranges[tier - 1][0]
         
     def get_save_string(self):
+        '''Gets the string that is saved in the cat data'''
         return f"{self.path.name},{self.points},{self.interest_only}"
 
 class CatSkills:
     """
     Holds the cats skills, and handled changes in the skills. 
     """
-    
+
     #Mentor Inflence groups. 
     influence_flags = {
-        SkillPath.TEACHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL, 
-        SkillPath.HUNTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
+        SkillPath.TEACHER: SkillTypeFlag.STRONG & SkillTypeFlag.AGILE & SkillTypeFlag.SMART & SkillTypeFlag.OBSERVANT & SkillTypeFlag.SOCIAL, 
+        SkillPath.HUNTER: SkillTypeFlag.STRONG & SkillTypeFlag.AGILE & SkillTypeFlag.OBSERVANT,
         SkillPath.FIGHTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
         SkillPath.RUNNER: SkillTypeFlag.AGILE,
         SkillPath.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
@@ -288,7 +292,7 @@ class CatSkills:
         SkillPath.STORY: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.LORE: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.CAMP: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        SkillPath.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
+        SkillPath.HEALER: SkillTypeFlag.SMART & SkillTypeFlag.OBSERVANT & SkillTypeFlag.SOCIAL,
         SkillPath.STAR: SkillTypeFlag.SUPERNATURAL,
         SkillPath.OMEN: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
@@ -325,6 +329,7 @@ class CatSkills:
     
     @staticmethod
     def generate_new_catskills(status, moons, hidden_skill:HiddenSkillEnum=None):
+        '''Generates a new skill'''
         new_skill = CatSkills()
         
         new_skill.hidden = hidden_skill       
@@ -522,7 +527,7 @@ class CatSkills:
                 if self.secondary:
                     self.secondary.interest_only = False
 
-    def meets_skill_requirement(self, path:str|SkillPath|HiddenSkillEnum, min_tier:int=0) -> bool:
+    def meets_skill_requirement(self, path:str & SkillPath & HiddenSkillEnum, min_tier:int=0) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
         
         if isinstance(path, str):
