@@ -528,9 +528,10 @@ class CatSkills:
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False
-
+        # pylint: disable=unsupported-binary-operation
     def meets_skill_requirement(self, path:str|SkillPath|HiddenSkillEnum, min_tier:int=0) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
+        # pylint: enable=unsupported-binary-operation
         
         if isinstance(path, str):
             # Try to conter to Skillpath or HiddenSkillEnum
