@@ -1120,7 +1120,7 @@ class Clan():
 
     def load_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Load the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return
@@ -1133,7 +1133,7 @@ class Clan():
 
     def save_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Save the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return

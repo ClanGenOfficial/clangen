@@ -186,7 +186,7 @@ class GenerateEvents:
         if event_type == 'death':
             warrior_adjacent_ranks.extend(["deputy", "apprentice"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
-        elif event_type in ['injury', 'nutrition', 'misc', 'new_cat']:
+        elif event_type in ['injury', 'nutrition', 'misc_events', 'new_cat']:
             warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
 
