@@ -321,8 +321,8 @@
 		"cruel season_death_chance": 300,
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
-		"base_random_murder_chance": 10,
-		"base_murder_kill_chance": 120
+		"base_random_murder_chance": 30,
+		"base_murder_kill_chance": 170
 	},
 	"condition_related": {
 		"expanded_illness_chance": 250,

@@ -679,7 +679,7 @@ class Events:
         # aging the cat
         cat.one_moon()
         cat.moons += 1
-        cat.update_traits()
+        cat.manage_outside_trait()
         if cat.moons == 1:
             cat.age = "kitten"
             if cat.status not in [
@@ -1189,8 +1189,10 @@ class Events:
         promote cats and add to event list
         """
         # ceremony = []
+        
+        _ment = Cat.fetch_cat(cat.mentor) if cat.mentor else None # Grab current mentor, if they have one, before it's removed. 
         cat.status_change(promoted_to)
-        cat.update_traits()
+        cat.rank_change_traits_skill(_ment)
 
         involved_cats = [
             cat.ID
