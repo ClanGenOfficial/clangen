@@ -1341,7 +1341,7 @@ class ProfileScreen(Screens):
 
         return scar_history
 
-    def adjust_skill_change_text(self, skill, mentor):
+    '''def adjust_skill_change_text(self, skill, mentor):
         """
         adjust the skill text as needed.  if a mentor needs to be mentioned, set mentor to True
         """
@@ -1391,7 +1391,7 @@ class ProfileScreen(Screens):
                         if skill.startswith(y):
                             adjust_skill = adjust_skill.replace(' a ', ' an ')
                             break
-        return adjust_skill
+        return adjust_skill'''
 
     def get_apprenticeship_text(self):
         """
