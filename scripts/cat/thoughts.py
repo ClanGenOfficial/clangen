@@ -107,11 +107,35 @@ class Thoughts():
                 return False
 
         if 'main_skill_constraint' in thought:
-            if main_cat.skill not in thought['main_skill_constraint']:
+            _flag = False
+            for _skill in thought['main_skill_constraint']:
+                spli = _skill.split(",")
+                
+                if len(spli) != 2:
+                    print("Throught constraint not properly formated", _skill)
+                    continue
+                
+                if main_cat.skills.meets_skill_requirement(spli[0], spli[1]):
+                    _flag = True
+                    break
+            
+            if not _flag:
                 return False
             
         if 'random_skill_constraint' in thought and random_cat:
-            if random_cat.skill not in thought['random_skill_constraint']:
+            _flag = False
+            for _skill in thought['random_skill_constraint']:
+                spli = _skill.split(",")
+                
+                if len(spli) != 2:
+                    print("Throught constraint not properly formated", _skill)
+                    continue
+                
+                if random_cat.skills.meets_skill_requirement(spli[0], spli[1]):
+                    _flag = True
+                    break
+            
+            if not _flag:
                 return False
 
         if 'backstory_constraint' in thought:

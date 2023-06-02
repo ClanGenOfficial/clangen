@@ -1425,7 +1425,7 @@ class ProfileScreen(Screens):
             trait_influence = []
             if "trait" in mentor_influence and mentor_influence["trait"] != None:
                 if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
-                    mentor_influence["trait"] = None
+                    mentor_influence["trait"] = {}
                     return
                 for _mentor in mentor_influence["trait"]:
                     #If the strings are not set (empty list), continue. 
@@ -1445,49 +1445,38 @@ class ProfileScreen(Screens):
                         
                     
                     trait_influence.append(str(ment_obj.name) +  \
-                                        " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ".")
+                                        " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ". ")
+                    
+                    
 
             influence_history += " ".join(trait_influence)
+            
+            
             skill_influence = []
-            if "skill" in mentor_influence and mentor_influence["skill"] is not None:
+            if "skill" in mentor_influence and mentor_influence["skill"] != None:
                 for _mentor in mentor_influence["skill"]:
                     #If the strings are not set (empty list), continue. 
-                    if not mentor_influence["skill"][_mentor].get("path"):
+                    if not mentor_influence["skill"][_mentor].get("strings"):
                         continue
                     
                     ment_obj = Cat.fetch_cat(_mentor)
                     #Continue of the mentor is invalid too.
                     if not isinstance(ment_obj, Cat):
                         continue
-
-                    '''if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
+                    
+                    if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
                         string_snippet = ", ".join(mentor_influence["skill"][_mentor].get("strings")[:-1]) + \
                             " and " + mentor_influence["skill"][_mentor].get("strings")[-1]
                     else:
-                        string_snippet = mentor_influence["skill"][_mentor].get("strings")[0]'''
+                        string_snippet = mentor_influence["skill"][_mentor].get("strings")[0]
+                        
                     
-                    string_snippet = str(mentor_influence["skill"])
+                    skill_influence.append(str(ment_obj.name) +  \
+                                        " helped {PRONOUN/m_c/object} become better at " + string_snippet + ". ")
+                    
+                    
 
-                    if string_snippet in Cat.skill_groups.get('special'):
-                        skill_influence.append(str(ment_obj.name) +  \
-                                        " helped {PRONOUN/m_c/object} unlock {PRONOUN/m_c/poss} abilities as a " + string_snippet + ".")
-                    elif string_snippet in Cat.skill_groups.get('star'):
-                        skill_influence.append(str(ment_obj.name) +  \
-                                        " helped {PRONOUN/m_c/object} grow a " + string_snippet + ".")
-                    elif string_snippet in Cat.skill_groups.get('smart'):
-                        skill_influence.append(str(ment_obj.name) +  \
-                                        " influenced {PRONOUN/m_c/object} to become " + string_snippet + ".")
-                    else:
-                        # for loop to assign proper grammar to all these groups
-                        become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
-                        for x in become_group:
-                            if string_snippet in Cat.skill_groups.get(x):
-                                adjust_skill = f'become a {string_snippet}'
-                                string_snippet = adjust_skill
-                                break
-                        skill_influence.append(str(ment_obj.name) +  \
-                                        " influenced {PRONOUN/m_c/object} to " + string_snippet + ".")
-                influence_history += " ".join(skill_influence)
+            influence_history += " ".join(skill_influence)
 
         app_ceremony = History.get_app_ceremony(self.the_cat)
         #print(app_ceremony)

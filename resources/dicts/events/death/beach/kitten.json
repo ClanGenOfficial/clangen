@@ -1,7 +1,10 @@
 [
     {
         "camp": "any",
-        "tags": ["Greenleaf", "classic"],
+        "tags": [
+            "Greenleaf",
+            "classic"
+        ],
         "death_text": "m_c died from dehydration and heat stroke.",
         "history_text": {
             "reg_death": "m_c died of dehydration and heat stroke."

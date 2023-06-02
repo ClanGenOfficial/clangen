@@ -124,8 +124,23 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
-        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "cat bite",
@@ -152,10 +167,24 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
-        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
-    
     {
         "injury": "bite-wound",
         "tags": [
@@ -181,8 +210,23 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
-        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "bite-wound",
@@ -209,8 +253,23 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
-        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "bite-wound",
@@ -227,7 +286,15 @@
             "scar": "m_c was scarred by a dog.",
             "reg_death": "m_c died from their wounds after fighting a dog."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -253,12 +320,25 @@
             "scar": "m_c was scarred by a fox while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a fox."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-    
     {
         "injury": "cat bite",
         "tags": [
@@ -282,9 +362,22 @@
             "scar": "m_c was scarred by their mentor, r_c, for failing to defend the territory well enough.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for failing to defend the territory well enough."
         },
-        "cat_trait": ["insecure", "nervous", "careful", "loving"],
+        "cat_trait": [
+            "insecure",
+            "nervous",
+            "careful",
+            "loving"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -312,7 +405,15 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -338,9 +439,22 @@
             "scar": "m_c was scarred by their mentor, r_c, for messing with a Twoleg object.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for messing with a Twoleg object."
         },
-        "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
+        "cat_trait": [
+            "troublesome",
+            "childish",
+            "playful",
+            "adventurous"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -366,9 +480,20 @@
             "scar": "m_c was scarred by their mentor, r_c, for disobeying them.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for disobeying them."
         },
-        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_trait": [
+            "troublesome",
+            "childish",
+            "playful"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null
     },
     {
@@ -396,8 +521,17 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "cat bite",
@@ -422,9 +556,27 @@
             "scar": "m_c was scarred by their mentor, r_c's, harsh training.",
             "reg_death": "m_c died from wounds caused by their mentor's harsh training."
         },
-        "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
+        "cat_trait": [
+            "careful",
+            "compassionate",
+            "childish",
+            "insecure",
+            "lonesome",
+            "loving",
+            "nervous",
+            "playful",
+            "strange",
+            "thoughtful"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null
     },
     {
@@ -442,12 +594,19 @@
             "scar": "m_c was scarred by a rogue.",
             "reg_death": "m_c died from their wounds after fighting a rogue."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bruises",
         "tags": [
@@ -457,7 +616,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c trained extra hard to impress their mentor, but was a bit too rough with their body, and has the bruises to show it.",
-        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_trait": [
+            "ambitious",
+            "daring",
+            "bold",
+            "loyal"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -499,12 +663,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last battle training session, and has been wincing all day. Seems they're a bit bruised.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "scrapes",
         "tags": [
@@ -514,12 +684,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last battle training session, and has been wincing all day. Seems they're a bit scraped up.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sprain",
         "tags": [
@@ -529,7 +705,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c trained extra hard to impress their mentor, but twisted their paw at an awkward angle.",
-        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_trait": [
+            "ambitious",
+            "daring",
+            "bold",
+            "loyal"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -543,7 +724,13 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was rushing around the camp in excitement for a patrol when their paw landed wrong on a rock! They took a tumble, and can't help limping the rest of the day.",
-        "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
+        "cat_trait": [
+            "adventurous",
+            "bold",
+            "daring",
+            "playful",
+            "childish"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -557,9 +744,21 @@
             "Leaf-bare"
         ],
         "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarrassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
-     "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "ambitious", "troublesome", "insecure", "lonesome", "nervous", "sneaky"]
-     },
-     {
+        "cat_trait": [
+            "adventurous",
+            "bold",
+            "childish",
+            "daring",
+            "playful",
+            "ambitious",
+            "troublesome",
+            "insecure",
+            "lonesome",
+            "nervous",
+            "sneaky"
+        ]
+    },
+    {
         "injury": "sprain",
         "tags": [
             "Newleaf",
@@ -568,12 +767,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last battle training session and sprained a paw.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "cracked pads",
         "tags": [
@@ -583,7 +788,12 @@
             "Leaf-bare"
         ],
         "event_text": "m_c trained extra hard to impress their mentor, but now finds their paws to be sore and bleeding.",
-        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_trait": [
+            "ambitious",
+            "daring",
+            "bold",
+            "loyal"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -597,12 +807,16 @@
             "Leaf-bare"
         ],
         "event_text": "m_c trained extra hard to impress their mentor, but is extremely sore when they wake the next morning.",
-        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_trait": [
+            "ambitious",
+            "daring",
+            "bold",
+            "loyal"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "broken bone",
         "tags": [
@@ -618,7 +832,15 @@
             "scar": "m_c was scarred by a big dog.",
             "reg_death": "m_c died from their wounds after fighting a big dog."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -645,12 +867,25 @@
             "scar": "m_c was scarred by a big dog while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a big dog."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "claw-wound",
         "tags": [
@@ -666,7 +901,15 @@
             "scar": "m_c was scarred by a hawk.",
             "reg_death": "m_c died from their wounds after fighting a hawk."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -692,7 +935,21 @@
             "scar": "m_c was scarred by a hawk while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a hawk."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -720,9 +977,22 @@
             "scar": "m_c was scarred by their mentor, r_c, for failing to defend the territory well enough.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for failing to defend the territory well enough."
         },
-        "cat_trait": ["insecure", "nervous", "careful", "loving"],
+        "cat_trait": [
+            "insecure",
+            "nervous",
+            "careful",
+            "loving"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -750,7 +1020,15 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -776,9 +1054,22 @@
             "scar": "m_c was scarred by their mentor, r_c, for messing with a Twoleg object.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for messing with a Twoleg object."
         },
-        "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
+        "cat_trait": [
+            "troublesome",
+            "childish",
+            "playful",
+            "adventurous"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "loyal"
+        ],
         "other_cat_skill": null
     },
     {
@@ -806,8 +1097,19 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "daring", "bold"],
-        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful",
+            "daring",
+            "bold"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -832,9 +1134,20 @@
             "scar": "m_c was scarred by their mentor, r_c, for disobeying them.",
             "reg_death": "m_c died from their wounds after their mentor hurt them for disobeying them."
         },
-        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_trait": [
+            "troublesome",
+            "childish",
+            "playful"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null
     },
     {
@@ -862,8 +1175,17 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
+        "other_cat_skill": [
+            "FIGHTER,1"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -888,12 +1210,29 @@
             "scar": "m_c was scarred by their mentor, r_c's, harsh training.",
             "reg_death": "m_c died from wounds caused by their mentor's harsh training."
         },
-        "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
+        "cat_trait": [
+            "careful",
+            "compassionate",
+            "childish",
+            "insecure",
+            "lonesome",
+            "loving",
+            "nervous",
+            "playful",
+            "strange",
+            "thoughtful"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null
     },
-
     {
         "injury": "mangled leg",
         "tags": [
@@ -919,7 +1258,13 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "strict", "adventurous"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "strict",
+            "adventurous"
+        ],
         "other_cat_skill": null
     }
 ]

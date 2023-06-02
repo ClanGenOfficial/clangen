@@ -1,7 +1,12 @@
 [
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "event_text": "m_c visits the other medicine cats.",
         "cat_trait": null,
         "cat_skill": null,
@@ -10,165 +15,319 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan"
+        ],
         "event_text": "m_c visits o_c to converse with their medicine cats about an omen StarClan sent.",
-        "cat_trait": ["strong connection to starclan", "omen sight", "clairvoyant", "dream walker"],
-        "cat_skill": ["compassionate", "faithful", "altruistic"],
+        "cat_trait": [
+            "strong connection to starclan",
+            "omen sight",
+            "clairvoyant",
+            "dream walker"
+        ],
+        "cat_skill": [],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan"
+        ],
         "event_text": "m_c visits o_c to congratulate them on their new medicine cat.",
-        "cat_trait": ["good mediator", "great mediator", "excellent mediator"],
-        "cat_skill": ["compassionate", "empathetic"],
+        "cat_trait": [
+            "good mediator",
+            "great mediator",
+            "excellent mediator"
+        ],
+        "cat_skill": [],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
     {
         "camp": "any",
-        "tags": ["ceremony", "other_cat", "other_cat_med", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "ceremony",
+            "other_cat",
+            "other_cat_med",
+            "to_both",
+            "platonic",
+            "comfort",
+            "trust",
+            "neg_dislike",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "event_text": "r_c presents m_c with acc_plural as a congratulations.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "accessories": ["WILD", "PLANT"]
+        "accessories": [
+            "WILD",
+            "PLANT"
+        ]
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "accessories": ["HERBS", "PETALS", "DRY HERBS"]
+        "accessories": [
+            "HERBS",
+            "PETALS",
+            "DRY HERBS"
+        ]
     },
     {
-      "camp": "any",
-      "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_leader"],
-      "event_text": "m_c speaks to r_c about an omen {PRONOUN/m_c/subject} saw while on patrol recently.",
-      "cat_trait": null,
-      "cat_skill": ["omen sight"],
-      "other_cat_trait": null,
-     "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "other_cat",
+            "other_cat_leader"
+        ],
+        "event_text": "m_c speaks to r_c about an omen {PRONOUN/m_c/subject} saw while on patrol recently.",
+        "cat_trait": null,
+        "cat_skill": [
+            "OMEN,3"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_med"],
-    "event_text": "m_c speaks to r_c about a potential omen and what it means.",
-    "cat_trait": null,
-    "cat_skill": ["omen sight"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "other_cat",
+            "other_cat_med"
+        ],
+        "event_text": "m_c speaks to r_c about a potential omen and what it means.",
+        "cat_trait": null,
+        "cat_skill": [
+            "OMEN,3"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
-    "cat_trait": null,
-    "cat_skill": ["dream walker"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
+        "cat_trait": null,
+        "cat_skill": [
+            "DREAM,2"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
-    "cat_trait": null,
-    "cat_skill": ["clairvoyant"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
+        "cat_trait": null,
+        "cat_skill": [
+            "CLAIRVOYANT,2"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
-    "cat_trait": null,
-    "cat_skill": ["prophet"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
+        "cat_trait": null,
+        "cat_skill": [
+            "PROPHET,3"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["other_cat", "other_cat_elder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
-    "cat_trait": null,
-    "cat_skill": ["lore keeper"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "other_cat_elder",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
+        "cat_trait": null,
+        "cat_skill": [
+            "LORE,2"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
-    "cat_trait": null,
-    "cat_skill": ["dream walker"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
+        "cat_trait": null,
+        "cat_skill": [
+            "DREAM,2"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
     {
-    "camp": "any",
-    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
-    "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
-    "cat_trait": null,
-    "cat_skill": null,
-    "other_cat_trait": null,
-    "other_cat_skill": null,
-    "accessories": ["COLLAR"]
+        "camp": "any",
+        "tags": [
+            "Leaf-bare",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": [
+            "COLLAR"
+        ]
     },
     {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-    "event_text": "m_c was seen loudly bickering with the medicine cat of o_c.",
-    "cat_trait": null,
-    "cat_skill": null,
-    "other_cat_trait": null,
-    "other_cat_skill": null
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-  "event_text": "m_c was seen talking with a traveling loner healer on the border.",
-  "cat_trait": null,
-  "cat_skill": null,
-  "other_cat_trait": null,
-  "other_cat_skill": null
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
-  "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
-  "cat_trait": null,
-  "cat_skill": null,
-  "other_cat_trait": null,
-  "other_cat_skill": null
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-  "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war."
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-  "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
-  "cat_skill": ["omen sight"]
-},
-{
-  "camp": "any",
-  "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"],
-  "event_text": "m_c preps battle herbs into small bundles to rush to the battlefield in case of severe injuries."
-},
-{
-  "tags": ["Leaf-bare", "war"],
-  "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leafbare's harsh weather."
-},
-{
-   "camp": "any",
-   "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "war"], 
-   "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
-}
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan"
+        ],
+        "event_text": "m_c was seen loudly bickering with the medicine cat of o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was seen talking with a traveling loner healer on the border.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan"
+        ],
+        "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war."
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
+        "cat_skill": [
+            "OMEN,3"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "event_text": "m_c preps battle herbs into small bundles to rush to the battlefield in case of severe injuries."
+    },
+    {
+        "tags": [
+            "Leaf-bare",
+            "war"
+        ],
+        "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leafbare's harsh weather."
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
+    }
 ]
