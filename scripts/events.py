@@ -159,6 +159,8 @@ class Events():
                 e = random.choice(self.kit_once)
                 self.kit_once.remove(e)
                 game.cur_events_list.append(Single_Event(e))
+        elif game.clan.age == 6:
+            game.cur_events_list.append(Single_Event(random.choice(self.b_txt['app_ceremony'])))
         elif game.clan.age < 12:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.b_txt["app"])))

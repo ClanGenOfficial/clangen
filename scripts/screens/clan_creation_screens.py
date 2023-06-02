@@ -237,9 +237,7 @@ class MakeClanScreen(Screens):
                 game.choose_cats[a].moons = choice(range(120, 155))
             elif game.choose_cats[a].moons == 0:
                 game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
-            for scar in game.choose_cats[a].scars:
-                if scar in not_allowed:
-                    game.choose_cats[a].scars.remove(scar)
+            
 
     
     def handle_choose_background_event(self, event):
@@ -340,7 +338,7 @@ class MakeClanScreen(Screens):
 
     def handle_saved_clan_event(self, event):
         if event.ui_element == self.elements["continue"]:
-            self.change_screen('clan screen')
+            self.change_screen('camp screen')
 
     def exit_screen(self):
         self.main_menu.kill()
@@ -940,11 +938,11 @@ class MakeClanScreen(Screens):
                          self.leader,
                          self.deputy,
                          self.med_cat,
-                         self.biome_selected, game.switches['world_seed'],
-                         game.switches['camp_site'], convert_camp[self.selected_camp_tab],
-                         self.game_mode, self.members, your_cat = self.your_cat,
+                         self.biome_selected,
+                         convert_camp[self.selected_camp_tab],
+                         self.game_mode, self.members,
                          starting_season=self.selected_season,
-                         )
+                         your_cat=self.your_cat)
         game.clan.your_cat.moons = 0
         game.clan.create_clan()
         #game.clan.starclan_cats.clear()

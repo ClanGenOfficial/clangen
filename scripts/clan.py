@@ -430,7 +430,7 @@ class Clan():
                  game_mode='classic',
                  starting_members=[],
                  starting_season='Newleaf',
-                 your_cat =None):
+                 your_cat=None):
         self.history = History()
         self.your_cat = your_cat
         if name != "":

@@ -614,8 +614,8 @@ class EventsScreen(Screens):
             current_alert.kill()
 
     def update_events_display(self):
-
-        self.season.set_text(f'Current season: {game.clan.current_season}')
+        
+        self.season.set_text(str(game.clan.your_cat.name))
         if game.clan.age == 1:
             self.clan_age.set_text(f'Your age: {game.clan.age} moon')
         if game.clan.age != 1:
@@ -624,7 +624,10 @@ class EventsScreen(Screens):
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
         self.display_events_elements = {}
-
+        self.display_events_elements["you"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1050, 240), (200, 200))),
+                                                                    pygame.transform.scale(
+                                                                        game.clan.your_cat.sprite,
+                                                                        (200, 200)), manager=MANAGER)
         for ele in self.involved_cat_buttons:
             ele.kill()
         self.involved_cat_buttons = []
