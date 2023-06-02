@@ -87,7 +87,7 @@
     {
         "id": "charismatic_medicine_cat",
         "thoughts": [
-            "Is doing their daily checkup on the elders"
+            "Is doing {PRONOUN/m_c/poss} daily checkup on the elders"
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -128,7 +128,7 @@
     {
         "id": "confident_medicine_cat",
         "thoughts": [
-            "Is proud of their ability to care for their Clanmates",
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
             "Does not doubt themselves while treating a cat"
         ],
         "main_trait_constraint": [
@@ -165,7 +165,7 @@
     {
         "id": "insecure_medicine_cat",
         "thoughts": [
-            "Is saying that they don't deserve their full name"
+            "Is saying that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} deserve {PRONOUN/m_c/poss} full name"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -174,14 +174,14 @@
     {
         "id": "lonesome_medicine_cat",
         "thoughts": [
-            "Is wishing they could have a mate and kits",
-            "Wishes their Clanmates could understand their struggles",
+            "Is wishing {PRONOUN/m_c/subject} could have a mate and kits",
+            "Wishes {PRONOUN/m_c/poss} Clanmates could understand {PRONOUN/m_c/poss} struggles",
             "Wishes there were more medicine cats in the Clan",
-            "Wonders why the warriors won't share prey with them",
-            "Wishes they could make friends with someone",
+            "Wonders why the warriors won't share prey with {PRONOUN/m_c/object}",
+            "Wishes {PRONOUN/m_c/subject} could make friends with someone",
             "Wishes the warriors shared an interest in herbs",
             "Wants to talk to the leader about having a new apprentice",
-            "Wishes for an apprentice, as they're a bit lonely",
+            "Wishes for an apprentice, as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit lonely",
             "Hasn't talked to any warriors for a few days"
         ],
         "main_trait_constraint": [
