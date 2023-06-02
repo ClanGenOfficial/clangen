@@ -10,10 +10,12 @@
 
 
   "major_severity": [
-    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to move into the nursery in preparation for {PRONOUN/m_c/poss} soon-to-come kits."
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to move into the nursery in preparation for {PRONOUN/m_c/poss} soon-to-come kits.",
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} believe {PRONOUN/m_c/subject} can successfully complete {PRONOUN/m_c/poss} duties while expecting kits and {VERB/m_c/prefer/prefers} to move into the nursery."
   ],
   "minor_severity": [
-    " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet."
+    " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
+    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now."
   ],
   "comment": [
     "both the minor and major severity strings will appear in conjunction with either a litter guess or an announcement. Write them accordingly!",

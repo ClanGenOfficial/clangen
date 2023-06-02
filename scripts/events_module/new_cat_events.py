@@ -1,5 +1,4 @@
 from scripts.cat.names import names
-from scripts.cat.pelts import collars
 from scripts.cat_relations.relationship import Relationship
 
 import random

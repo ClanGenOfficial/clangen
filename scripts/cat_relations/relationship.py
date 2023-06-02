@@ -147,13 +147,11 @@ class Relationship():
                 possible_death = self.adjust_interaction_string(injury_dict["death_text"]) if "death_text" in injury_dict else None
                 if injured_cat.status == "leader":
                     possible_death = self.adjust_interaction_string(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
-                if possible_scar:
+                
+                if possible_scar or possible_death:
                     for condition in injuries:
-                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
-                if possible_death:
-                    for condition in injuries:
-                        self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
-
+                        self.history.add_possible_history(injured_cat, condition, scar_text=possible_scar, death_text=possible_death)
+                
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 

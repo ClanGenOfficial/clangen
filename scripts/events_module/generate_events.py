@@ -186,7 +186,7 @@ class GenerateEvents:
         if event_type == 'death':
             warrior_adjacent_ranks.extend(["deputy", "apprentice"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
-        elif event_type in ['injury', 'nutrition', 'misc', 'new_cat']:
+        elif event_type in ['injury', 'nutrition', 'misc_events', 'new_cat']:
             warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
 
@@ -319,10 +319,10 @@ class GenerateEvents:
             # check that injury is possible
             if event.injury in INJURIES:
 
-                if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
+                if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
                     continue
 
-                if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
+                if event.injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
                     continue
 
             # check meddie tags
@@ -493,13 +493,15 @@ class GenerateEvents:
         # grab general events first, since they'll always exist
         events = self.get_death_reaction_dicts("general", rel_value)
         possible_events.extend(events["general"][body_status])
-        possible_events.extend(events[trait][body_status])
+        if trait in events:
+            possible_events.extend(events[trait][body_status])
 
         # grab family events if they're needed
         if family_relation != 'general':
             events = self.get_death_reaction_dicts(family_relation, rel_value)
             possible_events.extend(events["general"][body_status])
-            possible_events.extend(events[trait][body_status])
+            if trait in events:
+                possible_events.extend(events[trait][body_status])
 
         # print(possible_events)
 

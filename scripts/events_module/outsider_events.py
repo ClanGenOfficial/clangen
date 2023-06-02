@@ -23,7 +23,7 @@ class OutsiderEvents:
         # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                cat.dead = True
+                cat.die()
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
                 elif cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:

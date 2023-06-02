@@ -20,7 +20,7 @@ class CanHaveKits(unittest.TestCase):
         cat.no_kits = True
 
         # then
-        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True, affair_setting=True))
+        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True, allow_affair=True))
 
 
 class Pregnancy(unittest.TestCase):
