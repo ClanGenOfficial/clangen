@@ -275,10 +275,11 @@ class CatSkills:
     Holds the cats skills, and handled changes in the skills. 
     """
 
-    #Mentor Inflence groups. 
+    #Mentor Inflence groups.
+    # pylint: disable=unsupported-binary-operation
     influence_flags = {
-        SkillPath.TEACHER: SkillTypeFlag.STRONG & SkillTypeFlag.AGILE & SkillTypeFlag.SMART & SkillTypeFlag.OBSERVANT & SkillTypeFlag.SOCIAL, 
-        SkillPath.HUNTER: SkillTypeFlag.STRONG & SkillTypeFlag.AGILE & SkillTypeFlag.OBSERVANT,
+        SkillPath.TEACHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
+        SkillPath.HUNTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
         SkillPath.FIGHTER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
         SkillPath.RUNNER: SkillTypeFlag.AGILE,
         SkillPath.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
@@ -292,7 +293,7 @@ class CatSkills:
         SkillPath.STORY: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.LORE: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.CAMP: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        SkillPath.HEALER: SkillTypeFlag.SMART & SkillTypeFlag.OBSERVANT & SkillTypeFlag.SOCIAL,
+        SkillPath.HEALER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
         SkillPath.STAR: SkillTypeFlag.SUPERNATURAL,
         SkillPath.OMEN: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
@@ -300,6 +301,7 @@ class CatSkills:
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL
     }
+    # pylint: enable=unsupported-binary-operation
     
     def __init__(self,
                  skill_dict=None,
@@ -395,9 +397,9 @@ class CatSkills:
         mentor_tags = CatSkills.influence_flags[mentor.skills.primary.path] if mentor.skills.primary else None
 
         can_primary = bool(
-            CatSkills.influence_flags[self.primary.path] & mentor_tags) if self.primary and mentor_tags else False
+            CatSkills.influence_flags[self.primary.path] | mentor_tags) if self.primary and mentor_tags else False
         can_secondary = bool(
-            CatSkills.influence_flags[self.secondary.path] & mentor_tags) if self.secondary and mentor_tags else False
+            CatSkills.influence_flags[self.secondary.path] | mentor_tags) if self.secondary and mentor_tags else False
             
         # If nothing can be effected, just return as well.         
         if not (can_primary or can_secondary):
@@ -527,7 +529,7 @@ class CatSkills:
                 if self.secondary:
                     self.secondary.interest_only = False
 
-    def meets_skill_requirement(self, path:str & SkillPath & HiddenSkillEnum, min_tier:int=0) -> bool:
+    def meets_skill_requirement(self, path:str|SkillPath|HiddenSkillEnum, min_tier:int=0) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
         
         if isinstance(path, str):
