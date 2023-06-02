@@ -5,8 +5,8 @@
             "Is enjoying learning about mediating",
             "Is learning how to deal with argumentative Clanmates",
             "Is learning how to gently guide a cat into accepting a truth they don't like",
-            "Wishes they had learned to mediate arguments sooner",
-            "Wants their training to be completed already",
+            "Wishes {PRONOUN/m_c/subject} had learned to mediate arguments sooner",
+            "Wants {PRONOUN/m_c/poss} training to be completed already",
             "Is learning guided breathing techniques",
             "Is learning how to help others see the bigger picture",
             "Is helping a cat work through complicated emotions",
@@ -31,7 +31,7 @@
         "thoughts": [
             "Is amazed at how well r_c mediated a fight between Clanmates",
             "Is amazed at how well r_c mediated a territory dispute",
-            "Is amazed at how r_c talked their way out of a potential war",
+            "Is amazed at how r_c talked {PRONOUN/r_c/poss} way out of a potential war",
             "Is asking r_c the best way to calm down an angry cat",
             "Is asking r_c about new ways to work through problems",
             "Is following in r_c's pawsteps"
@@ -43,8 +43,8 @@
     {
         "id": "mediator_app_alive_apprentice",
         "thoughts": [
-            "Successfully solved an argument between their denmates",
-            "Tried to solve an argument between their denmates but only made it worse",
+            "Successfully solved an argument between {PRONOUN/m_c/poss} denmates",
+            "Tried to solve an argument between {PRONOUN/m_c/poss} denmates but only made it worse",
             "Helped r_c work through some insecurities",
             "Helped r_c learn to be more receptive to criticism",
             "Moved nests around to avoid an argument between the other apprentices"
@@ -71,7 +71,7 @@
     {
         "id": "vengeful_mediator_apprentice",
         "thoughts": [
-            "Takes the opposite side of a cat that was rude to them",
+            "Takes the opposite side of a cat that was rude to {PRONOUN/m_c/object}",
             "Considers letting an argument continue after being so rudely blown off"
         ],
         "main_trait_constraint": [
