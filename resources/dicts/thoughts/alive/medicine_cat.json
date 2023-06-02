@@ -210,7 +210,7 @@
     {
         "id": "nervous_medicine_cat",
         "thoughts": [
-            "Recounts the amount of catmint in their stores"
+            "Recounts the amount of catmint in {PRONOUN/m_c/poss} stores"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -229,8 +229,8 @@
     {
         "id": "responsible_medicine_cat",
         "thoughts": [
-            "Ensures that all of their duties are taken care of",
-            "Ignores the rumbling in their stomach in favor of treating cats"
+            "Ensures that all of {PRONOUN/m_c/poss} duties are taken care of",
+            "Ignores the rumbling in {PRONOUN/m_c/poss} stomach in favor of treating cats"
         ],
         "main_trait_constraint": [
             "responsible"
