@@ -24,11 +24,12 @@
         ],
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "cat_trait": null,
-        "cat_skill": ["good kitsitter", "great kitsitter", "excellent kitsitter"],
+        "cat_skill": [
+            "KIT,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sore",
         "tags": [
@@ -40,7 +41,9 @@
         ],
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
         "cat_trait": null,
-        "cat_skill": ["good kitsitter", "great kitsitter", "excellent kitsitter"],
+        "cat_skill": [
+            "KIT,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -58,7 +61,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "joint pain",
         "tags": [
@@ -111,11 +113,12 @@
         ],
         "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - their joints are now quite sore.",
         "cat_trait": null,
-        "cat_skill": ["camp keeper", "den builder"],
+        "cat_skill": [
+            "CAMP,2"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "broken bone",
         "tags": [
@@ -136,7 +139,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "dislocated joint",
         "tags": [
@@ -151,7 +153,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "tick bites",
         "tags": [
@@ -175,7 +176,15 @@
             "Leaf-bare"
         ],
         "event_text": "m_c has been yowling about their ticks for the better part of the day, the itchy bites maddening to them.",
-        "cat_trait": ["cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bold"],
+        "cat_trait": [
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "bold"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -189,7 +198,15 @@
             "Leaf-bare"
         ],
         "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting their pelt.",
-        "cat_trait": ["cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bold"],
+        "cat_trait": [
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "bold"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -203,12 +220,20 @@
             "Leaf-bare"
         ],
         "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles. Regardless, they're found out when someone spots them scratching at the bites.",
-        "cat_trait": ["altruistic", "calm", "careful", "insecure", "lonesome", "nervous", "patient", "thoughtful"],
+        "cat_trait": [
+            "altruistic",
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "nervous",
+            "patient",
+            "thoughtful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "claw-wound",
         "tags": [
@@ -231,9 +256,31 @@
             "scar": "m_c was scarred by r_c.",
             "reg_death": "m_c died from their wounds after r_c hurt them for trying to stop an argument."
         },
-        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "patient", "thoughtful", "wise"],
-        "cat_skill": ["good mediator"],
-        "other_cat_trait": ["bloodthirsty", "bold", "childish", "daring", "fierce", "insecure", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "calm",
+            "compassionate",
+            "empathetic",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "cat_skill": [
+            "MEDIATOR,1"
+        ],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "bold",
+            "childish",
+            "daring",
+            "fierce",
+            "insecure",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
         "other_cat_skill": null
     },
     {
@@ -258,7 +305,18 @@
             "scar": "m_c was scarred while trying to save r_c from an enemy warrior.",
             "reg_death": "m_c died from their wounds after trying to save r_c from an enemy warrior."
         },
-        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "calm",
+            "compassionate",
+            "empathetic",
+            "thoughtful",
+            "daring",
+            "bold",
+            "fierce",
+            "bloodthirsty",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -285,12 +343,22 @@
             "scar": "m_c was scarred while trying to save r_c from a rogue.",
             "reg_death": "m_c died from their wounds after trying to save r_c from a rogue."
         },
-        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "calm",
+            "compassionate",
+            "empathetic",
+            "thoughtful",
+            "daring",
+            "bold",
+            "fierce",
+            "bloodthirsty",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bite-wound",
         "tags": [
@@ -313,7 +381,18 @@
             "scar": "m_c was scarred while trying to save r_c from a dog.",
             "reg_death": "m_c died from their wounds after trying to save r_c from a dog."
         },
-        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "calm",
+            "compassionate",
+            "empathetic",
+            "thoughtful",
+            "daring",
+            "bold",
+            "fierce",
+            "bloodthirsty",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

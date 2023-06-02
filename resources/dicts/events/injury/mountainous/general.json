@@ -55,7 +55,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bruises",
         "tags": [
@@ -70,7 +69,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "torn pelt",
         "tags": [
@@ -85,7 +83,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "claw-wound",
         "tags": [
@@ -106,7 +103,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "small cut",
         "tags": [
@@ -135,7 +131,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "frostbite",
         "tags": [
@@ -154,7 +149,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "water in their lungs",
         "tags": [
@@ -171,7 +165,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "mangled tail",
         "tags": [

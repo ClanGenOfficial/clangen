@@ -76,8 +76,7 @@
             "unscathed_stat": "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -111,8 +110,7 @@
             "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -201,9 +199,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -253,9 +249,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -305,9 +299,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -356,7 +348,7 @@
             "death": "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they can do - eventually the Twolegs notice, and r_c is taken by them."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -406,7 +398,7 @@
             "death": "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -456,7 +448,7 @@
             "death": "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -511,9 +503,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -567,9 +557,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -622,8 +610,7 @@
             "injury": "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "patient",
@@ -729,8 +716,7 @@
             "injury": "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "patient",
@@ -778,8 +764,7 @@
             "injury": "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "patient",
@@ -829,8 +814,7 @@
             "injury": "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "patient",
@@ -878,8 +862,7 @@
             "injury": "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "patient",
@@ -928,8 +911,7 @@
             "unscathed_common": "Although the cats rejoice at the rain, after the uptenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -961,8 +943,7 @@
             "unscathed_common": "Although r_c rejoices at the rain, after the uptenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 1
@@ -992,8 +973,7 @@
             "unscathed_common": "Although the cats rejoice at the rain, after the uptenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of Leaf-bare."
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -1030,9 +1010,7 @@
             "unscathed_common": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "bloodthirsty",
@@ -1074,12 +1052,8 @@
             "injury": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving its prey up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "bloodthirsty",
@@ -1122,9 +1096,7 @@
             "unscathed_common": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -1159,12 +1131,8 @@
             "injury": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1204,12 +1172,8 @@
             "injury": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -1248,12 +1212,8 @@
             "injury": "As r_c descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1293,12 +1253,8 @@
             "injury": "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -1337,12 +1293,8 @@
             "injury": "As r_c descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1381,9 +1333,7 @@
             "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1429,9 +1379,7 @@
             "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1486,12 +1434,8 @@
             "injury": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1546,9 +1490,7 @@
             "injury": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1601,9 +1543,7 @@
             "injury": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1652,9 +1592,7 @@
             "unscathed_common": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",

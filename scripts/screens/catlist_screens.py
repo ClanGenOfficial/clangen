@@ -2052,7 +2052,7 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
-            med_skill = cat.skill
+            med_skill = cat.skills.skill_list
             med_exp = f"experience: {cat.experience_level}"
             med_working = True
             if cat.not_working():

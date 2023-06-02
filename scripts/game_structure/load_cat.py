@@ -1,14 +1,16 @@
 import os
+import random
 from math import floor
 from .game_essentials import game
 from ..cat.history import History
+from ..cat.skills import CatSkills
 from ..housekeeping.datadir import get_save_dir
 
 import ujson
 
 from re import sub
 from scripts.cat.pelts import Pelt
-from scripts.cat.cats import Cat, Personality
+from scripts.cat.cats import Cat, Personality, BACKSTORIES
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.utility import update_sprite, is_iterable
 from random import choice
@@ -27,6 +29,7 @@ def load_cats():
             game.switches['error_message'] = 'Can\'t find clan_cats.json!'
             game.switches['traceback'] = e
             raise
+
 
 def json_load():
     all_cats = []
@@ -119,6 +122,8 @@ def json_load():
             
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
+            if new_cat.backstory in BACKSTORIES["conversion"]:
+                new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
             
@@ -137,9 +142,22 @@ def json_load():
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
-            new_cat.skill = cat["skill"]
 
-           
+            if "skill_dict" in cat:
+                new_cat.skills = CatSkills(cat["skill_dict"])
+            elif "skill" in cat:
+                print('skill in cat')
+                if new_cat.backstory is None:
+                    if "skill" == 'formerly a loner':
+                        backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
+                        new_cat.backstory = backstory
+                    elif "skill" == 'formerly a kittypet':
+                        backstory = choice(['kittypet1', 'kittypet2'])
+                        new_cat.backstory = backstory
+                    else:
+                        new_cat.backstory = 'clanborn'
+                new_cat.skills.get_skills_from_old(cat["skill"])
+
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.mate:
                 new_cat.mate = [i for i in new_cat.mate if i is not None]
@@ -164,13 +182,13 @@ def json_load():
                     cat["scar_event"] if "scar_event" in cat else []
                 )
 
-            #new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
+            # new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else [new_cat.default_pronouns[0].copy()]
             all_cats.append(new_cat)
 
         except KeyError as e:
             if "ID" in cat:
                 key = f" ID #{cat['ID']} "
-            else: 
+            else:
                 key = f" at index {i} "
             game.switches['error_message'] = f'Cat{key}in clan_cats.json is missing {e}!'
             game.switches['traceback'] = e
@@ -241,7 +259,6 @@ def json_load():
         # Save integrety checks
         if game.config["save_load"]["load_integrity_checks"]:
             save_check()
-    
 
 
 def csv_load(all_cats):
@@ -289,7 +306,7 @@ def csv_load(all_cats):
                 )
                 game.switches[
                     'error_message'] = '2There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 the_cat = Cat(ID=attr[0],
                               prefix=attr[1].split(':')[0],
                               suffix=attr[1].split(':')[1],
@@ -303,7 +320,7 @@ def csv_load(all_cats):
                 
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 the_cat.age, the_cat.mentor = attr[4], attr[8]
                 game.switches[
                     'error_message'] = '4There was an error loading cat # ' + str(
@@ -337,7 +354,7 @@ def csv_load(all_cats):
                     24], attr[27]
                 game.switches[
                     'error_message'] = '10There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 the_cat.skill = attr[25]
                 if len(attr) > 28:
                     the_cat.pelt.accessory = attr[28]
@@ -347,7 +364,7 @@ def csv_load(all_cats):
                     the_cat.specialty2 = None
                 game.switches[
                     'error_message'] = '11There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 if len(attr) > 34:
                     the_cat.experience = int(attr[34])
                     experiencelevels = [
@@ -360,7 +377,7 @@ def csv_load(all_cats):
                     the_cat.experience = 0
                 game.switches[
                     'error_message'] = '12There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 if len(attr) > 30:
                     # Attributes that are to be added after the update
                     the_cat.moons = int(attr[30])
@@ -373,17 +390,17 @@ def csv_load(all_cats):
                         the_cat.pelt.cat_sprites['dead'] = attr[33]
                 game.switches[
                     'error_message'] = '13There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 if len(attr) > 35:
                     the_cat.dead_for = int(attr[35])
                 game.switches[
                     'error_message'] = '14There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 if len(attr) > 36 and attr[36] is not None:
                     the_cat.apprentice = attr[36].split(';')
                 game.switches[
                     'error_message'] = '15There was an error loading cat # ' + str(
-                        attr[0])
+                    attr[0])
                 if len(attr) > 37:
                     the_cat.pelt.paralyzed = bool(attr[37])
                 if len(attr) > 38:
@@ -393,7 +410,7 @@ def csv_load(all_cats):
                 if len(attr) > 40:
                     the_cat.genderalign = attr[40]
                 if len(attr
-                       ) > 41 and attr[41] is not None:  #KEEP THIS AT THE END
+                       ) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
                     the_cat.former_apprentices = attr[41].split(';')
         game.switches[
             'error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
@@ -401,7 +418,7 @@ def csv_load(all_cats):
             # Load the mentors and apprentices after all cats have been loaded
             game.switches[
                 'error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(
-                    inter_cat)
+                inter_cat)
             inter_cat.mentor = Cat.all_cats.get(inter_cat.mentor)
             apps = []
             former_apps = []
@@ -415,17 +432,17 @@ def csv_load(all_cats):
             for f_app_id in inter_cat.former_apprentices:
                 f_app = Cat.all_cats.get(f_app_id)
                 former_apps.append(f_app)
-            inter_cat.apprentice = [a.ID for a in apps] #Switch back to IDs. I don't want to risk breaking everything.
+            inter_cat.apprentice = [a.ID for a in apps]  # Switch back to IDs. I don't want to risk breaking everything.
             inter_cat.former_apprentices = [a.ID for a in former_apps]
             if not inter_cat.dead:
                 game.switches[
                     'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                        inter_cat)
+                    inter_cat)
                 inter_cat.load_relationship_of_cat()
             game.switches[
                 'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
-                    inter_cat)
-            #update_sprite(inter_cat)
+                inter_cat)
+            # update_sprite(inter_cat)
         # generate the relationship if some is missing
         if not the_cat.dead:
             game.switches[
@@ -438,14 +455,15 @@ def csv_load(all_cats):
                     the_cat.create_all_relationships()
         game.switches['error_message'] = ''
 
+
 def save_check():
     """Checks through loaded cats, checks and attempts to fix issues """
-    
+
     for cat in Cat.all_cats:
         cat_ob = Cat.all_cats[cat]
-        
+
         # Not-mutural mate relations
-        #if cat_ob.mate:
+        # if cat_ob.mate:
         #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
         #    if _temp_ob:
         #        # Check if the mate's mate feild is set to none
@@ -454,23 +472,23 @@ def save_check():
         #    else:
         #        # Invalid mate
         #        cat_ob.mate = None
-                
+
+
 def version_convert(version_info):
-    """Does all save-convertion that require referencing the saved version number.
-    This is a seperate function, since the version info is stored in clan.json, but most converson needs to be 
+    """Does all save-conversion that require referencing the saved version number.
+    This is a separate function, since the version info is stored in clan.json, but most conversion needs to be
     done on the cats. Clan data is loaded in after cats, however. """
-    
+
     if version_info is None:
         return
-    
+
     if version_info["version_name"] == SAVE_VERSION_NUMBER:
         # Save was made on current version
         return
-    
+
     if version_info["version_name"] is None:
-        # Save was made before version number stoage was implemented. 
+        # Save was made before version number storage was implemented.
         # (ie, save file version 0)
         # This means the EXP must be adjusted. 
         for c in Cat.all_cats.values():
             c.experience = c.experience * 3.2
-    
