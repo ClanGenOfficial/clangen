@@ -198,7 +198,7 @@ class Skill():
     
     @staticmethod
     def get_random_skill(points:int = None, point_tier:int = None, exclude=(), interest_only=False):
-        """Generates a random skill. If wanted, you can specify a teir for the points
+        """Generates a random skill. If wanted, you can specify a tier for the points
         value to be randomized within. """
         
         if isinstance(points, int):
@@ -251,17 +251,17 @@ class Skill():
         print("Can't set tier directly")
         return
     
-    def set_points_to_tier(self, teir:int):
+    def set_points_to_tier(self, tier:int):
         """This is seperate from the tier setter, since it will booonly allow you
-        to set points to teir 1, 2, or 3, and never 0. Tier 0 is retricted to interest_only
+        to set points to tier 1, 2, or 3, and never 0. Tier 0 is retricted to interest_only
         skills"""
         
         # Make sure it in the right range. If not, return. 
-        if not (1 <= teir <= 3):
+        if not (1 <= tier <= 3):
             return
         
         # Adjust to 0-indexed ranges list
-        self.points = Skill.point_range[teir - 1][0]
+        self.points = Skill.tier_ranges[tier - 1][0]
         
     def get_save_string(self):
         return f"{self.path.name},{self.points},{self.interest_only}"
@@ -530,7 +530,7 @@ class CatSkills:
                 if self.secondary:
                     self.secondary.interest_only = False
 
-    def meets_skill_requirement(self, path:str, min_teir:int=0) -> bool:
+    def meets_skill_requirement(self, path:str, min_tier:int=0) -> bool:
         """Checks both primary and seconday, to see if cat matches skill restaint"""
         
         try: 
@@ -547,11 +547,11 @@ class CatSkills:
                 return True
         
         if self.primary:
-            if path == self.primary.path and self.primary.tier >= min_teir:
+            if path == self.primary.path and self.primary.tier >= min_tier:
                 return True
         
         if self.secondary:
-            if path == self.secondary.path and self.secondary.tier >= min_teir:
+            if path == self.secondary.path and self.secondary.tier >= min_tier:
                 return True
         
         return False
