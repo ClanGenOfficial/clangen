@@ -58,6 +58,7 @@ class ChooseMentorScreen(Screens):
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
                     self.update_apprentice()
+                    self.update_cat_list()
                     self.update_selected_cat()
                     self.update_buttons()
                 else:
@@ -66,6 +67,7 @@ class ChooseMentorScreen(Screens):
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches['cat'] = self.previous_cat
                     self.update_apprentice()
+                    self.update_cat_list()
                     self.update_selected_cat()
                     self.update_buttons()
                 else:

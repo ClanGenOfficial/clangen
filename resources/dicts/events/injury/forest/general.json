@@ -14,7 +14,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sprain",
         "camp": "any",
@@ -30,7 +29,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "torn pelt",
         "camp": "any",
@@ -46,7 +44,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "small cut",
         "camp": "any",
@@ -77,7 +74,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "frostbite",
         "camp": "any",
@@ -97,7 +93,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "water in their lungs",
         "camp": "any",
@@ -115,7 +110,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "mangled tail",
         "camp": "any",
@@ -137,7 +131,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "burn",
         "camp": "any",
@@ -177,12 +170,18 @@
             "scar": "m_c's pelt was burned by a forest fire.",
             "reg_death": "m_c died from their burns after a forest fire."
         },
-        "cat_trait": ["ambitious", "bold", "altruistic", "daring", "fierce", "responsible"],
+        "cat_trait": [
+            "ambitious",
+            "bold",
+            "altruistic",
+            "daring",
+            "fierce",
+            "responsible"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "severe burn",
         "camp": "any",
@@ -222,7 +221,14 @@
             "scar": "m_c's pelt was burned by a forest fire.",
             "reg_death": "m_c died from their burns after a forest fire."
         },
-        "cat_trait": ["ambitious", "bold", "altruistic", "daring", "fierce", "responsible"],
+        "cat_trait": [
+            "ambitious",
+            "bold",
+            "altruistic",
+            "daring",
+            "fierce",
+            "responsible"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
