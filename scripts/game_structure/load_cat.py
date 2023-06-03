@@ -156,7 +156,7 @@ def json_load():
                         new_cat.backstory = backstory
                     else:
                         new_cat.backstory = 'clanborn'
-                new_cat.skills.get_skills_from_old(cat["skill"])
+                new_cat.skills = CatSkills.get_skills_from_old(cat["skill"], new_cat.status, new_cat.moons)
 
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.mate:

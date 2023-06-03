@@ -558,7 +558,7 @@ class CatSkills:
         return False
         
     @staticmethod
-    def get_skills_from_old(old_skill):
+    def get_skills_from_old(old_skill, status, moons):
         """Generates a CatSkill object"""
         
         new_skill = CatSkills()
@@ -603,11 +603,14 @@ class CatSkills:
             "prophet": (SkillPath.PROPHET, 3),
             "lore keeper": (SkillPath.LORE, 2),
             "keen eye": (SkillPath.SENSE, 2),
-        },
+        }
         
+        old_skill = old_skill.strip()
         if old_skill in conversion:
             new_skill.primary = Skill(conversion[old_skill][0])
             new_skill.primary.set_points_to_tier(conversion[old_skill][1])
+        else:
+            new_skill = CatSkills.generate_new_catskills(status, moons)
         
         return new_skill
 
