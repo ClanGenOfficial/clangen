@@ -10,13 +10,13 @@ from scripts.utility import (
     get_highest_romantic_relation,
     event_text_adjust,
     get_personality_compatibility,
+    process_text
 
 )
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import (
-    Relationship,
     INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints
@@ -126,7 +126,11 @@ class Romantic_Events():
         interaction_str = choice(chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = Relationship.adjust_interaction_string(Relationship,interaction_str)
+        cat_dict = {
+            "m_c": (str(cat_from.name), choice(cat_from.pronouns)),
+            "r_c": (str(cat_to.name), choice(cat_to.pronouns))
+        }
+        interaction_str = process_text(interaction_str, cat_dict)
 
         # display the interaction in the moon events
         effect = " (positive effect)" if positive else " (negative effect)"
