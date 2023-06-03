@@ -311,6 +311,53 @@
         }
     },
     {
+        "patrol_id": "gen_bord_scent_hostile_dislikelocked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "other_clan",
+            "otherclan_nochangesuccess",
+            "death",
+            "bite-wound",
+            "torn pelt",
+            "injury",
+            "scar",
+            "BRIGHTHEART",
+            "rel_patrol",
+            "big_change",
+            "dislike",
+            "trust",
+            "respect",
+            "distrust",
+            "disrespect"
+        ],
+        "intro_text": "As your patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good.",
+        "decline_text": "p_l decides that it isn't important right now. They'll report it when they get back to camp.",
+        "chance_of_success": 10,
+        "exp": 50,
+        "success_text": {
+            "unscathed_common": "p_l has felt the glares r_c has sent their way all morning, and returned them just as vehemently when r_c's own back is turned. But when they spot the shadow of an o_c_n warrior falling on r_c, they react without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl.",
+            "unscathed_rare": "The hatred between them is no secret - r_c has said, in the past, that the world would be better off without p_l in it. But when o_c_n puts that to the test, battling against the border patrol, r_c puts their back to p_l like they would any of their other clanmates, fighting just as fiercely to protect their flank. Maybe p_l is insufferable, but fox-dung if they'll let o_c_n take them!"
+        },
+        "fail_text": {
+            "death": "r_c throws themselves into battle, determined to throw o_c_n off their territory, but as they twist and turn in combat, two warriors from o_c_n surround them. r_c calls to their Clanmate to back them up, but instead is knocked to the ground, pain spreading through the back of their neck. They struggle for breath, fading rapidly - where was their backup, the rest of their patrol?",
+            "injury": "r_c throws themselves into battle, determined to throw o_c_n off their territory, but as they twist and turn in combat, two warriors from o_c_n surround them. r_c calls to their Clanmate to back them up, but instead hears a familiar voice snarling that they need to deal with their own problems. Beaten and bloodstained, the border patrol reports back to camp as resentful of each other as they've ever been."
+        },
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": "p_l and r_c might have their problems with each other, but they'll be damned to the dark forest if they let that get in the way of ripping apart o_c_n trespassers! They ambush the hostile patrol, and through they return back to camp bloodstained, none is their own.",
+        "antagonize_fail_text": "p_l and r_c let the problems they have with <i>each other</i> eclipse the problems they have with o_c_n scent in c_n's borders, and their ambush of the enemy patrol fails in humiliating fashion.",
+        "history_text": {
+            "scar": "r_c carries a scar, and lingering resentment, from when a Clanmate failed to watch their back during a border altercation.",
+            "reg_death": "r_c was killed in a border altercation when a Clanmate failed to watch their back.",
+            "lead_death": "were killed when a Clanmate failed to support them during a border altercation"
+        },
+        "relationship_constraint": [
+            "dislike_60"
+        ]
+    },
+    {
         "patrol_id": "fst_bord_solo1",
         "biome": "forest",
         "season": "Any",
