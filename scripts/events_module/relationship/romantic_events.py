@@ -165,6 +165,7 @@ class Romantic_Events():
             game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
+        ''' Handles cats breaking up their relationship '''
         from_mate_in_clan = False
         if cat_to.ID in cat_from.mate:
             from_mate_in_clan = cat_to.is_alive() and not cat_to.outside
