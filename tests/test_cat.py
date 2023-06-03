@@ -9,6 +9,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
+from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat_relations.relationship import Relationship
 from scripts.cat.history import History
 
@@ -376,41 +377,7 @@ class TestMateFunctions(unittest.TestCase):
         self.assertGreater(old_relation2.comfortable, relation2.comfortable)
         self.assertGreater(old_relation2.trust, relation2.trust)
         self.assertGreaterEqual(old_relation2.admiration, relation2.admiration)
-        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)
-
-class TestStatusChange(unittest.TestCase):
-
-    def test_apprentice_to_warrior(self):
-        # given
-        apprentice = Cat()
-        mentor = Cat()
-        apprentice.status = "apprentice"
-        apprentice.skill = "???"
-        mentor.apprentice.append(apprentice.ID)
-        apprentice.mentor = mentor.ID
-        apprentice.history = History(
-                beginning={},
-                mentor_influence={},
-                app_ceremony={},
-                lead_ceremony=None,
-                possible_death={},
-                died_by=[],
-                possible_scar={},
-                scar_events=[],
-                murder={},
-            )
-
-        # when
-        self.assertNotEqual(apprentice.mentor, None)
-        apprentice.status_change("warrior")
-        apprentice.update_skill()
-        apprentice.update_traits()
-        
-        # then
-        self.assertNotEqual(apprentice.skill, "???")
-        self.assertIn(apprentice.skill, apprentice.skills)
-        self.assertEqual(apprentice.mentor, None)
-        self.assertFalse(mentor.apprentice)
+        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)  
 
 class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):

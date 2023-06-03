@@ -28,9 +28,7 @@
             "unscathed_common": "When one of the boulders abruptly starts roaring, app1 shrieks and runs. It takes the rest of the patrol to find {PRONOUN/app1/object}, and the teaching moment is forgotten as the cats gather to comfort {PRONOUN/app1/object}."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "win_trait": [
             "altruistic",

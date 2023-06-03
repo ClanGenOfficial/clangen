@@ -426,8 +426,6 @@ class Clan():
                  deputy=None,
                  medicine_cat=None,
                  biome='Forest',
-                 world_seed=6616,
-                 camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
                  starting_members=[],
@@ -464,8 +462,6 @@ class Clan():
             self.instructor = None
             # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
-            self.world_seed = world_seed
-            self.camp_site = camp_site
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
@@ -706,7 +702,8 @@ class Clan():
                     else:
                         game.clan.medicine_cat = None
 
-    def switch_clans(self, clan):
+    @staticmethod
+    def switch_clans(clan):
         """
         TODO: DOCS
         """
@@ -723,9 +720,6 @@ class Clan():
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
-            "worldseed": self.world_seed,
-            "camp_site_1": self.camp_site[0],
-            "camp_site_2": self.camp_site[1],
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
@@ -880,8 +874,6 @@ class Clan():
                              Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
-                             world_seed=int(general[4]),
-                             camp_site=(int(general[5]), int(general[6])),
                              game_mode=general[7])
             game.clan.reputation = general[8]
         elif len(general) == 8:
@@ -898,8 +890,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
                 game_mode=general[7],
             )
         elif len(general) == 7:
@@ -914,8 +904,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
             )
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
@@ -1017,8 +1005,6 @@ class Clan():
                          med_cat,
                          biome=clan_data["biome"],
                          camp_bg=clan_data["camp_bg"],
-                         camp_site=(int(clan_data["camp_site_1"]),
-                                    int(clan_data["camp_site_2"])),
                          game_mode=clan_data["gamemode"])
 
         game.clan.reputation = int(clan_data["reputation"])
@@ -1070,9 +1056,7 @@ class Clan():
 
         # Patrolled cats
         if "patrolled_cats" in clan_data:
-            for cat in clan_data["patrolled_cats"]:
-                if cat in Cat.all_cats:
-                    game.patrolled.append(Cat.all_cats[cat])
+            game.patrolled = clan_data["patrolled_cats"]
 
         # Mediated flag
         if "mediated" in clan_data:
@@ -1134,7 +1118,7 @@ class Clan():
 
     def load_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Load the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return
@@ -1147,7 +1131,7 @@ class Clan():
 
     def save_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Save the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return
@@ -1339,10 +1323,20 @@ class Clan():
         deputy = Cat.fetch_cat(self.deputy) if isinstance(Cat.fetch_cat(self.deputy), Cat) else None
         
         weight = 0.3
-        clan_sociability = round(weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
-            (1-weight) *  statistics.median([i.personality.sociability for i in all_cats]))
-        clan_aggression = round(weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
-            (1-weight) *  statistics.median([i.personality.aggression for i in all_cats]))
+
+        if (leader or deputy) and all_cats:
+            clan_sociability = round(weight * statistics.mean([i.personality.sociability for i in [leader, deputy] if i]) + \
+                (1-weight) *  statistics.median([i.personality.sociability for i in all_cats]))
+            clan_aggression = round(weight * statistics.mean([i.personality.aggression for i in [leader, deputy] if i]) + \
+                (1-weight) *  statistics.median([i.personality.aggression for i in all_cats]))
+        elif (leader or deputy):
+            clan_sociability = round(statistics.mean([i.personality.sociability for i in [leader, deputy] if i]))
+            clan_aggression = round(statistics.mean([i.personality.aggression for i in [leader, deputy] if i]))
+        elif all_cats:
+            clan_sociability = round(statistics.median([i.personality.sociability for i in all_cats]))
+            clan_aggression = round(statistics.median([i.personality.aggression for i in all_cats]))
+        else:
+            return "stoic"
         
         # temperment = ['high_agress', 'med_agress', 'low agress' ]
         if 12 <= clan_sociability:

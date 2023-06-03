@@ -30,7 +30,7 @@
             "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and r_c is badly wounded, forcing the patrol to retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "bloodthirsty",
@@ -72,7 +72,7 @@
             "death": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, covered in wounds and cold."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -118,9 +118,7 @@
             "injury": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and r_c is badly injured, forcing the patrol to retreat."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "bold",
@@ -163,8 +161,7 @@
             "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -206,8 +203,7 @@
             "death": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -250,8 +246,7 @@
             "injury": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of {PRONOUN/r_c/poss} training to keep an eye out for driftwood, and sinks {PRONOUN/r_c/poss} claws into the first piece that's swept past {PRONOUN/r_c/object}. It saves {PRONOUN/r_c/poss} life."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -292,8 +287,7 @@
             "injury": "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning {PRONOUN/r_c/subject} {VERB/r_c/have/has}, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/r_c/subject} nevertheless {VERB/r_c/cling/clings} to safety as the floodwaters run their course."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "careful",
@@ -340,9 +334,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -363,7 +355,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -407,9 +399,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/haul/hauls} {PRONOUN/s_c/self} to {PRONOUN/s_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -430,7 +420,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -527,9 +517,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -550,7 +538,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -589,9 +577,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -612,7 +598,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -699,9 +685,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/aren't/isn't} as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -722,7 +706,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -756,9 +740,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -779,7 +761,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,

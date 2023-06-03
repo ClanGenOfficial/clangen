@@ -399,9 +399,9 @@ class ChangeCatName(UIWindow):
                                                     None,
                                                     use_suffix,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).prefix)
@@ -414,9 +414,9 @@ class ChangeCatName(UIWindow):
                                                     use_prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).suffix)
@@ -601,7 +601,7 @@ class KillCat(UIWindow):
                     death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.death_entry_box.get_text())
 
                 self.the_cat.die()
-                self.history.add_death_or_scars(self.the_cat, text=death_message, death=True)
+                self.history.add_death(self.the_cat, death_message)
                 update_sprite(self.the_cat)
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()
@@ -1001,6 +1001,7 @@ class SaveError(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+       
                 
 class SaveAsImage(UIWindow):
     def __init__(self, image_to_save, file_name):
@@ -1120,9 +1121,9 @@ class SaveAsImage(UIWindow):
                 self.confirm_text.set_text(f"Saved as {file_name} in the saved_images folder")
             elif event.ui_element == self.small_size_button:
                 self.scale_factor = 1
-                self.small_size_button.enable()
+                self.small_size_button.disable()
                 self.medium_size_button.enable()
-                self.large_size_button.disable()
+                self.large_size_button.enable()
             elif event.ui_element == self.medium_size_button:
                 self.scale_factor = 4
                 self.small_size_button.enable()
