@@ -52,7 +52,7 @@
         "max_cats": 1,
         "constraints": {
             "skill": [
-                "clairvoyant"
+                "CLAIRVOYANT,1"
             ]
         }
     },
