@@ -146,8 +146,7 @@ class SkillPath(Enum):
                           if i not in exclude]
         
         
-        if not int(random.random() * 20):
-            print("uncommon")
+        if not int(random.random() * 25):
             return random.choice(uncommon_paths)
         else:
             common_paths = [i for i in list(SkillPath) if 

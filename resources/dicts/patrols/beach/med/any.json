@@ -28,7 +28,7 @@
         "max_cats": 1,
         "constraints": {
             "skill": [
-                "prophet"
+                "PROPHET,1"
             ]
         }
     },
@@ -58,7 +58,7 @@
         "max_cats": 1,
         "constraints": {
             "skill": [
-                "clairvoyant"
+                "CLAIRVOYANT,1"
             ]
         }
     },

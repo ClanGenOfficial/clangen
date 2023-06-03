@@ -499,7 +499,10 @@ class PatrolScreen(Screens):
                                                                    ), manager=MANAGER)
 
         # Add selected cats to the patrol.
-        intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
+        try:
+            intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
+        except RuntimeError:
+            self.change_screen("camp screen")
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((150, 300), (600, 600))),
@@ -611,7 +614,6 @@ class PatrolScreen(Screens):
         self.able_cats = []
 
         # ASSIGN TO ABLE CATS
-        print(game.patrolled)
         for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
                 'elder', 'kitten', 'mediator', 'mediator apprentice'

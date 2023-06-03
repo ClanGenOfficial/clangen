@@ -26,7 +26,7 @@
         "max_cats": 1,
         "constraints": {
             "skill": [
-                "prophet"
+                "PROPHET,1"
             ]
         }
     },
