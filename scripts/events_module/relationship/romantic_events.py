@@ -7,8 +7,8 @@ import ujson
 
 from scripts.cat.history import History
 from scripts.utility import (
-    get_highest_romantic_relation, 
-    event_text_adjust, 
+    get_highest_romantic_relation,
+    event_text_adjust,
     get_personality_compatibility,
 
 )
@@ -16,16 +16,16 @@ from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import (
-    INTERACTION_MASTER_DICT,
     Relationship,
+    INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
-    cats_fulfill_single_interaction_constraints,
+    cats_fulfill_single_interaction_constraints
 )
 
 
 class Romantic_Events():
     """All events which are related to mate's such as becoming mates and breakups, but also for possible mates and romantic interactions."""
-    
+
     def __init__(self) -> None:
         self.history = History()
         self.had_one_event = False
@@ -72,7 +72,7 @@ class Romantic_Events():
                 continue
 
             filtered_interactions.append(interaction)
-        
+
         if len(filtered_interactions) < 1:
             print(f"There were no romantic interactions for: {cat_from.name} to {cat_to.name}")
             return False
@@ -126,8 +126,7 @@ class Romantic_Events():
         interaction_str = choice(chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(cat_from.name))
-        interaction_str = interaction_str.replace("r_c", str(cat_to.name))
+        interaction_str = Relationship.adjust_interaction_string(Relationship,interaction_str)
 
         # display the interaction in the moon events
         effect = " (positive effect)" if positive else " (negative effect)"

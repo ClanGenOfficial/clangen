@@ -243,10 +243,8 @@ def create_new_cat(Cat,
     :param outside: set this as True to generate the cat as an outsider instead of as part of the clan - default: False (clan cat)
     """
     accessory = None
-    if type(backstory) == list:
+    if isinstance(backstory, list):
         backstory = choice(backstory)
-    else:
-        backstory = backstory
 
     if backstory in (
             Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
@@ -348,8 +346,8 @@ def create_new_cat(Cat,
             new_cat.update_mentor()
 
         # Remove disabling scars, if they generated.
-        not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
-                       'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
+        not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 
+                       'LEFTBLIND', 'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
         for scar in new_cat.pelt.scars:
             if scar in not_allowed:
                 new_cat.pelt.scars.remove(scar)
@@ -540,11 +538,11 @@ def get_personality_compatibility(cat1, cat2):
     aggression_diff = abs(cat_1_aggression - cat_2_aggression)
     stability_diff = abs(cat_1_stability - cat_2_stability)
 
-    if all(4 >= diff_value and diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    if all(4 >= diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return True
-    elif all(7 >= diff_value and diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    if all(7 >= diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return None
-    elif all(17 > diff_value and diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    if all(17 > diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
         return False
 
     return None
@@ -665,14 +663,14 @@ def change_relationship_values(cats_to: list,
             if you don't want this to happen, then set auto_romance to False
 
     use the relationship value params to indicate how much the values should change.
-    """
-    '''# this is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
+    
+    This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True'''
+        changed = True"""
 
     # pick out the correct cats
     for kitty in cats_from:
@@ -737,6 +735,7 @@ def pronoun_repl(m, cat_pronouns_dict):
 
 
 def name_repl(m, cat_dict):
+    ''' Name replacement '''
     return cat_dict[m.group(0)][0]
 
 
