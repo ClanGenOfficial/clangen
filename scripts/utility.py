@@ -517,14 +517,6 @@ def get_personality_compatibility(cat1, cat2):
         False - if personalities have a negative compatibility
         None - if personalities have a neutral compatibility
     """
-    cat_1_lawfulness = cat1.personality.lawfulness
-    cat_1_sociability = cat1.personality.sociability
-    cat_1_aggression = cat1.personality.aggression
-    cat_1_stability = cat1.personality.stability
-    cat_2_lawfulness = cat2.personality.lawfulness
-    cat_2_sociability = cat2.personality.sociability
-    cat_2_aggression = cat2.personality.aggression
-    cat_2_stability = cat2.personality.stability
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
 
@@ -533,16 +525,22 @@ def get_personality_compatibility(cat1, cat2):
             return None
         return True
 
-    lawfulness_diff = abs(cat_1_lawfulness - cat_2_lawfulness)
-    sociability_diff = abs(cat_1_sociability - cat_2_sociability)
-    aggression_diff = abs(cat_1_aggression - cat_2_aggression)
-    stability_diff = abs(cat_1_stability - cat_2_stability)
+    lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
+    sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
+    aggression_diff = abs(cat1.personality.aggression - cat2.personality.aggression)
+    stability_diff = abs(cat1.personality.stability - cat2.personality.stability)
+    list_of_differences = [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]
 
-    if all(4 >= diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    running_total = 0
+    for x in list_of_differences:
+        if x <= 4:
+            running_total += 1
+        elif x >= 8:
+            running_total -= 1
+
+    if running_total >= 2:
         return True
-    if all(7 >= diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
-        return None
-    if all(17 > diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    if running_total <= -2:
         return False
 
     return None
