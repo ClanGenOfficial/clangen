@@ -326,15 +326,15 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "The cats of StarClan were well aware of m_c's compassionate nature. r_c prances forward and gives the new leader a life for [virtue], whispering to keep {PRONOUN/m_c/poss} heart pure and open to others.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
+          "text": "Stars flicker in r_c's fur, and pride lit {PRONOUN/r_c/poss} friendly gaze. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} m_c a life for [virtue], the sensation feeling like a warm nest surrounded by loved ones.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "text": "r_c gently presses {PRONOUN/r_c/poss} nose agsainst m_c and gives a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wrap/wraps} {PRONOUN/r_c/poss} tail around m_c and keeps a warm gaze around the new leader until {PRONOUN/r_c/subject} finally stepped away.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
