@@ -20,8 +20,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3
@@ -53,8 +52,7 @@
             "unscathed_stat": "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -88,8 +86,7 @@
             "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "strange"
@@ -184,9 +181,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -239,9 +234,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -294,9 +287,7 @@
             "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -347,9 +338,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -390,9 +379,7 @@
             "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -436,9 +423,7 @@
             "injury": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "excellent hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "daring",
@@ -479,7 +464,7 @@
             "stat_death": "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -530,7 +515,7 @@
             "stat_death": "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -581,7 +566,7 @@
             "stat_death": "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "ambitious",
@@ -635,9 +620,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",
@@ -688,9 +671,7 @@
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few Thunderpaths doesn't mean they can forget their dangers."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "calm",

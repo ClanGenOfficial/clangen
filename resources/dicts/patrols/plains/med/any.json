@@ -157,7 +157,7 @@
             "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -245,7 +245,7 @@
             "unscathed_common": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -275,7 +275,7 @@
             "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1
@@ -313,7 +313,7 @@
             "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -347,7 +347,7 @@
             "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6

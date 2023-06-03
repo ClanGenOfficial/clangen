@@ -19,9 +19,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 3
@@ -76,8 +74,7 @@
         "chance_of_success": 50,
         "exp": 20,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -104,7 +101,7 @@
         "chance_of_success": 20,
         "exp": 10,
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -131,8 +128,7 @@
         "chance_of_success": 50,
         "exp": 15,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -159,9 +155,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -188,8 +182,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -216,9 +209,7 @@
             "unscathed_common": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -252,9 +243,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -284,8 +273,7 @@
             "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -314,8 +302,7 @@
             "unscathed_stat": "s_c reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -346,9 +333,7 @@
             "unscathed_common": "No one can make sense of the vision.",
             "unscathed_stat": "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -375,9 +360,7 @@
         "fail_text": {
             "unscathed_common": "r_c can't make sense of the vision."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -539,9 +522,7 @@
             "unscathed_common": "Following the noises, they see dogs eating a deer and Twolegs trying to catch them. Soon, the beasts are caught and the patrol goes to check out the deer. Suddenly, the sound of barking reaches their ears and as the dogs come back into view, the patrol scatters! p_l has to spend the whole day gathering the patrol rather than hunting."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "win_trait": [
             "sneaky",

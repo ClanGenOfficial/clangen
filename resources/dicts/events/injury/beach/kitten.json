@@ -57,7 +57,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "water in their lungs",
         "camp": "camp2",
@@ -73,12 +72,21 @@
         "history_text": {
             "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
         },
-        "cat_trait": ["daring", "impulsive", "attention-seeker"],
+        "cat_trait": [
+            "daring",
+            "impulsive",
+            "attention-seeker"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["troublesome", "bossy", "bullying", "daring", "impulsive"],
+        "other_cat_trait": [
+            "troublesome",
+            "bossy",
+            "bullying",
+            "daring",
+            "impulsive"
+        ],
         "other_cat_skill": null
     },
-
     {
         "injury": "shivering",
         "camp": "camp2",
@@ -94,12 +102,21 @@
         "history_text": {
             "reg_death": "m_c died after swimming through freezing water when dared by r_c."
         },
-        "cat_trait": ["daring", "impulsive", "attention-seeker"],
+        "cat_trait": [
+            "daring",
+            "impulsive",
+            "attention-seeker"
+        ],
         "cat_skill": null,
-        "other_cat_trait": ["troublesome", "bossy", "bullying", "daring", "impulsive"],
+        "other_cat_trait": [
+            "troublesome",
+            "bossy",
+            "bullying",
+            "daring",
+            "impulsive"
+        ],
         "other_cat_skill": null
     },
-
     {
         "injury": "bruises",
         "camp": "camp1",
@@ -109,7 +126,9 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is hopping around in the tide pools when they trip and fall onto the rocks. Thankfully they're only a bit bruised.",
-        "cat_trait": ["bouncy"],
+        "cat_trait": [
+            "bouncy"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -122,7 +141,14 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
-        "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
+        "cat_trait": [
+            "bouncy",
+            "daring",
+            "impulsive",
+            "noisy",
+            "troublesome",
+            "attention-seeker"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -137,12 +163,18 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is jumping around on the rocks when they slip and fall. The soft sand of the cave floor softens their landing, but they're still sporting some new bruises.",
-        "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
+        "cat_trait": [
+            "bouncy",
+            "daring",
+            "impulsive",
+            "noisy",
+            "troublesome",
+            "attention-seeker"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "scrapes",
         "camp": "camp1",
@@ -151,12 +183,18 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
-        "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
+        "cat_trait": [
+            "bouncy",
+            "daring",
+            "impulsive",
+            "noisy",
+            "troublesome",
+            "attention-seeker"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sprain",
         "camp": "camp1",
@@ -165,12 +203,18 @@
             "Leaf-fall"
         ],
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when they slip a little too much and twist their paw.",
-        "cat_trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"],
+        "cat_trait": [
+            "bouncy",
+            "daring",
+            "impulsive",
+            "noisy",
+            "troublesome",
+            "attention-seeker"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "snake bite",
         "camp": "any",
@@ -186,7 +230,15 @@
             "scar": "m_c was scarred as a kit, when a snake bit them.",
             "reg_death": "m_c died from their wounds after a snake bit them."
         },
-        "cat_trait": ["daring", "impulsive", "noisy", "troublesome", "attention-seeker", "inquisitive", "quiet"],
+        "cat_trait": [
+            "daring",
+            "impulsive",
+            "noisy",
+            "troublesome",
+            "attention-seeker",
+            "inquisitive",
+            "quiet"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

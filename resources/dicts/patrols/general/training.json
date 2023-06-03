@@ -28,8 +28,7 @@
             "injury": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and are rushed back to camp for deathberry poisoning."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -99,8 +98,7 @@
             "injury": "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -386,8 +384,7 @@
             "unscathed_stat": "p_l rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens."
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -442,8 +439,7 @@
             "unscathed_stat": "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return home, the quarrel continues."
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "ambitious",
@@ -498,8 +494,7 @@
             "unscathed_stat": "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -555,8 +550,7 @@
             "unscathed_stat": "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "ambitious",
@@ -610,9 +604,7 @@
             "unscathed_common": "No one can make sense of the vision.",
             "unscathed_stat": "r_c notices p_l looking at {PRONOUN/r_c/object} enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 3,
         "max_cats": 6
     },
@@ -635,9 +627,7 @@
         "fail_text": {
             "unscathed_common": "r_c can't make sense of the vision."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 1,
         "max_cats": 1
     },
@@ -696,9 +686,7 @@
             "unscathed_common": "app1 isn't a kit anymore, and though p_l tries to be gentle about it, they make it clear that it's app1's responsibility to make sure they're well rested and attentive for their training.",
             "unscathed_stat": "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how they should use this unexpected ability."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "win_trait": [
             "calm",
             "compassionate",
@@ -736,7 +724,7 @@
             "unscathed_common": "A branch snaps, and the whole patrol runs back to camp. Later an argument starts about what caused the noise."
         },
         "win_skills": [
-            "strong connection to StarClan"
+            "STAR,2"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1006,9 +994,7 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1038,9 +1024,7 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1071,8 +1055,7 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
         },
         "win_skills": [
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,2"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1102,8 +1085,7 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
         },
         "win_skills": [
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,2"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1137,8 +1119,7 @@
             "unscathed_common": "Unfortunately, p_l sees their whispers and separates the two apprentices, preventing their plot."
         },
         "win_skills": [
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,2"
         ],
         "min_cats": 4,
         "max_cats": 6
@@ -1165,12 +1146,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1196,12 +1173,8 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1231,12 +1204,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1265,12 +1234,8 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for {PRONOUN/app1/object} to lead the training?"
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1300,12 +1265,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1335,12 +1296,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1370,12 +1327,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1405,12 +1358,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "TEACHER,1",
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1437,12 +1386,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1468,12 +1413,8 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1503,12 +1444,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1537,12 +1474,8 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1572,12 +1505,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1607,12 +1536,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1642,12 +1567,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1677,12 +1598,8 @@
             "unscathed_common": "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "TEACHER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -1713,9 +1630,7 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1747,9 +1662,7 @@
             "unscathed_common": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1780,9 +1693,7 @@
             "unscathed_common": "p_l refuses, saying they have no time to talk. r_c accepts that answer, crestfallen, with tail drooping."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1813,9 +1724,7 @@
             "unscathed_common": "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1845,9 +1754,7 @@
             "unscathed_common": "The conversation dies off awkwardly as p_l refuses to give r_c an answer."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2
@@ -1875,9 +1782,7 @@
         "fail_text": {
             "unscathed_common": "p_l tells r_c {PRONOUN/r_c/subject} should be glad to escape StarClan's attention, and r_c pads away, disappointed."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
@@ -1990,12 +1895,8 @@
             "unscathed_common": "No matter how patiently p_l tries to teach app1 how to firmly, but gently, gather and shred the moss, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem to be paying any attention. Frustrated with {PRONOUN/app1/object}, p_l decides to have a talk with the leader upon their return to camp."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "SPEAKER,1",
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2

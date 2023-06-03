@@ -29,7 +29,7 @@
             "injury": "r_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. r_c is injured, desperate, and terrified - but they're alive."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "altruistic",
@@ -88,7 +88,7 @@
             "injury": "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "altruistic",
@@ -152,7 +152,7 @@
             "injury": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "altruistic",
@@ -211,9 +211,7 @@
             "injury": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -254,9 +252,7 @@
             "injury": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -297,9 +293,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "antagonize_text": null,
         "antagonize_fail_text": null,

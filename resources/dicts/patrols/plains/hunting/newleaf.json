@@ -29,9 +29,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -87,9 +85,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -145,8 +141,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -209,7 +204,7 @@
             "leader_death": "As their hunt descends into a full on battle with a red vixen determined to protect her young, p_l takes a blow meant for one of their Clanmates, losing a life."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -224,9 +219,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -271,7 +263,7 @@
             "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -286,9 +278,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -328,7 +317,7 @@
             "stat_injury": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -343,9 +332,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -380,9 +366,7 @@
             "unscathed_common": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of speed that shows where the small carnivore gets its name."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -416,12 +400,8 @@
             "injury": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart",
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "CLEVER,1",
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -456,9 +436,7 @@
             "unscathed_stat": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -516,9 +494,7 @@
             "stat_injury": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth, sinking them into s_c and giving them bigger problems than scavenging from a carcass."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -572,9 +548,7 @@
             "unscathed_common": "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -701,9 +675,7 @@
             "unscathed_common": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -732,9 +704,7 @@
         "chance_of_success": 60,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -858,9 +828,7 @@
             "unscathed_common": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,

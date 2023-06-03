@@ -23,7 +23,7 @@
             "death": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean."
         },
         "win_skills": [
-            "extremely smart"
+            "CLEVER,3"
         ],
         "win_trait": [
             "careful",
@@ -64,10 +64,7 @@
         "fail_text": {
             "unscathed_common": "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, and the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
         },
-        "win_skills": [
-            "wise",
-            "thoughtful"
-        ],
+        "win_skills": [],
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": "Hissing to {PRONOUN/p_l/self}, p_l turns and stalks off to continue the patrol, deliberately ignoring the mewls. It must be a trick of the wind, {PRONOUN/p_l/subject} {VERB/p_l/inform/informs} {PRONOUN/p_l/poss} companions, and no cat dares to argue.",

@@ -1056,9 +1056,7 @@ class Clan():
 
         # Patrolled cats
         if "patrolled_cats" in clan_data:
-            for cat in clan_data["patrolled_cats"]:
-                if cat in Cat.all_cats:
-                    game.patrolled.append(Cat.all_cats[cat])
+            game.patrolled = clan_data["patrolled_cats"]
 
         # Mediated flag
         if "mediated" in clan_data:

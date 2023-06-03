@@ -14,7 +14,16 @@
             "scar": "m_c was scarred after falling from a tall cliff.",
             "reg_death": "m_c died from their wounds after falling from a tall cliff."
         },
-        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

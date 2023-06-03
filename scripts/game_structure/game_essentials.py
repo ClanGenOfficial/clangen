@@ -188,7 +188,7 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-        
+
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int=15):
         """ If write_data is not a string, assumes you want this
