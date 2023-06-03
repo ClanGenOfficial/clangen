@@ -1699,7 +1699,6 @@ class MedDenScreen(Screens):
         self.current_page = None
         self.meds = None
         self.back_button = None
-        self.profile_screen = ProfileScreen()
 
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
@@ -2052,7 +2051,7 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
-            med_skill = cat.skills.skill_list
+            med_skill = cat.skills.skill_string()
             med_exp = f"experience: {cat.experience_level}"
             med_working = True
             if cat.not_working():
