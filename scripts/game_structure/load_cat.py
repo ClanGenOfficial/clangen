@@ -156,7 +156,7 @@ def json_load():
                         new_cat.backstory = backstory
                     else:
                         new_cat.backstory = 'clanborn'
-                new_cat.skills.get_skills_from_old(cat["skill"])
+                new_cat.skills = CatSkills.get_skills_from_old(cat["skill"], new_cat.status, new_cat.moons)
 
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
             if None in new_cat.mate:
@@ -203,7 +203,7 @@ def json_load():
         if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_condition:
             cat.get_permanent_condition("paralyzed")
         elif "paralyzed" in cat.permanent_condition and not cat.pelt.paralyzed:
-            cat.paralyzed = True
+            cat.pelt.paralyzed = True
 
         # load the relationships
         try:

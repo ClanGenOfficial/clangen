@@ -305,23 +305,25 @@ class Patrol():
 
     def check_constraints(self, patrol):
         if "relationship" in patrol.constraints:
-            keep = self.filter_relationship(patrol)
-            if keep:
-                print('kept relationship')
-        else:
-            keep = True
+            if not self.filter_relationship(patrol):
+                return False
+  
         if "skill" in patrol.constraints:
-            if (self.patrol_leader.skills.primary.skill or self.patrol_leader.skills.secondary.skill)\
-            in patrol.constraints["skill"]:
-                keep = True
-        else:
-            keep = True
+            for _skill in patrol.constraints["skill"]:
+                spl = _skill.split(",")
+                
+                if len(spl) != 2:
+                    print("incorrectly formatted skill constaint", _skill)
+                    continue
+                    
+                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], spl[1]):
+                    return False
+        
         if "trait" in patrol.constraints:
-            if self.patrol_leader.personality.trait in patrol.constraints["trait"]:
-                keep = True
-        else:
-            keep = True
-        return keep
+            if self.patrol_leader.personality.trait not in patrol.constraints["trait"]:
+                return False
+            
+        return True
 
     def filter_relationship(self, patrol):
         """
@@ -488,7 +490,7 @@ class Patrol():
                                                                 int(skill_break[1])):
                              win_stat_cats.append(kitty)
                     except (KeyError, IndexError):
-                        print("Incorrectly formating win skill", _skill)
+                        print("Incorrectly formatted win skill", _skill)
                         continue
         # See if we can assign a trait stat cat if one has not already been assigned
         if self.patrol_event.win_trait:
@@ -508,7 +510,7 @@ class Patrol():
                                                                 int(skill_break[1])):
                             fail_stat_cats.append(kitty)
                     except (ValueError, IndexError):
-                        print("Incorrectly formating win skill", _skill)
+                        print("Incorrectly formatted fail skill", _skill)
                         continue
         # See if we can assign a trait stat cat if one has not already been assigned
         if self.patrol_event.fail_trait:
@@ -518,7 +520,7 @@ class Patrol():
                 
                         
         if not (win_stat_cats or fail_stat_cats):
-            print("no possible stat cats")
+            print("no cats with win/fail attributes")
             return
         
         print('PATROL WIN STAT', win_stat_cats)

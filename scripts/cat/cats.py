@@ -1993,7 +1993,7 @@ class Cat():
                     self.permanent_condition = rel_data.get("permanent conditions")
 
             if "paralyzed" in self.permanent_condition and not self.paralyzed:
-                self.paralyzed = True
+                self.pelt.paralyzed = True
 
         except Exception as e:
             print(f"WARNING: There was an error reading the condition file of cat #{self}.\n", e)
