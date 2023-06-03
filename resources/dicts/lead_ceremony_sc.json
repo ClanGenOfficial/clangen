@@ -549,16 +549,12 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "A cool breeze buffets m_c's fur as {PRONOUN/m_c/subject} {VERB/m_c/watches/watch} r_c approach. r_c gives a life for [virtue]. {PRONOUN/r_c/subject/CAP} add that it may seem easy to follow the Warrior Code, but the Code doesn't always have the answers.",
+          "virtue": ["trusting their instincts"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        },
-        {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "m_c looks up as r_c pads towards {PRONOUN/m_c/object}. r_c dips {PRONOUN/m_c/poss} head and offers a life for [virtue]. {PRONOUN/r_c/subject/CAP} {PRONOUN/r_c/continues/continue} that {PRONOUN/m_c/poss} Clanmates may push {PRONOUN/m_c/object} to the very edge sometimes, but a leader must remain firm yet fair.",
+          "virtue": ["patience", "grace"]
         }
       ]
     },
@@ -567,19 +563,19 @@
       "tags": [],
       "lead_trait": ["righteous"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "r_c approaches, dipping {PRONOUN/r_c/poss} head in greeting to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/meows/meow} something about not being afraid to look beyond traditions before touching {PRONOUN/r_c/poss} muzzle to m_c's head and a cool energy begins to fizz through {PRONOUN/m_c/poss} body. This life is for [virtue], the starry cat tells {PRONOUN/m_c/object}.",
+          "virtue": ["curiosity"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "m_c suppresses {PRONOUN/m_c/poss} shivers of excitement as r_c pads up, a small smile on {PRONOUN/r_c/poss} face. The StarClan cat delicately touches {PRONOUN/r_c/poss} nose to r_c's head, murmuring that this life is for [virtue], and {PRONOUN/r_c/subject} {VERB/r_c/expects/expect} r_c to use it well.",
+          "virtue": ["devotion", "determination", "honesty", "justice"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "Tail lashing excitedly, m_c dips {PRONOUN/m_c/poss} head to r_c as {PRONOUN/r_c/poss} walk up. r_c returns the gesture and offers a life for [virtue], adding that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/m_c/subject} {VERB/m_c/needs/need} it, but it can't hurt.",
+          "virtue": ["devotion", "courage in the face of hardship", "compassion", "honor"]
         }
       ]
     },
@@ -651,19 +647,11 @@
       "tags": [],
       "lead_trait": ["strict"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "rank": ["warrior"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        },
-        {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        },
-        {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "text": "m_c squares {PRONOUN/m_c/poss} jaw as r_c approaches, preparing for receiving another life. r_c gazes at {PRONOUN/m_c/object}, an intensity in {PRONOUN/r_c/poss} eyes that makes m_c want to shrink back, but {PRONOUN/m_c/subject} stay frozen to the spot. r_c gives a life for [virtue], implying that m_c could use it.",
+          "virtue": ["grace", "mercy", "offering second chances", "forgiveness"]
         }
       ]
     },
@@ -748,6 +736,19 @@
         {
           "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
+
+    "arrogant_warrior": {
+      "tags": [],
+      "lead_trait": ["arrogant"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildy amused - or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
+          "virtue": ["humility"]
         }
       ]
     },
