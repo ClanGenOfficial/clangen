@@ -234,7 +234,7 @@ def create_new_cat(Cat,
     :param kit: set True if the cat is a lone kitten - default: False
     :param litter: set True if a litter of kittens needs to be generated - default: False
     :param other_clan: if new cat(s) are from a neighboring clan, pass the name of their home Clan - default: None
-    :param backstory: a list of possible backstories for the new cat(s) - default: None
+    :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
@@ -1093,7 +1093,7 @@ def adjust_patrol_text(text, patrol):
         text = 'This should not appear, report as a bug please!'
 
     replace_dict = {
-        "p_l": (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
+        "p_l": (str(patrol.patrol_leader.name), choice(patrol.patrol_leader.pronouns)),
     }
 
     if patrol.patrol_random_cat:
@@ -1103,31 +1103,32 @@ def adjust_patrol_text(text, patrol):
         replace_dict["r_c"] = (str(patrol.patrol_leader_name),
                                choice(patrol.patrol_leader.pronouns))
 
-    if len(patrol.patrol_other_cats) >= 1:
-        replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name),
-                                choice(patrol.patrol_other_cats[0].pronouns))
-    if len(patrol.patrol_other_cats) >= 2:
-        replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name),
-                                choice(patrol.patrol_other_cats[1].pronouns))
-    if len(patrol.patrol_other_cats) >= 3:
-        replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
-                                choice(patrol.patrol_other_cats[2].pronouns))
-    if len(patrol.patrol_other_cats) == 4:
-        replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
-                                choice(patrol.patrol_other_cats[3].pronouns))
+    other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
+    if len(other_cats) >= 1:
+        replace_dict['o_c1'] = (str(other_cats[0].name),
+                                choice(other_cats[0].pronouns))
+    if len(other_cats) >= 2:
+        replace_dict['o_c2'] = (str(other_cats[1].name),
+                                choice(other_cats[1].pronouns))
+    if len(other_cats) >= 3:
+        replace_dict['o_c3'] = (str(other_cats[2].name),
+                                choice(other_cats[2].pronouns))
+    if len(other_cats) == 4:
+        replace_dict['o_c4'] = (str(other_cats[3].name),
+                                choice(other_cats[3].pronouns))
 
-    if patrol.app1:
-        replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
-    if patrol.app2:
-        replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
-    if patrol.app3:
-        replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
-    if patrol.app4:
-        replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
-    if patrol.app5:
-        replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
-    if patrol.app6:
-        replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
+    if len(patrol.patrol_apprentices) > 0:
+        replace_dict["app1"] = (str(patrol.patrol_apprentices[0].name), choice(patrol.patrol_apprentices[0].pronouns))
+    if len(patrol.patrol_apprentices) > 1:
+        replace_dict["app2"] = (str(patrol.patrol_apprentices[1].name), choice(patrol.patrol_apprentices[1].pronouns))
+    if len(patrol.patrol_apprentices) > 2:
+        replace_dict["app3"] = (str(patrol.patrol_apprentices[2].name), choice(patrol.patrol_apprentices[2].pronouns))
+    if len(patrol.patrol_apprentices) > 3:
+        replace_dict["app4"] = (str(patrol.patrol_apprentices[3].name), choice(patrol.patrol_apprentices[3].pronouns))
+    if len(patrol.patrol_apprentices) > 4:
+        replace_dict["app5"] = (str(patrol.patrol_apprentices[4].name), choice(patrol.patrol_apprentices[4].pronouns))
+    if len(patrol.patrol_apprentices) > 5:
+        replace_dict["app6"] = (str(patrol.patrol_apprentices[5].name), choice(patrol.patrol_apprentices[5].pronouns))
 
     stat_cat = None
     if patrol.patrol_win_stat_cat:
@@ -1137,7 +1138,7 @@ def adjust_patrol_text(text, patrol):
     if stat_cat:
         replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
     else:
-        replace_dict['s_c'] = (str(patrol.patrol_leader_name),
+        replace_dict['s_c'] = (str(patrol.patrol_leader.name),
                                choice(patrol.patrol_leader.pronouns))
 
     text = process_text(text, replace_dict)

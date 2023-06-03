@@ -21,9 +21,7 @@
             "unscathed_common": "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -113,9 +111,7 @@
             "injury": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -147,9 +143,7 @@
             "unscathed_common": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -180,10 +174,8 @@
             "injury": "p_l has wildly overestimated their climbing ability. The bird flies away before they can make a move, and, trying not to think of how far down the ground is, p_l jumps down...but doesn't quite land on their feet."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter",
-            "smart tactician",
-            "valuable tactician"
+            "HUNTER,2",
+            "INSIGHTFUL,1"
         ],
         "win_trait": [
             "adventurous",
@@ -284,10 +276,8 @@
             "stat_trait": "s_c instructs the cats in the patrol to work as a unit in order to take down this hawk. r_c distracts the hawk while the rest of the patrol sneak around its back to pounce on and overwhelm it. After a brief but chaotic struggle, s_c manages to land a killing blow. The Clan will be thrilled to see such a successful hunt."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart",
-            "great hunter",
-            "fantastic hunter"
+            "CLEVER,2",
+            "HUNTER,2"
         ],
         "win_trait": [
             "bold",
@@ -360,9 +350,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -487,9 +475,7 @@
         "decline_text": "Running water is always a dangerous threat to cats. p_l takes app1 somewhere else to hunt.",
         "chance_of_success": 60,
         "exp": 20,
-        "win_skills": [
-            null
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -521,8 +507,7 @@
         "chance_of_success": 50,
         "exp": 30,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -559,7 +544,7 @@
             "stat_injury": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -596,7 +581,7 @@
             "stat_death": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -630,9 +615,7 @@
             "unscathed_stat": "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -664,9 +647,7 @@
         "fail_text": {
             "unscathed_common": "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -693,8 +674,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 3,
@@ -729,9 +709,7 @@
             "injury": "r_c tries to climb up after them but slips and falls, twisting their paw."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -800,9 +778,7 @@
             "injury": "As r_c pokes around the strange smelling whatever-it-is, they poke a piece of metal still holding the heat of fire in it, and skitter backwards with a yelp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 6,
@@ -843,9 +819,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -905,9 +879,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -968,8 +940,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -1031,9 +1002,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1091,9 +1060,7 @@
             "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being janked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -1153,8 +1120,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the gray fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -1215,7 +1181,7 @@
             "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1230,9 +1196,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -1276,7 +1239,7 @@
             "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1291,9 +1254,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -1335,7 +1295,7 @@
             "stat_injury": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1350,9 +1310,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1395,7 +1352,7 @@
             "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1410,9 +1367,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 2,
         "max_cats": 3,
@@ -1451,7 +1405,7 @@
             "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1466,9 +1420,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -1507,7 +1458,7 @@
             "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -1522,9 +1473,6 @@
             "righteous",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "good fighter"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1556,9 +1504,7 @@
         "chance_of_success": 60,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1645,9 +1591,7 @@
             "unscathed_common": "r_c doesn't bring much home, impressing nobody."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "win_trait": [
             "bold",
@@ -1689,9 +1633,7 @@
             "unscathed_common": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1728,9 +1670,7 @@
         "chance_of_success": 60,
         "exp": 15,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "win_trait": [
             "calm",

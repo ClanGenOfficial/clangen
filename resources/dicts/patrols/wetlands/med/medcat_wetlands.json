@@ -110,8 +110,8 @@
             "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -149,8 +149,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -189,8 +189,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -233,8 +233,8 @@
             "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -272,8 +272,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -312,8 +312,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -356,8 +356,8 @@
             "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -395,8 +395,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -435,8 +435,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -479,8 +479,8 @@
             "unscathed_common": "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -518,8 +518,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -558,8 +558,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -628,9 +628,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -669,9 +667,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -710,9 +706,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -751,9 +745,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -792,9 +784,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -833,9 +823,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -874,9 +862,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -915,9 +901,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",

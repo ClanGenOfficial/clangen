@@ -26,7 +26,7 @@
             "injury": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "bloodthirsty",
@@ -66,7 +66,7 @@
             "death": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. Their body is discovered the next day, covered in wounds and cold."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -112,9 +112,7 @@
             "injury": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "bold",
@@ -158,9 +156,7 @@
             "unscathed_stat": "s_c takes r_c aside, and reminds them coldly to focus on their duties."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "win_trait": [
             "charismatic",

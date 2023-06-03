@@ -141,7 +141,7 @@ class Group_Events():
                     continue
 
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
-                if main_cat.skill not in interact.skill_constraint["m_c"]:
+                if (main_cat.skills.primary.skill or main_cat.skills.secondary.skill) not in interact.skill_constraint["m_c"]:
                     continue
             
             if len(interact.backstory_constraint) >= 1 and "m_c" in interact.backstory_constraint:

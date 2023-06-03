@@ -26,7 +26,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "frostbite",
         "tags": [
@@ -39,7 +38,12 @@
             "scar": "m_c was scarred by frostbite.",
             "reg_death": "m_c died after they got frostbite sneaking out of camp."
         },
-        "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
+        "cat_trait": [
+            "daring",
+            "impulsive",
+            "inquisitive",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

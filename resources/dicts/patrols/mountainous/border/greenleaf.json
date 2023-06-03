@@ -28,9 +28,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -51,7 +49,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -92,9 +90,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -115,7 +111,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -211,9 +207,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -234,7 +228,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -275,9 +269,7 @@
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -298,7 +290,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -382,9 +374,7 @@
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -405,7 +395,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "smart"
+            "CLEVER,1"
         ],
         "min_cats": 3,
         "max_cats": 6
@@ -436,9 +426,7 @@
             "unscathed_stat": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "ambitious",
@@ -459,7 +447,7 @@
             "righteous"
         ],
         "fail_skills": [
-            "good fighter"
+            "FIGHTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6

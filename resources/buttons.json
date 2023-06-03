@@ -1111,26 +1111,26 @@
             }
         }
     },
-    "#see_family_button": 
+    "#family_tree_button": 
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/see_family.png"
+                "path": "resources/images/buttons/family_tree.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/see_family_hover.png"
+                "path": "resources/images/buttons/family_tree_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/see_family_hover.png"
+                "path": "resources/images/buttons/family_tree_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/see_family_unavailable.png"
+                "path":"resources/images/buttons/family_tree_unavailable.png"
             }
         }
     },

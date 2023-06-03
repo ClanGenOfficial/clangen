@@ -53,7 +53,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -97,7 +97,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -147,7 +147,7 @@
             "leader_death": "Another member of the patrol tries to start a fight with the eagle as it climbs onto the riverbank, and p_l gets between them, taking the furious bird's full wrath. They lose a life bleeding out on the ground, and all for the sake of a silly fish."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -199,7 +199,7 @@
             "injury": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -244,9 +244,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -302,9 +300,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -361,8 +357,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -412,9 +407,7 @@
             "unscathed_common": "p_l shifts on some pebbles as they ready themself to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -504,9 +497,7 @@
             "injury": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -538,9 +529,7 @@
             "unscathed_common": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,

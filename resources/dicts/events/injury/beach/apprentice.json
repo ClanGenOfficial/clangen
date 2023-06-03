@@ -15,12 +15,20 @@
             "scar": "m_c was scarred after falling from a tall tree.",
             "reg_death": "m_c died from their wounds after falling from a tall tree."
         },
-        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "water in their lungs",
         "camp": "any",
@@ -42,12 +50,20 @@
         "history_text": {
             "reg_death": "m_c died from water-inhalation when they nearly drowned."
         },
-        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "cracked pads",
         "camp": "any",
@@ -63,7 +79,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bruises",
         "camp": "camp2",
@@ -71,7 +86,14 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was dashing around the apprentice rock, when they slipped and fell into the high tide waters of the cave. They're alright, though a bit bruised and embarrassed.",
-        "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "bold",
+            "childish",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -85,12 +107,18 @@
             "Leaf-fall"
         ],
         "event_text": "m_c was messing around in the tide pools of the camp clearing, when their paw slipped and they fell in face first. Their pride is wounded, but otherwise they're only bruised.",
-        "cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "bold",
+            "childish",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "shivering",
         "camp": "any",
@@ -108,10 +136,16 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["adventurous", "bold", "childish", "daring", "playful", "troublesome"],
+        "other_cat_trait": [
+            "adventurous",
+            "bold",
+            "childish",
+            "daring",
+            "playful",
+            "troublesome"
+        ],
         "other_cat_skill": null
     },
-
     {
         "injury": "dehydrated",
         "camp": "any",
@@ -132,7 +166,10 @@
         "history_text": {
             "reg_death": "m_c died of dehydration after drinking salt water."
         },
-        "cat_trait": ["troublesome", "strange"],
+        "cat_trait": [
+            "troublesome",
+            "strange"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

@@ -35,7 +35,7 @@
             "leader_death": "The patrol starts a furious fight over the crucial food, and p_l wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -86,7 +86,7 @@
             "leader_death": "The patrol starts a furious fight over the crucial food, and p_l wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -140,7 +140,7 @@
             "leader_death": "The patrol starts a furious fight over the crucial food, and p_l wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -198,7 +198,7 @@
             "leader_death": "The patrol starts a furious fight over the crucial food, and p_l wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         },
         "win_skills": [
-            "excellent fighter"
+            "FIGHTER,3"
         ],
         "win_trait": [
             "ambitious"
@@ -249,8 +249,7 @@
             "injury": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -296,8 +295,7 @@
             "injury": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a mountain cave, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -340,8 +338,7 @@
             "injury": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -391,9 +388,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -450,9 +445,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -510,8 +503,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -561,9 +553,7 @@
             "unscathed_common": "p_l shifts on some pebbles as they ready themself to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -651,9 +641,7 @@
             "injury": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -688,9 +676,7 @@
             "injury": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the patrol comes home freezing cold with little to show for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -732,11 +718,8 @@
             "stat_injury": "s_c is facinated by the pretty feathers and can't wait to get their claws on them! They rush out to catch the bluejay, only for a mob of bluejays to decend on the patrol, every cat suffering for s_c's impulsive behaviour."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter",
-            "very smart",
-            "extremely smart"
+            "HUNTER,1",
+            "CLEVER,2"
         ],
         "win_trait": [
             "responsible",
@@ -746,9 +729,7 @@
             "sneaky",
             "careful"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "troublesome",
             "childish",
@@ -808,12 +789,11 @@
             "stat_injury": "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the medicince cat gets to tell them the difference between common buzzards and vultures."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart",
-            "fantastic hunter",
-            "strong connection to StarClan",
-            "lore keeper",
-            "keen eye"
+            "CLEVER,2",
+            "HUNTER,3",
+            "STAR,2",
+            "LORE,2",
+            "SENSE,2"
         ],
         "win_trait": [
             "faithful",
@@ -824,9 +804,7 @@
             "strange",
             "shameless"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "childish",
             "playful",

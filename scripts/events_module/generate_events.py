@@ -394,15 +394,40 @@ class GenerateEvents:
                         continue
                     had_trait = True
                 if event.other_cat_skill and not had_trait:
-                    if other_cat.skill not in event.other_cat_skill and int(random.random() * 15):
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        split = _skill.split(",")
+                        
+                        if len(split) < 2:
+                            print("Cat skill incorrectly formatted", _skill)
+                            continue
+                        
+                        if other_cat.skills.meets_skill_requirement(split[0], split[1]):
+                            _flag = True
+                            break
+                    
+                    if not _flag and int(random.random() * 15):
                         continue
+                
                 had_trait = True
                 if event.other_cat_negate_trait:
                     if other_cat.personality.trait in event.other_cat_negate_trait and int(random.random() * 15):
                         continue
                     had_trait = False
                 if event.other_cat_negate_skill and had_trait:
-                    if other_cat.skill in event.other_cat_negate_skill and int(random.random() * 15):
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        split = _skill.split(",")
+                        
+                        if len(split) < 2:
+                            print("Cat skill incorrectly formatted", _skill)
+                            continue
+                        
+                        if other_cat.skills.meets_skill_requirement(split[0], split[1]):
+                            _flag = True
+                            break
+                    
+                    if not _flag and int(random.random() * 15):
                         continue
 
             else:
@@ -420,7 +445,20 @@ class GenerateEvents:
                     continue
                 had_trait = True
             if event.cat_skill and not had_trait:
-                if cat.skill not in event.cat_skill and int(random.random() * 15):
+                _flag = False
+                for _skill in event.cat_skill:
+                    split = _skill.split(",")
+                    
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+                    
+                    if cat.skills.meets_skill_requirement(split[0], split[1]):
+                        _flag = True
+                        break
+                
+                # If the cat doesn't have the skill, and some random chance, continue. 
+                if not _flag and int(random.random() * 15):
                     continue
 
             had_trait = True
@@ -429,7 +467,19 @@ class GenerateEvents:
                     continue
                 had_trait = False
             if event.cat_negate_skill and had_trait:
-                if cat.skill in event.cat_negate_skill and int(random.random() * 15):
+                _flag = False
+                for _skill in event.cat_skill:
+                    split = _skill.split(",")
+                    
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+                    
+                    if cat.skills.meets_skill_requirement(split[0], split[1]):
+                        _flag = True
+                        break
+                
+                if not _flag and int(random.random() * 15):
                     continue
 
             # determine injury severity chance
