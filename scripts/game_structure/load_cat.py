@@ -203,7 +203,7 @@ def json_load():
         if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_condition:
             cat.get_permanent_condition("paralyzed")
         elif "paralyzed" in cat.permanent_condition and not cat.pelt.paralyzed:
-            cat.paralyzed = True
+            cat.pelt.paralyzed = True
 
         # load the relationships
         try:
