@@ -255,7 +255,7 @@
         "success_text": {
             "unscathed_common": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
             "stat_skill": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
-            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
         },
         "fail_text": {
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
@@ -294,7 +294,7 @@
             "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
             "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too. The patrol politely declines and continues on their patrol.",
             "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
-            "stat_trait": "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+            "stat_trait": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         },
         "fail_text": {
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
