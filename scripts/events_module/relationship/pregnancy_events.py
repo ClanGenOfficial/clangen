@@ -1,8 +1,9 @@
-from random import choice
+from random import choice, randint
 import random
 
 from scripts.cat.history import History
 from scripts.utility import (
+    create_new_cat,
     get_highest_romantic_relation,
     get_med_cats,
     add_children_to_cat,
@@ -155,6 +156,12 @@ class Pregnancy_Events():
                 for x in [other_cat.ID] + other_cat.mate:
                     if x not in kit.adoptive_parents:
                         kit.adoptive_parents.append(x)
+        
+        cat.create_inheritance_new_cat()
+        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        if other_cat:
+            other_cat.create_inheritance_new_cat()
+            other_cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
 
         game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
 
@@ -570,6 +577,16 @@ class Pregnancy_Events():
     def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan):
         # create amount of kits
         all_kitten = []
+        # blood parent for adoptive kits
+        insert = "their kits"
+        if kits_amount == 1:
+            insert = "their kit"
+        thought = f"Is glad that {insert} are safe"
+        blood_parent = create_new_cat(Cat, Relationship,
+                                      status=random.choice(["loner", "kittypet"]),
+                                      alive=False,
+                                      thought=thought,
+                                      age=randint(15,120))[0]
         # select background here to have the same over all kits
         backstory_1 = choice(['halfclan1', 'outsider_roots1'])
         backstory_2 = choice(['halfclan2', 'outsider_roots2'])
@@ -595,8 +612,8 @@ class Pregnancy_Events():
                     kit.adoptive_parents.remove(cat.ID)
                 if other_cat.ID in kit.adoptive_parents:
                     kit.adoptive_parents.remove(other_cat.ID)
-                cat.birth_cooldown = 6
-                other_cat.birth_cooldown = 6
+                cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+                other_cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
             else:
                 if cat and cat.gender == 'female':
                     backstory = backstory_1
@@ -607,11 +624,11 @@ class Pregnancy_Events():
 
                 if cat:
                     kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
-                    cat.birth_cooldown = 6
+                    cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                     kit.adoptive_parents = cat.mate
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
-                else: 
-                    kit = Cat(moons=0, backstory=backstory, status='newborn')
+                else:
+                    kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
             all_kitten.append(kit)
 
             # remove scars
@@ -660,7 +677,7 @@ class Pregnancy_Events():
 
             # give history
             self.history.add_beginning(kit, clan_born=True)
-
+        
         # check other cats of clan for siblings
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
@@ -672,6 +689,9 @@ class Pregnancy_Events():
                 kitten.relationships[second_kitten.ID].comfortable += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
             kitten.create_inheritance_new_cat()
+
+        blood_parent.inheritance.update_inheritance()
+
         return all_kitten
 
     def get_amount_of_kits(self, cat):
