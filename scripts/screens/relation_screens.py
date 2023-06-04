@@ -1153,6 +1153,10 @@ class ChooseMateScreen(Screens):
         self.have_kits_text = None
         self.with_selected_cat_text = None
         
+        self.potential_page_display = None
+        self.offspring_page_display = None
+        self.mate_page_display = None
+        
         # Keep track of the open tab
         # Can be "potential" for the potential mates tab, "offspring"
         # for the offspring tab, and "mates" for the mate tab. 
@@ -1399,7 +1403,14 @@ class ChooseMateScreen(Screens):
             self.mates_last_page.enable()
             self.mates_next_page.enable()
         
-        #TODO - disable last and next pages buttons. 
+        text = f"{self.mates_page + 1} / {max(1, total_pages)}"
+        if not self.mate_page_display:
+            self.mate_page_display = pygame_gui.elements.UILabel(scale(pygame.Rect((528, 370),(204, 48))), 
+                                                                      text,
+                                                                      container=self.mates_container,
+                                                                      object_id=get_text_box_theme("#text_box_26_horizcenter_vertcenter_spacing_95"))
+        else:
+            self.mate_page_display.set_text(text)
         
         if self.all_mates:
             display_cats = self.all_mates[self.mates_page]
@@ -1470,6 +1481,15 @@ class ChooseMateScreen(Screens):
         else:
             self.offspring_last_page.enable()
             self.offspring_next_page.enable()
+        
+        text = f"{self.offspring_page + 1} / {max(1, total_pages)}"
+        if not self.offspring_page_display:
+            self.offspring_page_display = pygame_gui.elements.UILabel(scale(pygame.Rect((528, 370),(204, 48))), 
+                                                                      text,
+                                                                      container=self.offspring_container,
+                                                                      object_id=get_text_box_theme("#text_box_26_horizcenter_vertcenter_spacing_95"))
+        else:
+            self.offspring_page_display.set_text(text)
         
         if self.all_offspring:
             display_cats = self.all_offspring[self.offspring_page]
@@ -1581,6 +1601,15 @@ class ChooseMateScreen(Screens):
         else:
             self.potential_last_page.enable()
             self.potential_next_page.enable()
+        
+        text = f"{self.potential_mates_page + 1} / {max(1, total_pages)}"
+        if not self.potential_page_display:
+            self.potential_page_display = pygame_gui.elements.UILabel(scale(pygame.Rect((528, 370),(204, 48))), 
+                                                                      text,
+                                                                      container=self.potential_container,
+                                                                      object_id=get_text_box_theme("#text_box_26_horizcenter_vertcenter_spacing_95"))
+        else:
+            self.potential_page_display.set_text(text)
         
         if self.all_potential_mates:
             display_cats = self.all_potential_mates[self.potential_mates_page]

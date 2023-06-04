@@ -849,27 +849,19 @@ class ProfileScreen(Screens):
             # NEWLINE ----------
 
         # PARENTS
-        all_bio_parents = [Cat.fetch_cat(i) for i in [the_cat.parent1, the_cat.parent2] if isinstance(Cat.fetch_cat(i), Cat)]
-        if all_bio_parents:
+        all_parents = [Cat.fetch_cat(i) for i in [the_cat.parent1, the_cat.parent2] + the_cat.adoptive_parents if isinstance(Cat.fetch_cat(i), Cat)]
+        if all_parents: 
             output += "\n"
-            if len(all_bio_parents) == 1:
-                output += 'birth parent: ' + str(all_bio_parents[0].name)
-            else:
-                output += 'birth parents: ' + ", ".join([str(i.name) for i in all_bio_parents])
-
-        if the_cat.adoptive_parents:
-            output += "\n"
-            all_adoptive_parents = [Cat.fetch_cat(i) for i in the_cat.adoptive_parents if isinstance(Cat.fetch_cat(i), Cat)]
-            if len(all_adoptive_parents) == 1:
-                output += "adoptive parent: " + str(all_adoptive_parents[0].name)
-            elif len(all_adoptive_parents) > 2:
-                output += "adoptive parents: " + ", ".join([str(i.name) for i in all_adoptive_parents[:2]]) + f", and {len(all_adoptive_parents) - 2} "
-                if len(all_adoptive_parents) - 2 == 1:
+            if len(all_parents) == 1:
+                output += "parent: " + str(all_parents[0].name)
+            elif len(all_parents) > 2:
+                output += "parents: " + ", ".join([str(i.name) for i in all_parents[:2]]) + f", and {len(all_parents) - 2} "
+                if len(all_parents) - 2 == 1:
                     output += "other"
                 else:
                     output += "others"
             else:
-                output += "adoptive parents: " + ", ".join([str(i.name) for i in all_adoptive_parents])
+                output += "parents: " + ", ".join([str(i.name) for i in all_parents])
 
         
         # MOONS
