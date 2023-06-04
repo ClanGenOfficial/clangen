@@ -146,7 +146,9 @@ class Pregnancy_Events():
             kit.thought = f"Snuggles up to the belly of {cat.name}"
             kit.adoptive_parents += [cat.ID] + cat.mate
             if other_cat:
-                kit.adoptive_parents += [other_cat.ID] + other_cat.mate
+                for x in [other_cat.ID] + other_cat.mate:
+                    if x not in kit.adoptive_parents:
+                        kit.adoptive_parents.append(x)
 
         game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
 

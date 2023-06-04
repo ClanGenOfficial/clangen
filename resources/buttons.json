@@ -5028,6 +5028,75 @@
             }
         }
     },
+    "#mates_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mates_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mates_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mates_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/mates_tab_unavailable.png"
+            }
+        }
+    },
+    "#offspring_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/offspring_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_unavailable.png"
+            }
+        }
+    },
+    "#potential_mates_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_unavailable.png"
+            }
+        }
+    },
     "#adoptive_parents": 
     {
         "prototype": "#image_button",
