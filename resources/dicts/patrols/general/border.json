@@ -353,7 +353,7 @@
             "stat_trait": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n they are immediately greeted by the leader who recognizes p_l knowing {PRONOUN/p_l/object} to be a kind and caring cat, and thanks both of them sincerely."
         },
         "fail_text": {
-            "unscathed_common": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their clan, they stop as they hear an o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own clan and resume {PRONOUN/p_l/poss} patrol.",
+            "unscathed_common": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their clan, they stop as they hear an o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with fury.",
             "death": "As p_l crosses the border with r_c to grab the kits by their scruff, an o_c_n patrol suddenly appears looking furious, with their claws out and fangs bared! r_c gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n their warriors."
         },
         "win_skills": [
@@ -400,7 +400,7 @@
         "success_text": {
             "unscathed_common": "p_l is not willing to let any cat die to a badger. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol to continue on while {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} on an o_c_n patrol to come by, and to give them a warning about the badger.",
             "unscathed_rare": "As luck would have it, p_l smells an o_c_n patrol approaching. {PRONOUN/p_l/subject/CAP} {VERB/p_l/call/calls} out to the patrol and tells them about the badger and where {PRONOUN/p_l/subject} saw it making a den. The o_c_n patrol is grateful and return to camp immediately to report the badger to their leader.",
-            "stat_skill": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n their camp. {PRONOUN/p_l/subject} {VERB/p_l/is/are} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/is/are} doing there. {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border."
+            "stat_skill": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n their camp. {PRONOUN/p_l/subject} {VERB/p_l/are/is} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing there. {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border."
         },
         "fail_text": {
             "unscathed_common": "The patrol waits patiently at the border for any o_c_n cat to appear but they are out of luck that day. p_l decides to continue the patrol as {PRONOUN/p_l/subject} {VERB/p_l/has/have} tried waiting long enough."
@@ -471,4 +471,5 @@
         "antagonize_text": null,
         "antagonize_fail_text": null
     }
+ 
 ]
