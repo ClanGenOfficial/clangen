@@ -2241,7 +2241,7 @@
             "unscathed_rare": "p_l gives the dolphins a few of their fish, and is surprised and grateful when {PRONOUN/p_l/subject} get some useful herbs in return, for the medicine cat den."
         },
         "fail_text": {
-            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins give some herbs for the good laugh {PRONOUN/p_l/object} gave them, it seems."
+            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins tries to give some herbs for the good laugh {PRONOUN/p_l/object} gave them, but p_l just walks away emberassed and soaked."
         },
         "min_cats": 2,
         "max_cats": 6,
