@@ -50,10 +50,10 @@ class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
         relation_events = Pregnancy_Events()
-        cat1 = Cat(gender = 'female', age = "adult")
-        cat2 = Cat(gender = 'female', age = "adult")
-        cat1.mate.append(cat2)
-        cat2.mate.append(cat1)
+        cat1 = Cat(gender = 'female', age = "adult", moons=40)
+        cat2 = Cat(gender = 'female', age = "adult", moons=40)
+        cat1.mate.append(cat2.ID)
+        cat2.mate.append(cat1.ID)
 
         # when
         single_parentage = False
