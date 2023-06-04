@@ -75,7 +75,7 @@ class Pregnancy_Events():
             return
 
         # Check if they can have kits.
-        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'], game.settings['affair'])
+        can_have_kits = self.check_if_can_have_kits(cat, game.settings['single parentage'], game.settings['affair'])
         if not can_have_kits:
             return
 
@@ -90,12 +90,18 @@ class Pregnancy_Events():
             cat.relationships[second_parent.ID] = second_parent_relation
 
         # check if the second_parent is not none and if they also can have kits
-        can_have_kits, kits_are_adopted = self.check_second_parent(cat, second_parent)
+        can_have_kits, kits_are_adopted = self.check_second_parent(
+            cat,
+            second_parent,
+            game.settings['single parentage'],
+            game.settings['affair'],
+            game.settings["same sex birth"]
+        )
         if second_parent:
             if not can_have_kits:
                 return
         else:
-            if not game.settings['no unknown fathers']:
+            if not game.settings['single parentage']:
                 return
 
         chance = self.get_balanced_kit_chance(cat, second_parent, is_affair)
@@ -393,7 +399,7 @@ class Pregnancy_Events():
     #                          check if event is triggered                         #
     # ---------------------------------------------------------------------------- #
 
-    def check_if_can_have_kits(self, cat, unknown_parent_setting, allow_affair):
+    def check_if_can_have_kits(self, cat, single_parentage, allow_affair):
         """Check if the given cat can have kits, see for age, birth-cooldown and so on."""
         if not cat:
             return False
@@ -418,14 +424,19 @@ class Pregnancy_Events():
                     print(f"WARNING: {cat.name}  has an invalid mate # {mate_id}. This has been unset.")
                     cat.mate.remove(mate_id)
 
-        # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
-        if not unknown_parent_setting and len(cat.mate) < 1 and not allow_affair:
+        # If the "single parentage setting in on, we should only allow cats that have mates to have kits.
+        if not single_parentage and len(cat.mate) < 1 and not allow_affair:
             return False
 
         # if function reaches this point, having kits is possible
         return True
 
-    def check_second_parent(self, cat: Cat, second_parent: Cat):
+    def check_second_parent(self, 
+                            cat: Cat, 
+                            second_parent: Cat, 
+                            single_parentage: bool, 
+                            allow_affair: bool, 
+                            same_sex_birth: bool):
         """
             This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits.
             returns:
@@ -433,11 +444,11 @@ class Pregnancy_Events():
         """
 
         # Checks for second parent alone:
-        if not self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'], game.settings['affair']):
+        if not self.check_if_can_have_kits(second_parent, single_parentage, allow_affair):
             return False, False
 
         # Check to see if the pair can have kits.
-        if not game.settings["no gendered breeding"]:
+        if not same_sex_birth:
             if cat.gender == second_parent.gender:
                 return True, True
 
@@ -452,7 +463,7 @@ class Pregnancy_Events():
             Return the second parent of a cat, which will have kits. 
             Also returns a bool that is true if an affair was triggered.
         """
-        samesex = game.settings['no gendered breeding']
+        samesex = game.settings['same sex birth']
         mate = None
 
         # randomly select a mate of given cat
@@ -762,7 +773,7 @@ class Pregnancy_Events():
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
-        if game.settings['no unknown fathers']:
+        if game.settings['single parentage']:
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance if affairs are not allowed
@@ -841,11 +852,11 @@ class Pregnancy_Events():
             inverse_chance = int(inverse_chance * 1.7)
 
         # - decrease inverse chance if the current family is small
-        if len(first_parent.get_relatives(game.settings["first_cousin_mates"])) < (living_cats/15):
+        if len(first_parent.get_relatives(game.settings["first cousin mates"])) < (living_cats/15):
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance single parents if settings allow an biggest family is huge
-        settings_allow = not second_parent and not game.settings['no unknown fathers']
+        settings_allow = not second_parent and not game.settings['single parentage']
         if settings_allow and self.biggest_family_is_big():
             inverse_chance = int(inverse_chance * 0.9)
 
