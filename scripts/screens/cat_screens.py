@@ -841,52 +841,31 @@ class ProfileScreen(Screens):
         # PELT LENGTH
         output += 'fur length: ' + the_cat.pelt.length
         # NEWLINE ----------
-        output += "\n"
 
         # ACCESSORY
         if the_cat.pelt.accessory:
+            output += "\n"
             output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------
-            output += "\n"
 
         # PARENTS
-        if the_cat.parent1 is None and the_cat.parent2 is None:
-            output += 'parents: unknown'
-        elif the_cat.parent1 and the_cat.parent2 is None:
-            if the_cat.parent1 in Cat.all_cats:
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            else:
-                parent_ob = Cat.load_faded_cat(the_cat.parent1)
-                if parent_ob:
-                    par1 = str(parent_ob.name)
+        all_parents = [Cat.fetch_cat(i) for i in [the_cat.parent1, the_cat.parent2] + the_cat.adoptive_parents if isinstance(Cat.fetch_cat(i), Cat)]
+        if all_parents: 
+            output += "\n"
+            if len(all_parents) == 1:
+                output += "parent: " + str(all_parents[0].name)
+            elif len(all_parents) > 2:
+                output += "parents: " + ", ".join([str(i.name) for i in all_parents[:2]]) + f", and {len(all_parents) - 2} "
+                if len(all_parents) - 2 == 1:
+                    output += "other"
                 else:
-                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-
-            output += 'parent: ' + par1 + ", unknown"
-        else:
-            if the_cat.parent1 in Cat.all_cats:
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
+                    output += "others"
             else:
-                parent_ob = Cat.load_faded_cat(the_cat.parent1)
-                if parent_ob:
-                    par1 = str(parent_ob.name)
-                else:
-                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+                output += "parents: " + ", ".join([str(i.name) for i in all_parents])
 
-            if the_cat.parent2 in Cat.all_cats:
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-            else:
-                parent_ob = Cat.load_faded_cat(the_cat.parent2)
-                if parent_ob:
-                    par2 = str(parent_ob.name)
-                else:
-                    par2 = "Error: Cat#" + the_cat.parent2 + " not found"
-
-            output += 'parents: ' + par1 + ' and ' + par2
-        # NEWLINE ----------
-        output += "\n"
-
+        
         # MOONS
+        output += "\n"
         if the_cat.dead:
             output += str(the_cat.moons)
             if the_cat.moons == 1:
