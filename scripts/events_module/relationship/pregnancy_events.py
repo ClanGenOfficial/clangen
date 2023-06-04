@@ -164,7 +164,7 @@ class Pregnancy_Events():
             return
         
         # additional save for no kit setting
-        if (cat and cat.no_kit) or (other_cat and other_cat.no_kit):
+        if (cat and cat.no_kits) or (other_cat and other_cat.no_kits):
             return
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
