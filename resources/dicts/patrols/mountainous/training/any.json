@@ -835,22 +835,24 @@
         "biome": "mountainous",
         "season": "Any",
         "tags": ["training", "no_app", "big_change", "pos_dislike", "pos_jealousy", "romantic", "rc_has_stat"],
-        "intro_text": "As p_l hops up on a fallen log to sharpen their claws for a training session, they find r_c doing the same thing. p_l allows themselves a sigh before they join them. While Clanmates will do better training together, r_c just rubs them the wrong way.",
-        "decline_text": "...It's fine to train somewhere else, p_l decides. They don't really want to interact with r_c.",
+        "intro_text": "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "r_c shows them a stunningly successful move they've been working on to rapidly change directions on wet rock, and p_l can't let themselves look bad in comparison, showing off their battle-back-flip with a smug smirk.",
-            "unscathed_rare": "r_c shows off how far they can pounce, which means p_l shows off how fast they can run, which means r_c shows off how sharp their claws are, which means p_l shows off how shiny their pelt is, which means r_c shows off how long their legs are, which means p_l shows off how cool their scars are - this goes on all afternoon."
+            "unscathed_common": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions on wet rock, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+            "unscathed_rare": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon."
         },
         "fail_text": {
-            "unscathed_common": "Both warriors are stiffly polite with each other, and it's a boring and completley unproductive afternoon, though maybe r_c isn't quite the thorn in their paw p_l thought they were."
+            "unscathed_common": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}."
         },
         "min_cats": 2,
         "max_cats": 2,
-        "relationship_constraint": [
-            "dislike_10"
-    ]
+        "constraints": {
+            "relationship": [
+                "dislike_10"
+            ]
+                }
     },
     {
         "patrol_id": "mtn_train_kea1",

@@ -1868,6 +1868,31 @@
         "max_cats": 2
     },
     {
+        "patrol_id": "gen_train_enemiestolovers_10locked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail"],
+        "intro_text": "r_c finds p_l out training in r_c's favourite spot - and not only does r_c have to share the spot, the pounce p_l is practising looks all wrong.",
+        "decline_text": "Nope, nopidity nope, r_c isn't hanging around that idiot!",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "p_l calls that a pounce? <i>This</i> is a pounce! r_c flies right over p_l's dumb pretty face, shooting a smirk over {PRONOUN/r_c/poss} shoulder.",
+            "unscathed_rare": "r_c bursts in and straight up laughs at p_l, telling {PRONOUN/p_l/object} exactly where {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going wrong. p_l challenges r_c to do any better, and with a hrumph of irritation, the competition begins, both cats out to one-up each other."
+        },
+        "fail_text": {
+            "unscathed_common": "Whatever, it's not r_c's problem. {PRONOUN/r_c/subject/CAP} wait at the side of the training grounds for p_l to be done. But not only does p_l train stupidly, r_c falls asleep waiting for {PRONOUN/p_l/object}. Neither of them get anything done."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_10",
+                "romantic_10"
+            ]
+                }
+    },
+    {
         "patrol_id": "gen_train_mosstraining1",
         "biome": "Any",
         "season": "Any",
