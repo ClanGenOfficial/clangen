@@ -53,14 +53,8 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
-        bg = random.randint(1,3)
-        if bg == 1:
-            self.bg = pygame.image.load("resources/images/menu3.png").convert()
-        elif bg == 2:
-            self.bg = pygame.image.load("resources/images/menu2.png").convert()
-        else:
-            self.bg = pygame.image.load("resources/images/menu.png").convert()
-
+        bg = random.randint(1,8)
+        self.bg = pygame.image.load("resources/images/menu" + str(bg) + ".png").convert()
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
         self.social_buttons = {}
 
