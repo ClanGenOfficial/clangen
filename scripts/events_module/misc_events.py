@@ -80,7 +80,7 @@ class MiscEvents():
             types.append("other_clans")
         if ceremony:
             types.append("ceremony")
-        # game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+        game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 

@@ -34,8 +34,8 @@ class OutsiderEvents:
                     text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
                            f"but as they drift away, they hope to see " \
                            f"familiar starry fur on the other side."
-                # game.cur_events_list.append(
-                #     Single_Event(text, "birth_death", cat.ID))
+                game.cur_events_list.append(
+                    Single_Event(text, "birth_death", cat.ID))
                 
     def lost_cat_become_outsider(self, cat: Cat):
         """ 

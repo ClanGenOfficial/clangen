@@ -70,7 +70,7 @@ class Relation_Events():
                     # randint is a slow function, don't call it unless we have to.
                     if random.random() > 0.6: 
                         text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
-                        # game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
+                        game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
                         cat.unset_mate(cat_mate)
 
         cats_amount = len(Cat.all_cats)
@@ -152,7 +152,7 @@ class Relation_Events():
                     # new relationship
                     text = f"{cat.name} and {cat_to.name} can't ignore their feelings for each other."
                     # game.relation_events_list.insert(0, text)
-                    # game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
                     self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
 
             # breakup

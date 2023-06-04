@@ -79,7 +79,7 @@
         "max_cats": 3
     },
     {
-        "patrol_id": "gen_your_cat3",
+        "patrol_id": "gen_your_cat4",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -104,7 +104,7 @@
         "max_cats": 3
     },
     {
-        "patrol_id": "gen_your_cat4",
+        "patrol_id": "gen_your_cat5",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -128,7 +128,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "gen_your_cat5",
+        "patrol_id": "gen_your_cat6",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -152,7 +152,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "gen_your_cat3",
+        "patrol_id": "gen_your_cat7",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -176,7 +176,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "gen_your_cat4",
+        "patrol_id": "gen_your_cat8",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -200,7 +200,7 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_your_cat5",
+        "patrol_id": "gen_your_cat9",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -224,7 +224,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "gen_your_cat6",
+        "patrol_id": "gen_your_cat10",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -248,7 +248,7 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_your_cat7",
+        "patrol_id": "gen_your_cat11",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -272,7 +272,7 @@
         "max_cats": 5
     },
     {
-        "patrol_id": "gen_your_cat8",
+        "patrol_id": "gen_your_cat12",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -296,7 +296,7 @@
         "max_cats": 4
     },
     {
-        "patrol_id": "gen_your_cat9",
+        "patrol_id": "gen_your_cat13",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -320,7 +320,7 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_your_cat10",
+        "patrol_id": "gen_your_cat14",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -344,11 +344,11 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_your_cat1",
+        "patrol_id": "gen_your_cat15",
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "patrol"
+            "border"
         ],
         "intro_text": "The deputy is forming a border patrol. Do you want to volunteer?",
         "success_text": {
@@ -361,21 +361,20 @@
         "chance_of_success": 60,
         "exp": 25,
         "win_skills": [
-            "observant",
-            "team player"
+            "very smart"
         ],
-        "min_cats": 3,
+        "min_cats": 1,
         "max_cats": 5
     },
     {
-        "patrol_id": "gen_your_cat2",
+        "patrol_id": "gen_your_cat16",
         "biome": "Any",
         "season": "Any",
         "tags": [
             "training",
             "warrior"
         ],
-        "intro_text": "An apprentice is struggling with their battle moves. Do you want to help them?",
+        "intro_text": "An apprentice is struggling with their battle moves.",
         "success_text": {
             "unscathed_common": "You give the apprentice some tips and they quickly improve. They're grateful for your help."
         },
@@ -386,14 +385,13 @@
         "chance_of_success": 70,
         "exp": 20,
         "win_skills": [
-            "patient",
-            "helpful"
+            "very smart"
         ],
-        "min_cats": 2,
+        "min_cats": 1,
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_your_cat3",
+        "patrol_id": "gen_your_cat17",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -410,14 +408,13 @@
         "chance_of_success": 80,
         "exp": 10,
         "win_skills": [
-            "responsible",
-            "thoughtful"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
     },
     {
-        "patrol_id": "gen_your_cat4",
+        "patrol_id": "gen_your_cat18",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -434,8 +431,7 @@
         "chance_of_success": 65,
         "exp": 25,
         "win_skills": [
-            "stealthy",
-            "quick"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
