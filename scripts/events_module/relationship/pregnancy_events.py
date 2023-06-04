@@ -555,6 +555,10 @@ class Pregnancy_Events():
     def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan):
         # create amount of kits
         all_kitten = []
+        # select background here to have the same over all kits
+        backstory_1 = choice(['halfclan1', 'outsider_roots1'])
+        backstory_2 = choice(['halfclan2', 'outsider_roots2'])
+        backstory_3 = choice(['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4'])
         for kit in range(kits_amount):
             kit = None
             if other_cat is not None:
@@ -580,11 +584,11 @@ class Pregnancy_Events():
                 other_cat.birth_cooldown = 6
             else:
                 if cat and cat.gender == 'female':
-                    backstory = choice(['halfclan1', 'outsider_roots1'])
+                    backstory = backstory_1
                 elif cat:
-                    backstory = choice(['halfclan2', 'outsider_roots2'])
+                    backstory = backstory_2
                 else: # cat is adopted
-                    backstory = choice(['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4'])
+                    backstory = backstory_3
 
                 if cat:
                     kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
