@@ -77,7 +77,7 @@ class Events():
             "You get a thorn stuck in your paw, and your parent gently removes it, teaching you about the dangers of the forest.",
         "You meet the Clan leader for the first time, their presence making you feel small and awed.",
     "You get your first minor injury, a small scratch from rough play. The sting is sharp, but the attention and care you receive from your mother and the medicine cat make you feel important."]
-
+        self.w_done = False
 
     def one_moon(self):
         """
@@ -145,13 +145,28 @@ class Events():
                 self.one_moon_cat(cat)
             else:
                 self.one_moon_outside_cat(cat)
-        game.cur_events_list.clear()
+        new_list = []
+        for i in game.cur_events_list:
+            if str(game.clan.your_cat.name) in i.text:
+                new_list.append(i)
+        game.cur_events_list = new_list
         resource_dir = "resources/dicts/events/lifegen_events/"
         with open(f"{resource_dir}ceremonies.json",
                   encoding="ascii") as read_file:
             self.b_txt = ujson.loads(read_file.read())
         if game.clan.age == 1:
-            game.cur_events_list.append(Single_Event(random.choice(self.b_txt["birth"])))
+            game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
+            while game.clan.your_cat.parent1 == game.clan.your_cat.ID:
+                game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
+            game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
+            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2 == game.clan.your_cat.ID:
+                game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
+            birth_txt = random.choice(self.b_txt["birth"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
+            birth_txt = birth_txt.replace("parent2", str(Cat.all_cats[game.clan.your_cat.parent2].name))
+            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
+
+            game.cur_events_list.append(Single_Event(birth_txt))
+
         elif game.clan.age < 6:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.b_txt["kit"])))
@@ -160,14 +175,27 @@ class Events():
                 self.kit_once.remove(e)
                 game.cur_events_list.append(Single_Event(e))
         elif game.clan.age == 6:
-            game.cur_events_list.append(Single_Event(random.choice(self.b_txt['app_ceremony'])))
-        elif game.clan.age < 12:
+            ceremony_txt = random.choice(self.b_txt['app_ceremony'])
+            ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
+            ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
+            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+            ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
+
+            game.cur_events_list.append(Single_Event(ceremony_txt))
+        elif game.clan.your_cat.status == 'apprentice':
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.b_txt["app"])))
+        elif game.clan.your_cat.status == 'warrior' and not self.w_done:
+            ceremony_txt = random.choice(self.b_txt['warrior_ceremony'])
+            ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
+            ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
+            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+            game.cur_events_list.append(Single_Event(ceremony_txt))
+            self.w_done = True
         elif game.clan.age < 100:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.b_txt["warrior"])))
-        elif game.clan.age > 100:
+        elif game.clan.age >= 100:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.b_txt["elder"])))
 

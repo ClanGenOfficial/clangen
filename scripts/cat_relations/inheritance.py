@@ -248,7 +248,8 @@ class Inheritance():
                     }
                     self.all_involved.append(grand_id)
                     self.all_but_cousins.append(grand_id)
-                self.grand_parents[grand_id]["additional"].append(f"parent of {str(parent_cat.name)}")
+                if parent_cat:
+                    self.grand_parents[grand_id]["additional"].append(f"parent of {str(parent_cat.name)}")
 
     def init_kits(self, inter_id, inter_cat):
         """Initial the class, with the focus of the kits relation."""
