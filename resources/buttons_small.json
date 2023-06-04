@@ -1111,26 +1111,26 @@
             }
         }
     },
-    "#see_family_button": 
+    "#family_tree_button": 
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/see_family.png"
+                "path": "resources/images/buttons/family_tree.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/see_family_hover.png"
+                "path": "resources/images/buttons/family_tree_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/see_family_hover.png"
+                "path": "resources/images/buttons/family_tree_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/see_family_unavailable.png"
+                "path":"resources/images/buttons/family_tree_unavailable.png"
             }
         }
     },
@@ -5025,6 +5025,75 @@
             "disabled_image":
             {
                 "path": "resources/images/buttons/image_large_unavailable.png"
+            }
+        }
+    },
+    "#mates_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mates_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mates_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mates_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/mates_tab_unavailable.png"
+            }
+        }
+    },
+    "#offspring_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/offspring_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/offspring_tab_unavailable.png"
+            }
+        }
+    },
+    "#potential_mates_tab_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/potential_mates_tab_unavailable.png"
             }
         }
     },

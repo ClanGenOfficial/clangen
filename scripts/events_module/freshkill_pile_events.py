@@ -287,9 +287,19 @@ class Freshkill_Events():
                     final_events.append(event)
                     continue
 
-                if event.cat_skill and cat.skill in event.cat_skill:
-                    final_events.append(event)
-                    continue
+                if event.cat_skill:
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        spl = _skill.split(",")
+                        if len(spl) != 2:
+                            continue
+                        
+                        if cat.skills.meets_skill_requirement(spl[0], spl[1]):
+                            _flag = True
+                    
+                    if _flag:
+                        final_events.append(event)
+                        continue
 
                 # if this event has no specification, but one of the needed tags, the event should be considered to be chosen
                 if not event.other_cat_trait and not event.cat_trait and \

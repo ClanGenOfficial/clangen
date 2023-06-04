@@ -143,12 +143,12 @@
             "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting.",
             false
         ],
-        "no gendered breeding": [
+        "same sex birth": [
             "Allow same-sex breeding",
             "Allow couples to birth kittens despite same-sex status",
             false
         ],
-        "no unknown fathers": [
+        "single parentage": [
             "Allow unmated cats to have offspring",
             "This setting will not affect the Affairs setting.",
             false
@@ -158,7 +158,7 @@
             "Allows mentors and the cats they trained to be romantic after they become warriors",
             true
         ],
-        "first_cousin_mates": [
+        "first cousin mates": [
             "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates",
             true

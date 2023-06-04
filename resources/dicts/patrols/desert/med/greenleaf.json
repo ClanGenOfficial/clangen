@@ -23,15 +23,11 @@
         "fail_text": {
             "unscathed_common": "They fail to interpret any signs, and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the hot sun."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "win_trait": [
             "None"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "None"
         ],
@@ -64,15 +60,11 @@
             "unscathed_common": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
             "unscathed_stat": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "win_trait": [
             "None"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "None"
         ],

@@ -8,7 +8,14 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit bruised.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -60,8 +67,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -74,8 +91,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a fox, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -88,8 +115,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a dog, but was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -108,8 +145,24 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from an enemy warrior, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -128,12 +181,27 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from a dog, and was barely even hurt! They're a bit bruised, but bruises are better than clawmarks.",
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "scrapes",
         "tags": [
@@ -143,7 +211,14 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session, and has been wincing all day. Seems they're a bit scraped up.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -157,8 +232,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a rogue, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -171,8 +256,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought a fox, but was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -191,12 +286,27 @@
             "trust"
         ],
         "event_text": "m_c saved r_c from a fox, and was barely even hurt! They're a bit scraped up, but a few scrapes are better than clawmarks.",
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
-        "cat_skill": ["good fighter", "great fighter", "excellent fighter"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
+        "cat_skill": [
+            "FIGHTER,1"
+        ],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sprain",
         "tags": [
@@ -206,12 +316,18 @@
             "Leaf-bare"
         ],
         "event_text": "m_c overdid their last sparring session and sprained a paw.",
-        "cat_trait": ["adventurous", "ambitious", "bold", "daring", "fierce", "troublesome"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bold",
+            "daring",
+            "fierce",
+            "troublesome"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bite-wound",
         "tags": [
@@ -227,11 +343,21 @@
             "scar": "m_c was scarred by a dog.",
             "reg_death": "m_c died from their wounds after fighting a dog."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "bite-wound",
@@ -254,11 +380,27 @@
             "scar": "m_c was scarred by a fox while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a fox."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "bite-wound",
@@ -282,13 +424,28 @@
             "scar": "m_c was scarred by a fox while protecting r_c.",
             "reg_death": "m_c died from their wounds after protecting r_c from a fox."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
-
     {
         "injury": "cat bite",
         "tags": [
@@ -304,11 +461,21 @@
             "scar": "m_c was scarred by a rogue.",
             "reg_death": "m_c died from their wounds after fighting a rogue."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "cat bite",
@@ -335,9 +502,16 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "daring",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "cat bite",
@@ -368,9 +542,18 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "daring",
+            "bold",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "cat bite",
@@ -397,11 +580,19 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "vengeful",
+            "ambitiuos",
+            "bold",
+            "fierce",
+            "insecure"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
-
     {
         "injury": "broken bone",
         "tags": [
@@ -417,11 +608,21 @@
             "scar": "m_c was scarred by a big dog.",
             "reg_death": "m_c died from their wounds after fighting a big dog."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,3"
+        ]
     },
     {
         "injury": "broken bone",
@@ -445,13 +646,28 @@
             "scar": "m_c was scarred by a big dog while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a big dog."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,3"
+        ]
     },
-
     {
         "injury": "claw-wound",
         "tags": [
@@ -467,11 +683,21 @@
             "scar": "m_c was scarred by a hawk.",
             "reg_death": "m_c died from their wounds after fighting a hawk."
         },
-        "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -494,11 +720,27 @@
             "scar": "m_c was scarred by a hawk while rescuing r_c.",
             "reg_death": "m_c died from their wounds after saving r_c from a hawk."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -523,11 +765,27 @@
             "scar": "m_c was scarred by a rogue while protecting r_c.",
             "reg_death": "m_c died from their wounds after protecting r_c from a rogue."
         },
-        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_trait": [
+            "altruistic",
+            "compassionate",
+            "loving",
+            "empathetic",
+            "responsible",
+            "loyal",
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "daring",
+            "fierce",
+            "vengeful"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -554,9 +812,16 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "daring",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -587,9 +852,18 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "daring",
+            "bold",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
     {
         "injury": "claw-wound",
@@ -616,11 +890,19 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
+        "other_cat_trait": [
+            "bloodthirsty",
+            "vengeful",
+            "ambitiuos",
+            "bold",
+            "fierce",
+            "insecure"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
-
     {
         "injury": "mangled tail",
         "tags": [
@@ -646,11 +928,22 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "righteous",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,2"
+        ]
     },
-
     {
         "injury": "mangled leg",
         "tags": [
@@ -676,8 +969,19 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "strict", "vengeful"],
+        "other_cat_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "strict",
+            "vengeful"
+        ],
         "other_cat_skill": null,
-        "cat_negate_skill": ["excellent fighter"]
+        "cat_negate_skill": [
+            "FIGHTER,3"
+        ]
     }
 ]

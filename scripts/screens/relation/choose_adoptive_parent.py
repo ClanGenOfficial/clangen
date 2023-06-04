@@ -96,6 +96,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 else:
                     self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
                     self.the_cat.create_inheritance_new_cat()
+                    self.selected_cat.create_inheritance_new_cat()
                     self.update_choose_adoptive_parent()
                     self.update_current_cat_info()
                 self.update_cat_list()
@@ -184,8 +185,7 @@ class ChooseAdoptiveParentScreen(Screens):
         self.toggle_parent = UIImageButton(scale(pygame.Rect((607, 620), (384, 60))), "",
                                          object_id="#set_adoptive_parent")
 
-        # The text will be changed as needed. This is used for both the "this pair can't have
-        # offspring" message, header for the kittens section for adoptive parent.
+        # The text will be changed as needed.
         self.kitten_message = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 666), (1200, 80))),
                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"))
         self.kitten_message.hide()
@@ -474,16 +474,6 @@ class ChooseAdoptiveParentScreen(Screens):
                                                                        scale(pygame.Rect((970, 370), (210, 250))),
                                                                        object_id="#text_box_22_horizcenter_spacing_95",
                                                                        manager=MANAGER)
-            # Display message
-
-            pixel_font_size = int(22 / 1400 * screen_y)
-            if self.the_cat.gender == self.selected_cat.gender and not game.settings[
-                'no gendered breeding']:
-                self.kitten_message.set_text(
-                    f"<font pixel_size={pixel_font_size}> (this pair will not be able to have kittens) </font>")
-                self.kitten_message.show()
-            else:
-                self.kitten_message.hide()
         else:
             self.kitten_message.hide()
 
@@ -547,9 +537,12 @@ class ChooseAdoptiveParentScreen(Screens):
                 continue
             if relevant_cat.dead:
                 continue
-            if self.the_cat.ID not in self.the_cat.adoptive_parents and\
-                self.the_cat.ID not in [relevant_cat.parent1, relevant_cat.parent2] and\
-                self.the_cat.moons < relevant_cat.moons and relevant_cat.moons - self.the_cat.moons >= 14:
+            relevant_parents = relevant_cat.get_parents()
+
+            if self.the_cat.ID not in relevant_parents and\
+                self.the_cat.ID not in relevant_cat.mate and\
+                self.the_cat.moons < relevant_cat.moons and\
+                relevant_cat.moons - self.the_cat.moons >= 14:
                 # 14 moons is for the minimal age of a cat to be a parent
                 valid_parents.append(relevant_cat)
         return valid_parents

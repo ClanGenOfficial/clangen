@@ -19,7 +19,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "bruises",
         "tags": [
@@ -34,7 +33,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sprain",
         "tags": [
@@ -75,7 +73,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "sore",
         "tags": [
@@ -90,7 +87,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "claw-wound",
         "tags": [
@@ -111,7 +107,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "frostbite",
         "tags": [
@@ -130,7 +125,6 @@
         "other_cat_trait": null,
         "other_cat_skill": null
     },
-
     {
         "injury": "water in their lungs",
         "tags": [
