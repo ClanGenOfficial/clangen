@@ -691,6 +691,8 @@ class Pregnancy_Events():
             kitten.create_inheritance_new_cat()
 
         blood_parent.inheritance.update_inheritance()
+        blood_parent.outside = True
+        clan.unknown_cats.append(blood_parent.ID)
 
         return all_kitten
 
