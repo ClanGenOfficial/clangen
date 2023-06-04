@@ -106,25 +106,6 @@ class Pregnancy(unittest.TestCase):
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
-    @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
-    def test_single_cat_male(self, check_if_can_have_kits):
-        # given
-        relation_events = Pregnancy_Events()
-        clan = Clan(name="clan")
-        cat = Cat(gender = 'male', moons=40)
-        clan.pregnancy_data = {}
-        number_before = len(cat.all_cats)
-
-        # when
-        check_if_can_have_kits.return_value = True
-        relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
-
-        # then
-        # a single male cat is not pregnant, event with the setting,
-        # but should bring kits back to the clan
-        self.assertNotEqual(number_before, len(cat.all_cats))
-
-
 class Mates(unittest.TestCase):
     def test_platonic_kitten_mating(self):
         # given

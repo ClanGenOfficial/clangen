@@ -577,6 +577,7 @@ class Pregnancy_Events():
     def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan):
         # create amount of kits
         all_kitten = []
+        
         # blood parent for adoptive kits
         insert = "their kits"
         if kits_amount == 1:
@@ -587,6 +588,8 @@ class Pregnancy_Events():
                                       alive=False,
                                       thought=thought,
                                       age=randint(15,120))[0]
+        blood_parent.thought = thought
+        
         # select background here to have the same over all kits
         backstory_1 = choice(['halfclan1', 'outsider_roots1'])
         backstory_2 = choice(['halfclan2', 'outsider_roots2'])
