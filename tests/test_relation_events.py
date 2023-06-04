@@ -76,6 +76,8 @@ class Pregnancy(unittest.TestCase):
         # but should bring kits back to the clan
         self.assertNotEqual(number_before, len(cat.all_cats))
 
+    @patch('scripts.events_module.relationship.pregnancy_events.Pregnancy_Events.check_if_can_have_kits')
+    def test_no_kit_setting(self, check_if_can_have_kits):
         # given
         relation_events = Pregnancy_Events()
         test_clan = Clan(name="clan")
