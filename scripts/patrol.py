@@ -110,7 +110,16 @@ class Patrol():
         
         return self.patrol_event.intro_text
 
-    def proceed_patrol(self, antag):
+    def proceed_patrol(self, path:str="proceed"):
+        """Procced the patrol to the next step. 
+            path can be: "proceed", "antag", or "decline" """
+        
+        if path == "decline":
+            if self.patrol_event:
+                return self.patrol_event.decline_text
+            else:
+                return "Error - no event choosen"
+        
         self.patrol_done = True
         self.calculate_success(antagonize=antag)
         
