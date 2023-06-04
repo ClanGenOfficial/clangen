@@ -96,6 +96,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 else:
                     self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
                     self.the_cat.create_inheritance_new_cat()
+                    self.selected_cat.create_inheritance_new_cat()
                     self.update_choose_adoptive_parent()
                     self.update_current_cat_info()
                 self.update_cat_list()
