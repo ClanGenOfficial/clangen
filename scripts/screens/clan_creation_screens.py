@@ -917,7 +917,7 @@ class MakeClanScreen(Screens):
         self.elements["continue"] = UIImageButton(scale(pygame.Rect((692, 500), (204, 60))), "",
                                                   object_id="#continue_button_small")
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Welcome to the world, ' + self.your_cat.name.prefix + 'kit!',
-                                                                      scale(pygame.Rect((200, 300), (1200, 60))),
+                                                                      scale(pygame.Rect((200, 270), (1200, 60))),
                                                                       object_id=get_text_box_theme(
                                                                           "#text_box_30_horizcenter"),
                                                                       manager=MANAGER)

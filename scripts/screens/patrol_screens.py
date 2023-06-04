@@ -876,18 +876,20 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()  # Clear all the cat buttons
 
         self.able_cats = []
-
+        the_cat = game.clan.your_cat
+        if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
+            self.able_cats.append(game.clan.your_cat)
         # ASSIGN TO ABLE CATS
         print(game.patrolled)
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
-                'elder', 'kitten', 'mediator', 'mediator apprentice'
-            ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
-                if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
-                    if game.config['fun']['newborns_can_patrol']:
-                        self.able_cats.append(the_cat)
-                else:
-                    self.able_cats.append(the_cat)
+        # for the_cat in Cat.all_cats_list:
+        #     if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
+        #         'elder', 'kitten', 'mediator', 'mediator apprentice'
+        #     ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
+        #         if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+        #             if game.config['fun']['newborns_can_patrol']:
+        #                 self.able_cats.append(the_cat)
+        #         else:
+        #             self.able_cats.append(the_cat)
 
         if not self.able_cats:
             all_pages = []

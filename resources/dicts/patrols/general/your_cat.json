@@ -1,0 +1,456 @@
+[
+    {
+        "patrol_id": "gen_your_cat1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "You catch the scent of a mouse nearby.",
+        "success_text": {
+            "unscathed_common": "You locate the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. You waggle your haunches and leap, pinning the mouse beneath a paw as you make the killing bite.",
+            "unscathed_rare": "You pinpoint the location of the prey and begins creeping forward. You're almost within pouncing distance when the mouse suddenly bolts. With a lash of your tail, you leap after the mouse, barely snagging it before it reaches a burrow. You purr in satisfaction as prey-blood hits your tongue."
+        },
+        "fail_text": {
+            "unscathed_common": "You narrowly miss the mouse."
+        },
+        "decline_text": "You ignore the mouse.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "small_prey"
+        ],
+        "intro_text": "During a hunting patrol, you spot a large, plump squirrel. However, it's close to the o_c_n border, and crossing it could lead to a skirmish.",
+        "success_text": {
+            "unscathed_common": "You successfully catch the squirrel and manage to get back to your territory without being spotted by o_c_n. Your Clan is pleased with the extra prey."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to catch the squirrel, but a o_c_n patrol spots you. A fight ensues, and you return to your Clan empty-pawed."
+        },
+        "decline_text": "You decide to respect the border and leave the squirrel. Your Clanmates commend your respect for the warrior code.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "You discover a new hunting ground full of prey. However, it's close to a Twolegplace, and there could be potential dangers.",
+        "success_text": {
+            "unscathed_common": "You decide to hunt in the new area. You manage to catch a lot of prey and return safely, earning praise from your Clan."
+        },
+        "fail_text": {
+            "unscathed_common": "You hunt in the new area, but a Twoleg spots you. You manage to escape, but it's a close call."
+        },
+        "decline_text": "You decide to stick to the usual hunting grounds. Prey is scarce, but at least you're safe from Twolegs.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "An apprentice that you look up to approaches you one day, asking you if you'd like to sneak out of camp.",
+        "success_text": {
+            "unscathed_common": "You sneak out of camp that night. No one catches you and you have a blast, you didn't know the world outside of camp was so large!"
+        },
+        "fail_text": {
+            "unscathed_common": "The warrior on guard duty catches you. They bring you back to the nursery and you receive a scolding."
+        },
+        "decline_text": "The apprentice rolls their eyes, calling you a scaredy mouse.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat4",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "You notice a strange smelling herb by the medicine cat's den. Would you like to investigate?",
+        "success_text": {
+            "unscathed_common": "You get closer and are able to identify the herb as marigold. The medicine cat seems impressed with your observational skills!"
+        },
+        "fail_text": {
+            "unscathed_common": "As you approach the herb, you sneeze loudly, alerting the medicine cat who scolds you for wandering too close to their den."
+        },
+        "decline_text": "You decide to leave the herb alone, not wanting to disturb the medicine cat's work.",
+        "chance_of_success": 45,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat5",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "kit_only",
+            "border"
+        ],
+        "intro_text": "A group of kits dare you to sneak into the leader's den while they're away.",
+        "success_text": {
+            "unscathed_common": "You manage to sneak in and out without being noticed. The other kits are in awe of your bravery."
+        },
+        "fail_text": {
+            "unscathed_common": "Just as you are about to leave the den, the leader walks in. You get scolded and are told to stay in the nursery."
+        },
+        "decline_text": "You tell the other kits that it's not worth the risk, which earns you some grumbles from the daring group.",
+        "chance_of_success": 35,
+        "exp": 15,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "You overhear the elders telling stories of great warriors.",
+        "success_text": {
+            "unscathed_common": "You listen to the stories and learn valuable lessons from the exploits of the great warriors."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to listen but the elders notice you and gently ask you to leave, saying the stories aren't suitable for kits."
+        },
+        "decline_text": "You decide to play with the other kits instead of listening to the elders' stories.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat4",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "An apprentice offers to show you some basic hunting moves.",
+        "success_text": {
+            "unscathed_common": "You manage to mimic the apprentice's movements accurately. They look at you with pride and commend your quick learning."
+        },
+        "fail_text": {
+            "unscathed_common": "You try your best, but you're still too young and awkward. The apprentice assures you that you'll get better with time."
+        },
+        "decline_text": "You decide to skip the training for now and go back to the nursery.",
+        "chance_of_success": 45,
+        "exp": 15,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat5",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "A moth flutters around the nursery, catching your eye.",
+        "success_text": {
+            "unscathed_common": "You leap and manage to catch the moth, paws landing softly on the ground. The other kits are impressed!"
+        },
+        "fail_text": {
+            "unscathed_common": "The moth eludes you, flitting away into the night. It was a tough opponent!"
+        },
+        "decline_text": "You decide to let the moth flutter in peace, and go back to your den.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat6",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training",
+            "apprentice"
+        ],
+        "intro_text": "Your mentor proposes an extra training session in tracking.",
+        "success_text": {
+            "unscathed_common": "You accept the training and successfully track a mouse by its scent. Your mentor is proud of your progress."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to track a squirrel but it leads you in circles."
+        },
+        "decline_text": "You decide to skip the training and rest for the day.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "win_skills": [
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat7",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "apprentice"
+        ],
+        "intro_text": "The deputy chooses you for a dawn patrol.",
+        "success_text": {
+            "unscathed_common": "You join the patrol and successfully scout the clan borders. Your alertness does not go unnoticed."
+        },
+        "fail_text": {
+            "unscathed_common": "You join the patrol but accidentally step on a twig, alerting a potential prey. You're reminded to be more careful."
+        },
+        "decline_text": "You decide to stay in the camp and help with other chores instead.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 5
+    },
+    {
+        "patrol_id": "gen_your_cat8",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "apprentice"
+        ],
+        "intro_text": "The elders ask you to share your fresh-kill with them. Do you want to share your meal?",
+        "success_text": {
+            "unscathed_common": "You share your meal with the elders, who tell you stories of their youth in return."
+        },
+        "fail_text": {
+            "unscathed_common": "You offer to share your meal but accidentally drop it in the dirt. The elders chuckle and assure you it's alright."
+        },
+        "decline_text": "You politely decline and decide to eat your meal in peace.",
+        "chance_of_success": 70,
+        "exp": 15,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 4
+    },
+    {
+        "patrol_id": "gen_your_cat9",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training",
+            "apprentice"
+        ],
+        "intro_text": "You notice a branch hanging low with a tempting leaf just out of reach.",
+        "success_text": {
+            "unscathed_common": "With a quick jump and a swipe, you manage to snag the leaf. Your agility surprises even you."
+        },
+        "fail_text": {
+            "unscathed_common": "You leap for the leaf but miss, landing in a heap on the ground. Your mentor teases you but encourages you to try again."
+        },
+        "decline_text": "You decide to leave the leaf alone and go back to your training.",
+        "chance_of_success": 55,
+        "exp": 15,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat10",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training",
+            "apprentice"
+        ],
+        "intro_text": "You spot a lone crow sitting on a branch. It screeches at you irritatingly.",
+        "success_text": {
+            "unscathed_common": "You successfully chase the crow away, demonstrating your courage and determination."
+        },
+        "fail_text": {
+            "unscathed_common": "You make a leap for the crow, but it flies away before you can get close. You land clumsily but unharmed."
+        },
+        "decline_text": "You decide not to bother with the crow and focus on your other tasks.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "patrol"
+        ],
+        "intro_text": "The deputy is forming a border patrol. Do you want to volunteer?",
+        "success_text": {
+            "unscathed_common": "You join the patrol and do an excellent job securing the clan's borders. Your vigilance is noted."
+        },
+        "fail_text": {
+            "unscathed_common": "You volunteer for the patrol, but get distracted and miss making a scent marker. Your mistake is pointed out, but forgiven."
+        },
+        "decline_text": "You decide to stay in camp and rest for now.",
+        "chance_of_success": 60,
+        "exp": 25,
+        "win_skills": [
+            "observant",
+            "team player"
+        ],
+        "min_cats": 3,
+        "max_cats": 5
+    },
+    {
+        "patrol_id": "gen_your_cat2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training",
+            "warrior"
+        ],
+        "intro_text": "An apprentice is struggling with their battle moves. Do you want to help them?",
+        "success_text": {
+            "unscathed_common": "You give the apprentice some tips and they quickly improve. They're grateful for your help."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to help the apprentice, but they're too frustrated to listen. You promise to try again another time."
+        },
+        "decline_text": "You decide to let their mentor handle it and go about your day.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "win_skills": [
+            "patient",
+            "helpful"
+        ],
+        "min_cats": 2,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "There's a stale piece of prey left in the fresh-kill pile. Do you want to remove it?",
+        "success_text": {
+            "unscathed_common": "You remove the stale prey and prevent any potential sickness in the camp. The medicine cat thanks you."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to remove the stale prey, but accidentally knock over the fresh-kill pile in the process. How embarassing!"
+        },
+        "decline_text": "You decide to leave the prey and let someone else handle it.",
+        "chance_of_success": 80,
+        "exp": 10,
+        "win_skills": [
+            "responsible",
+            "thoughtful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat4",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "You spot a large mouse nearby.",
+        "success_text": {
+            "unscathed_common": "You successfully stalk and catch the mouse. It will make a good addition to the fresh-kill pile."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to catch the mouse, but it escapes at the last moment. Better luck next time!"
+        },
+        "decline_text": "You decide to let the mouse go and focus on patrolling instead.",
+        "chance_of_success": 65,
+        "exp": 25,
+        "win_skills": [
+            "stealthy",
+            "quick"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    }
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+]
