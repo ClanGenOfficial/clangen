@@ -238,8 +238,10 @@ while True:
 
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F2:
+            if event.key == pygame.K_F3:
                 debugmode.toggle_console()
+            elif event.key == pygame.K_F2:
+                MANAGER.print_layer_debug()
 
         MANAGER.process_events(event)
     
