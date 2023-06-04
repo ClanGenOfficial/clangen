@@ -156,10 +156,10 @@ class Events():
             self.b_txt = ujson.loads(read_file.read())
         if game.clan.age == 1:
             game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent1 == game.clan.your_cat.ID:
+            while game.clan.your_cat.parent1 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].dead:
                 game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
             game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2 == game.clan.your_cat.ID:
+            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].dead:
                 game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
             birth_txt = random.choice(self.b_txt["birth"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
             birth_txt = birth_txt.replace("parent2", str(Cat.all_cats[game.clan.your_cat.parent2].name))
