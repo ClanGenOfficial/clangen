@@ -1685,6 +1685,9 @@ class ChooseMateScreen(Screens):
         self.offspring_next_page = None
         self.mates_last_page = None
         self.mates_next_page = None
+        self.potential_page_display = None
+        self.offspring_page_display = None
+        self.mate_page_display = None
         
     def update_current_cat_info(self, reset_selected_cat=True):
         """Updates all elements with the current cat, as well as the selected cat.
@@ -1890,7 +1893,7 @@ class ChooseMateScreen(Screens):
             self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
-                object_id="#text_box_22_horizcenter_vertcenter_spacing_95")
+                object_id=get_text_box_theme("#text_box_22_horizcenter_vertcenter_spacing_95"))
         
         
         if self.kits_selected_pair:
