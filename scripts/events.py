@@ -187,6 +187,16 @@ class Events:
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
             ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+            random_honor = None
+            resource_dir = "resources/dicts/events/ceremonies/"
+            with open(f"{resource_dir}ceremony_traits.json",
+                    encoding="ascii") as read_file:
+                TRAITS = ujson.loads(read_file.read())
+            try:
+                random_honor = random.choice(TRAITS[game.clan.your_cat.personality.trait])
+            except KeyError:
+                random_honor = "hard work"
+            ceremony_txt = ceremony_txt.replace('honor1', random_honor)
             game.cur_events_list.append(Single_Event(ceremony_txt))
             game.clan.your_cat.w_done = True
         elif game.clan.age < 100:
@@ -258,18 +268,24 @@ class Events:
             birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
         elif birth_type == 3:
             game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent1 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].dead:
+            while game.clan.your_cat.parent1 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent1].dead:
                 game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
             game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].dead:
+            counter = 0
+            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2.age != game.clan.your_cat.parent1.age or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent1].dead:
+                counter += 1
+                if counter >= 15:
+                    game.clan.your_cat.parent2 = None
+                    Cat.all_cats[game.clan.your_cat.parent1].children.append(game.clan.your_cat.ID)
+                    birth_txt = random.choice(self.b_txt["birth_one_parent"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
+                    birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
+                    return birth_txt
                 game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
             Cat.all_cats[game.clan.your_cat.parent1].children.append(game.clan.your_cat.ID)
             Cat.all_cats[game.clan.your_cat.parent2].children.append(game.clan.your_cat.ID)
-
             birth_txt = random.choice(self.b_txt["birth_two_parents"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
             birth_txt = birth_txt.replace("parent2", str(Cat.all_cats[game.clan.your_cat.parent2].name))
-            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
-            
+            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))   
         else:
             parent1 = random.choice(Cat.all_cats_list).ID
             while parent1 == game.clan.your_cat.ID or Cat.all_cats[parent1].moons < 12 or Cat.all_cats[parent1].dead:
