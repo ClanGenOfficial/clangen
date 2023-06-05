@@ -204,6 +204,7 @@ class MakeClanScreen(Screens):
             self.open_choose_background()
     
     def handle_create_other_cats(self):
+        game.choose_cats.clear()
         self.create_example_cats2()
         for cat in game.choose_cats.values():
             if cat.status == "warrior":

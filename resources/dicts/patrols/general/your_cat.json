@@ -95,7 +95,7 @@
         },
         "decline_text": "The apprentice rolls their eyes, calling you a scaredy mouse.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [
             "very smart",
             "extremely smart"
@@ -120,7 +120,7 @@
         },
         "decline_text": "You decide to leave the herb alone, not wanting to disturb the medicine cat's work.",
         "chance_of_success": 45,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [
             "very smart"
         ],
@@ -144,7 +144,7 @@
         },
         "decline_text": "You tell the other kits that it's not worth the risk, which earns you some grumbles from the daring group.",
         "chance_of_success": 35,
-        "exp": 15,
+        "exp": 0,
         "win_skills": [
             "very smart"
         ],
@@ -168,7 +168,7 @@
         },
         "decline_text": "You decide to play with the other kits instead of listening to the elders' stories.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [
             "very smart"
         ],
@@ -192,7 +192,7 @@
         },
         "decline_text": "You decide to skip the training for now and go back to the nursery.",
         "chance_of_success": 45,
-        "exp": 15,
+        "exp": 0,
         "win_skills": [
             "very smart"
         ],
@@ -216,7 +216,7 @@
         },
         "decline_text": "You decide to let the moth flutter in peace, and go back to your den.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [
             "very smart"
         ],
