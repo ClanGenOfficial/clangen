@@ -1326,7 +1326,7 @@ class Patrol():
         kit_thought = 'Is looking around the camp with wonder'
         if f"litter{outcome}" in attribute_list:
             print('litter outcome checking')
-            if not game.settings["no gendered breeding"]:
+            if not game.settings["same sex birth"]:
                 gender = 'female'
             litter = True
             age = randint(23, 100)
@@ -1449,7 +1449,7 @@ class Patrol():
                                                ))
             # giving the mother the necessary condition
             if game.clan.game_mode != 'classic' and kit_age <= 2 and not created_cats[0].dead:
-                if not game.settings["no gendered breeding"]:
+                if not game.settings["same sex birth"]:
                     if created_cats[0].gender == 'female':
                         created_cats[0].get_injured("recovering from birth")
                 else:

@@ -1889,7 +1889,7 @@ class ChooseMateScreen(Screens):
                                                                    )
         
         
-        if not game.settings["no gendered breeding"] and self.the_cat.gender == self.selected_cat.gender:
+        if not game.settings["same sex birth"] and self.the_cat.gender == self.selected_cat.gender:
             self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
@@ -2032,7 +2032,7 @@ class ChooseMateScreen(Screens):
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
                        and (not self.have_kits_only 
-                            or game.settings["no gendered breeding"]
+                            or game.settings["same sex birth"]
                             or i.gender != self.the_cat.gender)]
         
         return valid_mates
@@ -2377,7 +2377,7 @@ class RelationshipScreen(Screens):
                                                                                     (44, 40)))
             else:
                 # Family Dot
-                related = self.the_cat.is_related(self.inspect_cat, game.settings["first_cousin_mates"])
+                related = self.the_cat.is_related(self.inspect_cat, game.settings["first cousin mates"])
                 if related:
                     self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((90, 300), (36, 36))),
@@ -2459,7 +2459,7 @@ class RelationshipScreen(Screens):
                         col2 += "related: sibling (littermate)"
                     else:
                         col2 += "related: sibling"
-                elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
+                elif not game.settings["first cousin mates"] and self.inspect_cat.is_cousin(self.the_cat):
                     col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(col2,
@@ -2604,7 +2604,7 @@ class RelationshipScreen(Screens):
         else:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first_cousin_mates']:
+            if game.settings['first cousin mates']:
                 check_cousins = False
             else:
                 check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
@@ -3161,7 +3161,7 @@ class MediationScreen(Screens):
         elif other_cat:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first_cousin_mates']:
+            if game.settings['first cousin mates']:
                 check_cousins = False
             else:
                 check_cousins = other_cat.is_cousin(cat)
@@ -3235,7 +3235,7 @@ class MediationScreen(Screens):
                 col2 += "child"
             elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
                 col2 += "sibling"
-            elif not game.settings["first_cousin_mates"] and other_cat.is_cousin(cat):
+            elif not game.settings["first cousin mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,
