@@ -325,7 +325,7 @@ class Patrol():
                     print("incorrectly formatted skill constaint", _skill)
                     continue
                     
-                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], spl[1]):
+                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], int(spl[1])):
                     return False
         
         if "trait" in patrol.constraints:
