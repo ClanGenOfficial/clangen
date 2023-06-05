@@ -291,7 +291,7 @@ class Events:
             while parent1 == game.clan.your_cat.ID or Cat.all_cats[parent1].moons < 12 or Cat.all_cats[parent1].dead:
                 parent1 = random.choice(Cat.all_cats_list).ID
             parent2 = random.choice(Cat.all_cats_list).ID
-            while parent2 == parent1 or parent2 == game.clan.your_cat.ID or Cat.all_cats[parent1].moons < 12 or Cat.all_cats[parent1].dead:
+            while parent2 == parent1 or parent2 == game.clan.your_cat.ID or Cat.all_cats[parent2].moons < 12 or Cat.all_cats[parent2].dead or Cat.all_cats[parent2].age != Cat.all_cats[parent1].age:
                 parent2 = random.choice(Cat.all_cats_list).ID
             game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
             birth_txt = random.choice(self.b_txt["birth_adoptive_parents"]).replace("parent1",str(Cat.all_cats[parent1].name))
