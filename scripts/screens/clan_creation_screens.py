@@ -203,7 +203,6 @@ class MakeClanScreen(Screens):
             self.open_choose_background()
     
     def handle_create_other_cats(self):
-        game.choose_cats.clear()
         self.create_example_cats2()
         for cat in game.choose_cats.values():
             if cat.status == "warrior":
@@ -217,7 +216,10 @@ class MakeClanScreen(Screens):
                     cat.status = "medicine cat"
                 else:
                     self.members.append(cat)
+            else:
+                self.members.append(cat)
         self.members.append(self.your_cat)
+        print(len(self.members))
         
     def create_example_cats2(self):
         e = random.sample(range(12), 3)
@@ -233,6 +235,7 @@ class MakeClanScreen(Screens):
                 game.choose_cats[a].moons = choice(range(120, 155))
             elif game.choose_cats[a].moons == 0:
                 game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
+        
             
 
     
@@ -929,7 +932,6 @@ class MakeClanScreen(Screens):
 
     def save_clan(self):
         self.handle_create_other_cats()
-
         game.mediated.clear()
         game.patrolled.clear()
         game.cat_to_fade.clear()
