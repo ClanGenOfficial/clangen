@@ -2162,7 +2162,7 @@ class Cat():
             return False
 
         # Inheritance check
-        if self.is_related(other_cat, game.settings["first_cousin_mates"]):
+        if self.is_related(other_cat, game.settings["first cousin mates"]):
             return False
 
         # check exiled, outside, and dead cats
@@ -2481,7 +2481,7 @@ class Cat():
         direct_related = cat1.is_sibling(cat2) or cat1.is_parent(cat2) or cat2.is_parent(cat1)
         indirect_related = cat1.is_uncle_aunt(cat2) or \
                            cat2.is_uncle_aunt(cat1)
-        if not game.settings["first_cousin_mates"]:
+        if not game.settings["first cousin mates"]:
             indirect_related = indirect_related or cat1.is_cousin(cat2)
         related = direct_related or indirect_related
 
