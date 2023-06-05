@@ -3838,8 +3838,8 @@ class ChooseAdoptiveParentScreen(Screens):
             self.adoptive_last_page.disable()
             self.adoptive_next_page.enable()
         else:
-            self.offspring_last_page.enable()
-            self.offspring_next_page.enable()
+            self.adoptive_last_page.enable()
+            self.adoptive_last_page.enable()
         
         text = f"{self.adoptive_page + 1} / {max(1, total_pages)}"
         if not self.adoptive_page_display:
