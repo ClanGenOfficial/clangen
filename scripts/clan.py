@@ -730,7 +730,8 @@ class Clan():
             "temperament": self.temperament,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
-            "source_build": get_version_info().is_source_build
+            "source_build": get_version_info().is_source_build,
+            "your_cat": self.your_cat.ID
         }
 
         # LEADER DATA
@@ -1073,6 +1074,9 @@ class Clan():
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
+        
+        if "your_cat" in clan_data:
+            game.clan.your_cat = Cat.all_cats[clan_data["your_cat"]]
 
         # Return Version Info. 
         return {
