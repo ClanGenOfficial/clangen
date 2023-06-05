@@ -851,31 +851,6 @@
                 }
     },
     {
-        "patrol_id": "fst_train_enemiestolovers_10locked1",
-        "biome": "forest",
-        "season": "Any",
-        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail"],
-        "intro_text": "r_c finds p_l out training in r_c's favourite spot - and not only does r_c have to share the spot, the pounce p_l is practising looks all wrong.",
-        "decline_text": "Nope, nopidity nope, r_c isn't hanging around that idiot!",
-        "chance_of_success": 60,
-        "exp": 15,
-        "success_text": {
-            "unscathed_common": "p_l called that a pounce? <i>This</i> is a pounce! r_c flies right over p_l's dumb pretty face, shooting a smirk over their shoulder.",
-            "unscathed_rare": "r_c burst in and straight up laughs at p_l, telling them exactly where they're going wrong. p_l challenges r_c to do any better, and with a hrumph of irritation, the competition begins, both cats out to one-up eachother."
-        },
-        "fail_text": {
-            "unscathed_common": "Whatever, it's not r_c's problem. They wait at the side of the training grounds for p_l to be done. But not only does p_l train stupidly, r_c falls asleep waiting for them. Neither of them get anything done."
-        },
-        "min_cats": 2,
-        "max_cats": 2,
-        "constraints": {
-            "relationship": [
-                "dislike_10",
-                "romantic_10"
-            ]
-                }
-    },
-    {
         "patrol_id": "fst_train_groveclan1",
         "biome": "forest",
         "season": "Any",

@@ -1893,6 +1893,105 @@
                 }
     },
     {
+        "patrol_id": "gen_train_enemiestolovers_10locked2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail", "minor_injury"],
+        "intro_text": "p_l is working on {PRONOUN/p_l/poss} battle moves when r_c sticks {PRONOUN/r_c/poss} head around the corner. Perfect - not only will p_l get a training partner, but battering r_c (sheathed claws, <i>sheathed</i>, {PRONOUN/p_l/subject} {VERB/p_l/promise/promises}!) will be just a little more sasifying than putting a paw in any other Clanmate's face.",
+        "decline_text": "A sudden rain shower puts a damper on any thoughts of battle training.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "Oh by the stars, it is <i>so much fun</i> to smush in r_c's dumb smile and mess up {PRONOUN/r_c/poss} stupid pretty coat! r_c yells at {PRONOUN/p_l/object} for it, because {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a wuss.",
+            "unscathed_rare": "When r_c sweeps {PRONOUN/p_l/poss} legs out from under {PRONOUN/p_l/object} and p_l falls on {PRONOUN/p_l/poss} ass, p_l falls mute, caught between laughter and snarling - how dare r_c be so infuriatingly good!"
+        },
+        "fail_text": {
+            "injury": "Everyone keeps their claws in (no matter the temptations), but r_c slips at a crucial moment while {PRONOUN/r_c/subject} and p_l spar, and gets up with an awkward wince. Time to stop."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_10",
+                "romantic_10"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_10locked3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail"],
+        "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is, uh, sure to go well. p_l tries to start up a conversation about prey types, that seems safe.",
+        "decline_text": "You know what's safer? Not talking.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "r_c is dumb and likes dumb food. But then {PRONOUN/r_c/subject} offer to swap said horrible foulness for p_l's favourite the next time both are on the fresh-kill pile, and that's... really sweet actually. But then the argument starts again, and nope, r_c is the worst."
+        },
+        "fail_text": {
+            "unscathed_common": "Whatever, it doesn't matter. Some cats just have weird tastes, p_l thinks, shrugging."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_10",
+                "romantic_10"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_20locked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail"],
+        "intro_text": "p_l is an annoying furbag of a Clanmate, but there's no one else currently available to train with. Someone makes a <i>comment</i> about romantic sunset walks as the two cats head out of camp, and r_c leads the way, burning under {PRONOUN/r_c/poss} fur. Certainly not!",
+        "decline_text": "Actually, nope, r_c is headed straight back to camp to find whoever said that and claw their ears off!",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "It is sunset. This does <b>not</b> matter. Stupid fox-dung teasing Clanmates! r_c is snippy and snappish with p_l, and {PRONOUN/p_l/subject} {VERB/p_l/snap/snaps} back just as irritably, backlit all golden and beautiful by the sun.",
+            "unscathed_rare": "I mean, hah, r_c? And <i>p_l</i>?? Like <i>that</i> could ever happen, r_c laughs, just a little forced. Yeah, like p_l could ever put up with r_c for that long, p_l agrees heartily. This immediately starts an argument. They don't even get to see the pretty sunset r_c was planning on."
+        },
+        "fail_text": {
+            "unscathed_common": "r_c stutters so much that it's honestly a miracle p_l doesn't justifiably make fun of {PRONOUN/r_c/object} for it - {PRONOUN/r_c/subject} don't think {PRONOUN/r_c/subject} could take that right now. But p_l seems simiilarly preoccupied and distracted. Neither of them manages any productive training."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_20",
+                "romantic_20"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_20locked2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail", "minor_injury"],
+        "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, you see, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that deadicated to taking every opportunity to train, every with a tick like r_c.",
+        "decline_text": "p_l gets waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "They argue all the way to the training grounds, all the way through training, and all the way back again, and yet p_l curls up to sleep feeling strangely satisfied that {PRONOUN/p_l/subject} got to spend time with r_c.",
+            "unscathed_rare": "r_c is absolutely insufferable, and p_l suffers {PRONOUN/r_c/object} the whole afternoon, making sure to point out every single mistake r_c makes, feeling a little thrill every time {PRONOUN/p_l/subject} {VERB/p_l/drive/drives} r_c to distraction."
+        },
+        "fail_text": {
+            "injury": "They've barely started yet, only a tiny dip of the sun into an argument, when r_c takes a tumble that cuts training short."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_20",
+                "romantic_20"
+            ]
+                }
+    },
+    {
         "patrol_id": "gen_train_mosstraining1",
         "biome": "Any",
         "season": "Any",
