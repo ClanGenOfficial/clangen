@@ -272,7 +272,7 @@ class Events:
                 game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
             game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
             counter = 0
-            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or game.clan.your_cat.parent2.age != game.clan.your_cat.parent1.age or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent1].dead:
+            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or Cat.all_cats[game.clan.your_cat.parent2].age != Cat.all_cats[game.clan.your_cat.parent1].age or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent1].dead:
                 counter += 1
                 if counter >= 15:
                     game.clan.your_cat.parent2 = None
