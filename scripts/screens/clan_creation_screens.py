@@ -104,7 +104,6 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == 'choose leader':
                 self.handle_choose_leader_event(event)
             elif self.sub_screen == 'choose camp':
-                self.handle_create_other_cats()
                 self.handle_choose_background_event(event)
             elif self.sub_screen == 'saved screen':
                 self.handle_saved_clan_event(event)
@@ -684,6 +683,10 @@ class MakeClanScreen(Screens):
         """Opens the name clan screen"""
         
         self.clear_all_page()
+        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((700, 400), (200, 200))),
+                                                                    pygame.transform.scale(
+                                                                        self.your_cat.sprite,
+                                                                        (200, 200)), manager=MANAGER)
         self.elements['background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((500, 800), (600, 70))),
                                                                   MakeClanScreen.your_name_img, manager=MANAGER)
 
@@ -909,6 +912,7 @@ class MakeClanScreen(Screens):
 
     def open_clan_saved_screen(self):
         self.clear_all_page()
+
         self.sub_screen = 'saved screen'
 
         self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((700, 240), (200, 200))),
@@ -924,7 +928,8 @@ class MakeClanScreen(Screens):
                                                                       manager=MANAGER)
 
     def save_clan(self):
-        
+        self.handle_create_other_cats()
+
         game.mediated.clear()
         game.patrolled.clear()
         game.cat_to_fade.clear()
