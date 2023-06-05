@@ -121,7 +121,7 @@ class Patrol():
                 return "Error - no event choosen"
         
         self.patrol_done = True
-        self.calculate_success(antagonize=antag)
+        self.calculate_success(antagonize=(path == "antag"))
         
         return self.outcome_text
         
