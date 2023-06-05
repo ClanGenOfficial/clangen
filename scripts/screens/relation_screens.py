@@ -3975,51 +3975,49 @@ class ChooseAdoptiveParentScreen(Screens):
             self.tab_buttons[ele].kill()
         self.tab_buttons = {}
         
-        self.mates_cat_buttons = {}
-        self.offspring_cat_buttons = {}
-        self.potential_mates_buttons = {}
+        self.birth_parents_buttons = {}
+        self.adoptive_parents_buttons = {}
+        self.potential_parents_buttons = {}
         self.checkboxes = {}
         
         self.potential_container.kill()
         self.potential_container = None
-        self.offspring_container.kill()
-        self.offspring_container = None
-        self.mates_container.kill()
-        self.mates_container = None
+        self.adoptive_container.kill()
+        self.adoptive_container = None
+        self.birth_container.kill()
+        self.birth_container = None
         
-        self.single_only_text.kill()
-        self.single_only_text = None
-        self.have_kits_text.kill()
-        self.have_kits_text = None
-        self.with_selected_cat_text.kill()
-        self.with_selected_cat_text = None
+        
+        self.unrelated_only_text = None
+        self.mates_current_parents_text = None
         
         self.the_cat_frame.kill()
         self.the_cat_frame = None
-        self.mate_frame.kill()
-        self.mate_frame = None
+        self.parent_frame.kill()
+        self.parent_frame = None
         self.info.kill()
         self.info = None
+        self.help_button.kill()
+        self.help_button = None
         self.back_button.kill()
         self.back_button = None
         self.previous_cat_button.kill()
         self.previous_cat_button = None
         self.next_cat_button.kill()
         self.next_cat_button = None
-        self.toggle_mate.kill()
-        self.toggle_mate = None
+        self.toggle_adoptive_parent.kill()
+        self.toggle_adoptive_parent = None
+        
+        self.center_icon.kill()
+        self.center_icon = None
         
         self.potential_seperator = None
-        self.offspring_seperator = None
         self.potential_last_page = None
         self.potential_next_page = None
-        self.offspring_last_page = None
-        self.offspring_next_page = None
-        self.mates_last_page = None
-        self.mates_next_page = None
+        self.adoptive_last_page = None
+        self.adoptive_next_page = None
         self.potential_page_display = None
-        self.offspring_page_display = None
-        self.mate_page_display = None
+        self.adoptive_page_display = None
         
     def update_current_cat_info(self, reset_selected_cat=True):
         """Updates all elements with the current cat, as well as the selected cat.
