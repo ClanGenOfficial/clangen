@@ -1,3 +1,7 @@
+<strong>v0.1.2</strong>
+- Fixed several bugs
+- Added additional flavor text
+
 <strong>v0.1.1</strong>
 - Fixed several bugs
 - Added support for saving
