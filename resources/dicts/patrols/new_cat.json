@@ -885,5 +885,61 @@
         "max_cats": 1,
         "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/app1/object}, terrified of the echoing voice.",
         "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/app1/object} right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
-    }
+    },
+    {
+        "patrol_id": "gen_elder_rescue1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["new_cat_elder_kittypet", "new_cat_injury", "nc_blunt_force_injury", "border", "adult_stat", "blunt_force_injury"],
+        "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
+        "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
+        "chance_of_success": 85,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The patrol races towards the sound. They are puzzled when they only see a lone Twoleg, but grim realization soon dawns on them after they hear more screams coming from a bag the Twoleg is holding. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the rest of the patrol claws the ankles of the now furious Twoleg, p_l and r_c quickly and quietly get the old shivering cat out of sight, promising {PRONOUN/n_c/object} safety and welcome in c_n for as long as {PRONOUN/n_c/subject} like.",
+"stat_trait": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside - it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} call commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/cat/spend/spends}, the rest of the walk back to camp reassuring the old cat that {PRONOUN/n_c/subject} {VERB/cat/are/is} no burden, and they all would be happy to have their wisdom and knowledge be a part of c_n."
+        },
+        "fail_text": {
+	"injury": "As soon as {PRONOUN/r_c/subject} {VERB/cat/see/sees} a Twoleg and the bag they are holding wiggling and screaming {PRONOUN/r_c/subject} {VERB/cat/jump/jumps} into action. Unfortunately r_c was just a tad too slow and got kicked quite hard against a tree. p_l orders the patrol to protect and carry r_c while they retreat, with pain in their heart and emotions overwhelming {PRONOUN/p_l/object} for the unknown cat that {PRONOUN/p_l/subject} couldn't save.",
+	"stat_injury": "Upon seeing the Twoleg and the screeching bag they are holding s_c just can't take it. {PRONOUN/s_c/subject} {VERB/cat/jump/jumps}, into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard onto the floor the only thing the rest of the patrol can do is grab s_c and flee back to the safety of c_n."
+        },
+        "win_skills": ["CLEVER,2", "FIGHTER,1", "INSIGHTFUL,1"],
+        "win_trait": ["wise", "thoughtful"],
+        "fail_trait": ["loving", "compassionate"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": "As soon as the patrol realizes that a Twoleg is holding a Kittypet in a bag and that's where the screaming originates from, they quickly turn and resume their patrol. Kittypets are not their problem.",
+        "antagonize_fail_text": "The patrol quickly turn away once they realize that a Twoleg and a kittypet are involved, not their problem. Still, when they hear a loud splash everyone goes quiet and the rest of the patrol is spend in silence and shame."
+},
+{
+    "patrol_id": "bch_bord_ocean_newcatkits1",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": [
+        "border",
+        "new_cat_litter0_litter3_dead_orphaned6",
+        "platonic",
+        "comfort",
+        "warrior",
+        "shivering",
+        "frostbite",
+        "injure_all"
+    ],
+    "intro_text": "p_l hears desperate mewling coming from the ocean. ",
+    "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
+    "chance_of_success": 20,
+    "exp": 15,
+    "success_text": {
+        "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
+        "stat_trait": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
+    },
+    "fail_text": {
+        "unscathed_common": "To the cats' horror, they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, and the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
+    },
+    "win_skills": [],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": "Hissing to {PRONOUN/p_l/self}, p_l turns and stalks off to continue the patrol, deliberately ignoring the mewls. It must be a trick of the wind, {PRONOUN/p_l/subject} {VERB/p_l/inform/informs} {PRONOUN/p_l/poss} companions, and no cat dares to argue.",
+    "antagonize_fail_text": "The cats argue with each other about whether or not they should check out the source of the mewling. By the time they've decided what to do, the sound has already faded away."
+}
 ]
