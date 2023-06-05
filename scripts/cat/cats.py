@@ -778,15 +778,16 @@ class Cat():
         if self.status in ["warrior", "medicine cat", "mediator"]:
             # Give a couple doses of mentor inflence:
             if mentor:
-                for i in range(0, randint(0, 2)):
+                max = randint(0, 2)
+                i = 0
+                while max > i:
+                    i += 1
                     affect_personality = self.personality.mentor_influence(Cat.fetch_cat(mentor))
                     affect_skills = self.skills.mentor_influence(Cat.fetch_cat(mentor))
                     if affect_personality:
                         History.add_facet_mentor_influence(self, affect_personality[0], affect_personality[1], affect_personality[2])
-                        print(affect_personality)
                     if affect_skills:
                         History.add_skill_mentor_influence(self, affect_skills[0], affect_skills[1], affect_skills[2])
-                        print(affect_skills)
             
             History.add_mentor_skill_influence_strings(self)
             History.add_mentor_facet_influence_strings(self)
