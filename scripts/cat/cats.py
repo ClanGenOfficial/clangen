@@ -2800,6 +2800,8 @@ class Cat():
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
+        if "adoptive_parents" in cat_info:
+            cat_ob.adoptive_parents = cat_info["adoptive_parents"]
         cat_ob.faded = True
 
         return cat_ob
@@ -2928,6 +2930,7 @@ class Cat():
                 "moons": self.moons,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "adoptive_parents": self.adoptive_parents,
                 "df": self.df,
                 "faded_offspring": self.faded_offspring
             }

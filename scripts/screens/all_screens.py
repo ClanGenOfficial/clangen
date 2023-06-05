@@ -7,8 +7,8 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen
-from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
+    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen
+#from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
 
 # ---------------------------------------------------------------------------- #
