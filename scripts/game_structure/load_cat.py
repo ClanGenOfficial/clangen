@@ -174,6 +174,7 @@ def json_load():
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
+            new_cat.w_done = cat["w_done"] if "w_done" in cat else False
             
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(

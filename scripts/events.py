@@ -78,7 +78,6 @@ class Events:
             "You get a thorn stuck in your paw, and your parent gently removes it, teaching you about the dangers of the forest.",
         "You meet the Clan leader for the first time, their presence making you feel small and awed.",
     "You get your first minor injury, a small scratch from rough play. The sting is sharp, but the attention and care you receive from your mother and the medicine cat make you feel important."]
-        self.w_done = False
         self.c_txt = None
 
     def one_moon(self):
@@ -183,13 +182,13 @@ class Events:
         elif game.clan.your_cat.status == 'apprentice':
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt["app"])))
-        elif game.clan.your_cat.status == 'warrior' and not self.w_done:
+        elif game.clan.your_cat.status == 'warrior' and not game.clan.your_cat.w_done:
             ceremony_txt = random.choice(self.b_txt['warrior_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
             ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
             game.cur_events_list.append(Single_Event(ceremony_txt))
-            self.w_done = True
+            game.clan.your_cat.w_done = True
         elif game.clan.age < 100:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt["warrior"])))
