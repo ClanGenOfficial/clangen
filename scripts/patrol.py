@@ -1706,7 +1706,7 @@ class Patrol():
             self.handle_history(cat, death=True)
             cat.die(body)
 
-            if len(self.patrol_cats) > 1:
+            if game.game_mode != "classic" and len(self.patrol_cats) > 1:
                 for cat in self.patrol_cats:
                     if not cat.dead:
                         cat.get_injured("shock", lethal=False)
