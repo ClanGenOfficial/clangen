@@ -6,6 +6,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, Relationship
+from scripts.cat.skills import Skill, SkillPath
 from scripts.events_module.relationship.group_events import Group_Events, Group_Interaction
 
 class MainCatFiltering(unittest.TestCase):
@@ -56,7 +57,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.trait = "calm"
+        main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")
@@ -77,7 +78,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.trait = "calm"
+        main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")
@@ -98,8 +99,8 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_skill_one(self):
         # given
         group_events = Group_Events()
-        main_cat = Cat()
-        main_cat.skill = "good hunter"
+        main_cat = Cat(moons=40)
+        main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")
@@ -120,7 +121,7 @@ class MainCatFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         main_cat = Cat()
-        main_cat.skill = "good hunter"
+        main_cat.skills.primary = Skill(SkillPath.HUNTER, 9)
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")

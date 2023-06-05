@@ -1,7 +1,13 @@
 [
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "no_body"
+        ],
         "death_text": "m_c was washed out to sea, never to be seen again.",
         "history_text": {
             "reg_death": "m_c was washed out to sea."
@@ -13,7 +19,12 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was poisoned by a sea creature and died.",
         "history_text": {
             "reg_death": "m_c was killed by a poisonous sea crature."
@@ -25,19 +36,49 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "other_cat_injure", "water in their lungs", "shock", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body", "rc_to_mc", "platonic", "neg_dislike", "respect", "trust"],
+        "tags": [
+            "other_cat",
+            "other_cat_injure",
+            "water in their lungs",
+            "shock",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "no_body",
+            "rc_to_mc",
+            "platonic",
+            "neg_dislike",
+            "respect",
+            "trust"
+        ],
         "death_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "history_text": {
             "reg_death": "m_c was lost to the sea while trying to save r_c."
         },
-        "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
+        "cat_trait": [
+            "altruistic",
+            "bold",
+            "ambitious",
+            "compassionate",
+            "daring",
+            "confident",
+            "fierce",
+            "loyal",
+            "loving",
+            "empathetic",
+            "responsible"
+        ],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
     {
         "camp": "any",
-        "tags": ["Greenleaf", "classic"],
+        "tags": [
+            "Greenleaf",
+            "classic"
+        ],
         "death_text": "m_c died from dehydration and heat stroke.",
         "history_text": {
             "reg_death": "m_c died of dehydration and heat stroke."
@@ -49,7 +90,13 @@
     },
     {
         "camp": "camp3",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "no_body"
+        ],
         "death_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss. ",
         "history_text": {
             "reg_death": "m_c was taken by a mysterious sea creature."
@@ -58,5 +105,19 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "war"
+        ],
+        "death_text": "m_c drowned after being pushed out to sea by o_c warriors.",
+        "history_text": {
+            "reg_death": "m_c was pushed out to sea by enemy warriors."
+        }
     }
 ]

@@ -7,18 +7,22 @@ import pygame
 import pygame_gui
 from sys import exit
 from re import sub
+from platform import system
+import logging
+import subprocess
+
 
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from pygame_gui.elements import UIWindow
 
-from scripts.housekeeping.datadir import get_save_dir, get_cache_dir
+from scripts.housekeeping.datadir import get_save_dir, get_cache_dir, get_saved_images_dir, get_data_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
-from scripts.utility import scale, quit, update_sprite
+from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 
@@ -121,6 +125,7 @@ class SaveCheck(UIWindow):
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
+                    game.save_events()
                     self.save_button_saving_state.hide()
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
@@ -394,9 +399,9 @@ class ChangeCatName(UIWindow):
                                                     None,
                                                     use_suffix,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).prefix)
@@ -409,9 +414,9 @@ class ChangeCatName(UIWindow):
                                                     use_prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
+                                                    self.the_cat.pelt.tortiepattern,
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).suffix)
@@ -596,7 +601,7 @@ class KillCat(UIWindow):
                     death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.death_entry_box.get_text())
 
                 self.the_cat.die()
-                self.history.add_death_or_scars(self.the_cat, text=death_message, death=True)
+                self.history.add_death(self.the_cat, death_message)
                 update_sprite(self.the_cat)
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()
@@ -996,3 +1001,139 @@ class SaveError(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+       
+                
+class SaveAsImage(UIWindow):
+    def __init__(self, image_to_save, file_name):
+        super().__init__(scale(pygame.Rect((400, 350), (800, 500))),
+                         object_id="#game_over_window",
+                         resizable=False)
+        
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        
+        self.image_to_save = image_to_save
+        self.file_name = file_name
+        self.scale_factor = 1
+        
+        button_layout_rect = scale(pygame.Rect((0, 10), (44, 44)))
+        button_layout_rect.topright = scale_dimentions((-2, 10))
+        
+        self.close_button = UIImageButton(
+            button_layout_rect,
+            "",
+            object_id="#exit_window_button",
+            starting_height=2,
+            container=self,
+            anchors={'right': 'right',
+                     'top': 'top'}
+        )
+        
+        self.save_as_image = UIImageButton(
+            scale(pygame.Rect((0, 180), (270, 60))),
+            "",
+            object_id="#save_image_button",
+            starting_height=2,
+            container=self,
+            anchors={'centerx': 'centerx'}
+        )
+        
+        self.open_data_directory_button = UIImageButton(
+            scale(pygame.Rect((0, 350), (356, 60))),
+            "",
+            object_id="#open_data_directory_button",
+            container=self,
+            starting_height=2,
+            tool_tip_text="Opens the data directory. "
+                          "This is where save files, images, "
+                          "and logs are stored.",
+            anchors={'centerx': 'centerx'}
+        )
+        
+        self.small_size_button = UIImageButton(
+            scale(pygame.Rect((109, 100), (194, 60))),
+            "",
+            object_id="#image_small_button",
+            container=self,
+            starting_height=2
+        )
+        self.small_size_button.disable()
+        
+        self.medium_size_button = UIImageButton(
+            scale(pygame.Rect((303, 100), (194, 60))),
+            "",
+            object_id="#image_medium_button",
+            container=self,
+            starting_height=2
+        )
+        
+        self.large_size_button = UIImageButton(
+            scale(pygame.Rect((497, 100), (194, 60))),
+            "",
+            object_id="#image_large_button",
+            container=self,
+            starting_height=2
+        )
+        
+        self.confirm_text = pygame_gui.elements.UITextBox(
+            "",
+            scale(pygame.Rect((10, 250), (780, 90))),
+            object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
+            container=self,
+            starting_height=2
+        )
+        
+    def save_image(self):
+        file_name = self.file_name
+        file_number = ""
+        i = 0
+        while True:
+            if os.path.isfile(f"{get_saved_images_dir()}/{file_name + file_number}.png"):
+                i += 1
+                file_number = f"_{i}"
+            else:
+                break
+        
+        scaled_image = pygame.transform.scale_by(self.image_to_save, self.scale_factor)
+        pygame.image.save(scaled_image, f"{get_saved_images_dir()}/{file_name + file_number}.png")
+        return f"{file_name + file_number}.png"
+        
+    def process_event(self, event) -> bool:
+        super().process_event(event)
+        
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.close_button:
+                game.switches['window_open'] = False
+                self.kill()
+            elif event.ui_element == self.open_data_directory_button:
+                if system() == 'Darwin':
+                    subprocess.Popen(["open", "-R", get_data_dir()])
+                elif system() == 'Windows':
+                    os.startfile(get_data_dir())  # pylint: disable=no-member
+                elif system() == 'Linux':
+                    try:
+                        subprocess.Popen(['xdg-open', get_data_dir()])
+                    except OSError:
+                        logger.exception("Failed to call to xdg-open.")
+                return
+            elif event.ui_element == self.save_as_image:
+                file_name = self.save_image()
+                self.confirm_text.set_text(f"Saved as {file_name} in the saved_images folder")
+            elif event.ui_element == self.small_size_button:
+                self.scale_factor = 1
+                self.small_size_button.disable()
+                self.medium_size_button.enable()
+                self.large_size_button.enable()
+            elif event.ui_element == self.medium_size_button:
+                self.scale_factor = 4
+                self.small_size_button.enable()
+                self.medium_size_button.disable()
+                self.large_size_button.enable()
+            elif event.ui_element == self.large_size_button:
+                self.scale_factor = 6
+                self.small_size_button.enable()
+                self.medium_size_button.enable()
+                self.large_size_button.disable()
+    
+    
+        

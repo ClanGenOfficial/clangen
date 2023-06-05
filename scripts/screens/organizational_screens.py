@@ -24,6 +24,7 @@ from .base_screens import Screens
 
 from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
+from scripts.clan import Clan
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
@@ -67,7 +68,7 @@ class StartScreen(Screens):
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             screens = {
-                self.continue_button: 'clan screen',
+                self.continue_button: 'camp screen',
                 self.switch_clan_button: 'switch clan screen',
                 self.new_clan_button: 'make clan screen',
                 self.settings_button: 'settings screen',
@@ -88,8 +89,8 @@ class StartScreen(Screens):
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
-                game.switches['error_message'] = ''
-                game.switches['traceback'] = ''
+                #game.switches['error_message'] = ''
+                #game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
@@ -117,7 +118,7 @@ class StartScreen(Screens):
                     subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
-                self.change_screen('clan screen')
+                self.change_screen('camp screen')
 
     def on_use(self):
         """
@@ -220,7 +221,7 @@ class StartScreen(Screens):
         )
 
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1040, 1020), (320, 60))),
+            scale(pygame.Rect((1040, 1020), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
@@ -286,17 +287,15 @@ class StartScreen(Screens):
             object_id="#default_dark",
             manager=MANAGER)
 
+        
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
-            if len(game.switches['clan_list']) > 1:
-                self.switch_clan_button.enable()
-            else:
-                self.switch_clan_button.disable()
-        elif game.clan is not None and game.switches['error_message']:
-            self.continue_button.disable()
-            self.switch_clan_button.enable()
         else:
             self.continue_button.disable()
+        
+        if len(game.switches['clan_list']) > 1:
+            self.switch_clan_button.enable()
+        else:
             self.switch_clan_button.disable()
 
         if game.switches['error_message']:
@@ -360,7 +359,7 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
-                        game.clan.switch_clans(
+                        Clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
                         
@@ -717,14 +716,24 @@ class SettingsScreen(Screens):
             object_id="#save_settings_button",
             manager=MANAGER)
 
-        self.fullscreen_toggle = UIImageButton(
-            scale(pygame.Rect((1234, 50), (316, 72))),
-            "",
-            object_id="#toggle_fullscreen_button",
-            manager=MANAGER,
-            tool_tip_text="This will close the game. "
-                          "When you reopen, fullscreen"
-                          " will be toggled. ")
+        if game.settings['fullscreen']:
+            self.fullscreen_toggle = UIImageButton(
+                scale(pygame.Rect((1234, 50), (316, 72))),
+                "",
+                object_id="#toggle_fullscreen_button",
+                manager=MANAGER,
+                tool_tip_text="This will close the game. "
+                            "When you reopen, the game"
+                            " will be windowed. ")
+        else:
+            self.fullscreen_toggle = UIImageButton(
+                scale(pygame.Rect((1234, 50), (316, 72))),
+                "",
+                object_id="#toggle_fullscreen_button",
+                manager=MANAGER,
+                tool_tip_text="This will close the game. "
+                            "When you reopen, the game"
+                            " will be fullscreen. ")
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),

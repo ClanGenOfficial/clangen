@@ -1,20 +1,34 @@
 [
-  {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, their sleep anything but restful. They keep seeing flashes of prophecy_list_sight. They wake with a shiver, wondering what their dreams mean for the Clan.",
-    "cat_trait": null,
-    "cat_skill": ["prophet"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
-  },
-  {
-    "camp": "any",
-    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "The things they saw today, omen_list_sight... m_c isolates themselves in the shifting long grass, considering what the omens foretell.",
-    "cat_trait": null,
-    "cat_skill": ["omen sight"],
-    "other_cat_trait": null,
-    "other_cat_skill": null
-  }
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
+        "cat_trait": null,
+        "cat_skill": [
+            "PROPHET,3"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight... m_c isolates {PRONOUN/m_c/self} in the shifting long grass, considering what the omens foretell.",
+        "cat_trait": null,
+        "cat_skill": [
+            "OMEN,3"
+        ],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
 ]

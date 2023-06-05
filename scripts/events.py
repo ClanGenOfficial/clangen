@@ -15,9 +15,8 @@ from scripts.patrol import Patrol
 
 import ujson
 
-from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import collars
+from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -31,14 +30,14 @@ from scripts.events_module.disaster_events import DisasterEvents
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season, \
-    get_living_clan_cat_count, adjust_list_text, event_text_adjust, ongoing_event_text_adjust
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, \
+    get_current_season, adjust_list_text, ongoing_event_text_adjust
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
+from scripts.housekeeping.datadir import get_save_dir
 
-
-class Events():
+class Events:
     """
     TODO: DOCS
     """
@@ -105,7 +104,7 @@ class Events():
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
+            # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
             # print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
@@ -127,7 +126,7 @@ class Events():
                     Single_Event(
                         f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                     ))
-            # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
+            # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
@@ -195,7 +194,8 @@ class Events():
                     if len(alive_cats) == 0:
                         return
                     else:
-                        shaken_cats = random.sample(alive_cats, k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
+                        shaken_cats = random.sample(alive_cats,
+                                                    k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
 
                     shaken_cat_names = []
                     for cat in shaken_cats:
@@ -207,7 +207,7 @@ class Events():
                     if len(shaken_cats) == 1:
                         extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} is particularly shaken by it."
                     else:
-                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} are particularly shaken by it."
+                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} are particularly shaken by it. "
 
             else:
                 event = f"The past moon, {insert} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
@@ -223,7 +223,6 @@ class Events():
                     Single_Event(extra_event, ["birth_death"],
                                  [i.ID for i in shaken_cats]))
             Cat.dead_cats.clear()
-
 
         self.herb_destruction()
         self.herb_gather()
@@ -262,6 +261,7 @@ class Events():
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_events()
             except:
                 SaveError(traceback.format_exc())
 
@@ -355,7 +355,6 @@ class Events():
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
                     for herb in herbs_found:
-                        # TODO: need to add bee sting events so that this herb is relevant.
                         if herb in ['blackberry']:
                             continue
                         if game.clan.current_season in [
@@ -440,7 +439,7 @@ class Events():
             while game.clan.herbs[bad_herb] <= 0:
                 print(
                     f"Warning: {bad_herb} was chosen to destroy, although you currently have "
-                    f"{game.clan.herbs[bad_herb]}. Removing {bad_herb}" \
+                    f"{game.clan.herbs[bad_herb]}. Removing {bad_herb}"
                     f"from herb dict, finding a new herb..."
                 )
                 game.clan.herbs.pop(bad_herb)
@@ -485,8 +484,8 @@ class Events():
                 # Failsafe, since I have no idea why we are getting 0-herb entries.
                 while game.clan.herbs[herb_given] <= 0:
                     print(
-                        f"Warning: {herb_given} was chosen to give to another clan, " \
-                        f"although you currently have {game.clan.herbs[herb_given]}. " \
+                        f"Warning: {herb_given} was chosen to give to another clan, "
+                        f"although you currently have {game.clan.herbs[herb_given]}. "
                         f"Removing {herb_given} from herb dict, finding a new herb..."
                     )
                     game.clan.herbs.pop(herb_given)
@@ -680,7 +679,7 @@ class Events():
         # aging the cat
         cat.one_moon()
         cat.moons += 1
-        cat.update_traits()
+        cat.manage_outside_trait()
         if cat.moons == 1:
             cat.age = "kitten"
             if cat.status not in [
@@ -693,10 +692,11 @@ class Events():
             cat.age = 'adult'
         elif cat.moons == 120:
             cat.age = 'senior'
-
+            
+        cat.skills.progress_skill(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
         self.outsider_events.killing_outsiders(cat)
-
+    
     def one_moon_cat(self, cat):
         """
         Triggers various moon events for a cat.
@@ -763,6 +763,7 @@ class Events():
         self.handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
         # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
         self.perform_ceremonies(cat)
+        cat.skills.progress_skill(cat) # This must be done after ceremonies. 
 
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
@@ -835,10 +836,14 @@ class Events():
             game.config["death_related"]["leader_death_chance"] += game.config["death_related"]["war_death_modifier_leader"]
             game.config["death_related"]["classic_death_chance"] += game.config["death_related"]["war_death_modifier"]
             game.config["death_related"]["expanded_death_chance"] += game.config["death_related"]["war_death_modifier"]
-            game.config["death_related"]["cruel season_death_chance"] += game.config["death_related"]["war_death_modifier"]
-            game.config["condition_related"]["classic_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
-            game.config["condition_related"]["expanded_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
-            game.config["condition_related"]["cruel season_injury_chance"] += game.config["condition_related"]["war_injury_modifier"]
+            game.config["death_related"]["cruel season_death_chance"] += game.config["death_related"][
+                "war_death_modifier"]
+            game.config["condition_related"]["classic_injury_chance"] += game.config["condition_related"][
+                "war_injury_modifier"]
+            game.config["condition_related"]["expanded_injury_chance"] += game.config["condition_related"][
+                "war_injury_modifier"]
+            game.config["condition_related"]["cruel season_injury_chance"] += game.config["condition_related"][
+                "war_injury_modifier"]
 
     def check_war(self):
         """
@@ -959,7 +964,7 @@ class Events():
                 game.clan.new_leader(game.clan.deputy)
                 game.clan.leader_lives = 9
                 text = ''
-                if game.clan.deputy.trait == 'bloodthirsty':
+                if game.clan.deputy.personality.trait == 'bloodthirsty':
                     text = f'{game.clan.deputy.name} has become the new leader. ' \
                            f'They stare down at their Clanmates with unsheathed claws, ' \
                            f'promising a new era for the Clans.'
@@ -1061,7 +1066,7 @@ class Events():
                     elif has_med:
                         chance = int(chance * 2.22)
 
-                    if cat.trait in [
+                    if cat.personality.trait in [
                         'altruistic', 'compassionate', 'empathetic',
                         'wise', 'faithful'
                     ]:
@@ -1091,7 +1096,7 @@ class Events():
                                 break
 
                         chance = game.config["roles"]["mediator_app_chance"]
-                        if cat.trait in [
+                        if cat.personality.trait in [
                             'charismatic', 'empathetic', 'responsible',
                             'wise', 'thoughtful'
                         ]:
@@ -1135,8 +1140,7 @@ class Events():
                     if game.settings["12_moon_graduation"]:
                         preparedness = "prepared"
                     else:
-                        if cat.moons == game.config["graduation"][
-                            "min_graduating_age"]:
+                        if cat.moons == game.config["graduation"]["min_graduating_age"]:
                             preparedness = "early"
                         elif cat.experience_level in ["untrained", "trainee"]:
                             preparedness = "unprepared"
@@ -1185,9 +1189,10 @@ class Events():
         promote cats and add to event list
         """
         # ceremony = []
+        
+        _ment = Cat.fetch_cat(cat.mentor) if cat.mentor else None # Grab current mentor, if they have one, before it's removed. 
         cat.status_change(promoted_to)
-        cat.update_skill()
-        cat.update_traits()
+        cat.rank_change_traits_skill(_ment)
 
         involved_cats = [
             cat.ID
@@ -1321,7 +1326,7 @@ class Events():
 
             possible_ceremonies = temp
 
-            # Gather for backstories ----------------------------------------------------
+            # Gather for backstories.json ----------------------------------------------------
             tags = []
             if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
                 tags.append("abandoned")
@@ -1342,9 +1347,10 @@ class Events():
             temp = possible_ceremonies.intersection(
                 self.ceremony_id_by_tag["all_traits"])
 
-            temp.update(
-                possible_ceremonies.intersection(
-                    self.ceremony_id_by_tag[cat.trait]))
+            if cat.personality.trait in self.ceremony_id_by_tag:
+                temp.update(
+                    possible_ceremonies.intersection(
+                        self.ceremony_id_by_tag[cat.personality.trait]))
 
             possible_ceremonies = temp
         except Exception as ex:
@@ -1359,13 +1365,13 @@ class Events():
                       encoding="ascii") as read_file:
                 TRAITS = ujson.loads(read_file.read())
             try:
-                random_honor = random.choice(TRAITS[cat.trait])
+                random_honor = random.choice(TRAITS[cat.personality.trait])
             except KeyError:
                 random_honor = "hard work"
-        
+
         if cat.status in ["warrior", "medicine cat", "mediator"]:
             self.history.add_app_ceremony(cat, random_honor)
-        
+
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
 
@@ -1422,7 +1428,7 @@ class Events():
             return
 
         # check if cat already has acc
-        if cat.accessory:
+        if cat.pelt.accessory:
             self.ceremony_accessory = False
             return
 
@@ -1444,13 +1450,13 @@ class Events():
             chance += acc_chances["baby_modifier"]
         elif cat.age in ['senior adult', 'senior']:
             chance += acc_chances["elder_modifier"]
-        if cat.trait in [
+        if cat.personality.trait in [
             "adventurous", "childish", "confident", "daring", "playful",
             "attention-seeker", "bouncy", "sweet", "troublesome",
             "impulsive", "inquisitive", "strange", "shameless"
         ]:
             chance += acc_chances["happy_trait_modifier"]
-        elif cat.trait in [
+        elif cat.personality.trait in [
             "cold", "strict", "bossy", "bullying", "insecure", "nervous"
         ]:
             chance += acc_chances["grumpy_trait_modifier"]
@@ -1492,24 +1498,18 @@ class Events():
             else:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
 
+            mentor_modifier = 1
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
                 mentor_modifier = 0.7
                 mentor_skill_modifier = 0
-            else:
-                mentor_modifier = 1
-                cat_ob = Cat.fetch_cat(cat.mentor)
-                if cat_ob.skill in ['fantastic teacher']:
-                    mentor_skill_modifier = 1
-                else:
-                    mentor_skill_modifier = 0
-
+                
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
 
             if game.clan.game_mode == "classic":
                 exp += random.randint(0, 3)
 
-            cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
+            cat.experience += max(exp * mentor_modifier, 1)
 
     def invite_new_cats(self, cat):
         """
@@ -1663,18 +1663,32 @@ class Events():
     def handle_murder(self, cat):
         relationships = cat.relationships.values()
         targets = []
+        kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+        random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
+
+        # if this cat is unstable and aggressive, we lower the random murder chance
+        murder_modifier = round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
+        facet_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
+        #print(str(cat.name) + " Murder Chance: " + str(final_murder_chance) + "/" + str(2**(random_murder_chance - murder_modifier)))
 
         # first we grab all hate and resentment relationships, if any
-        hate_relation = [i for i in relationships if i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        hate_relation = [i for i in relationships if
+                         i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(hate_relation)
-        resent_relation = [i for i in relationships if i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        resent_relation = [i for i in relationships if
+                           i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
-        if targets:
-            chosen_target = random.choice(targets)
+        if targets or facet_murder_chance == 1:
+            if targets:
+                chosen_target = random.choice(targets)
+            else:
+                relations = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+                if not relations:
+                    return
+                chosen_target = random.choice(relations)
             print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
-            kill_chance = 120
 
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
@@ -1682,11 +1696,16 @@ class Events():
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            # this next part is probably temporary, since the personality rework is coming up so
-            # TODO: when personality rework is out, make sure this is changed to take the rework into account
-            if cat.trait in ["vengeful", "bloodthirsty", "cold"]:
-                kill_chance -= 30
-                print('TRAIT MODIFIER', kill_chance)
+            facet_modifiers = (0 + int(cat.personality.aggression)) + \
+                (16 - int(cat.personality.stability)) + (16 - int(cat.personality.lawfulness))
+            
+            kill_chance = kill_chance - facet_modifiers
+            print('Kill chance after facets', kill_chance)
+
+            # this adds a bit of randomness
+            randomness_modifier = (random.getrandbits(10) * .001)
+            kill_chance = kill_chance - randomness_modifier
+            print("Final kill chance: " + str(kill_chance))
 
             if kill_chance < 1:
                 kill_chance = 1
@@ -1934,13 +1953,13 @@ class Events():
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
                     cat.genderalign = "trans female"
-                    #cat.pronouns = [cat.default_pronouns[1].copy()]
+                    # cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
                     cat.genderalign = "trans male"
-                    #cat.pronouns = [cat.default_pronouns[2].copy()]
+                    # cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
                 cat.genderalign = "nonbinary"
-                #cat.pronouns = [cat.default_pronouns[0].copy()]
+                # cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == 'male':
                 gender = 'tom'
@@ -2012,7 +2031,7 @@ class Events():
 
                     if leader_status == "here" and deputy_status == "not_here":
 
-                        if random_cat.trait == 'bloodthirsty':
+                        if random_cat.personality.trait == 'bloodthirsty':
                             text = f"{random_cat.name} has been chosen as the new deputy. " \
                                    f"They look at the Clan leader with an odd glint in their eyes."
                             # No additional involved cats
@@ -2098,5 +2117,24 @@ class Events():
                 game.cur_events_list.insert(
                     0, Single_Event(f"{game.clan.name}Clan has no deputy!"))
 
+def load_events():
+    """
+    Load events from events.json and place into game.cur_events_list.
+    """
+
+    clanname = game.clan.name
+    events_path = f'{get_save_dir()}/{clanname}/events.json'
+    events_list = []
+    try:
+        with open(events_path, 'r') as f:
+            events_list = ujson.loads(f.read())
+        for event_dict in events_list:
+            event_obj = Single_Event.from_dict(event_dict)
+            if event_obj:
+                game.cur_events_list.append(event_obj)
+    except FileNotFoundError:
+        pass
+    except (PermissionError, ujson.JSONDecodeError) as e:
+        traceback.format_exc()
 
 events_class = Events()

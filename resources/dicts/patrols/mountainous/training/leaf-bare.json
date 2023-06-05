@@ -1,122 +1,183 @@
 [
-
-{
-    "patrol_id": "mtn_train_snowcrunching2",
-    "biome": "mountainous",
-    "season": "leaf-bare",
-    "tags": ["app_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail", "shivering", "injury"],
-    "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
-    "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
-    "chance_of_success": 70,
-    "exp": 10,
-    "success_text": [
-            "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
-            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
-            null,
-            "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
-    ],
-    "fail_text": [
-            "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
-            "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing.",
-            null,
-            "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose."
-    ],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-	"patrol_id": "mtn_train_wolfravens1",
-	"biome": "mountainous",
-	"season": "leaf-bare",
-	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
-	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
-	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 60,
-	"exp": 15,
-	"success_text": [
-    	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
-    	"The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
-    	"s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
-	],
-	"fail_text": [
-    	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
-	],
-	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"min_cats": 2,
-	"max_cats": 2,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "mtn_train_wolfravens2",
-	"biome": "mountainous",
-	"season": "leaf-bare",
-	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
-	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
-	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 60,
-	"exp": 15,
-	"success_text": [
-    	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
-    	"The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
-    	"s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 if they're ever part of a hunting patrol targeting large prey."
-	],
-	"fail_text": [
-    	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
-	],
-	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"min_cats": 2,
-	"max_cats": 2,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "mtn_train_wolfravens3",
-	"biome": "mountainous",
-	"season": "leaf-bare",
-	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
-	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
-	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 40,
-	"exp": 20,
-	"success_text": [
-    	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
-    	"The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
-    	"s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
-	],
-	"fail_text": [
-    	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
-	],
-	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"min_cats": 3,
-	"max_cats": 6,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "mtn_train_wolfravens4",
-	"biome": "mountainous",
-	"season": "leaf-bare",
-	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
-	"intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
-	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 40,
-	"exp": 15,
-	"success_text": [
-    	"It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
-    	"The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
-    	"s_c shows the apprentices that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 and app2 if they're ever part of a hunting patrol targeting large prey."
-	],
-	"fail_text": [
-    	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
-	],
-	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"min_cats": 3,
-	"max_cats": 6,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-}
+    {
+        "patrol_id": "mtn_train_snowcrunching2",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "app_stat",
+            "training",
+            "apprentice",
+            "two_apprentices",
+            "rel_two_apps",
+            "romantic",
+            "platonic",
+            "comfort",
+            "no_change_fail",
+            "shivering",
+            "injury"
+        ],
+        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+        "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+            "unscathed_rare": "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            "stat_trait": "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+        },
+        "fail_text": {
+            "unscathed_common": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+            "unscathed_stat": "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing.",
+            "injury": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose."
+        },
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_train_wolfravens1",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "adult_stat",
+            "training",
+            "apprentice",
+            "trust",
+            "comfort",
+            "no_change_fail",
+            "warrior"
+        ],
+        "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
+        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+            "unscathed_rare": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+            "stat_skill": "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
+        },
+        "fail_text": {
+            "unscathed_common": "One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
+        },
+        "win_skills": [
+            "SPEAKER,1"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_train_wolfravens2",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "adult_stat",
+            "training",
+            "apprentice",
+            "trust",
+            "comfort",
+            "no_change_fail",
+            "warrior"
+        ],
+        "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
+        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+            "unscathed_rare": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+            "stat_skill": "s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 if they're ever part of a hunting patrol targeting large prey."
+        },
+        "fail_text": {
+            "unscathed_common": "One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
+        },
+        "win_skills": [
+            "TEACHER,1"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_train_wolfravens3",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "adult_stat",
+            "training",
+            "apprentice",
+            "trust",
+            "comfort",
+            "no_change_fail",
+            "two_apprentices",
+            "warrior"
+        ],
+        "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
+        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+            "unscathed_rare": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+            "stat_skill": "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
+        },
+        "fail_text": {
+            "unscathed_common": "One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
+        },
+        "win_skills": [
+            "SPEAKER,1"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_train_wolfravens4",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "adult_stat",
+            "training",
+            "apprentice",
+            "trust",
+            "comfort",
+            "no_change_fail",
+            "two_apprentices",
+            "warrior"
+        ],
+        "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
+        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "chance_of_success": 40,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised and app2 shocked to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
+            "unscathed_rare": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+            "stat_skill": "s_c shows the apprentices that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 and app2 if they're ever part of a hunting patrol targeting large prey."
+        },
+        "fail_text": {
+            "unscathed_common": "One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
+        },
+        "win_skills": [
+            "TEACHER,1"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
 ]

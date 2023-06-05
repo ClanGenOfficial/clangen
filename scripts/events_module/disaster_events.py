@@ -42,7 +42,7 @@ class DisasterEvents():
         final_events = []
 
         for event in possible_events:
-            print(event.event)
+            #print(event.event)
             if event.priority == 'secondary':
                 print('priority')
                 continue
@@ -120,7 +120,7 @@ class DisasterEvents():
                         picked_disasters.append(potential_disaster)
 
                 if picked_disasters:
-                    print(picked_disasters)
+                    #print(picked_disasters)
                     # choose disaster and display trigger event
                     secondary_disaster = random.choice(picked_disasters)
                     print("chosen secondary", secondary_disaster)

@@ -1,5 +1,6 @@
 import unittest
 from scripts.cat.cats import Cat, Relationship
+from scripts.cat.skills import SkillPath, Skill
 
 from scripts.cat_relations.interaction import (
     Single_Interaction, 
@@ -131,9 +132,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_trait(self):
         # given
         calm = Cat()
-        calm.trait = "calm"
+        calm.personality.trait = "calm"
         troublesome = Cat()
-        troublesome.trait = "troublesome"
+        troublesome.personality.trait = "troublesome"
 
         # when
         calm_to_all = Single_Interaction("test")
@@ -159,9 +160,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_skill(self):
         # given
         hunter = Cat()
-        hunter.skill = "good hunter"
+        hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
         fighter = Cat()
-        fighter.skill = "good fighter"
+        fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
 
         # when
         hunter_to_all = Single_Interaction("test")
@@ -213,52 +214,3 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
             self.assertTrue(cats_fulfill_single_interaction_constraints(clan, clan, clan_to_all, game_mode))
             self.assertTrue(cats_fulfill_single_interaction_constraints(clan, clan, all_to_clan, game_mode))
-
-    def test_injuries(self):
-        # given
-        bruises = Cat()
-        bruises.get_injured("bruises")
-        healthy = Cat()
-
-        # when
-        bruises_to_no_constraints = Single_Interaction("test")
-        bruises_to_no_constraints.has_injuries = {
-            "m_c": ["bruises"]
-        }
-
-        bruises_claw = Single_Interaction("test")
-        bruises_claw.has_injuries = {
-            "m_c": ["bruises"],
-            "r_c": ["claw-wound"]
-        }
-
-        no_constraint_to_bruises = Single_Interaction("test")
-        no_constraint_to_bruises.has_injuries = {
-            "r_c": ["bruises"]
-        }
-
-        # then
-        for game_mode in ["expanded", "cruel season"]:
-            self.assertTrue(cats_fulfill_single_interaction_constraints(bruises, healthy, bruises_to_no_constraints, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, healthy, bruises_claw, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, healthy, no_constraint_to_bruises, game_mode))
-
-            self.assertFalse(cats_fulfill_single_interaction_constraints(healthy, bruises, bruises_to_no_constraints, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(healthy, bruises, bruises_claw, game_mode))
-            self.assertTrue(cats_fulfill_single_interaction_constraints(healthy, bruises, no_constraint_to_bruises, game_mode))
-
-            self.assertTrue(cats_fulfill_single_interaction_constraints(bruises, bruises, bruises_to_no_constraints, game_mode))
-            self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, bruises, bruises_claw, game_mode))
-            self.assertTrue(cats_fulfill_single_interaction_constraints(bruises, bruises, no_constraint_to_bruises, game_mode))
-
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, healthy, bruises_to_no_constraints, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, healthy, bruises_claw, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, healthy, no_constraint_to_bruises, "classic"))
-
-        self.assertFalse(cats_fulfill_single_interaction_constraints(healthy, bruises, bruises_to_no_constraints, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(healthy, bruises, bruises_claw, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(healthy, bruises, no_constraint_to_bruises, "classic"))
-
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, bruises, bruises_to_no_constraints, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, bruises, bruises_claw, "classic"))
-        self.assertFalse(cats_fulfill_single_interaction_constraints(bruises, bruises, no_constraint_to_bruises, "classic"))

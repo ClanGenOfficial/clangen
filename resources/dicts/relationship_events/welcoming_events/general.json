@@ -3,8 +3,20 @@
 		"id": "gen1",
 		"interactions":[
 			"m_c is welcoming r_c.",
-			"m_c see r_c arrive in the Clan and offers {PRONOUN/r_c/object} to show {PRONOUN/r_c/object} around."
+			"m_c sees r_c arrive in the Clan and offers {PRONOUN/r_c/object} to show {PRONOUN/r_c/object} around.",
+			"m_c asks r_c if {PRONOUN/r_c/subject} could use some help getting introduced to the other clan members."
 		]
+	},
+  { 
+		"id": "gen2",
+		"interactions":[
+			"m_c offers r_c some feathers as a welcome gift, that {PRONOUN/r_c/subject} can use to decorate {PRONOUN/r_c/poss} new nest.",
+			"m_c gives all of {PRONOUN/m_c/poss} best tips to r_c for {PRONOUN/r_c/poss} first patrol."
+		],
+		"reaction_random_cat": {
+			"platonic": "increase",
+			"trust": "increase"
+    }
 	},
 	{
 		"id": "gen_wander1",

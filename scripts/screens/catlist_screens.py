@@ -59,6 +59,7 @@ class ClanScreen(Screens):
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
+                    game.save_events()
                     game.save_settings()
                     game.switches['saved_clan'] = True
                     self.update_buttons_and_text()
@@ -90,6 +91,7 @@ class ClanScreen(Screens):
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_events()
                 game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
@@ -105,7 +107,7 @@ class ClanScreen(Screens):
 
         self.choose_cat_positions()
         
-        self.set_disabled_menu_buttons(["clan_screen"])
+        self.set_disabled_menu_buttons(["camp_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
 
@@ -392,6 +394,7 @@ class ClanScreen(Screens):
             self.med_den_label.hide()
             self.elder_den_label.hide()
 
+
 class StarClanScreen(Screens):
     list_page = 1
     display_cats = []
@@ -406,6 +409,7 @@ class StarClanScreen(Screens):
         self.next_page_button = None
         self.dark_forest_button = None
         self.starclan_button = None
+        self.to_living_button = None
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
@@ -426,6 +430,8 @@ class StarClanScreen(Screens):
                 self.change_screen('dark forest screen')
             elif event.ui_element == self.unknown_residence_button:
                 self.change_screen('unknown residence screen')
+            elif event.ui_element == self.to_living_button:
+                self.change_screen('list screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -510,6 +516,7 @@ class StarClanScreen(Screens):
         self.starclan_button.kill()
         self.dark_forest_button.kill()
         self.unknown_residence_button.kill()
+        self.to_living_button.kill()
         self.next_page_button.kill()
         self.previous_page_button.kill()
         self.page_number.kill()
@@ -552,17 +559,18 @@ class StarClanScreen(Screens):
         self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "",
                                                 object_id="#dark_forest_button"
                                                 , manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
-                                              object_id="#arrow_right_button"
-                                              , manager=MANAGER)
+        self.to_living_button = UIImageButton(scale(pygame.Rect((560, 270), (134, 68))), "",
+                                                object_id="#to_living_button", manager=MANAGER,
+                                                tool_tip_text='view living cats')
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", 
+                                              object_id="#arrow_right_button", manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
-                                                  object_id="#arrow_left_button"
-                                                  , manager=MANAGER)
+                                                  object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
                                                          object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)  # Text will be filled in later
 
-        self.set_disabled_menu_buttons(["starclan_screen"])
+        self.set_disabled_menu_buttons(["catlist_screen"])
         self.update_heading_text("StarClan")
         self.show_menu_buttons()
 
@@ -741,6 +749,7 @@ class DFScreen(Screens):
         self.next_page_button = None
         self.dark_forest_button = None
         self.starclan_button = None
+        self.to_living_button = None
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
@@ -763,6 +772,8 @@ class DFScreen(Screens):
                 self.change_screen('starclan screen')
             elif event.ui_element == self.unknown_residence_button:
                 self.change_screen('unknown residence screen')
+            elif event.ui_element == self.to_living_button:
+                self.change_screen('list screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -847,6 +858,7 @@ class DFScreen(Screens):
         self.starclan_button.kill()
         self.dark_forest_button.kill()
         self.unknown_residence_button.kill()
+        self.to_living_button.kill()
         self.next_page_button.kill()
         self.previous_page_button.kill()
         self.page_number.kill()
@@ -889,6 +901,9 @@ class DFScreen(Screens):
         self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "",
                                                 object_id="#dark_forest_button"
                                                 , manager=MANAGER)
+        self.to_living_button = UIImageButton(scale(pygame.Rect((560, 270), (134, 68))), "",
+                                                object_id="#to_living_button", manager=MANAGER,
+                                                tool_tip_text='view living cats')
         self.dark_forest_button.disable()
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button"
@@ -899,7 +914,7 @@ class DFScreen(Screens):
                                                          object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)
 
-        self.set_disabled_menu_buttons(["starclan_screen"])
+        self.set_disabled_menu_buttons(["catlist_screen"])
         self.update_heading_text("Dark Forest")
         self.show_menu_buttons()
 
@@ -1088,6 +1103,7 @@ class ListScreen(Screens):
         self.next_page_button = None
         self.outside_clan_button = None
         self.your_clan_button = None
+        self.to_dead_button = None
         self.filter_container = None
         self.living_cats = None
         self.all_pages = None
@@ -1097,6 +1113,8 @@ class ListScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.outside_clan_button:
                 self.change_screen("other screen")
+            elif event.ui_element == self.to_dead_button:
+                self.change_screen("starclan screen")
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -1203,15 +1221,18 @@ class ListScreen(Screens):
         self.your_clan_button.disable()
         self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                  object_id="#outside_clan_button", manager=MANAGER)
+        self.to_dead_button = UIImageButton(scale(pygame.Rect((560, 270), (134, 68))), "",
+                                                 object_id="#to_dead_button", manager=MANAGER,
+                                                tool_tip_text='view cats in the afterlife')
 
-        self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
+        self.filter_fav = UIImageButton(scale(pygame.Rect((366, 275), (56, 56))), "",
                                         object_id="#fav_cat",
                                         manager=MANAGER,
-                                        tool_tip_text='hide favorite cat indicators')
+                                        tool_tip_text='hide favourite cat indicators')
 
-        self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
+        self.filter_not_fav = UIImageButton(scale(pygame.Rect((366, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
-                                        tool_tip_text='show favorite cat indicators')
+                                        tool_tip_text='show favourite cat indicators')
         
         if game.clan.clan_settings["show_fav"]:
             self.filter_not_fav.hide()
@@ -1227,7 +1248,7 @@ class ListScreen(Screens):
                                                          object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 
-        self.set_disabled_menu_buttons(["list_screen"])
+        self.set_disabled_menu_buttons(["catlist_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
@@ -1284,6 +1305,7 @@ class ListScreen(Screens):
         self.hide_menu_buttons()
         self.your_clan_button.kill()
         self.outside_clan_button.kill()
+        self.to_dead_button.kill()
         self.next_page_button.kill()
         self.previous_page_button.kill()
         self.page_number.kill()
@@ -1677,7 +1699,6 @@ class MedDenScreen(Screens):
         self.current_page = None
         self.meds = None
         self.back_button = None
-        self.profile_screen = ProfileScreen()
 
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
@@ -1689,7 +1710,7 @@ class MedDenScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                self.change_screen('clan screen')
+                self.change_screen('camp screen')
             elif event.ui_element == self.next_med:
                 self.current_med += 1
                 self.update_med_cat()
@@ -2030,7 +2051,7 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
-            med_skill = cat.skill
+            med_skill = cat.skills.skill_string()
             med_exp = f"experience: {cat.experience_level}"
             med_working = True
             if cat.not_working():

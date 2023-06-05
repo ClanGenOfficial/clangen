@@ -1,7 +1,12 @@
 [
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c wandered out into the territory, and was later found dead.",
         "history_text": {
             "reg_death": "m_c died while wandering the territory."
@@ -13,7 +18,12 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a fox.",
         "history_text": {
             "reg_death": "m_c was killed by a fox."
@@ -25,7 +35,12 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a badger.",
         "history_text": {
             "reg_death": "m_c was killed by a badger."
@@ -37,7 +52,12 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a dog.",
         "history_text": {
             "reg_death": "m_c was killed by a dog."
@@ -49,7 +69,10 @@
     },
     {
         "camp": "any",
-        "tags": ["classic", "Leaf-bare"],
+        "tags": [
+            "classic",
+            "Leaf-bare"
+        ],
         "death_text": "m_c, already feeling weak, couldn't make it through a case of whitecough.",
         "history_text": {
             "reg_death": "m_c died of whitecough."
@@ -61,7 +84,10 @@
     },
     {
         "camp": "any",
-        "tags": ["classic", "Leaf-bare"],
+        "tags": [
+            "classic",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was too weak to recover from an illness, and passed away.",
         "history_text": {
             "reg_death": "m_c was killed by sickness."
@@ -73,7 +99,10 @@
     },
     {
         "camp": "any",
-        "tags": ["classic", "Leaf-bare"],
+        "tags": [
+            "classic",
+            "Leaf-bare"
+        ],
         "death_text": "Weakened by a lack of prey, m_c couldn't fight off whitecough and passed away.",
         "history_text": {
             "reg_death": "m_c died of whitecough."
@@ -85,7 +114,10 @@
     },
     {
         "camp": "any",
-        "tags": ["classic", "Leaf-bare"],
+        "tags": [
+            "classic",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was taken quickly by a case of greencough.",
         "history_text": {
             "reg_death": "m_c died of greencough."
@@ -97,7 +129,13 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "old_age",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c wandered out into the territory, and was later found dead, a peaceful expression on their face.",
         "history_text": {
             "reg_death": "m_c died of old age."
@@ -109,7 +147,13 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "old_age",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c was found stiff and curled up in their nest.  It seems they died in their sleep.",
         "history_text": {
             "reg_death": "m_c died of old age."
@@ -121,7 +165,13 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+            "old_age",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c faded more and more as the days went by, until one day, they were found dead in their nest.",
         "history_text": {
             "reg_death": "m_c died of old age."
@@ -132,12 +182,36 @@
         "other_cat_skill": null
     },
     {
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_mate", "multi_death", "old_age", "all_lives"],
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_mate",
+            "multi_death",
+            "old_age",
+            "all_lives"
+        ],
         "camp": "Any",
         "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
         "history_text": {
             "reg_death": "This cat died from old age life.",
             "lead_death": "lost all remaining lives from old age."
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "war",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "death_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
+        "history_text": {
+            "reg_death": "m_c died of a heart attack due to stress."
         }
     }
 ]

@@ -1,301 +1,534 @@
 [
-
-{
-    "patrol_id": "mtn_bord_trackrogue1",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "death"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-            "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
-    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["smart"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue.",
-        "reg_death": "r_c was killed by an invading rogue.",
-        "lead_death": "were killed by an invading rogue"
+    {
+        "patrol_id": "mtn_bord_trackrogue1",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "battle_injury",
+            "scar",
+            "BRIDGE",
+            "border",
+            "death"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+            "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            "death": "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+            "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+        },
+        "win_skills": [
+            "FIGHTER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "CLEVER,1"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue.",
+            "reg_death": "r_c was killed by an invading rogue.",
+            "lead_death": "were killed by an invading rogue"
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue2",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "battle_injury",
+            "scar",
+            "BRIDGE",
+            "border",
+            "death"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+            "unscathed_stat": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            "death": "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+            "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+        },
+        "win_skills": [
+            "CLEVER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "FIGHTER,1"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue.",
+            "reg_death": "r_c was killed by an invading rogue.",
+            "lead_death": "were killed by an invading rogue"
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue3",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "app_stat",
+            "fighting",
+            "battle_injury",
+            "scar",
+            "BRIDGE",
+            "border",
+            "apprentice",
+            "death"
+        ],
+        "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. app1 runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well they couldn't have been super friendly then, app1 assumes.",
+            "unscathed_rare": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
+            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
+            "death": "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
+            "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+        },
+        "fail_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue.",
+            "reg_death": "r_c was killed by an invading rogue.",
+            "lead_death": "were killed by an invading rogue"
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue4",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "battle_injury",
+            "scar",
+            "BRIDGE",
+            "border",
+            "warrior"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+            "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
+        },
+        "win_skills": [
+            "FIGHTER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "CLEVER,1"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue."
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue5",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "battle_injury",
+            "scar",
+            "BRIDGE",
+            "comfort",
+            "respect",
+            "trust",
+            "border",
+            "warrior"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+            "unscathed_stat": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+        },
+        "win_skills": [
+            "CLEVER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "FIGHTER,1"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue."
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue6",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "app_stat",
+            "fighting",
+            "battle_injury",
+            "scar",
+            "SNOUT",
+            "border",
+            "comfort",
+            "respect",
+            "trust",
+            "apprentice"
+        ],
+        "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
+            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
+            "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+        },
+        "fail_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "history_text": {
+            "scar": "r_c was scarred by an invading rogue."
+        }
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue7",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "border"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 20,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on."
+        },
+        "win_skills": [
+            "FIGHTER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "CLEVER,1"
+        ],
+        "min_cats": 3,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue8",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "fighting",
+            "comfort",
+            "respect",
+            "trust",
+            "border"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 20,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+            "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
+            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "unscathed_stat": "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
+        },
+        "win_skills": [
+            "CLEVER,1"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "fail_skills": [
+            "FIGHTER,1"
+        ],
+        "min_cats": 3,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "mtn_bord_trackrogue9",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "app_stat",
+            "fighting",
+            "border",
+            "comfort",
+            "respect",
+            "trust",
+            "apprentice"
+        ],
+        "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 20,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+            "unscathed_rare": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon."
+        },
+        "fail_text": {
+            "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
+            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border."
+        },
+        "fail_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful",
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_bord_shortswim1",
+        "biome": "mountain",
+        "season": "greenleaf",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "r_c looks at the small stream they have to cross to continue on to mark the border, and debates if they should stop for a quick swim to cool off.",
+        "decline_text": "r_c decides to continue with the patrol instead.",
+        "chance_of_success": 50,
+        "exp": 5,
+        "success_text": {
+            "unscathed_common": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
+            "stat_trait": "They keep going, responsibly, although instead of leaping the little stream r_c wades through it, letting the icy mountain water cool their paws pleasantly."
+        },
+        "fail_text": {
+            "unscathed_common": "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
+        },
+        "win_trait": [
+            "responsible",
+            "thoughtful",
+            "loyal",
+            "righteous",
+            "cold",
+            "strict"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue2",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "death"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-"Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
-            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
-    "win_skills": ["smart", "very smart", "extremely smart"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["good fighter"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue.",
-        "reg_death": "r_c was killed by an invading rogue.",
-        "lead_death": "were killed by an invading rogue"
-    }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue3",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["app_stat", "fighting", "battle_injury", "scar", "BRIDGE", "border", "apprentice", "death"],
-    "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. app1 runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well they couldn't have been super friendly then, app1 assumes.",
-            "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
-            null,
-            null
-    ],
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
-             "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
-            "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-    ],
-
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue.",
-        "reg_death": "r_c was killed by an invading rogue.",
-        "lead_death": "were killed by an invading rogue"
-    }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue4",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "border", "warrior"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-            "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
-            null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
-    ],
-    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["smart"],
-    "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue."
-    }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue5",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "battle_injury", "scar", "BRIDGE", "comfort", "respect", "trust", "border", "warrior"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-        "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
-            null,
-            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
-    ],
-    "win_skills": ["smart", "very smart", "extremely smart"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["good fighter"],
-    "min_cats": 2,
-    "max_cats": 2,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue."
-    }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue6",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["app_stat", "fighting", "battle_injury", "scar", "SNOUT", "border", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "While on patrol, app1 notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
-            null,
-            null
-    ],
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
-             "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
-            null,
-            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-    ],
-
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "min_cats": 2,
-    "max_cats": 2,
-    "history_text": {
-        "scar": "r_c was scarred by an invading rogue."
-    }
-},
-{
-    "patrol_id": "mtn_bord_trackrogue7",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "border"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 20,
-    "exp": 10,
-    "success_text": [
-        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-        "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-        "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-        "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
-        null,
-        null
-    ],
-    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["smart"],
-    "min_cats": 3,
-    "max_cats": 6
-},
-{
-    "patrol_id": "mtn_bord_trackrogue8",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["fighting", "comfort", "respect", "trust", "border"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 20,
-    "exp": 10,
-    "success_text": [
-        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-        "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
-    ],
-    "fail_text": [
-        "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-        "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
-        null,
-        null
-    ],
-    "win_skills": ["smart", "very smart", "extremely smart"],
-    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["good fighter"],
-    "min_cats": 3,
-    "max_cats": 6
-},
-{
-    "patrol_id": "mtn_bord_trackrogue9",
-    "biome": "mountainous",
-    "season": "greenleaf",
-    "tags": ["app_stat", "fighting", "border", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "While on patrol, r_c notices an unfamiliar scent. Something here smells like a cat not from c_n.",
-    "decline_text": "They decide not to investigate.",
-    "chance_of_success": 20,
-    "exp": 10,
-    "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
-            null,
-            null
-    ],
-    "fail_text": [
-            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
-             "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, they ask what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
-            null,
-            null
-    ],
-
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "mtn_bord_shortswim1",
-    "biome": "mountain",
-    "season": "greenleaf",
-    "tags": ["border"],
-    "intro_text": "r_c looks at the small stream they have to cross to continue on to mark the border, and debates if they should stop for a quick swim to cool off.",
-    "decline_text": "r_c decides to continue with the patrol instead.",
-    "chance_of_success": 50,
-    "exp": 5,
-    "success_text": [
-            "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
-            null,
-            null,
-            "They keep going, responsibly, although instead of leaping the little stream r_c wades through it, letting the icy mountain water cool their paws pleasantly."
-    ],
-    "fail_text": [
-            "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
-    ],
-    "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-}
 ]

@@ -137,11 +137,11 @@ class Group_Events():
                     continue
 
             if len(interact.trait_constraint) >= 1 and "m_c" in interact.trait_constraint:
-                if main_cat.trait not in interact.trait_constraint["m_c"]:
+                if main_cat.personality.trait not in interact.trait_constraint["m_c"]:
                     continue
 
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
-                if main_cat.skill not in interact.skill_constraint["m_c"]:
+                if (main_cat.skills.primary.skill or main_cat.skills.secondary.skill) not in interact.skill_constraint["m_c"]:
                     continue
             
             if len(interact.backstory_constraint) >= 1 and "m_c" in interact.backstory_constraint:
@@ -248,7 +248,7 @@ class Group_Events():
                     skill_ids = [cat.ID for cat in interact_cats]
 
                 if abbreviation in interact.trait_constraint:
-                    trait_ids = [cat.ID for cat in interact_cats if cat.trait in interact.trait_constraint[abbreviation]]
+                    trait_ids = [cat.ID for cat in interact_cats if cat.personality.trait in interact.trait_constraint[abbreviation]]
                 else:
                     trait_ids = [cat.ID for cat in interact_cats]
 
@@ -382,7 +382,7 @@ class Group_Events():
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-            if relevant_cat.trait not in constraint:
+            if relevant_cat.personality.trait not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -541,12 +541,10 @@ class Group_Events():
             possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
             if injured_cat.status == "leader":
                 possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
-            if possible_scar:
+            
+            if possible_death or possible_scar:
                 for condition in injuries:
-                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, scar=True)
-            if possible_death:
-                for condition in injuries:
-                    self.history.add_possible_death_or_scars(injured_cat, condition, possible_scar, death=True)
+                    self.history.add_possible_history(injured_cat, condition, death_text=possible_death, scar_text=possible_scar)
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""

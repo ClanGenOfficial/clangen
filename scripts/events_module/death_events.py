@@ -21,7 +21,6 @@ class Death_Events():
         self.had_one_event = False
         self.generate_events = GenerateEvents()
         self.history = History()
-        pass
 
     def handle_deaths(self, cat, other_cat, war, enemy_clan, alive_kits, murder=False):
         """ 
@@ -40,7 +39,7 @@ class Death_Events():
             other_clan_name = f'{other_clan.name}Clan'
 
         possible_short_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
-        print('death event', cat.ID)
+        #print('death event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(possible_short_events, cat, other_cat, war,
                                                                          enemy_clan,
                                                                          other_clan, alive_kits, murder=murder)
@@ -54,7 +53,7 @@ class Death_Events():
             print('WARNING: no death events found for', cat.name)
             return
         death_text = event_text_adjust(Cat, death_cause.event_text, cat, other_cat, other_clan_name)
-        print(death_text)
+        #print(death_text)
         additional_event_text = ""
 
         # assign default history
@@ -130,7 +129,7 @@ class Death_Events():
                 additional_event_text += cat.die(body)
                 death_history = history_text_adjust(death_history, other_clan_name, game.clan)
 
-            self.history.add_death_or_scars(cat, other_cat, death_history, murder_unrevealed_history, death=True)
+            self.history.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
 
         # give death history to other cat and kill them if they die
         if "other_cat_death" in death_cause.tags or "multi_death" in death_cause.tags:
@@ -150,14 +149,14 @@ class Death_Events():
                 additional_event_text += other_cat.die(body)
                 other_death_history = history_text_adjust(death_cause.history_text.get('reg_death'), other_clan_name, game.clan)
 
-            self.history.add_death_or_scars(other_cat, cat, other_death_history, death=True)
+            self.history.add_death(other_cat, other_death_history, other_cat=cat)
 
         # give injuries to other cat if tagged as such
         if "other_cat_injured" in death_cause.tags:
             for tag in death_cause.tags:
                 if tag in INJURIES:
                     other_cat.get_injured(tag)
-                    # TODO: consider how best to handle history for this (aka fix it later cus i don't wanna rn ;-;
+                    #TODO: consider how best to handle history for this (aka fix it later cus i don't wanna rn ;-;
                     #  and it's not being used by any events yet anyways)
 
         # handle relationships with other clans
