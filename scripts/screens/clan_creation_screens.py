@@ -219,7 +219,6 @@ class MakeClanScreen(Screens):
             else:
                 self.members.append(cat)
         self.members.append(self.your_cat)
-        print(len(self.members))
         
     def create_example_cats2(self):
         e = random.sample(range(12), 3)
@@ -235,9 +234,6 @@ class MakeClanScreen(Screens):
                 game.choose_cats[a].moons = choice(range(120, 155))
             elif game.choose_cats[a].moons == 0:
                 game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
-        
-            
-
     
     def handle_choose_background_event(self, event):
         if event.ui_element == self.elements['previous_step']:
