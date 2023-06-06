@@ -119,11 +119,15 @@ class Events:
             else:
                 self.one_moon_outside_cat(cat)
         new_list = []
+        other_list = []
         for i in game.cur_events_list:
             if str(game.clan.your_cat.name) in i.text:
                 new_list.append(i)
+            else:
+                other_list.append(i)
                 
         game.cur_events_list = new_list
+        game.other_events_list = other_list
         resource_dir = "resources/dicts/events/lifegen_events/"
         with open(f"{resource_dir}ceremonies.json",
                   encoding="ascii") as read_file:

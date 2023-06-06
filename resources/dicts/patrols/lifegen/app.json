@@ -1,0 +1,121 @@
+[{
+    "patrol_id": "gen_your_cat10",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "Your mentor proposes an extra training session in tracking.",
+    "success_text": {
+        "unscathed_common": "You accept the training and successfully track a mouse by its scent. Your mentor is proud of your progress."
+    },
+    "fail_text": {
+        "unscathed_common": "You try to track a squirrel but it leads you in circles."
+    },
+    "decline_text": "You decide to skip the training and rest for the day.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "win_skills": [
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat11",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border",
+        "apprentice"
+    ],
+    "intro_text": "The deputy chooses you for a dawn patrol.",
+    "success_text": {
+        "unscathed_common": "You join the patrol and successfully scout the clan borders. Your alertness does not go unnoticed."
+    },
+    "fail_text": {
+        "unscathed_common": "You join the patrol but accidentally step on a twig, alerting a potential prey. You're reminded to be more careful."
+    },
+    "decline_text": "You decide to stay in the camp and help with other chores instead.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 5
+},
+{
+    "patrol_id": "gen_your_cat12",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border",
+        "apprentice"
+    ],
+    "intro_text": "The elders ask you to share your fresh-kill with them. Do you want to share your meal?",
+    "success_text": {
+        "unscathed_common": "You share your meal with the elders, who tell you stories of their youth in return."
+    },
+    "fail_text": {
+        "unscathed_common": "You offer to share your meal but accidentally drop it in the dirt. The elders chuckle and assure you it's alright."
+    },
+    "decline_text": "You politely decline and decide to eat your meal in peace.",
+    "chance_of_success": 70,
+    "exp": 15,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+},
+{
+    "patrol_id": "gen_your_cat13",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You notice a branch hanging low with a tempting leaf just out of reach.",
+    "success_text": {
+        "unscathed_common": "With a quick jump and a swipe, you manage to snag the leaf. Your agility surprises even you."
+    },
+    "fail_text": {
+        "unscathed_common": "You leap for the leaf but miss, landing in a heap on the ground. Your mentor teases you but encourages you to try again."
+    },
+    "decline_text": "You decide to leave the leaf alone and go back to your training.",
+    "chance_of_success": 55,
+    "exp": 15,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+
+{
+    "patrol_id": "gen_your_cat14",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You spot a lone crow sitting on a branch. It screeches at you irritatingly.",
+    "success_text": {
+        "unscathed_common": "You successfully chase the crow away, demonstrating your courage and determination."
+    },
+    "fail_text": {
+        "unscathed_common": "You make a leap for the crow, but it flies away before you can get close. You land clumsily but unharmed."
+    },
+    "decline_text": "You decide not to bother with the crow and focus on your other tasks.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+}]

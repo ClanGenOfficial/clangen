@@ -1,0 +1,391 @@
+[
+    {
+        "patrol_id": "gen_your_cat4",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "An apprentice that you look up to approaches you one day, asking you if you'd like to sneak out of camp.",
+        "success_text": {
+            "unscathed_common": "You sneak out of camp that night. No one catches you and you have a blast, you didn't know the world outside of camp was so large!"
+        },
+        "fail_text": {
+            "unscathed_common": "Just as you are about to step beyond the camp's borders, a warrior on guard duty spots you. You're marched back to the nursery under their stern gaze, earning yourself a harsh lecture."
+        },
+        "decline_text": "The apprentice rolls their eyes, calling you a scaredy mouse.",
+        "chance_of_success": 40,
+        "exp": 0,
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat5",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "Lying within a paw's reach of the medicine cat's den, an herb emits a strange scent you've never smelled before. A wave of curiosity compels you to investigate.",
+        "success_text": {
+            "unscathed_common": "You get closer and are able to identify the herb as marigold. The medicine cat seems impressed with your observational skills!"
+        },
+        "fail_text": {
+            "unscathed_common": "As you approach the herb, you sneeze loudly, alerting the medicine cat who scolds you for wandering too close to their den."
+        },
+        "decline_text": "You decide to leave the herb alone, not wanting to disturb the medicine cat's work.",
+        "chance_of_success": 45,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat6",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "kit_only",
+            "border"
+        ],
+        "intro_text": "A shuffling gaggle of kits surrounds you, their eyes gleaming with mischief. Their challenge? Sneak into the leader's den, a territory typically shrouded in reverential silence, while the leader is away.",
+        "success_text": {
+            "unscathed_common": "With your heart thudding in your chest, you slink into the leader's den. It's grander and more mysterious than you ever imagined. Before anyone notices, you make your swift exit. Your successful adventure has the other kits gazing at you in pure awe, their whispers spreading tales of your daring escapade."
+        },
+        "fail_text": {
+            "unscathed_common": "You manage to slip into the den, but the leader's scent makes you freeze. Just as you're about to exit, the leader walks in, eyes wide in surprise. What follows is a stern lecture and a direct march back to the nursery, your ears burning with embarrassment."
+        },
+        "decline_text": "Remembering the warrior code, you express your reservations about invading the leader's personal space. While this earns you some grumbles from the daring group, your moral stance also brings a quiet respect from the more thoughtful kits.",
+        "chance_of_success": 35,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat7",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "The air is thick with the scent of age and wisdom as you overhear the elders reminiscing about the grand feats of great warriors, their voices vibrating with the raw thrill of battles won and hardships endured.",
+        "success_text": {
+            "unscathed_common": "Hidden from their view, you absorb every word, every pause, every emotion, learning valuable lessons about courage, loyalty, and perseverance from the exploits of the great warriors."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to listen, to lose yourself in their stories, but the elders notice your small form lurking nearby. They gently chide you, explaining that the tales they're sharing aren't suitable for your young ears."
+        },
+        "decline_text": "Torn between the lure of the tales and the exhilarating tumble of play, you finally decide to join the other kits, leaving the stories of old behind.",
+        "chance_of_success": 50,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat8",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "An apprentice, their eyes lit with the fire of purpose, offers to teach you some basic hunting moves. You can already see yourself, a full-fledged warrior, stalking through the forest with deadly grace.",
+        "success_text": {
+            "unscathed_common": "With intense concentration, you mimic the apprentice's movements, capturing their precision and agility. Their praise echoes in your ears as they commend your quick learning, a gleam of proud satisfaction in their eyes."
+        },
+        "fail_text": {
+            "unscathed_common": "You stumble through the steps, your kittenish clumsiness holding you back. But the apprentice is patient, reassuring you with a gentle mew that you will get better with time and practice."
+        },
+        "decline_text": "Despite the enticing offer, you decide to return to the nursery. The time will come when you will learn the ways of the warriors, but for now, you are content being a kit.",
+        "chance_of_success": 45,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat9",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "As the moon casts a soft glow over the nursery, a moth flutters its delicate wings, drawing your attention. Its erratic dance captivates you, igniting a challenge within you.",
+        "success_text": {
+            "unscathed_common": "Like a mini-warrior, you spring into action, your eyes locked on the fluttering target. A swift leap and a careful pounce later, you have the moth gently pinned under your paw. The other kits stare at you, their eyes wide with admiration."
+        },
+        "fail_text": {
+            "unscathed_common": "With a playful spring, you attempt to catch the elusive moth. It flits out of reach, disappearing into the moonlit night. Despite your failure, you can't help but chuckle at the challenging opponent."
+        },
+        "decline_text": "You watch the moth flutter around a while longer before deciding to let it continue its moonlit dance undisturbed. With a content sigh, you curl back into your warm den.",
+        "chance_of_success": 40,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat10",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "A lost thrush chick is chirping helplessly near the nursery. You feel a pang of sympathy.",
+        "success_text": {
+            "unscathed_common": "Your small size helps you approach the chick without scaring it. You manage to lead it back to its nest in the nearby bushes. The chick's mother chirps gratefully."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to help but end up scaring the chick further. Eventually, one of the elders steps in to handle the situation."
+        },
+        "decline_text": "You decide to stay back, hoping that the chick's mother will find it soon.",
+        "chance_of_success": 50,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat11",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "You stumble upon a stash of fresh moss, perfect for changing bedding in the elders' den.",
+        "success_text": {
+            "unscathed_common": "With great effort, you manage to haul a good bunch of the moss to the elder's den. An appretice, out of breath, thanks you for your help with their chores. The elders appreciate your initiative and hard work."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to move the moss, but it's a bit too much for your small size. You're left with a big mess!"
+        },
+        "decline_text": "You decide to leave the moss be and continue playing with the other kits.",
+        "chance_of_success": 40,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat12",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "A group of kits invites you to join their 'Great Adventure' - a journey to the edge of the camp.",
+        "success_text": {
+            "unscathed_common": "You join the adventure, and with teamwork and courage, make it to the camp's edge and back. The kits cheer for the successful mission."
+        },
+        "fail_text": {
+            "unscathed_common": "You bravely embark on the adventure but accidentally wander too close to the warriors' den. Your mission is cut short by a stern lecture."
+        },
+        "decline_text": "The idea of venturing so far from the nursery is a bit daunting, so you decide to sit this adventure out.",
+        "chance_of_success": 45,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat13",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "One of the medicine cats is looking for a specific herb and you think you've seen it near the nursery.",
+        "success_text": {
+            "unscathed_common": "You lead the medicine cat to the herb. It's not exactly what they were looking for, but they praise your observational skills and thank you for your help."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to locate the herb but end up pointing out a plain leaf with no herbal use. Despite this, the medicine cat appreciates your eagerness to help."
+        },
+        "decline_text": "You decide not to intervene, unsure of your knowledge of herbs.",
+        "chance_of_success": 55,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat14",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "You find a shiny pebble near the small, bubbling stream that runs through the camp.",
+        "success_text": {
+            "unscathed_common": "You pick up the pebble and decide to give it to your best friend as a gift. They are ecstatic and cherish your gift."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to pick up the pebble but it slips from your grasp and rolls back into the stream."
+        },
+        "decline_text": "Deciding to leave the pebble be, you return to your usual kit games.",
+        "chance_of_success": 50,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat15",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "border",
+        "kit_only"
+        ],
+        "intro_text": "During a breezy afternoon, a cluster of leaves caught in a spider's web catches your eye. You notice the intricate patterns and consider trying to recreate it with sticks and moss.",
+        "success_text": {
+        "unscathed_common": "Your paws, surprisingly nimble, manage to arrange the sticks and moss into a remarkable imitation of the web. The other kits are amazed by your work and praise your creativity."
+        },
+        "fail_text": {
+        "unscathed_common": "You try, but the materials refuse to cooperate. Your attempts result in a tangled mess of sticks and moss. Nonetheless, you learn something about patience and precision."
+        },
+        "decline_text": "The thought of mimicking a spider's web seems daunting. You leave the project for another day.",
+        "chance_of_success": 40,
+        "exp": 0,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+        },
+        
+        {
+        "patrol_id": "gen_your_cat16",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "border",
+        "kit_only"
+        ],
+        "intro_text": "You see an older kit attempting to climb a tree near the camp border. The idea of an aerial view of the camp sparks your curiosity.",
+        "success_text": {
+        "unscathed_common": "You approach the tree cautiously, digging your claws into the bark. With determination, you manage to climb high enough to glimpse a new perspective of your camp. It's breathtaking!"
+        },
+        "fail_text": {
+        "unscathed_common": "Your attempt is valiant, but the tree proves too difficult to scale at your age. You tumble down to the ground with a thump."
+        },
+        "decline_text": "Considering your small size, you decide it's best to remain on solid ground for now. You vow to attempt the climb when you're older.",
+        "chance_of_success": 35,
+        "exp": 0,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+        },
+        
+        {
+        "patrol_id": "gen_your_cat17",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "border",
+        "kit_only"
+        ],
+        "intro_text": "Late one evening, you notice a peculiar shimmering light in a nearby puddle. The prospect of discovering something new intrigues you.",
+        "success_text": {
+        "unscathed_common": "You approach the puddle and realize the shimmer is caused by a cluster of tiny bioluminescent insects. Your discovery is praised by the elders for its rare beauty."
+        },
+        "fail_text": {
+        "unscathed_common": "You approach the puddle, but the source of the light quickly scurries away. It's disappointing, but the mystery fuels your desire for knowledge."
+        },
+        "decline_text": "You decide not to investigate the light, preferring to stay safe and warm in the nursery.",
+        "chance_of_success": 45,
+        "exp": 0,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+        },
+        
+        {
+        "patrol_id": "gen_your_cat18",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "border",
+        "kit_only"
+        ],
+        "intro_text": "An elder is struggling to reach a small patch of shade to rest in. You think you might be able to help by moving some stones to block the sunlight's path.",
+        "success_text": {
+        "unscathed_common": "With some effort, you manage to move the stones. The shade now falls directly on the elder's resting spot. They purr in delight, thanking you for your kindness."
+        },
+        "fail_text": {
+        "unscathed_common": "You try to move the stones, but they're too heavy. However, your attempt makes the elder smile and they appreciate your thoughtfulness."
+        },
+        "decline_text": "You decide not to risk hurting yourself with the heavy stones. Instead, you go to the elder and keep them company.",
+        "chance_of_success": 50,
+        "exp": 0,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+        },
+        
+        {
+        "patrol_id": "gen_your_cat19",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "border",
+        "kit_only"
+        ],
+        "intro_text": "A gust of wind has blown a ball of moss into the thorny undergrowth. It's your favorite plaything, and you ponder whether to attempt to retrieve it.",
+        "success_text": {
+        "unscathed_common": "Carefully navigating the thorns, you manage to retrieve the ball of moss without a scratch. Your triumph is met with admiration by the other kits."
+        },
+        "fail_text": {
+        "unscathed_common": "You give it your best shot, but the thorns prove too dense. Even so, your courage earns you respect among your peers."
+        },
+        "decline_text": "You decide to leave the moss ball where it is. There will be other playthings and another day to play.",
+        "chance_of_success": 40,
+        "exp": 0,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+        }
+]

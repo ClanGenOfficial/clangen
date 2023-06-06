@@ -1,0 +1,42 @@
+[
+    {
+        "patrol_id": "gen_your_cat19",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "herb_gathering",
+            "med_only"
+        ],
+        "intro_text": "You catch the scent of a mouse nearby.",
+        "success_text": {
+            "unscathed_common": "You locate the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. You waggle your haunches and leap, pinning the mouse beneath a paw as you make the killing bite.",
+            "unscathed_rare": "You pinpoint the location of the prey and begins creeping forward. You're almost within pouncing distance when the mouse suddenly bolts. With a lash of your tail, you leap after the mouse, barely snagging it before it reaches a burrow. You purr in satisfaction as prey-blood hits your tongue."
+        },
+        "fail_text": {
+            "unscathed_common": "You narrowly miss the mouse."
+        },
+        "decline_text": "You ignore the mouse.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    }
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+]
