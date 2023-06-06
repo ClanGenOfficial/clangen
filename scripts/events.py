@@ -224,14 +224,12 @@ class Events:
             except:
                 SaveError(traceback.format_exc())
                 
-    def pick_parent(self):
-        parent = random.choice(Cat.all_cats_list).ID
-        while (parent == game.clan.your_cat.ID 
-            or Cat.all_cats[parent].moons < 12 
-            or Cat.all_cats[parent].moons > 100 
-            or Cat.all_cats[parent].dead):
+    def pick_valid_parent(self):
+        while True:
             parent = random.choice(Cat.all_cats_list).ID
-        return parent
+            parent_cat = Cat.all_cats[parent]
+            if parent != game.clan.your_cat.ID and 12 <= parent_cat.moons <= 100 and not parent_cat.dead:
+                return parent
 
     def set_birth_text(self, birth_key, replacements):
         birth_txt = random.choice(self.b_txt[birth_key])
@@ -241,100 +239,87 @@ class Events:
 
     def create_inheritance(self, parent_ids):
         for parent_id in parent_ids:
-            Cat.all_cats[parent_id].children.append(game.clan.your_cat.ID)
-            Cat.all_cats[parent_id].create_inheritance_new_cat()
+            parent_cat = Cat.all_cats[parent_id]
+            parent_cat.children.append(game.clan.your_cat.ID)
+            parent_cat.create_inheritance_new_cat()
         game.clan.your_cat.create_inheritance_new_cat()
 
+    def create_sibling(self):
+        sibling = Cat(status='kitten', moons=1)
+        sibling.thought = "Snuggles up to you"
+        game.clan.add_cat(sibling)
+        return sibling
+
+    def create_siblings(self, num_siblings):
+        siblings = [self.create_sibling() for _ in range(num_siblings)]
+        sibling_names = [str(sibling.name) for sibling in siblings]
+        sibling_text = ' and '.join(sibling_names)
+        return siblings, sibling_text
+
     def get_birth_txt(self):
-        num_siblings = random.choice([0,0,0,2,2])
-        siblings = []
-        sibling_text = ""
-        if num_siblings > 0:
-            sibling1 = Cat(status = 'kitten', moons = 1)
-            sibling1.thought = "Snuggles up to you"
-            game.clan.add_cat(sibling1)
-            sibling_text += str(sibling1.name) + " and "
-            siblings.append(sibling1)
-            sibling2 = Cat(status = 'kitten', moons = 1)
-            sibling2.thought = "Snuggles up to you"
-            game.clan.add_cat(sibling2)
-            sibling_text += str(sibling2.name)
-            siblings.append(sibling2)
+        num_siblings = random.choice([2, 2])
+        siblings, sibling_text = self.create_siblings(num_siblings)
 
         birth_type = random.randint(1,5)
-        
         if birth_type == 1:
-            if num_siblings > 0:
-                game.clan.your_cat.siblings.extend([siblings[0].ID,siblings[1].ID])
-                siblings[0].siblings.extend([game.clan.your_cat.ID,siblings[1].ID])
-                siblings[1].siblings.extend([game.clan.your_cat.ID,siblings[0].ID])
-                siblings[0].create_inheritance_new_cat()
-                siblings[1].create_inheritance_new_cat()
-                game.clan.your_cat.create_inheritance_new_cat()
-                return self.set_birth_text("birth_no_parents_siblings", {"y_c": game.clan.your_cat.name,"insert_siblings":sibling_text})
-            return self.set_birth_text("birth_no_parents", {"y_c": game.clan.your_cat.name})
+            return self.handle_birth_no_parents(siblings, sibling_text)
         elif birth_type in [2, 3, 4]:
-            game.clan.your_cat.parent1 = self.pick_parent()
-            if birth_type == 2:
-                if num_siblings > 0:
-                    game.clan.your_cat.siblings.extend([siblings[0].ID,siblings[1].ID])
-                    siblings[0].siblings.extend([game.clan.your_cat.ID,siblings[1].ID])
-                    siblings[1].siblings.extend([game.clan.your_cat.ID,siblings[0].ID])
-                    siblings[0].parent1 = game.clan.your_cat.parent1
-                    siblings[1].parent1 = game.clan.your_cat.parent1
-                    Cat.all_cats[game.clan.your_cat.parent1].children.extend([siblings[0].ID,siblings[1].ID,game.clan.your_cat.ID])
-                    Cat.all_cats[game.clan.your_cat.parent1].create_inheritance_new_cat()
-                    siblings[0].create_inheritance_new_cat()
-                    siblings[1].create_inheritance_new_cat()
-                    game.clan.your_cat.create_inheritance_new_cat()
-                    return self.set_birth_text("birth_one_parent_siblings", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name,"insert_siblings":sibling_text})
-                
-                replacements = {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name}
-                self.create_inheritance([game.clan.your_cat.parent1])
-                return self.set_birth_text("birth_one_parent", replacements)
-            else:
-                game.clan.your_cat.parent2 = self.pick_parent()
-                if num_siblings > 0:
-                    game.clan.your_cat.siblings.extend([siblings[0].ID,siblings[1].ID])
-                    siblings[0].siblings.extend([game.clan.your_cat.ID,siblings[1].ID])
-                    siblings[1].siblings.extend([game.clan.your_cat.ID,siblings[0].ID])
-                    siblings[0].parent1 = game.clan.your_cat.parent1
-                    siblings[1].parent1 = game.clan.your_cat.parent1
-                    siblings[0].parent2 = game.clan.your_cat.parent2
-                    siblings[1].parent2 = game.clan.your_cat.parent2
-                    Cat.all_cats[game.clan.your_cat.parent1].children.extend([siblings[0].ID,siblings[1].ID,game.clan.your_cat.ID])
-                    Cat.all_cats[game.clan.your_cat.parent1].create_inheritance_new_cat()
-                    Cat.all_cats[game.clan.your_cat.parent2].children.extend([siblings[0].ID,siblings[1].ID,game.clan.your_cat.ID])
-                    Cat.all_cats[game.clan.your_cat.parent2].create_inheritance_new_cat()
-                    siblings[0].create_inheritance_new_cat()
-                    siblings[1].create_inheritance_new_cat()
-                    game.clan.your_cat.create_inheritance_new_cat()
-                    return self.set_birth_text("birth_two_parents_siblings", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings":sibling_text})
-                replacements = {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name}
-                Cat.all_cats[game.clan.your_cat.parent1].mate.append(game.clan.your_cat.parent2)
-                Cat.all_cats[game.clan.your_cat.parent2].mate.append(game.clan.your_cat.parent1)
-                self.create_inheritance([game.clan.your_cat.parent1, game.clan.your_cat.parent2])
-                return self.set_birth_text("birth_two_parents", replacements)
-                
+            return self.handle_birth_one_or_two_parents(birth_type, siblings, sibling_text)
         else:
-            parent1, parent2 = self.pick_parent(), self.pick_parent()
-            if num_siblings > 0:
-                    game.clan.your_cat.siblings.extend([siblings[0].ID,siblings[1].ID])
-                    siblings[0].siblings.extend([game.clan.your_cat.ID,siblings[1].ID])
-                    siblings[1].siblings.extend([game.clan.your_cat.ID,siblings[0].ID])
-                    siblings[0].adoptive_parents.extend([parent1,parent2])
-                    siblings[1].adoptive_parents.extend([parent1,parent2])
-                    Cat.all_cats[parent1].create_inheritance_new_cat()
-                    Cat.all_cats[parent2].create_inheritance_new_cat()
-                    siblings[0].create_inheritance_new_cat()
-                    siblings[1].create_inheritance_new_cat()
-                    game.clan.your_cat.create_inheritance_new_cat()
-                    return self.set_birth_text("birth_adoptive_parents_siblings", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings":sibling_text})
-            game.clan.your_cat.adoptive_parents.extend([parent1, parent2])
-            replacements = {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name}
-            self.create_inheritance([parent1, parent2])
-            return self.set_birth_text("birth_adoptive_parents", replacements)
+            return self.handle_birth_adoptive_parents(siblings, sibling_text)
 
+    def handle_birth_no_parents(self, siblings, sibling_text):
+        if siblings:
+            self.add_siblings_and_inheritance(siblings)
+            return self.set_birth_text("birth_no_parents_siblings", {"y_c": game.clan.your_cat.name, "insert_siblings": sibling_text})
+        return self.set_birth_text("birth_no_parents", {"y_c": game.clan.your_cat.name})
+
+    def handle_birth_one_or_two_parents(self, birth_type, siblings, sibling_text):
+        game.clan.your_cat.parent1 = self.pick_valid_parent()
+        if birth_type == 2:
+            return self.handle_birth_one_parent(siblings, sibling_text)
+        else:
+            game.clan.your_cat.parent2 = self.pick_valid_parent()
+            return self.handle_birth_two_parents(siblings, sibling_text)
+
+    def handle_birth_one_parent(self, siblings, sibling_text):
+        if siblings:
+            self.add_siblings_and_inheritance(siblings, game.clan.your_cat.parent1)
+            return self.set_birth_text("birth_one_parent_siblings", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
+        self.create_inheritance([game.clan.your_cat.parent1])
+        return self.set_birth_text("birth_one_parent", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name})
+
+    def handle_birth_two_parents(self, siblings, sibling_text):
+        if siblings:
+            self.add_siblings_and_inheritance(siblings, game.clan.your_cat.parent1, game.clan.your_cat.parent2)
+            return self.set_birth_text("birth_two_parents_siblings", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
+        replacements = {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name}
+        self.create_inheritance([game.clan.your_cat.parent1, game.clan.your_cat.parent2])
+        return self.set_birth_text("birth_two_parents", replacements)
+
+    def handle_birth_adoptive_parents(self, siblings, sibling_text):
+        parent1, parent2 = self.pick_valid_parent(), self.pick_valid_parent()
+        if siblings:
+            self.add_siblings_and_inheritance(siblings, parent1, parent2)
+            return self.set_birth_text("birth_adoptive_parents_siblings", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
+        self.create_inheritance([parent1, parent2])
+        return self.set_birth_text("birth_adoptive_parents", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name})
+
+    def add_siblings_and_inheritance(self, siblings, parent1=None, parent2=None):
+        for sibling in siblings:
+            game.clan.your_cat.siblings.append(sibling.ID)
+            sibling.siblings.extend([game.clan.your_cat.ID, siblings[1].ID if siblings[1] != sibling else siblings[0].ID])
+            if parent1: sibling.parent1 = parent1
+            if parent2: sibling.parent2 = parent2
+            sibling.create_inheritance_new_cat()
+        game.clan.your_cat.create_inheritance_new_cat()
+        if parent1:
+            Cat.all_cats[parent1].children.extend([sibling.ID for sibling in siblings] + [game.clan.your_cat.ID])
+            Cat.all_cats[parent1].create_inheritance_new_cat()
+        if parent2:
+            Cat.all_cats[parent2].children.extend([sibling.ID for sibling in siblings] + [game.clan.your_cat.ID])
+            Cat.all_cats[parent2].create_inheritance_new_cat()
+        
     def mediator_events(self, cat):
         """ Check for mediator events """
         # If the cat is a mediator, check if they visited other clans
