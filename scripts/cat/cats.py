@@ -715,10 +715,7 @@ class Cat():
     
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""  
-        """Updates trait and skill upon ceremony"""  
-        self.personality.set_kit(self.is_baby()) #Update kit trait stuff
-        """Updates trait and skill upon ceremony"""
-        self.personality.set_kit(self.is_baby()) #Update kit trait stuff
+
         if self.status in ["warrior", "medicine cat", "mediator"]:
             # Give a couple doses of mentor inflence:
             if mentor:
