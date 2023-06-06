@@ -222,7 +222,6 @@ class Cat():
         self.leader_death_heal = None
         self.also_got = False
         self.permanent_condition = {}
-        self.retired = False
         self.df = False
         self.experience_level = None
         self.no_kits = False
@@ -612,86 +611,37 @@ class Cat():
     def gone(self):
         """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
         mentors and apprentices. """
-        if self.status == 'leader':
-            self.outside = True
-            game.clan.leader_lives = 1
-            game.clan.leader.outside = True
+        self.outside = True
+        
+        if self.status in ['leader', 'warrior']:
+            self.status_change("warrior")
 
-        elif self.status == 'deputy':
-            self.outside = True
-            # self.status = 'warrior'
-            game.clan.deputy.outside = True
-        else:
-            self.outside = True
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
             if app_ob:
                 app_ob.update_mentor()
         self.update_mentor()
+        for x in self.apprentice:
+            Cat.fetch_cat(x).update_mentor()
         game.clan.add_to_outside(self)
 
-    def add_to_clan(self):
-        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be
-        assigned a mentor. """
+    def add_to_clan(self) -> list:
+        """ Makes a "outside cat" a clan cat. Returns a list of any additional cats that
+            are coming with them. """
         self.outside = False
-
-        if self.status in ['leader', 'deputy']:
-            self.status_change('warrior')
-        elif self.status == 'apprentice' and self.moons >= 15:
-            self.status_change('warrior')
-            involved_cats = [self.ID]
-            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
-                self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 15:
-            self.status_change('warrior')
-            involved_cats = [self.ID]
-            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
-                self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 6:
-            self.status_change('apprentice')
-            involved_cats = [self.ID]
-            game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
-                self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                self.name) + '.', "ceremony", involved_cats))
-        elif self.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
-            if self.moons == 0:
-                self.status = 'newborn'
-            elif self.moons < 6:
-                self.status = "kitten"
-            elif self.moons < 12:
-                self.status_change('apprentice')
-            elif self.moons < 120:
-                self.status_change('warrior')
-            else:
-                self.status_change('elder')
 
         game.clan.add_to_clan(self)
 
         # check if there are kits under 12 moons with this cat and also add them to the clan
         children = self.get_children()
-        names = []
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
             if child.outside and not child.exiled and child.moons < 12:
                 child.add_to_clan()
-                if child.moons < 6:
-                    names.append(child.name)
-                    ids.append(child_id)
-        if len(names) > 0:
-            event_text = "This text should not appear, script cat.py function add_to_clan."
-            if len(names) > 2:
-                event_text = f"{', '.join([str(i) for i in names[0:-1]])}, and {names[-1]}"
-            elif len(names) == 2:
-                event_text = f"{names[0]} and {names[1]}"
-            else:
-                event_text = f"{names[0]}"
-            game.cur_events_list.append(
-                Single_Event(f"Together with {self.name}, {str(event_text)} joins the Clan.", ids))
-
-        self.update_mentor()
+                ids.append(child_id)
+        
+        return ids
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
@@ -703,25 +653,24 @@ class Cat():
         self.status = new_status
         self.name.status = new_status
 
+        self.update_mentor()
+        for app in self.apprentice.copy():
+            fetched_cat = Cat.fetch_cat(app)
+            if isinstance(fetched_cat, Cat):
+                fetched_cat.update_mentor()
+
         # If they have any apprentices, make sure they are still valid:
         if old_status == "medicine cat":
             game.clan.remove_med_cat(self)
 
-            for app in self.apprentice.copy():
-                fetched_cat = Cat.fetch_cat(app)
-                if fetched_cat:
-                    fetched_cat.update_med_mentor()
-
         # updates mentors
         if self.status == 'apprentice':
-            self.update_mentor()
+            pass
 
         elif self.status == 'medicine cat apprentice':
-            self.update_med_mentor()
+            pass
 
         elif self.status == 'warrior':
-            self.update_mentor()
-
             if old_status == 'leader':
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -735,18 +684,10 @@ class Cat():
                     game.clan.deputy_predecessors += 1
 
         elif self.status == 'medicine cat':
-            self.update_med_mentor()
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
         elif self.status == 'elder':
-            self.update_mentor()
-
-            # Ideally, this should also be triggered for cats that retired due to
-            # health conditions. However, it is currently being triggered for all elders to
-            # prevent "unretiring" by switching to med or mediator, then warrior.
-            self.retired = True
-
             if old_status == 'leader':
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
@@ -759,10 +700,10 @@ class Cat():
                     game.clan.deputy_predecessors += 1
 
         elif self.status == 'mediator':
-            self.update_mentor()
+            pass
 
         elif self.status == 'mediator apprentice':
-            self.update_mentor()
+            pass
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -774,29 +715,23 @@ class Cat():
     
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""  
-        self.personality.set_kit(self.is_baby()) #Update kit trait stuff
+
         if self.status in ["warrior", "medicine cat", "mediator"]:
             # Give a couple doses of mentor inflence:
             if mentor:
-                for i in range(0, randint(0, 2)):
+                max = randint(0, 2)
+                i = 0
+                while max > i:
+                    i += 1
                     affect_personality = self.personality.mentor_influence(Cat.fetch_cat(mentor))
                     affect_skills = self.skills.mentor_influence(Cat.fetch_cat(mentor))
                     if affect_personality:
                         History.add_facet_mentor_influence(self, affect_personality[0], affect_personality[1], affect_personality[2])
-                        print(affect_personality)
                     if affect_skills:
                         History.add_skill_mentor_influence(self, affect_skills[0], affect_skills[1], affect_skills[2])
-                        print(affect_skills)
             
             History.add_mentor_skill_influence_strings(self)
             History.add_mentor_facet_influence_strings(self)
-            # Smaller facet wobble if there was mentor inflenece
-            if History.get_mentor_influence(self).get("trait"):
-                self.personality.facet_wobble(max = 2)
-            else:
-                self.personality.facet_wobble()
-        else:
-            self.personality.facet_wobble()
         return
 
     def manage_outside_trait(self):
@@ -1288,8 +1223,11 @@ class Cat():
 
     def one_moon(self):
         """Handles a moon skip for an alive cat. """
+        
+        
         if self.exiled or self.outside:
             # this is handled in events.py
+            self.personality.set_kit(self.is_baby())
             self.thoughts()
             return
 
@@ -1297,15 +1235,22 @@ class Cat():
             self.thoughts()
             return
 
+        old_age = self.age
         self.moons += 1
         if self.moons == 1:
             self.status = 'kitten'
         self.in_camp = 1
+        
+        if old_age != self.age:
+            # Things to do if the age changes
+            self.personality.facet_wobble()
+        
+        # Set personality to correct type
+        self.personality.set_kit(self.is_baby())
+        # Upon age-change
 
-        if self.status in ['apprentice', 'mediator apprentice']:
+        if self.status in ['apprentice', 'mediator apprentice', 'medicine cat apprentice']:
             self.update_mentor()
-        elif self.status == 'medicine cat apprentice':
-            self.update_med_mentor()
 
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
@@ -1823,7 +1768,7 @@ class Cat():
             moons_until = 0
 
         if name == "paralyzed":
-            self.paralyzed = True
+            self.pelt.paralyzed = True
 
         new_perm_condition = PermanentCondition(
             name=name,
@@ -1864,10 +1809,22 @@ class Cat():
                 break
         return not_working
 
-    # This is only for cats that retire due to the health condition.
+    
     def retire_cat(self):
+        """This is only for cats that retire due to health condition"""
+        
+        #There are some special tasks we need to do for apprentice
+        # Note that although you can unretire cats, they will be a full warrior/med_cat/mediator
+        if self.moons > 6 and self.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+            _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
+            self.status_change("warrior") # Temp switch them to warrior, so the following step will work
+            self.rank_change_traits_skill(_ment)
+            
+        
+        self.status_change("elder")
+        return
+        
         old_status = self.status
-        self.retired = True
         self.status = 'elder'
         self.name.status = 'elder'
         #self.update_traits()
@@ -1992,7 +1949,7 @@ class Cat():
                 if "permanent conditions" in rel_data:
                     self.permanent_condition = rel_data.get("permanent conditions")
 
-            if "paralyzed" in self.permanent_condition and not self.paralyzed:
+            if "paralyzed" in self.permanent_condition and not self.pelt.paralyzed:
                 self.pelt.paralyzed = True
 
         except Exception as e:
@@ -2001,23 +1958,6 @@ class Cat():
     # ---------------------------------------------------------------------------- #
     #                                    mentor                                    #
     # ---------------------------------------------------------------------------- #
-
-    def is_valid_med_mentor(self, potential_mentor: Cat):
-        # Dead or outside cats can't be mentors
-        if potential_mentor.dead or potential_mentor.outside:
-            return False
-        # Match jobs
-        if self.status == 'medicine cat apprentice' and potential_mentor.status == 'medicine cat':
-            return True
-        if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
-            return False
-        # If not an app, don't need a mentor
-        if 'medicine cat apprentice' not in self.status:
-            return False
-        # Dead cats don't need mentors
-        if self.dead:
-            return False
-        return True
 
     def is_valid_mentor(self, potential_mentor: Cat):
         # Dead or outside cats can't be mentors
@@ -2037,48 +1977,9 @@ class Cat():
         if 'apprentice' not in self.status:
             return False
         # Dead cats don't need mentors
-        if self.dead:
+        if self.dead or self.outside or self.exiled:
             return False
         return True
-
-    def update_med_mentor(self, new_mentor: Any = None):
-        # No !!
-        if isinstance(new_mentor, Cat):
-            print("Everything is terrible!! (new_mentor {new_mentor} is a Cat D:)")
-            return
-        # Check if cat can have a mentor
-        illegible_for_mentor = self.dead or self.outside or self.exiled or self.status != "medicine cat apprentice"
-        if illegible_for_mentor:
-            self.__remove_mentor()
-            return
-
-        # If eligible, cat should get a mentor.
-        if new_mentor:
-            self.__remove_mentor()
-            self.__add_mentor(new_mentor)
-
-        # Check if current mentor is valid
-        if self.mentor:
-            mentor_cat = Cat.fetch_cat(self.mentor)  # This will return None if there is no current mentor
-            if mentor_cat and not self.is_valid_med_mentor(mentor_cat):
-                self.__remove_mentor()
-
-        # Need to pick a random mentor if not specified
-        if not self.mentor:
-            potential_mentors = []
-            priority_mentors = []
-            for cat in self.all_cats.values():
-                if self.is_valid_med_mentor(cat):
-                    potential_mentors.append(cat)
-                    if not cat.apprentice:  # length of list is 0
-                        priority_mentors.append(cat)
-            # First try for a cat who currently has no apprentices
-            if priority_mentors:  # length of list > 0
-                new_mentor = choice(priority_mentors)
-            elif potential_mentors:  # length of list > 0
-                new_mentor = choice(potential_mentors)
-            if new_mentor:
-                self.__add_mentor(new_mentor.ID)
 
     def __remove_mentor(self):
         """Should only be called by update_mentor, also sets fields on mentor."""
@@ -2114,7 +2015,8 @@ class Cat():
             return
         # Check if cat can have a mentor
         illegible_for_mentor = self.dead or self.outside or self.exiled or self.status not in ["apprentice",
-                                                                                               "mediator apprentice"]
+                                                                                               "mediator apprentice",
+                                                                                               "medicine cat apprentice"]
         if illegible_for_mentor:
             self.__remove_mentor()
             return
@@ -2800,6 +2702,8 @@ class Cat():
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
+        if "adoptive_parents" in cat_info:
+            cat_ob.adoptive_parents = cat_info["adoptive_parents"]
         cat_ob.faded = True
 
         return cat_ob
@@ -2928,6 +2832,7 @@ class Cat():
                 "moons": self.moons,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "adoptive_parents": self.adoptive_parents,
                 "df": self.df,
                 "faded_offspring": self.faded_offspring
             }
@@ -2988,7 +2893,6 @@ class Cat():
                 "former_apprentices": [appr for appr in self.former_apprentices],
                 "df": self.df,
                 "outside": self.outside,
-                "retired": self.retired if self.retired else False,
                 "faded_offspring": self.faded_offspring,
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
