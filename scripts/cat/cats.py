@@ -160,7 +160,12 @@ class Cat():
             self.adoptive_parents = []
             self.mate = []
             self.status = status
+            self.pronouns = [self.default_pronouns[0].copy()]
             self.moons = moons
+            self.dead = True
+            self.outside = False
+            self.exiled = False
+            self.inheritance = None
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
@@ -896,11 +901,8 @@ class Cat():
 
         history_dict = History.make_dict(self)
         try:
-            with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
-                json_string = ujson.dumps(history_dict, indent=4)
-                history_file.write(json_string)
+            game.safe_save(history_dir + '/' + self.ID + '_history.json', history_dict)
         except:
-            print(f"WARNING: saving history of cat #{self.ID} didn't work")
             self.history = History(
                 beginning={},
                 mentor_influence={},
@@ -911,6 +913,9 @@ class Cat():
                 scar_events=[],
                 murder={},
             )
+
+            print(f"WARNING: saving history of cat #{self.ID} didn't work")
+            
 
     def generate_lead_ceremony(self):
         """
