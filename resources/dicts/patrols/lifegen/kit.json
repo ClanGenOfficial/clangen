@@ -387,5 +387,29 @@
         ],
         "min_cats": 1,
         "max_cats": 1
+        },
+        {
+            "patrol_id": "gen_your_cat26",
+            "biome": "Any",
+            "season": "Any",
+            "tags": [
+                "border",
+                "kit_only"
+            ],
+            "intro_text": "Two of your fellow kits are arguing about a ball of moss. You can choose to intervene and help them solve their dispute.",
+            "success_text": {
+                "unscathed_common": "With your assistance, the kits come to a compromise and thank you for your help."
+            },
+            "fail_text": {
+                "unscathed_common": "Despite your efforts, the kits continue to quarrel. You sigh. You feel too old for your age, almost as if you're not really a few moon old kit and instead you're some higher being."
+            },
+            "decline_text": "You decide to let the kits solve their own problems and opt to spend your time on other activities.",
+            "chance_of_success": 95,
+            "exp": 0,
+            "win_skills": [
+                "very smart"
+            ],
+            "min_cats": 1,
+            "max_cats": 1
         }
 ]
