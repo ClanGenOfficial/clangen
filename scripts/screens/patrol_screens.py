@@ -582,13 +582,13 @@ class PatrolScreen(Screens):
                                                      object_id="#return_to_clan", manager=MANAGER)
         self.elements['patrol_again'] = UIImageButton(scale(pygame.Rect((1120, 274), (324, 60))), "",
                                                       object_id="#patrol_again", manager=MANAGER)
-
-        if user_input in ["antag", "antagonize"]:
-            antag = True
-        else:
-            antag = False
         
-        display_text = self.patrol_obj.proceed_patrol(antag)
+        if user_input in ["nopro", "notproceed"]:
+            display_text = self.patrol_obj.proceed_patrol("decline")
+        elif user_input in ["antag", "antagonize"]:
+            display_text = self.patrol_obj.proceed_patrol("antag")
+        else:
+            display_text = self.patrol_obj.proceed_patrol("proceed")
         
         # Adjust text for solo patrols
         display_text = adjust_patrol_text(display_text, self.patrol_obj)
