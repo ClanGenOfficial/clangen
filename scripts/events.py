@@ -627,7 +627,7 @@ class Events:
         if additional_cats:
             text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} "
             if len(additional_cats) > 1:
-                text += str(len(additional_cats)) + "childen."
+                text += str(len(additional_cats)) + " childen."
             else:
                 text += "child."
          
@@ -640,13 +640,13 @@ class Events:
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"] and x.moons > 15:
                 if x.status == "medicine cat apprentice":
-                    self.ceremony(lost_cat, "medicine cat")
+                    self.ceremony(x, "medicine cat")
                 elif x.status == "mediator apprentice":
-                    self.ceremony(lost_cat, "mediator")
+                    self.ceremony(x, "mediator")
                 else:
-                    self.ceremony(lost_cat, "warrior")
-            elif x.status in ["kitten", "newborn"] and x.moons > 6:
-                self.ceremony(lost_cat, "apprentice")
+                    self.ceremony(x, "warrior")
+            elif x.status in ["kitten", "newborn"] and x.moons >= 6:
+                self.ceremony(x, "apprentice")
             else:
                 if x.moons == 0:
                     x.status = 'newborn'
