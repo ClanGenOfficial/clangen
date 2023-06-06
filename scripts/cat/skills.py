@@ -173,6 +173,32 @@ class Skill():
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
     
+    short_strings = {
+        SkillPath.TEACHER: "teaching",
+        SkillPath.HUNTER: "hunting",
+        SkillPath.FIGHTER: "fighting",
+        SkillPath.RUNNER: "running",
+        SkillPath.CLIMBER: "climbing",
+        SkillPath.SWIMMER: "swimming",
+        SkillPath.SPEAKER: "speaking",
+        SkillPath.MEDIATOR: "mediating",
+        SkillPath.CLEVER: "clever",
+        SkillPath.INSIGHTFUL: "advising",
+        SkillPath.SENSE: "observing",
+        SkillPath.KIT: "caretaking",
+        SkillPath.STORY: "storytelling",
+        SkillPath.LORE: "lorekeeping",
+        SkillPath.CAMP: "campkeeping",
+        SkillPath.HEALER: "healing",
+        SkillPath.STAR: "starclan",
+        SkillPath.OMEN: "omen",
+        SkillPath.DREAM: "dreaming",
+        SkillPath.CLAIRVOYANT: "predicting",
+        SkillPath.PROPHET: "prophesying",
+        SkillPath.GHOST: "ghosts"
+    }
+    
+    
     def __init__(self, path:SkillPath, points:int=0, interest_only:bool=False):
         
         self.path = path
@@ -183,6 +209,9 @@ class Skill():
             self._p = self.point_range[0]
         else:
             self._p = points
+    
+    def get_short_skill(self):
+        return Skill.short_strings.get(self.path, "???")
     
     @staticmethod
     def generate_from_save_string(save_string:str):
@@ -371,12 +400,19 @@ class CatSkills:
             "hidden": self.hidden.name if self.hidden else None
         }
 
-    def skill_string(self):
+    def skill_string(self, short=False):
         output = []
-        if self.primary:
-            output.append(self.primary.skill)
-        if self.secondary:
-            output.append(self.secondary.skill)
+        
+        if short:
+            if self.primary:
+                output.append(self.primary.get_short_skill())
+            if self.secondary:
+                output.append(self.secondary.get_short_skill())
+        else:
+            if self.primary:
+                output.append(self.primary.skill)
+            if self.secondary:
+                output.append(self.secondary.skill)
         
         if not output:
             return "???"
@@ -499,7 +535,7 @@ class CatSkills:
                     self.secondary.interest_only = False
                     
                 # If a cat doesn't can a secondary, have a small change for them to get one. 
-                if not int(random.random() * 200):
+                if not self.secondary and not int(random.random() * 200):
                     self.secondary = Skill.get_random_skill(exclude=self.primary.path)
                 
                 # If a cat is not an apprentice or kit, 

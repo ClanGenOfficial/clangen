@@ -1823,25 +1823,6 @@ class Cat():
         
         self.status_change("elder")
         return
-        
-        old_status = self.status
-        self.status = 'elder'
-        self.name.status = 'elder'
-        #self.update_traits()
-
-        if old_status == 'leader':
-            game.clan.leader_lives = 0
-            if game.clan.leader:
-                if game.clan.leader.ID == self.ID:
-                    game.clan.leader = None
-                    game.clan.leader_predecessors += 1
-
-        if game.clan.deputy:
-            if game.clan.deputy.ID == self.ID:
-                game.clan.deputy = None
-                game.clan.deputy_predecessors += 1
-
-        self.update_mentor()
 
     def is_ill(self):
         is_ill = True

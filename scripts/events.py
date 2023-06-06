@@ -657,41 +657,7 @@ class Events:
                 elif x.moons < 120:
                     x.status_change('warrior')
                 else:
-                    x.status_change('elder')
-                    
-            
-            """if self.status in ['leader', 'deputy']: # Just in case -- they should have had their status changes already. 
-                self.status_change('warrior')
-            elif self.status == 'apprentice' and self.moons >= 15:
-                self.status_change('warrior')
-                involved_cats = [self.ID]
-                game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
-                    self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                    self.name) + '.', "ceremony", involved_cats))
-            elif self.status == 'kitten' and self.moons >= 15:
-                self.status_change('warrior')
-                involved_cats = [self.ID]
-                game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
-                    self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                    self.name) + '.', "ceremony", involved_cats))
-            elif self.status == 'kitten' and self.moons >= 6:
-                self.status_change('apprentice')
-                involved_cats = [self.ID]
-                game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
-                    self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
-                    self.name) + '.', "ceremony", involved_cats))
-            
-            if self.moons == 0:
-                self.status = 'newborn'
-            elif self.moons < 6:
-                self.status = "kitten"
-            elif self.moons < 12:
-                self.status_change('apprentice')
-            elif self.moons < 120:
-                self.status_change('warrior')
-            else:
-                self.status_change('elder')"""
-            
+                    x.status_change('elder')      
 
     def handle_fading(self, cat):
         """
@@ -1188,11 +1154,6 @@ class Events:
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            if cat.is_disabled() and not game.settings["retirement"]:
-                                for condition in cat.permanent_condition:
-                                    if cat.permanent_condition[condition]["severity"] == "severe":
-                                        cat.status = 'apprentice'
-                                        return
                             self.ceremony(cat, 'apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
