@@ -269,147 +269,143 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-        "border",
-        "kit_only"
+            "border",
+            "kit_only"
         ],
         "intro_text": "During a breezy afternoon, a cluster of leaves caught in a spider's web catches your eye. You notice the intricate patterns and consider trying to recreate it with sticks and moss.",
         "success_text": {
-        "unscathed_common": "Your paws, surprisingly nimble, manage to arrange the sticks and moss into a remarkable imitation of the web. The other kits are amazed by your work and praise your creativity."
+            "unscathed_common": "Your paws, surprisingly nimble, manage to arrange the sticks and moss into a remarkable imitation of the web. The other kits are amazed by your work and praise your creativity."
         },
         "fail_text": {
-        "unscathed_common": "You try, but the materials refuse to cooperate. Your attempts result in a tangled mess of sticks and moss. Nonetheless, you learn something about patience and precision."
+            "unscathed_common": "You try, but the materials refuse to cooperate. Your attempts result in a tangled mess of sticks and moss. Nonetheless, you learn something about patience and precision."
         },
         "decline_text": "The thought of mimicking a spider's web seems daunting. You leave the project for another day.",
         "chance_of_success": 40,
         "exp": 0,
         "win_skills": [
-        "very smart"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
-        },
-        
-        {
+    },
+    {
         "patrol_id": "gen_your_cat16",
         "biome": "Any",
         "season": "Any",
         "tags": [
-        "border",
-        "kit_only"
+            "border",
+            "kit_only"
         ],
         "intro_text": "You see an older kit attempting to climb a tree near the camp border. The idea of an aerial view of the camp sparks your curiosity.",
         "success_text": {
-        "unscathed_common": "You approach the tree cautiously, digging your claws into the bark. With determination, you manage to climb high enough to glimpse a new perspective of your camp. It's breathtaking!"
+            "unscathed_common": "You approach the tree cautiously, digging your claws into the bark. With determination, you manage to climb high enough to glimpse a new perspective of your camp. It's breathtaking!"
         },
         "fail_text": {
-        "unscathed_common": "Your attempt is valiant, but the tree proves too difficult to scale at your age. You tumble down to the ground with a thump."
+            "unscathed_common": "Your attempt is valiant, but the tree proves too difficult to scale at your age. You tumble down to the ground with a thump."
         },
         "decline_text": "Considering your small size, you decide it's best to remain on solid ground for now. You vow to attempt the climb when you're older.",
         "chance_of_success": 35,
         "exp": 0,
         "win_skills": [
-        "very smart"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
-        },
-        
-        {
+    },
+    {
         "patrol_id": "gen_your_cat17",
         "biome": "Any",
         "season": "Any",
         "tags": [
-        "border",
-        "kit_only"
+            "border",
+            "kit_only"
         ],
         "intro_text": "Late one evening, you notice a peculiar shimmering light in a nearby puddle. The prospect of discovering something new intrigues you.",
         "success_text": {
-        "unscathed_common": "You approach the puddle and realize the shimmer is caused by a cluster of tiny bioluminescent insects. Your discovery is praised by the elders for its rare beauty."
+            "unscathed_common": "You approach the puddle and realize the shimmer is caused by a cluster of tiny bioluminescent insects. Your discovery is praised by the elders for its rare beauty."
         },
         "fail_text": {
-        "unscathed_common": "You approach the puddle, but the source of the light quickly scurries away. It's disappointing, but the mystery fuels your desire for knowledge."
+            "unscathed_common": "You approach the puddle, but the source of the light quickly scurries away. It's disappointing, but the mystery fuels your desire for knowledge."
         },
         "decline_text": "You decide not to investigate the light, preferring to stay safe and warm in the nursery.",
         "chance_of_success": 45,
         "exp": 0,
         "win_skills": [
-        "very smart"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
-        },
-        
-        {
+    },
+    {
         "patrol_id": "gen_your_cat18",
         "biome": "Any",
         "season": "Any",
         "tags": [
-        "border",
-        "kit_only"
+            "border",
+            "kit_only"
         ],
         "intro_text": "An elder is struggling to reach a small patch of shade to rest in. You think you might be able to help by moving some stones to block the sunlight's path.",
         "success_text": {
-        "unscathed_common": "With some effort, you manage to move the stones. The shade now falls directly on the elder's resting spot. They purr in delight, thanking you for your kindness."
+            "unscathed_common": "With some effort, you manage to move the stones. The shade now falls directly on the elder's resting spot. They purr in delight, thanking you for your kindness."
         },
         "fail_text": {
-        "unscathed_common": "You try to move the stones, but they're too heavy. However, your attempt makes the elder smile and they appreciate your thoughtfulness."
+            "unscathed_common": "You try to move the stones, but they're too heavy. However, your attempt makes the elder smile and they appreciate your thoughtfulness."
         },
         "decline_text": "You decide not to risk hurting yourself with the heavy stones. Instead, you go to the elder and keep them company.",
         "chance_of_success": 50,
         "exp": 0,
         "win_skills": [
-        "very smart"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
-        },
-        
-        {
+    },
+    {
         "patrol_id": "gen_your_cat19",
         "biome": "Any",
         "season": "Any",
         "tags": [
-        "border",
-        "kit_only"
+            "border",
+            "kit_only"
         ],
         "intro_text": "A gust of wind has blown a ball of moss into the thorny undergrowth. It's your favorite plaything, and you ponder whether to attempt to retrieve it.",
         "success_text": {
-        "unscathed_common": "Carefully navigating the thorns, you manage to retrieve the ball of moss without a scratch. Your triumph is met with admiration by the other kits."
+            "unscathed_common": "Carefully navigating the thorns, you manage to retrieve the ball of moss without a scratch. Your triumph is met with admiration by the other kits."
         },
         "fail_text": {
-        "unscathed_common": "You give it your best shot, but the thorns prove too dense. Even so, your courage earns you respect among your peers."
+            "unscathed_common": "You give it your best shot, but the thorns prove too dense. Even so, your courage earns you respect among your peers."
         },
         "decline_text": "You decide to leave the moss ball where it is. There will be other playthings and another day to play.",
         "chance_of_success": 40,
         "exp": 0,
         "win_skills": [
-        "very smart"
+            "very smart"
         ],
         "min_cats": 1,
         "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat26",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "kit_only"
+        ],
+        "intro_text": "Two of your fellow kits are arguing about a ball of moss. You can choose to intervene and help them solve their dispute.",
+        "success_text": {
+            "unscathed_common": "With your assistance, the kits come to a compromise and thank you for your help."
         },
-        {
-            "patrol_id": "gen_your_cat26",
-            "biome": "Any",
-            "season": "Any",
-            "tags": [
-                "border",
-                "kit_only"
-            ],
-            "intro_text": "Two of your fellow kits are arguing about a ball of moss. You can choose to intervene and help them solve their dispute.",
-            "success_text": {
-                "unscathed_common": "With your assistance, the kits come to a compromise and thank you for your help."
-            },
-            "fail_text": {
-                "unscathed_common": "Despite your efforts, the kits continue to quarrel. You sigh. You feel too old for your age, almost as if you're not really a few moon old kit and instead you're some higher being."
-            },
-            "decline_text": "You decide to let the kits solve their own problems and opt to spend your time on other activities.",
-            "chance_of_success": 95,
-            "exp": 0,
-            "win_skills": [
-                "very smart"
-            ],
-            "min_cats": 1,
-            "max_cats": 1
-        }
+        "fail_text": {
+            "unscathed_common": "Despite your efforts, the kits continue to quarrel. You sigh. You feel too old for your age, almost as if you're not really a few moon old kit and instead you're some higher being."
+        },
+        "decline_text": "You decide to let the kits solve their own problems and opt to spend your time on other activities.",
+        "chance_of_success": 95,
+        "exp": 0,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    }
 ]
