@@ -402,7 +402,7 @@ class GenerateEvents:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
                         
-                        if other_cat.skills.meets_skill_requirement(split[0], split[1]):
+                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             _flag = True
                             break
                     
@@ -423,11 +423,11 @@ class GenerateEvents:
                             print("Cat skill incorrectly formatted", _skill)
                             continue
                         
-                        if other_cat.skills.meets_skill_requirement(split[0], split[1]):
+                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
                             _flag = True
                             break
                     
-                    if not _flag and int(random.random() * 15):
+                    if _flag and int(random.random() * 15):
                         continue
 
             else:
@@ -453,12 +453,12 @@ class GenerateEvents:
                         print("Cat skill incorrectly formatted", _skill)
                         continue
                     
-                    if cat.skills.meets_skill_requirement(split[0], split[1]):
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
                         _flag = True
                         break
                 
                 # If the cat doesn't have the skill, and some random chance, continue. 
-                if not _flag and int(random.random() * 15):
+                if _flag and int(random.random() * 15):
                     continue
 
             had_trait = True
@@ -475,11 +475,11 @@ class GenerateEvents:
                         print("Cat skill incorrectly formatted", _skill)
                         continue
                     
-                    if cat.skills.meets_skill_requirement(split[0], split[1]):
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
                         _flag = True
                         break
                 
-                if not _flag and int(random.random() * 15):
+                if _flag and int(random.random() * 15):
                     continue
 
             # determine injury severity chance
