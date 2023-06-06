@@ -2454,7 +2454,6 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("elder", resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
                 # here
-                self.the_cat.update_traits()
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)
@@ -2712,12 +2711,7 @@ class RoleScreen(Screens):
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
-            # ADULT CAT ROLES
-            # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
-                self.switch_warrior.disable()
-            else:
-                self.switch_warrior.enable()
+            self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.enable()
             self.retire.enable()
@@ -2732,17 +2726,12 @@ class RoleScreen(Screens):
             else:
                 self.promote_leader.disable()
 
-            if deputy_invalid and self.the_cat.age != "elder":
+            if deputy_invalid:
                 self.promote_deputy.enable()
             else:
                 self.promote_deputy.disable()
 
-            # ADULT CAT ROLES
-            # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
-                self.switch_warrior.disable()
-            else:
-                self.switch_warrior.enable()
+            self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.disable()
             self.retire.enable()
@@ -2752,11 +2741,18 @@ class RoleScreen(Screens):
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
         elif self.the_cat.status == "elder":
-            self.promote_leader.disable()
-            self.promote_deputy.disable()
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            self.switch_warrior.disable()
+            self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
             self.retire.disable()
@@ -2798,10 +2794,7 @@ class RoleScreen(Screens):
             self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.age != "elder":
-                self.switch_warrior.enable()
-            else:
-                self.switch_warrior.disable()
+            self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
             self.retire.enable()

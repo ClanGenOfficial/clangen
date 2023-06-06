@@ -681,12 +681,12 @@ class Condition_Events():
             'young adult': 80,
             'adult': 70,
             'senior adult': 50,
-            'senior': 0
+            'senior': 10
         }
 
-        if not triggered and not cat.dead and not cat.retired and cat.status not in \
+        if not triggered and not cat.dead and cat.status not in \
                 ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
-                 'mediator apprentice'] \
+                 'mediator apprentice', 'elder'] \
                 and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
