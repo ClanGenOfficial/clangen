@@ -83,7 +83,6 @@ class EventsScreen(Screens):
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:
                     GameOver('events screen')
-
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
                 self.update_display_events_lists()
@@ -447,10 +446,11 @@ class EventsScreen(Screens):
                                                         , manager=MANAGER)
         self.events_frame.disable()
         # Set text for clan age
-        if game.clan.age == 1:
-            self.clan_age.set_text(f'Your age: {game.clan.age} moon')
-        if game.clan.age != 1:
-            self.clan_age.set_text(f'Your age: {game.clan.age} moons')
+        if game.clan.your_cat.moons != 1:
+            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moons')
+        elif game.clan.your_cat.moons == 1:
+            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moon')
+
 
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
