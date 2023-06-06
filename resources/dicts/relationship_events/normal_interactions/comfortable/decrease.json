@@ -102,5 +102,56 @@
 		"reaction_random_cat": {
 			"comfortable": "decrease"
 		}
+	},
+	{
+		"id": "comfort_de_high3",
+		"intensity": "high",
+		"interactions": [
+			"m_c shivers after noticing r_c following {PRONOUN/m_c/object} around like a shadow.",
+			"m_c feels a chill after noticing r_c is nearby.",
+			"Watching r_c stalk silently around camp makes m_c feel uneasy.",
+			"m_c doesn't like the way r_c seems to overwhelm the camp with {PRONOUN/r_c/poss} presence."
+		],
+		"random_trait_constraint": [
+			"bloodthirsty",
+			"cold",
+			"vengeful"
+		]
+	},
+	{
+		"id": "comfort_de_high4",
+		"intensity": "high",
+		"interactions": [
+			"m_c doesn't like the way that r_c seems to enjoy {PRONOUN/r_c/poss} influence over the Clan.",
+			"Much to m_c's dismay, r_c has asked {PRONOUN/m_c/object} to do another difficult task.",
+			"m_c thinks that r_c is casting a dark shadow over the whole Clan's reputation."
+		],
+		"random_trait_constraint": [
+			"bloodthirsty",
+			"cold",
+			"vengeful"
+		],
+		"random_status_constraint": [
+			"leader",
+			"deputy"
+		]
+	},
+	{
+		"id": "comfort_de_high5",
+		"intensity": "high",
+		"interactions": [
+			"m_c notices that r_c doesn't seem to care if {PRONOUN/r_c/poss} treatments hurt.",
+			"m_c overhears r_c complaining about giving herbs to cats that don't 'deserve' them.",
+			"m_c is startled at r_c's views on sharing herbs with other Clans."
+		],
+		"random_trait_constraint": [
+			"bloodthirsty",
+			"cold",
+			"vengeful"
+		],
+		"random_status_constraint": [
+			"medicine cat",
+			"medicine cat apprentice"
+		]
 	}
 ]
