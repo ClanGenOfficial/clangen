@@ -778,15 +778,16 @@ class Cat():
         if self.status in ["warrior", "medicine cat", "mediator"]:
             # Give a couple doses of mentor inflence:
             if mentor:
-                for i in range(0, randint(0, 2)):
+                max = randint(0, 2)
+                i = 0
+                while max > i:
+                    i += 1
                     affect_personality = self.personality.mentor_influence(Cat.fetch_cat(mentor))
                     affect_skills = self.skills.mentor_influence(Cat.fetch_cat(mentor))
                     if affect_personality:
                         History.add_facet_mentor_influence(self, affect_personality[0], affect_personality[1], affect_personality[2])
-                        print(affect_personality)
                     if affect_skills:
                         History.add_skill_mentor_influence(self, affect_skills[0], affect_skills[1], affect_skills[2])
-                        print(affect_skills)
             
             History.add_mentor_skill_influence_strings(self)
             History.add_mentor_facet_influence_strings(self)
@@ -1823,7 +1824,7 @@ class Cat():
             moons_until = 0
 
         if name == "paralyzed":
-            self.paralyzed = True
+            self.pelt.paralyzed = True
 
         new_perm_condition = PermanentCondition(
             name=name,
@@ -1992,7 +1993,7 @@ class Cat():
                 if "permanent conditions" in rel_data:
                     self.permanent_condition = rel_data.get("permanent conditions")
 
-            if "paralyzed" in self.permanent_condition and not self.paralyzed:
+            if "paralyzed" in self.permanent_condition and not self.pelt.paralyzed:
                 self.pelt.paralyzed = True
 
         except Exception as e:
@@ -2800,6 +2801,8 @@ class Cat():
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
+        if "adoptive_parents" in cat_info:
+            cat_ob.adoptive_parents = cat_info["adoptive_parents"]
         cat_ob.faded = True
 
         return cat_ob
@@ -2928,6 +2931,7 @@ class Cat():
                 "moons": self.moons,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "adoptive_parents": self.adoptive_parents,
                 "df": self.df,
                 "faded_offspring": self.faded_offspring
             }

@@ -5159,10 +5159,75 @@
 			"selected_image":
             {
                 "path": "resources/images/buttons/unset_adoptive_parent_hover.png"
+            }
+        }
+    },
+    "#adoptive_parents_tab_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/adoptive_parents_tab.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/adoptive_parents_tab_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/adoptive_parents_tab_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/unset_adoptive_parents_unavailable.png"
+                "path":"resources/images/buttons/adoptive_parents_tab_unavailable.png"
+            }
+        }
+    },
+    "#birth_parents_tab_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/birth_parents_tab.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/birth_parents_tab_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/birth_parents_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/birth_parents_tab_unavailable.png"
+            }
+        }
+    },
+    "#potential_parents_tab_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/potential_parents_tab.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/potential_parents_tab_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/potential_parents_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/potential_parents_tab_unavailable.png"
             }
         }
     }

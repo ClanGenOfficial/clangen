@@ -2008,8 +2008,10 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'relations':
             if self.the_cat.dead:
                 self.see_relationships_button.disable()
+                self.change_adoptive_parent_button.disable()
             else:
                 self.see_relationships_button.enable()
+                self.change_adoptive_parent_button.enable()
 
             if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.exiled or self.the_cat.outside:
