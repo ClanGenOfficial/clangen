@@ -90,10 +90,8 @@
             "FIGHTER,3"
         ],
         "win_trait": [
-            "altruistic",
             "compassionate",
             "confident",
-            "empathetic",
             "faithful",
             "fierce",
             "loving",
@@ -154,10 +152,8 @@
             "FIGHTER,3"
         ],
         "win_trait": [
-            "altruistic",
             "compassionate",
             "confident",
-            "empathetic",
             "faithful",
             "fierce",
             "loving",
@@ -207,7 +203,7 @@
         "fail_text": {
             "unscathed_common": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
             "death": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, {PRONOUN/r_c/subject} {VERB/r_c/have/has} {PRONOUN/r_c/poss} fangs sunk in the dog's throat. At least {PRONOUN/r_c/subject}'ll take the beast with {PRONOUN/r_c/object}.",
-            "injury": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again."
+            "injury": "Small, yappy, but... still a dog. r_c peers down from the tree where the animal has pinned {PRONOUN/r_c/object}, wincing in pain. {PRONOUN/r_c/subject/CAP} won't underestimate these ugly creatures again."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -348,13 +344,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "p_l wouldn't be able to forgive {PRONOUN/p_l/self} if something happened to those kits. {PRONOUN/p_l/subject} {VERB/p_l/order/orders} the patrol other than r_c to go back to camp, and r_c and p_l go to bring the kits back to o_c_n.",
-            "unscathed_rare": "p_l orders the patrol except r_c back to camp. p_l and r_c grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a concerned patrol that is very happy and grateful to see the kit's safe, thanking them profusely.",
-            "stat_skill": "p_l orders the patrol to go back to camp asking that r_c be left behind to help {PRONOUN/p_l/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n their camp, with the kits squealing with joy on their back, they are greeted with relief and laughter.",
-            "stat_trait": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n they are immediately greeted by the leader who recognizes p_l knowing {PRONOUN/p_l/object} to be a kind and caring cat, and thanks both of them sincerely."
+            "unscathed_rare": "p_l orders the patrol except r_c back to camp. p_l and r_c grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a concerned patrol that is very happy and grateful to see the kits safe, thanking them profusely.",
+            "stat_skill": "p_l orders the patrol to go back to camp asking that r_c be left behind to help {PRONOUN/p_l/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n's camp, with the kits squealing with joy on their back, they are greeted with relief and laughter.",
+            "stat_trait": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l - knowing {PRONOUN/p_l/object} to be a kind and caring cat - and thanks both of them sincerely."
         },
         "fail_text": {
-            "unscathed_common": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their clan, they stop as they hear an o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with fury.",
-            "death": "As p_l crosses the border with r_c to grab the kits by their scruff, an o_c_n patrol suddenly appears looking furious, with their claws out and fangs bared! r_c gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n their warriors."
+            "unscathed_common": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their Clan, they stop as they hear a o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own Clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with fury.",
+            "death": "As p_l crosses the border with r_c to grab the kits by their scruff, a o_c_n patrol suddenly appears, looking furious, with their claws out and fangs bared! r_c gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n warriors."
         },
         "win_skills": [
             "SPEAKER,1",
@@ -375,7 +371,7 @@
         "antagonize_text": "p_l seizes the opportunity to weaken o_c_n and orders the patrol to attack and kill the kits.",
         "antagonize_fail_text": "p_l and the patrol cross the border to attack the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
         "history_text": {
-            "reg_death": "r_c was slayed by o_c_n warriors",
+            "reg_death": "r_c was slain by o_c_n warriors",
             "lead_death": "lost a life by o_c_n warriors"
         }
     },
@@ -421,7 +417,7 @@
         ],
         "min_cats": 3,
         "max_cats": 6,
-        "antagonize_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} {PRONOUN/p_l/object} patrol and sometime later an o_c_n patrol calls out to their patrol and asks if they have seen anything suspicious. p_l tells them coldly that {PRONOUN/p_l/poss} clan doesn't owe them anything and continues {PRONOUN/p_l/poss} patrol.",
+        "antagonize_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} {PRONOUN/p_l/object} patrol and sometime later an o_c_n patrol calls out to their patrol and asks if they have seen anything suspicious. p_l tells them coldly that {PRONOUN/p_l/poss} Clan doesn't owe them anything and continues {PRONOUN/p_l/poss} patrol.",
         "antagonize_fail_text": "An o_c_n patrol approaches and asks if they have seen anything odd. At the same time that p_l says no, r_c tells the o_c_n cats about the huge badger {PRONOUN/r_c/subject} saw. The o_c_n patrols thanks r_c for {PRONOUN/r_c/poss} honesty, looking angrily at p_l at the same time."
     },
     {
@@ -443,8 +439,8 @@
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l is super proud of the apprentices, they are all attentive and are asking some great questions about c_n their relations to the other clans.",
-            "unscathed_rare": "p_l is laughing at the faces the apprentices are making, as they complain about all the icky smells coming from the other clans at the border. They keep up their disgusted grimaces while asking questions about the other clans their specific cultures."
+            "unscathed_common": "p_l is super proud of the apprentices, they are all attentive and are asking some great questions about c_n their relations to the other Clans.",
+            "unscathed_rare": "p_l is laughing at the faces the apprentices are making, as they complain about all the icky smells coming from the other Clans at the border. They keep up their disgusted grimaces while asking questions about the other Clans their specific cultures."
         },
         "fail_text": {
             "unscathed_common": "p_l just can't deal with those mouse brained apprentices today. {PRONOUN/p_l/subject} had to stop app1 from crossing the border twice now. {PRONOUN/p_l/subject} order them all back to camp scolding them along the way."
