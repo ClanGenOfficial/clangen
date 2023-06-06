@@ -499,7 +499,7 @@ class CatSkills:
                     self.secondary.interest_only = False
                     
                 # If a cat doesn't can a secondary, have a small change for them to get one. 
-                if not int(random.random() * 200):
+                if not self.secondary and not int(random.random() * 200):
                     self.secondary = Skill.get_random_skill(exclude=self.primary.path)
                 
                 # If a cat is not an apprentice or kit, 
