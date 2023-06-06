@@ -40,8 +40,7 @@
 		"interactions": [
 			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
 			"m_c calls to r_c to catch {PRONOUN/m_c/subject} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
-			"m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow.",
-			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up."
+			"m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -175,6 +174,24 @@
 			"deputy",
 			"leader"
 		]
+	},
+	{
+		"id": "platonic_to_app_inc_med1",
+		"interactions": [
+			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"deputy",
+			"leader",
+			"warrior"
+		],
+		"random_status_constraint": [
+			"apprentice"
+		],
+		"reaction_random_cat": {
+			"platonic": "increase"
+		}
 	},
 	{
 		"id": "platonic_kit_inc_med1",
