@@ -36,7 +36,7 @@ class DisasterEvents():
         if int(random.random() * 1):
             return
 
-        print('new disaster')
+        # print('new disaster')
 
         possible_events = self.generate_events.possible_ongoing_events("disasters")
         final_events = []

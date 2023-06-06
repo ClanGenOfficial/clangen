@@ -486,7 +486,7 @@ class Patrol():
                 continue
             possible_stat_cats.append(kitty)
 
-        print('POSSIBLE STAT CATS',  [str(i.name) for i in possible_stat_cats])
+        # print('POSSIBLE STAT CATS',  [str(i.name) for i in possible_stat_cats])
 
         #WIN STAT CAT
         win_stat_cats = []
@@ -530,11 +530,11 @@ class Patrol():
                 
                         
         if not (win_stat_cats or fail_stat_cats):
-            print("no cats with win/fail attributes")
+            # print("no cats with win/fail attributes")
             return
         
-        print('PATROL WIN STAT', win_stat_cats)
-        print('PATROL FAIL STAT', fail_stat_cats)
+        # print('PATROL WIN STAT', win_stat_cats)
+        # print('PATROL FAIL STAT', fail_stat_cats)
         
         # Check if patrol_stat cat is 
         if fail_stat_cats:
@@ -930,7 +930,7 @@ class Patrol():
         if self.patrol_event is None:
             return
 
-        print("patrol tags: ", self.patrol_event.tags)
+        # print("patrol tags: ", self.patrol_event.tags)
 
         antagonize = antagonize
         success_text = self.patrol_event.success_text
@@ -948,7 +948,7 @@ class Patrol():
         # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
         success_chance = min(success_chance, 90)
 
-        print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
+        # print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
         
         
@@ -985,20 +985,20 @@ class Patrol():
         if success_chance >= 120:
             success_chance = 115
             skill_updates += "success chance over 120, updated to 115"
-        print(skill_updates)
+        # print(skill_updates)
         c = int(random.random() * 120)
         outcome = int(random.getrandbits(4))
-        print('ending chance', success_chance, 'vs.', c)
+        # print('ending chance', success_chance, 'vs.', c)
 
         # denotes if they get the common "basic" outcome or the rare "basic" outcome
         rare = False
         common = False
         if outcome >= 11:
             rare = True
-            print('TRY FOR RARE OUTCOME')
+            # print('TRY FOR RARE OUTCOME')
         else:
             common = True
-            print("TRY FOR COMMON OUTCOME")
+            # print("TRY FOR COMMON OUTCOME")
 
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #

@@ -108,34 +108,6 @@ class Events:
         # print(game.clan.current_season)
         self.pregnancy_events.handle_pregnancy_age(game.clan)
         self.check_war()
-
-        # if game.clan.game_mode in ['expanded', 'cruel season'
-        #                            ] and game.clan.freshkill_pile:
-        #     needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        #     # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
-        #     # print(f" -- FRESHKILL: clan needs {needed_amount} prey")
-        #     # feed the cats and update the nutrient status
-        #     relevant_cats = list(
-        #         filter(
-        #             lambda _cat: _cat.is_alive() and not _cat.exiled and
-        #                          not _cat.outside, Cat.all_cats.values()))
-        #     game.clan.freshkill_pile.time_skip(relevant_cats)
-        #     self.get_moon_freshkill()
-        #     # handle freshkill pile events, after feeding
-        #     # first 5 moons there will not be any freshkill pile event
-        #     if game.clan.age >= 5:
-        #         self.freshkill_events.handle_amount_freshkill_pile(
-        #             game.clan.freshkill_pile, relevant_cats)
-        #     # make a notification if the clan has not enough prey
-        #     if not game.clan.freshkill_pile.clan_has_enough_food(
-        #     ) and FRESHKILL_EVENT_ACTIVE:
-        #         game.cur_events_list.insert(
-        #             0,
-        #             Single_Event(
-        #                 f"{game.clan.name}Clan doesn't have enough prey for next moon!"
-        #             ))
-        #     # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
-
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
@@ -252,53 +224,53 @@ class Events:
             except:
                 SaveError(traceback.format_exc())
                 
-    def get_birth_txt(self):
-        # 1 - no parents, 2 - one parent, 3 - two parents, 4 - adoptive parents
-        birth_type = random.randint(1,4)
-        birth_txt = ""
-        if birth_type == 1:
-            birth_txt = random.choice(self.b_txt["birth_no_parents"])
-            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
-        elif birth_type == 2:
-            game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent1 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].dead:
-                game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            Cat.all_cats[game.clan.your_cat.parent1].children.append(game.clan.your_cat.ID)
-            birth_txt = random.choice(self.b_txt["birth_one_parent"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
-            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
-        elif birth_type == 3:
-            game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            while game.clan.your_cat.parent1 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent1].dead:
-                game.clan.your_cat.parent1 = random.choice(Cat.all_cats_list).ID
-            game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
-            counter = 0
-            while game.clan.your_cat.parent2 == game.clan.your_cat.parent1 or Cat.all_cats[game.clan.your_cat.parent2].age != Cat.all_cats[game.clan.your_cat.parent1].age or game.clan.your_cat.parent2 == game.clan.your_cat.ID or Cat.all_cats[game.clan.your_cat.parent1].moons < 12 or Cat.all_cats[game.clan.your_cat.parent1].moons > 100 or Cat.all_cats[game.clan.your_cat.parent2].dead:
-                counter += 1
-                if counter >= 15:
-                    game.clan.your_cat.parent2 = None
-                    Cat.all_cats[game.clan.your_cat.parent1].children.append(game.clan.your_cat.ID)
-                    birth_txt = random.choice(self.b_txt["birth_one_parent"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
-                    birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))
-                    return birth_txt
-                game.clan.your_cat.parent2 = random.choice(Cat.all_cats_list).ID
-            Cat.all_cats[game.clan.your_cat.parent1].children.append(game.clan.your_cat.ID)
-            Cat.all_cats[game.clan.your_cat.parent2].children.append(game.clan.your_cat.ID)
-            birth_txt = random.choice(self.b_txt["birth_two_parents"]).replace("parent1",str(Cat.all_cats[game.clan.your_cat.parent1].name))
-            birth_txt = birth_txt.replace("parent2", str(Cat.all_cats[game.clan.your_cat.parent2].name))
-            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))   
-        else:
-            parent1 = random.choice(Cat.all_cats_list).ID
-            while parent1 == game.clan.your_cat.ID or Cat.all_cats[parent1].moons < 12 or Cat.all_cats[parent1].dead:
-                parent1 = random.choice(Cat.all_cats_list).ID
-            parent2 = random.choice(Cat.all_cats_list).ID
-            while parent2 == parent1 or parent2 == game.clan.your_cat.ID or Cat.all_cats[parent2].moons < 12 or Cat.all_cats[parent2].dead or Cat.all_cats[parent2].age != Cat.all_cats[parent1].age:
-                parent2 = random.choice(Cat.all_cats_list).ID
-            game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
-            birth_txt = random.choice(self.b_txt["birth_adoptive_parents"]).replace("parent1",str(Cat.all_cats[parent1].name))
-            birth_txt = birth_txt.replace("parent2", str(Cat.all_cats[parent2].name))
-            birth_txt = birth_txt.replace("y_c", str(game.clan.your_cat.name))    
+    def pick_parent(self):
+        parent = random.choice(Cat.all_cats_list).ID
+        while (parent == game.clan.your_cat.ID 
+            or Cat.all_cats[parent].moons < 12 
+            or Cat.all_cats[parent].moons > 100 
+            or Cat.all_cats[parent].dead):
+            parent = random.choice(Cat.all_cats_list).ID
+        return parent
+
+    def set_birth_text(self, birth_key, replacements):
+        birth_txt = random.choice(self.b_txt[birth_key])
+        for key, value in replacements.items():
+            birth_txt = birth_txt.replace(key, str(value))
         return birth_txt
 
+    def create_inheritance(self, parent_ids):
+        for parent_id in parent_ids:
+            Cat.all_cats[parent_id].children.append(game.clan.your_cat.ID)
+            Cat.all_cats[parent_id].create_inheritance_new_cat()
+        game.clan.your_cat.create_inheritance_new_cat()
+
+    def get_birth_txt(self):
+        birth_type = random.randint(1,5)
+        
+        if birth_type == 1:
+            return self.set_birth_text("birth_no_parents", {"y_c": game.clan.your_cat.name})
+
+        elif birth_type in [2, 3, 4]:
+            game.clan.your_cat.parent1 = self.pick_parent()
+            if birth_type == 2:
+                replacements = {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name}
+                self.create_inheritance([game.clan.your_cat.parent1])
+                return self.set_birth_text("birth_one_parent", replacements)
+            else:
+                game.clan.your_cat.parent2 = self.pick_parent()
+                replacements = {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name}
+                Cat.all_cats[game.clan.your_cat.parent1].mate.append(game.clan.your_cat.parent2)
+                Cat.all_cats[game.clan.your_cat.parent2].mate.append(game.clan.your_cat.parent1)
+                self.create_inheritance([game.clan.your_cat.parent1, game.clan.your_cat.parent2])
+                return self.set_birth_text("birth_two_parents", replacements)
+                
+        else:
+            parent1, parent2 = self.pick_parent(), self.pick_parent()
+            game.clan.your_cat.adoptive_parents.extend([parent1, parent2])
+            replacements = {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name}
+            self.create_inheritance([parent1, parent2])
+            return self.set_birth_text("birth_adoptive_parents", replacements)
 
     def mediator_events(self, cat):
         """ Check for mediator events """
