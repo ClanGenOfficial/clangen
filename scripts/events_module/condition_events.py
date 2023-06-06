@@ -697,9 +697,9 @@ class Condition_Events():
                         retire_chances = {
                             'newborn': 0,
                             'kitten': 0,
-                            'adolescent': 20,
-                            'young adult': 20,
-                            'adult': 10,
+                            'adolescent': 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
+                            'young adult': 10,
+                            'adult': 5,
                             'senior adult': 5,
                             'senior': 5
                         }
@@ -716,13 +716,14 @@ class Condition_Events():
                     
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
-                        event_types.append('ceremony')
+                        retire_involved = [cat.ID]
                         if cat.age == 'adolescent':
                             event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
                                     f"kits, they're warmly welcomed into the elder's den."
                         elif game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
                                     not game.clan.leader.outside and cat.moons < 120:
+                                retire_involved.append(game.clan.leader.ID)
                                 event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
                                         f"approaches them and promises them that no one would think less of them for " \
                                         f"retiring early and that they would still be a valuable member of the Clan " \
@@ -738,7 +739,9 @@ class Condition_Events():
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()
-                        event_list.append(event)
+                        # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
+                        game.cur_events_list.append(
+                                Single_Event(event, "ceremony", retire_involved))
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
         event_triggered = False

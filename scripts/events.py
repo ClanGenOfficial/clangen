@@ -1154,11 +1154,6 @@ class Events:
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            if cat.is_disabled() and not game.settings["retirement"]:
-                                for condition in cat.permanent_condition:
-                                    if cat.permanent_condition[condition]["severity"] == "severe":
-                                        cat.status = 'apprentice'
-                                        return
                             self.ceremony(cat, 'apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
