@@ -170,7 +170,6 @@ def json_load():
             new_cat.df = cat["df"] if "df" in cat else False
 
             new_cat.outside = cat["outside"] if "outside" in cat else False
-            new_cat.retired = cat["retired"] if "retired" in cat else False
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False

@@ -1643,6 +1643,10 @@ class ChooseMateScreen(Screens):
             self.tab_buttons[ele].kill()
         self.tab_buttons = {}
         
+        self.all_mates = []
+        self.all_potential_mates = []
+        self.all_offspring = []
+        
         self.mates_cat_buttons = {}
         self.offspring_cat_buttons = {}
         self.potential_mates_buttons = {}
@@ -3974,6 +3978,9 @@ class ChooseAdoptiveParentScreen(Screens):
         for ele in self.tab_buttons:
             self.tab_buttons[ele].kill()
         self.tab_buttons = {}
+        
+        self.all_adoptive_parents = []
+        self.all_potential_parents = []
         
         self.birth_parents_buttons = {}
         self.adoptive_parents_buttons = {}
