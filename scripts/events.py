@@ -2071,7 +2071,7 @@ class Events:
     def check_and_promote_deputy(self):
         """Checks if a new deputy needs to be appointed, and appointed them if needed. """
         if (not game.clan.deputy or game.clan.deputy.dead
-                or game.clan.deputy.outside or game.clan.deputy.retired):
+                or game.clan.deputy.outside or game.clan.deputy.status == "elder"):
             if game.settings.get('deputy'):
 
                 # This determines all the cats who are eligible to be deputy.

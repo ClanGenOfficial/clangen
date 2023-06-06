@@ -222,7 +222,6 @@ class Cat():
         self.leader_death_heal = None
         self.also_got = False
         self.permanent_condition = {}
-        self.retired = False
         self.df = False
         self.experience_level = None
         self.no_kits = False
@@ -2897,7 +2896,6 @@ class Cat():
                 "former_apprentices": [appr for appr in self.former_apprentices],
                 "df": self.df,
                 "outside": self.outside,
-                "retired": self.retired if self.retired else False,
                 "faded_offspring": self.faded_offspring,
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
