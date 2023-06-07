@@ -166,7 +166,7 @@ class Cat():
             self.dead = True
             self.outside = False
             self.exiled = False
-            self.inheritance = None
+            self.inheritance = None # This should never be used, but just for safty
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
