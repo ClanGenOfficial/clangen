@@ -26,9 +26,7 @@
             "unscathed_stat": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -62,9 +60,7 @@
             "unscathed_stat": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -99,9 +95,7 @@
             "unscathed_stat": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -136,9 +130,7 @@
             "unscathed_stat": "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,

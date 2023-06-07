@@ -90,16 +90,16 @@ class GenerateEvents:
                     tags=event["tags"],
                     event_text=event_text,
                     history_text=event["history_text"] if "history_text" in event else {},
-                    cat_trait=event["cat_trait"] if "cat_negate_trait" in event else [],
-                    cat_skill=event["cat_skill"] if "cat_negate_trait" in event else [],
-                    other_cat_trait=event["other_cat_trait"] if "cat_negate_trait" in event else [],
-                    other_cat_skill=event["other_cat_skill"] if "cat_negate_trait" in event else [],
+                    cat_trait= event["cat_trait"] if "cat_trait" in event else [],
+                    cat_skill=event["cat_skill"] if "cat_skill" in event else [],
+                    other_cat_trait=event["other_cat_trait"] if "other_cat_trait" in event else [],
+                    other_cat_skill=event["other_cat_skill"] if "other_cat_skill" in event else [],
                     cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else [],
                     cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else [],
                     other_cat_negate_trait=event[
                         "other_cat_negate_trait"] if "other_cat_negate_trait" in event else [],
                     other_cat_negate_skill=event[
-                        "other_cat_negate_trait"] if "other_cat_negate_trait" in event else [],
+                        "other_cat_negate_skill"] if "other_cat_negate_skill" in event else [],
                     backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else [],
 
                     # injury event only
@@ -186,7 +186,7 @@ class GenerateEvents:
         if event_type == 'death':
             warrior_adjacent_ranks.extend(["deputy", "apprentice"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
-        elif event_type in ['injury', 'nutrition', 'misc', 'new_cat']:
+        elif event_type in ['injury', 'nutrition', 'misc_events', 'new_cat']:
             warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
 
@@ -394,15 +394,40 @@ class GenerateEvents:
                         continue
                     had_trait = True
                 if event.other_cat_skill and not had_trait:
-                    if other_cat.skill not in event.other_cat_skill and int(random.random() * 15):
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        split = _skill.split(",")
+                        
+                        if len(split) < 2:
+                            print("Cat skill incorrectly formatted", _skill)
+                            continue
+                        
+                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                            _flag = True
+                            break
+                    
+                    if not _flag and int(random.random() * 15):
                         continue
+                
                 had_trait = True
                 if event.other_cat_negate_trait:
                     if other_cat.personality.trait in event.other_cat_negate_trait and int(random.random() * 15):
                         continue
                     had_trait = False
                 if event.other_cat_negate_skill and had_trait:
-                    if other_cat.skill in event.other_cat_negate_skill and int(random.random() * 15):
+                    _flag = False
+                    for _skill in event.cat_skill:
+                        split = _skill.split(",")
+                        
+                        if len(split) < 2:
+                            print("Cat skill incorrectly formatted", _skill)
+                            continue
+                        
+                        if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                            _flag = True
+                            break
+                    
+                    if _flag and int(random.random() * 15):
                         continue
 
             else:
@@ -420,7 +445,20 @@ class GenerateEvents:
                     continue
                 had_trait = True
             if event.cat_skill and not had_trait:
-                if cat.skill not in event.cat_skill and int(random.random() * 15):
+                _flag = False
+                for _skill in event.cat_skill:
+                    split = _skill.split(",")
+                    
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+                    
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        _flag = True
+                        break
+                
+                # If the cat doesn't have the skill, and some random chance, continue. 
+                if _flag and int(random.random() * 15):
                     continue
 
             had_trait = True
@@ -429,7 +467,19 @@ class GenerateEvents:
                     continue
                 had_trait = False
             if event.cat_negate_skill and had_trait:
-                if cat.skill in event.cat_negate_skill and int(random.random() * 15):
+                _flag = False
+                for _skill in event.cat_skill:
+                    split = _skill.split(",")
+                    
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+                    
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        _flag = True
+                        break
+                
+                if _flag and int(random.random() * 15):
                     continue
 
             # determine injury severity chance
@@ -539,14 +589,14 @@ class ShortEvent:
         self.tags = tags
         self.event_text = event_text
         self.history_text = history_text
-        self.cat_trait = cat_trait
-        self.cat_skill = cat_skill
-        self.other_cat_trait = other_cat_trait
-        self.other_cat_skill = other_cat_skill
-        self.cat_negate_trait = cat_negate_trait
-        self.cat_negate_skill = cat_negate_skill
-        self.other_cat_negate_trait = other_cat_negate_trait
-        self.other_cat_negate_skill = other_cat_negate_skill
+        self.cat_trait = cat_trait if cat_trait else []
+        self.cat_skill = cat_skill if cat_skill else []
+        self.other_cat_trait = other_cat_trait if other_cat_trait else []
+        self.other_cat_skill = other_cat_skill if other_cat_skill else []
+        self.cat_negate_trait = cat_negate_trait if cat_negate_trait else []
+        self.cat_negate_skill = cat_negate_skill if cat_negate_skill else []
+        self.other_cat_negate_trait = other_cat_negate_trait if other_cat_negate_trait else []
+        self.other_cat_negate_skill = other_cat_negate_skill if other_cat_negate_skill else []
         self.backstory_constraint = backstory_constraint
 
         # for injury event

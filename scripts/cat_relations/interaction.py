@@ -278,13 +278,13 @@ def cats_fulfill_single_interaction_constraints(main_cat, random_cat, interactio
             return False
 
     if len(interaction.main_skill_constraint) >= 1:
-        if main_cat.skill not in interaction.main_skill_constraint:
+        if (main_cat.skills.primary.skill or main_cat.skills.secondary.skill) not in interaction.main_skill_constraint:
             return False
 
     if len(interaction.random_skill_constraint) >= 1:
-        if random_cat.skill not in interaction.random_skill_constraint:
+        if (random_cat.skills.primary.skill or random_cat.skills.secondary.skill) not in interaction.random_skill_constraint:
             return False
-
+        
     if len(interaction.backstory_constraint) >= 1:
         if "m_c" in interaction.backstory_constraint:
             if main_cat.backstory not in interaction.backstory_constraint["m_c"]:

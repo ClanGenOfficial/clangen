@@ -83,8 +83,7 @@
             "stat_injury": "Even though s_c made it out, {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} someone pushed {PRONOUN/s_c/object}, and blame r_c. r_c denies it and says they should get s_c back to camp to get {PRONOUN/s_c/poss} injury looked at."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -153,8 +152,7 @@
             "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -224,8 +222,7 @@
             "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -285,9 +282,7 @@
             "injury": "r_c eventually manages to pull {PRONOUN/r_c/object} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some beach grass to shelter in through the night out on the shore until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the medicine den."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -371,9 +366,7 @@
             "unscathed_stat": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and slink straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -418,9 +411,7 @@
             "unscathed_stat": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -465,9 +456,7 @@
             "unscathed_stat": "s_c wavers in {PRONOUN/s_c/poss} decision. {PRONOUN/s_c/subject/CAP} {VERB/s_c/have/haves} so much work to do, so many other things demanding {PRONOUN/s_c/poss} time... No, definitely not. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} around and march straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -515,9 +504,7 @@
             "unscathed_common": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -550,9 +537,7 @@
             "unscathed_common": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. "
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -586,9 +571,7 @@
             "unscathed_common": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/subject} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -622,9 +605,7 @@
             "unscathed_common": "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -780,7 +761,7 @@
             "unscathed_common": "r_c spots p_l looking at {PRONOUN/r_c/object} a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -823,7 +804,7 @@
             "unscathed_common": "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -907,15 +888,11 @@
         "fail_text": {
             "unscathed_common": "A sudden storm cuts off p_l's words and the patrol sprints back to camp to get warm and dry."
         },
-        "win_skills": [
-            "None"
-        ],
+        "win_skills": [],
         "win_trait": [
             "None"
         ],
-        "fail_skills": [
-            "None"
-        ],
+        "fail_skills": [],
         "fail_trait": [
             "None"
         ],

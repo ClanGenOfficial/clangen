@@ -8,6 +8,7 @@ This class will be used to check for relations while mating and for the display 
 
 """  # pylint: enable=line-too-long
 from enum import Enum  # pylint: disable=no-name-in-module
+from scripts.game_structure.game_essentials import game
 
 class RelationType(Enum):
     """An enum representing the possible age groups of a cat"""
@@ -188,8 +189,6 @@ class Inheritance():
 
     def init_parents(self):
         """Initial the class, with the focus of the parent relation."""
-        new_adoptive_parents = []
-
         # by blood
         current_parent_ids = self.get_blood_parents()
         for relevant_id in current_parent_ids:
@@ -202,24 +201,6 @@ class Inheritance():
             }
             self.all_involved.append(relevant_id)
             self.all_but_cousins.append(relevant_id)
-
-            # adoptive parents (mates of blood parents)
-            for relevant_id in current_parent_ids:
-                for mate_id in relevant_cat.mate:
-                    # add it also to the list of adoptive parents of the cat itself
-                    if mate_id not in self.cat.adoptive_parents and mate_id not in self.get_blood_parents():
-                        new_adoptive_parents.append(mate_id)
-                        self.need_update.append(mate_id)
-                    if mate_id not in self.parents:
-                        self.parents[mate_id] = {
-                            "type": RelationType.ADOPTIVE,
-                            "additional": [f"mate from {str(relevant_cat.name)}"]
-                        }
-                        self.all_but_cousins.append(mate_id)
-                        self.all_involved.append(mate_id)
-                        self.other_mates.append(mate_id)
-                    elif mate_id not in self.get_blood_parents():
-                        self.parents[mate_id]["additional"].append(f"mate from {str(relevant_cat.name)}")
 
         # adoptive
         current_parent_ids = self.get_no_blood_parents()
@@ -234,11 +215,6 @@ class Inheritance():
             }
             self.all_involved.append(relevant_id)
             self.all_but_cousins.append(relevant_id)
-
-        # update the adoptive parents of the current cat
-        for new_adoptive_parent_id in new_adoptive_parents:
-            if new_adoptive_parent_id not in self.cat.adoptive_parents:
-                self.cat.adoptive_parents.append(new_adoptive_parent_id)
 
     def init_mates(self):
         """Initial the class, with the focus of the mates relation."""

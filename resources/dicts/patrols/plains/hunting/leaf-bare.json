@@ -30,8 +30,7 @@
             "injury": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -72,8 +71,7 @@
             "injury": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in the mouth of a rabbit warren, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
         },
         "win_skills": [
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -111,8 +109,7 @@
             "injury": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
         },
         "win_skills": [
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -161,9 +158,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -219,9 +214,7 @@
             "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -277,8 +270,7 @@
             "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,2"
         ],
         "win_trait": [
             "adventurous",
@@ -331,9 +323,7 @@
             "unscathed_stat": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -391,9 +381,7 @@
             "stat_injury": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens them with snapping teeth, sinking them into s_c and giving them bigger problems than scavenging from a carcass."
         },
         "win_skills": [
-            "good fighter",
-            "great fighter",
-            "excellent fighter"
+            "FIGHTER,1"
         ],
         "win_trait": [
             "altruistic",
@@ -447,9 +435,7 @@
             "unscathed_common": "p_l tries their best, but they can't flush out or reach the sleeping squirrel."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -576,9 +562,7 @@
             "unscathed_common": "They search as hard as they can, but can never quite seem to find where the squirrels are hiding. Oh well."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -607,9 +591,7 @@
         "chance_of_success": 40,
         "exp": 10,
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -736,9 +718,7 @@
             "unscathed_common": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
         },
         "win_skills": [
-            "good hunter",
-            "great hunter",
-            "fantastic hunter"
+            "HUNTER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,

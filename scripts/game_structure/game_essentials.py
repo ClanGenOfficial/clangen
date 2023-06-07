@@ -115,13 +115,6 @@ class Game():
         'biome': None,
         'camp_bg': None,
         'language': 'english',
-        'search_text': '',
-        'map_selection': (0, 0),
-        'world_seed': None,
-        'camp_site': (0, 0),
-        'choosing_camp': False,
-        'hunting_territory': (0, 0),
-        'training_territory': (0, 0),
         'options_tab': None,
         'profile_tab_group': None,
         'sub_tab_group': None,
@@ -195,7 +188,7 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-        
+
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int=15):
         """ If write_data is not a string, assumes you want this

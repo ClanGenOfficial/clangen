@@ -76,9 +76,7 @@
             "injury": "While r_c is carefully sniffing at the burrow entrance, there's a clatter of rocks behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "patient",
@@ -146,9 +144,7 @@
             "injury": "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "patient",
@@ -220,8 +216,7 @@
             "stat_injury": "Even though s_c made it out, they swear someone pushed them, and blame r_c. r_c denies it and says they should get s_c back to camp to get their injury looked at."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -289,8 +284,7 @@
             "injury": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -360,8 +354,7 @@
             "injury": "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
         },
         "win_skills": [
-            "very smart",
-            "extremely smart"
+            "CLEVER,2"
         ],
         "win_trait": [
             "altruistic",
@@ -421,9 +414,7 @@
             "injury": "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a small cave to shelter in through the night on the cold mountain until a patrol finds them the next morning and helps them to the medicine den."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -507,9 +498,7 @@
             "unscathed_stat": "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -554,9 +543,7 @@
             "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and go straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -601,9 +588,7 @@
             "unscathed_stat": "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and go straight back to camp."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "win_trait": [
             "adventurous",
@@ -694,7 +679,7 @@
             "unscathed_stat": "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
         },
         "win_skills": [
-            "fantastic hunter"
+            "HUNTER,3"
         ],
         "win_trait": [
             "adventurous",
@@ -737,9 +722,7 @@
             "unscathed_common": "app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -772,9 +755,7 @@
             "unscathed_common": "app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -808,9 +789,7 @@
             "unscathed_common": "app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -844,9 +823,7 @@
             "unscathed_common": "app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
         },
         "win_skills": [
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "TEACHER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -879,12 +856,8 @@
             "unscathed_common": "app1 screeches, and the kea shrieks back, an huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?"
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good teacher",
-            "great teacher",
-            "fantastic teacher"
+            "SPEAKER,1",
+            "TEACHER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,

@@ -23,10 +23,8 @@
             "unscathed_stat": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd..."
         },
         "win_skills": [
-            "good storyteller",
-            "great storyteller",
-            "fantastic storyteller",
-            "excellent speaker"
+            "STORY,1",
+            "SPEAKER,3"
         ],
         "win_trait": [
             "adventurous"

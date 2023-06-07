@@ -29,9 +29,7 @@
             "unscathed_stat": "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -72,12 +70,8 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "SPEAKER,1",
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -117,7 +111,7 @@
             "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -165,7 +159,7 @@
             "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -210,7 +204,7 @@
             "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -249,7 +243,7 @@
             "injury": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -297,7 +291,7 @@
             "injury": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -342,7 +336,7 @@
             "injury": "The patrol digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, empty-pawed and miserable."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -381,7 +375,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -429,7 +423,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -474,7 +468,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any daisies under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -513,7 +507,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -561,7 +555,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -605,7 +599,7 @@
             "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -645,7 +639,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -694,7 +688,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -739,7 +733,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -780,7 +774,7 @@
             "injury": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -830,7 +824,7 @@
             "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -876,7 +870,7 @@
             "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,

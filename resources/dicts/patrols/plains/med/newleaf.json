@@ -28,9 +28,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -70,12 +68,8 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "SPEAKER,1",
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -111,7 +105,7 @@
             "unscathed_common": "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -151,7 +145,7 @@
             "unscathed_common": "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -188,7 +182,7 @@
             "unscathed_common": "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -220,7 +214,7 @@
             "unscathed_common": "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -260,7 +254,7 @@
             "unscathed_common": "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -297,7 +291,7 @@
             "unscathed_common": "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -329,7 +323,7 @@
             "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -369,7 +363,7 @@
             "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -406,7 +400,7 @@
             "unscathed_common": "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -438,7 +432,7 @@
             "unscathed_common": "It's alright to fail, p_l reminds themselves. At least they know where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -477,7 +471,7 @@
             "unscathed_common": "app1 loses their head over the catmint, and p_l is forced to cancel the gathering patrol to take them back to camp until they regain their sense."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -515,7 +509,7 @@
             "unscathed_common": "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. The one catmint plant they successfully find ends up with their helpers rolling around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -548,7 +542,7 @@
             "unscathed_common": "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -588,7 +582,7 @@
             "unscathed_common": "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude about it doesn't help, either."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -626,7 +620,7 @@
             "unscathed_common": "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about what they see as little more than weeds."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -658,7 +652,7 @@
             "unscathed_common": "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -698,7 +692,7 @@
             "unscathed_common": "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment and app1's shock."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -734,7 +728,7 @@
             "unscathed_common": "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -771,8 +765,8 @@
             "unscathed_common": "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -811,8 +805,8 @@
             "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -853,8 +847,8 @@
             "injury": "The cats search and search until their pawpads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
-            "keen eye",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,3"
         ],
         "win_trait": [
             "patient"
@@ -893,7 +887,7 @@
             "unscathed_common": "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -933,7 +927,7 @@
             "unscathed_common": "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude about it doesn't help, either."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -970,7 +964,7 @@
             "unscathed_common": "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about what they see as little more than weeds."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1003,7 +997,7 @@
             "unscathed_common": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1043,7 +1037,7 @@
             "unscathed_common": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1081,7 +1075,7 @@
             "unscathed_common": "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1113,7 +1107,7 @@
             "unscathed_common": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1153,7 +1147,7 @@
             "unscathed_common": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1190,7 +1184,7 @@
             "unscathed_common": "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1222,7 +1216,7 @@
             "unscathed_common": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1262,7 +1256,7 @@
             "unscathed_common": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1298,7 +1292,7 @@
             "unscathed_common": "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1332,7 +1326,7 @@
             "injury": "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1374,7 +1368,7 @@
             "injury": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1412,7 +1406,7 @@
             "injury": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1445,7 +1439,7 @@
             "unscathed_common": "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1485,7 +1479,7 @@
             "unscathed_common": "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1523,7 +1517,7 @@
             "unscathed_common": "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1556,7 +1550,7 @@
             "unscathed_common": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1596,7 +1590,7 @@
             "unscathed_common": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1634,7 +1628,7 @@
             "unscathed_common": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1667,7 +1661,7 @@
             "unscathed_common": "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1707,7 +1701,7 @@
             "unscathed_common": "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1745,7 +1739,7 @@
             "unscathed_common": "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1777,7 +1771,7 @@
             "unscathed_common": "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1817,7 +1811,7 @@
             "unscathed_common": "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l and app1 even had a chance to harvest them."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1854,7 +1848,7 @@
             "unscathed_common": "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -1886,9 +1880,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1928,9 +1920,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1967,9 +1957,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "smart",
-            "very smart",
-            "extremely smart"
+            "CLEVER,1"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -2001,7 +1989,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -2041,7 +2029,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -2078,7 +2066,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -2110,7 +2098,7 @@
             "unscathed_common": "p_l has no time - and no thyme. They're forced to give up on the search for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -2150,7 +2138,7 @@
             "unscathed_common": "p_l has no time - and no thyme. They're forced to give up on the search for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -2187,7 +2175,7 @@
             "unscathed_common": "p_l has no time - and no thyme. They're forced to give up on the search for today."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -2219,7 +2207,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -2259,7 +2247,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -2296,7 +2284,7 @@
             "unscathed_common": "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,

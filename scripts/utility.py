@@ -223,7 +223,8 @@ def create_new_cat(Cat,
                    gender=None,
                    thought='Is looking around the camp with wonder',
                    alive=True,
-                   outside=False):
+                   outside=False
+	):
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class
@@ -234,7 +235,7 @@ def create_new_cat(Cat,
     :param kit: set True if the cat is a lone kitten - default: False
     :param litter: set True if a litter of kittens needs to be generated - default: False
     :param other_clan: if new cat(s) are from a neighboring clan, pass the name of their home Clan - default: None
-    :param backstory: a list of possible backstories for the new cat(s) - default: None
+    :param backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
@@ -243,10 +244,8 @@ def create_new_cat(Cat,
     :param outside: set this as True to generate the cat as an outsider instead of as part of the clan - default: False (clan cat)
     """
     accessory = None
-    if type(backstory) == list:
+    if isinstance(backstory, list):
         backstory = choice(backstory)
-    else:
-        backstory = backstory
 
     if backstory in (
             Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
@@ -348,8 +347,8 @@ def create_new_cat(Cat,
             new_cat.update_mentor()
 
         # Remove disabling scars, if they generated.
-        not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
-                       'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
+        not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 
+                       'LEFTBLIND', 'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
         for scar in new_cat.pelt.scars:
             if scar in not_allowed:
                 new_cat.pelt.scars.remove(scar)
@@ -519,14 +518,6 @@ def get_personality_compatibility(cat1, cat2):
         False - if personalities have a negative compatibility
         None - if personalities have a neutral compatibility
     """
-    cat_1_lawfulness = cat1.personality.lawfulness
-    cat_1_sociability = cat1.personality.sociability
-    cat_1_aggression = cat1.personality.aggression
-    cat_1_stability = cat1.personality.stability
-    cat_2_lawfulness = cat2.personality.lawfulness
-    cat_2_sociability = cat2.personality.sociability
-    cat_2_aggression = cat2.personality.aggression
-    cat_2_stability = cat2.personality.stability
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
 
@@ -535,16 +526,22 @@ def get_personality_compatibility(cat1, cat2):
             return None
         return True
 
-    lawfulness_diff = abs(cat_1_lawfulness - cat_2_lawfulness)
-    sociability_diff = abs(cat_1_sociability - cat_2_sociability)
-    aggression_diff = abs(cat_1_aggression - cat_2_aggression)
-    stability_diff = abs(cat_1_stability - cat_2_stability)
+    lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
+    sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
+    aggression_diff = abs(cat1.personality.aggression - cat2.personality.aggression)
+    stability_diff = abs(cat1.personality.stability - cat2.personality.stability)
+    list_of_differences = [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]
 
-    if all(4 >= diff_value and diff_value >= 0 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    running_total = 0
+    for x in list_of_differences:
+        if x <= 4:
+            running_total += 1
+        elif x >= 8:
+            running_total -= 1
+
+    if running_total >= 2:
         return True
-    elif all(7 >= diff_value and diff_value >= 5 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
-        return None
-    elif all(17 > diff_value and diff_value >= 8 for diff_value in [lawfulness_diff, sociability_diff, aggression_diff, stability_diff]):
+    if running_total <= -2:
         return False
 
     return None
@@ -665,14 +662,14 @@ def change_relationship_values(cats_to: list,
             if you don't want this to happen, then set auto_romance to False
 
     use the relationship value params to indicate how much the values should change.
-    """
-    '''# this is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
+    
+    This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True'''
+        changed = True"""
 
     # pick out the correct cats
     for kitty in cats_from:
@@ -737,6 +734,7 @@ def pronoun_repl(m, cat_pronouns_dict):
 
 
 def name_repl(m, cat_dict):
+    ''' Name replacement '''
     return cat_dict[m.group(0)][0]
 
 
@@ -1093,7 +1091,7 @@ def adjust_patrol_text(text, patrol):
         text = 'This should not appear, report as a bug please!'
 
     replace_dict = {
-        "p_l": (patrol.patrol_leader_name, choice(patrol.patrol_leader.pronouns)),
+        "p_l": (str(patrol.patrol_leader.name), choice(patrol.patrol_leader.pronouns)),
     }
 
     if patrol.patrol_random_cat:
@@ -1103,31 +1101,32 @@ def adjust_patrol_text(text, patrol):
         replace_dict["r_c"] = (str(patrol.patrol_leader_name),
                                choice(patrol.patrol_leader.pronouns))
 
-    if len(patrol.patrol_other_cats) >= 1:
-        replace_dict['o_c1'] = (str(patrol.patrol_other_cats[0].name),
-                                choice(patrol.patrol_other_cats[0].pronouns))
-    if len(patrol.patrol_other_cats) >= 2:
-        replace_dict['o_c2'] = (str(patrol.patrol_other_cats[1].name),
-                                choice(patrol.patrol_other_cats[1].pronouns))
-    if len(patrol.patrol_other_cats) >= 3:
-        replace_dict['o_c3'] = (str(patrol.patrol_other_cats[2].name),
-                                choice(patrol.patrol_other_cats[2].pronouns))
-    if len(patrol.patrol_other_cats) == 4:
-        replace_dict['o_c4'] = (str(patrol.patrol_other_cats[3].name),
-                                choice(patrol.patrol_other_cats[3].pronouns))
+    other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
+    if len(other_cats) >= 1:
+        replace_dict['o_c1'] = (str(other_cats[0].name),
+                                choice(other_cats[0].pronouns))
+    if len(other_cats) >= 2:
+        replace_dict['o_c2'] = (str(other_cats[1].name),
+                                choice(other_cats[1].pronouns))
+    if len(other_cats) >= 3:
+        replace_dict['o_c3'] = (str(other_cats[2].name),
+                                choice(other_cats[2].pronouns))
+    if len(other_cats) == 4:
+        replace_dict['o_c4'] = (str(other_cats[3].name),
+                                choice(other_cats[3].pronouns))
 
-    if patrol.app1:
-        replace_dict["app1"] = (str(patrol.app1.name), choice(patrol.app1.pronouns))
-    if patrol.app2:
-        replace_dict["app2"] = (str(patrol.app2.name), choice(patrol.app2.pronouns))
-    if patrol.app3:
-        replace_dict["app3"] = (str(patrol.app3.name), choice(patrol.app3.pronouns))
-    if patrol.app4:
-        replace_dict["app4"] = (str(patrol.app4.name), choice(patrol.app4.pronouns))
-    if patrol.app5:
-        replace_dict["app5"] = (str(patrol.app5.name), choice(patrol.app5.pronouns))
-    if patrol.app6:
-        replace_dict["app6"] = (str(patrol.app6.name), choice(patrol.app6.pronouns))
+    if len(patrol.patrol_apprentices) > 0:
+        replace_dict["app1"] = (str(patrol.patrol_apprentices[0].name), choice(patrol.patrol_apprentices[0].pronouns))
+    if len(patrol.patrol_apprentices) > 1:
+        replace_dict["app2"] = (str(patrol.patrol_apprentices[1].name), choice(patrol.patrol_apprentices[1].pronouns))
+    if len(patrol.patrol_apprentices) > 2:
+        replace_dict["app3"] = (str(patrol.patrol_apprentices[2].name), choice(patrol.patrol_apprentices[2].pronouns))
+    if len(patrol.patrol_apprentices) > 3:
+        replace_dict["app4"] = (str(patrol.patrol_apprentices[3].name), choice(patrol.patrol_apprentices[3].pronouns))
+    if len(patrol.patrol_apprentices) > 4:
+        replace_dict["app5"] = (str(patrol.patrol_apprentices[4].name), choice(patrol.patrol_apprentices[4].pronouns))
+    if len(patrol.patrol_apprentices) > 5:
+        replace_dict["app6"] = (str(patrol.patrol_apprentices[5].name), choice(patrol.patrol_apprentices[5].pronouns))
 
     stat_cat = None
     if patrol.patrol_win_stat_cat:
@@ -1137,7 +1136,7 @@ def adjust_patrol_text(text, patrol):
     if stat_cat:
         replace_dict['s_c'] = (str(stat_cat.name), choice(stat_cat.pronouns))
     else:
-        replace_dict['s_c'] = (str(patrol.patrol_leader_name),
+        replace_dict['s_c'] = (str(patrol.patrol_leader.name),
                                choice(patrol.patrol_leader.pronouns))
 
     text = process_text(text, replace_dict)

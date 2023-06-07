@@ -174,6 +174,7 @@ class Relationship():
         ))
 
     def adjust_interaction_string(self, string):
+        ''' Adjusts the string text for viewing '''
 
         cat_dict = {
             "m_c": (str(self.cat_from.name), choice(self.cat_from.pronouns)),

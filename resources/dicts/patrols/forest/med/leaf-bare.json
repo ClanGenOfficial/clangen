@@ -28,9 +28,7 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker"
+            "SPEAKER,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -70,12 +68,8 @@
             "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
-            "good speaker",
-            "great speaker",
-            "excellent speaker",
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+            "SPEAKER,1",
+            "MEDIATOR,1"
         ],
         "fail_trait": [
             "troublesome",
@@ -113,7 +107,7 @@
             "injury": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -159,7 +153,7 @@
             "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -201,7 +195,7 @@
             "injury": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -238,7 +232,7 @@
             "injury": "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -284,7 +278,7 @@
             "injury": "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -326,7 +320,7 @@
             "injury": "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -363,7 +357,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -409,7 +403,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -451,7 +445,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -488,7 +482,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -534,7 +528,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -576,7 +570,7 @@
             "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -614,7 +608,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -661,7 +655,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -704,7 +698,7 @@
             "injury": "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -744,7 +738,7 @@
             "injury": "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -792,7 +786,7 @@
             "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -836,7 +830,7 @@
             "injury": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "min_cats": 3,
         "max_cats": 6,

@@ -74,38 +74,38 @@ class Clan():
 
     layouts = {
         "default": {
-            'leader den': (688, 188),
-            'medicine den': (160, 400),
+            'leader den': (688, 200),
+            'medicine den': (210, 400),
             'nursery': (1240, 400),
-            'clearing': (720, 589),
-            'apprentice den': (164, 860),
-            'warrior den': (1180, 860),
+            'clearing': (635, 570),
+            'apprentice den': (140, 820),
+            'warrior den': (1230, 880),
             'elder den': (696, 980),
-            'leader place': [([750, 240], "xy"), ([700, 340], "xy"),
-                             ([800, 340], "xy")],
-            'medicine place': [([140, 500], "xy"), ([240, 500], "xy"),
-                               ([340, 500], "xy"), ([200, 600], "xy"),
-                               ([300, 600], "xy")],
+            'leader place': [([750, 390], "xy"), ([920, 205], "xy"),
+                             ([950, 538], "xy")],
+            'medicine place': [([160, 540], "xy"), ([254, 570], "xy"),
+                               ([416, 546], "xy"), ([330, 660], "xy"),
+                               ([80, 368], "xy")],
             'nursery place': [([1170, 600], "xy"), ([1200, 500], "xy"),
                               ([1300, 500], "xy"), ([1070, 600], "xy"),
                               ([1970, 600], "xy"), ([1270, 600], "xy"),
                               ([1370, 600], "xy"), ([1060, 700], "xy"),
                               ([1160, 700], "xy"), ([1260, 700], "xy"),
                               ([1360, 700], "xy")],
-            'clearing place': [([750, 640], "xy"), ([600, 740], "xy"),
-                               ([700, 740], "xy"), ([800, 740], "xy"),
-                               ([600, 840], "xy"), ([700, 840], "xy"),
-                               ([800, 840], "xy")],
-            'apprentice place': [([140, 940], "xy"), ([240, 940], "xy"),
-                                 ([340, 940], "xy"), ([200, 1040], "xy"),
-                                 ([300, 1040], "xy"), ([400, 1040], "xy")],
-            'warrior place': [([1400, 940], "xy"), ([1100, 980], "xy"),
-                              ([1200, 940], "xy"), ([1300, 980], "xy"),
-                              ([1400, 1040], "xy"), ([1100, 1080], "xy"),
-                              ([1200, 1040], "xy"), ([1300, 1080], "xy")],
-            'elder place': [([840, 1140], "xy"), ([700, 1040], "xy"),
-                            ([800, 1040], "xy"), ([640, 1140], "xy"),
-                            ([740, 1140], "xy")]
+            'clearing place': [([710, 640], "xy"), ([590, 700], "xy"),
+                               ([750, 740], "xy"), ([870, 720], "xy"),
+                               ([650, 810], "xy"), ([800, 840], "xy"),
+                               ([950, 820], "xy")],
+            'apprentice place': [([140, 920], "xy"), ([250, 940], "xy"),
+                                 ([330, 920], "xy"), ([240, 1040], "xy"),
+                                 ([300, 1020], "xy"), ([70, 990], "xy")],
+            'warrior place': [([1260, 980], "xy"), ([1378, 1000], "xy"),
+                              ([1480, 1052], "xy"), ([1214, 1050], "xy"),
+                              ([1415, 1162], "xy"), ([1310, 1150], "xy"),
+                              ([1254, 1100], "xy"), ([1340, 1070], "xy")],
+            'elder place': [([890, 1140], "xy"), ([700, 1040], "xy"),
+                            ([800, 1040], "xy"), ([690, 1140], "xy"),
+                            ([790, 1140], "xy")]
         },
         "Forestcamp2": {
             'leader den': (688, 188),
@@ -426,8 +426,6 @@ class Clan():
                  deputy=None,
                  medicine_cat=None,
                  biome='Forest',
-                 world_seed=6616,
-                 camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
                  starting_members=[],
@@ -464,8 +462,6 @@ class Clan():
             self.instructor = None
             # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
-            self.world_seed = world_seed
-            self.camp_site = camp_site
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
@@ -706,7 +702,8 @@ class Clan():
                     else:
                         game.clan.medicine_cat = None
 
-    def switch_clans(self, clan):
+    @staticmethod
+    def switch_clans(clan):
         """
         TODO: DOCS
         """
@@ -723,9 +720,6 @@ class Clan():
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
-            "worldseed": self.world_seed,
-            "camp_site_1": self.camp_site[0],
-            "camp_site_2": self.camp_site[1],
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
@@ -880,8 +874,6 @@ class Clan():
                              Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
-                             world_seed=int(general[4]),
-                             camp_site=(int(general[5]), int(general[6])),
                              game_mode=general[7])
             game.clan.reputation = general[8]
         elif len(general) == 8:
@@ -898,8 +890,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
                 game_mode=general[7],
             )
         elif len(general) == 7:
@@ -914,8 +904,6 @@ class Clan():
                 Cat.all_cats.get(med_cat_info[0], None),
                 biome=general[2],
                 camp_bg=general[3],
-                world_seed=int(general[4]),
-                camp_site=(int(general[5]), int(general[6])),
             )
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
@@ -1017,8 +1005,6 @@ class Clan():
                          med_cat,
                          biome=clan_data["biome"],
                          camp_bg=clan_data["camp_bg"],
-                         camp_site=(int(clan_data["camp_site_1"]),
-                                    int(clan_data["camp_site_2"])),
                          game_mode=clan_data["gamemode"])
 
         game.clan.reputation = int(clan_data["reputation"])
@@ -1070,9 +1056,7 @@ class Clan():
 
         # Patrolled cats
         if "patrolled_cats" in clan_data:
-            for cat in clan_data["patrolled_cats"]:
-                if cat in Cat.all_cats:
-                    game.patrolled.append(Cat.all_cats[cat])
+            game.patrolled = clan_data["patrolled_cats"]
 
         # Mediated flag
         if "mediated" in clan_data:
@@ -1134,7 +1118,7 @@ class Clan():
 
     def load_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Load the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return
@@ -1147,7 +1131,7 @@ class Clan():
 
     def save_pregnancy(self, clan):
         """
-        TODO: DOCS
+        Save the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
         if not game.clan.name:
             return
