@@ -284,6 +284,13 @@ class Events:
             return self.handle_birth_one_parent(siblings, sibling_text)
         else:
             game.clan.your_cat.parent2 = self.pick_valid_parent()
+            counter = 0
+            while game.clan.your_cat.parent1 == game.clan.your_cat.parent2 and Cat.all_cats[game.clan.your_cat.parent1].age == Cat.all_cats[game.clan.your_cat.parent1].age:
+                counter+=1
+                if counter > 15:
+                    game.clan.your_cat.parent2 = None
+                    return self.handle_birth_one_parent(siblings, sibling_text)
+                game.clan.your_cat.parent2 = self.pick_valid_parent()
             return self.handle_birth_two_parents(siblings, sibling_text)
 
     def handle_birth_one_parent(self, siblings, sibling_text):
