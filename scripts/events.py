@@ -229,11 +229,11 @@ class Events:
                 SaveError(traceback.format_exc())
                 
     def pick_valid_parent(self):
-        while True:
+        parent = random.choice(Cat.all_cats_list).ID
+        while parent == game.clan.your_cat.ID or Cat.all_cats[parent].moons < 12 or Cat.all_cats[parent].moons > 100 or Cat.all_cats[parent].dead:
             parent = random.choice(Cat.all_cats_list).ID
-            parent_cat = Cat.all_cats[parent]
-            if parent != game.clan.your_cat.ID and 12 <= parent_cat.moons <= 100 and not parent_cat.dead:
-                return parent
+        return parent
+        
 
     def set_birth_text(self, birth_key, replacements):
         birth_txt = random.choice(self.b_txt[birth_key])
@@ -264,7 +264,7 @@ class Events:
         num_siblings = random.choice([0, 0, 0, 2, 2])
         siblings, sibling_text = self.create_siblings(num_siblings)
 
-        birth_type = random.randint(1,5)
+        birth_type = 3
         if birth_type == 1:
             return self.handle_birth_no_parents(siblings, sibling_text)
         elif birth_type in [2, 3, 4]:
@@ -285,7 +285,7 @@ class Events:
         else:
             game.clan.your_cat.parent2 = self.pick_valid_parent()
             counter = 0
-            while game.clan.your_cat.parent1 == game.clan.your_cat.parent2 and Cat.all_cats[game.clan.your_cat.parent1].age == Cat.all_cats[game.clan.your_cat.parent1].age:
+            while game.clan.your_cat.parent1 == game.clan.your_cat.parent2 or Cat.all_cats[game.clan.your_cat.parent1].age != Cat.all_cats[game.clan.your_cat.parent2].age:
                 counter+=1
                 if counter > 15:
                     game.clan.your_cat.parent2 = None
