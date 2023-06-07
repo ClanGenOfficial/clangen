@@ -285,6 +285,13 @@ class Patrol():
         # possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_GEN))
         if game.clan.your_cat.status == 'kitten':
             possible_patrols.extend(self.generate_patrol_events(self.kit_lifegen))
+        elif game.clan.your_cat.status == 'apprentice' or game.clan.your_cat.status == 'medicine cat apprentice':
+            possible_patrols.extend(self.generate_patrol_events(self.app_lifegen))
+        elif game.clan.your_cat.status == 'elder':
+            possible_patrols.extend(self.generate_patrol_events(self.elder_lifegen))
+        else:
+            possible_patrols.extend(self.generate_patrol_events(self.warrior_lifegen))
+
 
         # if game_setting_disaster:
         #     dis_chance = int(random.getrandbits(3))  # disaster patrol chance

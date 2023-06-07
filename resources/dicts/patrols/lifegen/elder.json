@@ -1,1 +1,92 @@
-[]
+[{
+    "patrol_id": "gen_your_cat40",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A young apprentice approaches you, curious to hear about your past adventures. You reminisce, wondering whether you should indulge them with a story.",
+    "success_text": {
+    "unscathed_common": "You decide to share a story, captivating the apprentice with tales of your past. They hang on your every word, awestruck and inspired by your experiences."
+    },
+    "fail_text": {
+    "unscathed_common": "You attempt to recount a tale, but the details seem fuzzy. What did you do again?"
+    },
+    "decline_text": "You politely decline, feeling tired. The apprentice is understanding and promises to return another time for your tales.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "win_skills": [
+    "excellent storyteller"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat42",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "The leader asks for your opinion on a dispute between two warriors. You feel respected, knowing that your wisdom is still valued.",
+    "success_text": {
+    "unscathed_common": "You weigh the situation and provide a fair resolution. The leader appreciates your wisdom, and the warriors agree to your solution."
+    },
+    "fail_text": {
+    "unscathed_common": "You attempt to mediate, but the warriors seem unconvinced. The leader decides to handle the matter personally."
+    },
+    "decline_text": "You politely decline, feeling unsure about your ability to resolve the issue. The leader respects your decision and turns to other clan members for advice.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+    "very wise"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat43",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A kit comes running up to you, asking for a play fight. Despite your old bones, you consider their request, remembering your own playful youth.",
+    "success_text": {
+    "unscathed_common": "You agree and have a gentle play fight with the kit. They squeal in delight and declare you the best playmate ever."
+    },
+    "fail_text": {
+    "unscathed_common": "You agree to the play fight but soon find your joints complaining."
+    },
+    "decline_text": "You decline, explaining that you're too old for play fighting. The kit seems disappointed but understands. They scamper off to find another playmate.",
+    "chance_of_success": 45,
+    "exp": 10,
+    "win_skills": [
+    "kind"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat44",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A young warrior offers to fetch you fresh-kill. You contemplate whether you should accept or insist on doing it yourself for old times' sake.",
+    "success_text": {
+    "unscathed_common": "You graciously accept their offer and enjoy a well-chosen piece of fresh-kill. The young warrior seems pleased to be of help."
+    },
+    "fail_text": {
+    "unscathed_common": "You decide to do it yourself but find that you're not as fast as you used to be. The warrior steps in, understanding your desire to be independent."
+    },
+    "decline_text": "You politely decline, deciding to fetch your own meal. The young warrior nods respectfully and offers their help should you need it later.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+    "independent"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    }]

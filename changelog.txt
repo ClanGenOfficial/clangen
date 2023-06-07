@@ -1,3 +1,12 @@
+<strong>v0.1.3</strong>
+- Fixed several bugs
+- Added additional flavor text
+- Added siblings! You now have a chance to have siblings upon birth
+- Added more patrols
+- Elders can now 'patrol'
+- New menus
+- Clan events are now shown in the Misc tab
+
 <strong>v0.1.2</strong>
 - Fixed several bugs
 - Added additional flavor text

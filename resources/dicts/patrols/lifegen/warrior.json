@@ -78,9 +78,6 @@
         "min_cats": 1,
         "max_cats": 3
     },
-    
-   
-   
     {
         "patrol_id": "gen_your_cat15",
         "biome": "Any",
@@ -109,8 +106,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "training",
-            "warrior"
+            "training"
         ],
         "intro_text": "An apprentice is struggling with their battle moves.",
         "success_text": {
@@ -173,6 +169,235 @@
         ],
         "min_cats": 1,
         "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat30",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "patrol"
+        ],
+        "intro_text": "The clan leader assigns you to lead a hunting patrol. It's your chance to prove your leadership skills and help provide for the clan.",
+        "success_text": {
+            "unscathed_common": "You successfully lead the patrol, coordinating your team to bring down various prey. Your leadership is praised and the clan appreciates the fresh-kill."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your best efforts, the patrol struggles to catch enough prey."
+        },
+        "decline_text": "Feeling uncertain, you suggest another warrior lead the patrol instead. The leader respects your decision, promising future opportunities.",
+        "chance_of_success": 65,
+        "exp": 30,
+        "win_skills": [
+            "excellent leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 5
+    },
+    {
+        "patrol_id": "gen_your_cat31",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A queen asks you to watch over her kits while she hunts. It's a chance to share stories and keep the young ones entertained.",
+        "success_text": {
+            "unscathed_common": "You accept and keep the kits entertained with stories of your adventures. The queen returns to find them asleep, grateful for your help."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to entertain the kits, but they prove more energetic than you expected. You end up losing them after you spend a moment with your back turned. The tired queen spends the rest of the afternoon looking for them, and finds them playing in the leader's den."
+        },
+        "decline_text": "You politely decline, feeling more comfortable with warrior duties. The queen understands and finds another cat to help.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": [
+            "very patient"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat32",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "You notice an unfamiliar scent on your clan's borders. It's your responsibility to investigate and ensure the clan's safety.",
+        "success_text": {
+            "unscathed_common": "You successfully track the scent to a lost loner. After guiding them away from your territory, you return to your duties, satisfied with your vigilance."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to track the scent, but it fades before you find its source."
+        },
+        "decline_text": "Feeling unsure, you decide to report the scent to your leader and let them handle the situation. You trust their judgement in these matters.",
+        "chance_of_success": 70,
+        "exp": 30,
+        "win_skills": [
+            "very observant"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_your_cat33",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "An elder asks you to share a story of your most daring adventure. It's an opportunity to share your experiences and inspire younger cats.",
+        "success_text": {
+            "unscathed_common": "You captivate the clan with your tale, filling their eyes with wonder. They appreciate your storytelling and the kits beg for more stories in the future."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to recount a tale, but you struggle to remember key details. Everyone looks quite bored."
+        },
+        "decline_text": "Feeling shy, you respectfully decline and promise to share a story another time. The elder understands, looking forward to hearing your tales in the future.",
+        "chance_of_success": 55,
+        "exp": 20,
+        "win_skills": [
+            "excellent storyteller"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat34",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "The medicine cat runs out of marigold and asks for your help to find some. It's a chance to help the clan and learn more about herbs.",
+        "success_text": {
+            "unscathed_common": "You manage to find a patch of marigold and return it to the medicine cat. They thank you, and you feel proud of your contribution."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your best efforts, you're unable to find any marigold. You've forogtten what it looks like -- all of these plants look the same!"
+        },
+        "decline_text": "You respectfully decline, not feeling confident in your knowledge of herbs. The medicine cat understands and decides to search themselves.",
+        "chance_of_success": 65,
+        "exp": 20,
+        "win_skills": [
+            "very observant"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "gen_your_cat35",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A fellow warrior, who you have feelings for, seems to be spending a lot of time with another cat. You ponder whether you should confront them about your feelings.",
+        "success_text": {
+            "unscathed_common": "Summoning your courage, you express your feelings. To your relief, they confess they feel the same way. The two of you decide to spend more time together."
+        },
+        "fail_text": {
+            "unscathed_common": "You gather your courage to confess, but your words end up jumbled and unclear. They seem confused, and the conversation ends awkwardly."
+        },
+        "decline_text": "You decide against confronting them, not wanting to potentially damage your current relationship. You hope that with time, your feelings will become clearer.",
+        "chance_of_success": 50,
+        "exp": 25,
+        "win_skills": [
+            "very brave"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat36",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "You find a particularly smooth stone near the river that reminds you of a cat you're fond of. You think they might like it as a gift.",
+        "success_text": {
+            "unscathed_common": "You offer them the stone and they seem genuinely touched by your thoughtfulness. Their appreciation makes you feel warm and happy inside."
+        },
+        "fail_text": {
+            "unscathed_common": "You present the stone, but they seem confused and unsure of what to do with it. You feel embarrassed, replaying this moment over and over again while you're in your nest that night."
+        },
+        "decline_text": "You reconsider and decide to keep the stone for yourself, unsure if they would appreciate the gesture or not. You'll think of another way to show your fondness.",
+        "chance_of_success": 55,
+        "exp": 15,
+        "win_skills": [
+            "very thoughtful"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat37",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "After a long day of patrolling, a cat you're close to invites you to share tongues. You consider their offer, hoping to deepen your bond.",
+        "success_text": {
+            "unscathed_common": "You accept their offer and spend a comfortable evening grooming each other. The intimacy strengthens your bond and you both go to sleep content."
+        },
+        "fail_text": {
+            "unscathed_common": "You agree, but they don't show up at the agreed upon spot later that day."
+        },
+        "decline_text": "Feeling too tired, you politely decline and head to your nest for some well-deserved rest. You promise to take them up on their offer another time.",
+        "chance_of_success": 65,
+        "exp": 20,
+        "win_skills": [
+            "very patient"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat38",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A cat you have a crush on seems down lately. You want to do something to cheer them up.",
+        "success_text": {
+            "unscathed_common": "You decide to share a humorous story from your apprentice days. They listen attentively and by the end, their mood seems lifted. They thank you for making them smile."
+        },
+        "fail_text": {
+            "unscathed_common": "You attempt to cheer them up by performing a funny trick, but you trip over your own paws. They don't laugh, excusing themselves instead."
+        },
+        "decline_text": "You decide not to interfere, thinking they might prefer some space. You'll keep an eye on them and step in if they seem to need a friend.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": [
+            "very thoughtful"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+    },
+    {
+        "patrol_id": "gen_your_cat39",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A moonlit walk by the river with a cat you're interested in seems like a perfect way to spend the evening. You invite them to join you.",
+        "success_text": {
+            "unscathed_common": "They agree, and you both enjoy a peaceful walk, chatting and sharing stories. By the end of the evening, you feel a stronger connection between you."
+        },
+        "fail_text": {
+            "unscathed_common": "They agree, but the walk is awkward and filled with silence."
+        },
+        "decline_text": "You decide against it, not wanting to push them into something they might not enjoy. You'll find another way to spend time together.",
+        "chance_of_success": 70,
+        "exp": 25,
+        "win_skills": [
+            "very brave"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
     }
-
 ]
