@@ -7,7 +7,7 @@ import pygame
 
 from ..cat.history import History
 from ..housekeeping.datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, SaveAsImage
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, SaveAsImage, ExileCat
 
 import ujson
 
@@ -420,7 +420,8 @@ class ProfileScreen(Screens):
                 KillCat(self.the_cat)
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
-                    Cat.exile(self.the_cat)
+                    ExileCat(self.the_cat)
+                    #Cat.exile(self.the_cat)
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -1632,6 +1633,7 @@ class ProfileScreen(Screens):
 
         #print(victim_text)
         return victim_text
+    
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""

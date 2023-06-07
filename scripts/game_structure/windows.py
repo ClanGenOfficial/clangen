@@ -621,7 +621,6 @@ class KillCat(UIWindow):
                 game.all_screens['profile screen'].screen_switches()
                 self.kill()
 
-
 class UpdateWindow(UIWindow):
     def __init__(self, last_screen, announce_restart_callback):
         super().__init__(scale(pygame.Rect((500, 400), (600, 320))),

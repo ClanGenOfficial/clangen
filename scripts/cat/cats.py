@@ -482,6 +482,9 @@ class Cat():
             if fetched_cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
+        if self.history:
+            self.history.add_exile(self, reason=self.exile_reason)
+        self.exile_reason = None
 
     def grief(self, body: bool):
         """
