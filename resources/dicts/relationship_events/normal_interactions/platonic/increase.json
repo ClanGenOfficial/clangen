@@ -39,7 +39,7 @@
 		"id": "platonic_inc_med3",
 		"interactions": [
 			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
-			"m_c calls to r_c to catch {PRONOUN/m_c/subject} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
+			"m_c calls to r_c to catch {PRONOUN/m_c/object} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
 			"m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow."
 		],
 		"main_status_constraint": [
