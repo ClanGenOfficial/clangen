@@ -242,11 +242,22 @@
         "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
         "Runs out of their den into 'battle', only to find that it was just a storm",
         "Prances around with their tail up high, ready for anything",
-        "Promises the kits they'll protect them when the time comes",
         "Is not afraid of anything"
     ],
     "main_trait_constraint": [
         "bold"
+    ]
+},
+{
+    "id": "bold_warrior_to_kits",
+    "thoughts": [
+        "Promises the kits they'll protect them when the time comes"
+    ],
+    "main_trait_constraint": [
+        "bold"
+    ],
+    "random_status_constraint": [
+        "kitten"
     ]
 },
 {
@@ -267,12 +278,23 @@
         "Is purring quietly",
         "Has been reaching meditative states while sunbathing",
         "Calmly takes the lead while some Clanmates argue over this and that",
-        "Is unable to be scared, no matter how much the kits try",
         "Knows everything will be okay in the end",
         "Takes a deep breath and doesn't let a mean comment get to them"
     ],
     "main_trait_constraint": [
         "calm"
+    ]
+},
+{
+    "id": "calm_warrior_to_kits",
+    "thoughts": [
+        "Is unable to be scared, no matter how much the kits try"
+    ],
+    "main_trait_constraint": [
+        "calm"
+    ],
+    "random_status_constraint": [
+        "kitten"
     ]
 },
 {
@@ -292,12 +314,24 @@
         "Fortifies the camp walls for the fourth time this week",
         "Asks the deputy about sending out some more hunting patrols- just to be sure",
         "Feels at peace",
-        "Coaches other warriors to take a more guarded stance for their technique",
-        "Keeps an eye on some rowdy kits"
+        "Coaches other warriors to take a more guarded stance for their technique"
     ],
     "main_trait_constraint": [
         "careful"
     ]
+},
+{
+    "id": "careful_warrior_to_kits",
+    "thoughts": [
+        "Keeps an eye on some rowdy kits"
+    ],
+    "main_trait_constraint": [
+        "careful"
+    ],
+    "random_status_constraint": [
+        "kitten"
+    ]
+
 },
 {
     "id": "charismatic_warrior",
@@ -349,8 +383,8 @@
         "Doesn't want to share a piece of fresh-kill",
         "Has felt bad all day about stepping on a bug"
     ],
-    "main_trait_constraint": [
-        "childish"
+    "random_status_constraint": [
+        "kitten"
     ]
 },
 {
@@ -530,7 +564,6 @@
         "Is hoping that StarClan protects their loved ones...",
         "Thanked StarClan for their catch out on a hunting patrol today",
         "Prays to StarClan that next season will be a good one",
-        "Rolls their eyes at the kits laughing about spirits not being real",
         "Goes to the medicine cat to ask for spiritual advice",
         "Wonders if StarClan can hear them",
         "Leaves fresh-kill at the grave of a dead loved one"
@@ -540,24 +573,15 @@
     ]
 },
 {
-    "id": "faithful_warrior",
+    "id": "faithful_warrior_to_kits",
     "thoughts": [
-        "Is giving thanks to StarClan",
-        "Is assuring some worried Clanmates that StarClan will guide them",
-        "Is pondering their warrior ancestors, and the protections they grant the Clan",
-        "Would follow their Clanmates to the ends of the earth",
-        "Feels safe within the walls of the camp",
-        "Is promising to always serve StarClan",
-        "Is hoping that StarClan protects their loved ones...",
-        "Thanked StarClan for their catch out on a hunting patrol today",
-        "Prays to StarClan that next season will be a good one",
-        "Rolls their eyes at the kits laughing about spirits not being real",
-        "Goes to the medicine cat to ask for spiritual advice",
-        "Wonders if StarClan can hear them",
-        "Leaves fresh-kill at the grave of a dead loved one"
+        "Rolls their eyes at the kits laughing about spirits not being real"
     ],
     "main_trait_constraint": [
         "faithful"
+    ],
+    "random_status_constraint": [
+        "kitten"
     ]
 },
 {
@@ -838,7 +862,6 @@
         "Is refusing to follow the deputy's recent orders due to their own morals",
         "Silently judges another warrior from afar",
         "Calms themselves down by thinking how StarClan will see to things",
-        "Teaches the kits about morals until they all fall asleep",
         "Reported a Clanmate for breaking the code",
         "Is appalled at a Clanmate blatantly lying" 
     ],
@@ -846,6 +869,20 @@
         "righteous"
     ]
 },
+{
+    "id": "righteous_warrior_to_kits",
+    "thoughts": [
+        "Teaches the kits about morals until they all fall asleep"
+    ],
+    "main_trait_constraint": [
+        "righteous"
+    ],
+    "random_status_constraint":[
+        "kitten"
+    ]
+},
+
+
 {
     "id": "shameless_warrior",
     "thoughts": [
@@ -1041,7 +1078,6 @@
     "thoughts": [
         "Has a suggestion for the Clan leader",
         "Is grooming themselves thoughtfully",
-        "Tells some kits a thing or two about growing older",
         "Solves a problem by thinking back to another time the exact same thing happened",
         "Feels completely at peace",
         "Has been coming up with complicated riddles for fun"  
@@ -1079,6 +1115,18 @@
     ],
     "random_living_status": [
         "living"
+    ]
+},
+{
+    "id": "wise_warrior_to_kits",
+    "thoughts": [
+        "Tells some kits a thing or two about growing older"
+    ],
+    "main_trait_constraint": [
+        "wise"
+    ],
+    "random_status_constraint": [
+        "kitten"
     ]
 }
 ]
