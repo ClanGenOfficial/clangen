@@ -100,7 +100,7 @@ class Death_Events():
             body = True
 
         # handle other cat
-        if "other_cat" and other_cat:
+        if other_cat and "other_cat" in death_cause.tags:
             # if at least one cat survives, change relationships
             if "multi_death" not in death_cause.tags:
                 self.handle_relationship_changes(cat, death_cause, other_cat)

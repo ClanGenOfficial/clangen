@@ -887,10 +887,10 @@
         "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/app1/object} right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
     },
     {
-        "patrol_id": "gen_elder_rescue1",
+        "patrol_id": "gen_bord_elder_rescue1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["new_cat_elder_kittypet", "new_cat_injury", "nc_blunt_force_injury", "border", "adult_stat", "blunt_force_injury"],
+        "tags": ["new_cat_elder_kittypet", "new_cat_injury", "nc_blunt_force_injury", "border", "adult_stat", "blunt_force_injury", "border"],
         "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
         "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
         "chance_of_success": 85,
