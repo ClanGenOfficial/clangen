@@ -264,7 +264,7 @@ class Events:
         num_siblings = random.choice([0, 0, 0, 2, 2])
         siblings, sibling_text = self.create_siblings(num_siblings)
 
-        birth_type = 3
+        birth_type = random.randint(1,6)
         if birth_type == 1:
             return self.handle_birth_no_parents(siblings, sibling_text)
         elif birth_type in [2, 3, 4]:
