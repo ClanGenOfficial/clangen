@@ -195,6 +195,9 @@
         ],
         "main_trait_constraint": [
             "loving"
+        ],
+        "random_status_constraint":[
+            "newborn"
         ]
     },
     {

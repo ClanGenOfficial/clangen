@@ -1909,6 +1909,7 @@ class Patrol():
         if scar and "scar" in self.patrol_event.history_text:
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))
+            adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
             if possible:
                 History.add_possible_history(cat, condition, scar_text=adjust_text)
             else:
@@ -1918,6 +1919,7 @@ class Patrol():
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
                         History.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
@@ -1926,6 +1928,7 @@ class Patrol():
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
                         History.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
