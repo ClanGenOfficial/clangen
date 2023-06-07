@@ -261,7 +261,7 @@ class Events:
         return siblings, sibling_text
 
     def get_birth_txt(self):
-        num_siblings = random.choice([2, 2])
+        num_siblings = random.choice([0, 0, 0, 2, 2])
         siblings, sibling_text = self.create_siblings(num_siblings)
 
         birth_type = random.randint(1,5)
