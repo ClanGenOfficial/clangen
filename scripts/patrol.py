@@ -9,8 +9,6 @@ import pygame
 from scripts.cat.history import History
 from scripts.clan import HERBS, Clan
 from scripts.utility import (
-    add_siblings_to_cat,
-    add_children_to_cat,
     event_text_adjust,
     change_clan_relations,
     change_clan_reputation,
@@ -1488,7 +1486,7 @@ class Patrol():
                     )
 
                     # give relationships for siblings
-                    for sibling in new_cat.siblings:
+                    for sibling in new_cat.get_siblings():
                         sibling = Cat.fetch_cat(sibling)
                         sibling.relationships[new_cat.ID] = Relationship(sibling, new_cat)
                         new_cat.relationships[sibling.ID] = Relationship(new_cat, sibling)

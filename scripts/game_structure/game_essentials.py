@@ -441,27 +441,19 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if len(inter_cat.mate):
+            if inter_cat.mate:
                 for mate_id in inter_cat.mate:
                     if mate_id in self.cat_class.all_cats:
-                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
+                        self.cat_class.all_cats[mate_id].unset_mate(inter_cat)
 
             # If they have parents, add them to their parents "faded offspring" list:
-            if inter_cat.parent1:
-                if inter_cat.parent1 in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.parent1].faded_offspring.append(cat)
+            for x in inter_cat.get_parents():
+                if x in self.cat_class.all_cats:
+                    self.cat_class.all_cats[x].faded_offspring.append(cat)
                 else:
-                    parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent1, cat)
+                    parent_faded = self.add_faded_offspring_to_faded_cat(x, cat)
                     if not parent_faded:
-                        print("WARNING: Can't find faded parent1")
-
-            if inter_cat.parent2:
-                if inter_cat.parent2 in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.parent2].faded_offspring.append(cat)
-                else:
-                    parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent2, cat)
-                    if not parent_faded:
-                        print("WARNING: Can't find faded parent2")
+                        print(f"WARNING: Can't find parent {x} of {cat.name}")
 
             # Get a copy of info
             if game.settings["save_faded_copy"]:

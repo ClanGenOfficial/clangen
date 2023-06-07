@@ -78,8 +78,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        cat1.siblings = [cat2.ID]
-        cat2.siblings = [cat1.ID]
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -117,8 +115,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        cat1.siblings = [cat2.ID]
-        cat2.siblings = [cat1.ID]
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")

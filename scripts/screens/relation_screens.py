@@ -1252,6 +1252,9 @@ class ChooseMateScreen(Screens):
                 self.selected_cat = event.ui_element.cat_object
                 self.update_selected_cat()
             elif event.ui_element in self.offspring_cat_buttons.values():
+                if event.ui_element.cat_object.faded:
+                    return
+                
                 game.switches["cat"] = event.ui_element.cat_object.ID
                 self.change_screen("profile screen")
             
@@ -2026,7 +2029,8 @@ class ChooseMateScreen(Screens):
         
         # Behold! The uglest list comprehension ever created! 
         valid_mates = [i for i in Cat.all_cats_list if
-                       self.the_cat.is_potential_mate(
+                       not i.faded
+                       and self.the_cat.is_potential_mate(
                            i, for_love_interest=False, 
                            age_restriction=False) 
                        and i.ID not in self.the_cat.mate
@@ -3793,6 +3797,8 @@ class ChooseAdoptiveParentScreen(Screens):
                     pygame.transform.scale(birth_parents[0].sprite, (300, 300)), 
                     cat_object=birth_parents[0], manager=MANAGER, 
                     container=self.birth_container)
+            if birth_parents[0].faded:
+                self.birth_parents_buttons["cat"].disable()
         elif len(birth_parents) >= 2:
             x_pos = 300
             for i, _par in enumerate(birth_parents):
@@ -3803,6 +3809,8 @@ class ChooseAdoptiveParentScreen(Screens):
                     container=self.birth_container,
                     tool_tip_text=str(_par.name),
                     starting_height=2)
+                if _par.faded:
+                    self.birth_parents_buttons["cat" + str(i)].disable()
                 x_pos += 330
         
     def update_adoptive_parents_container(self):
@@ -3864,6 +3872,8 @@ class ChooseAdoptiveParentScreen(Screens):
                 _off.sprite, cat_object=_off, manager=MANAGER, 
                 container=self.adoptive_container,
                 starting_height=2)
+            if _off.faded:
+                self.adoptive_parents_buttons["cat" + str(i)].disable()
             pos_x += 120
             if pos_x >= 1200:
                 pos_x = 30
@@ -4071,8 +4081,11 @@ class ChooseAdoptiveParentScreen(Screens):
 
         if reset_selected_cat:
             self.selected_cat = None
-            if self.the_cat.adoptive_parents:
-                self.selected_cat = Cat.fetch_cat(self.the_cat.adoptive_parents[0])
+            # Protection against faded
+            for x in self.the_cat.adoptive_parents:
+                parent_ob = Cat.fetch_cat(x)
+                if not parent_ob.faded:
+                    self.selected_cat = Cat.fetch_cat(parent_ob)
             self.update_selected_cat()
         
         self.draw_tab_button()
