@@ -437,7 +437,7 @@ class MakeClanScreen(Screens):
 
     def handle_saved_clan_event(self, event):
         if event.ui_element == self.elements["continue"]:
-            self.change_screen('clan screen')
+            self.change_screen('camp screen')
 
     def exit_screen(self):
         self.main_menu.kill()

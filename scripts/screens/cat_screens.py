@@ -17,7 +17,7 @@ from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import collars, wild_accessories
+from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
@@ -31,13 +31,13 @@ from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def accessory_display_name(cat):
-    accessory = cat.accessory
+    accessory = cat.pelt.accessory
 
     if accessory is None:
         return ''
     acc_display = accessory.lower()
 
-    if accessory in collars:
+    if accessory in Pelt.collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan',
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow',
                          'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink',
@@ -52,7 +52,7 @@ def accessory_display_name(cat):
             else:
                 acc_display = collar_colors[collar_color] + ' collar'
 
-    elif accessory in wild_accessories:
+    elif accessory in Pelt.wild_accessories:
         if acc_display == 'blue feathers':
             acc_display = 'crow feathers'
         elif acc_display == 'red feathers':
@@ -383,12 +383,12 @@ class ProfileScreen(Screens):
                 self.change_screen('relationship screen')
             elif event.ui_element == self.choose_mate_button:
                 self.change_screen('choose mate screen')
-            elif event.ui_element == self.change_mentor_button:
-                self.change_screen('choose mentor screen')
         # Roles Tab
         elif self.open_tab == 'roles':
             if event.ui_element == self.manage_roles:
                 self.change_screen('role screen')
+            elif event.ui_element == self.change_mentor_button:
+                self.change_screen('choose mentor screen')
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -840,8 +840,8 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        if the_cat.accessory:
-            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+        if the_cat.pelt.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------
             output += "\n"
 
@@ -904,44 +904,40 @@ class ProfileScreen(Screens):
 
         # MATE
         if len(the_cat.mate) > 0:
-            # NEWLINE ----------
             output += "\n"
-            if len(the_cat.mate) > 0:
-                # collect all names
-                mates = []
-                prev_mates = []
-                for mate_id in the_cat.mate:
-                    if mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(mate_id)
-                        if not mate_ob:
-                            continue
-                        if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
-                            prev_mates.append(str(mate_ob.name))
-                        else:
-                            mates.append(str(mate_ob.name))
+            
+            
+            mate_names = []
+            # Grab the names of only the first two, since that's all we will display
+            for _m in the_cat.mate[:2]:
+                mate_ob = Cat.fetch_cat(_m)
+                if not isinstance(mate_ob, Cat):
+                    continue
+                if mate_ob.dead != self.the_cat.dead:
+                    if the_cat.dead:
+                        former_indicate = "(living)"
                     else:
-                        output += 'Error: mate: ' + str(mate_id) + " not found"
-                for prev_mate_id in the_cat.previous_mates:
-                    if prev_mate_id in Cat.all_cats:
-                        mate_ob = Cat.fetch_cat(prev_mate_id)
-                        if not mate_ob:
-                            continue
-                        prev_mates.append(str(mate_ob.name))
-                    else:
-                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
-                # merge the names together for the output
-                if len(mates) > 0:
-                    if len(mates) > 1:
-                        output += 'mates: ' + str(', '.join(mates))
-                    else:
-                        output += 'mate: ' + mates[0]
-                if len(prev_mates) > 0:
-                    if len(mates) > 0:
-                        output += '\n'
-                    if len(prev_mates) > 1:
-                        output += 'former mates: ' + str(', '.join(prev_mates))
-                    else:
-                        output += 'former mate: ' + prev_mates[0]
+                        former_indicate = "(dead)"
+                    
+                    mate_names.append(f"{str(mate_ob.name)} {former_indicate}")
+                elif mate_ob.outside != self.the_cat.outside:
+                    mate_names.append(f"{str(mate_ob.name)} (away)")
+                else:
+                    mate_names.append(f"{str(mate_ob.name)}")
+                    
+            if len(the_cat.mate) == 1:
+                output += "mate: " 
+            else:
+                output += "mates: "
+            
+            output += ", ".join(mate_names)
+            
+            if len(the_cat.mate) > 2:
+                output += f", and {len(the_cat.mate) - 2}"
+                if len(the_cat.mate) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -992,16 +988,23 @@ class ProfileScreen(Screens):
 
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
-
-            if len(the_cat.former_apprentices) == 1 and Cat.fetch_cat(the_cat.former_apprentices[0]):
-                output += 'former apprentice: ' + str(
-                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
-
-            elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join(
-                    [str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices if Cat.fetch_cat(i)])
+        if the_cat.former_apprentices:
+            
+            apprentices = [Cat.fetch_cat(i) for i in the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+            
+            if len(apprentices) > 2:
+                output += 'former apprentices: ' + ", ".join([str(i.name) for i in apprentices[:2]]) + \
+                    ", and " + str(len(apprentices) - 2) 
+                if len(apprentices) - 2 > 1:
+                    output += " others"
+                else:
+                    output += " other"
+            else:
+                if len(apprentices) > 1:
+                    output += 'former apprentices: '
+                else:
+                    output += 'former apprentice: '
+                output += ", ".join(str(i.name) for i in apprentices)
 
             # NEWLINE ----------
             output += "\n"
@@ -1219,16 +1222,21 @@ class ProfileScreen(Screens):
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
             if app_history:
-                life_history.append(str(app_history))
+                life_history.append(app_history)
+                
+            #Get mentorshif text if it exists
+            mentor_history = self.get_mentorship_text()
+            if mentor_history:
+                life_history.append(mentor_history)
 
             # now go get the scar history and add that if any exists
             body_history = []
             scar_history = self.get_scar_text()
             if scar_history:
-                body_history.append(str(scar_history))
+                body_history.append(scar_history)
             death_history = self.get_death_text()
             if death_history:
-                body_history.append(str(death_history))
+                body_history.append(death_history)
             # join scar and death into one paragraph
             if body_history:
                 life_history.append(" ".join(body_history))
@@ -1435,6 +1443,34 @@ class ProfileScreen(Screens):
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
 
+    def get_mentorship_text(self):
+        """
+        
+        returns full list of previously mentored apprentices. 
+        
+        """
+        
+        text = ""
+        # Doing this is two steps 
+        all_real_apprentices = [Cat.fetch_cat(i) for i in self.the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
+        if all_real_apprentices:
+            text = "{PRONOUN/m_c/subject/CAP} mentored "
+            if len(all_real_apprentices) > 2:
+                text += ', '.join([str(i.name) for i in all_real_apprentices[:-1]]) + ", and " + str(all_real_apprentices[-1].name) + "."
+            elif len(all_real_apprentices) == 2:
+                text += str(all_real_apprentices[0].name) + " and " + str(all_real_apprentices[1].name) + "."
+            elif len(all_real_apprentices) == 1:
+                text += str(all_real_apprentices[0].name) + "."
+            
+            cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+            }   
+            
+            text = process_text(text, cat_dict)
+        
+        return text
+        
+
     def get_death_text(self):
         """
         returns adjusted death history text
@@ -1450,7 +1486,7 @@ class ProfileScreen(Screens):
         if death_history:
             all_deaths = []
             for death in death_history:
-                if murder_history:
+                if murder_history.get("is_victim"):
                     # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
                     for event in murder_history["is_victim"]:
                         if event["text"] == death["text"] and event["moon"] == death["moon"]:
@@ -1552,7 +1588,7 @@ class ProfileScreen(Screens):
                     else:
                         victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-        print(victim_text)
+        #print(victim_text)
         return victim_text
     
 
@@ -1844,13 +1880,9 @@ class ProfileScreen(Screens):
             self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
                                                    starting_height=2, object_id="#see_family_button", manager=MANAGER)
             self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
-                                                          starting_height=2, object_id="#see_relationships_button"
-                                                          , manager=MANAGER)
+                                                          starting_height=2, object_id="#see_relationships_button", manager=MANAGER)
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
-            self.change_mentor_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
-                                                      starting_height=2, object_id="#change_mentor_button"
-                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1870,6 +1902,8 @@ class ProfileScreen(Screens):
                                               "", object_id="#manage_roles_button",
                                               starting_height=2
                                               , manager=MANAGER)
+            self.change_mentor_button = UIImageButton(scale(pygame.Rect((452, 972), (344, 72))), "",
+                                                      starting_height=2, object_id="#change_mentor_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1940,18 +1974,17 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice',
-                                           'mediator apprentice'] or self.the_cat.dead \
-                    or self.the_cat.outside:
-                self.change_mentor_button.disable()
-            else:
-                self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.dead or self.the_cat.outside:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
+                                            or self.the_cat.dead or self.the_cat.outside:
+                self.change_mentor_button.disable()
+            else:
+                self.change_mentor_button.enable()
 
         elif self.open_tab == "personal":
 
@@ -2151,9 +2184,9 @@ class ProfileScreen(Screens):
             self.see_family_button.kill()
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
-            self.change_mentor_button.kill()
         elif self.open_tab == 'roles':
             self.manage_roles.kill()
+            self.change_mentor_button.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
@@ -3172,10 +3205,10 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox((200, 1150), "platform_shown", self.platform_shown)
         
         # "Show Scars"
-        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.scars)
+        self.make_one_checkbox((600, 1150), "scars_shown", self.scars_shown, self.the_cat.pelt.scars)
         
         # "Show accessories"
-        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.accessory)
+        self.make_one_checkbox((1000, 1150), "acc_shown", self.acc_shown, self.the_cat.pelt.accessory)
         
         # "Show as living"
         self.make_one_checkbox((400, 1250), "override_dead_lineart", self.override_dead_lineart, self.the_cat.dead,

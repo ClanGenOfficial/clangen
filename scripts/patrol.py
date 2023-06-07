@@ -19,7 +19,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.pelts import collars, scars1, scars2, scars3
+from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
@@ -1633,12 +1633,12 @@ class Patrol():
                     cat = self.patrol_fail_stat_cat
                 else:
                     return
-                if len(self.patrol_random_cat.scars) < 4:
+                if len(self.patrol_random_cat.pelt.scars) < 4:
                     for tag in self.patrol_event.tags:
                         print(tag)
-                        if tag in scars1 + scars2 + scars3:
+                        if tag in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
                             print('gave scar')
-                            cat.scars.append(tag)
+                            cat.pelt.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
                     self.handle_history(cat, scar=True)
 
@@ -1658,32 +1658,26 @@ class Patrol():
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             if possible:
-                self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                         scar=True)
+                self.history.add_possible_history(cat, condition, scar_text=adjust_text)
             else:
-                self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                scar=True)
+                self.history.add_scar(cat, adjust_text)
         if death:
             if cat.status == 'leader':
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
             else:
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     if possible:
-                        self.history.add_possible_death_or_scars(cat, condition, adjust_text,
-                                                                 death=True)
+                        self.history.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
-                        self.history.add_death_or_scars(cat, condition, adjust_text,
-                                                        death=True)
+                        self.history.add_death(cat, adjust_text)
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
@@ -1870,8 +1864,9 @@ class Patrol():
             if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
                 affect = cat.personality.mentor_influence(Cat.fetch_cat(cat.mentor))
-                History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
-                print(affect)
+                if affect:
+                    History.add_facet_mentor_influence(cat, affect[0], affect[1], affect[2])
+                    print(affect)
 
     def handle_reputation(self, difference):
         """
