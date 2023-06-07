@@ -1467,8 +1467,6 @@ class Patrol():
                 for new_cat in created_cats[1:]:
                     # adding parent and siblings
                     new_cat.parent1 = created_cats[0].ID
-                    add_children_to_cat(created_cats[0], cat_class)
-                    add_siblings_to_cat(new_cat, cat_class)
 
                     # creating relationships
                     new_cat.relationships[created_cats[0].ID] = Relationship(new_cat, created_cats[0])
