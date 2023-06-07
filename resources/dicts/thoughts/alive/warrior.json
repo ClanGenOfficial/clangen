@@ -98,8 +98,7 @@
     {
         "id": "gen_older_warrior",
         "thoughts": [
-            "Tries to set a good example for younger cats",
-            "Feels {PRONOUN/m_c/poss} bones creak as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks}"
+            "Tries to set a good example for younger cats"
         ],
         "main_age_constraint": [
             "senior adult",

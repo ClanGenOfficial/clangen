@@ -526,8 +526,8 @@ class PatrolScreen(Screens):
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_skills:
-            if x not in skills:
-                skills.append(x.skill)
+            if x.get_short_skill() not in skills:
+                skills.append(x.get_short_skill())
         for x in self.patrol_obj.patrol_traits:
             if x not in traits:
                 traits.append(x)
@@ -705,8 +705,12 @@ class PatrolScreen(Screens):
         patrol_traits = []
         if self.current_patrol is not []:
             for x in self.current_patrol:
-                if x.skill not in patrol_skills:
-                    patrol_skills.append(x.skill)
+                if x.skills.primary and x.skills.primary.get_short_skill() not in patrol_skills:
+                    patrol_skills.append(x.skills.primary.get_short_skill())
+                
+                if x.skills.secondary and x.skills.secondary.get_short_skill() not in patrol_skills:
+                    patrol_skills.append(x.skills.secondary.get_short_skill())
+                
                 if x.personality.trait not in patrol_traits:
                     patrol_traits.append(x.personality.trait)
 
@@ -794,7 +798,7 @@ class PatrolScreen(Screens):
 
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.personality.trait) +
-                                                                          "\n" + str(self.selected_cat.skills.skill_string()) +
+                                                                          "\n" + str(self.selected_cat.skills.skill_string(short=True)) +
                                                                           "\n" + str(
                 self.selected_cat.experience_level) +
                                                                           (f' ({str(self.selected_cat.experience)})' if
