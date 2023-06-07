@@ -79,7 +79,7 @@
 			"m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
 			"m_c thanks r_c for keeping the Clan healthy.",
 			"m_c watches r_c sort herbs as {PRONOUN/m_c/subject} {VERB/m_c/chat/chats} about how {PRONOUN/r_c/poss} day has gone.",
-			"m_c lets r_c know that {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} about to go out and asks if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to watch for any herbs.",
+			"m_c lets r_c know that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} about to go out and asks if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to watch for any herbs.",
 			"m_c asks r_c if there's any herbs {PRONOUN/m_c/subject} should look out for while {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} out on patrol later."
 		],
 		"main_status_constraint": [
