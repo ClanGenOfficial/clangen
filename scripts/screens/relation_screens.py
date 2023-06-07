@@ -4192,6 +4192,7 @@ class ChooseAdoptiveParentScreen(Screens):
             name,
             object_id="#text_box_34_horizcenter")
 
+        print(str(self.selected_cat.name))
         info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
                self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait
         self.selected_cat_elements["info"] = pygame_gui.elements.UITextBox(info,
@@ -4214,18 +4215,10 @@ class ChooseAdoptiveParentScreen(Screens):
                          i.moons - self.the_cat.moons >= 14 and # Adoptive parent must be at least 14 moons older. 
                          i.ID not in self.the_cat.mate and # Can't set your mate your adoptive parent. 
                          i.ID not in self.the_cat.adoptive_parents and # already adoptive paret
+                         i.ID != self.the_cat.parent1 and  # Is not blood parent
+                         i.ID != self.the_cat.parent2 and
                          (not self.mates_current_parents or self.is_parent_mate(self.the_cat, i)) and #Toggle for only mates of current parents
                          (not self.unrelated_only or i.ID not in self.the_cat.get_relatives())] #Toggle for only not-closely-related. 
-        
-        valid_parents = [i for i in Cat.all_cats_list if
-                         not (i.dead or i.outside or i.exiled) and  # Adoptive parents cant be dead or outside
-                         i.ID != self.the_cat.ID and 
-                         self.the_cat.ID not in i.get_parents() and 
-                         i.moons - self.the_cat.moons >= 14 and 
-                         i.ID not in self.the_cat.mate and
-                         i.ID not in self.the_cat.adoptive_parents and
-                         (not self.mates_current_parents or self.is_parent_mate(self.the_cat, i)) and
-                         (not self.unrelated_only or i.ID not in self.the_cat.get_relatives())]
         
         return valid_parents
 
@@ -4247,12 +4240,12 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.next_cat = 1
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
