@@ -198,7 +198,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "A queen asks you to watch over her kits while she hunts. It's a chance to share stories and keep the young ones entertained.",
         "success_text": {
@@ -244,7 +244,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "An elder asks you to share a story of your most daring adventure. It's an opportunity to share your experiences and inspire younger cats.",
         "success_text": {
@@ -267,7 +267,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "The medicine cat runs out of marigold and asks for your help to find some. It's a chance to help the clan and learn more about herbs.",
         "success_text": {
@@ -290,7 +290,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "A fellow warrior, who you have feelings for, seems to be spending a lot of time with another cat. You ponder whether you should confront them about your feelings.",
         "success_text": {
@@ -313,7 +313,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "You find a particularly smooth stone near the river that reminds you of a cat you're fond of. You think they might like it as a gift.",
         "success_text": {
@@ -336,7 +336,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "After a long day of patrolling, a cat you're close to invites you to share tongues. You consider their offer, hoping to deepen your bond.",
         "success_text": {
@@ -359,7 +359,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "A cat you have a crush on seems down lately. You want to do something to cheer them up.",
         "success_text": {
@@ -382,7 +382,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "camp"
+            "border"
         ],
         "intro_text": "A moonlit walk by the river with a cat you're interested in seems like a perfect way to spend the evening. You invite them to join you.",
         "success_text": {

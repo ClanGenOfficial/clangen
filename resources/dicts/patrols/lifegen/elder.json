@@ -3,7 +3,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": [
-    "camp"
+    "border"
     ],
     "intro_text": "A young apprentice approaches you, curious to hear about your past adventures. You reminisce, wondering whether you should indulge them with a story.",
     "success_text": {
@@ -26,7 +26,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": [
-    "camp"
+    "border"
     ],
     "intro_text": "The leader asks for your opinion on a dispute between two warriors. You feel respected, knowing that your wisdom is still valued.",
     "success_text": {
@@ -49,7 +49,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": [
-    "camp"
+    "border"
     ],
     "intro_text": "A kit comes running up to you, asking for a play fight. Despite your old bones, you consider their request, remembering your own playful youth.",
     "success_text": {
@@ -72,7 +72,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": [
-    "camp"
+    "border"
     ],
     "intro_text": "A young warrior offers to fetch you fresh-kill. You contemplate whether you should accept or insist on doing it yourself for old times' sake.",
     "success_text": {
