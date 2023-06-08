@@ -160,7 +160,13 @@ class Cat():
             self.adoptive_parents = []
             self.mate = []
             self.status = status
+            self.pronouns = [self.default_pronouns[0].copy()]
             self.moons = moons
+            self.dead_for = 0
+            self.dead = True
+            self.outside = False
+            self.exiled = False
+            self.inheritance = None # This should never be used, but just for safty
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
@@ -214,8 +220,6 @@ class Cat():
         self.thought = ''
         self.genderalign = None
         self.birth_cooldown = 0
-        self.siblings = []
-        self.children = []
         self.illnesses = {}
         self.injuries = {}
         self.healed_condition = None
@@ -896,11 +900,8 @@ class Cat():
 
         history_dict = History.make_dict(self)
         try:
-            with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
-                json_string = ujson.dumps(history_dict, indent=4)
-                history_file.write(json_string)
+            game.safe_save(history_dir + '/' + self.ID + '_history.json', history_dict)
         except:
-            print(f"WARNING: saving history of cat #{self.ID} didn't work")
             self.history = History(
                 beginning={},
                 mentor_influence={},
@@ -911,6 +912,9 @@ class Cat():
                 scar_events=[],
                 murder={},
             )
+
+            print(f"WARNING: saving history of cat #{self.ID} didn't work")
+            
 
     def generate_lead_ceremony(self):
         """
@@ -1243,7 +1247,7 @@ class Cat():
         
         if old_age != self.age:
             # Things to do if the age changes
-            self.personality.facet_wobble()
+            self.personality.facet_wobble(max=2)
         
         # Set personality to correct type
         self.personality.set_kit(self.is_baby())
@@ -2683,9 +2687,9 @@ class Cat():
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
-        if "adoptive_parents" in cat_info:
-            cat_ob.adoptive_parents = cat_info["adoptive_parents"]
+        cat_ob.adoptive_parents = cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
         cat_ob.faded = True
+        cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 
         return cat_ob
 
@@ -2811,6 +2815,7 @@ class Cat():
                 "name_suffix": self.name.suffix,
                 "status": self.status,
                 "moons": self.moons,
+                "dead_for": self.dead_for,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
                 "adoptive_parents": self.adoptive_parents,
