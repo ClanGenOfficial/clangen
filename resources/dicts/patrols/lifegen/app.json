@@ -473,7 +473,7 @@
         "unscathed_common": "You have a blast! Your mentor shares their best moves with you and you even show them a couple of your own."
     },
     "fail_text": {
-        "unscathed_common": "You can’t seem to put your paws were your mentor tells you and finally they decide its time to finish."
+        "unscathed_common": "You can't seem to put your paws were your mentor tells you and finally they decide its time to finish."
     },
     "decline_text": "You decide not to go battle training so you hunt instead.",
     "chance_of_success": 40,
@@ -497,7 +497,7 @@
         "unscathed_common": "You jump to your paws excitedly, running after you mentor to explore the territory, they escort you through the scenery showing you places in the territory you never knew existed!"
     },
     "fail_text": {
-        "unscathed_common": "You jump to your paws and run after them, as you trek through the territory you become excited and run off, your mentor’s walking to slow anyway. After a moment you realize you don’t recognise this part of the forest, eventually your mentor finds you and leads you back to camp with a scolding about running off."
+        "unscathed_common": "You jump to your paws and run after them, as you trek through the territory you become excited and run off, your mentor's walking to slow anyway. After a moment you realize you don't recognise this part of the forest, eventually your mentor finds you and leads you back to camp with a scolding about running off."
     },
     "decline_text": "You decline the offer.",
     "chance_of_success": 40,
@@ -521,7 +521,7 @@
         "unscathed_common": "You have a blast! Your mentor shows you the best places for prey and you both come back with a hefty haul."
     },
     "fail_text": {
-        "unscathed_common": "You can’t seem to find any prey, your mentor comforts you, saying they wouldn’t have had any hope of finding prey in this terrible weather either."
+        "unscathed_common": "You can't seem to find any prey, your mentor comforts you, saying they wouldn't have had any hope of finding prey in this terrible weather either."
     },
     "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
     "chance_of_success": 40,
@@ -545,7 +545,7 @@
         "unscathed_common": "This is a stealth lesson, and you are the stealthiest cat today, you bring brack more prey than your mentor!"
     },
     "fail_text": {
-        "unscathed_common": "You can’t seem to find any prey, the scents are all just muddled up today, you watch as a senior warrior pads past, their jaws full with freshly caught prey, maybe it was just bad luck."
+        "unscathed_common": "You can't seem to find any prey, the scents are all just muddled up today, you watch as a senior warrior pads past, their jaws full with freshly caught prey, maybe it was just bad luck."
     },
     "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
     "chance_of_success": 40,
@@ -569,9 +569,9 @@
         "unscathed_common": "You go out alone, the peace and quiet gives you time to perfect your hunting crouch and you bring back an impressive amount of prey, your mentor watches as you enter the camp their eyes glowing with pride."
     },
     "fail_text": {
-        "unscathed_common": "As you head out, every creaking branch and swishing fern makes you jump, maybe hunting alone wasn’t the best idea..."
+        "unscathed_common": "As you head out, every creaking branch and swishing fern makes you jump, maybe hunting alone wasn't the best idea..."
     },
-    "decline_text": "You decide not to go hunting alone you’d rather not upset your mentor.",
+    "decline_text": "You decide not to go hunting alone you'd rather not upset your mentor.",
     "chance_of_success": 40,
     "exp": 20,
     "win_skills": [
@@ -590,12 +590,12 @@
     ],
     "intro_text": "You think about hunting by yourself, hoping it might impress your mentor.",
     "success_text": {
-        "unscathed_common": "You go out alone, the peace and quiet gives you confidence and you seem to be focusing better, you catch the most prey you’ve ever caught!"
+        "unscathed_common": "You go out alone, the peace and quiet gives you confidence and you seem to be focusing better, you catch the most prey you've ever caught!"
     },
     "fail_text": {
         "unscathed_common": "As you head out, the territory seems to grow into a maze, every tree and rock looks the same, as you begin to panic, a patrol of warriors stumble upon you looking surprised to see you alone, you mentor happens to be in the patrol and they scold you for being so reckless, immediately taking you home."
     },
-    "decline_text": "You decide not to go hunting alone you’d rather not upset your mentor.",
+    "decline_text": "You decide not to go hunting alone you'd rather not upset your mentor.",
     "chance_of_success": 40,
     "exp": 20,
     "win_skills": [
@@ -617,7 +617,7 @@
         "unscathed_common": "Finding a quiet place not too far from camp, you work hard at your hunting crouch, practicing you stealth amongst some long grass and familiarise yourself with wind changes, you return to camp feeling pleased with your progress."
     },
     "fail_text": {
-        "unscathed_common": "You can’t seem to find anywhere to practice your moves that doesn’t already have a cat, you can’t think about anything with all the warriors trudging around in your space."
+        "unscathed_common": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space."
     },
     "decline_text": "You decide that your battle skills need more work and practice on that instead.",
     "chance_of_success": 40,
@@ -641,7 +641,7 @@
         "unscathed_common": "Finding a quiet place not too far from camp, you work hard at practicing ambushes, defensive and offensive attacks, even coming up with a brand new move to show your mentor! You return to camp feeling pleased with your progress."
     },
     "fail_text": {
-        "unscathed_common": "You can’t seem to find anywhere to practice your moves that doesn’t already have a cat, you can’t think about anything with all the warriors trudging around in your space."
+        "unscathed_common": "You can't seem to find anywhere to practice your moves that doesn't already have a cat, you can't think about anything with all the warriors trudging around in your space."
     },
     "decline_text": "You decide that your hunting techniques need more work and you practice that instead.",
     "chance_of_success": 40,
@@ -686,7 +686,7 @@
     ],
     "intro_text": "Your mentor asks you to clean out the elders den",
     "success_text": {
-        "unscathed_common": "Although being one of the worst duties and apprentice can be assigned, the task you have been given must be done, as you clean out the moss the elders tell you an enthralling tale of daring and courage keeping up the good spirits, it turns out that the task wasn’t as bad as you thought."
+        "unscathed_common": "Although being one of the worst duties and apprentice can be assigned, the task you have been given must be done, as you clean out the moss the elders tell you an enthralling tale of daring and courage keeping up the good spirits, it turns out that the task wasn't as bad as you thought."
     },
     "fail_text": {
         "unscathed_common": "Although grumbling and complaining you agree to do the task, but your bad mood makes the elders cranky and you begin a heated debate about were the softest moss should be placed, eventually they send you out stating they can do it themselves."
@@ -723,6 +723,5 @@
     ],
     "min_cats": 1,
     "max_cats": 2
-},
-
+}
 ]
