@@ -364,7 +364,6 @@ class Events:
     def create_inheritance(self, parent_ids):
         for parent_id in parent_ids:
             parent_cat = Cat.all_cats[parent_id]
-            parent_cat.children.append(game.clan.your_cat.ID)
             parent_cat.create_inheritance_new_cat()
         game.clan.your_cat.create_inheritance_new_cat()
 
@@ -438,17 +437,13 @@ class Events:
 
     def add_siblings_and_inheritance(self, siblings, parent1=None, parent2=None):
         for sibling in siblings:
-            game.clan.your_cat.siblings.append(sibling.ID)
-            sibling.siblings.extend([game.clan.your_cat.ID, siblings[1].ID if siblings[1] != sibling else siblings[0].ID])
             if parent1: sibling.parent1 = parent1
             if parent2: sibling.parent2 = parent2
             sibling.create_inheritance_new_cat()
         game.clan.your_cat.create_inheritance_new_cat()
         if parent1:
-            Cat.all_cats[parent1].children.extend([sibling.ID for sibling in siblings] + [game.clan.your_cat.ID])
             Cat.all_cats[parent1].create_inheritance_new_cat()
         if parent2:
-            Cat.all_cats[parent2].children.extend([sibling.ID for sibling in siblings] + [game.clan.your_cat.ID])
             Cat.all_cats[parent2].create_inheritance_new_cat()
         
     def mediator_events(self, cat):
