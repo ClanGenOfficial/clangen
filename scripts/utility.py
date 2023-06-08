@@ -536,7 +536,7 @@ def get_personality_compatibility(cat1, cat2):
     for x in list_of_differences:
         if x <= 4:
             running_total += 1
-        elif x >= 8:
+        elif x >= 6:
             running_total -= 1
 
     if running_total >= 2:
