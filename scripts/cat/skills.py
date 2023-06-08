@@ -439,15 +439,15 @@ class CatSkills:
         mentor_tags = CatSkills.influence_flags[mentor.skills.primary.path] if mentor.skills.primary else None
 
         can_primary = bool(
-            CatSkills.influence_flags[self.primary.path] | mentor_tags) if self.primary and mentor_tags else False
+            CatSkills.influence_flags[self.primary.path] & mentor_tags) if self.primary and mentor_tags else False
         can_secondary = bool(
-            CatSkills.influence_flags[self.secondary.path] | mentor_tags) if self.secondary and mentor_tags else False
+            CatSkills.influence_flags[self.secondary.path] & mentor_tags) if self.secondary and mentor_tags else False
             
         # If nothing can be effected, just return as well.         
         if not (can_primary or can_secondary):
             return
 
-        amount_effect = random.randint(2, 5)
+        amount_effect = random.randint(2, 4)
         
         if can_primary and can_secondary:
             if random.randint(1, 2) == 1:

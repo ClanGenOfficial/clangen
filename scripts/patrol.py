@@ -1128,7 +1128,7 @@ class Patrol():
             else:
                 self.outcome_text = self.patrol_event.fail_text[outcome]
 
-        print("PATROL ID:", self.event.patrol_id)
+        print("PATROL ID:", self.patrol_event.patrol_id)
         self.handle_exp_gain(self.success)
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
