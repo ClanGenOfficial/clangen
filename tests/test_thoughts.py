@@ -62,7 +62,6 @@ class TestFamilyThoughts(unittest.TestCase):
         # given
         parent = Cat(moons=40)
         kit = Cat(parent1=parent.ID, moons=4)
-        parent.children.append(kit.ID)
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"

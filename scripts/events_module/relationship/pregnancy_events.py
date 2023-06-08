@@ -6,8 +6,6 @@ from scripts.utility import (
     create_new_cat,
     get_highest_romantic_relation,
     get_med_cats,
-    add_children_to_cat,
-    add_siblings_to_cat, 
     event_text_adjust,
     get_personality_compatibility
 )

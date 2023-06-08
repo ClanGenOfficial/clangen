@@ -5,8 +5,7 @@ import random
 
 from scripts.cat.cats import Cat, INJURIES, PERMANENT, cat_class
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, add_siblings_to_cat, \
-    add_children_to_cat, create_new_cat
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 

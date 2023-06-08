@@ -9,8 +9,6 @@ import pygame
 from scripts.cat.history import History
 from scripts.clan import HERBS, Clan
 from scripts.utility import (
-    add_siblings_to_cat,
-    add_children_to_cat,
     event_text_adjust,
     change_clan_relations,
     change_clan_reputation,
@@ -1142,7 +1140,7 @@ class Patrol():
             else:
                 self.outcome_text = self.patrol_event.fail_text[outcome]
 
-        print(self.outcome_text)
+        print("PATROL ID:", self.patrol_event.patrol_id)
         self.handle_exp_gain(self.success)
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
@@ -1481,8 +1479,6 @@ class Patrol():
                 for new_cat in created_cats[1:]:
                     # adding parent and siblings
                     new_cat.parent1 = created_cats[0].ID
-                    add_children_to_cat(created_cats[0], cat_class)
-                    add_siblings_to_cat(new_cat, cat_class)
 
                     # creating relationships
                     new_cat.relationships[created_cats[0].ID] = Relationship(new_cat, created_cats[0])
@@ -1500,7 +1496,7 @@ class Patrol():
                     )
 
                     # give relationships for siblings
-                    for sibling in new_cat.siblings:
+                    for sibling in new_cat.get_siblings():
                         sibling = Cat.fetch_cat(sibling)
                         sibling.relationships[new_cat.ID] = Relationship(sibling, new_cat)
                         new_cat.relationships[sibling.ID] = Relationship(new_cat, sibling)
@@ -2138,10 +2134,10 @@ class Patrol():
                 affect_skills = cat.skills.mentor_influence(Cat.fetch_cat(cat.mentor))
                 if affect_personality:
                     History.add_facet_mentor_influence(cat, affect_personality[0], affect_personality[1], affect_personality[2])
-                    print(affect_personality)
+                    print(str(cat.name), affect_personality)
                 if affect_skills:
                     History.add_skill_mentor_influence(cat, affect_skills[0], affect_skills[1], affect_skills[2])
-                    print(affect_skills)
+                    print(str(cat.name), affect_skills)
 
     def handle_reputation(self, difference):
         """

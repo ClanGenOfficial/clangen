@@ -3,7 +3,8 @@
 		"id": "trust_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c doesn't think that r_c has been completely honest lately."
+			"m_c doesn't think that r_c has been completely honest lately.",
+			"m_c thinks r_c has been acting strangely."
 		]
 	},
 	{
@@ -19,7 +20,8 @@
 	{
 		"id": "trust_de_med1",
 		"interactions": [
-			"m_c caught r_c in a lie."
+			"m_c caught r_c in a lie.",
+			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}."
 		]
 	},
 	{
@@ -34,7 +36,8 @@
 	{
 		"id": "trust_de_med3",
 		"interactions": [
-			"r_c is gossiping about m_c."
+			"r_c is gossiping about m_c.",
+			"m_c is spreading a rumor about r_c."
 		],
 		"random_trait_constraint": [
 			"sneaky"
@@ -43,7 +46,8 @@
 	{
 		"id": "trust_kit_de_med1",
 		"interactions": [
-			"m_c constantly pulling pranks on r_c."
+			"m_c constantly pulling pranks on r_c.",
+			"m_c is relentlessly pestering r_c."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -60,7 +64,8 @@
 		"id": "trust_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to {PRONOUN/m_c/object}."
+			"m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to {PRONOUN/m_c/object}.",
+			"m_c turned to r_c in a time of need, only for r_c to abandon {PRONOUN/m_c/object}."
 		]
 	},
 	{
@@ -80,14 +85,16 @@
 		"id": "trust_for_medcat_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c can never seem explain {PRONOUN/r_c/poss} health in a way that makes r_c listen..."
+			"m_c can never seem explain {PRONOUN/r_c/poss} health in a way that makes r_c listen...",
+			"m_c feels like r_c is downplaying the severity of m_c's health concerns.",
+			"m_c accuses r_c of not taking care of cats properly."
 		],
 		"random_status_constraint": [
 			"medicine cat"
 		]
 	},
 	{
-		"id": "trust_for_medcat_de_high1",
+		"id": "trust_for_medcat_de_high2",
 		"intensity": "high",
 		"interactions": [
 			"m_c is dissatisfied that r_c can't seem to get rid of {PRONOUN/m_c/poss} chronic pain."
@@ -95,8 +102,42 @@
 		"main_status_constraint": [
 			"elder"
 		],
-		"random_status_constrain,t": [
+		"random_status_constraint": [
 			"medicine cat"
+		]
+	},
+	{
+		"id": "trust_for_medcat_de_high3",
+		"intensity": "high",
+		"interactions": [
+			"m_c accuses r_c of treating cats incorrectly on purpose!",
+			"m_c saw r_c bringing deathberries into the medicine den.",
+			"r_c was rough with m_c during a recent treatment."
+		],
+		"random_status_constraint": [
+			"medicine cat"
+		],
+		"random_trait_constraint": [
+			"cold",
+			"bloodthirsty",
+			"vengeful"
+		]
+	},
+	{
+		"id": "trust_for_leader_de_high1",
+		"intensity": "high",
+		"interactions": [
+			"m_c cowers away from r_c after r_c barks an order at {PRONOUN/m_c/object}.",
+			"After hearing r_c's most recent demands, m_c is concerned about the future of the Clan.",
+			"m_c doesn't believe that r_c has the Clan's best interests in mind."
+		],
+		"random_status_constraint": [
+			"leader"
+		],
+		"random_trait_constraint": [
+			"cold",
+			"bloodthirsty",
+			"vengeful"
 		]
 	}
 ]

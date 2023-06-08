@@ -99,6 +99,18 @@ class Inheritance():
             # grand_kits
             self.init_cousins(inter_id, inter_cat)
 
+        # relations to faded cats - these must occur after all non-faded 
+        # cats have been handled, and in the following order. 
+        self.init_faded_kits()
+        
+        self.init_faded_siblings()
+        
+        self.init_faded_parents_siblings()
+        
+        self.init_faded_grandkits()
+        
+        self.init_faded_cousins()
+
         if len(self.need_update) > 1:
             for update_id in self.need_update:
                 if update_id in self.all_inheritances:
@@ -187,6 +199,50 @@ class Inheritance():
     #                            different init function                           #
     # ---------------------------------------------------------------------------- #
 
+    def init_faded_kits(self):
+        
+        for inter_id in self.cat.faded_offspring:
+            inter_cat = self.cat.fetch_cat(inter_id)
+            self.init_kits(inter_id, inter_cat)
+
+    def init_faded_siblings(self):
+      
+        for inter_id in self.get_blood_parents() + self.cat.adoptive_parents:
+            inter_cat = self.cat.fetch_cat(inter_id)
+            for inter_sibling_id in inter_cat.faded_offspring:
+                inter_sibling = self.cat.fetch_cat(inter_sibling_id)
+                self.init_siblings(inter_sibling_id, inter_sibling)
+             
+    def init_faded_parents_siblings(self):
+        
+        for inter_id in self.get_blood_parents() + self.cat.adoptive_parents:
+            inter_parent = self.cat.fetch_cat(inter_id)
+            for inter_grand_id in self.get_blood_parents(inter_parent) + inter_parent.adoptive_parents:
+                inter_grand = self.cat.fetch_cat(inter_grand_id)
+                for inter_parent_sibling_id in inter_grand.faded_offspring:
+                    inter_parent_sibling = self.cat.fetch_cat(inter_parent_sibling_id)
+                    self.init_parents_siblings(inter_parent_sibling_id, inter_parent_sibling)
+    
+    def init_faded_grandkits(self):
+        """This must occur after all kits, faded and otherwise, have been gathered. """
+        
+        for inter_id in self.get_kits():
+            inter_cat = self.cat.fetch_cat(inter_id)
+            for inter_grandkit_id in inter_cat.faded_offspring:
+                inter_grandkit = self.cat.fetch_cat(inter_grandkit_id)
+                self.init_grand_kits(inter_grandkit_id, inter_grandkit)
+        
+    def init_faded_cousins(self):
+        """This must occur after all parent's siblings, faded and otherwise, have been gathered."""
+        
+        for inter_id in self.get_parents_siblings():
+            inter_cat = self.cat.fetch_cat(inter_id)
+            for inter_cousin_id in inter_cat.faded_offspring:
+                inter_cousin = self.cat.fetch_cat(inter_cousin_id)
+                self.init_cousins(inter_cousin_id, inter_cousin)
+            
+        
+        
     def init_parents(self):
         """Initial the class, with the focus of the parent relation."""
         # by blood
