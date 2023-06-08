@@ -345,7 +345,14 @@ class GenerateEvents:
             # check if clan has kits
             if "clan_kits" in event.tags and not alive_kits:
                 continue
-
+            
+            if "adoption" in event.tags:
+                # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
+                if cat.no_kits:
+                    continue
+                if any(cat.fetch_cat(i).no_kits for i in cat.mate):
+                    continue
+            
             # check for old age
             if "old_age" in event.tags and cat.moons < 150:
                 continue
