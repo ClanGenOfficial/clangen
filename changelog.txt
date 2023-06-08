@@ -3,6 +3,7 @@
 - Added additional flavor text
 - Changed default game mode to expanded mode
 - Fixed some events to make them make more sense
+- Added patrols (Thanks Silverstar!)
 
 <strong>v0.1.3</strong>
 - Fixed several bugs
