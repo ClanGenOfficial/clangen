@@ -1247,7 +1247,7 @@ class Cat():
         
         if old_age != self.age:
             # Things to do if the age changes
-            self.personality.facet_wobble()
+            self.personality.facet_wobble(max=2)
         
         # Set personality to correct type
         self.personality.set_kit(self.is_baby())
