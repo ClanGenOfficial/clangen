@@ -113,6 +113,108 @@ class Events:
             self.handle_lost_cats_return()
 
         # Calling of "one_moon" functions.
+        
+                
+        if Cat.grief_strings:
+            remove_cats = []
+            death_report_cats = []
+
+            # Grab all the dead or outside cats, who should not have grief text
+            for ID in Cat.grief_strings:
+                check_cat = Cat.all_cats.get(ID)
+                if check_cat:
+                    if check_cat.dead or check_cat.outside:
+                        remove_cats.append(check_cat.ID)
+                    else:
+                        death_report_cats.append(check_cat.ID)
+
+            # Remove the dead or outside cats
+            for ID in remove_cats:
+                if ID in Cat.grief_strings:
+                    Cat.grief_strings.pop(ID)
+
+            # Generate events
+            for item in Cat.grief_strings.values():
+                game.cur_events_list.append(
+                    Single_Event(item[0], ["birth_death", "relation"],
+                                 item[1]))
+
+            Cat.grief_strings.clear()
+
+        if Cat.dead_cats:
+            ghost_names = []
+            shaken_cats = []
+            extra_event = None
+            for ghost in Cat.dead_cats:
+                ghost_names.append(str(ghost.name))
+            insert = adjust_list_text(ghost_names)
+
+            if len(Cat.dead_cats) > 1 and game.clan.game_mode != 'classic':
+                event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
+                        f"lives are shared in stories around the circle of mourners as those that were closest to them " \
+                        f"take them to their final resting place."
+
+                if len(ghost_names) > 2:
+                    alive_cats = list(
+                        filter(
+                            lambda kitty: (kitty.status != "leader" and not kitty.dead and
+                                           not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
+                    # finds a percentage of the living clan to become shaken
+
+                    if len(alive_cats) == 0:
+                        return
+                    else:
+                        shaken_cats = random.sample(alive_cats,
+                                                    k=max(int((len(alive_cats) * random.choice([4, 5, 6])) / 100), 1))
+
+                    shaken_cat_names = []
+                    for cat in shaken_cats:
+                        shaken_cat_names.append(str(cat.name))
+                        cat.get_injured("shock", event_triggered=False, lethal=False, severity='minor')
+
+                    insert = adjust_list_text(shaken_cat_names)
+
+                    if len(shaken_cats) == 1:
+                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} is particularly shaken by it."
+                    else:
+                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} are particularly shaken by it. "
+
+            else:
+                event = f"The past moon, {insert} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their Clanmates will miss the spot they took up in their lives. Moments of their " \
+                        f"life are shared in stories around the circle of mourners as those that were closest to them " \
+                        f"take them to their final resting place."
+
+            game.cur_events_list.append(
+                Single_Event(event, ["birth_death"],
+                             [i.ID for i in Cat.dead_cats]))
+            if extra_event:
+                game.cur_events_list.append(
+                    Single_Event(extra_event, ["birth_death"],
+                                 [i.ID for i in shaken_cats]))
+            Cat.dead_cats.clear()
+
+        self.herb_destruction()
+        self.herb_gather()
+
+        if game.clan.game_mode in ["expanded", "cruel season"]:
+            amount_per_med = get_amount_cat_for_one_medic(game.clan)
+            med_fullfilled = medical_cats_condition_fulfilled(
+                Cat.all_cats.values(), amount_per_med)
+            if not med_fullfilled:
+                string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
+                         f"for longer and have a higher chance of dying. "
+                game.cur_events_list.insert(0, Single_Event(string, "health"))
+        else:
+            has_med = any(
+                str(cat.status) in {"medicine cat", "medicine cat apprentice"}
+                and not cat.dead and not cat.outside
+                for cat in Cat.all_cats.values())
+            if not has_med:
+                string = f"{game.clan.name}Clan has no medicine cat!"
+                game.cur_events_list.insert(0, Single_Event(string, "health"))
+                
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
@@ -1098,7 +1200,6 @@ class Events:
                 # game.ceremony_events_list.append(text)
                 text += f"\nVisit {game.clan.deputy.name}'s " \
                         "profile to see their full leader ceremony."
-
                 game.cur_events_list.append(
                     Single_Event(text, "ceremony", game.clan.deputy.ID))
                 self.ceremony_accessory = True
@@ -1473,8 +1574,8 @@ class Events:
         if cat.status in ["warrior", "medicine cat", "mediator"]:
             self.history.add_app_ceremony(cat, random_honor)
         
-        # ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
-        #     list(possible_ceremonies))]
+        ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
+            list(possible_ceremonies))]
 
         # This is a bit strange, but it works. If there is
         # only one parent involved, but more than one living
@@ -1483,39 +1584,39 @@ class Events:
         # parent to include in the involved cats. Therefore,
         # text adjust also returns the random parents it picked,
         # which will be added to the involved cats if needed.
-        # ceremony_text, involved_living_parent, involved_dead_parent = \
-        #     ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
-        #                          random_honor=random_honor,
-        #                          mentor=mentor, previous_alive_mentor=previous_alive_mentor,
-        #                          living_parents=living_parents, dead_parents=dead_parents)
+        ceremony_text, involved_living_parent, involved_dead_parent = \
+            ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
+                                 random_honor=random_honor,
+                                 mentor=mentor, previous_alive_mentor=previous_alive_mentor,
+                                 living_parents=living_parents, dead_parents=dead_parents)
 
         # Gather additional involved cats
-        # for tag in ceremony_tags:
-        #     if tag == "yes_leader":
-        #         involved_cats.append(game.clan.leader.ID)
-        #     elif tag in ["yes_mentor", "yes_leader_mentor"]:
-        #         involved_cats.append(cat.mentor)
-        #     elif tag == "dead_mentor":
-        #         involved_cats.append(dead_mentor.ID)
-        #     elif tag in ["alive_mentor", "alive_leader_mentor"]:
-        #         involved_cats.append(previous_alive_mentor.ID)
-        #     elif tag == "alive2_parents" and len(living_parents) >= 2:
-        #         for c in living_parents[:2]:
-        #             involved_cats.append(c.ID)
-        #     elif tag == "alive1_parents" and involved_living_parent:
-        #         involved_cats.append(involved_living_parent.ID)
-        #     elif tag == "dead2_parents" and len(dead_parents) >= 2:
-        #         for c in dead_parents[:2]:
-        #             involved_cats.append(c.ID)
-        #     elif tag == "dead1_parent" and involved_dead_parent:
-        #         involved_cats.append(involved_dead_parent.ID)
+        for tag in ceremony_tags:
+            if tag == "yes_leader":
+                involved_cats.append(game.clan.leader.ID)
+            elif tag in ["yes_mentor", "yes_leader_mentor"]:
+                involved_cats.append(cat.mentor)
+            elif tag == "dead_mentor":
+                involved_cats.append(dead_mentor.ID)
+            elif tag in ["alive_mentor", "alive_leader_mentor"]:
+                involved_cats.append(previous_alive_mentor.ID)
+            elif tag == "alive2_parents" and len(living_parents) >= 2:
+                for c in living_parents[:2]:
+                    involved_cats.append(c.ID)
+            elif tag == "alive1_parents" and involved_living_parent:
+                involved_cats.append(involved_living_parent.ID)
+            elif tag == "dead2_parents" and len(dead_parents) >= 2:
+                for c in dead_parents[:2]:
+                    involved_cats.append(c.ID)
+            elif tag == "dead1_parent" and involved_dead_parent:
+                involved_cats.append(involved_dead_parent.ID)
 
         # # remove duplicates
-        # involved_cats = list(set(involved_cats))
-
-        # game.cur_events_list.append(
-        #     Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
-        # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
+        involved_cats = list(set(involved_cats))
+        if str(game.clan.your_cat.name) not in ceremony_text:
+            game.cur_events_list.append(
+                Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
+        game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
 
     def gain_accessories(self, cat):
         """
