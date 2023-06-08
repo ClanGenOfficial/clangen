@@ -656,7 +656,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "r_c grits their teeth to not chide m_c like a kitten once more about their troublesome ways, and gives them a life for [virtue].",
+          "text": "r_c grits {PRONOUN/r_c/poss} teeth to not chide m_c like a kitten once more about {PRONOUN/m_c_c/poss} troublesome ways, and gives {PRONOUN/m_c/object} a life for [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
@@ -694,7 +694,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "There was no doubt in r_c's mind that m_c would be a wise leader of legend one day. It was their pleasure to give the new leader a life for [virtue].",
+          "text": "There was no doubt in r_c's mind that m_c would be a wise leader of legend one day. It was {PRONOUN/r_c/poss} pleasure to give the new leader a life for [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
