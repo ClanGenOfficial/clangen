@@ -435,5 +435,294 @@
             ],
             "min_cats": 1,
             "max_cats": 2
-            }
+            },
+        {
+    "patrol_id": "gen_your_cat30",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "Your mentor tasks you with hunting for the elders.",
+    "success_text": {
+        "unscathed_common": "As you hunt, you find a mouse nest, you burrow down into the nest and catch any you can get your claws on, the elders will be please tonight!"
+    },
+    "fail_text": {
+        "unscathed_common": "The territory seems to be bare tonight, you can't catch a whiff of prey."
+    },
+    "decline_text": "You decide not to hunt for the elders and instead focus on your training.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat31",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You go out battle training with your mentor",
+    "success_text": {
+        "unscathed_common": "You have a blast! Your mentor shares their best moves with you and you even show them a couple of your own."
+    },
+    "fail_text": {
+        "unscathed_common": "You can’t seem to put your paws were your mentor tells you and finally they decide its time to finish."
+    },
+    "decline_text": "You decide not to go battle training so you hunt instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat32",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "Your mentor asks if you would like to check the borders with them",
+    "success_text": {
+        "unscathed_common": "You jump to your paws excitedly, running after you mentor to explore the territory, they escort you through the scenery showing you places in the territory you never knew existed!"
+    },
+    "fail_text": {
+        "unscathed_common": "You jump to your paws and run after them, as you trek through the territory you become excited and run off, your mentor’s walking to slow anyway. After a moment you realize you don’t recognise this part of the forest, eventually your mentor finds you and leads you back to camp with a scolding about running off."
+    },
+    "decline_text": "You decline the offer.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat33",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You go out hunting with your mentor",
+    "success_text": {
+        "unscathed_common": "You have a blast! Your mentor shows you the best places for prey and you both come back with a hefty haul."
+    },
+    "fail_text": {
+        "unscathed_common": "You can’t seem to find any prey, your mentor comforts you, saying they wouldn’t have had any hope of finding prey in this terrible weather either."
+    },
+    "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat34",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You go out hunting with your mentor",
+    "success_text": {
+        "unscathed_common": "This is a stealth lesson, and you are the stealthiest cat today, you bring brack more prey than your mentor!"
+    },
+    "fail_text": {
+        "unscathed_common": "You can’t seem to find any prey, the scents are all just muddled up today, you watch as a senior warrior pads past, their jaws full with freshly caught prey, maybe it was just bad luck."
+    },
+    "decline_text": "You decide not to go hunting so you practice your battle moves instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat35",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You think about hunting by yourself, hoping it might impress your mentor.",
+    "success_text": {
+        "unscathed_common": "You go out alone, the peace and quiet gives you time to perfect your hunting crouch and you bring back an impressive amount of prey, your mentor watches as you enter the camp their eyes glowing with pride."
+    },
+    "fail_text": {
+        "unscathed_common": "As you head out, every creaking branch and swishing fern makes you jump, maybe hunting alone wasn’t the best idea..."
+    },
+    "decline_text": "You decide not to go hunting alone you’d rather not upset your mentor.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat36",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You think about hunting by yourself, hoping it might impress your mentor.",
+    "success_text": {
+        "unscathed_common": "You go out alone, the peace and quiet gives you confidence and you seem to be focusing better, you catch the most prey you’ve ever caught!"
+    },
+    "fail_text": {
+        "unscathed_common": "As you head out, the territory seems to grow into a maze, every tree and rock looks the same, as you begin to panic, a patrol of warriors stumble upon you looking surprised to see you alone, you mentor happens to be in the patrol and they scold you for being so reckless, immediately taking you home."
+    },
+    "decline_text": "You decide not to go hunting alone you’d rather not upset your mentor.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat37",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You decide to take some time to perfect you hunting technique",
+    "success_text": {
+        "unscathed_common": "Finding a quiet place not too far from camp, you work hard at your hunting crouch, practicing you stealth amongst some long grass and familiarise yourself with wind changes, you return to camp feeling pleased with your progress."
+    },
+    "fail_text": {
+        "unscathed_common": "You can’t seem to find anywhere to practice your moves that doesn’t already have a cat, you can’t think about anything with all the warriors trudging around in your space."
+    },
+    "decline_text": "You decide that your battle skills need more work and practice on that instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat38",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "You decide to take some time to perfect you fighting techniques.",
+    "success_text": {
+        "unscathed_common": "Finding a quiet place not too far from camp, you work hard at practicing ambushes, defensive and offensive attacks, even coming up with a brand new move to show your mentor! You return to camp feeling pleased with your progress."
+    },
+    "fail_text": {
+        "unscathed_common": "You can’t seem to find anywhere to practice your moves that doesn’t already have a cat, you can’t think about anything with all the warriors trudging around in your space."
+    },
+    "decline_text": "You decide that your hunting techniques need more work and you practice that instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat39",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "The medicine cat asks you to collect some more moss for the herb storage",
+    "success_text": {
+        "unscathed_common": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go."
+    },
+    "fail_text": {
+        "unscathed_common": "You agree, but as you pad through the territory a downpour of rain soils any moss that could have been collected, you return back empty pawed."
+    },
+    "decline_text": "Medicine cat duties! No way! Your training to be a warrior!",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat40",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "Your mentor asks you to clean out the elders den",
+    "success_text": {
+        "unscathed_common": "Although being one of the worst duties and apprentice can be assigned, the task you have been given must be done, as you clean out the moss the elders tell you an enthralling tale of daring and courage keeping up the good spirits, it turns out that the task wasn’t as bad as you thought."
+    },
+    "fail_text": {
+        "unscathed_common": "Although grumbling and complaining you agree to do the task, but your bad mood makes the elders cranky and you begin a heated debate about were the softest moss should be placed, eventually they send you out stating they can do it themselves."
+    },
+    "decline_text": "Cleaning out the elders den? You slip away quietly saying your off to gather moss, but you curl up and take nap in a patch of warm sun.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_your_cat41",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training",
+        "apprentice"
+    ],
+    "intro_text": "Your mentor asks you to check the elders for ticks",
+    "success_text": {
+        "unscathed_common": "You agree, although moss collecting being one of the more boring duties, its still an important task and you work hard at bringing home a healthy collection of fresh moss, familiarising yourself with the territory as you go."
+    },
+    "fail_text": {
+        "unscathed_common": "Although grumbling and complaining you agree to do the task, dreading it with every hair on your pelt, but as you walk to the den, the mousebile in your jaws, you stumble, the foul stuff spilling all over your muzzle! It takes forever to get the smell out of your pelt and another apprentice has already done the task by the time your done."
+    },
+    "decline_text": "Checking the elders for ticks? Yuck!",
+    "chance_of_success": 40,
+    "exp": 20,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+
 ]
