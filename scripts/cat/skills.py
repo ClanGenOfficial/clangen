@@ -560,7 +560,6 @@ class CatSkills:
                 # This is to simulate them reaching their "peak"
                 if not int(random.random() * int(the_cat.moons/4)):
                     self.primary.points += 1  
-                    print(str(the_cat.name), self)
         else:
             # For outside cats, just check interest and flip it if needed. 
             # Going on age, rather than status here. 

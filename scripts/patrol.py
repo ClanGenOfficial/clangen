@@ -1128,7 +1128,7 @@ class Patrol():
             else:
                 self.outcome_text = self.patrol_event.fail_text[outcome]
 
-        print(self.outcome_text)
+        print("PATROL ID:", self.event.patrol_id)
         self.handle_exp_gain(self.success)
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
@@ -2107,10 +2107,10 @@ class Patrol():
                 affect_skills = cat.skills.mentor_influence(Cat.fetch_cat(cat.mentor))
                 if affect_personality:
                     History.add_facet_mentor_influence(cat, affect_personality[0], affect_personality[1], affect_personality[2])
-                    print(affect_personality)
+                    print(str(cat.name), affect_personality)
                 if affect_skills:
                     History.add_skill_mentor_influence(cat, affect_skills[0], affect_skills[1], affect_skills[2])
-                    print(affect_skills)
+                    print(str(cat.name), affect_skills)
 
     def handle_reputation(self, difference):
         """
