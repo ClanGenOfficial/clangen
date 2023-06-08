@@ -447,7 +447,7 @@ class CatSkills:
         if not (can_primary or can_secondary):
             return
 
-        amount_effect = random.randint(2, 4)
+        amount_effect = random.randint(1, 4)
         
         if can_primary and can_secondary:
             if random.randint(1, 2) == 1:
@@ -491,7 +491,7 @@ class CatSkills:
                         
             if the_cat.status == 'kitten':
                 # Check to see if the cat gains a secondary
-                if not self.secondary and not int(random.random() * 6):
+                if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
                     self.secondary = Skill.get_random_skill(points=0, interest_only=True, exclude=self.primary.path)
                 
@@ -508,13 +508,13 @@ class CatSkills:
 
             elif 'apprentice' in the_cat.status:
                 # Check to see if the cat gains a secondary
-                if not self.secondary and not int(random.random() * 6):
+                if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
                     self.secondary = Skill.get_random_skill(points=0, interest_only=True, exclude=self.primary.path)
                 
                 # Check if they get any points this moon
                 if not int(random.random() * 4):
-                    amount_effect = random.randint(1, 4)
+                    amount_effect = random.randint(2, 5)
                     if self.primary and self.secondary:
                         if random.randint(1, 2) == 1:
                             self.primary.points += amount_effect
@@ -552,7 +552,7 @@ class CatSkills:
                     
                 # If a cat doesn't can a secondary, have a small change for them to get one. 
                 # but, only a first-tier skill. 
-                if not self.secondary and not int(random.random() * 200):
+                if not self.secondary and not int(random.random() * 300):
                     self.secondary = Skill.get_random_skill(exclude=self.primary.path, point_tier=1)
                 
                 # There is a change for primary to condinue to improve throughout life 
