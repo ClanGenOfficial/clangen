@@ -223,7 +223,8 @@ def create_new_cat(Cat,
                    gender=None,
                    thought='Is looking around the camp with wonder',
                    alive=True,
-                   outside=False):
+                   outside=False
+	):
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class

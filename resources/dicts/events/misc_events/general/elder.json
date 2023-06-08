@@ -138,7 +138,7 @@
             "respect",
             "clan_kits"
         ],
-        "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/start/starts} telling the kits a thrilling story of times long past.",
+        "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
         "cat_skill": [
             "STORY,1",
             "LORE,2"

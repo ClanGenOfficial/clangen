@@ -110,9 +110,18 @@ class Patrol():
         
         return self.patrol_event.intro_text
 
-    def proceed_patrol(self, antag):
+    def proceed_patrol(self, path:str="proceed"):
+        """Procced the patrol to the next step. 
+            path can be: "proceed", "antag", or "decline" """
+        
+        if path == "decline":
+            if self.patrol_event:
+                return self.patrol_event.decline_text
+            else:
+                return "Error - no event choosen"
+        
         self.patrol_done = True
-        self.calculate_success(antagonize=antag)
+        self.calculate_success(antagonize=(path == "antag"))
         
         return self.outcome_text
         
@@ -316,7 +325,7 @@ class Patrol():
                     print("incorrectly formatted skill constaint", _skill)
                     continue
                     
-                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], spl[1]):
+                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], int(spl[1])):
                     return False
         
         if "trait" in patrol.constraints:
@@ -1326,7 +1335,7 @@ class Patrol():
         kit_thought = 'Is looking around the camp with wonder'
         if f"litter{outcome}" in attribute_list:
             print('litter outcome checking')
-            if not game.settings["no gendered breeding"]:
+            if not game.settings["same sex birth"]:
                 gender = 'female'
             litter = True
             age = randint(23, 100)
@@ -1449,7 +1458,7 @@ class Patrol():
                                                ))
             # giving the mother the necessary condition
             if game.clan.game_mode != 'classic' and kit_age <= 2 and not created_cats[0].dead:
-                if not game.settings["no gendered breeding"]:
+                if not game.settings["same sex birth"]:
                     if created_cats[0].gender == 'female':
                         created_cats[0].get_injured("recovering from birth")
                 else:
@@ -1697,7 +1706,7 @@ class Patrol():
             self.handle_history(cat, death=True)
             cat.die(body)
 
-            if len(self.patrol_cats) > 1:
+            if game.game_mode != "classic" and len(self.patrol_cats) > 1:
                 for cat in self.patrol_cats:
                     if not cat.dead:
                         cat.get_injured("shock", lethal=False)
@@ -1900,6 +1909,7 @@ class Patrol():
         if scar and "scar" in self.patrol_event.history_text:
             adjust_text = self.patrol_event.history_text['scar']
             adjust_text = adjust_text.replace("r_c", str(cat.name))
+            adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
             if possible:
                 History.add_possible_history(cat, condition, scar_text=adjust_text)
             else:
@@ -1909,6 +1919,7 @@ class Patrol():
                 if "lead_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['lead_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
                         History.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
@@ -1917,6 +1928,7 @@ class Patrol():
                 if "reg_death" in self.patrol_event.history_text:
                     adjust_text = self.patrol_event.history_text['reg_death']
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
+                    adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
                         History.add_possible_history(cat,condition=condition, death_text=adjust_text)
                     else:
