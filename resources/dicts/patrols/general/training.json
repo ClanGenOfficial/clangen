@@ -1971,7 +1971,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_change_fail", "minor_injury"],
-        "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, you see, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that deadicated to taking every opportunity to train, every with a tick like r_c.",
+        "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, you see, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
         "decline_text": "p_l gets waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
         "chance_of_success": 60,
         "exp": 15,
@@ -1990,6 +1990,98 @@
                 "romantic_20"
             ]
                 }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_30locked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic"],
+        "intro_text": "Maybe it's a little immature to be so invested in an <s>argument</s> refined conversation about battle strategies.",
+        "decline_text": "Yeah, time to take a breather from this conversation, p_l and r_c decide.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c, both cats going flying in a ball of fur and insults and slightly too much body contact.",
+            "unscathed_rare": "r_c's tail twitches with irritation as {PRONOUN/r_c/subject} {VERB/r_c/refute/refutes} p_l's point, drawing p_l's eye. And then it happens again, and again, until p_l snaps and pounces and whoops suddenly r_c is right under {PRONOUN/p_l/object}, muzzle to muzzle and very close. Erm. Sorry?"
+        },
+        "fail_text": {
+            "unscathed_common": "p_l wins that argument with a point r_c just can't refute. Somehow this pleases neither of them."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_30",
+                "romantic_30"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_30locked2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "no_leader"],
+        "intro_text": "p_l can't believe that r_c is <i>so Stars-damned annoying</i> that the leader of c_n sent them both out together to work out their problems. Like, what?",
+        "decline_text": "Maybe this rivalry has gotten a little... excessive.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "If there is a single thing that r_c and p_l can both agree on it's this; how dare anyone order them to be friends! They complain to each other about the leader's commands for a good long while, before both being swept up into their normal arguments. Which they'll be continuing as long as they feel like, thank you."
+        },
+        "fail_text": {
+            "unscathed_common": "It's the most boring afternoon imaginable, both cats padding in conversational tip-toe rather than their usual exuberant dynamic, but yes, fine, under threat of looking like fox-dung in front of c_n, maybe they can work out a way of getting along."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_30",
+                "romantic_30"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_enemiestolovers_30locked3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "romantic", "leader"],
+        "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
+        "decline_text": "Time for training to end. Now.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "p_l snaps. Oh by StarClan, can r_c not shut up for ONE SECOND?! Falling onto {PRONOUN/p_l/poss} rump, horrified at {PRONOUN/p_l/self}, p_l has a fantastic view of r_c, ears up with shock, twisting round to gape at {PRONOUN/p_l/object}. Which lasts for a split second before r_c is calling p_l mouse-brained and about as helpful as Twolegs in leafbare, {PRONOUN/r_c/poss} tirade barely interrupted by p_l's outburst. Maybe there are some cats in the Clan p_l is still just another cat to. The thought is strangely comforting."
+        },
+        "fail_text": {
+            "unscathed_common": "{PRONOUN/p_l/subject} {VERB/p_l/breath/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?"
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_30",
+                "romantic_30"
+            ]
+                }
+    },
+    {
+        "patrol_id": "gen_train_pullingpigtails1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "no_leader", "apprentice", "warrior", "two_apprentices", "rel_two_apps", "big_change", "pos_dislike", "romantic", "no_change_fail", "minor_injury"],
+        "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
+        "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
+        "chance_of_success": 60,
+        "exp": 25,
+        "success_text": {
+            "unscathed_common": "Each time p_l looks the other way app1 makes sure to quickly tug on app2's fur. Next time app1 decides to do it again, app2 makes sure to turn ever so slightly, making {PRONOUN/app1/object} trip and fall into a puddle.",
+            "unscathed_rare": "p_l, p_l! app1 keeps tugging on {PRONOUN/app2/poss} fur, app2 whines! Exhausted by their childish actions, p_l tells the apprentices to sort it out between themselves. They've back on the path for a grand total of two seconds before there's a much louder yelp, a startling crash, and app2 trots past p_l, merrily reporting that {PRONOUN/app2/subject}{VERB/app2/'ve/'s} dealt with the problem."
+        },
+        "fail_text": {
+            "injury": "p_l tries to ignore what's clearly apprentice nonsense, up until there's a rather more pained yelp. app1 has encountered something sharp in the puddle app2 shoved {PRONOUN/app1/object} into. <i>Apprentices</i>. The leader is going to hear <i>exactly</i> which cats caused this patrol to fail."
+        },
+        "min_cats": 3,
+        "max_cats": 6
     },
     {
         "patrol_id": "gen_train_mosstraining1",
