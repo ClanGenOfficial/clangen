@@ -270,10 +270,10 @@ class PatrolScreen(Screens):
                     self.patrol_type = 'general'
 
             if game.clan.game_mode != 'classic':
-                self.elements['paw'].enable()
-                self.elements['mouse'].enable()
-                self.elements['claws'].enable()
-                self.elements['herb'].enable()
+                # self.elements['paw'].enable()
+                # self.elements['mouse'].enable()
+                # self.elements['claws'].enable()
+                # self.elements['herb'].enable()
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
 

@@ -629,24 +629,24 @@ class Patrol():
             elif game.clan.your_cat.status != "kitten" and "kit_only" in patrol.tags:
                 continue
             #  correct button check
-            if patrol_type == "general":
-                if not set(patrol.tags).intersection({"hunting", "border", "training"}):
-                    # This make sure general only gets hunting, border, or training patrols.
-                    continue
-            else:
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
-                    continue
-                elif 'herb_gathering' not in patrol.tags and patrol_type == 'med':
-                    continue
+            # if patrol_type == "general":
+            #     if not set(patrol.tags).intersection({"hunting", "border", "training"}):
+            #         # This make sure general only gets hunting, border, or training patrols.
+            #         continue
+            # else:
+            #     if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+            #         continue
+            #     elif 'border' not in patrol.tags and patrol_type == 'border':
+            #         continue
+            #     elif 'training' not in patrol.tags and patrol_type == 'training':
+            #         continue
+            #     elif 'herb_gathering' not in patrol.tags and patrol_type == 'med':
+            #         continue
 
-            if patrol_size < patrol.min_cats:
-                continue
-            if patrol_size > patrol.max_cats:
-                continue
+            # if patrol_size < patrol.min_cats:
+            #     continue
+            # if patrol_size > patrol.max_cats:
+            #     continue
 
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
