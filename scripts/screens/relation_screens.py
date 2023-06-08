@@ -3628,6 +3628,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 else:
                     self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
                     self.the_cat.create_inheritance_new_cat()
+                    self.selected_cat.create_inheritance_new_cat()
                 
                 self.draw_tab_button()
                 self.update_toggle_button()
