@@ -38,7 +38,7 @@ class MakeClanScreen(Screens):
 
 
     # This section holds all the information needed
-    game_mode = 'classic'  # To save the users selection before conformation.
+    game_mode = 'expanded'  # To save the users selection before conformation.
     clan_name = ""  # To store the clan name before conformation
     leader = None  # To store the clan leader before conformation
     deputy = None
@@ -70,7 +70,7 @@ class MakeClanScreen(Screens):
 
     def screen_switches(self):
         # Reset variables
-        self.game_mode = 'classic'
+        self.game_mode = 'expanded'
         self.clan_name = ""
         self.selected_camp_tab = 1
         self.biome_selected = None
