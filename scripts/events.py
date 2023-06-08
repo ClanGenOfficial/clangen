@@ -93,7 +93,7 @@ class Events:
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
-        checks = [len(game.clan.your_cat.apprentice), game.clan.your_cat.mate]
+        checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate)]
         if any(
                 str(cat.status) in {
                     'leader', 'deputy', 'warrior', 'medicine cat',
@@ -321,8 +321,16 @@ class Events:
             ceremony_txt = random.choice(self.d_txt['gain_app'])
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
             ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
-            game.cur_events_list.append(Single_Event(ceremony_txt))
+            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
 
+        if len(game.clan.your_cat.mate) == checks[1] + 1:
+            resource_dir = "resources/dicts/events/lifegen_events/"
+            with open(f"{resource_dir}ceremonies.json",
+                    encoding="ascii") as read_file:
+                self.d_txt = ujson.loads(read_file.read())
+            ceremony_txt = random.choice(self.d_txt['gain_mate'])
+            ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
+            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         # Resort
         if game.sort_type != "id":
             Cat.sort_cats()
