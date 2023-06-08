@@ -78,7 +78,8 @@ class Events:
             "You get a thorn stuck in your paw, and your parent gently removes it, teaching you about the dangers of the forest.",
         "You meet the Clan leader for the first time, their presence making you feel small and awed.",
     "You get your first minor injury, a small scratch from rough play. The sting is sharp, but the attention and care you receive from your mother and the medicine cat make you feel important."]
-        self.c_txt = None        
+        self.c_txt = None
+        self.d_txt = None        
 
     def one_moon(self):
         """
@@ -92,7 +93,7 @@ class Events:
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
-
+        checks = [len(game.clan.your_cat.apprentice), game.clan.your_cat.mate]
         if any(
                 str(cat.status) in {
                     'leader', 'deputy', 'warrior', 'medicine cat',
@@ -114,7 +115,7 @@ class Events:
 
         # Calling of "one_moon" functions.
         
-                
+        
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -227,7 +228,27 @@ class Events:
                 new_list.append(i)
             else:
                 other_list.append(i)
-                
+        # Promote leader and deputy, if needed.
+        self.check_and_promote_leader()
+        self.check_and_promote_deputy()
+
+        if game.clan.game_mode in ["expanded", "cruel season"]:
+            amount_per_med = get_amount_cat_for_one_medic(game.clan)
+            med_fullfilled = medical_cats_condition_fulfilled(
+                Cat.all_cats.values(), amount_per_med)
+            if not med_fullfilled:
+                string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
+                            f"for longer and have a higher chance of dying. "
+                game.cur_events_list.insert(0, Single_Event(string, "health"))
+        else:
+            has_med = any(
+                str(cat.status) in {"medicine cat", "medicine cat apprentice"}
+                and not cat.dead and not cat.outside
+                for cat in Cat.all_cats.values())
+            if not has_med:
+                string = f"{game.clan.name}Clan has no medicine cat!"
+                game.cur_events_list.insert(0, Single_Event(string, "health"))
+        
         game.cur_events_list = new_list
         game.other_events_list = other_list
         resource_dir = "resources/dicts/events/lifegen_events/"
@@ -291,27 +312,16 @@ class Events:
         elif game.clan.your_cat.moons > 100:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt["elder"])))
-    
-        if game.clan.game_mode in ["expanded", "cruel season"]:
-            amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            med_fullfilled = medical_cats_condition_fulfilled(
-                Cat.all_cats.values(), amount_per_med)
-            if not med_fullfilled:
-                string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
-                         f"for longer and have a higher chance of dying. "
-                game.cur_events_list.insert(0, Single_Event(string, "health"))
-        else:
-            has_med = any(
-                str(cat.status) in {"medicine cat", "medicine cat apprentice"}
-                and not cat.dead and not cat.outside
-                for cat in Cat.all_cats.values())
-            if not has_med:
-                string = f"{game.clan.name}Clan has no medicine cat!"
-                game.cur_events_list.insert(0, Single_Event(string, "health"))
 
-        # Promote leader and deputy, if needed.
-        self.check_and_promote_leader()
-        self.check_and_promote_deputy()
+        if len(game.clan.your_cat.apprentice) == checks[0] + 1:
+            resource_dir = "resources/dicts/events/lifegen_events/"
+            with open(f"{resource_dir}ceremonies.json",
+                    encoding="ascii") as read_file:
+                self.d_txt = ujson.loads(read_file.read())
+            ceremony_txt = random.choice(self.d_txt['gain_app'])
+            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+            ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
+            game.cur_events_list.append(Single_Event(ceremony_txt))
 
         # Resort
         if game.sort_type != "id":
