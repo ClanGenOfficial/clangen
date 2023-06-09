@@ -882,7 +882,7 @@
         "chance_of_success": 75,
         "exp": 5,
         "success_text": {
-            "unscathed_common": "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
+            "unscathed_common": "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both Clan and dolphins wept at their death when it came.",
             "unscathed_rare": "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
         },
         "fail_text": {

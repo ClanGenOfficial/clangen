@@ -1709,6 +1709,7 @@ class Events:
             return triggered_death
 
     def handle_murder(self, cat):
+        ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
         kill_chance = game.config["death_related"]["base_murder_kill_chance"]
@@ -1804,7 +1805,6 @@ class Events:
                     names += f" and {last_name}"
             disaster.extend([
                 ' drown after the camp becomes flooded.',
-                f' are killed in a battle against {random.choice(other_clan).name}Clan.',
                 ' are killed after a fire rages through the camp.',
                 ' are killed in an ambush by a group of rogues.',
                 ' go missing in the night.',
@@ -1852,6 +1852,8 @@ class Events:
 
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
+                # this next bit is temporary until we can rework it
+                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
