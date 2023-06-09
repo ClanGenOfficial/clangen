@@ -92,11 +92,11 @@ class Relation_Events():
 
     def handle_mating(self, current_relationship):
         """Handle mating for the selected relationship."""
-        if not self.can_trigger_events(cat):
-            return
-
         cat = current_relationship.cat_from
         cat_to = current_relationship.cat_to
+
+        if not self.can_trigger_events(cat):
+            return
 
         # fix the settings if the current cats are mates
         if (cat.ID in cat_to.mate or cat_to.ID in cat.mate) and\
