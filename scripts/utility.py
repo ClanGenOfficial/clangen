@@ -404,7 +404,9 @@ def create_new_cat(Cat,
 
         # create relationships
         new_cat.create_relationships_new_cat()
-        new_cat.create_inheritance_new_cat()
+        # Note - we always update inheritance after the cats are generated, to
+        # allow us to add parents. 
+        #new_cat.create_inheritance_new_cat() 
 
     return created_cats
 

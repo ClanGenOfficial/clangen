@@ -1399,6 +1399,7 @@ class Patrol():
                                       )
         if not alive:
             self.results_text.append(f"{created_cats[0].name}'s ghost now wanders.")
+            game.clan.add_to_unknown(created_cats[0])
 
         # now we hurt the kitty
         if "new_cat_injury" in tags and game.clan.game_mode != 'classic':
@@ -1529,7 +1530,8 @@ class Patrol():
                             trust=parent_to_kit["trust"]
                         )
 
-        # now have the new cats form relationships with the patrol cats
+        # now have the new cats form relationships with the patrol cats and 
+        # update inheritance
         for new_cat in created_cats:
             if new_cat.outside:
                 continue
@@ -1539,8 +1541,11 @@ class Patrol():
                 patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
                 new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
             self.results_text.append(f"{new_cat.name} has joined the Clan.")
-            # update inheritance
+            
+            # update inheritance!
             new_cat.create_inheritance_new_cat()
+            
+            
             # for each cat increase the relationship towards all patrolling cats
             new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
             clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
