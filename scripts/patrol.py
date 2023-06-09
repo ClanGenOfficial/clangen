@@ -2044,8 +2044,9 @@ class Patrol():
                     amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
                 elif "good hunter" in self.patrol_skills:
                     amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
-                print(f" -- FRESHKILL: added {amount} fail-prey")
                 game.clan.freshkill_pile.add_freshkill(amount)
+                if FRESHKILL_ACTIVE:
+                    print(f" -- FRESHKILL: added {amount} fail-prey")
                 if len(self.patrol_cats) == 1:
                     self.results_text.append(
                         f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
@@ -2073,7 +2074,8 @@ class Patrol():
             if current_tag in self.patrol_event.tags or prey_type in self.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
-        print(" -- FRESHKILL: amount per cat ", prey_amount_per_cat)
+        if FRESHKILL_ACTIVE:
+            print(" -- FRESHKILL: amount per cat ", prey_amount_per_cat)
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
@@ -2082,7 +2084,8 @@ class Patrol():
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
 
         if game.clan.game_mode != "classic":
-            print(f" -- FRESHKILL: added {total_amount} prey")
+            if FRESHKILL_ACTIVE:
+                print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
                 amount_text = "medium"
