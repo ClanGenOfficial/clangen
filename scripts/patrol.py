@@ -1096,12 +1096,8 @@ class Patrol():
                     outcome = "injury"
 
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
-                if outcome == "death":
-                    self.handle_deaths_and_gone(self.patrol_random_cat)
-                elif outcome == "stat_death":
-                    self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-                elif outcome == "leader_death":
-                    self.handle_deaths_and_gone(self.patrol_leader)
+                if "death" in outcome:
+                    self.handle_deaths_and_gone(outcome)
                 elif outcome == "injury" or outcome == "stat_injury":
                     if game.clan.game_mode == 'classic':
                         self.handle_scars(outcome)
@@ -1680,7 +1676,26 @@ class Patrol():
                 else:
                     cat.experience = cat.experience + gained_exp
 
-    def handle_deaths_and_gone(self, cat):
+    def handle_deaths_and_gone(self, outcome):
+        ''' handles death and abduction/lost events '''
+        # find the new cat tag and split to get attributes - else return if no tag found
+        attribute_list = []
+        tags = self.patrol_event.tags
+        for tag in tags:
+            # print(tag)
+            if "death" in tag:
+                attribute_list = tag.split("_")
+                break
+        if not attribute_list:
+            if "stat" in outcome:
+                cat = self.patrol_fail_stat_cat
+            elif "leader" in outcome:
+                cat = self.patrol_leader
+            else:
+                cat = self.patrol_random_cat
+        else:
+            if "app1" in attribute_list:
+                cat = self.patrol_apprentices[0]
         if "no_body" in self.patrol_event.tags:
             body = False
         else:
