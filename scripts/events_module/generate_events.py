@@ -259,6 +259,9 @@ class GenerateEvents:
         minor = []
         major = []
         severe = []
+        
+        # Chance to bypass the skill or trait requirements. 
+        trait_skill_bypass = 15
 
         if war and random.randint(1, 10) != 1 and other_clan == enemy_clan:
             war_event = True
@@ -393,16 +396,17 @@ class GenerateEvents:
                     continue
                 elif "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
                     continue
-
-                # check other_cat trait and skill
-                had_trait = False
+                
+                
+                # check other cat trait and skill
+                has_trait = False
                 if event.other_cat_trait:
-                    if other_cat.personality.trait not in event.other_cat_trait and int(random.random() * 15):
-                        continue
-                    had_trait = True
-                if event.other_cat_skill and not had_trait:
-                    _flag = False
-                    for _skill in event.cat_skill:
+                    if other_cat.personality.trait in event.other_cat_trait:
+                        has_trait = True
+                
+                has_skill = False
+                if event.other_cat_skill:
+                    for _skill in event.other_cat_skill:
                         split = _skill.split(",")
                         
                         if len(split) < 2:
@@ -410,20 +414,30 @@ class GenerateEvents:
                             continue
                         
                         if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            _flag = True
+                            has_skill = True
                             break
                     
-                    if not _flag and int(random.random() * 15):
+                # There is a small chance to bypass the skill or trait requirments.  
+                if event.other_cat_trait and event.other_cat_skill:
+                    if not (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                        continue
+                elif event.other_cat_trait:
+                    if not has_trait and int(random.random() * trait_skill_bypass):
+                        continue
+                elif event.other_cat_skill:
+                    if not has_skill and int(random.random() * trait_skill_bypass):
                         continue
                 
-                had_trait = True
+                
+                # check cat negate trait and skill
+                has_trait = False
                 if event.other_cat_negate_trait:
-                    if other_cat.personality.trait in event.other_cat_negate_trait and int(random.random() * 15):
-                        continue
-                    had_trait = False
-                if event.other_cat_negate_skill and had_trait:
-                    _flag = False
-                    for _skill in event.cat_skill:
+                    if other_cat.personality.trait in event.other_cat_negate_trait:
+                        has_trait = True
+                
+                has_skill = False
+                if event.other_cat_negate_trait:
+                    for _skill in event.other_cat_negate_trait:
                         split = _skill.split(",")
                         
                         if len(split) < 2:
@@ -431,11 +445,12 @@ class GenerateEvents:
                             continue
                         
                         if other_cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                            _flag = True
+                            has_skill = True
                             break
                     
-                    if _flag and int(random.random() * 15):
-                        continue
+                # There is a small chance to bypass the skill or trait requirments.  
+                if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                    continue
 
             else:
                 if "other_cat" in event.tags or "multi_death" in event.tags:
@@ -445,36 +460,17 @@ class GenerateEvents:
             if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
-            # check cat trait and skill
-            had_trait = False
-            if event.cat_trait:
-                if cat.personality.trait not in event.cat_trait and int(random.random() * 15):
-                    continue
-                had_trait = True
-            if event.cat_skill and not had_trait:
-                _flag = False
-                for _skill in event.cat_skill:
-                    split = _skill.split(",")
-                    
-                    if len(split) < 2:
-                        print("Cat skill incorrectly formatted", _skill)
-                        continue
-                    
-                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                        _flag = True
-                        break
-                
-                # If the cat doesn't have the skill, and some random chance, continue. 
-                if _flag and int(random.random() * 15):
-                    continue
 
-            had_trait = True
-            if event.cat_negate_trait:
-                if cat.personality.trait in event.cat_negate_trait and int(random.random() * 15):
-                    continue
-                had_trait = False
-            if event.cat_negate_skill and had_trait:
-                _flag = False
+            # check cat trait and skill
+            has_trait = False
+            if event.cat_trait:
+                if cat.personality.trait in event.cat_trait:
+                    has_trait = True
+            else:
+                has_trait = None
+            
+            has_skill = False
+            if event.cat_skill:
                 for _skill in event.cat_skill:
                     split = _skill.split(",")
                     
@@ -483,11 +479,43 @@ class GenerateEvents:
                         continue
                     
                     if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                        _flag = True
+                        has_skill = True
+                        break
+            
+            # There is a small chance to bypass the skill or trait requirments.  
+            if event.cat_trait and event.cat_skill:
+                if not (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                    continue
+            elif event.cat_trait:
+                if not has_trait and int(random.random() * trait_skill_bypass):
+                    continue
+            elif event.cat_skill:
+                if not has_skill and int(random.random() * trait_skill_bypass):
+                    continue
+            
+            
+            # check cat negate trait and skill
+            has_trait = False
+            if event.cat_negate_trait:
+                if cat.personality.trait in event.cat_negate_trait:
+                    has_trait = True
+            
+            has_skill = False
+            if event.cat_negate_skill:
+                for _skill in event.cat_negate_skill:
+                    split = _skill.split(",")
+                    
+                    if len(split) < 2:
+                        print("Cat skill incorrectly formatted", _skill)
+                        continue
+                    
+                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
+                        has_skill = True
                         break
                 
-                if _flag and int(random.random() * 15):
-                    continue
+            # There is a small chance to bypass the skill or trait requirments.  
+            if (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                continue
 
             # determine injury severity chance
             if event.injury:

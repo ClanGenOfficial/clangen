@@ -298,7 +298,7 @@
         ],
         "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
         "cat_skill": [
-            "OMEN,3"
+            "OMEN,1"
         ]
     },
     {
