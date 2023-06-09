@@ -277,6 +277,7 @@ class History:
     
     @staticmethod
     def add_skill_mentor_influence(cat, mentor_id, path, amount):
+        """ Adds mentor influence on skills """
         
         History.check_load(cat)
         
