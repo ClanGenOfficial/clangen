@@ -909,7 +909,7 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
