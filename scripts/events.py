@@ -84,6 +84,8 @@ class Events:
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
+        game.just_died.clear()
+        
 
         if any(
                 str(cat.status) in {
@@ -243,6 +245,9 @@ class Events:
             if not has_med:
                 string = f"{game.clan.name}Clan has no medicine cat!"
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
+        
+        # Clear the list of cats that died this moon.
+        game.just_died.clear()
 
         # Promote leader and deputy, if needed.
         self.check_and_promote_leader()
@@ -752,8 +757,12 @@ class Events:
         and new cat events
         """
         if cat.dead:
+            
             cat.thoughts()
-            cat.dead_for += 1
+            if cat.ID in game.just_died:
+                cat.moons +=1
+            else:
+                cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
 
