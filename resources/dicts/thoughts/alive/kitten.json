@@ -388,7 +388,7 @@
             "Is in r_c's way... again",
             "Yowls loudly in the middle of the clearing for absolutely no reason",
             "Begs for life-saving herbs to cure {PRONOUN/m_c/poss} minor scrape",
-            "Is calling a clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}"
+            "Is calling a Clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "attention-seeker"
