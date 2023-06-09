@@ -1133,16 +1133,20 @@ class Cat():
             chosen_life = {}
             while i < 10:
                 attempted = []
-                try:
+                if life_list:
                     chosen_life = choice(life_list)
-                except IndexError:
-                    print(
-                        f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
-                if chosen_life not in used_lives and chosen_life not in attempted:
-                    break
+                    if chosen_life not in used_lives and chosen_life not in attempted:
+                        break
+                    else:
+                        attempted.append(chosen_life)
+                    i += 1
                 else:
-                    attempted.append(chosen_life)
-                i += 1
+                    print(
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    chosen_life = ceremony_dict["default_life"]
+                    break
+                
+            
             used_lives.append(chosen_life)
             if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]

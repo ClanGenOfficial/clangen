@@ -35,6 +35,11 @@
     }
   },
 
+  "default_life": {
+          "text": "r_c approches, dipping {PRONOUN/r_c/poss} head in greeting. \"I give you a life for [virtue].\" {PRONOUN/r_c/subject/CAP} {VERB/r_c/meow/meows}, before slipping back into the crowd.",
+          "virtue": ["energy", "strength", "widsom"]
+        },
+
   "lives": {
     "only_guide": {
       "tags": ["new_clan", "guide"],
