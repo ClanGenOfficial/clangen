@@ -1136,16 +1136,20 @@ class Cat():
             chosen_life = {}
             while i < 10:
                 attempted = []
-                try:
+                if life_list:
                     chosen_life = choice(life_list)
-                except IndexError:
-                    print(
-                        f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
-                if chosen_life not in used_lives and chosen_life not in attempted:
-                    break
+                    if chosen_life not in used_lives and chosen_life not in attempted:
+                        break
+                    else:
+                        attempted.append(chosen_life)
+                    i += 1
                 else:
-                    attempted.append(chosen_life)
-                i += 1
+                    print(
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    chosen_life = ceremony_dict["default_life"]
+                    break
+                
+            
             used_lives.append(chosen_life)
             if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
@@ -2064,7 +2068,9 @@ class Cat():
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+			# the +1 is necessary because both might not already aged up
+			# if only one is aged up at this point, later they are more moons apart than the setting defined
+            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                 return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]

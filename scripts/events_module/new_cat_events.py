@@ -134,13 +134,14 @@ class NewCatEvents:
             involved_cats.append(new_cat.ID)
             
             # Set the blood parent, if one was created.
-            # Also set adoptive parents if needed.
-            if blood_parent:
-                new_cat.parent1 = blood_parent.ID
-            if "adoption" in new_cat_event.tags:
+            # Also set adoptive parents if needed. 
+            new_cat.parent1 = blood_parent.ID if blood_parent else None
+            if "adoption" in new_cat_event.tags and cat.ID not in new_cat.adoptive_parents:
                 new_cat.adoptive_parents.append(cat.ID)
                 if len(cat.mate) > 0:
-                    new_cat.adoptive_parents.extend(cat.mate)
+                    for mate_id in cat.mate:
+                        if mate_id not in new_cat.adoptive_parents:
+                            new_cat.adoptive_parents.extend(cat.mate)
             
             # All parents have been added now, we now create the inheritance. 
             new_cat.create_inheritance_new_cat()
