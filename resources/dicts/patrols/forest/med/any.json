@@ -15,11 +15,11 @@
         "chance_of_success": 45,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
-            "unscathed_rare": "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
+            "unscathed_common": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
+            "unscathed_rare": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives {PRONOUN/p_l/object} a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head."
         },
         "fail_text": {
-            "unscathed_common": "They gaze eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - they really could have used some guidance from StarClan."
+            "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - {PRONOUN/p_l/subject} really could have used some guidance from StarClan."
         },
         "min_cats": 1,
         "max_cats": 1,
@@ -73,12 +73,12 @@
             "random_herbs"
         ],
         "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory.",
-        "decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused.",
+        "decline_text": "As {PRONOUN/p_l/subject} {VERB/r_c/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/r_c/hesitate/hesitates} and {VERB/r_c/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused.",
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs they need without them if needed.",
-            "unscathed_rare": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout and bolts ahead. To p_l's surprise, they have found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill as soon as they return to camp."
+            "unscathed_common": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs {PRONOUN/app1/subject} {VERB/app1/need/needs} without {PRONOUN/p_l/object} if needed.",
+            "unscathed_rare": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN/app1/subject} {VERB/app1/have/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill as soon as they return to camp."
         },
         "fail_text": {
             "unscathed_common": "app1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
@@ -97,15 +97,15 @@
             "random_herbs"
         ],
         "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
-        "decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor won't be very pleased, but they rationalize that it's better to go with confidence than nerves.",
+        "decline_text": "Nervous and scared of everything that even slightly moves, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l is focused and determined to prove their independence. They find the herbs easily, and bring them back to the camp with their head held high, no sweat, no stress, no fuss.",
-            "unscathed_rare": "p_l goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
+            "unscathed_common": "p_l is focused and determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily, and {VERB/p_l/bring/brings} them back to the camp with {PRONOUN/p_l/poss} head held high, no sweat, no stress, no fuss.",
+            "unscathed_rare": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
         },
         "fail_text": {
-            "unscathed_common": "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, their tail dragging miserably along the ground."
+            "unscathed_common": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
         },
         "min_cats": 1,
         "max_cats": 1,
@@ -122,15 +122,15 @@
             "herb",
             "blackberry"
         ],
-        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind gently rustles through the trees as they pad along.",
-        "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
+        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind gently rustles through the trees as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
+        "decline_text": "Before {PRONOUN/app1/subject} {VERB/app1/get/gets} more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls {PRONOUN/app1/object} back. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is plucking some blackberry leaves when their attention is suddenly grabbed by a a_sign. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
+            "unscathed_common": "p_l is plucking some blackberry leaves when {PRONOUN/p_l/poss} attention is suddenly grabbed by a a_sign. The fur on {PRONOUN/p_l/poss} back begins to prickle slightly, the sound of {PRONOUN/p_l/poss} heartbeat like thunder in {PRONOUN/p_l/poss} ears. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} and {VERB/p_l/hare/hares} back to camp, herbs forgotten. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to tell {PRONOUN/p_l/poss} mentor about this as soon as possible!"
         },
         "fail_text": {
-            "unscathed_common": "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions."
+            "unscathed_common": "app1 feels a pit of dread beginning to form in {PRONOUN/app1/poss} belly - {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten where to find the herb {PRONOUN/app1/poss} mentor wanted. {PRONOUN/app1/subject/CAP} {VERB/app1/taste/tastes} the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. {PRONOUN/app1/subject/CAP}'ll have to swallow {PRONOUN/app1/poss} pride and return to ask for directions."
         },
         "min_cats": 1,
         "max_cats": 1
@@ -148,8 +148,8 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
-        "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
+        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits {PRONOUN/p_l/object}, but the Clan doesn't have the luxury to sit inside away from the weather.",
+        "decline_text": "Someone calls p_l back, and the patrol is forgotten as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} a Clanmate.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
