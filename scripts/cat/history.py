@@ -233,7 +233,7 @@ class History:
                 SkillPath.CLIMBER: [ "climbing" ],
                 SkillPath.SWIMMER: [ "swimming" ],
                 SkillPath.SPEAKER: [ "arguing" ],
-                SkillPath.MEDIATOR: [ "resolving arugments" ],
+                SkillPath.MEDIATOR: [ "resolving arguments" ],
                 SkillPath.CLEVER: [ "solving problems" ],
                 SkillPath.INSIGHTFUL: [ "providing insight" ],
                 SkillPath.SENSE: [ "noticing small details" ],
