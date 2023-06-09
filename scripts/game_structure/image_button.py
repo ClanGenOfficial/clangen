@@ -77,7 +77,7 @@ class UISpriteButton():
         self.image.disable()
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
         self.button = CatButton(relative_rect, visible=visible, cat_id=cat_id, cat_object=cat_object,
-                                starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text,
+                                starting_height=starting_height+1, manager=manager, tool_tip_text=tool_tip_text,
                                 container=container)
 
     def return_cat_id(self):
