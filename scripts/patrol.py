@@ -1399,6 +1399,7 @@ class Patrol():
                                       )
         if not alive:
             self.results_text.append(f"{created_cats[0].name}'s ghost now wanders.")
+            game.clan.add_to_unknown(create_new_cat[0])
 
         # now we hurt the kitty
         if "new_cat_injury" in tags and game.clan.game_mode != 'classic':
