@@ -1,23 +1,19 @@
 {
     "#default_dark": {
-        "colours":
-        {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#EFE5CE"
         },
-        "font":
-        {
+        "font": {
             "name": "notosans",
             "size": "15"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center"
         }
     },
-
     "#text_box_22_dark": {
         "prototype": "#default_dark",
         "font": {
@@ -27,8 +23,7 @@
     },
     "#text_box_22_horizcenter_dark": {
         "prototype": "#text_box_22_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "center"
         }
     },
@@ -45,10 +40,17 @@
             "line_spacing": "0.95"
         }
     },
+    "#text_box_22_horizcenter_vertcenter_spacing_95_dark": {
+        "prototype": "#text_box_22_dark",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center",
+            "line_spacing": "0.95"
+        }
+    },
     "#text_box_22_horizleft_dark": {
         "prototype": "#text_box_22_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "left"
         }
     },
@@ -58,7 +60,6 @@
             "line_spacing": "0.95"
         }
     },
-
     "#text_box_26_dark": {
         "prototype": "#default_dark",
         "font": {
@@ -66,15 +67,14 @@
             "size": 13
         }
     },
-    "#text_box_26_dark_horizcenter_pad_10_14_dark": {
+    "#text_box_26_horizcenter_pad_10_14_dark": {
         "prototype": "#text_box_26_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "left",
             "padding": "5,5"
         }
     },
-    "#text_box_26_dark_horizcenter_vertcenter_spacing_95_dark": {
+    "#text_box_26_horizcenter_vertcenter_spacing_95_dark": {
         "prototype": "#text_box_26_dark",
         "misc": {
             "text_horiz_alignment": "center",
@@ -82,7 +82,6 @@
             "line_spacing": "0.95"
         }
     },
-
     "#text_box_30_dark": {
         "prototype": "#default_dark",
         "font": {
@@ -92,8 +91,7 @@
     },
     "#text_box_30_horizcenter_dark": {
         "prototype": "#text_box_30_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "center"
         }
     },
@@ -112,22 +110,19 @@
     },
     "#text_box_30_horizcenter_vertcenter_dark": {
         "prototype": "#text_box_30_horizcenter_dark",
-        "misc":
-        {
+        "misc": {
             "text_vert_alignment": "center"
         }
     },
     "#text_box_30_horizleft_dark": {
         "prototype": "#text_box_30_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "left"
         }
     },
     "#text_box_30_horizleft_pad_0_8_dark": {
         "prototype": "#text_box_30_horizleft_dark",
-        "misc":
-        {
+        "misc": {
             "padding": "0,4"
         }
     },
@@ -137,7 +132,6 @@
             "padding": "20,20"
         }
     },
-
     "#text_box_34_dark": {
         "prototype": "#default_dark",
         "font": {
@@ -147,19 +141,16 @@
     },
     "#text_box_34_horizcenter_dark": {
         "prototype": "#text_box_34_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "center"
         }
     },
     "#text_box_34_horizleft_dark": {
         "prototype": "#text_box_34_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "left"
         }
     },
-
     "#text_box_40_dark": {
         "prototype": "#default_dark",
         "font": {
@@ -169,8 +160,7 @@
     },
     "#text_box_40_horizcenter_dark": {
         "prototype": "#text_box_40_dark",
-        "misc":
-        {
+        "misc": {
             "text_horiz_alignment": "center"
         }
     }

@@ -3,13 +3,16 @@
 		"id": "neutral_interaction1",
 		"interactions": [
 			"m_c saw r_c the other day, but didn't get a chance to meow hello.",
-			"m_c bickered about something trivial with r_c."
+			"m_c bickered about something trivial with r_c.",
+			"m_c nods politely as r_c passes by.",
+			"m_c acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers."
 		]
 	},
 	{
 		"id": "neutral_interaction2",
 		"interactions": [
-			"m_c is giving r_c a task."
+			"m_c is giving r_c a task.",
+			"m_c is checking on r_c."
 		],
 		"main_status_constraint": [
 			"medicine cat",
@@ -28,7 +31,8 @@
 	{
 		"id": "neutral_interaction3",
 		"interactions": [
-			"m_c is stuttering while speaking to r_c."
+			"m_c is stuttering while speaking to r_c.",
+			"r_c asks m_c to speak up while chatting together."
 		],
 		"main_trait_constraint": [
 			"nervous"
@@ -37,7 +41,8 @@
 	{
 		"id": "neutral_interaction4",
 		"interactions": [
-			"m_c stands tall when r_c walks by."
+			"m_c stands tall when r_c walks by.",
+			"m_c lifts {PRONOUN/m_c/poss} chin up while passing by r_c."
 		],
 		"main_trait_constraint": [
 			"confident"
@@ -50,6 +55,26 @@
 		],
 		"main_trait_constraint": [
 			"bold"
+		]
+	},
+	{
+		"id": "neutral_interaction6",
+		"interactions": [
+			"r_c seems to be oblivious to m_c glaring at {PRONOUN/r_c/object} from across camp.",
+			"m_c is sharpening {PRONOUN/m_c/poss} claws near r_c."
+		],
+		"main_trait_constraint": [
+			"bloodthirsty"
+		]
+	},
+	{
+		"id": "neutral_interaction7",
+		"interactions": [
+			"m_c doesn't notice r_c leaving camp.",
+			"m_c doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}."
+		],
+		"main_trait_constraint": [
+			"oblivious"
 		]
 	}
 ]

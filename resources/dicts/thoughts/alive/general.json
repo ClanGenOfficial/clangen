@@ -1100,7 +1100,7 @@
     {
         "id": "cold_apprentices",
         "thoughts": [
-            "Is hoping {PRONOUN/m_c/subject} name will end in -claw"
+            "Is hoping {PRONOUN/m_c/poss} name will end in -claw"
         ],
         "main_status_constraint": [
             "apprentice",

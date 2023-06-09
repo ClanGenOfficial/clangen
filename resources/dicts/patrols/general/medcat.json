@@ -92,9 +92,7 @@
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
             "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "fail_trait": [
             "ambitious",
             "insecure"
@@ -131,9 +129,7 @@
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
             "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
-        "win_skills": [
-            "dreamwalker"
-        ],
+        "win_skills": [],
         "fail_trait": [
             "ambitious",
             "insecure"
@@ -166,9 +162,7 @@
         "fail_text": {
             "unscathed_common": "r_c can't make sense of the vision."
         },
-        "win_skills": [
-            "strong connection to starclan"
-        ],
+        "win_skills": [],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -201,9 +195,7 @@
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
             "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
-        "win_skills": [
-            "dreamwalker"
-        ],
+        "win_skills": [],
         "fail_trait": [
             "ambitious",
             "insecure"
@@ -237,8 +229,7 @@
             "unscathed_stat": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change."
         },
         "win_skills": [
-            "strong connection to starclan",
-            "clairvoyant"
+            "CLAIRVOYANT,2"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -276,8 +267,7 @@
             "unscathed_stat": "p_l turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/p_l/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/p_l/object}, and things must change."
         },
         "win_skills": [
-            "strong connection to starclan",
-            "clairvoyant"
+            "CLAIRVOYANT,2"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -350,8 +340,7 @@
             "unscathed_stat": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change."
         },
         "win_skills": [
-            "strong connection to starclan",
-            "clairvoyant"
+            "CLAIRVOYANT,2"
         ],
         "fail_trait": [
             "bloodthirsty",
@@ -393,9 +382,7 @@
         },
         "min_cats": 2,
         "max_cats": 2,
-        "win_skills": [
-            "strong connection to starclan"
-        ]
+        "win_skills": []
     },
     {
         "patrol_id": "gen_med_medwar_natureofdeath",
@@ -426,9 +413,7 @@
         },
         "min_cats": 2,
         "max_cats": 2,
-        "win_skills": [
-            "strong connection to starclan"
-        ]
+        "win_skills": []
     },
     {
         "patrol_id": "gen_med_medwar_puddles",
@@ -492,9 +477,8 @@
             "unscathed_common": "The medicine cats are too caught up in chatting with one another - they don't collect a single leaf."
         },
         "win_skills": [
-            "keen eye",
-            "very smart",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -529,9 +513,8 @@
             "unscathed_common": "It starts pouring rain while they're out, and even p_l has to admit defeat and lead them home."
         },
         "win_skills": [
-            "keen eye",
-            "very smart",
-            "extremely smart"
+            "SENSE,2",
+            "CLEVER,2"
         ],
         "min_cats": 3,
         "max_cats": 6,
@@ -798,7 +781,7 @@
             "unscathed_stat": "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at {PRONOUN/r_c/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. r_c tries to comfort {PRONOUN/s_c/object}, but s_c shakes {PRONOUN/s_c/poss} head, knowing that no matter what {PRONOUN/r_c/subject} {VERB/r_c/say/says}, their roles are just too different. Both cats are too upset to gather herbs."
         },
         "win_skills": [
-            "keen eye"
+            "SENSE,2"
         ],
         "win_trait": [
             "loving"
@@ -892,7 +875,7 @@
             "unscathed_stat": "app1 tries a few times to strike up conversation, but s_c barely acknowledges {PRONOUN/app1/object} at all. When {PRONOUN/s_c/subject} finally {VERB/s_c/do/does} answer back, it's to snap at the younger cat to stay focused and stop distracting {PRONOUN/s_c/object}. app1 draws {PRONOUN/app1/poss} ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
         },
         "win_skills": [
-            "strong connection to StarClan"
+            "STAR,2"
         ],
         "fail_trait": [
             "cold",
@@ -933,7 +916,7 @@
             "unscathed_stat": "app1 tries a few times to strike up conversation, but s_c barely acknowledges {PRONOUN/app1/object} at all. When {PRONOUN/s_c/subject} finally {VERB/s_c/do/does} answer back, it's to snap at the younger cat to stay focused and stop distracting {PRONOUN/s_c/object}. app1 draws {PRONOUN/app1/poss} ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
         },
         "win_skills": [
-            "strong connection to StarClan"
+            "STAR,2"
         ],
         "fail_trait": [
             "cold",
@@ -1054,7 +1037,7 @@
             "unscathed_common": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
         },
         "win_skills": [
-            "strong connection to StarClan"
+            "STAR,2"
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -1087,9 +1070,7 @@
         "fail_text": {
             "unscathed_common": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
         },
-        "win_skills": [
-            "lorekeeper"
-        ],
+        "win_skills": [],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
