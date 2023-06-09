@@ -73,10 +73,14 @@ class Relation_Events():
         if range_number > 60:
             range_number = 60
 
+        used_relationships = []
         # for i in range(0, range_number):
         for _ in itertools.repeat(None, range_number):
             random_index = int(random.random() * len(cat.relationships))
+            if random_index in used_relationships:
+                continue
             current_relationship = list(cat.relationships.values())[random_index]
+            used_relationships.append(random_index)
 
             if not current_relationship.opposite_relationship:
                 current_relationship.link_relationship()
@@ -90,12 +94,23 @@ class Relation_Events():
         """Handle mating for the selected relationship."""
         cat = current_relationship.cat_from
         cat_to = current_relationship.cat_to
+
+        if not self.can_trigger_events(cat):
+            return
+
+        # fix the settings if the current cats are mates
+        if (cat.ID in cat_to.mate or cat_to.ID in cat.mate) and\
+            not current_relationship.mate:
+            current_relationship.mate = True
+
+
         # TODO: find a solution
         cat_mate = None if len(cat.mate) < 1 else Cat.fetch_cat(cat.mate[0])
         
-        cat_to_mate = None
         # TODO: find a solution 
-        # THIS CODE PART IS FOR ONLY ONE MATE 
+        cat_to_mate = None
+
+        # Remove deleted mates if ther are some
         if len(cat_to.mate) > 0:
             for mate_id in cat.mate:
                 if mate_id not in Cat.all_cats:
@@ -170,11 +185,17 @@ class Relation_Events():
                     cat,
                     cat_to
                 )
+                self.had_one_event = True
 
         # new mates
         if not self.had_one_event:
             if cat_to.is_potential_mate(cat) and cat.ID not in cat.mate:
                 self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
+            self.had_one_event = True
+        
+        if self.had_one_event:
+            self.trigger_event(cat)
+            self.trigger_event(cat_to)
 
     def romantic_events(self, cat):
         """
