@@ -1897,7 +1897,7 @@ class Patrol():
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
-            print('getting scar')
+            # print('getting scar')
             if "scar" in self.patrol_event.tags:
                 if "stat" not in outcome:
                     cat = self.patrol_random_cat
