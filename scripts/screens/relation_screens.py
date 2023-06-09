@@ -2,6 +2,8 @@ import pygame.transform
 import pygame_gui.elements
 from random import choice
 
+from scripts.cat_relations.inheritance import Inheritance
+
 from .base_screens import Screens, cat_profiles
 
 from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
@@ -1437,8 +1439,6 @@ class ChooseMateScreen(Screens):
     def update_offspring_container(self):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
-        
-        
         self.all_offspring = [Cat.fetch_cat(i) for i in list(self.the_cat.inheritance.kits) if isinstance(Cat.fetch_cat(i), Cat)]
         if self.selected_cat and self.kits_selected_pair:
             self.all_offspring = [i for i in self.all_offspring if self.selected_cat.is_parent(i)]
@@ -1700,6 +1700,8 @@ class ChooseMateScreen(Screens):
         """Updates all elements with the current cat, as well as the selected cat.
             Called when the screen switched, and whenever the focused cat is switched"""
         self.the_cat = Cat.all_cats[game.switches['cat']]
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
         self.get_previous_next_cat()
 
         for ele in self.current_cat_elements:
@@ -2024,7 +2026,6 @@ class ChooseMateScreen(Screens):
             self.previous_cat_button.enable()
 
     def on_use(self):
-
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
 
