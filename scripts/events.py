@@ -1705,6 +1705,7 @@ class Events:
             return triggered_death
 
     def handle_murder(self, cat):
+        ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
         kill_chance = game.config["death_related"]["base_murder_kill_chance"]
