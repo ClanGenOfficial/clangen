@@ -170,7 +170,6 @@ def json_load():
             new_cat.df = cat["df"] if "df" in cat else False
 
             new_cat.outside = cat["outside"] if "outside" in cat else False
-            new_cat.retired = cat["retired"] if "retired" in cat else False
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
@@ -218,38 +217,13 @@ def json_load():
             game.switches['error_message'] = f'There was an error loading relationships for cat #{cat}.'
             game.switches['traceback'] = e
             raise
-
-        # get all the siblings ids and save them
-        siblings = list(
-            filter(lambda inter_cat: cat.is_sibling(inter_cat), all_cats))
-        cat.siblings = [sibling.ID for sibling in siblings]
-
-        # Add faded siblings:
-        for parent in cat.get_parents():
-            try:
-                cat_ob = Cat.fetch_cat(parent)
-                cat.siblings.extend(cat_ob.faded_offspring)
-            except:
-                if parent == cat.parent1:
-                    cat.parent1 = None
-                elif parent == cat.parent2:
-                    cat.parent2 = None
-
-        # Remove duplicates
-        cat.siblings = list(set(cat.siblings))
-
-        # get all the children ids and save them
-        children = list(
-            filter(lambda inter_cat: cat.is_parent(inter_cat), all_cats))
-        cat.children = [child.ID for child in children]
-
-        # Add faded children
-        cat.children.extend(cat.faded_offspring)
+        
+        
+        cat.inheritance = Inheritance(cat)
         
         try:
             # initialization of thoughts
             cat.thoughts()
-            cat.inheritance = Inheritance(cat)
         except Exception as e:
             logger.exception(f'There was an error when thoughts for cat #{cat} are created.')
             game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'

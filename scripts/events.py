@@ -31,7 +31,7 @@ from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, \
-    get_current_season, adjust_list_text, ongoing_event_text_adjust
+    get_current_season, adjust_list_text, ongoing_event_text_adjust, event_text_adjust
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
@@ -609,15 +609,55 @@ class Events:
             ] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
-        if lost_cat:
-            lost_cat_name = lost_cat.name
-            text = [
-                f'After a long journey, {lost_cat_name} has finally returned home to the Clan.'
-            ]
-            lost_cat.outside = False
-            game.cur_events_list.append(
-                Single_Event(random.choice(text), "misc", [lost_cat.ID]))
-            lost_cat.add_to_clan()
+        
+        if not lost_cat:
+            return
+        
+        text = [
+            'After a long journey, m_c has finally returned home to c_n.',
+            'm_c was found at the border, tired, but happy to be home.',
+            "m_c strides into camp, much to the everyone's suprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
+            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} jouney, but c_n is where m_c truly belongs. With a tearful goodbye, " 
+                "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
+        ]
+        lost_cat.outside = False
+        additional_cats = lost_cat.add_to_clan()
+        text = random.choice(text)
+        
+        if additional_cats:
+            text += " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} "
+            if len(additional_cats) > 1:
+                text += str(len(additional_cats)) + " childen."
+            else:
+                text += "child."
+         
+        text = event_text_adjust(Cat, text, lost_cat, clan=game.clan)
+        
+        game.cur_events_list.append(
+                Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
+        
+        # Proform a ceremony if needed
+        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
+            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"] and x.moons > 15:
+                if x.status == "medicine cat apprentice":
+                    self.ceremony(x, "medicine cat")
+                elif x.status == "mediator apprentice":
+                    self.ceremony(x, "mediator")
+                else:
+                    self.ceremony(x, "warrior")
+            elif x.status in ["kitten", "newborn"] and x.moons >= 6:
+                self.ceremony(x, "apprentice")
+            else:
+                if x.moons == 0:
+                    x.status = 'newborn'
+                elif x.moons < 6:
+                    x.status = "kitten"
+                elif x.moons < 12:
+                    x.status_change('apprentice')
+                elif x.moons < 120:
+                    x.status_change('warrior')
+                else:
+                    x.status_change('elder')      
 
     def handle_fading(self, cat):
         """
@@ -1114,11 +1154,6 @@ class Events:
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
                         else:
-                            if cat.is_disabled() and not game.settings["retirement"]:
-                                for condition in cat.permanent_condition:
-                                    if cat.permanent_condition[condition]["severity"] == "severe":
-                                        cat.status = 'apprentice'
-                                        return
                             self.ceremony(cat, 'apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
@@ -1997,7 +2032,7 @@ class Events:
     def check_and_promote_deputy(self):
         """Checks if a new deputy needs to be appointed, and appointed them if needed. """
         if (not game.clan.deputy or game.clan.deputy.dead
-                or game.clan.deputy.outside or game.clan.deputy.retired):
+                or game.clan.deputy.outside or game.clan.deputy.status == "elder"):
             if game.settings.get('deputy'):
 
                 # This determines all the cats who are eligible to be deputy.
@@ -2116,25 +2151,5 @@ class Events:
             else:
                 game.cur_events_list.insert(
                     0, Single_Event(f"{game.clan.name}Clan has no deputy!"))
-
-def load_events():
-    """
-    Load events from events.json and place into game.cur_events_list.
-    """
-
-    clanname = game.clan.name
-    events_path = f'{get_save_dir()}/{clanname}/events.json'
-    events_list = []
-    try:
-        with open(events_path, 'r') as f:
-            events_list = ujson.loads(f.read())
-        for event_dict in events_list:
-            event_obj = Single_Event.from_dict(event_dict)
-            if event_obj:
-                game.cur_events_list.append(event_obj)
-    except FileNotFoundError:
-        pass
-    except (PermissionError, ujson.JSONDecodeError) as e:
-        traceback.format_exc()
 
 events_class = Events()

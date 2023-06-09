@@ -6,8 +6,6 @@ from scripts.utility import (
     create_new_cat,
     get_highest_romantic_relation,
     get_med_cats,
-    add_children_to_cat,
-    add_siblings_to_cat, 
     event_text_adjust,
     get_personality_compatibility
 )
@@ -75,6 +73,11 @@ class Pregnancy_Events():
         if cat.outside:
             return
 
+        # Handle birth cooldown outside of the check_if_can_have_kits function, so it only happens once
+        # for each cat. 
+        if cat.birth_cooldown > 0:
+            cat.birth_cooldown -= 1
+        
         # Check if they can have kits.
         can_have_kits = self.check_if_can_have_kits(cat, game.settings['single parentage'], game.settings['affair'])
         if not can_have_kits:
@@ -129,9 +132,24 @@ class Pregnancy_Events():
         if other_cat and other_cat.ID in clan.pregnancy_data:
             return
         
+        # Gather adoptive parents, to feed into the 
+        # get kits function. 
+        adoptive_parents = [cat.ID]
+        if other_cat:
+            adoptive_parents.append(other_cat.ID)
+        
+        for _m in cat.mate:
+            if _m not in adoptive_parents:
+                adoptive_parents.append(_m)
+        
+        if other_cat:
+            for _m in other_cat.mate:
+                if _m not in adoptive_parents:
+                    adoptive_parents.append(_m)
+        
         amount = self.get_amount_of_kits(cat)
-        kits = self.get_kits(amount, None, None, clan)
-
+        kits = self.get_kits(amount, None, None, clan, adoptive_parents=adoptive_parents)
+        
         insert = 'this should not display'
         insert2 = 'this should not display'
         if amount == 1:
@@ -157,11 +175,14 @@ class Pregnancy_Events():
                     if x not in kit.adoptive_parents:
                         kit.adoptive_parents.append(x)
         
-        cat.create_inheritance_new_cat()
+        
+        # Normally, birth cooldown is only applied to cat who gave birth
+        # However, if we don't apply birth cooldown to adoption, we get
+        # too much adoption, since adoptive couples are using the increased two-parent 
+        # kits chance. We will only apply it to "cat" in this case
+        # which is enough to stop the couple from adopting about within
+        # the window. 
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-        if other_cat:
-            other_cat.create_inheritance_new_cat()
-            other_cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
 
         game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
 
@@ -314,6 +335,9 @@ class Pregnancy_Events():
         else:
             insert = f'litter of {kits_amount} kits'
 
+        # Since cat has given birth, apply the birth cooldown. 
+        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
         # change or leaf as it is? 
@@ -412,7 +436,6 @@ class Pregnancy_Events():
             return False
 
         if cat.birth_cooldown > 0:
-            cat.birth_cooldown -= 1
             return False
 
         if 'recovering from birth' in cat.injuries:
@@ -574,64 +597,90 @@ class Pregnancy_Events():
 
         return None
 
-    def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan):
-        # create amount of kits
+    def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=()):
+        """Create some amount of kits
+           No parents are specifed, it will create a blood parents for all the 
+           kits to be related to. They may be dead or alive, but will always be outside 
+           the clan. """
         all_kitten = []
         
-        # blood parent for adoptive kits
-        insert = "their kits"
-        if kits_amount == 1:
-            insert = "their kit"
-        thought = f"Is glad that {insert} are safe"
-        blood_parent = create_new_cat(Cat, Relationship,
-                                      status=random.choice(["loner", "kittypet"]),
-                                      alive=False,
-                                      thought=thought,
-                                      age=randint(15,120))[0]
-        blood_parent.thought = thought
+        #First, just a check: If we have no cat, but an other_cat was provided, 
+        # swap other_cat to cat:
+        # This way, we can ensure that if only one parent is provided, 
+        # it's cat, not other_cat. 
+        # And if cat is None, we know that no parents were provided. 
+        if other_cat and not cat:
+            cat = other_cat
+            other_cat = None
         
-        # select background here to have the same over all kits
-        backstory_1 = choice(['halfclan1', 'outsider_roots1'])
-        backstory_2 = choice(['halfclan2', 'outsider_roots2'])
-        backstory_3 = choice(['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4'])
+        blood_parent = None
+         
+        ##### SELECT BACKSTORY #####
+        if cat and cat.gender == 'female':
+            backstory = choice(['halfclan1', 'outsider_roots1'])
+        elif cat:
+            backstory = choice(['halfclan2', 'outsider_roots2'])
+        else: # cat is adopted
+            backstory = choice(['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4'])
+        ###########################
+        
+        ##### ADOPTIVE PARENTS #####
+        # First, gather all the mates of the provided bio parents to be added
+        # as adoptive parents. 
+        all_adoptive_parents = []
+        birth_parents = [i.ID for i in (cat, other_cat) if i]
+        for _par in (cat, other_cat):
+            if not _par:
+                continue
+            for _m in _par.mate:
+                if _m not in birth_parents and _m not in all_adoptive_parents:
+                    all_adoptive_parents.append(_m)
+        
+        # Then, add any additional adoptive parents that were provided passed directly into the
+        # function. 
+        for _m in adoptive_parents:
+            if _m not in all_adoptive_parents:
+                all_adoptive_parents.append(_m)
+        
+        #############################
+        
+        #### GENERATE THE KITS ######
         for kit in range(kits_amount):
+            
             kit = None
-            if other_cat is not None:
+            if not cat: 
+                
+                # No parents provided, give a blood parent - this is an adoption. 
+                if not blood_parent:
+                    # Generate a blood parent if we haven't already. 
+                    insert = "their kits"
+                    if kits_amount == 1:
+                        insert = "their kit"
+                    thought = f"Is glad that {insert} are safe"
+                    blood_parent = create_new_cat(Cat, Relationship,
+                                                status=random.choice(["loner", "kittypet"]),
+                                                alive=False,
+                                                thought=thought,
+                                                age=randint(15,120))[0]
+                    blood_parent.thought = thought
+                
+                kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
+            elif cat and other_cat:
+                # Two parents provided
+                kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
+                
                 if cat.gender == 'female':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
-                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
-                
-                # all current mates are adoptive parents
-                kit.adoptive_parents = cat.mate + other_cat.mate
-
-                # remove blood parents from adoptive parents
-                if cat.ID in kit.adoptive_parents:
-                    kit.adoptive_parents.remove(cat.ID)
-                if other_cat.ID in kit.adoptive_parents:
-                    kit.adoptive_parents.remove(other_cat.ID)
-                cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                other_cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
             else:
-                if cat and cat.gender == 'female':
-                    backstory = backstory_1
-                elif cat:
-                    backstory = backstory_2
-                else: # cat is adopted
-                    backstory = backstory_3
-
-                if cat:
-                    kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
-                    cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                    kit.adoptive_parents = cat.mate
-                    kit.thought = f"Snuggles up to the belly of {cat.name}"
-                else:
-                    kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
+                # A one blood parent litter is the only option left. 
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
+                
+            kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             all_kitten.append(kit)
 
             # remove scars
@@ -674,12 +723,13 @@ class Pregnancy_Events():
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
                     kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-            # remove accessory
+            
+            #### REMOVE ACCESSORY ###### 
             kit.pelt.accessory = None
             clan.add_cat(kit)
 
-            # give history
-            self.history.add_beginning(kit, clan_born=True)
+            #### GIVE HISTORY ###### 
+            self.history.add_beginning(kit, clan_born=bool(cat))
         
         # check other cats of clan for siblings
         for kitten in all_kitten:
@@ -691,11 +741,12 @@ class Pregnancy_Events():
                 kitten.relationships[second_kitten.ID].platonic_like += 20 + y
                 kitten.relationships[second_kitten.ID].comfortable += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
-            kitten.create_inheritance_new_cat()
+            
+            kitten.create_inheritance_new_cat() # Calculate inheritance. 
 
-        blood_parent.inheritance.update_inheritance()
-        blood_parent.outside = True
-        clan.unknown_cats.append(blood_parent.ID)
+        if blood_parent:
+            blood_parent.outside = True
+            clan.unknown_cats.append(blood_parent.ID)
 
         return all_kitten
 

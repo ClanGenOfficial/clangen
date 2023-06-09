@@ -2025,8 +2025,10 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'relations':
             if self.the_cat.dead:
                 self.see_relationships_button.disable()
+                self.change_adoptive_parent_button.disable()
             else:
                 self.see_relationships_button.enable()
+                self.change_adoptive_parent_button.enable()
 
             if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.exiled or self.the_cat.outside:
@@ -2469,7 +2471,6 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("elder", resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
                 # here
-                self.the_cat.update_traits()
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)
@@ -2533,8 +2534,6 @@ class RoleScreen(Screens):
                                             manager=MANAGER)
         self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
                                     object_id="#retire_button",
-                                    tool_tip_text="If a cat is retired, you will be "
-                                                  "unable to switch them to warrior status. ",
                                     manager=MANAGER)
         self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
                                             object_id="#switch_med_cat_button",
@@ -2727,12 +2726,7 @@ class RoleScreen(Screens):
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
-            # ADULT CAT ROLES
-            # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
-                self.switch_warrior.disable()
-            else:
-                self.switch_warrior.enable()
+            self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.enable()
             self.retire.enable()
@@ -2747,17 +2741,12 @@ class RoleScreen(Screens):
             else:
                 self.promote_leader.disable()
 
-            if deputy_invalid and self.the_cat.age != "elder":
+            if deputy_invalid:
                 self.promote_deputy.enable()
             else:
                 self.promote_deputy.disable()
 
-            # ADULT CAT ROLES
-            # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
-                self.switch_warrior.disable()
-            else:
-                self.switch_warrior.enable()
+            self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.disable()
             self.retire.enable()
@@ -2767,11 +2756,18 @@ class RoleScreen(Screens):
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
         elif self.the_cat.status == "elder":
-            self.promote_leader.disable()
-            self.promote_deputy.disable()
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            self.switch_warrior.disable()
+            self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
             self.retire.disable()
@@ -2813,10 +2809,7 @@ class RoleScreen(Screens):
             self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.age != "elder":
-                self.switch_warrior.enable()
-            else:
-                self.switch_warrior.disable()
+            self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
             self.retire.enable()

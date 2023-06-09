@@ -48,7 +48,8 @@
             "Is feeling rather cross today",
             "Thinks that times have changed for the better since {PRONOUN/m_c/subject} {VERB/m_c/were/was} young",
             "Is recalling something no other cat remembers anymore",
-            "Is grumbling about the weather"
+            "Is grumbling about the weather",
+            "Feels {PRONOUN/m_c/poss} bones creak as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks}"
         ],
         "main_age_constraint": [
             "senior"

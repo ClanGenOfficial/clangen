@@ -694,7 +694,7 @@
             "Leaf-bare",
             "war"
         ],
-        "death_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject} {VERB/were/was} killed while investigating enemy territory.",
+        "death_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} killed while investigating enemy territory.",
         "history_text": {
             "reg_death": "m_c was killed investigating enemy territory.",
             "lead_death": "was killed investigating enemy territory."

@@ -5,8 +5,7 @@ import random
 
 from scripts.cat.cats import Cat, INJURIES, PERMANENT, cat_class
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, add_siblings_to_cat, \
-    add_children_to_cat, create_new_cat
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
@@ -38,10 +37,8 @@ class NewCatEvents:
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "new_cat")
-        final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
-                                                                         enemy_clan,
-                                                                         other_clan, alive_kits)
+        
+        #Determine
         if self.has_outside_cat():
             if random.randint(1, 3) == 1:
                 outside_cat = self.select_outside_cat()
@@ -69,14 +66,20 @@ class NewCatEvents:
                 game.clan.add_to_clan(outside_cat)
 
                 return [outside_cat]
+
+        
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
-        try:
-            new_cat_event = (random.choice(final_events))
-        except:
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "new_cat")
+        final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
+                                                                        enemy_clan,
+                                                                        other_clan, alive_kits)
+        if not final_events:
             print('ERROR: no new cat moon events available')
             return
+        else:
+            new_cat_event = (random.choice(final_events))
 
         involved_cats = []
         created_cats = []
@@ -98,6 +101,8 @@ class NewCatEvents:
         elif "new_med" in new_cat_event.tags:
             status = "medicine cat"
 
+
+        
         created_cats = create_new_cat(Cat,
                                       Relationship,
                                       new_cat_event.new_name,
@@ -109,23 +114,33 @@ class NewCatEvents:
                                       new_cat_event.backstory,
                                       status
                                       )
-        # print(created_cats)
-
-        if "adoption" in new_cat_event.tags:
-            if cat.no_kits:
-                return
-            if len(cat.mate) > 0:
-                for mate_id in cat.mate:
-                    mate = cat.fetch_cat(mate_id)
-                    if mate.no_kits:
-                       return
+        
+        blood_parent = None
+        if new_cat_event.litter:
+            # If we have a litter joining, assign them a blood parent for
+            # relation-tracking purposes
+            thought = "Is happy their kits are safe"
+            blood_parent = create_new_cat(Cat, Relationship,
+                                          status=random.choice(["loner", "kittypet"]),
+                                          alive=False,
+                                          thought=thought,
+                                          age=random.randint(15,120))[0]
+                
+            
         for new_cat in created_cats:
+            
             involved_cats.append(new_cat.ID)
+            
+            # Set the blood parent, if one was created.
+            # Also set adoptive parents if needed. 
+            new_cat.parent1 = blood_parent
             if "adoption" in new_cat_event.tags:
                 new_cat.adoptive_parents.append(cat.ID)
                 if len(cat.mate) > 0:
                     new_cat.adoptive_parents.extend(cat.mate)
-                new_cat.create_inheritance_new_cat()
+            
+            # All parents have been added now, we now create the inheritance. 
+            new_cat.create_inheritance_new_cat()
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')
