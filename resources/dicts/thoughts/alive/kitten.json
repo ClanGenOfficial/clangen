@@ -320,7 +320,7 @@
             "Wouldn't hurt a fly",
             "Wonders how r_c is feeling today",
             "Cheers r_c on",
-            "Is the cutest kit in the clan",
+            "Is the cutest kit in the Clan",
             "Loves to be helpful"
         ],
         "main_trait_constraint": [
@@ -388,7 +388,7 @@
             "Is in r_c's way... again",
             "Yowls loudly in the middle of the clearing for absolutely no reason",
             "Begs for life-saving herbs to cure {PRONOUN/m_c/poss} minor scrape",
-            "Is calling a clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}"
+            "Is calling a Clan meeting, before r_c rudely interrupts {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "attention-seeker"
@@ -421,7 +421,7 @@
             "Is too shy to go to the fresh-kill pile alone",
             "Hides sheepishly behind r_c",
             "Is afraid other cats will think {PRONOUN/m_c/subject} {VERB/m_c/are/is} silly",
-            "Doesn't want to be an apprentice because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} afraid of disappointing the clan",
+            "Doesn't want to be an apprentice because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} afraid of disappointing the Clan",
             "Hates making mistakes",
             "Is afraid of being in the way"
         ],
@@ -440,7 +440,7 @@
             "Is quiet when other cats are talking",
             "Is being very patient today",
             "Wants to always do the right thing",
-            "Is extra quiet during clan meetings... even though {PRONOUN/m_c/subject} should be in the nursery",
+            "Is extra quiet during Clan meetings... even though {PRONOUN/m_c/subject} should be in the nursery",
             "Is helping clean out the nursery"
         ],
         "main_trait_constraint": [

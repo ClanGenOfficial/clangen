@@ -41,6 +41,10 @@
     }
   },
 
+  "default_life": {
+          "text": "r_c stalks forward, eyes flashing. \"With this life, I grant you [virtue].\" {PRONOUN/r_c/subject} {VERB/r_c/meow/meows}, before disappearing back into the darkness ",
+          "virtue": ["energy", "strength", "determination"]
+        },
 
   "lives": {
     "only_guide": {
