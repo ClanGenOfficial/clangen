@@ -253,7 +253,7 @@ class History:
         for _ment in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][_ment]["strings"] = []
             for _path in cat.history.mentor_influence["skill"][_ment]:
-                #Check to make sure nothing weird got in there. 
+                #Check to make sure nothing weird got in there.
                 if _path == "strings":
                     continue
                 
@@ -262,7 +262,6 @@ class History:
                         cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[SkillPath[_path]]))
                 except KeyError:
                     print("issue", _path)
-                    pass
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
@@ -277,6 +276,7 @@ class History:
     
     @staticmethod
     def add_skill_mentor_influence(cat, mentor_id, path, amount):
+        """ Adds mentor influence on skills """
         
         History.check_load(cat)
         

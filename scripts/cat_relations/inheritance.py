@@ -122,7 +122,8 @@ class Inheritance():
         """Update all the inheritances of the cats, which are related to the current cat."""
         # only adding/removing parents or kits will use this function, because all inheritances are based on parents
         for cat_id in self.all_involved:
-            if cat_id in self.all_inheritances:
+             # Don't update the inheritance of faded cats - they are not viewable by the player and won't be used in any checks. 
+            if cat_id in self.all_inheritances and not self.cat.fetch_cat(cat_id).faded:
                 self.all_inheritances[cat_id].update_inheritance()
 
     def update_all_mates(self):
