@@ -125,6 +125,8 @@ class NewCatEvents:
                                           alive=False,
                                           thought=thought,
                                           age=random.randint(15,120))[0]
+            blood_parent.outside = True
+            game.clan.add_to_unknown(blood_parent)
             
             
         for new_cat in created_cats:
