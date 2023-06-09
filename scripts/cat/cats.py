@@ -433,6 +433,7 @@ class Cat():
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
+                game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
                 self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
@@ -441,6 +442,8 @@ class Cat():
                     text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
+            game.just_died.append(self.ID)
+            print(game.just_died)
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Clear Relationships. 
