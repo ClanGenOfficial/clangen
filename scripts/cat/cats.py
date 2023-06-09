@@ -2068,7 +2068,9 @@ class Cat():
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+			# the +1 is necessary because both might not already aged up
+			# if only one is aged up at this point, later they are more moons apart than the setting defined
+            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                 return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
