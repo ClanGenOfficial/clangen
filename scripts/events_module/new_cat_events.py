@@ -135,7 +135,7 @@ class NewCatEvents:
             
             # Set the blood parent, if one was created.
             # Also set adoptive parents if needed. 
-            new_cat.parent1 = blood_parent.ID
+            new_cat.parent1 = blood_parent.ID if blood_parent else None
             if "adoption" in new_cat_event.tags:
                 new_cat.adoptive_parents.append(cat.ID)
                 if len(cat.mate) > 0:
