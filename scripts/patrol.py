@@ -1685,6 +1685,7 @@ class Patrol():
             # print(tag)
             if "death" in tag:
                 attribute_list = tag.split("_")
+                print(attribute_list)
                 break
         if not attribute_list:
             if "stat" in outcome:
