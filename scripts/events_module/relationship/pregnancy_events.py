@@ -169,13 +169,7 @@ class Pregnancy_Events():
         for kit in kits:
             cats_involved.append(kit.ID)
             kit.thought = f"Snuggles up to the belly of {cat.name}"
-            kit.adoptive_parents += [cat.ID] + cat.mate
-            if other_cat:
-                for x in [other_cat.ID] + other_cat.mate:
-                    if x not in kit.adoptive_parents:
-                        kit.adoptive_parents.append(x)
-        
-        
+
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
         # too much adoption, since adoptive couples are using the increased two-parent 
@@ -597,12 +591,14 @@ class Pregnancy_Events():
 
         return None
 
-    def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=()):
+    def get_kits(self, kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None):
         """Create some amount of kits
            No parents are specifed, it will create a blood parents for all the 
            kits to be related to. They may be dead or alive, but will always be outside 
            the clan. """
         all_kitten = []
+        if not adoptive_parents: 
+            adoptive_parents = []
         
         #First, just a check: If we have no cat, but an other_cat was provided, 
         # swap other_cat to cat:

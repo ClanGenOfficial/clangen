@@ -849,7 +849,7 @@ class ProfileScreen(Screens):
             # NEWLINE ----------
 
         # PARENTS
-        all_parents = [Cat.fetch_cat(i) for i in [the_cat.parent1, the_cat.parent2] + the_cat.adoptive_parents if isinstance(Cat.fetch_cat(i), Cat)]
+        all_parents = [Cat.fetch_cat(i) for i in the_cat.get_parents()]
         if all_parents: 
             output += "\n"
             if len(all_parents) == 1:
