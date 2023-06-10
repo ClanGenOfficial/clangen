@@ -1687,7 +1687,7 @@ class Patrol():
                 attribute_list = tag.split("_")
                 print(attribute_list)
                 break
-        if not attribute_list:
+        if attribute_list and len(attribute_list) == 1:
             if "stat" in outcome:
                 cat = self.patrol_fail_stat_cat
             elif "leader" in outcome:
