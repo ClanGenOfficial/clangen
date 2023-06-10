@@ -1395,7 +1395,7 @@ class ProfileScreen(Screens):
             valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
                                     isinstance(Cat.fetch_cat(i), Cat)]
             if valid_formor_mentors:
-                influence_history += "{PRONOUN/m_c/subject/CAP} was mentored by "
+                influence_history += "{PRONOUN/m_c/subject/CAP} {VERB/m_c/was/were} mentored by "
                 if len(valid_formor_mentors) > 1:
                     influence_history += ", ".join([str(i.name) for i in valid_formor_mentors[:-1]]) + " and " + \
                         str(valid_formor_mentors[-1].name) + ". "

@@ -1687,7 +1687,7 @@ class Patrol():
                 attribute_list = tag.split("_")
                 print(attribute_list)
                 break
-        if not attribute_list:
+        if attribute_list and len(attribute_list) == 1:
             if "stat" in outcome:
                 cat = self.patrol_fail_stat_cat
             elif "leader" in outcome:
@@ -1812,7 +1812,8 @@ class Patrol():
             "cold_injury": ["shivering", "frostbite"],
             "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
             "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-            "beak_bite": ["beak bite", "torn ear", "scrapes"]
+            "beak_bite": ["beak bite", "torn ear", "scrapes"],
+            "rat_bite": ["rat bite", "torn ear", "torn pelt"]
         }
 
         possible_conditions = []
