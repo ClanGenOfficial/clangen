@@ -1683,7 +1683,7 @@ class Patrol():
         tags = self.patrol_event.tags
         for tag in tags:
             # print(tag)
-            if "death" in tag:
+            if "death" in tag or "gone" in tag:
                 attribute_list = tag.split("_")
                 print(attribute_list)
                 break
