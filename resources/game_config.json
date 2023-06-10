@@ -5,9 +5,9 @@
 		"start_amount": 60,
 		"auto_warrior_prey": [1,3],
 		"auto_apprentice_prey": [1,2],
-		"condition_increase": 0.5,
+		"condition_increase": 1,
 		"event_trigger_factor": 3.5,
-		"additional_prey": 1,
+		"additional_prey": 0.5,
 		"nutrition_malnourished_percentage" : 70,
 		"nutrition_starving_percentage" : 25,
 		"prey_requirement":{

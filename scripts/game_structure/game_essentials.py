@@ -8,6 +8,7 @@ import os
 from shutil import move as shutil_move
 from ast import literal_eval
 import traceback
+from scripts.event_class import Single_Event
 
 pygame.init()
 
@@ -23,6 +24,7 @@ class Game():
     # relation_scroll_ct = 0
 
     mediated = []  # Keep track of which couples have been mediated this moon.
+    just_died = [] #keeps track of which cats died this moon via die()
 
     cur_events_list = []
     ceremony_events_list = []
@@ -278,8 +280,7 @@ class Game():
                     loaded_clan = None
             os.remove(get_save_dir() + '/clanlist.txt')
             if loaded_clan:
-                with open(get_save_dir() + '/currentclan.txt', 'w') as f:
-                    f.write(loaded_clan)
+                self.safe_save(get_save_dir() + '/currentclan.txt', loaded_clan)
         elif os.path.exists(get_save_dir() + '/currentclan.txt'):
             with open(get_save_dir() + '/currentclan.txt', 'r') as f:
                 loaded_clan = f.read().strip()
@@ -441,31 +442,37 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if len(inter_cat.mate):
+            if inter_cat.mate:
                 for mate_id in inter_cat.mate:
                     if mate_id in self.cat_class.all_cats:
-                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
+                        self.cat_class.all_cats[mate_id].unset_mate(inter_cat)
 
             # If they have parents, add them to their parents "faded offspring" list:
-            if inter_cat.parent1:
-                if inter_cat.parent1 in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.parent1].faded_offspring.append(cat)
+            for x in inter_cat.get_parents():
+                if x in self.cat_class.all_cats:
+                    self.cat_class.all_cats[x].faded_offspring.append(cat)
                 else:
-                    parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent1, cat)
+                    parent_faded = self.add_faded_offspring_to_faded_cat(x, cat)
                     if not parent_faded:
-                        print("WARNING: Can't find faded parent1")
-
-            if inter_cat.parent2:
-                if inter_cat.parent2 in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.parent2].faded_offspring.append(cat)
-                else:
-                    parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent2, cat)
-                    if not parent_faded:
-                        print("WARNING: Can't find faded parent2")
+                        print(f"WARNING: Can't find parent {x} of {cat.name}")
 
             # Get a copy of info
             if game.settings["save_faded_copy"]:
-                copy_of_info += str(inter_cat.get_save_dict())
+                copy_of_info += ujson.dumps(inter_cat.get_save_dict(), indent=4) + \
+                    "\n--------------------------------------------------------------------------\n"
+                
+            # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
+            cat_data = inter_cat.get_save_dict(faded=True)
+            
+            self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
+
+            self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
+
+        game.cat_to_fade = []
+        
+        # Save the copies, flush the file. 
+        if game.settings["save_faded_copy"]:
+            with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
                 
                 if not os.path.exists(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt'):
                     # Create the file if it doesn't exist
@@ -475,15 +482,9 @@ class Game():
                 with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
                     write_file.write(copy_of_info)
                 
-            
-            # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
-            cat_data = inter_cat.get_save_dict(faded=True)
-            
-            self.safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
-
-            self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
-
-        game.cat_to_fade = []
+                    write_file.flush()
+                    os.fsync(write_file.fileno())
+        
 
     def save_events(self):
         """
@@ -510,6 +511,23 @@ class Game():
 
         return True
 
+    def load_events(self):
+        """
+        Load events from events.json and place into game.cur_events_list.
+        """
+
+        clanname = self.clan.name
+        events_path = f'{get_save_dir()}/{clanname}/events.json'
+        events_list = []
+        try:
+            with open(events_path, 'r') as f:
+                events_list = ujson.loads(f.read())
+            for event_dict in events_list:
+                event_obj = Single_Event.from_dict(event_dict)
+                if event_obj:
+                    game.cur_events_list.append(event_obj)
+        except FileNotFoundError:
+            pass
 
 game = Game()
 

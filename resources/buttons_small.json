@@ -4113,7 +4113,7 @@
             },
             "selected_image":
             {
-                "path": "resources/images/buttons/cat_icon.png"
+                "path": "resources/images/buttons/cat_icon_hover.png"
             },
             "disabled_image":
             {

@@ -241,12 +241,17 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
+            "other_cat",
             "other_cat_app",
             "romantic",
             "comfort",
             "trust"
         ],
-        "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them."
+        "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
+        "accessories": [
+            "WILD",
+            "PLANT"
+        ]
     },
     {
         "camp": "any",

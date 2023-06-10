@@ -729,7 +729,8 @@ class EventsScreen(Screens):
                                                    pressed_button_pos[1] + 4),
                                                    (232/1600 * screen_x, 60/1400 * screen_y)),
                                       text=name, ids=ev, container=self.event_container,
-                                      object_id="#events_cat_profile_button", manager=MANAGER))
+                                      object_id="#events_cat_profile_button", layer_starting_height=2, 
+                                      manager=MANAGER))
                     # There is only room for about four buttons.
                     if i > 3:
                         break

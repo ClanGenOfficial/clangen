@@ -48,7 +48,7 @@
             "apprentice",
             "injury",
             "poisoned",
-            "death",
+            "death_app1",
             "no_herbs0"
         ],
         "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
@@ -61,7 +61,7 @@
         },
         "fail_text": {
             "unscathed_common": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
-            "death": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+            "death": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/r_c/subject/CAP} {VERB/r_c/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
             "injury": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/r_c/object} from deathberry poisoning."
         },
         "min_cats": 3,

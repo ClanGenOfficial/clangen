@@ -10,7 +10,7 @@
         "event_text": "As a storm rages across the mountain outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
         "cat_trait": null,
         "cat_skill": [
-            "PROPHET,3"
+            "PROPHET,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -26,7 +26,7 @@
         "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight... m_c sits on an isolated mountain ledge, considering what the omens foretell.",
         "cat_trait": null,
         "cat_skill": [
-            "OMEN,3"
+            "OMEN,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -40,7 +40,7 @@
         "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/poss} words paint an enchanting picture of the ancestors of c_n as {PRONOUN/m_c/subject} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
         "cat_trait": null,
         "cat_skill": [
-            "LORE,2"
+            "LORE,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null

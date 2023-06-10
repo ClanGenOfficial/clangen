@@ -404,7 +404,9 @@ def create_new_cat(Cat,
 
         # create relationships
         new_cat.create_relationships_new_cat()
-        new_cat.create_inheritance_new_cat()
+        # Note - we always update inheritance after the cats are generated, to
+        # allow us to add parents. 
+        #new_cat.create_inheritance_new_cat() 
 
     return created_cats
 
@@ -536,7 +538,7 @@ def get_personality_compatibility(cat1, cat2):
     for x in list_of_differences:
         if x <= 4:
             running_total += 1
-        elif x >= 8:
+        elif x >= 6:
             running_total -= 1
 
     if running_total >= 2:
@@ -613,31 +615,6 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     }
 
     return return_dict
-
-
-def add_siblings_to_cat(cat, cat_class, orphan=False):
-    """Iterate over all current cats and add the ID to the current cat."""
-    orphan = orphan
-    if orphan:
-        for inter_cat in cat_class.all_cats.values():
-            cat.siblings.append(inter_cat.ID)
-            inter_cat.siblings.append(cat.ID)
-    else:
-        for inter_cat in cat_class.all_cats.values():
-            if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
-                cat.siblings.append(inter_cat.ID)
-            if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
-                inter_cat.siblings.append(cat.ID)
-
-
-def add_children_to_cat(cat, cat_class):
-    """Iterate over all current cats and add the ID to the current cat."""
-    for inter_cat in cat_class.all_cats.values():
-        if cat.is_parent(inter_cat) and inter_cat.ID not in cat.children:
-            cat.children.append(inter_cat.ID)
-        if inter_cat.is_parent(cat) and cat.ID not in inter_cat.children:
-            inter_cat.children.append(cat.ID)
-    # print('cats children', cat.children)
 
 
 def change_relationship_values(cats_to: list,
