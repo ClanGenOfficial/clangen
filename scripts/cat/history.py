@@ -232,7 +232,7 @@ class History:
                 SkillPath.RUNNER: [ "running" ],
                 SkillPath.CLIMBER: [ "climbing" ],
                 SkillPath.SWIMMER: [ "swimming" ],
-                SkillPath.SPEAKER: [ "aruging" ],
+                SkillPath.SPEAKER: [ "arguing" ],
                 SkillPath.MEDIATOR: [ "resolving arugments" ],
                 SkillPath.CLEVER: [ "solving problems" ],
                 SkillPath.INSIGHTFUL: [ "providing insight" ],

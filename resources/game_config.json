@@ -216,6 +216,7 @@
 		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
+		"birth_cooldown": 6,
 		"primary_chance_mated": 80,
 		"primary_chance_unmated": 130,
 		"random_affair_chance": 50,
@@ -351,7 +352,6 @@
 		"load_integrity_checks": true
 	},
 	"fun": {
-
 		"april_fools": false,
 		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
