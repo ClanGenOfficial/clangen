@@ -653,8 +653,9 @@ class ProfileScreen(Screens):
         self.profile_elements["med_den"] = UIImageButton(scale(pygame.Rect
                                                                ((200, 760), (302, 56))),
                                                          "",
-                                                         object_id="#med_den_button"
-                                                         , manager=MANAGER)
+                                                         object_id="#med_den_button",
+                                                         manager=MANAGER,
+                                                         starting_height=2)
         if not (self.the_cat.dead or self.the_cat.outside) and (
                 self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or
                 self.the_cat.is_ill() or

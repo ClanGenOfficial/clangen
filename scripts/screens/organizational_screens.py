@@ -882,7 +882,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((0, 0), (1200, 8000))),
+            scale(pygame.Rect((0, 0), (1150, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER)
@@ -899,6 +899,7 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
+                    starting_height=2
                 ),
             else:
                 self.tooltip[f'tip{i}'] = UIImageButton(
@@ -907,12 +908,13 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
-                    tool_tip_text=tooltip
+                    tool_tip_text=tooltip,
+                    starting_height=2
                 ),
 
             i += 1
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
-            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
+            (1150 / 1600 * screen_x, (i * 56 + y_pos + 550) / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""

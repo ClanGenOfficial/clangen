@@ -100,8 +100,8 @@ class Relation_Events():
 
         # fix the settings if the current cats are mates
         if (cat.ID in cat_to.mate or cat_to.ID in cat.mate) and\
-            not current_relationship.mate:
-            current_relationship.mate = True
+            not current_relationship.mates:
+            current_relationship.mates = True
 
 
         # TODO: find a solution
