@@ -27,12 +27,12 @@
 
     "general": {
         "dark mode": [
-            "Dark Mode",
-            "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode.",
+            "Dark mode",
+            "Camp backgrounds will match with the mode: nighttime for dark mode and daytime for light mode.",
             false
         ],
         "custom cursor": [
-            "Custom Cursor",
+            "Custom cursor",
             "The cursor will be replaced with a cat paw.",
             false
         ],
@@ -47,8 +47,8 @@
             true
         ],
 		"moons and seasons": [
-            "Show moons and seasons UI",
-            "Enable a clan page UI addition which displays clan age and current clan season",
+            "Show moons and seasons widget",
+            "Displays clan age and current clan season on several pages",
             false
         ],
         "den labels": [
@@ -77,12 +77,12 @@
             false
         ],
         "deputy": [
-            "Allow leaders to automatically choose a new deputy.",
+            "Allow leaders to automatically choose a new deputy",
             "The warrior code rules will be taken into account when choosing a deputy.",
             false
         ],
         "12_moon_graduation": [
-            "Disable experience-based apprentice graduation.",
+            "Disable experience-based apprentice graduation",
             "All apprentices will graduate at 12 moons.",
             false
         ],
@@ -128,7 +128,7 @@
         ],
         "random med cat":[
             "Allow medicine cats to be randomly selected on patrol",
-            "Med cats can be selected with the patrol buttons +1, +3,+6",
+            "Medicine cats can be selected with the patrol buttons +1, +3,+6",
             true
         ]
     },
@@ -139,18 +139,18 @@
             true
         ],
         "affair": [
-            "Allow affairs and mate switches based on relationships",
-            "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting.",
+            "Allow cats to breed with cats that aren't their mates.",
+            "This will allow mated and unmated cats to have kits with other cats they are not mated with.",
             false
         ],
         "same sex birth": [
             "Allow same-sex breeding",
-            "Allow couples to birth kittens despite same-sex status",
+            "Allow couples to birth kittens despite same-sex status. If off, same-sex couples will adopt instead.",
             false
         ],
         "single parentage": [
-            "Allow unmated cats to have offspring",
-            "This setting will not affect the Affairs setting.",
+            "Allow cats to have kittens with an unknown second biological parent",
+            "The cat will be listed as the only biological parent.",
             false
         ],
         "romantic with former mentor": [

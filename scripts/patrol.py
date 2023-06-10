@@ -1096,12 +1096,8 @@ class Patrol():
                     outcome = "injury"
 
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
-                if outcome == "death":
-                    self.handle_deaths_and_gone(self.patrol_random_cat)
-                elif outcome == "stat_death":
-                    self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-                elif outcome == "leader_death":
-                    self.handle_deaths_and_gone(self.patrol_leader)
+                if "death" in outcome:
+                    self.handle_deaths_and_gone(outcome)
                 elif outcome == "injury" or outcome == "stat_injury":
                     if game.clan.game_mode == 'classic':
                         self.handle_scars(outcome)
@@ -1680,7 +1676,27 @@ class Patrol():
                 else:
                     cat.experience = cat.experience + gained_exp
 
-    def handle_deaths_and_gone(self, cat):
+    def handle_deaths_and_gone(self, outcome):
+        ''' handles death and abduction/lost events '''
+        # find the new cat tag and split to get attributes - else return if no tag found
+        attribute_list = []
+        tags = self.patrol_event.tags
+        for tag in tags:
+            # print(tag)
+            if "death" in tag:
+                attribute_list = tag.split("_")
+                print(attribute_list)
+                break
+        if not attribute_list:
+            if "stat" in outcome:
+                cat = self.patrol_fail_stat_cat
+            elif "leader" in outcome:
+                cat = self.patrol_leader
+            else:
+                cat = self.patrol_random_cat
+        else:
+            if "app1" in attribute_list:
+                cat = self.patrol_apprentices[0]
         if "no_body" in self.patrol_event.tags:
             body = False
         else:
@@ -2014,7 +2030,7 @@ class Patrol():
             game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
             self.results_text.append(f"{insert.capitalize()} gathered during this patrol.")
 
-    def handle_prey(self, outcome_nr):
+    def handle_prey(self, outcome_key):
         """Handle the amount of prey which was caught and add it to the fresh-kill pile of the clan."""
         if not "hunting" in self.patrol_event.tags:
             return
@@ -2027,9 +2043,9 @@ class Patrol():
             basic_amount += ADDITIONAL_PREY
         prey_types = {
             "small_prey": basic_amount,
-            "medium_prey": basic_amount * 2,
-            "large_prey": basic_amount * 3,
-            "huge_prey": basic_amount * 4
+            "medium_prey": basic_amount * 1.5,
+            "large_prey": basic_amount * 2,
+            "huge_prey": basic_amount * 3
         }
 
         if not self.success and "hunting" in self.patrol_event.tags:
@@ -2044,8 +2060,9 @@ class Patrol():
                     amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
                 elif "good hunter" in self.patrol_skills:
                     amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
-                print(f" -- FRESHKILL: added {amount} fail-prey")
                 game.clan.freshkill_pile.add_freshkill(amount)
+                if FRESHKILL_ACTIVE:
+                    print(f" -- FRESHKILL: added {amount} fail-prey")
                 if len(self.patrol_cats) == 1:
                     self.results_text.append(
                         f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
@@ -2056,16 +2073,25 @@ class Patrol():
         prey_amount_per_cat = 0
         total_amount = 0
 
+        # after the patrol format changed, the tag's have to be adapted
+        number_translation = {}
+        idx = 0
+        for k in self.patrol_event.success_text.keys():
+            number_translation[k] = idx
+            idx += 1
+
         # check what kind of prey type this succeeded patrol event has
-        prey_size = None
+        amount_text = None
         for prey_type, amount in prey_types.items():
-            current_tag = prey_type + str(outcome_nr)
-            if not outcome_nr:
-                current_tag = prey_type + '0'
-            prey_size = prey_type.split('_')[0]
+            current_tag = prey_type
+            if outcome_key in number_translation:
+                current_tag = current_tag + str(number_translation[outcome_key])
+            amount_text = prey_type.split('_')[0]
             if current_tag in self.patrol_event.tags or prey_type in self.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
+        if FRESHKILL_ACTIVE:
+            print(" -- FRESHKILL: amount per cat ", prey_amount_per_cat)
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
@@ -2074,12 +2100,26 @@ class Patrol():
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
 
         if game.clan.game_mode != "classic":
+            if FRESHKILL_ACTIVE:
+                print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
+                amount_text = "medium"
+                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 2:
+                    amount_text = "small"
+                elif total_amount < game.clan.freshkill_pile.amount_food_needed():
+                    amount_text = "decent"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+                    amount_text = "huge"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+                    amount_text = "large"
+                elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
+                    amount_text = "good"
+
                 if len(self.patrol_cats) == 1:
-                    self.results_text.append(f"{self.patrol_leader_name} brings back a {prey_size} amount of prey.")
+                    self.results_text.append(f"{self.patrol_leader_name} brings back a {amount_text} amount of prey.")
                 else:
-                    self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
+                    self.results_text.append(f"The patrol brings back a {amount_text} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize, outcome):
         """

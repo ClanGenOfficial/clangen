@@ -18,7 +18,7 @@ import ujson
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
@@ -106,8 +106,9 @@ class Events:
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
-            # print(f" -- FRESHKILL: clan needs {needed_amount} prey")
+            if FRESHKILL_ACTIVE:
+                print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
+                print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
                 filter(
@@ -128,7 +129,8 @@ class Events:
                     Single_Event(
                         f"{game.clan.name}Clan doesn't have enough prey for next moon!"
                     ))
-            # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
+            if FRESHKILL_ACTIVE:
+                print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
@@ -329,6 +331,8 @@ class Events:
                     1]
 
             prey_amount += random.randint(lower_value, upper_value)
+        if FRESHKILL_ACTIVE:
+            print(f" -- FRESHKILL: added {prey_amount} monthly prey")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
@@ -1705,6 +1709,7 @@ class Events:
             return triggered_death
 
     def handle_murder(self, cat):
+        ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
         kill_chance = game.config["death_related"]["base_murder_kill_chance"]
@@ -1800,7 +1805,6 @@ class Events:
                     names += f" and {last_name}"
             disaster.extend([
                 ' drown after the camp becomes flooded.',
-                f' are killed in a battle against {random.choice(other_clan).name}Clan.',
                 ' are killed after a fire rages through the camp.',
                 ' are killed in an ambush by a group of rogues.',
                 ' go missing in the night.',
@@ -1848,6 +1852,8 @@ class Events:
 
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
+                # this next bit is temporary until we can rework it
+                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
