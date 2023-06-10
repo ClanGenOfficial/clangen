@@ -952,7 +952,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c bounds up to the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/m_c/object/CAP} {VERB/m_c/flick/flicks} {PRONOUN/r_c/poss} muck-covered tail and run back to the line of shadows.",
+          "text": "r_c bounds up to the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flick/flicks} {PRONOUN/r_c/poss} muck-covered tail and {VERB/r_c/run/runs} back to the line of shadows.",
           "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]
