@@ -414,7 +414,7 @@ class SwitchClanScreen(Screens):
                                        object_id="#main_menu_button",
                                        manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
-            'Note: This will close the game.\n When you open it next, it should have the new clan.',
+            'Note: This will close the game.\n When you open it next, it should have the new Clan.',
             # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -427,9 +427,9 @@ class SwitchClanScreen(Screens):
             manager=MANAGER)
         if game.clan:
             self.current_clan.set_text(
-                f"The currently loaded clan is {game.clan.name}Clan")
+                f"The currently loaded Clan is {game.clan.name}Clan")
         else:
-            self.current_clan.set_text("There is no clan currently loaded.")
+            self.current_clan.set_text("There is no Clan currently loaded.")
 
         self.clan_list = game.read_clans()
 
