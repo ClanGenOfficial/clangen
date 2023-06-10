@@ -1805,12 +1805,12 @@ class MedDenScreen(Screens):
                                                       , manager=MANAGER)
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
-            if game.settings["fullscreen"]:
+            """if game.settings["fullscreen"]:
                 img_path = "resources/images/spacer.png"
             else:
-                img_path = "resources/images/spacer_small.png"
+                img_path = "resources/images/spacer_small.png"""
             self.log_box = pygame_gui.elements.UITextBox(
-                f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
+                f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
                 scale(pygame.Rect
                       ((300, 900), (1080, 360))),
                 object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
@@ -2051,8 +2051,8 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
-            med_skill = cat.skills.skill_string()
-            med_exp = f"experience: {cat.experience_level}"
+            med_skill = cat.skills.skill_string(short=True)
+            med_exp = f"exp: {cat.experience_level}"
             med_working = True
             if cat.not_working():
                 med_working = False
@@ -2124,7 +2124,8 @@ class MedDenScreen(Screens):
                                                                    cat.sprite,
                                                                    cat_object=cat,
                                                                    manager=MANAGER,
-                                                                   tool_tip_text=conditions)
+                                                                   tool_tip_text=conditions,
+                                                                   starting_height=2)
 
 
             name = str(cat.name)

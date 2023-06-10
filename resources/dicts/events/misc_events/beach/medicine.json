@@ -10,7 +10,7 @@
         "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
         "cat_trait": null,
         "cat_skill": [
-            "PROPHET,3"
+            "PROPHET,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -26,7 +26,7 @@
         "event_text": "The things {PRONOUN/m_c/subject} saw today: omen_list_sight... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
         "cat_trait": null,
         "cat_skill": [
-            "OMEN,3"
+            "OMEN,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
