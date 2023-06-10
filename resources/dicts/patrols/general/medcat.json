@@ -1172,6 +1172,7 @@
         "season": "Any",
         "tags": [
             "herb_gathering",
+            "med_cat",
             "apprentice",
             "two_apprentices",
             "warrior_app",
@@ -1214,6 +1215,7 @@
         "season": "Any",
         "tags": [
             "herb_gathering",
+            "med_cat",
             "apprentice",
             "two_apprentices",
             "warrior_app",
@@ -1235,6 +1237,30 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_med_catminthunt_20locked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["med_cat", "no_app", "warrior", "big_change", "dislike", "romantic", "rel_patrol", "herb_gathering", "herb", "catmint", "no_herbs0", "many_herbs1"],
+        "intro_text": "p_l thinks r_c is a bit of a feather-brain, so when {PRONOUN/r_c/subject} come up to p_l while p_l is gathering herbs and suggest replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c/poss} eye, p_l hesitates.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} aren't going to go after a herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} dislike. It's simply a bad idea.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "They find absolutely no catmint together, but strangely, r_c seems okay with that, just interested in chatting with p_l. So maybe {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a <i>nice</i> feather-brain.",
+            "unscathed_rare": "Fine. c_n does need more catmint. When they come across the bush, sheltered and thriving, p_l watches r_c carefully take the stalks off the leaves. p_l only needs the leaves, so {PRONOUN/p_l/subject} don't mind watching r_c getting silly with the stalks. It's even a little thrilling, to be invited to join {PRONOUN/r_c/object}."
+        },
+        "fail_text": {
+            "unscathed_common": "p_l politely declines. r_c insists. p_l <i>far less politely declines</i>."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_20"
+            ]
+                }
     },
     {
         "patrol_id": "gen_med_discussnews1",
@@ -1284,7 +1310,7 @@
             "unscathed_rare": "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down, and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
         },
         "fail_text": {
-            "unscathed_common": "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a    single one. They return to camp frustrated and irritated with each other.",
+            "unscathed_common": "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
             "unscathed_stat": "Even though there should be plenty of herbs, they fail to find anything. s_c blames r_c for distracting {PRONOUN/s_c/object}, and they get into a huge argument."
         },
         "fail_trait": [
