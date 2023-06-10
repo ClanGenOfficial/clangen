@@ -316,7 +316,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c chokes out a bitter laugh, taunting the new leader about if {PRONOUN/m_c/poss} honeyed words can help {PRONOUN/m_c/object} in a real fight. r_c presses {PRONOUN/r_c/poss} nose against m_c's head and sneers our a life for [virtue].",
+          "text": "r_c chokes out a bitter laugh, taunting the new leader about if {PRONOUN/m_c/poss} honeyed words can help {PRONOUN/m_c/object} in a real fight. r_c presses {PRONOUN/r_c/poss} nose against m_c's head and sneers out a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
