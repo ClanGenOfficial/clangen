@@ -1154,7 +1154,8 @@
             "dislike",
             "injury",
             "sore",
-            "injure_all"
+            "injure_all",
+            "rc_has_stat"
         ],
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave.",

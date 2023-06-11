@@ -830,7 +830,8 @@
             "p_l_to_r_c",
             "injury",
             "sore",
-            "injure_all"
+            "injure_all",
+            "rc_has_stat"
         ],
         "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",

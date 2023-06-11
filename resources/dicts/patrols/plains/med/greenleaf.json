@@ -61,6 +61,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+            "unscathed_rare": "r_c disappears for a moment, only to return with a pretty flower in {PRONOUN/r_c/poss} jaws. p_l chuckles and reminds {PRONOUN/r_c/object} that that's not medicinal. r_c smiles, setting the flower down. Perhaps not, but {PRONOUN/r_c/subject} thought it would make a nice gift. p_l, charmed, carries the flower with {PRONOUN/p_l/object} for the rest of the patrol.",
             "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
         },
         "fail_text": {
@@ -1247,7 +1248,8 @@
             "dislike",
             "injury",
             "sore",
-            "injure_all"
+            "injure_all",
+            "rc_has_stat"
         ],
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before they can leave.",

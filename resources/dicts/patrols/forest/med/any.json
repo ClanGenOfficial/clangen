@@ -15,11 +15,11 @@
         "chance_of_success": 45,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
-            "unscathed_rare": "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
+            "unscathed_common": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far too important.",
+            "unscathed_rare": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives {PRONOUN/p_l/object} a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head."
         },
         "fail_text": {
-            "unscathed_common": "They gaze eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - they really could have used some guidance from StarClan."
+            "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - {PRONOUN/p_l/subject} really could have used some guidance from StarClan."
         },
         "min_cats": 1,
         "max_cats": 1,
@@ -73,12 +73,12 @@
             "random_herbs"
         ],
         "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory.",
-        "decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused.",
+        "decline_text": "As {PRONOUN/p_l/subject} {VERB/r_c/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/r_c/hesitate/hesitates} and {VERB/r_c/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused.",
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs they need without them if needed.",
-            "unscathed_rare": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout and bolts ahead. To p_l's surprise, they have found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill as soon as they return to camp."
+            "unscathed_common": "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs {PRONOUN/app1/subject} {VERB/app1/need/needs} without {PRONOUN/p_l/object} if needed.",
+            "unscathed_rare": "As p_l is explaining why and where the herbs are growing, app1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN/app1/subject} {VERB/app1/have/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN/app1/subject} found and recognized the herb, p_l promises {PRONOUN/app1/object} the first pick of fresh-kill as soon as they return to camp."
         },
         "fail_text": {
             "unscathed_common": "app1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
@@ -97,15 +97,15 @@
             "random_herbs"
         ],
         "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
-        "decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor won't be very pleased, but they rationalize that it's better to go with confidence than nerves.",
+        "decline_text": "Nervous and scared of everything that even slightly moves, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l is focused and determined to prove their independence. They find the herbs easily, and bring them back to the camp with their head held high, no sweat, no stress, no fuss.",
-            "unscathed_rare": "p_l goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
+            "unscathed_common": "p_l is focused and determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily, and {VERB/p_l/bring/brings} them back to the camp with {PRONOUN/p_l/poss} head held high, no sweat, no stress, no fuss.",
+            "unscathed_rare": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
         },
         "fail_text": {
-            "unscathed_common": "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, their tail dragging miserably along the ground."
+            "unscathed_common": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
         },
         "min_cats": 1,
         "max_cats": 1,
@@ -122,15 +122,15 @@
             "herb",
             "blackberry"
         ],
-        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind gently rustles through the trees as they pad along.",
-        "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
+        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind gently rustles through the trees as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
+        "decline_text": "Before {PRONOUN/app1/subject} {VERB/app1/get/gets} more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls {PRONOUN/app1/object} back. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is plucking some blackberry leaves when their attention is suddenly grabbed by a a_sign. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
+            "unscathed_common": "p_l is plucking some blackberry leaves when {PRONOUN/p_l/poss} attention is suddenly grabbed by a a_sign. The fur on {PRONOUN/p_l/poss} back begins to prickle slightly, the sound of {PRONOUN/p_l/poss} heartbeat like thunder in {PRONOUN/p_l/poss} ears. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} and {VERB/p_l/hare/hares} back to camp, herbs forgotten. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to tell {PRONOUN/p_l/poss} mentor about this as soon as possible!"
         },
         "fail_text": {
-            "unscathed_common": "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions."
+            "unscathed_common": "app1 feels a pit of dread beginning to form in {PRONOUN/app1/poss} belly - {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten where to find the herb {PRONOUN/app1/poss} mentor wanted. {PRONOUN/app1/subject/CAP} {VERB/app1/taste/tastes} the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. {PRONOUN/app1/subject/CAP}'ll have to swallow {PRONOUN/app1/poss} pride and return to ask for directions."
         },
         "min_cats": 1,
         "max_cats": 1
@@ -148,17 +148,17 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
-        "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
+        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits {PRONOUN/p_l/object}, but the Clan doesn't have the luxury to sit inside away from the weather.",
+        "decline_text": "Someone calls p_l back, and the patrol is forgotten as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} a Clanmate.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to. But, even though r_c slips over and they all end up drenched, they do bring back herbs.",
+            "unscathed_common": "It's absolutely miserable weather to gather in, and p_l wishes {PRONOUN/p_l/subject} didn't have to. But, even though r_c slips over and they all end up drenched, they do bring back herbs.",
             "unscathed_rare": "The entire patrol mutely agrees to grit their teeth and bear it, but that doesn't stop the relief everyone feels when they settle into their nests to dry off, a rather motley assortment of herbs refreshing the medicine cat den's stocks.",
             "stat_skill": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!"
         },
         "fail_text": {
-            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
+            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do {PRONOUN/p_l/subject} {VERB/p_l/have/has} to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
         },
         "win_skills": [
             "SENSE,2"
@@ -178,15 +178,15 @@
             "many_herbs1"
         ],
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
             "unscathed_common": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. No cat will have the chance to bleed out - not now, with so many cobwebs to staunch their wounds!",
-            "unscathed_rare": "p_l visits a few of their favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass they have gathered."
+            "unscathed_rare": "p_l visits a few of {PRONOUN/p_l/poss} favourite places to gather cobwebs. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} back to camp, {PRONOUN/p_l/subject} {VERB/p_l/end/ends} up startling several cats on {PRONOUN/p_l/poss} way back to {PRONOUN/p_l/poss} den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass {PRONOUN/p_l/subject} {VERB/p_l/have/has} gathered."
         },
         "fail_text": {
-            "unscathed_common": "Over-tired from caring for their patients all day and night, the only cobwebs p_l manages to 'collect' are the ones they accidentally walked into."
+            "unscathed_common": "Over-tired from caring for {PRONOUN/p_l/poss} patients all day and night, the only cobwebs p_l manages to 'collect' are the ones {PRONOUN/p_l/subject} accidentally walked into."
         },
         "min_cats": 1,
         "max_cats": 1
@@ -207,15 +207,15 @@
             "many_herbs1"
         ],
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside them to gather as many as they can, their eyes glittering with joy and pride as they work.",
-            "unscathed_rare": "p_l takes app1 to a few of their favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l and app1 are practically walking cobwebs, impossible to see beneath the sheer mass they have gathered."
+            "unscathed_common": "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside {PRONOUN/p_l/object} to gather as many as {PRONOUN/app1/subject} can, {PRONOUN/app1/poss} eyes glittering with joy and pride as {PRONOUN/app1/subject} {VERB/app1/work/works}.",
+            "unscathed_rare": "p_l takes app1 to a few of {PRONOUN/p_l/poss} favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to {PRONOUN/p_l/poss} den - p_l and app1 are practically walking cobwebs, impossible to see beneath the sheer mass they have gathered."
         },
         "fail_text": {
-            "unscathed_common": "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
+            "unscathed_common": "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching {PRONOUN/p_l/poss} apprentice and caring for {PRONOUN/p_l/poss} patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -237,17 +237,17 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
+        "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs that they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
+            "unscathed_common": "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs that {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} colliding with things in {PRONOUN/r_c/poss} path {PRONOUN/r_c/subject} can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
             "unscathed_rare": "The patrol brings back a truly massive haul, and return in good humour, laughing as they set down their sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
-            "stat_skill": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow their lead, it's a very successful gathering mission."
+            "stat_skill": "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow {PRONOUN/s_c/poss} lead, it's a very successful gathering mission."
         },
         "fail_text": {
-            "unscathed_common": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
+            "unscathed_common": "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds {PRONOUN/p_l/poss} breath and counts to ten before {PRONOUN/p_l/subject} {VERB/p_l/dismiss/dismisses} the patrol, every found cobweb ruined, what little they did manage to find."
         },
         "win_skills": [
             "SENSE,2"
@@ -268,17 +268,17 @@
             "many_herbs2",
             "med_cat"
         ],
-        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "p_l heads out on a herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
             "unscathed_common": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "unscathed_rare": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
+            "unscathed_rare": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where {PRONOUN/p_l/subject} diligently {VERB/p_l/process/processes} it down further into smaller stem sections that are easily stored.",
             "stat_skill": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores."
         },
         "fail_text": {
-            "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
+            "unscathed_common": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful."
         },
         "win_skills": [
             "SENSE,2"
@@ -307,17 +307,17 @@
             "trust",
             "apprentice"
         ],
-        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
+            "unscathed_common": "p_l doesn't know why horsetail plants lack leaves, but {PRONOUN/p_l/subject} {VERB/p_l/encourage/encourages} app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
             "unscathed_rare": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with them.",
-            "stat_skill": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
+            "stat_skill": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores as {PRONOUN/p_l/subject} {VERB/p_l/describe/describes} the plant's uses to app1."
         },
         "fail_text": {
-            "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "unscathed_common": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and app1 looks up at {PRONOUN/p_l/object} with disappointment."
         },
         "win_skills": [
             "SENSE,2"
@@ -342,17 +342,17 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
+        "intro_text": "Bringing a motley assortment of Clanmates along with {PRONOUN/p_l/subject}, p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help them makes the patrol an easy afternoon's work.",
+            "unscathed_common": "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help {PRONOUN/p_l/object} makes the patrol an easy afternoon's work.",
             "unscathed_rare": "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire shoot back to camp. The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where they diligently process it down further into smaller stem sections that are easily stored.",
             "stat_skill": "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores with the help of the warriors."
         },
         "fail_text": {
-            "unscathed_common": "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
+            "unscathed_common": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and the cats snappy with each other."
         },
         "win_skills": [
             "SENSE,2"
@@ -370,15 +370,15 @@
             "moss",
             "herb"
         ],
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile - once they're satisfied, they take a moment to wrap their jaws around the heap, then make their way back to camp."
+            "unscathed_common": "p_l quickly makes {PRONOUN/p_l/poss} way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/spend/spends} a bit of time slicing bits off with {PRONOUN/p_l/poss} claws, careful not to get any roots or dirt in the pile - once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} a moment to wrap {PRONOUN/p_l/poss} jaws around the heap, then {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
         },
         "fail_text": {
-            "unscathed_common": "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+            "unscathed_common": "Mouse-dung! When p_l gets to the best moss-gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
         },
         "min_cats": 1,
         "max_cats": 1
@@ -398,12 +398,12 @@
             "platonic",
             "dislike"
         ],
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
+            "unscathed_common": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
         },
         "fail_text": {
             "unscathed_common": "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -425,12 +425,12 @@
             "platonic",
             "dislike"
         ],
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
+            "unscathed_common": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
         },
         "fail_text": {
             "unscathed_common": "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -451,12 +451,12 @@
             "big_change",
             "platonic"
         ],
-        "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
+            "unscathed_common": "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} know, with {PRONOUN/p_l/poss} entourage following close behind. The cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
         },
         "fail_text": {
             "unscathed_common": "Mouse-dung! When the cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -481,7 +481,7 @@
             "small cut",
             "med_only"
         ],
-        "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along app1 as their assistant for this trip, and the two cats head out in relative silence.",
+        "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along app1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
         "exp": 10,
@@ -510,7 +510,7 @@
             "injury",
             "small cut"
         ],
-        "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along r_c as their assistant for this trip, and the two cats head out in relative silence.",
+        "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
         "exp": 10,
@@ -537,7 +537,7 @@
             "no_app"
         ],
         "intro_text": "p_l and r_c head into the old growth forest to look for herbs, discussing the latest news.",
-        "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
+        "decline_text": "It seems like some mischievous cat has gotten into the herb storage and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to sort it all over again.",
         "chance_of_success": 50,
         "exp": 10,
         "success_text": {
@@ -568,13 +568,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "It makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
+            "unscathed_common": "It makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
         },
         "fail_text": {
             "unscathed_common": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
@@ -604,7 +604,7 @@
         },
         "fail_text": {
             "unscathed_common": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
-            "unscathed_stat": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
+            "unscathed_stat": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/subject} and they get into a huge argument."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -627,13 +627,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "app3 ignores it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "unscathed_common": "app3 ignores it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
         },
         "fail_text": {
             "unscathed_common": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
@@ -659,13 +659,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
-            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
+            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
         },
         "fail_text": {
             "unscathed_common": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
@@ -691,13 +691,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
         },
         "fail_text": {
             "unscathed_common": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
@@ -723,13 +723,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "unscathed_common": "The other apprentices ignore it, but it makes app1 laugh, muffled through {PRONOUN/app1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "unscathed_rare": "<i>Murrp</i>ing with laughter, app1 clacks the stick {PRONOUN/app1/subject} {VERB/app1/hold/holds} in {PRONOUN/app1/poss} own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
         },
         "fail_text": {
             "unscathed_common": "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
@@ -763,7 +763,7 @@
             "unscathed_rare": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
         },
         "fail_text": {
-            "unscathed_common": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+            "unscathed_common": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell {PRONOUN/p_l/object} herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been."
         },
         "min_cats": 3,
         "max_cats": 3
@@ -794,7 +794,7 @@
             "unscathed_rare": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
         },
         "fail_text": {
-            "unscathed_common": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+            "unscathed_common": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell {PRONOUN/p_l/object} herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been."
         },
         "min_cats": 4,
         "max_cats": 4
@@ -825,7 +825,7 @@
             "unscathed_rare": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
         },
         "fail_text": {
-            "unscathed_common": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+            "unscathed_common": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell {PRONOUN/p_l/object} herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been."
         },
         "min_cats": 5,
         "max_cats": 5
@@ -857,7 +857,7 @@
             "unscathed_rare": "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
         },
         "fail_text": {
-            "unscathed_common": "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+            "unscathed_common": "p_l is disgusted with the general disdain {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} from the other apprentices, and how hypocritical it is to tell {PRONOUN/p_l/object} herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than {PRONOUN/p_l/subject} {VERB/p_l/have/has} been."
         },
         "min_cats": 6,
         "max_cats": 6
@@ -886,11 +886,11 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "There's nothing to apologize for! app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-            "unscathed_rare": "app2 seems somewhat irritated at first, but as p_l keeps chatting to them, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+            "unscathed_common": "There's nothing to apologize for! app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "unscathed_rare": "app2 seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/app2/object}, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
-            "unscathed_common": "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+            "unscathed_common": "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like {PRONOUN/app2/subject}'d prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -914,13 +914,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+            "unscathed_common": "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
             "unscathed_common": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
@@ -947,13 +947,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up their {PRONOUN/app2/poss} into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
             "unscathed_common": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
@@ -984,7 +984,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1015,7 +1015,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1042,13 +1042,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
             "unscathed_common": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
@@ -1079,7 +1079,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1106,13 +1106,13 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+            "unscathed_common": "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "unscathed_rare": "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to {PRONOUN/app2/object}, however, {PRONOUN/app2/subject} {VERB/app2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
             "unscathed_common": "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
@@ -1143,7 +1143,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/Are/Is} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."

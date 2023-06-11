@@ -66,70 +66,12 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    backstory_text = {
-        None: "This cat was born into the Clan where they currently reside.",
-        'clan_founder': "This cat is one of the founding members of the Clan.",
-        'clanborn': "This cat was born into the Clan where they currently reside.",
-        'halfclan1': "This cat was born into the Clan, but one of their parents resides in another Clan.",
-        'halfclan2': "This cat was born in another Clan, but chose to come to this Clan to be with their other parent.",
-        'outsider_roots1': "This cat was born into the Clan, but one of their parents is an outsider that belongs to no Clan.",
-        'outsider_roots2': "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age.",
-        'loner1': "This cat joined the Clan by choice after living life as a loner.",
-        'loner2': "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife might be an interesting change of pace.",
-        'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
-        'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
-        'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
-        'kittypet4': "This cat used to be a kittypet. One day, they got sick, and their Twolegs brought them into the belly of a monster. The Twolegs then left them to fend for themselves.",
-        'rogue1': "This cat joined the Clan by choice after living life as a rogue.",
-        'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
-        'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
-        'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
-        'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
-        'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
-        'abandoned4': "This cat was found and taken in after being abandoned by their Twolegs as a kit.",
-        'medicine_cat': "This cat was once a medicine cat in another Clan.",
-        'otherclan': "This cat was born into another Clan, but came to this Clan by choice.",
-        'otherclan2': "This cat was unhappy in their old Clan and decided to come here instead.",
-        'otherclan3': "This cat's Clan stayed with the Clan after a disaster struck their old one, and This cat decided to stay after the rest of their Clan returned home.",
-        'ostracized_warrior': "This cat was ostracized from their old Clan, but no one really knows why.",
-        'disgraced': "This cat was cast out of their old Clan for some transgression that they're not keen on talking about.",
-        'retired_leader': "This cat used to be the leader of another Clan before deciding they needed a change of scenery after leadership became too much. They returned their nine lives and let their deputy take over before coming here.",
-        'refugee': "This cat came to this Clan after fleeing from their former Clan and the tyrannical leader that had taken over.",
-        'refugee2': "This cat used to live as a loner, but after another cat chased them from their home, they took refuge in the Clan.",
-        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel Twoleg.",
-        'refugee4': "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
-        'tragedy_survivor': "Something horrible happened to this cat's previous Clan. They refuse to speak about it.",
-        'tragedy_survivor2': "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
-        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their Twolegs.",
-        'tragedy_survivor4': "This cat used to be a loner, but joined the Clan after something terrible made them leave their old home behind.",
-        'orphaned': "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where they came from.",
-        'orphaned2': "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they really came from.",
-        'wandering_healer1': "This cat used to wander, helping those where they could, and eventually found the Clan.",
-        'wandering_healer2': "This cat used to live in a specific spot, offering help to all who wandered by, but eventually found their way to the Clan.",
-        'guided1': "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their whispers to the Clan.",
-        'guided2': "This cat used to live a rough life as a rogue. While wandering, they found a set of starry pawprints, and followed them to the Clan.",
-        'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan.",
-        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave.",
-        'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
-        'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
-        'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
-        'orphaned6': "This cat was found flailing in the ocean as a teeny kitten, no parent in sight.",
-        'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
-        'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
-        'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
-        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
-        'outsider': "This cat was born outside of a Clan.",
-        'outsider2': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan.",
-        'outsider3': "This cat was born outside of a Clan, while their parent was lost.",
-    }
+    backstory_text = BACKSTORIES["backstories"][backstory]
     
-    if backstory != None and backstory in backstory_text:
-        return backstory_text.get(backstory, "")
     if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return f"This cat is a {cat.status} and currently resides outside of the Clans."
     
-    return backstory_text.get(backstory, "")
-
+    return backstory_text
 
 # ---------------------------------------------------------------------------- #
 #             change how backstory info displays on cat profiles               #
@@ -138,78 +80,15 @@ def backstory_text(cat):
     backstory = cat.backstory
     if backstory is None:
         return ''
-    bs_display = backstory
-
-    backstory_map = {
-        'clanborn': 'Clanborn',
-        'clan_founder': 'Clan founder',
-        'halfclan1': 'half-Clan',
-        'halfclan2': 'half-Clan',
-        'outsider_roots1': 'outsider roots',
-        'outsider_roots2': 'outsider roots',
-        'loner1': 'formerly a loner',
-        'loner2': 'formerly a loner',
-        'refugee2': 'formerly a loner',
-        'tragedy_survivor4': 'formerly a loner',
-        'guided3': 'formerly a loner',
-        'wandering_healer2': 'formerly a loner',
-        'kittypet1': 'formerly a kittypet',
-        'kittypet2': 'formerly a kittypet',
-        'kittypet3': 'formerly a kittypet',
-        'kittypet4': 'formerly a kittypet',
-        'refugee3': 'formerly a kittypet',
-        'tragedy_survivor3': 'formerly a kittypet',
-        'guided1': 'formerly a kittypet',
-        'rogue1': 'formerly a rogue',
-        'rogue2': 'formerly a rogue',
-        'rogue3': 'formerly a rogue',
-        'refugee4': 'formerly a rogue',
-        'tragedy_survivor2': 'formerly a rogue',
-        'guided2': 'formerly a rogue',
-        'wandering_healer1': 'formerly a rogue',
-        'abandoned1': 'formerly abandoned',
-        'abandoned2': 'formerly abandoned',
-        'abandoned3': 'formerly abandoned',
-        'abandoned4': 'formerly abandoned',
-        'medicine_cat': 'formerly a medicine cat',
-        'otherclan': 'formerly from another Clan',
-        'otherclan2': 'formerly from another Clan',
-        'otherclan3': 'formerly from another Clan',
-        'refugee5': 'formerly from another Clan',
-        'other_clan1': 'formerly from another Clan',
-        'guided4': 'formerly from another Clan',
-        'ostracized_warrior': 'ostracized warrior',
-        'disgraced': 'disgraced',
-        'disgraced2': 'disgraced',
-        'disgraced3': 'disgraced',
-        'retired_leader': 'retired leader',
-        'refugee': 'refugee',
-        'tragedy_survivor': 'survivor of a tragedy',
-        'orphaned': 'orphaned',
-        'orphaned2': 'orphaned',
-        'orphaned3': 'orphaned',
-        'orphaned4': 'orphaned',
-        'orphaned5': 'orphaned',
-        'outsider': 'outsider',
-        'outsider2': 'outsider',
-        'outsider3': 'outsider',
-    }
-
-    if bs_display in backstory_map:
-        bs_display = backstory_map[bs_display]
-
-    if bs_display == "disgraced":
-        if cat.status == 'medicine cat':
-            bs_display = 'disgraced medicine cat'
-        elif cat.status in ['warrior', 'elder', "deputy", "leader", "mediator"]:
-            bs_display = 'disgraced deputy'
-    if bs_display is None:
-        bs_display = None
-    else:
-        return bs_display
+    bs_category = None
+    
+    for category in BACKSTORIES["backstory_categories"]:
+        if backstory in category:
+            bs_category = category
+            break
+    bs_display = BACKSTORIES["backstory_display"][bs_category]
 
     return bs_display
-
 
 # ---------------------------------------------------------------------------- #
 #                               Profile Screen                                 #
@@ -1395,7 +1274,7 @@ class ProfileScreen(Screens):
             valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
                                     isinstance(Cat.fetch_cat(i), Cat)]
             if valid_formor_mentors:
-                influence_history += "{PRONOUN/m_c/subject/CAP} was mentored by "
+                influence_history += "{PRONOUN/m_c/subject/CAP} {VERB/m_c/was/were} mentored by "
                 if len(valid_formor_mentors) > 1:
                     influence_history += ", ".join([str(i.name) for i in valid_formor_mentors[:-1]]) + " and " + \
                         str(valid_formor_mentors[-1].name) + ". "
@@ -1486,6 +1365,7 @@ class ProfileScreen(Screens):
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
 
+
     def get_mentorship_text(self):
         """
         
@@ -1514,13 +1394,23 @@ class ProfileScreen(Screens):
         return text
         
 
+    def get_text_for_murder_event(self, event, death):
+        if event["text"] == death["text"] and event["moon"] == death["moon"]:
+            if event["revealed"] is True:
+                return event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            else:
+                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+        return None
+
+
+
     def get_death_text(self):
         """
         returns adjusted death history text
         """
         text = None
-        death_history = History.get_death_or_scars(self.the_cat, death=True)
-        murder_history = History.get_murders(self.the_cat)
+        death_history = self.the_cat.history.get_death_or_scars(self.the_cat, death=True)
+        murder_history = self.the_cat.history.get_murders(self.the_cat)
         if game.switches['show_history_moons']:
             moons = True
         else:
@@ -1528,55 +1418,61 @@ class ProfileScreen(Screens):
 
         if death_history:
             all_deaths = []
-            for death in death_history:
-                if murder_history.get("is_victim"):
-                    # TODO: this is gross, try to fix so it's not hella nested, seems like the only solution atm
+            death_number = len(death_history)
+            for index, death in enumerate(death_history):
+                found_murder = False  # Add this line to track if a matching murder event is found
+                if murder_history:
                     for event in murder_history["is_victim"]:
-                        if event["text"] == death["text"] and event["moon"] == death["moon"]:
-                            if event["revealed"] is True:
-                                text = event_text_adjust(Cat,
-                                                         event["text"],
-                                                         self.the_cat,
-                                                         Cat.fetch_cat(death["involved"]))
-                            else:
-                                text = event_text_adjust(Cat,
-                                                         event["unrevealed_text"],
-                                                         self.the_cat,
-                                                         Cat.fetch_cat(death["involved"]))
-                else:
-                    text = event_text_adjust(Cat,
-                                             death["text"],
-                                             self.the_cat,
-                                             Cat.fetch_cat(death["involved"]))
-                if moons:
-                    text += f" (Moon {death['moon']})"
-                all_deaths.append(text)
+                        text = self.get_text_for_murder_event(event, death)
+                        if text is not None:
+                            found_murder = True  # Update the flag if a matching murder event is found
+                            break
 
-            death_number = len(all_deaths)
+                if found_murder and text is not None and not event["revealed"]:
+                    text = event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                elif not found_murder:
+                    text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+
+
+                if self.the_cat.status == 'leader':
+                    if index == death_number - 1 and self.the_cat.dead:
+                        if death_number == 9:
+                            life_text = "lost their final life"
+                        else:
+                            life_text = "lost their final lives"
+                    else:
+                        life_text = "lost a life"
+                else:
+                    life_text = ""
+
+                if text:
+                    if life_text:
+                        text = f"{life_text} when {{PRONOUN/m_c/subject}} {text}"
+                    else:
+                        text = f"{text}"
+
+                    if moons:
+                        text += f" (Moon {death['moon']})"
+                    all_deaths.append(text)
 
             if self.the_cat.status == 'leader' or death_number > 1:
-
                 if death_number > 2:
-                    deaths = f"{', '.join(all_deaths[0:-1])}, and {all_deaths[-1]}"
+                    filtered_deaths = [death for death in all_deaths if death is not None]
+                    deaths = f"{', '.join(filtered_deaths[0:-1])}, and {filtered_deaths[-1]}"
                 elif death_number == 2:
                     deaths = " and ".join(all_deaths)
                 else:
                     deaths = all_deaths[0]
 
-                if self.the_cat.dead:
-                    insert = ' lost all {PRONOUN/m_c/poss} lives'
-                elif game.clan.leader_lives == 8:
-                    insert = ' lost a life'
-                else:
-                    insert = ' lost {PRONOUN/m_c/poss} lives'
-
-                text = str(self.the_cat.name) + insert + " when {PRONOUN/m_c/subject} " + deaths + "."
+                text = str(self.the_cat.name) + " " + deaths + "."
             else:
                 text = all_deaths[0]
+
             cat_dict = {
                 "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
             }
             text = process_text(text, cat_dict)
+
         return text
 
     def get_murder_text(self):

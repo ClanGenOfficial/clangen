@@ -108,7 +108,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c jovially jaunts up to the new leader. The dark murk on {PRONOUN/r_c/poss} fur or the red eyes did not seem to dampen {PRONOUN/r_c/object} spirit one bit. {PRONOUN/r_c/subject/CAP} {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
+          "text": "r_c jovially jaunts up to the new leader. The dark murk on {PRONOUN/r_c/poss} fur or the red eyes did not seem to dampen {PRONOUN/r_c/poss} spirit one bit. {PRONOUN/r_c/subject/CAP} {VERB/r_c/touch/touches} {PRONOUN/r_c/poss} nose to m_c's head, giving {PRONOUN/m_c/object} a life for [virtue]. When m_c looks up, r_c is walking away from the scene in high spirits.",
           "virtue": ["humor", "seeing the brighter side of a dark situation", "adventure", "confidence", "daring to do what must be done", "humor", "inspiring obedience", "authority"]
 
         }
@@ -146,7 +146,7 @@
       "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         },
         {
-          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. {PRONOUN/r_c/subject} {VERB/r_c/spit/spits} at m_c that {PRONOUN/m_c/poss} pain is almost over.",
+          "text": "r_c hisses a raspy greeting. Energy surges through m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/spit/spits} at m_c that {PRONOUN/m_c/poss} pain is almost over.",
           "virtue": ["bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry"]
         }
@@ -187,7 +187,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as {PRONOUN/r_c/subject} stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on {PRONOUN/m_c/poss} <i>>own</i> Clan, rather than the horizons, {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
+          "text": "r_c narrows {PRONOUN/r_c/poss} eyes as {PRONOUN/r_c/subject} stalk up to m_c. After a cryptic warning to keep {PRONOUN/m_c/poss} eyes on {PRONOUN/m_c/poss} <i>own</i> Clan, rather than the horizons, {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -316,7 +316,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c chokes out a bitter laugh, taunting the new leader about if {PRONOUN/m_c/poss} honeyed words can help {PRONOUN/m_c/object} in a real fight. r_c presses {PRONOUN/r_c/poss} nose against m_c's head and sneers our a life for [virtue].",
+          "text": "r_c chokes out a bitter laugh, taunting the new leader about if {PRONOUN/m_c/poss} honeyed words can help {PRONOUN/m_c/object} in a real fight. r_c presses {PRONOUN/r_c/poss} nose against m_c's head and sneers out a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -328,7 +328,7 @@
       "stubbornness", "authority"]
         },
         {
-          "text": "Slinking across the ground to close the distance between them, r_c grins like {PRONOUN/car_ct/subject} {VERB/r_c/were/was} watching a tiny, trapped mouse. r_c gives m_c a life foor [virtue], vanishing before that maw could strike at {PRONOUN/m_c/poss}'s throat.",
+          "text": "Slinking across the ground to close the distance between them, r_c grins like {PRONOUN/r_c/subject} {VERB/r_c/were/was} watching a tiny, trapped mouse. r_c gives m_c a life for [virtue], vanishing before that maw could strike at {PRONOUN/m_c/poss} throat.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -952,7 +952,7 @@
       "rank": ["kitten"],
       "life_giving": [
         {
-          "text": "r_c bounds up to the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/m_c/object/CAP} {VERB/m_c/flick/flicks} {PRONOUN/r_c/poss} muck-covered tail and run back to the line of shadows.",
+          "text": "r_c bounds up to the new leader, reaching up on {PRONOUN/r_c/poss} hind legs to give {PRONOUN/m_c/object} a new life for [virtue]. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flick/flicks} {PRONOUN/r_c/poss} muck-covered tail and {VERB/r_c/run/runs} back to the line of shadows.",
           "virtue": ["adventure", "curiosity", "perspective", "protection"]
         }
       ]

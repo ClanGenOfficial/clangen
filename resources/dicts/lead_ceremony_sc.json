@@ -551,15 +551,15 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "r_c approaches, dipping {PRONOUN/r_c/poss} head in greeting to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/meows/meow} something about not being afraid to look beyond traditions before touching {PRONOUN/r_c/poss} muzzle to m_c's head and a cool energy begins to fizz through {PRONOUN/m_c/poss} body. This life is for [virtue], the starry cat tells {PRONOUN/m_c/object}.",
+          "text": "r_c approaches, dipping {PRONOUN/r_c/poss} head in greeting to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/meow/meows} something about not being afraid to look beyond traditions before touching {PRONOUN/r_c/poss} muzzle to m_c's head and a cool energy begins to fizz through {PRONOUN/m_c/poss} body. This life is for [virtue], the starry cat tells {PRONOUN/m_c/object}.",
           "virtue": ["curiosity"]
         },
         {
-          "text": "m_c suppresses {PRONOUN/m_c/poss} shivers of excitement as r_c pads up, a small smile on {PRONOUN/r_c/poss} face. The StarClan cat delicately touches {PRONOUN/r_c/poss} nose to r_c's head, murmuring that this life is for [virtue], and {PRONOUN/r_c/subject} {VERB/r_c/expects/expect} r_c to use it well.",
+          "text": "m_c suppresses {PRONOUN/m_c/poss} shivers of excitement as r_c pads up, a small smile on {PRONOUN/r_c/poss} face. The StarClan cat delicately touches {PRONOUN/r_c/poss} nose to m_c's head, murmuring that this life is for [virtue], and {PRONOUN/r_c/subject} {VERB/r_c/expect/expects} m_c to use it well.",
           "virtue": ["devotion", "determination", "honesty", "justice"]
         },
         {
-          "text": "Tail lashing excitedly, m_c dips {PRONOUN/m_c/poss} head to r_c as {PRONOUN/r_c/poss} walk up. r_c returns the gesture and offers a life for [virtue], adding that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/m_c/subject} {VERB/m_c/needs/need} it, but it can't hurt.",
+          "text": "Tail lashing excitedly, m_c dips {PRONOUN/m_c/poss} head to r_c as {PRONOUN/r_c/subject} walk up. r_c returns the gesture and offers a life for [virtue], adding that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it, but it can't hurt.",
           "virtue": ["devotion", "courage in the face of hardship", "compassion", "honor"]
         }
       ]
