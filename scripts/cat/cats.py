@@ -77,7 +77,7 @@ class Cat():
         'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
         'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3', 'kittypet4'],
         'former_clancat_backstories': ['ostracized_warrior', 'disgraced1', 'retired_leader', 'refugee',
-                                       'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
+                                       'tragedy_survivor1', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
         'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
         'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5', 'orphaned6'],
@@ -616,7 +616,7 @@ class Cat():
             return "general"
 
     def gone(self):
-        """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
+        """ Makes a Clan cat an "outside" cat. Handles removing them from special positions, and removing
         mentors and apprentices. """
         self.outside = True
         
@@ -633,7 +633,7 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
-        """ Makes a "outside cat" a clan cat. Returns a list of any additional cats that
+        """ Makes a "outside cat" a Clan cat. Returns a list of any additional cats that
             are coming with them. """
         self.outside = False
 
@@ -859,7 +859,7 @@ class Cat():
             else:
                 clanname = game.switches['clan_list'][0]
         except IndexError:
-            print('WARNING: History failed to load, no clan in game.switches?')
+            print('WARNING: History failed to load, no Clan in game.switches?')
             return
 
         history_directory = get_save_dir() + '/' + clanname + '/history/'
@@ -1331,7 +1331,7 @@ class Cat():
         self.thought = str(chosen_thought)
 
     def relationship_interaction(self):
-        """Randomly choose a cat of the clan and have a interaction with them."""
+        """Randomly choose a cat of the Clan and have a interaction with them."""
         # if the cat has no relationships, skip
         if not self.relationships or len(self.relationships) < 1:
             return
@@ -2197,7 +2197,7 @@ class Cat():
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
                 continue
-            # if they are not outside of the clan at the same time
+            # if they are not outside of the Clan at the same time
             if self.outside and not inter_cat.outside or not self.outside and inter_cat.outside:
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
@@ -2680,7 +2680,7 @@ class Cat():
         try:
             with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
-        except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
+        except AttributeError:  # If loading cats is attempted before the Clan is loaded, we would need to use this.
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
                       'r') as read_file:
                 cat_info = ujson.loads(read_file.read())

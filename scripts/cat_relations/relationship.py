@@ -58,7 +58,7 @@ class Relationship():
 
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
-        # such interactions are only allowed for living clan members
+        # such interactions are only allowed for living Clan members
         if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
             return
         if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:

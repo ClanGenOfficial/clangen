@@ -254,9 +254,9 @@ class Game():
         else:
             return None'''
         # All of the above is old code
-        # Now, we want clanlist.txt to contain ONLY the name of the clan that is currently loaded
+        # Now, we want clanlist.txt to contain ONLY the name of the Clan that is currently loaded
         # We will get the list of clans from the saves folder
-        # each clan has its own folder, and the name of the folder is the name of the clan
+        # each Clan has its own folder, and the name of the folder is the name of the clan
         # so we can just get a list of all the folders in the saves folder
 
         # First, we need to make sure the saves folder exists
@@ -268,7 +268,7 @@ class Game():
         # Now we can get a list of all the folders in the saves folder
         clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
 
-        # the clan specified in saves/clanlist.txt should be first in the list
+        # the Clan specified in saves/clanlist.txt should be first in the list
         # so we can load it automatically
 
         if os.path.exists(get_save_dir() + '/clanlist.txt'):

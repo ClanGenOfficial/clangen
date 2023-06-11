@@ -136,7 +136,7 @@ class ClanScreen(Screens):
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
                     
         # Den Labels
-        # Redo the locations, so that it uses layout on the clan page
+        # Redo the locations, so that it uses layout on the Clan page
         self.warrior_den_label = pygame_gui.elements.UIImage(
             scale(pygame.Rect(self.layout["warrior den"], (242, 56))),
             pygame.transform.scale(
@@ -1563,7 +1563,7 @@ class AllegiancesScreen(Screens):
                 living_elders.remove(queen)
             
         #Clan Leader Box:
-        # Pull the clan leaders
+        # Pull the Clan leaders
         outputs = []
         if game.clan.leader and not (game.clan.leader.dead or game.clan.leader.outside):
                 outputs.append([
@@ -1919,7 +1919,7 @@ class MedDenScreen(Screens):
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
 
             if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"You have no medicine cats who are able to work. Your clan will be at a higher risk of death and disease."
+                meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
             med_concern = f"This should not appear."

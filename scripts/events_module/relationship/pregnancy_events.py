@@ -727,7 +727,7 @@ class Pregnancy_Events():
             #### GIVE HISTORY ###### 
             self.history.add_beginning(kit, clan_born=bool(cat))
         
-        # check other cats of clan for siblings
+        # check other cats of Clan for siblings
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
             for second_kitten in all_kitten:

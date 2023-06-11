@@ -58,7 +58,7 @@
 - Added a button in the settings menu to open the save data location in your file-explorer. 
 - New backgrounds: Shipwreck and Crystal River
 - Revamped background: Gully
-- Overlapping cat sprites on the clan page has been reduced. Once two cats are on a single spot, that position is considered "full."
+- Overlapping cat sprites on the Clan page has been reduced. Once two cats are on a single spot, that position is considered "full."
 - You can now choose the starting season when creating a new clan. 
 - Most backgrounds have unique cat placements. 
 - The appearance of the allegiances page has been changed, and descriptions have been updated to flow better. 
