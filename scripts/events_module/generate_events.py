@@ -368,35 +368,34 @@ class GenerateEvents:
             if other_cat:
                 if "other_cat_leader" in event.tags and other_cat.status != "leader":
                     continue
-                elif "other_cat_dep" in event.tags and other_cat.status != "deputy":
+                if "other_cat_dep" in event.tags and other_cat.status != "deputy":
                     continue
-                elif "other_cat_med" in event.tags and other_cat.status != "medicine cat":
+                if "other_cat_med" in event.tags and other_cat.status != "medicine cat":
                     continue
-                elif "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
+                if "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
                     continue
-                elif "other_cat_warrior" in event.tags and other_cat.status != "warrior":
+                if "other_cat_warrior" in event.tags and other_cat.status != "warrior":
                     continue
-                elif "other_cat_app" in event.tags and other_cat.status != "apprentice":
+                if "other_cat_app" in event.tags and other_cat.status != "apprentice":
                     continue
-                elif "other_cat_elder" in event.tags and other_cat.status != "elder":
+                if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
                     continue
-                elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
+                if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
                     continue
-                elif "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
+                if "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
                     continue
-                elif "other_cat_parent" in event.tags and other_cat.ID not in cat.get_parents():
+                if "other_cat_parent" in event.tags and other_cat.ID not in cat.get_parents():
                     continue
 
                 if "other_cat_own_app" in event.tags and other_cat.ID not in cat.apprentice:
                     continue
-                elif "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
+                if "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
                     continue
-                
                 
                 # check other cat trait and skill
                 has_trait = False
