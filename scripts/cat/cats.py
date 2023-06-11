@@ -800,32 +800,10 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
-    def convert_history(self, mentor_influence, died_by, scar_events):
+    def convert_history(self, died_by, scar_events):
         """
         this is to handle old history save conversions
         """
-        if mentor_influence or self.former_mentor:
-            trait = None
-            skill = None
-            if mentor_influence:
-                if len(mentor_influence) == 1:
-                    mentor_influence = [mentor_influence[0], 'None']
-                if mentor_influence[0] not in ['None', 'none']:
-                    if mentor_influence[0] in ["Benevolent", "Abrasive", "Outgoing", "Reserved"]:
-                        trait = mentor_influence[0]
-                        if mentor_influence[1] not in ['None', 'none']:
-                            skill = mentor_influence[1]
-                    else:
-                        skill = mentor_influence[0]
-                if mentor_influence[1] not in ['None', 'none'] and not trait:
-                    trait = mentor_influence[1]
-
-            mentor_influence = {
-                "mentor": self.former_mentor[-1] if self.former_mentor else None,
-                "skill": skill,
-                "trait": trait
-            }
-
         deaths = []
         if died_by:
             for death in died_by:
@@ -847,7 +825,6 @@ class Cat():
                     }
                 )
         self.history = History(
-            mentor_influence=mentor_influence,
             died_by=deaths,
             scar_events=scars,
         )
