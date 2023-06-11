@@ -259,7 +259,7 @@ for a, i in enumerate(
 # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
 for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
     'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
-    sprites.make_group('whitepatches', (a, 5), F'white{i}')
+    sprites.make_group('whitepatches', (a, 5), f'white{i}')
 # acorn's woodpecker, boots, miss, cow and cow2
 for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO']):
     sprites.make_group('whitepatches', (a, 6), 'white' + i)
