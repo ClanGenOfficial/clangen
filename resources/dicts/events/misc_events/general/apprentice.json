@@ -247,7 +247,7 @@
             "comfort",
             "trust"
         ],
-        "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
+        "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
         "accessories": [
             "WILD",
             "PLANT"

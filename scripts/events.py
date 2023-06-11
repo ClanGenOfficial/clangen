@@ -647,15 +647,18 @@ class Events:
         
         # Proform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
-            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"] and x.moons > 15:
-                if x.status == "medicine cat apprentice":
-                    self.ceremony(x, "medicine cat")
-                elif x.status == "mediator apprentice":
-                    self.ceremony(x, "mediator")
-                else:
-                    self.ceremony(x, "warrior")
-            elif x.status in ["kitten", "newborn"] and x.moons >= 6:
-                self.ceremony(x, "apprentice")
+            print(x.status)
+            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
+                if x.moons >= 15:
+                    if x.status == "medicine cat apprentice":
+                        self.ceremony(x, "medicine cat")
+                    elif x.status == "mediator apprentice":
+                        self.ceremony(x, "mediator")
+                    else:
+                        self.ceremony(x, "warrior")
+            elif x.status in ["kitten", "newborn"]:
+                if x.moons >= 6:
+                    self.ceremony(x, "apprentice")
             else:
                 if x.moons == 0:
                     x.status = 'newborn'

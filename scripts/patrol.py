@@ -1967,15 +1967,13 @@ class Patrol():
         }
         outcome_number = outcomes[outcome]
         outcome = outcome_number
-
-        for x in range(len(no_herbs_tags)):
-            if f"no_herbs{x}" in self.patrol_event.tags and outcome == x:
-                return
+        
+        if f"no_herbs{outcome}" in self.patrol_event.tags:
+            return
 
         large_amount = None
-        for x in range(len(many_herbs_tags)):
-            if f"many_herbs{x}" in self.patrol_event.tags and outcome == x:
-                large_amount = 4
+        if f"many_herbs{outcome}" in self.patrol_event.tags:
+            large_amount = 4
 
         if "random_herbs" in self.patrol_event.tags:
             number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
