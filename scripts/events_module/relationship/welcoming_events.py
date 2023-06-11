@@ -15,12 +15,12 @@ class Welcoming_Events():
         pass
     
     def welcome_cat(self, clan_cat: Cat, new_cat: Cat) -> None:
-        """Checks and triggers the welcome event from the clan cat to the new cat.
+        """Checks and triggers the welcome event from the Clan cat to the new cat.
 
             Parameters
             ----------
             clan_cat : Cat
-                the cat clan cat which welcome the new cat
+                the Clan cat which welcome the new cat
             new_cat : Cat
                 new cat which will be welcomed
 

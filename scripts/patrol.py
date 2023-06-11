@@ -132,7 +132,7 @@ class Patrol():
                 list of cats which are on the patrol
             
             clan: Clan
-                the clan class of the game, this parameter is needed to make tests possible
+                the Clan class of the game, this parameter is needed to make tests possible
 
             Returns
             ----------
@@ -296,7 +296,7 @@ class Patrol():
             elif hostile_rep:
                 possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
 
-        # other clan patrols
+        # other Clan patrols
         if other_clan_chance == 1:
             if clan_neutral:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
@@ -2261,13 +2261,13 @@ class Patrol():
         pl_rc_ids = [p_l_id, r_c_id]
 
         if "clan_to_p_l" in self.patrol_event.tags:
-            # whole clan gains relationship towards p_l
+            # whole Clan gains relationship towards p_l
             cats_to = [p_l_id]
             cats_from = all_cats
 
         elif "clan_to_r_c" in self.patrol_event.tags:
             if self.patrol_fail_stat_cat or self.patrol_win_stat_cat:
-                # whole clan gains relationship towards s_c
+                # whole Clan gains relationship towards s_c
                 cats_to = [s_c_id]
                 cats_from = all_cats
             else:
@@ -2275,7 +2275,7 @@ class Patrol():
                 cats_from = all_cats
 
         elif "clan to patrol" in self.patrol_event.tags:
-            # whole clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
+            # whole Clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
             cats_to = cat_ids
             cats_from = all_cats
 
@@ -2284,7 +2284,7 @@ class Patrol():
                 cats_to = [s_c_id]
                 cats_from = self.patrol_cats
             else:
-                # whole clan gains relationship towards r_c
+                # whole Clan gains relationship towards r_c
                 cats_to = [r_c_id]
                 cats_from = self.patrol_cats
 
@@ -2442,7 +2442,7 @@ class PatrolEvent:
         
 -- PATROL ABBREVIATIONS --
     Clan name - c_n
-    Other clan name - o_c_n
+    Other Clan name - o_c_n
     Random cat - r_c
     Patrol leader - p_l
     Stat Cat - s_c (this is the cat with relevant skills/traits for the situation)
@@ -2578,15 +2578,15 @@ class PatrolEvent:
 
     - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
-        # whole clan gains relationship towards p_l - "clan_to_p_l"
-        # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
-        # whole clan gains relationship towards r_c - "clan_to_r_c"
+        # whole Clan gains relationship towards p_l - "clan_to_p_l"
+        # whole Clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
+        # whole Clan gains relationship towards r_c - "clan_to_r_c"
         # patrol gains relationship towards p_l - "patrol_to_p_l"
         # patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
         # patrol gains relationship towards r_c - "patrol_to_r_c"
         # "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
         # two apps gain relationship towards each other - "rel_two_apps"
-        # whole clan gains relationship towards patrol - "clan_to_patrol"
+        # whole Clan gains relationship towards patrol - "clan_to_patrol"
         # whole patrol gains relationship with each other - "rel_patrol" 
         (also default, so if you don't add any other tags, it goes to this. If you want this outcome, 
         you don't need to add any tags, this is just if you need to add one of the other tags)
@@ -2606,7 +2606,7 @@ class PatrolEvent:
         ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, 
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
-        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
+        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the Clan 
         (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.

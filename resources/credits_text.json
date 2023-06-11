@@ -1,6 +1,6 @@
 {
     "text": [
-        "<b>Welcome to Warrior Cats clan generator!</b>",
+        "<b>Welcome to Warrior Cats Clan generator!</b>",
         "",
         "This is a fan-made generator for the Warrior Cats -book series by Erin Hunter.",
         "",
@@ -21,7 +21,7 @@
     ],
     "contrib": {
         "Acorn": "",
-        "anju": "-Senior Contributor-<br>Creating the Original Game- Old Base Code (Clan creation, Clan screen, Timeskip, Mates and kits, Starclan), Base Sprites & Pelts, Patrol Arts, New Sprite Revisions, Shaders",
+        "anju": "-Senior Contributor-<br>Creating the Original Game- Old Base Code (Clan creation, Clan screen, Timeskip, Mates and kits, StarClan), Base Sprites & Pelts, Patrol Arts, New Sprite Revisions, Shaders",
         "anonn (Nicole)": "Art and Writing",
         "Archanyhm": "-Senior Contributor-<br>Contributed Auto-Updater, Update-API, macOS fixes, changelog display",
         "beejeans": "patrol sprites, classic, mackerel, and sokoke tabbies, various white patches",
@@ -85,7 +85,7 @@
         "thyfrankie": "Writing",
         "Tiri": "Writing contributions: Recode of patrols, added randomised prey lists, herb gathering patrols, funeral ceremonies, prophecies",
         "transfoxes": "UI Button rewrite, misc code",
-        "Tybaxel": "Patrol sprites, clan creation screen art",
+        "Tybaxel": "Patrol sprites, Clan creation screen art",
         "wood pank": "Art",
         "ZtheCorgi (Zabe)": "nylon & indigo collars, various small bugfixes and proofreading"
     }

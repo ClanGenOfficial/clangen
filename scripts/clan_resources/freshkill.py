@@ -168,7 +168,7 @@ class Freshkill_Pile():
             Returns
             -------
             needed_prey : int|float
-                the amount of prey the clan needs
+                the amount of prey the Clan needs
         """
         living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]

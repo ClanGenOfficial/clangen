@@ -176,7 +176,7 @@ class Death_Events():
         """
         on hold until personality rework because i'd rather not have to figure this out a second time
         tentative plan is to have capability for a cat to witness the murder and then have a reaction based off trait
-        and perhaps reveal it to other clan members
+        and perhaps reveal it to other Clan members
         """
         witness = None
         # choose the witness

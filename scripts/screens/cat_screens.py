@@ -453,7 +453,7 @@ class ProfileScreen(Screens):
             or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
-        # use these attributes to create differing profiles for starclan cats etc.
+        # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False
         is_df_instructor = False
         if self.the_cat is None:
