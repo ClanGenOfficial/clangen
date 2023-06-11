@@ -1245,7 +1245,7 @@ class Patrol():
             chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
-                chosen_backstory = ["medicine_cat", "disgraced"]
+                chosen_backstory = ["medicine_cat", "disgraced1"]
             if not success:
                 outsider = create_outside_cat(Cat, "former Clancat", backstory=choice(chosen_backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
@@ -1256,13 +1256,13 @@ class Patrol():
             # failsafe in case self.other_clan is None for some reason
             if "medcat" in attribute_list:
                 status = 'medicine cat'
-                chosen_backstory = ["medicine_cat", "disgraced"]
+                chosen_backstory = ["medicine_cat", "disgraced1"]
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
                 chosen_backstory = Cat.backstory_categories["rogue_backstories"]
                 if "medcat" in attribute_list:
-                    chosen_backstory = ["medicine_cat", "disgraced"]
+                    chosen_backstory = ["medicine_cat", "disgraced1"]
                 if not success:
                     outsider = create_outside_cat(Cat, loner, backstory=choice(chosen_backstory))
                     self.results_text.append(f"The Clan has met {outsider}.")
@@ -1683,11 +1683,11 @@ class Patrol():
         tags = self.patrol_event.tags
         for tag in tags:
             # print(tag)
-            if "death" in tag:
+            if "death" in tag or "gone" in tag:
                 attribute_list = tag.split("_")
                 print(attribute_list)
                 break
-        if not attribute_list:
+        if attribute_list and len(attribute_list) == 1:
             if "stat" in outcome:
                 cat = self.patrol_fail_stat_cat
             elif "leader" in outcome:
@@ -1812,7 +1812,8 @@ class Patrol():
             "cold_injury": ["shivering", "frostbite"],
             "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
             "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-            "beak_bite": ["beak bite", "torn ear", "scrapes"]
+            "beak_bite": ["beak bite", "torn ear", "scrapes"],
+            "rat_bite": ["rat bite", "torn ear", "torn pelt"]
         }
 
         possible_conditions = []

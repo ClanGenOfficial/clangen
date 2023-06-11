@@ -35,7 +35,6 @@
         "disgraced1": "This cat was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.",
         "disgraced2": "This cat was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.",
         "disgraced3": "This cat once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} refuse to share.",
-        "disgraced": " This cat left {PRONOUN/m_c/poss} old Clan on bad terms. ",
 
         "retired_leader": "This cat used to be the leader of another Clan before deciding {PRONOUN/m_c/subject} needed a change of scenery after leadership became too much. {PRONOUN/m_c/subject/CAP} returned {PRONOUN/m_c/poss} nine lives and let {PRONOUN/m_c/poss} deputy take over before coming here.",
         "medicine_cat": "This cat was once a medicine cat in another Clan.",
