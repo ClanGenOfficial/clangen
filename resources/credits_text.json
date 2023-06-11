@@ -20,7 +20,6 @@
         "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
     ],
     "contrib": {
-        "Acorn": "",
         "anju": "-Senior Contributor-<br>Creating the Original Game- Old Base Code (Clan creation, Clan screen, Timeskip, Mates and kits, StarClan), Base Sprites & Pelts, Patrol Arts, New Sprite Revisions, Shaders",
         "Archanyhm": "-Senior Contributor-<br>Contributed Auto-Updater, Update-API, macOS fixes, changelog display",
         "Blackfur": "-Senior Contributor-<br>Initial macOS port, maintainer of Clangen-Web",
@@ -32,7 +31,8 @@
         "Ryos": "-Senior Contributor-<br>Lots of White Patches, Patrol Rework, Spritesheet Update (added paralyzed and sick sprites), Thought Rework, Misc Writing & Art Additions, Sprite Wrangler",
         "SableSteel": "-Senior Contributor-<br>Created original patrol code, events, and a lot of updates of the fan edit",
         "scribble": "-Senior Contributor-<br>User Interface, Med Den, Herb System, Conditions System, Moon + Patrol Events, Camp Backgrounds + Other Art, History, Family Tree",
-        "anonn (Nicole)": "Art and Writing",
+        "Acorn": "",
+		"anonn (Nicole)": "Art and Writing",
         "beejeans": "Patrol sprites, classic, mackerel, and sokoke tabbies, various white patches",
         "catastrophe": "Writing (ceremonies, patrols, thoughts)",
         "Charlie": "Cream color and Pale Ginger modifications",
