@@ -145,7 +145,7 @@
         ],
         "same sex birth": [
             "Allow same-sex breeding",
-            "Allow couples to birth kittens despite same-sex status. If off, same-sex couples will adopt instead.",
+            "Allow couples to birth kittens despite same-sex status. If toggled off, same-sex couples will adopt instead.",
             false
         ],
         "single parentage": [
