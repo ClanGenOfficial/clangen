@@ -864,6 +864,30 @@
         "antagonize_fail_text": null
     },
     {
+        "patrol_id": "bch_train_arguingromance1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["training", "no_app", "big_change", "pos_dislike", "pos_jealousy", "romantic", "rc_has_stat"],
+        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} begin {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/subject} the wrong way.",
+        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": {
+            "unscathed_common": "r_c shows {PRONOUN/p_l/object} a stunningly successful move {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to rapidly change directions in deep dry sand, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle-back-flip with a smug smirk.",
+            "unscathed_rare": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, which means p_l shows off how fast {PRONOUN/p_l/subject} can run, which means r_c shows off how sharp {PRONOUN/r_c/poss} claws are, which means p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, which means r_c shows off how long {PRONOUN/r_c/poss} legs are, which means p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon."
+        },
+        "fail_text": {
+            "unscathed_common": "Both warriors are stiffly polite with each other, and it's a boring and completely unproductive afternoon, though maybe r_c isn't quite the thorn in {PRONOUN/p_l/poss} paw p_l thought {PRONOUN/r_c/subject} {VERB/r_c/were/was}."
+        },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "dislike_10"
+            ]
+                }
+    },
+    {
         "patrol_id": "bch_training_dolphinlore1",
         "biome": "beach",
         "season": "Any",

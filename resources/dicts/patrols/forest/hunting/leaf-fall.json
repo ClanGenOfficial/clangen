@@ -446,6 +446,511 @@
         "antagonize_fail_text": null
     },
     {
+        "patrol_id": "fst_hunt_random_leaffall_siblings2applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "two_apprentices", "big_change", "pos_dislike", "pos_jealous", "rel_patrol", "minor_injury"],
+        "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall, with all its nuts and fruits, will surely make the prey fat, full, and stupid!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "app1 misses a f_tp_s, and app2 startles a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+	        "stat_skill": "s_c catches a great f_mp_s, and two f_tp_p! But their sibling comes up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument."
+            },
+        "fail_text": {
+	        "unscathed_common": "The littermates end up dirty, exhausted, and without much more than a f_tp_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+	        "injury": "app1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/app1/poss} sibling helps {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings2applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "two_apprentices", "platonic", "respect", "rel_patrol", "no_change_fail"],
+        "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And the leaf-fall colors of the forest will be amazing to explore together!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Yeah, it's a relatively okay hunt, with a couple f_tp_p and a dirty f_tp_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app1's would make a cute couple!",
+	        "stat_skill": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!"
+            },
+        "fail_text": {
+	        "unscathed_common": "Together they manage a grand haul of one f_tp_s, and not even a very big f_tp_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings2applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "two_apprentices", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "app1 thinks app2's f_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two f_tp_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back f_tp_p.",
+	        "stat_skill": "s_c spends half the patrol in the branches of the forest, both impressing and frustrating the sibling trying to keep up with {PRONOUN/s_c/object}."
+            },
+        "fail_text": {
+	        "unscathed_common": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
+            },
+        "win_skills": ["CLIMBER,0"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings3applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "three_apprentices", "pos_dislike", "pos_jealous", "rel_patrol", "minor_injury"],
+        "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall, with all its nuts and fruits, will surely make the prey fat, full, and stupid!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 misses a f_tp_s, and app2 and app3 startle a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+	        "stat_skill": "s_c catches a great f_mp_s, and two f_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument."
+            },
+        "fail_text": {
+	        "unscathed_common": "The littermates end up dirty, exhausted, and without much more than a f_tp_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+	        "injury": "app1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 3,
+        "max_cats": 3,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings3applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "three_apprentices", "platonic", "respect", "rel_patrol", "no_change_fail"],
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the leaf-fall colors of the forest will be amazing to explore together!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "Yeah, it's a relatively okay hunt, with a couple f_tp_p and a dirty f_tp_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+	        "stat_skill": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!"
+            },
+        "fail_text": {
+	        "unscathed_common": "Together they manage a grand haul of one f_tp_s, and not even a very big f_tp_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 3,
+        "max_cats": 3,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings3applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "three_apprentices", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 thinks app2's f_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two f_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back f_tp_p than the f_mp_s {PRONOUN/app3/subject} caught.",
+	        "stat_skill": "s_c spends half the patrol in the branches of the forest, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}."
+            },
+        "fail_text": {
+	        "unscathed_common": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
+            },
+        "win_skills": ["CLIMBER,0"],
+        "min_cats": 3,
+        "max_cats": 3,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings4applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "four_apprentices", "big_change", "pos_dislike", "pos_jealous", "rel_patrol", "minor_injury"],
+        "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall, with all its nuts and fruits, will surely make the prey fat, full, and stupid!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 misses a f_tp_s, and app2 and app3 startle a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+	        "stat_skill": "s_c catches a great f_mp_s, and two f_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument."
+            },
+        "fail_text": {
+	        "unscathed_common": "The littermates end up dirty, exhausted, and without much more than a f_tp_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+	        "injury": "app1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 4,
+        "max_cats": 4,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings4applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "four_apprentices", "platonic", "respect", "rel_patrol", "no_change_fail"],
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the leaf-fall colors of the forest will be amazing to explore together!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "Yeah, it's a relatively okay hunt, with a couple f_tp_p and a dirty f_tp_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+	        "stat_skill": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!"
+            },
+        "fail_text": {
+	        "unscathed_common": "Together they manage a grand haul of one f_tp_s, and not even a very big f_tp_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 4,
+        "max_cats": 4,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings4applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "four_apprentices", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 thinks app2's f_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two f_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back f_tp_p than the f_mp_s {PRONOUN/app3/subject} caught.",
+	        "stat_skill": "s_c spends half the patrol in the branches of the forest, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}."
+            },
+        "fail_text": {
+	        "unscathed_common": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
+            },
+        "win_skills": ["CLIMBER,0"],
+        "min_cats": 4,
+        "max_cats": 4,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings5applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "five_apprentices", "big_change", "pos_dislike", "pos_jealous", "rel_patrol", "minor_injury"],
+        "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall, with all its nuts and fruits, will surely make the prey fat, full, and stupid!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 misses a f_tp_s, and app2 and app3 startle a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+	        "stat_skill": "s_c catches a great f_mp_s, and two f_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument."
+            },
+        "fail_text": {
+	        "unscathed_common": "The littermates end up dirty, exhausted, and without much more than a f_tp_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+	        "injury": "app1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 5,
+        "max_cats": 5,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings5applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "five_apprentices", "platonic", "respect", "rel_patrol", "no_change_fail"],
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the leaf-fall colors of the forest will be amazing to explore together!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "Yeah, it's a relatively okay hunt, with a couple f_tp_p and a dirty f_tp_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+	        "stat_skill": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!"
+            },
+        "fail_text": {
+	        "unscathed_common": "Together they manage a grand haul of one f_tp_s, and not even a very big f_tp_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 5,
+        "max_cats": 5,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings5applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "five_apprentices", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 thinks app2's f_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two f_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back f_tp_p than the f_mp_s {PRONOUN/app3/subject} caught.",
+	        "stat_skill": "s_c spends half the patrol in the branches of the forest, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}."
+            },
+        "fail_text": {
+	        "unscathed_common": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
+            },
+        "win_skills": ["CLIMBER,0"],
+        "min_cats": 5,
+        "max_cats": 5,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings6applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "six_apprentices", "big_change", "pos_dislike", "pos_jealous", "rel_patrol", "minor_injury"],
+        "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Leaf-fall, with all its nuts and fruits, will surely make the prey fat, full, and stupid!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 misses a f_tp_s, and app2 and app3 startle a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, app1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp.",
+	        "stat_skill": "s_c catches a great f_mp_s, and two f_tp_p! But their siblings come up empty pawed. s_c offers to let them claim the smaller prey as their own, but the insulting suggestion just causes a massive argument."
+            },
+        "fail_text": {
+	        "unscathed_common": "The littermates end up dirty, exhausted, and without much more than a f_tp_s to show for it. Fox-dung! But at least out here, even if they didn't get much prey, they can complain about how stupidly hard hunting is to a sympathetic audience.",
+	        "injury": "app1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/app1/poss} siblings help {PRONOUN/app1/object} back to camp, chatting reassuringly about how hard their hunting lessons are."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 6,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings6applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "six_apprentices", "platonic", "respect", "rel_patrol", "no_change_fail"],
+        "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentice den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the leaf-fall colors of the forest will be amazing to explore together!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "Yeah, it's a relatively okay hunt, with a couple f_tp_p and a dirty f_tp_s. But what app1 is actually going to remember about today is that app2 thinks that {PRONOUN/app2/poss} mentor and app3's would make a cute couple!",
+	        "stat_skill": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!"
+            },
+        "fail_text": {
+	        "unscathed_common": "Together they manage a grand haul of one f_tp_s, and not even a very big f_tp_s at that. They have a lot more to learn before they'll all be ready to take on the responsibility of providing for c_n."
+            },
+        "win_skills": ["HUNTER,0"],
+        "min_cats": 6,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings6applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "small_prey0", "medium_prey2", "apprentice", "six_apprentices", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "The clouds are out, foretelling more rain, but they aren't here yet! And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
+        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 thinks app2's f_tp_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two f_tp_p, while app3 insists that {PRONOUN/app3/subject}'d much rather bring back f_tp_p than the f_mp_s {PRONOUN/app3/subject} caught.",
+	        "stat_skill": "s_c spends half the patrol in the branches of the forest, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c/object}."
+            },
+        "fail_text": {
+	        "unscathed_common": "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
+            },
+        "win_skills": ["CLIMBER,0"],
+        "min_cats": 6,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings1warrior1applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "medium_prey", "warrior", "adult_stat", "apprentice", "one_apprentice", "respect", "pos_jealous", "patrol_to_p_l", "no_change_fail"],
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? The mornings are really starting to bite with cold now, as the Clan pads its way through time ever closer to the first snowfall.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+	        "stat_skill": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?"
+            },
+        "fail_text": {
+	        "unscathed_common": "app1 yawns {PRONOUN/app1/poss} way through the not overly successful hunting patrol."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings1warrior1applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "medium_prey", "warrior", "adult_stat", "apprentice", "one_apprentice", "respect", "platonic", "rel_patrol"],
+        "intro_text": "As they wander through the leaf-fall forest, the trees clad in color and competing for the attention of animals with their harvests, p_l awkwardly asks app1 how {PRONOUN/app1/subject} think {PRONOUN/app1/poss} training is going.",
+        "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Giving in and accepting that {PRONOUN/app1/subject}{VERB/app1/'re/'s} just going to look stupid in front of {PRONOUN/app1/poss} cool older sibling, app1 tells p_l about the trouble {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having with {PRONOUN/app1/poss} pounce. It's such a simple thing - {PRONOUN/app1/subject} should have it by now! But p_l is actually super helpful and reassuring about it, it's nice.",
+	        "stat_skill": "Because, you see, if app1 ever wanted help - s_c knows they're not littermates, but they're still siblings, s_c is totally here for {PRONOUN/app1/object} if app1 ever wants extra training. It's still an awkward offer. But it's nice."
+            },
+        "fail_text": {
+	        "unscathed_common": "app1 doesn't want to talk about it. Like. At all. {PRONOUN/app1/subject/CAP} stalk off in a huff."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings1warrior1applocked3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "medium_prey", "warrior", "adult_stat", "apprentice", "one_apprentice", "respect", "platonic", "rel_patrol"],
+        "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
+        "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Taking down a f_mp_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to p_l.",
+	        "stat_skill": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a f_mp_s to prove it!"
+            },
+        "fail_text": {
+	        "unscathed_common": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to p_l."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings2to5warrior1applocked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "medium_prey", "warrior", "adult_stat", "apprentice", "one_apprentice", "respect", "pos_jealous", "rel_patrol", "no_change_fail"],
+        "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} do. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? The mornings are really starting to bite with cold now, as the Clan pads its way through time ever closer to the first snowfall.",
+        "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in their nest.",
+        "chance_of_success": 50,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "app1 collects two f_tp_p, and watches p_l take down a f_mp_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two f_mp_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+	        "stat_skill": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?"
+            },
+        "fail_text": {
+	        "unscathed_common": "app1 yawns {PRONOUN/app1/poss} way through the not overly successful hunting patrol."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leaffall_siblings2to5warrior1applocked2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["hunting", "medium_prey", "warrior", "adult_stat", "apprentice", "one_apprentice", "respect", "platonic", "rel_patrol"],
+        "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
+        "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
+        "chance_of_success": 50,
+        "exp": 30,
+        "success_text": {
+            "unscathed_common": "Taking down a f_mp_s all by {PRONOUN/app1/self}, app1 feels twice {PRONOUN/app1/poss} actual size showing it to {PRONOUN/app1/poss} older, fully named warrior siblings.",
+	        "stat_skill": "s_c, so physically strong and impressive, shows app1 exactly how to pull off one of {PRONOUN/s_c/poss} moves, and app1 trots back to camp with a f_mp_s to prove it!"
+            },
+        "fail_text": {
+	        "unscathed_common": "app1 knows {PRONOUN/app1/poss} patrol is still bringing back a little prey for the fresh-kill pile, but... it's so disappointing. {PRONOUN/app1/subject/CAP} really wanted to prove how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} grown to their family."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
         "patrol_id": "fst_hunt_fox_leaf-fallscavenge1",
         "biome": "forest",
         "season": "leaf-fall",
