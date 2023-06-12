@@ -3,7 +3,7 @@ from scripts.cat_relations.relationship import Relationship
 
 import random
 
-from scripts.cat.cats import Cat, INJURIES, PERMANENT, cat_class
+from scripts.cat.cats import Cat, INJURIES, BACKSTORIES
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
 from scripts.game_structure.game_essentials import game
@@ -253,7 +253,7 @@ class NewCatEvents:
                 return cat
 
     def update_cat_properties(self, cat):
-        if cat.backstory in Cat.backstory_categories['healer_backstories']:
+        if cat.backstory in BACKSTORIES["backstory_categories"]['healer_backstories']:
                 cat.status = 'medicine cat'
         else:
             cat.status = "warrior"
