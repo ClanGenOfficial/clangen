@@ -1351,7 +1351,7 @@ class Patrol():
 
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if f'{backstory}{outcome}' in attribute_list:
                     possible_backstories.append(backstory)
 
@@ -1364,7 +1364,7 @@ class Patrol():
         else:
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if backstory in attribute_list:
                     possible_backstories.append(backstory)
 
