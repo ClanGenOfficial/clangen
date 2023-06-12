@@ -1775,7 +1775,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "It is easy to wonder why StarClan place their paws on some cats and not others. r_c is comforted to know p_l feels that too sometimes, and they end up spending the afternoon discussing it together, both cats feeling validated and reassured.",
+            "unscathed_common": "It is easy to wonder why StarClan places their paws on some cats and not others. r_c is comforted to know p_l feels that too sometimes, and they end up spending the afternoon discussing it together, both cats feeling validated and reassured.",
             "unscathed_rare": "p_l tells r_c that one day StarClan will call on {PRONOUN/r_c/object}, for all {PRONOUN/r_c/poss} many talents and {PRONOUN/r_c/poss} drive and determination to help c_n. r_c ducks {PRONOUN/r_c/poss} head, embarrassed and pleased.",
             "stat_skill": "s_c knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c/object}. With r_c, {PRONOUN/s_c/subject} {VERB/s_c/go/goes} to a quiet area near camp and show {PRONOUN/r_c/object} how to breath, to feel connected to the world around {PRONOUN/r_c/object}, and let {PRONOUN/r_c/poss} worries evaporate from {PRONOUN/r_c/poss} pelt."
         },
