@@ -284,11 +284,15 @@ class Events:
             if game.clan.your_cat.mentor:
                 ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
             game.cur_events_list.append(Single_Event(ceremony_txt))
-            if game.clan.your_cat.status == "medicine cat apprentice":
-                game.clan.your_cat.status = "apprentice"
         elif game.clan.your_cat.status == 'apprentice':
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt["app"])))
+        elif game.clan.your_cat.status == 'medicine cat apprentice':
+            for i in range(random.randint(0,5)):
+                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["med_app"])))
+        elif game.clan.your_cat.status == 'mediator apprentice':
+            for i in range(random.randint(0,5)):
+                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["mediator_app"])))
         elif game.clan.your_cat.status == 'warrior' and not game.clan.your_cat.w_done:
             ceremony_txt = random.choice(self.b_txt['warrior_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
@@ -309,8 +313,6 @@ class Events:
         elif game.clan.your_cat.moons < 100:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt["warrior"])))
-            if game.clan.your_cat.status == "medicine cat":
-                game.clan.your_cat.status = "warrior"
         elif game.clan.your_cat.moons == 100:
             ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
