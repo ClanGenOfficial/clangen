@@ -18,7 +18,7 @@ import ujson
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
@@ -94,6 +94,9 @@ class Events:
         Patrol.used_patrols.clear()
         game.patrolled.clear()
         checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate)]
+        game.just_died.clear()
+        
+
         if any(
                 str(cat.status) in {
                     'leader', 'deputy', 'warrior', 'medicine cat',
@@ -161,7 +164,7 @@ class Events:
                         filter(
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
                                            not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
-                    # finds a percentage of the living clan to become shaken
+                    # finds a percentage of the living Clan to become shaken
 
                     if len(alive_cats) == 0:
                         return
@@ -228,6 +231,10 @@ class Events:
                 new_list.append(i)
             else:
                 other_list.append(i)
+        
+        # Clear the list of cats that died this moon.
+        game.just_died.clear()
+
         # Promote leader and deputy, if needed.
         self.check_and_promote_leader()
         self.check_and_promote_deputy()
@@ -505,6 +512,8 @@ class Events:
                     1]
 
             prey_amount += random.randint(lower_value, upper_value)
+        if FRESHKILL_ACTIVE:
+            print(f" -- FRESHKILL: added {prey_amount} monthly prey")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
@@ -819,15 +828,18 @@ class Events:
         
         # Proform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
-            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"] and x.moons > 15:
-                if x.status == "medicine cat apprentice":
-                    self.ceremony(x, "medicine cat")
-                elif x.status == "mediator apprentice":
-                    self.ceremony(x, "mediator")
-                else:
-                    self.ceremony(x, "warrior")
-            elif x.status in ["kitten", "newborn"] and x.moons >= 6:
-                self.ceremony(x, "apprentice")
+            print(x.status)
+            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
+                if x.moons >= 15:
+                    if x.status == "medicine cat apprentice":
+                        self.ceremony(x, "medicine cat")
+                    elif x.status == "mediator apprentice":
+                        self.ceremony(x, "mediator")
+                    else:
+                        self.ceremony(x, "warrior")
+            elif x.status in ["kitten", "newborn"]:
+                if x.moons >= 6:
+                    self.ceremony(x, "apprentice")
             else:
                 if x.moons == 0:
                     x.status = 'newborn'
@@ -933,8 +945,12 @@ class Events:
         and new cat events
         """
         if cat.dead:
+            
             cat.thoughts()
-            cat.dead_for += 1
+            if cat.ID in game.just_died:
+                cat.moons +=1
+            else:
+                cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
 
@@ -954,7 +970,7 @@ class Events:
             if cat.dead:
                 return
 
-        # prevent injured or sick cats from unrealistic clan events
+        # prevent injured or sick cats from unrealistic Clan events
         if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
                 if random.getrandbits(1):
@@ -1175,7 +1191,7 @@ class Events:
             # If leader is None, treat them as dead (since they are dead - and faded away.)
             leader_outside = True
 
-        # If a clan deputy exists, and the leader is dead,
+        # If a Clan deputy exists, and the leader is dead,
         #  outside, or doesn't exist, make the deputy leader.
         if game.clan.deputy:
             if game.clan.deputy is not None and \
@@ -1256,7 +1272,7 @@ class Events:
                         if c.moons >= 150 and c.status == "medicine cat"
                     ]
 
-                    # check if the clan has sufficient med cats
+                    # check if the Clan has sufficient med cats
                     has_med = medical_cats_condition_fulfilled(
                         Cat.all_cats.values(),
                         amount_per_med=get_amount_cat_for_one_medic(game.clan))
@@ -1280,7 +1296,7 @@ class Events:
                         else:
                             chance = int(chance / 14)
                     # These chances will only be reached if the
-                    # clan has at least one non-elder medicine cat.
+                    # Clan has at least one non-elder medicine cat.
                     elif not has_med:
                         chance = int(chance / 7.125)
                     elif has_med:
@@ -1840,7 +1856,7 @@ class Events:
             # Otherwise, other_cat is None
             other_cat = None
 
-        # check if clan has kits, if True then clan has kits
+        # check if Clan has kits, if True then Clan has kits
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/125 by default
@@ -1876,6 +1892,7 @@ class Events:
             return triggered_death
 
     def handle_murder(self, cat):
+        ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
         kill_chance = game.config["death_related"]["base_murder_kill_chance"]
@@ -1971,7 +1988,6 @@ class Events:
                     names += f" and {last_name}"
             disaster.extend([
                 ' drown after the camp becomes flooded.',
-                f' are killed in a battle against {random.choice(other_clan).name}Clan.',
                 ' are killed after a fire rages through the camp.',
                 ' are killed in an ambush by a group of rogues.',
                 ' go missing in the night.',
@@ -2019,6 +2035,8 @@ class Events:
 
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
+                # this next bit is temporary until we can rework it
+                History.add_death(poor_little_meowmeow, 'This cat died after disaster struck the Clan.')
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
@@ -2052,7 +2070,7 @@ class Events:
     def handle_outbreaks(self, cat):
         """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic,
-        # or if clan has sufficient med cats in expanded mode
+        # or if Clan has sufficient med cats in expanded mode
         if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
@@ -2269,7 +2287,7 @@ class Events:
 
                             involved_cats.append(game.clan.leader.ID)
                     elif leader_status == "not_here" and deputy_status == "here":
-                        text = f"The clan is without a leader, but a " \
+                        text = f"The Clan is without a leader, but a " \
                                f"new deputy must still be named.  " \
                                f"{random_cat.name} is chosen as the new deputy. " \
                                f"The retired deputy nods their approval."

@@ -640,7 +640,7 @@ class EventsScreen(Screens):
         self.event_container.kill()
         self.make_events_container()
 
-        # Stop if clan is new, so that events from previously loaded clan don't show up
+        # Stop if Clan is new, so that events from previously loaded Clan don't show up
         if game.clan.age == 0:
             return
 

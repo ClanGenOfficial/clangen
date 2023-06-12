@@ -532,7 +532,7 @@ class Condition_Events():
                     # gather potential event strings for gotten condition
                     possible_string_list = PERMANENT_CONDITION_GOT_STRINGS[injury][condition_got]
 
-                    # choose event string and ensure clan's med cat number aligns with event text
+                    # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
                     
                     med_list = get_med_cats(Cat)
@@ -612,7 +612,7 @@ class Condition_Events():
                 # gather potential event strings for gotten risk
                 possible_string_list = CONGENITAL_CONDITION_GOT_STRINGS[condition]
 
-                # choose event string and ensure clan's med cat number aligns with event text
+                # choose event string and ensure Clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
                 med_list = get_med_cats(Cat)
                 med_cat = None
@@ -753,7 +753,7 @@ class Condition_Events():
             if risk["name"] == 'an infected wound' and 'a festering wound' in cat.illnesses:
                 continue
 
-            # adjust chance of risk gain if clan has enough meds
+            # adjust chance of risk gain if Clan has enough meds
             chance = risk["chance"]
             if medical_cats_condition_fulfilled(Cat.all_cats.values(),
                                                 get_amount_cat_for_one_medic(game.clan)):
@@ -806,7 +806,7 @@ class Condition_Events():
                         removed_condition = True
                         dictionary.pop(condition)
 
-                    # choose event string and ensure clan's med cat number aligns with event text
+                    # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = int(random.random() * len(possible_string_list))
                     med_list = get_med_cats(Cat)
                     if len(med_list) == 0:
@@ -856,7 +856,7 @@ class Condition_Events():
                 break
 
     def use_herbs(self, cat, condition, conditions, source):
-        # herbs that can be used for the condition and the clan has available
+        # herbs that can be used for the condition and the Clan has available
         clan_herbs = set()
         needed_herbs = set()
         clan_herbs.update(game.clan.herbs.keys())

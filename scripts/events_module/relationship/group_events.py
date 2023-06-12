@@ -400,7 +400,7 @@ class Group_Events():
         if not all_fulfilled:
             return False
 
-        # if the interaction has injuries constraints, but the clan is in classic mode
+        # if the interaction has injuries constraints, but the Clan is in classic mode
         if game.clan.game_mode == 'classic' and len(interaction.has_injuries) > 0:
             return False
         # check if all cats fulfill the injuries constraints

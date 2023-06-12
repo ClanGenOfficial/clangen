@@ -136,7 +136,7 @@ class ClanScreen(Screens):
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
                     
         # Den Labels
-        # Redo the locations, so that it uses layout on the clan page
+        # Redo the locations, so that it uses layout on the Clan page
         self.warrior_den_label = pygame_gui.elements.UIImage(
             scale(pygame.Rect(self.layout["warrior den"], (242, 56))),
             pygame.transform.scale(
@@ -1563,7 +1563,7 @@ class AllegiancesScreen(Screens):
                 living_elders.remove(queen)
             
         #Clan Leader Box:
-        # Pull the clan leaders
+        # Pull the Clan leaders
         outputs = []
         if game.clan.leader and not (game.clan.leader.dead or game.clan.leader.outside):
                 outputs.append([
@@ -1805,12 +1805,12 @@ class MedDenScreen(Screens):
                                                       , manager=MANAGER)
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
-            if game.settings["fullscreen"]:
+            """if game.settings["fullscreen"]:
                 img_path = "resources/images/spacer.png"
             else:
-                img_path = "resources/images/spacer_small.png"
+                img_path = "resources/images/spacer_small.png"""
             self.log_box = pygame_gui.elements.UITextBox(
-                f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
+                f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
                 scale(pygame.Rect
                       ((300, 900), (1080, 360))),
                 object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
@@ -1919,7 +1919,7 @@ class MedDenScreen(Screens):
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
 
             if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"You have no medicine cats who are able to work. Your clan will be at a higher risk of death and disease."
+                meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
             med_concern = f"This should not appear."
@@ -2051,8 +2051,8 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
-            med_skill = cat.skills.skill_string()
-            med_exp = f"experience: {cat.experience_level}"
+            med_skill = cat.skills.skill_string(short=True)
+            med_exp = f"exp: {cat.experience_level}"
             med_working = True
             if cat.not_working():
                 med_working = False
@@ -2124,7 +2124,8 @@ class MedDenScreen(Screens):
                                                                    cat.sprite,
                                                                    cat_object=cat,
                                                                    manager=MANAGER,
-                                                                   tool_tip_text=conditions)
+                                                                   tool_tip_text=conditions,
+                                                                   starting_height=2)
 
 
             name = str(cat.name)

@@ -66,7 +66,7 @@ class Cat():
         "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
         "kittypet1", "kittypet2", "kittypet3", "kittypet4", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2",
         "abandoned3", "abandoned4", "medicine_cat", "otherclan", 'otherclan1', "otherclan2", "otherclan3",
-        "ostracized_warrior", "disgraced", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
+        "ostracized_warrior", "disgraced1", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
         "tragedy_suvivor", "tragedy_survivor2", "tragedy_survivor4", "tragedy_survivor4", "orphaned", "orphaned2",
         "orphaned3", "orphaned4", "orphaned5", "orphaned6" "wandering_healer1", "wandering_healer2", "guided1",
         "guided2", "guided3", "guided4", "outsider", "outsider2", "outsider3"
@@ -76,8 +76,8 @@ class Cat():
         'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
         'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
         'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3', 'kittypet4'],
-        'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                                       'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
+        'former_clancat_backstories': ['ostracized_warrior', 'disgraced1', 'retired_leader', 'refugee',
+                                       'tragedy_survivor1', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
         'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
         'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5', 'orphaned6'],
@@ -434,6 +434,7 @@ class Cat():
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
+                game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
                 self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
@@ -442,6 +443,8 @@ class Cat():
                     text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
+            game.just_died.append(self.ID)
+            print(game.just_died)
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Clear Relationships. 
@@ -614,7 +617,7 @@ class Cat():
             return "general"
 
     def gone(self):
-        """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
+        """ Makes a Clan cat an "outside" cat. Handles removing them from special positions, and removing
         mentors and apprentices. """
         self.outside = True
         
@@ -631,7 +634,7 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
-        """ Makes a "outside cat" a clan cat. Returns a list of any additional cats that
+        """ Makes a "outside cat" a Clan cat. Returns a list of any additional cats that
             are coming with them. """
         self.outside = False
 
@@ -798,32 +801,10 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
-    def convert_history(self, mentor_influence, died_by, scar_events):
+    def convert_history(self, died_by, scar_events):
         """
         this is to handle old history save conversions
         """
-        if mentor_influence or self.former_mentor:
-            trait = None
-            skill = None
-            if mentor_influence:
-                if len(mentor_influence) == 1:
-                    mentor_influence = [mentor_influence[0], 'None']
-                if mentor_influence[0] not in ['None', 'none']:
-                    if mentor_influence[0] in ["Benevolent", "Abrasive", "Outgoing", "Reserved"]:
-                        trait = mentor_influence[0]
-                        if mentor_influence[1] not in ['None', 'none']:
-                            skill = mentor_influence[1]
-                    else:
-                        skill = mentor_influence[0]
-                if mentor_influence[1] not in ['None', 'none'] and not trait:
-                    trait = mentor_influence[1]
-
-            mentor_influence = {
-                "mentor": self.former_mentor[-1] if self.former_mentor else None,
-                "skill": skill,
-                "trait": trait
-            }
-
         deaths = []
         if died_by:
             for death in died_by:
@@ -845,7 +826,6 @@ class Cat():
                     }
                 )
         self.history = History(
-            mentor_influence=mentor_influence,
             died_by=deaths,
             scar_events=scars,
         )
@@ -857,7 +837,7 @@ class Cat():
             else:
                 clanname = game.switches['clan_list'][0]
         except IndexError:
-            print('WARNING: History failed to load, no clan in game.switches?')
+            print('WARNING: History failed to load, no Clan in game.switches?')
             return
 
         history_directory = get_save_dir() + '/' + clanname + '/history/'
@@ -1134,16 +1114,20 @@ class Cat():
             chosen_life = {}
             while i < 10:
                 attempted = []
-                try:
+                if life_list:
                     chosen_life = choice(life_list)
-                except IndexError:
-                    print(
-                        f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
-                if chosen_life not in used_lives and chosen_life not in attempted:
-                    break
+                    if chosen_life not in used_lives and chosen_life not in attempted:
+                        break
+                    else:
+                        attempted.append(chosen_life)
+                    i += 1
                 else:
-                    attempted.append(chosen_life)
-                i += 1
+                    print(
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    chosen_life = ceremony_dict["default_life"]
+                    break
+                
+            
             used_lives.append(chosen_life)
             if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
@@ -1325,7 +1309,7 @@ class Cat():
         self.thought = str(chosen_thought)
 
     def relationship_interaction(self):
-        """Randomly choose a cat of the clan and have a interaction with them."""
+        """Randomly choose a cat of the Clan and have a interaction with them."""
         # if the cat has no relationships, skip
         if not self.relationships or len(self.relationships) < 1:
             return
@@ -2062,7 +2046,9 @@ class Cat():
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+			# the +1 is necessary because both might not already aged up
+			# if only one is aged up at this point, later they are more moons apart than the setting defined
+            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                 return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
@@ -2189,7 +2175,7 @@ class Cat():
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
                 continue
-            # if they are not outside of the clan at the same time
+            # if they are not outside of the Clan at the same time
             if self.outside and not inter_cat.outside or not self.outside and inter_cat.outside:
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
@@ -2672,7 +2658,7 @@ class Cat():
         try:
             with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
-        except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
+        except AttributeError:  # If loading cats is attempted before the Clan is loaded, we would need to use this.
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
                       'r') as read_file:
                 cat_info = ujson.loads(read_file.read())

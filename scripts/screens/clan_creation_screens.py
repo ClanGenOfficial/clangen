@@ -76,7 +76,7 @@ class MakeClanScreen(Screens):
         self.biome_selected = None
         self.selected_season = "Newleaf"
         self.choosing_rank = None
-        self.leader = None  # To store the clan leader before conformation
+        self.leader = None  # To store the Clan leader before conformation
         self.deputy = None
         self.med_cat = None
         self.members = []
@@ -107,7 +107,33 @@ class MakeClanScreen(Screens):
                 self.handle_choose_background_event(event)
             elif self.sub_screen == 'saved screen':
                 self.handle_saved_clan_event(event)
-            
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if self.sub_screen == 'game mode':
+                self.handle_game_mode_key(event)
+            elif self.sub_screen == 'name clan':
+                self.handle_name_clan_key(event)
+            elif self.sub_screen == 'choose camp':
+                self.handle_choose_background_key(event)
+            elif self.sub_screen == 'saved screen' and (event.key == pygame.K_RETURN or event.key == pygame.K_RIGHT):
+                self.change_screen('start screen')
+
+    # def handle_game_mode_event(self, event):
+    #     """Handle events for the game mode screen"""
+    #     # Game mode selection buttons
+    #     if event.ui_element == self.elements['classic_mode_button']:
+    #         self.game_mode = 'classic'
+    #         self.refresh_text_and_buttons()
+    #     elif event.ui_element == self.elements['expanded_mode_button']:
+    #         self.game_mode = 'expanded'
+    #         self.refresh_text_and_buttons()
+    #     elif event.ui_element == self.elements['cruel_mode_button']:
+    #         self.game_mode = 'cruel'
+    #         self.refresh_text_and_buttons()
+    #     # When the next_step button is pressed, go to the Clan naming page.
+    #     elif event.ui_element == self.elements['next_step']:
+    #         game.settings['game_mode'] = self.game_mode
+    #         self.open_name_clan()
     
     def handle_name_clan_event(self, event):
         if event.ui_element == self.elements["random"]:
@@ -121,7 +147,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -145,7 +171,7 @@ class MakeClanScreen(Screens):
                     self.elements["error"].show()
                     return
                 if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                    self.elements["error"].set_text("A clan with that name already exists.")
+                    self.elements["error"].set_text("A Clan with that name already exists.")
                     self.elements["error"].show()
                     return
                 self.clan_name = new_name
@@ -157,7 +183,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -354,7 +380,7 @@ class MakeClanScreen(Screens):
                 self.elements['next_step'].disable()
             elif self.elements["name_entry"].get_text().casefold() in [clan.casefold() for clan in
                                                                        game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 self.elements['next_step'].disable()
                 return
@@ -603,7 +629,8 @@ class MakeClanScreen(Screens):
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
-                                                   str(selected.personality.trait)))
+                                                   str(selected.personality.trait) + "\n" +
+                                                   str(selected.skills.skill_string())))
             self.elements['cat_info'].show()
 
 
@@ -716,7 +743,7 @@ class MakeClanScreen(Screens):
 
 
     def open_name_clan(self):
-        """Opens the name clan screen"""
+        """Opens the name Clan screen"""
         self.clear_all_page()
         self.sub_screen = 'name clan'
 
@@ -812,7 +839,7 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),

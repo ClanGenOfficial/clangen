@@ -84,9 +84,6 @@ class Inheritance():
             # kits + their mates
             self.init_kits(inter_id, inter_cat)
 
-            # grand kits
-            self.init_grand_kits(inter_id, inter_cat)
-
             # siblings + their mates
             self.init_siblings(inter_id, inter_cat)
 
@@ -96,8 +93,13 @@ class Inheritance():
             # cousins
             self.init_cousins(inter_id, inter_cat)
 
-            # grand_kits
-            self.init_cousins(inter_id, inter_cat)
+        # since grand kits depending on kits, ALL KITS HAVE TO BE SET FIRST!
+        for inter_id, inter_cat in self.cat.all_cats.items():
+            if inter_id == self.cat.ID:
+                continue
+
+            # grand kits
+            self.init_grand_kits(inter_id, inter_cat)
 
         # relations to faded cats - these must occur after all non-faded 
         # cats have been handled, and in the following order. 
@@ -122,7 +124,8 @@ class Inheritance():
         """Update all the inheritances of the cats, which are related to the current cat."""
         # only adding/removing parents or kits will use this function, because all inheritances are based on parents
         for cat_id in self.all_involved:
-            if cat_id in self.all_inheritances:
+             # Don't update the inheritance of faded cats - they are not viewable by the player and won't be used in any checks. 
+            if cat_id in self.all_inheritances and not self.cat.fetch_cat(cat_id).faded:
                 self.all_inheritances[cat_id].update_inheritance()
 
     def update_all_mates(self):
@@ -476,7 +479,7 @@ class Inheritance():
         # so it we only need to check if the inter cat has a parent which is in the kits dict
         inter_parent_ids = self.get_parents(inter_cat)
         parents_cats = [self.cat.fetch_cat(c_id) for c_id in inter_parent_ids]
-        parent_cats_names = [str(c.name) for c in parents_cats]
+        parent_cats_names = [str(c.name) for c in parents_cats if c]
 
         add_info = ""
         if len(parent_cats_names) > 0:

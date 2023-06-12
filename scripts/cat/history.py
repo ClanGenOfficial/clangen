@@ -29,6 +29,14 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
 
+        # fix 'old' history save bugs
+        if type(self.mentor_influence["trait"]) is type(None):
+            self.mentor_influence["trait"] = {}
+        if type(self.mentor_influence["skill"]) is type(None):
+            self.mentor_influence["skill"] = {}
+        if "mentor" in self.mentor_influence:
+            del self.mentor_influence["mentor"]
+
         """
         want save to look like
         {
@@ -233,7 +241,7 @@ class History:
                 SkillPath.CLIMBER: [ "climbing" ],
                 SkillPath.SWIMMER: [ "swimming" ],
                 SkillPath.SPEAKER: [ "arguing" ],
-                SkillPath.MEDIATOR: [ "resolving arugments" ],
+                SkillPath.MEDIATOR: [ "resolving arguments" ],
                 SkillPath.CLEVER: [ "solving problems" ],
                 SkillPath.INSIGHTFUL: [ "providing insight" ],
                 SkillPath.SENSE: [ "noticing small details" ],
@@ -253,7 +261,7 @@ class History:
         for _ment in cat.history.mentor_influence["skill"]:
             cat.history.mentor_influence["skill"][_ment]["strings"] = []
             for _path in cat.history.mentor_influence["skill"][_ment]:
-                #Check to make sure nothing weird got in there. 
+                #Check to make sure nothing weird got in there.
                 if _path == "strings":
                     continue
                 
@@ -262,11 +270,10 @@ class History:
                         cat.history.mentor_influence["skill"][_ment]["strings"].append(random.choice(skill_influence_text[SkillPath[_path]]))
                 except KeyError:
                     print("issue", _path)
-                    pass
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
-        """Adds the history infomation for a single mentor facet change, that occurs after a patrol. """
+        """Adds the history information for a single mentor facet change, that occurs after a patrol. """
         
         History.check_load(cat)
         if mentor_id not in cat.history.mentor_influence["trait"]:
@@ -277,6 +284,7 @@ class History:
     
     @staticmethod
     def add_skill_mentor_influence(cat, mentor_id, path, amount):
+        """ Adds mentor influence on skills """
         
         History.check_load(cat)
         
