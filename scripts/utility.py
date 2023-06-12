@@ -197,6 +197,8 @@ def change_clan_relations(other_clan, difference):
     # grab the clan that has been indicated
     other_clan = other_clan
     # grab the relation value for that clan
+    if other_clan not in game.clan.all_clans:
+        return
     y = game.clan.all_clans.index(other_clan)
     clan_relations = int(game.clan.all_clans[y].relations)
     # change the value
