@@ -892,7 +892,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
-            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRPONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around {PRONOUN/r_c/object}, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
             "stat_skill": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates}, carefully, and the patrol helps {PRONOUN/s_c/object} strip the cover of the sand away from a Twoleg trap underneath.",
             "stat_trait": "Something isn't right. Nervously pawing at the sand, s_c thinks that the smell is too good to be true. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} it, convincing the patrol to return to camp and report it to the deputy instead."
         },

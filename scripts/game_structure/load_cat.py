@@ -176,7 +176,6 @@ def json_load():
             
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(
-                    cat["mentor_influence"] if "mentor_influence" in cat else [],
                     cat["died_by"] if "died_by" in cat else [],
                     cat["scar_event"] if "scar_event" in cat else []
                 )
@@ -432,7 +431,8 @@ def csv_load(all_cats):
 
 def save_check():
     """Checks through loaded cats, checks and attempts to fix issues """
-
+    return
+    
     for cat in Cat.all_cats:
         cat_ob = Cat.all_cats[cat]
 

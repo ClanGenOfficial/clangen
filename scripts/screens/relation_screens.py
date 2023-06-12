@@ -2,6 +2,8 @@ import pygame.transform
 import pygame_gui.elements
 from random import choice
 
+from scripts.cat_relations.inheritance import Inheritance
+
 from .base_screens import Screens, cat_profiles
 
 from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
@@ -1437,8 +1439,6 @@ class ChooseMateScreen(Screens):
     def update_offspring_container(self):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
-        
-        
         self.all_offspring = [Cat.fetch_cat(i) for i in list(self.the_cat.inheritance.kits) if isinstance(Cat.fetch_cat(i), Cat)]
         if self.selected_cat and self.kits_selected_pair:
             self.all_offspring = [i for i in self.all_offspring if self.selected_cat.is_parent(i)]
@@ -1700,6 +1700,8 @@ class ChooseMateScreen(Screens):
         """Updates all elements with the current cat, as well as the selected cat.
             Called when the screen switched, and whenever the focused cat is switched"""
         self.the_cat = Cat.all_cats[game.switches['cat']]
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
         self.get_previous_next_cat()
 
         for ele in self.current_cat_elements:
@@ -2024,7 +2026,6 @@ class ChooseMateScreen(Screens):
             self.previous_cat_button.enable()
 
     def on_use(self):
-
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
 
@@ -4229,19 +4230,32 @@ class ChooseAdoptiveParentScreen(Screens):
 
     def get_valid_adoptive_parents(self):
         """Get a list of valid parents for the current cat"""
-        valid_parents = [i for i in Cat.all_cats_list if
-                         not (i.dead or i.outside or i.exiled) and  # Adoptive parents cant be dead or outside
-                         i.ID != self.the_cat.ID and # Can't be your own adoptive parent
-                         self.the_cat.ID not in i.get_parents() and # It would be weird to be adopted by your child
-                         i.moons - self.the_cat.moons >= 14 and # Adoptive parent must be at least 14 moons older. 
-                         i.ID not in self.the_cat.mate and # Can't set your mate your adoptive parent. 
-                         i.ID not in self.the_cat.adoptive_parents and # already adoptive paret
-                         i.ID != self.the_cat.parent1 and  # Is not blood parent
-                         i.ID != self.the_cat.parent2 and
-                         (not self.mates_current_parents or self.is_parent_mate(self.the_cat, i)) and #Toggle for only mates of current parents
-                         (not self.unrelated_only or i.ID not in self.the_cat.get_relatives())] #Toggle for only not-closely-related. 
+        valid_parents = [inter_cat for inter_cat in Cat.all_cats_list if
+                         not (inter_cat.dead or inter_cat.outside or inter_cat.exiled) and  # Adoptive parents cant be dead or outside
+                         inter_cat.ID != self.the_cat.ID and # Can't be your own adoptive parent
+                         inter_cat.moons - self.the_cat.moons >= 14 and # Adoptive parent must be at least 14 moons older. -> own child can't adopt you
+                         inter_cat.ID not in self.the_cat.mate and # Can't set your mate your adoptive parent. 
+                         inter_cat.ID not in self.the_cat.get_parents() and # Adoptive parents can't already be their parent
+                         self.not_related_to_mate(inter_cat) and # quick fix TODO: change / remove later
+                         (not self.mates_current_parents or self.is_parent_mate(self.the_cat, inter_cat)) and #Toggle for only mates of current parents
+                         (not self.unrelated_only or inter_cat.ID not in self.the_cat.get_relatives())] #Toggle for only not-closely-related. 
         
         return valid_parents
+
+    def not_related_to_mate(self, possible_parent) -> bool:
+        """
+        This should prevent weird combinations, till the pop-up is implemented.
+        It checks the potential parent is a relative of your mate.
+        Return if the cat is a possible adoptive parent.
+        """
+        if len(self.the_cat.mate) > 0:
+            for mate_id in self.the_cat.mate:
+                mate = Cat.fetch_cat(mate_id)
+                mate_relatives = mate.get_relatives()
+                if possible_parent.ID in mate_relatives:
+                    return False
+        
+        return True
 
     def get_previous_next_cat(self):
         is_instructor = False

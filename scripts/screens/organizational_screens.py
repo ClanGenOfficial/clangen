@@ -414,7 +414,7 @@ class SwitchClanScreen(Screens):
                                        object_id="#main_menu_button",
                                        manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
-            'Note: This will close the game.\n When you open it next, it should have the new clan.',
+            'Note: This will close the game.\n When you open it next, it should have the new Clan.',
             # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
@@ -427,9 +427,9 @@ class SwitchClanScreen(Screens):
             manager=MANAGER)
         if game.clan:
             self.current_clan.set_text(
-                f"The currently loaded clan is {game.clan.name}Clan")
+                f"The currently loaded Clan is {game.clan.name}Clan")
         else:
-            self.current_clan.set_text("There is no clan currently loaded.")
+            self.current_clan.set_text("There is no Clan currently loaded.")
 
         self.clan_list = game.read_clans()
 
@@ -882,7 +882,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((0, 0), (1200, 8000))),
+            scale(pygame.Rect((0, 0), (1150, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER)
@@ -899,6 +899,7 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
+                    starting_height=2
                 ),
             else:
                 self.tooltip[f'tip{i}'] = UIImageButton(
@@ -907,12 +908,13 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
-                    tool_tip_text=tooltip
+                    tool_tip_text=tooltip,
+                    starting_height=2
                 ),
 
             i += 1
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
-            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
+            (1150 / 1600 * screen_x, (i * 56 + y_pos + 550) / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""

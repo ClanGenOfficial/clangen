@@ -6,7 +6,7 @@
             "Is pondering the next mentors for the kits of the Clan",
             "Thinks about who should mentor new apprentices",
             "Bats a mossball back to r_c when it hits {PRONOUN/m_c/object}, chuckling at the wide-eyed kit",
-            "Is looking over the kits, pleased the clan is thriving",
+            "Is looking over the kits, pleased the Clan is thriving",
             "Is visiting the nursery to check on the kits, the future of the Clan"
         ],  
         "random_status_constraint": [
@@ -118,7 +118,7 @@
             "Is hoping to postpone the retirement of {PRONOUN/m_c/poss} clanmates",
             "Is asking the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
             "Doesn't understand StarClan's resentment towards {PRONOUN/m_c/object}",
-            "Is thinking about taking kits from another clan",
+            "Is thinking about taking kits from another Clan",
             "Encourages warriors to destroy other Clan's herb supplies",
             "Demands the warriors train with their claws unsheathed",
             "Is thinking about exiling elders from now on",
