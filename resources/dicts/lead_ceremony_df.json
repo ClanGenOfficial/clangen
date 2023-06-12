@@ -679,25 +679,22 @@
       "tags": [],
       "lead_trait": ["responsible"],
       "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "deputy", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "m_c's eyes glide to where r_c pads out of the gloom. The shadowy cat's eyes light up in surprise before darkening once more. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scoff/scoffs}, remarking that {PRONOUN/r_c/subject} never thought {PRONOUN/r_c/subject}'d see m_c in these dark woods before giving a life for [virtue].",
+          "virtue": ["ambition", "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", 
+          "shamelessness", "zealotry", "bloodlust", "restless energy", "stubbornness", "authority"]
+        },
+        {
+          "text": "A cold prickle passes through m_c's pelt as r_c slinks into view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/let/lets} out a shrill hiss that turns into a cackle. {PRONOUN/r_c/subject/CAP} didn't know that code-following kitties could show up here, {PRONOUN/r_c/subject} {VERB/r_c/scoff/scoffs}. The life for [virtue] that {PRONOUN/r_c/subject} {VERB/r_c/offer/offers} rushes through m_c like a lightning bolt.",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
-        },
-        {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
+          "text": "m_c feels {PRONOUN/m_c/poss} pelt prickle with apprehension as r_c stalks closer. The dark form snorts derisively before sweeping {PRONOUN/r_c/poss} tail across m_c's whiskers, giving a life for [virtue]. m_c wobbles as a sickening feeling spreads through {PRONOUN/m_c/object}, but it's gone as soon as it began.",
+          "virtue": ["ruthlessness", "indifference", "single-mindedness", "authority"]
         }
       ]
     },
@@ -709,22 +706,16 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "EXAMPLE r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
+          "text": "m_c pins {PRONOUN/m_c/poss} ears back as the shadowy figure of r_c appears from the gloom. r_c's flint-sharp eyes reveal nothing as {PRONOUN/r_c/subject} lift a paw with unsheathed claws up to m_c's head. The touch is light, gifting a life for [virtue], but the pain that rips through m_c makes {PRONOUN/m_c/object} want to scream.",
+          "virtue": ["detachment", "vehemence", "fervor", "ferocity"]
         },
         {
-          "text": "EXAMPLE A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
+          "text": "m_c stands rigidly as the shape of r_c barrels towards {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} short of bowling m_c over and {VERB/r_c/let/lets} out a sharp laugh - a wicked sound. \"Your virtuous ways won't save you here,\" {PRONOUN/r_c/subject} {VERB/r_c/hiss/hisses}, shoving {PRONOUN/r_c/poss} head towards m_c's. The impact almost makes {PRONOUN/m_c/poss} head spin, but then the pain of [virtue] zips through {PRONOUN/m_c/poss} body, letting everything else be forgotten.",
+          "virtue": ["backbone", "tenacity", "sharp senses", "good instincts", "drive"]
         },
         {
-          "text": "EXAMPLE r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
-          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
-      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
-      "stubbornness", "authority"]
+          "text": "m_c keeps {PRONOUN/m_c/poss} eyes slitted as r_c pads up. The dark cat regards them coldly, mewing that {PRONOUN/m_c/poss} righteousness is a sure way to gain authority in c_n. {PRONOUN/r_c/subject/CAP} briefly {VERB/r_c/brush/brushes} {PRONOUN/r_c/poss} muzzle against m_c's, a life for [virtue] ripping through {PRONOUN/m_c/poss} body with the intensity of a fire.",
+          "virtue": ["sharp claws", "sharp fangs"]
         }
       ]
     },
