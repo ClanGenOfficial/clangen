@@ -248,7 +248,7 @@ def create_new_cat(Cat,
         backstory = choice(backstory)
 
     if backstory in (
-            Cat.BACKSTORIES["backstory_categories"]["former_clancat_backstories"] or Cat.BACKSTORIES["backstory_categories"]["otherclan_categories"]):
+            BACKSTORIES["backstory_categories"]["former_clancat_backstories"] or BACKSTORIES["backstory_categories"]["otherclan_categories"]):
         other_clan = True
 
     created_cats = []
@@ -416,9 +416,9 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         TODO: DOCS
         """
     suffix = ''
-    if backstory in Cat.BACKSTORIES["backstory_categories"]["rogue_backstories"]:
+    if backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
         status = 'rogue'
-    elif backstory in Cat.BACKSTORIES["backstory_categories"]["former_clancat_backstories"]:
+    elif backstory in BACKSTORIES["backstory_categories"]["former_clancat_backstories"]:
         status = "former Clancat"
     if status == 'kittypet':
         name = choice(names.names_dict["loner_names"])
@@ -1510,3 +1510,6 @@ with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
 PREY_LISTS = None
 with open(f"resources/dicts/prey_text_replacements.json", 'r') as read_file:
     PREY_LISTS = ujson.loads(read_file.read())
+
+with open(f"resources/dicts/backstories.json", 'r') as read_file:
+    BACKSTORIES = ujson.loads(read_file.read())
