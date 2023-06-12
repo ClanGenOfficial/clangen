@@ -287,11 +287,16 @@ class Events:
         elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
             for i in range(random.randint(0,5)):
                 game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
-        elif game.clan.your_cat.status == 'warrior' and not game.clan.your_cat.w_done:
-            ceremony_txt = random.choice(self.b_txt['warrior_ceremony'])
+        elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
+            if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status in ['medicine cat', 'mediator']:
+                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
+            else:
+                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
             ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+            ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.former_mentor[-1]].name))
+
             random_honor = None
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
@@ -302,7 +307,7 @@ class Events:
             except KeyError:
                 random_honor = "hard work"
             ceremony_txt = ceremony_txt.replace('honor1', random_honor)
-            game.cur_events_list.append(Single_Event(ceremony_txt))
+            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
             game.clan.your_cat.w_done = True
         elif game.clan.your_cat.moons < 100:
             for i in range(random.randint(0,5)):
