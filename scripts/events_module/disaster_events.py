@@ -44,16 +44,16 @@ class DisasterEvents():
         for event in possible_events:
             #print(event.event)
             if event.priority == 'secondary':
-                print('priority')
+                # print('priority')
                 continue
             if game.clan.current_season not in event.season:
-                print('season')
+                # print('season')
                 continue
             if (game.clan.camp_bg and 'any') not in event.camp:
-                print('camp')
+                # print('camp')
                 continue
 
-            print('still valid')
+            # print('still valid')
             chance = 1
             if event.rarity == 'uncommon':
                 chance = 10
@@ -67,7 +67,7 @@ class DisasterEvents():
 
         # choose and save disaster
         chosen_disaster = random.choice(final_events)
-        print('chosen disaster', chosen_disaster.event)
+        # print('chosen disaster', chosen_disaster.event)
         game.clan.primary_disaster = chosen_disaster
 
         # display trigger event
@@ -101,7 +101,7 @@ class DisasterEvents():
 
             # checking if a secondary disaster is triggered
             if game.clan.primary_disaster.secondary_disasters:
-                print('secondary disaster rolling')
+                # print('secondary disaster rolling')
                 picked_disasters = []
                 for potential_disaster in game.clan.primary_disaster.secondary_disasters:
                     current_primary_duration = game.clan.primary_disaster.current_duration
@@ -123,7 +123,7 @@ class DisasterEvents():
                     #print(picked_disasters)
                     # choose disaster and display trigger event
                     secondary_disaster = random.choice(picked_disasters)
-                    print("chosen secondary", secondary_disaster)
+                    # print("chosen secondary", secondary_disaster)
                     event = self.disaster_text(secondary_disaster["trigger_events"])
                     game.cur_events_list.append(
                         Single_Event(event, "misc"))

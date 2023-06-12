@@ -96,7 +96,7 @@ class Patrol():
                                                                self.patrol_leader, 
                                                                self.patrol_random_cat, 
                                                                self.patrol_apprentices):
-            print("did the romance")
+            # print("did the romance")
             self.patrol_event = romantic_event_choice
         else:
             self.patrol_event = normal_event_choice

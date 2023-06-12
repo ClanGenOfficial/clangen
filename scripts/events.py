@@ -271,7 +271,7 @@ class Events:
             self.w_done = False
         elif game.clan.your_cat.moons < 6:
             for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["kit"])))
+                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["kitten"])))
             if random.randint(1,2) == 1 and self.kit_once:
                 e = random.choice(self.kit_once)
                 self.kit_once.remove(e)
@@ -284,15 +284,9 @@ class Events:
             if game.clan.your_cat.mentor:
                 ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
             game.cur_events_list.append(Single_Event(ceremony_txt))
-        elif game.clan.your_cat.status == 'apprentice':
+        elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
             for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["app"])))
-        elif game.clan.your_cat.status == 'medicine cat apprentice':
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["med_app"])))
-        elif game.clan.your_cat.status == 'mediator apprentice':
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["mediator_app"])))
+                game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
         elif game.clan.your_cat.status == 'warrior' and not game.clan.your_cat.w_done:
             ceremony_txt = random.choice(self.b_txt['warrior_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
@@ -312,7 +306,7 @@ class Events:
             game.clan.your_cat.w_done = True
         elif game.clan.your_cat.moons < 100:
             for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["warrior"])))
+                game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
         elif game.clan.your_cat.moons == 100:
             ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
@@ -833,7 +827,7 @@ class Events:
         
         # Proform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
-            print(x.status)
+            # print(x.status)
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
@@ -1925,29 +1919,29 @@ class Events:
                 if not relations:
                     return
                 chosen_target = random.choice(relations)
-            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            # print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
-            print('DISLIKE MODIFIER', kill_chance)
+            # print('DISLIKE MODIFIER', kill_chance)
             kill_chance -= chosen_target.jealousy
-            print('JEALOUS MODIFIER', kill_chance)
+            # print('JEALOUS MODIFIER', kill_chance)
 
             facet_modifiers = (0 + int(cat.personality.aggression)) + \
                 (16 - int(cat.personality.stability)) + (16 - int(cat.personality.lawfulness))
             
             kill_chance = kill_chance - facet_modifiers
-            print('Kill chance after facets', kill_chance)
+            # print('Kill chance after facets', kill_chance)
 
             # this adds a bit of randomness
             randomness_modifier = (random.getrandbits(10) * .001)
             kill_chance = kill_chance - randomness_modifier
-            print("Final kill chance: " + str(kill_chance))
+            # print("Final kill chance: " + str(kill_chance))
 
             if kill_chance < 1:
                 kill_chance = 1
             if not int(random.random() * kill_chance):
-                print("KILL KILL KILL")
+                # print("KILL KILL KILL")
                 self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, self.at_war,
                                                 self.enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
 

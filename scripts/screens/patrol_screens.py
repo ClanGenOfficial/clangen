@@ -616,7 +616,7 @@ class PatrolScreen(Screens):
         if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
             self.able_cats.append(game.clan.your_cat)
         # ASSIGN TO ABLE CATS
-        print(game.patrolled)
+        # print(game.patrolled)
         # for the_cat in Cat.all_cats_list:
         #     if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
         #         'elder', 'kitten', 'mediator', 'mediator apprentice'
