@@ -1,6 +1,7 @@
 import random
 from enum import Enum, Flag, auto
 from typing import Union
+from scripts.game_structure.game_essentials import game
 
 class SkillPath(Enum):
     TEACHER = (
@@ -420,10 +421,14 @@ class CatSkills:
             if self.secondary:
                 output.append(self.secondary.skill)
         
+        if "StarClan" in output and game.clan.instructor.df:
+            for string in output:
+                string.replace('StarClan', 'the Dark Forest')
+
         if not output:
             return "???"
-        else:
-            return " + ".join(output) 
+
+        return " + ".join(output)
 
     def mentor_influence(self, mentor):
         """
