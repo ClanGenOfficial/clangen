@@ -139,6 +139,7 @@ if clan_list:
         load_cats()
         version_info = clan_class.load_clan()
         version_convert(version_info)
+        game.load_events()
     except Exception as e:
         logging.exception("File failed to load")
         if not game.switches['error_message']:

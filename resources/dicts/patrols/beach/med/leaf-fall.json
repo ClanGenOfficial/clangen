@@ -1173,7 +1173,8 @@
             "dislike",
             "injury",
             "sore",
-            "injure_all"
+            "injure_all",
+            "rc_has_stat"
         ],
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
@@ -1186,8 +1187,8 @@
             "stat_trait": "Night falls, but still s_c insistently keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves."
         },
         "fail_text": {
-            "unscathed_common": "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "unscathed_stat": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+            "unscathed_common": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+            "unscathed_stat": "By the time {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up and return to camp, p_l is approaching the explosion point with s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
             "death": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
             "injury": "The cats search and search until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but {PRONOUN/p_l/subject} just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },

@@ -165,7 +165,7 @@ class Relationship():
             effect = f" ({intensity} negative effect)"
 
         interaction_str = interaction_str + effect
-        self.log.append(interaction_str)
+        self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moon(s) old")
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
@@ -182,7 +182,6 @@ class Relationship():
         }
 
         return process_text(string, cat_dict)
-
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.

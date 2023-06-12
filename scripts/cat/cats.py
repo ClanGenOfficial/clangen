@@ -66,7 +66,7 @@ class Cat():
         "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
         "kittypet1", "kittypet2", "kittypet3", "kittypet4", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2",
         "abandoned3", "abandoned4", "medicine_cat", "otherclan", 'otherclan1', "otherclan2", "otherclan3",
-        "ostracized_warrior", "disgraced", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
+        "ostracized_warrior", "disgraced1", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
         "tragedy_suvivor", "tragedy_survivor2", "tragedy_survivor4", "tragedy_survivor4", "orphaned", "orphaned2",
         "orphaned3", "orphaned4", "orphaned5", "orphaned6" "wandering_healer1", "wandering_healer2", "guided1",
         "guided2", "guided3", "guided4", "outsider", "outsider2", "outsider3"
@@ -76,7 +76,7 @@ class Cat():
         'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
         'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
         'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3', 'kittypet4'],
-        'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+        'former_clancat_backstories': ['ostracized_warrior', 'disgraced1', 'retired_leader', 'refugee',
                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
         'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
@@ -160,7 +160,13 @@ class Cat():
             self.adoptive_parents = []
             self.mate = []
             self.status = status
+            self.pronouns = [self.default_pronouns[0].copy()]
             self.moons = moons
+            self.dead_for = 0
+            self.dead = True
+            self.outside = False
+            self.exiled = False
+            self.inheritance = None # This should never be used, but just for safty
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
@@ -214,8 +220,6 @@ class Cat():
         self.thought = ''
         self.genderalign = None
         self.birth_cooldown = 0
-        self.siblings = []
-        self.children = []
         self.illnesses = {}
         self.injuries = {}
         self.healed_condition = None
@@ -429,6 +433,7 @@ class Cat():
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
+                game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
                 self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
@@ -437,6 +442,8 @@ class Cat():
                     text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
+            game.just_died.append(self.ID)
+            print(game.just_died)
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Clear Relationships. 
@@ -896,11 +903,8 @@ class Cat():
 
         history_dict = History.make_dict(self)
         try:
-            with open(history_dir + '/' + self.ID + '_history.json', 'w') as history_file:
-                json_string = ujson.dumps(history_dict, indent=4)
-                history_file.write(json_string)
+            game.safe_save(history_dir + '/' + self.ID + '_history.json', history_dict)
         except:
-            print(f"WARNING: saving history of cat #{self.ID} didn't work")
             self.history = History(
                 beginning={},
                 mentor_influence={},
@@ -911,6 +915,9 @@ class Cat():
                 scar_events=[],
                 murder={},
             )
+
+            print(f"WARNING: saving history of cat #{self.ID} didn't work")
+            
 
     def generate_lead_ceremony(self):
         """
@@ -1129,16 +1136,20 @@ class Cat():
             chosen_life = {}
             while i < 10:
                 attempted = []
-                try:
+                if life_list:
                     chosen_life = choice(life_list)
-                except IndexError:
-                    print(
-                        f'WARNING: life list had no items for giver #{giver_cat.ID}. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
-                if chosen_life not in used_lives and chosen_life not in attempted:
-                    break
+                    if chosen_life not in used_lives and chosen_life not in attempted:
+                        break
+                    else:
+                        attempted.append(chosen_life)
+                    i += 1
                 else:
-                    attempted.append(chosen_life)
-                i += 1
+                    print(
+                        f'WARNING: life list had no items for giver #{giver_cat.ID}. Using default life. If you are a beta tester, please report and ping scribble along with all the info you can about the giver cat mentioned in this warning.')
+                    chosen_life = ceremony_dict["default_life"]
+                    break
+                
+            
             used_lives.append(chosen_life)
             if "virtue" in chosen_life:
                 poss_virtues = [i for i in chosen_life["virtue"] if i not in used_virtues]
@@ -1243,7 +1254,7 @@ class Cat():
         
         if old_age != self.age:
             # Things to do if the age changes
-            self.personality.facet_wobble()
+            self.personality.facet_wobble(max=2)
         
         # Set personality to correct type
         self.personality.set_kit(self.is_baby())
@@ -2057,7 +2068,9 @@ class Cat():
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"]:
+			# the +1 is necessary because both might not already aged up
+			# if only one is aged up at this point, later they are more moons apart than the setting defined
+            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                 return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
@@ -2683,9 +2696,9 @@ class Cat():
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
-        if "adoptive_parents" in cat_info:
-            cat_ob.adoptive_parents = cat_info["adoptive_parents"]
+        cat_ob.adoptive_parents = cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
         cat_ob.faded = True
+        cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 
         return cat_ob
 
@@ -2811,6 +2824,7 @@ class Cat():
                 "name_suffix": self.name.suffix,
                 "status": self.status,
                 "moons": self.moons,
+                "dead_for": self.dead_for,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
                 "adoptive_parents": self.adoptive_parents,

@@ -910,18 +910,18 @@ class RelationshipLog(UIWindow):
         for button in self.disable_button_list:
             button.disable()
 
-        if game.settings["fullscreen"]:
+        """if game.settings["fullscreen"]:
             img_path = "resources/images/spacer.png"
         else:
-            img_path = "resources/images/spacer_small.png"
+            img_path = "resources/images/spacer_small.png"""
 
         opposite_log_string = None
         if not relationship.opposite_relationship:
             relationship.link_relationship()
         if relationship.opposite_relationship and len(relationship.opposite_relationship.log) > 0:
-            opposite_log_string = f"{f'<br><img src={img_path}><br>'.join(relationship.opposite_relationship.log)}<br>"
+            opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
 
-        log_string = f"{f'<br><img src={img_path}><br>'.join(relationship.log)}<br>" if len(relationship.log) > 0 else\
+        log_string = f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>" if len(relationship.log) > 0 else\
             "There are no relationship logs."
         
         if not opposite_log_string:
