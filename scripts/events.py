@@ -440,6 +440,7 @@ class Events:
         parent1, parent2 = self.pick_valid_parent(), self.pick_valid_parent()
         while parent2 == parent1:
             parent2 = self.pick_valid_parent()
+        game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
         if siblings:
             self.add_siblings_and_inheritance(siblings, parent1, parent2)
             return self.set_birth_text("birth_adoptive_parents_siblings", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
@@ -456,6 +457,7 @@ class Events:
             Cat.all_cats[parent1].create_inheritance_new_cat()
         if parent2:
             Cat.all_cats[parent2].create_inheritance_new_cat()
+
         
     def mediator_events(self, cat):
         """ Check for mediator events """

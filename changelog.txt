@@ -1,3 +1,9 @@
+<strong>v0.2.0: Choose your Path</strong>
+- Added medicine cat, mediator, deputy, and leader paths
+- New apprentice icons by jesmar!
+- Many new events and patrols
+- Fixed several bugs
+
 <strong>v0.1.4</strong>
 - Fixed several bugs
 - Added additional flavor text
