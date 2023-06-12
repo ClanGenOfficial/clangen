@@ -140,17 +140,17 @@
         ],
         "affair": [
             "Allow cats to breed with cats that aren't their mates.",
-            "This will allow mated and unmated cats to have kits with other cats they are not mated with.",
+            "This will allow mated and unmated cats to have kits with other cats they are not mated with. This includes, but is not limited to, affairs/cheating.",
             false
         ],
         "same sex birth": [
             "Allow same-sex breeding",
-            "Allow couples to birth kittens despite same-sex status. If off, same-sex couples will adopt instead.",
+            "Allow couples to birth kittens despite same-sex status. If toggled off, same-sex couples will adopt instead.",
             false
         ],
         "single parentage": [
-            "Allow cats to have kittens with an unknown second biological parent",
-            "The cat will be listed as the only biological parent.",
+            "Allow cats to have kittens with an unknown second parent",
+            "Allow cats to have kittens with an unknown second biological parent. The cat will be listed as the only biological parent.",
             false
         ],
         "romantic with former mentor": [
