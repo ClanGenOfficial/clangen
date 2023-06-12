@@ -444,7 +444,7 @@ class Cat():
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            print(game.just_died)
+            # print(game.just_died)
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Clear Relationships. 

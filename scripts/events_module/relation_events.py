@@ -153,23 +153,24 @@ class Relation_Events():
                     cat_to_mate.relationships[cat_to.ID] = Relationship(cat_to_mate, cat_to, True)
                     other_mate_relationship = cat_to.relationships[cat_to_mate.ID]
 
-            if ((love_over_30 and not normal_chance) or (bigger_than_current and not bigger_love_chance)):
-                self.had_one_event = True
-                # break up the old relationships
-                cat_mate = Cat.all_cats.get(cat_mate.ID)
-                self.romantic_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat,
-                                    cat_mate)
+            if cat_mate:
+                if ((love_over_30 and not normal_chance) or (bigger_than_current and not bigger_love_chance)):
+                    self.had_one_event = True
+                    # break up the old relationships
+                    cat_mate = Cat.all_cats.get(cat_mate.ID)
+                    self.romantic_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat,
+                                        cat_mate)
 
-                if cat_to_mate:
-                    # relationship_from, relationship_to, cat_from, cat_to
-                    self.romantic_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
-                                        cat_to, cat_to_mate)
+                    if cat_to_mate:
+                        # relationship_from, relationship_to, cat_from, cat_to
+                        self.romantic_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
+                                            cat_to, cat_to_mate)
 
-                # new relationship
-                text = f"{cat.name} and {cat_to.name} can't ignore their feelings for each other."
-                # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
-                self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
+                    # new relationship
+                    text = f"{cat.name} and {cat_to.name} can't ignore their feelings for each other."
+                    # game.relation_events_list.insert(0, text)
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
+                    self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
 
         # breakup
         if not self.had_one_event and current_relationship.mates and both_alive:

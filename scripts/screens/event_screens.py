@@ -78,10 +78,10 @@ class EventsScreen(Screens):
         if game.switches['window_open']:
             pass
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.timeskip_button:
-                self.scroll_height = {}
-                if game.clan.your_cat.moons == 5:
+            if event.ui_element == self.timeskip_button and game.clan.your_cat.moons == 5 and game.clan.your_cat.status == 'kitten':
                     PickPath('events screen')
+            elif event.ui_element == self.timeskip_button:
+                self.scroll_height = {}
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:
                     GameOver('events screen')

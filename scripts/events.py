@@ -265,81 +265,90 @@ class Events:
         with open(f"{resource_dir}events.json",
                   encoding="ascii") as read_file:
             self.c_txt = ujson.loads(read_file.read())
-        if game.clan.your_cat.moons == 1:
-            birth_txt = self.get_birth_txt()
-            game.cur_events_list.append(Single_Event(birth_txt))
-            self.w_done = False
-        elif game.clan.your_cat.moons < 6:
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["kitten"])))
-            if random.randint(1,2) == 1 and self.kit_once:
-                e = random.choice(self.kit_once)
-                self.kit_once.remove(e)
-                game.cur_events_list.append(Single_Event(e))
-        elif game.clan.your_cat.moons == 6:
-            ceremony_txt = random.choice(self.b_txt['app_ceremony'])
-            ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
-            ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
-            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-            if game.clan.your_cat.mentor:
-                ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
-            game.cur_events_list.append(Single_Event(ceremony_txt))
-        elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
-        elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
-            if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status in ['medicine cat', 'mediator']:
-                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
+        if not game.clan.your_cat.dead:
+            if game.clan.your_cat.moons == 1:
+                birth_txt = self.get_birth_txt()
+                game.cur_events_list.append(Single_Event(birth_txt))
+                self.w_done = False
+            elif game.clan.your_cat.moons < 6:
+                for i in range(random.randint(0,5)):
+                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt["kitten"])))
+                if random.randint(1,2) == 1 and self.kit_once:
+                    e = random.choice(self.kit_once)
+                    self.kit_once.remove(e)
+                    game.cur_events_list.append(Single_Event(e))
+            elif game.clan.your_cat.moons == 6:
+                game.clan.your_cat.status_change(game.clan.your_cat.status)
+                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + ' ceremony'])
+                ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
+                ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
+                ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+                if game.clan.your_cat.mentor:
+                    ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
+                game.cur_events_list.append(Single_Event(ceremony_txt))
+            elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                for i in range(random.randint(0,5)):
+                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
+            elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
+                if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status in ['medicine cat', 'mediator']:
+                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
+                else:
+                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony'])
+                ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
+                ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
+                ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+                ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.former_mentor[-1]].name))
+
+                random_honor = None
+                resource_dir = "resources/dicts/events/ceremonies/"
+                with open(f"{resource_dir}ceremony_traits.json",
+                        encoding="ascii") as read_file:
+                    TRAITS = ujson.loads(read_file.read())
+                try:
+                    random_honor = random.choice(TRAITS[game.clan.your_cat.personality.trait])
+                except KeyError:
+                    random_honor = "hard work"
+                ceremony_txt = ceremony_txt.replace('honor1', random_honor)
+                game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+                game.clan.your_cat.w_done = True
+            elif game.clan.your_cat.moons < 120:
+                for i in range(random.randint(0,5)):
+                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
+            elif game.clan.your_cat.moons == 120:
+                ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
+                ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
+                ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
+                ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+                game.cur_events_list.append(Single_Event(ceremony_txt))
+            elif game.clan.your_cat.moons > 120:
+                for i in range(random.randint(0,5)):
+                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt["elder"])))
+
+            if len(game.clan.your_cat.apprentice) == checks[0] + 1:
+                resource_dir = "resources/dicts/events/lifegen_events/"
+                with open(f"{resource_dir}ceremonies.json",
+                        encoding="ascii") as read_file:
+                    self.d_txt = ujson.loads(read_file.read())
+                ceremony_txt = random.choice(self.d_txt['gain_app'])
+                ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
+                ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+
+            if len(game.clan.your_cat.mate) == checks[1] + 1:
+                resource_dir = "resources/dicts/events/lifegen_events/"
+                with open(f"{resource_dir}ceremonies.json",
+                        encoding="ascii") as read_file:
+                    self.d_txt = ujson.loads(read_file.read())
+                ceremony_txt = random.choice(self.d_txt['gain_mate'])
+                ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+        elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
+            if game.clan.your_cat.moons < 6:
+                ceremony_txt = random.choice(self.b_txt['death_kit'])
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
             else:
-                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony'])
-            ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
-            ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
-            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-            ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.former_mentor[-1]].name))
-
-            random_honor = None
-            resource_dir = "resources/dicts/events/ceremonies/"
-            with open(f"{resource_dir}ceremony_traits.json",
-                    encoding="ascii") as read_file:
-                TRAITS = ujson.loads(read_file.read())
-            try:
-                random_honor = random.choice(TRAITS[game.clan.your_cat.personality.trait])
-            except KeyError:
-                random_honor = "hard work"
-            ceremony_txt = ceremony_txt.replace('honor1', random_honor)
-            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
-            game.clan.your_cat.w_done = True
-        elif game.clan.your_cat.moons < 100:
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
-        elif game.clan.your_cat.moons == 100:
-            ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
-            ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
-            ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
-            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-            game.cur_events_list.append(Single_Event(ceremony_txt))
-        elif game.clan.your_cat.moons > 100:
-            for i in range(random.randint(0,5)):
-                game.cur_events_list.append(Single_Event(random.choice(self.c_txt["elder"])))
-
-        if len(game.clan.your_cat.apprentice) == checks[0] + 1:
-            resource_dir = "resources/dicts/events/lifegen_events/"
-            with open(f"{resource_dir}ceremonies.json",
-                    encoding="ascii") as read_file:
-                self.d_txt = ujson.loads(read_file.read())
-            ceremony_txt = random.choice(self.d_txt['gain_app'])
-            ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-            ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
-            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
-
-        if len(game.clan.your_cat.mate) == checks[1] + 1:
-            resource_dir = "resources/dicts/events/lifegen_events/"
-            with open(f"{resource_dir}ceremonies.json",
-                    encoding="ascii") as read_file:
-                self.d_txt = ujson.loads(read_file.read())
-            ceremony_txt = random.choice(self.d_txt['gain_mate'])
-            ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
-            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+                ceremony_txt = random.choice(self.b_txt['death'])
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         # Resort
         if game.sort_type != "id":
             Cat.sort_cats()
@@ -394,10 +403,16 @@ class Events:
 
         birth_type = random.randint(1,6)
         if birth_type == 1:
+            game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
         elif birth_type in [2, 3, 4]:
+            if birth_type == 2:
+                game.clan.your_cat.backstory = random.choice(["halfclan1", "clanborn", "outsider_roots1"])
+            else:
+                game.clan.your_cat.backstory = "clanborn"
             return self.handle_birth_one_or_two_parents(birth_type, siblings, sibling_text)
         else:
+            game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_adoptive_parents(siblings, sibling_text)
 
     def handle_birth_no_parents(self, siblings, sibling_text):
