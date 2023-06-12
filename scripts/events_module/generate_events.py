@@ -334,7 +334,7 @@ class GenerateEvents:
             elif "medicine_cat_app" in event.tags and cat.status != "medicine cat apprentice":
                 continue
 
-            # other clan related checks
+            # other Clan related checks
             if "other_clan" in event.tags:
                 if "war" in event.tags and not war:
                     continue
@@ -345,7 +345,7 @@ class GenerateEvents:
                 elif "hostile" in event.tags and int(other_clan.relations) > 7:
                     continue
 
-            # check if clan has kits
+            # check if Clan has kits
             if "clan_kits" in event.tags and not alive_kits:
                 continue
             
@@ -687,7 +687,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 "other_cat_own_app", "other_cat_mentor" < mark the other cat has having to be the m_c's mentor or app respectively
 
-"clan_kits" < clan must have kits for this event to appear
+"clan_kits" < Clan must have kits for this event to appear
 
 **Relationship tags do not work for New Cat events**
 mc_to_rc < change mc's relationship values towards rc

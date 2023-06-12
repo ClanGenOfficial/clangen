@@ -561,7 +561,7 @@ class Clan():
 
     def add_to_starclan(self, cat):  # Same as add_cat
         """
-        Places the dead cat into starclan.
+        Places the dead cat into StarClan.
         It should not be removed from the list of cats in the clan
         """
         if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats and cat.df is False:
@@ -649,7 +649,7 @@ class Clan():
             return _
 
         else:
-            return 'No clan'
+            return 'No Clan'
 
     def new_leader(self, leader):
         """
@@ -1097,7 +1097,7 @@ class Clan():
                 clan.herbs = ujson.loads(read_file.read())
 
         else:
-            # generate a random set of herbs since the clan didn't have any saved
+            # generate a random set of herbs since the Clan didn't have any saved
             herbs = {}
             random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
             for herb in random_herbs:
@@ -1311,7 +1311,7 @@ class Clan():
     @property
     def temperament(self):
         """Temperment is determined whenever it's accessed. This makes sure it's always accurate to the 
-            current cats in the clan. However, determining clan temperment is slow! 
+            current cats in the Clan. However, determining Clan temperment is slow! 
             Clan temperment should be used as sparcely as possible, since
             it's pretty resource-intensive to determine it. """
         
@@ -1393,7 +1393,7 @@ class StarClan():
         60: [301, 400],
         90: [401, 500],
         100: [501, 502]
-    }  # Tells how faded the cat will be in starclan by months spent
+    }  # Tells how faded the cat will be in StarClan by months spent
     dead_cats = {}
 
     def __init__(self):
