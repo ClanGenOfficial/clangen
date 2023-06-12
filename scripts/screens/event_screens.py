@@ -9,7 +9,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
-from scripts.game_structure.windows import GameOver
+from scripts.game_structure.windows import GameOver, PickPath
 import ujson
 import random
 
@@ -80,9 +80,12 @@ class EventsScreen(Screens):
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button:
                 self.scroll_height = {}
+                if game.clan.your_cat.moons == 5:
+                    PickPath('events screen')
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:
                     GameOver('events screen')
+                
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
                 self.update_display_events_lists()

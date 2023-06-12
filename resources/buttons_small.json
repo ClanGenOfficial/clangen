@@ -3523,6 +3523,52 @@
             }
         }
     },
+    "#med":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med.png"
+            }
+        }
+    },
+    "#warrior":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/warrior.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/warrior_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/warrior.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/warrior.png"
+            }
+        }
+    },
     "#delete_it_button":
     {
         "prototype": "#image_button",
@@ -5228,6 +5274,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/potential_parents_tab_unavailable.png"
+            }
+        }
+    },
+    "#mediator":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mediator.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mediator_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mediator.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/mediator.png"
             }
         }
     }

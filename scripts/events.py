@@ -281,7 +281,8 @@ class Events:
             ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
             ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-            ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
+            if game.clan.your_cat.mentor:
+                ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.mentor].name))
             game.cur_events_list.append(Single_Event(ceremony_txt))
             if game.clan.your_cat.status == "medicine cat apprentice":
                 game.clan.your_cat.status = "apprentice"
@@ -436,6 +437,8 @@ class Events:
 
     def handle_birth_adoptive_parents(self, siblings, sibling_text):
         parent1, parent2 = self.pick_valid_parent(), self.pick_valid_parent()
+        while parent2 == parent1:
+            parent2 = self.pick_valid_parent()
         if siblings:
             self.add_siblings_and_inheritance(siblings, parent1, parent2)
             return self.set_birth_text("birth_adoptive_parents_siblings", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})

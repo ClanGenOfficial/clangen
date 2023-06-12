@@ -1136,4 +1136,66 @@ class SaveAsImage(UIWindow):
                 self.large_size_button.disable()
     
     
-        
+class PickPath(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(scale(pygame.Rect((500, 400), (600, 360))),
+                         window_display_title='Choose your Path',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.clan_name = str(game.clan.name + 'Clan')
+        self.last_screen = last_screen
+        self.pick_path_message = UITextBoxTweaked(
+            f"You have an important decision to make...",
+            scale(pygame.Rect((40, 40), (520, -1))),
+            line_spacing=1,
+            object_id="text_box_30_horizcenter",
+            container=self
+        )
+
+        self.begin_anew_button = UIImageButton(
+            scale(pygame.Rect((30, 170), (150, 150))),
+            "",
+            object_id="#med",
+            container=self,
+            tool_tip_text='Choose to become a medicine cat apprentice'
+        )
+        self.not_yet_button = UIImageButton(
+            scale(pygame.Rect((220, 170), (150, 150))),
+            "",
+            object_id="#warrior",
+            container=self,
+            tool_tip_text='Choose to become a warrior apprentice'
+
+        )
+        self.mediator_button = UIImageButton(
+            scale(pygame.Rect((410, 170), (150, 150))),
+            "",
+            object_id="#mediator",
+            container=self,
+            tool_tip_text='Choose to become a mediator apprentice'
+
+        )
+
+        self.not_yet_button.enable()
+        self.begin_anew_button.enable()
+        self.mediator_button.enable()
+
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.begin_anew_button:
+                game.switches['window_open'] = False
+                game.clan.your_cat.status = 'medicine cat apprentice'
+                self.kill()
+            elif event.ui_element == self.not_yet_button:
+                game.switches['window_open'] = False
+                game.clan.your_cat.status = 'apprentice'
+                self.kill()
+            elif event.ui_element == self.mediator_button:
+                game.switches['window_open'] = False
+                game.clan.your_cat.status = 'mediator apprentice'
+                self.kill()
