@@ -427,7 +427,6 @@ class CatSkills:
                     str_index = output.index(string)
                     string = string.replace('StarClan', 'the Dark Forest')
                     output[str_index] = string
-                    print(output)
 
         if not output:
             return "???"
