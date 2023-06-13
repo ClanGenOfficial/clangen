@@ -1535,7 +1535,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "It's hard to identify mullein while it's small, but p_l finds a plant or two for each member of their patrol and rips down their central stalks, carrying them back to camp to trim the leaves off later. As they pad back, a scent draws their nose. Thyme! Well worth picking up while they're there.",
-            "unscathed_rare": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it amd the thyme bush they stumble across.",
+            "unscathed_rare": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it and the thyme bush they stumble across.",
             "stat_skill": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol. As a bonus, their plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
         },
         "fail_text": {

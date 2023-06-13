@@ -1,6 +1,7 @@
 import random
 from enum import Enum, Flag, auto
 from typing import Union
+from scripts.game_structure.game_essentials import game
 
 class SkillPath(Enum):
     TEACHER = (
@@ -101,9 +102,15 @@ class SkillPath(Enum):
     )
     STAR = (
         "curious about StarClan",
-        "innate connection to StarClan",
-        "strong connection to StarClan",
-        "unbreakable connection to StarClan"
+        "connection to Starclan",
+        "deep StarClan bond",
+        "unshakable StarClan link",
+    )
+    DARK = (
+        "interested in the Dark Forest",
+        "Dark Forest affinity",
+        "deep Dark Forest bond",
+        "unshakable Dark Forest link",
     )
     OMEN = (
         "interested in oddities",
@@ -142,7 +149,8 @@ class SkillPath(Enum):
         
         uncommon_paths = [i for i in [SkillPath.GHOST, SkillPath.PROPHET, 
                           SkillPath.CLAIRVOYANT, SkillPath.DREAM,
-                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER]
+                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER, 
+                          SkillPath.DARK]
                           if i not in exclude]
         
         
@@ -190,12 +198,13 @@ class Skill():
         SkillPath.LORE: "lorekeeping",
         SkillPath.CAMP: "campkeeping",
         SkillPath.HEALER: "healing",
-        SkillPath.STAR: "starclan",
+        SkillPath.STAR: "StarClan",
         SkillPath.OMEN: "omen",
         SkillPath.DREAM: "dreaming",
         SkillPath.CLAIRVOYANT: "predicting",
         SkillPath.PROPHET: "prophesying",
-        SkillPath.GHOST: "ghosts"
+        SkillPath.GHOST: "ghosts",
+        SkillPath.DARK: "dark forest"
     }
     
     
@@ -331,7 +340,8 @@ class CatSkills:
         SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
         SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
-        SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL
+        SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL
     }
     # pylint: enable=unsupported-binary-operation
     
@@ -419,11 +429,11 @@ class CatSkills:
                 output.append(self.primary.skill)
             if self.secondary:
                 output.append(self.secondary.skill)
-        
+
         if not output:
             return "???"
-        else:
-            return " + ".join(output) 
+
+        return " + ".join(output)
 
     def mentor_influence(self, mentor):
         """

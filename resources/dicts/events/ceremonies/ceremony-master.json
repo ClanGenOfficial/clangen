@@ -249,7 +249,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c is frustrated that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't) have a mentor."
+    "m_c is frustrated that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have a mentor."
   ],
   "app_17": [
     [
@@ -1013,7 +1013,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see dead_par1 and dead_par2 in StarClan"
+    "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see dead_par1 and dead_par2 in StarClan."
   ],
   "med_app_20": [
     [
