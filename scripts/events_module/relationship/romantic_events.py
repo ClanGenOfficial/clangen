@@ -542,21 +542,34 @@ class Romantic_Events():
         # change the chance based on the last interactions
         if len(relationship_from.log) > 0:
             # check last interaction
-            last_log = relationship_from.log[len(relationship_from.log) - 1]
+            last_log1 = relationship_from.log[len(relationship_from.log) - 1]
 
-            if 'negative' in last_log:
+            if 'negative' in last_log1:
                 chance_number -= 30
-                if 'fight' in last_log:
+                if 'fight' in last_log1:
                     chance_number -= 20
+                if 'argument' in last_log1:
+                    chance_number -= 10
+                if 'different view' in last_log1:
+                    chance_number -= 5
+            
+            # also look at the last 3 interactions if there are more than that
+            if len(relationship_from.log) > 2:
+                last_log2 = relationship_from.log[len(relationship_from.log) - 2]
+                if 'negative' in last_log2:
+                    chance_number -= 15
+                last_log3 = relationship_from.log[len(relationship_from.log) - 3]
+                if 'negative' in last_log3:
+                    chance_number -= 10
 
-            # check all interactions - the logs are still buggy
-            # negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
-            # chance_number -= len(negative_interactions)
-            # positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
-            # chance_number += len(positive_interactions)
+            # check all interactions - positive and negative will "balance" each other out
+            negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
+            chance_number -= len(negative_interactions)
+            positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
+            chance_number += len(positive_interactions)
 
-            # if len(negative_interactions) > len(positive_interactions) and len(relationship_from.log) > 5 :
-            #    chance_number -= 20
+            if len(negative_interactions) * 2 > len(positive_interactions) and len(relationship_from.log) > 5 :
+                chance_number -= 20
 
         # this should be nearly impossible, that chance is lower than 0
         if chance_number <= 0:
