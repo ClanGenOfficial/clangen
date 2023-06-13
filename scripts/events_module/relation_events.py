@@ -68,13 +68,14 @@ class Relation_Events():
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
-        range_number = int(cats_amount / 1.5)  # int(1.9) rounds to 1
+        range_number = int(cats_amount / 1.8)  # int(1.9) rounds to 1
         
         if range_number > 60:
             range_number = 60
 
         used_relationships = []
         # for i in range(0, range_number):
+        print("HOW OFTEN", range_number)
         for _ in itertools.repeat(None, range_number):
             random_index = int(random.random() * len(cat.relationships))
             if random_index in used_relationships:
@@ -121,11 +122,6 @@ class Relation_Events():
 
         potential_mates = cat.is_potential_mate(cat_to) and cat_to.is_potential_mate(cat)
         both_alive = not cat.dead and not cat_to.dead
-
-        # confession 
-        if random.random() > 0.8 and potential_mates and not current_relationship.mates:
-            if self.romantic_events_class.handle_confession(cat):
-                self.had_one_event = True
 
         # breakup and new mate
         if not self.had_one_event and len(cat_to.mate) > 0 and potential_mates and not current_relationship.mates:
@@ -187,7 +183,6 @@ class Relation_Events():
                 cat.set_mate(cat_to)
                 cat_to.set_mate(cat)
 
-
         # breakup
         if not self.had_one_event and current_relationship.mates and both_alive:
             breakup = self.romantic_events_class.check_if_breakup(
@@ -213,6 +208,11 @@ class Relation_Events():
         if self.had_one_event:
             self.trigger_event(cat)
             self.trigger_event(cat_to)
+
+        # confession 
+        if random.random() > 0.85 and potential_mates and not current_relationship.mates:
+            if self.romantic_events_class.handle_confession(cat):
+                self.had_one_event = True
 
     def romantic_events(self, cat):
         """

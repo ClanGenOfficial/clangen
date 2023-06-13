@@ -211,11 +211,19 @@ class Romantic_Events():
 
         become_mate = False
         condition = game.config["mates"]["confession"]["accept_confession"]
-        if self.relationship_fulfill_condition(highest_romantic_relation, condition):
+        rel_to_check = highest_romantic_relation.opposite_relationship
+        if self.relationship_fulfill_condition(rel_to_check, condition):
+            become_mate = True
+            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+        # second acceptance chance if the romantic is high enough
+        elif "romantic" in condition and condition["romantic"] != 0 and\
+            condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
             become_mate = True
             mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
         else:
             mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
+            cat_from.relationships[cat_to.ID].romantic_love -= 8
+            cat_to.relationships[cat_from.ID].comfortable -= 8
 
         mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
         game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
@@ -223,7 +231,7 @@ class Romantic_Events():
         if become_mate:
             cat_from.set_mate(cat_to)
 
-        return become_mate
+        return True
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
