@@ -86,7 +86,7 @@
 		"confession": {
 			"make_confession" : {
 				"romantic": 30,
-				"platonic": 10,
+				"platonic": 15,
 				"dislike": -15,
 				"admiration": 0,
 				"comfortable": 10,
@@ -94,13 +94,13 @@
 				"trust": 0
 			},
 			"accept_confession" : {
-				"romantic": 15,
-				"platonic": 10,
-				"dislike": -15,
+				"romantic": 20,
+				"platonic": 15,
+				"dislike": -10,
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": 0,
-				"trust": 0
+				"trust": 5
 			}
 		},
 		"mate_condition": {
@@ -123,22 +123,22 @@
 		},
 		"poly":{
 			"current_mate_condition": {
-				"romantic": 0,
+				"romantic": 30,
 				"platonic": 0,
 				"dislike": 0,
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": -15,
-				"trust": 15
+				"trust": 25
 			},
 			"mates_to_each_other": {
 				"romantic": 0,
-				"platonic": 10,
-				"dislike": -15,
+				"platonic": 15,
+				"dislike": -10,
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": -15,
-				"trust": 10
+				"trust": 20
 			}
 		},
 		"comment":[
