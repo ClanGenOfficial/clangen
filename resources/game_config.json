@@ -280,7 +280,7 @@
 		}
 	},
 	"lost_cat": {
-		"rejoin_chance": 1
+		"rejoin_chance": 20
 	},
 	"cat_ages": {
 		"newborn": [0, 0],

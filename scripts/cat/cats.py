@@ -441,7 +441,7 @@ class Cat():
             self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
             game.clan.add_to_darkforest(self)
 
-        if game.clan.game_mode != 'classic':
+        if game.clan.game_mode != 'classic' and not (self.outside or self.exiled):
             self.grief(body)
 
         if not self.outside:
