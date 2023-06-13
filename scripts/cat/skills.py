@@ -421,9 +421,13 @@ class CatSkills:
             if self.secondary:
                 output.append(self.secondary.skill)
         
-        if "StarClan" in output and game.clan.instructor.df:
+        if game.clan.instructor.df:
             for string in output:
-                string.replace('StarClan', 'the Dark Forest')
+                if 'StarClan' in string:
+                    str_index = output.index(string)
+                    string = string.replace('StarClan', 'the Dark Forest')
+                    output[str_index] = string
+                    print(output)
 
         if not output:
             return "???"
