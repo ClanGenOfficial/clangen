@@ -62,28 +62,6 @@ class Cat():
 
     gender_tags = {'female': 'F', 'male': 'M'}
 
-    backstories = [
-        "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2", "loner1", "loner2",
-        "kittypet1", "kittypet2", "kittypet3", "kittypet4", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2",
-        "abandoned3", "abandoned4", "medicine_cat", "otherclan", 'otherclan1', "otherclan2", "otherclan3",
-        "ostracized_warrior", "disgraced", "retired_leader", "refugee", "refugee2", "refugee3", "refugee4", 'refugee5',
-        "tragedy_suvivor", "tragedy_survivor2", "tragedy_survivor4", "tragedy_survivor4", "orphaned", "orphaned2",
-        "orphaned3", "orphaned4", "orphaned5", "orphaned6" "wandering_healer1", "wandering_healer2", "guided1",
-        "guided2", "guided3", "guided4", "outsider", "outsider2", "outsider3"
-    ]
-    backstory_categories = {
-        'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
-        'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
-        'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
-        'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3', 'kittypet4'],
-        'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                                       'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
-        'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
-        'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
-        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5', 'orphaned6'],
-        'abandoned_backstories': ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']
-    }
-
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
     experience_levels_range = {
@@ -616,7 +594,7 @@ class Cat():
             return "general"
 
     def gone(self):
-        """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
+        """ Makes a Clan cat an "outside" cat. Handles removing them from special positions, and removing
         mentors and apprentices. """
         self.outside = True
         
@@ -633,7 +611,7 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
-        """ Makes a "outside cat" a clan cat. Returns a list of any additional cats that
+        """ Makes a "outside cat" a Clan cat. Returns a list of any additional cats that
             are coming with them. """
         self.outside = False
 
@@ -800,32 +778,10 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
-    def convert_history(self, mentor_influence, died_by, scar_events):
+    def convert_history(self, died_by, scar_events):
         """
         this is to handle old history save conversions
         """
-        if mentor_influence or self.former_mentor:
-            trait = None
-            skill = None
-            if mentor_influence:
-                if len(mentor_influence) == 1:
-                    mentor_influence = [mentor_influence[0], 'None']
-                if mentor_influence[0] not in ['None', 'none']:
-                    if mentor_influence[0] in ["Benevolent", "Abrasive", "Outgoing", "Reserved"]:
-                        trait = mentor_influence[0]
-                        if mentor_influence[1] not in ['None', 'none']:
-                            skill = mentor_influence[1]
-                    else:
-                        skill = mentor_influence[0]
-                if mentor_influence[1] not in ['None', 'none'] and not trait:
-                    trait = mentor_influence[1]
-
-            mentor_influence = {
-                "mentor": self.former_mentor[-1] if self.former_mentor else None,
-                "skill": skill,
-                "trait": trait
-            }
-
         deaths = []
         if died_by:
             for death in died_by:
@@ -847,7 +803,6 @@ class Cat():
                     }
                 )
         self.history = History(
-            mentor_influence=mentor_influence,
             died_by=deaths,
             scar_events=scars,
         )
@@ -859,7 +814,7 @@ class Cat():
             else:
                 clanname = game.switches['clan_list'][0]
         except IndexError:
-            print('WARNING: History failed to load, no clan in game.switches?')
+            print('WARNING: History failed to load, no Clan in game.switches?')
             return
 
         history_directory = get_save_dir() + '/' + clanname + '/history/'
@@ -1331,7 +1286,7 @@ class Cat():
         self.thought = str(chosen_thought)
 
     def relationship_interaction(self):
-        """Randomly choose a cat of the clan and have a interaction with them."""
+        """Randomly choose a cat of the Clan and have a interaction with them."""
         # if the cat has no relationships, skip
         if not self.relationships or len(self.relationships) < 1:
             return
@@ -2197,7 +2152,7 @@ class Cat():
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
                 continue
-            # if they are not outside of the clan at the same time
+            # if they are not outside of the Clan at the same time
             if self.outside and not inter_cat.outside or not self.outside and inter_cat.outside:
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
@@ -2680,7 +2635,7 @@ class Cat():
         try:
             with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
-        except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
+        except AttributeError:  # If loading cats is attempted before the Clan is loaded, we would need to use this.
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json",
                       'r') as read_file:
                 cat_info = ujson.loads(read_file.read())

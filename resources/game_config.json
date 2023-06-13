@@ -55,7 +55,7 @@
 			"start_amount defines the amount of prey when a new freshkill-pile is made",
 			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
 			"additional_prey - added amount for hunting patrol, to make it easier",
-			"event_trigger_factor - this number will be used to multiply with the amount of prey the clan needs, if the pile is bigger than this number, prey events will be triggered",
+			"event_trigger_factor - this number will be used to multiply with the amount of prey the Clan needs, if the pile is bigger than this number, prey events will be triggered",
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
 		]
@@ -358,5 +358,5 @@
 		"newborns_can_patrol": false
 	},
 	"lock_season": false, 
-	"comment": "Forces the season to be locked at the clan's starting_season"
+	"comment": "Forces the season to be locked at the Clan's starting_season"
 }

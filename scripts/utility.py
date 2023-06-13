@@ -114,7 +114,7 @@ def get_living_clan_cat_count(Cat):
 
 
 def get_cats_same_age(cat, Relationship, range=10):  # pylint: disable=redefined-builtin
-    """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
+    """Look for all cats in the Clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
@@ -160,8 +160,8 @@ def get_free_possible_mates(cat, Relationship):
 # ---------------------------------------------------------------------------- #
 def get_current_season():
     """
-    function to handle the math for finding the clan's current season
-    :return: the clan's current season
+    function to handle the math for finding the Clan's current season
+    :return: the Clan's current season
     """
 
     if game.config['lock_season']:
@@ -185,14 +185,14 @@ def get_current_season():
 
 def change_clan_reputation(difference):
     """
-    will change the clan's reputation with outsider cats according to the difference parameter.
+    will change the Clan's reputation with outsider cats according to the difference parameter.
     """
     game.clan.reputation += difference
 
 
 def change_clan_relations(other_clan, difference):
     """
-    will change the clan's relation with other clans according to the difference parameter.
+    will change the Clan's relation with other clans according to the difference parameter.
     """
     # grab the clan that has been indicated
     other_clan = other_clan
@@ -206,7 +206,7 @@ def change_clan_relations(other_clan, difference):
         clan_relations = 30
     elif clan_relations < 0:
         clan_relations = 0
-    # setting it in the clan save
+    # setting it in the Clan save
     game.clan.all_clans[y].relations = clan_relations
 
 def create_new_cat(Cat,
@@ -241,14 +241,14 @@ def create_new_cat(Cat,
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param thought: if you need to give a custom "welcome" thought, set it here
     :param alive: set this as False to generate the cat as already dead - default: True (alive)
-    :param outside: set this as True to generate the cat as an outsider instead of as part of the clan - default: False (clan cat)
+    :param outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     """
     accessory = None
     if isinstance(backstory, list):
         backstory = choice(backstory)
 
     if backstory in (
-            Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
+            BACKSTORIES["backstory_categories"]["former_clancat_backstories"] or BACKSTORIES["backstory_categories"]["otherclan_categories"]):
         other_clan = True
 
     created_cats = []
@@ -291,7 +291,7 @@ def create_new_cat(Cat,
         else:
             _gender = gender
 
-        # other clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
+        # other Clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
         if other_clan or kit or litter or age < 12:
             new_cat = Cat(moons=age,
                           status=status,
@@ -416,9 +416,9 @@ def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         TODO: DOCS
         """
     suffix = ''
-    if backstory in Cat.backstory_categories["rogue_backstories"]:
+    if backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
         status = 'rogue'
-    elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
+    elif backstory in BACKSTORIES["backstory_categories"]["former_clancat_backstories"]:
         status = "former Clancat"
     if status == 'kittypet':
         name = choice(names.names_dict["loner_names"])
@@ -880,7 +880,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     :param Cat: the cat class
     :param text: the text to be adjusted
     :param clan: the name of the clan
-    :param other_clan_name: the other clan's name if another clan is involved
+    :param other_clan_name: the other Clan's name if another Clan is involved
     """
     cat_dict = {}
     if "lead_name" in text:
@@ -935,10 +935,10 @@ def event_text_adjust(Cat,
     if cat:
         cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
-        if "acc_plural" in text:
-            text = text.replace("acc_plural", str(ACC_DISPLAY[cat.pelt.accessory]["plural"]))
-        if "acc_singular" in text:
-            text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
+    if "acc_plural" in text:
+        text = text.replace("acc_plural", str(ACC_DISPLAY[cat.pelt.accessory]["plural"]))
+    if "acc_singular" in text:
+        text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
@@ -1510,3 +1510,6 @@ with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
 PREY_LISTS = None
 with open(f"resources/dicts/prey_text_replacements.json", 'r') as read_file:
     PREY_LISTS = ujson.loads(read_file.read())
+
+with open(f"resources/dicts/backstories.json", 'r') as read_file:
+    BACKSTORIES = ujson.loads(read_file.read())

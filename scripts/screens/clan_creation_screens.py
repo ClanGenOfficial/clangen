@@ -53,8 +53,8 @@ class MakeClanScreen(Screens):
 
     # This section holds all the information needed
     game_mode = 'classic'  # To save the users selection before conformation.
-    clan_name = ""  # To store the clan name before conformation
-    leader = None  # To store the clan leader before conformation
+    clan_name = ""  # To store the Clan name before conformation
+    leader = None  # To store the Clan leader before conformation
     deputy = None
     med_cat = None
     members = []
@@ -89,7 +89,7 @@ class MakeClanScreen(Screens):
         self.biome_selected = None
         self.selected_season = "Newleaf"
         self.choosing_rank = None
-        self.leader = None  # To store the clan leader before conformation
+        self.leader = None  # To store the Clan leader before conformation
         self.deputy = None
         self.med_cat = None
         self.members = []
@@ -149,7 +149,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['cruel_mode_button']:
             self.game_mode = 'cruel'
             self.refresh_text_and_buttons()
-        # When the next_step button is pressed, go to the clan naming page.
+        # When the next_step button is pressed, go to the Clan naming page.
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
             self.open_name_clan()
@@ -187,7 +187,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -211,7 +211,7 @@ class MakeClanScreen(Screens):
                     self.elements["error"].show()
                     return
                 if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                    self.elements["error"].set_text("A clan with that name already exists.")
+                    self.elements["error"].set_text("A Clan with that name already exists.")
                     self.elements["error"].show()
                     return
                 self.clan_name = new_name
@@ -223,7 +223,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -458,7 +458,7 @@ class MakeClanScreen(Screens):
                 self.elements['next_step'].disable()
             elif self.elements["name_entry"].get_text().casefold() in [clan.casefold() for clan in
                                                                        game.switches['clan_list']]:
-                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 self.elements['next_step'].disable()
                 return
@@ -705,7 +705,8 @@ class MakeClanScreen(Screens):
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
-                                                   str(selected.personality.trait)))
+                                                   str(selected.personality.trait) + "\n" +
+                                                   str(selected.skills.skill_string(short=True))))
             self.elements['cat_info'].show()
         else:
             self.elements['next_step'].disable()
@@ -779,7 +780,7 @@ class MakeClanScreen(Screens):
                                                                             pygame.transform.scale(text_box, (798, 922))
                                                                             , manager=MANAGER)
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
-            "Your clan's game mode is permanent and cannot be changed after Clan creation.",
+            "Your Clan's game mode is permanent and cannot be changed after Clan creation.",
             scale(pygame.Rect((200, 1162), (1200, 80))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER
@@ -805,14 +806,14 @@ class MakeClanScreen(Screens):
         self.elements['mode_details'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((650, 320), (810, 922))),
                                                                       object_id="#text_box_30_horizleft_pad_40_40",
                                                                       manager=MANAGER)
-        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 100))),
+        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 55))),
                                                                    object_id="#text_box_30_horizcenter_light",
                                                                    manager=MANAGER)
 
         self.refresh_text_and_buttons()
 
     def open_name_clan(self):
-        """Opens the name clan screen"""
+        """Opens the name Clan screen"""
         self.clear_all_page()
         self.sub_screen = 'name clan'
 
@@ -908,7 +909,7 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),

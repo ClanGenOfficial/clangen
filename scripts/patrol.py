@@ -21,7 +21,7 @@ from scripts.game_structure.game_essentials import game
 from itertools import combinations
 from scripts.cat.names import names
 from scripts.cat.skills import SkillPath
-from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
@@ -132,7 +132,7 @@ class Patrol():
                 list of cats which are on the patrol
             
             clan: Clan
-                the clan class of the game, this parameter is needed to make tests possible
+                the Clan class of the game, this parameter is needed to make tests possible
 
             Returns
             ----------
@@ -296,7 +296,7 @@ class Patrol():
             elif hostile_rep:
                 possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
 
-        # other clan patrols
+        # other Clan patrols
         if other_clan_chance == 1:
             if clan_neutral:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
@@ -1096,12 +1096,8 @@ class Patrol():
                     outcome = "injury"
 
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
-                if outcome == "death":
-                    self.handle_deaths_and_gone(self.patrol_random_cat)
-                elif outcome == "stat_death":
-                    self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-                elif outcome == "leader_death":
-                    self.handle_deaths_and_gone(self.patrol_leader)
+                if "death" in outcome:
+                    self.handle_deaths_and_gone(outcome)
                 elif outcome == "injury" or outcome == "stat_injury":
                     if game.clan.game_mode == 'classic':
                         self.handle_scars(outcome)
@@ -1213,7 +1209,7 @@ class Patrol():
         if cat_type == 'kittypet':
             kittypet = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["kittypet_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["kittypet_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1224,7 +1220,7 @@ class Patrol():
         elif cat_type == 'loner':
             loner = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["loner_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["loner_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1235,7 +1231,7 @@ class Patrol():
         elif cat_type == 'rogue':
             loner = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["rogue_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["rogue_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1246,27 +1242,27 @@ class Patrol():
         elif cat_type == 'clancat':
             other_clan = self.other_clan
             new_name = False
-            chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
-                chosen_backstory = ["medicine_cat", "disgraced"]
+                chosen_backstory = ["medicine_cat", "disgraced1"]
             if not success:
                 outsider = create_outside_cat(Cat, "former Clancat", backstory=choice(chosen_backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
         else:
             other_clan = self.other_clan
-            chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             # failsafe in case self.other_clan is None for some reason
             if "medcat" in attribute_list:
                 status = 'medicine cat'
-                chosen_backstory = ["medicine_cat", "disgraced"]
+                chosen_backstory = ["medicine_cat", "disgraced1"]
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
-                chosen_backstory = Cat.backstory_categories["rogue_backstories"]
+                chosen_backstory = BACKSTORIES["backstory_categories"]["rogue_backstories"]
                 if "medcat" in attribute_list:
-                    chosen_backstory = ["medicine_cat", "disgraced"]
+                    chosen_backstory = ["medicine_cat", "disgraced1"]
                 if not success:
                     outsider = create_outside_cat(Cat, loner, backstory=choice(chosen_backstory))
                     self.results_text.append(f"The Clan has met {outsider}.")
@@ -1355,7 +1351,7 @@ class Patrol():
 
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if f'{backstory}{outcome}' in attribute_list:
                     possible_backstories.append(backstory)
 
@@ -1368,7 +1364,7 @@ class Patrol():
         else:
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if backstory in attribute_list:
                     possible_backstories.append(backstory)
 
@@ -1680,7 +1676,27 @@ class Patrol():
                 else:
                     cat.experience = cat.experience + gained_exp
 
-    def handle_deaths_and_gone(self, cat):
+    def handle_deaths_and_gone(self, outcome):
+        ''' handles death and abduction/lost events '''
+        # find the new cat tag and split to get attributes - else return if no tag found
+        attribute_list = []
+        tags = self.patrol_event.tags
+        for tag in tags:
+            # print(tag)
+            if "death" in tag or "gone" in tag:
+                attribute_list = tag.split("_")
+                print(attribute_list)
+                break
+        if attribute_list and len(attribute_list) == 1:
+            if "stat" in outcome:
+                cat = self.patrol_fail_stat_cat
+            elif "leader" in outcome:
+                cat = self.patrol_leader
+            else:
+                cat = self.patrol_random_cat
+        else:
+            if "app1" in attribute_list:
+                cat = self.patrol_apprentices[0]
         if "no_body" in self.patrol_event.tags:
             body = False
         else:
@@ -1796,7 +1812,8 @@ class Patrol():
             "cold_injury": ["shivering", "frostbite"],
             "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
             "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-            "beak_bite": ["beak bite", "torn ear", "scrapes"]
+            "beak_bite": ["beak bite", "torn ear", "scrapes"],
+            "rat_bite": ["rat bite", "torn ear", "torn pelt"]
         }
 
         possible_conditions = []
@@ -1950,15 +1967,13 @@ class Patrol():
         }
         outcome_number = outcomes[outcome]
         outcome = outcome_number
-
-        for x in range(len(no_herbs_tags)):
-            if f"no_herbs{x}" in self.patrol_event.tags and outcome == x:
-                return
+        
+        if f"no_herbs{outcome}" in self.patrol_event.tags:
+            return
 
         large_amount = None
-        for x in range(len(many_herbs_tags)):
-            if f"many_herbs{x}" in self.patrol_event.tags and outcome == x:
-                large_amount = 4
+        if f"many_herbs{outcome}" in self.patrol_event.tags:
+            large_amount = 4
 
         if "random_herbs" in self.patrol_event.tags:
             number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
@@ -2244,13 +2259,13 @@ class Patrol():
         pl_rc_ids = [p_l_id, r_c_id]
 
         if "clan_to_p_l" in self.patrol_event.tags:
-            # whole clan gains relationship towards p_l
+            # whole Clan gains relationship towards p_l
             cats_to = [p_l_id]
             cats_from = all_cats
 
         elif "clan_to_r_c" in self.patrol_event.tags:
             if self.patrol_fail_stat_cat or self.patrol_win_stat_cat:
-                # whole clan gains relationship towards s_c
+                # whole Clan gains relationship towards s_c
                 cats_to = [s_c_id]
                 cats_from = all_cats
             else:
@@ -2258,7 +2273,7 @@ class Patrol():
                 cats_from = all_cats
 
         elif "clan to patrol" in self.patrol_event.tags:
-            # whole clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
+            # whole Clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
             cats_to = cat_ids
             cats_from = all_cats
 
@@ -2267,7 +2282,7 @@ class Patrol():
                 cats_to = [s_c_id]
                 cats_from = self.patrol_cats
             else:
-                # whole clan gains relationship towards r_c
+                # whole Clan gains relationship towards r_c
                 cats_to = [r_c_id]
                 cats_from = self.patrol_cats
 
@@ -2425,7 +2440,7 @@ class PatrolEvent:
         
 -- PATROL ABBREVIATIONS --
     Clan name - c_n
-    Other clan name - o_c_n
+    Other Clan name - o_c_n
     Random cat - r_c
     Patrol leader - p_l
     Stat Cat - s_c (this is the cat with relevant skills/traits for the situation)
@@ -2561,15 +2576,15 @@ class PatrolEvent:
 
     - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
-        # whole clan gains relationship towards p_l - "clan_to_p_l"
-        # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
-        # whole clan gains relationship towards r_c - "clan_to_r_c"
+        # whole Clan gains relationship towards p_l - "clan_to_p_l"
+        # whole Clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
+        # whole Clan gains relationship towards r_c - "clan_to_r_c"
         # patrol gains relationship towards p_l - "patrol_to_p_l"
         # patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
         # patrol gains relationship towards r_c - "patrol_to_r_c"
         # "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
         # two apps gain relationship towards each other - "rel_two_apps"
-        # whole clan gains relationship towards patrol - "clan_to_patrol"
+        # whole Clan gains relationship towards patrol - "clan_to_patrol"
         # whole patrol gains relationship with each other - "rel_patrol" 
         (also default, so if you don't add any other tags, it goes to this. If you want this outcome, 
         you don't need to add any tags, this is just if you need to add one of the other tags)
@@ -2589,7 +2604,7 @@ class PatrolEvent:
         ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, 
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
-        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
+        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the Clan 
         (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.

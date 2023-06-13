@@ -466,6 +466,18 @@ class Romantic_Events():
                 mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
             mate_string = mate_string.replace("[r_c_mates]", mate_name_string)
 
+        if "(m_c_mate/mates)":
+            insert = "mate"
+            if len(cat_from.mate) > 1:
+                insert = "mates"
+            mate_string = mate_string.replace("(m_c_mate/mates)", insert)
+
+        if "(r_c_mate/mates)":
+            insert = "mate"
+            if len(cat_to.mate) > 1:
+                insert = "mates"
+            mate_string = mate_string.replace("(r_c_mate/mates)", insert)
+
         mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
         return mate_string
 

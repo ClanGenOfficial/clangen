@@ -731,5 +731,48 @@
         "max_cats": 1,
         "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/app1/object}, terrified of the echoing voice.",
         "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/app1/object} right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
+    },
+    {
+        "patrol_id": "gen_bord_elder_rescuewelcoming1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "new_cat_elder_kittypet",
+            "new_cat_injury",
+            "nc_blunt_force_injury",
+            "border",
+            "adult_stat",
+            "blunt_force_injury",
+            "border"
+        ],
+        "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
+        "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
+        "chance_of_success": 85,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "The patrol races towards the sound. They are puzzled when they only see a lone Twoleg, but grim realization soon dawns on them after they hear more screams coming from a bag the Twoleg is holding. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the rest of the patrol claws the ankles of the now furious Twoleg, p_l and r_c quickly and quietly get the old shivering cat out of sight, promising them safety and welcome in c_n for as long as they like.",
+            "stat_trait": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside - it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that they aren't a burden, and they all would be happy to have their wisdom and knowledge be a part of c_n."
+        },
+        "fail_text": {
+            "injury": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the bag wiggling and screaming, {PRONOUN/r_c/subject} {VERB/r_c/jump/jumps} into action. Unfortunately r_c was just a tad too slow and got kicked quite hard against a tree. p_l orders the patrol to protect and carry r_c while they retreat, with pain in their heart for the unknown cat that they couldn't save.",
+            "stat_injury": "Upon seeing the Twoleg and the screeching bag they are holding s_c just can't take it. {PRONOUN/s_c/subject} {VERB/cat/jump/jumps}, into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard onto the floor the only thing the rest of the patrol can do is grab s_c and flee back to the safety of c_n."
+        },
+        "win_skills": [
+            "CLEVER,2",
+            "FIGHTER,1",
+            "INSIGHTFUL,1"
+        ],
+        "win_trait": [
+            "wise",
+            "thoughtful"
+        ],
+        "fail_trait": [
+            "loving",
+            "compassionate"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": "As soon as the patrol realizes that a Twoleg is holding a Kittypet in a bag and that's where the screaming originates from, they quickly turn and resume their patrol. Kittypets are not their problem.",
+        "antagonize_fail_text": "The patrol quickly turn away once they realize that a Twoleg and a kittypet are involved, not their problem. Still, when they hear a loud splash everyone goes quiet and the rest of the patrol is spend in silence and shame."
     }
 ]
