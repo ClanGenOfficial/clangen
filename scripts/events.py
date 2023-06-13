@@ -1715,52 +1715,46 @@ class Events:
         ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
-        kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+        
+        # if this cat is unstable and aggressive, we lower the random murder chance. 
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
+        random_murder_chance -= round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
 
-        # if this cat is unstable and aggressive, we lower the random murder chance
-        murder_modifier = round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
-        facet_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
-        #print(str(cat.name) + " Murder Chance: " + str(final_murder_chance) + "/" + str(2**(random_murder_chance - murder_modifier)))
-
-        # first we grab all hate and resentment relationships, if any
-        hate_relation = [i for i in relationships if
+        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
+        # of dislike for. 
+        if random.getrandbits(random_murder_chance - random_murder_chance) == 1:
+            targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        else:
+            # If random murder is not triggered, targets can only be those they have high dislike for. 
+            hate_relation = [i for i in relationships if
                          i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-        targets.extend(hate_relation)
-        resent_relation = [i for i in relationships if
-                           i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-        targets.extend(resent_relation)
+            targets.extend(hate_relation)
+            resent_relation = [i for i in relationships if
+                            i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+            targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
-        if targets or facet_murder_chance == 1:
-            if targets:
-                chosen_target = random.choice(targets)
-            else:
-                relations = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-                if not relations:
-                    return
-                chosen_target = random.choice(relations)
+        if targets:
+            chosen_target = random.choice(targets)
+            
             print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
+            kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+            
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
             print('DISLIKE MODIFIER', kill_chance)
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            facet_modifiers = (0 + int(cat.personality.aggression)) + \
-                (16 - int(cat.personality.stability)) + (16 - int(cat.personality.lawfulness))
+            facet_modifiers = cat.personality.aggression + \
+                (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
             
             kill_chance = kill_chance - facet_modifiers
-            print('Kill chance after facets', kill_chance)
-
-            # this adds a bit of randomness
-            randomness_modifier = (random.getrandbits(10) * .001)
-            kill_chance = kill_chance - randomness_modifier
+            kill_chance = max(15, kill_chance)
+             
             print("Final kill chance: " + str(kill_chance))
-
-            if kill_chance < 1:
-                kill_chance = 1
+            
             if not int(random.random() * kill_chance):
                 print("KILL KILL KILL")
                 self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, self.at_war,
