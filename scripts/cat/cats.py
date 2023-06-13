@@ -1191,6 +1191,12 @@ class Cat():
         """Handles a moon skip for an alive cat. """
         
         
+        old_age = self.age
+        self.moons += 1
+        if self.moons == 1 and self.status == "newborn":
+            self.status = 'kitten'
+        self.in_camp = 1
+        
         if self.exiled or self.outside:
             # this is handled in events.py
             self.personality.set_kit(self.is_baby())
@@ -1200,12 +1206,6 @@ class Cat():
         if self.dead:
             self.thoughts()
             return
-
-        old_age = self.age
-        self.moons += 1
-        if self.moons == 1:
-            self.status = 'kitten'
-        self.in_camp = 1
         
         if old_age != self.age:
             # Things to do if the age changes
@@ -2742,7 +2742,7 @@ class Cat():
     @moons.setter
     def moons(self, value: int):
         self._moons = value
-
+        
         updated_age = False
         for key_age in self.age_moons.keys():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
@@ -2750,10 +2750,10 @@ class Cat():
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = "elder"
+                self.age = "senior"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
-            
+        
     @property
     def sprite(self):
         # Update the sprite

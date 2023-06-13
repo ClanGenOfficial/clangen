@@ -23,13 +23,13 @@
             "other_clan"
         ],
         "event_text": "m_c visits o_c to converse with their medicine cats about an omen StarClan sent.",
-        "cat_trait": [
-            "strong connection to StarClan",
-            "omen sight",
-            "clairvoyant",
-            "dream walker"
+        "cat_trait": null,
+        "cat_skill": [
+            "STAR,0",
+            "CLAIRVOYANT,0",
+            "OMEN,0",
+            "DREAM,0"
         ],
-        "cat_skill": [],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -43,12 +43,10 @@
             "other_clan"
         ],
         "event_text": "m_c visits o_c to congratulate them on their new medicine cat.",
-        "cat_trait": [
-            "good mediator",
-            "great mediator",
-            "excellent mediator"
+        "cat_trait": null,
+        "cat_skill": [
+            "MEDIATOR,1"
         ],
-        "cat_skill": [],
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -110,7 +108,7 @@
         "event_text": "m_c speaks to r_c about an omen {PRONOUN/m_c/subject} saw while on patrol recently.",
         "cat_trait": null,
         "cat_skill": [
-            "OMEN,3"
+            "OMEN,0"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -128,7 +126,7 @@
         "event_text": "m_c speaks to r_c about a potential omen and what it means.",
         "cat_trait": null,
         "cat_skill": [
-            "OMEN,3"
+            "OMEN,0"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -139,7 +137,8 @@
             "Leaf-bare",
             "Newleaf",
             "Greenleaf",
-            "Leaf-fall"
+            "Leaf-fall",
+            "skill_trait_required"
         ],
         "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
         "cat_trait": null,
@@ -155,7 +154,8 @@
             "Leaf-bare",
             "Newleaf",
             "Greenleaf",
-            "Leaf-fall"
+            "Leaf-fall",
+            "skill_trait_required"
         ],
         "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
         "cat_trait": null,
@@ -176,7 +176,7 @@
         "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
         "cat_trait": null,
         "cat_skill": [
-            "PROPHET,3"
+            "PROPHET,2"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -194,7 +194,7 @@
         "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
         "cat_trait": null,
         "cat_skill": [
-            "LORE,2"
+            "LORE,0"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
@@ -205,7 +205,8 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "skill_trait_required"
         ],
         "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
         "cat_trait": null,
@@ -298,7 +299,7 @@
         ],
         "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
         "cat_skill": [
-            "OMEN,1"
+            "OMEN,0"
         ]
     },
     {
