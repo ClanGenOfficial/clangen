@@ -2217,7 +2217,7 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "gen_train_assess1",
+        "patrol_id": "gen_train_huntassess1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -2240,9 +2240,9 @@
         "chance_of_success": 60,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "Before app1 can say anything, app2 gives up on {PRONOUN/app2/poss} bid for leader and decides that they {PRONOUN/app2/subject} would rather hunt on {PRONOUN/app2/poss} own than stick with a group. app2 picks a location aloud and runs off without giving app1 a chance to calm {PRONOUN/app2/object} down. app1 chooses not to dwell on it, and is relieved to hunt alone.",
+            "unscathed_common": "Before app1 can say anything, app2 gives up on {PRONOUN/app2/poss} bid for leader and decides that {PRONOUN/app2/subject} would rather hunt on {PRONOUN/app2/poss} own than stick with a group. app2 picks a location aloud and runs off without giving app1 a chance to calm {PRONOUN/app2/object} down. app1 chooses not to dwell on it, and is relieved to hunt alone.",
 	        "unscathed_rare": "app2 isn't surprised when app1 speaks up and looks annoyed. app1 suggests that it would be a clever idea to split up, so that they don't startle each other's prey and ensure the group's success. Everyone thinks this is a good compromise and splits up with the promise to meet back at camp.",
-	        "stat_skill": "app1 knows that app2 isn't well-liked in the den for {PRONOUN/app2/poss} attitude. However, they {PRONOUN/app1/subject} {VERB/app1/do/does}n't think app2 is a bad cat. {PRONOUN/app2/subject/CAP} just {VERB/app2/need/needs} someone to believe in {PRONOUN/app2/object}. Well, let app1 be that someone. {PRONOUN/app1/subject/CAP} agrees with app2. app2 is skeptically surprised by app1's vote of confidence but is happy to lead the patrol. When the patrol arrives at the spot app2 suggested, prey scent is everywhere. app1 comes home with enough prey for the queens and elders and is rewarded with a nod from {PRONOUN/app1/poss} mentor.",
+	        "stat_skill": "app1 knows that app2 isn't well-liked in the den for {PRONOUN/app2/poss} attitude. However, {PRONOUN/app1/subject} {VERB/app1/do/does}n't think app2 is a bad cat. {PRONOUN/app2/subject/CAP} just {VERB/app2/need/needs} someone to believe in {PRONOUN/app2/object}. Well, let app1 be that someone. {PRONOUN/app1/subject/CAP} agrees with app2. app2 is skeptically surprised by app1's vote of confidence but is happy to lead the patrol. When the patrol arrives at the spot app2 suggested, prey scent is everywhere. app1 comes home with enough prey for the queens and elders and is rewarded with a nod from {PRONOUN/app1/poss} mentor.",
 	        "stat_trait": "app1 can't let app2 have all the glory. {PRONOUN/app1/subject/CAP} {VERB/app1/suggest/suggests} a good place to hunt that can show off the patrol's teamwork. Even app2 says that teamwork in a clan is important. Everyone follows app1 and is shocked when they are instantly greeted with a running hare. Catching it is easy, and the apprentices share amused purrs."
         },
         "fail_text": {
@@ -2250,8 +2250,14 @@
 	        "death": "At this rate, the patrol is going to impede app1's chances to get {PRONOUN/app1/poss} warrior's name. app1 leaves the patrol to their bickering and goes off on {PRONOUN/app1/poss} own to hunt. {PRONOUN/app1/poss/CAP} thoughts swim with curses toward the others in the patrol. It should have been obvious, this was {PRONOUN/app1/poss} assessment, after all. In frustration, {PRONOUN/app1/subject} go further than intended. The only warning of danger to break {PRONOUN/app1/object} from {PRONOUN/app1/poss} thoughts is the screech of a raging monster before nothingness.",
 	        "stat_injury": "app1 tries hard to resist the urge to scratch app2's confidence away. How dare {PRONOUN/app2/subject} try to show off during {PRONOUN/app1/poss} assessment? Unfortunately, it's a losing battle. app1 just can't hold {PRONOUN/app1/self} back anymore as {PRONOUN/app1/subject} listen to app2 brag about why {PRONOUN/app2/subject} should be leader of the patrol. Before app2 can say anything else, app1 leaps onto {PRONOUN/app2/object} and they tussle over the ground. The mentors rush out of hiding to break up the fight and chide the apprentices for their foolishness."
         },
-        "win_skills": ["SENSE,0", "MEDIATOR,0"],
-        "win_trait": ["ambitious", "competitive"],
+        "win_skills": [
+            "SENSE,0", 
+            "MEDIATOR,0"
+        ],
+        "win_trait": [
+            "ambitious", 
+            "competitive"
+        ],
         "fail_trait": ["bloodthirsty"],
         "min_cats": 2,
         "max_cats": 3,
@@ -2260,6 +2266,53 @@
         "history_text": {
                 "scar": "r_c carries a scar from when they fought with a Clanmate as an apprentice.",
                 "death": "r_c died when they distractedly ran onto the thunderpath as an apprentice."
+        }
+},
+{
+        "patrol_id": "gen_train_trackassess1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training", 
+            "apprentice", 
+            "one_apprentice", 
+            "app_stat", 
+            "warrior", 
+            "rel_patrol", 
+            "no_change_fail", 
+            "platonic", 
+            "dislike", 
+            "respect", 
+            "death"
+        ],
+        "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find r_c posing as an enemy warrior somewhere on the territory and handle the situation. r_c could be anywhere!",
+        "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "Sluggishly, app1 heads out into the territory to find r_c. By the time the sun starts to set, {PRONOUN/app1/subject} are about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} r_c nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks r_c and catches {PRONOUN/r_c/object} off-guard! After a brief tussle, r_c admits defeat, and guides app1 home.",
+	"unscathed_rare": "app1 is nervous upon heading out. However, {PRONOUN/app1/subject} {VERB/app1/manage/manages} to pick up r_c's scent within a few hours, and follow the trail. When {PRONOUN/app1/subject} find r_c, the warrior is drinking from a stream. Yowling, app1 leaps at r_c and sweeps {PRONOUN/r_c/object} off {PRONOUN/r_c/poss} feet into the shallow water. r_c is winded, and after {PRONOUN/r_c/subject} stand up, {PRONOUN/r_c/subject} congratulate app1.",
+	"stat_skill": "app1 was already awake, and raring to go. {PRONOUN/app1/subject/CAP} run off before the deputy can say anything. It is just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} r_c {PRONOUN/app1/subject} have to stifle {PRONOUN/app1/poss} chitters of excited pleasure. r_c must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/r_c/poss} whiskers twitch in amusement. Oh, well, {PRONOUN/app1/subject} gleefully charge forward.",
+	"stat_trait": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} disguise {PRONOUN/app1/poss} scent and carefully work {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} pinpoint r_c's hiding spot, and sneak behind the warrior. Without hesitation, app1 pounces on r_c and pins {PRONOUN/r_c/object} to the ground, a paw on {PRONOUN/r_c/poss} throat."
+        },
+        "fail_text": {
+	"unscathed_common": "Admittedly, {PRONOUN/app1/subject} knew {PRONOUN/app1/subject} weren't ready. app1 could not find r_c, and by the time sundown approached, {PRONOUN/app1/poss} mentor appeared to take {PRONOUN/app1/object} home. app1 cannot help but feel like a failure after this. Back at camp, {PRONOUN/app1/subject} can see r_c's whiskers twitching in amusement at {PRONOUN/app1/poss} predicament.",
+	"unscathed_stat": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find r_c before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat? {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second guessing.",
+	"leader_death": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could r_c be hiding? {PRONOUN/app1/subject/CAP} wish that r_c would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not r_c. The smell of a foreign cat washes over app1."
+        },
+        "win_skills": [
+            "RUNNER,0", 
+            "CLEVER,0"
+        ],
+        "win_trait": ["sneaky"],
+        "fail_trait": [
+            "insecure", 
+            "nervous"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "history_text": {
+	    "leader death": "killed by another cat while doing their assessment."
         }
 }
 ]
