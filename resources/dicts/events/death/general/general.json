@@ -550,7 +550,7 @@
         "death_text": "m_c and r_c are killed by a gang of rogues.",
         "history_text": {
             "reg_death": "m_c was killed by a gang of rogues.",
-            "lead_death": "was killed by a gang of rogues"
+            "lead_death": "{VERB/m_c/were/was} killed by a gang of rogues"
         }
     },
     {
@@ -697,7 +697,7 @@
         "death_text": "m_c sacrificed {PRONOUN/m_c/self} by taking on the role of a messenger, delivering important information that could save {PRONOUN/m_c/poss} Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} killed while investigating enemy territory.",
         "history_text": {
             "reg_death": "m_c was killed investigating enemy territory.",
-            "lead_death": "was killed investigating enemy territory."
+            "lead_death": "{VERB/m_c/were/was} killed investigating enemy territory."
         }
     },
     {
@@ -742,7 +742,7 @@
         "death_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c warriors.",
         "history_text": {
             "reg_death": "m_c was hit by a monster.",
-            "lead_death": "was hit by a monster."
+            "lead_death": "{VERB/m_c/were/was} hit by a monster."
         }
     }
 ]

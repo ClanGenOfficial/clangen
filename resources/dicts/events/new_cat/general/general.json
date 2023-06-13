@@ -473,12 +473,12 @@
         "event_text": "m_c finds a warrior from o_c named n_c, who asks to join the Clan.",
         "other_clan": true,
         "backstory": [
-            "otherclan",
+            "otherclan1",
             "otherclan2",
             "ostracized_warrior",
             "disgraced",
             "refugee",
-            "tragedy_survivor",
+            "tragedy_survivor1",
             "guided4"
         ],
         "cat_trait": null,
@@ -505,12 +505,12 @@
         "event_text": "An injured warrior from o_c asks to join, in exchange for healing.",
         "other_clan": true,
         "backstory": [
-            "otherclan",
+            "otherclan1",
             "otherclan2",
             "ostracized_warrior",
             "disgraced",
             "refugee",
-            "tragedy_survivor",
+            "tragedy_survivor1",
             "guided4"
         ],
         "cat_trait": null,
