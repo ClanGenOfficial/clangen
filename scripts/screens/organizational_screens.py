@@ -1018,12 +1018,6 @@ class StatsScreen(Screens):
         TODO: DOCS
         """
         
-        for x in Cat.all_cats_list:
-            if x.outside or x.dead:
-                continue
-            if x.status in ["kitten", "newborn"]:
-                x.gone()
-        
         self.set_disabled_menu_buttons(["stats"])
         self.show_menu_buttons()
         self.update_heading_text(f'{game.clan.name}Clan')
