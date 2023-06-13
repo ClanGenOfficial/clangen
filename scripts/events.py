@@ -606,21 +606,22 @@ class Events:
         """
         TODO: DOCS
         """
+        
+        eligable_cats = []
         for cat in Cat.all_cats.values():
             if cat.outside and cat.ID not in Cat.outside_cats:
                 # The outside-value must be set to True before the cat can go to cotc
                 Cat.outside_cats.update({cat.ID: cat})
-
-        lost_cat = None
-        for cat in Cat.outside_cats.values():
+                
             if cat.outside and cat.status not in [
                 'kittypet', 'loner', 'rogue', 'former Clancat'
             ] and not cat.exiled and not cat.dead:
-                lost_cat = cat
-                break
+                eligable_cats.append(cat)
         
-        if not lost_cat:
+        if not eligable_cats:
             return
+        
+        lost_cat = random.choice(eligable_cats)
         
         text = [
             'After a long journey, m_c has finally returned home to c_n.',
@@ -646,8 +647,8 @@ class Events:
                 Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
         
         # Proform a ceremony if needed
-        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
-            print(x.status)
+        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
+           
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
@@ -656,9 +657,8 @@ class Events:
                         self.ceremony(x, "mediator")
                     else:
                         self.ceremony(x, "warrior")
-            elif x.status in ["kitten", "newborn"]:
-                if x.moons >= 6:
-                    self.ceremony(x, "apprentice")
+                elif x.status in ["kitten", "newborn"] and x.moons >= 6:
+                    self.ceremony(x, "apprentice") 
             else:
                 if x.moons == 0:
                     x.status = 'newborn'
@@ -730,20 +730,7 @@ class Events:
         """
         # aging the cat
         cat.one_moon()
-        cat.moons += 1
         cat.manage_outside_trait()
-        if cat.moons == 1:
-            cat.age = "kitten"
-            if cat.status not in [
-                'kittypet', 'loner', 'rogue', 'former Clancat'
-            ]:
-                cat.status = "kitten"
-        elif cat.moons == 6:
-            cat.age = 'adolescent'
-        elif cat.moons == 12:
-            cat.age = 'adult'
-        elif cat.moons == 120:
-            cat.age = 'senior'
             
         cat.skills.progress_skill(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
@@ -1242,6 +1229,7 @@ class Events:
         # ceremony = []
         
         _ment = Cat.fetch_cat(cat.mentor) if cat.mentor else None # Grab current mentor, if they have one, before it's removed. 
+        old_name = str(cat.name)
         cat.status_change(promoted_to)
         cat.rank_change_traits_skill(_ment)
 
@@ -1435,7 +1423,7 @@ class Events:
         # which will be added to the involved cats if needed.
         ceremony_text, involved_living_parent, involved_dead_parent = \
             ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
-                                 random_honor=random_honor,
+                                 random_honor=random_honor, old_name=old_name,
                                  mentor=mentor, previous_alive_mentor=previous_alive_mentor,
                                  living_parents=living_parents, dead_parents=dead_parents)
 

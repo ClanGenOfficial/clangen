@@ -45,7 +45,7 @@
         "event_text": "m_c visits o_c to congratulate them on their new medicine cat.",
         "cat_trait": null,
         "cat_skill": [
-            "MEDIATE,1"
+            "MEDIATOR,1"
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
