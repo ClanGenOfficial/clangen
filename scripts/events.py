@@ -606,21 +606,22 @@ class Events:
         """
         TODO: DOCS
         """
+        
+        eligable_cats = []
         for cat in Cat.all_cats.values():
             if cat.outside and cat.ID not in Cat.outside_cats:
                 # The outside-value must be set to True before the cat can go to cotc
                 Cat.outside_cats.update({cat.ID: cat})
-
-        lost_cat = None
-        for cat in Cat.outside_cats.values():
+                
             if cat.outside and cat.status not in [
                 'kittypet', 'loner', 'rogue', 'former Clancat'
             ] and not cat.exiled and not cat.dead:
-                lost_cat = cat
-                break
+                eligable_cats.append(cat)
         
-        if not lost_cat:
+        if not eligable_cats:
             return
+        
+        lost_cat = random.choice(eligable_cats)
         
         text = [
             'After a long journey, m_c has finally returned home to c_n.',
@@ -646,8 +647,8 @@ class Events:
                 Single_Event(text, "misc", [lost_cat.ID] + additional_cats))
         
         # Proform a ceremony if needed
-        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:
-            print(x.status)
+        for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
+           
             if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
@@ -656,9 +657,8 @@ class Events:
                         self.ceremony(x, "mediator")
                     else:
                         self.ceremony(x, "warrior")
-            elif x.status in ["kitten", "newborn"]:
-                if x.moons >= 6:
-                    self.ceremony(x, "apprentice")
+                elif x.status in ["kitten", "newborn"] and x.moons >= 6:
+                    self.ceremony(x, "apprentice") 
             else:
                 if x.moons == 0:
                     x.status = 'newborn'
@@ -730,20 +730,7 @@ class Events:
         """
         # aging the cat
         cat.one_moon()
-        cat.moons += 1
         cat.manage_outside_trait()
-        if cat.moons == 1:
-            cat.age = "kitten"
-            if cat.status not in [
-                'kittypet', 'loner', 'rogue', 'former Clancat'
-            ]:
-                cat.status = "kitten"
-        elif cat.moons == 6:
-            cat.age = 'adolescent'
-        elif cat.moons == 12:
-            cat.age = 'adult'
-        elif cat.moons == 120:
-            cat.age = 'senior'
             
         cat.skills.progress_skill(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
@@ -1242,6 +1229,7 @@ class Events:
         # ceremony = []
         
         _ment = Cat.fetch_cat(cat.mentor) if cat.mentor else None # Grab current mentor, if they have one, before it's removed. 
+        old_name = str(cat.name)
         cat.status_change(promoted_to)
         cat.rank_change_traits_skill(_ment)
 
@@ -1435,7 +1423,7 @@ class Events:
         # which will be added to the involved cats if needed.
         ceremony_text, involved_living_parent, involved_dead_parent = \
             ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
-                                 random_honor=random_honor,
+                                 random_honor=random_honor, old_name=old_name,
                                  mentor=mentor, previous_alive_mentor=previous_alive_mentor,
                                  living_parents=living_parents, dead_parents=dead_parents)
 
@@ -1715,52 +1703,46 @@ class Events:
         ''' Handles murder '''
         relationships = cat.relationships.values()
         targets = []
-        kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+        
+        # if this cat is unstable and aggressive, we lower the random murder chance. 
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
+        random_murder_chance -= round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
 
-        # if this cat is unstable and aggressive, we lower the random murder chance
-        murder_modifier = round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
-        facet_murder_chance = random.getrandbits(random_murder_chance - murder_modifier)
-        #print(str(cat.name) + " Murder Chance: " + str(final_murder_chance) + "/" + str(2**(random_murder_chance - murder_modifier)))
-
-        # first we grab all hate and resentment relationships, if any
-        hate_relation = [i for i in relationships if
+        # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
+        # of dislike for. 
+        if random.getrandbits(random_murder_chance - random_murder_chance) == 1:
+            targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        else:
+            # If random murder is not triggered, targets can only be those they have high dislike for. 
+            hate_relation = [i for i in relationships if
                          i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-        targets.extend(hate_relation)
-        resent_relation = [i for i in relationships if
-                           i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-        targets.extend(resent_relation)
+            targets.extend(hate_relation)
+            resent_relation = [i for i in relationships if
+                            i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+            targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
-        if targets or facet_murder_chance == 1:
-            if targets:
-                chosen_target = random.choice(targets)
-            else:
-                relations = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-                if not relations:
-                    return
-                chosen_target = random.choice(relations)
+        if targets:
+            chosen_target = random.choice(targets)
+            
             print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
+            kill_chance = game.config["death_related"]["base_murder_kill_chance"]
+            
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
             print('DISLIKE MODIFIER', kill_chance)
             kill_chance -= chosen_target.jealousy
             print('JEALOUS MODIFIER', kill_chance)
 
-            facet_modifiers = (0 + int(cat.personality.aggression)) + \
-                (16 - int(cat.personality.stability)) + (16 - int(cat.personality.lawfulness))
+            facet_modifiers = cat.personality.aggression + \
+                (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
             
             kill_chance = kill_chance - facet_modifiers
-            print('Kill chance after facets', kill_chance)
-
-            # this adds a bit of randomness
-            randomness_modifier = (random.getrandbits(10) * .001)
-            kill_chance = kill_chance - randomness_modifier
+            kill_chance = max(15, kill_chance)
+             
             print("Final kill chance: " + str(kill_chance))
-
-            if kill_chance < 1:
-                kill_chance = 1
+            
             if not int(random.random() * kill_chance):
                 print("KILL KILL KILL")
                 self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, self.at_war,
