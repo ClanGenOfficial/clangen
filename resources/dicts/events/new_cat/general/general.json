@@ -476,8 +476,8 @@
             "otherclan1",
             "otherclan2",
             "ostracized_warrior",
-            "disgraced",
-            "refugee",
+            "disgraced1",
+            "refugee1",
             "tragedy_survivor1",
             "guided4"
         ],
@@ -508,8 +508,8 @@
             "otherclan1",
             "otherclan2",
             "ostracized_warrior",
-            "disgraced",
-            "refugee",
+            "disgraced1",
+            "refugee1",
             "tragedy_survivor1",
             "guided4"
         ],
@@ -688,7 +688,7 @@
         "other_clan": true,
         "backstory": [
             "otherclan2",
-            "disgraced",
+            "disgraced1",
             "refugee1",
             "tragedy_survivor1"
         ],
@@ -709,7 +709,7 @@
         "other_clan": true,
         "backstory": [
             "otherclan2",
-            "disgraced",
+            "disgraced1",
             "refugee1",
             "tragedy_survivor1",
             "otherclan2"
@@ -732,7 +732,7 @@
         "other_clan": true,
         "backstory": [
             "otherclan1",
-            "disgraced",
+            "disgraced1",
             "refugee1",
             "tragedy_survivor1"
         ],
@@ -756,7 +756,7 @@
         "backstory": [
             "medicine_cat",
             "otherclan1",
-            "disgraced",
+            "disgraced1",
             "refugee1",
             "tragedy_survivor1"
         ],

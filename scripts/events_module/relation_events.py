@@ -75,7 +75,6 @@ class Relation_Events():
 
         used_relationships = []
         # for i in range(0, range_number):
-        print("HOW OFTEN", range_number)
         for _ in itertools.repeat(None, range_number):
             random_index = int(random.random() * len(cat.relationships))
             if random_index in used_relationships:
@@ -173,7 +172,7 @@ class Relation_Events():
                         cat_to, 
                         cat_to_mate
                     )
-                    cat_to.unset_mate(cat_mate, breakup=True, fight=False)
+                    cat_to.unset_mate(cat_to_mate, breakup=True, fight=False)
                     text = f"{cat_to.name} and {cat_to_mate.name} broke up."
                     game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_to.ID, cat_to_mate.ID]))
 
