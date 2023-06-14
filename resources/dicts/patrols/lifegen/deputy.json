@@ -1,0 +1,120 @@
+[{
+    "patrol_id": "gen_your_cat65",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "You need to organize the dawn patrol, however there seems to be a shortage of warriors ready to head out.",
+    "success_text": {
+    "unscathed_common": "Despite the shortage, you manage to assemble a strong and motivated patrol. Your leadership qualities shine through."
+    },
+    "fail_text": {
+    "unscathed_common": "You struggle to assemble a strong patrol. This setback reminds you of the challenges of leadership."
+    },
+    "decline_text": "Rather than pushing the tired warriors, you decide to join the patrol yourself. Your decision is respected by the Clan.",
+    "chance_of_success": 50,
+    "exp": 50,
+    "win_skills": [
+    "strong leader"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+    },
+    {
+    "patrol_id": "gen_your_cat66",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "As deputy, it's your duty to deal with a recent feud between two warriors over a prey dispute.",
+    "success_text": {
+    "unscathed_common": "You mediate effectively, resolving the feud and restoring peace. Your fairness and authority are respected by the Clan."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your best efforts, the feud continues. It's a tough reminder that not all disputes can be easily resolved."
+    },
+    "decline_text": "You decide to bring this matter to the Clan leader, feeling it's too delicate to handle on your own. Your humility is appreciated by the Clan.",
+    "chance_of_success": 65,
+    "exp": 45,
+    "win_skills": [
+    "strong leader"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+    },
+    {
+    "patrol_id": "gen_your_cat67",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A young apprentice is having trouble with their warrior training. You decide to step in and help.",
+    "success_text": {
+    "unscathed_common": "You manage to encourage and help the apprentice, who shows great improvement. Your mentorship skills are admired by the Clan."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your encouragement, the apprentice continues to struggle. It's a challenging reminder of the difficulties of mentorship."
+    },
+    "decline_text": "You decide to pair the apprentice with a more experienced mentor, hoping that different teaching methods will help. Your thoughtful decision is respected by the Clan.",
+    "chance_of_success": 55,
+    "exp": 50,
+    "win_skills": [
+    "strong leader"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+    },
+    {
+    "patrol_id": "gen_your_cat68",
+    "biome": "Any",
+    "season": "leaf-bare",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A harsh leaf-bare is approaching, and you're tasked with devising a strategy for the Clan's survival.",
+    "success_text": {
+    "unscathed_common": "Your strategy of rationing and sharing heat proves effective, ensuring the Clan's survival through the leaf-bare. Your foresight is commended by the Clan."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your strategy, leaf-bare proves to be challenging for the Clan. This setback strengthens your resolve to do better next time."
+    },
+    "decline_text": "Feeling the weight of this task, you decide to collaborate with the Clan's senior warriors and the medicine cat. The Clan appreciates your wise decision.",
+    "chance_of_success": 50,
+    "exp": 55,
+    "win_skills": [
+    "strong leader"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+    },
+    {
+    "patrol_id": "gen_your_cat69",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "As deputy, you are put in charge of some battle training review with the new warriors. It's your task to ensure they are ready for the trials of Clan life.",
+    "success_text": {
+    "unscathed_common": "Your training methods prove effective, and the new warriors are well-prepared. Your dedication to the Clan is recognized by all."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your best efforts, the new warriors are struggling with the basics. It's a stark reminder of the challenges of training."
+    },
+    "decline_text": "Feeling that the new warriors could benefit from different perspectives, you arrange for other experienced warriors to share their knowledge. The Clan appreciates your inclusive approach.",
+    "chance_of_success": 50,
+    "exp": 55,
+    "win_skills": [
+    "strong leader"
+    ],
+    "min_cats": 1,
+    "max_cats": 4
+    }]
+    
+    
+    
+    
+    

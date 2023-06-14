@@ -1,0 +1,115 @@
+[{
+    "patrol_id": "gen_your_cat45",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "Your mentor asks you to identify various herbs as part of your training. You feel a bit nervous but know this is important for your future role.",
+    "success_text": {
+    "unscathed_common": "You confidently identify each herb correctly. Your mentor praises your knowledge and dedication, encouraging you to keep practicing."
+    },
+    "fail_text": {
+    "unscathed_common": "You mix up a couple of herbs, and your mentor corrects you sternly."
+    },
+    "decline_text": "You decide to take a break from the training, feeling overwhelmed. Your mentor understands and assures you that it's okay to take things slow.",
+    "chance_of_success": 55,
+    "exp": 20,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat46",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A kit has a minor scratch. Your mentor suggests you treat it to gain some practical experience.",
+    "success_text": {
+    "unscathed_common": "You successfully treat the scratch, using the proper herbs and methods. The kit thanks you, and your mentor compliments your skills."
+    },
+    "fail_text": {
+    "unscathed_common": "You're a bit hesitant and fumble with the herbs. Your mentor has to step in to help."
+    },
+    "decline_text": "You decide to watch your mentor do it this time, feeling unsure about your abilities. Your mentor understands and promises to guide you next time.",
+    "chance_of_success": 60,
+    "exp": 25,
+    "win_skills": [
+    "very careful"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat47",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "Your mentor is taking you to a hidden place where special medicinal herbs grow. You feel excited and privileged.",
+    "success_text": {
+    "unscathed_common": "You successfully locate and collect the special herbs, gaining valuable knowledge in the process. Your mentor seems pleased with your progress."
+    },
+    "fail_text": {
+    "unscathed_common": "You struggle to find the correct herbs and accidently pick a few wrong ones. Your mentor corrects you, reminding you to be patient and observant."
+    },
+    "decline_text": "You decide to stay in camp and practice your existing knowledge, feeling that rushing into new things might confuse you. Your mentor appreciates your thoughtfulness.",
+    "chance_of_success": 65,
+    "exp": 30,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat48",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "An elder seems to be having trouble sleeping. Your mentor suggests you prepare a remedy to help.",
+    "success_text": {
+    "unscathed_common": "You prepare the remedy accurately, and it helps the elder sleep comfortably. You feel content, and your mentor praises your empathy and skill."
+    },
+    "fail_text": {
+    "unscathed_common": "You mix the herbs in the wrong proportions, and the remedy doesn't work as expected."
+    },
+    "decline_text": "You feel unsure about preparing the remedy and decide to watch your mentor do it instead. They understand your hesitance and guide you through the process.",
+    "chance_of_success": 50,
+    "exp": 25,
+    "win_skills": [
+    "very caring"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat49",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A patrol returns with minor injuries. You have the chance to step up and help your mentor in treating them.",
+    "success_text": {
+    "unscathed_common": "You treat the injuries efficiently under your mentor's watchful eyes, proving that you are progressing well in your training."
+    },
+    "fail_text": {
+    "unscathed_common": "You're a bit shaky and make a few mistakes, and your mentor steps in to correct you."
+    },
+    "decline_text": "Feeling overwhelmed, you decide to assist your mentor instead of taking the lead. Your mentor understands and appreciates your help.",
+    "chance_of_success": 55,
+    "exp": 30,
+    "win_skills": [
+    "very caring"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    }]

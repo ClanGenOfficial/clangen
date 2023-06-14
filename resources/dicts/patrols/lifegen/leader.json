@@ -1,0 +1,117 @@
+[
+    {
+        "patrol_id": "gen_your_cat70",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "As leader, you need to make a decision about the allocation of prey during the scarce leaf-bare. The Clan's survival depends on your decision.",
+        "success_text": {
+            "unscathed_common": "Your fair and thoughtful decision ensures that all cats get enough to eat, despite the scarcity. The Clan appreciates your wise leadership."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your best efforts, there's unrest in the Clan due to the scarcity of food. The harsh realities of leadership weigh heavy on you."
+        },
+        "decline_text": "Rather than making the decision alone, you decide to hold a Clan meeting to discuss the issue. The Clan appreciates your democratic leadership style.",
+        "chance_of_success": 75,
+        "exp": 60,
+        "win_skills": [
+            "wise leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_your_cat71",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A neighboring Clan has been encroaching on your territory. As the leader, you have to decide how to respond.",
+        "success_text": {
+            "unscathed_common": "Your decision to send a stern warning to the other Clan proves effective. They apologize and promise to respect the borders. Your Clan admires your assertiveness."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your stern warning, the other Clan continues to violate the borders. This challenge tests your resolve as a leader."
+        },
+        "decline_text": "Rather than making a hasty decision, you decide to gather more information about the situation. Your Clan respects your thoroughness.",
+        "chance_of_success": 70,
+        "exp": 60,
+        "win_skills": [
+            "wise leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_your_cat72",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "An argument between two senior warriors threatens to divide the Clan. As leader, you need to intervene and restore peace.",
+        "success_text": {
+            "unscathed_common": "Your wise words defuse the tension and resolve the argument. The Clan is grateful for your balanced judgment."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your intervention, the warriors continue to argue. This tests your patience and leadership skills."
+        },
+        "decline_text": "Instead of directly intervening, you decide to involve the Clan's mediator. This thoughtful action shows your belief in the strengths of your Clan members.",
+        "chance_of_success": 70,
+        "exp": 60,
+        "win_skills": [
+            "wise leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_your_cat73",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A fierce storm has damaged the camp, and as the leader, you must organize the repair efforts.",
+        "success_text": {
+            "unscathed_common": "With your guidance, the Clan works together efficiently to repair the camp. The Clan appreciates your clear direction and leadership."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your efforts, the repair process is slow and arduous. This difficult situation tests your leadership."
+        },
+        "decline_text": "Rather than dictating the repair process, you decide to listen to the ideas of your Clan members. This approach shows your trust in your Clan's abilities.",
+        "chance_of_success": 75,
+        "exp": 65,
+        "win_skills": [
+            "wise leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_your_cat74",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "An epidemic has spread through the Clan. As leader, you must decide how to handle the crisis.",
+        "success_text": {
+            "unscathed_common": "You calmly organize a quarantine and direct the medicine cat's efforts. Your Clan admires your composure and swift decision-making in the face of adversity."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite your efforts, the epidemic continues to spread. This crisis tests your leadership in a way nothing else has."
+        },
+        "decline_text": "Recognizing your limitations in medical matters, you choose to defer to the medicine cat's judgment. The Clan appreciates your humility and trust in others.",
+        "chance_of_success": 70,
+        "exp": 65,
+        "win_skills": [
+            "wise leader"
+        ],
+        "min_cats": 1,
+        "max_cats": 6
+    }
+]

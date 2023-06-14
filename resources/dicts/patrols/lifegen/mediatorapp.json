@@ -1,0 +1,115 @@
+[{
+    "patrol_id": "gen_your_cat55",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A dispute breaks out between two apprentices over who gets to go on the next patrol. As a mediator apprentice, it's your job to resolve it.",
+    "success_text": {
+    "unscathed_common": "You listen to both sides and propose a fair solution. Both apprentices agree and thank you for your help. Your skills as a mediator are improving."
+    },
+    "fail_text": {
+    "unscathed_common": "You try to mediate, but the apprentices are too heated. They're eventually separated by a senior warrior. Despite the outcome, you've learned from the experience."
+    },
+    "decline_text": "You decide to let a senior warrior handle the situation, feeling it's beyond your current capabilities. They handle it effectively, and you learn from their methods.",
+    "chance_of_success": 50,
+    "exp": 25,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat56",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "Two warriors are arguing about a recent border skirmish with another Clan. Tensions are rising, and you feel it's your duty to intervene.",
+    "success_text": {
+    "unscathed_common": "You step in and help defuse the argument. The warriors appreciate your diplomatic approach, and the camp atmosphere returns to normal."
+    },
+    "fail_text": {
+    "unscathed_common": "You attempt to mediate, but the warriors are not in a mood to listen. A senior warrior steps in to calm them down. It's a lesson on when to intervene and when to step back."
+    },
+    "decline_text": "You decide not to get involved, feeling the issue is too sensitive for your current skills. A senior warrior intervenes, and you observe how they handle the situation.",
+    "chance_of_success": 55,
+    "exp": 30,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat57",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A warrior has been excessively harsh in their training, causing an apprentice to lose confidence. You think you can help.",
+    "success_text": {
+    "unscathed_common": "You talk to both the apprentice and the warrior separately. You help the warrior understand the apprentice's perspective, and the training becomes more balanced."
+    },
+    "fail_text": {
+    "unscathed_common": "You try to mediate, but the warrior is defensive, and the apprentice is upset. Eventually, a senior warrior steps in to handle the situation."
+    },
+    "decline_text": "You decide to let a senior warrior handle the situation, as it involves an important aspect of Clan life: training. You observe the resolution keenly.",
+    "chance_of_success": 40,
+    "exp": 35,
+    "win_skills": [
+    "very caring"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat58",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "An elder feels that their stories are not being appreciated by the younger generation. You think you can help bridge the gap.",
+    "success_text": {
+    "unscathed_common": "You organise a story session where the elder shares their tales, and the younger cats listen intently. The elder feels appreciated, and the younger cats learn valuable lessons."
+    },
+    "fail_text": {
+    "unscathed_common": "You try to organise a story session, but the younger cats are restless, and the elder feels even more discouraged. It's a hard situation, but you learn from it."
+    },
+    "decline_text": "You decide to first talk to the younger cats and understand their point of view before proceeding further. The elder appreciates your thoughtful approach.",
+    "chance_of_success": 55,
+    "exp": 40,
+    "win_skills": [
+    "very caring"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    },
+    {
+    "patrol_id": "gen_your_cat59",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A couple of apprentices have started a prank war, disrupting the peace in the camp. You decide to step in.",
+    "success_text": {
+    "unscathed_common": "You talk to the apprentices, make them realise the effect of their pranks on the Clan, and they agree to stop. Your mediation skills are getting better every day."
+    },
+    "fail_text": {
+    "unscathed_common": "You try to mediate, but the apprentices don't take you seriously, and the prank war continues. Eventually, a senior warrior has to step in."
+    },
+    "decline_text": "You decide to let the senior warriors handle this, as it involves maintaining discipline in the Clan. You observe how they handle the situation.",
+    "chance_of_success": 40,
+    "exp": 35,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+    }]

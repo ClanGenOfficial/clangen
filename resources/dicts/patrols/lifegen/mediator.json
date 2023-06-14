@@ -1,0 +1,115 @@
+[{
+    "patrol_id": "gen_your_cat60",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "An argument breaks out in the Clan over the best way to store fresh-kill for leaf-bare. As a mediator, you step in to settle the dispute.",
+    "success_text": {
+    "unscathed_common": "You gather everyone's input and propose a plan that takes into account the various perspectives. The Clan agrees on your plan, commending your mediation skills."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your efforts, the Clan can't reach an agreement. The leader eventually has to step in and make a decision. This experience is a reminder that some disputes are hard to mediate."
+    },
+    "decline_text": "Deciding the matter is too complex for a single cat to handle, you suggest forming a small committee to make the decision. The Clan appreciates your wise approach.",
+    "chance_of_success": 50,
+    "exp": 35,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat61",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "Two warriors have a heated argument about a recent hunting trip. You decide to mediate before things get out of hand.",
+    "success_text": {
+    "unscathed_common": "Using your mediation skills, you manage to diffuse the argument. Both warriors calm down, acknowledging your fair judgement."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your best efforts, the argument escalates. A senior warrior has to intervene. Not every situation can be easily mediated, but you learn from the experience."
+    },
+    "decline_text": "Feeling this situation is beyond your skill, you ask a senior warrior to intervene. Watching them handle the situation, you pick up some valuable lessons.",
+    "chance_of_success": 55,
+    "exp": 30,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat62",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A dispute breaks out in the Clan about which part of the territory is best for hunting. As a mediator, you try to keep the peace.",
+    "success_text": {
+    "unscathed_common": "You hear both sides and suggest a compromise that satisfies everyone. Your skills as a mediator are commended by the Clan."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your best efforts, the dispute continues. A senior warrior has to intervene. It's a learning experience about how hard mediation can sometimes be."
+    },
+    "decline_text": "You decide to consult with some senior warriors before stepping in, believing their experience will help you mediate better. The Clan appreciates your cautious approach.",
+    "chance_of_success": 55,
+    "exp": 35,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat63",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "The apprentices are arguing about who is the fastest runner. You decide to step in before the argument escalates.",
+    "success_text": {
+    "unscathed_common": "You suggest a friendly race to determine the fastest runner. The apprentices agree, the argument is settled, and everyone enjoys the race."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your suggestion of a friendly race, the argument continues. It takes a while for the situation to calm down, but you learn some valuable lessons in mediation."
+    },
+    "decline_text": "You decide to let the apprentices settle the argument themselves, observing how they handle the situation. Sometimes, stepping back is the best way to mediate.",
+    "chance_of_success": 50,
+    "exp": 40,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat64",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A disagreement over border markings with a neighbouring Clan is causing tension. As a mediator, you decide to intervene.",
+    "success_text": {
+    "unscathed_common": "You manage to resolve the disagreement by proposing a shared patrol to remark the border. Both Clans appreciate your diplomacy and fairness."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your efforts, the disagreement escalates into a skirmish. It's a hard lesson in the limits of mediation."
+    },
+    "decline_text": "Feeling that the issue is too sensitive for you to handle alone, you consult with the Clan leader before taking any action. The Clan appreciates your wise decision.",
+    "chance_of_success": 55,
+    "exp": 40,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    }]

@@ -1,0 +1,115 @@
+[{
+    "patrol_id": "gen_your_cat50",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A heavy rainstorm has soaked through the medicine den, making some of your herbs wet. You need to act quickly to salvage what you can.",
+    "success_text": {
+    "unscathed_common": "You manage to save most of the herbs and set them out to dry. It was a close call, but your swift actions minimized the damage."
+    },
+    "fail_text": {
+    "unscathed_common": "Despite your best efforts, some herbs are lost. It's a setback, but you're determined to restock as soon as possible."
+    },
+    "decline_text": "Feeling overwhelmed, you decide to call for help. Other cats step in to assist, understanding the importance of preserving the medicine stock.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "win_skills": [
+    "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat51",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "One of the elders is feeling under the weather. You need to diagnose the problem and administer the correct remedy.",
+    "success_text": {
+    "unscathed_common": "You correctly identify the issue and administer the appropriate herbs. The elder feels better and expresses their gratitude for your expertise."
+    },
+    "fail_text": {
+    "unscathed_common": "It takes you a while to figure out what's wrong. By then, the elder's condition worsens. You administer the correct herbs and promise to keep a closer eye next time."
+    },
+    "decline_text": "You decide to monitor the elder's condition a bit longer before administering any herbs. The elder trusts your judgement and agrees to rest.",
+    "chance_of_success": 40,
+    "exp": 35,
+    "win_skills": [
+    "very careful"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat52",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "There is a shortage of a particular herb in the camp. You consider whether you should risk going out to find more.",
+    "success_text": {
+    "unscathed_common": "You decide to venture out and are successful in finding the herb. Your clanmates appreciate your dedication and commitment to your role."
+    },
+    "fail_text": {
+    "unscathed_common": "You venture out, but unfortunately, you are unable to find the herb. You're a bit disappointed but resolve to try again later."
+    },
+    "decline_text": "You decide not to risk going out, hoping to make do with what you have. Your clanmates understand your decision and trust your judgement.",
+    "chance_of_success": 40,
+    "exp": 40,
+    "win_skills": [
+    "very brave"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat53",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "A new kit has been born in the camp. It's your responsibility to check the kit's health and assure the queen everything is alright.",
+    "success_text": {
+    "unscathed_common": "You check the kit carefully and assure the queen that her kit is healthy. The queen is relieved, and you feel a sense of fulfillment in your duty."
+    },
+    "fail_text": {
+    "unscathed_common": "You notice that the kit isn't feeding properly. After some effort, you manage to help, but it's a reminder of the importance of your role."
+    },
+    "decline_text": "Feeling unsure, you decide to seek advice from an older medicine cat before conducting the check-up. The queen is patient and trusts your caution.",
+    "chance_of_success": 50,
+    "exp": 45,
+    "win_skills": [
+    "very caring"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    },
+    {
+    "patrol_id": "gen_your_cat54",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+    "camp"
+    ],
+    "intro_text": "There has been an outbreak of whitecough among the apprentices. You need to quarantine them and start treatment immediately.",
+    "success_text": {
+    "unscathed_common": "You act quickly and efficiently, quarantining the apprentices and starting the treatment. Your swift actions prevent the illness from spreading further."
+    },
+    "fail_text": {
+    "unscathed_common": "You start the treatment, but it's a bit late, and the illness spreads to a few other cats. It's a hard lesson on the importance of quick action."
+    },
+    "decline_text": "Overwhelmed by the situation, you call for assistance from the senior warriors to help quarantine the apprentices while you focus on the treatment.",
+    "chance_of_success": 50,
+    "exp": 40,
+    "win_skills": [
+    "very brave"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+    }]
