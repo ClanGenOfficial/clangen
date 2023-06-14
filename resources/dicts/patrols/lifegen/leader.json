@@ -2,11 +2,11 @@
     {
         "patrol_id": "gen_your_cat70",
         "biome": "Any",
-        "season": "Any",
+        "season": "leaf-bare",
         "tags": [
             "camp"
         ],
-        "intro_text": "As leader, you need to make a decision about the allocation of prey during the scarce leaf-bare. The Clan's survival depends on your decision.",
+        "intro_text": "You need to make a decision about the allocation of prey during the scarce leaf-bare. The Clan's survival depends on your decision.",
         "success_text": {
             "unscathed_common": "Your fair and thoughtful decision ensures that all cats get enough to eat, despite the scarcity. The Clan appreciates your wise leadership."
         },
@@ -52,7 +52,7 @@
         "tags": [
             "camp"
         ],
-        "intro_text": "An argument between two senior warriors threatens to divide the Clan. As leader, you need to intervene and restore peace.",
+        "intro_text": "An argument between two senior warriors threatens to divide the Clan. You need to intervene and restore peace.",
         "success_text": {
             "unscathed_common": "Your wise words defuse the tension and resolve the argument. The Clan is grateful for your balanced judgment."
         },
@@ -98,12 +98,12 @@
         "tags": [
             "camp"
         ],
-        "intro_text": "An epidemic has spread through the Clan. As leader, you must decide how to handle the crisis.",
+        "intro_text": "An epidemic has spread through the Clan and you must decide how to handle the crisis.",
         "success_text": {
             "unscathed_common": "You calmly organize a quarantine and direct the medicine cat's efforts. Your Clan admires your composure and swift decision-making in the face of adversity."
         },
         "fail_text": {
-            "unscathed_common": "Despite your efforts, the epidemic continues to spread. This crisis tests your leadership in a way nothing else has."
+            "unscathed_common": "Despite your efforts, the epidemic continues to spread and the medicine cats have to work overtime. This crisis tests your leadership in a way nothing else has."
         },
         "decline_text": "Recognizing your limitations in medical matters, you choose to defer to the medicine cat's judgment. The Clan appreciates your humility and trust in others.",
         "chance_of_success": 70,
