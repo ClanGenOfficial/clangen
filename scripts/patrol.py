@@ -1336,7 +1336,7 @@ class Patrol():
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
                 print('parent is dead')
-                chosen_kit_backstory = ['orphaned', 'orphaned2']
+                chosen_kit_backstory = ['orphaned1', 'orphaned2']
             else:
                 print('parent is alive')
                 chosen_kit_backstory = ['outsider_roots2', 'outsider_roots2']

@@ -549,7 +549,10 @@ class Events:
                     chosen_ally.relations -= 5
             event = random.choice(possible_events)
             game.herb_events_list.append(event)
-            game.cur_events_list.append(Single_Event(event, "health"))
+            event_type = "health"
+            if f"{chosen_ally.name}Clan" in event:
+                event_type = ["health", "other_clans"]
+            game.cur_events_list.append(Single_Event(event, event_type))
 
         elif not int(random.random() * 10) and 'moss' in game.clan.herbs:
             herb_amount = random.randrange(1, game.clan.herbs['moss'] + 1)
