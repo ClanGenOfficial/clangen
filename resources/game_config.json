@@ -72,7 +72,7 @@
 		"passive_influence_div": 1.3,
 		"chance_for_neutral": 10,
 		"chance_of_special_group": 8,
-		"chance_romantic_not_mate": 10,
+		"chance_romantic_not_mate": 15,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
 			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
@@ -82,11 +82,11 @@
 	"mates":{
 		"age_range": 40,
 		"chance_fulfilled_condition": 5,
-		"chance_friends_to_lovers": 300,
+		"chance_friends_to_lovers": 250,
 		"confession": {
 			"make_confession" : {
 				"romantic": 30,
-				"platonic": 10,
+				"platonic": 15,
 				"dislike": -15,
 				"admiration": 0,
 				"comfortable": 10,
@@ -94,11 +94,11 @@
 				"trust": 0
 			},
 			"accept_confession" : {
-				"romantic": 15,
-				"platonic": 10,
-				"dislike": -15,
+				"romantic": 17,
+				"platonic": 15,
+				"dislike": -10,
 				"admiration": 0,
-				"comfortable": 15,
+				"comfortable": 10,
 				"jealousy": 0,
 				"trust": 0
 			}
@@ -123,22 +123,22 @@
 		},
 		"poly":{
 			"current_mate_condition": {
-				"romantic": 0,
+				"romantic": 30,
 				"platonic": 0,
 				"dislike": 0,
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": -15,
-				"trust": 15
+				"trust": 25
 			},
 			"mates_to_each_other": {
 				"romantic": 0,
-				"platonic": 10,
-				"dislike": -15,
+				"platonic": 15,
+				"dislike": -10,
 				"admiration": 0,
 				"comfortable": 15,
 				"jealousy": -15,
-				"trust": 10
+				"trust": 20
 			}
 		},
 		"comment":[

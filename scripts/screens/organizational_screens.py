@@ -1017,6 +1017,7 @@ class StatsScreen(Screens):
         """
         TODO: DOCS
         """
+        
         self.set_disabled_menu_buttons(["stats"])
         self.show_menu_buttons()
         self.update_heading_text(f'{game.clan.name}Clan')
