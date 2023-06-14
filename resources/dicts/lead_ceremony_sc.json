@@ -741,7 +741,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "Puffing out BLANK chest, r_c gives m_c a life for [virtue] and dares BLANK to make c_n an even better Clan than the last leader ever could!",
+          "text": "Puffing out {PRONOUN/r_c/poss}  chest, r_c gives m_c a life for [virtue] and dares {PRONOUN/m_c/object} to make c_n an even better Clan than anyone ever could!",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]

@@ -901,6 +901,20 @@
         }
       ]
     },
+    "competitive_warrior": {
+      "tags": [],
+      "lead_trait": ["competitive"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "r_c knows that m_c will never be able to outdo {PRONOUN/r_c/object}, even with the Dark Forest on the leader's side. Even as the life for [virtue] fades into a dull, painful ache, r_c whispers how {PRONOUN/r_c/subject} will be here and watching m_c fail again and again compared to dark spirit.",
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
+        }
+      ]
+    },
         "flamboyant_warrior": {
       "tags": [],
       "lead_trait": ["flamboyant"],
