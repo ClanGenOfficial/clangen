@@ -895,7 +895,9 @@
       "life_giving": [
         {
           "text": "m_c was the best of the warriors in c_n. The best in the whole Clan entierly. Maybe even the best warrior of all of history! That was what r_c crooned into the new leader's ears as the life for [virtue] was given freely.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
         }
       ]
     },
@@ -907,7 +909,9 @@
       "life_giving": [
         {
           "text": "Such a theatric attitude had no place in the Dark Forest. But the gloom-covered spirit of r_c gives m_c a life for [virtue] with silent contempt in {PRONOUN/r_c/poss}  eyes regardless of {PRONOUN/r_c/poss} feelings on the matter.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
         }
       ]
     },
@@ -919,7 +923,9 @@
       "life_giving": [
         {
           "text": "r_c wondered if m_c's grumpy attitude was from anger and bloodlust, or a general spite towards the world. The shadowy spirit gives the new leader a life for [virtue].",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
         }
       ]
     },
@@ -931,7 +937,9 @@
       "life_giving": [
         {
           "text": "So long as m_c uses {PRONOUN/m_c/poss} rebellious ways to destroy the hold StarClan has on the world, r_c couldn't give a rats tail what the new leader did with the life for [virtue].",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
         }
       ]
     },
@@ -943,7 +951,9 @@
       "life_giving": [
         {
           "text": "Was thius a joke? The murk-covered form of r_c couldn't believe that m_c got chosen to be leader. r_c rolls {PRONOUN/r_c/poss} eyes and gives a life for [virtue] with an incredulous sigh.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+          "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
+          "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
+          "stubbornness", "authority"]
         }
       ]
     },
