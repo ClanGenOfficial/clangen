@@ -75,7 +75,6 @@ class Relation_Events():
 
         used_relationships = []
         # for i in range(0, range_number):
-        print("HOW OFTEN", range_number)
         for _ in itertools.repeat(None, range_number):
             random_index = int(random.random() * len(cat.relationships))
             if random_index in used_relationships:
