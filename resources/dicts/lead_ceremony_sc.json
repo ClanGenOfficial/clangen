@@ -771,6 +771,18 @@
         }
       ]
     },
+    "sincere_warrior": {
+      "tags": [],
+      "lead_trait": ["sincere"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Sincerity and honesty was one of the most prominent trait of a StarClan cat. r_c presses {PRONOUN/r_c/poss} nose against m_c and with a serene voice gives the new leader a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
     "default_kit": {
       "tags": [],
       "lead_trait": [],

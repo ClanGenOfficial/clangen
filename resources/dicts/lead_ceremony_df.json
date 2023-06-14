@@ -935,6 +935,18 @@
         }
       ]
     },
+    "sincere_warrior": {
+      "tags": [],
+      "lead_trait": ["sincere"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Was thius a joke? The murk-covered form of r_c couldn't believe that m_c got chosen to be leader. r_c rolls {PRONOUN/r_c/poss} eyes and gives a life for [virtue] with an incredulous sigh.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
     "default_kit": {
       "tags": [],
       "lead_trait": [],
