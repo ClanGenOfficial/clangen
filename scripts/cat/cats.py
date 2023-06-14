@@ -2042,6 +2042,8 @@ class Cat():
 
     def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
         """Unset the mate from both self and other_cat"""
+        if not other_cat:
+            return
 
         # Both cats must have mates for this to work
         if len(self.mate) < 1 or len(other_cat.mate) < 1:
