@@ -887,6 +887,18 @@
         }
       ]
     },
+    "arrogant_warrior": {
+      "tags": [],
+      "lead_trait": ["vengeful"],
+      "star_trait": [],
+      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
+      "life_giving": [
+        {
+          "text": "m_c was the best of the warriors in c_n. The best in the whole Clan entierly. Maybe even the best warrior of all of history! That was what r_c crooned into the new leader's ears as the life for [virtue] was given freely.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
   
     "default_kit": {
       "tags": [],
