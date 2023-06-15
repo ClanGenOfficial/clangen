@@ -313,6 +313,8 @@ class PatrolScreen(Screens):
 
             able_no_med = [cat for cat in self.able_cats if
                            cat.status not in ['medicine cat', 'medicine cat apprentice']]
+            if game.settings['random med cat']:
+                able_no_med = self.able_cats
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
             if len(self.current_patrol) >= 6 or len(able_no_med) < 1:

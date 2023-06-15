@@ -1005,13 +1005,13 @@ def leader_ceremony_text_adjust(Cat,
 def ceremony_text_adjust(Cat,
                          text,
                          cat,
+                         old_name=None,
                          dead_mentor=None,
                          mentor=None,
                          previous_alive_mentor=None,
                          random_honor=None,
                          living_parents=(),
                          dead_parents=()):
-    prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
 
     random_honor = random_honor
@@ -1031,8 +1031,10 @@ def ceremony_text_adjust(Cat,
         "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else (
             "leader_name", None),
         "c_n": (clanname, None),
-        "(prefix)": (prefix, None),
     }
+    
+    if old_name:
+        cat_dict["(old_name)"] = (old_name, None)
 
     if random_honor:
         cat_dict["r_h"] = (random_honor, None)
