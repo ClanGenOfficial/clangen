@@ -112,4 +112,28 @@
     ],
     "min_cats": 1,
     "max_cats": 3
-    }]
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "As you are lounging about in a patch of sun, you notice that there is a fresh trail of paw prints leading up to the entrance of your den.",
+        "success_text": {
+            "unscathed_common": "Curious, you poke your head into the den only to see a group of kits poking about the herb store! As soon as you round up the kits, you harshly scold them on the potential dangers that come with playing around in the medicine den. You know it's a hard lesson to hear, but it is a necessary one."
+        },
+        "fail_text": {
+            "unscathed_common": "After a few more moments of sunbathing, you decide to walk over and poke your head into the den. To your horror, a group of kits had managed to get into the herb store. Various different herbs were scattered around the den, some trampled and useless as they fell victim to the kit's game."
+        },
+        "decline_text": "You ignore the paw prints, sighing as the sun warms your pelt. Maybe an apprentice was just collecting some moss.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    }
+    ]

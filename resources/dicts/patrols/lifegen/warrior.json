@@ -399,5 +399,29 @@
         ],
         "min_cats": 1,
         "max_cats": 2
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "During a patrol you spot a strange wooden path that's slightly elevated, it has some birds on it",
+        "success_text": {
+            "unscathed_common": "You leap onto the path, snagging a bird with your claws- your clanmates are impressed with your catch"
+        },
+        "fail_text": {
+            "unscathed_common": "You leap towards the path, but miss the landing slamming into one of the boards- scaring all the birds away. Your clanmates are happy you're okay but are unimpressed by your fall"
+        },
+        "decline_text": "You flick your tail and tell the cats that are on patrol with you that they should hunt somewhere else",
+        "chance_of_success": 50,
+        "exp": 15,
+        "win_skills": [
+            "great hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
     }
+    
 ]

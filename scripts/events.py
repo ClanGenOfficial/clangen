@@ -272,7 +272,9 @@ class Events:
                 self.w_done = False
             elif game.clan.your_cat.moons < 6:
                 for i in range(random.randint(0,5)):
-                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt["kitten"])))
+                    kit_event = Single_Event(random.choice(self.c_txt["kitten"]))
+                    if kit_event not in game.cur_events_list:
+                        game.cur_events_list.append(kit_event)
                 if random.randint(1,2) == 1 and self.kit_once:
                     e = random.choice(self.kit_once)
                     self.kit_once.remove(e)
@@ -298,7 +300,8 @@ class Events:
                             e_txt = random.choice(self.c_txt[game.clan.your_cat.status])
                     else:
                         e_txt = e_txt.replace('mentor1', str(Cat.all_cats[game.clan.your_cat.mentor].name))
-                    game.cur_events_list.append(Single_Event(e_txt))
+                    if Single_Event(e_txt) not in game.cur_events_list:
+                        game.cur_events_list.append(Single_Event(e_txt))
             elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
                 if game.clan.your_cat.former_mentor:
                     if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status == 'medicine cat':
@@ -325,7 +328,10 @@ class Events:
                 game.clan.your_cat.w_done = True
             elif game.clan.your_cat.status != 'elder':
                 for i in range(random.randint(0,5)):
-                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
+                    evt = Single_Event(random.choice(self.c_txt[game.clan.your_cat.status]))
+                    if evt not in game.cur_events_list:
+                        game.cur_events_list.append(evt)
+                    
             elif game.clan.your_cat.moons == 120 and game.clan.your_cat.status == 'elder':
                 ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
                 ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
@@ -334,7 +340,9 @@ class Events:
                 game.cur_events_list.append(Single_Event(ceremony_txt))
             elif game.clan.your_cat.status == 'elder':
                 for i in range(random.randint(0,5)):
-                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt["elder"])))
+                    evt = Single_Event(random.choice(self.c_txt["elder"]))
+                    if evt not in game.cur_events_list:
+                        game.cur_events_list.append(evt)
 
             if len(game.clan.your_cat.apprentice) == checks[0] + 1:
                 resource_dir = "resources/dicts/events/lifegen_events/"

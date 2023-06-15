@@ -112,7 +112,31 @@
     ],
     "min_cats": 1,
     "max_cats": 4
-    }]
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "As you are assigning cats to their designated patrols, one clan member questions you about your choice to set them to a specific border, arguing that another one would be much easier to patrol.",
+        "success_text": {
+            "unscathed_common": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Thankfully, your clanmate seems to understand and thanks you for your explanation."
+        },
+        "fail_text": {
+            "unscathed_common": "While you understand your clan member's point of view, you explain that all of the clan's borders must be checked on regularly, and that they were doing the clan a favor by going on that patrol. Unfortunately, your clanmate fails to see your reasoning and argues back, saying that their point still stands. In the end, you decide to switch them out with another cat, allowing them to join a different patrol."
+        },
+        "decline_text": "You firmly state that you do not have time for cats to question your orders and send the patrol off without any further explanation.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    }
+    ]
     
     
     

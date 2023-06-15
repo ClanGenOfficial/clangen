@@ -62,3 +62,6 @@ class Single_Event():
             types=dict.get("types", None),
             cats_involved=dict.get("cats_involved", None)
         )
+
+    def __eq__(self, obj):
+        return self.text == obj.text

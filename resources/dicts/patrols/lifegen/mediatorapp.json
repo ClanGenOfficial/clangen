@@ -112,4 +112,29 @@
     ],
     "min_cats": 1,
     "max_cats": 2
-    }]
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "While assisting in various menial tasks around camp, you notice a commotion coming from a couple of warriors in the clearing. They seem to be locked in an argument over an event that occurred earlier that day.",
+        "success_text": {
+            "unscathed_common": "With the help of your training, you quickly manage to get the warriors to calm down enough to tell you what the disagreement is about. Now that you have a full understanding of the issue, you begin to mediate back and forth between both cats, attempting to allow them to understand each other's point of view. By the end of it, the two are able to walk away with smooth pelts, the issue being resolved."
+        },
+        "fail_text": {
+            "unscathed_common": "Although you try your best to calm the warriors down, everything you say seems to rub them the wrong way. One spits at you, stating that they don't need help from a half-trained apprentice. You turn away with your pride wounded and a stinging reminder that not every mediation will be a success."
+        },
+        "decline_text": "You shrug and continue your task with a dismissive flick of your tail. Whatever the issue is can be resolved without your help.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    }
+    
+    ]

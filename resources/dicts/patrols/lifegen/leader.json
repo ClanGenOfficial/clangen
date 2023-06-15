@@ -23,6 +23,29 @@
         "max_cats": 6
     },
     {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "As you ponder over a tough decision to make for the clan, you wonder if it would be wise to confide some of your clan members and ask for their opinions and advice.",
+        "success_text": {
+            "unscathed_common": "You cave in and decide to ask the senior warriors what they think about your decision. You and your clanmates are able to have a serious conversation, going over the advantages and disadvantages of your plan and how it could affect the clan's future. You are able to walk away confident in both your decision and the opinions of your clanmates."
+        },
+        "fail_text": {
+            "unscathed_common": "You cave in and decide to ask the senior warriors what they think about your decision. Unfortunately, each of your clanmates seem to have a different opinion from one another and are unable to see each other eye to eye. You break up the conversation and stalk back to your den, your time wasted and your mind split with indecision."
+        },
+        "decline_text": "You decide not to confide in your clanmates, confident in your ability to make decisions on your own.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },    
+    {
         "patrol_id": "gen_your_cat71",
         "biome": "Any",
         "season": "Any",

@@ -25,6 +25,29 @@
         "max_cats": 3
     },
     {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "As you bat a small leaf around camp, you are alerted by pawsteps coming from the camp entrance. The hunting patrol has returned, their jaws laden with prey.",
+        "success_text": {
+            "unscathed_common": "You abandon the leaf in an instant and start bouncing around the patrol, asking a flurry of questions; How did they catch the prey? Was it difficult? The patrol leader seems amused by your enthusiasm and promises to tell you more about the hunt later."
+        },
+        "fail_text": {
+            "unscathed_common": "You abandon the leaf in an instant and start bouncing around the patrol, asking a flurry of questions; How did they catch the prey? Was it difficult? Your excitement evaporates as the patrol leader snaps at you, saying that they don't have time to answer your questions."
+        },
+        "decline_text": "You ignore the patrol and focus your attention on the leaf. Your game is much more important.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },    
+    {
         "patrol_id": "gen_your_cat5",
         "biome": "Any",
         "season": "Any",

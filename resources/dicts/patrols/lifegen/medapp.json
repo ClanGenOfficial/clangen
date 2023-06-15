@@ -22,6 +22,29 @@
     "max_cats": 2
     },
     {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "While out of camp with your mentor, they decide to quiz you on various different herbs and their uses stating that it is important to remember each herb and remedy so that they can be prepared for any kind of emergency.",
+        "success_text": {
+            "unscathed_common": "You are able to easily rattle off each use for the majority of the herbs that your mentor names, taking care to also include how to properly use each herb. When you are finished, your mentor gives you a nod of approval, saying that your training so far is paying off. You continue on, happy to have your mentor's support and approval."
+        },
+        "fail_text": {
+            "unscathed_common": "You try your best, you really do! However, as frustrating as it is, your mind seems to have jumbled up all of the remedies that you had learned. You ultimately fail the quiz. Although your mentor promises that everything will come in time, you can feel their disappointment. You continue on, your head down and your confidence shattered."
+        },
+        "decline_text": "Before your mentor can ask anything, the two of you stumble upon an unknown patch of herbs. Your mentor decides to put the quiz on hold, asking you to help them gather the herbs instead.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },    
+    {
     "patrol_id": "gen_your_cat46",
     "biome": "Any",
     "season": "Any",
