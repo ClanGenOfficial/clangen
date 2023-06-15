@@ -1713,7 +1713,7 @@ class Events:
 
         # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
         # of dislike for. 
-        if random.getrandbits(random_murder_chance - random_murder_chance) == 1:
+        if random.getrandbits(max(1, random_murder_chance - random_murder_chance)) == 1:
             targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
         else:
             # If random murder is not triggered, targets can only be those they have high dislike for. 
