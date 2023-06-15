@@ -1661,30 +1661,39 @@ class Patrol():
         self.kit_lifegen = None
         with open(f"{resource_dir}/lifegen/kit.json", 'r', encoding='ascii') as read_file:
             self.kit_lifegen = ujson.loads(read_file.read())
+            
         self.app_lifegen = None
         with open(f"{resource_dir}/lifegen/app.json", 'r', encoding='ascii') as read_file:
             self.app_lifegen = ujson.loads(read_file.read())
+            
         self.medapp_lifegen = None
         with open(f"{resource_dir}/lifegen/medapp.json", 'r', encoding='ascii') as read_file:
             self.medapp_lifegen = ujson.loads(read_file.read())
+            
         self.mediatorapp_lifegen = None
         with open(f"{resource_dir}/lifegen/mediatorapp.json", 'r', encoding='ascii') as read_file:
             self.mediatorapp_lifegen = ujson.loads(read_file.read())
-        self.med = None
+            
+        self.med_lifegen = None
         with open(f"{resource_dir}/lifegen/med.json", 'r', encoding='ascii') as read_file:
-            self.med = ujson.loads(read_file.read())
-        self.mediator = None
+            self.med_lifegen = ujson.loads(read_file.read())
+            
+        self.mediator_lifegen = None
         with open(f"{resource_dir}/lifegen/mediator.json", 'r', encoding='ascii') as read_file:
-            self.mediator = ujson.loads(read_file.read())
-        self.deputy = None
+            self.mediator_lifegen = ujson.loads(read_file.read())
+            
+        self.deputy_lifegen = None
         with open(f"{resource_dir}/lifegen/deputy.json", 'r', encoding='ascii') as read_file:
-            self.deputy = ujson.loads(read_file.read())
-        self.leader = None
+            self.deputy_lifegen = ujson.loads(read_file.read())
+            
+        self.leader_lifegen = None
         with open(f"{resource_dir}/lifegen/leader.json", 'r', encoding='ascii') as read_file:
-            self.leader = ujson.loads(read_file.read())
+            self.leader_lifegen = ujson.loads(read_file.read())
+            
         self.warrior_lifegen = None
         with open(f"{resource_dir}/lifegen/warrior.json", 'r', encoding='ascii') as read_file:
             self.warrior_lifegen = ujson.loads(read_file.read())
+            
         self.elder_lifegen = None
         with open(f"{resource_dir}/lifegen/elder.json", 'r', encoding='ascii') as read_file:
             self.elder_lifegen = ujson.loads(read_file.read())

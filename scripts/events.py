@@ -279,7 +279,11 @@ class Events:
                     game.cur_events_list.append(Single_Event(e))
             elif game.clan.your_cat.moons == 6:
                 game.clan.your_cat.status_change(game.clan.your_cat.status)
-                ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + ' ceremony'])
+                ceremony_txt = ""
+                if game.clan.your_cat.mentor:
+                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + ' ceremony'])
+                else:
+                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + ' ceremony no mentor'])
                 ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
                 ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
                 ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
@@ -288,16 +292,24 @@ class Events:
                 game.cur_events_list.append(Single_Event(ceremony_txt))
             elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                 for i in range(random.randint(0,5)):
-                    game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
+                    e_txt = random.choice(self.c_txt[game.clan.your_cat.status])
+                    if not game.clan.your_cat.mentor:
+                        while "mentor" in e_txt or "mentor1" in e_txt:
+                            e_txt = random.choice(self.c_txt[game.clan.your_cat.status])
+                    else:
+                        e_txt = e_txt.replace('mentor1', str(Cat.all_cats[game.clan.your_cat.mentor].name))
+                    game.cur_events_list.append(Single_Event(e_txt))
             elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
-                if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status in ['medicine cat', 'mediator']:
-                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
-                else:
+                if game.clan.your_cat.former_mentor:
+                    if Cat.all_cats[game.clan.your_cat.former_mentor[-1]].dead and game.clan.your_cat.status == 'medicine cat':
+                        ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
                     ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony'])
+                    ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.former_mentor[-1]].name))
+                else:
+                    ceremony_txt = random.choice(self.b_txt[game.clan.your_cat.status + '_ceremony_no_mentor'])
                 ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
                 ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
                 ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
-                ceremony_txt = ceremony_txt.replace('m_n', str(Cat.all_cats[game.clan.your_cat.former_mentor[-1]].name))
 
                 random_honor = None
                 resource_dir = "resources/dicts/events/ceremonies/"
@@ -311,16 +323,16 @@ class Events:
                 ceremony_txt = ceremony_txt.replace('honor1', random_honor)
                 game.cur_events_list.insert(0, Single_Event(ceremony_txt))
                 game.clan.your_cat.w_done = True
-            elif game.clan.your_cat.moons < 120:
+            elif game.clan.your_cat.status != 'elder':
                 for i in range(random.randint(0,5)):
                     game.cur_events_list.append(Single_Event(random.choice(self.c_txt[game.clan.your_cat.status])))
-            elif game.clan.your_cat.moons == 120:
+            elif game.clan.your_cat.moons == 120 and game.clan.your_cat.status == 'elder':
                 ceremony_txt = random.choice(self.b_txt['elder_ceremony'])
                 ceremony_txt = ceremony_txt.replace('c_n', str(game.clan.name))
                 ceremony_txt = ceremony_txt.replace('y_c', str(game.clan.your_cat.name))
                 ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
                 game.cur_events_list.append(Single_Event(ceremony_txt))
-            elif game.clan.your_cat.moons > 120:
+            elif game.clan.your_cat.status == 'elder':
                 for i in range(random.randint(0,5)):
                     game.cur_events_list.append(Single_Event(random.choice(self.c_txt["elder"])))
 
@@ -1929,7 +1941,7 @@ class Events:
         if targets:
             chosen_target = random.choice(targets)
             
-            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            # print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
             
@@ -1945,7 +1957,7 @@ class Events:
             kill_chance = kill_chance - facet_modifiers
             kill_chance = max(15, kill_chance)
              
-            print("Final kill chance: " + str(kill_chance))
+            # print("Final kill chance: " + str(kill_chance))
             
             if not int(random.random() * kill_chance):
                 # print("KILL KILL KILL")
