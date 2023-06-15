@@ -136,7 +136,8 @@ class Condition_Events():
                     other_clan = enemy_clan
                 else:
                     other_clan = random.choice(game.clan.all_clans)
-                other_clan_name = f'{other_clan.name}Clan'
+                if other_clan:
+                    other_clan_name = f'{other_clan.name}Clan'
 
                 if other_clan_name == 'None':
                     other_clan = game.clan.all_clans[0]
