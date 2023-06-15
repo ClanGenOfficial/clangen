@@ -2,6 +2,7 @@
 - Added medicine cat, mediator, deputy, and leader paths
 - New apprentice icons by jesmar!
 - Many new events and patrols
+- New menus
 - Fixed several bugs
 
 <strong>v0.1.4</strong>
