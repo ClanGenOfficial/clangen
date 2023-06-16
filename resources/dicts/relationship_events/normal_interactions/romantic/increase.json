@@ -245,7 +245,7 @@
 		}
 	},
 	{
-		"id": "rom_inc_high4",
+		"id": "rom_inc_high5",
 		"intensity": "high",
 		"interactions": [
 			"m_c purrs for a long time at one of r_c's lame jokes."

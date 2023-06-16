@@ -384,7 +384,7 @@ class Pregnancy_Events():
             if cat.status == 'leader':
                 clan.leader_lives -= 1
                 cat.die()
-                death_event = (f" died shortly after kitting.")
+                death_event = (f"died shortly after kitting")
             else:
                 cat.die()
                 death_event = (f"{cat.name} died while kitting.")
@@ -393,7 +393,7 @@ class Pregnancy_Events():
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 if cat.status == 'leader':
-                    death_event = (f" died after a harsh kitting.")
+                    death_event = (f"died after a harsh kitting")
                 else:
                     death_event = (f"{cat.name} after a harsh kitting.")
                 self.history.add_possible_history(cat, 'blood loss', death_text=death_event)

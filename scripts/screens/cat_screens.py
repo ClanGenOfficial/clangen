@@ -2225,8 +2225,8 @@ class ProfileScreen(Screens):
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
             season_x = {
                 "greenleaf": 0 + offset,
-                "leafbare": 160 + offset,
-                "leaffall": 320 + offset,
+                "leaf-bare": 160 + offset,
+                "leaf-fall": 320 + offset,
                 "newleaf": 480 + offset
             }
             
