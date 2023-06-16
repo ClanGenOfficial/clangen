@@ -3364,11 +3364,15 @@ class SpriteInspectScreen(Screens):
         
         
 class TalkScreen(Screens):
+   
 
     def __init__(self, name=None):
         super().__init__(name)
         self.back_button = None
-        self.texts = ["The cat smiles at you. 'Hello!'", "Mrrrp!"]
+        self.resource_dir = "resources/dicts/lifegen_talk/"
+        with open(f"{self.resource_dir}warrior.json",
+                  encoding="ascii") as read_file:
+            self.texts = ujson.loads(read_file.read())['general']
         self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
 
         self.scroll_container = None
@@ -3381,13 +3385,15 @@ class TalkScreen(Screens):
         self.next_frame_time = pygame.time.get_ticks() + self.typing_delay
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((300, 900), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox("", 
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)
         self.text.disable()
         self.profile_elements = {}
+        self.talk_box_img = image_cache.load_image("resources/images/talk_box.png").convert_alpha()
+        
 
 
     def screen_switches(self):
@@ -3395,19 +3401,30 @@ class TalkScreen(Screens):
         self.text_index = 0
         self.frame_index = 0
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        self.resource_dir = "resources/dicts/lifegen_talk/"
+        with open(f"{self.resource_dir}{self.the_cat.status}.json",
+                  encoding="ascii") as read_file:
+            self.texts = ujson.loads(read_file.read())['general']
+        self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
+       
+        self.talk_box = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((178, 942), (1248, 302))),
+                self.talk_box_img
+            )
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
                                         object_id="#back_button", manager=MANAGER)
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((500, 1050), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox("", 
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)
         self.text.disable()
-        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
+        self.profile_elements = {}
+        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((70, 900), (400, 400))),
 
                                                                          pygame.transform.scale(
-                                                                             self.the_cat.sprite,
-                                                                             (300, 300)), manager=MANAGER)
+                                                                             generate_sprite(self.the_cat),
+                                                                             (400, 400)), manager=MANAGER)
         self.profile_elements["cat_image"].disable()
 
 
@@ -3418,6 +3435,10 @@ class TalkScreen(Screens):
         del self.scroll_container
         self.back_button.kill()
         del self.back_button
+        self.profile_elements["cat_image"].kill()
+        del self.profile_elements
+        self.talk_box.kill()
+        del self.talk_box
 
     def on_use(self):
             
