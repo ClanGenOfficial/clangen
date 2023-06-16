@@ -1,5 +1,5 @@
 from .base_screens import Screens
-from .cat_screens import ProfileScreen, CeremonyScreen, RoleScreen, SpriteInspectScreen
+from .cat_screens import ProfileScreen, CeremonyScreen, RoleScreen, SpriteInspectScreen, TalkScreen
 from .clan_creation_screens import MakeClanScreen
 from .catlist_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen, MedDenScreen
 from .event_screens import EventsScreen
@@ -39,6 +39,7 @@ screens = Screens()
 
 profile_screen = ProfileScreen('profile screen')
 ceremony_screen = CeremonyScreen('ceremony screen')
+talk_screen = TalkScreen('talk screen')
 role_screen = RoleScreen('role screen')
 sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
 

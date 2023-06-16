@@ -208,6 +208,9 @@ class ProfileScreen(Screens):
             elif "leader_ceremony" in self.profile_elements and \
                     event.ui_element == self.profile_elements["leader_ceremony"]:
                 self.change_screen('ceremony screen')
+            elif "talk" in self.profile_elements and \
+                    event.ui_element == self.profile_elements["talk"]:
+                self.change_screen('talk screen')
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen('med den screen')
             elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
@@ -590,6 +593,21 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
+            
+        if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
+            self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                (766, 220), (68, 68))),
+                "",
+                object_id="#talk_button",
+                tool_tip_text="Talk to this Cat", manager=MANAGER
+            )
+        elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+            self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                (850, 220), (68, 68))),
+                "",
+                object_id="#talk_button",
+                tool_tip_text="Talk to this Cat", manager=MANAGER
+            )
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
@@ -3343,3 +3361,91 @@ class SpriteInspectScreen(Screens):
             return full_image
         else:
             return self.cat_image
+        
+        
+class TalkScreen(Screens):
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.back_button = None
+        self.texts = ["The cat smiles at you. 'Hello!'", "Mrrrp!"]
+        self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
+
+        self.scroll_container = None
+        self.life_text = None
+        self.header = None
+        self.the_cat = None
+        self.text_index = 0
+        self.frame_index = 0
+        self.typing_delay = 50
+        self.next_frame_time = pygame.time.get_ticks() + self.typing_delay
+        self.clock = pygame.time.Clock()
+        self.font = pygame.font.Font(None, 32)
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
+        self.text = pygame_gui.elements.UITextBox("", 
+                                                  scale(pygame.Rect((0, 0), (1100, -1))),
+                                                  object_id=get_text_box_theme("#text_box_30_horizleft"),
+                                                  container=self.scroll_container, manager=MANAGER)
+        self.text.disable()
+        self.profile_elements = {}
+
+
+    def screen_switches(self):
+        self.hide_menu_buttons()
+        self.text_index = 0
+        self.frame_index = 0
+        self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
+                                        object_id="#back_button", manager=MANAGER)
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
+        self.text = pygame_gui.elements.UITextBox("", 
+                                                  scale(pygame.Rect((0, 0), (1100, -1))),
+                                                  object_id=get_text_box_theme("#text_box_30_horizleft"),
+                                                  container=self.scroll_container, manager=MANAGER)
+        self.text.disable()
+        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
+
+                                                                         pygame.transform.scale(
+                                                                             self.the_cat.sprite,
+                                                                             (300, 300)), manager=MANAGER)
+        self.profile_elements["cat_image"].disable()
+
+
+    def exit_screen(self):
+        self.text.kill()
+        del self.text
+        self.scroll_container.kill()
+        del self.scroll_container
+        self.back_button.kill()
+        del self.back_button
+
+    def on_use(self):
+            
+        now = pygame.time.get_ticks()
+        if now >= self.next_frame_time and self.frame_index < len(self.text_frames[self.text_index]) - 1:
+            self.frame_index += 1
+            self.next_frame_time = now + self.typing_delay
+
+        # Always render the current frame
+        self.text.html_text = self.text_frames[self.text_index][self.frame_index]
+        self.text.rebuild()
+        self.clock.tick(60)
+
+    def handle_event(self, event):
+        if game.switches['window_open']:
+            pass
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+        
+        elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
+            if event.key == pygame.K_ESCAPE:
+                self.change_screen('profile screen')
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+                if self.frame_index == len(self.text_frames[self.text_index]) - 1:
+                    if self.text_index < len(self.texts) - 1:
+                        self.text_index += 1
+                        self.frame_index = 0
+                else:
+                    self.frame_index = len(self.text_frames[self.text_index]) - 1  # Go to the last frame
+        return
