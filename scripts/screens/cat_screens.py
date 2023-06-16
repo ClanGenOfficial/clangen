@@ -593,21 +593,21 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
-            
-        if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
-            self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                (766, 220), (68, 68))),
-                "",
-                object_id="#talk_button",
-                tool_tip_text="Talk to this Cat", manager=MANAGER
-            )
-        elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
-            self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                (850, 220), (68, 68))),
-                "",
-                object_id="#talk_button",
-                tool_tip_text="Talk to this Cat", manager=MANAGER
-            )
+        if self.the_cat.ID != game.clan.your_cat.ID:    
+            if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                    (766, 220), (68, 68))),
+                    "",
+                    object_id="#talk_button",
+                    tool_tip_text="Talk to this Cat", manager=MANAGER
+                )
+            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                    (850, 220), (68, 68))),
+                    "",
+                    object_id="#talk_button",
+                    tool_tip_text="Talk to this Cat", manager=MANAGER
+                )
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
@@ -3381,7 +3381,7 @@ class TalkScreen(Screens):
         self.the_cat = None
         self.text_index = 0
         self.frame_index = 0
-        self.typing_delay = 50
+        self.typing_delay = 40
         self.next_frame_time = pygame.time.get_ticks() + self.typing_delay
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)
@@ -3401,25 +3401,36 @@ class TalkScreen(Screens):
         self.text_index = 0
         self.frame_index = 0
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        self.profile_elements = {}
+
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(str(self.the_cat.name),
+                                                                          scale(pygame.Rect((500, 870), (-1, 80))),
+                                                                          object_id=get_text_box_theme(
+                                                                              "#text_box_40_horizcenter"),
+                                                                          manager=MANAGER)
         self.resource_dir = "resources/dicts/lifegen_talk/"
-        with open(f"{self.resource_dir}{self.the_cat.status}.json",
+        if self.the_cat.age == 'newborn':
+            with open(f"{self.resource_dir}newborn.json",
                   encoding="ascii") as read_file:
-            self.texts = ujson.loads(read_file.read())['general']
+                self.texts = ujson.loads(read_file.read())['general']
+        else:
+            with open(f"{self.resource_dir}{self.the_cat.status}.json",
+                    encoding="ascii") as read_file:
+                self.texts = ujson.loads(read_file.read())['general']
         self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
-       
+        
         self.talk_box = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((178, 942), (1248, 302))),
                 self.talk_box_img
             )
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
                                         object_id="#back_button", manager=MANAGER)
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((500, 1050), (1400, 1000))))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((500, 970), (900, 300))))
         self.text = pygame_gui.elements.UITextBox("", 
-                                                  scale(pygame.Rect((0, 0), (1100, -1))),
+                                                  scale(pygame.Rect((0, 0), (900, -100))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)
         self.text.disable()
-        self.profile_elements = {}
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((70, 900), (400, 400))),
 
                                                                          pygame.transform.scale(
@@ -3436,6 +3447,7 @@ class TalkScreen(Screens):
         self.back_button.kill()
         del self.back_button
         self.profile_elements["cat_image"].kill()
+        self.profile_elements["cat_name"].kill()
         del self.profile_elements
         self.talk_box.kill()
         del self.talk_box
