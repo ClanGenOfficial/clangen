@@ -30,7 +30,7 @@ class MiscEvents():
         else:
             other_clan = random.choice(game.clan.all_clans)
         
-        other_clan = None
+        other_clan_name = None
         if other_clan:
             other_clan_name = f'{other_clan.name}Clan'
 
