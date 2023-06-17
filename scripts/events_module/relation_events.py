@@ -146,7 +146,8 @@ class Relation_Events():
                                            current_relationship.romantic_love
                                            > other_mate_relationship.romantic_love)
                 else:
-                    cat_to_mate.relationships[cat_to.ID] = Relationship(cat_to_mate, cat_to, True)
+                    cat_to_mate.create_one_relationship(cat_to)
+                    cat_to_mate.relationships[cat_to.ID].mate = True
                     other_mate_relationship = cat_to.relationships[cat_to_mate.ID]
 
             if ((love_over_30 and not normal_chance) or (bigger_than_current and not bigger_love_chance)):
@@ -242,9 +243,9 @@ class Relation_Events():
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             if inter_cat.ID not in cat.relationships:
-                cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+                cat.create_one_relationship(inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+                inter_cat.create_one_relationship(cat)
 
             cat_to_inter = cat.relationships[inter_cat.ID].platonic_like > 10 or\
                 cat.relationships[inter_cat.ID].comfortable > 10
@@ -400,9 +401,9 @@ class Relation_Events():
             if inter_cat.ID == main_cat.ID:
                 continue
             if cat_to.ID not in cat_from.relationships:
-                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
-                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
+                    cat_to.create_one_relationship(cat_from)
                 continue
 
             relationship = cat_from.relationships[cat_to.ID]

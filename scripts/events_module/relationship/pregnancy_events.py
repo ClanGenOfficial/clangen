@@ -90,8 +90,7 @@ class Pregnancy_Events():
         if second_parent and second_parent.ID in cat.relationships:
             second_parent_relation = cat.relationships[second_parent.ID]
         elif second_parent:
-            second_parent_relation = Relationship(cat, second_parent)
-            cat.relationships[second_parent.ID] = second_parent_relation
+            second_parent_relation = cat.create_one_relationship(second_parent)
 
         # check if the second_parent is not none and if they also can have kits
         can_have_kits, kits_are_adopted = self.check_second_parent(
@@ -322,7 +321,7 @@ class Pregnancy_Events():
                 if cat.outside and not cat.exiled:
                     kit.backstory = "outsider3"
                 kit.relationships = {}
-                kit.relationships[cat.ID] = Relationship(kit, cat)
+                kit.create_one_relationship(cat)
 
         if kits_amount == 1:
             insert = 'single kitten'
@@ -510,8 +509,7 @@ class Pregnancy_Events():
         if mate and mate.ID in cat.relationships:
             mate_relation = cat.relationships[mate.ID]
         elif mate:
-            mate_relation = Relationship(cat, mate, True)
-            cat.relationships[mate.ID] = mate_relation
+            mate_relation = cat.create_one_relationship(mate)
 
 
         # LOVE AFFAIR
@@ -879,7 +877,7 @@ class Pregnancy_Events():
                 if not second_parent_relation.opposite_relationship:
                     second_parent_relation.link_relationship()
             else:
-                second_parent_relation = Relationship(first_parent, second_parent)
+                second_parent_relation = first_parent.create_one_relationship(second_parent)
 
             average_romantic_love = (second_parent_relation.romantic_love +
                                      second_parent_relation.opposite_relationship.romantic_love) / 2

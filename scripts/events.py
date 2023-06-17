@@ -1713,16 +1713,28 @@ class Events:
 
         # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
         # of dislike for. 
-        if random.getrandbits(max(1, random_murder_chance - random_murder_chance)) == 1:
+        special_murder = False
+        if random.getrandbits(max(1, random_murder_chance)) == 1:
+            special_murder = True
             targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-        else:
-            # If random murder is not triggered, targets can only be those they have high dislike for. 
-            hate_relation = [i for i in relationships if
-                         i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-            targets.extend(hate_relation)
-            resent_relation = [i for i in relationships if
-                            i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
-            targets.extend(resent_relation)
+            if not targets:
+                return
+            
+            chosen_target = random.choice(targets)
+            print("Random Murder!", str(cat.name), str(chosen_target.name))
+            self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, self.at_war,
+                                                self.enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
+            
+            return
+            
+   
+        # If random murder is not triggered, targets can only be those they have high dislike for. 
+        hate_relation = [i for i in relationships if
+                        i.dislike > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        targets.extend(hate_relation)
+        resent_relation = [i for i in relationships if
+                        i.jealousy > 50 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
+        targets.extend(resent_relation)
 
         # if we have some, then we need to decide if this cat will kill
         if targets:

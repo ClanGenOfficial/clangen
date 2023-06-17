@@ -14,7 +14,7 @@ from scripts.event_class import Single_Event
 # ---------------------------------------------------------------------------- #
 
 class Death_Events():
-    """All events with a connection to conditions."""
+    """All events with a connection to death."""
 
     def __init__(self) -> None:
         self.event_sums = 0

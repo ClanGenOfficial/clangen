@@ -1298,7 +1298,7 @@ class Cat():
 
         chosen_cat = choice(cats_to_choose)
         if chosen_cat.ID not in self.relationships:
-            self.relationships[chosen_cat.ID] = Relationship(self, chosen_cat)
+            self.create_one_relationship(chosen_cat)
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
@@ -2057,7 +2057,8 @@ class Cat():
         if breakup:
             if not self.dead:
                 if other_cat.ID not in self.relationships:
-                    self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                    self.create_one_relationship(other_cat)
+                    self.relationships[other_cat.ID].mate = True
                 self_relationship = self.relationships[other_cat.ID]
                 self_relationship.romantic_love -= 40
                 self_relationship.comfortable -= 20
@@ -2068,7 +2069,8 @@ class Cat():
 
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
-                    other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                    other_cat.create_one_relationship(self)
+                    other_cat.relationships[self.ID].mate = True
                 other_relationship = other_cat.relationships[self.ID]
                 other_relationship.romantic_love -= 40
                 other_relationship.comfortable -= 20
@@ -2112,7 +2114,8 @@ class Cat():
         # Set starting relationship values
         if not self.dead:
             if other_cat.ID not in self.relationships:
-                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                self.create_one_relationship(other_cat)
+                self.relationships[other_cat.ID].mate =  True
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.romantic_love += 20
             self_relationship.comfortable += 20
@@ -2121,7 +2124,8 @@ class Cat():
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                other_cat.create_one_relationship(self)
+                other_cat.relationships[self.ID].mate = True
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.romantic_love += 20
             other_relationship.comfortable += 20
@@ -2137,6 +2141,11 @@ class Cat():
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
         if other_cat.ID in self.relationships:
             return None
+        
+        if other_cat == self:
+            print("Attempted to create a relationship with self!")
+            return None
+        
         relationship = Relationship(self, other_cat)
         self.relationships[other_cat.ID] = relationship
         return relationship
@@ -2282,14 +2291,14 @@ class Cat():
             if not os.path.exists(relation_cat_directory):
                 self.init_all_relationships()
                 for cat in Cat.all_cats.values():
-                    cat.relationships[self.ID] = Relationship(cat, self)
+                    cat.create_one_relationship(self)
                 return
             try:
                 with open(relation_cat_directory, 'r') as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
-                        if cat_to is None:
+                        if cat_to is None or rel['cat_to_id'] == self.ID:
                             continue
                         new_rel = Relationship(
                             cat_from=self,
