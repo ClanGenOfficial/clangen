@@ -734,7 +734,67 @@
         }
       ]
     },
-
+    "competitive_warrior": {
+      "tags": [],
+      "lead_trait": ["competitive"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Puffing out {PRONOUN/r_c/poss} chest, r_c gives m_c a life for [virtue] and dares {PRONOUN/m_c/object} to make c_n an even better Clan than anyone ever could!",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
+    "flamboyant_warrior": {
+      "tags": [],
+      "lead_trait": ["flamboyant"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "m_c had always been known for a dramatic persona, but r_c hopes that the new leader will let that become an asset than a bane. r_c gives the c_n cat a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
+    
+    "grumpy_warrior": {
+      "tags": [],
+      "lead_trait": ["grumpy"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Despite r_c's best efforts, m_c didn't once crack a smile during the starry spirit's part of the ceremony. r_c awkwardly gives a life for [virtue] before leaving the grumpy cat behind.",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
+    "rebellious_warrior": {
+      "tags": [],
+      "lead_trait": ["Rebellious"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Not all of StarClan is as rigid as the Code some cling to. r_c hopes that m_c will use {PRONOUN/m_c/poss} rebellious nature to make c_n a better place as {PRONOUN/r_c/subject} {VERB/r_c/gives/give} a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
+    "sincere_warrior": {
+      "tags": [],
+      "lead_trait": ["sincere"],
+      "star_trait": [],
+      "rank": ["warrior", "deputy"],
+      "life_giving": [
+        {
+          "text": "Sincerity and honesty was one of the most prominent trait of a StarClan cat. r_c presses {PRONOUN/r_c/poss} nose against m_c and with a serene voice gives the new leader a life for [virtue].",
+          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
+        }
+      ]
+    },
     "default_kit": {
       "tags": [],
       "lead_trait": [],

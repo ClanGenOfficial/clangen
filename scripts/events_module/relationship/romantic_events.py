@@ -212,6 +212,9 @@ class Romantic_Events():
         become_mate = False
         condition = game.config["mates"]["confession"]["accept_confession"]
         rel_to_check = highest_romantic_relation.opposite_relationship
+        if not rel_to_check:
+            highest_romantic_relation.link_relationship()
+            rel_to_check = highest_romantic_relation.opposite_relationship
         if self.relationship_fulfill_condition(rel_to_check, condition):
             become_mate = True
             mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
@@ -364,6 +367,8 @@ class Romantic_Events():
             - negative number: value has to be lower than number
         
         """
+        if not relationship:
+            return False
         if "romantic" in condition and condition["romantic"] != 0:
             if condition["romantic"] > 0 and relationship.romantic_love < condition["romantic"]:
                 return False
