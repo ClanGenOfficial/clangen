@@ -706,7 +706,7 @@ class MakeClanScreen(Screens):
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
                                                    str(selected.personality.trait) + "\n" +
-                                                   str(selected.skills.skill_string(short=True))))
+                                                   str(selected.skills.skill_string())))
             self.elements['cat_info'].show()
         else:
             self.elements['next_step'].disable()
@@ -752,7 +752,7 @@ class MakeClanScreen(Screens):
                     cat_object=game.choose_cats[u], manager=MANAGER)
             elif game.choose_cats[u] in [self.leader, self.deputy, self.med_cat] + self.members:
                 self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
+                    scale(pygame.Rect((1400, 260 + 100 * (u - 6)), (100, 100))),
                     game.choose_cats[u].sprite,
                     cat_object=game.choose_cats[u], manager=MANAGER)
                 self.elements["cat" + str(u)].disable()
@@ -766,7 +766,7 @@ class MakeClanScreen(Screens):
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
-        return f"<b>{cat.name}</b><br>{cat.gender}<br>{cat.age}<br>{cat.personality.trait}"
+        return f"<b>{cat.name}</b><br>{cat.gender}<br>{cat.age}<br>{cat.personality.trait}<br>{cat.skills.skill_string(short=True)}"
 
     def open_game_mode(self):
         # Clear previous screen
@@ -951,7 +951,7 @@ class MakeClanScreen(Screens):
         self.clan_name_header()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -993,7 +993,7 @@ class MakeClanScreen(Screens):
 
         # info for chosen cats:
         self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
-                                                                  scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -1042,7 +1042,7 @@ class MakeClanScreen(Screens):
 
         # info for chosen cats:
         self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
-                                                                  scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
