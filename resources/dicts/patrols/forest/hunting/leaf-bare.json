@@ -2233,6 +2233,264 @@
         }
     },
     {
+        "patrol_id": "fst_hunt_random_leafbare_siblings2warriorslocked1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_dislike", "rel_patrol", "no_change_fail"],
+        "intro_text": "As the frosts compete with sludgey, half-melted snow for the title of Most Unpleasent Ground Surface, p_l is out on a hunting patrol with r_c.",
+        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Three f_tp_p are nothing to sniff at in leaf-bare as a hunting success, but stars above being alone with r_c makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
+            "unscathed_rare": "The hunting patrol isn't very successful, yet it matters not a wit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
+	        "stat_skill": "s_c nets them a healthy f_mp_s to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?"
+            },
+        "fail_text": {
+	        "unscathed_common": "It isn't a very successful hunt - they'll have to head out again for more soon."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings2warriorslocked2",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "platonic", "dislike", "comfort", "rel_patrol", "no_change_fail"],
+        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} sibling. Especially when the weather has kept them in camp too often recently!",
+        "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "A scruffy f_tp_s, a bundle of f_tp_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
+            "unscathed_rare": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized f_mp_s with some f_tp_p on the side for the fresh-kill pile.",
+	        "stat_skill": "r_c is proud of s_c, watching s_c dart among the treetops."
+            },
+        "fail_text": {
+	        "unscathed_common": "They don't manage anything like the number of catches they were both expecting to get - a bit disappointing, even if they're not entirely empty-pawed."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings2warriorslocked3",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "platonic", "comfort", "rel_patrol", "no_change_fail", "injury", "dislocated joint"],
+        "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
+        "decline_text": "Cancel that - a border patrol needs backup.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Watching r_c execute a fantastic leap to bring down a f_mp_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it as they move on to the next hunting ground.",
+            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two f_mp_p for the fresh-kill pile r_c spends a bit just chasing p_l around the forest, batting at each other in a moment of silliness.",
+	        "stat_skill": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from squirrels, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} from branch to branch in the canopy."
+            },
+        "fail_text": {
+	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
+            "injury": "r_c sees a squirrel {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly - {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} out a front paw to stop {PRONOUN/r_c/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!"
+            },
+        "win_skills": ["CLIMBER,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings2warriorslocked4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_jealous", "patrol_to_p_l", "big_change", "injury", "severe headache"],
+        "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
+        "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "p_l grabs a still-leaf-fall-plump f_mp_s that {PRONOUN/p_l/subject} can barely carry, and r_c congratulates {PRONOUN/p_l/object}, secretly wondering if {PRONOUN/r_c/subject}'ll ever manage to surpass {PRONOUN/r_c/poss} sibling's achievements.",
+            "unscathed_rare": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back a good catch of prey for the clan, a contribution that just about makes up for r_c's meagre offerings."
+            },
+        "fail_text": {
+	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
+            "injury": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp."
+            },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings2warriorslocked5",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_dislike", "patrol_to_r_c", "big_change", "no_change_fail", "injury", "diarrhea"],
+        "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where mature trees protect their prey from the worse of leaf-bare.",
+        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Together, they collect a couple f_tp_p and an old f_mp_s. It should be a great patrol, returning with reasonable prey in the harsh season - but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
+            "unscathed_rare": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} sibling works with {PRONOUN/r_c/object} long enough to bring back sufficient prey - but no longer."
+            },
+        "fail_text": {
+	        "unscathed_common": "Today is just not their day.",
+            "injury": "The patrol tries to hunt, but r_c keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww."
+            },
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings3to6warriorslocked1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_dislike", "rel_patrol", "no_change_fail"],
+        "intro_text": "As the frosts compete with sludgey, half-melted snow for the title of Most Unpleasent Ground Surface, p_l is out on a hunting patrol with their siblings.",
+        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "A f_mp_s and three f_tp_p is nothing to sniff at in leaf-bare as a hunting success, but stars above being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
+            "unscathed_rare": "The hunting patrol isn't very successful, yet matters not a wit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable.",
+	        "stat_skill": "s_c nets them two healthy f_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?"
+            },
+        "fail_text": {
+	        "unscathed_common": "It isn't a very successful hunt - they'll have to head out again for more soon."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings3to6warriorslocked2",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "platonic", "dislike", "comfort", "rel_patrol", "no_change_fail"],
+        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
+        "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "A scruffy f_tp_s, a bundle of f_tp_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
+            "unscathed_rare": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized f_mp_s with some f_tp_p on the side for the fresh-kill pile.",
+	        "stat_skill": "The siblings are proud of s_c, watching s_c dart among the treetops."
+            },
+        "fail_text": {
+	        "unscathed_common": "They don't manage anything like the number of catches they were all expecting to get - a bit disappointing, even if they're not entirely empty-pawed."
+            },
+        "win_skills": ["CLIMBER,1", "HUNTER,1"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings3to6warriorslocked3",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "platonic", "comfort", "rel_patrol", "no_change_fail", "injury", "dislocated joint"],
+        "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
+        "decline_text": "Cancel that - a border patrol needs backup.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Watching r_c execute a fantastic leap to bring down a f_mp_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it together as they move on to the next hunting ground.",
+            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two f_mp_p and a f_tp_s for the fresh-kill pile r_c spends a bit just chasing their siblings around the forest, batting at each other in a moment of silliness.",
+	        "stat_skill": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from squirrels, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} from branch to branch in the canopy."
+            },
+        "fail_text": {
+	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
+            "injury": "r_c sees a squirrel {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly - {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} out a front paw to stop {PRONOUN/r_c/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!"
+            },
+        "win_skills": ["CLIMBER,1"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings3to6warriorslocked4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_jealous", "patrol_to_p_l", "big_change", "injury", "severe headache"],
+        "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
+        "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "p_l grabs a still-leaf-fall-plump f_mp_s that {PRONOUN/p_l/subject} can barely carry, and r_c congratulates {PRONOUN/p_l/object}, secretly wondering if {PRONOUN/r_c/subject}'ll ever manage to surpass {PRONOUN/r_c/poss} sibling's achievements.",
+            "unscathed_rare": "r_c always feels like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back a good catch of prey for the clan, a contribution that just about makes up for r_c's meagre offerings."
+            },
+        "fail_text": {
+	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
+            "injury": "r_c comes down with a crippling headache, making {PRONOUN/r_c/object} stagger, dizzy and weak, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} helped back to camp."
+            },
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbare_siblings3to6warriorslocked5",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "small_prey", "no_app", "pos_dislike", "patrol_to_r_c", "big_change", "no_change_fail", "injury", "diarrhea"],
+        "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where mature trees protect their prey from the worse of leaf-bare.",
+        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Together, they collect a couple f_tp_p and an old f_mp_s. It should be a great patrol, returning with reasonable prey in the harsh season - but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
+            "unscathed_rare": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} siblings work with {PRONOUN/r_c/object} long enough to bring back sufficient prey - but no longer."
+            },
+        "fail_text": {
+	        "unscathed_common": "Today is just not their day.",
+            "injury": "The patrol tries to hunt, but r_c keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww."
+            },
+        "min_cats": 3,
+        "max_cats": 6,
+        "constraints": {
+	        "relationship": [
+                "siblings"
+	        ]
+        }
+    },
+    {
         "patrol_id": "fst_hunt_mouse4",
         "biome": "forest",
         "season": "leaf-bare",
