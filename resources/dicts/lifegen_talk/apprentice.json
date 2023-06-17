@@ -1,5 +1,30 @@
-
 {
-    "general": ["hi", "hello!", "mrp"
-    ]
-}
+    "app_1": [
+        [
+            "app",
+            "crush"
+        ],
+        [
+            "H-hi there! Didn't see you there. Well, I mean, I saw you, but I didn't expect to... um... run into you here, at the fresh-kill pile. Yeah, I was just... grabbing something to eat.",
+            "Oh, you're here for the same reason? Great, great... um, any particular prey you fancy today? I mean, there's a good selection.",
+            "It's a... a nice day, isn't it? The sun's out, the birds are singing.. .But it's been a busy day, you know. Hunting, patrolling, the usual warrior stuff.",
+            "You're... you're looking strong. I mean, your fur, it's very... shiny today. Must be all that grooming. Not that I've been watching you groom. That would be weird. I just... happened to notice.",
+            "Well, I should... I should probably get going. Got to... eat this vole and... stuff. Yeah. Nice chatting with you. Maybe we could... um... do it again sometime? If you want to, I mean. No pressure.",
+            "Have a good day... and... um... yeah. See you later!"
+        ]
+    ],
+    "app_2": [
+        [
+            "app"
+        ],
+        [
+            "Hey there! Finally got away from your mentor's watchful gaze, huh? Mine's been keeping me on my paws all day. I swear, if I have to stalk one more imaginary mouse...",
+            "I saw you in battle training earlier, though. You're getting really good! That move you pulled off... what was it again? The duck and roll? It looked really cool. Maybe you could show me sometime?",
+            "And speaking of cool things, have you seen the elder's den lately? They've got a whole new stash of fresh moss. It looks so comfy! We should totally sneak in there one night and have a sleepover. We'll tell ghost stories and everything!",
+            "Oh, and did you hear about the Gathering tomorrow night? I can't wait to see the other Clans. I wonder what their apprentices are like. Do you think they train as hard as we do? Or maybe they're all super lazy and we're going to be the best warriors ever!",
+            "But before that, we've got to finish our chores. Ugh, I hate cleaning out the elder's ticks. They're so gross. And they always tell the same stories over and over. But I guess it's all part of being an apprentice.",
+            "Anyway, we should probably get back to it. Don't want our mentors catching us slacking off. But later, let's meet at the training hollow. Maybe we can practice that move of yours?"
+        ]
+    ],
+    "app_3": [[],[]]
+    }
