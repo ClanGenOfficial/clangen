@@ -1421,7 +1421,8 @@ class ProfileScreen(Screens):
             death_number = len(death_history)
             for index, death in enumerate(death_history):
                 found_murder = False  # Add this line to track if a matching murder event is found
-                if murder_history:
+                if "is_victim" in murder_history:
+                    print(str(murder_history))
                     for event in murder_history["is_victim"]:
                         text = self.get_text_for_murder_event(event, death)
                         if text is not None:
