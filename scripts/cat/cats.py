@@ -1982,11 +1982,11 @@ class Cat():
             potential_mentors = []
             priority_mentors = []
             for cat in self.all_cats.values():
-                if self.is_valid_mentor(cat) and not cat.not_working():
+                if self.is_valid_mentor(cat):
                     potential_mentors.append(cat)
-                    if not cat.apprentice:  # length of list is 0
+                    if not cat.apprentice and not cat.not_working(): 
                         priority_mentors.append(cat)
-            # First try for a cat who currently has no apprentices
+            # First try for a cat who currently has no apprentices and is working
             if priority_mentors:  # length of list > 0
                 new_mentor = choice(priority_mentors)
             elif potential_mentors:  # length of list > 0
