@@ -261,7 +261,7 @@ for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MIN
     'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
     sprites.make_group('whitepatches', (a, 5), f'white{i}')
 # acorn's woodpecker, boots, miss, cow and cow2
-for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO']):
+for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB']):
     sprites.make_group('whitepatches', (a, 6), 'white' + i)
 
 # single (solid)
