@@ -2183,6 +2183,92 @@
         "max_cats": 6
     },
     {
+        "patrol_id": "gen_train_BFFs_platonic502locked1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["training", "platonic", "comfort", "dislike", "jealousy", "rel_patrol"],
+        "intro_text": "p_l and r_c twine around each other in camp, chirping excitedly with the anticipation of getting to go out training together - it's been forever since they've been able to hang out!",
+        "decline_text": "Unfortunately, the cats just don't have time to go out training today. They headbutt softly, promising to catch up another time.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Like birds into flight the two cats leap into training, bounding in joyful synchronization, the strength of their friendship lending itself to fantastic risks and complete trust, their play-battle as much game as exercise, round and round in wild abandon until they both lie, utterly exhausted, perfectly content. Their purrs mingle quietly as they share tongues, exchanging secrets and dreams.",
+	        "unscathed_rare": "They push themselves hard, rushing through their training to get to steal more time to catch up together. And yet, with r_c, even stretching {PRONOUN/p_l/poss} speed to its limit feels like a game to p_l. Still, when both of them collpase in a sunbeam, heaving for breath and stretching out muscles that want to cramp, it's p_l's favourite bit of the day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/knead/kneads} helpfully at r_c's legs, easing the sore muscles as they both relax in the sun together.",
+	        "stat_trait": "They've barely left camp before s_c is off, leading them both on an enchanting, feral, glorious romp through the territory, heedless of any barrier in {PRONOUN/s_c/poss} way, wild and free and rich in pure excitement. To crash along with {PRONOUN/s_c/poss} best friend, laughing and skidding and bouncing like kits, it's like fresh prey-blood on the tonuge, like the first suns of newleaf, it's just - essential. They need to do this more often!"
+        },
+        "fail_text": {
+	"unscathed_common": "It's just not the day for it - first r_c trips on a root, but is fine to continue, then p_l makes a comment {PRONOUN/p_l/subject} {VERB/p_l/know/knows} is dumb - it just doesn't go how they'd hoped for.",
+	"unscathed_stat": "They head out of camp, and r_c is nearly giddy with the chance to spend time together, but s_c just isn't able to lighten up for long enough to enjoy it. There's something weighing {PRONOUN/s_c/object} down, like rot in crowfood, and {PRONOUN/s_c/subject} {VERB/s_c/apologise/apologises} to r_c, cutting the patrol short."
+        },
+        "win_trait": ["childish", "playful", "daring", "adventurous", "shameless", "competitive", "oblivious", "flamboyant"],
+        "fail_trait": ["cold", "insecure", "strict", "arrogant", "grumpy", "gloomy"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "platonic_50"
+            ]
+                }
+},
+{
+    "patrol_id": "gen_train_leaderparentchildlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "leader", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "minor_injury"],
+    "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
+    "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": {
+        "unscathed_common": "Trying not to let on how much care is going into choosing each mew, p_l starts up a series of quiet complaints, shared with app1 like it's no big thing, talking about how hard it is to feel so distant from the rest of c_n, how {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so glad {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} got app1, how {PRONOUN/p_l/subject} only {VERB/p_l/want/wants} to be seen as another cat trying {PRONOUN/p_l/poss} hardest, just like everyone else. app1 doesn't reply - but {PRONOUN/app1/subject} {VERB/app1/do/does} brush against p_l, the touch of {PRONOUN/app1/poss} pelt a massive comfort.",
+        "unscathed_rare": "p_l sits down with app1 in the training grounds. What's wrong? As the leader, p_l could - app1 cuts {PRONOUN/p_l/object} off. Yes, app1 knows {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} the leader, <i>everyone</i> stars-damned knows p_l is the leader! That's the problem! Everyone expects so much, just because app1 happened to be born into p_l's nest, like that's helped app1 at all! p_l curls around them sympathetically, listening, heart sinking to hear the burden placed on {PRONOUN/p_l/poss} child by the clan.",
+        "stat_trait": "Could... could they just spend time together, p_l asks, hopeful and fragile. {VERB/p_l/Have/Has} {PRONOUN/p_l/subject} done something wrong? But no, no, app1 rushes to reassure {PRONOUN/p_l/object}, all the stiffness drained from the apprentice by {PRONOUN/app1/poss} urgency to comfort. No, app1 just wants to be the best for p_l, {PRONOUN/app1/subject} {VERB/app1/see/sees} p_l leading the Clan with such strength and {PRONOUN/app1/subject} just {VERB/app1/want/wants} p_l to be proud of {PRONOUN/app1/object}!"
+    },
+    "fail_text": {
+        "unscathed_common": "p_l tries to talk to app1 during a break, but it doesn't work. Maybe this relationship is just another thing p_l has sacrificed to lead c_n. The thought bites at {PRONOUN/p_l/object}.",
+        "injury": "p_l tries to get app1 to slow down long enough to talk to {PRONOUN/p_l/object}, to find out what's gotten into {PRONOUN/p_l/poss} kit, but app1 races away, shouting back something about {PRONOUN/app1/poss} skills. By the time p_l catches up, app1 has already faceplanted into the ground, hard enough to need to return to camp in awkward silence.",
+        "stat_injury": "p_l's attempts to open up a honest conversation with app1 are met with strong teenage derision, and p_l resolves to try again later. app1 doesn't give {PRONOUN/p_l/object} the chance, instead getting injured while waltzing around ignoring p_l's instructions."
+    },
+    "win_trait": ["compassionate", "thoughtful", "calm", "careful", "faithful", "loving", "loyal", "wise", "sincere"],
+    "fail_trait": ["troublesome", "ambitious", "childish", "cold", "arrogant", "competitive", "rebellious"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "constraints": {
+        "relationship": [
+            "parent/child"
+        ]
+            }
+},
+{
+    "patrol_id": "gen_train_deputyparentchildlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "leader", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "minor_injury"],
+    "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
+    "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": {
+        "unscathed_common": "Trying not to let on how much care is going into choosing each mew, p_l starts up a series of quiet complaints, shared with app1 like it's no big thing, talking about how hard it is to feel so distant from the rest of c_n, how {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so glad {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} got app1, how {PRONOUN/p_l/subject} only {VERB/p_l/want/wants} to be seen as another cat trying {PRONOUN/p_l/poss} hardest, just like everyone else. app1 doesn't reply - but {PRONOUN/app1/subject} {VERB/app1/do/does} brush against p_l, the touch of {PRONOUN/app1/poss} pelt a massive comfort.",
+        "unscathed_rare": "p_l sits down with app1 in the training grounds. What's wrong? As the deputy, p_l could - app1 cuts {PRONOUN/p_l/object} off. Yes, app1 knows {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} the deputy, <i>everyone</i> stars-damned knows p_l is the deputy! That's the problem! Everyone expects so much, just because app1 happened to be born into p_l's nest, like that's helped app1 at all! p_l curls around them sympathetically, listening, heart sinking to hear the burden placed on {PRONOUN/p_l/poss} child by the clan.",
+        "stat_trait": "Could... could they just spend time together, p_l asks, hopeful and fragile. {VERB/p_l/Have/Has} {PRONOUN/p_l/subject} done something wrong? But no, no, app1 rushes to reassure {PRONOUN/p_l/object}, all the stiffness drained from the apprentice by {PRONOUN/app1/poss} urgency to comfort. No, app1 just wants to be the best for p_l, {PRONOUN/app1/subject} {VERB/app1/see/sees} p_l leading the Clan with such strength and {PRONOUN/app1/subject} just {VERB/app1/want/wants} p_l to be proud of {PRONOUN/app1/object}!"
+    },
+    "fail_text": {
+        "unscathed_common": "p_l tries to talk to app1 during a break, but it doesn't work. Maybe this relationship is just another thing p_l has sacrificed to lead c_n. The thought bites at {PRONOUN/p_l/object}.",
+        "injury": "p_l tries to get app1 to slow down long enough to talk to {PRONOUN/p_l/object}, to find out what's gotten into {PRONOUN/p_l/poss} kit, but app1 races away, shouting back something about {PRONOUN/app1/poss} skills. By the time p_l catches up, app1 has already faceplanted into the ground, hard enough to need to return to camp in awkward silence.",
+        "stat_injury": "p_l's attempts to open up a honest conversation with app1 are met with strong teenage derision, and p_l resolves to try again later. app1 doesn't give {PRONOUN/p_l/object} the chance, instead getting injured while waltzing around ignoring p_l's instructions."
+    },
+    "win_trait": ["compassionate", "thoughtful", "calm", "careful", "faithful", "loving", "loyal", "wise", "sincere"],
+    "fail_trait": ["troublesome", "ambitious", "childish", "cold", "arrogant", "competitive", "rebellious"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "constraints": {
+        "relationship": [
+            "parent/child"
+        ]
+            }
+},
+    {
         "patrol_id": "gen_train_mosstraining1",
         "biome": "Any",
         "season": "Any",
