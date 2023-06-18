@@ -11,7 +11,7 @@
 		"id": "gen2",
 		"interactions":[
 			"m_c offers r_c some feathers as a welcome gift, that {PRONOUN/r_c/subject} can use to decorate {PRONOUN/r_c/poss} new nest.",
-			"m_c gives all of {PRONOUN/m_c/poss} best tips to r_c for {PRONOUN/r_c/poss} first patrol."
+			"m_c offers r_c some tips for building a new nest."
 		],
 		"reaction_random_cat": {
 			"platonic": "increase",

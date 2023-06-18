@@ -433,19 +433,18 @@ class Cat():
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan.instructor.df is False:
-            self.df = False
-            game.clan.add_to_starclan(self)
-        elif game.clan.instructor.df is True:
-            self.df = True
-            self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
-            game.clan.add_to_darkforest(self)
-
-        if game.clan.game_mode != 'classic':
+        if game.clan.game_mode != 'classic' and not (self.outside or self.exiled):
             self.grief(body)
 
         if not self.outside:
             Cat.dead_cats.append(self)
+            if game.clan.instructor.df is False:
+                self.df = False
+                game.clan.add_to_starclan(self)
+            elif game.clan.instructor.df is True:
+                self.df = True
+                self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
+                game.clan.add_to_darkforest(self)
         else:
             self.thought = "Is fascinated by the new ghostly world they've stumbled into"
             game.clan.add_to_unknown(self)
@@ -1191,6 +1190,12 @@ class Cat():
         """Handles a moon skip for an alive cat. """
         
         
+        old_age = self.age
+        self.moons += 1
+        if self.moons == 1 and self.status == "newborn":
+            self.status = 'kitten'
+        self.in_camp = 1
+        
         if self.exiled or self.outside:
             # this is handled in events.py
             self.personality.set_kit(self.is_baby())
@@ -1200,12 +1205,6 @@ class Cat():
         if self.dead:
             self.thoughts()
             return
-
-        old_age = self.age
-        self.moons += 1
-        if self.moons == 1:
-            self.status = 'kitten'
-        self.in_camp = 1
         
         if old_age != self.age:
             # Things to do if the age changes
@@ -2023,8 +2022,8 @@ class Cat():
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
                 return False
 
-			# the +1 is necessary because both might not already aged up
-			# if only one is aged up at this point, later they are more moons apart than the setting defined
+            # the +1 is necessary because both might not already aged up
+            # if only one is aged up at this point, later they are more moons apart than the setting defined
             if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
                 return False
 
@@ -2042,6 +2041,8 @@ class Cat():
 
     def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
         """Unset the mate from both self and other_cat"""
+        if not other_cat:
+            return
 
         # Both cats must have mates for this to work
         if len(self.mate) < 1 or len(other_cat.mate) < 1:
@@ -2742,7 +2743,7 @@ class Cat():
     @moons.setter
     def moons(self, value: int):
         self._moons = value
-
+        
         updated_age = False
         for key_age in self.age_moons.keys():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
@@ -2750,10 +2751,10 @@ class Cat():
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = "elder"
+                self.age = "senior"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
-            
+        
     @property
     def sprite(self):
         # Update the sprite

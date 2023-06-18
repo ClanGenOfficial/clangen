@@ -511,5 +511,35 @@
             "insecure",
             "nervous"
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "skill_trait_required"
+        ],
+        "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.",
+        "cat_trait": null,
+        "cat_skill": [
+            "DARK,0"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "skill_trait_required"
+        ],
+        "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
+        "cat_trait": null,
+        "cat_skill": [
+            "GHOST,0"
+        ]
     }
 ]

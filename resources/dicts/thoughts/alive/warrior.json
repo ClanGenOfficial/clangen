@@ -481,7 +481,7 @@
         "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the smartest cat in the Clan",
         "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the funniest cat around",
         "Is strutting around confidently",
-        "Boasts about how much fresh-kill {PRONOUN/m_c/poss} {VERB/m_c/intend/intends} to bring back to camp today",
+        "Boasts about how much fresh-kill {PRONOUN/m_c/subject} {VERB/m_c/intend/intends} to bring back to camp",
         "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the best hunter in the Clan",
         "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the fastest runner in the Clan",
         "Is showing off {PRONOUN/m_c/poss} battle moves",

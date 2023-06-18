@@ -29,7 +29,10 @@ class MiscEvents():
             other_clan = enemy_clan
         else:
             other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{other_clan.name}Clan'
+        
+        other_clan_name = None
+        if other_clan:
+            other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
