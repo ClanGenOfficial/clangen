@@ -3381,7 +3381,7 @@ class TalkScreen(Screens):
         self.the_cat = None
         self.text_index = 0
         self.frame_index = 0
-        self.typing_delay = 40
+        self.typing_delay = 20
         self.next_frame_time = pygame.time.get_ticks() + self.typing_delay
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)

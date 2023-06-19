@@ -1,5 +1,80 @@
-
 {
-    "general": ["hi", "hello!", "mrp"
+    "dep_0": [
+        [
+            "warrior",
+            "leafbare",
+            "forest"
+        ],
+        [
+            "Greetings, y_c. There's a chill in the air today... Leaf-bare is upon us, but we are strong. We've weathered harsh moons before, and we'll do so again.",
+            "Oh, you're on border patrol today, aren't you? Be wary, the scent markers may be harder to find in this cold weather. But I have faith in your keen nose.",
+            "And, watch out for the ice. It's treacherous this time of year. Use your senses, trust your instincts. That's what we do, isn't it? We thrive where others would perish because we understand the woods.",
+            "Off you go now. Remember, the forest may be quiet, but it's never silent. Listen to its whispers. Feel its heartbeat beneath your paws. And most importantly, know that you carry the heartbeat of the Clan with you.",
+            "Stay safe, y_c."
+        ]
+    ],
+    "dep_1": [
+        [
+            "warrior",
+            "beach"
+        ],
+        [
+            "Well met, y_c. Dawn is breaking over our seaside home, and the tide is retreating. It's time to patrol our sandy borders.",
+            "You're off to the tidepools today, aren't you? Be careful. The rocks can be slippery, and the sea... well, she has her own mind.",
+            "Go now, honor your duties. Feel the sand beneath your paws, let the sea breeze guide you, and the sun warm your fur. And if the going gets tough, remember that you are c_nClan - as relentless as the waves, as steady as the tide.",
+            "Return safe, y_c. May StarClan light your path, and may the sea sing you home."
+        ]
+    ],
+    "dep_2": [
+        [
+            "warrior",
+            "plains"
+        ],
+        [
+            "Good day, y_c. The grass whispers secrets with each gust of wind, and the sun rides high in the open sky. We're far from the shadowed woods here, in the heart of the vast plains.",
+            "Ah, you're set to patrol the grasslands today, aren't you? Be cautious. What the plains offer in visibility, they take in shelter. We stand in the open here, visible to friends and foes alike.",
+            "We face the world with our heads held high, just as the tall grass does. In the open, we find our courage, our unity. We don't have the cover of the woods, but we have the wide sky above and the vast plain around. And that's our strength.",
+            "So go now, feel the grass under your paws, the wind in your fur, and the boundless sky overhead. Let them remind you of who you are, of the strength and spirit that makes us c_nClan.",
+            "Return safe, y_c. May StarClan light your path."
+        ]
+    ],
+    "dep_3": [
+        [
+            "kit"
+        ],
+        [
+            "Well, hello there, little one. You've strayed a bit far from the nursery, haven't you? No need to fret, kits are born curious, it's how you learn. We're a part of c_nClan, and that means we have the whole territory to explore... when you're old enough, of course.",
+            "What's that? You want to be an apprentice? That spark in your eyes... it reminds me of my own kithood. But remember, growing up isn't just about catching the biggest prey or being the fastest runner. It's about protecting your Clanmates, honoring the warrior code, and understanding that your strength comes from the unity of the Clan.",
+            "Your warrior name... ah, that's not for me to decide. But when the time comes, it will reflect your courage, your determination, and your spirit. StarClan will guide us in that choice, as they guide us in all things.",
+            "Right now, your job is to grow strong and learn. Learn from the elders' stories, from watching the warriors, and yes, even from playing with your denmates. It's all part of becoming a great clanmate.",
+            "Now off you go, back to the nursery. We'll have plenty of time to talk about your duties when you're an apprentice. But for now, enjoy being a kit. It's a special time, and it only happens once."
+        ]
+    ],
+    "dep_4": [
+        [
+            "app",
+            "forest",
+            "leafbare"
+        ],
+        [
+            "Ah, my young apprentice. Every sunhigh brings us a new opportunity to learn and grow, doesn't it? It's a great time to be part of c_nClan. The snow is thick, and the forest is quiet. It's our time.",
+            "I hear you're off to join the border patrol today. Good. It's an important duty. You'll learn the scent of our Clan, of our territory. You'll understand that our borders are not just lines in the snow, but a promise, a responsibility.",
+            "Hunting in leaf-bare can be a challenge, but remember, the warrior code guides us in times of plenty and times of scarcity. We respect the forest, and in return, it provides for us. And when it seems it doesn't, we must remember that this, too, is a part of the natural cycle.",
+            "Stay strong, y_c. Each day is a step on the journey to becoming a warrior. And remember, each trial is a lesson, each triumph, a milestone."
+        ]
+    ],
+    "dep_5": [
+        [
+            "medapp",
+            "greenleaf"
+        ],
+        [
+            "Greetings, young healer. The light of StarClan shines brightly in your eyes. It's no small path you tread, the path of a medicine cat. But I see you've embraced your calling with an open heart. You do c_nClan proud.",
+            "The herbs are flourishing in this greenleaf, aren't they? Yes, it's your duty to understand them, their uses, their secrets... But remember, they're not just remedies. They're a part of the forest, a part of our lives. They carry the wisdom of countless moons within them.",
+            "And your dreams... StarClan communicates with us through you. Your role is not just as a healer, but as a bridge between us and our ancestors. It's a heavy responsibility, but remember, StarClan chose you. They see strength within you, even when you may not.",
+            "This journey you're on, it's unique. You won't be measured by your hunting skills or your fighting prowess, but by your wisdom, your empathy, your understanding. You are a guide, a beacon of hope, especially in the darkest of storms.",
+            "Go now, back to your herbs, back to your studies. Know that c_nClan is proud of you, our young healer. May StarClan light your path, and may your journey be as boundless as the open sky."
+            
+        ]
     ]
 }
