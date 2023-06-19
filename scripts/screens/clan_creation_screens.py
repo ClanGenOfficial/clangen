@@ -743,11 +743,19 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_allowed_characters(
             list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- "))
         self.elements["name_entry"].set_text_length_limit(11)
-    
-        self.elements["clan"] = pygame_gui.elements.UITextBox("-kit",
+
+        if game.settings['dark mode']:
+            self.elements["clan"] = pygame_gui.elements.UITextBox("-kit",
+                                                              scale(pygame.Rect((820, 1005), (200, 50))),
+                                                              object_id="#default_dark",
+                                                              manager=MANAGER)
+        
+        else:
+            self.elements["clan"] = pygame_gui.elements.UITextBox("-kit",
                                                               scale(pygame.Rect((820, 1005), (200, 50))),
                                                               object_id="#default_light",
                                                               manager=MANAGER)
+        
 
 
     def open_name_clan(self):

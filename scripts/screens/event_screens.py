@@ -436,10 +436,14 @@ class EventsScreen(Screens):
                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                      manager=MANAGER)
         self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
-                                                    scale(pygame.Rect((200, 280), (1200, 80))),
+                                                    scale(pygame.Rect((200, 220), (1200, 80))),
                                                     object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                     manager=MANAGER)
         self.clan_age = pygame_gui.elements.UITextBox("",
+                                                      scale(pygame.Rect((200, 280), (1200, 80))),
+                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                      manager=MANAGER)
+        self.leaf = pygame_gui.elements.UITextBox("leafbare",
                                                       scale(pygame.Rect((200, 340), (1200, 80))),
                                                       object_id=get_text_box_theme("#text_box_30_horizcenter"),
                                                       manager=MANAGER)
@@ -576,6 +580,8 @@ class EventsScreen(Screens):
         del self.heading
         self.season.kill()
         del self.season
+        self.leaf.kill()
+        del self.leaf
         self.event_container.kill()
 
         for ele in self.display_events_elements:
@@ -618,6 +624,7 @@ class EventsScreen(Screens):
 
     def update_events_display(self):
         
+        self.leaf.set_text(f'Current season: {game.clan.current_season}')
         self.season.set_text(str(game.clan.your_cat.name))
         if game.clan.age == 1:
             self.clan_age.set_text(f'Your age: {game.clan.age} moon')
@@ -627,7 +634,7 @@ class EventsScreen(Screens):
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
         self.display_events_elements = {}
-        self.display_events_elements["you"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1050, 240), (200, 200))),
+        self.display_events_elements["you"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1050, 200), (200, 200))),
                                                                     pygame.transform.scale(
                                                                         game.clan.your_cat.sprite,
                                                                         (200, 200)), manager=MANAGER)
