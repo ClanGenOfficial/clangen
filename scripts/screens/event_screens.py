@@ -123,7 +123,7 @@ class EventsScreen(Screens):
                 if self.health_alert:
                     self.health_alert.kill()
                 self.health_events_button.enable()
-                self.health_events = [x for x in game.cur_events_list if "health" in x.types]
+                self.health_events = [x for x in game.other_events_list if "health" in x.types]
                 if self.health_events:
                     self.health_alert = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 980), (8, 44))),
                                                                     pygame.transform.scale(

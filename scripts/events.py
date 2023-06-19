@@ -990,7 +990,7 @@ class Events:
         cat.one_moon()
 
         # Handle Mediator Events
-        # self.mediator_events(cat)
+        self.mediator_events(cat)
 
         # handle nutrition amount
         # (CARE: the cats has to be fed before - should be handled in "one_moon" function)
@@ -1021,6 +1021,8 @@ class Events:
             if cat.dead:
                 return
             self.handle_outbreaks(cat)
+        elif cat.ID != game.clan.your_cat.ID and cat.status not in ['kitten', 'elder']:
+            cat.experience += random.randint(0,10)
 
         # newborns don't do much
         if cat.status == 'newborn':
@@ -2040,11 +2042,11 @@ class Events:
                     game.cur_events_list.append(
                         Single_Event(event_string, "birth_death",
                                      involved_cats))
-                    game.birth_death_events_list.append(event_string)
+                    # game.birth_death_events_list.append(event_string)
                     return
                 game.cur_events_list.append(
                     Single_Event(event_string, "birth_death", involved_cats))
-                game.birth_death_events_list.append(event_string)
+                # game.birth_death_events_list.append(event_string)
 
             else:
                 disaster_str = random.choice(disaster)
@@ -2057,7 +2059,7 @@ class Events:
                 event_string = f'{names}{disaster_str}'
                 game.cur_events_list.append(
                     Single_Event(event_string, "birth_death", involved_cats))
-                game.birth_death_events_list.append(event_string)
+                # game.birth_death_events_list.append(event_string)
 
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
@@ -2187,7 +2189,7 @@ class Events:
 
                 game.cur_events_list.append(
                     Single_Event(event, "health", involved_cats))
-                game.health_events_list.append(event)
+                # game.health_events_list.append(event)
                 break
 
     def coming_out(self, cat):
@@ -2227,7 +2229,7 @@ class Events:
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
             game.cur_events_list.append(
                 Single_Event(text, "misc", involved_cats))
-            game.misc_events_list.append(text)
+            # game.misc_events_list.append(text)
 
     def check_and_promote_leader(self):
         """ Checks if a new leader need to be promoted, and promotes them, if needed.  """

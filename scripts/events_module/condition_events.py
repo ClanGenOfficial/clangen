@@ -78,7 +78,7 @@ class Condition_Events():
             if cat.dead:
                 types.append("birth_death")
             game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
-            game.health_events_list.append(event_string)
+            # game.health_events_list.append(event_string)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
