@@ -1459,6 +1459,9 @@ def get_special_date() -> SpecialDate:
 #                                     OTHER                                    #
 # ---------------------------------------------------------------------------- #
 
+def chunks(L, n):
+    return [L[x: x + n] for x in range(0, len(L), n)]
+
 def is_iterable(y):
     try:
         0 in y
