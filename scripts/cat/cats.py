@@ -1344,14 +1344,9 @@ class Cat():
             self.die()
             return False
 
-        keys = self.illnesses[illness].keys()
-        if 'moons_with' in keys:
-            self.illnesses[illness]["moons_with"] += 1
-        else:
-            self.illnesses[illness].update({'moons_with': 1})
+        moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
-        self.illnesses[illness]["duration"] -= 1
-        if self.illnesses[illness]["duration"] <= 0:
+        if self.illnesses[illness]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
 
@@ -1378,16 +1373,10 @@ class Cat():
             self.die()
             return False
 
-        keys = self.injuries[injury].keys()
-        if 'moons_with' in keys:
-            self.injuries[injury]["moons_with"] += 1
-        else:
-            self.injuries[injury].update({'moons_with': 1})
+        moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if not self.injuries[injury]["complication"]:
-            self.injuries[injury]["duration"] -= 1
-        if self.injuries[injury]["duration"] <= 0:
+        if not self.injuries[injury]["complication"] and self.injuries[injury]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
 
@@ -1414,12 +1403,6 @@ class Cat():
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2
             return "reveal"
-
-        keys = self.permanent_condition[condition].keys()
-        if 'moons_with' in keys:
-            self.permanent_condition[condition]["moons_with"] += 1
-        else:
-            self.permanent_condition[condition].update({'moons_with': 1})
 
         # leader should have a higher chance of death
         if self.status == "leader" and mortality != 0:
@@ -1580,7 +1563,7 @@ class Cat():
                 "mortality": new_illness.current_mortality,
                 "infectiousness": new_illness.infectiousness,
                 "duration": new_illness.duration,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
@@ -1643,7 +1626,7 @@ class Cat():
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
                 "duration": new_injury.duration,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "complication": None,
@@ -1751,7 +1734,7 @@ class Cat():
                 "severity": new_perm_condition.severity,
                 "born_with": born_with,
                 "moons_until": new_perm_condition.moons_until,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "mortality": new_perm_condition.current_mortality,
                 "illness_infectiousness": new_perm_condition.illness_infectiousness,
                 "risks": new_perm_condition.risks,
@@ -1888,12 +1871,9 @@ class Cat():
         try:
             with open(condition_cat_directory, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
-                if "illnesses" in rel_data:
-                    self.illnesses = rel_data.get("illnesses")
-                if "injuries" in rel_data:
-                    self.injuries = rel_data.get("injuries")
-                if "permanent conditions" in rel_data:
-                    self.permanent_condition = rel_data.get("permanent conditions")
+                self.illnesses = rel_data.get("illnesses", {})
+                self.injuries = rel_data.get("injuries", {})
+                self.permanent_condition = rel_data.get("permanent conditions", {})
 
             if "paralyzed" in self.permanent_condition and not self.pelt.paralyzed:
                 self.pelt.paralyzed = True
@@ -2140,15 +2120,14 @@ class Cat():
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
         if other_cat.ID in self.relationships:
+            return self.relationships[other_cat.ID]
+        
+        if other_cat.ID == self.ID:
+            print(f"Attempted to create a relationship with self: {self.name}. Please report as a bug!")
             return None
         
-        if other_cat == self:
-            print("Attempted to create a relationship with self!")
-            return None
-        
-        relationship = Relationship(self, other_cat)
-        self.relationships[other_cat.ID] = relationship
-        return relationship
+        self.relationships[other_cat.ID] = Relationship(self, other_cat)
+        return self.relationships[other_cat.ID]
 
     def create_relationships_new_cat(self):
         """Create relationships for a new generated cat."""

@@ -1341,7 +1341,6 @@ class ProfileScreen(Screens):
             influence_history += " ".join(skill_influence)
 
         app_ceremony = History.get_app_ceremony(self.the_cat)
-        #print(app_ceremony)
 
         graduation_history = ""
         if app_ceremony:
@@ -1738,7 +1737,7 @@ class ProfileScreen(Screens):
                 text_list.append(f"born with this condition")
             else:
                 # moons with the condition if not born with condition
-                moons_with = self.the_cat.permanent_condition[name].get("moons_with", 1)
+                moons_with = game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
                 if moons_with != 1:
                     text_list.append(f"has had this condition for {moons_with} moons")
                 else:
@@ -1758,17 +1757,19 @@ class ProfileScreen(Screens):
         if name in self.the_cat.injuries:
             # moons with condition
             keys = self.the_cat.injuries[name].keys()
-            if 'moons_with' in keys:  # need to check if it exists for older saves
-                moons_with = self.the_cat.injuries[name]["moons_with"]
-                insert = 'has been hurt for'
-                if name == 'recovering from birth':
-                    insert = 'has been recovering for'
-                elif name == 'pregnant':
-                    insert = 'has been pregnant for'
-                if moons_with != 1:
-                    text_list.append(f"{insert} {moons_with} moons")
-                else:
-                    text_list.append(f"{insert} 1 moon")
+            moons_with = game.clan.age - self.the_cat.injuries[name]["moon_start"]
+            insert = 'has been hurt for'
+            
+            if name == 'recovering from birth':
+                insert = 'has been recovering for'
+            elif name == 'pregnant':
+                insert = 'has been pregnant for'
+            
+            if moons_with != 1:
+                text_list.append(f"{insert} {moons_with} moons")
+            else:
+                text_list.append(f"{insert} 1 moon")
+            
             # infected or festering
             if 'complication' in keys:
                 complication = self.the_cat.injuries[name]["complication"]
@@ -1776,6 +1777,7 @@ class ProfileScreen(Screens):
                     if 'a festering wound' in self.the_cat.illnesses:
                         complication = 'festering'
                     text_list.append(f'is {complication}!')
+            
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
                 text_list.append("Can't work with this condition")
@@ -1783,18 +1785,20 @@ class ProfileScreen(Screens):
         # collect details for illnesses
         if name in self.the_cat.illnesses:
             # moons with condition
-            keys = self.the_cat.illnesses[name].keys()
-            if 'moons_with' in keys:  # need to check if it exists for older saves
-                moons_with = self.the_cat.illnesses[name]["moons_with"]
-                insert = "has been sick for"
-                if name == 'grief stricken':
-                    insert = 'has been grieving for'
-                if moons_with != 1:
-                    text_list.append(f"{insert} {moons_with} moons")
-                else:
-                    text_list.append(f"{insert} 1 moon")
+            moons_with = game.clan.age - self.the_cat.illnesses[name]["moon_start"]
+            insert = "has been sick for"
+            
+            if name == 'grief stricken':
+                insert = 'has been grieving for'
+            
+            if moons_with != 1:
+                text_list.append(f"{insert} {moons_with} moons")
+            else:
+                text_list.append(f"{insert} 1 moon")
+            
             if self.the_cat.illnesses[name]['infectiousness'] != 0:
                 text_list.append("infectious!")
+            
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
                 text_list.append("Can't work with this condition")

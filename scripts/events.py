@@ -129,7 +129,7 @@ class Events:
                     ))
             if FRESHKILL_ACTIVE:
                 print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
-
+        
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
@@ -145,7 +145,6 @@ class Events:
         # self.disaster_events.handle_disasters()
 
         # Handle grief events.
-
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -1695,8 +1694,9 @@ class Events:
         age_start = game.config["death_related"]["old_age_death_start"]
         if cat.moons > int(
                 random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
+            
             self.death_events.handle_deaths(cat, other_cat, game.clan.war["at_war"],
-                                            alive_kits)
+                                            enemy_clan, alive_kits)
             return True
 
         # disaster death chance
@@ -1715,6 +1715,8 @@ class Events:
                                                                     enemy_clan, game.clan.current_season)
             return triggered_death
 
+        
+
     def handle_murder(self, cat):
         ''' Handles murder '''
         relationships = cat.relationships.values()
@@ -1722,19 +1724,17 @@ class Events:
         
         # if this cat is unstable and aggressive, we lower the random murder chance. 
         random_murder_chance = int(game.config["death_related"]["base_random_murder_chance"])
-        random_murder_chance -= round(((0 + int(cat.personality.aggression)) * 0.1) + ((16 - int(cat.personality.stability)) * 0.1))
+        random_murder_chance -= 0.5 * ((cat.personality.aggression) + (16 - cat.personality.stability))
 
         # Check to see if random murder is triggered. If so, we allow targets to be anyone they have even the smallest amount 
         # of dislike for. 
-        special_murder = False
-        if random.getrandbits(max(1, random_murder_chance)) == 1:
-            special_murder = True
+        if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [i for i in relationships if i.dislike > 1 and not Cat.fetch_cat(i.cat_to).dead and not Cat.fetch_cat(i.cat_to).outside]
             if not targets:
                 return
             
             chosen_target = random.choice(targets)
-            print("Random Murder!", str(cat.name), str(chosen_target.name))
+            print("Random Murder!", str(cat.name),  str(Cat.fetch_cat(chosen_target.cat_to).name))
             
             # If at war, grab enemy clans
             enemy_clan = None
@@ -1763,15 +1763,15 @@ class Events:
         if targets:
             chosen_target = random.choice(targets)
             
-            print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+            #print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
             
             # chance to murder grows with the dislike and jealousy value
             kill_chance -= chosen_target.dislike
-            print('DISLIKE MODIFIER', kill_chance)
+            #print('DISLIKE MODIFIER', kill_chance)
             kill_chance -= chosen_target.jealousy
-            print('JEALOUS MODIFIER', kill_chance)
+            #print('JEALOUS MODIFIER', kill_chance)
 
             facet_modifiers = cat.personality.aggression + \
                 (16 - cat.personality.stability) + (16 - cat.personality.lawfulness)
@@ -1779,9 +1779,10 @@ class Events:
             kill_chance = kill_chance - facet_modifiers
             kill_chance = max(15, kill_chance)
              
-            print("Final kill chance: " + str(kill_chance))
+            #print("Final kill chance: " + str(kill_chance))
             
             if not int(random.random() * kill_chance):
+                print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
                 print("KILL KILL KILL")
                 
                 # If at war, grab enemy clans
