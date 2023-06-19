@@ -252,7 +252,8 @@ while True:
     # update
     game.update_game()
     if game.switch_screens:
-        game.all_screens[game.last_screen_forupdate].exit_screen()
+        if game.last_screen_forupdate:
+            game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
 

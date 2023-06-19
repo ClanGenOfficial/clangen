@@ -7,7 +7,7 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen
+    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen, ChooseRebornCat
 #from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
 
@@ -87,6 +87,7 @@ patrol_screen = PatrolScreen('patrol screen')
 
 choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
+choose_reborn_cat_screen = ChooseRebornCat('choose reborn screen')
 choose_adoptive_parent_screen = ChooseAdoptiveParentScreen('choose adoptive parent screen')
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')

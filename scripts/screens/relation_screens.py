@@ -4353,11 +4353,13 @@ class ChooseRebornCat(Screens):
             if event.ui_element in self.cat_list_buttons.values():
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.update_selected_cat()
-                self.update_buttons()
-            elif event.ui_element == self.confirm_mentor:
-                self.change_cat(self.selected_cat)
-                self.update_buttons()
-                self.update_selected_cat()
+                # self.update_buttons()
+            elif event.ui_element == self.confirm_mentor and self.selected_cat:
+                if not self.selected_cat.dead:
+                    self.update_selected_cat()
+
+                    self.change_cat(self.selected_cat)
+                    # self.update_buttons()
             elif event.ui_element == self.back_button:
                 self.change_screen('events screen')
             elif event.ui_element == self.next_cat_button:
@@ -4365,7 +4367,7 @@ class ChooseRebornCat(Screens):
                     game.switches['cat'] = self.next_cat
                     self.update_cat_list()
                     self.update_selected_cat()
-                    self.update_buttons()
+                    # self.update_buttons()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
@@ -4373,7 +4375,7 @@ class ChooseRebornCat(Screens):
                     game.switches['cat'] = self.previous_cat
                     self.update_cat_list()
                     self.update_selected_cat()
-                    self.update_buttons()
+                    # self.update_buttons()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_page_button:
@@ -4384,10 +4386,10 @@ class ChooseRebornCat(Screens):
                 self.update_cat_list()
 
     def screen_switches(self):
-        self.the_cat = Cat.all_cats[game.switches['cat']]
+        self.the_cat = game.clan.your_cat
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
-        self.heading = pygame_gui.elements.UITextBox("Choose a cat",
+        self.heading = pygame_gui.elements.UITextBox("",
                                                      scale(pygame.Rect((300, 50), (1000, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizcenter"),
                                                      manager=MANAGER)
@@ -4413,30 +4415,30 @@ class ChooseRebornCat(Screens):
         #                                                              , manager=MANAGER)
 
         # Layout Images:
-        self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((80, 226), (562, 394))),
+        self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 226), (562, 394))),
                                                         pygame.transform.scale(
                                                             image_cache.load_image(
                                                                 "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
                                                             (562, 394)), manager=MANAGER)
-        self.app_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((960, 226), (562, 394))),
-                                                     pygame.transform.scale(
-                                                         image_cache.load_image(
-                                                             "resources/images/choosing_cat2_frame_ment.png").convert_alpha(),
-                                                         (562, 394)), manager=MANAGER)
+        # self.app_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((960, 226), (562, 394))),
+        #                                              pygame.transform.scale(
+        #                                                  image_cache.load_image(
+        #                                                      "resources/images/choosing_cat2_frame_ment.png").convert_alpha(),
+        #                                                  (562, 394)), manager=MANAGER)
 
-        self.mentor_icon = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 320), (343, 228))),
-                                                       pygame.transform.scale(
-                                                           image_cache.load_image(
-                                                               "resources/images/mentor.png").convert_alpha(),
-                                                           (343, 228)), manager=MANAGER)
+        # self.mentor_icon = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 320), (343, 228))),
+        #                                                pygame.transform.scale(
+        #                                                    image_cache.load_image(
+        #                                                        "resources/images/mentor.png").convert_alpha(),
+        #                                                    (343, 228)), manager=MANAGER)
 
-        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
-                                                 object_id="#previous_cat_button")
-        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "",
-                                             object_id="#next_cat_button")
+        # self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
+        #                                          object_id="#previous_cat_button")
+        # self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "",
+        #                                      object_id="#next_cat_button")
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
-        self.confirm_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
-                                            object_id="#confirm_mentor_button")
+        self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
+                                            object_id="#patrol_select_button")
         # if self.mentor is not None:
         #     self.current_mentor_warning = pygame_gui.elements.UITextBox(
         #         "Current mentor selected",
@@ -4456,9 +4458,12 @@ class ChooseRebornCat(Screens):
 
         self.update_selected_cat()  # Updates the image and details of selected cat
         self.update_cat_list()
-        self.update_buttons()
+        # self.update_buttons()
 
     def exit_screen(self):
+
+        self.selected_details["selected_image"].kill()
+        self.selected_details["selected_info"].kill()
         for ele in self.cat_list_buttons:
             self.cat_list_buttons[ele].kill()
         self.cat_list_buttons = {}
@@ -4473,30 +4478,20 @@ class ChooseRebornCat(Screens):
 
         self.heading.kill()
         del self.heading
-        self.info.kill()
-        del self.info
-        self.current_mentor_text.kill()
-        del self.current_mentor_text
+
         self.mentor_frame.kill()
         del self.mentor_frame
-        self.mentor_icon.kill()
-        del self.mentor_icon
-        self.previous_cat_button.kill()
-        del self.previous_cat_button
-        self.next_cat_button.kill()
-        del self.next_cat_button
+
         self.back_button.kill()
         del self.back_button
         self.confirm_mentor.kill()
         del self.confirm_mentor
-        self.current_mentor_warning.kill()
-        del self.current_mentor_warning
+
         self.previous_page_button.kill()
         del self.previous_page_button
         self.next_page_button.kill()
         del self.next_page_button
-        self.app_frame.kill()
-        del self.app_frame
+
 
     # def update_apprentice(self):
     #     """ Updates the apprentice focused on. """
@@ -4588,75 +4583,51 @@ class ChooseRebornCat(Screens):
         if self.next_cat == 1:
             self.next_cat = 0
 
-    def change_mentor(self, new_mentor=None):
-        old_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        if new_mentor and old_mentor is not None:
-            old_mentor.apprentice.remove(self.the_cat.ID)
-            if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
-                old_mentor.former_apprentices.append(self.the_cat.ID)
-
-            self.the_cat.patrol_with_mentor = 0
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
-            self.mentor = new_mentor
-
-            # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
-
-        elif new_mentor:
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
-            self.mentor = new_mentor
-
-            # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
-
-        if self.mentor is not None:
-            self.current_mentor_text.set_text(
-                f"{self.the_cat.name}'s current mentor is {self.mentor.name}")
-        else:
-            self.current_mentor_text.set_text(f"{self.the_cat.name} does not have a mentor")
+    def change_cat(self, new_mentor=None):
+        self.exit_screen()
+        game.clan.your_cat = new_mentor
+        if game.clan.your_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+            game.clan.your_cat.w_done = True
+        game.switches['cur_screen'] = "events screen"
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
         for ele in self.selected_details:
             self.selected_details[ele].kill()
         self.selected_details = {}
-        if self.selected_mentor:
+        if self.selected_cat:
 
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((100, 300), (300, 300))),
+                scale(pygame.Rect((650, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_mentor.sprite,
+                    self.selected_cat.sprite,
                     (300, 300)), manager=MANAGER)
 
-            info = self.selected_mentor.status + "\n" + \
-                   self.selected_mentor.genderalign + "\n" + self.selected_mentor.personality.trait + "\n" + \
-                   self.selected_mentor.skills.skill_string(short=True)
-            if len(self.selected_mentor.former_apprentices) >= 1:
-                info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
-            if len(self.selected_mentor.apprentice) >= 1:
-                info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
+            info = self.selected_cat.status + "\n" + \
+                   self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait + "\n" + \
+                   self.selected_cat.skills.skill_string(short=True)
+            # if len(self.selected_cat.former_apprentices) >= 1:
+            #     info += f"\n{len(self.selected_cat.former_apprentices)} former app(s)"
+            # if len(self.selected_cat.apprentice) >= 1:
+            #     info += f"\n{len(self.selected_cat.apprentice)} current app(s)"
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
-                                                                                   scale(pygame.Rect((420, 325),
+                                                                                   scale(pygame.Rect((980, 325),
                                                                                                      (210, 250))),
                                                                                    object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                                    manager=MANAGER)
 
-            name = str(self.selected_mentor.name)  # get name
+            name = str(self.selected_cat.name)  # get name
             if 11 <= len(name):  # check name length
                 short_name = str(name)[0:9]
                 name = short_name + '...'
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
-                scale(pygame.Rect((130, 230), (220, 60))),
+                scale(pygame.Rect((690, 230), (220, 60))),
                 name,
                 object_id="#text_box_34_horizcenter", manager=MANAGER)
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
-        valid_mentors = self.chunks(self.get_valid_mentors(), 30)
+        valid_mentors = self.chunks(self.get_valid_cats(), 30)
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
@@ -4698,15 +4669,16 @@ class ChooseRebornCat(Screens):
                 pos_y += 120
             i += 1
 
-    def update_buttons(self):
-        """Updates the status of buttons. """
-        # Disable to enable the choose mentor button
-        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
-            self.confirm_mentor.disable()
-            self.current_mentor_warning.show()
-        else:
-            self.confirm_mentor.enable()
-            self.current_mentor_warning.hide()
+    # def update_buttons(self):
+    #     """Updates the status of buttons. """
+    #     # Disable to enable the choose mentor button
+    #     # if not self.selected_cat or self.selected_cat.ID == self.the_cat.mentor:
+    #     #     self.confirm_mentor.disable()
+    #     #     self.current_mentor_warning.show()
+    #     # else:
+    #     #     self.confirm_mentor.enable()
+    #     #     self.current_mentor_warning.hide()
+    #     print('hi')
 
     def get_valid_cats(self):
         valid_mentors = []

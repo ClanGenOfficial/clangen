@@ -36,6 +36,7 @@ class ClanScreen(Screens):
         self.leader_den_label = None
         self.warrior_den_label = None
         self.layout = None
+        self.save_button = None
 
     def on_use(self):
         if game.settings['backgrounds']:
@@ -207,30 +208,31 @@ class ClanScreen(Screens):
         self.cat_buttons = []
 
         # Kill all other elements, and destroy the reference so they aren't hanging around
-        self.save_button.kill()
-        del self.save_button
-        self.save_button_saved_state.kill()
-        del self.save_button_saved_state
-        self.save_button_saving_state.kill()
-        del self.save_button_saving_state
-        self.warrior_den_label.kill()
-        del self.warrior_den_label
-        self.leader_den_label.kill()
-        del self.leader_den_label
-        self.med_den_label.kill()
-        del self.med_den_label
-        self.elder_den_label.kill()
-        del self.elder_den_label
-        self.nursery_label.kill()
-        del self.nursery_label
-        self.clearing_label.kill()
-        del self.clearing_label
-        self.app_den_label.kill()
-        del self.app_den_label
-        self.label_toggle.kill()
-        del self.label_toggle
-        self.show_den_labels.kill()
-        del self.show_den_labels
+        if self.save_button:
+            self.save_button.kill()
+            del self.save_button
+            self.save_button_saved_state.kill()
+            del self.save_button_saved_state
+            self.save_button_saving_state.kill()
+            del self.save_button_saving_state
+            self.warrior_den_label.kill()
+            del self.warrior_den_label
+            self.leader_den_label.kill()
+            del self.leader_den_label
+            self.med_den_label.kill()
+            del self.med_den_label
+            self.elder_den_label.kill()
+            del self.elder_den_label
+            self.nursery_label.kill()
+            del self.nursery_label
+            self.clearing_label.kill()
+            del self.clearing_label
+            self.app_den_label.kill()
+            del self.app_den_label
+            self.label_toggle.kill()
+            del self.label_toggle
+            self.show_den_labels.kill()
+            del self.show_den_labels
 
         # reset save status
         game.switches['saved_clan'] = False

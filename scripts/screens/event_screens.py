@@ -9,7 +9,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
-from scripts.game_structure.windows import GameOver, PickPath
+from scripts.game_structure.windows import GameOver, PickPath, DeathScreen
 import ujson
 import random
 
@@ -80,6 +80,10 @@ class EventsScreen(Screens):
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button and game.clan.your_cat.moons == 5 and game.clan.your_cat.status == 'kitten':
                     PickPath('events screen')
+            elif event.ui_element == self.timeskip_button and game.clan.your_cat.dead_for == 1:
+                    self.exit_screen()
+                    DeathScreen('events screen')
+                    return
             elif event.ui_element == self.timeskip_button:
                 self.scroll_height = {}
                 events_class.one_moon()
@@ -598,12 +602,13 @@ class EventsScreen(Screens):
 
         # self.hide_menu_buttons()
 
-    def on_use(self):
-        # What does this do?
-        if game.switches['events_left'] == 0:
-            self.timeskip_button.enable()
-        else:
-            self.timeskip_button.disable()
+    # def on_use(self):
+    #     # What does this do?
+    #     # if game.switches['events_left'] == 0:
+    #     #     self.timeskip_button.enable()
+    #     # else:
+    #     #     self.timeskip_button.disable()
+    #     print('fdsafdas')
 
     def update_list_buttons(self, current_list, current_alert=None):
         """ handles the disabling and enabling of the list buttons """
@@ -627,9 +632,9 @@ class EventsScreen(Screens):
         self.leaf.set_text(f'Current season: {game.clan.current_season}')
         self.season.set_text(str(game.clan.your_cat.name))
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Your age: {game.clan.age} moon')
+            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Your age: {game.clan.age} moons')
+            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moons')
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
