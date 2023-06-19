@@ -7,7 +7,8 @@
         [
             "Hello, little kit. You have a sparkle in your eye today. What's your adventure this time? Pretending to be a warrior, or perhaps a Clan leader?",
             "You know, it's wonderful to see such enthusiasm. It's what keeps our Clan vibrant and strong. But remember, even the greatest leaders and warriors must learn how to listen, understand, and make peace. That's part of what I do as a mediator.",
-            "I see disagreements, arguments, even fights among our Clanmates, and it's my job to help find a solution. It's not always easy, but it's necessary. A Clan divided cannot stand. We must work together, respect each other, and compromise when we need to.",
+            "I see disagreements, arguments, even fights among our Clanmates, and it's my job to help find a solution. It's not always easy, but it's necessary.",
+            "A Clan divided cannot stand. We must work together, respect each other, and compromise when we need to.",
             "You see, it's not just about being the strongest or fastest. It's about being wise, compassionate, and fair. It's about knowing when to fight and when to talk. And most importantly, it's about remembering that we are all part of one Clan.",
             "So, as you play and grow, remember these lessons. Strength and courage are important, but so are wisdom and kindness. And remember that no matter how fierce a disagreement, there's always a way to find peace if we're willing to seek it.",
             "Enough of my lectures. Off you go, little one."
@@ -18,7 +19,12 @@
             "warrior"
         ],
         [
-
+            "Greetings, warrior. I see the burdens of our Clan rest heavy on your shoulders today. The life of a warrior can be tough, filled with challenges and responsibilities. But remember, strength isn't only shown through fighting or hunting.",
+            "As a mediator, I've learned that patience, understanding, and communication often resolve issues more effectively than claws and teeth. Conflicts can often be avoided by trying to understand the other cat's point of view.",
+            "Remember, every cat in our Clan is here because they have something to contribute, whether they are a skilled hunter, a patient medicine cat, or a brave leader.",
+            "It's not just about your own strength and skills but how you use them to support your Clanmates.",
+            "If you find yourself in a dispute, don't let your temper get the best of you. Calm your mind and listen to what the other cat has to say. Try to find a solution that benefits the entire Clan.",
+            "It's not always easy, but a peaceful resolution often strengthens our bonds."
         ]
     ],
     "medi_1": [

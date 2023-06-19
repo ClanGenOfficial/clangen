@@ -1268,10 +1268,16 @@ class DeathScreen(UIWindow):
                 game.switches['window_open'] = False
                 # game.switch_screens = True
                 game.switches['cur_screen'] = 'start screen'
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
                 self.kill()
             elif event.ui_element == self.mediator_button:
                 game.last_screen_forupdate = None
                 game.switches['window_open'] = False
                 game.switches['cur_screen'] = "choose reborn screen"
                 # game.switch_screens = True
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
                 self.kill()

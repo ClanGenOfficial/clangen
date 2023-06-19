@@ -3388,15 +3388,9 @@ class TalkScreen(Screens):
         self.next_frame_time = pygame.time.get_ticks() + self.typing_delay
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 32)
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((300, 900), (1400, 1000))))
-        self.text = pygame_gui.elements.UITextBox("", 
-                                                  scale(pygame.Rect((0, 0), (1100, -1))),
-                                                  object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                                  container=self.scroll_container, manager=MANAGER)
-        self.text.disable()
+        self.text = None
         self.profile_elements = {}
-        self.talk_box_img = image_cache.load_image("resources/images/talk_box.png").convert_alpha()
-        
+        self.talk_box_img = None
 
 
     def screen_switches(self):
@@ -3413,7 +3407,8 @@ class TalkScreen(Screens):
                                                                           manager=MANAGER)
         self.texts = self.get_possible_text(self.the_cat)
         self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
-        
+        self.talk_box_img = image_cache.load_image("resources/images/talk_box.png").convert_alpha()
+
         self.talk_box = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((178, 942), (1248, 302))),
                 self.talk_box_img
@@ -3425,13 +3420,11 @@ class TalkScreen(Screens):
                                                   scale(pygame.Rect((0, 0), (900, -100))),
                                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)
-        self.text.disable()
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((70, 900), (400, 400))),
 
                                                                          pygame.transform.scale(
                                                                              generate_sprite(self.the_cat),
                                                                              (400, 400)), manager=MANAGER)
-        self.profile_elements["cat_image"].disable()
 
 
     def exit_screen(self):
@@ -3444,6 +3437,7 @@ class TalkScreen(Screens):
         self.profile_elements["cat_image"].kill()
         self.profile_elements["cat_name"].kill()
         del self.profile_elements
+
         self.talk_box.kill()
         del self.talk_box
 
