@@ -735,6 +735,7 @@
         "season": "Any",
         "tags": [
             "app_stat",
+            "app1_has_stat",
             "training",
             "platonic",
             "dislike",
@@ -797,7 +798,7 @@
         },
         "fail_text": {
             "unscathed_common": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
-            "unscathed_stat": "s_c freezes in indecision, and eventually a warrior spots {PRONOUN/s_c/object} sitting under cover with {PRONOUN/s_c/poss} prey and accuses app1 of eating it anyway."
+            "unscathed_stat": "s_c freezes in indecision, and eventually a warrior spots {PRONOUN/s_c/object} sitting under cover with {PRONOUN/s_c/poss} prey and accuses s_c of eating it anyway."
         },
         "win_trait": [
             "adventurous",
