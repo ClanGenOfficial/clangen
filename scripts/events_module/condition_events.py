@@ -400,11 +400,8 @@ class Condition_Events():
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
-            elif cat.dead and cat.status == 'leader':
-                self.history.add_death(cat, f"died to {illness}")
-                break
-
             elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                self.history.add_death(cat, f"died to {illness}")
                 break
 
             # heal the cat
@@ -477,10 +474,7 @@ class Condition_Events():
             if skipped:
                 continue
 
-            elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
-                break
-
-            if cat.dead:
+            if cat.dead or cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
                 triggered = True
 
                 try:
