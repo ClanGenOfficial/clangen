@@ -154,7 +154,7 @@ class SkillPath(Enum):
                           if i not in exclude]
         
         
-        if not int(random.random() * 25):
+        if not int(random.random() * 15):
             return random.choice(uncommon_paths)
         else:
             common_paths = [i for i in list(SkillPath) if 
@@ -605,7 +605,36 @@ class CatSkills:
                     return True
         
         return False
+    
+    def check_skill_requirement_list(self, skill_list:list) -> int:
+        """Takes a whole list of skill requirments in the form 
+            [ "SKILL_PATH,MIN_TIER" ... ] and determines how many skill
+            requirments are meet. The list format is used in all patrol and event skill
+            restrictions. Returns an integer value of how many skills requirments are meet.  
+            """
         
+        skills_meet = 0
+        
+        min_tier = 0
+        for _skill in skill_list:
+            spl = _skill.split(",")
+            
+            if len(spl) != 2:
+                print("Incorrectly formatted skill restriction", _skill)
+                continue
+            
+            try:
+                min_tier = int(spl[1])
+            except ValueError:
+                print("Min Skill Tier cannot be converted to int", _skill)
+                continue
+            
+            if self.meets_skill_requirement(spl[0], min_tier):
+                skills_meet += 1
+        
+        return skills_meet
+                     
+    
     @staticmethod
     def get_skills_from_old(old_skill, status, moons):
         """Generates a CatSkill object"""

@@ -4214,7 +4214,6 @@ class ChooseAdoptiveParentScreen(Screens):
             name,
             object_id="#text_box_34_horizcenter")
 
-        print(str(self.selected_cat.name))
         info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
                self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait
         self.selected_cat_elements["info"] = pygame_gui.elements.UITextBox(info,

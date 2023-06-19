@@ -1298,7 +1298,7 @@ class Cat():
 
         chosen_cat = choice(cats_to_choose)
         if chosen_cat.ID not in self.relationships:
-            self.relationships[chosen_cat.ID] = Relationship(self, chosen_cat)
+            self.create_one_relationship(chosen_cat)
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
@@ -1344,14 +1344,9 @@ class Cat():
             self.die()
             return False
 
-        keys = self.illnesses[illness].keys()
-        if 'moons_with' in keys:
-            self.illnesses[illness]["moons_with"] += 1
-        else:
-            self.illnesses[illness].update({'moons_with': 1})
+        moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
-        self.illnesses[illness]["duration"] -= 1
-        if self.illnesses[illness]["duration"] <= 0:
+        if self.illnesses[illness]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
 
@@ -1378,16 +1373,10 @@ class Cat():
             self.die()
             return False
 
-        keys = self.injuries[injury].keys()
-        if 'moons_with' in keys:
-            self.injuries[injury]["moons_with"] += 1
-        else:
-            self.injuries[injury].update({'moons_with': 1})
+        moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if not self.injuries[injury]["complication"]:
-            self.injuries[injury]["duration"] -= 1
-        if self.injuries[injury]["duration"] <= 0:
+        if not self.injuries[injury]["complication"] and self.injuries[injury]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
 
@@ -1414,12 +1403,6 @@ class Cat():
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2
             return "reveal"
-
-        keys = self.permanent_condition[condition].keys()
-        if 'moons_with' in keys:
-            self.permanent_condition[condition]["moons_with"] += 1
-        else:
-            self.permanent_condition[condition].update({'moons_with': 1})
 
         # leader should have a higher chance of death
         if self.status == "leader" and mortality != 0:
@@ -1580,7 +1563,7 @@ class Cat():
                 "mortality": new_illness.current_mortality,
                 "infectiousness": new_illness.infectiousness,
                 "duration": new_illness.duration,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
@@ -1643,7 +1626,7 @@ class Cat():
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
                 "duration": new_injury.duration,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "complication": None,
@@ -1751,7 +1734,7 @@ class Cat():
                 "severity": new_perm_condition.severity,
                 "born_with": born_with,
                 "moons_until": new_perm_condition.moons_until,
-                "moons_with": 1,
+                "moon_start": game.clan.age,
                 "mortality": new_perm_condition.current_mortality,
                 "illness_infectiousness": new_perm_condition.illness_infectiousness,
                 "risks": new_perm_condition.risks,
@@ -1888,12 +1871,9 @@ class Cat():
         try:
             with open(condition_cat_directory, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
-                if "illnesses" in rel_data:
-                    self.illnesses = rel_data.get("illnesses")
-                if "injuries" in rel_data:
-                    self.injuries = rel_data.get("injuries")
-                if "permanent conditions" in rel_data:
-                    self.permanent_condition = rel_data.get("permanent conditions")
+                self.illnesses = rel_data.get("illnesses", {})
+                self.injuries = rel_data.get("injuries", {})
+                self.permanent_condition = rel_data.get("permanent conditions", {})
 
             if "paralyzed" in self.permanent_condition and not self.pelt.paralyzed:
                 self.pelt.paralyzed = True
@@ -1982,11 +1962,11 @@ class Cat():
             potential_mentors = []
             priority_mentors = []
             for cat in self.all_cats.values():
-                if self.is_valid_mentor(cat) and not cat.not_working():
+                if self.is_valid_mentor(cat):
                     potential_mentors.append(cat)
-                    if not cat.apprentice:  # length of list is 0
+                    if not cat.apprentice and not cat.not_working(): 
                         priority_mentors.append(cat)
-            # First try for a cat who currently has no apprentices
+            # First try for a cat who currently has no apprentices and is working
             if priority_mentors:  # length of list > 0
                 new_mentor = choice(priority_mentors)
             elif potential_mentors:  # length of list > 0
@@ -2057,7 +2037,8 @@ class Cat():
         if breakup:
             if not self.dead:
                 if other_cat.ID not in self.relationships:
-                    self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                    self.create_one_relationship(other_cat)
+                    self.relationships[other_cat.ID].mate = True
                 self_relationship = self.relationships[other_cat.ID]
                 self_relationship.romantic_love -= 40
                 self_relationship.comfortable -= 20
@@ -2068,7 +2049,8 @@ class Cat():
 
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
-                    other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                    other_cat.create_one_relationship(self)
+                    other_cat.relationships[self.ID].mate = True
                 other_relationship = other_cat.relationships[self.ID]
                 other_relationship.romantic_love -= 40
                 other_relationship.comfortable -= 20
@@ -2112,7 +2094,8 @@ class Cat():
         # Set starting relationship values
         if not self.dead:
             if other_cat.ID not in self.relationships:
-                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                self.create_one_relationship(other_cat)
+                self.relationships[other_cat.ID].mate =  True
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.romantic_love += 20
             self_relationship.comfortable += 20
@@ -2121,7 +2104,8 @@ class Cat():
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                other_cat.create_one_relationship(self)
+                other_cat.relationships[self.ID].mate = True
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.romantic_love += 20
             other_relationship.comfortable += 20
@@ -2136,10 +2120,14 @@ class Cat():
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
         if other_cat.ID in self.relationships:
+            return self.relationships[other_cat.ID]
+        
+        if other_cat.ID == self.ID:
+            print(f"Attempted to create a relationship with self: {self.name}. Please report as a bug!")
             return None
-        relationship = Relationship(self, other_cat)
-        self.relationships[other_cat.ID] = relationship
-        return relationship
+        
+        self.relationships[other_cat.ID] = Relationship(self, other_cat)
+        return self.relationships[other_cat.ID]
 
     def create_relationships_new_cat(self):
         """Create relationships for a new generated cat."""
@@ -2282,14 +2270,14 @@ class Cat():
             if not os.path.exists(relation_cat_directory):
                 self.init_all_relationships()
                 for cat in Cat.all_cats.values():
-                    cat.relationships[self.ID] = Relationship(cat, self)
+                    cat.create_one_relationship(self)
                 return
             try:
                 with open(relation_cat_directory, 'r') as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
-                        if cat_to is None:
+                        if cat_to is None or rel['cat_to_id'] == self.ID:
                             continue
                         new_rel = Relationship(
                             cat_from=self,
