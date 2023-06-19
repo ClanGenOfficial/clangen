@@ -1,3 +1,9 @@
+<strong>v0.2.1: Death is not the end!</strong>
+- Added the ability to continue as another cat after you die
+- Added random path button
+- UI changes
+- Fixed several bugs/typos
+
 <strong>v0.2.0: Choose your Path</strong>
 - Added medicine cat, mediator, deputy, and leader paths
 - New apprentice icons by jesmar!
