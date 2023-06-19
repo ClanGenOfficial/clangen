@@ -40,11 +40,13 @@
     ],
     "dep_3": [
         [
-            "kit"
+            "kitten"
         ],
         [
-            "Well, hello there, little one. You've strayed a bit far from the nursery, haven't you? No need to fret, kits are born curious, it's how you learn. We're a part of c_nClan, and that means we have the whole territory to explore... when you're old enough, of course.",
-            "What's that? You want to be an apprentice? That spark in your eyes... it reminds me of my own kithood. But remember, growing up isn't just about catching the biggest prey or being the fastest runner. It's about protecting your Clanmates, honoring the warrior code, and understanding that your strength comes from the unity of the Clan.",
+            "Well, hello there, little one. You've strayed a bit far from the nursery, haven't you? No need to fret, kits are born curious, it's how you learn.",
+            "We're a part of c_nClan, and that means we have the whole territory to explore... when you're old enough, of course.",
+            "What's that? You want to be an apprentice? That spark in your eyes... it reminds me of my own kithood. But remember, growing up isn't just about catching the biggest prey or being the fastest runner.",
+            "It's about protecting your Clanmates, honoring the warrior code, and understanding that your strength comes from the unity of the Clan.",
             "Your warrior name... ah, that's not for me to decide. But when the time comes, it will reflect your courage, your determination, and your spirit. StarClan will guide us in that choice, as they guide us in all things.",
             "Right now, your job is to grow strong and learn. Learn from the elders' stories, from watching the warriors, and yes, even from playing with your denmates. It's all part of becoming a great clanmate.",
             "Now off you go, back to the nursery. We'll have plenty of time to talk about your duties when you're an apprentice. But for now, enjoy being a kit. It's a special time, and it only happens once."
@@ -52,26 +54,29 @@
     ],
     "dep_4": [
         [
-            "app",
+            "apprentice",
             "forest",
             "leafbare"
         ],
         [
             "Ah, my young apprentice. Every sunhigh brings us a new opportunity to learn and grow, doesn't it? It's a great time to be part of c_nClan. The snow is thick, and the forest is quiet. It's our time.",
             "I hear you're off to join the border patrol today. Good. It's an important duty. You'll learn the scent of our Clan, of our territory. You'll understand that our borders are not just lines in the snow, but a promise, a responsibility.",
-            "Hunting in leaf-bare can be a challenge, but remember, the warrior code guides us in times of plenty and times of scarcity. We respect the forest, and in return, it provides for us. And when it seems it doesn't, we must remember that this, too, is a part of the natural cycle.",
+            "Hunting in leaf-bare can be a challenge, but remember, the warrior code guides us in times of plenty and times of scarcity.",
+            "We respect the forest, and in return, it provides for us. And when it seems it doesn't, we must remember that this, too, is a part of the natural cycle.",
             "Stay strong, y_c. Each day is a step on the journey to becoming a warrior. And remember, each trial is a lesson, each triumph, a milestone."
         ]
     ],
     "dep_5": [
         [
-            "medapp",
+            "medicine cat apprentice",
             "greenleaf"
         ],
         [
             "Greetings, young healer. The light of StarClan shines brightly in your eyes. It's no small path you tread, the path of a medicine cat. But I see you've embraced your calling with an open heart. You do c_nClan proud.",
-            "The herbs are flourishing in this greenleaf, aren't they? Yes, it's your duty to understand them, their uses, their secrets... But remember, they're not just remedies. They're a part of the forest, a part of our lives. They carry the wisdom of countless moons within them.",
-            "And your dreams... StarClan communicates with us through you. Your role is not just as a healer, but as a bridge between us and our ancestors. It's a heavy responsibility, but remember, StarClan chose you. They see strength within you, even when you may not.",
+            "The herbs are flourishing in this greenleaf, aren't they? Yes, it's your duty to understand them, their uses, their secrets... But remember, they're not just remedies.",
+            "They're a part of the forest, a part of our lives. They carry the wisdom of countless moons within them.",
+            "And your dreams... StarClan communicates with us through you. Your role is not just as a healer, but as a bridge between us and our ancestors. It's a heavy responsibility, but remember, StarClan chose you.",
+            "They see strength within you, even when you may not.",
             "This journey you're on, it's unique. You won't be measured by your hunting skills or your fighting prowess, but by your wisdom, your empathy, your understanding. You are a guide, a beacon of hope, especially in the darkest of storms.",
             "Go now, back to your herbs, back to your studies. Know that c_nClan is proud of you, our young healer. May StarClan light your path, and may your journey be as boundless as the open sky."
             

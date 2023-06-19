@@ -1,5 +1,113 @@
 
 {
-    "general": ["hi", "hello!", "mrp"
+    "medi_1": [
+        [
+            "kitten"
+        ],
+        [
+            "Hello, little kit. You have a sparkle in your eye today. What's your adventure this time? Pretending to be a warrior, or perhaps a Clan leader?",
+            "You know, it's wonderful to see such enthusiasm. It's what keeps our Clan vibrant and strong. But remember, even the greatest leaders and warriors must learn how to listen, understand, and make peace. That's part of what I do as a mediator.",
+            "I see disagreements, arguments, even fights among our Clanmates, and it's my job to help find a solution. It's not always easy, but it's necessary. A Clan divided cannot stand. We must work together, respect each other, and compromise when we need to.",
+            "You see, it's not just about being the strongest or fastest. It's about being wise, compassionate, and fair. It's about knowing when to fight and when to talk. And most importantly, it's about remembering that we are all part of one Clan.",
+            "So, as you play and grow, remember these lessons. Strength and courage are important, but so are wisdom and kindness. And remember that no matter how fierce a disagreement, there's always a way to find peace if we're willing to seek it.",
+            "Enough of my lectures. Off you go, little one."
+        ]
+    ],
+    "medi_2": [
+        [
+            "warrior"
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
     ]
+
 }

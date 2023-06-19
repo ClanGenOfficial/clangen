@@ -1,5 +1,56 @@
 
 {
-    "general": ["hi", "hello!", "mrp"
+    "med_1": [
+        [
+            "kitten"
+        ],
+        [
+            "Oh, you are a curious little one, aren't you? Sneaking into my den again to explore. I see that twinkle in your eyes. You remind me of myself when I was a kit.",
+            "But remember, young one, this den isn't just for fun. It's a place of healing and rest. The herbs here, they aren't just leaves and flowers. Each has a purpose, a role to play in keeping our Clan healthy and strong.",
+            "See this leaf? It's called yarrow. It can help a cat vomit if they've eaten something poisonous. And this one, the bright yellow flower? That's marigold, good for preventing infection in wounds.",
+            "A medicine cat's duty is not just to heal, but also to listen to StarClan. They guide us, give us omens and signs. It's a big responsibility, but it's also an honor. We are the bridge between our Clan and our ancestors.",
+            "But don't worry, being a kit is the perfect time to learn. Curiosity is a gift, one that you should nurture. Just remember to respect the den and what it represents.",
+            "And who knows? Maybe one day you'll be the one teaching a curious kit about the ways of a medicine cat."
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "medi_1": [
+        [
+
+        ],
+        [
+
+        ]
     ]
 }

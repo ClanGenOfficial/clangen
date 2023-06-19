@@ -593,21 +593,21 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
-        # if self.the_cat.ID != game.clan.your_cat.ID:    
-        #     if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
-        #         self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-        #             (766, 220), (68, 68))),
-        #             "",
-        #             object_id="#talk_button",
-        #             tool_tip_text="Talk to this Cat", manager=MANAGER
-        #         )
-        #     elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
-        #         self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-        #             (850, 220), (68, 68))),
-        #             "",
-        #             object_id="#talk_button",
-        #             tool_tip_text="Talk to this Cat", manager=MANAGER
-        #         )
+        if self.the_cat.ID != game.clan.your_cat.ID:    
+            if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                    (766, 220), (68, 68))),
+                    "",
+                    object_id="#talk_button",
+                    tool_tip_text="Talk to this Cat", manager=MANAGER
+                )
+            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+                    (850, 220), (68, 68))),
+                    "",
+                    object_id="#talk_button",
+                    tool_tip_text="Talk to this Cat", manager=MANAGER
+                )
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
@@ -3375,9 +3375,7 @@ class TalkScreen(Screens):
         super().__init__(name)
         self.back_button = None
         self.resource_dir = "resources/dicts/lifegen_talk/"
-        with open(f"{self.resource_dir}warrior.json",
-                  encoding="ascii") as read_file:
-            self.texts = ujson.loads(read_file.read())['general']
+        self.texts = ""
         self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
 
         self.scroll_container = None
@@ -3413,15 +3411,7 @@ class TalkScreen(Screens):
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_40_horizcenter"),
                                                                           manager=MANAGER)
-        self.resource_dir = "resources/dicts/lifegen_talk/"
-        if self.the_cat.age == 'newborn':
-            with open(f"{self.resource_dir}newborn.json",
-                  encoding="ascii") as read_file:
-                self.texts = ujson.loads(read_file.read())['general']
-        else:
-            with open(f"{self.resource_dir}{self.the_cat.status}.json",
-                    encoding="ascii") as read_file:
-                self.texts = ujson.loads(read_file.read())['general']
+        self.texts = self.get_possible_text(self.the_cat)
         self.text_frames = [[text[:i+1] for i in range(len(text))] for text in self.texts]
         
         self.talk_box = pygame_gui.elements.UIImage(
@@ -3487,3 +3477,37 @@ class TalkScreen(Screens):
                 else:
                     self.frame_index = len(self.text_frames[self.text_index]) - 1  # Go to the last frame
         return
+    
+    def get_possible_text(self, cat):
+        status = cat.status
+        trait = cat.personality.trait
+        skill = cat.skills
+        text = ""
+        resource_dir = "resources/dicts/lifegen_talk/"
+        possible_texts = None
+        with open(f"{resource_dir}{status}.json", 'r') as read_file:
+            possible_texts = ujson.loads(read_file.read())
+            
+        texts_list = []
+        for talk in possible_texts.values():
+            if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
+                continue
+            if cat.relationships[game.clan.your_cat.ID].dislike > 50 and 'hate' not in talk[0]:
+                continue
+            else:
+                texts_list.append(talk[1])
+        if not texts_list:
+            resource_dir = "resources/dicts/lifegen_talk/"
+            possible_texts = None
+            with open(f"{resource_dir}general.json", 'r') as read_file:
+                possible_texts = ujson.loads(read_file.read())
+            texts_list.append(possible_texts['general'][1])
+        
+        text = choice(texts_list)
+        text = [t.replace("c_n", game.clan.name) for t in text]
+        text = [t.replace("y_c", str(game.clan.your_cat.name)) for t in text]
+
+        return choice(texts_list)
+        
+        
+        

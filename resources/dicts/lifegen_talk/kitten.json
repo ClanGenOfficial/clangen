@@ -1,5 +1,118 @@
 
 {
-    "general": ["hi", "hello!", "mrp"
+    "kit_1": [
+        [
+            "kitten",
+            "jealousy"
+        ],
+        [
+            "There you are, prancing around like you're the Clan leader's kit or something. Just because you caught a beetle today doesn't mean you're the best at everything.",
+            "Look at you, always the center of attention. Everyone always cooing and pawing at you. Well, I don't need all that. I'm going to be the greatest warrior this Clan has ever seen, just you wait.",
+            "So, you climbed to the top of the elders' den, big deal! I can do that too, I just... don't want to. Yeah, that's it. I've got better things to do than show off like you do.",
+            "Oh, don't give me that look. You think you're so great, don't you? Well, one day I'll show you. I'll be the one everyone is talking about. And then we'll see who's the best.",
+            "Just you wait, one day I'll be an apprentice, and then a warrior. And I won't forget how you've been. You'll see. I'll prove to you and to everyone that I'm just as good... No, I'm better!"
+        ]
+    ],
+    "kit_2": [
+        [
+            "kitten",
+            "dislike"
+        ],
+        [
+            "There you are, acting like you own the nursery again.",
+            "Always hogging the best spots in the den, always first in line for fresh-kill. Well, I've had enough of it. You're not the only kit in this Clan, you know!",
+            "And stop telling me what to do! I'll explore the camp if I want to. I don't care if it's against the rules. You're not my mother!",
+            "I hope StarClan makes you a medicine cat. Then you won't be able to boss anyone around anymore. You'll have to deal with stinky herbs and heal tick bites all day long!"
+        ]
+    ],
+    "kit_3": [
+        [
+            "kit"
+        ],
+        [
+            "Hey! There you are! I've been looking all over for you! I found the most amazing bug today by the nursery. It was huge! You have to come see it.",
+            "Do you remember that time when we pretended to be Clan leaders and started giving orders to the elders? They were so surprised! That was the best day ever.",
+            "You're the best thing about the nursery. Even better than fresh moss and feathers! And when we're warriors, we'll be the best in the Clan, I know it. No mouse will be safe from us!"
+
+        ]
+    ],
+    "kit_4": [
+        [
+            "kitten",
+            "respect"
+        ],
+        [
+            "Hi there! I saw you standing up to that older kit earlier, the one who keeps stealing our moss balls. That was really brave of you. I don't think I could have done that.",
+            "I really look up to you, you know? You're always fair, and you never let anyone push you around. When we play 'Clans,' I always want to be your deputy. Even though you always make me the medicine cat.",
+            "I hope that when I become an apprentice, I'll be as brave as you. But until then, I'm glad you're my friend. Cause I know you'll always lead me in the right direction!"
+        ]
+    ],
+    "kit_5": [
+        [
+            "kitten",
+            "trust"
+        ],
+        [
+            "Hey, it's you! I was hoping to find you here. I've got something to tell you...",
+            "You remember that dream I told you about, right? The one where I was an apprentice, catching my first mouse? I had it again last night, but this time, there was an owl, too.",
+            "It was so scary... but knowing I could tell you about it makes it less frightening.",
+            "You're always there for me, like when I fell into that thorn bush, and you helped me get out. Or when we got lost outside camp, and you led us back home. You never laugh at me or tell me I'm silly. You just... listen. And that means a lot."
+        ]
+    ],
+    "kit_6": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
+    ],
+    "kit_": [
+        [
+
+        ],
+        [
+
+        ]
     ]
 }

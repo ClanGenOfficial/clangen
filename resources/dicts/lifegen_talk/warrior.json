@@ -1,11 +1,15 @@
-
 {
-    "general": ["It's another fine dawn in the territory, isn't it? The air carries the scent of Newleaf, and the forest feels more alive than ever.", 
-    "I see you're up early... Keen to get a start on the day, are we? Or perhaps something's troubling you?", 
-    "Our lives as warriors aren't without their thorns, are they? But remember, even the sharpest thorn is less threatening when you face it with your Clanmates at your side.", 
-    "Oh, and about last Gathering... Yes, I noticed the tension too. ThornClan seems restless. We must be ready for anything.",
-    "But let's not allow the possibility of trouble to overshadow this beautiful day, alright? We are warriors, but we also appreciate the peace when it's granted to us.",    
-    "So come on, let's face the day, paw step by paw step, side by side. May StarClan light our path."]
-    
-
+    "warrior_1": [
+        [
+            "warrior"
+        ],
+        [
+            "It's another fine dawn in the territory, isn't it? The air carries the scent of Newleaf, and the forest feels more alive than ever.",
+            "I see you're up early... Keen to get a start on the day, are we? Or perhaps something's troubling you?",
+            "Our lives as warriors aren't without their thorns, are they? But remember, even the sharpest thorn is less threatening when you face it with your Clanmates at your side.",
+            "Oh, and about last Gathering... Yes, I noticed the tension too. ThornClan seems restless. We must be ready for anything.",
+            "But let's not allow the possibility of trouble to overshadow this beautiful day, alright? We are warriors, but we also appreciate the peace when it's granted to us.",
+            "So come on, let's face the day, paw step by paw step, side by side. May StarClan light our path."
+        ]
+    ]
 }

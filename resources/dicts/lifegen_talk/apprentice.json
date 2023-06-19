@@ -1,7 +1,7 @@
 {
     "app_1": [
         [
-            "app",
+            "apprentice",
             "romantic_like"
         ],
         [
@@ -15,21 +15,22 @@
     ],
     "app_2": [
         [
-            "app",
+            "apprentice",
             "platonic_like"
         ],
         [
             "Hey there! Finally got away from your mentor, huh? Mine's been keeping me on my paws all day. I swear, if I have to stalk one more imaginary mouse...",
             "I saw you in battle training earlier, though. You're getting really good! That move you pulled off... what was it again? The duck and roll? It looked really cool. Maybe you could show me sometime?",
             "And speaking of cool things, have you seen the elder's den lately? They've got a whole new stash of fresh moss. It looks so comfy! We should totally sneak in there one night and have a sleepover. We'll tell ghost stories and everything!",
-            "Oh, and did you hear about the Gathering tomorrow night? I can't wait to see the other Clans. I wonder what their apprentices are like. Do you think they train as hard as we do? Or maybe they're all super lazy and we're going to be the best warriors ever!",
+            "Oh, and did you hear about the Gathering tomorrow night? I can't wait to see the other Clans. I wonder what their apprentices are like.",
+            "Do you think they train as hard as we do? Or maybe they're all super lazy and we're going to be the best warriors ever!",
             "But before that, we've got to finish our chores. Ugh, I hate cleaning out the elder's ticks. They're so gross. And they always tell the same stories over and over. But I guess it's all part of being an apprentice.",
             "Anyway, we should probably get back to it. Don't want our mentors catching us slacking off. But later, let's meet at the training hollow. Maybe we can practice that move of yours?"
         ]
     ],
     "app_3": [
         [
-            "app",
+            "apprentice",
             "jealousy"
         ],
         [
@@ -43,7 +44,7 @@
     ],
     "app_4": [
         [
-            "app",
+            "apprentice",
             "dislike"
         ],
         [
@@ -57,7 +58,7 @@
     ],
     "app_5": [
         [
-            "app",
+            "apprentice",
             "comfort"
         ],
         [
@@ -69,7 +70,7 @@
     ],
     "app_6": [
         [
-            "app",
+            "apprentice",
             "respect"
         ],
         [
@@ -82,12 +83,12 @@
     ],
     "app_7": [
         [
-            "app",
+            "apprentice",
             "trust"
         ],
         [
             "Hey there, friend! I was just thinking about that adventure we had last moon. Remember when we got lost in the forest? I was so scared, but having you there made everything less frightening.",
-            "You know, it's rare to find someone you can really trust in this life. But I trust you, completely. You've been there for me, through thick and thin, through victories and mistakes. You've seen me at my best and at my worst, and yet, here we are.",
+            "You know, it's rare to find someone you can really trust in this life. But I trust you, completely. You've seen me at my best and at my worst, and yet, here we are.",
             "When we train together, I know you have my back. When we share tongues, I know I can tell you anything. You're more than just a Clanmate or a friend to me. You're like family.",
             "I hope you know that the trust goes both ways. I'm here for you, no matter what. If you need help with training, if you want to talk about something, if you're scared or uncertain... just let me know. We're in this together."
         ]
@@ -122,6 +123,32 @@
         ],
         [
             "Leave me alone."
+        ]
+    ],
+    "app_12": [
+        [
+            "hate"
+        ],
+        [
+            "Can't you see I'm busy?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_14": [
+        [
+            "kitten"
+        ],
+        [
+            "Hey, y_c! You're getting so big, you'll be an apprentice before you know it. Do you ever wonder what it's like, getting to train and go on patrols?",
+            "Well, let me tell you, it's not just fun and games. It's hard work, too. There's so much to learn: how to hunt, how to fight, how to navigate through the territory, and not just that. There's also the warrior code.",
+            "But don't worry, it's not all serious. You get to explore and see things that you've never seen before. You get to learn new things every day. You get to watch the elders, the warriors, even the leader and deputy, and learn from them. And trust me, catching your first mouse, there's nothing quite like it."
         ]
     ]
 }
