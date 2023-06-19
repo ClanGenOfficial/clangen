@@ -928,8 +928,6 @@ class Events:
                     enemy_clan.relations -= 1
 
         else:  # try to start a war if no war in progress
-            if not self.WAR_TXT:
-                self.load_war()
             for other_clan in game.clan.all_clans:
                 threshold = 5
                 if other_clan.temperament == 'bloodthirsty':
