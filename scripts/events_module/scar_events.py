@@ -87,7 +87,8 @@ class Scar_Events():
         if injury_name not in self.scar_allowed:
             return None, None
         
-        chance = max(int(13 - cat.injuries[injury_name]["moons_with"]), 1)
+        moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
+        chance = max(13 - moons_with, 1)
         
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):

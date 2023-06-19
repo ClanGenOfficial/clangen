@@ -276,8 +276,6 @@ class Pregnancy_Events():
                 if cat.injuries["pregnant"]["severity"] == "minor":
                     cat.injuries["pregnant"]["severity"] = "major"
                     text += choice(PREGNANT_STRINGS["major_severity"])
-                cat.injuries["pregnant"]["duration"] -= 1
-                cat.injuries["pregnant"]["moons_with"] += 1
             except:
                 print("Is this an old save? Cat does not have the pregnant condition")
 
