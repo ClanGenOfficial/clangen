@@ -246,7 +246,7 @@
             "unscathed_rare": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
         },
         "fail_text": {
-            "unscathed_common": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
+            "unscathed_common": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
             "unscathed_stat": "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
             "injury": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
         },
@@ -283,7 +283,7 @@
             "unscathed_rare": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
         },
         "fail_text": {
-            "unscathed_common": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
+            "unscathed_common": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
             "unscathed_stat": "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
             "death": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator."
         },

@@ -752,7 +752,7 @@
         },
         "fail_text": {
             "unscathed_common": "app1 tries to look brave in front of the other cats, but hears a rustle behind {PRONOUN/app1/object} and startles so badly {PRONOUN/app1/subject} {VERB/app1/fall/falls} over.",
-            "unscathed_stat": "s_c makes fun of app1 for being so scared."
+            "unscathed_stat": "s_c makes fun of app2 for being so scared."
         },
         "win_trait": [
             "charismatic",

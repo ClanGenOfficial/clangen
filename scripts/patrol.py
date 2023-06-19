@@ -464,7 +464,7 @@ class Patrol():
         possible_stat_cats = []
         for kitty in self.patrol_cats:
             if "app_stat" in self.patrol_event.tags \
-                    and kitty.status not in ['apprentice', "medicine cat apprentice"]:
+                    and kitty.status not in ['apprentice', "medicine cat apprentice"] and kitty != self.patrol_apprentices[0]:
                 continue
             if "adult_stat" in self.patrol_event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
                 continue
