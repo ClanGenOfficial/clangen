@@ -7,11 +7,11 @@ from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
 # ---------------------------------------------------------------------------- #
-#                               Death Event Class                              #
+#                            Disaster Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class DisasterEvents():
-    """All events with a connection to conditions."""
+    """All events with a connection to disasters."""
 
     def __init__(self) -> None:
         self.event_sums = 0

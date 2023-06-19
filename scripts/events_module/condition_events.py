@@ -48,7 +48,7 @@ class Condition_Events():
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
             random_number = int(
-                random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
+                random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_illness_chance"))
             if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
                 season_dict = ILLNESSES_SEASON_LIST[season]
                 possible_illnesses = []
@@ -96,7 +96,7 @@ class Condition_Events():
         has_other_clan = False
         triggered = False
         text = None
-        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_injury_chance"])
+        random_number = int(random.random() * game.get_config_value("condition_related", f"{game.clan.game_mode}_injury_chance"))
 
         if cat.dead:
             triggered = True
@@ -400,11 +400,8 @@ class Condition_Events():
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
-            elif cat.dead and cat.status == 'leader':
-                self.history.add_death(cat, f"died to {illness}")
-                break
-
             elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                self.history.add_death(cat, f"died to {illness}")
                 break
 
             # heal the cat
@@ -477,10 +474,7 @@ class Condition_Events():
             if skipped:
                 continue
 
-            elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
-                break
-
-            if cat.dead:
+            if cat.dead or cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
                 triggered = True
 
                 try:
