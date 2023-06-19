@@ -593,21 +593,21 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
-        if self.the_cat.ID != game.clan.your_cat.ID:    
-            if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
-                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                    (766, 220), (68, 68))),
-                    "",
-                    object_id="#talk_button",
-                    tool_tip_text="Talk to this Cat", manager=MANAGER
-                )
-            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
-                self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                    (850, 220), (68, 68))),
-                    "",
-                    object_id="#talk_button",
-                    tool_tip_text="Talk to this Cat", manager=MANAGER
-                )
+        # if self.the_cat.ID != game.clan.your_cat.ID:    
+        #     if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
+        #         self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+        #             (766, 220), (68, 68))),
+        #             "",
+        #             object_id="#talk_button",
+        #             tool_tip_text="Talk to this Cat", manager=MANAGER
+        #         )
+        #     elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+        #         self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
+        #             (850, 220), (68, 68))),
+        #             "",
+        #             object_id="#talk_button",
+        #             tool_tip_text="Talk to this Cat", manager=MANAGER
+        #         )
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
