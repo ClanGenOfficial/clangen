@@ -10,6 +10,7 @@ from re import sub
 from platform import system
 import logging
 import subprocess
+import random
 
 
 from scripts.cat.history import History
@@ -1138,7 +1139,7 @@ class SaveAsImage(UIWindow):
     
 class PickPath(UIWindow):
     def __init__(self, last_screen):
-        super().__init__(scale(pygame.Rect((500, 400), (600, 360))),
+        super().__init__(scale(pygame.Rect((500, 400), (600, 500))),
                          window_display_title='Choose your Path',
                          object_id='#game_over_window',
                          resizable=False)
@@ -1155,14 +1156,14 @@ class PickPath(UIWindow):
         )
 
         self.begin_anew_button = UIImageButton(
-            scale(pygame.Rect((30, 170), (150, 150))),
+            scale(pygame.Rect((30, 190), (150, 150))),
             "",
             object_id="#med",
             container=self,
             tool_tip_text='Choose to become a medicine cat apprentice'
         )
         self.not_yet_button = UIImageButton(
-            scale(pygame.Rect((220, 170), (150, 150))),
+            scale(pygame.Rect((220, 190), (150, 150))),
             "",
             object_id="#warrior",
             container=self,
@@ -1170,17 +1171,27 @@ class PickPath(UIWindow):
 
         )
         self.mediator_button = UIImageButton(
-            scale(pygame.Rect((410, 170), (150, 150))),
+            scale(pygame.Rect((410, 190), (150, 150))),
             "",
             object_id="#mediator",
             container=self,
             tool_tip_text='Choose to become a mediator apprentice'
 
         )
+        self.random_button = UIImageButton(
+            scale(pygame.Rect((255, 370), (100, 100))),
+            "",
+            object_id="#random_dice_button",
+            container=self,
+            tool_tip_text='Random'
+
+        )
 
         self.not_yet_button.enable()
         self.begin_anew_button.enable()
         self.mediator_button.enable()
+        self.random_button.enable()
+
 
 
     def process_event(self, event):
@@ -1198,4 +1209,9 @@ class PickPath(UIWindow):
             elif event.ui_element == self.mediator_button:
                 game.switches['window_open'] = False
                 game.clan.your_cat.status = 'mediator apprentice'
+                self.kill()
+            elif event.ui_element == self.random_button:
+                game.switches['window_open'] = False
+                
+                game.clan.your_cat.status = random.choice(['mediator apprentice','apprentice','medicine cat apprentice'])
                 self.kill()
