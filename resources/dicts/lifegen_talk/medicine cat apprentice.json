@@ -1,60 +1,158 @@
-
 {
     "medi_1": [
         [
-
+            "kitten"
         ],
         [
-
+            "Hey, little kit! Ever thought about being a medicine cat? We get to play with all the herbs... and we don't have to deal with pesky thorns when we hunt!",
+            "Guess what? I learned a new herb today! It's called marigold, and it's used to heal wounds. Cool, right? Not as cool as catching a mouse, but it's interesting.",
+            "Don't worry, I won't let you get a bellyache from eating too much fresh-kill! I know the perfect herb for that. But don't test me on purpose, okay?",
+            "You know, sometimes I wonder what it would be like to be a warrior. Then I remember I'd have to share my den with a bunch of snoring cats, and I'm glad I'm a medicine cat apprentice!",
+            "And remember, even though you're small now, one day you might be the one taking care of the clan. So listen, learn, and play nice with your littermates."
+        ]
+    ],
+    "medi_2": [
+        [
+            "apprentice"
+        ],
+        [
+            "Hey, fellow apprentice! Ready for another day of training? I'll be over here, sorting herbs and looking for omens.",
+            "I heard you're going hunting today. Must be fun! You gotta teach me some hunting techniques.",
+            "You know, I sometimes wonder about what it's like going out on patrols. But then I remember how wet and muddy it gets, and I'm glad I get to stay in the medicine den!",
+            "Do you ever get jealous that I get to sleep in and you have to go out for dawn patrol? Who am I kidding, I'm up all night watching snoring elders and sick cats.",
+            "Well, I gotta go. Remember, just because you're an apprentice doesn't mean you can't make a big difference. Keep learning, keep trying, and one day you'll be the best warrior you can be!"
+        ]
+    ],
+    "medi_3": [
+        [
+            "medicine cat apprentice"
+        ],
+        [
+            "Hey, y_c! Isn't it great being the most important apprentice in the clan? I mean, who else can treat a bee sting or a bellyache?",
+            "I heard you found a new patch of yarrow today. Nice! If you find any extra, you can always bring it to me. I seem to be using a lot of it lately, thanks to the kits' love for snacking on what they're not supposed to!",
+            "You know, I sometimes wonder what it would be like to have normal apprentice duties. Then I remember the joy of a successfully treated wound, and I'm content where I am.",
+            "Do you ever wish we could go out hunting or fighting? Yeah, me neither. I prefer the scent of herbs to the smell of damp fur and mud.",
+            "And remember, even though we're still learning, we're already a vital part of the clan. We're medicine cat apprentices, and that's something to be proud of!"
+        ]
+    ],
+    "medi_4": [
+        [
+            "mediator apprentice"
+        ],
+        [
+            "Hey, y_c! Ever wish you could swap places with me? Trust me, dealing with cranky cats and a den full of herbs is no picnic!",
+            "I heard you managed to solve a big dispute today. Well done! If you ever need to unwind, I've got some nice calming herbs here in the den.",
+            "Do you ever miss the simplicity of being a kit? Me too. But then I remember the responsibility and respect we have now, and I wouldn't trade it for the world.",
+            "You know, I admire your patience. I mean, I have to deal with sick and injured cats, but you have to deal with grumpy and stubborn ones!",
+            "And remember, even if it feels like all you're doing is listening to petty squabbles, you're learning important skills. Keep going, and one day you'll be a fantastic mediator!"
+        ]
+    ],
+    "medi_5": [
+        [
+            "warrior"
+        ],
+        [
+            "Hello, warrior! Are you ready for another day of patrols and hunting? I'm ready to deal with whatever injuries you bring back.",
+            "Do you ever get tired of all that running around? Because watching you makes me tired! It's a good thing I chose the path of a medicine cat apprentice.",
+            "I know it's not as exciting as catching a squirrel, but I've discovered a new use for mouse bile today. It turns out it's not just for ticks!",
+            "I can't believe how hard you work. I mean, sorting herbs is tough, but running around the forest chasing after prey and protecting the clan... that's really impressive.",
+            "And remember, even though you're a warrior, it's okay to ask for help. Whether you're injured or just tired, I'm here for you."
+        ]
+    ],
+    "medi_6": [
+        [
+            "medicine cat"
+        ],
+        [
+            "Hello, mentor! Ready for another day of herb-sorting and treating our clumsy clanmates? I hope we don't run out of marigold again...",
+            "Do you ever miss being an apprentice? Me neither! Who wants to go back to doing all the dirty work? Oh wait...",
+            "I can't wait to learn everything you know. It's amazing how you can remember all those herbs and their uses!",
+            "I know it's a big responsibility, taking care of the health of the clan, but I wouldn't want to be doing anything else.",
+            "And remember, even though I'm your apprentice, I'm here to support you too. You've taught me so much, and I can't wait to learn more."
+        ]
+    ],
+    "medi_7": [
+        [
+            "mediator"
+        ],
+        [
+            "Hello, mediator! Are you ready for another day of settling disputes? I'm just here, sorting herbs and trying to keep our clanmates healthy.",
+            "Do you ever wish you could just tell everyone to figure things out on their own? I know I sometimes feel that way when a cat comes in with the third scratch of the week!",
+            "I can't believe the patience you have. Dealing with cranky, stubborn cats all day... it's amazing!",
+            "I know we have different roles in the clan, but we both have the same goal: to keep the clan happy and healthy.",
+            "And remember, even though you're dealing with difficult situations, you're doing an amazing job. The clan is lucky to have you."
+        ]
+    ],
+    "medi_8": [
+        [
+            "deputy"
+        ],
+        [
+            "Hello, deputy! Are you ready for another day of organising patrols and keeping the clan in line? I'm just over here, ready to deal with any thorns or injuries your warriors bring back.",
+            "Do you ever wish you could take a break from all that responsibility? Because watching you makes me tired! It's a good thing I'm over here, with my herbs and my quiet den.",
+            "I can't believe the work you do. I mean, sorting herbs is a lot of work, but organising the whole clan... that's really something.",
+            "I know we have different roles in the clan, but I just wanted to say that I respect the work you do. The clan wouldn't run smoothly without you.",
+            "And remember, even though you're busy, it's okay to take care of yourself too. If you ever need anything, don't hesitate to come to me."
+        ]
+    ],
+    "medi_9": [
+        [
+            "leader"
+        ],
+        [
+            "Hello, leader! Ready for another day of leading the clan? I'm here, ready to help keep our clanmates healthy and happy.",
+            "Do you ever wish you could be an apprentice again? Running around the forest, with no responsibilities... It's a fun thought, isn't it?",
+            "I can't imagine the pressure you're under. Leading a clan is a huge responsibility. But you're doing an amazing job.",
+            "I know we have different roles, but we both want what's best for the clan. And I just wanted to say that I'm here to support you in any way I can.",
+            "And remember, even though you're our leader, you're still a cat. If you ever need to talk, or need some herbs, I'm here for you."
+        ]
+    ],
+    "medi_10": [
+        [
+            "elder"
+        ],
+        [
+            "Hello, elder! Ready for another day of sharing stories and wisdom? I'll be over here, sorting through herbs and learning as much as I can.",
+            "Do you ever miss being a warrior? I sometimes wonder what it would be like. But then I remember that I love my herbs too much!",
+            "I can't believe all the things you've seen and done. You're a link to the past and a guide for the future. I'm grateful for your wisdom.",
+            "I know being an elder is different than being a medicine cat apprentice. But I think we're both important in our own ways. We both serve the clan, just in different ways.",
+            "And remember, just because you're an elder now doesn't mean you're not important. Your stories and wisdom are invaluable to the clan. And if you ever need anything, don't hesitate to come to me."
         ]
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
     ]
-
 }

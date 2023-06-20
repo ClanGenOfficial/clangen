@@ -38,6 +38,102 @@
             "In these troubling times, let us lean on each other. Let us share the weight, so it does not become too much for one cat to bear. I am here for you, as a healer, as an advisor, and as a friend."
         ]
     ],
+    "medi_4": [
+        ["kitten"],
+        ["Greetings, little one! Have you been staying away from the elderberry bush? Those berries might look tasty, but they're not for kits.",
+        "Do you ever dream of being a medicine cat? Well, keep that curiosity alive! Who knows what your path will be?",
+        "I see a bright future for you, little one. You're going to make your clan very proud.",
+        "Remember, play nice with your denmates, and always listen to the elders. They know a lot more than you think.",
+        "And remember, even if you're the smallest in the clan, you're just as important as the biggest warrior."]
+    ],
+    "medi_5": [
+        ["apprentice"],
+        ["Ah, an eager apprentice! How's the training coming along? Remember, a scratch won't send you to StarClan.",
+        "Do you ever wish to switch the training grounds for the medicine den? Learning herbs can be just as exciting as learning battle moves.",
+        "Your progress is commendable. The clan is excited to see you grow into a fine warrior.",
+        "Your role is crucial to the clan, even as an apprentice. We all started where you are now.",
+        "And don't forget, always respect your mentor and elders, they have much wisdom to share."]
+    ],
+    "medi_6": [
+        ["medicine cat apprentice"],
+        ["Hello there, my apprentice! How are the herbs coming along? I hope you haven't mixed up marigold and mouse bile!",
+        "Do you ever miss the days of wrestling with your denmates? Well, learning the healing arts is a different kind of challenge.",
+        "You're doing wonderfully in your training. Your clan is grateful for your dedication.",
+        "Every day is a learning opportunity. Don't fret over mistakes, they're part of the journey.",
+    "I'm proud of you, little one. Come talk to me anytime."]
+    ],
+    "medi_7": [
+        ["mediator apprentice"],
+        ["Ah, y_c! How are the negotiations coming along? It's not easy getting warriors to agree, I'll tell you that!",
+        "Do you ever wonder about the sparring and the hunting lessons warrior apprentices do? I suppose resolving disputes is a different kind of hunt.",
+        "You're doing a good job. The clan needs a calm voice like yours to keep things peaceful.",
+        "Remember, it's not about taking sides, but about helping others see eye to eye.",
+        "And don't forget, even the wisest cats need guidance. Don't hesitate to seek advice."]
+    ],
+    "medi_8": [
+        ["warrior"],
+        ["Ready for the next patrol, warrior? Remember, one missed mouse is better than a twisted paw.",
+        "Do you ever wish you could trade your claws for a day among my herbs? I sometimes wonder what it would be like to have your strength.",
+        "Your bravery and dedication are an inspiration to the clan. We appreciate your efforts.",
+        "Your strength isn't just in your muscles, it's in your heart, your loyalty to your clan.",
+        "Though, even the toughest warrior can use some rest. Don't push yourself too hard."]
+    ],
+    "medi_9": [
+        ["medicine cat"],
+        ["Well met, y_c. How are the stocks holding up? Have you found a way to make the travelling herbs taste any better?",
+        "Do you ever wish for a day without sniffles and coughs? I sometimes do.",
+        "Your skills and dedication are invaluable. The clan wouldn't be the same without your care.",
+        "Remember, we heal not only with our herbs but with our words and presence.",
+        "And even though we have to keep our distance sometimes, we're as much a part of the clan as any other cat."]
+    ],
+    "medi_10": [
+        ["mediator"],
+        ["Hello, y_c! Any disagreements today? Warriors can be as prickly as thistles sometimes.",
+        "Do you ever wish for a quiet day among the herbs? I sometimes wonder what it's like to be in your paws.",
+        "Your skills in keeping the peace are invaluable. Your work contributes greatly to our clan's harmony.",
+        "Remember, peace comes not only from resolving conflicts but from understanding and empathy.",
+        "Even the wisest cats can learn something new. Always be open to change."]
+    ],
+    "medi_11": [
+        ["deputy"],
+        ["Ah, y_c! Are the patrols going well? Remember, not every wound is visible. Check on your warriors' spirits as well.",
+        "Do you ever wish for a simple day in the medicine den? I sometimes wonder what it's like to shoulder your responsibilities.",
+        "Your dedication and leadership are inspirational. Your clan relies on your strength and wisdom.",
+        "Remember, it's not just about leading the clan, but also about guiding them, showing them the way.",
+        "Though, even the greatest deputies need a break sometimes. Make sure to rest."]
+    ],
+    "medi_12": [
+        ["leader"],
+        ["Greetings, noble leader. Have the stars spoken to you today? Remember, sometimes they whisper, and we need to listen closely.",
+        "Do you ever wish for a day of peace in the medicine den? I sometimes wonder what it's like to lead our clan.",
+        "Your wisdom and bravery are a beacon to us all. The clan stands behind you, always.",
+        "Remember, leading isn't just about making decisions, it's about nurturing the clan's spirit.",
+        "Don't forget though, even the greatest leaders need guidance. Don't forget to look to the stars."]
+    ],
+    "medi_13": [
+        ["elder"],
+        ["Hello, y_c! How are you feeling today? Any aches or pains? You warriors are tough, but sometimes tough means stubborn.",
+        "Do you ever miss the thrill of the chase? I suppose sharing stories with the kits can be just as rewarding.",
+        "Your wisdom and tales are a treasure to the clan. You continue to guide us with your words.",
+        "Remember, even though your warrior days are behind you, your role is still important. You're the clan's memory.",
+        "Your stories not only entertain us but teach us valuable lessons. Thank you for your wisdom."]
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
+    "medi_1": [
+        [],
+        []
+    ],
     "medi_1": [
         [],
         []

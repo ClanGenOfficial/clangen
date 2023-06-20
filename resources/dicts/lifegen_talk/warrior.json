@@ -224,73 +224,123 @@
     ],
     "warrior_20": [
         [
-            "warrior",
-            ""
+            "kitten"
         ],
-        []
-    ],
-    "warrior_7": [
         [
-            "warrior",
-            ""
-        ],
-        []
+            "Hello there, future warrior! Have you been practicing your pouncing? I heard from a little bird that you're getting pretty good.",
+            "Can you imagine, one day you'll be hunting and patrolling just like us warriors. Are you excited? I bet you can't wait!",
+            "But for now, make sure you listen to your mother and the elders. They have lots of wisdom to share, even if their stories can be a bit long sometimes.",
+            "Remember, it's okay to make mistakes, little one. Even the greatest warriors started out just like you.",
+            "And never forget, the clan is always here for you, and we'll always have your back."
+        ]
     ],
-    "warrior_7": [
+    "warrior_21": [
         [
-            "warrior",
-            ""
+            "apprentice"
         ],
-        []
+        [
+            "Ready for today's training, apprentice? I heard from your mentor that you're quick on your paws. That's excellent!",
+            "Do you ever wish training was over so you could finally be a warrior? I remember those days well, but trust me, every step of the journey is important.",
+            "Keep up the good work and remember to respect your elders. They may not be as quick as us anymore, but they've got moons of experience under their pelts.",
+            "Remember, being a warrior isn't just about fighting and hunting, it's about being loyal to your clan and looking out for each other.",
+            "And also, every cat has a role to play, and right now, your role is to learn. Keep going, you're doing great."
+        ]
     ],
-    "warrior_7": [
+    "warrior_22": [
         [
-            "warrior",
-            ""
+            "medicine cat apprentice"
         ],
-        []
+        [
+            "Hello there, healer-to-be! How are the herbs coming along? You know, us warriors do appreciate your work, even if we grumble about the taste of your concoctions.",
+            "Do you ever wonder about the excitement of warrior training? I sometimes wonder what it would be like to have your responsibilities.",
+            "Your role is as important as any warrior's, and we all respect the path you've chosen. Healing is no less heroic than fighting.",
+            "Remember, every cat has their own path to walk. Yours may be lined with herbs instead of thorns, but it's equally important.",
+            "And also, you're doing a great job. Don't hesitate to ask for help if you need it, we're all here to support each other."
+        ]
     ],
-    "warrior_7": [
+    "warrior_23": [
         [
-            "warrior",
-            ""
+            "mediator apprentice"
         ],
-        []
+        [
+            "Ready to sort out the latest dispute, peacekeeper? It's impressive how you manage to keep things calm around here.",
+            "Do you ever wish you could join us on patrol? Well, dealing with squabbling warriors isn't a walk in the forest either!",
+            "Your role is essential for the clan's harmony. It's a tough job, and we warriors respect what you do.",
+            "Remember, being a mediator isn't always about pleasing everyone, it's about finding the fairest solution.",
+            "And also, even the strongest warriors need a peaceful camp to return to. Your role is just as vital as ours."
+        ]
     ],
-    "warrior_7": [
+    "warrior_24": [
         [
-            "warrior",
-            ""
+            "warrior"
         ],
-        []
+        [
+            "Ready for patrol, fellow warrior? It's going to be a great day for hunting, I can feel it in my whiskers.",
+            "Do you ever wish you could swap roles with a kit for a day? I know I do, especially after a tough patrol.",
+            "Your strength and bravery are appreciated. We're all a vital part of the clan, protecting and feeding our family.",
+            "Remember, it's not just about catching the biggest prey or being the fastest in the patrol, it's about working together and keeping our clan safe.",
+            "And also, every cat in the clan is important, from the smallest kit to the oldest elder. We're all in this together."
+        ]
     ],
-    "warrior_7": [
+    "warrior_25": [
         [
-            "warrior",
-            ""
+            "medicine cat"
         ],
-        []
+        [
+            "Greetings, healer! How's the herb stock looking? You know, us warriors might grumble, but we're grateful for your care.",
+            "Do you ever miss the thrill of the hunt? I sometimes wonder what it would be like to trade places for a day.",
+            "Your work doesn't go unnoticed. Your dedication and skill in healing are as crucial as any warrior's strength.",
+            "Remember, even though you're busy looking after all of us, it's important to look after yourself too.",
+            "And also, your role is unique and highly respected. We warriors would be lost without you."
+        ]
     ],
-    "warrior_7": [
+    "warrior_26": [
         [
-            "warrior",
-            ""
+            "mediator"
         ],
-        []
+        [
+            "Hello, peacekeeper! Ready to untangle another knot of disagreement? We warriors might be tough, but we're glad to have you smoothing our ruffled fur.",
+            "Do you ever wish for a straightforward day of patrolling and hunting? I sometimes wonder what it's like dealing with all the clan disputes.",
+            "Your skills in keeping the peace are invaluable. Without you, who knows how many unnecessary squabbles would escalate?",
+            "Remember, even though it might seem tough at times, your role is vital for our clan's harmony.",
+            "And also, no matter how challenging a dispute may seem, you've got the wisdom and patience to handle it. We believe in you."
+        ]
     ],
-    "warrior_7": [
+    "warrior_27": [
         [
-            "warrior",
-            ""
+            "deputy"
         ],
-        []
+        [
+            "Ready for another day of organizing us unruly warriors, deputy? I've got to say, I don't envy your job!",
+            "Do you ever wish for the simpler days of being a warrior? I sometimes wonder what it's like to carry your responsibilities.",
+            "Your hard work and leadership don't go unnoticed. We all appreciate your dedication.",
+            "Remember, even though you're busy keeping everything in order, it's important to take time for yourself too.",
+            "And don't forget, even the greatest deputies need a listening ear sometimes. If you ever need to talk, I'm here."
+        ]
     ],
-    "warrior_7": [
+    "warrior_28": [
         [
-            "warrior",
-            ""
+            "leader"
         ],
-        []
+        [
+            "Greetings, leader! Ready to guide us through another day? I'm on my way to patrol the borders.",
+            "Do you ever wish for a quiet day of hunting and sunning? I sometimes wonder what it's like to bear the weight of the whole clan.",
+            "Your courage and wisdom are an inspiration to us all. We're all here, standing behind you, ready to support our clan.",
+            "Remember, even though you carry the weight of our clan, you're not alone. We're all in this together.",
+            "And don't forget, leadership isn't about being perfect, it's about doing your best for the clan. And you're doing a great job."
+        ]
+    ],
+    "warrior_29": [
+        [
+            "elder"
+        ],
+        [
+            "Hello, wise one! Have you thought of any new tales to tell? Us warriors can always use a good story after a long day.",
+            "Do you ever miss the thrill of the chase? I sometimes wonder what it will be like when I join the elders' den.",
+            "Your stories and wisdom are a treasure. Your life as a warrior continues to inspire us all.",
+            "Remember, even though you're not out on patrols anymore, you're still a vital part of our clan.",
+            "And also, the lessons we learn from your tales are as valuable as any battle skill. Thank you for your wisdom."
+        ]
     ],
     "warrior_7": [
         [
