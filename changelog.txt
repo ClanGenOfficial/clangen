@@ -1,4 +1,4 @@
-<stong>v0.9.0</strong>
+<strong>v0.9.0</strong>
 <u>Big Changes:</u>
 Cats can now have more than one mate, with no upper limit.  The choose mate screen has been redesigned to support selecting multiple mates!
 In addition to two biological parents, cat can have an unlimited number of adoptive parents. Adoptive parents are treated the same as biological parents for relation-tracking. You can manually add new adoptive parents.
