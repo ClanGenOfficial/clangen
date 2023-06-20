@@ -3373,8 +3373,15 @@ class TalkScreen(Screens):
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
                 continue
-            
             if ('leafbare' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('newleaf' in talk[0] and game.clan.current_season != 'Newleaf') or ('leaffall' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('greenleaf' in talk[0] and game.clan.current_season != 'Greenleaf'):
+                continue
+            if any(i in ['bloodthirsty', 'cold', 'childish', 'faithful', 'strict', 'insecure'] for i in talk[0]):
+                if trait not in talk[0]:
+                    continue
+            if any(i in ['beach', 'forest', 'plains', 'mountainous', 'wetlands'] for i in talk[0]):
+                if game.clan.biome not in talk[0]:
+                    continue
+            if (not game.clan.your_cat.is_ill() and not game.clan.your_cat.is_injured()) and 'injured' in talk[0]:
                 continue
             if game.clan.your_cat.ID in cat.relationships:
                 if cat.relationships[game.clan.your_cat.ID].dislike < 50 and 'hate' in talk[0]:

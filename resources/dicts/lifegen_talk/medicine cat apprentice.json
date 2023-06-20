@@ -170,24 +170,134 @@
             "The snow-covered forest has its own quiet beauty, wouldn't you agree?"
         ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medapp_2": [
+        [
+            "kit",
+            "injured"
+        ],
+        [
+            "Hey, little one, I see you have a boo-boo. Let's fix you up, alright?",
+            "You're very brave for coming here. Even the smallest scratch can be scary.",
+            "See? I'm just going to put this poultice here, and you'll feel better in no time. It's just like when we play healers!",
+            "Now, remember to be careful when playing. Even the strongest warriors get injured sometimes. But when you're a kit, it's important to stay safe.",
+            "All done! You were very brave. Go rest now, and you'll be playing again in no time."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medapp_3": [
+        [
+            "apprentice",
+            "injured"
+        ],
+        [
+            "Oh, an apprentice! I know you're learning a lot right now, but getting hurt is not part of the curriculum, you know?",
+            "I'll patch you up quickly. Don't worry, every cat gets injured at some point. It's all part of learning to be a Clan member.",
+            "See? I'm just applying this herb, and you'll be on your paws in no time. It's not so bad, right?",
+            "Remember to take it easy while you heal. I know you're eager to get back to training, but you need to allow your body to recover.",
+            "Okay, there you go! Remember, even the strongest warriors need to heal sometimes. Take care of yourself."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medapp_4": [
+        [
+            "medicine cat apprentice",
+            "injured"
+        ],
+        [
+            "Oh, a fellow medicine cat apprentice! It's not often we have to heal one another, is it?",
+            "Let's get you patched up. Remember, we can't heal others if we don't take care of ourselves first.",
+            "Here, I'm applying this poultice. See? Even we can learn from our injuries.",
+            "Take it easy and let your body heal. You're doing great work, but we also need to keep ourselves healthy.",
+            "Alright, all patched up! Remember, we can't care for others if we don't care for ourselves. Rest up."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medapp_5": [
+        [
+            "mediator apprentice",
+            "injured"
+        ],
+        [
+            "Ah, a mediator apprentice. You're always in the thick of things, aren't you? Let's get you patched up.",
+            "Remember, while it's important to help solve others' disputes, you can't forget to take care of yourself.",
+            "Here, this herb will help. Being injured can be scary, but it's also a chance to learn and grow.",
+            "Rest and let your body heal. You're an important part of this Clan, and we need you healthy.",
+            "All done! Remember, taking care of yourself is just as important as taking care of others. Rest and get well soon."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medapp_6": [
+        [
+            "warrior",
+            "injured"
+        ],
+        [
+            "Warrior, you're always out there defending our Clan, aren't you? Let's get those injuries sorted out.",
+            "Being a warrior is tough. You must always remember to take care of yourself and not push too hard.",
+            "Here, let me apply this. Remember, even the bravest and strongest warriors need time to heal.",
+            "Rest and let your body recover. Our Clan needs you, and you'll be able to protect us better once you're healed.",
+            "All done. Remember, rest and recovery are as much a part of being a warrior as fighting and hunting."
+        ]
+    ],
+    "medapp_7": [
+        [
+            "medicine cat",
+            "injured"
+        ],
+        [
+            "Oh, my mentor! You're always taking care of others, sometimes you forget to take care of yourself, don't you?",
+            "Don't worry, I've learned well from you. Let me take care of this. I'm sure you'll be back on your paws in no time.",
+            "Remember, just like you always tell me, we can't help others if we don't help ourselves.",
+            "Take your time to rest and recover. Our Clan needs its medicine cat, and that includes you, mentor.",
+            "All done! You've taught me well. Now, rest and take it easy for a while."
+        ]
+    ],
+    "medapp_8": [
+        [
+            "mediator",
+            "injured"
+        ],
+        [
+            "A mediator, always in the midst of things, sometimes at your own risk. Let's patch you up.",
+            "Remember, you have to be strong for yourself, too, not just for others. It's okay to need help sometimes.",
+            "This poultice will help your injury. I understand how crucial your role is.",
+            "Rest and let your body heal. Our Clan needs you healthy and strong, guiding us through our disputes and troubles.",
+            "All done! Take it easy for a few days and let your body recover. You're important to us."
+        ]
+    ],
+    "medapp_9": [
+        [
+            "deputy",
+            "injured"
+        ],
+        [
+            "Ah, deputy, you work so hard for the Clan. But even deputies get hurt, and that's okay. Let's get you patched up.",
+            "You're always putting the Clan first, but now it's time to put yourself first. Let's take care of these injuries.",
+            "Applying this herb will help you heal faster. You're important to us, and we need you in top shape.",
+            "Remember to rest and give yourself time to heal. It's as important as fulfilling your duties to the Clan.",
+            "All done! Now, remember to rest and get well soon. The Clan depends on you."
+        ]
+    ],
+    "medapp_10": [
+        [
+            "leader",
+            "injured"
+        ],
+        [
+            "Oh, our leader! It's not often we see you in the medicine den, is it? Let's take care of that injury.",
+            "You carry the weight of the Clan on your shoulders. But now, let me lighten that burden a little by healing your wounds.",
+            "Here, let me apply this poultice. Even leaders can get hurt, and that's okay. It's all part of leading a Clan.",
+            "Remember, healing takes time. Our Clan needs its leader healthy and strong. So, it's important to rest and recover.",
+            "There, all done. You'll be back leading the Clan in no time. Until then, rest and heal, leader."
+        ]
+    ],
+    "medapp_11": [
+        [
+            "elder",
+            "injured"
+        ],
+        [
+            "Come in, wise elder. Your years have brought wisdom and respect, but sometimes they bring aches and pains, too.",
+            "Let me treat your wounds. You've done so much for us; now it's time for us to look after you.",
+            "See? It's not so bad. These herbs will help with the pain and speed up your healing.",
+            "Take your time and rest. Our Clan values its elders, and we need you healthy and strong.",
+            "All patched up! Remember, no racing with the kits until you're fully healed, okay?"
+        ]
     ]
 }

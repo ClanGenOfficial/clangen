@@ -141,7 +141,8 @@
             "With swift footwork, you dodge your opponent's attack, and while they're off-balance, you strike. Speed and precision over brute force.",
             "Then there's the leap-and-hold. Used correctly, it's a powerful move, especially against a larger opponent. You leap onto your enemy's back, grab onto their fur, and hold on tight.",
             "It might not inflict much damage, but it can certainly disorient and wear them down.",
-            "Remember, every warrior has a favorite move, a strength they rely on. But the best warriors? They adapt. They know their strengths, but they also recognize their weaknesses. They learn from each battle, from every friend, from every foe.",
+            "Remember, every warrior has a favorite move, a strength they rely on. But the best warriors? They adapt. They know their strengths, but they also recognize their weaknesses.",
+            "They learn from each battle, from every friend, from every foe.",
             "So, let's get started. Show me your stance. Let's see where your strengths lie, and together, we'll sharpen them into formidable weapons."
         ]
     ],
@@ -152,10 +153,13 @@
         [
             "Ah, the seasons. Each one holds a charm of its own, don't you think?",
             "Leaf-bare has a quiet beauty to it. The snow blanketing the forest, the peace of the long nights... It's a time for stories by the fire and huddled warmth in the den. The hunting may be harder, but it brings us closer as a Clan, makes us stronger.",
-            "New-leaf is a time of rebirth. The snow melts, the prey returns, and the forest comes alive. There's nothing quite like the smell of fresh green-leaf in the morning or the sight of the first buds on the trees. It's a promise of new beginnings, a fresh start.",
+            "New-leaf is a time of rebirth. The snow melts, the prey returns, and the forest comes alive. There's nothing quite like the smell of fresh green-leaf in the morning or the sight of the first buds on the trees.",
+            "It's a promise of new beginnings, a fresh start.",
             "Green-leaf is a season of abundance. The days are long and warm, the prey is plentiful, and the forest is in full bloom. The trees are a riot of green, the air hums with life. It's a time for long patrols and leisurely sunning.",
-            "And leaf-fall... Ah, leaf-fall might just be my favorite. The forest is ablaze with color, the air crisp and cool. It's a time of harvest, a reminder to appreciate what we have. And the rustling of dry leaves underpaw? There's no other feeling quite like it.",
-            "But no matter the season, remember this - we are warriors. We adapt. We survive. We thrive. Each season presents its own challenges, its own rewards. And through it all, we remain strong, together. So, tell me, what's your favorite season?"
+            "And leaf-fall... Leaf-fall might just be my favorite. The forest is ablaze with color, the air crisp and cool. It's a time of harvest, a reminder to appreciate what we have.",
+            "And the rustling of dry leaves underpaw? There's no other feeling quite like it.",
+            "But no matter the season, remember this - we are warriors. We adapt. We survive. We thrive. Each season presents its own challenges, its own rewards. And through it all, we remain strong, together.",
+            "So, tell me, what's your favorite season?"
         ]
     ],
     "warrior_13": [

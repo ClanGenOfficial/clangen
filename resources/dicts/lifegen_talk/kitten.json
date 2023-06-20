@@ -173,5 +173,112 @@
             "Even though you're kinda smelly... and have a lot of ticks.",
             "Oops! Sorry! Did I say that out loud?"
         ]
+    ],
+    "kit_150": [
+        [
+            "kit"
+        ],
+        [
+            "Hey, do you know any new games we could play?",
+            "I'm tired of playing the same old games. I bet you know some fun ones!",
+            "Can you teach me? I promise not to be too clumsy!",
+            "Awesome! Let's call the other kits as well. The more, the merrier, right?",
+            "Wait for me, I'll bring my lucky pebble! Can't start a game without it!"
+        ]
+    ],
+    "kit_16": [
+        [
+            "apprentice"
+        ],
+        [
+            "Hey, when you're done with your duties, could you take me to the apprentice den?",
+            "I want to see the rest of dens too. You could show me where you sleep!",
+            "Can you also teach me a move or two? I won't use it on anyone... maybe just on my denmate.",
+            "Promise I won't cause any trouble. Can't wait to be an apprentice like you!",
+            "We're gonna have so much fun! I'll quickly finish my share of the fresh-kill!"
+        ]
+    ],
+    "kit_17": [
+        [
+            "medicine cat apprentice"
+        ],
+        [
+            "Do you have anything for a pretend tummy ache? I'm playing a sick warrior!",
+            "I heard you have all kinds of herbs. Could you show me?",
+            "Just pretend ones, okay? I don't actually want to eat any.",
+            "I'll be your best patient ever!"
+        ]
+    ],
+    "kit_18": [
+        [
+            "mediator apprentice"
+        ],
+        [
+            "Can you help me settle a debate? I think moss-ball is better than hide-and-seek, but my denmate disagrees!",
+            "Do you think you could explain to her why moss-ball is the superior game?",
+            "I promise to listen if you say that hide-and-seek is better, but you're wrong!",
+            "Okay, let's get this sorted then! Thanks for helping us!",
+            "Hey, why don't you join us for a game after? It'll be fun!"
+        ]
+    ],
+    "kit_19": [
+        [
+            "warrior"
+        ],
+        [
+            "Do you remember your first battle? Were you as brave as you are now?",
+            "Can you show me a cool warrior move? Just a small one, promise I won't hurt myself!",
+            "One day, I'll fight just like you, you'll see!",
+            "Do you think I can practice a roar now? I'll be the fiercest kit in the Clan!",
+            "I can't wait to become a warrior like you. Rawr!"
+        ]
+    ],
+    "kit_20": [
+        [
+            "medicine cat"
+        ],
+        [
+            "Can you ask StarClan if they have any messages for me? I promise to be a good listener!",
+            "Does StarClan like moss-ball? I bet they do!",
+            "Do you think you can teach me how to dream like you do? It must be exciting to speak to StarClan!",
+            "Imagine being a medicine cat! Then no one can order me to bed early, right?",
+            "I can't wait to have StarClan dreams. Until then, I'll just dream of the biggest fresh-kill pile!"
+        ]
+    ],
+    "kit_21": [
+        [
+            "mediator"
+        ],
+        [
+            "Can you help me tell the other kits it's my turn with the moss-ball? They don't seem to listen to me!",
+            "You're really good at making everyone agree. I bet you can make them see it's only fair!",
+            "Do you think I could learn to speak like you? Then no one can ignore me!",
+            "Alright, let's tell them it's my turn! After you, of course!",
+            "Thanks for helping! One day, I'll be a great speaker like you."
+        ]
+    ],
+    "kit_22": [
+        [
+            "leader"
+        ],
+        [
+            "Hey, do you think I could have a peek at the leader's den? I bet it's full of exciting things!",
+            "I promise not to touch anything. I'm just curious!",
+            "Do you think I could be a leader one day? I'd make sure kits have a say in everything!",
+            "Do you think the Clan would listen to a kit leader? We could have moss-ball every evening!",
+            "Alright, I can dream! One day, I'll have my own den and you can visit!"
+        ]
+    ],
+    "kit_23": [
+        [
+            "elder"
+        ],
+        [
+            "Do you have any stories about brave kits? I want to hear something exciting!",
+            "I bet the elders' den is full of old secrets and tales. Could you share one?",
+            "Promise I won't tell the other kits. It'll be our little secret!",
+            "Is it true that apprentices used to wrestle badgers for fun? That's what my denmate said!",
+            "Thanks for the story! It was the best I've ever heard!"
+        ]
     ]
 }
