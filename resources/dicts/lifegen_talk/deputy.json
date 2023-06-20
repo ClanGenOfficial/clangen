@@ -213,91 +213,109 @@
         [
             "kitten"
         ],
-        ["Hey there, little furball! How's your day going? Keeping out of trouble I hope?",
-        "Being a kit is all about playing and learning. You've got a lot of learning to do before you become an apprentice!",
-        "Try to listen to your mother and the elders, they have lots of wisdom to share.",
-        "Remember, even though you're small now, one day you might be deputy or even leader!",
-        "And always remember, being brave isn't about not being scared, it's about facing your fears."]
+        [
+            "Hey there, little furball! How's your day going? Keeping out of trouble I hope?",
+            "Being a kit is all about playing and learning. You've got a lot of learning to do before you become an apprentice!",
+            "Try to listen to your mother and the elders, they have lots of wisdom to share.",
+            "Remember, even though you're small now, one day you might be deputy or even leader!",
+            "And always remember, being brave isn't about not being scared, it's about facing your fears."
+        ]
     ],
     "dep_18": [
         [
             "apprentice"
         ],
-        ["Training hard, I hope? Remember, it's not just about hunting and fighting.",
-        "Learning to be a good clanmate is just as important as catching your first mouse.",
-        "You're doing well in your training. Keep up the good work, and you'll make a fine warrior.",
-        "Remember, listening is just as important as talking. You can learn a lot from the others.",
-        "And always remember, respect the code, respect your clanmates, and respect yourself."]
+        [
+            "Training hard, I hope? Remember, it's not just about hunting and fighting.",
+            "Learning to be a good clanmate is just as important as catching your first mouse.",
+            "You're doing well in your training. Keep up the good work, and you'll make a fine warrior.",
+            "Remember, listening is just as important as talking. You can learn a lot from the others.",
+            "And always remember, respect the code, respect your clanmates, and respect yourself."
+        ]
     ],
     "dep_19": [
         [
             "medicine cat apprentice"
         ],
-        ["Hello, young healer! How are your studies? The world of healing is broad and deep.",
-        "Your role is vital to the clan, remember that. Healing is as important as hunting and fighting.",
-        "You're doing a great job. I see you becoming a fine medicine cat in the future.",
-        "Remember, every herb and every wound is a lesson. Keep learning and growing.",
-        "And always remember, patience is key. Healing takes time, and that's okay."]
+        [
+            "Hello, young healer! How are your studies? The world of healing is broad and deep.",
+            "Your role is vital to the clan, remember that. Healing is as important as hunting and fighting.",
+            "You're doing a great job. I see you becoming a fine medicine cat in the future.",
+            "Remember, every herb and every wound is a lesson. Keep learning and growing.",
+            "And always remember, patience is key. Healing takes time, and that's okay."
+        ]
     ],
     "dep_20": [
         [
             "mediator apprentice"
         ],
-        ["Greetings! How's the journey of peacekeeping? Not all battles are fought with claws and teeth, some are fought with words.",
-        "Your training may be different from the warriors', but your role is just as important.",
-        "You're showing great potential. Keep honing your skills, and you'll be a great mediator.",
-        "Remember, the best resolution is one where everyone feels heard and understood.",
-        "And always remember, a good mediator stands in the middle, not on one side or the other."]
+        [
+            "Greetings! How's the journey of peacekeeping? Not all battles are fought with claws and teeth, some are fought with words.",
+            "Your training may be different from the warriors', but your role is just as important.",
+            "You're showing great potential. Keep honing your skills, and you'll be a great mediator.",
+            "Remember, the best resolution is one where everyone feels heard and understood.",
+            "And always remember, a good mediator stands in the middle, not on one side or the other."
+        ]
     ],
     "dep_21": [
         [
             "warrior"
         ],
-        ["Ready for today's patrol, warrior? Your strength and courage are invaluable to our clan.",
-        "Your duty to the clan goes beyond hunting and fighting, it's also about caring for your clanmates.",
-        "Your dedication doesn't go unnoticed. The clan respects and values your commitment.",
-        "Remember, a warrior's greatest strength isn't their muscles, but their heart.",
-        "And always remember, your actions reflect on the whole clan. Make us proud."]
+        [
+            "Ready for today's patrol, warrior? Your strength and courage are invaluable to our clan.",
+            "Your duty to the clan goes beyond hunting and fighting, it's also about caring for your clanmates.",
+            "Your dedication doesn't go unnoticed. The clan respects and values your commitment.",
+            "Remember, a warrior's greatest strength isn't their muscles, but their heart.",
+            "And always remember, your actions reflect on the whole clan. Make us proud."
+        ]
     ],
     "dep_22": [
         [
             "medicine cat"
         ],
-        ["How are the herbs, healer? Your role in our clan can't be understated.",
-        "Your skills not only heal our bodies but also our spirits. You keep the clan strong and healthy.",
-        "I see the hard work you put into your duty. The clan is grateful.",
-        "Remember, a good medicine cat is not only a healer but also a comforter.",
-        "And always remember, your herbs can heal wounds, but your words can heal hearts."]
+        [
+            "How are the herbs, healer? Your role in our clan can't be understated.",
+            "Your skills not only heal our bodies but also our spirits. You keep the clan strong and healthy.",
+            "I see the hard work you put into your duty. The clan is grateful.",
+            "Remember, a good medicine cat is not only a healer but also a comforter.",
+            "And always remember, your herbs can heal wounds, but your words can heal hearts."
+        ]
     ],
     "dep_23": [
         [
             "mediator"
         ],
-        ["Keeping the peace today, mediator? Your skills in conflict resolution are essential to our clan.",
-        "Your work helps maintain harmony in the clan. That's a task of great importance.",
-        "Your wisdom and patience make you an excellent mediator. We all appreciate your efforts.",
-        "Remember, a good mediator can see the heart of the problem, not just the surface.",
-        "And always remember, even the toughest conflicts can be resolved with patience and understanding."]
+        [
+            "Keeping the peace today, mediator? Your skills in conflict resolution are essential to our clan.",
+            "Your work helps maintain harmony in the clan. That's a task of great importance.",
+            "Your wisdom and patience make you an excellent mediator. We all appreciate your efforts.",
+            "Remember, a good mediator can see the heart of the problem, not just the surface.",
+            "And always remember, even the toughest conflicts can be resolved with patience and understanding."
+        ]
     ],
     "dep_24": [
         [
             "leader"
         ],
-        ["Leading the clan today, leader? Your wisdom and guidance are crucial to us.",
-        "Your role is one of the toughest in the clan, but also one of the most rewarding.",
-        "Your leadership has brought strength and unity to the clan. We're lucky to have you.",
-        "Remember, a good leader listens to their clan and makes decisions that benefit everyone.",
-        "And always remember, every cat in the clan looks up to you. Lead us well."]
+        [
+            "Leading the clan today, leader? Your wisdom and guidance are crucial to us.",
+            "Your role is one of the toughest in the clan, but also one of the most rewarding.",
+            "Your leadership has brought strength and unity to the clan. We're lucky to have you.",
+            "Remember, a good leader listens to their clan and makes decisions that benefit everyone.",
+            "And always remember, every cat in the clan looks up to you. Lead us well."
+        ]
     ],
     "dep_25": [
         [
             "elder"
         ],
-        ["Hello, elder! How are you? Your stories and wisdom are treasures to our clan.",
-        "Your experiences and teachings guide us all. We respect and value your wisdom.",
-        "The clan wouldn't be the same without you. We're all grateful for your guidance.",
-        "Remember, every story you tell is a lesson for the younger generations.",
-        "And always remember, your age is a testament to your strength and resilience. You're an inspiration to us all."]
+        [
+            "Hello, elder! How are you? Your stories and wisdom are treasures to our clan.",
+            "Your experiences and teachings guide us all. We respect and value your wisdom.",
+            "The clan wouldn't be the same without you. We're all grateful for your guidance.",
+            "Remember, every story you tell is a lesson for the younger generations.",
+            "And always remember, your age is a testament to your strength and resilience. You're an inspiration to us all."
+        ]
     ],
     "dep_26": [
         [
