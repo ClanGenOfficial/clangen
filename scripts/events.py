@@ -413,13 +413,16 @@ class Events:
         siblings = [self.create_sibling() for _ in range(num_siblings)]
         sibling_names = [str(sibling.name) for sibling in siblings]
         sibling_text = ' and '.join(sibling_names)
+        for s in siblings:
+            game.clan.your_cat.inheritance.siblings[s.ID] = s
+            s.backstory = game.clan.your_cat.backstory
         return siblings, sibling_text
 
     def get_birth_txt(self):
-        num_siblings = random.choice([0, 0, 0, 2, 2])
+        num_siblings = random.choice([2, 2])
         siblings, sibling_text = self.create_siblings(num_siblings)
 
-        birth_type = random.randint(1,6)
+        birth_type = 1
         if birth_type == 1:
             game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
@@ -452,6 +455,7 @@ class Events:
                     game.clan.your_cat.parent2 = None
                     return self.handle_birth_one_parent(siblings, sibling_text)
                 game.clan.your_cat.parent2 = self.pick_valid_parent()
+            
             return self.handle_birth_two_parents(siblings, sibling_text)
 
     def handle_birth_one_parent(self, siblings, sibling_text):
@@ -462,6 +466,8 @@ class Events:
         return self.set_birth_text("birth_one_parent", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "y_c": game.clan.your_cat.name})
 
     def handle_birth_two_parents(self, siblings, sibling_text):
+        Cat.all_cats[game.clan.your_cat.parent1].mate.append(Cat.all_cats[game.clan.your_cat.parent2])
+        Cat.all_cats[game.clan.your_cat.parent2].mate.append(Cat.all_cats[game.clan.your_cat.parent1])
         if siblings:
             self.add_siblings_and_inheritance(siblings, game.clan.your_cat.parent1, game.clan.your_cat.parent2)
             return self.set_birth_text("birth_two_parents_siblings", {"parent1": Cat.all_cats[game.clan.your_cat.parent1].name, "parent2": Cat.all_cats[game.clan.your_cat.parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
@@ -473,6 +479,8 @@ class Events:
         parent1, parent2 = self.pick_valid_parent(), self.pick_valid_parent()
         while parent2 == parent1:
             parent2 = self.pick_valid_parent()
+        Cat.all_cats[parent1].mate.append(Cat.all_cats[parent2])
+        Cat.all_cats[parent2].mate.append(Cat.all_cats[parent1])
         game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
         if siblings:
             self.add_siblings_and_inheritance(siblings, parent1, parent2)
@@ -1031,7 +1039,7 @@ class Events:
                 return
             self.handle_outbreaks(cat)
         elif cat.ID != game.clan.your_cat.ID and cat.status not in ['kitten', 'elder']:
-            cat.experience += random.randint(0,10)
+            cat.experience += random.randint(0,5)
 
         # newborns don't do much
         if cat.status == 'newborn':
