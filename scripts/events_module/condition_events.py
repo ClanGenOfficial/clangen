@@ -375,7 +375,6 @@ class Condition_Events():
         for illness in illnesses:
             # print('SAVE FILE', cat.name, cat.illnesses)
             # print('COPY', cat.name, illnesses)
-
             if illness in game.switches['skip_conditions']:
                 continue
 
@@ -474,7 +473,7 @@ class Condition_Events():
             if skipped:
                 continue
 
-            if cat.dead or cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+            if cat.dead or (cat.status == 'leader' and starting_life_count != game.clan.leader_lives):
                 triggered = True
 
                 try:
@@ -487,9 +486,10 @@ class Condition_Events():
                 event = event_text_adjust(Cat, event, cat)
 
                 if cat.status == 'leader':
-                    history_text = event.replace(cat.name, " ")
+                    history_text = event.replace(str(cat.name), " ")
                     self.history.add_death(cat, condition=injury, death_text=history_text.strip())
-                    event = event.replace('.', ', losing a life.')
+                    if not cat.dead:
+                        event = event.replace('.', ', losing a life.')
                 else:
                     self.history.add_death(cat, condition=injury, death_text=event)
 
