@@ -141,7 +141,7 @@ class Group_Events():
                     continue
 
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
-                if (main_cat.skills.primary.skill or main_cat.skills.secondary.skill) not in interact.skill_constraint["m_c"]:
+                if not main_cat.skills.check_skill_requirement_list(interact.skill_constraint):
                     continue
             
             if len(interact.backstory_constraint) >= 1 and "m_c" in interact.backstory_constraint:
@@ -334,9 +334,9 @@ class Group_Events():
             cat_to = Cat.all_cats[cat_to_id]
 
             if cat_to_id not in cat_from.relationships:
-                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
-                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
+                    cat_to.create_one_relationship(cat_from)
                 continue
 
             relationship = cat_from.relationships[cat_to_id]

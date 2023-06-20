@@ -485,7 +485,6 @@ class Game():
                     write_file.flush()
                     os.fsync(write_file.fileno())
         
-
     def save_events(self):
         """
         Save current events list to events.json
@@ -528,6 +527,38 @@ class Game():
                     game.cur_events_list.append(event_obj)
         except FileNotFoundError:
             pass
+        
+    def get_config_value(self, *args):
+        """Fetches a value from the self.config dictionary. Pass each key as a 
+        seperate arugment, in the same order you would access the dictionary. 
+        This function will apply war modifers if the clan is currently at war. """
+        
+        war_effected = {
+            ("death_related", "leader_death_chance"): ("death_related", "war_death_modifier_leader"),
+            ("death_related", "classic_death_chance"): ("death_related", "war_death_modifier"),
+            ("death_related", "expanded_death_chance"): ("death_related", "war_death_modifier"),
+            ("death_related", "cruel season_death_chance"): ("death_related", "war_death_modifier"),
+            ("condition_related", "classic_injury_chance"): ("condition_related", "war_injury_modifier"),
+            ("condition_related", "expanded_injury_chance"): ("condition_related", "war_injury_modifier"),
+            ("condition_related", "cruel season_injury_chance"): ("condition_related", "war_injury_modifier")
+        }
+        
+        
+        # Get Value
+        config_value = self.config
+        for key in args:
+            config_value = config_value[key]
+        
+        # Apply war if needed
+        if self.clan and self.clan.war["at_war"] and args in war_effected:
+            # Grabs the modifer
+            mod = self.config
+            for key in war_effected[args]:
+                mod = mod[key]
+
+            config_value -= mod
+            
+        return config_value
 
 game = Game()
 

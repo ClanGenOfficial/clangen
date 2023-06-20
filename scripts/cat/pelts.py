@@ -294,8 +294,6 @@ class Pelt():
         elif self.pattern == "MINIMAL4":
             self.pattern = "MINIMALFOUR"
         
-        
-        
     def init_eyes(self, parents):
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)

@@ -8,7 +8,7 @@
             "no_app",
             "medium_prey"
         ],
-        "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, scrounging in the sand for its stashed-away food",
+        "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, scrounging in the sand for its stashed-away food.",
         "decline_text": "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if they wait just a bit they're sure to catch something even bigger.",
         "chance_of_success": 30,
         "exp": 20,
