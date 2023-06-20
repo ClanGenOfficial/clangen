@@ -50,7 +50,7 @@ class Relation_Events():
         if not random.getrandbits(4):
             self.romantic_events(cat)
 
-        if len(cat.mate) > 1:
+        if len(cat.mate) > 0:
             for mate_id in cat.mate:
                 if mate_id not in Cat.all_cats:
                     print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
