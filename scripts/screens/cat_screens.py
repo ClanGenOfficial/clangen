@@ -1208,58 +1208,6 @@ class ProfileScreen(Screens):
 
         return scar_history
 
-    '''def adjust_skill_change_text(self, skill, mentor):
-        """
-        adjust the skill text as needed.  if a mentor needs to be mentioned, set mentor to True
-        """
-        adjust_skill = 'this should not appear - skill text adjustments'
-        vowels = ['e', 'a', 'i', 'o', 'u']
-        skill_paths = SKILLS["paths"]
-        skill_grammar_lists = {
-            "grow_as": ['dream', 'prophet'],
-            "grow_a": ['sense', 'star'],
-            "gain_more": ['camp', "ghost"],
-            "become": ['clever', 'clairvoyant'],
-            "become_a": ['teacher', 'hunter', 'fighter', 'runner', 'climber', 'swimmer', 'speaker', 'mediator',
-                         "kit", "story", "lore", "healer", "omen", "prophet"]
-        }
-        for group in skill_grammar_lists:
-            # find which group it is to assign proper text
-            if mentor:
-                if group == 'grow_as':
-                    adjust_skill = 'grow as a '
-                elif group == 'grow_a':
-                    adjust_skill = 'grow a '
-                elif group == 'gain_more':
-                    adjust_skill = "gain more skills with {PRONOUN/m_c/poss}"
-                elif group == 'become':
-                    adjust_skill = "become "
-                else:
-                    adjust_skill = 'become a '
-            else:
-                if group == 'grow_as':
-                    adjust_skill = 'grew as a '
-                elif group == 'grow_a':
-                    adjust_skill = 'grew a '
-                elif group == 'gain_more':
-                    adjust_skill = "gained more skills with {PRONOUN/m_c/poss}"
-                elif group == 'become':
-                    adjust_skill = "became "
-                else:
-                    adjust_skill = 'became a '
-            # now check if this is the group the skill fits in
-            for path in skill_grammar_lists[group]:
-                if skill in skill_paths.get(path):
-                    adjust_skill += skill
-                    # adjust a/an if need be
-                    for y in vowels:
-                        if 'a' not in adjust_skill:
-                            break
-                        if skill.startswith(y):
-                            adjust_skill = adjust_skill.replace(' a ', ' an ')
-                            break
-        return adjust_skill'''
-
     def get_apprenticeship_text(self):
         """
         returns adjusted apprenticeship history text (mentor influence and app ceremony)
@@ -1279,7 +1227,7 @@ class ProfileScreen(Screens):
             valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
                                     isinstance(Cat.fetch_cat(i), Cat)]
             if valid_formor_mentors:
-                influence_history += "{PRONOUN/m_c/subject/CAP} {VERB/m_c/was/were} mentored by "
+                influence_history += "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by "
                 if len(valid_formor_mentors) > 1:
                     influence_history += ", ".join([str(i.name) for i in valid_formor_mentors[:-1]]) + " and " + \
                         str(valid_formor_mentors[-1].name) + ". "
@@ -1576,7 +1524,7 @@ class ProfileScreen(Screens):
         
         # gather a list of all the conditions and info needed.
         all_illness_injuries = [(i, self.get_condition_details(i)) for i in self.the_cat.permanent_condition if
-                                not (i['born_with'] and i["moons_until"] != -2)]
+                                not (self.the_cat.permanent_condition[i]['born_with'] and self.the_cat.permanent_condition[i]["moons_until"] != -2)]
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.injuries if
                                     i not in ("an infected wound", "an festering wound")])
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.illnesses])

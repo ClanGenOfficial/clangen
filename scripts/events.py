@@ -967,7 +967,9 @@ class Events:
             
         cat.skills.progress_skill(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-        self.outsider_events.killing_outsiders(cat)
+        
+        if not cat.dead:
+            self.outsider_events.killing_outsiders(cat)
     
     def one_moon_cat(self, cat):
         """
@@ -1024,7 +1026,6 @@ class Events:
                 self.condition_events.handle_illnesses(cat)
             else:
                 self.condition_events.handle_injuries(cat)
-                game.switches['skip_conditions'].clear()
             game.switches['skip_conditions'].clear()
             if cat.dead:
                 return
@@ -1051,6 +1052,9 @@ class Events:
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+        # Stop the timeskip if the cat died in childbirth
+        if cat.dead:
+            return
 
         # this is the new interaction function, currently not active
         cat.relationship_interaction()
