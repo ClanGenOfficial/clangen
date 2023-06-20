@@ -3376,10 +3376,28 @@ class TalkScreen(Screens):
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
                 continue
-            if cat.relationships[game.clan.your_cat.ID].dislike > 50 and 'hate' not in talk[0]:
+            
+            if ('leafbare' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('newleaf' in talk[0] and game.clan.current_season != 'Newleaf') or ('leaffall' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('greenleaf' in talk[0] and game.clan.current_season != 'Greenleaf'):
                 continue
-            else:
-                texts_list.append(talk[1])
+            if game.clan.your_cat.ID in cat.relationships:
+                if cat.relationships[game.clan.your_cat.ID].dislike < 50 and 'hate' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].romantic_love < 30 and 'romantic_like' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].platonic_like < 30 and 'platonic_like' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].jealousy < 30 and 'jealousy' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].dislike < 30 and 'dislike' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].comfortable < 30 and 'comfort' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].admiration < 30 and 'respect' in talk[0]:
+                    continue
+                if cat.relationships[game.clan.your_cat.ID].trust < 30 and 'trust' in talk[0]:
+                    continue
+            
+            texts_list.append(talk[1])
         if not texts_list:
             resource_dir = "resources/dicts/lifegen_talk/"
             possible_texts = None

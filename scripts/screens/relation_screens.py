@@ -2328,8 +2328,7 @@ class RelationshipScreen(Screens):
 
         # Keep a list of all the relations
         self.all_relations = list(self.the_cat.relationships.values()).copy()
-        if self.the_cat.ID in list(self.the_cat.relationships.keys()).copy():
-            print("BAD")
+
 
         self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(str(self.the_cat.name) + " Relationships",
                                                                           scale(pygame.Rect((150, 150), (800, 100))),
@@ -2568,8 +2567,7 @@ class RelationshipScreen(Screens):
         # "position" should refer to the top left corner of the *main* relation box, not including the name.
         pos_x = pos[0]
         pos_y = pos[1]
-        if the_relationship.cat_to.ID == game.clan.your_cat.ID:
-            print("BAD")
+        
         self.sprite_buttons["image" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x + 44, pos_y), (100, 100))),
                                                                the_relationship.cat_to.sprite,
                                                                cat_object=the_relationship.cat_to)

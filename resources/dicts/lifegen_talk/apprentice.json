@@ -95,6 +95,7 @@
     ],
     "app_8": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -103,6 +104,7 @@
     ],
     "app_9": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -111,6 +113,7 @@
     ],
     "app_10": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -119,6 +122,7 @@
     ],
     "app_11": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -127,6 +131,7 @@
     ],
     "app_12": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -135,6 +140,7 @@
     ],
     "app_13": [
         [
+            "Any",
             "hate"
         ],
         [
@@ -148,7 +154,9 @@
         [
             "Hey, y_c! You're getting so big, you'll be an apprentice before you know it. Do you ever wonder what it's like, getting to train and go on patrols?",
             "Well, let me tell you, it's not just fun and games. It's hard work, too. There's so much to learn: how to hunt, how to fight, how to navigate through the territory, and not just that. There's also the warrior code.",
-            "But don't worry, it's not all serious. You get to explore and see things that you've never seen before. You get to learn new things every day. You get to watch the elders, the warriors, even the leader and deputy, and learn from them. And trust me, catching your first mouse, there's nothing quite like it."
+            "But don't worry, it's not all serious. You get to explore and see things that you've never seen before. You get to learn new things every day. You get to watch the elders, the warriors, even the leader and deputy, and learn from them.",
+            "And trust me, catching your first mouse, there's nothing quite like it.",
+            "One day, you'll be able to go out too. Don't worry!"
         ]
     ],
     "app_15": [
@@ -180,7 +188,7 @@
             "warrior"
         ],
         [
-            "I've been meaning to talk to you, actually. It's about my final assessment. It's coming up soon and... well, I'm a little nervous, to be honest",
+            "I've been meaning to talk to you, actually. It's about my final assessment. It's coming up soon and... well, I'm a little nervous, to be honest.",
             "I mean, I've been training hard, and I feel like I've learned a lot. But this is the big test, right? It's not just about whether I can catch a mouse or fight off an intruder. It's about whether I'm ready to be a warrior.",
             "Did you feel like this before your assessment? Did you worry that you might not make it, that you might let down the Clan, your mentor, yourself?",
             "I guess what I'm asking is... do you have any advice for me? Any words of wisdom to help me through?",
@@ -192,7 +200,7 @@
             "medicine cat"
         ],
         [
-            "Hello, I've been meaning to come see you. It's about this recurring dream I've been having, I'm not sure if it's anything important, but it has been bothering me",
+            "Hello, I've been meaning to come see you. It's about this recurring dream I've been having, I'm not sure if it's anything important, but it has been bothering me.",
             "It's always the same - I'm standing by a pool of water, looking at my reflection. But instead of my own face, I see a cloud-covered sky and a single star shining brightly through. Then I wake up...",
             "I know you're the one who interprets dreams and signs from StarClan. Do you think this could be a message? Or is it just a dream, nothing more?",
             "I've been an apprentice for a while now, so I've been trying to pay more attention to the world around me, to the signs. But I'm not sure what to make of this one. Could you maybe help me understand?",
@@ -204,10 +212,11 @@
             "mediator"
         ],
         [
-            "Hey, I was hoping to find you. There's something that's been on my mind lately, and I think you might be the right cat to help me sort it out",
-            "You know how you're always helping resolve disputes within the Clan, and even between Clans sometimes? You're good at it, finding the middle ground, making peace. I admire that about you",
-            "I'm having a bit of a disagreement with another apprentice. Nothing serious, just... it's about the hunting routes. We can't seem to agree on the best way to divide them so we both can catch enough. I know it sounds silly, but it's causing a lot of tension",
-            "I was wondering if you could give me some advice on how to approach this? How can I get my point across without starting a fight? You always seem to know what to say",
+            "Hey, I was hoping to find you. There's something that's been on my mind lately, and I think you might be the right cat to help me sort it out.",
+            "You know how you're always helping resolve disputes within the Clan, and even between Clans sometimes? You're good at it, finding the middle ground, making peace. I admire that about you.",
+            "I'm having a bit of a disagreement with another apprentice. Nothing serious, just... it's about the hunting routes. We can't seem to agree on the best way to divide them so we both can catch enough.",
+            "I know it sounds stupid, but I really want to be able to make amends.",
+            "I was wondering if you could give me some advice on how to approach this? How can I get my point across without starting a fight? You always seem to know what to say.",
             "Thanks for listening. I really appreciate it. It's good to know that there's someone in the Clan who's always ready to lend an ear and help smooth things over."
         ]
     ],
@@ -216,9 +225,9 @@
             "deputy"
         ],
         [
-            "y_c, may I have a word with you? I've been thinking a lot about my future in the Clan and... well, I wanted to discuss it with you",
-            "I've always admired the way you lead the Clan, the way you take responsibility for us all. You're firm but fair, always looking out for every cat. I think... I think I want to be like that one day",
-            "I know it's a long way off, and I still have a lot to learn. But I want to start working towards that now. I want to be the best warrior I can be, for the Clan",
+            "y_c, may I have a word with you? I've been thinking a lot about my future in the Clan and... well, I wanted to discuss it with you.",
+            "I've always admired the way you lead the Clan, the way you take responsibility for us all. You're firm but fair, always looking out for every cat. I think... I think I want to be like that one day.",
+            "I know it's a long way off, and I still have a lot to learn. But I want to start working towards that now. I want to be the best warrior I can be, for the Clan.",
             "Do you have any advice for me? How can I start preparing for such a role, even as an apprentice? Is there anything I should be doing now, to get ready for that kind of responsibility?",
             "Thank you for listening, y_c. I appreciate your guidance. I'll work hard, I promise. For the Clan."
         ]
@@ -229,42 +238,60 @@
         ],
         [
             "y_c, if you have a moment, there's something I'd like to discuss with you. It's about my future in the Clan and the path I wish to take",
-            "Ever since I became an apprentice, I've looked up to you. The way you lead us with courage, wisdom, and strength, it's something I aspire to. I've been thinking a lot about what kind of warrior I want to be, and I can't shake the feeling that I want to lead",
+            "Ever since I became an apprentice, I've looked up to you. The way you lead us with courage, wisdom, and strength, it's something I aspire to.",
+            "I've been thinking a lot about what kind of warrior I want to be, and I can't shake the feeling that I want to lead.",
             "I know it's ambitious. I know it's not something to take lightly. But I want to learn, to grow, to prepare myself. I want to contribute to our Clan in the most significant way I can",
             "I'm not asking for special treatment or shortcuts. I just want your advice, your guidance. How can I become a better warrior, a potential leader? What should I focus on? What do I need to learn?",
             "Thank you, y_c. Your words mean more to me than I can express. I promise you, I'll take your advice to heart and work hard to be a cat you, and our Clan, can be proud of."
         ]
     ],
-    "app_13": [
+    "app_22": [
         [
-            "hate"
+            "Any",
+            "leafbare"
         ],
         [
-            "You again? Haven't you done enough?"
+            "Leaf-bare is coming, isn't it? You can already feel the chill in the air, and the leaves are almost all off the trees. I've heard stories, but this will be my first leaf-bare as an apprentice.",
+            "I know it's going to be hard. The elders tell stories about the cold, about the scarce prey, about how the Clan has to come together to survive. I'm a little scared, I won't lie.",
+            "But I'm also ready. I've been training hard, learning how to hunt in all conditions. I want to be able to contribute, to help the Clan get through leaf-bare.",
+            "I hope that by the time Greenleaf comes again, I'll be a full warrior. That's my goal. To prove myself during the hardest time of the year, and to come out of it as a warrior.",
+            "I know it's a big task. But I also know that with the help of my mentors, my friends, and my Clan, I can make it. After all, that's what being in a Clan is all about, right?"
         ]
     ],
-    "app_13": [
+    "app_23": [
         [
-            "hate"
+            "Any",
+            "leaffall"
         ],
         [
-            "You again? Haven't you done enough?"
+            "Leaf-fall is such a beautiful time, isn't it? When the leaves start changing colors, painting the forest in hues of red, orange, and yellow. I feel like the whole forest is preparing for a long rest.",
+            "Even though the prey is starting to hide away and the chill is seeping in, there's something about leaf-fall that feels warm. It's like the forest is giving us a bright farewell before the harsh leafbare.",
+            "And then there's the rustling of the leaves underpaw. It's hard to hunt without making a noise, but I've been practicing. I've found that if you move with the wind, you can cover the noise of your pawsteps.",
+            "I wonder, though, how everything changes so quickly. One moment, it's Greenleaf with all its warmth and abundance, and the next moment, it's leaf-fall, preparing us for the scarcity of leaf-bare.",
+            "But I guess that's how life is, right? A cycle of changes, each one preparing us for the next. It's a lesson from nature, and as a part of nature, we too adapt and grow."
         ]
     ],
-    "app_13": [
+    "app_24": [
         [
-            "hate"
+            "Any",
+            "newleaf"
         ],
         [
-            "You again? Haven't you done enough?"
+            "Newleaf... It's like the whole forest is waking up from a long sleep, don't you think? The trees are budding, the prey is coming out from their hiding spots, everything feels... alive.",
+            "I love how the sun feels warmer, and the days get longer. Training becomes more fun when you can feel the warm sun on your pelt, and the longer days mean more time to practice.",
+            "The flowers... they're kinda pretty too! I'm no medicine cat but I can still appreciate them!"
         ]
     ],
-    "app_13": [
+    "app_25": [
         [
-            "hate"
+            "Any",
+            "greenleaf"
         ],
         [
-            "You again? Haven't you done enough?"
+            "Greenleaf is amazing, isn't it? The forest is in full bloom, and there is prey at every pawstep. It's like StarClan has opened up the skies and poured life onto the earth.",
+            "But it's not just about the plenty of food. It's the feeling of the sun on your fur, the warm ground beneath your paws, and the endless green that stretches as far as the eye can see. It's like the whole forest is singing!",
+            "But the sun can be really hot sometimes too. The thirst... I sometimes feel like I could drink the whole river and still be thirsty.",
+            "Well, I guess every season has its ups and downs!"
         ]
     ],
     "app_13": [
