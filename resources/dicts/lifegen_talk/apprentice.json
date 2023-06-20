@@ -7,8 +7,8 @@
         [
             "H-hi there! Didn't see you there. Well, I mean, I saw you, but I didn't expect to... um... run into you here, at the fresh-kill pile. Yeah, I was just... grabbing something to eat.",
             "Oh, you're here for the same reason? Great, great... um, any particular prey you fancy today? I mean, there's a good selection.",
-            "It's a... a nice day, isn't it? The sun's out, the birds are singing.. .But it's been a busy day, you know. Hunting, patrolling, the usual warrior stuff.",
-            "You're... you're looking strong. I mean, your fur, it's very... shiny today. Must be all that grooming. Not that I've been watching you groom. That would be weird. I just... happened to notice.",
+            "It's a... a nice day, isn't it? The sun's out, the birds are singing... But it's been a busy day, you know. Hunting, patrolling, the usual warrior stuff.",
+            "You're- you're looking strong. I mean, your fur, it's very... shiny today. Must be all that grooming. Not that I've been watching you groom. That would be weird. I just... happened to notice.",
             "Well, I should... I should probably get going. Got to... eat this vole and... stuff. Yeah. Nice chatting with you. Maybe we could... um... do it again sometime? If you want to, I mean. No pressure.",
             "Have a good day... and... um... yeah. See you later!"
         ]
@@ -149,6 +149,138 @@
             "Hey, y_c! You're getting so big, you'll be an apprentice before you know it. Do you ever wonder what it's like, getting to train and go on patrols?",
             "Well, let me tell you, it's not just fun and games. It's hard work, too. There's so much to learn: how to hunt, how to fight, how to navigate through the territory, and not just that. There's also the warrior code.",
             "But don't worry, it's not all serious. You get to explore and see things that you've never seen before. You get to learn new things every day. You get to watch the elders, the warriors, even the leader and deputy, and learn from them. And trust me, catching your first mouse, there's nothing quite like it."
+        ]
+    ],
+    "app_15": [
+        [
+            "medicine cat apprentice"
+        ],
+        [
+            "Hey, y_c. Where've you been? Oh? I guess it's no surprise to find you here. Always with your nose in the herbs, aren't you?",
+            "You know, I sometimes wonder what it's like, not having to train for battle, not having to worry about patrols and hunting and all that.",
+            "But then, I see you with all these herbs and remedies, having to remember what each one does, what goes with what... Seems like a different kind of battle to me.",
+            "Must be pretty tough, huh? You're doing a great job, though. Just wanted you to know that.",
+            "Anyway, I'd better get going. Got a training session with the deputy. I'll see you around, yeah?"
+        ]
+    ],
+    "app_16": [
+        [
+            "mediator apprentice"
+        ],
+        [
+            "Hey, there you are! I heard about your latest peace talks with the other Clans. That's some pretty intense work you're doing, isn't it?",
+            "I mean, we're all trying to become warriors, right? Fighting, hunting, protecting the Clan... But you, you're out there trying to stop the fights before they even happen. That's... that's really something.",
+            "I've seen how hard you work, how much time you spend listening to everyone, trying to understand their point of view. I don't know if I could do that. I guess that's why you're the mediator apprentice, not me.",
+            "I just wanted to say... I admire you. You're making a difference, even if not everyone sees it. Keep it up, okay?",
+            "Alright, I've got to run. Training waits for no cat, you know? Catch you later!"
+        ]
+    ],
+    "app_17": [
+        [
+            "warrior"
+        ],
+        [
+            "I've been meaning to talk to you, actually. It's about my final assessment. It's coming up soon and... well, I'm a little nervous, to be honest",
+            "I mean, I've been training hard, and I feel like I've learned a lot. But this is the big test, right? It's not just about whether I can catch a mouse or fight off an intruder. It's about whether I'm ready to be a warrior.",
+            "Did you feel like this before your assessment? Did you worry that you might not make it, that you might let down the Clan, your mentor, yourself?",
+            "I guess what I'm asking is... do you have any advice for me? Any words of wisdom to help me through?",
+            "Anyway, thanks for listening. I appreciate it. I'll do my best, I promise. I won't let the Clan down."
+        ]
+    ],
+    "app_18": [
+        [
+            "medicine cat"
+        ],
+        [
+            "Hello, I've been meaning to come see you. It's about this recurring dream I've been having, I'm not sure if it's anything important, but it has been bothering me",
+            "It's always the same - I'm standing by a pool of water, looking at my reflection. But instead of my own face, I see a cloud-covered sky and a single star shining brightly through. Then I wake up...",
+            "I know you're the one who interprets dreams and signs from StarClan. Do you think this could be a message? Or is it just a dream, nothing more?",
+            "I've been an apprentice for a while now, so I've been trying to pay more attention to the world around me, to the signs. But I'm not sure what to make of this one. Could you maybe help me understand?",
+            "Thank you for listening. It feels good to get it off my chest, even if it turns out to be nothing. Thanks for being here for us."
+        ]
+    ],
+    "app_19": [
+        [
+            "mediator"
+        ],
+        [
+            "Hey, I was hoping to find you. There's something that's been on my mind lately, and I think you might be the right cat to help me sort it out",
+            "You know how you're always helping resolve disputes within the Clan, and even between Clans sometimes? You're good at it, finding the middle ground, making peace. I admire that about you",
+            "I'm having a bit of a disagreement with another apprentice. Nothing serious, just... it's about the hunting routes. We can't seem to agree on the best way to divide them so we both can catch enough. I know it sounds silly, but it's causing a lot of tension",
+            "I was wondering if you could give me some advice on how to approach this? How can I get my point across without starting a fight? You always seem to know what to say",
+            "Thanks for listening. I really appreciate it. It's good to know that there's someone in the Clan who's always ready to lend an ear and help smooth things over."
+        ]
+    ],
+    "app_20": [
+        [
+            "deputy"
+        ],
+        [
+            "y_c, may I have a word with you? I've been thinking a lot about my future in the Clan and... well, I wanted to discuss it with you",
+            "I've always admired the way you lead the Clan, the way you take responsibility for us all. You're firm but fair, always looking out for every cat. I think... I think I want to be like that one day",
+            "I know it's a long way off, and I still have a lot to learn. But I want to start working towards that now. I want to be the best warrior I can be, for the Clan",
+            "Do you have any advice for me? How can I start preparing for such a role, even as an apprentice? Is there anything I should be doing now, to get ready for that kind of responsibility?",
+            "Thank you for listening, y_c. I appreciate your guidance. I'll work hard, I promise. For the Clan."
+        ]
+    ],
+    "app_21": [
+        [
+            "leader"
+        ],
+        [
+            "y_c, if you have a moment, there's something I'd like to discuss with you. It's about my future in the Clan and the path I wish to take",
+            "Ever since I became an apprentice, I've looked up to you. The way you lead us with courage, wisdom, and strength, it's something I aspire to. I've been thinking a lot about what kind of warrior I want to be, and I can't shake the feeling that I want to lead",
+            "I know it's ambitious. I know it's not something to take lightly. But I want to learn, to grow, to prepare myself. I want to contribute to our Clan in the most significant way I can",
+            "I'm not asking for special treatment or shortcuts. I just want your advice, your guidance. How can I become a better warrior, a potential leader? What should I focus on? What do I need to learn?",
+            "Thank you, y_c. Your words mean more to me than I can express. I promise you, I'll take your advice to heart and work hard to be a cat you, and our Clan, can be proud of."
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
+        ]
+    ],
+    "app_13": [
+        [
+            "hate"
+        ],
+        [
+            "You again? Haven't you done enough?"
         ]
     ]
 }

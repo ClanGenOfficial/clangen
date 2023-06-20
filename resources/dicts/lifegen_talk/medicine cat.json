@@ -1,4 +1,3 @@
-
 {
     "med_1": [
         [
@@ -13,44 +12,42 @@
             "And who knows? Maybe one day you'll be the one teaching a curious kit about the ways of a medicine cat."
         ]
     ],
-    "medi_1": [
+    "med_2": [
         [
-
+            "warrior",
+            "injured"
         ],
         [
-
+            "Come in, warrior. I've seen you wince when you move, and your eyes tell a tale of sleepless nights. You're not fooling anyone, you know. It's okay to admit when you're hurt. That's why I'm here.",
+            "Being a warrior isn't just about strength and bravery. It's also about knowing when to seek help. Your body speaks its own language, and you must listen to it. A hurt ignored can turn into a wound that won't heal.",
+            "I know times have been tough, and the burden of protecting the Clan weighs heavy on your shoulders. The prey is scarce, the nights are long, and there is tension at the borders. But remember, you are not alone in this.",
+            "As a medicine cat, my role is not just to treat physical wounds. I'm here to listen, to be a pillar when things seem shaky. Your well-being, both physical and emotional, is my concern. You don't have to carry your burdens alone.",
+            "There is no shame in seeking help, and there's no strength in suffering in silence. You are a brave and respected warrior, and your Clanmates look up to you. But even the bravest warriors need help sometimes."
+        ]
+    ],
+    "med_3": [
+        [
+            "leader",
+            "leafbare"
+        ],
+        [
+            "Greetings, y_c. I can see the weight of the Clan on your shoulders tonight. It's been a challenging season for us all, hasn't it? Scarce prey, harsh weather, and I can see the worry in your eyes about our borders.",
+            "I may not lead patrols or make the decisions, but as a medicine cat, I see more than you might think. I see the anxiety in our warriors, the worry in our queens, the confusion in our kits. They look to you for guidance, for strength.",
+            "But remember, you are not alone in this.",
+            "You shoulder a great burden, one that isn't just about hunting or defending. You carry our hopes, our fears, and our dreams. It's a daunting task, but you do not need to bear it alone.",
+            "In these troubling times, let us lean on each other. Let us share the weight, so it does not become too much for one cat to bear. I am here for you, as a healer, as an advisor, and as a friend."
         ]
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ],
     "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
-    ],
-    "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
+        [],
+        []
     ]
 }
