@@ -1563,7 +1563,7 @@ class Cat():
                 "mortality": new_illness.current_mortality,
                 "infectiousness": new_illness.infectiousness,
                 "duration": new_illness.duration,
-                "moon_start": game.clan.age,
+                "moon_start": game.clan.age if game.clan else 0,
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
@@ -1626,7 +1626,7 @@ class Cat():
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
                 "duration": new_injury.duration,
-                "moon_start": game.clan.age,
+                "moon_start": game.clan.age if game.clan else 0,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "complication": None,
@@ -1734,7 +1734,7 @@ class Cat():
                 "severity": new_perm_condition.severity,
                 "born_with": born_with,
                 "moons_until": new_perm_condition.moons_until,
-                "moon_start": game.clan.age,
+                "moon_start": game.clan.age if game.clan else 0,
                 "mortality": new_perm_condition.current_mortality,
                 "illness_infectiousness": new_perm_condition.illness_infectiousness,
                 "risks": new_perm_condition.risks,
