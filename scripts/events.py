@@ -1101,6 +1101,10 @@ class Events:
         # if there are somehow no other clans, don't proceed
         if not game.clan.all_clans:
             return
+        
+        # Prevent wars from starting super early in the game. 
+        if game.clan.age <= 4:
+            return
 
         # check that the save dict has all the things we need
         if "at_war" not in game.clan.war:
