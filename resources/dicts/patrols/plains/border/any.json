@@ -26,7 +26,7 @@
         "fail_text": {
             "unscathed_common": "Whoops! It seems a fox was calling this home. The patrol backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as they were.",
             "unscathed_stat": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! They're brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
-            "death": "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when p_l, who was leading the group, cries out in pain. The cats back out of the tunnel quickly, but not quickly enough to save their Clanmate.",
+            "death": "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c cries out in pain. The cats back out of the tunnel quickly, but not quickly enough to save their Clanmate.",
             "injury": "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c gains a nasty wound."
         },
         "win_skills": [
