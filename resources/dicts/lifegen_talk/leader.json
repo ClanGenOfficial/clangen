@@ -118,5 +118,114 @@
             "Remember, every scar you bear tells a story of bravery, endurance, and survival.",
             "The stories you share carry the spirit of our ancestors. You're our link to the past."
         ]
-    ]
+    ],
+    "leader_11": [
+        [
+        "kit"
+        ],
+        [
+        "Hello, little one! You're growing up in a place full of stories and voices, all part of something we call Clan politics.",
+        "You see, our decisions here, whether about where to hunt or how to protect our borders, they are all part of making sure the Clan stays strong.",
+        "Someday, you'll be a part of these decisions, too. And you'll learn how each one can shape our future.",
+        "Even as a kit, you are an important part of our Clan. The lessons you learn now will guide you in the moons to come.",
+        "Now run along and play. There's time enough for serious matters when you're older!"
+        ]
+        ],
+        "leader_21": [
+        [
+        "apprentice"
+        ],
+        [
+        "Good day, y_c! As you learn our ways, you'll begin to see how our decisions impact the Clan and shape its future.",
+        "Every decision we make, whether it's dealing with other Clans or maintaining our territory, forms relationships with other Clans.",
+        "Sometimes, these decisions can be tough. We have to think about the welfare of the Clan and its future generations.",
+        "Your opinions matter. As you learn and grow, your voice will become a part of these discussions.",
+        "Always remember, our main aim is to ensure the peace and prosperity of our Clan."
+        ]
+        ],
+        "leader_31": [
+        [
+        "medicine cat apprentice"
+        ],
+        [
+        "Greetings, y_c. Your role is unique, treading the line between our physical world and the spiritual.",
+        "While you focus on the health of our Clan, you'll notice how our decisions affect the well-being of all our cats.",
+        "Clan politics might seem separate from your duties, but they're intertwined. The peace of our Clan can greatly impact the health of our cats.",
+        "Though you remain neutral, your perspective on our decisions is valuable. Always feel free to share your insights.",
+        "Together, we'll work towards maintaining the balance and harmony of our Clan."
+        ]
+        ],
+        "leader_41": [
+        [
+        "mediator apprentice"
+        ],
+        [
+        "Ah, y_c. You've chosen a role that truly dives into the heart of Clan politics.",
+        "Your role is to smooth the ripples in our Clan. You'll find the politics we deal with can often be the source of these ripples.",
+        "You'll be involved in many decisions, mediating disagreements and finding peaceful solutions. It's an essential role for our Clan's unity.",
+        "Always seek to understand every side of an issue. In Clan politics, every voice matters, and each perspective has its value.",
+        "May your path be guided by fairness and understanding. We're all in this together."
+        ]
+        ],
+        "leader_51": [
+        [
+        "warrior"
+        ],
+        [
+        "Greetings, warrior! Your pawsteps shape our Clan's path through the forest of Clan politics.",
+        "Each decision we make, from daily patrols to the most significant cross-Clan discussions, is part of this path.",
+        "I value your thoughts and observations. Your experiences can provide vital insights into the decisions we need to make.",
+        "Through our collective wisdom, we ensure the strength and prosperity of our Clan.",
+        "Your courage and dedication are an inspiration to us all. Together, we can overcome any challenge."
+        ]
+        ],
+        "leader_61": [
+        [
+        "medicine cat"
+        ],
+        [
+        "Ah, medicine cat, you straddle the worlds of the physical and the spiritual, bringing balance to our Clan.",
+        "You'll see how our decisions, the very heart of Clan politics, can affect the health and harmony of our Clan.",
+        "Although you are neutral, your insights can provide a unique perspective. I encourage you to share your thoughts when you feel it's needed.",
+        "The decisions we make are to ensure the peace and prosperity of our Clan. And your role is pivotal to that.",
+        "Thank you for your dedication. Your work brings comfort and healing, and it's deeply appreciated."
+        ]
+        ],
+        "leader_71": [
+        [
+        "mediator"
+        ],
+        [
+        "Greetings, mediator. Your role is fundamental to the fabric of Clan politics.",
+        "You help us find consensus, smooth conflicts, and build stronger bonds within our Clan.",
+        "Your insight into each cat's views and feelings can help guide us to decisions that respect and honor everyone's perspectives.",
+        "I value your wisdom and the peace you bring. Your work strengthens our unity and helps us move forward together.",
+        "Thank you for your dedication. Your role is pivotal in maintaining the harmony of our Clan."
+        ]
+        ],
+        "leader_81": [
+        [
+        "deputy"
+        ],
+        [
+        "My trusted deputy, our duties bring us close to the heart of Clan politics.",
+        "Every day, we make decisions that shape our Clan's path, from setting patrols to negotiating with other Clans.",
+        "Your thoughts, ideas, and observations are invaluable to me. They help shape the decisions we make.",
+        "As a deputy, you are more than my right paw. You are a confidante, a partner, and a friend.",
+        "I am grateful for your loyalty and dedication. Together, we can steer our Clan towards a prosperous future."
+        ]
+        ],
+        
+        "leader_101": [
+        [
+        "elder"
+        ],
+        [
+        "Hello, elder. Your tales and wisdom have shaped our Clan's past and will continue to guide its future.",
+        "In your stories, the younger generations can see the echoes of old Clan politics and learn valuable lessons.",
+        "Your perspective can provide insight and depth to our decision-making. Your voice is important to me and our Clan.",
+        "I appreciate your guidance and wisdom. You're a link to our past and an inspiration for our future.",
+        "Thank you for your wisdom and patience. Your role in our Clan is invaluable."
+        ]
+        ]
 }
