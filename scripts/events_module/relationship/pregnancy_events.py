@@ -364,7 +364,7 @@ class Pregnancy_Events():
                 death_chance = 40
         else:
             death_chance = 40
-        if not int(random.random() * 1):  # chance for a cat to die during childbirth
+        if not int(random.random() * death_chance):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
             meds = get_med_cats(Cat, working=False)
