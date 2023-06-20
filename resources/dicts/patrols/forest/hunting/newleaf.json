@@ -2192,6 +2192,26 @@
         }
     },
     {
+        "patrol_id": "fst_hunt_herb_warriornewleaf1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": ["hunting", "patrol_to_p_l", "respect", "random_herbs"],
+        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} believe c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely admit to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} a medicine cat, and ask {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the forest's herbal properties, especially with the herb stores still recovering from leaf-bare?",
+        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": {
+            "unscathed_common": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine den. The patrol brings the herbs back to camp and they are put to good use.",
+            "stat_skill": "s_c carefully plucks some of the herbs and takes them back to the camp to be identified before the patrol goes to the trouble of collecting them, smartly decideding to get an informed opinion before committing the patrol."
+        },
+        "fail_text": {
+            "unscathed_common": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill."
+        },
+        "win_skills": ["CLEVER,0", "INSIGHTFUL,0", "SENSE,0", "STORY,0", "LORE,0"],
+        "min_cats": 3,
+        "max_cats": 6
+},
+    {
         "patrol_id": "fst_hunt_eggs_newleaf1",
         "biome": "forest",
         "season": "newleaf",
