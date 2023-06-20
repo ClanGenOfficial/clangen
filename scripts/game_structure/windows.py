@@ -51,6 +51,7 @@ class SaveCheck(UIWindow):
                 scale(pygame.Rect((146, 310), (305, 60))),
                 "",
                 object_id="#main_menu_button",
+                starting_height=2,
                 container=self
             )
             self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
@@ -59,6 +60,7 @@ class SaveCheck(UIWindow):
                 scale(pygame.Rect((146, 310), (305, 60))),
                 "",
                 object_id="#smallquit_button",
+                starting_height=2,
                 container=self
             )
             self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"

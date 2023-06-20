@@ -1978,7 +1978,7 @@
             "dislike",
             "respect"
         ],
-        "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They describe ragwort to the warrior with them, though they'd be surprised if anyone manages to spot it.",
+        "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They describe ragwort to the warriors with them, though they'd be surprised if anyone manages to spot it.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "exp": 10,

@@ -60,8 +60,9 @@ class NewCatEvents:
                 for the_cat in outside_cat.all_cats.values():
                     if the_cat.dead or the_cat.outside or the_cat.ID == outside_cat.ID:
                         continue
-                    the_cat.relationships[outside_cat.ID] = Relationship(the_cat, outside_cat)
-                    outside_cat.relationships[the_cat.ID] = Relationship(outside_cat, the_cat)
+                    the_cat.create_one_relationship(outside_cat)
+                    outside_cat.create_one_relationship(the_cat)
+
                 # takes cat out of the outside cat list
                 game.clan.add_to_clan(outside_cat)
 
@@ -148,8 +149,9 @@ class NewCatEvents:
 
             if "m_c" in new_cat_event.tags:
                 # print('moon event new cat rel gain')
-                cat.relationships[new_cat.ID] = Relationship(cat, new_cat)
-                new_cat.relationships[cat.ID] = Relationship(new_cat, cat)
+                cat.create_one_relationship(new_cat)
+                new_cat.create_one_relationship(cat)
+                
                 new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
                 clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
                 change_relationship_values(
@@ -182,8 +184,10 @@ class NewCatEvents:
                     siblings = new_cat.get_siblings()
                     for sibling in siblings:
                         sibling = Cat.fetch_cat(sibling)
-                        sibling.relationships[new_cat.ID] = Relationship(sibling, new_cat)
-                        new_cat.relationships[sibling.ID] = Relationship(new_cat, sibling)
+                        
+                        sibling.create_one_relationship(new_cat)
+                        new_cat.create_one_relationship(sibling)
+                        
                         cat1_to_cat2 = game.config["new_cat"]["sib_buff"]["cat1_to_cat2"]
                         cat2_to_cat1 = game.config["new_cat"]["sib_buff"]["cat2_to_cat1"]
                         change_relationship_values(
