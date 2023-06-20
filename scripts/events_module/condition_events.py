@@ -488,7 +488,8 @@ class Condition_Events():
                 if cat.status == 'leader':
                     history_text = event.replace(str(cat.name), " ")
                     self.history.add_death(cat, condition=injury, death_text=history_text.strip())
-                    event = event.replace('.', ', losing a life.')
+                    if not cat.dead:
+                        event = event.replace('.', ', losing a life.')
                 else:
                     self.history.add_death(cat, condition=injury, death_text=event)
 
