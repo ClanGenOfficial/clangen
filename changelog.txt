@@ -1,3 +1,8 @@
+<strong>v0.3.0: Social Circle</strong>
+- Added "talking" feature
+- Added many new events and patrols
+- Fixed several bugs/typos
+
 <strong>v0.2.1: Death is not the end!</strong>
 - Added the ability to continue as another cat after you die
 - Added random path button
