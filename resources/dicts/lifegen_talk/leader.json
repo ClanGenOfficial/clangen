@@ -14,74 +14,109 @@
     ],
     "leader_2": [
         [
-
+            "kitten"
         ],
         [
-
+            "Hello there, little kit! You seem to be growing stronger each day.",
+            "Play hard and learn well, my little friend. The clan's future rests in paws like yours.",
+            "Be obedient to your queens and respect your elders. They have much wisdom to share.",
+            "Never forget, each of you may be small now, but in time, you will be our protectors."
         ]
     ],
-    "leader_1": [
+    "leader_3": [
         [
-
+            "apprentice"
         ],
         [
-
+            "Greetings, young one! I hope your training is going well and you're enjoying your journey.",
+            "It's not just about being strong, but being clever, wise and kind. These make a great warrior.",
+            "I'm proud of your progress. Keep practicing, and you'll become a fine warrior.",
+            "Take this advice, a silent hunter catches more prey than a noisy one.",
+            "We're all here for you. Don't hesitate to ask for help."
         ]
     ],
-    "leader_1": [
+    "leader_4": [
         [
-
+            "medicine cat apprentice"
         ],
         [
-
+            "Ah, our future healer! Your dedication to learning and helping others is admirable.",
+            "The path you've chosen is unique and vital. You'll do great things for our clan.",
+            "Your training may seem tough now, but the rewards are beyond measure.",
+            "Remember, each herb has its secrets. Your job is to understand them.",
+            "Your role goes beyond treating wounds, you're the heart of the clan."
         ]
     ],
-    "leader_1": [
+    "leader_5": [
         [
-
+            "mediator apprentice"
         ],
         [
-
+            "Good day, peacekeeper in training! Your words are as important as a warrior's claws.",
+            "Your role is invaluable. The clan needs your wisdom and understanding to resolve conflicts.",
+            "Your progress is encouraging. Keep practicing, and you'll be a fine mediator.",
+            "Take this advice to heart, it's often not what you say, but how you say it.",
+            "And remember, peace isn't the absence of conflict but how we deal with it."
         ]
     ],
-    "leader_1": [
+    "leader_6": [
         [
-
+            "warrior"
         ],
         [
-
+            "Ready for patrol, brave warrior? Your skills and courage protect our borders.",
+            "You're not just a warrior, but a role model for our younger clan members.",
+            "I'm grateful for your service. Your dedication makes our clan strong.",
+            "Remember, a great warrior wins not because they are strong, but because they are clever.",
+            "Your courage inspires us all. Keep making the clan proud."
         ]
     ],
-    "leader_1": [
+    "leader_7": [
         [
-
+            "medicine cat"
         ],
         [
-
+            "Hello, y_c. Your wisdom and skills are pillars of our clan's strength.",
+            "You carry a heavy responsibility, and you do it well. The clan is in good paws.",
+            "I see the love and care you put into your duty. The clan is truly grateful.",
+            "Remember, your role extends beyond healing the body, you're also a healer of spirits.",
+            "Your words can be just as soothing as your herbs."
         ]
     ],
-    "leader_1": [
+    "leader_8": [
         [
-
+            "mediator"
         ],
         [
-
+            "Maintaining peace today, y_c? Your role is pivotal to our clan's harmony.",
+            "Your ability to resolve conflicts and maintain peace is truly admirable.",
+            "I appreciate your patience and understanding. You're doing an excellent job.",
+            "Remember, sometimes the greatest victory is the battle not fought.",
+            "A fair decision is not what benefits the most, but what harms the least."
         ]
     ],
-    "leader_1": [
+    "leader_9": [
         [
-
+            "deputy"
         ],
         [
-
+            "Working hard today, my loyal deputy? Your leadership and decision-making are crucial for our clan.",
+            "You're not just my deputy, but my confidant and friend. I couldn't ask for a better right paw.",
+            "I appreciate your dedication. Our clan is stronger because of your efforts.",
+            "Remember, leadership is not about being in charge, it's about taking care of those in your charge.",
+            "As a deputy, your words can inspire hope or breed discontent. Choose them wisely."
         ]
     ],
-    "leader_1": [
+    "leader_10": [
         [
-
+            "elder"
         ],
         [
-
+            "Ah, wise one! Your tales and wisdom guide our paws on the right path.",
+            "Your strength and resilience are an inspiration to us all. The clan respects and admires you.",
+            "I'm grateful for your guidance. You've seen many moons and your wisdom is invaluable.",
+            "Remember, every scar you bear tells a story of bravery, endurance, and survival.",
+            "The stories you share carry the spirit of our ancestors. You're our link to the past."
         ]
     ]
 }
