@@ -245,6 +245,7 @@
             "Thank you, y_c. Your words mean more to me than I can express. I promise you, I'll take your advice to heart and work hard to be a cat you, and our Clan, can be proud of."
         ]
     ],
+    
     "app_22": [
         [
             "Any",
@@ -294,20 +295,30 @@
             "Well, I guess every season has its ups and downs!"
         ]
     ],
-    "app_13": [
+    "app_26": [
         [
-            "hate"
+            "elder"
         ],
         [
-            "You again? Haven't you done enough?"
+            "There you are, you old badger!",
+            "AH! I'm sorry! One of the other apprentices told me to call you that! I swear!",
+            "I'll- I'll just get going now! See ya!"
         ]
     ],
-    "app_13": [
+    "app_28": [
         [
-            "hate"
+            "murder"
         ],
         [
-            "You again? Haven't you done enough?"
+            "The Clan may turn a blind eye, but I see through your facade!"
+        ]
+    ],
+    "app_29": [
+        [
+            "murder"
+        ],
+        [
+            "D-don't come any closer."
         ]
     ]
 }

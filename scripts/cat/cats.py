@@ -1344,8 +1344,11 @@ class Cat():
                     game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
             self.die()
             return False
-
-        moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
+        if "moon_start" in self.illnesses[illness]:
+            moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
+            
+        else:
+            moons_with = 0
 
         if self.illnesses[illness]["duration"] - moons_with <= 0:
             self.healed_condition = True
