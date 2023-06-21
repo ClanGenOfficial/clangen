@@ -358,7 +358,7 @@ class Events:
                 with open(f"{resource_dir}ceremonies.json",
                         encoding="ascii") as read_file:
                     self.d_txt = ujson.loads(read_file.read())
-                ceremony_txt = random.choice(self.d_txt['gain_mate'])
+                ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.strip(" ")])
                 ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
@@ -415,6 +415,7 @@ class Events:
     def create_siblings(self, num_siblings):
         siblings = [self.create_sibling() for _ in range(num_siblings)]
         sibling_names = [str(sibling.name) for sibling in siblings]
+        sibling_text = ""
         if num_siblings == 1:
             sibling_text = sibling_names[0]
         if num_siblings == 2:
@@ -2053,8 +2054,8 @@ class Events:
             #print("Final kill chance: " + str(kill_chance))
             
             if not int(random.random() * kill_chance):
-                print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
-                print("KILL KILL KILL")
+                # print(cat.name, 'TARGET CHOSEN', Cat.fetch_cat(chosen_target.cat_to).name)
+                # print("KILL KILL KILL")
                 
                 # If at war, grab enemy clans
                 enemy_clan = None
