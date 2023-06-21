@@ -50,21 +50,20 @@ class Relation_Events():
         if not random.getrandbits(4):
             self.romantic_events(cat)
 
-        if len(cat.mate) > 1:
-            for mate_id in cat.mate:
-                if mate_id not in Cat.all_cats:
-                    print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
-                    cat.mate.remove(mate_id)
-                    continue
+        for mate_id in cat.mate:
+            if mate_id not in Cat.all_cats:
+                print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
+                cat.mate.remove(mate_id)
+                continue
 
-                cat_mate = Cat.fetch_cat(mate_id)
-                # Move on from dead mates
-                if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
-                    # randint is a slow function, don't call it unless we have to.
-                    if random.random() > 0.6: 
-                        text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
-                        game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
-                        cat.unset_mate(cat_mate)
+            cat_mate = Cat.fetch_cat(mate_id)
+            # Move on from dead mates
+            if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
+                # randint is a slow function, don't call it unless we have to.
+                if random.random() > 0.5: 
+                    text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
+                    cat.unset_mate(cat_mate)
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
