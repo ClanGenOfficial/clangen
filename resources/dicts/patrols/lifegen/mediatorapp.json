@@ -135,6 +135,30 @@
         ],
         "min_cats": 1,
         "max_cats": 1
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "As you plan to pounce on a moth, you hear two fellow apprentices arguing loudly. The elders are complaining, but the two ignore them and continue on. You look over too see a young warrior frantically trying to end the argument with no luck.",
+        "success_text": {
+            "unscathed_common": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. You negotiate a solution, smoothing over the potential fight. The warrior thanks you, and you leave the area with a confident nod. Later the elders come up to you with a thanks, and offer to share a meal with you. You gladly accept, soaking in all their knowledge."
+        },
+        "fail_text": {
+            "unscathed_common": "You decide to trot over, forgetting about the moth. You quickly intervene, asking the apprentices what's going on. One of them explains that they want the first go at moss ball with the warrior, and so does the other. Despite your attempts to negotiate a solution with them, it only gets worse. It takes one of the elders to step in to solve it. The warrior thanks you for trying, and you nod with a frown. You leave the area with your tail tucked, filled with disappointment."
+        },
+        "decline_text": "You turn your head back at the moth, ignoring the loud arguing. You attempt to pounce on it, but end up stumbling over. Thankfully, no one was watching.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "win_skills": [
+            "quick to help"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
     }
+    
     
     ]

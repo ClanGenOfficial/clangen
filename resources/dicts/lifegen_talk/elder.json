@@ -1,20 +1,19 @@
-
 {
     "elder_1": [
         [
-"kitten"
+            "kitten"
         ],
         [
             "Hey, tiny whiskers, have you tried pouncing on that leaf over there? It looks suspiciously crunchy!",
-"Remember, in your grand adventures, the elders' den isn't a great mountain to climb, it's just a bunch of old cats trying to nap.",
-"Now, as an elder, I can say, naps are good, and play is fun, but make sure you do both in moderation. Or you'll end up with too much energy at bedtime and too many scolding from your mother.",
-"When you grow a bit older, you'll become an apprentice and you'll be so busy you'll wish you had time to play. So, enjoy these days, little furball!",
-"And hey, don't forget to visit us sometimes, alright? We might have some good stories to tell. Or at least, we'll make good audiences for your own tales."
+            "Remember, in your grand adventures, the elders' den isn't a great mountain to climb, it's just a bunch of old cats trying to nap.",
+            "Now, as an elder, I can say, naps are good, and play is fun, but make sure you do both in moderation. Or you'll end up with too much energy at bedtime and too many scolding from your mother.",
+            "When you grow a bit older, you'll become an apprentice and you'll be so busy you'll wish you had time to play. So, enjoy these days, little furball!",
+            "And hey, don't forget to visit us sometimes, alright? We might have some good stories to tell. Or at least, we'll make good audiences for your own tales."
         ]
     ],
-    "elder_1": [
+    "elder_2": [
         [
-
+            "apprentice"
         ],
         [
             "Ah, an apprentice now, are you? Busy chasing your own tail, huh?",
@@ -24,9 +23,9 @@
             "And hey, don't forget us old cats. We may not chase mice anymore, but we can still tell a good tale or two. Or at least, we can lend a sympathetic ear when you want to grumble about your mentor."
         ]
     ],
-    "elder_1": [
+    "elder_3": [
         [
-
+            "medicine cat apprentice"
         ],
         [
             "Ah, chosen the path of a healer, eh? Now that's a path full of mystery and catnip!",
@@ -36,9 +35,9 @@
             "Just remember to visit us sometimes, alright? We might have some good stories to share. Or at least, we can provide some warm company on a chilly leaf-bare night."
         ]
     ],
-    "elder_1": [
+    "elder_4": [
         [
-
+            "mediator apprentice"
         ],
         [
             "So, you're learning to be a peacekeeper, huh? That's quite a task. Cats can be as prickly as a thorn bush sometimes!",
@@ -48,60 +47,235 @@
             "Don't forget to visit us sometimes, alright? We might have some good stories to share. Or at least, we can provide some warm company when you need a peaceful moment."
         ]
     ],
-    "elder_1": [
+    "elder_5": [
         [
-
+            "warrior"
         ],
         [
-
+            "Ah, a warrior now, are you? Your strength and courage are the pillars of our Clan. It is because of you that we can sleep safely each night.",
+            "Remember, young warrior, to uphold the warrior code. It is what guides us, what defines us. Don't ever lose sight of it.",
+            "Enjoy these moons of strength and vigor. The Clan depends on you for hunting and protection. It's a responsibility, but also an honor.",
+            "Remember to respect your elders. We may be old, but we were once where you are now. We fought, we protected, and we served our Clan.",
+            "And don't forget, warrior, we are here for you. For advice, for stories, or just a quiet presence. The elders are always here."
         ]
     ],
-    "elder_1": [
+    "elder_6": [
         [
-
+            "medicine cat"
         ],
         [
-
+            "Welcome to the elder's den, y_c. Finally come to check my ticks? Come in, come in.",
+            "I was pondering the ways of the medicine cat earlier. Your wisdom and knowledge are invaluable. You are the bridge between our Clan and StarClan.",
+            "Remember, wise one, your role goes beyond healing. You are a spiritual guide, a beacon of hope during dark times.",
+            "Take care of yourself, medicine cat. You care for all of us, but don't forget to listen to your own needs as well.",
+            "Thank you for your service. Your compassion and healing touch have comforted many. You are truly an asset to our Clan.",
+            "And remember, even a medicine cat can benefit from the wisdom of the elders. We are here, ready to share our experiences and stories."
         ]
     ],
-    "elder_1": [
+    "elder_7": [
         [
-
+            "mediator"
         ],
         [
-
+            "Hello, y_c. You bring us together and help us understand each other better.",
+            "Remember, peacekeeper, your role requires patience and understanding. It's not about who is right, but about finding a resolution that strengthens the Clan.",
+            "Listen to the voices of your Clanmates. Understanding their feelings, their perspectives, is your key to resolving disagreements.",
+            "Thank you for your service. Your efforts keep our Clan united and strong. You truly embody the spirit of the Clan.",
+            "And remember, even a mediator can benefit from the wisdom of the elders. We've seen many moons, many conflicts. Don't hesitate to seek our advice."
         ]
     ],
-    "elder_1": [
+    "elder_8": [
         [
-
+            "leader"
         ],
         [
-
+            "Ah, noble y_c. Welcome, welcome. Your strength and wisdom guide us. Your decisions shape our present and future.",
+            "Remember, leader, that the weight of the Clan rests on your shoulders. But you are never alone. We are all here to support you.",
+            "Take care of yourself, leader. You look after all of us, but don't forget to listen to your own needs as well.",
+            "Thank you for your service. Your leadership, courage, and wisdom guide us. You truly embody the spirit of the Clan.",
+            "And remember, even a leader can benefit from the wisdom of the elders. We've seen many moons, many leaders. We are here, ready to share our experiences and advice."
         ]
     ],
-    "elder_1": [
+    "elder_9": [
         [
-
+            "elder"
         ],
         [
-
+            "Ah, my fellow elder. We've lived through many moons, seen the rise and fall of many seasons. We've served our Clan, and now we rest.",
+            "Remember, elder, our role is not done yet. We are the storytellers, the keepers of our Clan's history. We have much to teach the younger ones.",
+            "Take care of yourself, elder. We've served our time. Now, it's time to rest and enjoy the quieter moments.",
+            "Thank you for your service. Your strength and wisdom have helped shape our Clan. You've earned your rest.",
+            "And remember, we are here for each other. To share stories, to offer comfort, and to listen. The elders are always here for each other."
         ]
     ],
-    "elder_1": [
+    "elder_10": [
         [
-
+            "deputy"
         ],
         [
-
+            "y_c, hello, dear. Come to speak with the elders, eh?",
+            "While you're here, why don't I tell you a story? Don't give me that look. Stories aren't just for kits.",
+            "Let me recount the tale of Bravestripe, a courageous and strong warrior from many moons ago.",
+            "Bravestripe was valiant, but he took his strength for granted. He would take on patrols and hunting missions alone, refusing help from others.",
+            "One day, he encountered a badger. Despite his strength, he was overpowered. He was gravely injured and only just made it back to the camp.",
+            "Bravestripe learned that strength isn't about working alone. True strength comes from teamwork and unity."
         ]
     ],
-    "elder_1": [
+    "elder_11": [
         [
-
+            "kitten"
         ],
         [
-
+            "Ah, kit! You've got the spark of a future leader in your eyes, I can see it. Just remember not to trip over your own tail when you run too fast!",
+            "Watching you play and scamper about the camp takes me back many moons to when I was a kit, full of energy and causing mischief. Enjoy these days!",
+            "Do you know what the warrior code says about tickling an elder's nose with a feather while they're sleeping? No? Well, I suppose we should be grateful for small mercies!",
+            "I hope you're paying attention to the tales we tell. They're not just stories, they're lessons. And sometimes they're just made up to keep you entertained. You'll figure out which is which!",
+            "And remember, kit, the greatest warrior is not the strongest or the fastest. It's the one who can catch a mouse without giving away their own shadow!"
+        ]
+    ],
+    "elder_12": [
+        [
+            "apprentice"
+        ],
+        [
+            "Oh, to be an apprentice again! The thrill of the hunt, the excitement of learning... the never-ending cleaning of the elder's den! It's all part of the journey.",
+            "Do you remember when you were a kit and thought being an apprentice would be all fun and games? And now look at you, with your nose always in the moss!",
+            "Did anyone tell you about the time I tried to catch a rabbit on my first day as an apprentice? I ended up getting tangled in a bramble bush! So don't feel too embarrassed about your own mistakes. We've all been there!",
+            "Learning to be a warrior or a medicine cat is not all about fighting and healing. It's also about learning to sleep with one eye open in case a clanmate tries to prank you while you're sleeping!",
+            "And remember, even though we elders might seem grumpy when you wake us up from our nap, we're proud of you. Keep learning, keep trying, and don't forget to have fun!"
+        ]
+    ],
+    "elder_13": [
+        [
+            "medicine cat apprentice"
+        ],
+        [
+            "A medicine cat apprentice, eh? I remember when I was your age, I couldn't tell the difference between a yarrow leaf and a mouse tail. I hope you're doing better than I did!",
+            "Do you know how you can tell that you're talking to an old cat? They'll tell you about all their aches and pains. Get ready for a lot of that!",
+            "Listen closely to the spirits of StarClan. They might just tell you how to get out of cleaning the elder's den... or not.",
+            "Ah, being a medicine cat apprentice is a big responsibility. But remember, if you make a mistake, we'll only tease you a little... unless it's a really funny mistake.",
+            "And remember, no matter how many herbs you learn, nothing heals better than a good laugh and a sunny spot to nap in."
+        ]
+    ],
+    "elder_14": [
+        [
+            "mediator apprentice"
+        ],
+        [
+            "A mediator apprentice, now that's a tough job. You have to deal with grumpy old elders like me and excitable kits, all in the same day!",
+            "Do you know what's the trick to solving disputes? Always let the other cat think they won. Especially when they're an elder with a sharp tongue!",
+            "I know it can be tough, listening to all the squabbles and disagreements. Just remember, if all else fails, distract them with a good story or a piece of juicy gossip.",
+            "The role of a mediator is vital. Without you, we'd probably still be arguing about that border dispute from six moons ago. But don't let it go to your head, youngster!",
+            "And remember, even a mediator needs to let their fur down sometimes. Don't forget to play and enjoy your youth."
+        ]
+    ],
+    "elder_15": [
+        [
+            "warrior"
+        ],
+        [
+            "So, you're a warrior now! You know what that means? You get to check the elders for ticks!",
+            "Ah, to be a warrior. To feel the thrill of the hunt, the wind in your fur... and the annoyance of an elder who won't stop talking!",
+            "Do you remember when you were a kit and thought being a warrior meant just fighting and hunting? And now look at you, spending half your time trying to get moss out of your bedding!",
+            "Being a warrior is not just about strength. It's also about being patient enough to listen to an old cat's stories. Speaking of which, did I ever tell you about the time I...",
+            "I see you're busy. I'll save that tale for another time.",
+            "But remember, warrior, no matter how many battles you fight, there's always something new to learn. Even if it's just a new trick to get out of den duty!"
+        ]
+    ],
+    "elder_16": [
+        [
+            "medicine cat"
+        ],
+        [
+            "Ah, our beloved medicine cat. The one who gets to listen to all our ailments. My hind leg's been acting up again, by the way.",
+            "I hope you have some herbs for a headache. Not for me, for you. You'll need them after listening to me and the other elders!",
+            "You know, when I was a young cat, I thought about becoming a medicine cat. But then I realized I'd have to deal with grumpy old elders like me, and I quickly changed my mind!",
+            "Remember, medicine cat, your work is appreciated. Even if we grumble and complain, we respect and thank you. Now, about that thorn in my paw...",
+            "And remember, even the medicine cat needs a break from time to time. Come join us elders for a nap in the sun. Just make sure we're awake before you start snoring!"
+        ]
+    ],
+    "elder_17": [
+        [
+            "mediator"
+        ],
+        [
+            "Ah, our mediator. The only cat in the clan who can tell an elder they're wrong and live to tell the tale!",
+            "Your job is as tough as a badger's hide. But don't worry, we elders are easy to deal with. Just agree with everything we say, and you'll be fine!",
+            "Do you remember when you thought being a mediator would be easy? And now look at you, stuck in the middle of a heated argument about whether squirrels or mice make a better meal!",
+            "Thank you for your work, mediator. It's not easy to listen to all the squabbles and disagreements. But remember, if you ever need to vent, we elders are all ears... as long as we're awake, that is.",
+            "And remember, even when the arguing seems endless, take some time for yourself. Even mediators need a break from all the drama."
+        ]
+    ],
+    "elder_18": [
+        [
+            "leader"
+        ],
+        [
+            "Ah, our noble leader. I remember when you were just a kit, tripping over your own paws. Look how far you've come!",
+            "Being a leader isn't easy. You have to make tough decisions, lead us into battle... and put up with elders who think they know better!",
+            "Do you remember when you thought being a leader was all about giving orders and eating the biggest piece of fresh-kill? And now you know it's really about listening to endless complaints and trying to get a moment of peace!",
+            "But remember, we're all here for you. We believe in you and support you. Even when we grumble, it's only because we care.",
+            "And remember, no matter how serious things get, there's always time for a good joke and a nap in the sun."
+        ]
+    ],
+    "elder_19": [
+        [
+            "elder"
+        ],
+        [
+            "Ah, fellow elder, isn't it grand? We've lived, we've fought, and now we get to tell the same stories over and over until the young ones can recite them in their sleep!",
+            "Remember when we thought we'd miss the thrill of the hunt, the excitement of the battle? And now we realize that a soft patch of moss and a sunny day are more than enough excitement for us!",
+            "Sometimes it's hard, watching the younger ones make the same mistakes we did. But then we remember the lessons we learned, and we hope they learn them too.",
+            "But we're not just old fur and stories. We're the heart of the clan. We've been there, done that, and we're still here, stronger than ever.",
+            "And remember, fellow elder, no matter how many moons pass, we're still warriors at heart. Our spirits are still young, even if our bodies are a little slower. So let's enjoy these golden days and remember to keep the young ones on their toes!"
+        ]
+    ],
+    "elder_20": [
+        [
+            "deputy"
+        ],
+        [
+            "Ah, our noble deputy. I remember when you were just a kit, tripping over your own paws. Look how far you've come!",
+            "Being a deputy isn't easy. You have to make tough decisions, plan patrols... and put up with elders who think they know better!",
+            "Do you remember when you thought being a deputy was all about giving orders and eating the biggest piece of fresh-kill? And now you know it's really about listening to endless complaints and trying to get a moment of peace!",
+            "But remember, we're all here for you. We believe in you and support you. Even when we grumble, it's only because we care.",
+            "And also, no matter how serious things get, there's always time for a good joke and a nap in the sun."
+        ]
+    ],
+    "elder_21": [
+        [
+            "kitten"
+        ],
+        [
+            "I remember a tale from when I was your age, about a curious kit named Moonkit.",
+            "Moonkit was adventurous, always wandering off and disobeying the queens. One day, she went too far into the forest.",
+            "Despite her courage, she wasn't ready for what the forest held. She ended up cornered by a fox. If not for the timely arrival of a warrior, she wouldn't have made it.",
+            "So remember, young kit, listen to your elders. They might seem strict, but they only want to keep you safe.",
+            "Obeying rules isn't a sign of cowardice, it's wisdom. Take that lesson from Moonkit's tale."
+        ]
+    ],
+    "elder_22": [
+        [
+            "apprentice"
+        ],
+        [
+            "Do you remember the tale of Quickpaw, young one? He was an apprentice, full of energy and eager to be a warrior.",
+            "Quickpaw was swift and nimble, but his impatience often got the better of him. He'd rush into things without thinking first.",
+            "During a hunting assessment, Quickpaw pounced too soon and scared away an entire rabbit warren. His impatience cost him and his clanmates a good meal.",
+            "That day, Quickpaw learned that patience isn't just waiting, it's about waiting wisely. He became one of the best hunters later.",
+            "Remember his tale, young one. Patience is not just about time, it's about making the right move at the right time."
+        ]
+    ],
+    "elder_23": [
+        [
+            "warrior"
+        ],
+        [
+            "Let me recount the tale of Bravestripe, a courageous and strong warrior from many moons ago.",
+            "Bravestripe was valiant, but he took his strength for granted. He would take on patrols and hunting missions alone, refusing help from others.",
+            "One day, he encountered a badger. Despite his strength, he was overpowered. He was gravely injured and only just made it back to the camp.",
+            "Bravestripe learned that strength isn't about working alone. True strength comes from teamwork and unity.",
+            "Remember Bravestripe's tale, young warrior. No cat is an island. We are strongest when we work together."
         ]
     ]
 }

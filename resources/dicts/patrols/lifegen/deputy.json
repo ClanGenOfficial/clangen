@@ -135,7 +135,175 @@
         ],
         "min_cats": 1,
         "max_cats": 1
-    }
+    },
+    {
+        "patrol_id": "lifegen_1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "One of the apprentices complains about their mentor being too hard on them during the hunting sessions. They request you to intervene.",
+        "success_text": {
+            "unscathed_common": "You speak with the mentor, explaining the apprentice's concerns. The mentor understands and promises to be more patient and understanding. The apprentice thanks you."
+        },
+        "fail_text": {
+            "unscathed_common": "You try to talk to the mentor but they dismiss the concerns, saying that toughness is necessary for survival. The apprentice is disappointed."
+        },
+        "decline_text": "You remind the apprentice that their training is supposed to be hard, encouraging them to keep trying their best.",
+        "chance_of_success": 60,
+        "exp": 15,
+        "win_skills": [
+            "persuasive"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+},
+{
+    "patrol_id": "lifegen_2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "A clan member has fallen into the river during a fishing patrol and is afraid of water now. They seek your guidance.",
+    "success_text": {
+        "unscathed_common": "You spend some time with the clan member, gradually easing their fear of water. Eventually, they regain their confidence and thank you."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite your efforts, the clan member is still scared and is unable to overcome their fear."
+    },
+    "decline_text": "You don't have time for this. You send the clan member to the medicine cat instead.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "win_skills": [
+        "empathetic"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "A clan member reports sighting a fox near the border. You need to decide whether to send a patrol or not.",
+    "success_text": {
+        "unscathed_common": "You decide to send a patrol. The cats manage to chase the fox away without any casualties."
+    },
+    "fail_text": {
+        "unscathed_common": "You decide to send a patrol. However, the fox turns out to be more aggressive than expected, causing injuries to the patrol cats."
+    },
+    "decline_text": "You decide to monitor the situation for now, hoping the fox won't pose a threat.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "strategic"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+},
+{
+    "patrol_id": "lifegen_4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "An apprentice has consumed some unknown berries and is feeling sick. The medicine cat needs your help to find the right herbs while they monitor the apprentice's condition.",
+    "success_text": {
+        "unscathed_common": "You successfully find the needed plants and the apprentice recovers quickly with you and the medicine cat's help."
+    },
+    "fail_text": {
+        "unscathed_common": "You try your best but fail to find the right herbs. The apprentice's condition worsens before the medicine cat finally identifies and finds the correct herbs."
+    },
+    "decline_text": "You decide to let the medicine cat handle the situation on their own.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        "knowledgeable"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "A pair of rogue cats have been spotted near the territory. They claim to be just passing through, but the clan is uneasy.",
+    "success_text": {
+        "unscathed_common": "You decide to personally monitor the rogues, ensuring they leave the territory without causing trouble."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite your vigilance, the rogue cats manage to steal some prey, causing unrest among the clan members."
+    },
+    "decline_text": "You advise the clan to stay vigilant and continue their usual duties, hoping the rogues will keep their word and move on.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "observant"
+    ],
+    "min_cats": 1,
+    "max_cats": 2
+},
+{
+    "patrol_id": "lifegen_6",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "training"
+    ],
+    "intro_text": "An apprentice is struggling with the advanced fighting techniques. They approach you for additional training.",
+    "success_text": {
+        "unscathed_common": "Your training sessions prove fruitful and the apprentice's fighting skills improve significantly."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite your efforts, the apprentice struggles to pick up the new techniques."
+    },
+    "decline_text": "You advise the apprentice to be patient and keep practicing, assuring them that mastery takes time.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "win_skills": [
+        "experienced"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_8",
+    "biome": "Forest",
+    "season": "Greenleaf",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "There are suspicious markings on trees near the border. A few clan members believe it could be a sign of a rival clan encroaching.",
+    "success_text": {
+        "unscathed_common": "You lead a patrol to investigate and find it's just a group of kittypets. You manage to chase them away."
+    },
+    "fail_text": {
+        "unscathed_common": "You decide to ignore the markings, but it turns out to be a sign of a rival clan. They take advantage of the situation and attack your clan."
+    },
+    "decline_text": "You choose to ignore the markings for now, deciding to keep a watchful eye on the border instead.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "win_skills": [
+        "cautious"
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+}
+
+
+
+
+
+
+
     ]
     
     

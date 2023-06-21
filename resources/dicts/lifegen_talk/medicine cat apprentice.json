@@ -1,60 +1,303 @@
-
 {
     "medi_1": [
         [
-
+            "kitten"
         ],
         [
-
+            "Hey, little kit! Ever thought about being a medicine cat? We get to play with all the herbs... and we don't have to deal with pesky thorns when we hunt!",
+            "Guess what? I learned a new herb today! It's called marigold, and it's used to heal wounds. Cool, right? Not as cool as catching a mouse, but it's interesting.",
+            "Don't worry, I won't let you get a bellyache from eating too much fresh-kill! I know the perfect herb for that. But don't test me on purpose, okay?",
+            "You know, sometimes I wonder what it would be like to be a warrior. Then I remember I'd have to share my den with a bunch of snoring cats, and I'm glad I'm a medicine cat apprentice!",
+            "And remember, even though you're small now, one day you might be the one taking care of the clan. So listen, learn, and play nice with your littermates."
         ]
     ],
-    "medi_1": [
+    "medi_2": [
         [
-
+            "apprentice"
         ],
         [
-
+            "Hey, fellow apprentice! Ready for another day of training? I'll be over here, sorting herbs and looking for omens.",
+            "I heard you're going hunting today. Must be fun! You gotta teach me some hunting techniques.",
+            "You know, I sometimes wonder about what it's like going out on patrols. But then I remember how wet and muddy it gets, and I'm glad I get to stay in the medicine den!",
+            "Do you ever get jealous that I get to sleep in and you have to go out for dawn patrol? Who am I kidding, I'm up all night watching snoring elders and sick cats.",
+            "Well, I gotta go. Remember, just because you're an apprentice doesn't mean you can't make a big difference. Keep learning, keep trying, and one day you'll be the best warrior you can be!"
         ]
     ],
-    "medi_1": [
+    "medi_3": [
         [
-
+            "medicine cat apprentice"
         ],
         [
-
+            "Hey, y_c! Isn't it great being the most important apprentice in the clan? I mean, who else can treat a bee sting or a bellyache?",
+            "I heard you found a new patch of yarrow today. Nice! If you find any extra, you can always bring it to me. I seem to be using a lot of it lately, thanks to the kits' love for snacking on what they're not supposed to!",
+            "You know, I sometimes wonder what it would be like to have normal apprentice duties. Then I remember the joy of a successfully treated wound, and I'm content where I am.",
+            "Do you ever wish we could go out hunting or fighting? Yeah, me neither. I prefer the scent of herbs to the smell of damp fur and mud.",
+            "And remember, even though we're still learning, we're already a vital part of the clan. We're medicine cat apprentices, and that's something to be proud of!"
         ]
     ],
-    "medi_1": [
+    "medi_4": [
         [
-
+            "mediator apprentice"
         ],
         [
-
+            "Hey, y_c! Ever wish you could swap places with me? Trust me, dealing with cranky cats and a den full of herbs is no picnic!",
+            "I heard you managed to solve a big dispute today. Well done! If you ever need to unwind, I've got some nice calming herbs here in the den.",
+            "Do you ever miss the simplicity of being a kit? Me too. But then I remember the responsibility and respect we have now, and I wouldn't trade it for the world.",
+            "You know, I admire your patience. I mean, I have to deal with sick and injured cats, but you have to deal with grumpy and stubborn ones!",
+            "And remember, even if it feels like all you're doing is listening to petty squabbles, you're learning important skills. Keep going, and one day you'll be a fantastic mediator!"
         ]
     ],
-    "medi_1": [
+    "medi_5": [
         [
-
+            "warrior"
         ],
         [
-
+            "Hello, warrior! Are you ready for another day of patrols and hunting? I'm ready to deal with whatever injuries you bring back.",
+            "Do you ever get tired of all that running around? Because watching you makes me tired! It's a good thing I chose the path of a medicine cat apprentice.",
+            "I know it's not as exciting as catching a squirrel, but I've discovered a new use for mouse bile today. It turns out it's not just for ticks!",
+            "I can't believe how hard you work. I mean, sorting herbs is tough, but running around the forest chasing after prey and protecting the clan... that's really impressive.",
+            "And remember, even though you're a warrior, it's okay to ask for help. Whether you're injured or just tired, I'm here for you."
         ]
     ],
-    "medi_1": [
+    "medi_6": [
         [
-
+            "medicine cat"
         ],
         [
-
+            "Hello, mentor! Ready for another day of herb-sorting and treating our clumsy clanmates? I hope we don't run out of marigold again...",
+            "Do you ever miss being an apprentice? Me neither! Who wants to go back to doing all the dirty work? Oh wait...",
+            "I can't wait to learn everything you know. It's amazing how you can remember all those herbs and their uses!",
+            "I know it's a big responsibility, taking care of the health of the clan, but I wouldn't want to be doing anything else.",
+            "And remember, even though I'm your apprentice, I'm here to support you too. You've taught me so much, and I can't wait to learn more."
         ]
     ],
-    "medi_1": [
+    "medi_7": [
         [
-
+            "mediator"
         ],
         [
-
+            "Hello, mediator! Are you ready for another day of settling disputes? I'm just here, sorting herbs and trying to keep our clanmates healthy.",
+            "Do you ever wish you could just tell everyone to figure things out on their own? I know I sometimes feel that way when a cat comes in with the third scratch of the week!",
+            "I can't believe the patience you have. Dealing with cranky, stubborn cats all day... it's amazing!",
+            "I know we have different roles in the clan, but we both have the same goal: to keep the clan happy and healthy.",
+            "And remember, even though you're dealing with difficult situations, you're doing an amazing job. The clan is lucky to have you."
+        ]
+    ],
+    "medi_8": [
+        [
+            "deputy"
+        ],
+        [
+            "Hello, deputy! Are you ready for another day of organising patrols and keeping the clan in line? I'm just over here, ready to deal with any thorns or injuries your warriors bring back.",
+            "Do you ever wish you could take a break from all that responsibility? Because watching you makes me tired! It's a good thing I'm over here, with my herbs and my quiet den.",
+            "I can't believe the work you do. I mean, sorting herbs is a lot of work, but organising the whole clan... that's really something.",
+            "I know we have different roles in the clan, but I just wanted to say that I respect the work you do. The clan wouldn't run smoothly without you.",
+            "And remember, even though you're busy, it's okay to take care of yourself too. If you ever need anything, don't hesitate to come to me."
+        ]
+    ],
+    "medi_9": [
+        [
+            "leader"
+        ],
+        [
+            "Hello, leader! Ready for another day of leading the clan? I'm here, ready to help keep our clanmates healthy and happy.",
+            "Do you ever wish you could be an apprentice again? Running around the forest, with no responsibilities... It's a fun thought, isn't it?",
+            "I can't imagine the pressure you're under. Leading a clan is a huge responsibility. But you're doing an amazing job.",
+            "I know we have different roles, but we both want what's best for the clan. And I just wanted to say that I'm here to support you in any way I can.",
+            "And remember, even though you're our leader, you're still a cat. If you ever need to talk, or need some herbs, I'm here for you."
+        ]
+    ],
+    "medi_10": [
+        [
+            "elder"
+        ],
+        [
+            "Hello, elder! Ready for another day of sharing stories and wisdom? I'll be over here, sorting through herbs and learning as much as I can.",
+            "Do you ever miss being a warrior? I sometimes wonder what it would be like. But then I remember that I love my herbs too much!",
+            "I can't believe all the things you've seen and done. You're a link to the past and a guide for the future. I'm grateful for your wisdom.",
+            "I know being an elder is different than being a medicine cat apprentice. But I think we're both important in our own ways. We both serve the clan, just in different ways.",
+            "And remember, just because you're an elder now doesn't mean you're not important. Your stories and wisdom are invaluable to the clan. And if you ever need anything, don't hesitate to come to me."
+        ]
+    ],
+    "medi_11": [
+        [
+            "newleaf",
+            "Any"
+        ],
+        [
+            "I love when Newleaf arrives. The forest seems to wake up from a long sleep, doesn't it?",
+            "The herbs grow plentiful, and the prey returns. It's a time of renewal and growth.",
+            "You can feel the excitement in the air. The clan's energy seems to pick up, mirroring nature's activity.",
+            "And the forest... it looks so beautiful. The green leaves, blooming flowers, it's like a fresh start.",
+            "Newleaf also means ticks and fleas. Have to keep a good stock of mouse bile ready."
+        ]
+    ],
+    "medi_12": [
+        [
+            "greenleaf",
+            "Any"
+        ],
+        [
+            "Greenleaf, the time of plenty. The sun is high and the days are long. It's a good time for our clan.",
+            "There's plenty of prey, and the herbs are at their strongest. We can stock up for the colder moons.",
+            "Yet, it's also a time to be careful. The sun can be harsh. We need to ensure everyone stays hydrated.",
+            "It's also a time of fun and play for the kits. The warm weather means they can explore more.",
+            "Despite its bounty, Greenleaf can bring drought. We must be ready for that too."
+        ]
+    ],
+    "medi_13": [
+        [
+            "leaffall",
+            "Any"
+        ],
+        [
+            "I find Leaf-fall beautiful. The forest turns into a canvas of orange, yellow, and red.",
+            "But, it's also a reminder that leaf-bare is coming. We need to stock up on herbs and prey.",
+            "Leaf-fall is a season of preparation. It tests our resourcefulness and planning.",
+            "The forest becomes a rustling carpet of fallen leaves. It's strangely serene, don't you think?",
+            "It's also the time for coughs and colds. Have to keep a good stock of tansy and catmint."
+        ]
+    ],
+    "medi_14": [
+        [
+            "leafbare",
+            "Any"
+        ],
+        [
+            "Leaf-bare, the toughest of seasons. The forest goes quiet and the cold sets in.",
+            "Prey becomes scarce, and many herbs die off. We must rely on our leaf-fall preparations.",
+            "It's a hard time for all of us, but it's also a time for the clan to come together.",
+            "The snow-covered forest has its own quiet beauty, wouldn't you agree?"
+        ]
+    ],
+    "medapp_2": [
+        [
+            "kit",
+            "injured"
+        ],
+        [
+            "Hey, little one, I see you have a boo-boo. Let's fix you up, alright?",
+            "You're very brave for coming here. Even the smallest scratch can be scary.",
+            "See? I'm just going to put this poultice here, and you'll feel better in no time. It's just like when we play healers!",
+            "Now, remember to be careful when playing. Even the strongest warriors get injured sometimes. But when you're a kit, it's important to stay safe.",
+            "All done! You were very brave. Go rest now, and you'll be playing again in no time."
+        ]
+    ],
+    "medapp_3": [
+        [
+            "apprentice",
+            "injured"
+        ],
+        [
+            "Oh, an apprentice! I know you're learning a lot right now, but getting hurt is not part of the curriculum, you know?",
+            "I'll patch you up quickly. Don't worry, every cat gets injured at some point. It's all part of learning to be a Clan member.",
+            "See? I'm just applying this herb, and you'll be on your paws in no time. It's not so bad, right?",
+            "Remember to take it easy while you heal. I know you're eager to get back to training, but you need to allow your body to recover.",
+            "Okay, there you go! Remember, even the strongest warriors need to heal sometimes. Take care of yourself."
+        ]
+    ],
+    "medapp_4": [
+        [
+            "medicine cat apprentice",
+            "injured"
+        ],
+        [
+            "Oh, a fellow medicine cat apprentice! It's not often we have to heal one another, is it?",
+            "Let's get you patched up. Remember, we can't heal others if we don't take care of ourselves first.",
+            "Here, I'm applying this poultice. See? Even we can learn from our injuries.",
+            "Take it easy and let your body heal. You're doing great work, but we also need to keep ourselves healthy.",
+            "Alright, all patched up! Remember, we can't care for others if we don't care for ourselves. Rest up."
+        ]
+    ],
+    "medapp_5": [
+        [
+            "mediator apprentice",
+            "injured"
+        ],
+        [
+            "Ah, a mediator apprentice. You're always in the thick of things, aren't you? Let's get you patched up.",
+            "Remember, while it's important to help solve others' disputes, you can't forget to take care of yourself.",
+            "Here, this herb will help. Being injured can be scary, but it's also a chance to learn and grow.",
+            "Rest and let your body heal. You're an important part of this Clan, and we need you healthy.",
+            "All done! Remember, taking care of yourself is just as important as taking care of others. Rest and get well soon."
+        ]
+    ],
+    "medapp_6": [
+        [
+            "warrior",
+            "injured"
+        ],
+        [
+            "Warrior, you're always out there defending our Clan, aren't you? Let's get those injuries sorted out.",
+            "Being a warrior is tough. You must always remember to take care of yourself and not push too hard.",
+            "Here, let me apply this. Remember, even the bravest and strongest warriors need time to heal.",
+            "Rest and let your body recover. Our Clan needs you, and you'll be able to protect us better once you're healed.",
+            "All done. Remember, rest and recovery are as much a part of being a warrior as fighting and hunting."
+        ]
+    ],
+    "medapp_7": [
+        [
+            "medicine cat",
+            "injured"
+        ],
+        [
+            "Oh, my mentor! You're always taking care of others, sometimes you forget to take care of yourself, don't you?",
+            "Don't worry, I've learned well from you. Let me take care of this. I'm sure you'll be back on your paws in no time.",
+            "Remember, just like you always tell me, we can't help others if we don't help ourselves.",
+            "Take your time to rest and recover. Our Clan needs its medicine cat, and that includes you, mentor.",
+            "All done! You've taught me well. Now, rest and take it easy for a while."
+        ]
+    ],
+    "medapp_8": [
+        [
+            "mediator",
+            "injured"
+        ],
+        [
+            "A mediator, always in the midst of things, sometimes at your own risk. Let's patch you up.",
+            "Remember, you have to be strong for yourself, too, not just for others. It's okay to need help sometimes.",
+            "This poultice will help your injury. I understand how crucial your role is.",
+            "Rest and let your body heal. Our Clan needs you healthy and strong, guiding us through our disputes and troubles.",
+            "All done! Take it easy for a few days and let your body recover. You're important to us."
+        ]
+    ],
+    "medapp_9": [
+        [
+            "deputy",
+            "injured"
+        ],
+        [
+            "Ah, deputy, you work so hard for the Clan. But even deputies get hurt, and that's okay. Let's get you patched up.",
+            "You're always putting the Clan first, but now it's time to put yourself first. Let's take care of these injuries.",
+            "Applying this herb will help you heal faster. You're important to us, and we need you in top shape.",
+            "Remember to rest and give yourself time to heal. It's as important as fulfilling your duties to the Clan.",
+            "All done! Now, remember to rest and get well soon. The Clan depends on you."
+        ]
+    ],
+    "medapp_10": [
+        [
+            "leader",
+            "injured"
+        ],
+        [
+            "Oh, our leader! It's not often we see you in the medicine den, is it? Let's take care of that injury.",
+            "You carry the weight of the Clan on your shoulders. But now, let me lighten that burden a little by healing your wounds.",
+            "Here, let me apply this poultice. Even leaders can get hurt, and that's okay. It's all part of leading a Clan.",
+            "Remember, healing takes time. Our Clan needs its leader healthy and strong. So, it's important to rest and recover.",
+            "There, all done. You'll be back leading the Clan in no time. Until then, rest and heal, leader."
+        ]
+    ],
+    "medapp_11": [
+        [
+            "elder",
+            "injured"
+        ],
+        [
+            "Come in, wise elder. Your years have brought wisdom and respect, but sometimes they bring aches and pains, too.",
+            "Let me treat your wounds. You've done so much for us; now it's time for us to look after you.",
+            "See? It's not so bad. These herbs will help with the pain and speed up your healing.",
+            "Take your time and rest. Our Clan values its elders, and we need you healthy and strong.",
+            "All patched up! Remember, no racing with the kits until you're fully healed, okay?"
         ]
     ]
-
 }

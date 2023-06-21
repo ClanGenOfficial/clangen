@@ -4459,8 +4459,8 @@ class ChooseRebornCat(Screens):
 
     def exit_screen(self):
 
-        self.selected_details["selected_image"].kill()
-        self.selected_details["selected_info"].kill()
+        # self.selected_details["selected_image"].kill()
+        # self.selected_details["selected_info"].kill()
         for ele in self.cat_list_buttons:
             self.cat_list_buttons[ele].kill()
         self.cat_list_buttons = {}

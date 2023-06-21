@@ -38,16 +38,254 @@
             "In these troubling times, let us lean on each other. Let us share the weight, so it does not become too much for one cat to bear. I am here for you, as a healer, as an advisor, and as a friend."
         ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medi_4": [
+        [
+            "kitten"
+        ],
+        [
+            "Greetings, little one! Have you been staying away from the elderberry bush? Those berries might look tasty, but they're not for kits.",
+            "Do you ever dream of being a medicine cat? Well, keep that curiosity alive! Who knows what your path will be?",
+            "I see a bright future for you, little one. You're going to make your clan very proud.",
+            "Remember, play nice with your denmates, and always listen to the elders. They know a lot more than you think.",
+            "And remember, even if you're the smallest in the clan, you're just as important as the biggest warrior."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medi_5": [
+        [
+            "apprentice"
+        ],
+        [
+            "Ah, an eager apprentice! How's the training coming along? Remember, a scratch won't send you to StarClan.",
+            "Do you ever wish to switch the training grounds for the medicine den? Learning herbs can be just as exciting as learning battle moves.",
+            "Your progress is commendable. The clan is excited to see you grow into a fine warrior.",
+            "Your role is crucial to the clan, even as an apprentice. We all started where you are now.",
+            "And don't forget, always respect your mentor and elders, they have much wisdom to share."
+        ]
     ],
-    "medi_1": [
-        [],
-        []
+    "medi_6": [
+        [
+            "medicine cat apprentice"
+        ],
+        [
+            "Hello there, my apprentice! How are the herbs coming along? I hope you haven't mixed up marigold and mouse bile!",
+            "Do you ever miss the days of wrestling with your denmates? Well, learning the healing arts is a different kind of challenge.",
+            "You're doing wonderfully in your training. Your clan is grateful for your dedication.",
+            "Every day is a learning opportunity. Don't fret over mistakes, they're part of the journey.",
+            "I'm proud of you, little one. Come talk to me anytime."
+        ]
+    ],
+    "medi_7": [
+        [
+            "mediator apprentice"
+        ],
+        [
+            "Ah, y_c! How are the negotiations coming along? It's not easy getting warriors to agree, I'll tell you that!",
+            "Do you ever wonder about the sparring and the hunting lessons warrior apprentices do? I suppose resolving disputes is a different kind of hunt.",
+            "You're doing a good job. The clan needs a calm voice like yours to keep things peaceful.",
+            "Remember, it's not about taking sides, but about helping others see eye to eye.",
+            "And don't forget, even the wisest cats need guidance. Don't hesitate to seek advice."
+        ]
+    ],
+    "medi_8": [
+        [
+            "warrior"
+        ],
+        [
+            "Ready for the next patrol, warrior? Remember, one missed mouse is better than a twisted paw.",
+            "Do you ever wish you could trade your claws for a day among my herbs? I sometimes wonder what it would be like to have your strength.",
+            "Your bravery and dedication are an inspiration to the clan. We appreciate your efforts.",
+            "Your strength isn't just in your muscles, it's in your heart, your loyalty to your clan.",
+            "Though, even the toughest warrior can use some rest. Don't push yourself too hard."
+        ]
+    ],
+    "medi_9": [
+        [
+            "medicine cat"
+        ],
+        [
+            "Well met, y_c. How are the stocks holding up? Have you found a way to make the travelling herbs taste any better?",
+            "Do you ever wish for a day without sniffles and coughs? I sometimes do.",
+            "Your skills and dedication are invaluable. The clan wouldn't be the same without your care.",
+            "Remember, we heal not only with our herbs but with our words and presence.",
+            "And even though we have to keep our distance sometimes, we're as much a part of the clan as any other cat."
+        ]
+    ],
+    "medi_10": [
+        [
+            "mediator"
+        ],
+        [
+            "Hello, y_c! Any disagreements today? Warriors can be as prickly as thistles sometimes.",
+            "Do you ever wish for a quiet day among the herbs? I sometimes wonder what it's like to be in your paws.",
+            "Your skills in keeping the peace are invaluable. Your work contributes greatly to our clan's harmony.",
+            "Remember, peace comes not only from resolving conflicts but from understanding and empathy.",
+            "Even the wisest cats can learn something new. Always be open to change."
+        ]
+    ],
+    "medi_11": [
+        [
+            "deputy"
+        ],
+        [
+            "Ah, y_c! Are the patrols going well? Remember, not every wound is visible. Check on your warriors' spirits as well.",
+            "Do you ever wish for a simple day in the medicine den? I sometimes wonder what it's like to shoulder your responsibilities.",
+            "Your dedication and leadership are inspirational. Your clan relies on your strength and wisdom.",
+            "Remember, it's not just about leading the clan, but also about guiding them, showing them the way.",
+            "Though, even the greatest deputies need a break sometimes. Make sure to rest."
+        ]
+    ],
+    "medi_12": [
+        [
+            "leader"
+        ],
+        [
+            "Greetings, noble leader. Have the stars spoken to you today? Remember, sometimes they whisper, and we need to listen closely.",
+            "Do you ever wish for a day of peace in the medicine den? I sometimes wonder what it's like to lead our clan.",
+            "Your wisdom and bravery are a beacon to us all. The clan stands behind you, always.",
+            "Remember, leading isn't just about making decisions, it's about nurturing the clan's spirit.",
+            "Don't forget though, even the greatest leaders need guidance. Don't forget to look to the stars."
+        ]
+    ],
+    "medi_13": [
+        [
+            "elder"
+        ],
+        [
+            "Hello, y_c! How are you feeling today? Any aches or pains? You warriors are tough, but sometimes tough means stubborn.",
+            "Do you ever miss the thrill of the chase? I suppose sharing stories with the kits can be just as rewarding.",
+            "Your wisdom and tales are a treasure to the clan. You continue to guide us with your words.",
+            "Remember, even though your warrior days are behind you, your role is still important. You're the clan's memory.",
+            "Your stories not only entertain us but teach us valuable lessons. Thank you for your wisdom."
+        ]
+    ],
+    "med_30": [
+        [
+            "kit",
+            "injured"
+        ],
+        [
+            "Hey, little one. I heard about your tumble. You're brave to come see me, you know.",
+            "It's not fun to get hurt, but every scar is a story, and every story is a lesson learned. It's how we grow.",
+            "I'll fix you up in no time. You'll be back playing moss-ball with the other kits before you know it.",
+            "Remember, even the smallest kit can make the biggest difference. It's not about how big or strong you are, but how big your heart is.",
+            "So, let's get you all patched up, okay? You're doing a great job. The Clan needs strong kits like you."
+        ]
+    ],
+    "med_4": [
+        [
+            "apprentice",
+            "injured"
+        ],
+        [
+            "Ah, apprentices and their eagerness. It's good to see you're pushing your limits, but remember to take care of yourself too.",
+            "A scrape or two is normal when you're learning, but it's also important to know your limits. You can't serve your Clan if you're always in the medicine cat's den.",
+            "Resting is as important as training. It's not a race, and you have time to learn. Your Clan needs you healthy and strong.",
+            "Let me tend to your wound. You're doing very well and your Clan is proud of you. Just remember, it's not all about how many scars you carry.",
+            "There you go, good as new. Remember, a smart apprentice listens to their mentor, and to their body as well. You're going to be a great warrior one day."
+        ]
+    ],
+    "med_5": [
+        [
+            "medicine cat apprentice",
+            "injured"
+        ],
+        [
+            "Even healers need healing sometimes, don't they? It's important to take care of yourself while taking care of others.",
+            "Your role in the Clan is important. The cats rely on you for their well-being. You need to set an example by caring for your own health as well.",
+            "Here, let me look at that. Remember, you cannot pour from an empty cup. Healing begins from within.",
+            "I'm proud of how far you've come. Your dedication to the well-being of our Clan is admirable. But remember, it's not a sign of weakness to ask for help when you need it.",
+            "Now, off you go. Rest and recover. Your Clan needs you, and I need my apprentice healthy and ready to learn."
+        ]
+    ],
+    "med_6": [
+        [
+            "mediator apprentice",
+            "injured"
+        ],
+        [
+            "Oh, look who's here. Even mediators have their bad days, huh? It's alright, let me take a look at you.",
+            "You've been doing a great job keeping the peace in the Clan, but don't forget to take care of yourself too.",
+            "Let me tend to your injuries. Remember, it's important to maintain your own peace before you can mediate for others.",
+            "Rest up and recover. The Clan appreciates your efforts, and I'm sure they'd want you to be well.",
+            "You're all set. Now, take it easy and remember - helping others begins with helping ourselves."
+        ]
+    ],
+    "med_7": [
+        [
+            "warrior",
+            "injured"
+        ],
+        [
+            "Come in, y_c. The path of a warrior is not easy, and it's common to acquire a few battle scars along the way.",
+            "Don't ignore your injuries, they are signs that you have fought bravely for your Clan.",
+            "Let me treat you. It's important to remember that being a warrior is not just about how many battles you win, but also how well you recover.",
+            "Rest and let your body heal. You're no good to your Clan if you're not in fighting shape.",
+            "You'll be back on your paws in no time. Remember, a good warrior knows when to fight and when to rest."
+        ]
+    ],
+    "med_8": [
+        [
+            "medicine cat",
+            "injured"
+        ],
+        [
+            "It seems the healer has become the patient. It's not often we find ourselves on the other side of the moss bed, is it?",
+            "Healing others is our duty, but we can't forget to care for ourselves as well. Our Clan needs us in top shape.",
+            "Here, let me help you. We're two sides of the same leaf. When one of us is hurting, the Clan feels it.",
+            "You're doing a great job caring for the Clan. Just remember, you also need to care for yourself.",
+            "Rest and recover. Your Clan needs their medicine cat healthy and strong."
+        ]
+    ],
+    "med_9": [
+        [
+            "mediator",
+            "injured"
+        ],
+        [
+            "A mediator's job is never easy, is it? You keep the peace and carry the burden of others' disputes. But you can't forget about your own well-being.",
+            "Here, let me tend to your injuries. You need to be strong to support others. It's not a sign of weakness to admit when you're hurt.",
+            "Rest and take time to recover. The Clan needs you in top form to mediate their issues.",
+            "You're doing a great job. Just remember, your health matters as much as the peace you strive to maintain.",
+            "There you go. Now take it easy and let your body heal. You're a vital part of this Clan and we need you healthy."
+        ]
+    ],
+    "med_10": [
+        [
+            "deputy",
+            "injured"
+        ],
+        [
+            "Ah, deputy, you push yourself too hard. You shoulder so much for the Clan, but you need to take care of yourself as well.",
+            "Let me treat your injuries. You've been doing a great job, but the Clan needs you to be strong and healthy. We all rely on you.",
+            "Rest, eat, and let your body recover. As deputy, you're the backbone of the Clan, but even the strongest bones need care.",
+            "Remember, being a deputy isn't just about being the strongest or the fastest, it's also about knowing when to seek help.",
+            "Take it easy, deputy. You've done well. Now let your body recover. The Clan needs you."
+        ]
+    ],
+    "med_11": [
+        [
+            "leader",
+            "injured"
+        ],
+        [
+            "Leader, you carry the weight of the Clan on your shoulders, but even you need to rest and heal sometimes.",
+            "Allow me to tend to your wounds. Your health is crucial to the Clan's well-being. A leader leads by example, after all.",
+            "Rest and recover. The Clan looks up to you, and seeing you take care of your health will inspire them to do the same.",
+            "Take it slow and give your body time to heal. Your strength and guidance are the pillars of the Clan, but even the strongest need care.",
+            "Don't worry, leader, you'll be back on your paws in no time. The Clan needs you, but they also need you healthy and strong."
+        ]
+    ],
+    "med_12": [
+        [
+            "elder",
+            "injured"
+        ],
+        [
+            "Come in, old friend. The moons have worn our fur, but not our spirits, eh?",
+            "I'll help with those aches and pains. Remember, old age is a badge of honor, a testament to a life well-lived and battles bravely fought.",
+            "Rest and let your body heal. You've earned your place in the elders' den, a place of respect and honor in the Clan.",
+            "We'll look after you, just as you've looked after us. Your stories and wisdom are an important part of our history.",
+            "Now, take it easy. The Clan needs its elders, wise and hearty. You're our link to the past and our guide to the future."
+        ]
     ]
 }
