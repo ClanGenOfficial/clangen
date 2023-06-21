@@ -1,6 +1,7 @@
 <strong>v0.9.1</strong>
 - Fix save-conversion issue with tortie patches
 - Cats will now properly move on from dead mates
+- Removed "EXAMPLE" text from leader ceremonies
 
 <strong>v0.9.0</strong>
 <u>BIG CHANGES:</u>
