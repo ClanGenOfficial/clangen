@@ -3331,9 +3331,10 @@ class TalkScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_bg, (0, 0))    
         now = pygame.time.get_ticks()
-        if now >= self.next_frame_time and self.frame_index < len(self.text_frames[self.text_index]) - 1:
-            self.frame_index += 1
-            self.next_frame_time = now + self.typing_delay
+        if self.text_index < len(self.text_frames):
+            if now >= self.next_frame_time and self.frame_index < len(self.text_frames[self.text_index]) - 1:
+                self.frame_index += 1
+                self.next_frame_time = now + self.typing_delay
 
         # Always render the current frame
         self.text.html_text = self.text_frames[self.text_index][self.frame_index]

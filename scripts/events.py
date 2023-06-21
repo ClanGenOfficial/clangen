@@ -387,7 +387,7 @@ class Events:
                 
     def pick_valid_parent(self):
         parent = random.choice(Cat.all_cats_list).ID
-        while parent == game.clan.your_cat.ID or Cat.all_cats[parent].moons < 12 or Cat.all_cats[parent].moons > 100 or Cat.all_cats[parent].dead:
+        while parent == game.clan.your_cat.ID or Cat.all_cats[parent].moons < 14 or Cat.all_cats[parent].moons > 100 or Cat.all_cats[parent].dead:
             parent = random.choice(Cat.all_cats_list).ID
         return parent
         

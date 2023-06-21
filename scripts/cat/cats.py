@@ -1376,8 +1376,10 @@ class Cat():
                 game.clan.leader_lives -= 1
             self.die()
             return False
+        moons_with = 0
+        if "moon_start" in self.injuries[injury]:
+            moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
-        moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if not self.injuries[injury]["complication"] and self.injuries[injury]["duration"] - moons_with <= 0:
