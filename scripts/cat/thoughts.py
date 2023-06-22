@@ -139,10 +139,12 @@ class Thoughts():
                 return False
 
         if 'backstory_constraint' in thought:
-            if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
-                return False
-            if random_cat and random_cat.backstory not in thought['backstory_constraint']["r_c"]:
-                return False
+            if "m_c" in thought['backstory_constraint']:
+                if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
+                    return False
+            if "r_c" in thought['backstory_constraint']:
+                if random_cat and random_cat.backstory not in thought['backstory_constraint']["r_c"]:
+                    return False
 
         # Filter for the living status of the random cat. The living status of the main cat
         # is taken into account in the thought loading process.

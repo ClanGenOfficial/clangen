@@ -14,6 +14,30 @@
             "Enough of my lectures. Off you go, little one."
         ]
     ],
+    "medtr_13": [
+        [
+        "Any"
+        ],
+        [
+        "The role of a mediator... It's not an easy one, you know. I often find myself caught between disagreements, trying to find a resolution that suits all parties. It's a delicate balance.",
+        "I constantly question myself - am I being fair? Am I favoring one side over the other? Am I truly helping to resolve conflicts or am I just stirring the pot more?",
+        "Some days, it feels like I carry the weight of the whole Clan on my shoulders. Each decision I make can ripple through the ranks, affecting relationships, duty assignments, even morale.",
+        "And the doubts, they never stop. Even when things calm down, I can't help but wonder if there was a better way to handle the situation, a solution I didn't see.",
+        "It's a daunting task, and some days I wonder if I'm cut out for it. But at the end of the day, I remember why I took on this role. It's about keeping the peace, building bridges, fostering understanding. And for that, it's worth it."
+        ]
+        ],
+        "medtr_14": [
+        [
+        "Any"
+        ],
+        [
+        "There's a weight to being a mediator that's hard to describe. You become the buffer between clashing opinions, the bridge over troubled waters. It can be exhausting.",
+        "Every decision feels like treading on thin ice. You want to be fair, unbiased, but you also have to consider the dynamics of the Clan. It's a complicated dance, and sometimes, I feel like I'm stumbling.",
+        "There's this pressure to always have the right answer, to always know what to do. But sometimes, I just... don't. There are days when I feel completely at a loss.",
+        "I keep asking myself - am I really making a difference? Is my presence helping, or am I just causing more tension? It's a spiral of doubts that can be hard to escape.",
+        "But then I remember the moments of resolution, the sighs of relief, the thank yous. It reminds me why I chose this path, why it matters. It's tough, no doubt about it. But if I can help bring peace, then it's worth all the struggles."
+        ]
+        ],
     "medi_2": [
         [
             "warrior"
@@ -146,14 +170,6 @@
             "Remember, your role in the clan is vital. Your words are a guiding light for us all.",
             "No matter how old you are, there's always room to learn and grow."
         ]
-    ],
-    "medi_1": [
-        [
-
-        ],
-        [
-
-        ]
     ]
-
+    
 }

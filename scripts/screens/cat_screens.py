@@ -3384,6 +3384,8 @@ class TalkScreen(Screens):
                     continue
             if (not game.clan.your_cat.is_ill() and not game.clan.your_cat.is_injured()) and 'injured' in talk[0]:
                 continue
+            if (game.clan.your_cat.status == 'kitten') and 'no_kit' in talk[0]:
+                continue
             if game.clan.your_cat.ID in cat.relationships:
                 if cat.relationships[game.clan.your_cat.ID].dislike < 50 and 'hate' in talk[0]:
                     continue

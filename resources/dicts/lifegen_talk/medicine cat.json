@@ -38,6 +38,32 @@
             "In these troubling times, let us lean on each other. Let us share the weight, so it does not become too much for one cat to bear. I am here for you, as a healer, as an advisor, and as a friend."
         ]
     ],
+    "med_13": [
+        [
+        "Any",
+        "leafbare"
+        ],
+        [
+        "Our herb stores... they're dwindling. I've never seen them this low before. The season has been harsh, and the plants are not thriving as they should.",
+        "Every day, I walk through the forest, searching for the familiar scents of marigold, comfrey, yarrow... but they are scarce. Our usual harvesting spots are barren. I fear what this could mean for us.",
+        "Injuries are bound to happen, and with leaf-bare coming, we will need all the herbs we can get to fight off whitecough and greencough. The health of the Clan is at stake here.",
+        "I've been working hard to ration the herbs we do have, using them only when absolutely necessary. But it's a delicate balance. We can't afford to hold back if a cat's life is in danger.",
+        "I'll need every paw I can get to gather herbs. Warriors, apprentices, even kits... If you spot any herbs during your patrols or play, bring them back. We need all the help we can get."
+        ]
+        ],
+        "med_14": [
+        [
+        "Any",
+        "leaffall"
+        ],
+        [
+        "The state of our herb stores has been weighing heavily on my mind. The plants are not growing as quickly or as abundantly as they should be, and our reserves are dwindling.",
+        "With each passing day, my worry grows. We need these herbs to heal wounds, to stave off illness. If we run out... I don't even want to think about the consequences.",
+        "I have been trying to find new spots to harvest, but it's proving challenging. The weather has not been kind to us this season, and the plants are suffering.",
+        "I've been talking with the other medicine cats during our gatherings, hoping they might have some advice or extra herbs to spare. But it seems we're all in the same predicament.",
+        "We need to work together as a Clan, to keep an eye out for any herbs while we're out in the territory. It's times like these that test our strength, but I have faith in us. We'll weather this storm, just like we have countless others."
+        ]
+        ],
     "medi_4": [
         [
             "kitten"

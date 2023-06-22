@@ -299,6 +299,313 @@
             "And also, your role is unique and highly respected. We warriors would be lost without you."
         ]
     ],
+    "warrior_51": [
+        [
+            "Any",
+            "injured",
+            "no_kit"
+        ],
+        [
+            "Hey, you look a little down. Remember, even the bravest warriors have their bad days. It's okay to feel upset sometimes.",
+            "The forest can seem big and scary, especially when you're feeling alone. But remember, you're part of a Clan. We're here for you, every step of the way.",
+            "Take a deep breath. Feel the earth beneath your paws, the wind in your fur. This is your home, your place. You're strong, you're capable. You can handle anything the forest throws at you.",
+            "When things get tough, look to your Clan. We're your family. We'll stand by you, through the good and the bad. That's what being in a Clan is all about.",
+            "So lift your head high. Tomorrow is a new day, a fresh start. And whatever comes, we'll face it together."
+        ]
+    ],
+    "warrior_52": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Lost in thought? This world can be a lot to take in sometimes, can't it? So many questions, so many unknowns.",
+            "Remember, it's okay not to have all the answers. Life is a journey, and we're all learning as we go. The important thing is to keep asking questions, to keep seeking the truth.",
+            "There will be times when you're uncertain, times when you doubt yourself. But know this: you're not alone. We're all finding our way, together.",
+            "Your questions, your doubts, they're a sign of your strength. They show that you're thinking, that you're growing. That's something to be proud of.",
+            "So take heart. Keep asking, keep learning, keep growing. You're doing just fine."
+        ]
+    ],
+    "warrior_53": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "The moon is high and the night is quiet. It's a perfect time for some quiet reflection, isn't it?",
+            "Sometimes, in the silence of the night, we find the answers we're looking for. The calm helps us think, helps us see things more clearly.",
+            "The night can be a comforting friend. It's a time for rest, a time for dreams. A time to let go of the troubles of the day and prepare for a new dawn.",
+            "So take a deep breath. Let the peace of the night wash over you. The stars are watching over us, guiding us on our path.",
+            "Remember, no matter how dark the night, the dawn always comes. And with it, a new day, a new beginning. You're stronger than you think."
+        ]
+    ],
+    "warrior_54": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "You're looking a little anxious there, friend. Life in the Clan can be challenging sometimes, can't it?",
+            "Facing battles, training hard, dealing with Clan politics... it's a lot. But remember, every warrior has faced these challenges. You're not alone.",
+            "Take a step back, take a deep breath. Remember why you're here. Remember your oath to serve and protect your Clan, to uphold the warrior code. That's what matters.",
+            "Every challenge you face, every battle you fight, makes you stronger, makes you a better warrior. It's all part of the journey.",
+            "You're doing great, friend. Keep your head high and your spirit strong. We're all in this together."
+        ]
+    ],
+    "warrior_55": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Ah, the weight of responsibility can be heavy at times, can't it? But remember, you're not carrying it alone.",
+            "Every cat in the Clan shares in our duties. From the youngest kit to the oldest elder, we all have a part to play.",
+            "Take heart in knowing that your efforts are not in vain. Every pawstep you take, every mouse you catch, strengthens our Clan.",
+            "Life may be tough at times, but remember, you're tougher. Every challenge you overcome makes you stronger, wiser, better.",
+            "So don't be too hard on yourself. You're doing your best, and that's all anyone can ask."
+        ]
+    ],
+    "warrior_46": [
+        [
+            "Any"
+        ],
+        [
+            "Clan culture... It's something special, isn't it? More than just rules and rituals, it's a way of life, a way of being.",
+            "From the warrior code to the gatherings, everything we do is steeped in tradition. It's what binds us together, makes us who we are.",
+            "It's not just about being a strong fighter or a skilled hunter. It's about respect, loyalty, bravery, and love for your Clan. That's what being a Clan cat is all about.",
+            "It's easy to forget sometimes, caught up in the day-to-day tasks. But take a moment to appreciate it. The warmth of the nursery, the camaraderie of the warriors, the wisdom of the elders. This is our Clan, and it's something to be proud of.",
+            "Yeah, it's not always easy. There are challenges, disagreements, tough times. But at the end of the day, we're all in this together. One Clan, under the stars."
+        ]
+    ],
+    "warrior_47": [
+        [
+            "Any"
+        ],
+        [
+            "Oh, you've found a shiny pebble, huh? Cats collect all sorts of trinkets. It's a peculiar habit, isn't it?",
+            "I guess it's the hunter in us, always searching, always collecting. Some cats have quite the collection. Feathers, stones, bits of Twoleg stuff. You'd be surprised what you can find in the forest.",
+            "Just remember, no matter how shiny or interesting, nothing is more valuable than the respect and trust of your Clanmates.",
+            "Trinkets can be fun, a nice distraction. But it's our actions, our loyalty, our bravery, that really matter. Those are the things that are truly valuable.",
+            "So go ahead, collect your trinkets. Enjoy them. But remember, it's the memories we make, the friendships we build, that are the real treasures."
+        ]
+    ],
+    "warrior_48": [
+        [
+            "Any"
+        ],
+        [
+            "Clan history? Now, that's a topic! We have a history as deep and winding as the river.",
+            "It's full of tales of bravery, sacrifice, love, and loss. Each one of us is a part of that history, a single thread in the tapestry of our Clan.",
+            "There are tales of great battles, of leaders who led with wisdom and courage, of warriors who made the ultimate sacrifice for their Clan.",
+            "And then there are the quiet moments, the everyday lives of our ancestors. The hunts, the births, the changing of the seasons. Every moment is a piece of our history.",
+            "Our history shapes us, guides us, reminds us of who we are. But we're not just a product of our past. We're also the makers of our future. So let's make it a good one, eh?"
+        ]
+    ],
+    "warrior_49": [
+        [
+            "Any"
+        ],
+        [
+            "Flowers, eh? They sure brighten up the place, don't they? And some of them can be pretty useful too!",
+            "Did you know that marigold can be used to treat wounds? Or that poppy seeds can soothe pain? I'm not a medicine cat, but I know our world is full of natural remedies, if you know where to look.",
+            "And then there are the simple pleasures. The sweet scent of honey-suckle, the bright colors of the peacock flower, the soft rustle of reeds in the breeze.",
+            "The forest is full of beauty, if you take the time to notice. Even in the darkest times, there are always flowers blooming somewhere.",
+            "So take a moment to appreciate them, to breathe in their sweet scent. After all, life isn't just about survival. It's about finding joy in the little things, too."
+        ]
+    ],
+    "warrior_50": [
+        [
+            "Any"
+        ],
+        [
+            "Gossip, huh? Well, you know what they say about gossip. It's like a mouse - easy to catch, but hard to hold onto.",
+            "There's always some rumor or other floating around. Most of it is harmless, just cats letting off steam. But sometimes, well, words can be sharper than claws.",
+            "You have to be careful with gossip. It can twist the truth, hurt feelings, cause misunderstandings. It's not something to be taken lightly.",
+            "I always say, if you've got something to say, say it directly. No point in whispering behind tails. That's just asking for trouble.",
+            "So next time you hear a juicy piece of gossip, think before you spread it. Words have power. Use them wisely."
+        ]
+    ],
+    "warrior_41": [
+        [
+            "Any"
+        ],
+        [
+            "Have you ever seen a Twoleg monster? Those loud, stinky creatures that tear through the forest without a care?",
+            "The first time I encountered one, I was just an apprentice. It was terrifying, like a badger charging through the undergrowth.",
+            "You can't fight a Twoleg monster like you would another cat. They're big, they're fast, and they don't respect the warrior code. The best thing to do is steer clear.",
+            "Remember, we are warriors of the forest. We respect all life, even if it doesn't respect us. Even if it's a Twoleg monster tearing up our territory.",
+            "Stay alert, stay safe, and respect the power of the Twoleg monsters. They may not understand our ways, but they are a part of our world."
+        ]
+    ],
+    "warrior_42": [
+        [
+            "Any"
+        ],
+        [
+            "Battle moves are more than just swings and swipes. They're about strategy, precision, and timing.",
+            "Every move we make in battle has a purpose. It's a dance, a game of chess, each piece moving in sync with the other.",
+            "There's the belly rake, a move that demands precision and timing. And the leap-and-hold, a daring move that immobilizes the enemy. Each move is unique, each move has its time and place.",
+            "Training and practicing your battle moves is vital. A well-executed move can turn the tide of battle. But remember, brute strength alone won't win a fight.",
+            "Remember, a true warrior fights not out of hatred, but out of love. Love for their Clan, their kin, and their home."
+        ]
+    ],
+    "warrior_43": [
+        [
+            "Any"
+        ],
+        [
+            "Do you know the deathberry defense move? It's a tricky one, named after the deadly berries because of its potential danger.",
+            "The move involves bluffing an attack and then swiftly changing direction to confuse and disorient the opponent. But timing and precision are key, or you could leave yourself exposed.",
+            "It's not a move for every battle. Like the deathberries themselves, it should be used with caution and respect. Otherwise, it could cause more harm than good.",
+            "In the heat of the battle, remember that every move has its purpose and place. Understanding when and how to use them is just as important as the moves themselves.",
+            "Battle moves are not just about power and agility, but about strategy and understanding. With practice and experience, you'll learn to master them."
+        ]
+    ],
+    "warrior_44": [
+        [
+            "Any"
+        ],
+        [
+            "Have you ever heard of the Twolegplace? It's a strange place, full of monsters and Twolegs. It's loud, it's confusing, and it's nothing like the forest.",
+            "I've only been there once, when I was an apprentice. I remember the noise, the strange smells, the Twolegs rushing around like ants in a nest.",
+            "But despite its strangeness, the Twolegplace is part of our world. We may not understand it, but it's important to respect it.",
+            "As warriors, we have a duty to protect our territory, even if that means dealing with the Twolegplace and its oddities.",
+            "So remember, while the Twolegplace may be different, it's still part of the world we live in. We may not understand it, but we must respect it."
+        ]
+    ],
+    "warrior_45": [
+        [
+            "Any"
+        ],
+        [
+            "The double front paw swipe, have you ever tried that move? It's a powerful one if executed correctly.",
+            "It involves using both front paws to swipe at an opponent's face or chest, ideally throwing them off balance. But it requires great strength and control, and leaves you momentarily exposed.",
+            "The trick is to perform it swiftly and retreat before the opponent can counterattack. But it's a risky move, and not recommended for inexperienced warriors.",
+            "Remember, each battle move carries its own risks and rewards. The key is understanding when and how to use them.",
+            "With practice and experience, you'll learn to use the right move at the right time, turning the tide of any battle in your favor."
+        ]
+    ],
+    "warrior_21": [
+        [
+            "Any"
+        ],
+        [
+            "You see this scar? Got it in a border skirmish with an enemy Clan. A reminder that danger can lurk even in the most placid streams.",
+            "The thing about battles, it's not about brute strength. It's about strategy, knowing when to strike and when to retreat.",
+            "I'm not going to lie, the fear never completely goes away. But you learn to use it, channel it into focus, into determination.",
+            "We fight for our Clan, our family. That's what gives us courage. That's what makes us warriors.",
+            "In the end, it's not the scars that define us, but the spirit that drives us. We are warriors, after all."
+        ]
+    ],
+    "warrior_22": [
+        [
+            "Any"
+        ],
+        [
+            "Have you ever observed the forest at dawn? It's as if the world is waking up, shaking off the darkness, and embracing the new day.",
+            "The rustling leaves, the chattering birds, the scurrying creatures... each a note in the symphony of the forest.",
+            "You learn to love these sounds, not just for their beauty, but for the stories they tell. The forest talks, you just need to learn to listen.",
+            "Each morning is a promise of a new beginning, a fresh chance to leave your mark, to live the warrior code.",
+            "There's a kind of magic in these early hours. It's a reminder that life persists, that our Clan persists, no matter the challenges."
+        ]
+    ],
+    "warrior_23": [
+        [
+            "Any"
+        ],
+        [
+            "The warrior code. It's not just a set of rules. It's our identity, our honor, our life.",
+            "We live by the code, we fight by the code, we die by the code. It unites us, strengthens us, gives us purpose.",
+            "It teaches us respect - for our Clanmates, for our adversaries, for the balance of life.",
+            "The code isn't always easy. Sometimes, it demands great sacrifices. But in its wisdom, it shapes us into better cats.",
+            "Every pawstep we take, every breath we draw, we carry the code with us. It is as much a part of us as our fur and claws."
+        ]
+    ],
+    "warrior_24": [
+        [
+            "Any"
+        ],
+        [
+            "Have you ever wondered about our ancestors in StarClan? What do they do all day? Do they watch us every moment?",
+            "I like to think they are guiding us, giving us signs, showing us the right path.",
+            "Their wisdom flows in our veins, whispers in our dreams, lights our darkest hours.",
+            "In times of doubt, I find solace in their presence. Knowing they have faced trials of their own and persevered gives me strength.",
+            "Our ancestors may not walk among us, but their spirits are forever with us, guiding us, guarding us."
+        ]
+    ],
+    "warrior_25": [
+        [
+            "Any"
+        ],
+        [
+            "Hunting is more than just stalking and pouncing. It's a dance with nature, a test of patience and skill.",
+            "Every rustle, every scent, every heartbeat - they're all clues. You need to learn to read them, to feel the pulse of the forest.",
+            "The satisfaction of a successful hunt isn't just in the kill, it's in the perfect execution of the dance.",
+            "But don't forget, every life taken is a life given. We respect our prey, for they sustain us, allow us to serve our Clan.",
+            "Remember, a warrior doesn't just take from the forest, a warrior is a part of the forest."
+        ]
+    ],
+    "warrior_26": [
+        [
+            "Any"
+        ],
+        [
+            "There's a lot we can learn from the changing seasons. They remind us that nothing remains the same, that change is the only constant.",
+            "Leaf-bare teaches us resilience. Newleaf, hope. Greenleaf, joy. Leaf-fall, surrender.",
+            "Each season carries its own trials, its own rewards. We adapt, we grow. That's what makes us strong.",
+            "Just as the forest changes, so do we. Each season shapes us, adds a new layer to our story.",
+            "In the end, we're much like the seasons. Constantly changing, yet always the same. Always warriors."
+        ]
+    ],
+    "warrior_27": [
+        [
+            "Any"
+        ],
+        [
+            "The moon has always fascinated me. Its serene glow lighting our path in the dark, the way it changes shape but never truly disappears.",
+            "They say StarClan resides on the moon. Perhaps that's why it feels so comforting, so familiar.",
+            "On nights when it's full, I find myself thinking about the countless generations of warriors who've looked up at the same moon.",
+            "The moon, in its own way, unites us. No matter where we are, we all look up at the same sky, the same stars, the same moon.",
+            "It's a beautiful thought, isn't it? That we're all connected by the moonlight."
+        ]
+    ],
+    "warrior_28": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Do you remember your first Gathering? The overwhelming rush of emotions. Excitement, curiosity, anxiety.",
+            "Seeing the other Clans, realizing we're part of something bigger. It changes your perspective.",
+            "Despite our differences, our rivalries, Gatherings remind us that we're all bound by the same code, the same respect for the forest.",
+            "There's a strange peace in that unity. A pause from the struggles, a moment of kinship.",
+            "Gatherings aren't just meetings. They're a testament to our shared history, our shared beliefs. They're a part of who we are."
+        ]
+    ],
+    "warrior_29": [
+        [
+            "Any"
+        ],
+        [
+            "You know what I miss most about being a kit? The boundless curiosity, the joy in simple things.",
+            "As a warrior, it's easy to get caught up in duties, in worries. We often forget to take a moment to just enjoy the forest.",
+            "A ray of sunshine through the leaves, the taste of fresh prey, the quiet lullaby of the stream. There's beauty in these simple things.",
+            "Being a warrior doesn't mean losing that joy, that wonder. It just means learning to see it in a new light.",
+            "Remember to pause, to breathe, to take in the world around you. That's just as much a part of being a warrior as fighting and hunting."
+        ]
+    ],
+    "warrior_30": [
+        [
+            "Any"
+        ],
+        [
+            "You ever wonder what's beyond our territory? What other adventures, other challenges might be out there?",
+            "I know we're bound to our territory, to our Clan. But a part of me can't help but feel curious.",
+            "Not that I'd leave. This is my home, my family. But there's a whole world out there, and we only know a small part of it.",
+            "Maybe that's the beauty of it. There's always something more to discover, something more to learn.",
+            "Being a warrior doesn't mean knowing everything. It means being open to the unknown, to the possibility of more."
+        ]
+    ],
     "warrior_26": [
         [
             "mediator"
@@ -346,47 +653,5 @@
             "Remember, even though you're not out on patrols anymore, you're still a vital part of our clan.",
             "And also, the lessons we learn from your tales are as valuable as any battle skill. Thank you for your wisdom."
         ]
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
-    ],
-    "warrior_7": [
-        [
-            "warrior",
-            ""
-        ],
-        []
     ]
 }
