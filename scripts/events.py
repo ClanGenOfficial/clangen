@@ -358,7 +358,7 @@ class Events:
                 with open(f"{resource_dir}ceremonies.json",
                         encoding="ascii") as read_file:
                     self.d_txt = ujson.loads(read_file.read())
-                ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.strip(" ") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.strip(" ")])
+                ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
                 ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
