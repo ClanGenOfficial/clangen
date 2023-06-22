@@ -2842,7 +2842,7 @@ class Cat():
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
                 "favourite": self.favourite,
-                "w_done": self.w_done
+                "w_done": self.w_done if self.w_done else False
             }
 
 
