@@ -7,11 +7,11 @@ from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 
 # ---------------------------------------------------------------------------- #
-#                               Death Event Class                              #
+#                            Disaster Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class DisasterEvents():
-    """All events with a connection to conditions."""
+    """All events with a connection to disasters."""
 
     def __init__(self) -> None:
         self.event_sums = 0
@@ -42,7 +42,6 @@ class DisasterEvents():
         final_events = []
 
         for event in possible_events:
-            #print(event.event)
             if event.priority == 'secondary':
                 print('priority')
                 continue
@@ -120,7 +119,6 @@ class DisasterEvents():
                         picked_disasters.append(potential_disaster)
 
                 if picked_disasters:
-                    #print(picked_disasters)
                     # choose disaster and display trigger event
                     secondary_disaster = random.choice(picked_disasters)
                     print("chosen secondary", secondary_disaster)

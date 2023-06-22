@@ -180,7 +180,8 @@
             "THREE",
             "big_bite_injury",
             "clan_to_patrol",
-            "respect"
+            "respect",
+            "death"
         ],
         "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
