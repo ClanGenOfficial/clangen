@@ -1,3 +1,28 @@
 [
-
+    {
+        "patrol_id": "fst_train_leaffallromanticstroll_20locked1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": ["training", "no_app", "romantic", "platonic", "comfort", "dislike", "jealousy", "rel_patrol"],
+        "intro_text": "p_l thinks r_c is, well, really, just, ah, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask {PRONOUN/r_c/object} to go on a date with {PRONOUN/p_l/object} this afternoon!",
+        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad the forest together, stopping under a great oak and curling up in the drifts of bright leaves beneath it.",
+	        "unscathed_rare": "All p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the bright crunch of leaves underfoot a pleasent backdrop as they chat, heads bent together.",
+	        "stat_skill": "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. But it's all worth it to hear r_c's 'yes'. Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+        },
+        "fail_text": {
+	        "unscathed_common": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. Gently, but no. Tail tucked, p_l goes to be alone."
+        },
+        "win_skills": ["SPEAKER,1", "MEDIATOR,1", "INSIGHTFUL,1"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "constraints": {
+            "relationship": [
+                "romantic_20"
+            ]
+                }
+}
 ]
