@@ -403,7 +403,7 @@ class Events:
             parent_cat = Cat.all_cats[parent_id]
             parent_cat.create_inheritance_new_cat()
         game.clan.your_cat.create_inheritance_new_cat()
-        game.clan.your_cat.create_relationships_new_cat()
+        game.clan.your_cat.init_all_relationships()
 
     def create_sibling(self):
         sibling = Cat(status='kitten', moons=1)
@@ -458,7 +458,7 @@ class Events:
         else:
             game.clan.your_cat.parent1 = blood_parent.ID
             game.clan.your_cat.create_inheritance_new_cat()
-            game.clan.your_cat.create_relationships_new_cat()
+            game.clan.your_cat.init_all_relationships()
             blood_parent.create_inheritance_new_cat()
         return self.set_birth_text("birth_no_parents", {"y_c": game.clan.your_cat.name})
 
@@ -506,9 +506,9 @@ class Events:
             for i in siblings:
                 i.adoptive_parents.extend([parent1,parent2])
                 i.create_inheritance_new_cat()
-                i.create_relationships_new_cat()
+                i.init_all_relationships()
                 game.clan.your_cat.create_inheritance_new_cat()
-                game.clan.your_cat.create_relationships_new_cat()
+                game.clan.your_cat.init_all_relationships()
                 if parent1:
                     Cat.all_cats[parent1].create_inheritance_new_cat()
                 if parent2:
@@ -525,9 +525,9 @@ class Events:
             if parent2: sibling.parent2 = parent2
             if blood_parent: sibling.parent1 = blood_parent.ID
             sibling.create_inheritance_new_cat()
-            sibling.create_relationships_new_cat()
+            sibling.init_all_relationships()
         game.clan.your_cat.create_inheritance_new_cat()
-        game.clan.your_cat.create_relationships_new_cat()
+        game.clan.your_cat.init_all_relationships()
         if blood_parent:
             blood_parent.create_inheritance_new_cat()
         if parent1:
