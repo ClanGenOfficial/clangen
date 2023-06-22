@@ -89,7 +89,8 @@
             "Being an apprentice isn't just about learning how to fight and hunt, it's about understanding the spirit of the warrior code. It's about the courage in your heart, the honesty in your words, and the respect for your clanmates.",
             "Look around you. The warriors you see are not just your mentors, they are your family. And just like how the forest provides us shelter, food, and protection, we too have to provide for each other. That's the essence of a Clan.",
             "Every time you go out for training, remember that it's not just about catching the most prey or being the fastest runner. It's about learning to listen to the forest, understanding the way of the warrior, and carrying the pride of your Clan.",
-            "And when the day comes for you to become a warrior, remember that it's not the end of your journey, but the beginning. For a true warrior's learning never ends. The forest changes with each season, and so should we. Adaptation and resilience, those are the qualities of a great warrior.",
+            "And when the day comes for you to become a warrior, remember that it's not the end of your journey, but the beginning. For a true warrior's learning never ends. The forest changes with each season, and so should we.",
+            "Adaptation and resilience, those are the qualities of a great warrior.",
             "And remember, always be proud of who you are. You are not just an apprentice, you are the future of our Clan. The strength and survival of our Clan depends on you, so carry this responsibility with pride and honor."
         ]
     ],
@@ -98,11 +99,11 @@
             "medicine cat apprentice"
         ],
         [
-            "Your role as a medicine cat apprentice isn't one to be taken lightly. You are the heart of the Clan, the keeper of health, and the whisperer of StarClan. You hold the power to heal, to soothe, and to reassure. Your paws can mend wounds, but your words can mend spirits.",
-            "However, the knowledge you wield can also bring great pain. You must learn to balance the truth with kindness, the reality with hope. It's a difficult task, one that not every cat can handle. It's okay to feel overwhelmed sometimes, it's okay to seek guidance.",
+            "Your role as a medicine cat apprentice isn't one to be taken lightly. You are the heart of the Clan, the keeper of health, and the whisperer of StarClan. You hold the power to heal, to soothe, and to reassure.","Your paws can mend wounds, but your words can mend spirits.",
+            "However, the knowledge you wield can also bring great pain. You must learn to balance the truth with kindness, the reality with hope. It's a difficult task, one that not every cat can handle.","It's okay to feel overwhelmed sometimes, it's okay to seek guidance.",
             "Your mentor is there for you, and so is StarClan. They will guide you through your dreams, give you the signs you need to lead your Clan through hardships. They are with you, always, just as the Clan is.",
             "And remember, a medicine cat's purpose isn't just to heal, it's also to connect. Connect with your Clanmates, connect with other medicine cats, and connect with StarClan. The bonds you build will be your biggest strength.",
-            "Lastly, be proud of your path. Being a medicine cat is a noble duty, one that requires a strong heart and a clear mind. Your Clan trusts you, respects you, and looks up to you. So walk this path with confidence, for you are the beacon of hope in your Clan."
+            "Lastly, be proud of your path. Being a medicine cat is a noble duty, one that requires a strong heart and a clear mind. Your Clan trusts you, respects you, and looks up to you.","So walk this path with confidence, for you are the beacon of hope in your Clan."
         ]
     ],
     "dep_8": [
@@ -110,11 +111,11 @@
             "mediator apprentice"
         ],
         [
-            "As a mediator apprentice, your role is to bring balance and harmony within our Clan. You need to have the courage to stand in the middle, to understand both sides, and to find a path that leads to peace. This is no easy task, as feelings can run high, and claws can be quick to unsheath.",
+            "As a mediator apprentice, your role is to bring balance and harmony within our Clan. You need to have the courage to stand in the middle, to understand both sides, and to find a path that leads to peace.","This is no easy task, as feelings can run high, and claws can be quick to unsheath.",
             "However, a mediator doesn't simply squash disputes. You help us understand each other better. You're a listener, a voice of reason, a beacon of fairness. You help us see things from different perspectives, you help us to empathize with each other, to connect on a deeper level.",
             "Remember, being a mediator doesn't mean you're always neutral. You can have your own opinions, your own emotions. The challenge is not letting those cloud your judgment. Your own biases can be your greatest obstacles in finding fair solutions.",
             "Patience and understanding are your greatest allies. Each cat has their own story, their own motives. Try to understand them, try to walk in their paws. The more you know, the better you can mediate.",
-            "Your journey as a mediator will be challenging, but rewarding. When cats can reconcile their differences, when they can live in peace, it strengthens the Clan, and that is a victory for us all. And in this journey, remember, you're not alone. We're all here to support you, and I'm especially proud of the path you've chosen."
+            "Your journey as a mediator will be challenging, but rewarding. When cats can reconcile their differences, when they can live in peace, it strengthens the Clan, and that is a victory for us all.","And in this journey, remember, you're not alone. We're all here to support you, and I'm especially proud of the path you've chosen."
         ]
     ],
     "dep_9": [
@@ -122,10 +123,13 @@
             "warrior"
         ],
         [
-            "As deputy, I understand the weight of the warrior's duty. You bear the safety and security of our Clan on your shoulders. It's a burden not to be taken lightly. It requires strength, courage, and a sense of responsibility. But remember, being a warrior isn't simply about strength or skill in battle.",
-            "Indeed, we're warriors, but we're also protectors, teachers, and nurturers. Our duty goes beyond fighting and defending our borders. It extends to caring for the elders, mentoring the apprentices, providing for the queens and their kits, and fostering peace within the Clan.",
-            "We must also remember our code. We must respect every life, even those of our enemies. We fight only when we must, and we always offer mercy. The code guides us, it shapes our actions and decisions. And as warriors, we must live by it, not just recite it.",
-            "Remember that the strength of a warrior is measured not just by their victories in battles, but also by their wisdom, their compassion, and their willingness to sacrifice for the greater good of the Clan. And in this journey, I am here for you. Together, we can ensure the prosperity and survival of our Clan.",
+            "As deputy, I understand the weight of the warrior's duty. You bear the safety and security of our Clan on your shoulders. It's a burden not to be taken lightly. It requires strength, courage, and a sense of responsibility.",
+            "But remember, being a warrior isn't simply about strength or skill in battle.",
+            "Indeed, we're warriors, but we're also protectors, teachers, and nurturers. Our duty goes beyond fighting and defending our borders.",
+            "It extends to caring for the elders, mentoring the apprentices, providing for the queens and their kits, and fostering peace within the Clan.",
+            "We must also remember our code. We must respect every life, even those of our enemies. We fight only when we must, and we always offer mercy.",
+            "The code guides us, it shapes our actions and decisions. And as warriors, we must live by it, not just recite it.",
+            "Remember that the strength of a warrior is measured not just by their victories in battles, but also by their wisdom, their compassion, and their willingness to sacrifice for the greater good of the Clan.","And in this journey, I am here for you. Together, we can ensure the prosperity and survival of our Clan.",
             "Finally, a good warrior knows when to ask for help. You don't need to bear your burdens alone. The Clan is here to support you. Don't hesitate to reach out when you need it. We are a Clan, and our strength lies in our unity."
         ]
     ],
@@ -134,11 +138,11 @@
             "medicine cat"
         ],
         [
-            "Your role as a medicine cat is one of the pillars of our Clan, it is not only about healing bodies, but also about soothing minds and spirits. It's a responsibility that extends beyond the typical warrior duties, and I have nothing but respect for your dedication and commitment.",
-            "The connection you foster with StarClan is vital. You're our link to the ancestors, guiding us with their wisdom and their will. Your ability to interpret their signs and messages is invaluable. Remember to rely on their guidance as well as your own instincts.",
+            "Your role as a medicine cat is one of the pillars of our Clan, it is not only about healing bodies, but also about soothing minds and spirits.","It's a responsibility that extends beyond the typical warrior duties, and I have nothing but respect for your dedication and commitment.",
+            "The connection you foster with StarClan is vital. You're our link to the ancestors, guiding us with their wisdom and their will.","Your ability to interpret their signs and messages is invaluable. Remember to rely on their guidance as well as your own instincts.",
             "Never forget the importance of empathy in your role. In times of distress and injury, our Clanmates need more than herbs and treatments; they need reassurance, they need hope. Your calming presence can bring solace in a way no herb can.",
             "Remember, too, that your role requires a delicate balance. While you're a valued member of our Clan, there are times when you must put the needs of the sick and injured above any personal loyalties. It's a tough path to tread, but I know you walk it with grace and dignity.",
-            "And finally, you are not alone in your responsibilities. Just as you support our Clan, we are here to support you. Should you ever need assistance, whether in gathering herbs or in difficult decisions, remember that we are all one Clan. Your burdens are ours to share, and together, we are stronger."
+            "And finally, you are not alone in your responsibilities. Just as you support our Clan, we are here to support you.","Should you ever need assistance, whether in gathering herbs or in difficult decisions, remember that we are all one Clan. Your burdens are ours to share, and together, we are stronger."
         ]
     ],
     "dep_11": [
@@ -157,7 +161,7 @@
         ],
         [
             "Being a mediator is all about balance. Too much in one direction or another, and conflict can escalate. Your ability to walk that line, to keep us grounded and unified is essential to our survival as a clan.",
-            "You are like the quiet stream that smoothly flows through rough rocks and uneven terrain, unifying them with its peaceful persistence. Your work often goes unnoticed, like a smooth river stone that directs the current, but without it, the river would be chaotic.",
+            "You are like the quiet stream that smoothly flows through rough rocks and uneven terrain, unifying them with its peaceful persistence.","Your work often goes unnoticed, like a smooth river stone that directs the current, but without it, the river would be chaotic.",
             "Remember, you're not only mediating between conflicting sides but also between past lessons and future decisions. You help us to learn from our history, to not repeat the mistakes, and to grow stronger. Keep honing your skills and continue to be our peacekeeper."
         ]
     ],
