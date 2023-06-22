@@ -458,7 +458,6 @@ class UnknownResScreen(Screens):
             elif event.key == pygame.K_RIGHT:
                 self.change_screen('patrol screen')
 
-
     def exit_screen(self):
         self.hide_menu_buttons()
         self.starclan_button.kill()
@@ -488,7 +487,7 @@ class UnknownResScreen(Screens):
     def get_dead_cats(self):
         self.dead_cats = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.ID in game.clan.unknown_cats:
+            if the_cat.ID in game.clan.unknown_cats and not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
