@@ -645,10 +645,15 @@ class Clan():
 
         if ID in Cat.all_cats:
             Cat.all_cats.pop(ID)
-            if ID in self.clan_cats:
-                self.clan_cats.remove(ID)
-            if ID in self.starclan_cats:
-                self.starclan_cats.remove(ID)
+        
+        if ID in self.clan_cats:
+            self.clan_cats.remove(ID)
+        if ID in self.starclan_cats:
+            self.starclan_cats.remove(ID)
+        if ID in self.unknown_cats:
+            self.unknown_cats.remove(ID)
+        if ID in self.darkforest_cats:
+            self.darkforest_cats.remove(ID)
 
     def __repr__(self):
         if self.name is not None:
