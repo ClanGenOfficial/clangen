@@ -173,7 +173,6 @@ class GenerateEvents:
                         collateral_damage=event["collateral_damage"]
                     )
                     break
-                #print(event)
                 return event
 
     def possible_short_events(self, cat_type=None, age=None, event_type=None):
@@ -548,7 +547,6 @@ class GenerateEvents:
                     final_events = major
                 else:
                     final_events = severe
-                #print(cat.status, severity_chosen[0])
 
         return final_events
 

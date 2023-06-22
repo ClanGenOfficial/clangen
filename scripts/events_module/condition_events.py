@@ -373,8 +373,6 @@ class Condition_Events():
         # making a copy, so we can iterate through copy and modify the real dict at the same time
         illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-            # print('SAVE FILE', cat.name, cat.illnesses)
-            # print('COPY', cat.name, illnesses)
             if illness in game.switches['skip_conditions']:
                 continue
 
@@ -465,8 +463,6 @@ class Condition_Events():
             if injury in game.switches['skip_conditions']:
                 continue
 
-            # print('SAVE FILE', cat.name, cat.injuries)
-            # print('COPY', cat.name, injuries)
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
@@ -783,7 +779,6 @@ class Condition_Events():
                                 old_risk["chance"] = 0
                             else:
                                 old_risk['chance'] = risk["chance"] + 10
-                            #print('RISK UPDATED', risk['chance'], old_risk['chance'])
 
                 med_cat = None
                 removed_condition = False

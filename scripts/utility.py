@@ -370,8 +370,7 @@ def create_new_cat(Cat,
                     if age > leeway:
                         continue
                     possible_conditions.append(condition)
-                # print(possible_conditions, str(new_cat.name), new_cat.moons)
-
+                    
                 if possible_conditions:
                     chosen_condition = choice(possible_conditions)
                     born_with = False

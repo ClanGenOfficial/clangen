@@ -402,7 +402,7 @@ class Cat():
         """
         self.injuries.clear()
         self.illnesses.clear()
-        # print('DEATH', self.name)
+        
         # Deal with leader death
         text = ""
         if self.status == 'leader':
@@ -421,7 +421,6 @@ class Cat():
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            print(game.just_died)
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Clear Relationships. 
@@ -570,7 +569,6 @@ class Cat():
 
             if text:
                 # adjust and append text to grief string list
-                # print(text)
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
@@ -947,8 +945,6 @@ class Cat():
         # sort relations by the strength of their relationship
         dead_relations.sort(
             key=lambda rel: rel.romantic_love + rel.platonic_like + rel.admiration + rel.comfortable + rel.trust, reverse=True)
-        #for rel in dead_relations:
-        #    print(self.fetch_cat(rel.cat_to).name)
 
         # if we have relations, then make sure we only take the top 8
         if dead_relations:
