@@ -1930,12 +1930,15 @@ class Events:
         
         # If at war, grab enemy clans
         enemy_clan = None
-        if game.clan.war["at_war"] is True:
-            
-            for other_clan in game.clan.all_clans:
-                if other_clan.name == game.clan.war["enemy"]:
-                    enemy_clan = other_clan
-                    break
+        if "at_war" not in game.clan.war:
+            game.clan.war["at_war"] = False
+        if "at_war" in game.clan.war:
+            if game.clan.war["at_war"] is True:
+                
+                for other_clan in game.clan.all_clans:
+                    if other_clan.name == game.clan.war["enemy"]:
+                        enemy_clan = other_clan
+                        break
             
 
 

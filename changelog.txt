@@ -1,3 +1,8 @@
+<strong>v0.3.1: </strong>
+- Added new events/dialogue
+- Added new sibling numbers
+- Lots of crash fixes
+
 <strong>v0.3.0: Social Circle</strong>
 - Added "talking" feature
 - Added many new events and patrols
