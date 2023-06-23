@@ -161,7 +161,7 @@
         "first cousin mates": [
             "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates",
-            true
+            false
         ]
     },
 
