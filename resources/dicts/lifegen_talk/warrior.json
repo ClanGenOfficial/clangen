@@ -653,5 +653,13 @@
             "Remember, even though you're not out on patrols anymore, you're still a vital part of our clan.",
             "And also, the lessons we learn from your tales are as valuable as any battle skill. Thank you for your wisdom."
         ]
+    ],
+    "warrior_2293": [
+        [
+            "murder"
+        ],
+        [
+            "You killed them, didn't you?"
+        ]
     ]
 }

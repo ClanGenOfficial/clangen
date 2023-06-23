@@ -5,7 +5,7 @@ from .catlist_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, A
 from .event_screens import EventsScreen
 from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
-from .patrol_screens import PatrolScreen
+from .patrol_screens import PatrolScreen, PatrolScreen2
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen, ChooseRebornCat
 #from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
@@ -80,6 +80,8 @@ switch_clan_screen = SwitchClanScreen('switch clan screen')
 # ---------------------------------------------------------------------------- #
 
 patrol_screen = PatrolScreen('patrol screen')
+patrol_screen2 = PatrolScreen2('patrol screen2')
+
 
 # ---------------------------------------------------------------------------- #
 #                              relation_screens.py                             #
