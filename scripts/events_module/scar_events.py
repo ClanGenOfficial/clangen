@@ -31,7 +31,8 @@ class Scar_Events():
     ]
     claw_scars = [
         "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
-        "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE"
+        "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE",
+        "BRIDGE"
     ]
     leg_scars = [
         "NOPAW", "TOETRAP", "MANLEG"
@@ -55,21 +56,35 @@ class Scar_Events():
     quill_scars = [
         "QUILLCHUNK", "QUILLSCRATCH"
     ]
+    head_scars = [
+        "SNOUT", "CHEEK", "BRIDGE", "BEAKCHEEK"
+    ]
+    bone_scars = [
+        "MANLEG",  "TOETRAP"
+    ]
+    back_scars = [
+        "TWO", "TAILBASE"
+    ]
     
     scar_allowed = {
         "bite-wound": canid_scars,
         "cat-bite": bite_scars,
-        "severe_burn": burn_scars,
+        "severe burn": burn_scars,
         "rat bite": rat_scars,
         "snake bite": snake_scars,
         "mangled tail": tail_scars,
         "mangled leg": leg_scars,
         "torn ear": ear_scars,
         "frostbite": frostbite_scars,
+        "torn pelt": claw_scars + beak_scars,
         "damaged eyes": eye_scars,
         "quilled by porcupine": quill_scars,
         "claw-wound": claw_scars,
-        "beak bite": beak_scars
+        "beak bite": beak_scars,
+        "broken jaw": head_scars,
+        "broken back": back_scars,
+        "broken bone": bone_scars,
+        "head damage": head_scars
     }
     
 
@@ -88,13 +103,14 @@ class Scar_Events():
             return None, None
         
         moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
-        chance = max(13 - moons_with, 1)
+        chance = max(7 - moons_with, 1)
         
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
-            chance += 3
+            chance += 2
+        
         if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
-
+            
             # move potential scar text into displayed scar text
             
 

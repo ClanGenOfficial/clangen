@@ -223,7 +223,9 @@
         "tags": [
             "hunting",
             "poison_clan",
-            "large_prey0"
+            "large_prey0",
+            "injury",
+            "poisoned"
         ],
         "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "success_text": {

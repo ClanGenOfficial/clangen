@@ -684,7 +684,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan2",
@@ -705,7 +705,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan2",
@@ -728,7 +728,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan1",
@@ -751,7 +751,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "medicine_cat",

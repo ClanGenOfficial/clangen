@@ -175,16 +175,15 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
       - name: Setup Python 3.8 x86
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
-          cache: 'poetry'
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Set up cargo cache
         uses: actions/cache@v3
         continue-on-error: false
