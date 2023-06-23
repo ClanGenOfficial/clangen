@@ -282,7 +282,7 @@ class StartScreen(Screens):
                 ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "Warning: this game includes some mild descriptions of gore.",
+            "Warning: this game includes some mild descriptions of gore, violence, and animal abuse",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",
             manager=MANAGER)
