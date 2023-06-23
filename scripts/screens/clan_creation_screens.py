@@ -859,11 +859,14 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
-                                                                  visible=False,
-                                                                  object_id=get_text_box_theme(
-                                                                      "#text_box_22_horizleft_spacing_95"),
-                                                                  manager=MANAGER)
+        if game.settings['dark mode']:
+            self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
+                                                                    visible=False, object_id="#text_box_22_horizleft_spacing_95_dark",
+                                                                    manager=MANAGER)
+        else:
+            self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
+                                                                    visible=False, object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+                                                                    manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
