@@ -468,7 +468,12 @@ class Events:
                 for parents in parents_txt.keys():
                     if (game.clan.your_cat.parent1 and not game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead) or \
                     (parents == 2 and game.clan.your_cat.parent1 and game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead and not Cat.all_cats[game.clan.your_cat.parent2].dead):
-                        kit_event = Single_Event(random.choice(self.c_txt[f"moon_{moons}_{parents_txt[parents]}"]))
+                        kit_event1 = random.choice(self.c_txt[f"moon_{moons}_{parents_txt[parents]}"])
+                        kit_event1 = kit_event1.replace("parent1", str(Cat.all_cats[game.clan.your_cat.parent1].name))
+                        kit_event1 = kit_event1.replace("parent2", str(Cat.all_cats[game.clan.your_cat.parent2].name))
+
+                        kit_event = Single_Event(kit_event1)
+                        
                         if kit_event not in game.cur_events_list:
                             game.cur_events_list.append(kit_event)
                         break

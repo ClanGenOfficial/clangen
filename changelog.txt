@@ -9,7 +9,7 @@
 - Added new sibling numbers
 - Lots of crash fixes
 
-<strong>v0.3.0: Social Circle</strong>
+<strong>v0.3.0: Social Circles</strong>
 - Added "talking" feature
 - Added many new events and patrols
 - Fixed several bugs/typos
