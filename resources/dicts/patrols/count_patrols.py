@@ -69,6 +69,19 @@ def get_patrol_details(path):
             DETAILS["MIN_" + str(p_["min_cats"])].add(p_["patrol_id"])
         else:
             DETAILS["MIN_" + str(p_["min_cats"])] = {p_["patrol_id"]}
+            
+        # Grab Outcomes
+        for outcome in p_["success_text"]:
+            if "SUCCESSTEXT_" + outcome in DETAILS:
+                DETAILS["SUCCESSTEXT_" + outcome].add(p_["patrol_id"])
+            else:
+                DETAILS["SUCCESSTEXT_" + outcome] = {p_["patrol_id"]}
+                
+        for outcome in p_["success_text"]:
+            if "FAILTEXT_" + outcome in DETAILS:
+                DETAILS["FAILTEXT_" + outcome].add(p_["patrol_id"])
+            else:
+                DETAILS["FAILTEXT_" + outcome] = {p_["patrol_id"]}
 
 
 def check_patrol_sprites():
@@ -152,6 +165,7 @@ Check patrol IDs
 Check patrol sprites
 Check for certain patrols
 """)
+
 task = input("What would you like to do? ")
 
 if 'patrol ids' in task.casefold():
@@ -194,3 +208,9 @@ print("Patrol IDs: ", forest_new_cat)
 looking = DETAILS["TAG_death"].intersection(DETAILS["MIN_1"], DETAILS["MAX_1"])
 print("Number of patrols death tag and min_cat = 1 and max_cats = 1: ", len(looking))
 print("Patrol IDs: ", looking)'''
+
+looking = DETAILS["SUCCESSTEXT_stat_skill"].intersection(DETAILS["MIN_2"], DETAILS["MAX_2"])
+print(looking)
+
+looking = DETAILS["SUCCESSTEXT_stat_trait"].intersection(DETAILS["MIN_2"], DETAILS["MAX_2"])
+print(looking)
