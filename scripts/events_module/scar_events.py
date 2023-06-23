@@ -103,11 +103,11 @@ class Scar_Events():
             return None, None
         
         moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
-        chance = max(7 - moons_with, 1)
+        chance = max(4 - moons_with, 1)
         
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
-            chance += 2
+            chance += 1
         
         if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
             

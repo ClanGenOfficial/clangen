@@ -458,6 +458,50 @@ class Patrol():
 
         return True
 
+    def _allowed_stat_cat(self, kitty):
+        """Helper functions that deals with filtering
+        for conflicts with r_c and s_c"""
+
+        if len(self.patrol_cats) == 1:
+            # When you have a one cat patrol, no
+            # no filtering for random_cat and patrol_leader
+            # random cat and patrol leader will be the 
+            # same, and stat cat can also be the same cat
+            return True
+
+        if len(self.patrol_cats) == 2:
+            # For a 2 cat patrol, the only restriction is
+            # that s_c can't be r_c. s_c only allowed to be the 
+            # same cat as the p_l. This
+            # can be overidden by the "rc_has_stat"
+            # tag, which forces s_c to be r_c instead. 
+            if "rc_has_stat" in self.patrol_event.tags:
+                return True if kitty == self.patrol_random_cat else False
+
+            return True if kitty == self.patrol_leader else False
+
+        # normal, 3+ cat p_l and r_c 
+        # filtering, where stat cat must be
+        # different from s_c and random cat
+        new_possible_cats = []
+        if "rc_has_stat" in self.patrol_event.tags:
+            # If "rc_has_stat" is provided, the s_c must be r_c. If they
+            # are not, return False 
+            return True if kitty == self.patrol_random_cat else False
+
+        if "pl_has_stat" in self.patrol_event.tags:
+            # if "pl_has_stat" is provided, the s_c must be p_l
+            return True if kitty == self.patrol_leader else False
+
+        # Otherwise, can't be random cat or patrol_leader
+        if kitty == self.patrol_random_cat:
+            return False
+        if kitty == self.patrol_leader:
+            return False
+
+        return True
+
+
     def get_stat_cats(self):
         """sets patrol.patrol_fail_stat_cat and patrol.patrol_win_stat_cat"""
         
@@ -466,16 +510,16 @@ class Patrol():
             if "app_stat" in self.patrol_event.tags \
                     and kitty.status not in ['apprentice', "medicine cat apprentice"]:
                 continue
+            
             if "adult_stat" in self.patrol_event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
                 continue
+            
             if "app1_has_stat" in self.patrol_event.tags and self.patrol_apprentices and kitty != self.patrol_apprentices[0]:
                 continue
-            if "rc_has_stat" in self.patrol_event.tags and kitty != self.patrol_random_cat:
+            
+            if not self._allowed_stat_cat(kitty):
                 continue
-            if "rc_has_stat" not in self.patrol_event.tags and kitty == self.patrol_random_cat:
-                continue
-            if kitty == self.patrol_leader:
-                continue
+            
             possible_stat_cats.append(kitty)
 
         print('POSSIBLE STAT CATS',  [str(i.name) for i in possible_stat_cats])
