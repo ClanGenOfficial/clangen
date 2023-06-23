@@ -442,8 +442,8 @@
             "stat_skill": "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
         },
         "fail_text": {
-            "unscathed_common": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! They aren't quick enough to catch it, but at least the noise was nothing dangerous.",
-            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wants to get away from them and quickly runs off back behind the rocks.",
+            "unscathed_common": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP}{VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
+            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wants to get away from {PRONOUN/s_c/object} and quickly runs off back behind the rocks.",
             "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling dog! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol, and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now. The dog kills the lone cat with little trouble.",
             "injury": "r_c  heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away."
         },
@@ -462,7 +462,7 @@
         "history_text": {
             "scar": "p_l gained a scar from a fox.",
             "reg_death": "p_l was killed by a dog while patrolling alone.",
-            "lead_death": "were killed while patrolling alone"
+            "lead_death": "{VERB/p_l/were/was} killed while patrolling alone"
         }
     },
     {
@@ -2233,7 +2233,7 @@
             "dislike"
         ],
         "intro_text": "The patrol, going back to camp with a good haul of fish, sees a pod of dolphins chattering at them.",
-        "decline_text": "p_l bows their head and offers {PRONOUN/p_l/poss} apologies to the pod of dolphins, but they will keep those fish for the fresh-kill pile.",
+        "decline_text": "p_l bows {PRONOUN/p_l/poss} head and offers {PRONOUN/p_l/poss} apologies to the pod of dolphins, but they will keep those fish for the fresh-kill pile.",
         "chance_of_success": 60,
         "exp": 5,
         "success_text": {
@@ -2241,7 +2241,7 @@
             "unscathed_rare": "p_l gives the dolphins a few of their fish, and is surprised and grateful when {PRONOUN/p_l/subject} get some useful herbs in return, for the medicine cat den."
         },
         "fail_text": {
-            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins tries to give some herbs for the good laugh {PRONOUN/p_l/object} gave them, but p_l just walks away emberassed and soaked."
+            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins tries to give some herbs for the good laugh {PRONOUN/p_l/object} gave them, but p_l just walks away, embarrassed and soaked."
         },
         "min_cats": 2,
         "max_cats": 6,
