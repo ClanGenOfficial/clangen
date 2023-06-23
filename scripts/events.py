@@ -959,7 +959,7 @@ class Events:
             opacity_at_fade = game.config["fading"]["opacity_at_fade"]
             fading_speed = game.config["fading"]["visual_fading_speed"]
             # Handle opacity
-            cat.opacity = int((100 - opacity_at_fade) *
+            cat.pelt.opacity = int((100 - opacity_at_fade) *
                               (1 -
                                (cat.dead_for / age_to_fade) ** fading_speed) +
                               opacity_at_fade)
