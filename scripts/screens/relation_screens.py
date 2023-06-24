@@ -3093,6 +3093,18 @@ class MediationScreen(Screens):
         x = 130
         y = 970
         for cat in self.all_cats[self.page - 1]:
+            if game.clan.clan_settings["show_fav"] and cat.favourite:
+                _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                self.cat_buttons.append(
+                    pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((x, y), (100, 100))),
+                        _temp))
+                self.cat_buttons[-1].disable()
+            
             self.cat_buttons.append(
                 UISpriteButton(scale(pygame.Rect((x, y), (100, 100))), cat.sprite, cat_object=cat)
             )

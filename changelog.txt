@@ -1,3 +1,12 @@
+<strong>v0.9.2</strong>
+- Update the content warning on the start screen
+- Increase chance of condition-related scars in expanded mode
+- The "favorite" marking now displays on the mediation screen
+- The fading-cat effect will now display properly
+- Fixed some issues related to faded cats
+- "a festering wound" will no longer show on the cat conditions tab.
+- Allow one-cat and two-cat patrols to have stat outcomes
+
 <strong>v0.9.1</strong>
 - Fix save-conversion issue with tortie patches
 - Cats will now properly move on from dead mates
