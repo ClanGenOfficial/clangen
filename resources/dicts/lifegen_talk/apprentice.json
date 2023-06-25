@@ -245,7 +245,6 @@
             "Thank you, y_c. Your words mean more to me than I can express. I promise you, I'll take your advice to heart and work hard to be a cat you, and our Clan, can be proud of."
         ]
     ],
-    
     "app_22": [
         [
             "Any",
@@ -319,6 +318,26 @@
         ],
         [
             "D-don't come any closer."
+        ]
+    ],
+    "app_292": [
+        [
+            "Any"
+        ],
+        [
+            "Hey, I need an opinion, if you're up for it.",
+            "Do you think that r_c would like this flower? I saw it the other day and it reminded me of them, but I'm worried they won't like it...",
+            "Thanks for the help! I appreciate it."
+        ]
+    ],
+    "app_2592": [
+        [
+            "Any"
+        ],
+        [
+            "Do you ever wonder what it's like up there? In Starclan, I mean. There must be loads of cats up there.",
+            "Do you think that they get any peace? Do they have camps? What about borders? I know they're usually said to be rather free-going and all, but I just sorta wonder...how do they manage it? I can barely handle staying in the apprentices' den since my denmates are chattering on all the time!",
+            "However they do it, they must be really patient and strong to handle all that chattering..."
         ]
     ]
 }

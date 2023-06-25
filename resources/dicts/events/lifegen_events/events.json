@@ -657,5 +657,7 @@
         "A kit tells you that you're really old. You respond that if they stop pestering you, they may get to be this old as well!",
         "During a Clan meeting, you doze off and start snoring loudly, causing the younger cats to giggle and the leader to pause their speech.",
         "You attempt to jump onto a ledge, forgetting it's a bit higher than it used to be. Your surprised yowl when you land back on the ground causes laughter to echo through the camp."
-    ]
+    ],
+    "exiled":
+    ["You wander around, lost."]
 }

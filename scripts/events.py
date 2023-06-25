@@ -259,7 +259,7 @@ class Events:
         with open(f"{resource_dir}events.json",
                   encoding="ascii") as read_file:
             self.c_txt = ujson.loads(read_file.read())
-        if not game.clan.your_cat.dead:
+        if not game.clan.your_cat.dead and not game.clan.your_cat.status == 'exiled':
             if game.clan.your_cat.moons == 1:
                 self.generate_birth()
             elif game.clan.your_cat.moons < 6:
@@ -282,6 +282,9 @@ class Events:
 
         elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
             self.generate_death_event()
+        
+        elif game.clan.your_cat.status == 'exiled':
+            self.generate_exile_events()
             
         # Resort
         if game.sort_type != "id":
@@ -590,6 +593,11 @@ class Events:
         else:
             ceremony_txt = random.choice(self.b_txt['death'])
             game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+            
+    def generate_exile_event(self):
+        evt = Single_Event(random.choice(self.c_txt["exiled"]))
+        if evt not in game.cur_events_list:
+            game.cur_events_list.append(evt)
 
     def mediator_events(self, cat):
         """ Check for mediator events """
