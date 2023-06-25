@@ -1304,7 +1304,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The soft, rose-like scent of the mallow bushes drifts around p_l as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp. Thankfully, another pink-flowered plant grows nearby and p_l had just begun to run out of betony. The patrol chats as they work, exchanging gossip and news as the smell of cut stems grows around them.",
-            "unscathed_rare": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes , not even with an entire patrol helping them cart away mallow and just nearby a betony plant is patiently waiting for its stems to be collected.",
+            "unscathed_rare": "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes, not even with an entire patrol helping them cart away mallow and just nearby a betony plant is patiently waiting for its stems to be collected.",
             "stat_skill": "s_c has a good eye for these things, finding an excellent patch of mallow with a tempting betony plant growing nearby. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
         },
         "fail_text": {
