@@ -550,7 +550,7 @@ class Game():
             config_value = config_value[key]
         
         # Apply war if needed
-        if self.clan and self.clan.war["at_war"] and args in war_effected:
+        if self.clan and self.clan.war.get("at_war", False) and args in war_effected:
             # Grabs the modifer
             mod = self.config
             for key in war_effected[args]:
