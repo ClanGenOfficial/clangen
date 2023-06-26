@@ -3386,6 +3386,16 @@ class TalkScreen(Screens):
                 continue
             if (game.clan.your_cat.status == 'kitten') and 'no_kit' in talk[0]:
                 continue
+            if ("you_insecure" in talk[0]) and game.clan.your_cat.personality.trait != "insecure":
+                continue
+            if "from_mentor" in talk[0]:
+                if game.clan.your_cat.mentor != cat.ID:
+                    continue
+            if "dead_close" in talk[0]:
+                if not game.clan.your_cat.parent1:
+                    continue
+                elif not Cat.all_cats.get(game.clan.your_cat.parent1).dead or Cat.all_cats.get(game.clan.your_cat.parent1).outside:
+                    continue
             if game.clan.your_cat.ID in cat.relationships:
                 if cat.relationships[game.clan.your_cat.ID].dislike < 50 and 'hate' in talk[0]:
                     continue

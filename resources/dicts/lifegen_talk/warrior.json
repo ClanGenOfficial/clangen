@@ -83,7 +83,8 @@
         [
             "It's about time we had a word. Your recent performance on patrols has been... less than exemplary. You've been late, distracted, and your scent-marking has been sloppy.",
             "This isn't a game we're playing, it's a matter of survival. We're warriors of the Clan, defenders of our borders, and providers for our kin. There's no room for lax behavior or carelessness.",
-            "I'm not saying this to belittle you, but to make you understand the weight of our duties. When we slack off, it isn't just our reputation that suffers but the safety and security of our Clan. We're not here for fun or games.","We're here to serve and protect, and that requires discipline.",
+            "I'm not saying this to belittle you, but to make you understand the weight of our duties. When we slack off, it isn't just our reputation that suffers but the safety and security of our Clan. We're not here for fun or games.",
+            "We're here to serve and protect, and that requires discipline.",
             "Our actions today shape the world of tomorrow. As warriors, we don't just shape our own futures but that of the whole Clan. It's our responsibility to uphold the warrior code and fulfill our duties to the best of our abilities.",
             "Remember, we stand as the first line of defense, the beacon of hope for our Clan. It's an honor and a burden, and it should be treated as such. We owe it to our kin and to ourselves. So let's give it the respect and dedication it deserves.",
             "Now, let's go over the border patrols again. This time, I want you to mark every tree and stone as if it's the last thing you do. We're warriors, and it's time we acted like it."
@@ -96,9 +97,11 @@
         ],
         [
             "ello, friend. I see the burden of the past few moons has taken a toll on your spirit. Remember, we're not just warriors... We're part of something greater, a lineage that stretches back to the days of the first Clans.",
-            "Each dawn brings a new challenge, a new chance to prove our strength, our valor. We may face hardship, but we do so together, as a Clan, under the watchful eyes of StarClan.","They guide our paws in the darkness, lead us through uncertainty, and bestow strength when we're weak.",
+            "Each dawn brings a new challenge, a new chance to prove our strength, our valor. We may face hardship, but we do so together, as a Clan, under the watchful eyes of StarClan.",
+            "They guide our paws in the darkness, lead us through uncertainty, and bestow strength when we're weak.",
             "You're a fierce warrior. You have a fire in your heart, a light that shines even in the darkest nights. Don't let your doubts extinguish it. Even the greatest warriors have their moments of uncertainty. It's part of our journey, a testament to our growth.",
-            "Trust in StarClan. They chose you to walk the path of a warrior for a reason. Your journey, your story, it's a part of our Clan's legacy, written in the stars above. And know this - you are never alone on your path.","Not as long as StarClan guides us, not as long as we stand together as a Clan.",
+            "Trust in StarClan. They chose you to walk the path of a warrior for a reason. Your journey, your story, it's a part of our Clan's legacy, written in the stars above. And know this - you are never alone on your path.",
+            "Not as long as StarClan guides us, not as long as we stand together as a Clan.",
             "So hold your head high. Trust in your strength, your spirit. You're a true warrior, one our Clan is proud to call their own. And I, for one, am proud to call you my Clanmate. May StarClan light your path, always."
         ]
     ],
@@ -661,5 +664,25 @@
         [
             "You killed them, didn't you?"
         ]
-    ]
+    ],
+    "warrior_4324": [
+        [
+            "apprentice",
+            "from_mentor",
+            "dead_close"
+        ],
+        [
+            "You were distracted during training today, is everything alright? I know it's been rough lately, but.. you're doing very good, you know that?",
+            "You caught so much prey, won so many mock battles, gave so much back to the clan..",
+            "I'm proud of you, little one. I'm sure parent1 is too."
+        ]
+    ],
+    "warrior231": [["mediator"],[
+        "Hey! I was looking to talk with you. Is there a chance that you can help me out with something? If you aren't busy of course.", 
+"So…I had an argument with another clan member earlier. Who it was doesn't matter…but I think we both said some things that we shouldn't have. Lines were crossed and—we were both just really angry with each other.", 
+"It was a stupid argument anyway. I've been trying to own up and apologize to them, maybe even have a conversation over what went wrong. I just don't know what to say, and that's where I was hoping you could help me out a little.", 
+"That's…actually a good idea! I'll make sure to try that when I see them, maybe it will help us see eye to eye, or at least smooth some pelts a tad.",
+"Thanks for helping me out, the clan really is lucky to have you. I'll update you on this whole situation later, hopefully I'll be able to bring good news."
+
+    ]]
 }
