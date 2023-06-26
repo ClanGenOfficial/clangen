@@ -166,7 +166,6 @@ class MakeClanScreen(Screens):
         elif event.key == pygame.K_LEFT:
             if not self.elements['name_entry'].is_focused:
                 self.clan_name = ""
-                self.open_game_mode()
         elif event.key == pygame.K_RIGHT:
             if not self.elements['name_entry'].is_focused:
                 new_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
