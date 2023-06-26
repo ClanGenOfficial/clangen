@@ -171,7 +171,7 @@ class Screens():
         elif event.ui_element == self.menu_buttons["catlist_screen"]:
             self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
-            self.change_screen('patrol screen')
+            self.change_screen('patrol screen2')
         elif event.ui_element == self.menu_buttons["main_menu"]:
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
         elif event.ui_element == self.menu_buttons["allegiances"]:
