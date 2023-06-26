@@ -862,7 +862,7 @@ def find_special_list_types(text):
 
 def history_text_adjust(text,
                         other_clan_name,
-                        clan):
+                        clan,other_cat_rc=None):
     """
     we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
     this is so that future pronoun changes or name changes will continue to be reflected in history
@@ -871,6 +871,8 @@ def history_text_adjust(text,
         text = text.replace("o_c", other_clan_name)
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
+    if "r_c" in text and other_cat_rc:
+        text = text.replace("r_c", str(other_cat_rc.name))
     return text
 
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
