@@ -1,3 +1,8 @@
+<strong>v0.3.3: </strong>
+- Added new events/dialogue
+- Fixed relationships
+- Fixed several bugs
+
 <strong>v0.3.2: </strong>
 - Added new events/dialogue
 - You can now change to regular clangen patrols

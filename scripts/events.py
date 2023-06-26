@@ -106,13 +106,19 @@ class Events:
         # print(game.clan.current_season)
         self.pregnancy_events.handle_pregnancy_age(game.clan)
         self.check_war()
+        
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
         # Calling of "one_moon" functions.
         
-        
+        for cat in Cat.all_cats.copy().values():
+            if not cat.outside or cat.dead:
+                self.one_moon_cat(cat)
+            else:
+                self.one_moon_outside_cat(cat)
+                
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -213,11 +219,7 @@ class Events:
                 string = f"{game.clan.name}Clan has no medicine cat!"
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
                 
-        for cat in Cat.all_cats.copy().values():
-            if not cat.outside or cat.dead:
-                self.one_moon_cat(cat)
-            else:
-                self.one_moon_outside_cat(cat)
+        
         new_list = []
         other_list = []
         for i in game.cur_events_list:
