@@ -101,7 +101,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before their eyes. p_l awakes relieved and determined. They know now what actions they should take to save c_n",
-            "stat_skill": "strong connection to starclan",
+            "stat_skill": "strong connection to StarClan",
             "stat_trait": "faithful"
         },
         "fail_text": {

@@ -90,8 +90,7 @@ class Pregnancy_Events():
         if second_parent and second_parent.ID in cat.relationships:
             second_parent_relation = cat.relationships[second_parent.ID]
         elif second_parent:
-            second_parent_relation = Relationship(cat, second_parent)
-            cat.relationships[second_parent.ID] = second_parent_relation
+            second_parent_relation = cat.create_one_relationship(second_parent)
 
         # check if the second_parent is not none and if they also can have kits
         can_have_kits, kits_are_adopted = self.check_second_parent(
@@ -277,8 +276,6 @@ class Pregnancy_Events():
                 if cat.injuries["pregnant"]["severity"] == "minor":
                     cat.injuries["pregnant"]["severity"] = "major"
                     text += choice(PREGNANT_STRINGS["major_severity"])
-                cat.injuries["pregnant"]["duration"] -= 1
-                cat.injuries["pregnant"]["moons_with"] += 1
             except:
                 print("Is this an old save? Cat does not have the pregnant condition")
 
@@ -322,7 +319,7 @@ class Pregnancy_Events():
                 if cat.outside and not cat.exiled:
                     kit.backstory = "outsider3"
                 kit.relationships = {}
-                kit.relationships[cat.ID] = Relationship(kit, cat)
+                kit.create_one_relationship(cat)
 
         if kits_amount == 1:
             insert = 'single kitten'
@@ -384,7 +381,7 @@ class Pregnancy_Events():
             if cat.status == 'leader':
                 clan.leader_lives -= 1
                 cat.die()
-                death_event = (f" died shortly after kitting.")
+                death_event = (f"died shortly after kitting")
             else:
                 cat.die()
                 death_event = (f"{cat.name} died while kitting.")
@@ -393,7 +390,7 @@ class Pregnancy_Events():
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 if cat.status == 'leader':
-                    death_event = (f" died after a harsh kitting.")
+                    death_event = (f"died after a harsh kitting")
                 else:
                     death_event = (f"{cat.name} after a harsh kitting.")
                 self.history.add_possible_history(cat, 'blood loss', death_text=death_event)
@@ -510,8 +507,7 @@ class Pregnancy_Events():
         if mate and mate.ID in cat.relationships:
             mate_relation = cat.relationships[mate.ID]
         elif mate:
-            mate_relation = Relationship(cat, mate, True)
-            cat.relationships[mate.ID] = mate_relation
+            mate_relation = cat.create_one_relationship(mate)
 
 
         # LOVE AFFAIR
@@ -727,7 +723,7 @@ class Pregnancy_Events():
             #### GIVE HISTORY ###### 
             self.history.add_beginning(kit, clan_born=bool(cat))
         
-        # check other cats of clan for siblings
+        # check other cats of Clan for siblings
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
             for second_kitten in all_kitten:
@@ -879,7 +875,7 @@ class Pregnancy_Events():
                 if not second_parent_relation.opposite_relationship:
                     second_parent_relation.link_relationship()
             else:
-                second_parent_relation = Relationship(first_parent, second_parent)
+                second_parent_relation = first_parent.create_one_relationship(second_parent)
 
             average_romantic_love = (second_parent_relation.romantic_love +
                                      second_parent_relation.opposite_relationship.romantic_love) / 2

@@ -1,6 +1,7 @@
 import random
 from enum import Enum, Flag, auto
 from typing import Union
+from scripts.game_structure.game_essentials import game
 
 class SkillPath(Enum):
     TEACHER = (
@@ -101,9 +102,15 @@ class SkillPath(Enum):
     )
     STAR = (
         "curious about StarClan",
-        "innate connection to StarClan",
-        "strong connection to StarClan",
-        "unbreakable connection to StarClan"
+        "connection to Starclan",
+        "deep StarClan bond",
+        "unshakable StarClan link",
+    )
+    DARK = (
+        "interested in the Dark Forest",
+        "Dark Forest affinity",
+        "deep Dark Forest bond",
+        "unshakable Dark Forest link",
     )
     OMEN = (
         "interested in oddities",
@@ -142,11 +149,12 @@ class SkillPath(Enum):
         
         uncommon_paths = [i for i in [SkillPath.GHOST, SkillPath.PROPHET, 
                           SkillPath.CLAIRVOYANT, SkillPath.DREAM,
-                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER]
+                          SkillPath.OMEN, SkillPath.STAR, SkillPath.HEALER, 
+                          SkillPath.DARK]
                           if i not in exclude]
         
         
-        if not int(random.random() * 25):
+        if not int(random.random() * 15):
             return random.choice(uncommon_paths)
         else:
             common_paths = [i for i in list(SkillPath) if 
@@ -190,12 +198,13 @@ class Skill():
         SkillPath.LORE: "lorekeeping",
         SkillPath.CAMP: "campkeeping",
         SkillPath.HEALER: "healing",
-        SkillPath.STAR: "starclan",
+        SkillPath.STAR: "StarClan",
         SkillPath.OMEN: "omen",
         SkillPath.DREAM: "dreaming",
         SkillPath.CLAIRVOYANT: "predicting",
         SkillPath.PROPHET: "prophesying",
-        SkillPath.GHOST: "ghosts"
+        SkillPath.GHOST: "ghosts",
+        SkillPath.DARK: "dark forest"
     }
     
     
@@ -331,7 +340,8 @@ class CatSkills:
         SkillPath.DREAM: SkillTypeFlag.SUPERNATURAL,
         SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
-        SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL
+        SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL
     }
     # pylint: enable=unsupported-binary-operation
     
@@ -419,11 +429,11 @@ class CatSkills:
                 output.append(self.primary.skill)
             if self.secondary:
                 output.append(self.secondary.skill)
-        
+
         if not output:
             return "???"
-        else:
-            return " + ".join(output) 
+
+        return " & ".join(output)
 
     def mentor_influence(self, mentor):
         """
@@ -595,7 +605,36 @@ class CatSkills:
                     return True
         
         return False
+    
+    def check_skill_requirement_list(self, skill_list:list) -> int:
+        """Takes a whole list of skill requirments in the form 
+            [ "SKILL_PATH,MIN_TIER" ... ] and determines how many skill
+            requirments are meet. The list format is used in all patrol and event skill
+            restrictions. Returns an integer value of how many skills requirments are meet.  
+            """
         
+        skills_meet = 0
+        
+        min_tier = 0
+        for _skill in skill_list:
+            spl = _skill.split(",")
+            
+            if len(spl) != 2:
+                print("Incorrectly formatted skill restriction", _skill)
+                continue
+            
+            try:
+                min_tier = int(spl[1])
+            except ValueError:
+                print("Min Skill Tier cannot be converted to int", _skill)
+                continue
+            
+            if self.meets_skill_requirement(spl[0], min_tier):
+                skills_meet += 1
+        
+        return skills_meet
+                     
+    
     @staticmethod
     def get_skills_from_old(old_skill, status, moons):
         """Generates a CatSkill object"""

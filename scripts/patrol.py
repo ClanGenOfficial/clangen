@@ -21,7 +21,7 @@ from scripts.game_structure.game_essentials import game
 from itertools import combinations
 from scripts.cat.names import names
 from scripts.cat.skills import SkillPath
-from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
@@ -132,7 +132,7 @@ class Patrol():
                 list of cats which are on the patrol
             
             clan: Clan
-                the clan class of the game, this parameter is needed to make tests possible
+                the Clan class of the game, this parameter is needed to make tests possible
 
             Returns
             ----------
@@ -296,7 +296,7 @@ class Patrol():
             elif hostile_rep:
                 possible_patrols.extend(self.generate_patrol_events(self.NEW_CAT_HOSTILE))
 
-        # other clan patrols
+        # other Clan patrols
         if other_clan_chance == 1:
             if clan_neutral:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
@@ -316,15 +316,8 @@ class Patrol():
                 return False
   
         if "skill" in patrol.constraints:
-            for _skill in patrol.constraints["skill"]:
-                spl = _skill.split(",")
-                
-                if len(spl) != 2:
-                    print("incorrectly formatted skill constaint", _skill)
-                    continue
-                    
-                if not self.patrol_leader.skills.meets_skill_requirement(spl[0], int(spl[1])):
-                    return False
+            if not self.patrol_leader.skills.check_skill_requirement_list(patrol.constraints["skill"]):
+                return False
         
         if "trait" in patrol.constraints:
             if self.patrol_leader.personality.trait not in patrol.constraints["trait"]:
@@ -465,6 +458,50 @@ class Patrol():
 
         return True
 
+    def _allowed_stat_cat(self, kitty):
+        """Helper functions that deals with filtering
+        for conflicts with r_c and s_c"""
+
+        if len(self.patrol_cats) == 1:
+            # When you have a one cat patrol, no
+            # no filtering for random_cat and patrol_leader
+            # random cat and patrol leader will be the 
+            # same, and stat cat can also be the same cat
+            return True
+
+        if len(self.patrol_cats) == 2:
+            # For a 2 cat patrol, the only restriction is
+            # that s_c can't be r_c. s_c only allowed to be the 
+            # same cat as the p_l. This
+            # can be overidden by the "rc_has_stat"
+            # tag, which forces s_c to be r_c instead. 
+            if "rc_has_stat" in self.patrol_event.tags:
+                return True if kitty == self.patrol_random_cat else False
+
+            return True if kitty == self.patrol_leader else False
+
+        # normal, 3+ cat p_l and r_c 
+        # filtering, where stat cat must be
+        # different from s_c and random cat
+        new_possible_cats = []
+        if "rc_has_stat" in self.patrol_event.tags:
+            # If "rc_has_stat" is provided, the s_c must be r_c. If they
+            # are not, return False 
+            return True if kitty == self.patrol_random_cat else False
+
+        if "pl_has_stat" in self.patrol_event.tags:
+            # if "pl_has_stat" is provided, the s_c must be p_l
+            return True if kitty == self.patrol_leader else False
+
+        # Otherwise, can't be random cat or patrol_leader
+        if kitty == self.patrol_random_cat:
+            return False
+        if kitty == self.patrol_leader:
+            return False
+
+        return True
+
+
     def get_stat_cats(self):
         """sets patrol.patrol_fail_stat_cat and patrol.patrol_win_stat_cat"""
         
@@ -473,14 +510,16 @@ class Patrol():
             if "app_stat" in self.patrol_event.tags \
                     and kitty.status not in ['apprentice', "medicine cat apprentice"]:
                 continue
+            
             if "adult_stat" in self.patrol_event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
                 continue
-            if "rc_has_stat" in self.patrol_event.tags and kitty != self.patrol_random_cat:
+            
+            if "app1_has_stat" in self.patrol_event.tags and self.patrol_apprentices and kitty != self.patrol_apprentices[0]:
                 continue
-            if "rc_has_stat" not in self.patrol_event.tags and kitty == self.patrol_random_cat:
+            
+            if not self._allowed_stat_cat(kitty):
                 continue
-            if kitty == self.patrol_leader:
-                continue
+            
             possible_stat_cats.append(kitty)
 
         print('POSSIBLE STAT CATS',  [str(i.name) for i in possible_stat_cats])
@@ -489,17 +528,9 @@ class Patrol():
         win_stat_cats = []
         if self.patrol_event.win_skills:
             for kitty in possible_stat_cats:
-                for _skill in self.patrol_event.win_skills:
-                    skill_break = _skill.split(",")
-                    
-                    try:
-                        if kitty.skills.meets_skill_requirement(skill_break[0],
-                                                                int(skill_break[1])):
-                             win_stat_cats.append(kitty)
-                    except (KeyError, IndexError):
-                        print("Incorrectly formatted win skill", _skill)
-                        continue
-        # See if we can assign a trait stat cat if one has not already been assigned
+                if kitty.skills.check_skill_requirement_list(self.patrol_event.win_skills):
+                    win_stat_cats.append(kitty)
+                        
         if self.patrol_event.win_trait:
             for kitty in possible_stat_cats:
                 if kitty.personality.trait in self.patrol_event.win_trait:
@@ -509,17 +540,9 @@ class Patrol():
         fail_stat_cats = []    
         if self.patrol_event.fail_skills:
             for kitty in possible_stat_cats:
-                for _skill in self.patrol_event.fail_skills:
-                    skill_break = _skill.split(",")
-                    
-                    try:
-                        if kitty.skills.meets_skill_requirement(SkillPath[skill_break[0]],
-                                                                int(skill_break[1])):
-                            fail_stat_cats.append(kitty)
-                    except (ValueError, IndexError):
-                        print("Incorrectly formatted fail skill", _skill)
-                        continue
-        # See if we can assign a trait stat cat if one has not already been assigned
+                if kitty.skills.check_skill_requirement_list(self.patrol_event.fail_skills):
+                    fail_stat_cats.append(kitty)
+    
         if self.patrol_event.fail_trait:
             for kitty in possible_stat_cats:
                 if kitty.personality.trait in self.patrol_event.fail_trait:
@@ -948,38 +971,27 @@ class Patrol():
         
         # Skill and trait stuff
         for kitty in self.patrol_cats:
-            for _skill in self.patrol_event.win_skills:
-                spli = _skill.split(",")
-                
-                if len(spli) < 2:
-                    print("Incorrectly formatted skill", _skill)
-                    continue
-                
-                if kitty.skills.meets_skill_requirement(spli[0], int(spli[1])):
-                    success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-                    
-            for _skill in self.patrol_event.fail_skills:
-                spli = _skill.split(",")
-                
-                if len(spli) < 2:
-                    print("Incorrectly formatted skill", _skill)
-                    continue
-                
-                if kitty.skills.meets_skill_requirement(spli[0], int(spli[1])):
-                    success_chance -= game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            hits = kitty.skills.check_skill_requirement_list(self.patrol_event.win_skills)
+            success_chance += hits * game.config["patrol_generation"]["win_stat_cat_modifier"] 
             
-            if kitty.personality.trait in self.patrol_event.win_trait:
+            hits = kitty.skills.check_skill_requirement_list(self.patrol_event.fail_skills)
+            success_chance -= hits * game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            
+    
+            if self.patrol_event.win_trait and kitty.personality.trait in self.patrol_event.win_trait:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
-            if (kitty.skills.primary.skill or kitty.skills.secondary.skill or kitty.skills.hidden_skill) in self.patrol_event.fail_skills:
-                success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
+                
             if self.patrol_event.fail_trait and kitty.personality.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        
         if success_chance >= 120:
             success_chance = 115
             skill_updates += "success chance over 120, updated to 115"
+        
         print(skill_updates)
+        
         c = int(random.random() * 120)
         outcome = int(random.getrandbits(4))
         print('ending chance', success_chance, 'vs.', c)
@@ -1209,7 +1221,7 @@ class Patrol():
         if cat_type == 'kittypet':
             kittypet = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["kittypet_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["kittypet_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1220,7 +1232,7 @@ class Patrol():
         elif cat_type == 'loner':
             loner = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["loner_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["loner_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1231,7 +1243,7 @@ class Patrol():
         elif cat_type == 'rogue':
             loner = True
             new_name = choice([True, False])
-            chosen_backstory = Cat.backstory_categories["rogue_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["rogue_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["wandering_healer1", "wandering_healer2"]
@@ -1242,7 +1254,7 @@ class Patrol():
         elif cat_type == 'clancat':
             other_clan = self.other_clan
             new_name = False
-            chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 chosen_backstory = ["medicine_cat", "disgraced1"]
@@ -1252,7 +1264,7 @@ class Patrol():
                 return
         else:
             other_clan = self.other_clan
-            chosen_backstory = Cat.backstory_categories["former_clancat_backstories"]
+            chosen_backstory = BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             # failsafe in case self.other_clan is None for some reason
             if "medcat" in attribute_list:
                 status = 'medicine cat'
@@ -1260,7 +1272,7 @@ class Patrol():
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
-                chosen_backstory = Cat.backstory_categories["rogue_backstories"]
+                chosen_backstory = BACKSTORIES["backstory_categories"]["rogue_backstories"]
                 if "medcat" in attribute_list:
                     chosen_backstory = ["medicine_cat", "disgraced1"]
                 if not success:
@@ -1336,7 +1348,7 @@ class Patrol():
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
                 print('parent is dead')
-                chosen_kit_backstory = ['orphaned', 'orphaned2']
+                chosen_kit_backstory = ['orphaned1', 'orphaned2']
             else:
                 print('parent is alive')
                 chosen_kit_backstory = ['outsider_roots2', 'outsider_roots2']
@@ -1351,7 +1363,7 @@ class Patrol():
 
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if f'{backstory}{outcome}' in attribute_list:
                     possible_backstories.append(backstory)
 
@@ -1364,7 +1376,7 @@ class Patrol():
         else:
             # giving specified backstories.json if any were specified
             possible_backstories = []
-            for backstory in Cat.backstories:
+            for backstory in BACKSTORIES["backstories"]:
                 if backstory in attribute_list:
                     possible_backstories.append(backstory)
 
@@ -1466,7 +1478,7 @@ class Patrol():
                     new_cat.parent1 = created_cats[0].ID
 
                     # creating relationships
-                    new_cat.relationships[created_cats[0].ID] = Relationship(new_cat, created_cats[0])
+                    new_cat.create_one_relationship(created_cats[0])
                     kit_to_parent = game.config["new_cat"]["parent_buff"]["kit_to_parent"]
                     change_relationship_values(
                         cats_to=[created_cats[0].ID],
@@ -1483,8 +1495,8 @@ class Patrol():
                     # give relationships for siblings
                     for sibling in new_cat.get_siblings():
                         sibling = Cat.fetch_cat(sibling)
-                        sibling.relationships[new_cat.ID] = Relationship(sibling, new_cat)
-                        new_cat.relationships[sibling.ID] = Relationship(new_cat, sibling)
+                        sibling.create_one_relationship(new_cat)
+                        new_cat.create_one_relationship(sibling)
                         cat1_to_cat2 = game.config["new_cat"]["sib_buff"]["cat1_to_cat2"]
                         cat2_to_cat1 = game.config["new_cat"]["sib_buff"]["cat2_to_cat1"]
                         change_relationship_values(
@@ -1512,7 +1524,7 @@ class Patrol():
 
                     # if the parent is dead, don't make their relationship to the kits cus it ain't saved anyway
                     if not created_cats[0].dead:
-                        created_cats[0].relationships[new_cat.ID] = Relationship(created_cats[0], new_cat)
+                        created_cats[0].create_one_relationship(new_cat)
                         parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
                         change_relationship_values(
                             cats_to=[new_cat.ID],
@@ -1534,8 +1546,9 @@ class Patrol():
             if new_cat.dead:
                 continue
             for patrol_cat in self.patrol_cats:
-                patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
-                new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
+                patrol_cat.create_one_relationship(new_cat)
+                new_cat.create_one_relationship(patrol_cat)
+                
             self.results_text.append(f"{new_cat.name} has joined the Clan.")
             
             # update inheritance!
@@ -1967,15 +1980,13 @@ class Patrol():
         }
         outcome_number = outcomes[outcome]
         outcome = outcome_number
-
-        for x in range(len(no_herbs_tags)):
-            if f"no_herbs{x}" in self.patrol_event.tags and outcome == x:
-                return
+        
+        if f"no_herbs{outcome}" in self.patrol_event.tags:
+            return
 
         large_amount = None
-        for x in range(len(many_herbs_tags)):
-            if f"many_herbs{x}" in self.patrol_event.tags and outcome == x:
-                large_amount = 4
+        if f"many_herbs{outcome}" in self.patrol_event.tags:
+            large_amount = 4
 
         if "random_herbs" in self.patrol_event.tags:
             number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
@@ -2261,13 +2272,13 @@ class Patrol():
         pl_rc_ids = [p_l_id, r_c_id]
 
         if "clan_to_p_l" in self.patrol_event.tags:
-            # whole clan gains relationship towards p_l
+            # whole Clan gains relationship towards p_l
             cats_to = [p_l_id]
             cats_from = all_cats
 
         elif "clan_to_r_c" in self.patrol_event.tags:
             if self.patrol_fail_stat_cat or self.patrol_win_stat_cat:
-                # whole clan gains relationship towards s_c
+                # whole Clan gains relationship towards s_c
                 cats_to = [s_c_id]
                 cats_from = all_cats
             else:
@@ -2275,7 +2286,7 @@ class Patrol():
                 cats_from = all_cats
 
         elif "clan to patrol" in self.patrol_event.tags:
-            # whole clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
+            # whole Clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
             cats_to = cat_ids
             cats_from = all_cats
 
@@ -2284,7 +2295,7 @@ class Patrol():
                 cats_to = [s_c_id]
                 cats_from = self.patrol_cats
             else:
-                # whole clan gains relationship towards r_c
+                # whole Clan gains relationship towards r_c
                 cats_to = [r_c_id]
                 cats_from = self.patrol_cats
 
@@ -2442,7 +2453,7 @@ class PatrolEvent:
         
 -- PATROL ABBREVIATIONS --
     Clan name - c_n
-    Other clan name - o_c_n
+    Other Clan name - o_c_n
     Random cat - r_c
     Patrol leader - p_l
     Stat Cat - s_c (this is the cat with relevant skills/traits for the situation)
@@ -2578,15 +2589,15 @@ class PatrolEvent:
 
     - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
-        # whole clan gains relationship towards p_l - "clan_to_p_l"
-        # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
-        # whole clan gains relationship towards r_c - "clan_to_r_c"
+        # whole Clan gains relationship towards p_l - "clan_to_p_l"
+        # whole Clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
+        # whole Clan gains relationship towards r_c - "clan_to_r_c"
         # patrol gains relationship towards p_l - "patrol_to_p_l"
         # patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
         # patrol gains relationship towards r_c - "patrol_to_r_c"
         # "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
         # two apps gain relationship towards each other - "rel_two_apps"
-        # whole clan gains relationship towards patrol - "clan_to_patrol"
+        # whole Clan gains relationship towards patrol - "clan_to_patrol"
         # whole patrol gains relationship with each other - "rel_patrol" 
         (also default, so if you don't add any other tags, it goes to this. If you want this outcome, 
         you don't need to add any tags, this is just if you need to add one of the other tags)
@@ -2606,7 +2617,7 @@ class PatrolEvent:
         ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, 
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
-        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
+        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the Clan 
         (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.

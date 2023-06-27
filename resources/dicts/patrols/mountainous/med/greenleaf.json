@@ -14,17 +14,17 @@
             "s_c_to_r_c",
             "rc_has_stat"
         ],
-        "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the greenleaf growing season, and for carrying capacity should they find anything.",
+        "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} to take advantage of the greenleaf growing season, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
-            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+            "unscathed_common": "Surprisingly, r_c actually starts up a conversation with {PRONOUN/p_l/object} about the herbs {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}.",
+            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/comes/come} back to camp, smiling softly."
         },
         "fail_text": {
             "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
             "SPEAKER,1"
@@ -59,13 +59,13 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+            "unscathed_common": "The ground is dusty and slippery, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
             "unscathed_rare": "r_c disappears for a moment, only to return with a pretty flower in {PRONOUN/r_c/poss} jaws. p_l chuckles and reminds {PRONOUN/r_c/object} that that's not medicinal. r_c smiles, setting the flower down. Perhaps not, but {PRONOUN/r_c/subject} thought it would make a nice gift. p_l, charmed, carries the flower with {PRONOUN/p_l/object} for the rest of the patrol.",
-            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+            "stat_skill": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly."
         },
         "fail_text": {
             "unscathed_common": "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
+            "unscathed_stat": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
         },
         "win_skills": [
             "SPEAKER,1",
@@ -97,12 +97,12 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l follows their industrious example as they gather. They prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
-            "unscathed_rare": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections - and they've even found a little goldenrod to go with it!",
-            "stat_skill": "s_c is able to find the sought-after herb quickly, as they can easily spot the purple blossoms among the other plants, and they bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home."
+            "unscathed_common": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l follows their industrious example as {PRONOUN/p_l/subject} {VERB/s_c/gather/gathers}. {PRONOUN/p_l/subject/CAP} {VERB/s_c/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
+            "unscathed_rare": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections - and {PRONOUN/p_l/subject}{VERB/s_c/'ve/'s} even found a little goldenrod to go with it!",
+            "stat_skill": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/p_l/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home."
         },
         "fail_text": {
-            "unscathed_common": "...Wait. Have they passed the betony already? p_l doubles back, and while they find a shrub that looks a lot like betony, it's surrounded by suspicious hoofprints and devoid of flowers. Without the blooms, p_l isn't confident in their identification, and returns to camp with nothing to show for their long trek."
+            "unscathed_common": "...Wait. {VERB/p_l/Have/Has} {PRONOUN/p_l/subject} passed the betony already? p_l doubles back, and while {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a shrub that looks a lot like betony, it's surrounded by suspicious hoofprints and devoid of flowers. Without the blooms, p_l isn't confident in {PRONOUN/p_l/poss} identification, and returns to camp with nothing to show for {PRONOUN/p_l/poss} long trek."
         },
         "win_skills": [
             "SENSE,2"
@@ -133,17 +133,17 @@
             "trust",
             "apprentice"
         ],
-        "intro_text": "p_l wanders off into the territory, keeping an eye out for the purple flowers that betony grows. app1 leads the way, their tail up and waving jauntily.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "p_l wanders off into the territory, keeping an eye out for the purple flowers that betony grows. app1 leads the way, {PRONOUN/app1/poss} tail up and waving jauntily.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as they gather. They prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
-            "unscathed_rare": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections - and they've even found a little goldenrod to go with it! app1, however, is more interested in how betony prevents gross, runny dirt.",
-            "stat_skill": "s_c is able to find the sought-after herb quickly, as they can easily spot the purple blossoms among the other plants. They point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home."
+            "unscathed_common": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as {PRONOUN/app1/subject} {VERB/app1/gather/gathers}. They prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
+            "unscathed_rare": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections - and {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} even found a little goldenrod to go with it! app1, however, is more interested in how betony prevents gross, runny dirt.",
+            "stat_skill": "s_c is able to find the sought-after herb quickly, as {PRONOUN/p_l/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/p_l/subject/CAP} point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home."
         },
         "fail_text": {
-            "unscathed_common": "...Wait. Have they passed the betony already? p_l doubles back, and while they find a shrub that looks a lot like betony, it's surrounded by suspicious hoofprints and devoid of flowers. Without the blooms, p_l isn't confident in their identification, and returns to camp with nothing to show for their long trek."
+            "unscathed_common": "...Wait. Have they passed the betony already? p_l doubles back, and while {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a shrub that looks a lot like betony, it's surrounded by suspicious hoofprints and devoid of flowers. Without the blooms, p_l isn't confident in {PRONOUN/p_l/poss} identification, and the two return to camp with nothing to show for their long trek."
         },
         "win_skills": [
             "SENSE,2"
@@ -179,7 +179,7 @@
         "success_text": {
             "unscathed_common": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs their patrol to follow their industrious example as they gather. They prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
             "unscathed_rare": "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l's patrol brings back, they'll be able to dose their Clanmates and prevent coughs and chest infections - and they've even found a little goldenrod to go with it!",
-            "stat_skill": "s_c is able to find the sought-after herb quickly, as they can easily spot the purple blossoms among the other plants, and they organise the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home."
+            "stat_skill": "s_c is able to find the sought-after herb quickly, as they can easily spot the purple blossoms among the other plants, and they organize the patrol to bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on their path home."
         },
         "fail_text": {
             "unscathed_common": "...Wait. Have they passed the betony already? p_l doubles back, and while they find a shrub that looks a lot like betony, it's surrounded by suspicious hoofprints and devoid of flowers. Without the blooms, p_l isn't confident in their identification, and returns to camp with nothing to show for their long trek."
@@ -1524,7 +1524,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "p_l spots the mullein plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. They hop down to trot over and harvest them with the rest of the patrol, and nearly squish a thyme plant. Hey, they'll take that too!",
-            "unscathed_rare": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it amd the thyme bush they stumble across.",
+            "unscathed_rare": "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it and the thyme bush they stumble across.",
             "stat_skill": "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol. As a bonus, their plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
         },
         "fail_text": {

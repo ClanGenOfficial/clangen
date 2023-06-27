@@ -1,69 +1,49 @@
-<strong>v0.8.4</strong>
-- fixed a crash when there was only one cat left in the clan
-- fixed some issues with the new name code
+<strong>v0.9.2</strong>
+- Update the content warning on the start screen
+- Increase chance of condition-related scars in expanded mode
+- The "favorite" marking now displays on the mediation screen
+- The fading-cat effect will now display properly
+- Fixed some issues related to faded cats
+- "a festering wound" will no longer show on the cat conditions tab.
+- Allow one-cat and two-cat patrols to have stat outcomes
 
-<strong>v0.8.3</strong>
-- fixed some naming code
+<strong>v0.9.1</strong>
+- Fix save-conversion issue with tortie patches
+- Cats will now properly move on from dead mates
+- Removed "EXAMPLE" text from leader ceremonies
 
-<strong>v0.8.2</strong>
-- squashed some bugs
+<strong>v0.9.0</strong>
+<u>BIG CHANGES:</u>
+- Cats can now have more than one mate, with no upper limit.  The choose mate screen has been redesigned to support selecting multiple mates!
+- In addition to two biological parents, cats can have an unlimited number of adoptive parents. Adoptive parents are treated the same as biological parents for relation-tracking. You can manually add new adoptive parents.
+- New war system, with more fleshed out events. The game will now remember wars when you close and reopen.
+- The way traits are assigned has been changed. Under the hood, cats have four personality facets that determine their trait.
+- New skill system! Apprentices and kits now get low-level skills, and cats can have up to two skills. Skills are no longer linked to status/rank. Cats can now improve their skill as they age!
+- With a new trait and skill system, the way mentors influence personality and skills has also changed.
+- New sprite inspect screen, with options for viewing a cat in previous life-stages and saving the sprite as a transparent image.
+- New murder events!
 
-<strong>v0.8.1</strong>
-- added changelog text
+<u>NEW VISUALS:</u>
+- Re-draw of the Classic Forest Camp!
+- New colors: SIENNA, LILAC, GOLDEN-BROWN and CHOCOLATE
+- New tortie patterns: ROSETAIL, SAFI, HALF, CHIMERA, SMUDGED, DAUB, DAPPLENIGHT, STREAK, MASK, CHEST, ARMTAIL, and EMBER
+- New white patches: DIVA, SAVANNAH, FADESPOTS, SHIBAINU, TOPCOVER, DAPPLEPAW, BEARD, PEBBLESHINE, OWL, WOODPECKER, MISS, BOOTS, COW, COWTWO and BUB
+- New vitiligo pattern: BLEACHED
+- Pelt tints have been adjusted.
 
-<strong>v0.8.0</strong>
-<u>Cat and Sprite Changes:</u>
-- New sprites for paralyzed, sick/injured, and newborn cats. 
-- Separated vitiligo and points from white patches. It's now possible for a cat to have all three! 
-- New vitiligo patterns: PHANTOM, MOON, and POWDER
-- New white patch pattern: PETAL
-- New eye colors: SILVER and BRONZE
-- New accessories: Nylon Collars (in all colors), and INDIGO and WHITE collars of all types! 
-- New mask-based tortie system! Tortie patches can now be any color/pattern.
-- New tortie patch patterns: REDTAIL, DELILAH, MINIMALONE, MINIMALTWO, MINIMALTHREE, MINIMALFOUR, OREO, SWOOP, MOTTLED, SIDEMASK, EYEDOT, BANDANA, PACMAN, STREAMSTRIKE, ROBIN, ORIOLE, BRINDLE, and PAIGE. 
-- Rare "Wildcard Torties", which bypass the normal rules for tortie patch color/pattern to allow for wacky combinations. 
-- Smoke pelt colors have been slightly tweaked for consistency. GHOST smoke has been given lighter points. 
-- New separate tint that is applied only to the white patch and point markings.
-- You can now favorite cats! You can toggle favorite cat indicators on the list and patrol screen.
-- Pregnancy is now a condition that may prevent cats from patrolling. 
-- EXP limit has been increased, and the EXP levels have been renamed. 
-- Apprentices now graduate based on EXP, rather than age. This can be turned off in settings, if desired. 
-- Cats can now retire any time between 110 - 140 moons. 
-- New prefixes, suffixes, and loner names! 
-- Some prefixes and suffixes are now specific to your biome. 
-- You can now override special rank suffixes for particular cats. 
-- New randomize buttons on the change name screen. 
-- Moved list of possible names to a .json for easier customization in compiled versions.
-- The code handling relationship events have been rewritten, and new types of relationship events are now possible.
-
-<u>Relationship and Moon Events Changes:</u>
-- New system for accessory moon events, alongside many new accessory events and possible "congratulatory" accessories after a cat gives birth.
-- There is now more variation in relationship initialization, which allows cats to have more varied relationships with their family. 
-- Lots of new relationship events! 
-- Group relationship events have been added.
-- Affairs have generally been made more common. 
-- Lots of fun new moon events, including special events for medicine cats and elders with certain skills.
-
-<u>Thoughts Overhaul:</u>
-- Thought code has been reworked to be way more specific.
-- Cats can now have thoughts based on their status, age, backstory, and even permanent conditions!
-- This should also have fixed those pesky bugs where cats would think about dead or lost cats as if they were still around.
-- In light of this update, A TON of new thoughts were added.
-
-
-<u>Other Significant Changes:</u>
-- New auto-updater! The game will now alert you when a new version is available, and will update without the need to re-download. 
-- New re-designed family page! More family relationships are now shown, and it's easier than ever to browse through a cat's lineage.
-- Save files are now stored in an OS-specific data directory. You will no longer need to move save files when updating. 
-- Added a button in the settings menu to open the save data location in your file-explorer. 
-- New backgrounds: Shipwreck and Crystal River
-- Revamped background: Gully
-- Overlapping cat sprites on the clan page has been reduced. Once two cats are on a single spot, that position is considered "full."
-- You can now choose the starting season when creating a new clan. 
-- Most backgrounds have unique cat placements. 
-- The appearance of the allegiances page has been changed, and descriptions have been updated to flow better. 
-- On the allegiances page, kits will now be listed with their parent, if they have one. 
-- Lots of new patrol artwork! 
-- New error screen when saves fail to load, which gives more in-depth failure messages. 
-- New custom cursor (it's a little paw!)
-- Lots of bugfixes and QOL tweaks!
+<u>OTHER CHANGES:</u>
+- More cat history information is now stored, including the moon-number that some important events occur. (Note: some history information on old saves may be lost)
+- More in-depth relationship information on the family tree.
+- The current event-list is now saved with clan information, and persists upon closing and reopening the game.
+- You can now "un-retire" cats.
+- A new way for same-sex couples to adopt if same-sex breeding is turned off.
+- New personality traits have been added: arrogant, competitive, grumpy, cunning, oblivious, gloomy, sincere, flamboyant, and rebellious
+- Severe conditions no longer have a 100% chance of causing early retirement.
+- Fleshed out leader ceremonies, with more trait dependence and tasty flavor text.
+- New patrols, thoughts, events, names
+- Official Social Media buttons added to the start screen.
+- Some keybinds added for easy navigation.
+- "Cat List" and "StarClan" tabs have been combined. Some buttons on the cat profile page have been reorganized.
+- Save-file corruption (nullification) has been fixed.
+- Lots of small tweaks to event chances.
+- Bugfixes galore!

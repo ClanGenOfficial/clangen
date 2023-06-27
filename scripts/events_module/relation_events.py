@@ -50,25 +50,24 @@ class Relation_Events():
         if not random.getrandbits(4):
             self.romantic_events(cat)
 
-        if len(cat.mate) > 1:
-            for mate_id in cat.mate:
-                if mate_id not in Cat.all_cats:
-                    print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
-                    cat.mate.remove(mate_id)
-                    continue
+        for mate_id in cat.mate:
+            if mate_id not in Cat.all_cats:
+                print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
+                cat.mate.remove(mate_id)
+                continue
 
-                cat_mate = Cat.fetch_cat(mate_id)
-                # Move on from dead mates
-                if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
-                    # randint is a slow function, don't call it unless we have to.
-                    if random.random() > 0.6: 
-                        text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
-                        game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
-                        cat.unset_mate(cat_mate)
+            cat_mate = Cat.fetch_cat(mate_id)
+            # Move on from dead mates
+            if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
+                # randint is a slow function, don't call it unless we have to.
+                if random.random() > 0.5: 
+                    text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
+                    cat.unset_mate(cat_mate)
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
-        range_number = int(cats_amount / 1.5)  # int(1.9) rounds to 1
+        range_number = int(cats_amount / 1.8)  # int(1.9) rounds to 1
         
         if range_number > 60:
             range_number = 60
@@ -122,14 +121,10 @@ class Relation_Events():
         potential_mates = cat.is_potential_mate(cat_to) and cat_to.is_potential_mate(cat)
         both_alive = not cat.dead and not cat_to.dead
 
-        # confession 
-        if random.random() > 0.8 and potential_mates and not current_relationship.mates:
-            if self.romantic_events_class.handle_confession(cat):
-                self.had_one_event = True
-
         # breakup and new mate
         if not self.had_one_event and len(cat_to.mate) > 0 and potential_mates and not current_relationship.mates:
-            love_over_30 = current_relationship.romantic_love > 30 and current_relationship.opposite_relationship.romantic_love > 30
+            love_over_30 = current_relationship.romantic_love > 30 and\
+                current_relationship.opposite_relationship.romantic_love > 30
 
             normal_chance = int(random.random() * 10)
 
@@ -150,26 +145,42 @@ class Relation_Events():
                                            current_relationship.romantic_love
                                            > other_mate_relationship.romantic_love)
                 else:
-                    cat_to_mate.relationships[cat_to.ID] = Relationship(cat_to_mate, cat_to, True)
+                    cat_to_mate.create_one_relationship(cat_to)
+                    cat_to_mate.relationships[cat_to.ID].mate = True
                     other_mate_relationship = cat_to.relationships[cat_to_mate.ID]
 
             if ((love_over_30 and not normal_chance) or (bigger_than_current and not bigger_love_chance)):
                 self.had_one_event = True
-                # break up the old relationships
-                cat_mate = Cat.all_cats.get(cat_mate.ID)
-                self.romantic_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat,
-                                    cat_mate)
+                # break up the old mate relationships
+                if cat_mate:
+                    cat_mate = Cat.all_cats.get(cat_mate.ID)
+                    if cat_mate:
+                        self.romantic_events_class.handle_breakup(
+                            mate_relationship, 
+                            mate_relationship.opposite_relationship, 
+                            cat, 
+                            cat_mate
+                        )
+                        cat.unset_mate(cat_mate, breakup=True, fight=False)
+                        text = f"{cat.name} and {cat_mate.name} broke up."
+                        game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat.ID, cat_mate.ID]))
 
                 if cat_to_mate:
-                    # relationship_from, relationship_to, cat_from, cat_to
-                    self.romantic_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
-                                        cat_to, cat_to_mate)
+                    self.romantic_events_class.handle_breakup(
+                        other_mate_relationship, 
+                        other_mate_relationship.opposite_relationship,
+                        cat_to, 
+                        cat_to_mate
+                    )
+                    cat_to.unset_mate(cat_to_mate, breakup=True, fight=False)
+                    text = f"{cat_to.name} and {cat_to_mate.name} broke up."
+                    game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_to.ID, cat_to_mate.ID]))
 
-                # new relationship
+                # new mate relationship
                 text = f"{cat.name} and {cat_to.name} can't ignore their feelings for each other."
-                # game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
-                self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
+                game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat.ID, cat_to.ID]))
+                cat.set_mate(cat_to)
+                cat_to.set_mate(cat)
 
         # breakup
         if not self.had_one_event and current_relationship.mates and both_alive:
@@ -196,6 +207,11 @@ class Relation_Events():
         if self.had_one_event:
             self.trigger_event(cat)
             self.trigger_event(cat_to)
+
+        # confession 
+        if random.random() > 0.85 and potential_mates and not current_relationship.mates:
+            if self.romantic_events_class.handle_confession(cat):
+                self.had_one_event = True
 
     def romantic_events(self, cat):
         """
@@ -226,9 +242,9 @@ class Relation_Events():
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             if inter_cat.ID not in cat.relationships:
-                cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+                cat.create_one_relationship(inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+                inter_cat.create_one_relationship(cat)
 
             cat_to_inter = cat.relationships[inter_cat.ID].platonic_like > 10 or\
                 cat.relationships[inter_cat.ID].comfortable > 10
@@ -384,9 +400,9 @@ class Relation_Events():
             if inter_cat.ID == main_cat.ID:
                 continue
             if cat_to.ID not in cat_from.relationships:
-                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
-                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
+                    cat_to.create_one_relationship(cat_from)
                 continue
 
             relationship = cat_from.relationships[cat_to.ID]

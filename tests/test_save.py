@@ -62,7 +62,7 @@ class LoadSave(unittest.TestCase):
     def test_check_current_clan(self):
         for i in range(1, num_example_saves + 1):
             with self.subTest(i=i):
-                print("Checking current clan for save " + str(i))
+                print("Checking current Clan for save " + str(i))
                 self.example_save(i)
                 fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
@@ -72,7 +72,7 @@ class LoadSave(unittest.TestCase):
                 new_out = self.new_implimentation()
                 
 
-                self.assertEqual(old_out[0], new_out[0], "Current clan not saved correctly for save " + str(i))
+                self.assertEqual(old_out[0], new_out[0], "Current Clan not saved correctly for save " + str(i))
     
     
     

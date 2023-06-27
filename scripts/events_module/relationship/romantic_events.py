@@ -179,7 +179,6 @@ class Romantic_Events():
                 self.had_one_event = True
                 cat_from.unset_mate(cat_to, breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up."
-                # game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def handle_confession(self, cat_from):
@@ -212,11 +211,22 @@ class Romantic_Events():
 
         become_mate = False
         condition = game.config["mates"]["confession"]["accept_confession"]
-        if self.relationship_fulfill_condition(highest_romantic_relation, condition):
+        rel_to_check = highest_romantic_relation.opposite_relationship
+        if not rel_to_check:
+            highest_romantic_relation.link_relationship()
+            rel_to_check = highest_romantic_relation.opposite_relationship
+        if self.relationship_fulfill_condition(rel_to_check, condition):
+            become_mate = True
+            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+        # second acceptance chance if the romantic is high enough
+        elif "romantic" in condition and condition["romantic"] != 0 and\
+            condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
             become_mate = True
             mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
         else:
             mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
+            cat_from.relationships[cat_to.ID].romantic_love -= 8
+            cat_to.relationships[cat_from.ID].comfortable -= 8
 
         mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
         game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
@@ -224,7 +234,7 @@ class Romantic_Events():
         if become_mate:
             cat_from.set_mate(cat_to)
 
-        return become_mate
+        return True
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
@@ -357,6 +367,8 @@ class Romantic_Events():
             - negative number: value has to be lower than number
         
         """
+        if not relationship:
+            return False
         if "romantic" in condition and condition["romantic"] != 0:
             if condition["romantic"] > 0 and relationship.romantic_love < condition["romantic"]:
                 return False
@@ -466,6 +478,18 @@ class Romantic_Events():
                 mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
             mate_string = mate_string.replace("[r_c_mates]", mate_name_string)
 
+        if "(m_c_mate/mates)":
+            insert = "mate"
+            if len(cat_from.mate) > 1:
+                insert = "mates"
+            mate_string = mate_string.replace("(m_c_mate/mates)", insert)
+
+        if "(r_c_mate/mates)":
+            insert = "mate"
+            if len(cat_to.mate) > 1:
+                insert = "mates"
+            mate_string = mate_string.replace("(r_c_mate/mates)", insert)
+
         mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
         return mate_string
 
@@ -530,21 +554,34 @@ class Romantic_Events():
         # change the chance based on the last interactions
         if len(relationship_from.log) > 0:
             # check last interaction
-            last_log = relationship_from.log[len(relationship_from.log) - 1]
+            last_log1 = relationship_from.log[len(relationship_from.log) - 1]
 
-            if 'negative' in last_log:
+            if 'negative' in last_log1:
                 chance_number -= 30
-                if 'fight' in last_log:
+                if 'fight' in last_log1:
                     chance_number -= 20
+                if 'argument' in last_log1:
+                    chance_number -= 10
+                if 'different view' in last_log1:
+                    chance_number -= 5
+            
+            # also look at the last 3 interactions if there are more than that
+            if len(relationship_from.log) > 2:
+                last_log2 = relationship_from.log[len(relationship_from.log) - 2]
+                if 'negative' in last_log2:
+                    chance_number -= 15
+                last_log3 = relationship_from.log[len(relationship_from.log) - 3]
+                if 'negative' in last_log3:
+                    chance_number -= 10
 
-            # check all interactions - the logs are still buggy
-            # negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
-            # chance_number -= len(negative_interactions)
-            # positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
-            # chance_number += len(positive_interactions)
+            # check all interactions - positive and negative will "balance" each other out
+            negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
+            chance_number -= len(negative_interactions)
+            positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
+            chance_number += len(positive_interactions)
 
-            # if len(negative_interactions) > len(positive_interactions) and len(relationship_from.log) > 5 :
-            #    chance_number -= 20
+            if len(negative_interactions) * 2 > len(positive_interactions) and len(relationship_from.log) > 5 :
+                chance_number -= 20
 
         # this should be nearly impossible, that chance is lower than 0
         if chance_number <= 0:

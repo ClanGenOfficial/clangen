@@ -29,6 +29,14 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
 
+        # fix 'old' history save bugs
+        if type(self.mentor_influence["trait"]) is type(None):
+            self.mentor_influence["trait"] = {}
+        if type(self.mentor_influence["skill"]) is type(None):
+            self.mentor_influence["skill"] = {}
+        if "mentor" in self.mentor_influence:
+            del self.mentor_influence["mentor"]
+
         """
         want save to look like
         {
@@ -265,7 +273,7 @@ class History:
 
     @staticmethod
     def add_facet_mentor_influence(cat, mentor_id, facet, amount):
-        """Adds the history infomation for a single mentor facet change, that occurs after a patrol. """
+        """Adds the history information for a single mentor facet change, that occurs after a patrol. """
         
         History.check_load(cat)
         if mentor_id not in cat.history.mentor_influence["trait"]:

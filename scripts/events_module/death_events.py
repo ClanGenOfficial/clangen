@@ -14,7 +14,7 @@ from scripts.event_class import Single_Event
 # ---------------------------------------------------------------------------- #
 
 class Death_Events():
-    """All events with a connection to conditions."""
+    """All events with a connection to death."""
 
     def __init__(self) -> None:
         self.event_sums = 0
@@ -39,7 +39,7 @@ class Death_Events():
             other_clan_name = f'{other_clan.name}Clan'
 
         possible_short_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
-        #print('death event', cat.ID)
+
         final_events = self.generate_events.filter_possible_short_events(possible_short_events, cat, other_cat, war,
                                                                          enemy_clan,
                                                                          other_clan, alive_kits, murder=murder)
@@ -53,7 +53,6 @@ class Death_Events():
             print('WARNING: no death events found for', cat.name)
             return
         death_text = event_text_adjust(Cat, death_cause.event_text, cat, other_cat, other_clan_name)
-        #print(death_text)
         additional_event_text = ""
 
         # assign default history
@@ -176,7 +175,7 @@ class Death_Events():
         """
         on hold until personality rework because i'd rather not have to figure this out a second time
         tentative plan is to have capability for a cat to witness the murder and then have a reaction based off trait
-        and perhaps reveal it to other clan members
+        and perhaps reveal it to other Clan members
         """
         witness = None
         # choose the witness

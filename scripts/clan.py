@@ -431,63 +431,71 @@ class Clan():
                  starting_members=[],
                  starting_season='Newleaf'):
         self.history = History()
-        if name != "":
-            self.name = name
-            self.leader = leader
-            if self.leader:
-                self.leader.status_change('leader')
-                self.clan_cats.append(self.leader.ID)
-            self.leader_lives = 9
-            self.leader_predecessors = 0
-            self.deputy = deputy
-            if deputy is not None:
-                self.deputy.status_change('deputy')
-                self.clan_cats.append(self.deputy.ID)
-            self.deputy_predecessors = 0
-            self.medicine_cat = medicine_cat
-            self.med_cat_list = []
-            self.med_cat_predecessors = 0
-            if medicine_cat is not None:
-                self.clan_cats.append(self.medicine_cat.ID)
-                self.med_cat_list.append(self.medicine_cat.ID)
-                if medicine_cat.status != 'medicine cat':
-                    Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
-            self.med_cat_number = len(
-                self.med_cat_list
-            )  # Must do this after the medicine cat is added to the list.
-            self.herbs = {}
-            self.age = 0
-            self.current_season = 'Newleaf'
-            self.starting_season = starting_season
-            self.instructor = None
-            # This is the first cat in starclan, to "guide" the other dead cats there.
-            self.biome = biome
-            self.camp_bg = camp_bg
-            self.game_mode = game_mode
-            self.pregnancy_data = {}
-            self.inheritance = {}
-            self._reputation = 80
-            self.starting_members = starting_members
-            if game_mode in ['expanded', 'cruel season']:
-                self.freshkill_pile = Freshkill_Pile()
-            else:
-                self.freshkill_pile = None
-            self.primary_disaster = None
-            self.secondary_disaster = None
-            self.war = {}
+        if name == "":
+            return
+        
+        self.name = name
+        self.leader = leader
+        if self.leader:
+            self.leader.status_change('leader')
+            self.clan_cats.append(self.leader.ID)
+        self.leader_lives = 9
+        self.leader_predecessors = 0
+        self.deputy = deputy
+        if deputy is not None:
+            self.deputy.status_change('deputy')
+            self.clan_cats.append(self.deputy.ID)
+        self.deputy_predecessors = 0
+        self.medicine_cat = medicine_cat
+        self.med_cat_list = []
+        self.med_cat_predecessors = 0
+        if medicine_cat is not None:
+            self.clan_cats.append(self.medicine_cat.ID)
+            self.med_cat_list.append(self.medicine_cat.ID)
+            if medicine_cat.status != 'medicine cat':
+                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+        self.med_cat_number = len(
+            self.med_cat_list
+        )  # Must do this after the medicine cat is added to the list.
+        self.herbs = {}
+        self.age = 0
+        self.current_season = 'Newleaf'
+        self.starting_season = starting_season
+        self.instructor = None
+        # This is the first cat in starclan, to "guide" the other dead cats there.
+        self.biome = biome
+        self.camp_bg = camp_bg
+        self.game_mode = game_mode
+        self.pregnancy_data = {}
+        self.inheritance = {}
+        
+        """
+        Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
+        it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
+        and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
+        """
+        self._reputation = 80
+        
+        self.starting_members = starting_members
+        if game_mode in ['expanded', 'cruel season']:
+            self.freshkill_pile = Freshkill_Pile()
+        else:
+            self.freshkill_pile = None
+        self.primary_disaster = None
+        self.secondary_disaster = None
+        self.war = {
+            "at_war": False,
+            "enemy": None, 
+            "duration": 0,
+        }
 
-            self.faded_ids = [
-            ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
-            """
-            Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
-            it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
-            and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
-            """
+        self.faded_ids = [
+        ]  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
-            # This only contains one thing right now, but will be expanded. 
-            self.clan_settings = {
-                "show_fav": True
-            }
+        # This only contains one thing right now, but will be expanded. 
+        self.clan_settings = {
+            "show_fav": True
+        }
 
     def create_clan(self):
         """
@@ -561,7 +569,7 @@ class Clan():
 
     def add_to_starclan(self, cat):  # Same as add_cat
         """
-        Places the dead cat into starclan.
+        Places the dead cat into StarClan.
         It should not be removed from the list of cats in the clan
         """
         if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats and cat.df is False:
@@ -637,10 +645,15 @@ class Clan():
 
         if ID in Cat.all_cats:
             Cat.all_cats.pop(ID)
-            if ID in self.clan_cats:
-                self.clan_cats.remove(ID)
-            if ID in self.starclan_cats:
-                self.starclan_cats.remove(ID)
+        
+        if ID in self.clan_cats:
+            self.clan_cats.remove(ID)
+        if ID in self.starclan_cats:
+            self.starclan_cats.remove(ID)
+        if ID in self.unknown_cats:
+            self.unknown_cats.remove(ID)
+        if ID in self.darkforest_cats:
+            self.darkforest_cats.remove(ID)
 
     def __repr__(self):
         if self.name is not None:
@@ -649,7 +662,7 @@ class Clan():
             return _
 
         else:
-            return 'No clan'
+            return 'No Clan'
 
     def new_leader(self, leader):
         """
@@ -1097,7 +1110,7 @@ class Clan():
                 clan.herbs = ujson.loads(read_file.read())
 
         else:
-            # generate a random set of herbs since the clan didn't have any saved
+            # generate a random set of herbs since the Clan didn't have any saved
             herbs = {}
             random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
             for herb in random_herbs:
@@ -1311,7 +1324,7 @@ class Clan():
     @property
     def temperament(self):
         """Temperment is determined whenever it's accessed. This makes sure it's always accurate to the 
-            current cats in the clan. However, determining clan temperment is slow! 
+            current cats in the Clan. However, determining Clan temperment is slow! 
             Clan temperment should be used as sparcely as possible, since
             it's pretty resource-intensive to determine it. """
         
@@ -1393,7 +1406,7 @@ class StarClan():
         60: [301, 400],
         90: [401, 500],
         100: [501, 502]
-    }  # Tells how faded the cat will be in starclan by months spent
+    }  # Tells how faded the cat will be in StarClan by months spent
     dead_cats = {}
 
     def __init__(self):
