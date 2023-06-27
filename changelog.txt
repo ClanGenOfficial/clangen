@@ -1,3 +1,8 @@
+<strong>v0.3.4: </strong>
+- Added new events/dialogue
+- Improve readability
+- Fixed several bugs
+
 <strong>v0.3.3: </strong>
 - Added new events/dialogue
 - Fixed relationships
