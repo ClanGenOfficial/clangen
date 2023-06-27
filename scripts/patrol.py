@@ -689,7 +689,7 @@ class Patrol():
             
             if game.current_screen == "patrol screen":
                 if "bloodthirsty_only" in patrol.tags:
-                    if Cat.all_cat.get(game.clan.your_cat.mentor).personality.trait != "bloodthirsty":
+                    if Cat.all_cats.get(game.clan.your_cat.mentor).personality.trait != "bloodthirsty":
                         continue
 
             # makes sure that an apprentice is present if the apprentice tag is
