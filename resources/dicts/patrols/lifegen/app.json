@@ -723,6 +723,31 @@
         ],
         "min_cats": 1,
         "max_cats": 2
+    },
+    {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training",
+            "bloodthirsty_only"
+        ],
+        "intro_text": "Your mentor brings you out of camp for a training session. You crouch down, ready for a spar, and they tell you to keep your claws unsheathed for the fight.",
+        "success_text": {
+            "unscathed_common": "The two of you trade blows fiercely, aiming to draw blood. By the end, you're exhausted, panting and bleeding, but still standing. Your mentor looks at you proudly, sporting some scratches of their own, and says you'll make a fearsome warrior. "
+        },
+        "fail_text": {
+            "unscathed_common": "You try your best to take their words to heart, but you can barely touch them anyway. Their claws score into your flank over and over again, until you're covered in scratches. They seem disappointed in you, and you limp back to the medicine cat's den, bruised and bleeding. "
+        },
+        "decline_text": "You hesitate, unsure if your leader would approve. They sense your unwillingness, and tell you to forget about it with a disappointed flick of their tail.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "win_skills": [
+            "bloodthirsty"
+        ],
+        "min_cats": 2,
+        "max_cats": 2
     }
+    
     
 ]

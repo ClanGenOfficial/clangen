@@ -686,6 +686,11 @@ class Patrol():
                     continue
                 if patrol_size > patrol.max_cats:
                     continue
+            
+            if game.current_screen == "patrol screen":
+                if "bloodthirsty_only" in patrol.tags:
+                    if Cat.all_cat.get(game.clan.your_cat.mentor).personality.trait != "bloodthirsty":
+                        continue
 
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:

@@ -135,5 +135,28 @@
         ],
         "min_cats": 1,
         "max_cats": 1
-    }
+    },{
+    "patrol_id": "lifegen_X",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "While resting in your den, you hear a small greeting from the entrance. You look up to see a clan member standing there, sheepishly asking you if you can help them figure out a recent dream that has been plaguing them for the last few days",
+    "success_text": {
+        "unscathed_common": "You invite the warrior in with a flick of your tail, asking them to sit down. The two of you have an in-depth conversation as you try to help them figure out the dreams' potential meanings and the action that should be taken. After the two of you have finished, your clanmate gratefully thanks you for your help and walks out of your den feeling validated, and with a newfound confidence that wasn't present before your discussion."
+    },
+    "fail_text": {
+        "unscathed_common": "After having your clanmate describe the dream, you attempt to have a conversation, offering what you think is helpful insight and potential ideas as to what the dream could be about. To your dismay, your clanmate seems to become more and more worried as you go on, concerned that the dream was some indistinct warning that they were supposed to interpret. You offer some quick words of reassurance as they quickly leave the den, but it seems to go right over their head."
+    },
+    "decline_text": "You quickly chalk it up to a nightmare, reassuring them that it will go away in a few days' time.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+        "very smart"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+}
+
     ]

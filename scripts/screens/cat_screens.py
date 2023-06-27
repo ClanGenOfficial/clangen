@@ -3388,8 +3388,13 @@ class TalkScreen(Screens):
                 continue
             if ("you_insecure" in talk[0]) and game.clan.your_cat.personality.trait != "insecure":
                 continue
+            if ("from_strict" in talk[0] and cat.personality.trait != "strict"):
+                continue
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
+                    continue
+            if "newborn" in talk[0]:
+                if game.clan.your_cat.moons != 0:
                     continue
             if "dead_close" in talk[0]:
                 if not game.clan.your_cat.parent1:

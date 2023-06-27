@@ -349,6 +349,15 @@
             "And then, I'll share my prey with all my friends. We'll have the biggest feast ever!"
         ]
     ],
+    "KIT32132": [
+        ["newborn"],[
+            "Oops-! Careful there y_c! I don't think you're supposed to leave the nursery just yet, your just a bit too young",
+	"The older cats wouldn't be too happy if they found out I let you out into the camp, but hey! There are tons of things to do here! We could play moss ball, Hunt the Feather, Invasion, anything!",
+	"You might be a little shaky on your paws, but that's alright! You're still getting used to them. Don't worry, I was like that too once. You'll find your balance soon enough, maybe you can go outside by then!",
+	"There's a lot that I want to show you, but in the meanwhile, what do you want to play first?"
+
+        ]
+    ],
     "kit_15": [
         [
             "Any"

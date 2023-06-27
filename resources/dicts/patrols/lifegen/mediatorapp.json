@@ -158,7 +158,29 @@
         ],
         "min_cats": 1,
         "max_cats": 1
-    }
+    },{
+        "patrol_id": "gen_your_cat515",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+        "camp"
+        ],
+        "intro_text": "Your mentor and the leader are in an argument. The leader seems angry, and your mentor is trying to calm them down.",
+        "success_text": {
+        "unscathed_common": "You step in and after a few calming words, you manage to get through to the leader, and they can come to a compromise. Your mentor is proud of how you handled the situation."
+        },
+        "fail_text": {
+        "unscathed_common": "You step in to try and calm the leader down, but you just escalate the situation further, leading them to leave. Your mentor thanks you for the attempt, and tells you the leader would calm down eventually."
+        },
+        "decline_text": "After a bit of thought, you decide it's better to let your mentor handle that and you back off.",
+        "chance_of_success": 50,
+        "exp": 25,
+        "win_skills": [
+        "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 2
+        }
     
     
     ]

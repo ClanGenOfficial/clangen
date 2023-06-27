@@ -677,12 +677,43 @@
             "I'm proud of you, little one. I'm sure parent1 is too."
         ]
     ],
-    "warrior231": [["mediator"],[
-        "Hey! I was looking to talk with you. Is there a chance that you can help me out with something? If you aren't busy of course.", 
-"So... I had an argument with another clan member earlier. Who it was doesn't matter... but I think we both said some things that we shouldn't have. Lines were crossed and - we were both just really angry with each other.", 
-"It was a stupid argument anyway. I've been trying to own up and apologize to them, maybe even have a conversation over what went wrong. I just don't know what to say, and that's where I was hoping you could help me out a little.", 
-"That's... actually a good idea! I'll make sure to try that when I see them, maybe it will help us see eye to eye, or at least smooth some pelts a tad.",
-"Thanks for helping me out, the clan really is lucky to have you. I'll update you on this whole situation later, hopefully I'll be able to bring good news."
+    "warrior231": [
+        [
+            "mediator"
+        ],
+        [
+            "Hey! I was looking to talk with you. Is there a chance that you can help me out with something? If you aren't busy of course.",
+            "So... I had an argument with another clan member earlier. Who it was doesn't matter... but I think we both said some things that we shouldn't have. Lines were crossed and - we were both just really angry with each other.",
+            "It was a stupid argument anyway. I've been trying to own up and apologize to them, maybe even have a conversation over what went wrong. I just don't know what to say, and that's where I was hoping you could help me out a little.",
+            "That's... actually a good idea! I'll make sure to try that when I see them, maybe it will help us see eye to eye, or at least smooth some pelts a tad.",
+            "Thanks for helping me out, the clan really is lucky to have you. I'll update you on this whole situation later, hopefully I'll be able to bring good news."
+        ]
+    ],
+    "warrior2321": [
+        [
+            "kitten",
+            "from_bloodthirsty"
+        ],
+        [
+            "Hello, y_c. You're quite a talented little one, aren't you? I saw you earlier, playing with your siblings. I've been keeping an eye on you.",
+	"I can tell you're going to be a great warrior already. So much potential, and so young. You know, I can help you. I'm a warrior myself, and a rather good one at that. Say, here's a tip; one warrior to another.",
+"Next time you roughhouse with your siblings, try using your claws. It'll only hurt a bit for them, but it'll make you all into better warriors. In a real battle, an enemy isn't going to hold back like your littermates do. They're making you soft. A real enemy's going to come at you with everything they've got.",
+"If you really want to prepare, you have to do the same. Use your claws. Go for the throat. Remember, when you're a warrior, it's kill or be killed. You'll be doing your siblings a favor. You can thank me when you're older.",
+"Anyway, keep this between the two of us, alright? This'll be our secret. If it gets out, other kits might start pestering me for tips, too."
 
-    ]]
+        ]
+    ],
+    "warrior431": [
+        [
+            "from_strict",
+            "kitten"
+        ],
+        [
+            "Hello, young warrior. I see that you are eager for your apprentice ceremony, yes? To be fair, I haven't yet encountered a kit who wasn't ready to be an apprentice. The feeling of the wind in your fur, seeing your territory for the first time, there isn't anything quite like it",
+            "I relate to your enthusiasm kit, I do. You sure do have potential, and a determination to contribute to our clan, to make those around you proud. You want to show everyone what you're worth.",
+            "Say, how about I let you in on a little secret? The real way to become a respectable and powerful warrior is through the way of battle. Other cats may try and tell you that it's more 'honorable' to handle things civilly, to prioritize words over claws, but what use is that?",
+            "When it comes to standing against our enemies, you want to show them our strength, that we aren't a clan that they would want to mess with. We have teeth and claws for a reason, so why not put them to use?",
+            "All I'm saying is that if you stick with me, I'll shape you into a real warrior, the best warrior the clans have ever known. I'll make sure you have a legacy to live up to."
+        ]
+    ]
 }

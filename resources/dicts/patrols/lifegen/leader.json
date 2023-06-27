@@ -69,6 +69,29 @@
         "max_cats": 6
     },
     {
+        "patrol_id": "lifegen_X",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "During a moment of downtime, a clan member approaches you. They inform you that they have a few concerns regarding a decision that you recently made for the clan, and they would like to give their input",
+        "success_text": {
+            "unscathed_common": "You make sure to listen fully to your clanmate's concerns, allowing them to voice out their full opinion and give their own insight on how this decision may affect the clan in the future. You thank them for their decision to confide in you and promise to have a word with the clan's senior warriors and elders to see what they think."
+        },
+        "fail_text": {
+            "unscathed_common": "You lash out at your clanmate with your teeth bared, harshly telling them that they do not have the right to question your orders and defy you so openly. Your clanmate scrambles away, their expression unreadable and their claws tugging at the ground."
+        },
+        "decline_text": "You tell your clanmate that they can voice their concerns in a private conversation later.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "very smart"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },    
+    {
         "patrol_id": "gen_your_cat72",
         "biome": "Any",
         "season": "Any",
