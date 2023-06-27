@@ -336,16 +336,22 @@
         ],
         [
             "Do you ever wonder what it's like up there? In Starclan, I mean. There must be loads of cats up there.",
-            "Do you think that they get any peace? Do they have camps? What about borders? I know they're usually said to be rather free-going and all, but I just sorta wonder...how do they manage it? I can barely handle staying in the apprentices' den since my denmates are chattering on all the time!",
+            "Do you think that they get any peace? Do they have camps? What about borders? I know they're usually said to be rather free-going and all, but I just sorta wonder...how do they manage it?",
+            "I can barely handle staying in the apprentices' den since my denmates are chattering on all the time!",
             "However they do it, they must be really patient and strong to handle all that chattering..."
         ]
     ],
     "app_fdsa": [
-        ["medicine cat apprentice",
-    "you_insecure"],
-        ["Hi y_c! How's your training going? Having any trouble memorizing all those different herbs and remedies?",
-        "Really? That sucks. It was only a few mistakes though, I'm sure it will come to you soon enough! You wouldn't be a medicine apprentice if c_nClan didn't think you were capable, trust me!", 
-        "Remember the other day when you pulled that thorn out of my paw? You managed to pull that thing out before I could say 'Mouse!' There was also that other time where I hit my head after going for that pesky squirrel, and that other time when - I think you get the idea.", 
-        "What I'm trying to say is that you're doing great. I sure didn't get my hunters' crouch right on the first try! c_nClan is lucky to have you, don't put too much pressure on yourself, ok?"]
+        [
+            "medicine cat apprentice",
+            "you_insecure"
+        ],
+        [
+            "Hi y_c! How's your training going? Having any trouble memorizing all those different herbs and remedies?",
+            "Really? That sucks. It was only a few mistakes though, I'm sure it will come to you soon enough! You wouldn't be a medicine apprentice if c_nClan didn't think you were capable, trust me!",
+            "Remember the other day when you pulled that thorn out of my paw?",
+            "You managed to pull that thing out before I could say 'Mouse!' There was also that other time where I hit my head after going for that pesky squirrel, and that other time when - I think you get the idea.",
+            "What I'm trying to say is that you're doing great. I sure didn't get my hunters' crouch right on the first try! c_nClan is lucky to have you, don't put too much pressure on yourself, ok?"
+        ]
     ]
 }

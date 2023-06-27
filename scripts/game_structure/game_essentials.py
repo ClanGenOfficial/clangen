@@ -557,8 +557,8 @@ class Game():
             mod = self.config
             for key in war_effected[args]:
                 mod = mod[key]
-
-                config_value -= mod
+                if isinstance(mod, int) and isinstance(config_value, int):
+                    config_value -= mod
             
         return config_value
 

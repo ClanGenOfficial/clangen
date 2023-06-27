@@ -692,7 +692,7 @@
     "warrior2321": [
         [
             "kitten",
-            "from_bloodthirsty"
+            "bloodthirsty"
         ],
         [
             "Hello, y_c. You're quite a talented little one, aren't you? I saw you earlier, playing with your siblings. I've been keeping an eye on you.",
@@ -705,7 +705,7 @@
     ],
     "warrior431": [
         [
-            "from_strict",
+            "strict",
             "kitten"
         ],
         [
@@ -715,5 +715,18 @@
             "When it comes to standing against our enemies, you want to show them our strength, that we aren't a clan that they would want to mess with. We have teeth and claws for a reason, so why not put them to use?",
             "All I'm saying is that if you stick with me, I'll shape you into a real warrior, the best warrior the clans have ever known. I'll make sure you have a legacy to live up to."
         ]
+    ],
+    "warrior213": [
+        ["apprentice",
+    "bloodthirsty"], [
+        "Hello there, little apprentice. I've been seeing you around quite a lot. Feels nice to be out of the nursery, doesn't it? Now you're one step closer to becoming a proper warrior.",
+"I remember your apprentice ceremony, you know. I saw you up there and I said to myself, that one's got potential. I'd like them for an apprentice. I admit, I was disappointed when you got assigned to someone else.",
+"Oh, not to insult your mentor—they're a fine warrior, I'm sure. They're just a little too upright for me. Too much of a rule-follower. You feel the same way, don't you? Apprentices are always rebellious. That's alright, I was too.",
+"Tell you what—if you ever want some extra training, you can come to me. I know your mentor is pretty busy. We wouldn't want to disturb them for no reason. I'll help.",
+"I can teach you how to be a proper warrior. The truth is, a real warrior knows when to follow rules. Nothing wrong with the warrior code—but when it starts hindering your training, a mentor's gotta know when to bend the rules. Seems like yours doesn't.",
+"But I do. I'm sure your mentor makes you keep your claws in when you train. That's fine when it's kits playing around, but for an upcoming warrior? No good. It'll make you soft. Weak. That's what gets you killed. You're no kit, you can take a bit of pain.",
+"Your mentor might be too soft-hearted to do what must be done, but I'm not. You come with me, and I'll make you the most feared warrior in the forest. Keep that in mind. I'll be around."
+
+    ]
     ]
 }

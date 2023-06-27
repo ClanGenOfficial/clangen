@@ -3269,6 +3269,11 @@ class TalkScreen(Screens):
                                                                          pygame.transform.scale(
                                                                              generate_sprite(self.the_cat),
                                                                              (400, 400)), manager=MANAGER)
+        self.paw = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((1370, 1180), (30, 30))),
+                image_cache.load_image("resources/images/cursor.png").convert_alpha()
+            )
+        self.paw.visible = False
 
 
     def exit_screen(self):
@@ -3285,6 +3290,8 @@ class TalkScreen(Screens):
         del self.clan_name_bg
         self.talk_box.kill()
         del self.talk_box
+        self.paw.kill()
+        del self.paw
 
     def update_camp_bg(self):
         light_dark = "light"
@@ -3336,6 +3343,9 @@ class TalkScreen(Screens):
                 self.frame_index += 1
                 self.next_frame_time = now + self.typing_delay
 
+        if self.text_index == len(self.text_frames) - 1:
+            if self.frame_index == len(self.text_frames[self.text_index]) - 1:
+                self.paw.visible = True
         # Always render the current frame
         self.text.html_text = self.text_frames[self.text_index][self.frame_index]
         self.text.rebuild()
@@ -3388,8 +3398,6 @@ class TalkScreen(Screens):
                 continue
             if ("you_insecure" in talk[0]) and game.clan.your_cat.personality.trait != "insecure":
                 continue
-            if ("from_strict" in talk[0] and cat.personality.trait != "strict"):
-                continue
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
@@ -3418,9 +3426,19 @@ class TalkScreen(Screens):
                     continue
                 if cat.relationships[game.clan.your_cat.ID].trust < 30 and 'trust' in talk[0]:
                     continue
+                if "talk_dead" in talk[0]:
+                    dead_cat = str(Cat.all_cats.get(choice(game.clan.starclan_cats)).name)
+                    text = [t1.replace("d_c", dead_cat) for t1 in text]
+                    texts_list.append(talk[1])
+                    continue
                 texts_list.append(talk[1])
             else:
                 if any(i in ['hate', 'crush', 'romantic_like', 'platonic_like', 'jealousy', 'dislike', 'comfort', 'respect', 'trust'] for i in talk[0]):
+                    continue
+                if "talk_dead" in talk[0]:
+                    dead_cat = str(Cat.all_cats.get(choice(game.clan.starclan_cats)).name)
+                    text = [t1.replace("d_c", dead_cat) for t1 in text]
+                    texts_list.append(talk[1])
                     continue
                 texts_list.append(talk[1])
         if not texts_list:
@@ -3433,6 +3451,7 @@ class TalkScreen(Screens):
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]
+        
 
         return text
         

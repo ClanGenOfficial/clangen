@@ -244,7 +244,6 @@
             "I hope that I can catch a bug like that someday. Then I'll be the coolest one in the Clan."
         ]
     ],
-    
     "kit_11439": [
         [
             "kit"
@@ -350,12 +349,40 @@
         ]
     ],
     "KIT32132": [
-        ["newborn"],[
+        [
+            "newborn"
+        ],
+        [
             "Oops-! Careful there y_c! I don't think you're supposed to leave the nursery just yet, your just a bit too young",
-	"The older cats wouldn't be too happy if they found out I let you out into the camp, but hey! There are tons of things to do here! We could play moss ball, Hunt the Feather, Invasion, anything!",
-	"You might be a little shaky on your paws, but that's alright! You're still getting used to them. Don't worry, I was like that too once. You'll find your balance soon enough, maybe you can go outside by then!",
-	"There's a lot that I want to show you, but in the meanwhile, what do you want to play first?"
-
+            "The older cats wouldn't be too happy if they found out I let you out into the camp, but hey! There are tons of things to do here! We could play moss ball, Hunt the Feather, Invasion, anything!",
+            "You might be a little shaky on your paws, but that's alright! You're still getting used to them. Don't worry, I was like that too once. You'll find your balance soon enough, maybe you can go outside by then!",
+            "There's a lot that I want to show you, but in the meanwhile, what do you want to play first?"
+        ]
+    ],
+    "kit2314": [
+        [
+            "medicine cat",
+            "talk_dead"
+        ],
+        [
+            "Hi there! I wasn't expecting to see you around right now, I thought you would be in your den or something with all those herbs. But look at the cool feather I found!",
+            "It was a good thing I caught it too, it'll make a great toy for my new game! That cat over there gave me the idea, they even helped me find the feather too!",
+            "...What do you mean? That cat over there, the one by that pile of stones! They said that their name was d_c. They don't look that familiar, but no one else has questioned it so I haven't either.",
+            "Your face is kind of funny, it's like you've just seen a ghost! Oh, and before I forget, that cat wanted me to tell you that they don't blame you for not making them better and that it was their time to go.",
+            "I dunno where they went, but they seem pretty happy! Anyways, I really have to start setting up my new game, do you want to play it with me?",
+            "Huh. You don't look busy, but ok! Maybe later then. Bye!"
+        ]
+    ],
+    "kit21": [
+        [
+            "elder"
+        ],
+        [
+            "y_c, help! I'm playing hide and seek with my den mates, and I need to hide, quick!",
+            "Yes, I know that there are some really good hiding spots over by the medicine den, but, erm, I'm kind of not allowed over there after the incident a few days ago.",
+            "Hey, don't you get started on me as well! I didn't know that those brightly colored plants that I used for hunting practice were marigolds! And how would I know that the cobwebs were supposed to be stacked up like that?",
+            "If you tell me, I actually did the medicine cat a favor! That den looked like it needed to be reorganized anyways, so I gave them a reason to! They didn't seem to appreciate my work though..",
+            "Uh oh. I think I'm running out of time to hide. I gotta go! I'll see you later y_c, maybe you can tell me another story later!"
         ]
     ],
     "kit_15": [

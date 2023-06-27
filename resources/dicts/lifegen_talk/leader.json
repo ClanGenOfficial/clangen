@@ -245,11 +245,21 @@
             "Any"
             ],
             [
-            "Do you know the greatest challenge of a leader ceremony? It's not the journey to the place of StarClan, nor is it the weight of the nine lives you're about to receive. It's the understanding that you're about to shoulder the hopes, dreams, and lives of your entire Clan.",
+            "Do you know the greatest challenge of a leader ceremony? It's not the journey to the place of StarClan, nor is it the weight of the nine lives you're about to receive.","It's the understanding that you're about to shoulder the hopes, dreams, and lives of your entire Clan.",
             "Receiving the nine lives is an experience like no other. With each life, there's a pain, a joy, a lesson. But the overwhelming feeling is one of connection. Connection to the past, to the present, and to the future of your Clan.",
             "The spirits of the past leaders shared their wisdom with me during my ceremony. I felt their pride, their sorrow, their hopes, and their fears. It was as if their lives were flashing before my eyes, and I was living their experiences.",
             "With the ceremony, comes the understanding that you're a part of something bigger. That your actions will shape not only your destiny but that of your entire Clan.",
             "As a leader, every decision you make echoes through the generations. You're not just leading your Clan in the present, you're shaping its future. That's the real weight of a leader ceremony."
             ]
+            ],
+            "leader231": [
+                ["mediator apprentice"],[
+                    "Ah, y_c. I've been meaning to check up on you since your apprentice ceremony. How is your training going? Are you learning the ways of a true mediator?",
+	"I'm glad to see you so eager to learn, though I must warn you. The path of a mediator is much more than simply settling arguments between a few cats within the clan.","Being a mediator means that you remain unbiased in situations where cats you may care about may be involved",
+"It means that you will have to use logic and be sensible to come to a quick solution that all parties agree with, even if it means setting your loyalties to a close friend or even a clan member aside.",
+"I'm sure all that you need to learn will come in time, but remember. You are mediating for the sake of peace, whether that's between a couple of kits, or during a tense moment at a Gathering.","You are the last line of defense when all else fails, the potential difference between war and peace.", 
+"Now go on young apprentice, I'm sure that you are needed elsewhere. Just know that I will be watching your progress with interest and that I am always available if you need further instruction and guidance that your mentor cannot give you.","May the stars shine down upon you always."
+
+                ]
             ]
 }
