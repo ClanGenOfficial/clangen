@@ -3386,7 +3386,7 @@ class TalkScreen(Screens):
                 continue
             if ('leafbare' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('newleaf' in talk[0] and game.clan.current_season != 'Newleaf') or ('leaffall' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('greenleaf' in talk[0] and game.clan.current_season != 'Greenleaf'):
                 continue
-            if any(i in ['bloodthirsty', 'cold', 'childish', 'faithful', 'strict', 'insecure'] for i in talk[0]):
+            if any(i in ['bloodthirsty', 'cold', 'childish', 'faithful', 'strict', 'insecure', "nervous", "lonesome", "vengeful", "fierce"] for i in talk[0]):
                 if trait not in talk[0]:
                     continue
             if any(i in ['beach', 'forest', 'plains', 'mountainous', 'wetlands'] for i in talk[0]):
@@ -3401,6 +3401,13 @@ class TalkScreen(Screens):
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
+            if "parent" in talk[0]:
+                if game.clan.your_cat.parent1:
+                    if game.clan.your_cat.parent1 != cat.ID:
+                        continue
+                if game.clan.your_cat.parent2:
+                    if game.clan.your_cat.parent2 != cat.ID:
+                        continue
             if "newborn" in talk[0]:
                 if game.clan.your_cat.moons != 0:
                     continue

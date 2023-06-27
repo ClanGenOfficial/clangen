@@ -1210,12 +1210,12 @@ class Patrol():
             # print(tag)
             if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
-                print('found tag, attributes:', attribute_list)
+                # print('found tag, attributes:', attribute_list)
                 break
         if not attribute_list:
             return
 
-        print('new cat creation started')
+        # print('new cat creation started')
 
         # setting the defaults
         new_name = choice([True, False])
@@ -1373,25 +1373,25 @@ class Patrol():
         # give a litter if the outcome calls for it
         kit_thought = 'Is looking around the camp with wonder'
         if f"litter{outcome}" in attribute_list:
-            print('litter outcome checking')
+            # print('litter outcome checking')
             if not game.settings["same sex birth"]:
                 gender = 'female'
             litter = True
             age = randint(23, 100)
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
-                print('parent is dead')
+                # print('parent is dead')
                 chosen_kit_backstory = ['orphaned1', 'orphaned2']
             else:
-                print('parent is alive')
+                # print('parent is alive')
                 chosen_kit_backstory = ['outsider_roots2', 'outsider_roots2']
             # make sure kittens get right age
             if "litternewborn" in attribute_list:
-                print('litter is newborn')
+                # print('litter is newborn')
                 kit_age = 0
                 kit_thought = "Mewls quietly for milk"
             else:
-                print('litter is not newborn')
+                # print('litter is not newborn')
                 kit_age = randint(1, 5)
 
             # giving specified backstories.json if any were specified
@@ -1773,7 +1773,7 @@ class Patrol():
             # print(tag)
             if "death" in tag or "gone" in tag:
                 attribute_list = tag.split("_")
-                print(attribute_list)
+                # print(attribute_list)
                 break
         if attribute_list and len(attribute_list) == 1:
             if "stat" in outcome:
@@ -1993,9 +1993,9 @@ class Patrol():
                     return
                 if len(self.patrol_random_cat.pelt.scars) < 4:
                     for tag in self.patrol_event.tags:
-                        print(tag)
+                        # print(tag)
                         if tag in Pelt.scars1 + Pelt.scars2 + Pelt.scars3:
-                            print('gave scar')
+                            # print('gave scar')
                             cat.pelt.scars.append(tag)
                             self.results_text.append(f"{cat.name} got a scar.")
                     self.handle_history(cat, scar=True)

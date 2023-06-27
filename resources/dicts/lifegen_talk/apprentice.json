@@ -353,5 +353,19 @@
             "You managed to pull that thing out before I could say 'Mouse!' There was also that other time where I hit my head after going for that pesky squirrel, and that other time when - I think you get the idea.",
             "What I'm trying to say is that you're doing great. I sure didn't get my hunters' crouch right on the first try! c_nClan is lucky to have you, don't put too much pressure on yourself, ok?"
         ]
+    ],
+    "app31232": [
+        ["kitten"],
+        ["Oh hello there! What are you doing? Play-fighting? So, who are you pretending to be, y_c?",
+        "Leader? You might just be one someday, with your skills! But first you have to train hard and become a warrior. I'm nearly one already.",
+        "Do I want to be leader? Maybe... I'm not sure. It looks like a lot of work and responsibility. And I don't want to be too ambitious, because then I certainly won't become one.",
+        "It's also an honor to even be a warrior, let alone deputy or leader... Oh, my mentor's calling me! Bye, have a good day!"
+        ]
+    ],
+    "app3123": [
+        ["apprentice", "bloodthirsty", "vengeful","fierce"],
+        ["Uh, hey, y_c. When we were out training the other day, you were really intense. I could barely keep up with you.",
+        "It was... aha... kind of scary. I'm definitely glad we're clanmates, or else I might have to fight you for real one day. You're supposed to protect your clan with your life! That's what we've always been told.",
+        "So that means you won't... ever really hurt me, right?"]
     ]
 }

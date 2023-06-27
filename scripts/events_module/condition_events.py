@@ -889,9 +889,9 @@ class Condition_Events():
                 if usable_herbs:
                     herb_used = usable_herbs[0]
                 else:
-                    print("No herbs to use for this injury")
+                    # print("No herbs to use for this injury")
                     return
-                print(f"New herb found: {herb_used}")
+                # print(f"New herb found: {herb_used}")
 
             # deplete the herb
             amount_used = 1

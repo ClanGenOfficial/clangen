@@ -35,6 +35,18 @@
             "Just remember to visit us sometimes, alright? We might have some good stories to share. Or at least, we can provide some warm company on a chilly leaf-bare night."
         ]
     ],
+    "elder_3213213": [
+        [
+            "kitten"
+        ],
+        [
+            "Oh, I didn't see you there, y_c. What are you doing in the stuffy elder's den? I didn't think cats my age would seem like a lot of fun to a kit like you.",
+            "Huh? What's that? ...You've brought me some flowers? Oh, you're too kind. Thank you so much. Really, when you're an elder, it can start to feel like the clan just forgets about you... You've really brightened up my day!",
+            "Hold on, you want to change my bedding? And help me groom? Well, that has been getting harder for me lately, but this is too much! Wait until you're an apprentice before jumping into chores.",
+            "You should enjoy being a kit while you still can.",
+            "...Though, if it really would make you so happy to help me out, you can bring me a piece of freshkill for us to share. I'll tell you some stories before bedtime too, okay?"
+        ]
+    ],
     "elder_4": [
         [
             "mediator apprentice"
@@ -227,7 +239,8 @@
             "Remember when we thought we'd miss the thrill of the hunt, the excitement of the battle? And now we realize that a soft patch of moss and a sunny day are more than enough excitement for us!",
             "Sometimes it's hard, watching the younger ones make the same mistakes we did. But then we remember the lessons we learned, and we hope they learn them too.",
             "But we're not just old fur and stories. We're the heart of the clan. We've been there, done that, and we're still here, stronger than ever.",
-            "And remember, fellow elder, no matter how many moons pass, we're still warriors at heart. Our spirits are still young, even if our bodies are a little slower. So let's enjoy these golden days and remember to keep the young ones on their toes!"
+            "And remember, fellow elder, no matter how many moons pass, we're still warriors at heart. Our spirits are still young, even if our bodies are a little slower.",
+            "So let's enjoy these golden days and remember to keep the young ones on their toes!"
         ]
     ],
     "elder_20": [
@@ -287,9 +300,13 @@
         ]
     ],
     "elder32132": [
-        ["kitten",
-    "cold"],
-        ["Ugh. A kit. Get out, you little vermin. I'm trying to get some rest here. Tsk. Never any peace or quiet with kits around... ",
-        "I don't see why anyone would want any. No, I don't care if you're bored. Shoo! Go back to the nursery."]
+        [
+            "kitten",
+            "cold"
+        ],
+        [
+            "Ugh. A kit. Get out, you little vermin. I'm trying to get some rest here. Tsk. Never any peace or quiet with kits around... ",
+            "I don't see why anyone would want any. No, I don't care if you're bored. Shoo! Go back to the nursery."
+        ]
     ]
 }
