@@ -361,6 +361,8 @@ class ProfileScreen(Screens):
             if event.ui_element == self.left_conditions_arrow:
                 self.conditions_page -= 1
                 self.display_conditions_page()
+        if event.ui_element == self.placeholder_tab_3:
+            self.change_screen("murder screen")
 
     def screen_switches(self):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -397,7 +399,7 @@ class ProfileScreen(Screens):
 
         self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
                                                object_id="#cat_tab_3_blank_button", starting_height=1, manager=MANAGER)
-        self.placeholder_tab_3.disable()
+        # self.placeholder_tab_3.disable()
 
         self.placeholder_tab_4 = UIImageButton(scale(pygame.Rect((1152, 1244), (352, 60))), "",
                                                object_id="#cat_tab_4_blank_button", manager=MANAGER)
@@ -580,6 +582,13 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
+        
+        if not game.clan.your_cat:
+            print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
+            print("Choosing random cat to play...")
+            game.clan.your_cat = Cat.all_cats(choice(game.clan.clan_cats))
+            print("Chose " + str(game.clan.your_cat.name))
+        
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
@@ -3458,6 +3467,8 @@ class TalkScreen(Screens):
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]
+        text = [t1.replace("r_c", str(Cat.all_cats[choice(game.clan.clan_cats)].name)) for t1 in text]
+
         
 
         return text

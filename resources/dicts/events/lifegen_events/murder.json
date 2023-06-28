@@ -1,0 +1,310 @@
+{
+    "murder kitten kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+    ],
+    "murder kitten apprentice": [
+        "You convince v_c to play a game of 'river crossing' on the stepping stones at the edge of the camp. You pretend to struggle, urging them to help. As they reach for you, you push them, causing them to tumble into the river. Their small, terrified yowls are soon swallowed by the rushing water."
+    ],
+    "murder kitten medicinecatapprentice": [
+        "You find a dangerously weak branch hanging over the nursery. You convince v_c to play a game of 'leaping leaf' with you beneath it. During the game, you make sure to vigorously shake the branch, causing it to snap and fall, crushing v_c beneath it."
+    ],
+    "murder kitten mediatorapprentice": [
+
+    ],
+    "murder kitten warrior": [
+        "During a severe storm, you beg v_c to help you retrieve a 'lost mossball' up a tree. As they climb the tree to help, they slip, causing them to plummet to their death."
+    ],
+    "murder kitten medicinecat": [
+
+    ],
+    "murder kitten mediator": [
+
+    ],
+    "murder kitten deputy": [
+
+    ],
+    "murder kitten leader": [
+
+    ],
+    "murder kitten elder": [
+    ],
+
+    "murder apprentice kitten": [
+        "During a game of hide and seek, you urge v_c to hide in a deep, narrow pit. They tumble in and you bury them with loose soil and stones. When the game ends, v_c is nowhere to be found."],
+    "murder apprentice apprentice": [
+        "You invite v_c to join you in an 'adventure' by the Thunderpath, asking them to prove their courage by touching a monster. As they approach the path, you shove them onto the path right when a monster rushes by."
+    ],
+    "murder apprentice medicinecatapprentice": [
+
+    ],
+    "murder apprentice mediatorapprentice": [
+        "While v_c is busy sorting out a mock quarrel you've staged, you lead them to a perilous cliff edge. In their concentration, they don't notice how close they are to the edge, until a small 'accidental' nudge sends them plummeting."
+    ],
+    "murder apprentice warrior": [
+        "During a discussion on a high cliff, you pretend to stumble towards v_c, who isn't expecting the sudden push. They fall over the edge, unable to prevent their own tragic fate."
+    ],
+    "murder apprentice medicinecat": [
+
+    ],
+    "murder apprentice mediator": [
+
+    ],
+    "murder apprentice deputy": [
+
+    ],
+    "murder apprentice leader": [
+        "You convince v_c to check a 'dangerous' crevice you found, claiming it could be a threat to the Clan. As they lean over to investigate, the ground gives way, swallowing the leader."
+    ],
+    "murder apprentice elder": [
+        "You coax v_c to a new 'warm and comfortable' resting spot you've found. Unknown to them, it's an unstable ground near the river. As they settle, the ground collapses and they slide helplessly into the rapid river."
+    ],
+
+    "murder medicinecatapprentice kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+    ],
+    "murder medicinecatapprentice apprentice": [
+        "You convince v_c to take a 'muscle-strengthening' herb before training. The herb is actually foxglove, and the apprentice's heart stops forever."
+    ],
+    "murder medicinecatapprentice medicinecatapprentice": [
+
+    ],
+    "murder medicinecatapprentice mediatorapprentice": [
+        "You persuade v_c to try a 'new' herb, claiming it helps with clarity and decision making. It's yew leaves, and before long, v_c succumbs to the deadly poison."
+    ],
+    "murder medicinecatapprentice warrior": [
+        "You convince v_c to take a 'muscle-strengthening' herb before a patrol. The herb is actually foxglove, and the warrior's heart stops forever."
+
+    ],
+    "murder medicinecatapprentice medicinecat": [
+
+    ],
+    "murder medicinecatapprentice mediator": [
+        "You offer v_c a 'calming' herb to help with their mediations. It's a poisonous mushroom. The mediator's voice is silenced forever."
+    ],
+    "murder medicinecatapprentice deputy": [
+
+    ],
+    "murder medicinecatapprentice leader": [
+
+    ],
+    "murder medicinecatapprentice elder": [
+        "You tell v_c about a new herb to ease their aches and ask them to try it. It's actually water hemlock. Within hours, v_c succumbs to the poison."
+    ],
+
+    "murder mediatorapprentice kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder mediatorapprentice apprentice": [
+
+    ],
+    "murder mediatorapprentice medicinecatapprentice": [
+
+    ],
+    "murder mediatorapprentice mediatorapprentice": [
+        "During a staged argument near the river, you push v_c into the rapid currents while pretending to lose your balance. The apprentice is swept away, never to be seen again."
+    ],
+    "murder mediatorapprentice warrior": [
+        "You convince v_c to demonstrate a dangerous leap across a gorge. As they leap, you 'accidentally' startle them with a loud yowl, causing them to lose focus and fall."
+    ],
+    "murder mediatorapprentice medicinecat": [
+
+    ],
+    "murder mediatorapprentice mediator": [
+
+    ],
+    "murder mediatorapprentice deputy": [
+
+    ],
+    "murder mediatorapprentice leader": [
+
+    ],
+    "murder mediatorapprentice elder": [
+
+    ],
+
+    "murder warrior kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder warrior apprentice": [
+
+    ],
+    "murder warrior medicinecatapprentice": [
+
+    ],
+    "murder warrior mediatorapprentice": [
+
+    ],
+    "murder warrior warrior": [
+        "Competing in a tree-climbing race, you and v_c scale a particularly tall and old tree. In the heat of the competition, you 'accidentally' push a weak branch v_c is about to leap onto, causing them to fall to their doom."
+    ],
+    "murder warrior medicinecat": [
+
+    ],
+    "murder warrior mediator": [
+
+    ],
+    "murder warrior deputy": [
+
+    ],
+    "murder warrior leader": [
+
+    ],
+    "murder warrior elder": [
+
+    ],
+
+    "murder medicinecat kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder medicinecat apprentice": [
+
+    ],
+    "murder medicinecat medicinecatapprentice": [
+        "After you come up with a story about a new healing herb, you convince v_c to taste some foxglove seeds. Hours later, v_c is found lifeless, frothing at the mouth from the poison."
+    ],
+    "murder medicinecat mediatorapprentice": [
+
+    ],
+    "murder medicinecat warrior": [
+
+    ],
+    "murder medicinecat medicinecat": [
+
+    ],
+    "murder medicinecat mediator": [
+
+    ],
+    "murder medicinecat deputy": [
+
+    ],
+    "murder medicinecat leader": [
+
+    ],
+    "murder medicinecat elder": [
+
+    ],
+
+    "murder mediator kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder mediator apprentice": [
+
+    ],
+    "murder mediator medicinecatapprentice": [
+
+    ],
+    "murder mediator mediatorapprentice": [
+
+    ],
+    "murder mediator warrior": [
+
+    ],
+    "murder mediator medicinecat": [
+
+    ],
+    "murder mediator mediator": [
+
+    ],
+    "murder mediator deputy": [
+
+    ],
+    "murder mediator leader": [
+
+    ],
+    "murder mediator elder": [
+
+    ],
+
+    "murder deputy kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder deputy apprentice": [
+
+    ],
+    "murder deputy medicinecatapprentice": [
+
+    ],
+    "murder deputy mediatorapprentice": [
+
+    ],
+    "murder deputy warrior": [
+
+    ],
+    "murder deputy medicinecat": [
+
+    ],
+    "murder deputy mediator": [
+
+    ],
+    "murder deputy leader": [
+
+    ],
+    "murder deputy elder": [
+
+    ],
+
+    "murder leader kitten": [
+        "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth."
+
+    ],
+    "murder leader apprentice": [
+
+    ],
+    "murder leader medicinecatapprentice": [
+
+    ],
+    "murder leader mediatorapprentice": [
+
+    ],
+    "murder leader warrior": [
+
+    ],
+    "murder leader medicinecat": [
+
+    ],
+    "murder leader mediator": [
+
+    ],
+    "murder leader deputy": [
+
+    ],
+    "murder leader elder": [
+
+    ],
+
+    "murder elder kitten": [
+
+    ],
+    "murder elder apprentice": [
+
+    ],
+    "murder elder medicinecatapprentice": [
+
+    ],
+    "murder elder mediatorapprentice": [
+
+    ],
+    "murder elder warrior": [
+
+    ],
+    "murder elder medicinecat": [
+
+    ],
+    "murder elder mediator": [
+
+    ],
+    "murder elder deputy": [
+
+    ],
+    "murder elder leader": [
+
+    ],
+    "murder elder elder": [
+
+    ]
+}
