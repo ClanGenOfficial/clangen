@@ -477,5 +477,41 @@
         ["Hurry and open your eyes! It's getting really, really boring!",
         "The queens keep getting annoyed at me, 'cuz you're still sleeping. So get up already so we can play!",
         "Ugh, you're so stubborn... maybe I don't want to play with you anyways! Hmph!"]
+    ],
+    "app_321": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Waaahhh!!!!!!!!!"
+        ]
+    ],
+    "app_3211": [
+        [
+            "insult",
+            "Any",
+            "platonic_like"
+        ],
+        [
+            "You don't really mean that... do you?"
+        ]
+    ],
+    "app_321321": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "That's- That's not nice!"
+        ]
+    ],
+    "kit321": [
+        ["insult", "Any", "not_kit"],
+        ["Hey, that's not nice! I may be small, but I'm going to be a big strong warrior someday. You'll see!",
+        "Just because I'm a kit doesn't mean you can talk to me like that.",
+        "You hurt my feelings. That wasn't a nice thing to say...",
+        "Why would you say something like that anyway? Is this how older cats talk to kits?",
+        "I'm telling my mother on you! She won't like it when she hears what you said."]
     ]
 }

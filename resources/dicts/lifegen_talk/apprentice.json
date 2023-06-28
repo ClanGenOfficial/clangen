@@ -355,17 +355,66 @@
         ]
     ],
     "app31232": [
-        ["kitten"],
-        ["Oh hello there! What are you doing? Play-fighting? So, who are you pretending to be, y_c?",
-        "Leader? You might just be one someday, with your skills! But first you have to train hard and become a warrior. I'm nearly one already.",
-        "Do I want to be leader? Maybe... I'm not sure. It looks like a lot of work and responsibility. And I don't want to be too ambitious, because then I certainly won't become one.",
-        "It's also an honor to even be a warrior, let alone deputy or leader... Oh, my mentor's calling me! Bye, have a good day!"
+        [
+            "kitten"
+        ],
+        [
+            "Oh hello there! What are you doing? Play-fighting? So, who are you pretending to be, y_c?",
+            "Leader? You might just be one someday, with your skills! But first you have to train hard and become a warrior. I'm nearly one already.",
+            "Do I want to be leader? Maybe... I'm not sure. It looks like a lot of work and responsibility. And I don't want to be too ambitious, because then I certainly won't become one.",
+            "It's also an honor to even be a warrior, let alone deputy or leader... Oh, my mentor's calling me! Bye, have a good day!"
         ]
     ],
     "app3123": [
-        ["apprentice", "bloodthirsty", "vengeful","fierce"],
-        ["Uh, hey, y_c. When we were out training the other day, you were really intense. I could barely keep up with you.",
-        "It was... aha... kind of scary. I'm definitely glad we're clanmates, or else I might have to fight you for real one day. You're supposed to protect your clan with your life! That's what we've always been told.",
-        "So that means you won't... ever really hurt me, right?"]
-    ]
+        [
+            "apprentice",
+            "bloodthirsty",
+            "vengeful",
+            "fierce"
+        ],
+        [
+            "Uh, hey, y_c. When we were out training the other day, you were really intense. I could barely keep up with you.",
+            "It was... aha... kind of scary. I'm definitely glad we're clanmates, or else I might have to fight you for real one day. You're supposed to protect your clan with your life! That's what we've always been told.",
+            "So that means you won't... ever really hurt me, right?"
+        ]
+    ],
+    "app_321": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Uh... okay?"
+        ]
+    ],
+    "app_3211": [
+        [
+            "insult",
+            "Any",
+            "platonic_like"
+        ],
+        [
+            "You don't really mean that... do you?"
+        ]
+    ],
+    "app_321321": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "I don't understand... Why are you being like this?"
+        ]
+    ],
+    "app_1511": [
+        [
+        "warrior", "insult"
+        ],
+        [
+        "I may be an apprentice, but that doesn't mean you can just talk down to me. I work hard and I'm learning fast!",
+        "Your words won't break my spirit. They just show me the kind of cat you are.",
+        "Insulting me doesn't make you any stronger. We're supposed to be a team, remember?",
+        "Fine, I'll take your words as a challenge. Someday, I'll prove you wrong.",
+        "One day, I'll be a warrior too, and I won't forget your words."
+        ]]
 }

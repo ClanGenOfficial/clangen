@@ -11,6 +11,20 @@
             "And hey, don't forget to visit us sometimes, alright? We might have some good stories to tell. Or at least, we'll make good audiences for your own tales."
         ]
     ],
+    "elder_15a": [
+        [
+            "Any",
+            "insult",
+            "no_kit"
+        ],
+        [
+            "In my many moons, I've learned to ignore disrespect. It's a sign of immaturity.",
+            "Your insults might sting if I didn't know the value of wisdom over wit.",
+            "Young cat, words are cheap. Actions tell the true tale.",
+            "I've lived through battles and loss, through hunger and cold. Your words are but a mouse's squeak.",
+            "Perhaps when you've lived as long as I have, you'll understand the true value of respect."
+        ]
+    ],
     "elder_2": [
         [
             "apprentice"
@@ -308,5 +322,11 @@
             "Ugh. A kit. Get out, you little vermin. I'm trying to get some rest here. Tsk. Never any peace or quiet with kits around... ",
             "I don't see why anyone would want any. No, I don't care if you're bored. Shoo! Go back to the nursery."
         ]
+    ],
+    "elder_321312": [
+        ["kitten", "insult", "cold", "bloodthirsty", "strict"], ["Watch your tongue, kit."]
+    ],
+    "elder_32131a12": [
+        ["Any", "insult", "cold", "bloodthirsty", "strict"], ["Watch your tongue!"]
     ]
 }

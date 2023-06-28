@@ -1594,6 +1594,29 @@
             }
         }
     },
+    "#murder_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/murder.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/murder.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/murder.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/murder.png"
+            }
+        }
+    },
     "#kill_cat_button": 
     {
         "prototype": "#image_button",

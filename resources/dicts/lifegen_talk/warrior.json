@@ -751,5 +751,17 @@
 "You don't think so? Thank you so much... I'm a little nervous that they'll laugh at me. I've always been a little different after all."
 
         ]
-    ]
+    ],
+    "warrior_11115": [
+        [
+        "insult", "Any", "no_kit"
+        ],
+        [
+        "I didn't expect such words from a Clanmate. We're supposed to support each other.",
+        "You may not respect me, but I've earned my place in this Clan, same as you.",
+        "I've faced greater challenges than your harsh words. I won't let them get to me.",
+        "Your insult is a reflection of you, not me. I know my worth.",
+        "A warrior's strength isn't just in their claws, it's in their character. Remember that."
+        ]
+        ]
 }

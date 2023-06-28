@@ -261,5 +261,17 @@
 "Now go on young apprentice, I'm sure that you are needed elsewhere. Just know that I will be watching your progress with interest and that I am always available if you need further instruction and guidance that your mentor cannot give you.","May the stars shine down upon you always."
 
                 ]
-            ]
+            ],
+            "leader_1a5": [
+                [
+                "Any", "no_kit", "insult"
+                ],
+                [
+                "As your leader, I strive to foster respect among Clanmates. I expect the same from you.",
+                "I've been entrusted with the welfare of this Clan, and your insult won't deter me from my duties.",
+                "Disrespect doesn't show strength, it reveals weakness.",
+                "I've led this Clan through moons of hardship. I won't be shaken by harsh words.",
+                "A wise cat once said, the smaller the mind, the greater the insult. I hope you'll grow wiser."
+                ]
+                ]
 }

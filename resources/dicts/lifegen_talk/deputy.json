@@ -38,6 +38,18 @@
             "Return safe, y_c. May StarClan light your path."
         ]
     ],
+    "dep_15a": [
+        [
+        "Any", "no_kit", "insult"
+        ],
+        [
+        "As your deputy, I've dedicated my life to this Clan. Your words won't shake my commitment.",
+        "I won't let your insults distract me from my duties. There's too much at stake.",
+        "Every cat in this Clan has their worth, myself included. Your disrespect won't change that.",
+        "Your words may be hurtful, but they won't break me. I've faced greater challenges.",
+        "I'd suggest you spend less time throwing insults and more time serving the Clan."
+        ]
+        ],
     "dep_3": [
         [
             "kitten"

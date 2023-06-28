@@ -76,6 +76,14 @@
             "And remember, even if you're the smallest in the clan, you're just as important as the biggest warrior."
         ]
     ],
+    "medfas": [
+        ["Any", "no_kit", "insult"],
+        ["As a medicine cat, I've learned to heal more than physical wounds. Your words can't harm me.",
+        "Each of us has a role to play, and I'm proud of mine. Your insult won't change that.",
+        "Your disrespect says more about you than it does about me. Reflect on that.",
+        "I've faced death and disease, comforted the dying, and brought life into this world. Your words are a mere scratch.",
+        "Perhaps you should spend more time learning respect than flinging insults. It might make you a better cat."]
+    ],
     "medi_5": [
         [
             "apprentice"

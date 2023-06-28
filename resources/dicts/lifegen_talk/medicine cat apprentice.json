@@ -324,5 +324,17 @@
             "Take your time and rest. Our Clan values its elders, and we need you healthy and strong.",
             "All patched up! Remember, no racing with the kits until you're fully healed, okay?"
         ]
-    ]
+    ],
+    "medapp_15s": [
+        [
+        "Any", "no_kit", "insult"
+        ],
+        [
+        "Your words are hurtful, but as a medicine cat apprentice, I'm used to treating wounds, even the ones not visible.",
+        "Just because I chose a different path doesn't mean I'm less valuable to this Clan.",
+        "I might not fight with claws and teeth, but I battle illness and injury. That's bravery too.",
+        "An insult is just a word. It doesn't define who I am or my value to the Clan.",
+        "I chose healing over fighting, and if that's something you can't respect, then that's your problem, not mine."
+        ]
+        ]
 }
