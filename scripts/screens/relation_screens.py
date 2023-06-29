@@ -4889,6 +4889,9 @@ class ChooseMurderCatScreen(Screens):
                 self.m_txt = ujson.loads(read_file.read())
             ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
             ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
+            ceremony_txt = ceremony_txt.replace('c_n', game.clan.name)
+            if cat_to_murder.status == 'leader':
+                game.clan.leader_lives = 0
             cat_to_murder.die()
             History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
