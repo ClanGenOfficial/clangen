@@ -383,8 +383,7 @@ class ChangeCatName(UIWindow):
                 if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
                     self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
-                    self.the_cat.specsuffix_hidden = True
-                    self.the_cat.name.specsuffix_hidden = True
+                    
                 elif sub(r'[^A-Za-z0-9 ]+', '',
                          self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
                     self.name_changed.show()
