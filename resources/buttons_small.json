@@ -1628,15 +1628,15 @@
             },
             "hovered_image":
             {
-                "path": "resources/images/buttons/murder.png"
+                "path": "resources/images/buttons/murder_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/murder.png"
+                "path": "resources/images/buttons/murder_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/murder.png"
+                "path":"resources/images/buttons/murder_unavailable.png"
             }
         }
     },
