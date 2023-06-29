@@ -470,6 +470,7 @@ class Clan():
         self.game_mode = game_mode
         self.pregnancy_data = {}
         self.inheritance = {}
+        self.murdered = False
         
         """
         Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 

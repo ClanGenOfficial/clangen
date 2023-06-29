@@ -1774,6 +1774,8 @@ class ProfileScreen(Screens):
                 tool_tip_text='Choose to murder one of your clanmates',
                 starting_height=2, manager=MANAGER
             )
+            if game.clan.murdered:
+                self.murder_cat_button.disable()
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1895,9 +1897,11 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
-            
+                
             if self.the_cat.ID != game.clan.your_cat.ID:
                 self.murder_cat_button.hide()
+            elif self.the_cat.ID == game.clan.your_cat.ID:
+                self.murder_cat_button.show()
             
         # History Tab:
         elif self.open_tab == 'history':

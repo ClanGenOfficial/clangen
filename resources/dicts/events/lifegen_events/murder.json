@@ -82,7 +82,8 @@
     "murder apprentice mediatorapprentice": [
         "While v_c is busy sorting out a mock quarrel you've staged, you lead them to a perilous cliff edge. In their concentration, they don't notice how close they are to the edge, until a small 'accidental' nudge sends them plummeting.",
         "Knowing how weak mediator apprentices are, you decide to help your clan by eliminating them. You see v_c while patrolling around the Thunderpath, so you stalk them just like you do prey. You grab a pointed rock from the ground and jump on your target, quickly sending them to the afterlife.",
-        "Your allegations of favoritism lacked concrete evidence, stemming from nothing more than your intense dislike for v_c. It began with petty disputes among the apprentices; minor disagreements that shouldn't have caused significant harm. But v_c always sided with your Clanmates, even when you were correct. Initially, you shrugged it off, but as time progressed, your evidence of code violations by your Clanmates were repeatedly dismissed by v_c. They chose to settle disputes on their own terms, insisting you should be penalized every time without fail. Your patience was worn thin, and it seemed that even with StarClan bearing witness, v_c remained steadfast in their biased mediation. Enough was enough. If they were determined to paint you as the villain, then you would play the part. After shadowing them all day, you managed to corner v_c. With your superior strength, you had the upper hand even before they could call for help."],
+        "Your allegations of favoritism lacked concrete evidence, stemming from nothing more than your intense dislike for v_c. It began with petty disputes among the apprentices; minor disagreements that shouldn't have caused significant harm. But v_c always sided with your Clanmates, even when you were correct. Initially, you shrugged it off, but as time progressed, your evidence of code violations by your Clanmates were repeatedly dismissed by v_c. They chose to settle disputes on their own terms, insisting you should be penalized every time without fail. Your patience was worn thin, and it seemed that even with StarClan bearing witness, v_c remained steadfast in their biased mediation. Enough was enough. If they were determined to paint you as the villain, then you would play the part. After shadowing them all day, you managed to corner v_c. With your superior strength, you had the upper hand even before they could call for help."
+    ],
     "murder apprentice warrior": [
         "During a discussion on a high cliff, you pretend to stumble towards v_c, who isn't expecting the sudden push. They fall over the edge, unable to prevent their own tragic fate.",
         "You're in the midst of a hunting lesson with a warrior. Mimicking the low belly-to-ground stance they taught you, you stage a pretend pounce on an imaginary mouse. As the warrior approaches you, the Twoleg trap you'd carefully arranged snaps shut on their leg. Taking advantage of their sudden vulnerability, you make your fatal move before dashing back to camp, shedding convincingly fake tears as you run.",
@@ -179,36 +180,13 @@
         "After having to settle an argument between a few elders over the best sunning spot for the umpteenth time, you decide that you've had enough. At sunhigh when the day was at its warmest, you decide to take a particularly bothersome elder out of the camp, promising to lead them to a private sunning spot where they can finally get some peace. As the two of you approach a patch of long sunlit grass, you graciously allow the elder to go first, 'forgetting' to mention the hidden dangers ahead. You turn away and begin to head back to camp, ignoring the elder's yowl of pain and wails for help as an adder sank its fangs into their side.",
         "v_c's state of mind has slowly started to deteriorate, causing them to lash out in their confusion. As you try to calm v_c down, they demean you, saying that a youngster such as yourself doesn't know anything. You prove v_c wrong by murdering them while the whole clan slept late that night, a smile gracing your face as you whisper to them that you at least know how to kill."
     ],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     "murder warrior kitten": [
         "You encourage v_c to eat some shiny red berries you've found, saying that they're super tasty - better than freshkill even! Happily, they thank you for the snack. v_c is later found, lifeless, with deathberry juice dripping from their mouth.",
-        "You offer to take v_c onto a grand and exciting adventure out of the nursery. You help v_c sneak out and the two of you run into the woods. When you're far enough from camp, you suddenly speed up, leaving v_c behind as their startled cries call out your name from behind. You loop back to camp, alone, and no one asks where you've been.",
+        "You offer to take v_c onto a grand and exciting adventure out of the nursery. You help v_c sneak out and the two of you run into the woods. When you're far enough from camp, you suddenly speed up, leaving v_c behind as their startled cries call out your name from behind. You loop back to camp, alone, and no one asks where you've been. v_c is later found dead in the territory.",
         "You tell v_c to follow you, saying that you want to show them a shiny treasure you found recently. They happily agree and the two of you sneak out of camp. You lead v_c to a foxes' den, and they ask you what the smell is with a wrinkled nose. You tell them not to worry about it and push them forward, saying that the treasure is inside. With an anxious look at you, they slowly head in. You don't stay to listen to the foxes' feasting.",
-        "You ask v_c if they want to go on a secret mission with you, and they jump excitedly at the opportunity. You lead them out of camp and head towards the thunderpath together. When you start to hear a monster in the distance, you pressure v_c into walking out on the path, saying that you'll be right behind them. As the monster zooms toward the two of you, you quickly run back to the other side of the thunderpath while v_c is frozen in the headlights. You don't bother looking back.",
+        "You invite v_c on an adventure, and their enthusiasm is palpable. Guiding them away from the safety of the camp, you steer towards the perilous Thunderpath. As the ominous rumble of a distant monster fills the air, you coax v_c onto the path, reassuring them that you're right on their tail. As the monster's lights cut through the darkness, barreling towards you both, you dart back across to safety, leaving v_c frozen in its path. You don't bother looking back.",
         "You bring v_c a piece of crow-food that you found by the side of the thunderpath, claiming that it's from a special type of squirrel. They wrinkle their nose at it, but you encourage them to eat it, saying that it's about time they had proper food instead of milk. They swallow it down with difficulty, and later you hear v_c's pained wails from the medicine den. Their body is cold and frothing at the mouth when you bury them.",
-        "You gently pad over to v_c and with a reassuring smile, tell them that you have a secret mission for them! After helping v_c sneak out, you scruff them a little too hard. Your grip tightens and tightens. The kit soon starts begging you to put them down but by then, they're already starting to lose blood. You drop their body into a river and leave with a malevolent grin.",
-        "Ever since v_c was born, you feel like you can't think straight. All day you just need to play with them, take care of them, and give your prey to them. One day, you are just tired of this. You pick up the small annoying kitten of yours and throw them in the river. Hopefully your next child won't be this annoying, or else they'll join v_c."
+        "You gently pad over to v_c and with a reassuring smile, tell them that you have a secret mission for them! After helping v_c sneak out, you scruff them a little too hard. Your grip tightens and tightens. The kit soon starts begging you to put them down but by then, they're already starting to lose blood. You drop their body into a river and leave with a malevolent grin."
     ],
     "murder warrior apprentice": [
         "v_c's aloofness and refusal to learn or improve has infuriated you one too many times. You take them out of camp for some private battle training. Instead, you slaughter v_c, and put their dead body next to another clan's border. You head to a nearby water source to wash the blood off.",
@@ -227,8 +205,8 @@
     "murder warrior warrior": [
         "Competing in a tree-climbing race, you and v_c scale a particularly tall and old tree. In the heat of the competition, you 'accidentally' push a weak branch v_c is about to leap onto, causing them to fall to their doom.",
         "You take v_c on an unsuspecting hunting trip, early in the morning just as most cats wake up. As you approach a badger sett, you have the perfect idea. With fur ruffled up and a wide-eyed expression, it was easy to convince the rest of your clan that the badger got v_c, and the blood on your claws oh so obviously belonged to the badger.",
-        "You have had enough of v_c's teasing for too long. It's time to make them regret ever wronging you. You sink your claws into {PRONOUN/v_c/poss} side, satisfied at {PRONOUN/v_c/poss} yowls of agony, the adrenaline kicking in at the thrill of doing something you have wanted to do for so long. You watch as {PRONOUN/v_c/poss} body finally falls to the ground, dead, and a small smile comes on your face.",
-        "You never wanted to kill v_c, but there's no choice. You hesitantly claw into {PRONOUN/v_c/poss} belly, watching with pity as {PRONOUN/v_c/subject} {VERB/v_c/beg/begs} for you to stop, but you can't stop now. The damage has been done. You watch in regret as {PRONOUN/v_c/poss} body falls to the hard ground, dead.",
+        "You have had enough of v_c's teasing for too long. It's time to make them regret ever wronging you. You sink your claws into their side, satisfied at their yowls of agony, the adrenaline kicking in at the thrill of doing something you have wanted to do for so long. You watch as their body finally falls to the ground, dead, and a small smile comes on your face.",
+        "You never wanted to kill v_c, but there's no choice. You hesitantly claw into their belly, watching with pity as they beg for you to stop, but you can't stop now. The damage has been done. You watch in regret as their body falls to the hard ground, dead.",
         "v_c is a problem- always getting in the way, never quite fitting into clan life in the way they should. All you want to do is restore the balance of the Clan, and as v_c runs face first into the angry badger you've lured to their location, you can only hope this does it.",
         "During a sudden border patrol skirmish, as rival cats dart around you and v_c, a deadly, bladed claws was meant to strike at your throat. However, with a deft pawstep and an already gaping maw, you sag v_c's body from beside you and fling their body as a shield. Your stone muzzle watch as a petrified v_c's throat was easily poke and ripped open, leaving a single cry of pain then a flop of a body afterward from your former Clanmate.",
         "You glare at v_c wondering how did such a disappointment of a child become a warrior. You always hated them, for how weak and foolish your own child could be. The only thing in your mind is to get rid of them like you should have done a long time ago. You find them hunting alone peacefully outside the camp, so you make your attack. As you insert your claws into the neck of  your own child, you can't help but feel guilt  surrounding you...is this really what you wanted? Well, you can't turn back now, can you? Now..you will forever live knowing that you murdered your own child.",
@@ -249,7 +227,7 @@
     ],
     "murder warrior deputy": [
         "You stagger into camp, desperately crying out for your leader, but v_c is who questions you. You claim an apprentice has fallen and is now trapped, and you need their assistance immediately. When you arrive at the 'scene' with v_c, it turns out you've 'accidentally' arrived at a predator's den, the yapping jaws pulling v_c to meet their fate as you make your escape.",
-        "You were tired of v_c stealing your sunlight. You worked so hard, and then somebody like {PRONOUN/v_c/subject} just had to be chosen as the deputy of c_n. You tell {PRONOUN/v_c/object} to meet you in private. {PRONOUN/v_c/subject} {VERB/v_c/agree/agrees} and follow you to the private spot, where you kill {PRONOUN/v_c/object}.",
+        "You were tired of v_c stealing your sunlight. You worked so hard, and then somebody like them just had to be chosen as the deputy of c_n. You tell them to meet you in private. They agree and follow you to the private spot, where you kill them.",
         "How much you wish to be deputy and have cats look up to you, but since v_c exists and doesn't plan on retiring anytime soon it just drives you insane. Tired of v_c, you decide to take them on a walk near the river. As you both walk at the edge of the river, you push them in, laughing as they desperately try to keep their head above the water, as you sit there by the edge of the river, v_c gets close to the land and grabs you, pulling you in. Now, v_c isn't deputy anymore and you won't be either.",
         "'It's for the good of the Clan', the voice insists in your mind as you follow v_c out of camp. It's for the good of the Clan, they're a menace! When they become leader, they will destroy the Clan! With claws unsheathed, you leap at v_c, catching them off-guard and making their end quick. With blood dripping from your pelt, your whole body shaking, you send a prayer to StarClan. It's for the good of the Clan."
     ],

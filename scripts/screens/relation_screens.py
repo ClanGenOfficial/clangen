@@ -1,8 +1,12 @@
 import pygame.transform
 import pygame_gui.elements
 from random import choice, randint
+import ujson
 
 from scripts.cat_relations.inheritance import Inheritance
+from scripts.cat.history import History
+from scripts.event_class import Single_Event
+from scripts.events import events_class
 
 from .base_screens import Screens, cat_profiles
 
@@ -4875,8 +4879,21 @@ class ChooseMurderCatScreen(Screens):
         murdered = self.get_kill(game.clan.your_cat, new_mentor)
         you = game.clan.your_cat
         cat_to_murder = new_mentor
+        game.clan.murdered = True
+        murdered = True
         if murdered:
             print("murder successful")
+            resource_dir = "resources/dicts/events/lifegen_events/"
+            with open(f"{resource_dir}murder.json",
+                    encoding="ascii") as read_file:
+                self.m_txt = ujson.loads(read_file.read())
+            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+            ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
+            cat_to_murder.die()
+            History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+            game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + "."))
+            History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.", )
         else:
             print("murder failed")
             
@@ -5031,7 +5048,7 @@ class ChooseMurderCatScreen(Screens):
         valid_mentors = []
 
         for cat in Cat.all_cats_list:
-            if not cat.dead and not cat.outside:
+            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID:
                 valid_mentors.append(cat)
         
         return valid_mentors

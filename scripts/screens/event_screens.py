@@ -430,11 +430,9 @@ class EventsScreen(Screens):
 
     def screen_switches(self):
         # On first open, update display events list
-        if not self.first_opened:
-            self.first_opened = True
-            self.update_display_events_lists()
-            self.display_events = self.all_events
-
+        self.first_opened = True
+        self.update_display_events_lists()
+        self.display_events = self.all_events
         self.heading = pygame_gui.elements.UITextBox("",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),

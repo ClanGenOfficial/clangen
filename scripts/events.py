@@ -288,6 +288,8 @@ class Events:
         elif game.clan.your_cat.status == 'exiled':
             self.generate_exile_event()
             
+        game.clan.murdered = False
+            
         # Resort
         if game.sort_type != "id":
             Cat.sort_cats()
