@@ -657,7 +657,7 @@
             "And also, the lessons we learn from your tales are as valuable as any battle skill. Thank you for your wisdom."
         ]
     ],
-    "warrior_11": [
+    "warrior_1s1": [
         [
             "Any"
         ],
@@ -669,7 +669,7 @@
             "Next time you go on a hunting patrol, try to feel the forest, understand its rhythms, become one with it. It will make you a better hunter."
         ]
     ],
-    "warrior_12": [
+    "warrior_1a2": [
         [
             "Any"
         ],
@@ -681,7 +681,7 @@
             "So when in doubt, remember the code. It will never steer you wrong."
         ]
     ],
-    "warrior_13": [
+    "warrior_13f": [
         [
             "Any"
         ],
@@ -693,7 +693,7 @@
             "Remember, a true warrior fights not because they hate what's in front of them, but because they love what's behind them."
         ]
     ],
-    "warrior_14": [
+    "warrior_14a": [
         [
             "Any"
         ],
@@ -705,7 +705,7 @@
             "So tomorrow, wake up early and watch the sun rise. It's a sight no warrior should miss."
         ]
     ],
-    "warrior_15": [
+    "warrior_15f": [
         [
             "Any"
         ],
@@ -717,7 +717,7 @@
             "And as long as we have each other, there's nothing we can't overcome."
         ]
     ],
-    "warrior_16": [
+    "warrior_1g6": [
         [
             "Any"
         ],
@@ -729,7 +729,7 @@
             "And remember, no season lasts forever. The forest endures, and so will we."
         ]
     ],
-    "warrior_17": [
+    "warrior_17h": [
         [
             "Any"
         ],
@@ -741,7 +741,7 @@
             "They're proof that you're tougher than whatever tried to hurt you."
         ]
     ],
-    "warrior_18": [
+    "warrior_168": [
         [
             "warrior"
         ],
@@ -753,7 +753,7 @@
             "Remember, a Clan that forgets its past risks losing its future."
         ]
     ],
-    "warrior_19": [
+    "warrior_169": [
         [
             "Any"
         ],
@@ -765,7 +765,7 @@
             "So take some time to sit by the river, listen to its whispers. You might be surprised at what you learn."
         ]
     ],
-    "warrior_20": [
+    "warrior_206": [
         [
             "Any"
         ],
@@ -862,26 +862,30 @@
         ]
     ],
     "warrior2134": [
-        ["insecure",
-        "nervous",
-        "lonesome",
-        "warrior"],[
+        [
+            "insecure",
+            "nervous",
+            "lonesome",
+            "warrior"
+        ],
+        [
             "Ugh... The sun's so bright... I hate waking up early for dawn patrol. What about you, y_c?",
-"Yeah, I agree. It's sometimes so hard to leave my nest. It's so warm and soft... I'm a little nervous to admit that I wish I could sleep in my nest forever. Will the others think I'm silly and lazy, like a kittypet?",
-"You don't think so? Thank you so much... I'm a little nervous that they'll laugh at me. I've always been a little different after all."
-
+            "Yeah, I agree. It's sometimes so hard to leave my nest. It's so warm and soft... I'm a little nervous to admit that I wish I could sleep in my nest forever. Will the others think I'm silly and lazy, like a kittypet?",
+            "You don't think so? Thank you so much... I'm a little nervous that they'll laugh at me. I've always been a little different after all."
         ]
     ],
     "warrior_11115": [
         [
-        "insult", "Any", "no_kit"
+            "insult",
+            "Any",
+            "no_kit"
         ],
         [
-        "I didn't expect such words from a Clanmate. We're supposed to support each other.",
-        "You may not respect me, but I've earned my place in this Clan, same as you.",
-        "I've faced greater challenges than your harsh words. I won't let them get to me.",
-        "Your insult is a reflection of you, not me. I know my worth.",
-        "A warrior's strength isn't just in their claws, it's in their character. Remember that."
+            "I didn't expect such words from a Clanmate. We're supposed to support each other.",
+            "You may not respect me, but I've earned my place in this Clan, same as you.",
+            "I've faced greater challenges than your harsh words. I won't let them get to me.",
+            "Your insult is a reflection of you, not me. I know my worth.",
+            "A warrior's strength isn't just in their claws, it's in their character. Remember that."
         ]
-        ]
+    ]
 }
