@@ -1,5 +1,6 @@
 from scripts.utility import get_alive_clan_queens
 from scripts.cat.cats import Cat
+from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
 from copy import deepcopy
 import random
