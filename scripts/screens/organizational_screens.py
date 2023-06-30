@@ -11,32 +11,29 @@ This file contains:
 
 """  # pylint: enable=line-too-long
 
+import logging
+import os
 import platform
 import subprocess
-import os
 import traceback
-import logging
 from html import escape
 
 import pygame
+import pygame_gui
+import ujson
+from requests.exceptions import RequestException, Timeout
 
-from .base_screens import Screens
-
-from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
 from scripts.clan import Clan
-from scripts.game_structure.image_button import UIImageButton
-from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
-import pygame_gui
-from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
-from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
+from scripts.game_structure.discord_rpc import _DiscordRPC
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
+from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
+from .base_screens import Screens
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
-
-import ujson
-
 from ..housekeeping.version import get_version_info
 
 logger = logging.getLogger(__name__)
@@ -266,8 +263,9 @@ class StartScreen(Screens):
 
             if update_available:
                 self.update_button.visible = 1
-        except (ConnectionError, HTTPError):
+        except (RequestException, Timeout):
             logger.exception("Failed to check for update")
+            has_checked_for_update = True
 
         if game.settings['show_changelog']:
             show_changelog = True

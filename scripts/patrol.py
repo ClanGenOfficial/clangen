@@ -1879,14 +1879,16 @@ class Patrol():
                 for poisoned in cats_to_poison:
                     poisoned.get_injured('poisoned')
                     self.handle_history(cat, 'poisoned', possible=True, death=True)
-                    self.results_text.append(f"{poisoned.name} got: poisoned")
+                    if f"{poisoned.name} got: poisoned" not in self.results_text:
+                        self.results_text.append(f"{poisoned.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
                 for cat in self.patrol_cats:
                     if len(possible_conditions) > 0:
                         new_condition = choice(possible_conditions)
-                        self.results_text.append(f"{cat.name} got: {new_condition}")
+                        if f"{cat.name} got: {new_condition}" not in self.results_text:
+                            self.results_text.append(f"{cat.name} got: {new_condition}")
                         if new_condition in INJURIES:
                             cat.get_injured(new_condition, lethal=lethal)
                         elif new_condition in ILLNESSES:
