@@ -208,6 +208,9 @@ class Cat():
         self.experience_level = None
         self.no_kits = False
         self.w_done = False
+        self.talked_to = False
+        self.insulted = False
+
         
         self.prevent_fading = False  # Prevents a cat from fading.
         self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
@@ -2838,7 +2841,9 @@ class Cat():
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
                 "favourite": self.favourite,
-                "w_done": self.w_done if self.w_done else False
+                "w_done": self.w_done if self.w_done else False,
+                "talked_to": self.talked_to if self.talked_to else False,
+                "insulted": self.insulted if self.insulted else False
             }
 
 

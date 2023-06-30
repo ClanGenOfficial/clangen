@@ -1200,6 +1200,8 @@ class Events:
                 return
 
         self.handle_murder(cat)
+        cat.talked_to = False
+        cat.insulted = False
 
         game.switches['skip_conditions'].clear()
 

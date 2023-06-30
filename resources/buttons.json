@@ -1605,15 +1605,15 @@
             },
             "hovered_image":
             {
-                "path": "resources/images/buttons/murder.png"
+                "path": "resources/images/buttons/murder_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/murder.png"
+                "path": "resources/images/buttons/murder_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/murder.png"
+                "path":"resources/images/buttons/murder_unavailable.png"
             }
         }
     },
@@ -3833,15 +3833,38 @@
             },
             "hovered_image":
             {
-                "path": "resources/images/buttons/talk.png"
+                "path": "resources/images/buttons/talk_hover.png"
             },
             "selected_image":
             {
-                "path": "resources/images/buttons/talk.png"
+                "path": "resources/images/buttons/talk_hover.png"
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/talk.png"
+                "path":"resources/images/buttons/talk_unavailable.png"
+            }
+        }
+    },
+    "#insult_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/insult.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/insult_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/insult_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/insult_unavailable.png"
             }
         }
     },
@@ -5232,6 +5255,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/adoptive_parents_unavailable.png"
+            }
+        }
+    },
+    "#join_df_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/join_df.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/join_df_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/join_df_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/join_df_unavailable.png"
             }
         }
     },

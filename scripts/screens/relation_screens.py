@@ -4880,7 +4880,6 @@ class ChooseMurderCatScreen(Screens):
         you = game.clan.your_cat
         cat_to_murder = new_mentor
         game.clan.murdered = True
-        murdered = True
         if murdered:
             print("murder successful")
             resource_dir = "resources/dicts/events/lifegen_events/"
@@ -4914,7 +4913,7 @@ class ChooseMurderCatScreen(Screens):
         'deputy': 40,
         'leader': 50,
         'elder': 15,
-        'kitten': -10,
+        'kitten': -20,
     }
 
     skill_chances = {
@@ -4966,6 +4965,9 @@ class ChooseMurderCatScreen(Screens):
             chance -= 15
         if any(skill in self.best_murder_skills for skill in their_skills):
             chance -= 20
+        
+        if cat_to_murder.is_ill() or cat_to_murder.is_ill():
+            chance += 20
         
         r = randint(0,100)
         return r < max(5, chance + randint(-10,10))

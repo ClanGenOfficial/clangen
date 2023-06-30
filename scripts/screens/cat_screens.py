@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
-from random import choice
+from random import choice, randint
 
 import pygame
 
@@ -201,7 +201,16 @@ class ProfileScreen(Screens):
                 self.change_screen('ceremony screen')
             elif "talk" in self.profile_elements and \
                     event.ui_element == self.profile_elements["talk"]:
+                self.the_cat.talked_to = True
+                self.the_cat.relationships[game.clan.your_cat.ID].platonic_like += randint(1,5)
+                game.clan.your_cat.relationships[self.the_cat.ID].platonic_like += randint(1,5)
                 self.change_screen('talk screen')
+            elif "insult" in self.profile_elements and \
+                    event.ui_element == self.profile_elements["insult"]:
+                self.the_cat.insulted = True
+                self.the_cat.relationships[game.clan.your_cat.ID].dislike += randint(1,5)
+                self.the_cat.relationships[game.clan.your_cat.ID].platonic_like -= randint(1,5)
+                self.change_screen('insult screen')
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen('med den screen')
             elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
@@ -587,28 +596,51 @@ class ProfileScreen(Screens):
         if not game.clan.your_cat:
             print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
             print("Choosing random cat to play...")
-            game.clan.your_cat = Cat.all_cats(choice(game.clan.clan_cats))
+            game.clan.your_cat = Cat.all_cats[choice(game.clan.clan_cats)]
             print("Chose " + str(game.clan.your_cat.name))
         
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                    (766, 220), (68, 68))),
+                    (726, 220), (68, 68))),
                     "",
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
             elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                    (850, 220), (68, 68))),
+                    (830, 220), (68, 68))),
                     "",
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
+            if self.the_cat.talked_to:
+                self.profile_elements["talk"].disable()
+            else:
+                self.profile_elements["talk"].enable()
+        if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
+            if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
+                    (806, 220), (68, 68))),
+                    "",
+                    object_id="#insult_button",
+                    tool_tip_text="Insult this Cat", manager=MANAGER
+                )
+            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+                self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
+                    (662, 220), (68, 68))),
+                    "",
+                    object_id="#insult_button",
+                    tool_tip_text="Insult this Cat", manager=MANAGER
+                )
+            if self.the_cat.insulted:
+                self.profile_elements["insult"].disable()
+            else:
+                self.profile_elements["insult"].enable()
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
-                (766, 220), (68, 68))),
+                (746, 220), (68, 68))),
                 "",
                 object_id="#leader_ceremony_button",
                 tool_tip_text="Leader Ceremony", manager=MANAGER
@@ -1776,6 +1808,14 @@ class ProfileScreen(Screens):
             )
             if game.clan.murdered:
                 self.murder_cat_button.disable()
+            
+            self.join_df_button = UIImageButton(
+                scale(pygame.Rect((1156, 1118), (344, 72))),
+                "",
+                object_id="#join_df_button",
+                tool_tip_text='Join the Dark Forest',
+                starting_height=2, manager=MANAGER
+            )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1900,9 +1940,7 @@ class ProfileScreen(Screens):
                 
             if self.the_cat.ID != game.clan.your_cat.ID:
                 self.murder_cat_button.hide()
-            elif self.the_cat.ID == game.clan.your_cat.ID:
-                self.murder_cat_button.show()
-            
+                self.join_df_button.hide()
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
@@ -2028,6 +2066,8 @@ class ProfileScreen(Screens):
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
             self.murder_cat_button.kill()
+            self.join_df_button.kill()
+
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
@@ -3408,6 +3448,8 @@ class TalkScreen(Screens):
         texts_list = []
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
+                continue
+            if "insult" in talk[0]:
                 continue
             if ('leafbare' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('newleaf' in talk[0] and game.clan.current_season != 'Newleaf') or ('leaffall' in talk[0] and game.clan.current_season != 'Leaf-bare') or ('greenleaf' in talk[0] and game.clan.current_season != 'Greenleaf'):
                 continue
