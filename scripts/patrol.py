@@ -2069,9 +2069,9 @@ class Patrol():
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
                 for cat in self.patrol_cats:
-                    if cat.skills.primary.path == SkillPath.HUNTER:
+                    if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
                         amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]) / 10 + 1)
-                    elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER:
+                    elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
                         amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]) / 10 + 1)
                 game.clan.freshkill_pile.add_freshkill(int(amount))
                 if FRESHKILL_ACTIVE:
