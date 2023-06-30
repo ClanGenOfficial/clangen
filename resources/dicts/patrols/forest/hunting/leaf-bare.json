@@ -1166,14 +1166,14 @@
             "comfort",
             "medium_prey"
         ],
-        "intro_text": "As they give up on digging out an escaped mouse from its snowy tunnels, r_c swears they can smell something.",
-        "decline_text": "Nevermind?",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c <i>swears</i> {PRONOUN/r_c/subject} can smell something.",
+        "decline_text": "Nevermind..? Must have been the wind, blowing stale scent back at {PRONOUN/r_c/object}.",
         "chance_of_success": 60,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol really doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slighlty odd prize home without trouble.",
+            "unscathed_common": "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol <i>really</i> doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log at the end of it. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slightly odd prize home without trouble.",
             "unscathed_rare": "It's very weird how the lizards won't wake, not even with cats ripping apart their burrow, but no one is going to argue with more prey for the fresh-kill pile.",
-            "stat_skill": "s_c manages to figure it out - a hibernating lizard! If they hadn't all already had their faces in the snow, they'd never have found it, it gives off such little scent."
+            "stat_skill": "s_c manages to figure it out - a hibernating lizard! If they hadn't all had their faces in the snow already, they'd never have found it, what with it giving off such little scent."
         },
         "fail_text": {
             "unscathed_common": "The patrol is unable to fish out whatever is giving off that prey-scent - maybe it's just the scent left by the mouse?"
@@ -1203,18 +1203,18 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. The canopy of the forest will shelter them while they hunt.",
-        "decline_text": "But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears.",
+        "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} the canopy of the forest will shelter {PRONOUN/r_c/object} while they hunt.",
+        "decline_text": ".. But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears, after all.",
         "success_text": {
-            "unscathed_common": "With the benefits of a full fresh-kill pile at the forefront of their mind, r_c is determined to bring back whatever they can for the Clan. Thankfully the snowfall stays light and inconsistent, and their trip out is rewarded by a f_tp_s and several f_tp_p - though one of the f_tp_p is prey brought down by the cold, rather than by claw. Still, it's not crowfood, and it's all useful for c_n.",
-            "unscathed_rare": "r_c takes a risk, hunting between the bare tree trunks of the woods that have lost their leaves, rather than in the evergreens. But their judegement pays off, netting them a f_mp_s. They'll have to discuss it with the other warriors back at camp, maybe c_n has been overhunting the evergreen woods.",
-            "stat_skill": "The f_mp_p they net will be sorely appreciated back at camp, though the combination of fresh snow powder and more compacted stuff makes it difficult for s_c to keep their footing. Still, slipping over while carrying prey is far better than slipping over while pouncing on it!",
-            "stat_trait": "s_c doesn't like the look of the weather - not that they can actually see the clouds. They wait in camp instead, and as night sets sniff out a f_tp_s and a clutch of f_tp_p that froze to death in the storm. Frozen meat is still meat afterall."
+            "unscathed_common": "With the benefits of a full fresh-kill pile dancing in {PRONOUN/r_c/poss} mind, r_c is determined to bring back whatever {PRONOUN/r_c/subject} can. Thankfully, the snowfall is light and inconsistent, and {PRONOUN/r_c/poss} is rewarded by a f_tp_s and several f_tp_p - though one of the f_tp_p was found frozen, not killed by r_c. Still, it's not crowfood, and it's all edible.",
+            "unscathed_rare": "r_c takes a risk, hunting amongst the the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgement pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods..?",
+            "stat_skill": "The f_mp_p {PRONOUN/s_c/subject} net will be sorely appreciated back at camp, though the combination of fresh snow powder and more compacted stuff makes it difficult for s_c to keep {PRONOUN/s_c/poss} footing. Still, slipping over while carrying prey is <i>far</i> better than slipping over while pouncing on it!",
+            "stat_trait": "s_c doesn't like the look of the weather - not that {PRONOUN/s_c/subject} can actually see the clouds. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} in camp instead - and, as night sets, {PRONOUN/s_c/subject} {VERB/s_c/sniff/sniffs} out a f_tp_s and a clutch of f_tp_p that froze to death in the storm. Frozen meat is still meat, after all."
         },
         "fail_text": {
             "unscathed_common": "The skies darken and the snow thickens, and r_c retreats back to camp instead of risking the cold.",
-            "injury": "The skies darken and the snow thickens, but r_c is too far away from camp to turn back now. They end up huddled under a bush, cold and stiff as they wait out the storm from their uncomfortable shelter.",
-            "stat_injury": "Perhaps wandering so far when it was already snowing was a little... not their finest idea. Just a little, s_c reflects, shivering in a half rotten log as the thick snowstorm rages around them."
+            "injury": "The skies darken and the snow thickens, but r_c is too far away from camp to turn back now. {PRONOUN/r_c/subject/CAP} {VERB/r_c/end/ends} up huddled under a bush, cold and stiff as {PRONOUN/r_c/subject} {VERB/r_c/wait/waits} out the storm from {PRONOUN/r_c/poss} uncomfortable shelter.",
+            "stat_injury": "Perhaps wandering so far when it was already snowing was a little... foolhardy. Just a little, s_c reflects, shivering in a half-rotten log as the thick snowstorm rages around {PRONOUN/s_c/object}."
         },
         "chance_of_success": 30,
         "exp": 25,
