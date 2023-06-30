@@ -186,7 +186,7 @@ class Condition_Events():
                             possible_death = None
                             if "scar" in injury_event.history_text:
                                 possible_scar = history_text_adjust(injury_event.history_text['scar'],
-                                                                   other_clan_name, game.clan)
+                                                                   other_clan_name, game.clan, other_cat_rc = other_cat)
                             if cat.status == 'leader' and 'lead_death' in injury_event.history_text:
                                 possible_death = history_text_adjust(injury_event.history_text['lead_death'],
                                                                     other_clan_name, game.clan)
