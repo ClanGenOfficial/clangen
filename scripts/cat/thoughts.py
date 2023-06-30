@@ -312,6 +312,6 @@ class Thoughts():
             chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception:
             traceback.print_exc()
-            chosen_thought = "No thoughts, head empty"
+            chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
 
         return chosen_thought

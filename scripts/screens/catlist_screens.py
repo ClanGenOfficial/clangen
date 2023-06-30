@@ -544,6 +544,7 @@ class StarClanScreen(Screens):
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
+        Cat.sort_cats()
         # Determine the dead, non-exiled cats.
         self.get_dead_cats()
 
