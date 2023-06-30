@@ -2109,9 +2109,9 @@ class Patrol():
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
             # add bonus of certain skills
-            if cat.skills.primary.path == SkillPath.HUNTER:
+            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]
-            elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER:
+            elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
                 total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]
         if game.clan.game_mode != "classic":
             if FRESHKILL_ACTIVE:
