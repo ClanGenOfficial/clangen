@@ -469,7 +469,7 @@
         "chance_of_success": 20,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other.  By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other. By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
             "unscathed_rare": "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They spend some time in a warm sunbeam, sharing tongues and sunning themselves, and by the time they're ready to go home, every cat is feeling closer to one another.",
             "stat_skill": "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask {PRONOUN/s_c/object} what's up, and spots {PRONOUN/s_c/object} veering down a side path. r_c motions for the others as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} s_c, and {VERB/r_c/find/finds} {PRONOUN/s_c/object} purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} this will keep the Clan healthy for ages."
         },
@@ -505,7 +505,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other.  They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other. They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
             "unscathed_rare": "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They sit themselves in the cover of a tree to share tongues and chat out of the rain, and by the time they're ready to go home, every cat is feeling closer to one another.",
             "stat_skill": "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask {PRONOUN/s_c/object} what's up, and spots {PRONOUN/s_c/object} veering down a side path. r_c motions for the others as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} s_c, and {VERB/r_c/find/finds} {PRONOUN/s_c/object} purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} this will keep the Clan healthy for ages."
         },
