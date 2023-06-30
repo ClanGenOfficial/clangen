@@ -4898,6 +4898,24 @@ class ChooseMurderCatScreen(Screens):
             History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.", )
         else:
             print("murder failed")
+            c_m = str(cat_to_murder.name)
+            discover_chance = randint(1,2)
+            fail_texts = []
+            if discover_chance == 1:
+                fail_texts = ["You attempted to murder "+ c_m + ", but were unsuccessful. They were oblivious of your attempt.",
+                                "You attempted to murder "+ c_m + ", but they sidestepped the peril you'd arranged. They remained oblivious to your intent.",
+                                "You made an effort to end "+ c_m + "'s life, but fortune favored them. They were none the wiser of your deadly plot.",
+                                "Your plot to murder "+ c_m + " fell through, and they went about their day, unaware of the fate you'd intended for them.",
+                                "Despite your best efforts, "+ c_m + " remained unscathed. They continued on, blissfully ignorant of your lethal plan.",
+                                "Your attempt to kill "+ c_m + " proved futile, and they stayed clueless about your ominous intentions."]
+            else:
+                fail_texts = ["You attempted to murder "+ c_m + ", but your plot was unsuccessful. They appear to be slightly wary now.",
+                                "Your effort to end "+ c_m + "'s life was thwarted, and they now seem a bit more cautious around you.",
+                                "Despite your intent to murder "+ c_m + ", they remained unscathed. They look at you now with a hint of suspicion.",
+                                "You tried to kill "+ c_m + ", but they survived. They now seem to watch you with wary eyes.",
+                                "Your plot to murder "+ c_m + " fell through, and they remain alive, now showing signs of mild suspicion towards you."]
+                cat_to_murder.relationships[you.ID].dislike += 10
+            game.cur_events_list.insert(0, Single_Event(choice(fail_texts)))
             
         
         game.switches['cur_screen'] = "events screen"
