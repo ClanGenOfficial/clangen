@@ -15,12 +15,13 @@
     ],
     "dep_1a6": [
         [
-        "kitten","insult"
+            "kitten",
+            "insult"
         ],
         [
-        "Your courage is commendable, but your manners could use some work."
+            "Your courage is commendable, but your manners could use some work."
         ]
-        ],
+    ],
     "dep_1": [
         [
             "warrior",
@@ -48,16 +49,28 @@
     ],
     "dep_15a": [
         [
-        "Any", "no_kit", "insult"
+            "Any",
+            "no_kit",
+            "insult"
         ],
         [
-        "As your deputy, I've dedicated my life to this Clan. Your words won't shake my commitment.",
-        "I won't let your insults distract me from my duties. There's too much at stake.",
-        "Every cat in this Clan has their worth, myself included. Your disrespect won't change that.",
-        "Your words may be hurtful, but they won't break me. I've faced greater challenges.",
-        "I'd suggest you spend less time throwing insults and more time serving the Clan."
+            "As your deputy, I've dedicated my life to this Clan. Your words won't shake my commitment.",
+            "I won't let your insults distract me from my duties. There's too much at stake.",
+            "Every cat in this Clan has their worth, myself included. Your disrespect won't change that.",
+            "Your words may be hurtful, but they won't break me. I've faced greater challenges.",
+            "I'd suggest you spend less time throwing insults and more time serving the Clan."
         ]
+    ],
+    "dep_15af": [
+        [
+            "Any",
+            "no_kit",
+            "insult"
         ],
+        [
+            "Say that again and you'll regret it."
+        ]
+    ],
     "dep_3": [
         [
             "kitten"

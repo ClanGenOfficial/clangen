@@ -473,10 +473,14 @@
         ]
     ],
     "kit13123": [
-        ["newborn"],
-        ["Hurry and open your eyes! It's getting really, really boring!",
-        "The queens keep getting annoyed at me, 'cuz you're still sleeping. So get up already so we can play!",
-        "Ugh, you're so stubborn... maybe I don't want to play with you anyways! Hmph!"]
+        [
+            "newborn"
+        ],
+        [
+            "Hurry and open your eyes! It's getting really, really boring!",
+            "The queens keep getting annoyed at me, 'cuz you're still sleeping. So get up already so we can play!",
+            "Ugh, you're so stubborn... maybe I don't want to play with you anyways! Hmph!"
+        ]
     ],
     "app_321": [
         [
@@ -507,11 +511,17 @@
         ]
     ],
     "kit321": [
-        ["insult", "Any", "not_kit"],
-        ["Hey, that's not nice! I may be small, but I'm going to be a big strong warrior someday. You'll see!",
-        "Just because I'm a kit doesn't mean you can talk to me like that.",
-        "You hurt my feelings. That wasn't a nice thing to say...",
-        "Why would you say something like that anyway? Is this how older cats talk to kits?",
-        "I'm telling my mother on you! She won't like it when she hears what you said."]
+        [
+            "insult",
+            "Any",
+            "not_kit"
+        ],
+        [
+            "Hey, that's not nice! I may be small, but I'm going to be a big strong warrior someday. You'll see!",
+            "Just because I'm a kit doesn't mean you can talk to me like that.",
+            "You hurt my feelings. That wasn't a nice thing to say...",
+            "Why would you say something like that anyway? Is this how older cats talk to kits?",
+            "I'm telling my mother on you! She won't like it when she hears what you said."
+        ]
     ]
 }

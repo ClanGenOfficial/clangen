@@ -325,9 +325,36 @@
         ]
     ],
     "elder_321312": [
-        ["kitten", "insult", "cold", "bloodthirsty", "strict"], ["Watch your tongue, kit."]
+        [
+            "kitten",
+            "insult",
+            "cold",
+            "bloodthirsty",
+            "strict"
+        ],
+        [
+            "Watch your tongue, kit."
+        ]
     ],
     "elder_32131a12": [
-        ["Any", "insult", "cold", "bloodthirsty", "strict"], ["Watch your tongue!"]
+        [
+            "Any",
+            "insult",
+            "cold",
+            "bloodthirsty",
+            "strict"
+        ],
+        [
+            "Watch your tongue!"
+        ]
+    ],
+    "elder_32131a1d2": [
+        [
+            "Any",
+            "insult"
+        ],
+        [
+            "Pfft... You make me laugh."
+        ]
     ]
 }
