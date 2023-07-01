@@ -4881,7 +4881,6 @@ class ChooseMurderCatScreen(Screens):
         cat_to_murder = new_mentor
         game.clan.murdered = True
         if murdered:
-            print("murder successful")
             resource_dir = "resources/dicts/events/lifegen_events/"
             with open(f"{resource_dir}murder.json",
                     encoding="ascii") as read_file:
@@ -4897,7 +4896,6 @@ class ChooseMurderCatScreen(Screens):
             game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
             History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.", )
         else:
-            print("murder failed")
             c_m = str(cat_to_murder.name)
             discover_chance = randint(1,2)
             fail_texts = []
@@ -4987,7 +4985,7 @@ class ChooseMurderCatScreen(Screens):
         
         r = randint(0,100)
         r2 = randint(-10, 10)
-        print(str(chance + r2))
+        # print(str(chance + r2))
         return r < max(5, chance + r2)
 
     def update_selected_cat(self):
