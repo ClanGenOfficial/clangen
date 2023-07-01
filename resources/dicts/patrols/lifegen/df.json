@@ -1,0 +1,120 @@
+[
+    {
+        "patrol_id": "gen_your_catdf",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border"
+        ],
+        "intro_text": "You wake up in a forest. Shadowy trees hang overhead, and you feel eyes on you despite not seeing anyone around.",
+        "success_text": {
+            "unscathed_common": "You swerve around, just as a cat lunges from the shadows and aims their claws at your pelt. Ducking at just the right moment, you manage to avoid their swipe.",
+            "unscathed_rare": "You swerve around, just as a cat lunges from the shadows and aims their claws at your pelt. Ducking at just the right moment, you manage to avoid their swipe and launch a counterattack. With a shriek of pain, they skitter back into the shadows."
+        },
+        "fail_text": {
+            "unscathed_common": "You swerve around, just as a cat lunges from the shadows. You don't react quickly enough and they pin you down, hissing that you have a lot more training to do.",
+            "death": "You whip around, just as a cat lunges from the shadows. You don't react quickly enough and their claws sink into your neck. It seems like you won't be waking up this time."
+        },
+        "decline_text": "With a shake of your head, you manage to wake yourself up, sitting up in your nest with a gasp.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": [
+            "great fighter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "lifegen_16",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "training"
+        ],
+        "intro_text": "A skilled warrior of the past offers to train you in a dream. However, their methods seem harsh and cruel and their pelt drips with an unknown muck.",
+        "success_text": {
+            "unscathed_common": "You accept the training and, despite the harsh methods, manage to learn some valuable skills."
+        },
+        "fail_text": {
+            "unscathed_common": "You accept the training, but after a while of sparring, the warrior growls that you aren't strong enough."
+        },
+        "decline_text": "You decline the training, deciding not to submit to such harsh methods.",
+        "chance_of_success": 45,
+        "exp": 25,
+        "win_skills": [
+            "resilient"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_15",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "encounter"
+    ],
+    "intro_text": "A group of ghostly cats approach you with an offer to learn a forgotten prophecy, but at the price of bringing a message back to the living.",
+    "success_text": {
+        "unscathed_common": "You agree to their terms and upon waking, you relay the message to your clan's medicine cat along with the prophecy."
+    },
+    "fail_text": {
+        "unscathed_common": "You agree to their terms, but upon waking, you find that you can't remember the message they asked you to deliver."
+    },
+    "decline_text": "Unsure of their intentions, you decline their offer and quickly leave.",
+    "chance_of_success": 55,
+    "exp": 30,
+    "win_skills": [
+        "wise"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_14",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "You discover a hidden section of the Dark Forest, filled with echoes of old battles.",
+    "success_text": {
+        "unscathed_common": "You decide to explore the area and manage to uncover hidden wisdom from past battles that might help your clan in the future."
+    },
+    "fail_text": {
+        "unscathed_common": "You venture into the area, but it only leads to disturbing visions of past battles that leave you disoriented upon waking."
+    },
+    "decline_text": "Feeling it might bring unnecessary trouble, you decide to leave the hidden area untouched.",
+    "chance_of_success": 50,
+    "exp": 25,
+    "win_skills": [
+        "curious"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_13",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border"
+    ],
+    "intro_text": "You find a cat trapped in the Dark Forest during a dream. Stars glitter in their pelt, shimmering against the muck of the shadows. They're scared and don't know the way out.",
+    "success_text": {
+        "unscathed_common": "You guide the cat through the eerie forest, successfully leading them out. They wake up grateful for your help."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite your best efforts, you lead them in circles. You wake up, trying to rid the memory of the starry cat's terrified expression from your mind."
+    },
+    "decline_text": "You reassure the cat that this is only a dream and they'll wake up soon, leaving them to find their own way.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "win_skills": [
+        "compassionate"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+}
+
+]

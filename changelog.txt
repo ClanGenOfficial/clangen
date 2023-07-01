@@ -1,3 +1,12 @@
+<strong>v0.4.0: Dark Forest's Grasp</strong>
+- Attempt to murder a clanmate each moon
+- Join the Dark Forest
+- Go on Dark Forest patrols
+- Insult clanmates
+- New dialogue
+- You can now only talk to/insult clanmates once per moon
+- Updated warning message
+
 <strong>v0.3.4: </strong>
 - Added new events/dialogue
 - Improve readability

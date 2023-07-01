@@ -4894,7 +4894,7 @@ class ChooseMurderCatScreen(Screens):
             cat_to_murder.die()
             History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
-            game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + "."))
+            game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
             History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.", )
         else:
             print("murder failed")
@@ -4914,24 +4914,22 @@ class ChooseMurderCatScreen(Screens):
                                 "Despite your intent to murder "+ c_m + ", they remained unscathed. They look at you now with a hint of suspicion.",
                                 "You tried to kill "+ c_m + ", but they survived. They now seem to watch you with wary eyes.",
                                 "Your plot to murder "+ c_m + " fell through, and they remain alive, now showing signs of mild suspicion towards you."]
-                cat_to_murder.relationships[you.ID].dislike += 10
+                cat_to_murder.relationships[you.ID].dislike += 20
             game.cur_events_list.insert(0, Single_Event(choice(fail_texts)))
-            
-        
         game.switches['cur_screen'] = "events screen"
         
     
     status_chances = {
-        'warrior': 30,
-        'medicine cat': 30,
-        'mediator': 25,
-        'apprentice': 20,
-        'medicine cat apprentice': 10,
-        'mediator apprentice': 10,
-        'deputy': 40,
-        'leader': 50,
-        'elder': 15,
-        'kitten': -20,
+        'warrior': 40,
+        'medicine cat': 40,
+        'mediator': 35,
+        'apprentice': 30,
+        'medicine cat apprentice': 25,
+        'mediator apprentice': 20,
+        'deputy': 50,
+        'leader': 60,
+        'elder': 25,
+        'kitten': 10,
     }
 
     skill_chances = {
@@ -4988,7 +4986,9 @@ class ChooseMurderCatScreen(Screens):
             chance += 20
         
         r = randint(0,100)
-        return r < max(5, chance + randint(-10,10))
+        r2 = randint(-10, 10)
+        print(str(chance + r2))
+        return r < max(5, chance + r2)
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""

@@ -306,7 +306,8 @@
     ],
     "app_28": [
         [
-            "murder"
+            "murder",
+            "Any"
         ],
         [
             "The Clan may turn a blind eye, but I see through your facade!"
@@ -314,10 +315,20 @@
     ],
     "app_29": [
         [
-            "murder"
+            "murder",
+            "Any"
         ],
         [
             "D-don't come any closer."
+        ]
+    ],
+    "app_16a": [
+        [
+            "kitten",
+            "insult"
+        ],
+        [
+            "Hey! Be nice! When you're an apprentice, your mentor won't let that slide."
         ]
     ],
     "app_292": [
@@ -408,13 +419,15 @@
     ],
     "app_1511": [
         [
-        "warrior", "insult"
+            "warrior",
+            "insult"
         ],
         [
-        "I may be an apprentice, but that doesn't mean you can just talk down to me. I work hard and I'm learning fast!",
-        "Your words won't break my spirit. They just show me the kind of cat you are.",
-        "Insulting me doesn't make you any stronger. We're supposed to be a team, remember?",
-        "Fine, I'll take your words as a challenge. Someday, I'll prove you wrong.",
-        "One day, I'll be a warrior too, and I won't forget your words."
-        ]]
+            "I may be an apprentice, but that doesn't mean you can just talk down to me. I work hard and I'm learning fast!",
+            "Your words won't break my spirit. They just show me the kind of cat you are.",
+            "Insulting me doesn't make you any stronger. We're supposed to be a team, remember?",
+            "Fine, I'll take your words as a challenge. Someday, I'll prove you wrong.",
+            "One day, I'll be a warrior too, and I won't forget your words."
+        ]
+    ]
 }

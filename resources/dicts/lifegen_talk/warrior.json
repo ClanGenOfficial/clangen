@@ -779,12 +779,24 @@
     ],
     "warrior_2293": [
         [
-            "murder"
+            "murder",
+            "Any"
         ],
         [
             "You killed them, didn't you?"
         ]
     ],
+    "warrior_1d6": [
+        [
+        "kitten",
+        "insult"
+        ],
+        [
+        "Oh, a kit with a warrior's spirit, I see. Remember though, a true warrior knows when to use their words wisely.",
+        "You're still too young to understand the weight of your words. Be careful, young one."
+        ]
+        ],
+
     "warrior_4324": [
         [
             "apprentice",

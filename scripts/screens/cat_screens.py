@@ -302,6 +302,9 @@ class ProfileScreen(Screens):
                 KillCat(self.the_cat)
             elif event.ui_element == self.murder_cat_button:
                 self.change_screen('murder screen')
+            elif event.ui_element == self.join_df_button:
+                game.clan.your_cat.joined_df = True
+                self.join_df_button.disable()
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
@@ -597,6 +600,13 @@ class ProfileScreen(Screens):
             print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
             print("Choosing random cat to play...")
             game.clan.your_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+            counter = 0
+            while game.clan.your_cat.dead or game.clan.your_cat.outside:
+                if counter == 25:
+                    break
+                game.clan.your_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+                counter+=1
+                
             print("Chose " + str(game.clan.your_cat.name))
         
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
@@ -1816,6 +1826,8 @@ class ProfileScreen(Screens):
                 tool_tip_text='Join the Dark Forest',
                 starting_height=2, manager=MANAGER
             )
+            if game.clan.your_cat.joined_df:
+                self.join_df_button.disable()
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1940,6 +1952,11 @@ class ProfileScreen(Screens):
                 
             if self.the_cat.ID != game.clan.your_cat.ID:
                 self.murder_cat_button.hide()
+                self.join_df_button.hide()
+            else:
+                self.murder_cat_button.show()
+                self.join_df_button.show()
+            if game.clan.your_cat.status == 'kitten':
                 self.join_df_button.hide()
         # History Tab:
         elif self.open_tab == 'history':
@@ -2067,7 +2084,6 @@ class ProfileScreen(Screens):
             self.exile_cat_button.kill()
             self.murder_cat_button.kill()
             self.join_df_button.kill()
-
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
@@ -3468,6 +3484,11 @@ class TalkScreen(Screens):
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
+            if "murder" in talk[0]:
+                if game.clan.your_cat.history:
+                    if game.clan.your_cat.history.murder:
+                        if "is_murderer" not in game.clan.your_cat.history.murder:
+                            continue
             if "parent" in talk[0]:
                 if game.clan.your_cat.parent1:
                     if game.clan.your_cat.parent1 != cat.ID:

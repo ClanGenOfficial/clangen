@@ -1,4 +1,3 @@
-
 {
     "medi_1": [
         [
@@ -118,6 +117,28 @@
             "Your stories and wisdom are invaluable to our clan. Thank you for all that you've given and continue to give.",
             "Remember, even though you're an elder now, your voice is still important. If you ever need anything, don't hesitate to come to me.",
             "And remember, the wisdom you've gained over the moons is just as important as any dispute I could ever resolve. You're a treasure to our clan."
+        ]
+    ],
+    "medi_11": [
+        [
+            "insult",
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Is something the matter?"
+        ]
+    ],
+    "medi_12": [
+        [
+            "insult",
+            "kitten"
+        ],
+        [
+            "Hey! Wait... this is the perfect time to use my training!",
+            "What caused you to act this way?",
+            "Take a deep breath.",
+            "Reflect on your actions... hey! Don't just walk away from me!"
         ]
     ]
 }

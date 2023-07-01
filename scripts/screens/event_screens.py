@@ -459,6 +459,13 @@ class EventsScreen(Screens):
             print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
             print("Choosing random cat to play...")
             game.clan.your_cat = Cat.all_cats[random.choice(game.clan.clan_cats)]
+            counter = 0
+            while game.clan.your_cat.dead or game.clan.your_cat.outside:
+                if counter == 25:
+                    break
+                game.clan.your_cat = Cat.all_cats[random.choice(game.clan.clan_cats)]
+                counter+=1
+                
             print("Chose " + str(game.clan.your_cat.name))
         # Set text for clan age
         if game.clan.your_cat.moons != 1:

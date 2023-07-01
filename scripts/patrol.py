@@ -281,7 +281,7 @@ class Patrol():
             possible_patrols.extend(self.generate_patrol_events(self.BORDER_GEN))
             possible_patrols.extend(self.generate_patrol_events(self.TRAINING_GEN))
             possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_GEN))
-        else:
+        elif game.current_screen == 'patrol screen':
             if game.clan.your_cat.status == 'kitten':
                 possible_patrols.extend(self.generate_patrol_events(self.kit_lifegen))
             elif game.clan.your_cat.status == 'apprentice':
@@ -302,7 +302,8 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.elder_lifegen))
             else:
                 possible_patrols.extend(self.generate_patrol_events(self.warrior_lifegen))
-
+        else:
+            possible_patrols.extend(self.generate_patrol_events(self.df_lifegen))
 
         if game_setting_disaster and game.current_screen == 'patrol screen2':
             dis_chance = int(random.getrandbits(3))  # disaster patrol chance
@@ -1682,7 +1683,7 @@ class Patrol():
             self.MEDCAT_GEN = None
             with open(f"{resource_dir}general/medcat.json", 'r', encoding='ascii') as read_file:
                 self.MEDCAT_GEN = ujson.loads(read_file.read())
-        else:
+        elif game.current_screen == 'patrol screen':
             self.kit_lifegen = None
             with open(f"{resource_dir}/lifegen/kit.json", 'r', encoding='ascii') as read_file:
                 self.kit_lifegen = ujson.loads(read_file.read())
@@ -1722,6 +1723,10 @@ class Patrol():
             self.elder_lifegen = None
             with open(f"{resource_dir}/lifegen/elder.json", 'r', encoding='ascii') as read_file:
                 self.elder_lifegen = ujson.loads(read_file.read())
+        elif game.current_screen == 'patrol screen3':
+            self.df_lifegen = None
+            with open(f"{resource_dir}/lifegen/df.json", 'r', encoding='ascii') as read_file:
+                self.df_lifegen = ujson.loads(read_file.read())
 
     # ---------------------------------------------------------------------------- #
     #                                   Handlers                                   #

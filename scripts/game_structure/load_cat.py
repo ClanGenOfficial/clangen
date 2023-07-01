@@ -173,6 +173,9 @@ def json_load():
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.w_done = cat["w_done"] if "w_done" in cat else False
+            new_cat.talked_to = cat["talked_to"] if "talked_to" in cat else False
+            new_cat.insulted = cat["insulted"] if "insulted" in cat else False
+            new_cat.joined_df = cat["joined_df"] if "joined_df" in cat else False
             
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(
