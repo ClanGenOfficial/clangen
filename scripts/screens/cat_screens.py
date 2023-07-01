@@ -208,8 +208,12 @@ class ProfileScreen(Screens):
             elif "insult" in self.profile_elements and \
                     event.ui_element == self.profile_elements["insult"]:
                 self.the_cat.insulted = True
-                self.the_cat.relationships[game.clan.your_cat.ID].dislike += randint(1,5)
-                self.the_cat.relationships[game.clan.your_cat.ID].platonic_like -= randint(1,5)
+                if game.clan.your_cat.status != "kitten":
+                    self.the_cat.relationships[game.clan.your_cat.ID].dislike += randint(1,5)
+                    self.the_cat.relationships[game.clan.your_cat.ID].platonic_like -= randint(1,5)
+                    self.the_cat.relationships[game.clan.your_cat.ID].comfortable -= randint(1,5)
+                    self.the_cat.relationships[game.clan.your_cat.ID].trust -= randint(1,5)
+                    self.the_cat.relationships[game.clan.your_cat.ID].admiration -= randint(1,5)
                 self.change_screen('insult screen')
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen('med den screen')
@@ -619,7 +623,7 @@ class ProfileScreen(Screens):
                 )
             elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
-                    (830, 220), (68, 68))),
+                    (662, 220), (68, 68))),
                     "",
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
@@ -638,7 +642,7 @@ class ProfileScreen(Screens):
                 )
             elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
-                    (662, 220), (68, 68))),
+                    (830, 220), (68, 68))),
                     "",
                     object_id="#insult_button",
                     tool_tip_text="Insult this Cat", manager=MANAGER

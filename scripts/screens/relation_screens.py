@@ -4915,7 +4915,11 @@ class ChooseMurderCatScreen(Screens):
                                 "Despite your intent to murder "+ c_m + ", they remained unscathed. They look at you now with a hint of suspicion.",
                                 "You tried to kill "+ c_m + ", but they survived. They now seem to watch you with wary eyes.",
                                 "Your plot to murder "+ c_m + " fell through, and they remain alive, now showing signs of mild suspicion towards you."]
-                cat_to_murder.relationships[you.ID].dislike += 20
+                cat_to_murder.relationships[you.ID].dislike += randint(1,20)
+                cat_to_murder.relationships[you.ID].platonic_like -= randint(1,15)
+                cat_to_murder.relationships[you.ID].comfortable -= randint(1,15)
+                cat_to_murder.relationships[you.ID].trust -= randint(1,15)
+                cat_to_murder.relationships[you.ID].admiration -= randint(1,15)
             game.cur_events_list.insert(0, Single_Event(choice(fail_texts)))
         game.switches['cur_screen'] = "events screen"
         
