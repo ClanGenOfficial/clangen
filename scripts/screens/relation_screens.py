@@ -4955,7 +4955,7 @@ class ChooseMurderCatScreen(Screens):
                         game.cur_events_list.insert(1, Single_Event(choice(exiled)))
                         Cat.exile(game.clan.your_cat)
                 else:
-                    lead_choice == randint(1,5)
+                    lead_choice = randint(1,5)
                     if lead_choice == 1:
                         game.cur_events_list.insert(3, Single_Event(choice(exiled)))
                         Cat.exile(game.clan.your_cat)
