@@ -661,7 +661,7 @@ class ProfileScreen(Screens):
             )
         elif self.the_cat.status in ["mediator", "mediator apprentice"]:
             self.profile_elements["mediation"] = UIImageButton(scale(pygame.Rect(
-                (766, 220), (68, 68))),
+                (746, 220), (68, 68))),
                 "",
                 object_id="#mediation_button", manager=MANAGER
             )
@@ -3497,8 +3497,6 @@ class TalkScreen(Screens):
                         continue
                 else:
                     continue
-            else:
-                continue
             if "parent" in talk[0]:
                 if game.clan.your_cat.parent1:
                     if game.clan.your_cat.parent1 != cat.ID:
