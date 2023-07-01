@@ -4885,7 +4885,10 @@ class ChooseMurderCatScreen(Screens):
             with open(f"{resource_dir}murder.json",
                     encoding="ascii") as read_file:
                 self.m_txt = ujson.loads(read_file.read())
-            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+            c_s = cat_to_murder.status.replace(" ", "")
+            if c_s == "newborn":
+                c_s = "kitten"
+            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + c_s])
             ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
             ceremony_txt = ceremony_txt.replace('c_n', game.clan.name)
             if cat_to_murder.status == 'leader':

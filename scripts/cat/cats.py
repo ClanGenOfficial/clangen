@@ -442,7 +442,14 @@ class Cat():
 
         if not self.outside:
             Cat.dead_cats.append(self)
-            if game.clan.instructor.df is False:
+            if self.history:
+                if self.history.murder:
+                    if "is_murderer" in self.history.murder:
+                        if len(self.history.murder["is_murderer"]) > 2:
+                            self.df = True
+                            self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
+                            game.clan.add_to_darkforest(self)
+            elif game.clan.instructor.df is False:
                 self.df = False
                 game.clan.add_to_starclan(self)
             elif game.clan.instructor.df is True:
