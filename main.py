@@ -191,9 +191,29 @@ while True:
     time_delta = clock.tick(game.switches['fps']) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
-            screen.fill((57, 50, 36))
+            b = 50
+            if game.clan.your_cat:
+                if not game.clan.your_cat.history:
+                    game.clan.your_cat.load_history()
+                if game.clan.your_cat.history:
+                    if game.clan.your_cat.history.murder:
+                        if "is_murderer" in game.clan.your_cat.history.murder:
+                            if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                                for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
+                                    b -= 3
+            screen.fill((57, max(36,b), 36))
         else:
-            screen.fill((206, 194, 168))
+            b = 194
+            if game.clan.your_cat:
+                if not game.clan.your_cat.history:
+                    game.clan.your_cat.load_history()
+                if game.clan.your_cat.history:
+                    if game.clan.your_cat.history.murder:
+                        if "is_murderer" in game.clan.your_cat.history.murder:
+                            if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                                for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
+                                    b -= 1
+            screen.fill((206, max(b, 167), 168))
 
     if game.settings['custom cursor']:
         if pygame.mouse.get_cursor() == disabled_cursor:

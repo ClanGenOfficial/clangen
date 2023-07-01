@@ -288,5 +288,50 @@
             "I've led this Clan through moons of hardship. I won't be shaken by harsh words.",
             "A wise cat once said, the smaller the mind, the greater the insult. I hope you'll grow wiser."
         ]
+    ],
+    "leader_1ax5": [
+        [
+            "Any",
+            "insult"
+        ],
+        [
+            "Careful now."
+        ]
+    ],
+    "leader_1ax5w": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Huh, I never took you for one to mince words."
+        ]
+    ],
+    "leader_1axs5": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Your anger is heard, as are your words. We shall speak again when emotions have cooled."
+        ]
+    ],
+    "leader_1agx5": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Your words carry weight, but they do not change who I am as a leader."
+        ]
+    ],
+    "leader_1ax5x": [
+        [
+            "Any",
+            "kitten"
+        ],
+        [
+            "Calm yourself, little one."
+        ]
     ]
 }

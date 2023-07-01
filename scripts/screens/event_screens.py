@@ -80,7 +80,7 @@ class EventsScreen(Screens):
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button and game.clan.your_cat.moons == 5 and game.clan.your_cat.status == 'kitten':
                     PickPath('events screen')
-            elif event.ui_element == self.timeskip_button and game.clan.your_cat.dead_for == 1:
+            elif event.ui_element == self.timeskip_button and (game.clan.your_cat.dead_for == 1 or game.clan.your_cat.exiled):
                     self.exit_screen()
                     DeathScreen('events screen')
                     return

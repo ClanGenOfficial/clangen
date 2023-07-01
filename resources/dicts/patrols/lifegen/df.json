@@ -115,6 +115,30 @@
     ],
     "min_cats": 1,
     "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_123",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border",
+        "death"
+    ],
+    "intro_text": "While walking through the Dark Forest, you slip, falling into a river of inky black water.",
+    "success_text": {
+        "unscathed_common": "You stay calm, holding your breath and treading water until you reach the surface again."
+    },
+    "fail_text": {
+        "death": "It's no use. You can't tell which way is up or down, and fall deeper into the depths."
+    },
+    "decline_text": "You gasp, waking up in your nest. That was a horrible dream.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        "compassionate"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
 }
 
 ]

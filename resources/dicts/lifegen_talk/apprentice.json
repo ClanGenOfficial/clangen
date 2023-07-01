@@ -407,6 +407,51 @@
             "... Am I supposed to be offended?"
         ]
     ],
+    "app_3j2a1": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Are you just saying that because I caught a bigger bird than you?"
+        ]
+    ],
+    "app_32ga1": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Well, at least I don't have a furball stuck in my throat all the time!"
+        ]
+    ],
+    "app_32fa1": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Hmm, I think I smell sour mouse! Oh wait, it's just your attitude."
+        ]
+    ],
+    "app_32aa1": [
+        [
+            "insult",
+            "apprentice"
+        ],
+        [
+            "If you put as much effort into hunting as you do into hurling insults, we'd never go hungry."
+        ]
+    ],
+    "app_32ax1": [
+        [
+            "insult",
+            "apprentice"
+        ],
+        [
+            "Careful, your jealousy is showing."
+        ]
+    ],
     "app_3211": [
         [
             "insult",
