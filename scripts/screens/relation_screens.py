@@ -5021,6 +5021,7 @@ class ChooseMurderCatScreen(Screens):
     great_murder_skills = ["very clever", "formidable fighter", "keen eye"]
     best_murder_skills = ["incredibly clever", "unusually strong fighter", "unnatural senses"]
 
+
     def get_kill(self, you, cat_to_murder):
         chance = self.status_chances.get(you.status, 0)
         your_skills = []
@@ -5060,6 +5061,42 @@ class ChooseMurderCatScreen(Screens):
         r2 = randint(-10, 10)
         # print(str(chance + r2))
         return r < max(5, chance + r2)
+    
+    def get_chance(self, you, cat_to_murder):
+        chance = self.status_chances.get(you.status, 0)
+        your_skills = []
+        if you.skills.primary:
+            your_skills.append(you.skills.primary.skill)
+        if you.skills.secondary:
+            your_skills.append(you.skills.secondary.skill)
+        if any(skill in self.murder_skills for skill in your_skills):
+            chance += 5
+        if any(skill in self.good_murder_skills for skill in your_skills):
+            chance += 10
+        if any(skill in self.great_murder_skills for skill in your_skills):
+            chance += 15
+        if any(skill in self.best_murder_skills for skill in your_skills):
+            chance += 20
+        
+        chance += self.skill_chances.get(cat_to_murder.status, 0)
+        
+        their_skills = []
+        if cat_to_murder.skills.primary:
+            their_skills.append(cat_to_murder.skills.primary.skill)
+        if cat_to_murder.skills.secondary:
+            their_skills.append(cat_to_murder.skills.secondary.skill)
+        if any(skill in self.murder_skills for skill in their_skills):
+            chance -= 5
+        if any(skill in self.good_murder_skills for skill in their_skills):
+            chance -= 10
+        if any(skill in self.great_murder_skills for skill in their_skills):
+            chance -= 15
+        if any(skill in self.best_murder_skills for skill in their_skills):
+            chance -= 20
+        
+        if cat_to_murder.is_ill() or cat_to_murder.is_ill():
+            chance += 20
+        return chance
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
@@ -5092,6 +5129,24 @@ class ChooseMurderCatScreen(Screens):
                 scale(pygame.Rect((690, 230), (220, 60))),
                 name,
                 object_id="#text_box_34_horizcenter", manager=MANAGER)
+            if not self.selected_cat.dead and not self.selected_cat.outside:
+                c_text = ""
+                chance = self.get_chance(game.clan.your_cat, self.selected_cat)
+                if chance < 10:
+                    c_text = "very low"
+                elif chance < 20:
+                    c_text = "low"
+                elif chance < 30:
+                    c_text = "average"
+                elif chance < 50:
+                    c_text = "high"
+                else:
+                    c_text = "very high"
+                self.selected_details["chance"] = pygame_gui.elements.UITextBox("murder chance: " + c_text,
+                                                                                        scale(pygame.Rect((980, 500),
+                                                                                                            (210, 250))),
+                                                                                        object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
+                                                                                        manager=MANAGER)
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
