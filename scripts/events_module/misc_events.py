@@ -45,9 +45,12 @@ class MiscEvents():
 
             acc_checked_events.append(event)
 
+        if "is_murderer" in cat.history.murder:
+            reveal = self.handle_murder_self_reveals(cat)
+
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
-                                                                   alive_kits)
+                                                                   alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
         #                                    event                                     #
@@ -76,7 +79,7 @@ class MiscEvents():
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal)
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -158,10 +161,28 @@ class MiscEvents():
             if acc not in ["WILD", "PLANT", "COLLAR"]:
                 acc_list.append(acc)
 
-        if ("NOTAIL" or "HALFTAIL") in cat.pelt.scars:
-            try:
-                acc_list.remove(acc for acc in Pelt.tail_accessories)
-            except:
-                print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
+        if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+            for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
 
         cat.pelt.accessory = random.choice(acc_list)
+
+    def handle_murder_self_reveals(self, cat):
+        ''' Handles reveals for murders where the murderer reveals themself '''
+        if cat.Personality.Lawfulness > 8:
+            murderer_guilty = random.choice([True, False])
+        chance_of_reveal = 120
+        if murderer_guilty:
+            chance_of_reveal = chance_of_reveal - 100
+
+        if random.randint(1, chance_of_reveal) == 1:
+            return True
+        else:
+            return False
+
+    def handle_murder_witness_reveals(self, cat, other_cat):
+        ''' Handles reveals where the witness reveals the murderer '''
