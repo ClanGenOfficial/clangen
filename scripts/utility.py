@@ -918,7 +918,8 @@ def event_text_adjust(Cat,
                       other_cat=None,
                       other_clan_name=None,
                       new_cat=None,
-                      clan=None):
+                      clan=None,
+                      murder_reveal=False):
     """
     This function takes the given text and returns it with the abbreviations replaced appropriately
     :param Cat: Always give the Cat class
@@ -928,6 +929,7 @@ def event_text_adjust(Cat,
     :param other_clan_name: The other clan involved in the event
     :param new_cat: The cat taking the place of n_c
     :param clan: The player's Clan
+    :param murder_reveal: Whether or not this event is a murder reveal
     :return: the adjusted text
     """
 
@@ -959,6 +961,10 @@ def event_text_adjust(Cat,
             clan_name = str(game.clan.name)
 
     text = text.replace("c_n", clan_name + "Clan")
+
+    if murder_reveal:
+        victim = Cat.fetch_cat(cat.history.murder["victim"])
+        text = text.replace("mur_c", victim.name)
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)

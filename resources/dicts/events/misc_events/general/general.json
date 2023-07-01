@@ -541,5 +541,17 @@
         "cat_skill": [
             "GHOST,0"
         ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat_adult"
+        ],
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} somnambulistic muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death."
     }
 ]
