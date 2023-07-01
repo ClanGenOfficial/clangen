@@ -192,27 +192,29 @@ while True:
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
             b = 50
-            if game.clan.your_cat:
-                if not game.clan.your_cat.history:
-                    game.clan.your_cat.load_history()
-                if game.clan.your_cat.history:
-                    if game.clan.your_cat.history.murder:
-                        if "is_murderer" in game.clan.your_cat.history.murder:
-                            if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
-                                for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
-                                    b -= 3
+            if game.clan:
+                if game.clan.your_cat:
+                    if not game.clan.your_cat.history:
+                        game.clan.your_cat.load_history()
+                    if game.clan.your_cat.history:
+                        if game.clan.your_cat.history.murder:
+                            if "is_murderer" in game.clan.your_cat.history.murder:
+                                if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                                    for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
+                                        b -= 3
             screen.fill((57, max(36,b), 36))
         else:
             b = 194
-            if game.clan.your_cat:
-                if not game.clan.your_cat.history:
-                    game.clan.your_cat.load_history()
-                if game.clan.your_cat.history:
-                    if game.clan.your_cat.history.murder:
-                        if "is_murderer" in game.clan.your_cat.history.murder:
-                            if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
-                                for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
-                                    b -= 1
+            if game.clan:
+                if game.clan.your_cat:
+                    if not game.clan.your_cat.history:
+                        game.clan.your_cat.load_history()
+                    if game.clan.your_cat.history:
+                        if game.clan.your_cat.history.murder:
+                            if "is_murderer" in game.clan.your_cat.history.murder:
+                                if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                                    for i in range(len(game.clan.your_cat.history.murder["is_murderer"])):
+                                        b -= 1
             screen.fill((206, max(b, 167), 168))
 
     if game.settings['custom cursor']:
