@@ -757,7 +757,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over {PRONOUN/m_c/object}."
+    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over {PRONOUN/m_c/object}."
   ],
   "app_52": [
     [
