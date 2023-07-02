@@ -1429,41 +1429,47 @@ class ProfileScreen(Screens):
             else:
                 victims = []
 
-            # if "is_victim" in murder_history:
-            #    murderers = murder_history["is_victim"]
-            # else:
-            #    murderers = []
+            if "is_victim" in murder_history:
+               murderer = Cat.fetch_cat(murder_history["is_victim"]["murderer"])
+            else:
+               murderer = None
 
-            if victims:
-                victim_names = {}
-                name_list = []
+        if victims:
+            victim_names = {}
+            name_list = []
 
-                for victim in victims:
-                    if not Cat.fetch_cat(victim["victim"]):
-                        continue 
-                    name = str(Cat.fetch_cat(victim["victim"]).name)
+            for victim in victims:
+                if not Cat.fetch_cat(victim["victim"]):
+                    continue 
+                name = str(Cat.fetch_cat(victim["victim"]).name)
 
-                    if victim["revealed"]:
-                        victim_names[name] = []
-                        if moons:
-                            victim_names[name].append(victim["moon"])
+                if victim["revealed"]:
+                    victim_names[name] = []
+                    if moons:
+                        victim_names[name].append(victim["moon"])
 
-                if victim_names:
-                    for name in victim_names:
-                        if not moons:
-                            name_list.append(name)
-                        else:
-                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
-
-                    if len(name_list) == 1:
-                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
-                    elif len(victim_names) == 2:
-                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+            if victim_names:
+                for name in victim_names:
+                    if not moons:
+                        name_list.append(name)
                     else:
-                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
-        #print(victim_text)
-        return victim_text
+                if len(name_list) == 1:
+                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                elif len(victim_names) == 2:
+                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+                else:
+                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+        if murderer:
+            if murder_history["is_victim"]["revealed"]:
+                murdered_text = murder_history["is_victim"]["text"]
+
+        if victim_text:
+            return victim_text
+        else:
+            return murdered_text
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""

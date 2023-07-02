@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
@@ -18,7 +19,6 @@ class MiscEvents():
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
-        pass
 
     def handle_misc_events(self, cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
         """ 
@@ -45,7 +45,7 @@ class MiscEvents():
 
             acc_checked_events.append(event)
             
-        reveal = None
+        reveal = False
         if cat.history:
             if cat.history.murder:
                 if "is_murderer" in cat.history.murder:
@@ -90,6 +90,9 @@ class MiscEvents():
         if ceremony:
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+
+        if reveal:
+            History.reveal_murder(cat, other_cat, Cat)
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 
@@ -182,10 +185,10 @@ class MiscEvents():
         if murderer_guilty:
             chance_of_reveal = chance_of_reveal - 100
 
-        if random.randint(1, chance_of_reveal) == 1:
-            return True
-        else:
-            return False
+        # testing purposes
+        chance_of_reveal = 1
+
+        return bool(random.randint(1, chance_of_reveal) == 1)
 
     def handle_murder_witness_reveals(self, cat, other_cat):
         ''' Handles reveals where the witness reveals the murderer '''
