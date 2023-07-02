@@ -4780,6 +4780,7 @@ class ChooseMurderCatScreen(Screens):
     def screen_switches(self):
         self.the_cat = game.clan.your_cat
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
+        self.selected_cat = None
 
         self.heading = pygame_gui.elements.UITextBox("",
                                                      scale(pygame.Rect((300, 50), (1000, 80))),
@@ -5016,10 +5017,10 @@ class ChooseMurderCatScreen(Screens):
         'kitten': 30
     }
 
-    murder_skills = ["quick witted", "avid play-fighter", "oddly observant"]
-    good_murder_skills = ["clever", "good fighter", "natural intuition"]
-    great_murder_skills = ["very clever", "formidable fighter", "keen eye"]
-    best_murder_skills = ["incredibly clever", "unusually strong fighter", "unnatural senses"]
+    murder_skills = ["quick witted", "avid play-fighter", "oddly observant","never sits still"]
+    good_murder_skills = ["clever", "good fighter", "natural intuition","fast runner"]
+    great_murder_skills = ["very clever", "formidable fighter", "keen eye","incredible runner"]
+    best_murder_skills = ["incredibly clever", "unusually strong fighter", "unnatural senses","fast as the wind"]
 
 
     def get_kill(self, you, cat_to_murder):
@@ -5132,13 +5133,13 @@ class ChooseMurderCatScreen(Screens):
             if not self.selected_cat.dead and not self.selected_cat.outside:
                 c_text = ""
                 chance = self.get_chance(game.clan.your_cat, self.selected_cat)
-                if chance < 10:
+                if chance < 20:
                     c_text = "very low"
-                elif chance < 20:
-                    c_text = "low"
                 elif chance < 30:
+                    c_text = "low"
+                elif chance < 40:
                     c_text = "average"
-                elif chance < 50:
+                elif chance < 60:
                     c_text = "high"
                 else:
                     c_text = "very high"
