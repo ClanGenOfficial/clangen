@@ -44,9 +44,12 @@ class MiscEvents():
                 continue
 
             acc_checked_events.append(event)
-
-        if "is_murderer" in cat.history.murder:
-            reveal = self.handle_murder_self_reveals(cat)
+            
+        reveal = None
+        if cat.history:
+            if cat.history.murder:
+                if "is_murderer" in cat.history.murder:
+                    reveal = self.handle_murder_self_reveals(cat)
 
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
