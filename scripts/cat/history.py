@@ -37,7 +37,7 @@ class History:
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
 
-        """
+        """ 
         want save to look like
         {
         "beginning":{
@@ -626,5 +626,22 @@ class History:
 
         return cat.history.murder
 
+    @staticmethod
+    def reveal_murder(cat, other_cat, Cat):
+        ''' Reveals the murder properly in all of the associated history text
+        :param cat: The murderer
+        :param other_cat: The cat who discovers the truth about the murder
+        :param Cat: The cat class'''
 
+        murder_history = History.get_murders(cat)
+        if murder_history:
+            if "is_murderer" in murder_history:
+                murder_history["is_murderer"]["revealed"] = True
+                murder_history["is_murderer"]["revealed_by"] = other_cat.ID
+                murder_history["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
 
+                victim = Cat.fetch_cat(murder_history["is_murderer"]["victim"])
+                victim_history = victim.history.murder["is_victim"]
+                victim_history["revealed"] = True
+                victim_history["revealed_by"] = other_cat.ID
+                victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
