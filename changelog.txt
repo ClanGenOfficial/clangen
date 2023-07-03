@@ -1,3 +1,8 @@
+<strong>v0.4.2: </strong>
+- Display for murder chance
+- Edited murder events
+- Many bug/crash fixes
+
 <strong>v0.4.1: </strong>
 - Added additional events
 - You can now be discovered and punished for murder
