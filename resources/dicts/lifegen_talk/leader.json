@@ -292,6 +292,7 @@
     "leader_1ax5": [
         [
             "Any",
+            "insult",
             "insult"
         ],
         [
@@ -301,7 +302,8 @@
     "leader_1ax5w": [
         [
             "Any",
-            "no_kit"
+            "no_kit",
+            "insult"
         ],
         [
             "Huh, I never took you for one to mince words."
@@ -310,7 +312,8 @@
     "leader_1axs5": [
         [
             "Any",
-            "no_kit"
+            "no_kit",
+            "insult"
         ],
         [
             "Your anger is heard, as are your words. We shall speak again when emotions have cooled."
@@ -319,7 +322,8 @@
     "leader_1agx5": [
         [
             "Any",
-            "no_kit"
+            "no_kit",
+            "insult"
         ],
         [
             "Your words carry weight, but they do not change who I am as a leader."
@@ -328,7 +332,8 @@
     "leader_1ax5x": [
         [
             "Any",
-            "kitten"
+            "kitten",
+            "insult"
         ],
         [
             "Calm yourself, little one."

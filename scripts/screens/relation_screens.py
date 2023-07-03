@@ -4931,7 +4931,7 @@ class ChooseMurderCatScreen(Screens):
                         game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
                     elif lead_choice == 2:
                         game.cur_events_list.insert(3, Single_Event(choice(demote_leader)))
-                        game.clan.your_cat.status_chance('warrior')
+                        game.clan.your_cat.status_change('warrior')
                     else:
                         game.cur_events_list.insert(3, Single_Event(choice(exiled)))
                         Cat.exile(game.clan.your_cat)
@@ -4941,7 +4941,7 @@ class ChooseMurderCatScreen(Screens):
                         game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
                     elif lead_choice == 2:
                         game.cur_events_list.insert(3, Single_Event(choice(demote_deputy)))
-                        game.clan.your_cat.status_chance('warrior')
+                        game.clan.your_cat.status_change('warrior')
                     else:
                         game.cur_events_list.insert(3, Single_Event(choice(exiled)))
                         Cat.exile(game.clan.your_cat)
@@ -4951,7 +4951,7 @@ class ChooseMurderCatScreen(Screens):
                         game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
                     elif lead_choice == 2:
                         game.cur_events_list.insert(3, Single_Event(choice(demote_medicine_cat)))
-                        game.clan.your_cat.status_chance('warrior')
+                        game.clan.your_cat.status_change('warrior')
                     else:
                         game.cur_events_list.insert(1, Single_Event(choice(exiled)))
                         Cat.exile(game.clan.your_cat)
