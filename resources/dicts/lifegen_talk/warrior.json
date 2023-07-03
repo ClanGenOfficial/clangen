@@ -890,7 +890,7 @@
             "I'd be more offended if I respected your opinion."
         ]
     ],
-    "app_32fa1": [
+    "app_32afa1": [
         [
             "insult",
             "warrior"
@@ -899,7 +899,7 @@
             "Is that the best you can do?"
         ]
     ],
-    "app_32fa1": [
+    "app_32fax1": [
         [
             "insult",
             "Any",
@@ -909,7 +909,7 @@
             "Your words do not define me. I know who I am and where my loyalties lie."
         ]
     ],
-    "app_32fa1": [
+    "app_32fca1": [
         [
             "insult",
             "Any",
@@ -919,7 +919,7 @@
             "Oh, a playful jab, huh? Good thing warriors are tough!"
         ]
     ],
-    "app_32fa1": [
+    "app_32fab1": [
         [
             "insult",
             "Any",
@@ -929,7 +929,7 @@
             "It's easy to criticize, harder to understand. I hope one day you'll see the strength in empathy."
         ]
     ],
-    "app_32fa1": [
+    "app_32fa21": [
         [
             "insult",
             "Any",
@@ -939,7 +939,7 @@
             "Your words may sting, but they won't deter me from my duty."
         ]
     ],
-    "app_32fa1": [
+    "app_32faf1": [
         [
             "insult",
             "Any",
@@ -949,7 +949,7 @@
             "Insults are a warrior's last resort. Let's show each other respect."
         ]
     ],
-    "app_32fa1": [
+    "app_32faa1": [
         [
             "insult",
             "Any",
@@ -959,7 +959,7 @@
             "Every cat can spit fire when they're riled up. But it's the one who remains cool who wins the fight."
         ]
     ],
-    "app_32fa1": [
+    "app_32fad1": [
         [
             "insult",
             "Any",
@@ -1004,6 +1004,241 @@
             "I've faced greater challenges than your harsh words. I won't let them get to me.",
             "Your insult is a reflection of you, not me. I know my worth.",
             "A warrior's strength isn't just in their claws, it's in their character. Remember that."
+        ]
+    ],
+    "warrior_21x": [
+        [
+            "kitten",
+            "injured"
+        ],
+        [
+            "Easy there, little one. You're a brave kit, enduring this. Your strength makes the Clan proud.",
+            "You know, every warrior has their share of scrapes and bruises. It's all part of the journey.",
+            "Don't worry, you'll be back to your playful self in no time. Our medicine cat will make sure of that.",
+            "Use this time to listen to the elder's stories, they can teach you much about our Clan's history and the path of a warrior.",
+            "Remember, a warrior's strength doesn't only come from their claws, but from their heart. And you've got a heart as strong as the mightiest oak."
+        ]
+    ],
+    "warrior_2s2": [
+        [
+            "apprentice",
+            "injured"
+        ],
+        [
+            "Your training might be tough, y_c, but you're tougher. You'll come out of this stronger, I promise.",
+            "This is just a minor setback on the path to becoming a warrior. Every great warrior has been where you are now.",
+            "Our medicine cat is the best there is. They'll have you back on your paws in no time.",
+            "Use this time to reflect on your training, to think about the lessons you've learned and the cat you're becoming.",
+            "You're brave, resilient, and dedicated. Your injury is a challenge, but I have no doubt you'll rise to meet it."
+        ]
+    ],
+    "warrior_2f3": [
+        [
+            "medicine cat apprentice",
+            "injured"
+        ],
+        [
+            "Just as you've been there for us, we're here for you, y_c. We're all a part of this Clan, and we look out for each other.",
+            "You're usually the one providing comfort. Let us do the same for you now.",
+            "You'll be back to helping cats in no time, I'm certain. You've got the heart and spirit of a healer.",
+            "Use this time to learn from our medicine cat, not only about healing others, but also about taking care of yourself.",
+            "Injury can teach us things we didn't know about ourselves. You're not only a healer but also a fighter. Your Clanmates admire your spirit."
+        ]
+    ],
+    "warrior_2d4": [
+        [
+            "mediator apprentice",
+            "injured"
+        ],
+        [
+            "It's hard to see you hurt, y_c. But remember, even the greatest peacemakers have their moments of trial.",
+            "You've always been there to ease our disagreements. Now it's our turn to stand by you.",
+            "Your strength doesn't only lie in your ability to mediate, but also in your resilience. We're all rooting for your swift recovery.",
+            "This may be a challenging time, but it's also an opportunity to learn and grow. Just as you help us see different perspectives, use this time to gain new insight.",
+            "Remember, you're not alone in this. We're a Clan, and we support each other through thick and thin."
+        ]
+    ],
+    "warrior_25s": [
+        [
+            "warrior",
+            "injured"
+        ],
+        [
+            "You've faced countless battles, my friend. This is just another battle, a different kind. And I know you're strong enough to fight it.",
+            "Rest and let your body heal. The Clan can hold the fort while you're recovering. We all have your back.",
+            "We've stood together in many battles, and we'll stand together through this."
+        ]
+    ],
+    "warrior_2f1": [
+        [
+            "kitten",
+            "injured"
+        ],
+        [
+            "Ah, y_c, you're hurt. Being a kit is all about exploring and learning, but sometimes we stumble and get bruises along the way.",
+            "It's important to know that it's okay to get hurt. Every warrior, even the most legendary ones, have their share of scrapes and scratches.",
+            "You're so brave for holding back those tears. But remember, it's alright to cry when you're in pain. Even the toughest warriors need to let out their feelings sometimes.",
+            "We'll get you patched up in no time, and soon you'll be back to your playful self. These are the moments that make us stronger.",
+            "You're a brave kit and soon you'll be a brave warrior, I'm sure of it. We learn from these little tumbles, and they make us wiser and stronger."
+        ]
+    ],
+    "warrior_2c2": [
+        [
+            "apprentice",
+            "injured"
+        ],
+        [
+            "y_c, I see you're hurt. It's hard, isn't it? The path to becoming a warrior is strewn with hurdles, and some of them can be painful.",
+            "Your strength is not just in your muscles, but also in your heart. I see it in you. The strength to get up after a fall, the courage to face another day.",
+            "Injuries are part of our life, but they don't define us. It's how we rise from these challenges that show our true character.",
+            "We will mend your wounds, and you will be stronger for it. It's these scars that tell the story of our bravery.",
+            "Let this be a lesson to you. Not of the fall, but of the rise. You're going to be a great warrior, I can see it."
+        ]
+    ],
+    "warrior_2a3": [
+        [
+            "medicine cat apprentice",
+            "injured"
+        ],
+        [
+            "Seeing you hurt is a tough sight, y_c. Your path is one of healing, not of pain.",
+            "It's ironic, isn't it? Those who mend are sometimes the ones that need mending. But remember, you're not alone in this.",
+            "We rely on you, not just for your skills but also for your spirit. It's your kindness and dedication that lights up the medicine den.",
+            "You will heal, just as you have healed so many of us. And when you do, you'll be stronger than before, not just in body but in spirit.",
+            "Take this time to rest and recover. The Clan needs you healthy and strong. We are with you, just as you've always been with us."
+        ]
+    ],
+    "warrior_2s4": [
+        [
+            "mediator apprentice",
+            "injured"
+        ],
+        [
+            "y_c, seeing you in pain is difficult. You're the one who's always smoothing ruffled fur and mending emotional wounds.",
+            "It's your job to mend bridges, not to fall off them. But accidents happen, and we must face them with courage.",
+            "I admire your spirit. Even in pain, I see the light in your eyes, the drive to get back on your paws and help the Clan.",
+            "Your role is as important as any warrior's. You keep our Clan united and strong. And it's our turn to help you heal.",
+            "This will pass, and you'll bounce back even stronger. Your resilience is an inspiration to us all."
+        ]
+    ],
+    "warrior_211": [
+        [
+            "Any"
+        ],
+        [
+            "You know, there's nothing quite like the feeling of fresh moss under your paws after a long day. It's soft, cool, and makes the perfect nest.",
+            "I've tried bracken, feathers, and even ferns, but nothing comes close to moss. It's like sleeping on a cloud.",
+            "And collecting it? It's a task on its own. There's a certain satisfaction in finding the perfect patch, soft and green, and pulling it up in thick clumps.",
+            "Next time you make your nest, give moss a try. I guarantee you'll sleep like you've never slept before."
+        ]
+    ],
+    "warrior_221": [
+        [
+            "Any"
+        ],
+        [
+            "Have you ever tasted squirrel? Not just any squirrel, but a plump, leaf-fall squirrel?",
+            "There's something about the way their fur bristles with the chill of the coming leaf-bare, and how their meat is just that little bit more tender from all the nuts they've been hoarding.",
+            "Sure, rabbit is faster and thrush is easier to catch, but a leaf-fall squirrel, that's a real warrior's prey.",
+            "The next time you're out on a hunting patrol, keep your eyes on the trees. You won't be disappointed."
+        ]
+    ],
+    "warrior_231": [
+        [
+            "Any"
+        ],
+        [
+            "There's an art to the belly-rake. It's not just about strength, but timing, precision.",
+            "You wait for the perfect moment when your opponent is off balance, then you strike. It's not just a move, it's a dance.",
+            "Some warriors favor the direct approach, all claws and teeth, but not me. The belly-rake, that's my move.",
+            "It's not for every battle, but when you pull it off, there's nothing quite like it."
+        ]
+    ],
+    "warrior_241": [
+        [
+            "Any"
+        ],
+        [
+            "There's something about dawn patrols. The chill in the air, the dew on the leaves, the way the forest slowly comes to life.",
+            "It's quiet, peaceful. You can almost forget about the danger, the battles. It's just you and the forest.",
+            "Some cats prefer the heat of the day, the thrill of the hunt, but give me a quiet dawn patrol any day.",
+            "It's a moment of calm before the storm, a time to reflect and prepare for the day ahead."
+        ]
+    ],
+    "warrior_251": [
+        [
+            "Any"
+        ],
+        [
+            "When the moon is full and high, casting long shadows on the forest floor, that's my favorite time to hunt.",
+            "The prey is wary, cautious. It makes the hunt a challenge, a true test of a warrior's skill.",
+            "The forest is a different place under the moonlight, quieter, more mysterious. It's as if StarClan is watching over us, guiding our steps.",
+            "There's a thrill to night hunting, a sense of connection with our ancestors that I can't find anywhere else."
+        ]
+    ],
+    "warrior_26": [
+        [
+            "apprentice",
+            "from_mentor",
+            "you_bloodthirsty"
+        ],
+        [
+            "Hey, slow down there. I see that fire in your eyes, and while it's good to have spirit, it's important to remember that we're not just warriors, but guardians too.",
+            "Our role isn't just about fighting and proving how strong we are. It's about protecting our Clan and preserving peace.",
+            "The most successful warriors aren't the ones who always seek battle, but those who avoid it unless it's truly necessary.",
+            "Remember, your strength isn't measured in how many battles you've won, but in how many times you've kept your Clan safe."
+        ]
+    ],
+    "warrior_27": [
+        [
+            "apprentice",
+            "from_mentor",
+            "you_bloodthirsty"
+        ],
+        [
+            "I know you're eager to show what you're made of. That's good. But remember, being a warrior isn't all about battles.",
+            "It's about knowing when to use your claws and when to sheathe them. It's about understanding that our first duty is to our Clan, not our personal glory.",
+            "Look at the elders, their pelts scarred from moons of service. Their true strength lies not in the battles they've fought, but in the peace they've helped to preserve.",
+            "Don't rush into battle. Use your head, not just your claws."
+        ]
+    ],
+    "warrior_28": [
+        [
+            "apprentice",
+            "from_mentor",
+            "you_bloodthirsty"
+        ],
+        [
+            "I've seen that look before. The thirst for battle, the eagerness to prove yourself. But let me tell you, a true warrior knows the value of patience.",
+            "Every battle leaves scars, not all of them on the surface. They take a toll on us, on our Clan.",
+            "It's not the fights that make us warriors. It's our willingness to stand up for our Clan, to protect our territory and our Clanmates. That doesn't always mean jumping into a fight.",
+            "Don't seek out unnecessary battles. You'll be a stronger warrior, and a better Clanmate, for it."
+        ]
+    ],
+    "warrior_29": [
+        [
+            "apprentice",
+            "from_mentor",
+            "you_bloodthirsty"
+        ],
+        [
+            "You've got a strong spirit, I'll give you that. But remember, being a warrior is not just about strength and battle.",
+            "It's about using your mind, making strategic decisions, thinking about the welfare of the Clan as a whole. Not every problem can be solved with claws and teeth.",
+            "A wise warrior knows when to fight and when to negotiate. An unnecessary fight could lead to unnecessary loss.",
+            "Keep that fire, but temper it with wisdom. Use your strength wisely, not recklessly."
+        ]
+    ],
+    "warrior_30": [
+        [
+            "apprentice",
+            "from_mentor",
+            "you_bloodthirsty"
+        ],
+        [
+            "Being a warrior isn't about how many battles you fight, it's about the sacrifices you make for your Clan.",
+            "It's easy to be eager for battle, to want to prove yourself. But remember, the true strength of a warrior isn't in their claws, but in their heart.",
+            "Never forget, we fight to protect, not to harm. We fight for our Clan, our territory, our kin.",
+            "So, channel that energy, that thirst for battle, into becoming the best warrior you can be – for the sake of your Clan, not your own pride."
         ]
     ]
 }
