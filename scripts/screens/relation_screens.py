@@ -5055,7 +5055,9 @@ class ChooseMurderCatScreen(Screens):
         if any(skill in self.best_murder_skills for skill in their_skills):
             chance -= 20
         
-        if cat_to_murder.is_ill() or cat_to_murder.is_ill():
+        if you.is_ill() or you.is_injured():
+            chance -= 20
+        if cat_to_murder.is_ill() or cat_to_murder.is_injured():
             chance += 20
         
         r = randint(0,100)

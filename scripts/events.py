@@ -566,7 +566,7 @@ class Events:
             ceremony_txt = random.choice(self.d_txt['gain_app'])
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
             ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
-            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
 
     def check_gain_mate(self, checks):
         if len(game.clan.your_cat.mate) == checks[1] + 1:
@@ -576,7 +576,7 @@ class Events:
                 self.d_txt = ujson.loads(read_file.read())
             ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
             ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
-            game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
         
     def generate_death_event(self):
         if game.clan.your_cat.status == 'kitten':

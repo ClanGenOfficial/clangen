@@ -209,7 +209,7 @@ class ProfileScreen(Screens):
                     event.ui_element == self.profile_elements["insult"]:
                 self.the_cat.insulted = True
                 if game.clan.your_cat.status != "kitten":
-                    self.the_cat.relationships[game.clan.your_cat.ID].dislike += randint(1,5)
+                    self.the_cat.relationships[game.clan.your_cat.ID].dislike += randint(1,10)
                     self.the_cat.relationships[game.clan.your_cat.ID].platonic_like -= randint(1,5)
                     self.the_cat.relationships[game.clan.your_cat.ID].comfortable -= randint(1,5)
                     self.the_cat.relationships[game.clan.your_cat.ID].trust -= randint(1,5)
