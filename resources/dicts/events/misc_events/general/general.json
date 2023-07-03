@@ -504,7 +504,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "m_c considers, as {PRONOUN/m_c/subject} look out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} belong.",
+        "event_text": "m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
         "cat_trait": [
             "adventurous",
             "daring",

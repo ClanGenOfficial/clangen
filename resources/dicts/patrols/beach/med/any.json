@@ -206,7 +206,7 @@
             "many_herbs1"
         ],
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 80,
         "exp": 20,
         "success_text": {

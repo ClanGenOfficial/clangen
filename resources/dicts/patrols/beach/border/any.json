@@ -42,8 +42,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/r_c/poss} patrol.",
-            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/r_c/poss} patrol.",
+            "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "lead_death": "killed in a rogue ambush"
         }
     },
@@ -130,8 +130,8 @@
         "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
         "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
         "history_text": {
-            "scar": "r_c was badly scarred when rogues attacked their patrol.",
-            "reg_death": "This cat was killed when rogues attacked their patrol.",
+            "scar": "r_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
             "lead_death": "killed in a rogue ambush"
         }
     },

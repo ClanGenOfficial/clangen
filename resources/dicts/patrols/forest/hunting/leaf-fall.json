@@ -380,7 +380,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died from their wounds after battling the rat king."
+            "reg_death": "r_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
         }
     },
     {

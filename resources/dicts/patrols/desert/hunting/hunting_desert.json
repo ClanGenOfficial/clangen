@@ -1330,7 +1330,7 @@
         },
         "fail_text": {
             "unscathed_common": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
-            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1376,7 +1376,7 @@
         },
         "fail_text": {
             "unscathed_common": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
-            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1431,7 +1431,7 @@
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
             "death": "One tiny kit fox against r_c? No contest. r_c settles in to open the carcass, but is caught unawares by the boar returning to reclaim it, and is killed and eaten by the boar.",
-            "injury": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1",

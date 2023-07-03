@@ -13,7 +13,7 @@
         "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tall tree.",
-            "reg_death": "m_c died from their wounds after falling from a tall tree."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
         },
         "cat_trait": [
             "adventurous",

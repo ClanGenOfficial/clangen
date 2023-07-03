@@ -121,7 +121,7 @@
         "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
         "success_text": {
             "unscathed_common": "Your patrol catches the bird before it flies away!",
-            "unscathed_rare": "r_c creeps towards the bird, setting their paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
+            "unscathed_rare": "r_c creeps towards the bird, setting {PRONOUN/m_c/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
         },
         "fail_text": {
             "unscathed_common": "Your patrol narrowly misses the bird."
@@ -270,7 +270,7 @@
         },
         "fail_text": {
             "unscathed_common": "Your patrol jumps after it, but the rabbit has too great of a head start.",
-            "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
+            "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         },
         "win_skills": [
             "HUNTER,2"
@@ -426,7 +426,7 @@
         },
         "fail_text": {
             "unscathed_common": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
-            "unscathed_stat": "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when they slink in to their nest that night."
+            "unscathed_stat": "{PRONOUN/r_c/subject/CAP} {VERB/s_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} slink in to {PRONOUN/r_c/poss} nest that night."
         },
         "min_cats": 2,
         "max_cats": 6,

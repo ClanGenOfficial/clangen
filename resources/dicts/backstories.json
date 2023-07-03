@@ -1,7 +1,7 @@
 {
   "backstories": {
         "clan_founder": "This cat is one of the founding members of the Clan.",
-        "clanborn": "This cat was born into the Clan where {PRONOUN/m_c/subject} currently reside.",
+        "clanborn": "This cat was born into the Clan where {PRONOUN/m_c/subject} currently {VERB/m_c/reside/resides}.",
 
         "halfclan1": "This cat was born into the Clan, but one of {PRONOUN/m_c/poss} parents resides in another Clan.",
         "halfclan2": "This cat was born in another Clan, but chose to come to this Clan to be with {PRONOUN/m_c/poss} other parent.",
@@ -10,7 +10,7 @@
         "outsider_roots2": "This cat was born outside the Clan, but came to live in the Clan with {PRONOUN/m_c/poss} parent at a young age.",
 
         "loner1": "This cat joined the Clan by choice after living life as a loner.",
-        "loner2": "This cat used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clanlife might be an interesting change of pace.",
+        "loner2": "This cat used to live in a barn, but mostly stayed away from Twolegs. {PRONOUN/m_c/subject/CAP} decided Clan life might be an interesting change of pace.",
 
         "kittypet1": "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         "kittypet2": "This cat used to live on something called a 'boat' with Twolegs, but decided to join the Clan.",
@@ -29,12 +29,12 @@
         "otherclan1": "This cat was born into another Clan, but came to this Clan by choice.",
         "otherclan2": "This cat was unhappy in {PRONOUN/m_c/poss} old Clan and decided to come here instead.",
         "otherclan3": "This cat's Clan stayed with the Clan after a disaster struck {PRONOUN/m_c/poss} old one, and decided to stay after the rest of {PRONOUN/m_c/poss} Clan returned home.",
-        "otherclan4": "This cat grew up in another Clan but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now live in.",
+        "otherclan4": "This cat grew up in another Clan, but chose to leave that life and join the Clan {PRONOUN/m_c/subject} now {VERB/m_c/live/lives} in.",
 
 
         "disgraced1": "This cat was cast out of {PRONOUN/m_c/poss} old Clan for some transgression that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not keen on talking about.",
         "disgraced2": "This cat was exiled from {PRONOUN/m_c/poss} old Clan for something {PRONOUN/m_c/subject} didn't do and came here to seek safety.",
-        "disgraced3": "This cat once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} refuse to share.",
+        "disgraced3": "This cat once held a high rank in another Clan but was exiled for reasons {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to share.",
 
         "retired_leader": "This cat used to be the leader of another Clan before deciding {PRONOUN/m_c/subject} needed a change of scenery after leadership became too much. {PRONOUN/m_c/subject/CAP} returned {PRONOUN/m_c/poss} nine lives and let {PRONOUN/m_c/poss} deputy take over before coming here.",
         "medicine_cat": "This cat was once a medicine cat in another Clan.",
