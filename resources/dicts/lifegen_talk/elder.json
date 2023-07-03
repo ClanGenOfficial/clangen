@@ -314,6 +314,78 @@
             "Your paws... they reek of blood."
         ]
     ],
+    "elder_1": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "Your eyes hold the weight of a life taken."
+        ]
+    ],
+    "elder_2": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "In the shadows, whispers of your dark deed linger."
+        ]
+    ],
+    "elder_3": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "Silence cannot conceal the echoes of your crime."
+        ]
+    ],
+    "elder_6": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "A heavy burden rests upon your shoulders."
+        ]
+    ],
+    "elder_7": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "The winds whisper tales of your darkened path."
+        ]
+    ],
+    "elder_8": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "The night weeps for the life you've extinguished."
+        ]
+    ],
+    "elder_9": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "Your soul's shadow grows darker with each passing day."
+        ]
+    ],
+    "elder_10": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "The cats of StarClan. I can see them. They shudder in the wake of your transgression."
+        ]
+    ],
     "elder32132": [
         [
             "kitten",
