@@ -3458,6 +3458,7 @@ class TalkScreen(Screens):
     def get_possible_text(self, cat):
         status = cat.status
         trait = cat.personality.trait
+        you_trait = game.clan.your_cat.personality.trait
         skill = cat.skills
         text = ""
         resource_dir = "resources/dicts/lifegen_talk/"
@@ -3483,8 +3484,12 @@ class TalkScreen(Screens):
                 continue
             if (game.clan.your_cat.status == 'kitten') and 'no_kit' in talk[0]:
                 continue
-            if ("you_insecure" in talk[0]) and game.clan.your_cat.personality.trait != "insecure":
-                continue
+            if any(i in ['you_bloodthirsty', "you_insecure", 'you_cold', 'you_childish', 'you_faithful', 'you_strict', 'you_insecure', "you_nervous", "you_lonesome", "you_vengeful", "you_fierce"] for i in talk[0]):
+                ts = ['you_bloodthirsty', "you_insecure", 'you_cold', 'you_childish', 'you_faithful', 'you_strict', 'you_insecure', "you_nervous", "you_lonesome", "you_vengeful", "you_fierce"]
+                for j in range(len(ts)):
+                    ts[j] = ts[j][3:]
+                if you_trait not in ts:
+                    continue
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
