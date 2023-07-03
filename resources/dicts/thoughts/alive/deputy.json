@@ -166,7 +166,7 @@
             "ambitious"
         ],
         "main_skill_constraint": [
-            "TEACHER"
+            "TEACHER,1"
         ]
     },
     {
@@ -223,7 +223,7 @@
             "Encourages the older cats to share their skills and techniques with the younger generations"
         ],
         "main_skill_constraint": [
-            "TEACHER"
+            "TEACHER,1"
         ]
     },
     {
@@ -233,7 +233,7 @@
             "Is guiding an apprentice through their first hunting lesson"
         ],
         "main_skill_constraint": [
-            "TEACHER"
+            "TEACHER,1"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -247,7 +247,7 @@
             "Is out surveying the territory for the best hunting spots to send patrols tomorrow"
         ],
         "main_skill_constraint": [
-            "HUNTER"
+            "HUNTER,1"
         ]
     },
     {
@@ -259,7 +259,7 @@
             "Organizes a mock battle to keep the Clan's skills sharp"
         ],
         "main_skill_constraint": [
-            "FIGHTER"
+            "FIGHTER,1"
         ]
     },
     {
@@ -270,7 +270,7 @@
             "Is considering a unique approach to organizing the patrols"
         ],
         "main_skill_constraint": [
-            "CLEVER"
+            "CLEVER,1"
         ]
     },
     {
@@ -281,7 +281,7 @@
             "Is sharing knowledge about basic herbs with the Clan"
         ],
         "main_skill_constraint": [
-            "HEALER"
+            "HEALER,1"
         ]
     },
     {
@@ -290,7 +290,7 @@
             "Takes a patrol out to gather herbs for the medicine cat"
         ],
         "main_skill_constraint": [
-            "HEALER"
+            "HEALER,1"
         ],
         "random_status_constraint": [
             "medicine cat"
@@ -305,7 +305,7 @@
             "Is sharing tales of the Clan's legacy with wide-eyed apprentices"
         ],
         "main_skill_constraint": [
-            "STORY"
+            "STORY,1"
         ]
     },
     {
@@ -317,7 +317,7 @@
             "Is sharing tales of the Clan's legacy with wide-eyed apprentices"
         ],
         "main_skill_constraint": [
-            "STORY"
+            "STORY,1"
         ],
         "random_status_constraint": [
             "apprentice"
