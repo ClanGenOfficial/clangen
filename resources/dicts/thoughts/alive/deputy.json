@@ -173,7 +173,6 @@
         "id": "wise_deputy",
         "thoughts": [
             "Is reflecting on a past lesson to make a crucial decision",
-            "Is sharing words of wisdom with a confused apprentice",
             "Ponders how their decisions will impact the Clan in the long term",
             "Feels a sense of understanding after meditating on an issue"
         ],
@@ -219,7 +218,6 @@
         "id": "teacher_deputy",
         "thoughts": [
             "Is devising an effective teaching strategy for new skills",
-            "Is guiding an apprentice through their first hunting lesson",
             "Encourages the older cats to share their skills and techniques with the younger generations"
         ],
         "main_skill_constraint": [
@@ -230,7 +228,7 @@
         "id": "teacher_deputy_apprentice",
         "thoughts": [
             "Feels satisfaction watching an apprentice master a lesson",
-            "Is guiding an apprentice through their first hunting lesson"
+            "Guides an apprentice through their first hunting assessment"
         ],
         "main_skill_constraint": [
             "TEACHER,1"
@@ -301,8 +299,7 @@
         "thoughts": [
             "Is recalling an old story that might inspire the Clan in tough times",
             "Feels inspired to craft a new legend based on recent events",
-            "Uses the stories of old to help guide their decisions",
-            "Is sharing tales of the Clan's legacy with wide-eyed apprentices"
+            "Uses the stories of old to help guide their decisions"
         ],
         "main_skill_constraint": [
             "STORY,1"
