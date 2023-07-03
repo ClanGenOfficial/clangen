@@ -3554,10 +3554,16 @@ class TalkScreen(Screens):
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
         text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]
-        text = [t1.replace("r_c", str(Cat.all_cats[choice(game.clan.clan_cats)].name)) for t1 in text]
-
-        
-
+        if "r_c" in text:
+            r_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+            counter = 0
+            while r_cat.dead or r_cat.outside or r_cat.ID == game.clan.your_cat.ID:
+                r_cat = Cat.all_cats[choice(game.clan.clan_cats)]
+                counter += 1
+                if counter > 15:
+                    break
+            r_cat_name = str(r_cat.name)
+            text = [t1.replace("r_c", r_cat_name) for t1 in text]
         return text
         
 class InsultScreen(Screens):

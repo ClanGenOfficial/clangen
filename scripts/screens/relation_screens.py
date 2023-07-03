@@ -5094,8 +5094,9 @@ class ChooseMurderCatScreen(Screens):
             chance -= 15
         if any(skill in self.best_murder_skills for skill in their_skills):
             chance -= 20
-        
-        if cat_to_murder.is_ill() or cat_to_murder.is_ill():
+        if you.is_ill() or you.is_injured():
+            chance -= 20
+        if cat_to_murder.is_ill() or cat_to_murder.is_injured():
             chance += 20
         return chance
 
@@ -5143,7 +5144,15 @@ class ChooseMurderCatScreen(Screens):
                     c_text = "high"
                 else:
                     c_text = "very high"
-                self.selected_details["chance"] = pygame_gui.elements.UITextBox("murder chance: " + c_text,
+                if game.settings['dark mode']:
+                    self.selected_details["chance"] = pygame_gui.elements.UITextBox("murder chance: " + c_text,
+                                                                                            scale(pygame.Rect((980, 500),
+                                                                                                                (210, 250))),
+                                                                                            object_id="#text_box_22_horizcenter_vertcenter_spacing_95_dark",
+                                                                                            manager=MANAGER)
+
+                else:
+                    self.selected_details["chance"] = pygame_gui.elements.UITextBox("murder chance: " + c_text,
                                                                                         scale(pygame.Rect((980, 500),
                                                                                                             (210, 250))),
                                                                                         object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
