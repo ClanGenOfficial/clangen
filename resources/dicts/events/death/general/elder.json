@@ -24,7 +24,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a fox.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a fox.",
         "history_text": {
             "reg_death": "m_c was killed by a fox."
         },
@@ -41,7 +41,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a badger.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a badger.",
         "history_text": {
             "reg_death": "m_c was killed by a badger."
         },
@@ -58,7 +58,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a dog.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a dog.",
         "history_text": {
             "reg_death": "m_c was killed by a dog."
         },

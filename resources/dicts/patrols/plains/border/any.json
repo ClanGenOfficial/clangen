@@ -53,7 +53,7 @@
         "history_text": {
             "scar": "r_c was injured after disturbing a badger in its sett.",
             "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-            "lead_death": "were killed by a predator hiding in it's burrow"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in it's burrow"
         }
     },
     {
@@ -108,7 +108,7 @@
         "history_text": {
             "scar": "r_c was injured after disturbing a badger in its sett.",
             "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-            "lead_death": "were killed by a predator hiding in it's burrow"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in it's burrow"
         }
     },
     {
@@ -154,7 +154,7 @@
         "history_text": {
             "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/r_c/poss} patrol.",
             "reg_death": "This cat was killed when rogues ambushed their patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -193,7 +193,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "This cat was killed when rogues ambushed them while on a solo patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -241,7 +241,7 @@
         "history_text": {
             "scar": "r_c was badly scarred when rogues attacked {PRONOUN/r_c/poss} patrol.",
             "reg_death": "This cat was killed when rogues attacked their patrol.",
-            "lead_death": "were killed in a rogue attack"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue attack"
         }
     },
     {
@@ -304,7 +304,7 @@
         "history_text": {
             "scar": "r_c was scarred by an invading rogue.",
             "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -367,7 +367,7 @@
         "history_text": {
             "scar": "r_c was scarred by an invading rogue.",
             "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -423,7 +423,7 @@
         "history_text": {
             "scar": "r_c was scarred by an invading rogue.",
             "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {

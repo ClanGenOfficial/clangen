@@ -101,7 +101,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "history_text": {
             "reg_death": "m_c died from water-inhalation after falling in the river."
         },

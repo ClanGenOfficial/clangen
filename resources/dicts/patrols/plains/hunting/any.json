@@ -179,7 +179,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
-            "lead_death": "were killed by a wolverine"
+            "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
     {
@@ -564,7 +564,7 @@
         "history_text": {
             "scar": "p_l gained a scar from a fox.",
             "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "were killed by a predator"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -610,7 +610,7 @@
         "history_text": {
             "scar": "p_l gained a scar from a fox.",
             "reg_death": "p_l was killed by a wolverine while patrolling alone.",
-            "lead_death": "were killed by a predator"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -1114,7 +1114,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1168,7 +1168,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1220,7 +1220,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1274,7 +1274,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {

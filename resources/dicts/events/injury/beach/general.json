@@ -53,7 +53,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "history_text": {
             "reg_death": "m_c died from water-inhalation after being dragged out to sea."
         },

@@ -48,7 +48,7 @@
         "history_text": {
             "scar": "r_c was scarred by an enemy warrior.",
             "reg_death": "r_c was killed by an enemy warrior.",
-            "lead_death": "were killed by an enemy warrior"
+            "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
         }
     },
     {
@@ -102,7 +102,7 @@
         "history_text": {
             "scar": "r_c was scarred by an enemy warrior.",
             "reg_death": "r_c was killed by an enemy warrior.",
-            "lead_death": "were killed by an enemy warrior"
+            "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
         }
     },
     {
@@ -163,7 +163,7 @@
         "history_text": {
             "scar": "r_c disrespected the border lines and was scarred by an enemy warrior for it.",
             "reg_death": "r_c disrespected the border lines and was killed by an enemy warrior for it.",
-            "lead_death": "were killed by an enemy warrior"
+            "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
         }
     },
     {
@@ -252,7 +252,7 @@
         "history_text": {
             "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
             "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
         }
     },
     {
@@ -307,7 +307,7 @@
         "history_text": {
             "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
             "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
         }
     },
     {
@@ -371,7 +371,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -436,7 +436,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -501,7 +501,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life against a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -554,7 +554,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -607,7 +607,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -671,7 +671,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -736,7 +736,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -801,7 +801,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life against a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -854,7 +854,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -907,7 +907,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -971,7 +971,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1036,7 +1036,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1101,7 +1101,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life against a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1154,7 +1154,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1207,7 +1207,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1271,7 +1271,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1336,7 +1336,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1401,7 +1401,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life against a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1454,7 +1454,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     },
     {
@@ -1507,7 +1507,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c was killed by a hostile Clan.",
-            "lead_death": "were killed by a hostile Clan"
+            "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
         }
     }
 ]

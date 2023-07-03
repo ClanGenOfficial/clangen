@@ -73,7 +73,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paw pads aren't used to all the salt water they've been traipsing around in since becoming an apprentice, they've become cracked and sore.",
+        "event_text": "m_c's paw pads aren't used to all the salt water {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been traipsing around in since becoming an apprentice, they've become cracked and sore.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

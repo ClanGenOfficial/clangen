@@ -729,7 +729,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-            "unscathed_rare": "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            "unscathed_rare": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
             "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
         },
         "fail_text": {
@@ -1534,7 +1534,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1586,7 +1586,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1639,7 +1639,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1691,7 +1691,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {

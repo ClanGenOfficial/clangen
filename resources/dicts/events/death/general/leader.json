@@ -8,7 +8,7 @@
         ],
         "death_text": "Lightning struck in camp, and m_c lost a life.",
         "history_text": {
-            "lead_death": "were struck by lightning"
+            "lead_death": "{VERB/m_c/were/was} struck by lightning"
         }
     },
     {
@@ -21,7 +21,7 @@
         ],
         "death_text": "m_c was mortally wounded by a fox, and lost a life.",
         "history_text": {
-            "lead_death": "were wounded by a fox"
+            "lead_death": "{VERB/m_c/were/was} wounded by a fox"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -37,7 +37,7 @@
         ],
         "death_text": "m_c lost a life to a dog.",
         "history_text": {
-            "lead_death": "were mauled by a dog"
+            "lead_death": "{VERB/m_c/were/was} mauled by a dog"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -53,7 +53,7 @@
         ],
         "death_text": "m_c lost a life to a badger.",
         "history_text": {
-            "lead_death": "were killed by a badger"
+            "lead_death": "{VERB/m_c/were/was} killed by a badger"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -85,7 +85,7 @@
         ],
         "death_text": "m_c was bit by a venomous spider, and lost a life.",
         "history_text": {
-            "lead_death": "were bit by a venomous spider"
+            "lead_death": "{VERB/m_c/were/was} bit by a venomous spider"
         }
     },
     {
@@ -98,7 +98,7 @@
         ],
         "death_text": "m_c was bit by a venomous snake, and lost a life.",
         "history_text": {
-            "lead_death": "were bit by a venomous snake"
+            "lead_death": "{VERB/m_c/were/was} bit by a venomous snake"
         }
     },
     {
@@ -663,7 +663,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c's body just couldn't continue forward - they've lost all of their remaining lives to old age.",
+        "death_text": "m_c's body just couldn't continue forward - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost all of their remaining lives to old age.",
         "history_text": {
             "lead_death": "succumbed to old age"
         }
@@ -679,7 +679,7 @@
         ],
         "death_text": "m_c was brutally attacked by a rogue, and lost all of their lives.",
         "history_text": {
-            "lead_death": "were brutally attacked by a rogue"
+            "lead_death": "{VERB/m_c/were/was} brutally attacked by a rogue"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -696,7 +696,7 @@
         ],
         "death_text": "m_c was mauled by dogs, and lost all of their lives.",
         "history_text": {
-            "lead_death": "were mauled by dogs"
+            "lead_death": "{VERB/m_c/were/was} mauled by dogs"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -714,7 +714,7 @@
         ],
         "death_text": "m_c was burnt alive while trying to save their Clanmates from a fire.",
         "history_text": {
-            "lead_death": "were killed in a fire trying to save their Clanmates"
+            "lead_death": "{VERB/m_c/were/was} killed in a fire trying to save their Clanmates"
         },
         "cat_trait": [
             "altruistic",
@@ -744,7 +744,7 @@
         ],
         "death_text": "m_c was brutally murdered by a warrior from o_c, who cruelly took all their lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by a warrior from o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by a warrior from o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -764,7 +764,7 @@
         ],
         "death_text": "m_c was brutally murdered by the leader of o_c, who cruelly took all their lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by the leader of o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by the leader of o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,3"
@@ -784,7 +784,7 @@
         ],
         "death_text": "m_c was brutally murdered by the deputy of o_c, who cruelly took all their lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by the deputy of o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by the deputy of o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -969,7 +969,7 @@
         ],
         "death_text": "m_c was pushed under a monster, and lost a life.",
         "history_text": {
-            "lead_death": "were pushed under a monster by r_c",
+            "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c",
             "lead_murder_unrevealed": "were pushed under a monster"
         },
         "cat_trait": [
@@ -1011,7 +1011,7 @@
         ],
         "death_text": "m_c was murdered by r_c in cold blood, with the intention of taking their place.",
         "history_text": {
-            "lead_death": "were murdered by r_c",
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
         "other_cat_trait": [
@@ -1050,7 +1050,7 @@
         "death_text": "m_c was murdered by r_c, with the intention of taking their place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
-            "lead_death": "were murdered by r_c in an attempt to usurp their lead",
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c in an attempt to usurp their lead",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
         "cat_skill": [

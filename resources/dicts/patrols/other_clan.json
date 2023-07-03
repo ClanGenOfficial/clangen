@@ -328,9 +328,9 @@
         "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
         "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n deputy conversing with your leader. They tell the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
         "history_text": {
-            "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-            "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "scar": "r_c followed the scent of a trespassing cat and {VERB/r_c/were/was} scarred by a dog.",
+            "reg_death": "r_c followed the scent of a trespassing cat and {VERB/r_c/were/was} killed by a dog.",
+            "lead_death": "followed the scent of a trespassing cat and {VERB/r_c/were/was} killed by a dog"
         }
     },
     {
@@ -383,7 +383,7 @@
         "history_text": {
             "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
             "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
         }
     },
     {
@@ -501,7 +501,7 @@
         "history_text": {
             "scar": "r_c was injured by an enemy patrol while marking the border.",
             "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -562,7 +562,7 @@
         "history_text": {
             "scar": "r_c was injured by an enemy patrol while marking the border.",
             "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1016,7 +1016,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1077,7 +1077,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1536,7 +1536,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1597,7 +1597,7 @@
         "history_text": {
             "scar": "r_c got injured patrolling on the border.",
             "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {

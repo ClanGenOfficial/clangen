@@ -35,7 +35,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "r_c was swept out to sea by a flood.",
-            "lead_death": "were swept out to sea by a flood"
+            "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"
         }
     }
 ]
