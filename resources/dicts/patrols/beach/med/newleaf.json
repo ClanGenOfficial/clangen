@@ -759,7 +759,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead."
         },
         "fail_text": {
@@ -804,7 +804,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade {PRONOUN/p_l/poss} pride in plucking from the highest branches, even if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} no more potent than those at the bottom.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously, a great demonstration to app1 about why {PRONOUN/p_l/subject} came here and not anywhere else.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously, a great demonstration to app1 about why {PRONOUN/p_l/subject} came here and not anywhere else.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pass/passes} on the trick to app1, and once {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} back at camp both medicine cats strip off the leaves and give them a quick wash."
         },
         "fail_text": {
@@ -844,7 +844,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. {PRONOUN/p_l/subject/CAP} {VERB/p_l/share/shares} the little joke with the patrol, and the cats murrp with amusement, but it does also remind everyone to be careful as {PRONOUN/p_l/subject} {VERB/p_l/strip/strips} leaves from the tree.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to work plucking leaves to bring a impressive haul home.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to work plucking leaves to bring a impressive haul home.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants, {PRONOUN/s_c/subject} can bring a truly massive haul home, where the rest of the patrol helps {PRONOUN/s_c/subject} strip the leaves and carefully store {PRONOUN/s_c/object}."
         },
         "fail_text": {
@@ -879,7 +879,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} were anticipating.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores."
         },
         "fail_text": {
@@ -920,7 +920,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. app1 and p_l occasionally exchange quiet meows as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, contact calls reassuring each other that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} both still there amidst the towering goldenrod.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and the cats collect more goldenrod than {PRONOUN/p_l/subject} were anticipating. app1 nearly disappears underneath {PRONOUN/p_l/poss} light, but chaotically bushy, bundle, which has p_l stifling purrs of amusement.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and the cats collect more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating. app1 nearly disappears underneath {PRONOUN/app1/poss} light, but chaotically bushy, bundle, which has p_l stifling purrs of amusement.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As {PRONOUN/s_c/subject} do, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
         },
         "fail_text": {
@@ -958,7 +958,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, exchanging gossip and news as the smell of cut stems wreathes around {PRONOUN/p_l/object}.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} were anticipating, loading up every cat until everyone agrees the medicine cat den can't possibly fit more than this.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating, loading up every cat until everyone agrees the medicine cat den can't possibly fit more than this.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. {PRONOUN/s_c/subject/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
         },
         "fail_text": {

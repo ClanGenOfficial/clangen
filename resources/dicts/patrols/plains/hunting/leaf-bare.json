@@ -155,7 +155,7 @@
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -211,7 +211,7 @@
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -261,7 +261,7 @@
         "success_text": {
             "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
             "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up. They pounce onto the fox's back, digging in their claws. It's a wild ride through the plains until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} dragged through the plains, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the plains, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         },
         "fail_text": {
             "unscathed_common": "r_c fails to drive away the fox, which keeps possession of the food. However there were no injuries.",

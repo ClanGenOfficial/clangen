@@ -1722,7 +1722,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
+            "unscathed_common": "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} {VERB/r_c/were/was} interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
             "unscathed_rare": "r_c talks about how, sometimes, often even, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} tripping over {PRONOUN/r_c/poss} own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want r_c to change.",
             "stat_skill": "s_c talks about how choosing the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
         },

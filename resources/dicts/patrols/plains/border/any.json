@@ -512,7 +512,7 @@
             "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/r_c/object}. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
-            "unscathed_common": "It turns out {PRONOUN/r_c/subject} were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
+            "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
             "unscathed_stat": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/object} at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue manages to escape {PRONOUN/s_c/poss} grasp and run off further into c_n territory.",
             "injury": "Nose to the ground following the trail, r_c doesn't see the blow coming. {PRONOUN/r_c/subject/CAP} {VERB/r_c/haul/hauls} {PRONOUN/r_c/self} to {PRONOUN/r_c/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
         },
@@ -570,7 +570,7 @@
             "unscathed_rare": "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting there'll be a test soon."
         },
         "fail_text": {
-            "unscathed_common": "It turns out {PRONOUN/app1/subject} were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} don't want to look dumb in front of other cats.",
+            "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} don't want to look dumb in front of other cats.",
             "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts {PRONOUN/s_c/object}. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/object} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         },

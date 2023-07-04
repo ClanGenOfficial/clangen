@@ -90,7 +90,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -127,7 +127,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -193,7 +193,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -299,7 +299,7 @@
         },
         "fail_text": {
             "unscathed_common": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. app1 pads uncertainly back to camp, wondering if it was even real in the first place.",
-            "unscathed_stat": "app1 turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/app1/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/app1/object}, and things must change. app1 cowers in front of them, wishing {PRONOUN/app1/subject} were anywhere else."
+            "unscathed_stat": "app1 turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/app1/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/app1/object}, and things must change. app1 cowers in front of them, wishing {PRONOUN/app1/subject} {VERB/app1/were/was} anywhere else."
         },
         "fail_trait": [
             "bloodthirsty",

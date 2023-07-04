@@ -131,7 +131,7 @@
             "unscathed_rare": "The burdock plants are plentiful in the area that p_l chose. {PRONOUN/p_l/subject/CAP}'ll have a good supply to last a while!"
         },
         "fail_text": {
-            "unscathed_common": "p_l can't find the burdock plant {PRONOUN/p_l/subject} were thinking of. Maybe it was elsewhere in the territory..?",
+            "unscathed_common": "p_l can't find the burdock plant {PRONOUN/p_l/subject} {VERB/p_l/were/was} thinking of. Maybe it was elsewhere in the territory..?",
             "unscathed_stat": "By the time they reach the burdock plants, p_l is about ready to claw s_c's ears off. Great StarClan! <i>How</i> can a cat be so annoying? p_l hisses in exasperation, just as {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that the burdock is all shriveled and dead - the roots won't be any good. It's just one thing after another today."
         },
         "fail_trait": [
