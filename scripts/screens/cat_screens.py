@@ -3494,9 +3494,12 @@ class TalkScreen(Screens):
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
             if "murder" in talk[0]:
-                if game.clan.your_cat.history:
-                    if "is_murderer" in game.clan.your_cat.history.murder:
-                        if len(game.clan.your_cat.history.murder["is_murderer"]) == 0:
+                if game.clan.your_cat.revealed:
+                    if game.clan.your_cat.history:
+                        if "is_murderer" in game.clan.your_cat.history.murder:
+                            if len(game.clan.your_cat.history.murder["is_murderer"]) == 0:
+                                continue
+                        else:
                             continue
                     else:
                         continue

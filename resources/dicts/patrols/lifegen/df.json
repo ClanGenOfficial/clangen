@@ -148,7 +148,7 @@
         "border",
         "convince_rc"
     ],
-    "intro_text": "There's a familiar scent in the air. You track it down and find yourself face to face with... df_rc? They look lost.",
+    "intro_text": "There's a familiar scent in the air. You track it down and find yourself face to face with... one of your clanmates? They look lost.",
     "success_text": {
         "unscathed_common": "You convince them that this is no place for a cat like them.",
         "unscathed_rare": "You take them on as your apprentice."

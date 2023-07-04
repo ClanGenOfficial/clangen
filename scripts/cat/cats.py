@@ -211,6 +211,7 @@ class Cat():
         self.talked_to = False
         self.insulted = False
         self.joined_df = False
+        self.revealed = False
 
         
         self.prevent_fading = False  # Prevents a cat from fading.
@@ -2855,7 +2856,8 @@ class Cat():
                 "w_done": self.w_done if self.w_done else False,
                 "talked_to": self.talked_to if self.talked_to else False,
                 "insulted": self.insulted if self.insulted else False,
-                "joined_df": self.joined_df if self.joined_df else False
+                "joined_df": self.joined_df if self.joined_df else False,
+                "revealed": self.revealed if self.revealed else False
             }
 
 

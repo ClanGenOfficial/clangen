@@ -1,3 +1,9 @@
+<strong>v0.4.3: </strong>
+- Basics of accomplices added
+- Added new dialogue
+- Option to turn off red background
+- Bug fixes
+
 <strong>v0.4.2: </strong>
 - Display for murder chance
 - Edited murder events
