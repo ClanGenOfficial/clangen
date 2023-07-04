@@ -178,7 +178,7 @@
         "event_text": "m_c's tail was badly injured by falling rocks.",
         "history_text": {
             "scar": "m_c was scarred by falling rocks.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on them."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,

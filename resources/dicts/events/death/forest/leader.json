@@ -40,7 +40,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when a hawk attempted to grab and lift them.",
+        "death_text": "m_c lost a life when a hawk attempted to grab and lift {PRONOUN/m_c/object}.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} grabbed by a hawk"
         },

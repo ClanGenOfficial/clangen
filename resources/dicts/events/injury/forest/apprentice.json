@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
+        "event_text": "m_c was running around excitedly on patrol when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "cat_trait": [
             "adventurous",
             "bold",
@@ -31,7 +31,7 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
+        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tall tree.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."

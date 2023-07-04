@@ -130,7 +130,7 @@
             "rc_to_mc",
             "respect"
         ],
-        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared them to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
+        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN/m_c/object} to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
         "history_text": {
             "reg_death": "m_c died after swimming through freezing water when dared by r_c."
         },

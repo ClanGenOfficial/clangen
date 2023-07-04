@@ -49,7 +49,7 @@
             "neg_platonic",
             "dislike"
         ],
-        "death_text": "m_c was murdered. r_c stands over them, blood dripping from {PRONOUN/r_c/poss} pelt.",
+        "death_text": "m_c was murdered. r_c stands over {PRONOUN/m_c/object}, blood dripping from {PRONOUN/r_c/poss} pelt.",
         "history_text": {
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
