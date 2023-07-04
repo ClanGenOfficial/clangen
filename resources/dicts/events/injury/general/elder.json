@@ -132,7 +132,7 @@
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
         "history_text": {
             "scar": "m_c was scarred after a bad fall.",
-            "reg_death": "m_c died from their wounds after taking a bad fall."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after taking a bad fall."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -254,7 +254,7 @@
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through their pelt.",
         "history_text": {
             "scar": "m_c was scarred by r_c.",
-            "reg_death": "m_c died from their wounds after r_c hurt them for trying to stop an argument."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after r_c hurt them for trying to stop an argument."
         },
         "cat_trait": [
             "altruistic",
@@ -303,7 +303,7 @@
         "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from an enemy warrior.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from an enemy warrior."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from an enemy warrior."
         },
         "cat_trait": [
             "altruistic",
@@ -341,7 +341,7 @@
         "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from a rogue.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from a rogue."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a rogue."
         },
         "cat_trait": [
             "altruistic",
@@ -379,7 +379,7 @@
         "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from a dog.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from a dog."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a dog."
         },
         "cat_trait": [
             "altruistic",

@@ -55,7 +55,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when they fell from the top branches of a tree.",
+        "death_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
         "history_text": {
             "lead_death": "fell from a tall tree"
         },
@@ -193,7 +193,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was buried alive in an avalanche, and lost all their lives.",
+        "death_text": "m_c was buried alive in an avalanche, and lost all {PRONOUN/m_c/poss} lives.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
         },
@@ -210,7 +210,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "death_text": "m_c was buried alive in an landslide, and lost all their lives.",
+        "death_text": "m_c was buried alive in an landslide, and lost all {PRONOUN/m_c/poss} lives.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} buried alive in a landslide"
         },
@@ -225,7 +225,7 @@
             "all_lives",
             "Newleaf"
         ],
-        "death_text": "m_c was buried alive in an mudslide, and lost all their lives.",
+        "death_text": "m_c was buried alive in an mudslide, and lost all {PRONOUN/m_c/poss} lives.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} buried alive in a mudslide"
         },
@@ -271,7 +271,7 @@
         "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom, and couldn't recover.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c",
-            "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} shoved off a cliff by an unknown killer"
         },
         "cat_trait": null,
         "cat_skill": null,
