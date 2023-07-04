@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
+        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "cat_trait": [
             "adventurous",
             "bold",
@@ -31,7 +31,7 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
+        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tall tree.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
@@ -82,7 +82,7 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was hunting on a night patrol, and nearly carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
+        "event_text": "m_c was hunting on a night patrol, and nearly got carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
         "history_text": {
             "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."

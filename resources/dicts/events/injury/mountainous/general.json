@@ -63,7 +63,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, they were only bruised by the incident.",
+        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -77,7 +77,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
+        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at {PRONOUN/m_c/poss} pelt.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -125,7 +125,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was moving some branches out of the way when they got a splinter.",
+        "event_text": "m_c was moving some branches out of the way when {PRONOUN/m_c/subject} got a splinter.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -142,7 +142,7 @@
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": {
             "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after they got frostbite."
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
         },
         "cat_trait": null,
         "cat_skill": null,

@@ -154,7 +154,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was found stiff and curled up in {PRONOUN/m_c/poss} nest.  It seems they died in {PRONOUN/m_c/poss} sleep.",
+        "death_text": "m_c was found stiff and curled up in {PRONOUN/m_c/poss} nest.  It seems {PRONOUN/m_c/subject} died in {PRONOUN/m_c/poss} sleep.",
         "history_text": {
             "reg_death": "m_c died of old age."
         },

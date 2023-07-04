@@ -215,10 +215,10 @@
             "Leaf-bare",
             "no_body"
         ],
-        "death_text": "Usually m_c is well aware of when the high tide will come in, but today they're distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at their paws, the last thing they see is the smug grin of r_c sat high above on the rocks.",
+        "death_text": "Usually m_c is well aware of when the high tide will come in, but today {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at {PRONOUN/m_c/poss} paws, the last thing {PRONOUN/m_c/subject} {VERB/m_c/see/sees} is the smug grin of r_c sat high above on the rocks.",
         "history_text": {
             "lead_death": "{VERB/m_c/were/was} trapped in the tides by r_c",
-            "lead_murder_unrevealed": "were trapped by high tides"
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} trapped by high tides"
         },
         "cat_trait": [
             "responsible",

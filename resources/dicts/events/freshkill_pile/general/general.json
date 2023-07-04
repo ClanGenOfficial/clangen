@@ -71,7 +71,7 @@
         "history_text": [
             "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from a swarm of rats.",
             "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from a swarm of rats.",
-            "were killed defending the fresh-kill pile from a swarm of rats"
+            "{VERB/m_c/were/was} killed defending the fresh-kill pile from a swarm of rats"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -92,7 +92,7 @@
         "history_text": [
             "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from a swarm of rats.",
             "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from a swarm of rats.",
-            "were killed defending the fresh-kill pile from a swarm of rats"
+            "{VERB/m_c/were/was} killed defending the fresh-kill pile from a swarm of rats"
         ],
         "cat_trait": null,
         "cat_skill": null,

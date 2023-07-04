@@ -1084,7 +1084,7 @@
       "general_backstory",
       "bold"
     ],
-    "m_c tells (mentor) right after the ceremony that {PRONOUN/m_c/subject} will tell {PRONOUN/(mentor)/object} if {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} they're being a mousebrain. All the other cats immediately gasp and look (mentor)'s reaction and relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
+    "m_c tells (mentor) right after the ceremony that {PRONOUN/m_c/subject} will tell {PRONOUN/(mentor)/object} if {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/(mentor)/subject}{VERB/(mentor)/'re/'s} being a mousebrain. All the other cats immediately gasp and look for (mentor)'s reaction, then relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
   ],
   "med_app_27": [
     [
