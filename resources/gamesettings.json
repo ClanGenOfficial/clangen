@@ -130,6 +130,11 @@
             "Allow medicine cats to be randomly selected on patrol",
             "Medicine cats can be selected with the patrol buttons +1, +3,+6",
             true
+        ],
+        "red_bg": [
+            "Allow background color change with murder",
+            "Background color will get more red as your cat murders",
+            true
         ]
     },
     "relation": {

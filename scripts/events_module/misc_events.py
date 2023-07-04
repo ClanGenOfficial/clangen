@@ -176,16 +176,17 @@ class MiscEvents():
 
     def handle_murder_self_reveals(self, cat):
         ''' Handles reveals for murders where the murderer reveals themself '''
-        if cat.personality.Lawfulness > 8:
-            murderer_guilty = random.choice([True, False])
-        chance_of_reveal = 120
-        if murderer_guilty:
-            chance_of_reveal = chance_of_reveal - 100
+        # if cat.personality.Lawfulness > 8:
+        #     murderer_guilty = random.choice([True, False])
+        # chance_of_reveal = 120
+        # if murderer_guilty:
+        #     chance_of_reveal = chance_of_reveal - 100
 
-        if random.randint(1, chance_of_reveal) == 1:
-            return True
-        else:
-            return False
+        # if random.randint(1, chance_of_reveal) == 1:
+        #     return True
+        # else:
+        #     return False
+        return False
 
     def handle_murder_witness_reveals(self, cat, other_cat):
         ''' Handles reveals where the witness reveals the murderer '''
