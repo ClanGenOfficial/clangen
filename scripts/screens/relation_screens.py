@@ -4620,10 +4620,7 @@ class ChooseRebornCat(Screens):
             info = self.selected_cat.status + "\n" + \
                    self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait + "\n" + \
                    self.selected_cat.skills.skill_string(short=True)
-            # if len(self.selected_cat.former_apprentices) >= 1:
-            #     info += f"\n{len(self.selected_cat.former_apprentices)} former app(s)"
-            # if len(self.selected_cat.apprentice) >= 1:
-            #     info += f"\n{len(self.selected_cat.apprentice)} current app(s)"
+
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
                                                                                    scale(pygame.Rect((980, 325),
                                                                                                      (210, 250))),
@@ -4683,17 +4680,6 @@ class ChooseRebornCat(Screens):
                 pos_y += 120
             i += 1
 
-    # def update_buttons(self):
-    #     """Updates the status of buttons. """
-    #     # Disable to enable the choose mentor button
-    #     # if not self.selected_cat or self.selected_cat.ID == self.the_cat.mentor:
-    #     #     self.confirm_mentor.disable()
-    #     #     self.current_mentor_warning.show()
-    #     # else:
-    #     #     self.confirm_mentor.enable()
-    #     #     self.current_mentor_warning.hide()
-    #     print('hi')
-
     def get_valid_cats(self):
         valid_mentors = []
 
@@ -4719,6 +4705,7 @@ class ChooseMurderCatScreen(Screens):
     apprentice_details = {}
     selected_details = {}
     cat_list_buttons = {}
+    stage = 'choose murder cat'
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -4740,20 +4727,31 @@ class ChooseMurderCatScreen(Screens):
         self.heading = None
         self.mentor = None
         self.the_cat = None
-
+        self.murder_cat = None
+        
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.cat_list_buttons.values():
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.update_selected_cat()
 
-            elif event.ui_element == self.confirm_mentor and self.selected_cat:
+            elif event.ui_element == self.confirm_mentor and self.selected_cat and self.stage == 'choose murder cat':
                 if not self.selected_cat.dead:
+                    self.exit_screen()
                     self.update_selected_cat()
-                    self.change_cat(self.selected_cat)
+                    self.cat_to_murder = self.selected_cat
+                    self.stage = 'choose accomplice'
+                    self.screen_switches()
+            
+            elif event.ui_element == self.confirm_mentor and self.selected_cat:
+                    self.change_cat(self.murder_cat, self.selected_cat)
+                    self.stage = 'choose murder cat'
+
                     
             elif event.ui_element == self.back_button:
                 self.change_screen('events screen')
+                self.stage = 'choose murder cat'
+
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
@@ -4778,33 +4776,63 @@ class ChooseMurderCatScreen(Screens):
                 self.update_cat_list()
 
     def screen_switches(self):
-        self.the_cat = game.clan.your_cat
-        self.mentor = Cat.fetch_cat(self.the_cat.mentor)
-        self.selected_cat = None
+        if self.stage == 'choose murder cat':
+            self.the_cat = game.clan.your_cat
+            self.mentor = Cat.fetch_cat(self.the_cat.mentor)
+            self.selected_cat = None
 
-        self.heading = pygame_gui.elements.UITextBox("",
-                                                     scale(pygame.Rect((300, 50), (1000, 80))),
-                                                     object_id=get_text_box_theme("#text_box_34_horizcenter"),
-                                                     manager=MANAGER)
+            self.heading = pygame_gui.elements.UITextBox("Choose a cat to murder",
+                                                        scale(pygame.Rect((300, 50), (1000, 80))),
+                                                        object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                                                        manager=MANAGER)
+            
+            # Layout Images:
+            self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 226), (562, 394))),
+                                                            pygame.transform.scale(
+                                                                image_cache.load_image(
+                                                                    "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
+                                                                (562, 394)), manager=MANAGER)
+            
+            self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
+            self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
+                                                object_id="#patrol_select_button")
         
-        # Layout Images:
-        self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 226), (562, 394))),
-                                                        pygame.transform.scale(
-                                                            image_cache.load_image(
-                                                                "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
-                                                            (562, 394)), manager=MANAGER)
-        
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
-        self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
-                                            object_id="#patrol_select_button")
-       
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
-                                                  object_id="#relation_list_previous", manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
-                                              object_id="#relation_list_next", manager=MANAGER)
+            self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
+                                                    object_id="#relation_list_previous", manager=MANAGER)
+            self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
+                                                object_id="#relation_list_next", manager=MANAGER)
 
-        self.update_selected_cat()  # Updates the image and details of selected cat
-        self.update_cat_list()
+            self.update_selected_cat()  # Updates the image and details of selected cat
+            self.update_cat_list()
+        else:
+            self.the_cat = game.clan.your_cat
+            self.mentor = Cat.fetch_cat(self.the_cat.mentor)
+            self.selected_cat = None
+
+            self.heading = pygame_gui.elements.UITextBox("Choose an accomplice",
+                                                        scale(pygame.Rect((300, 50), (1000, 80))),
+                                                        object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                                                        manager=MANAGER)
+            
+            # Layout Images:
+            self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 226), (562, 394))),
+                                                            pygame.transform.scale(
+                                                                image_cache.load_image(
+                                                                    "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
+                                                                (562, 394)), manager=MANAGER)
+            
+            self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
+            self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
+                                                object_id="#patrol_select_button")
+        
+            self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
+                                                    object_id="#relation_list_previous", manager=MANAGER)
+            self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
+                                                object_id="#relation_list_next", manager=MANAGER)
+
+            self.update_selected_cat2()  # Updates the image and details of selected cat
+            self.update_cat_list2()
+
 
     def exit_screen(self):
 
@@ -4876,12 +4904,12 @@ class ChooseMurderCatScreen(Screens):
         if self.next_cat == 1:
             self.next_cat = 0
 
-    def change_cat(self, new_mentor=None):
+    def change_cat(self, new_mentor=None, accomplice=None):
         self.exit_screen()
         
-        murdered = self.get_kill(game.clan.your_cat, new_mentor)
+        murdered = self.get_kill(game.clan.your_cat, self.cat_to_murder, accomplice)
         you = game.clan.your_cat
-        cat_to_murder = new_mentor
+        cat_to_murder = self.cat_to_murder
         game.clan.murdered = True
         if murdered:
             resource_dir = "resources/dicts/events/lifegen_events/"
@@ -5023,7 +5051,7 @@ class ChooseMurderCatScreen(Screens):
     best_murder_skills = ["incredibly clever", "unusually strong fighter", "unnatural senses","fast as the wind"]
 
 
-    def get_kill(self, you, cat_to_murder):
+    def get_kill(self, you, cat_to_murder, accomplice):
         chance = self.status_chances.get(you.status, 0)
         your_skills = []
         if you.skills.primary:
@@ -5058,6 +5086,9 @@ class ChooseMurderCatScreen(Screens):
         if you.is_ill() or you.is_injured():
             chance -= 20
         if cat_to_murder.is_ill() or cat_to_murder.is_injured():
+            chance += 20
+            
+        if accomplice:
             chance += 20
         
         r = randint(0,100)
@@ -5159,10 +5190,87 @@ class ChooseMurderCatScreen(Screens):
                                                                                                             (210, 250))),
                                                                                         object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                                         manager=MANAGER)
+                    
+    def update_selected_cat2(self):
+        """Updates the image and information on the currently selected mentor"""
+        for ele in self.selected_details:
+            self.selected_details[ele].kill()
+        self.selected_details = {}
+        if self.selected_cat:
+
+            self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((650, 300), (300, 300))),
+                pygame.transform.scale(
+                    self.selected_cat.sprite,
+                    (300, 300)), manager=MANAGER)
+
+            info = self.selected_cat.status + "\n" + \
+                   self.selected_cat.genderalign + "\n" + self.selected_cat.personality.trait + "\n" + \
+                   self.selected_cat.skills.skill_string(short=True)
+            
+            self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
+                                                                                   scale(pygame.Rect((980, 325),
+                                                                                                     (210, 250))),
+                                                                                   object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
+                                                                                   manager=MANAGER)
+
+            name = str(self.selected_cat.name)  # get name
+            if 11 <= len(name):  # check name length
+                short_name = str(name)[0:9]
+                name = short_name + '...'
+            self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
+                scale(pygame.Rect((690, 230), (220, 60))),
+                name,
+                object_id="#text_box_34_horizcenter", manager=MANAGER)
+            
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
         valid_mentors = self.chunks(self.get_valid_cats(), 30)
+
+        # If the number of pages becomes smaller than the number of our current page, set
+        #   the current page to the last page
+        if self.current_page > len(valid_mentors):
+            self.list_page = len(valid_mentors)
+
+        # Handle which next buttons are clickable.
+        if len(valid_mentors) <= 1:
+            self.previous_page_button.disable()
+            self.next_page_button.disable()
+        elif self.current_page >= len(valid_mentors):
+            self.previous_page_button.enable()
+            self.next_page_button.disable()
+        elif self.current_page == 1 and len(valid_mentors) > 1:
+            self.previous_page_button.disable()
+            self.next_page_button.enable()
+        else:
+            self.previous_page_button.enable()
+            self.next_page_button.enable()
+        display_cats = []
+        if valid_mentors:
+            display_cats = valid_mentors[self.current_page - 1]
+
+        # Kill all the currently displayed cats.
+        for ele in self.cat_list_buttons:
+            self.cat_list_buttons[ele].kill()
+        self.cat_list_buttons = {}
+
+        pos_x = 0
+        pos_y = 40
+        i = 0
+        for cat in display_cats:
+            self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
+                scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
+                cat.sprite, cat_object=cat, manager=MANAGER)
+            pos_x += 120
+            if pos_x >= 1100:
+                pos_x = 0
+                pos_y += 120
+            i += 1
+            
+    def update_cat_list2(self):
+        """Updates the cat sprite buttons. """
+        valid_mentors = self.chunks(self.get_valid_cats2(), 30)
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
@@ -5210,6 +5318,15 @@ class ChooseMurderCatScreen(Screens):
 
         for cat in Cat.all_cats_list:
             if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID:
+                valid_mentors.append(cat)
+        
+        return valid_mentors
+
+    def get_valid_cats2(self):
+        valid_mentors = []
+
+        for cat in Cat.all_cats_list:
+            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID and not cat.ID == self.cat_to_murder.ID:
                 valid_mentors.append(cat)
         
         return valid_mentors
