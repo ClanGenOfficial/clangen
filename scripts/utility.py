@@ -1127,6 +1127,12 @@ def adjust_patrol_text(text, patrol):
         replace_dict['s_c'] = (str(patrol.patrol_leader.name),
                                choice(patrol.patrol_leader.pronouns))
 
+    if "convince_rc" in patrol.tags:
+        df_rc = Cat.all_cats.get(random.choice(game.clan.clan_cats))
+        while df_rc.dead or df_rc.outside or df_rc.status not in ['warrior', 'apprentice'] or df_rc.ID == game.clan.your_cat.ID:
+            df_rc = random.choice(game.clan.clan_cats)
+        replace_dict["df_rc"] = str(df_rc).name
+        df_rc.joined_df = True
     text = process_text(text, replace_dict)
     text = adjust_prey_abbr(text)
 

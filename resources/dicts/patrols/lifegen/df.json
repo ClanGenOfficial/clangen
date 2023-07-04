@@ -139,6 +139,31 @@
     ],
     "min_cats": 1,
     "max_cats": 1
+},
+{
+    "patrol_id": "lifegen_123",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "border",
+        "convince_rc"
+    ],
+    "intro_text": "There's a familiar scent in the air. You track it down and find yourself face to face with... df_rc? They look lost.",
+    "success_text": {
+        "unscathed_common": "You convince them that this is no place for a cat like them.",
+        "unscathed_rare": "You take them on as your apprentice."
+    },
+    "fail_text": {
+        "unscathed_common": "Another Dark Forest cat leaps between you two, hissing at you not to involve yourself with the new apprentices."
+    },
+    "decline_text": "You gasp, waking up in your nest.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "win_skills": [
+        "compassionate"
+    ],
+    "min_cats": 1,
+    "max_cats": 1
 }
 
 ]
