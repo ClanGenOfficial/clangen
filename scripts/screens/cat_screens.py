@@ -3478,7 +3478,7 @@ class TalkScreen(Screens):
                 if trait not in talk[0]:
                     continue
             if any(i in ['beach', 'forest', 'plains', 'mountainous', 'wetlands'] for i in talk[0]):
-                if game.clan.biome not in talk[0]:
+                if game.clan.biome.lower() not in talk[0]:
                     continue
             if (not game.clan.your_cat.is_ill() and not game.clan.your_cat.is_injured()) and 'injured' in talk[0]:
                 continue
