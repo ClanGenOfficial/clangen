@@ -1944,7 +1944,7 @@ class Patrol():
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
             if possible:
-                History.add_possible_history(cat, condition, scar_text=adjust_text)
+                History.add_possible_history(cat, condition=condition, scar_text=adjust_text)
             else:
                 History.add_scar(cat, adjust_text)
         if death:
@@ -1954,7 +1954,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
             else:
@@ -1963,7 +1963,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
 
