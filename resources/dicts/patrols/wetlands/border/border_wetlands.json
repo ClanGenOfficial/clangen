@@ -881,7 +881,7 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
             "stat_trait": "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         },
@@ -901,7 +901,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues."
+            "reg_death": "This cat died from being ambushed by rogues while on a solo patrol."
         }
     },
     {
@@ -915,7 +915,7 @@
             "respect",
             "trust"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -955,7 +955,7 @@
             "respect",
             "trust"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -993,7 +993,7 @@
             "death",
             "injury"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -1031,7 +1031,7 @@
             "border",
             "injury"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,

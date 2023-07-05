@@ -53,7 +53,7 @@
         "history_text": {
             "scar": "r_c was injured after disturbing a badger in its sett.",
             "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in it's burrow"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
         }
     },
     {
@@ -108,7 +108,7 @@
         "history_text": {
             "scar": "r_c was injured after disturbing a badger in its sett.",
             "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in it's burrow"
+            "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
         }
     },
     {

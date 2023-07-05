@@ -69,7 +69,7 @@
     "torn ear": {
         "partial hearing loss": [
             "r_c continues {PRONOUN/m_c/poss} test, but it's clear that m_c's hearing isn't what it used to be, probably related to {PRONOUN/m_c/poss} ear injury.",
-            "r_c informs m_c that though {PRONOUN/m_c/poss} ear has healed from it's tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life.",
+            "r_c informs m_c that though {PRONOUN/m_c/poss} ear has healed from its tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life.",
             "m_c realizes that it's not that the camp has been more peaceful lately - {PRONOUN/m_c/subject} just can't hear as much as {PRONOUN/m_c/subject} used to."
 
         ]
