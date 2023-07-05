@@ -2215,7 +2215,7 @@
     "patrol_id": "gen_train_leaderparentchildlocked1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "leader", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "minor_injury"],
+    "tags": ["training", "leader", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "patrol_to_p_l", "minor_injury"],
     "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
     "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
     "chance_of_success": 60,
@@ -2244,7 +2244,7 @@
     "patrol_id": "gen_train_deputyparentchildlocked1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "leader", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "minor_injury"],
+    "tags": ["training", "deputy", "apprentice", "one_apprentice", "app_stat", "big_change", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "disrespect", "distrust", "patrol_to_p_l", "minor_injury"],
     "intro_text": "p_l heads out for training with app1, and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in the stars name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
     "decline_text": "p_l calls off the patrol, instead going out in a bigger group of cats, hoping app1 will be more comfortable that way.",
     "chance_of_success": 60,
@@ -2267,6 +2267,396 @@
         "relationship": [
             "parent/child"
         ]
+            }
+},
+{
+    "patrol_id": "gen_train_kitcamplocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "big_change", "respect", "disrespect", "comfort"],
+    "intro_text": "p_l looks down at the group they have to try and teach, face doubtful. Camp maintainence isn't a glamourous topic, especially in the eyes of younger cats.",
+    "decline_text": "p_l calls off the lesson.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "When the topic is clawing the arse of an enemy warrior, anyone can get a young hothead's attention, but catching and holding it when the lesson is about gathering materials to reinforce camp? That takes real skill, though p_l doesn't get acknowledged for it often.",
+        "unscathed_rare": "app1 tries to derail p_l and switch to fighting training instead - but p_l asks, quick as an unsheathed claw, what's more important, the nursery, or the warrior protecting it? The nursury, obviously - so app1 nods, sits {PRONOUN/app1/poss} rump down, and listens to p_l explain how one helps weatherproof a kitten's den."
+    },
+    "fail_text": {
+        "unscathed_common": "p_l loses app1's attention - disrespectfully, app1 wanders off to practise {PRONOUN/app1/poss} battle moves."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "TEACHER,1", "INSIGHTFUL,1", "KIT,1", "CAMP,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_teacherinsightfullocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "big_change", "respect", "disrespect", "comfort"],
+    "intro_text": "p_l is the leader of the training group today - always a good choice for the role, skilled at explaining things, especially beneficial for apprentices. If {PRONOUN/p_l/subject} can get teenagers to listen, that is.",
+    "decline_text": "But today isn't the day for this lesson.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "Commanding attention, p_l takes the patrol through the familiar steps of the warrior code as they walk the territory - no, but have they considered what that rule truely <i>means</i>? Would they follow it to their own death? To their friend's? To a kit's? Have they truly reflected on their dedication to the code?",
+        "unscathed_rare": "Padding meow by meow through the warrior code, p_l impacts their ultimate lesson - that there is always, <i>always</i> a point where the code must be disregarded. To follow something blindly is not to truly follow it at all, and the code exists to guide their lives, not dictate them."
+    },
+    "fail_text": {
+        "unscathed_common": "app1 starts making trouble at the back of the patrol as soon as it's clear that p_l is here to impact a philosophical lesson instead of teaching them <i>something actually useful stars damn it!</i>"
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "TEACHER,1", "INSIGHTFUL,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_storylocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "rel_patrol", "respect", "platonic"],
+    "intro_text": "Leading the group of cats around them to a good vantage point, p_l settles down. Has anyone heard the tale of the Cat Who Time Forgot?",
+    "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead, and the cats disperse.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "The patrol quietens down immediately, p_l's reputation as a storyteller proceeding {PRONOUN/p_l/object}. Into the attentive silence, p_l spins the picture of a cat who slipped through time's claws to immortality, always young, forever strong. But {PRONOUN/p_l/subject} {VERB/p_l/whisper/whispers} of the costs; never learning, never growing, left behind by friends and family who lived and died. In the end, the cat became a hollow shell, unteathered by the world - for it's time's scarcity that gives life its value.",
+        "unscathed_rare": "Once upon a time, there was a kittypet so stealthy - yes, a kittypet - that time itself didn't know they existed. When after many long years the cat should have been taken in their sleep, time forgot to. Instead, the cat just aged and aged and aged, their fur becoming thin and falling out until none was left, bald and hairless and wrinkled. It's said they're still out there, living with their Twolegs, and every so often you'll find a warrior who swears they've met them."
+    },
+    "fail_text": {
+        "unscathed_common": "The patrol refuses to quieten down and pay attention, and it's not worth p_l's effort to entertain such an ungrateful audience."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "STORY,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_lorelocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "big_change", "respect", "trust"],
+    "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. As the patrol chats amoung themselves, something sparks p_l's attention. It reminds {PRONOUN/p_l/object} of charming Casanova, and it occurs to {PRONOUN/p_l/object} that maybe not every cat here knows that history.",
+    "decline_text": "It's a lovely day - too lovely to be ruined by mentions of that ancient furball.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "Casanova was a kittypet, coat long and beautiful and always combed just-so by his Twolegs, charming and sly and full of love and attention for any she-cat who'd stand still long enough to accept it. Generations ago, he fathered litters across half a dozen dens, full of promises of help and support before he moved on to the next molly without a backward glance. It's not a nice tale. But it's one important to remember.",
+        "unscathed_rare": "Ah, Casanova, famous for his charm trying to get the attention of a she-cat he liked, infamous for his vanishing acts afterwards. What p_l tries to emphasise about the history lesson isn't the infamous cad, it's that the Clans took care of the litters he fathered anyway, something where the strength of the Clan saved tiny lives that would've been lost to single motherhood."
+    },
+    "fail_text": {
+        "unscathed_common": "The patrol refuses to quieten down and pay attention, and it's not worth p_l's effort to edcucate such an ungrateful audience."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "LORE,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_fightingcleverlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "patrol_to_p_l", "big_change", "respect", "disrespect", "comfort"],
+    "intro_text": "p_l has plans for a clever little battle move - but {PRONOUN/p_l/subject} {VERB/p_l/need/needs} a couple cats to practise it with.",
+    "decline_text": "Today isn't the day for this lesson.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "Pulling the patrol together into a huddle, p_l explains the plan. Together, they're going to practise a coordinated kind of tackle, intended to shove an enemy warrior off a Clanmate, knock them silly, and give enough time to rescue their injured Clanmate. Looking around the determined faces, p_l nods. They can do this!",
+        "unscathed_rare": "It's hard to describe, but eventually p_l manages to communicate {PRONOUN/p_l/poss} idea, a type of kicking-off maneuver where a warrior stimultanously gets distance from an opponent and can also wind them if they kick right in the diaphram. The patrol practises until they've got it, everyone takes a turn getting winded by sheathed claws."
+    },
+    "fail_text": {
+        "unscathed_common": "r_c isn't comfortable doing such intense fighting training, but also doesn't bring it up, instead going for the worst of both worlds where {PRONOUN/r_c/subject} still {VERB/r_c/do/does} training and {VERB/r_c/ruin/ruins} it for the other cats, flinching back from being a good training partner."
+    },
+    "min_cats": 4,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "FIGHTER,1", "CLEVER,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_huntersenselocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "respect", "disrespect", "trust", "distrust"],
+    "intro_text": "As the patrol heads out, p_l spots a set of tracks and calls the other cats over to give them a demonstration.",
+    "decline_text": "Today isn't the day for this lesson.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/show/shows} app1 how crisp the edges of the pawprints are, how there hasn't been enough time for anything to disturb the perfection of the record of passage. app1 asks if those aren't <i>cat</i> pawprints though? p_l murrps. Yes, and good spotting. But the lesson isn't what made these, it's about how to judge how long it's been since they've been made - valuable information if this had been prey and not a Clanmate.",
+        "unscathed_rare": "The time of day, the direction of any wind, the season, the amount of damp nearby - it all effects tracking, and in predictable ways that allow a discerning warrior to time how long it's been since the animal who left them wandered through. It's a topic p_l genuinely enjoys, and can get impressively in depth on."
+    },
+    "fail_text": {
+        "unscathed_common": "While p_l has the skills to use tracks to their fullest effect in {PRONOUN/p_l/poss} own hunts, {PRONOUN/p_l/subject} completely {VERB/p_l/fail/fails} to communicate how anyone else might be able to do that. {PRONOUN/p_l/subject/CAP} might be impressive, but p_l needs to work on {PRONOUN/p_l/poss} communication skills."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "HUNTER,1", "SENSE,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_runnerclimberswimmerlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "respect", "disrespect", "trust", "distrust"],
+    "intro_text": "Gathering together to train, p_l notices that some of the other cats in the training ring are starting without warming up properly. Whoa, whoa, whoa, - everyone stop, let's go back to basics.",
+    "decline_text": "Today isn't the day for this lesson.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "p_l, athletic and not an idiot about it, redirects the training session to both a theoretical and practical demonstration of stretching - how to target one muscle group over another, what's a good pain that indicates you're increasing your flexibilty and what's a bad pain that signals STOP NOW.",
+        "unscathed_rare": "app1 argues back at {PRONOUN/p_l/object} - is p_l really going to turn this into a lesson on stretching??? But yes, absolutely {PRONOUN/p_l/subject} {VERB/p_l/are/is}, training without limbering up beforehand can result in dumb injuries and stupid mistakes, p_l isn't letting that happen on {PRONOUN/p_l/poss} watch."
+    },
+    "fail_text": {
+        "unscathed_common": "The patrol doesn't listen to p_l, and continues on. p_l huffs, stalking off. Don't come crying to {PRONOUN/p_l/object} when someone gets hurt in a simple training exercise then!"
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "RUNNER,1", "SWIMMER,1", "CLIMBER,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_speakermediatorlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "respect", "disrespect", "trust", "distrust"],
+    "intro_text": "As the training patrol gossips about the last gathering while they bask, app1 turns and asks p_l how to talk to cats from other Clans without giving away any of c_n's secrets.",
+    "decline_text": "Simple - just don't talk to them.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "There's a difference between being careful and being rude, p_l instructs. Some things are always safe to talk about, app1's favourite prey, the health of the elders, the birth of new kits, but always remember, if the cat {PRONOUN/app1/subject}{VERB/app1/'re/'s} talking to is worth anything, they'll accept that app1 can't talk about something with grace and understanding, not snippishness and mean comments.",
+        "unscathed_rare": "Think about the universal experiences you have in comment, p_l suggests. Every apprentice {PRONOUN/app1/subject} {VERB/app1/talk/talks} to is also going through life in the apprentice den, they should have plenty in common that isn't Clan secrets."
+    },
+    "fail_text": {
+        "unscathed_common": "p_l starts suggesting something - but app1 talks over {PRONOUN/p_l/object}, having just wanted an excuse to complain about the other Clans."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "SPEAKER,1", "MEDIATOR,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_stardarkghostlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "respect", "disrespect", "trust", "distrust"],
+    "intro_text": "As app1 falls over again, still not getting how to shift {PRONOUN/app1/poss} weight with that move, p_l watches {PRONOUN/app1/object} from the side of the training ring, sitting apart from the rest of the patrol - but not alone.",
+    "decline_text": "They remain silent, content to watch. app1 will make their own mistakes.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "The spirit beside {PRONOUN/p_l/object} calls to app1, a murmur that dirfts in and out of p_l's hearing, making {PRONOUN/p_l/poss} ears twitch. It isn't bad advice though. After another fall p_l pads forward to pass on the message - while it can be difficult to interpret the words of those who've gone beyond, seeing as they've been sitting there yelling the same advice over and over again p_l will manage.",
+        "unscathed_rare": "p_l is confused. Why manifest here, now, during this training? But when the ghostly presence's temper snaps and they charge in, incorporally trying to show app1 how it's done (to app1's complete and ongoing ignorance of the spiritual situation), p_l understands. This cat was an apprentice too, though they never grew older."
+    },
+    "fail_text": {
+        "unscathed_common": "The rest of the patrol is really disappointed in p_l, who seems to have {PRONOUN/p_l/poss} head in the clouds today."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "STAR,1", "GHOST,1", "DARK,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_healerlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "patrol_to_p_l", "respect", "disrespect", "trust", "distrust"],
+    "intro_text": "While practising their pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} scramble up with a yelp, one paw held off the ground.",
+    "decline_text": "It's only a couple minutes before {PRONOUN/app1/subject}{VERB/app1/'re/'s} bouncing around again - apprentices are made of jelly.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "Carefully, p_l has app1 sit back down, where p_l grooms the injured paw all over. By the time {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} finished their assessment, app1 is already feeling a lot better - it was just a jolt of pain, nothing more, and training can continue unimpeded.",
+        "unscathed_rare": "The leader of the patrol, p_l, is a cat experienced at battlefield medicine duties. {PRONOUN/p_l/subject/CAP} have app1 cautiously stretch out the injured paw, first one way, then another, asking questions of app1 the entire time, until p_l is satisfied that this was an almost torn claw. Almost is the key word here though, and app1 will be perfectly fine."
+    },
+    "fail_text": {
+        "unscathed_common": "p_l falls for app1's trick and lets {PRONOUN/app1/object} sit out the rest of the training session, but app1's limp mysteriously disappears on the way back to camp."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "HEALER,1"
+         ]     
+            }
+},
+{
+    "patrol_id": "gen_train_omenlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "rel_patrol", "big_change", "comfort"],
+    "intro_text": "p_l shifts uneasily as {PRONOUN/p_l/subject} {VERB/p_l/bask/basks}. r_c stretches {PRONOUN/r_c/poss} tail across {PRONOUN/p_l/poss} back - what's wrong?",
+    "decline_text": "Just a stone digging into p_l's armpit, nothing serious.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} all close here, literally, and it's only that fact that gives p_l the confidence to open up, pelt prickling with vulerability as {PRONOUN/p_l/subject} {VERB/p_l/murmur/murmurs} of the omen_list {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen recently, how {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been struggling to piece together what it could all mean. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} help, {PRONOUN/p_l/subject} {VERB/p_l/need/needs} advice.",
+        "unscathed_rare": "It's not something they <i>want</i> to talk about, but p_l gives in, knowing {PRONOUN/p_l/subject} should share {PRONOUN/p_l/poss} burden and gift. Recently, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen omen_list, though {PRONOUN/p_l/subject} can't yet tell what it means for c_n, or {PRONOUN/p_l/poss} friends."
+    },
+    "fail_text": {
+        "unscathed_common": "It's - it's nothing. p_l doesn't want to talk about it."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "relationship": [
+            "platonic_40"
+        ],
+        "skill": [
+            "OMEN,1"
+        ]     
+            }
+},
+{
+    "patrol_id": "gen_train_dreamlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "p_l_to_r_c", "big_change", "pos_dislike", "no_change_fail"],
+    "intro_text": "Despite theoretically leading this training patrol, p_l hangs back, watching the other cats.",
+    "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} just overtired - p_l hasn't been sleeping great recently.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has been seeing dream_list_emotional, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
+        "unscathed_rare": "The gift of dreamwalking is no gift, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional {PRONOUN/p_l/subject} felt in sleep, and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions."
+    },
+    "fail_text": {
+        "unscathed_common": "It's - it's nothing. p_l doesn't want to talk about it."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "DREAM,1"
+        ]     
+            }
+},
+{
+    "patrol_id": "gen_train_clairvoyantlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "patrol_to_p_l", "jealousy", "no_change_fail"],
+    "intro_text": "Ask p_l heads out with a group of clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side, {PRONOUN/p_l/poss} breath whooshing from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly hit with flashes of clair_list.",
+    "decline_text": "It's nothing, not a vision, it means NOTHING, p_l tells {PRONOUN/p_l/self}, and gets up.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "p_l struggles to get to {PRONOUN/p_l/poss} feet, unsteady and disorientated - only to find r_c there, slipping beside {PRONOUN/p_l/object} to support {PRONOUN/p_l/poss} weight. No one in c_n is alone, and the patrol stops in their tracks to make sure p_l is okay. Clairvoyance is a powerful, unstable gift.",
+        "unscathed_rare": "{PRONOUN/p_l/subject/CAP} don't know what it means, {PRONOUN/p_l/subject} <i>never</i> {VERB/p_/know/knows} what it means, and p_l curses the stars as {PRONOUN/p_l/subject} {VERB/p_l/rise/rises} to {PRONOUN/p_l/poss} feet, apologising profusely for disrupting the patrol."
+    },
+    "fail_text": {
+        "unscathed_common": "It's - it's nothing. p_l doesn't want to talk about it."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "CLAIRVOYANT,1"
+        ]     
+            }
+},
+{
+    "patrol_id": "gen_train_prophetlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "rel_patrol", "big_change", "comfort"],
+    "intro_text": "Among {PRONOUN/p_l/poss} friends and with a little sunshine to brighten {PRONOUN/p_l/poss} dark mood, p_l opens up about what's been shared with {PRONOUN/p_l/object} through the powers of the stars, prophecy_list.",
+    "decline_text": "No one wants to talk about it. p_l doesn't blame them, and lets the conversation move on.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "The sun has nearly set before what was meant to be a quick little training patrol heads back to camp. But the cats pad forward with confidence, p_l leading the way, {PRONOUN/p_l/poss} tail held high as {PRONOUN/p_l/subject} seek out med_name to pass on what {PRONOUN/p_l/object} and {PRONOUN/p_l/poss} friends have figured out.",
+        "unscathed_rare": "The stars might've been the ones to share this wisdom, but without {PRONOUN/p_l/poss} friends, it'd still be literally meaningless, and p_l bunts each member of the patrol in turn, thanking them for their help figuring out the prophecy and what it could mean."
+    },
+    "fail_text": {
+        "unscathed_common": "The friends can't work out what any of it means, and p_l seems to shrink down into {PRONOUN/p_l/self}. It's not that they don't all want to help p_l - but no one knows how."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "relationship": [
+            "platonic_40"
+        ],
+        "skill": [
+            "PROPHET,1"
+        ]     
+            }
+},
+{
+    "patrol_id": "gen_train_kittypetlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "patrol_to_p_l", "respect", "trust", "distrust", "disrespect"],
+    "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. o_c1 suggests clawing their faces off, or their ankles, if any cat has trouble reaching up that high. p_l laughes, and the patrol turns to {PRONOUN/p_l/object}.",
+    "decline_text": "Oh, nothing, don't worry about it.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "Look, the Clanborn cats are welcome to claw as many Twolegs as they like - but if what they actually want is for a Twolegs to leave them alone, it's simple. Take it from a former kittypet - if you hiss at a Twolegs, they'll hiss right back, you take a swipe, they'll want to swipe at you. Just chill out and duck away.",
+        "unscathed_rare": "The Clan cats really think they'd win a strength match against a Twolegs? Nah, try the kittypet way instead, p_l suggests from {PRONOUN/p_l/poss} own past. Just trot off down some little path that the big clumsy oafs can't follow."
+    },
+    "fail_text": {
+        "unscathed_common": "p_l starts to give advice based on {PRONOUN/p_l/poss} own experiences as a kittypet - but none of the rest of the patrol is interested in hearing it."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "KITTYPET,0"
+        ]     
+            }
+},
+{
+    "patrol_id": "gen_train_roguelonerlocked1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "patrol_to_p_l", "respect", "trust", "distrust", "disrespect"],
+    "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up - {PRONOUN/p_l/object} know all about it.",
+    "decline_text": "But {PRONOUN/p_l/object} {VERB/p_l/decide/dicides} to listen instead of joining in the conversation.",
+    "chance_of_success": 60,
+    "exp": 30,
+    "success_text": {
+        "unscathed_common": "It's not always fun, dredging up bits and pieces from {PRONOUN/p_l/poss} past, but watching the rest of the patrol's wide eyes makes it seem worth it. Not only will p_l feel better about {PRONOUN/p_l/poss} Clanmates preparation for how desperate a rogue can be, but this kind of quiet respect is... well, it's a strange warmth.",
+        "unscathed_rare": "p_l tells the group of how it's not that all rogues are aggressive - but all rogues are so so much more alone than the Clan cats, so much more vulerable, so much more scared of showing that soft underbelly. It's worth remembering, the next time one turns up on the border."
+    },
+    "fail_text": {
+        "unscathed_common": "p_l starts to give advice based on {PRONOUN/p_l/poss} own experiences before {PRONOUN/p_l/subject} joined c_n - but the rest of the patrol is uninterested."
+    },
+    "min_cats": 3,
+    "max_cats": 6,
+    "constraints": {
+        "skill": [
+            "ROGUE,0", "LONER,0"
+        ]     
             }
 },
     {
