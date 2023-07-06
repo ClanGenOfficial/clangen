@@ -141,7 +141,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+            "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
         }
     },
     {
@@ -178,7 +178,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+            "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
             "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
@@ -311,7 +311,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -518,7 +518,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -562,8 +562,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
             "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
@@ -608,8 +608,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine while patrolling alone.",
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine while patrolling alone.",
             "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
@@ -1112,8 +1112,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
             "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
@@ -1166,8 +1166,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
             "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
@@ -1218,7 +1218,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
             "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
@@ -1272,8 +1272,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
             "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
@@ -1372,7 +1372,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a kit fox."
+            "scar": "m_c carries a scar from a fight with a kit fox."
         }
     },
     {
@@ -1463,7 +1463,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from irritating a maned wolf as an apprentice."
+            "scar": "m_c carries a scar from irritating a maned wolf as an apprentice."
         }
     },
     {
@@ -1566,7 +1566,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a maned wolf, fighting over food."
+            "scar": "m_c was scarred by a maned wolf, fighting over food."
         }
     }
 ]

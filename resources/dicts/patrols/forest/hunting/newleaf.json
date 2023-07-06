@@ -224,7 +224,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+            "scar": "m_c was scarred after disappearing on patrol and being discovered injured."
         }
     },
     {
@@ -346,7 +346,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting a swarm of rats."
+            "scar": "m_c carries a scar from fighting a swarm of rats."
         }
     },
     {
@@ -386,7 +386,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred fighting a rat king."
+            "scar": "m_c was scarred fighting a rat king."
         }
     },
     {
@@ -426,7 +426,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
         }
     },
     {
@@ -548,7 +548,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -608,7 +608,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -669,8 +669,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died while fighting a fox on their own"
         }
     },
@@ -731,7 +731,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -843,7 +843,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight."
         }
     },
     {
@@ -902,8 +902,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight.",
-            "reg_death": "r_c fell in battle with a fox.",
+            "scar": "m_c carries a scar from a fox fight.",
+            "reg_death": "m_c fell in battle with a fox.",
             "lead_death": "died while fighting a fox"
         }
     },
@@ -960,7 +960,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1016,8 +1016,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a vixen.",
-            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "scar": "m_c carries a scar from a solo fight with a vixen.",
+            "reg_death": "m_c fell in a solo battle with a vixen.",
             "lead_death": "died while fighting a vixen"
         }
     },
@@ -1073,7 +1073,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1128,7 +1128,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1181,7 +1181,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a vixen."
+            "scar": "m_c carries a scar from a solo fight with a vixen."
         }
     },
     {
@@ -1607,8 +1607,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
-            "reg_death": "r_c died falling from the treetops, out on a solo nest raid.",
+            "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone.",
+            "reg_death": "m_c died falling from the treetops, out on a solo nest raid.",
             "lead_death": "falling from the treetops"
         }
     },
@@ -1669,8 +1669,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone.",
-            "reg_death": "r_c died falling from the treetops, out on a solo nest raid.",
+            "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone.",
+            "reg_death": "m_c died falling from the treetops, out on a solo nest raid.",
             "lead_death": "falling from the treetops"
         }
     },
@@ -1775,7 +1775,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
+            "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
         }
     },
     {
@@ -1830,8 +1830,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
-            "reg_death": "r_c died as an apprentice after going out nest raiding alone."
+            "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
+            "reg_death": "m_c died as an apprentice after going out nest raiding alone."
         }
     }
 ]

@@ -372,9 +372,9 @@
         "antagonize_text": "p_l goes to check the bush and finds a kittypet cowering inside. p_l scratches its ears off and sends it on its way.",
         "antagonize_fail_text": "p_l finds a gang of rogues in the bush! p_l has to turn tail and run, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n.",
         "history_text": {
-            "scar": "p_l gained a scar after tussling with a rogue.",
-            "reg_death": "p_l was killed by a rogue.",
-            "lead_death": "{VERB/p_l/were/was} killed by a rogue"
+            "scar": "m_c gained a scar after tussling with a rogue.",
+            "reg_death": "m_c was killed by a rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by a rogue"
         }
     },
     {

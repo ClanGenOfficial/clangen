@@ -52,7 +52,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -108,7 +108,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -164,8 +164,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died in battle with a fox"
         }
     },
@@ -225,8 +225,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight.",
-            "reg_death": "r_c fell in battle with a fox.",
+            "scar": "m_c carries a scar from a fox fight.",
+            "reg_death": "m_c fell in battle with a fox.",
             "lead_death": "died in battle with a fox"
         }
     },
@@ -282,7 +282,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -336,8 +336,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red vixen.",
-            "reg_death": "r_c fell in a solo battle with a red vixen.",
+            "scar": "m_c carries a scar from a solo fight with a red vixen.",
+            "reg_death": "m_c fell in a solo battle with a red vixen.",
             "lead_death": "died in battle with a fox"
         }
     },
@@ -379,7 +379,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -419,7 +419,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -532,8 +532,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting with a swift fox.",
-            "reg_death": "While scavenging alone, r_c was killed by a predator they didn't see.",
+            "scar": "m_c carries a scar from fighting with a swift fox.",
+            "reg_death": "While scavenging alone, m_c was killed by a predator they didn't see.",
             "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
@@ -658,7 +658,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred as an apprentice by an angry ground squirrel."
+            "scar": "m_c was scarred as an apprentice by an angry ground squirrel."
         }
     },
     {

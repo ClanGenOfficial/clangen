@@ -985,7 +985,7 @@
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. app1 and p_l occasionally exchange quiet meows as they work, contact calls reassuring each other that they're both still there amidst the towering goldenrod.",
             "unscathed_rare": "The bushes have responded to the sun's call with great enthusiasm, exploding outward in chaotic growth. p_l finds it heartening, seeing the goldenrod fight its own territorial battles against the plants next to it, bursting with health. The plant won't miss the stems and flowers p_l and app1 take.",
-            "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As {PRONOUN/s_c/subject} do, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
+            "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
         },
         "fail_text": {
             "unscathed_common": "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and app1 looks up at {PRONOUN/p_l/object} with disappointment."
@@ -1735,7 +1735,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain!",
+            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} {VERB/p_l/do/does} walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain!",
             "unscathed_rare": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple."
         },
@@ -1776,7 +1776,7 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! {PRONOUN/p_l/subject/CAP} {VERB/p_l/show/shows} app1 how the leaves can make excellent structural support for bandages and poultices.",
+            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} {VERB/p_l/do/does} walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! {PRONOUN/p_l/subject/CAP} {VERB/p_l/show/shows} app1 how the leaves can make excellent structural support for bandages and poultices.",
             "unscathed_rare": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
         },
@@ -1814,7 +1814,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! The warriors are relieved p_l lets them clear the plants away - there'll be plantain elsewhere, and the Clan needs this path.",
+            "unscathed_common": "p_l doesn't so much find the plantain plants as {PRONOUN/p_l/subject} {VERB/p_l/do/does} walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! The warriors are relieved p_l lets them clear the plants away - there'll be plantain elsewhere, and the Clan needs this path.",
             "unscathed_rare": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
         },
@@ -2119,7 +2119,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died before completing their medicine cat training, having accidentally eaten deathberries."
+            "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
         }
     },
     {
@@ -2290,7 +2290,7 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Thankfully, {PRONOUN/p_l/subject} don't have to go far, and being among thyme's calming scent makes gathering it quite pleasant. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
+            "unscathed_common": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to go far, and being among thyme's calming scent makes gathering it quite pleasant. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
             "unscathed_rare": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests {PRONOUN/p_l/subject} and app1 curl up in at night.",
             "stat_skill": "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at {PRONOUN/s_c/poss} little joke, putting down the herbs {PRONOUN/s_c/subject} {VERB/s_c/carry/carries} to explain it to app1."
         },

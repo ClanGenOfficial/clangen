@@ -44,7 +44,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -78,7 +78,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -124,8 +124,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "froze to death while hunting"
         }
     },
@@ -182,7 +182,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -238,7 +238,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -295,8 +295,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died while fighting a fox"
         }
     },
@@ -353,7 +353,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -407,7 +407,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -463,7 +463,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight."
         }
     },
     {
@@ -819,7 +819,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+            "scar": "m_c was scarred after disappearing on patrol and being discovered injured."
         }
     },
     {
@@ -928,7 +928,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting a swarm of rats."
+            "scar": "m_c carries a scar from fighting a swarm of rats."
         }
     },
     {
@@ -965,7 +965,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting a rat king."
+            "scar": "m_c carries a scar from fighting a rat king."
         }
     },
     {
@@ -1002,7 +1002,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
         }
     },
     {
@@ -1118,7 +1118,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c froze to death."
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -1236,7 +1236,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
+            "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
         }
     },
     {
@@ -1282,7 +1282,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -1328,8 +1328,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-            "reg_death": "r_c froze to death, caught in a snowstorm while hunting by themselves."
+            "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
+            "reg_death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
         }
     },
     {
@@ -1373,8 +1373,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "froze to death while hunting"
         }
     },
@@ -1433,7 +1433,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1491,7 +1491,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1550,8 +1550,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died while fighting a fox"
         }
     },
@@ -1610,7 +1610,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1666,7 +1666,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1724,7 +1724,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight."
         }
     },
     {

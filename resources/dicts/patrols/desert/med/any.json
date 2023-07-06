@@ -125,7 +125,7 @@
         "Antagonize_text": null,
         "Antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "p_l died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/p_l/poss} Clan."
+            "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
         }
     },
     {

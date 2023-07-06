@@ -1911,7 +1911,7 @@
             "injury": "While plucking them from the bush, p_l feels one of the berries split in their mouth, and a deceptively good taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
         },
         "history_text": {
-            "reg_death": "p_l died after accidentally eating deathberries."
+            "reg_death": "m_c died after accidentally eating deathberries."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1954,7 +1954,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died before completing their medicine cat training from accidentally eating deathberries."
+            "reg_death": "m_c died before completing their medicine cat training from accidentally eating deathberries."
         }
     },
     {

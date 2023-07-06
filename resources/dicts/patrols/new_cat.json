@@ -532,7 +532,7 @@
         "antagonize_fail_text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
         "history_text": {
             "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -574,7 +574,7 @@
         "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
         "history_text": {
             "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -616,7 +616,7 @@
         "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n.",
         "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
         "history_text": {
-            "scar": "p_l gained a scar after tussling with a rogue."
+            "scar": "m_c gained a scar after tussling with a rogue."
         }
     },
     {
@@ -658,7 +658,7 @@
         "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
         "history_text": {
             "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {

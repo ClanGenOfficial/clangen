@@ -33,7 +33,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -67,7 +67,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -103,7 +103,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -137,7 +137,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },

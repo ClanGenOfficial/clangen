@@ -157,7 +157,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -196,7 +196,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -235,7 +235,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -474,7 +474,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -513,7 +513,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -552,7 +552,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -714,7 +714,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -753,7 +753,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -792,7 +792,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -950,7 +950,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -1069,7 +1069,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters."
+            "reg_death": "m_c was drowned by floodwaters."
         }
     },
     {
@@ -1195,7 +1195,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
@@ -1239,7 +1239,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
@@ -1283,7 +1283,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
