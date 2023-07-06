@@ -213,8 +213,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/r_c/subject} always {VERB/r_c/say/says} it was a huge dog.",
-            "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/r_c/subject} took the dog out with {PRONOUN/r_c/object}.",
+            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+            "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
             "lead_death": "killed in a fight with a small dog"
         }
     },
@@ -254,7 +254,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/r_c/subject} always {VERB/r_c/say/says} it was a huge dog."
+            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog."
         }
     },
     {
@@ -293,7 +293,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, though {PRONOUN/r_c/subject} {VERB/r_c/insist/insists} it was huge."
+            "scar": "This cat got a scar from a fight with a small dog, though {PRONOUN/m_c/subject} {VERB/m_c/insist/insists} it was huge."
         }
     },
     {

@@ -971,7 +971,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1023,7 +1023,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1075,7 +1075,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1129,7 +1129,7 @@
         "history_text": {
             "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1425,7 +1425,7 @@
         "history_text": {
             "scar": "r_c carries a scar from an eagle's beak.",
             "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -1475,7 +1475,7 @@
         "history_text": {
             "scar": "r_c carries a scar from an eagle's beak.",
             "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {

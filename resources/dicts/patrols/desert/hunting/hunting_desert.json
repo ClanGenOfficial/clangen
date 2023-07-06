@@ -1458,7 +1458,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c fell when {PRONOUN/r_c/subject} {VERB/r_c/were/was} surprised by a peccary boar.",
+            "reg_death": "r_c fell when {PRONOUN/m_c/subject} {VERB/m_c/were/was} surprised by a peccary boar.",
             "lead_death": "{VERB/m_c/were/was} gored and eaten by a peccary boar"
         }
     },
