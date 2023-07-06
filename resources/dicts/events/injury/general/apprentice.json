@@ -806,7 +806,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but is extremely sore when {PRONOUN/m_c/subject} wake the next morning.",
+        "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, but is extremely sore when {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up the next morning.",
         "cat_trait": [
             "ambitious",
             "daring",
@@ -1253,7 +1253,7 @@
         ],
         "event_text": "m_c's leg was badly hurt after {PRONOUN/m_c/poss} mentor used a Twoleg trap during a training exercise.",
         "history_text": {
-            "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, when they used a Twoleg trap for training.",
+            "scar": "m_c was scarred by {PRONOUN/m_c/poss} mentor, r_c, when {PRONOUN/r_c/subject} used a Twoleg trap for training.",
             "reg_death": "m_c died from wounds caused by {PRONOUN/m_c/poss} mentor using a Twoleg trap for training."
         },
         "cat_trait": null,

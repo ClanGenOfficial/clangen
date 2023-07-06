@@ -105,7 +105,7 @@
             "Has an important message for r_c",
             "Is distraught that {PRONOUN/m_c/subject} can't help r_c take care of the Clan",
             "Sends an omen of things to come to r_c",
-            "Is excited that {PRONOUN/m_c/subject} are able to help c_n by sharing a new prophecy",
+            "Is excited that {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to help c_n by sharing a new prophecy",
             "Whispers useful suggestions in r_c's ears",
             "Sends a vision of an undiscovered herb patch to r_c",
             "Lets {PRONOUN/m_c/poss} scent linger near r_c, if only for a moment"
@@ -281,7 +281,7 @@
         "id": "gen_dead_to_alive_sibling",
         "thoughts": [
             "Watches r_c grow and live the life {PRONOUN/m_c/subject} could never have",
-            "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} are of {PRONOUN/r_c/object}",
+            "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}",
             "Celebrates r_c's successes with {PRONOUN/r_c/object}",
             "Is proud of who r_c has become"
         ],

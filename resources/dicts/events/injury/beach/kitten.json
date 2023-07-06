@@ -162,7 +162,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} slip and fall. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but{PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
+        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
         "cat_trait": [
             "bouncy",
             "daring",
@@ -182,7 +182,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} slip a little too much and take a tumble.",
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
         "cat_trait": [
             "bouncy",
             "daring",
@@ -202,7 +202,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} slip a little too much and twist {PRONOUN/m_c/poss} paw.",
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/twist/twists} {PRONOUN/m_c/poss} paw.",
         "cat_trait": [
             "bouncy",
             "daring",

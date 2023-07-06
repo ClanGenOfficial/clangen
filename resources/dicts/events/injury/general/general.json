@@ -260,7 +260,7 @@
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": {
             "scar": "m_c was scarred by r_c for disobeying orders.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/obj}."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -295,9 +295,9 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/obj}.",
+        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/obj}.",
+            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for {PRONOUN/m_c/poss} dissent."
         },
         "cat_trait": null,
@@ -335,10 +335,10 @@
             "scar",
             "ONE"
         ],
-        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/obj}.",
+        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/obj}.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/obj}."
+            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -479,7 +479,7 @@
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": {
             "scar": "m_c was scarred by r_c for disobeying orders.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/obj}."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -514,9 +514,9 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/obj}.",
+        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/obj}.",
+            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/object}.",
             "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for {PRONOUN/m_c/poss} dissent."
         },
         "cat_trait": null,
@@ -553,10 +553,10 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/obj}.",
+        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/obj}.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/obj}."
+            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,

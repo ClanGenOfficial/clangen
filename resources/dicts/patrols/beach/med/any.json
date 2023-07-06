@@ -186,7 +186,7 @@
             "stat_skill": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!"
         },
         "fail_text": {
-            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do {PRONOUN/p_l/subject} have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
+            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only {VERB/r_c/do/does} {PRONOUN/p_l/subject} {VERB/p_l/have/has} to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
         },
         "win_skills": [
             "SENSE,2"
@@ -1017,8 +1017,8 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1048,8 +1048,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1112,8 +1112,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1176,8 +1176,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."

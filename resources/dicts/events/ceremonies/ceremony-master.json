@@ -626,7 +626,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c hopes that dead_par1 is watching in pride from StarClan as {PRONOUN/m_c/subject} are apprenticed to (mentor)."
+    "m_c hopes that dead_par1 is watching in pride from StarClan as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed to (mentor)."
   ],
   "app_41": [
     [
@@ -757,7 +757,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over {PRONOUN/m_c/object}."
+    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over {PRONOUN/m_c/object}."
   ],
   "app_52": [
     [
@@ -1966,7 +1966,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(old_name) has excelled at every task placed before {PRONOUN/m_c/object}. Despite {PRONOUN/m_c/poss} young age, {PRONOUN/m_c/subject} are more than ready to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, honoring {PRONOUN/m_c/poss} r_h. "
+    "(old_name) has excelled at every task placed before {PRONOUN/m_c/object}. Despite {PRONOUN/m_c/poss} young age, {PRONOUN/m_c/subject} {VERB/m_c/are/is} more than ready to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, honoring {PRONOUN/m_c/poss} r_h. "
   ],
   "warrior_1": [
     [
@@ -1978,7 +1978,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "l_n calls the Clan to a meeting and declares (old_name) to be a warrior. {PRONOUN/m_c/subject/CAP} are now called m_c and are celebrated for {PRONOUN/m_c/poss} r_h."
+    "l_n calls the Clan to a meeting and declares (old_name) to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} now called m_c and are celebrated for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_2": [
     [
@@ -2014,7 +2014,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "l_n has been following the progress of (old_name) for moons, and feels that it is finally time for {PRONOUN/m_c/object} to get {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} are granted the name m_c in honor of {PRONOUN/m_c/poss} r_h."
+    "l_n has been following the progress of (old_name) for moons, and feels that it is finally time for {PRONOUN/m_c/object} to get {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} granted the name m_c in honor of {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_5": [
     [
