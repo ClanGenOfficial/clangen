@@ -539,7 +539,6 @@
         "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
         "cat_trait": null,
         "cat_skill": [
-        "cat_skill": [
             "GHOST,0"
         ]
     },
