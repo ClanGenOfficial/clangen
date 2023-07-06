@@ -695,7 +695,7 @@
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -931,7 +931,7 @@
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
