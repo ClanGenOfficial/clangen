@@ -3539,8 +3539,19 @@ class TalkScreen(Screens):
                     continue
                 if "talk_dead" in talk[0]:
                     dead_cat = str(Cat.all_cats.get(choice(game.clan.starclan_cats)).name)
-                    text = [t1.replace("d_c", dead_cat) for t1 in text]
-                    texts_list.append(talk[1])
+                    text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
+                    texts_list.append(text)
+                    continue
+                if "random_cat" in talk[0]:
+                    random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
+                    counter = 0
+                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID:
+                        counter+=1
+                        if counter == 15:
+                            continue
+                        random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
+                    text = [t1.replace("r_c", str(random_cat.name)) for t1 in talk[1]]
+                    texts_list.append(text)
                     continue
                 texts_list.append(talk[1])
             else:
@@ -3548,8 +3559,19 @@ class TalkScreen(Screens):
                     continue
                 if "talk_dead" in talk[0]:
                     dead_cat = str(Cat.all_cats.get(choice(game.clan.starclan_cats)).name)
-                    text = [t1.replace("d_c", dead_cat) for t1 in text]
-                    texts_list.append(talk[1])
+                    text = [t1.replace("d_c", dead_cat) for t1 in talk[1]]
+                    texts_list.append(text)
+                    continue
+                if "random_cat" in talk[0]:
+                    random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
+                    counter = 0
+                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID:
+                        counter+=1
+                        if counter == 15:
+                            continue
+                        random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
+                    text = [t1.replace("r_c", str(random_cat.name)) for t1 in talk[1]]
+                    texts_list.append(text)
                     continue
                 texts_list.append(talk[1])
         if not texts_list:
@@ -3561,17 +3583,7 @@ class TalkScreen(Screens):
         
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
-        text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]
-        r_cat = Cat.all_cats[choice(game.clan.clan_cats)]
-        counter = 0
-        while r_cat.dead or r_cat.outside or r_cat.ID == game.clan.your_cat.ID:
-            r_cat = Cat.all_cats[choice(game.clan.clan_cats)]
-            counter += 1
-            if counter > 15:
-                break
-
-        r_cat_name = str(r_cat.name)
-        text = [t1.replace("r_c", r_cat_name) for t1 in text]
+        text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]        
         return text
         
 class InsultScreen(Screens):
