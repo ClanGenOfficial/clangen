@@ -326,18 +326,28 @@ class History:
         """
         History.check_load(cat)
 
-        # Use a default is none is provided.
-        # Will probally sound weird, but it's better than nothing
-        if not death_text:
-            death_text = f"m_c died from an injury or illness ({condition})."
-        if not scar_text:
-            scar_text = f"m_c was scarred from an injury or illness ({condition})."        
-        
-        cat.history.possible_history[condition] = {
-            "death_text": death_text,
-            "scar_text": scar_text,
-            "other_cat": other_cat.ID if other_cat is not None else None
-        }
+        # If the condition already exists, we don't want to overwrite it
+        if condition in cat.history.possible_history:
+            if death_text is not None:
+                cat.history.possible_history[condition]["death_text"] = death_text
+            if scar_text is not None:
+                cat.history.possible_history[condition]["scar_text"] = scar_text
+            if other_cat is not None:
+                cat.history.possible_history[condition]["other_cat"] = other_cat.ID
+        else:
+            # Use a default is none is provided.
+            # Will probably sound weird, but it's better than nothing
+            if not death_text:
+                death_text = f"m_c died from an injury or illness ({condition})."
+            if not scar_text:
+                scar_text = f"m_c was scarred from an injury or illness ({condition})."
+            
+            cat.history.possible_history[condition] = {
+                "death_text": death_text,
+                "scar_text": scar_text,
+                "other_cat": other_cat.ID if other_cat is not None else None
+            }
+
 
     @staticmethod
     def remove_possible_history(cat, condition):
