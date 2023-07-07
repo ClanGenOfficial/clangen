@@ -75,7 +75,7 @@
         "patrol_id": "bch_train_eagle_leaffalldappledfeather1",
         "biome": "beach",
         "season": "leaf-fall",
-        "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "no_change_fail", "platonic", "comfort", "dislike", "app_stat", "injury", "cat bite"
+        "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "no_change_fail", "platonic", "comfort", "dislike", "app_stat", "injury", "cat bite", "scar", "TAILBASE"
         ],
         "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
@@ -103,7 +103,7 @@
         "patrol_id": "bch_train_eagle_leaffalldappledfeather_cruelseason1",
         "biome": "beach",
         "season": "leaf-fall",
-        "tags": ["training", "cruel_season", "death", "apprentice", "two_apprentices", "rel_two_apps", "no_change_fail", "platonic", "comfort", "dislike", "app_stat", "injury", "cat bite"
+        "tags": ["training", "cruel_season", "death", "apprentice", "two_apprentices", "rel_two_apps", "no_change_fail", "platonic", "comfort", "dislike", "app_stat", "injury", "cat bite", "scar", "TAILBASE"
         ],
         "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
