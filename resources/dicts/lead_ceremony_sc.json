@@ -505,7 +505,7 @@
           "virtue": ["bravery", "certainty", "confidence", "courage", "strength"]
         },
         {
-          "text": "m_c can barely meet r_c's gaze as the starry cat approaches. {PRONOUN/m_c/poss/CAP} head snaps up as r_c mews at {PRONOUN/m_c/object} to take heart in the life {PRONOUN/r_c/subject} are about to give. As r_c touches {PRONOUN/m_c/poss} forehead, a life for [virtue] surges through {PRONOUN/m_c/object}, filling {PRONOUN/m_c/object} with a resolve {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} never felt before.",
+          "text": "m_c can barely meet r_c's gaze as the starry cat approaches. {PRONOUN/m_c/poss/CAP} head snaps up as r_c mews at {PRONOUN/m_c/object} to take heart in the life {PRONOUN/r_c/subject} {VERB/r_c/are/is} about to give. As r_c touches {PRONOUN/m_c/poss} forehead, a life for [virtue] surges through {PRONOUN/m_c/object}, filling {PRONOUN/m_c/object} with a resolve {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} never felt before.",
           "virtue": ["bravery", "certainty", "confidence", "courage", "strength"]
         },
         {

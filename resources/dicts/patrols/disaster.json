@@ -10,7 +10,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -51,7 +51,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -92,7 +92,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -131,14 +131,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -157,7 +157,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -170,14 +170,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -196,7 +196,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -209,14 +209,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -235,7 +235,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned in floodwaters"
         }
     },
@@ -274,7 +274,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "were ambushed by rogues"
+            "lead_death": "{VERB/m_c/were/was} ambushed by rogues"
         }
     },
     {
@@ -292,8 +292,8 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing too. The patrol politely declines and continues on their patrol.",
-            "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
+            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines} and continues on {PRONOUN/r_c/poss} solo patrol.",
+            "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
             "stat_trait": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         },
         "fail_text": {
@@ -312,8 +312,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "were ambushed by rogues"
+            "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
+            "lead_death": "{VERB/m_c/were/was} ambushed by rogues while on a solo patrol"
         }
     },
     {
@@ -327,7 +327,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -368,7 +368,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -409,7 +409,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -448,14 +448,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around them.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -474,7 +474,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -487,14 +487,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -513,7 +513,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -526,14 +526,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -552,7 +552,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -567,7 +567,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -608,7 +608,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -649,7 +649,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -688,14 +688,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -714,7 +714,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -727,14 +727,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -753,7 +753,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -766,14 +766,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -792,7 +792,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -813,7 +813,7 @@
             "unscathed_common": "It's just an odd loner singing to themself. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
             "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing, too. The patrol politely declines, but compliments the loner's songs.",
             "stat_skill": "Your patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the flexibility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
-            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+            "stat_trait": "s_c signals for the patrol to stop. Carefully, quietly, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
         },
         "fail_text": {
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
@@ -832,7 +832,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "were ambushed by rogues"
+            "lead_death": "{VERB/m_c/were/was} ambushed by rogues"
         }
     },
     {
@@ -850,9 +850,9 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see the patrol they invite them to sing, too. The patrol politely declines, but compliments the loner's songs.",
-            "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
-            "stat_trait": "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too. {PRONOUN/r_c/subject/CAP} politely {VERB/r_c/decline/declines}, but {VERB/r_c/compliment/compliments} the loner's songs.",
+            "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+            "stat_trait": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         },
         "fail_text": {
             "death": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."
@@ -870,8 +870,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "were ambushed by rogues"
+            "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
+            "lead_death": "{VERB/m_c/were/was} ambushed by rogues while on a solo patrol"
         }
     },
     {
@@ -885,7 +885,7 @@
             "trust",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -924,14 +924,14 @@
             "disaster",
             "no_body"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "While it's pretty gray up there, the promised rain never comes.",
             "unscathed_rare": "r_c becomes wet from the rain but otherwise the patrol is successful.",
-            "stat_skill": "s_c makes a careful judgment and keeps going, but they stick to the clifftops, avoiding the low beaches as the rain pours down around them.",
+            "stat_skill": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain pours down around {PRONOUN/s_c/object}.",
             "stat_trait": "It's not worth the risk - s_c heads for home."
         },
         "fail_text": {
@@ -950,7 +950,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters.",
+            "reg_death": "m_c was drowned by floodwaters.",
             "lead_death": "drowned by floodwaters"
         }
     },
@@ -974,7 +974,7 @@
         "success_text": {
             "unscathed_common": "The cats leap forward, dashing to the other side of the beach and up onto the rocks. They make it in time to watch the beach get lost under a tide of water from inland.",
             "stat_skill": "s_c shouts to get back! The patrol scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
-            "stat_trait": "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the beach disappears under a flood of water from inland. They've saved them all."
+            "stat_trait": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at them to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all."
         },
         "fail_text": {
             "death": "The cats are in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean."
@@ -993,7 +993,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "reg_death": "This cat was swept out to sea by a flood.",
-            "lead_death": "were swept out to sea by a flood"
+            "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"
         }
     },
     {
@@ -1006,7 +1006,7 @@
             "respect",
             "trust"
         ],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and p_l wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -1043,7 +1043,7 @@
             "border",
             "disaster"
         ],
-        "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+        "intro_text": "There are dark clouds on the horizon and r_c wonders if they should continue.",
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 40,
         "exp": 20,
@@ -1069,7 +1069,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was drowned by floodwaters."
+            "reg_death": "m_c was drowned by floodwaters."
         }
     },
     {
@@ -1091,7 +1091,7 @@
         "success_text": {
             "unscathed_common": "The cats leap forward, dashing to the other side of the bog and up into the trees. They make it in time to watch the swamp get lost under a tide of water from inland.",
             "stat_skill": "s_c shouts to get back! The patrol scrambles back the way they came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
-            "stat_trait": "s_c shrieks at the strange sound, paws digging into the mud as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the swamp disappears under a flood of water from inland. They've saved them all."
+            "stat_trait": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} turn and run for home. The rest of the patrol yowls at them to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all."
         },
         "fail_text": {
             "death": "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under it's ice."
@@ -1131,8 +1131,8 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-            "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-            "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+            "stat_skill": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+            "stat_trait": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         },
         "fail_text": {
             "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
@@ -1152,8 +1152,8 @@
         "antagonize_fail_text": null,
         "history_text": {
             "scar": "This cat was badly scarred when rogues ambushed their patrol.",
-            "reg_death": "This cat was killed when rogues ambushed their patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -1175,8 +1175,8 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
-            "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-            "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+            "stat_skill": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+            "stat_trait": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         },
         "fail_text": {
             "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
@@ -1195,9 +1195,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed their patrol.",
-            "reg_death": "This cat was killed when rogues ambushed their patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -1219,8 +1219,8 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-            "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-            "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+            "stat_skill": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+            "stat_trait": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         },
         "fail_text": {
             "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
@@ -1239,9 +1239,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed their patrol.",
-            "reg_death": "This cat was killed when rogues ambushed their patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -1263,8 +1263,8 @@
         "exp": 30,
         "success_text": {
             "unscathed_common": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-            "stat_skill": "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-            "stat_trait": "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+            "stat_skill": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+            "stat_trait": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         },
         "fail_text": {
             "death": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
@@ -1283,9 +1283,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was badly scarred when rogues ambushed their patrol.",
-            "reg_death": "This cat was killed when rogues ambushed their patrol.",
-            "lead_death": "were killed in a rogue ambush"
+            "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     }
 ]

@@ -39,8 +39,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat was badly scarred when rogues ambushed their patrol.",
-            "reg_death": "This cat was killed when rogues ambushed their patrol.",
+            "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
             "lead_death": "rogues ambushed their patrol"
         }
     },
@@ -83,7 +83,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "This cat was killed when rogues ambushed them while on a solo patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
             "lead_death": "rogues ambushed their patrol"
         }
     },
@@ -131,9 +131,9 @@
         "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
         "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
         "history_text": {
-            "scar": "r_c was badly scarred when rogues attacked their patrol.",
-            "reg_death": "This cat was killed when rogues attacked their patrol.",
-            "lead_death": "killed when rogues attacked their patrol"
+            "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+            "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed when rogues attacked {PRONOUN/m_c/poss} patrol"
         }
     },
     {
@@ -195,9 +195,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a badger.",
-            "reg_death": "r_c lost their life to a badger.",
-            "lead_death": "were killed by a badger"
+            "scar": "m_c was scarred by a badger.",
+            "reg_death": "m_c lost their life to a badger.",
+            "lead_death": "{VERB/m_c/were/was} killed by a badger"
         }
     },
     {
@@ -388,9 +388,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -450,9 +450,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -506,9 +506,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -568,7 +568,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {
@@ -628,7 +628,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {
@@ -682,7 +682,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {
@@ -791,7 +791,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {

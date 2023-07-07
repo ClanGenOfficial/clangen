@@ -25,7 +25,7 @@
         ],
         "death_text": "m_c was crushed and lost a life when a tree fell into camp.",
         "history_text": {
-            "lead_death": "were crushed by a falling tree"
+            "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -40,9 +40,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when a hawk attempted to grab and lift them.",
+        "death_text": "m_c lost a life when a hawk attempted to grab and lift {PRONOUN/m_c/object}.",
         "history_text": {
-            "lead_death": "were grabbed by a hawk"
+            "lead_death": "{VERB/m_c/were/was} grabbed by a hawk"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -57,7 +57,7 @@
         ],
         "death_text": "m_c lost a life after being swept away by a flood.",
         "history_text": {
-            "lead_death": "were swept away by a flood"
+            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -72,7 +72,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when they fell from the top branches of a tree.",
+        "death_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
         "history_text": {
             "lead_death": "fell from a tall tree"
         },
@@ -133,7 +133,7 @@
         ],
         "death_text": "m_c was carried off by a hawk, never to be seen again.",
         "history_text": {
-            "lead_death": "were carried away by a hawk"
+            "lead_death": "{VERB/m_c/were/was} carried away by a hawk"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -154,7 +154,7 @@
         ],
         "death_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
         "history_text": {
-            "lead_death": "were swept away by the river"
+            "lead_death": "{VERB/m_c/were/was} swept away by the river"
         },
         "cat_trait": null,
         "cat_skill": null,

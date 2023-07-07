@@ -1382,9 +1382,9 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
-                            life_text = "lost their final life"
+                            life_text = "lost {PRONOUN/m_c/poss} final life"
                         else:
-                            life_text = "lost their final lives"
+                            life_text = "lost {PRONOUN/m_c/poss} final lives"
                     else:
                         life_text = "lost a life"
                 else:
