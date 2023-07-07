@@ -119,7 +119,7 @@
         "fail_text": {
             "unscathed_common": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
             "unscathed_stat": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
-            "injury": "r_c pounces with no hesitation! {PRONOUN/r_c/subject/CAP} easily {VERB/r_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps {PRONOUN/r_c/poss} way home, that rabbit certainly wasn't worth the trouble."
+            "injury": "r_c pounces with no hesitation! {PRONOUN/r_c/subject/CAP} easily {VERB/r_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps {PRONOUN/r_c/poss} way home; that rabbit certainly wasn't worth the trouble."
         },
         "win_skills": [
             "SPEAKER,1"

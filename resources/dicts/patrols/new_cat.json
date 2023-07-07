@@ -343,7 +343,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with their kits."
+            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits."
         },
         "fail_text": {
             "unscathed_common": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
@@ -397,7 +397,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help the queen joins c_n with their kits."
+            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help, the queen joins c_n with their kits."
         },
         "fail_text": {
             "unscathed_common": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
@@ -750,7 +750,7 @@
             "battle_injury",
             "meeting"
         ],
-        "intro_text": "As the patrol is checking the border lines, they hear the traispe of pawsteps through the territory.",
+        "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
         "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
         "chance_of_success": 50,
         "exp": 10,
@@ -858,7 +858,7 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the pitious cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
+            "unscathed_common": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
             "unscathed_rare": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, their fur soft and thin, their cries desperate as they call in confusion. app1 comes down to them, startling the poor thing half out of their pelt, and ask if they need assistance - this cat clearly doesn't belong here.",
             "stat_trait": "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/app1/self} cheerfully, and the desperate kittypet slowly loses a little of their fear as app1 guides them back to camp, sure that the Leader will know what to do with them."
         },
@@ -900,7 +900,7 @@
             "border"
         ],
         "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
-        "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely.",
+        "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely.",
         "chance_of_success": 85,
         "exp": 10,
         "success_text": {
@@ -948,7 +948,7 @@
         "chance_of_success": 20,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
+            "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them in place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
             "stat_trait": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
         },
         "fail_text": {
