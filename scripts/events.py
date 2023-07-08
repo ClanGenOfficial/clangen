@@ -563,7 +563,7 @@ class Events:
             with open(f"{resource_dir}ceremonies.json",
                     encoding="ascii") as read_file:
                 self.d_txt = ujson.loads(read_file.read())
-            ceremony_txt = random.choice(self.d_txt['gain_app'])
+            ceremony_txt = random.choice(self.d_txt['gain_app ' + game.clan.your_cat.status])
             ceremony_txt = ceremony_txt.replace('c_l', str(game.clan.leader.name))
             ceremony_txt = ceremony_txt.replace('app1', str(Cat.all_cats[game.clan.your_cat.apprentice[-1]].name))
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
