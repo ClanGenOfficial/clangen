@@ -4943,19 +4943,24 @@ class ChooseMurderCatScreen(Screens):
             if cat_to_murder.status == 'leader':
                 game.clan.leader_lives = 0
             cat_to_murder.die()
-            History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
-            History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.", )
             discover_chance = randint(1,5)
             if discover_chance == 1:
                 you.revealed = True
                 if accomplice:
                     if accompliced:
                         game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " with the help of " + str(accomplice.name) + "."))
+                        History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
+                        History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat with the help of {accomplice.name}.")
                     else:
                         game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help you."))
+                        History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                 else:
                     game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + "."))
+                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                 txt = ""
                 if game.clan.your_cat.status in ['kitten', 'leader', 'deputy', 'medicine cat']:
                     txt = choice(self.mu_txt["murder_discovered " + game.clan.your_cat.status])
@@ -5015,10 +5020,18 @@ class ChooseMurderCatScreen(Screens):
             else:
                 if accomplice:
                     if accompliced:
+                        History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
+                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+                        History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+
                         game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " along with " + str(accomplice.name) + ". It seems no one is aware of your actions."))
                     else:
+                        History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                         game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help. It seems no one is aware of your actions."))
                 else:
+                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                     game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
 
         else:
@@ -5208,19 +5221,19 @@ class ChooseMurderCatScreen(Screens):
                                                                                             manager=MANAGER)
                         
     def get_accomplice_chance(self, you, accomplice):
-        chance = randint(1,30)
+        chance = 30
         if accomplice.relationships[you.ID].platonic_like > 10:
-            chance += 10
+            chance += 20
         if accomplice.relationships[you.ID].dislike < 10:
-            chance += 10
+            chance += 20
         if accomplice.relationships[you.ID].romantic_love > 10:
-            chance += 10
+            chance += 20
         if accomplice.relationships[you.ID].comfortable > 10:
-            chance += 10
+            chance += 20
         if accomplice.relationships[you.ID].trust > 10:
-            chance += 10
+            chance += 20
         if accomplice.relationships[you.ID].admiration > 10:
-            chance += 10
+            chance += 20
         if you.status in ['medicine cat', 'mediator', 'deputy', 'leader']:
             chance += 20
         return chance
