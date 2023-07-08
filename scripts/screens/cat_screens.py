@@ -1444,7 +1444,7 @@ class ProfileScreen(Screens):
             else:
                murderer = None
 
-        if victims:
+        if len(victims) > 0:
             victim_names = {}
             name_list = []
 
@@ -1473,7 +1473,7 @@ class ProfileScreen(Screens):
                     victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
         if murderer:
-            if murder_history["is_victim"][0]["revealed"]:
+            if murder_history["is_victim"][0]["revealed"] is True:
                 murdered_text = murder_history["is_victim"][0]["text"]
 
         if victim_text:

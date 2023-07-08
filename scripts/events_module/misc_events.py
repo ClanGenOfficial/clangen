@@ -46,10 +46,18 @@ class MiscEvents():
             acc_checked_events.append(event)
             
         reveal = False
+        victim = None
         if cat.history:
             if cat.history.murder:
                 if "is_murderer" in cat.history.murder:
-                    reveal = self.handle_murder_self_reveals(cat)
+                    murder_history = cat.history.murder["is_murderer"]
+                    reveal = True #self.handle_murder_self_reveals(cat)
+                    for murder in murder_history:
+                        murder_index = murder_history.index(murder)
+                        if murder_history[murder_index]["revealed"] is True:
+                            continue
+                        victim = murder_history[murder_index]["victim"]
+        print("Reveal: " + str(reveal))
 
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
@@ -82,7 +90,7 @@ class MiscEvents():
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal)
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -92,7 +100,7 @@ class MiscEvents():
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
         if reveal:
-            History.reveal_murder(cat, other_cat, Cat)
+            History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 
@@ -179,7 +187,7 @@ class MiscEvents():
 
     def handle_murder_self_reveals(self, cat):
         ''' Handles reveals for murders where the murderer reveals themself '''
-        if cat.Personality.Lawfulness > 8:
+        if cat.personality.lawfulness > 8:
             murderer_guilty = random.choice([True, False])
         chance_of_reveal = 120
         if murderer_guilty:
@@ -188,7 +196,10 @@ class MiscEvents():
         # testing purposes
         chance_of_reveal = 1
 
-        return bool(random.randint(1, chance_of_reveal) == 1)
+        chance_roll = random.randint(0, chance_of_reveal)
+        print(chance_roll)
+
+        return bool(chance_roll = 1)
 
     def handle_murder_witness_reveals(self, cat, other_cat):
         ''' Handles reveals where the witness reveals the murderer '''

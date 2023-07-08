@@ -637,30 +637,28 @@ class History:
         return cat.history.murder
 
     @staticmethod
-    def reveal_murder(cat, other_cat, Cat):
+    def reveal_murder(cat, other_cat, Cat, victim, murder_index):
         ''' Reveals the murder properly in all of the associated history text
         :param cat: The murderer
         :param other_cat: The cat who discovers the truth about the murder
-        :param Cat: The cat class'''
+        :param Cat: The cat class
+        :param victim: The victim whose murder is being revealed
+        :param murder_index: Index of the murder'''
 
         murder_history = History.get_murders(cat)
         if murder_history:
             if "is_murderer" in murder_history:
-                for murder in murder_history["is_murderer"]:
-                    if murder["revealed"] is True:
-                        continue
+                murder_history["is_murderer"][murder_index]["revealed"] = True
+                murder_history["is_murderer"][murder_index]["revealed_by"] = other_cat.ID
+                murder_history["is_murderer"][murder_index]["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
 
-                    murder_history["is_murderer"]["revealed"] = True
-                    murder_history["is_murderer"]["revealed_by"] = other_cat.ID
-                    murder_history["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
+                victim = Cat.fetch_cat(victim)
+                print(victim)
+                victim_history = victim.history.murder["is_victim"]
+                victim_history["revealed"] = True
+                victim_history["revealed_by"] = other_cat.ID
+                victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
 
-                    victim = Cat.fetch_cat(murder_history["is_murderer"][murder]["victim"])
-                    print(victim)
-                    victim_history = victim.history.murder["is_victim"]
-                    victim_history["revealed"] = True
-                    victim_history["revealed_by"] = other_cat.ID
-                    victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
-
-                    murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', victim.name)
-                    murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', other_cat.name)
-                    victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', other_cat.name)
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', victim.name)
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', other_cat.name)
+                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', other_cat.name)
