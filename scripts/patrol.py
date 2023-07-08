@@ -109,14 +109,14 @@ class Patrol():
         return self.patrol_event.intro_text
 
     def proceed_patrol(self, path:str="proceed"):
-        """Procced the patrol to the next step. 
+        """Proceed the patrol to the next step. 
             path can be: "proceed", "antag", or "decline" """
         
         if path == "decline":
             if self.patrol_event:
                 return self.patrol_event.decline_text
             else:
-                return "Error - no event choosen"
+                return "Error - no event chosen"
         
         self.patrol_done = True
         self.calculate_success(antagonize=(path == "antag"))
@@ -188,7 +188,7 @@ class Patrol():
             possible_leader = [i for i in self.patrol_cats if i.status not in 
                                ["medicine cat apprentice", "apprentice"]]
             if possible_leader:
-                # Flip a coin to pick the most experence, or oldest. 
+                # Flip a coin to pick the most experience, or oldest. 
                 if randint(0, 1):
                     possible_leader.sort(key=lambda x: x.moons)
                 else:
@@ -204,10 +204,11 @@ class Patrol():
             
         # DETERMINE RANDOM CAT
         #Find random cat
-        possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
-        if not possible_random_cats:
-            self.patrol_random_cat = self.patrol_leader
+        if len(patrol_cats) > 1:
+            possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
+            self.patrol_random_cat = choice(possible_random_cats)
         else:
+            possible_random_cats = [i for i in patrol_cats]
             self.patrol_random_cat = choice(possible_random_cats)
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
@@ -473,7 +474,7 @@ class Patrol():
             # For a 2 cat patrol, the only restriction is
             # that s_c can't be r_c. s_c only allowed to be the 
             # same cat as the p_l. This
-            # can be overidden by the "rc_has_stat"
+            # can be overridden by the "rc_has_stat"
             # tag, which forces s_c to be r_c instead. 
             if "rc_has_stat" in self.patrol_event.tags:
                 return True if kitty == self.patrol_random_cat else False
@@ -779,7 +780,7 @@ class Patrol():
         -then checks for image file with the patrol_id minus any numbers
         -then checks for image file with the patrol_id minus any numbers and with 'gen' replacing biome indicator
         -if none of those are available, then uses placeholder patrol type image
-        if you are adding art and the art has gore or blood, add it's exact patrol id to the explicit_patrol_art.json
+        if you are adding art and the art has gore or blood, add its exact patrol id to the explicit_patrol_art.json
         """
         path = "resources/images/patrol_art/"
 
@@ -961,7 +962,7 @@ class Patrol():
                 len(self.patrol_cats) * gm_modifier * 2)
         success_chance = self.patrol_event.chance_of_success + int(success_adjust)
 
-        # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
+        # Auto-wins based on EXP are sorta lame. Often makes it impossible for large patrols with experienced cats to fail patrols at all. 
         # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
         success_chance = min(success_chance, 90)
 
@@ -2584,7 +2585,7 @@ class PatrolEvent:
         "six_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
 
         "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the 
-        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifers) and "apprentice".
+        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifiers) and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
@@ -2620,7 +2621,7 @@ class PatrolEvent:
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
         "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the Clan 
-        (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
+        (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", etc) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.
         "pos_fail" is for if you want the tagged relationship values to still be positive on a failure, rather than negative.
