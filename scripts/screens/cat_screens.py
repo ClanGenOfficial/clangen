@@ -613,7 +613,7 @@ class ProfileScreen(Screens):
                 
             print("Chose " + str(game.clan.your_cat.name))
         
-        if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
+        if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside and not game.clan.your_cat.dead and not game.clan.your_cat.outside:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
                     (726, 220), (68, 68))),
