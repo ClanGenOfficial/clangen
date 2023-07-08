@@ -17,20 +17,6 @@
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "sneaky",
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "vengeful",
-            "careful",
-            "lonesome",
-            "strange",
-            "daring",
-            "righteous",
-            "patient"
-        ],
         "other_cat_skill": [
             "CLEVER,1"
         ]
@@ -54,17 +40,6 @@
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "vengeful",
-            "lonesome",
-            "strange",
-            "daring",
-            "righteous"
-        ],
         "other_cat_skill": [
             "FIGHTER,2"
         ]
@@ -88,12 +63,6 @@
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "vengeful",
-            "ambitious",
-            "bloodthirsty",
-            "fierce"
-        ],
         "other_cat_skill": [
             "FIGHTER,2"
         ],
@@ -106,7 +75,6 @@
         "tags": [
             "other_cat",
             "murder",
-            "revealed",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -120,13 +88,6 @@
             "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, who made the death look accidental."
         },
-        "other_cat_trait": [
-            "vengeful",
-            "ambitious",
-            "bloodthirsty",
-            "fierce",
-            "sneaky"
-        ],
         "other_cat_skill": [
             "FIGHTER,2",
             "CLEVER,3"
@@ -155,12 +116,6 @@
             "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with deathberries."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -185,12 +140,6 @@
             "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with foxglove seeds."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -215,12 +164,6 @@
             "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with nightshade berries."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -245,12 +188,6 @@
             "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with water hemlock."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -275,12 +212,6 @@
             "reg_death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, by being fed incorrect herbs."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]

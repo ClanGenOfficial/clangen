@@ -1,7 +1,5 @@
 import random
 
-import ujson
-
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
 
@@ -37,7 +35,7 @@ class History:
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
 
-        """
+        """ 
         want save to look like
         {
         "beginning":{
@@ -636,5 +634,31 @@ class History:
 
         return cat.history.murder
 
+    @staticmethod
+    def reveal_murder(cat, other_cat, Cat, victim, murder_index):
+        ''' Reveals the murder properly in all of the associated history text
+        :param cat: The murderer
+        :param other_cat: The cat who discovers the truth about the murder
+        :param Cat: The cat class
+        :param victim: The victim whose murder is being revealed
+        :param murder_index: Index of the murder'''
 
+        victim = Cat.fetch_cat(victim)
+        murder_history = History.get_murders(cat)
+        victim_history = History.get_murders(victim)
 
+        if murder_history:
+            if "is_murderer" in murder_history:
+                murder_history = murder_history["is_murderer"][murder_index]
+                murder_history["revealed"] = True
+                murder_history["revealed_by"] = other_cat.ID
+                murder_history["revelation_text"] = "The truth of {PRONOUN/m_c/subject} crime against [victim] was discovered by [discoverer]."
+
+                victim_history = victim_history["is_victim"][0]
+                victim_history["revealed"] = True
+                victim_history["revealed_by"] = other_cat.ID
+                victim_history["revelation_text"] = "The truth of {PRONOUN/m_c/subject} murder was discovered by [discoverer]."
+
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', str(victim.name))
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', str(other_cat.name))
+                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', str(other_cat.name))
