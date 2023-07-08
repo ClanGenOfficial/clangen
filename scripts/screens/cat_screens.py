@@ -1442,6 +1442,7 @@ class ProfileScreen(Screens):
         if len(victims) > 0:
             victim_names = {}
             name_list = []
+            reveal_text = None
 
             for victim in victims:
                 if not Cat.fetch_cat(victim["victim"]):
@@ -1469,10 +1470,11 @@ class ProfileScreen(Screens):
                 else:
                     victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
-            cat_dict = {
-                    "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
-                }
-            victim_text = f'{victim_text} {process_text(reveal_text, cat_dict)}'
+            if reveal_text:
+                cat_dict = {
+                        "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+                    }
+                victim_text = f'{victim_text} {process_text(reveal_text, cat_dict)}'
 
         return victim_text
 
