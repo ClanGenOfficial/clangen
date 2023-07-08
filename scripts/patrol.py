@@ -1944,7 +1944,7 @@ class Patrol():
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
             if possible:
-                History.add_possible_history(cat, condition, scar_text=adjust_text)
+                History.add_possible_history(cat, condition=condition, scar_text=adjust_text)
             else:
                 History.add_scar(cat, adjust_text)
         if death:
@@ -1954,7 +1954,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
             else:
@@ -1963,7 +1963,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
 
@@ -2068,18 +2068,17 @@ class Patrol():
             relevant_patrol_tags = [tag for tag in self.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
-                if "fantastic hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
-                elif "great hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
-                elif "good hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
-                game.clan.freshkill_pile.add_freshkill(amount)
+                for cat in self.patrol_cats:
+                    if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
+                        amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]) / 10 + 1)
+                    elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
+                        amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]) / 10 + 1)
+                game.clan.freshkill_pile.add_freshkill(int(amount))
                 if FRESHKILL_ACTIVE:
                     print(f" -- FRESHKILL: added {amount} fail-prey")
                 if len(self.patrol_cats) == 1:
                     self.results_text.append(
-                        f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
+                        f"{self.patrol_leader.name} still manages to bring home some amount of prey.")
                 else:
                     self.results_text.append(f"The patrol still manages to bring home some amount of prey.")
             return
@@ -2110,9 +2109,10 @@ class Patrol():
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
             # add bonus of certain skills
-            if cat.skills.meets_skill_requirement(SkillPath.HUNTER.name):
-                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
-
+            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]
+            elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]
         if game.clan.game_mode != "classic":
             if FRESHKILL_ACTIVE:
                 print(f" -- FRESHKILL: added {total_amount} prey")
@@ -2131,7 +2131,7 @@ class Patrol():
                     amount_text = "good"
 
                 if len(self.patrol_cats) == 1:
-                    self.results_text.append(f"{self.patrol_leader_name} brings back a {amount_text} amount of prey.")
+                    self.results_text.append(f"{self.patrol_leader.name} brings back a {amount_text} amount of prey.")
                 else:
                     self.results_text.append(f"The patrol brings back a {amount_text} amount of prey.")
 

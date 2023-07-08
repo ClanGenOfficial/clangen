@@ -141,7 +141,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+            "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
         }
     },
     {
@@ -178,8 +178,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
-            "lead_death": "were killed by a wolverine"
+            "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
     {
@@ -311,7 +311,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -332,7 +332,7 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} were as far as that prairie dog thought.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought.",
             "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
@@ -387,7 +387,7 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} were as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
             "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
@@ -442,7 +442,7 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} were as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
             "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
@@ -518,7 +518,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -562,9 +562,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "were killed by a predator"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -608,9 +608,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine while patrolling alone.",
-            "lead_death": "were killed by a predator"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine while patrolling alone.",
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -1112,9 +1112,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1166,9 +1166,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1218,9 +1218,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1272,9 +1272,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1372,7 +1372,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a kit fox."
+            "scar": "m_c carries a scar from a fight with a kit fox."
         }
     },
     {
@@ -1435,7 +1435,7 @@
         },
         "fail_text": {
             "unscathed_common": "Terror gives app1 strength, and the don't stop running until {PRONOUN/app1/poss} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
-            "unscathed_stat": "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/s_c/poss} bravery. {PRONOUN/s_c/subject/CAP} {VERB/s_c/sneak/sneaks} closer and closer, until a puzzle wuff of air makes {PRONOUN/s_c/subject} look up. And up. And up. That is no fox. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pelt/pelts} for home, as behind {PRONOUN/s_c/object}, a confused maned wolf watches {PRONOUN/s_c/object} go.",
+            "unscathed_stat": "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/s_c/poss} bravery. {PRONOUN/s_c/subject/CAP} {VERB/s_c/sneak/sneaks} closer and closer, until a puzzle wuff of air makes {PRONOUN/s_c/subject} {VERB/s_c/look/looks} up. And up. And up. That is no fox. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pelt/pelts} for home, as behind {PRONOUN/s_c/object}, a confused maned wolf watches {PRONOUN/s_c/object} go.",
             "injury": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} screw {PRONOUN/s_c/poss} eyes shut at the outraged yelp, and feel {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/tense/tenses}, waiting for death to descend, and wait, and... waiting?",
             "stat_injury": "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/app1/poss} bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at {PRONOUN/app1/poss} feet and tosses {PRONOUN/app1/object} aside so they can get back to hunting."
         },
@@ -1463,7 +1463,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from irritating a maned wolf as an apprentice."
+            "scar": "m_c carries a scar from irritating a maned wolf as an apprentice."
         }
     },
     {
@@ -1566,7 +1566,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a maned wolf, fighting over food."
+            "scar": "m_c was scarred by a maned wolf, fighting over food."
         }
     }
 ]

@@ -219,7 +219,7 @@
         "thoughts": [
             "Is busy mastering a fighting technique",
             "Spent all morning mastering and practicing the hunting crouch",
-            "Wants to train until {PRONOUN/m_c/subject} have learned everything",
+            "Wants to train until {PRONOUN/m_c/subject} {VERB/m_c/have/has} learned everything",
             "Doesn't stop practicing a move until it's done perfectly",
             "Likes to catch fish",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
@@ -388,7 +388,7 @@
             "Asks if {PRONOUN/m_c/subject} can chase pretty bugs instead of prey",
             "Isn't paying attention to the lesson... again",
             "Overslept and missed the dawn patrol",
-            "Says {PRONOUN/m_c/subject} don't want to do anything today",
+            "Says {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't want to do anything today",
             "Is not allowed to leave camp without asking first"
         ],
         "main_trait_constraint": [
