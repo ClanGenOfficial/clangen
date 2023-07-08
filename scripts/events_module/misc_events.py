@@ -62,7 +62,6 @@ class MiscEvents():
                         if murder_history[murder_index]["revealed"] is True:
                             continue
                         victim = murder_history[murder_index]["victim"]
-        print("Reveal: " + str(reveal))
 
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
