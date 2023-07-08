@@ -21,7 +21,7 @@
 		"id": "platonic_inc_med1",
 		"interactions": [
 			"m_c saw r_c the other day and did get a chance to meow hello!",
-			"m_c reminds r_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} haven't already."
+			"m_c reminds r_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} {VERB/r_c/have/has}n't already."
 		]
 	},
 	{

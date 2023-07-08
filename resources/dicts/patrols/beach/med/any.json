@@ -18,7 +18,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "As p_l looks into the puddle, {PRONOUN/p_l/subject}'re greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
-            "unscathed_rare": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} were never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head."
+            "unscathed_rare": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l feels {PRONOUN/p_l/poss} shoulders sag with the weight of {PRONOUN/p_l/poss} relief, feeling the burden of the death lift from over {PRONOUN/p_l/poss} head."
         },
         "fail_text": {
             "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - {PRONOUN/p_l/subject} really could have used some guidance from StarClan."
@@ -100,7 +100,7 @@
             "random_herbs"
         ],
         "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
-        "decline_text": "Nervous and sneezing due to the salty air, they decide to go back to camp and try again another day. Their mentor won't be very pleased, but they rationalize that it's better to go with confidence than nerves.",
+        "decline_text": "Nervous and sneezing due to the salty air, they decide to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} rationalize that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
         "exp": 10,
         "success_text": {
@@ -152,7 +152,7 @@
             "rosemary"
         ],
         "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind gently rustles through the beach grass as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
-        "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
+        "decline_text": "Before {PRONOUN/app1/subject} {VERB/app1/get/gets} more than a few pawsteps away, their mentor calls {PRONOUN/app1/object} back. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
@@ -186,7 +186,7 @@
             "stat_skill": "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to with the weather like this!"
         },
         "fail_text": {
-            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do {PRONOUN/p_l/subject} have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
+            "unscathed_common": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only {VERB/r_c/do/does} {PRONOUN/p_l/subject} {VERB/p_l/have/has} to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
         },
         "win_skills": [
             "SENSE,2"
@@ -206,7 +206,7 @@
             "many_herbs1"
         ],
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 80,
         "exp": 20,
         "success_text": {
@@ -235,7 +235,7 @@
             "many_herbs1"
         ],
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/subject} also bringing {PRONOUN/p_l/poss} apprentice, and decide to go another day.",
         "chance_of_success": 80,
         "exp": 20,
         "success_text": {
@@ -295,7 +295,7 @@
             "many_herbs2"
         ],
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts about leaving their patients behind, and decide to go another day.",
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
@@ -333,7 +333,7 @@
             "apprentice"
         ],
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
@@ -396,7 +396,7 @@
             "herb"
         ],
         "intro_text": "p_l notices that the moss in the medicine den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-        "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+        "decline_text": "A cat requires their attention just as {PRONOUN/p_l/subject} go to leave. Moss will have to wait.",
         "chance_of_success": 80,
         "exp": 10,
         "success_text": {
@@ -514,10 +514,10 @@
             "unscathed_common": "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love {PRONOUN/p_l/poss} Clanmates express here has seeped into every corner. {PRONOUN/p_l/subject/CAP} {VERB/p_l/tidy/tidies} the grounds, collecting rosemary as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death."
         },
         "fail_text": {
-            "unscathed_common": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "unscathed_stat": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "death": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "injury": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+            "unscathed_common": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
+            "unscathed_stat": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
+            "death": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up.",
+            "injury": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of {PRONOUN/app1/poss} paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! {PRONOUN/app1/subject/CAP}'ll have to go back to camp and fix that up."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -546,13 +546,13 @@
             "unscathed_common": "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. {PRONOUN/p_l/subject/CAP} {VERB/p_l/tidy/tidies} the grounds, collecting rosemary as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death."
         },
         "fail_text": {
-            "unscathed_common": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "unscathed_stat": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "death": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up.",
-            "injury": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+            "unscathed_common": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
+            "unscathed_stat": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
+            "death": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up.",
+            "injury": "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of {PRONOUN/r_c/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c/subject/CAP}'ll have to go back to camp and fix that up."
         },
         "history_text": {
-            "scar": "r_c was scarred after stepping on a thorn."
+            "scar": "m_c was scarred after stepping on a thorn."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -629,7 +629,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
         "exp": 20,
@@ -661,7 +661,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "exp": 20,
@@ -693,7 +693,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
@@ -725,7 +725,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
@@ -757,7 +757,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
         "exp": 20,
@@ -924,7 +924,7 @@
             "unscathed_rare": "app2 seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/p_l/self}, {PRONOUN/p_l/subject} {VERB/p_l/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
         },
         "fail_text": {
-            "unscathed_common": "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+            "unscathed_common": "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like {PRONOUN/app2/subject}'d prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
         },
         "min_cats": 2,
         "max_cats": 2
@@ -948,7 +948,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
         "exp": 20,
@@ -981,7 +981,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
         "exp": 20,
@@ -1017,8 +1017,8 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1048,8 +1048,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1076,7 +1076,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
         "exp": 20,
@@ -1112,8 +1112,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."
@@ -1140,7 +1140,7 @@
             "respect",
             "romantic"
         ],
-        "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
         "exp": 20,
@@ -1176,8 +1176,8 @@
         "chance_of_success": 10,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
-            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} don't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. Are {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
+            "unscathed_common": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+            "unscathed_rare": "p_l is determined to prove themself to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, instead encouraging the patrol in their duties. {VERB/p_l/are/is/CAP} {PRONOUN/p_l/subject} a bit stiff? Sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!"
         },
         "fail_text": {
             "unscathed_common": "app1 and app2 start to argue, ruining everyone's day."

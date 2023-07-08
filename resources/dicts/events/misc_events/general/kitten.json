@@ -339,7 +339,7 @@
             "Newleaf",
             "Greenleaf"
         ],
-        "event_text": "m_c caught an insect while sneaking outside of the camp and wears proudly its wings as a trophy of {PRONOUN/m_c/poss} journey.",
+        "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN/m_c/poss} journey.",
         "accessories": [
             "MOTH WINGS",
             "CICADA WINGS"

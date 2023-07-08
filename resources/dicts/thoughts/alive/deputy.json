@@ -50,11 +50,25 @@
     {
         "id": "bloodthirsty_deputy_to_gen",
         "thoughts": [
+            "Is fantasizing about leading the Clan into a victorious battle",
+            "Feels a thrill imagining the chaos of a large-scale battle",
+            "Tells the border patrol not to let any intruders go free without a scar to remember them by"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "bloodthirsty_deputy_leader",
+        "thoughts": [
             "Thinks about killing the leader and staging it as an accident",
             "Encourages the leader to start a war"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
@@ -63,7 +77,8 @@
             "Accidentally assigns the same cat to three patrols",
             "Insists a hunting patrol to only bring back mice",
             "Goes missing and comes back smelling like garlic",
-            "Is making odd noises"
+            "Is making odd noises",
+            "Giggles at the thought of a bird trying to swim"
         ],
         "main_trait_constraint": [
             "strange"
@@ -74,10 +89,236 @@
         "thoughts": [
             "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right",
             "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
-            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place"
+            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place",
+            "Feels a pang of self-doubt when a patrol returns late",
+            "Questions whether they're respected or just tolerated by the Clan",
+            "Worries that their mistakes will lead to the Clan's downfall"
         ],
         "main_trait_constraint":[
             "insecure"
         ]
+    },
+    {  
+        "id":"insecure_deputy_leader",
+        "thoughts": [
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right"
+        ],
+        "main_trait_constraint":[
+            "insecure"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
+        "id": "fierce_deputy",
+        "thoughts": [
+            "Is sternly instructing a patrol about the importance of strength in defending the Clan",
+            "Feels a rush of adrenaline at the thought of an upcoming battle",
+            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "playful_deputy",
+        "thoughts": [
+            "Is inventing a fun game to make patrol assignments more engaging",
+            "Is amused by the antics of the younger cats",
+            "Finds joy in the simple tasks of a deputy's duty"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
+    },
+    {
+        "id": "nervous_deputy",
+        "thoughts": [
+            "Is fretting over a recent increase in fox sightings near the camp",
+            "Feels a twinge of worry about an approaching storm",
+            "Is overthinking a recent encounter with a rival Clan"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "ambitious_deputy",
+        "thoughts": [
+            "Is imagining the respect {PRONOUN/m_c/object}'d command as the leader of the Clan",
+            "Is considering innovative strategies to earn more recognition",
+            "Feels a burning desire to prove {PRONOUN/m_c/self} worthy of leadership"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "ambitious_deputy_teacher",
+        "thoughts": [
+            "Is planning a new training curriculum to impress the leader"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
+        "id": "wise_deputy",
+        "thoughts": [
+            "Is reflecting on a past lesson to make a crucial decision",
+            "Ponders how their decisions will impact the Clan in the long term",
+            "Feels a sense of understanding after meditating on an issue"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ]
+    },
+    {
+        "id": "wise_deputy_apprentice",
+        "thoughts": [
+            "Is sharing words of wisdom with a confused apprentice"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "rebellious_deputy",
+        "thoughts": [
+            "Is questioning the necessity of an outdated tradition"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ]
+    },
+    {
+        "id": "rebellious_deputy_leader",
+        "thoughts": [
+            "Feels an urge to challenge the leader's decision for the betterment of the Clan",
+            "Decided to change patrol routes on their own, hoping the leader will see the benefits"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
+        "id": "teacher_deputy",
+        "thoughts": [
+            "Is devising an effective teaching strategy for new skills",
+            "Encourages the older cats to share their skills and techniques with the younger generations"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
+        "id": "teacher_deputy_apprentice",
+        "thoughts": [
+            "Feels satisfaction watching an apprentice master a lesson",
+            "Guides an apprentice through their first hunting assessment"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "hunter_deputy",
+        "thoughts": [
+            "Makes sure no area of the territory is overhunted",
+            "Feels a rush of anticipation at the prospect of a successful hunt",
+            "Is out surveying the territory for the best hunting spots to send patrols tomorrow"
+        ],
+        "main_skill_constraint": [
+            "HUNTER,1"
+        ]
+    },
+    {
+        "id": "fighter_deputy",
+        "thoughts": [
+            "Is instructing a group of warriors in advanced combat techniques",
+            "Feels a sense of protection for the Clan, ready to defend them at any moment",
+            "Is assessing the Clan's physical strength and readiness for potential threats",
+            "Organizes a mock battle to keep the Clan's skills sharp"
+        ],
+        "main_skill_constraint": [
+            "FIGHTER,1"
+        ]
+    },
+    {
+        "id": "clever_deputy",
+        "thoughts": [
+            "Is solving a complex problem that has been troubling the Clan",
+            "Feels intrigued by a recent challenge and is strategizing solutions",
+            "Is considering a unique approach to organizing the patrols"
+        ],
+        "main_skill_constraint": [
+            "CLEVER,1"
+        ]
+    },
+    {
+        "id": "healer_deputy",
+        "thoughts": [
+            "Helps a Clanmate get a thorn out of their paw while out on patrol",
+            "Feels empathy for a sick Clanmate and is thinking of ways to help",
+            "Is sharing knowledge about basic herbs with the Clan"
+        ],
+        "main_skill_constraint": [
+            "HEALER,1"
+        ]
+    },
+    {
+        "id": "healer_deputy_medcat",
+        "thoughts": [
+            "Takes a patrol out to gather herbs for the medicine cat"
+        ],
+        "main_skill_constraint": [
+            "HEALER,1"
+        ],
+        "random_status_constraint": [
+            "medicine cat"
+        ]
+    },
+    {
+        "id": "story_deputy",
+        "thoughts": [
+            "Is recalling an old story that might inspire the Clan in tough times",
+            "Feels inspired to craft a new legend based on recent events",
+            "Uses the stories of old to help guide their decisions"
+        ],
+        "main_skill_constraint": [
+            "STORY,1"
+        ]
+    },
+    {
+        "id": "story_deputy_apprentice",
+        "thoughts": [
+            "Is recalling an old story that might inspire the Clan in tough times",
+            "Feels inspired to craft a new legend based on recent events",
+            "Uses the stories of old to help guide their decisions",
+            "Is sharing tales of the Clan's legacy with wide-eyed apprentices"
+        ],
+        "main_skill_constraint": [
+            "STORY,1"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
     }
+
 ]

@@ -119,7 +119,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a rattlesnake."
+            "scar": "m_c was scarred by a rattlesnake."
         }
     },
     {
@@ -177,7 +177,7 @@
         "success_text": {
             "unscathed_common": "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
             "unscathed_rare": "Your patrol drives away the red fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
-            "stat_skill": "s_c displays incredible skill, driving the red mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+            "stat_skill": "s_c displays incredible skill, driving the red mother vixen out of the territory almost by {PRONOUN/s_c/self}. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it."
         },
         "fail_text": {
@@ -210,8 +210,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen.",
-            "reg_death": "r_c fell in battle with a red fox.",
+            "scar": "m_c carries a scar from a fight with a red vixen.",
+            "reg_death": "m_c fell in battle with a red fox.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -237,7 +237,7 @@
         "success_text": {
             "unscathed_common": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
             "unscathed_rare": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to c_n.",
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to c_n.",
             "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it."
         },
         "fail_text": {
@@ -267,7 +267,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a red fox fight."
+            "scar": "m_c carries a scar from a red fox fight."
         }
     },
     {
@@ -293,7 +293,7 @@
         "exp": 50,
         "success_text": {
             "unscathed_common": "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless along the coastline, before they start to compete for prey in leaf-bare.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
             "stat_trait": "A brilliant battle move by s_c at a critical moment knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} pelt to do it alone."
         },
         "fail_text": {
@@ -323,8 +323,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red vixen.",
-            "reg_death": "r_c fell in a solo battle with a red vixen.",
+            "scar": "m_c carries a scar from a solo fight with a red vixen.",
+            "reg_death": "m_c fell in a solo battle with a red vixen.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -380,7 +380,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -435,7 +435,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -489,7 +489,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray vixen."
+            "scar": "m_c carries a scar from a solo fight with a gray vixen."
         }
     },
     {

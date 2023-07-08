@@ -21,7 +21,7 @@
             "Was hissed at by r_c for being too noisy",
             "Asks r_c what it is like to be so old",
             "Hopes r_c has a new story to tell {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/subject} don't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
         ],
         "random_status_constraint": [
             "elder"
@@ -364,7 +364,7 @@
             "Is feeling alone",
             "Wishes {PRONOUN/m_c/subject} had friends",
             "Wants somecat to talk to",
-            "Doesn't understand why {PRONOUN/m_c/subject} are always left out",
+            "Doesn't understand why {PRONOUN/m_c/subject} {VERB/m_c/are/is} always left out",
             "Hopes to make a friend today",
             "Is talking to some bugs",
             "Is sitting all alone",

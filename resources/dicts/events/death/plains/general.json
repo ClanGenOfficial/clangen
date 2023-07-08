@@ -42,7 +42,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was buried alive when a burrow collapsed on them.",
+        "death_text": "m_c was buried alive when a burrow collapsed on {PRONOUN/m_c/object}.",
         "history_text": {
             "reg_death": "m_c was buried alive when a burrow collapsed."
         },
@@ -99,7 +99,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "death_text": "m_c was walking on the ice, when it cracked and they fell in.",
+        "death_text": "m_c was walking on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
         "history_text": {
             "reg_death": "m_c froze to death after falling through ice."
         },
@@ -117,7 +117,7 @@
             "Leaf-bare",
             "war"
         ],
-        "death_text": "m_c was sealed into a cramped rabbit burrow by o_c warriors. {PRONOUN/m_c/subject} didn't make it out alive.",
+        "death_text": "m_c was sealed into a cramped rabbit burrow by o_c warriors. {PRONOUN/m_c/subject/CAP} didn't make it out alive.",
         "history_text": {
             "reg_death": "m_c suffocated underground.",
             "lead_death": "was suffocated underground."

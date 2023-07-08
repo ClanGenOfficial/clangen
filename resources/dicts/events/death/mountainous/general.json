@@ -97,7 +97,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "death_text": "m_c was walking on the ice, when it cracked and they fell in.",
+        "death_text": "m_c was walking on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
         "history_text": {
             "reg_death": "m_c froze to death after falling through ice."
         },
@@ -162,7 +162,7 @@
             "neg_platonic",
             "dislike"
         ],
-        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above them, watching as they fall.",
+        "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above {PRONOUN/m_c/object}, watching as they fall.",
         "history_text": {
             "reg_death": "m_c was pushed off a cliff by r_c.",
             "reg_murder_unrevealed": "m_c was pushed off a cliff by an unknown killer."
@@ -196,10 +196,10 @@
             "Leaf-bare",
             "war"
         ],
-        "death_text": "m_c was killed by a falling boulder pushed from a cliff above them by o_c warriors.",
+        "death_text": "m_c was killed by a falling boulder pushed from a cliff above {PRONOUN/m_c/object} by o_c warriors.",
         "history_text": {
-            "reg_death": "m_c was squished by a falling boulder.",
-            "lead_death": "was squished by a falling boulder."
+            "reg_death": "m_c was crushed by a falling boulder.",
+            "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
         }
     }
 ]

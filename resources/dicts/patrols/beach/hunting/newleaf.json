@@ -119,7 +119,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a rattlesnake."
+            "scar": "m_c was scarred by a rattlesnake."
         }
     },
     {
@@ -210,8 +210,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen.",
-            "reg_death": "r_c fell in battle with a red fox.",
+            "scar": "m_c carries a scar from a fight with a red vixen.",
+            "reg_death": "m_c fell in battle with a red fox.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -268,7 +268,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen."
+            "scar": "m_c carries a scar from a fight with a red vixen."
         }
     },
     {
@@ -324,8 +324,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red vixen.",
-            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "scar": "m_c carries a scar from a solo fight with a red vixen.",
+            "reg_death": "m_c fell in a solo battle with a vixen.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -381,7 +381,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -436,7 +436,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -489,7 +489,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray vixen."
+            "scar": "m_c carries a scar from a solo fight with a gray vixen."
         }
     }
 ]

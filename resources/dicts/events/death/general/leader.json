@@ -8,7 +8,7 @@
         ],
         "death_text": "Lightning struck in camp, and m_c lost a life.",
         "history_text": {
-            "lead_death": "were struck by lightning"
+            "lead_death": "{VERB/m_c/were/was} struck by lightning"
         }
     },
     {
@@ -21,7 +21,7 @@
         ],
         "death_text": "m_c was mortally wounded by a fox, and lost a life.",
         "history_text": {
-            "lead_death": "were wounded by a fox"
+            "lead_death": "{VERB/m_c/were/was} wounded by a fox"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -37,7 +37,7 @@
         ],
         "death_text": "m_c lost a life to a dog.",
         "history_text": {
-            "lead_death": "were mauled by a dog"
+            "lead_death": "{VERB/m_c/were/was} mauled by a dog"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -53,7 +53,7 @@
         ],
         "death_text": "m_c lost a life to a badger.",
         "history_text": {
-            "lead_death": "were killed by a badger"
+            "lead_death": "{VERB/m_c/were/was} killed by a badger"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -85,7 +85,7 @@
         ],
         "death_text": "m_c was bit by a venomous spider, and lost a life.",
         "history_text": {
-            "lead_death": "were bit by a venomous spider"
+            "lead_death": "{VERB/m_c/were/was} bit by a venomous spider"
         }
     },
     {
@@ -98,7 +98,7 @@
         ],
         "death_text": "m_c was bit by a venomous snake, and lost a life.",
         "history_text": {
-            "lead_death": "were bit by a venomous snake"
+            "lead_death": "{VERB/m_c/were/was} bit by a venomous snake"
         }
     },
     {
@@ -648,7 +648,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost some lives to their old age.",
+        "death_text": "m_c lost some lives to {PRONOUN/m_c/poss} old age.",
         "history_text": {
             "lead_death": "succumbed to old age"
         }
@@ -663,7 +663,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c's body just couldn't continue forward - they've lost all of their remaining lives to old age.",
+        "death_text": "m_c's body just couldn't continue forward - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
         "history_text": {
             "lead_death": "succumbed to old age"
         }
@@ -677,9 +677,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was brutally attacked by a rogue, and lost all of their lives.",
+        "death_text": "m_c was brutally attacked by a rogue, and lost all of {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were brutally attacked by a rogue"
+            "lead_death": "{VERB/m_c/were/was} brutally attacked by a rogue"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -694,9 +694,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was mauled by dogs, and lost all of their lives.",
+        "death_text": "m_c was mauled by dogs, and lost all of {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were mauled by dogs"
+            "lead_death": "{VERB/m_c/were/was} mauled by dogs"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -712,9 +712,9 @@
             "Leaf-bare",
             "no_body"
         ],
-        "death_text": "m_c was burnt alive while trying to save their Clanmates from a fire.",
+        "death_text": "m_c was burnt alive while trying to save {PRONOUN/m_c/poss} Clanmates from a fire.",
         "history_text": {
-            "lead_death": "were killed in a fire trying to save their Clanmates"
+            "lead_death": "{VERB/m_c/were/was} killed in a fire trying to save {PRONOUN/m_c/poss} Clanmates"
         },
         "cat_trait": [
             "altruistic",
@@ -742,9 +742,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was brutally murdered by a warrior from o_c, who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by a warrior from o_c, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by a warrior from o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by a warrior from o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -762,9 +762,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was brutally murdered by the leader of o_c, who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by the leader of o_c, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by the leader of o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by the leader of o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,3"
@@ -782,9 +782,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was brutally murdered by the deputy of o_c, who cruelly took all their lives.",
+        "death_text": "m_c was brutally murdered by the deputy of o_c, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were brutally murdered by the deputy of o_c"
+            "lead_death": "{VERB/m_c/were/was} brutally murdered by the deputy of o_c"
         },
         "cat_negate_skill": [
             "FIGHTER,2"
@@ -887,7 +887,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost lives to old age, their body slowly becoming more and more frail.",
+        "death_text": "m_c lost lives to old age, {PRONOUN/m_c/poss} body slowly becoming more and more frail.",
         "history_text": {
             "lead_death": "died of old age"
         }
@@ -902,7 +902,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c collapses in the midst of camp, losing their remaining lives to old age.",
+        "death_text": "m_c collapses in the midst of camp, losing {PRONOUN/m_c/poss} remaining lives to old age.",
         "history_text": {
             "lead_death": "died of old age"
         }
@@ -916,22 +916,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "One day, the deputy finds m_c dead in the leader's den. Seems they lost a life to old age.",
-        "history_text": {
-            "lead_death": "died of old age"
-        }
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "old_age",
-            "all_lives",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "death_text": "One day, m_c is found dead in the leader's den, never to rise again. Seems they lost the rest of their lives to old age.",
+        "death_text": "One day, the deputy finds m_c dead in the leader's den. Seems {PRONOUN/m_c/subject} lost a life to old age.",
         "history_text": {
             "lead_death": "died of old age"
         }
@@ -946,7 +931,22 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "Despite StarClan's efforts, m_c's body just couldn't continue. Their remaining lives were taken by old age.",
+        "death_text": "One day, m_c is found dead in the leader's den, never to rise again. Seems {PRONOUN/m_c/subject} lost the rest of {PRONOUN/m_c/poss} lives to old age.",
+        "history_text": {
+            "lead_death": "died of old age"
+        }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "old_age",
+            "all_lives",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "death_text": "Despite StarClan's efforts, m_c's body just couldn't continue. {PRONOUN/m_c/poss/CAP} remaining lives were taken by old age.",
         "history_text": {
             "lead_death": "died of old age"
         }
@@ -969,7 +969,7 @@
         ],
         "death_text": "m_c was pushed under a monster, and lost a life.",
         "history_text": {
-            "lead_death": "were pushed under a monster by r_c",
+            "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c",
             "lead_murder_unrevealed": "were pushed under a monster"
         },
         "cat_trait": [
@@ -1009,9 +1009,9 @@
             "jealousy",
             "neg_platonic"
         ],
-        "death_text": "m_c was murdered by r_c in cold blood, with the intention of taking their place.",
+        "death_text": "m_c was murdered by r_c in cold blood, with the intention of taking {PRONOUN/m_c/poss} place.",
         "history_text": {
-            "lead_death": "were murdered by r_c",
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
         "other_cat_trait": [
@@ -1047,10 +1047,10 @@
             "neg_trust",
             "dislike"
         ],
-        "death_text": "m_c was murdered by r_c, with the intention of taking their place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
+        "death_text": "m_c was murdered by r_c, with the intention of taking {PRONOUN/m_c/poss} place, but r_c miscalculated how many lives m_c had left!  m_c retaliated, killing r_c in self defense.",
         "history_text": {
             "reg_death": "m_c was killed by r_c in self-defense.",
-            "lead_death": "were murdered by r_c in an attempt to usurp their lead",
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c in an attempt to usurp {PRONOUN/m_c/poss} lead",
             "lead_murder_unrevealed": "were murdered by an unknown killer"
         },
         "cat_skill": [
