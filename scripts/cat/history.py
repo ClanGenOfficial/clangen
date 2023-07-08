@@ -646,12 +646,21 @@ class History:
         murder_history = History.get_murders(cat)
         if murder_history:
             if "is_murderer" in murder_history:
-                murder_history["is_murderer"]["revealed"] = True
-                murder_history["is_murderer"]["revealed_by"] = other_cat.ID
-                murder_history["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
+                for murder in murder_history["is_murderer"]:
+                    if murder["revealed"] is True:
+                        continue
 
-                victim = Cat.fetch_cat(murder_history["is_murderer"]["victim"])
-                victim_history = victim.history.murder["is_victim"]
-                victim_history["revealed"] = True
-                victim_history["revealed_by"] = other_cat.ID
-                victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
+                    murder_history["is_murderer"]["revealed"] = True
+                    murder_history["is_murderer"]["revealed_by"] = other_cat.ID
+                    murder_history["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
+
+                    victim = Cat.fetch_cat(murder_history["is_murderer"][murder]["victim"])
+                    print(victim)
+                    victim_history = victim.history.murder["is_victim"]
+                    victim_history["revealed"] = True
+                    victim_history["revealed_by"] = other_cat.ID
+                    victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
+
+                    murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', victim.name)
+                    murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', other_cat.name)
+                    victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', other_cat.name)
