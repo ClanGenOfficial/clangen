@@ -1080,11 +1080,11 @@ def adjust_patrol_text(text, patrol):
         "p_l": (str(patrol.patrol_leader.name), choice(patrol.patrol_leader.pronouns)),
     }
 
-    if patrol.patrol_random_cat:
+    if len(patrol.patrol_cats) > 1:
         replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
                                choice(patrol.patrol_random_cat.pronouns))
     else:
-        replace_dict["r_c"] = (str(patrol.patrol_leader_name),
+        replace_dict["r_c"] = (str(patrol.patrol_leader.name),
                                choice(patrol.patrol_leader.pronouns))
 
     other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
