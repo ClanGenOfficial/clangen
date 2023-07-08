@@ -247,12 +247,12 @@ class NewCatEvents:
         return created_cats
 
     def has_outside_cat(self):
-        outside_cats = (cat for id, cat in Cat.outside_cats.items() if
-                        cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat'] and not cat.dead)
+        outside_cats = [i for i in Cat.all_cats.values() if i.status in ["kittypet", "loner", "rogue", "former Clancat"] and not i.dead and i.outside]
         return any(outside_cats)
 
     def select_outside_cat(self):
-        for cat_id, cat in Cat.outside_cats.items():
+        outside_cats = [i for i in Cat.all_cats.values() if i.status in ["kittypet", "loner", "rogue", "former Clancat"] and not i.dead and i.outside]
+        for cat in outside_cats:  # iterating over the generated list
             if cat.status in ["kittypet", "loner", "rogue", "former Clancat"] and not cat.dead:
                 return cat
 

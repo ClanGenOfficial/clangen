@@ -242,7 +242,9 @@
         "Runs out of {PRONOUN/m_c/poss} den into 'battle', only to find that it was just a storm",
         "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
         "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes",
-        "Is not afraid of anything"
+        "Is not afraid of anything",
+        "Charges forward during a border patrol, eager and unafraid",
+        "Is always first to volunteer when a dangerous mission is announced"
     ],
     "main_trait_constraint": [
         "bold"
@@ -362,7 +364,10 @@
         "Doesn't say thank you when offered a piece of fresh-kill",
         "Turns away without saying a word when a Clanmate vents to {PRONOUN/m_c/object}",
         "Thinks the leader should be harsher on codebreakers",
-        "Flatly insults a Clanmate's appearance"
+        "Flatly insults a Clanmate's appearance",
+        "Believes weakness should be punished, not nurtured",
+        "Scorns the idea of needing help from anyone",
+        "Has little patience for small talk"
     ],
     "main_trait_constraint": [
         "cold"
@@ -648,7 +653,8 @@
 {
     "id": "loving_warrior_to_living_apprentices",
     "thoughts": [
-        "Spends some time with the apprentices"
+        "Spends some time with the apprentices",
+        "Comforts r_c after {PRONOUN/r_c/subject} had a bad day"
     ],
     "random_status_constraint": [
         "apprentice"
@@ -731,7 +737,7 @@
         "Is running after a colorful beetle",
         "Is letting out mrrows of laughter",
         "Has been playing tricks on {PRONOUN/m_c/poss} fellow warriors",
-        "Pretends the mouse {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} chasing is a bird, and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a hawk",        
+        "Pretends the mouse {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} chasing is a bird, and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a hawk",
         "Doesn't get {PRONOUN/m_c/poss} chores done all morning, too busy climbing trees",
         "Is making up songs and encouraging others to join in"
     ],
@@ -1020,7 +1026,10 @@
         "Tells some kits a thing or two about growing older",
         "Solves a problem by thinking back to another time the exact same thing happened",
         "Feels completely at peace",
-        "Has been coming up with complicated riddles for fun"  
+        "Has been coming up with complicated riddles for fun",
+        "Sits quietly, observing the Clan dynamics with a knowing gaze",
+        "Predicts the weather by observing the sky and the behavior of prey",
+        "Considers multiple outcomes before making a decision"
     ],
     "main_trait_constraint": [
         "wise"

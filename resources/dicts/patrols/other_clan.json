@@ -65,7 +65,7 @@
         },
         "fail_text": {
             "unscathed_common": "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence. Eventually everyone involved slowly shuffles away to continue their respective patrols.",
-            "unscathed_stat": "s_c pins their ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious and the other patrol definitely notices. While they don't remark on the hostility, your patrol gets the sense that the rude behavior has been noted."
+            "unscathed_stat": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious and the other patrol definitely notices. While they don't remark on the hostility, your patrol gets the sense that the rude behavior has been noted."
         },
         "other_clan": null,
         "win_skills": [
@@ -111,15 +111,15 @@
         "chance_of_success": 50,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
-            "unscathed_rare": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
+            "unscathed_common": "r_c pounces without hesitation! {PRONOUN/r_c/subject/CAP} {VERB/r_c/glance/glances} around, rabbit hanging from {PRONOUN/r_c/poss} muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, {PRONOUN/r_c/poss} prize in tow and transgression unnoticed.",
+            "unscathed_rare": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up. It's probably for the better that {PRONOUN/r_c/subject} weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
             "stat_skill": "r_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully, s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between Clans.",
             "stat_trait": "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
         },
         "fail_text": {
-            "unscathed_common": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
-            "unscathed_stat": "s_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
-            "injury": "r_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble."
+            "unscathed_common": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
+            "unscathed_stat": "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
+            "injury": "r_c pounces with no hesitation! {PRONOUN/r_c/subject/CAP} easily {VERB/r_c/kill/kills} the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps {PRONOUN/r_c/poss} way home; that rabbit certainly wasn't worth the trouble."
         },
         "win_skills": [
             "SPEAKER,1"
@@ -142,10 +142,10 @@
         ],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
-        "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
+        "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of {PRONOUN/r_c/poss} deed behind. That will show those o_c_n cats just how confident c_n is in {PRONOUN/r_c/poss} own power.",
+        "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks {PRONOUN/r_c/self} up before noticing the o_c_n cat watching {PRONOUN/r_c/object} from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
         "history_text": {
-            "scar": "r_c disrespected the border lines and was scarred by an enemy warrior for it."
+            "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it."
         }
     },
     {
@@ -260,15 +260,15 @@
         "success_text": {
             "unscathed_common": "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
             "unscathed_rare": "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
-            "stat_skill": "p_l is about to step over the border when a hiss stops them in their tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the warrior code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this."
+            "stat_skill": "p_l is about to step over the border when a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the warrior code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this."
         },
         "fail_text": {
-            "unscathed_common": "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is running their way. They force their fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. One of the warrior snarls that they can't spare any herbs for other Clans and p_l needs to leave. They oblige quickly.",
-            "injury": "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is running their way. They force their fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. The warriors either don't hear them or don't care and they get in a good scratch before the medicine cat can retreat."
+            "unscathed_common": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. One of the warrior snarls that they can't spare any herbs for other Clans and p_l needs to leave. They oblige quickly.",
+            "injury": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. The warriors either don't hear them or don't care and they get in a good scratch before the medicine cat can retreat."
         },
         "history_text": {
-            "scar": "p_l was scarred when a o_c_n patrol attacked them.",
-            "reg_death": "p_l died from their wounds after a o_c_n patrol attacked them."
+            "scar": "m_c was scarred when a o_c_n patrol attacked them.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a o_c_n patrol attacked them."
         },
         "win_skills": [
             "MEDIATOR,1"
@@ -303,7 +303,7 @@
         },
         "fail_text": {
             "unscathed_common": "Your patrol decides to follow the scent, but only end up walking in circles. Either the trespasser is good at concealing their trail or your patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
-            "unscathed_stat": "s_c can't contain their annoyance at the trespass and when your patrol finds a lost o_c_n apprentice to be the source of the scent s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
+            "unscathed_stat": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass and when your patrol finds a lost o_c_n apprentice to be the source of the scent s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
             "death": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon your patrol. r_c is killed before they can run and the rest of the patrol scatters in fear.",
             "injury": "Your patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and your patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c but thankfully only injuring them before r_c tears themself free and sprints away."
         },
@@ -328,9 +328,9 @@
         "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. Your patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
         "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n deputy conversing with your leader. They tell the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
         "history_text": {
-            "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-            "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "scar": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} scarred by a dog.",
+            "reg_death": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog.",
+            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
         }
     },
     {
@@ -359,7 +359,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l decides to follow the scent, but only ends up walking in circles. Either the trespasser is good at concealing their trail or your patrol just needs to work on their tracking skills. It doesn't matter now, the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
-            "unscathed_stat": "s_c can't contain their annoyance at the trespass and when they find a lost o_c_n apprentice to be the source of the scent s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
+            "unscathed_stat": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass and when they find a lost o_c_n apprentice to be the source of the scent s_c reprimands them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
             "death": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon r_c. r_c is killed before they can run.",
             "injury": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and r_c sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching r_c but thankfully only injuring them before r_c tears themself free and scales the tree."
         },
@@ -378,12 +378,12 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly marked border lines.",
+        "antagonize_text": "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads {PRONOUN/p_l/poss} own scent on o_c_n's territory, ruining the clearly marked border lines.",
         "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp.  Inside they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
         "history_text": {
-            "scar": "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-            "reg_death": "r_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and were killed by a dog"
+            "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
+            "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
+            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
         }
     },
     {
@@ -399,7 +399,7 @@
             "no_app"
         ],
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
-        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
@@ -440,7 +440,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was injured by an enemy patrol while marking the border."
+            "scar": "m_c was injured by an enemy patrol while marking the border."
         }
     },
     {
@@ -457,12 +457,12 @@
             "no_body"
         ],
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
-        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
             "unscathed_common": "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
-            "unscathed_rare": "r_c comes across a o_c_n apprentice on the wrong side of the border with a mouthful of prey. Furious, they snarl their anger. The young cat turns tail and flees, r_c hot on their tail. When they dart back across the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+            "unscathed_rare": "r_c comes across a o_c_n apprentice on the wrong side of the border with a mouthful of prey. Furious, they snarl {PRONOUN/r_c/poss} anger. The young cat turns tail and flees, r_c hot on their tail. When they dart back across the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
             "stat_skill": "s_c comes across a o_c_n patrol, out on a similar mission. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on the neighbors.",
             "stat_trait": "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
         },
@@ -499,9 +499,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was injured by an enemy patrol while marking the border.",
-            "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c was injured by an enemy patrol while marking the border.",
+            "reg_death": "m_c lost {PRONOUN/m_c/poss} life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -560,9 +560,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was injured by an enemy patrol while marking the border.",
-            "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c was injured by an enemy patrol while marking the border.",
+            "reg_death": "m_c lost a life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -608,7 +608,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was injured by an enemy patrol while marking the border."
+            "scar": "m_c was injured by an enemy patrol while marking the border."
         }
     },
     {
@@ -654,7 +654,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was injured by an enemy patrol while marking the border."
+            "scar": "m_c was injured by an enemy patrol while marking the border."
         }
     },
     {
@@ -760,7 +760,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -817,7 +817,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -954,7 +954,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1014,9 +1014,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border.",
-            "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c got injured patrolling on the border.",
+            "reg_death": "m_c lost their life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1075,9 +1075,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border.",
-            "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c got injured patrolling on the border.",
+            "reg_death": "m_c lost a life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1123,7 +1123,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1169,7 +1169,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1225,7 +1225,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1282,7 +1282,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1339,7 +1339,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1474,7 +1474,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1534,9 +1534,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border.",
-            "reg_death": "r_c lost their life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c got injured patrolling on the border.",
+            "reg_death": "m_c lost their life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1595,9 +1595,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border.",
-            "reg_death": "r_c lost a life in an ambush on the border.",
-            "lead_death": "were killed in a border ambush"
+            "scar": "m_c got injured patrolling on the border.",
+            "reg_death": "m_c lost a life in an ambush on the border.",
+            "lead_death": "{VERB/m_c/were/was} killed in a border ambush"
         }
     },
     {
@@ -1643,7 +1643,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     },
     {
@@ -1689,7 +1689,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured patrolling on the border."
+            "scar": "m_c got injured patrolling on the border."
         }
     }
 ]

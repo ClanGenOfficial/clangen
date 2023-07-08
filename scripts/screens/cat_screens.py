@@ -269,12 +269,22 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.specify_gender_button:
                 SpecifyCatGender(self.the_cat)
             elif event.ui_element == self.cis_trans_button:
-                if self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
+                if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
                     self.the_cat.genderalign = self.the_cat.gender
-                elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
+                elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'male':
                     self.the_cat.genderalign = 'trans female'
-                elif self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
+                elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'female':
                     self.the_cat.genderalign = 'trans male'
+                elif self.the_cat.genderalign in ["trans female", "trans male"]:
+                    self.the_cat.genderalign = 'nonbinary'
+                '''if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                elif self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                elif self.the_cat.genderalign in ["nonbinary"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
+                elif self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -1372,9 +1382,9 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
-                            life_text = "lost their final life"
+                            life_text = "lost {PRONOUN/m_c/poss} final life"
                         else:
-                            life_text = "lost their final lives"
+                            life_text = "lost {PRONOUN/m_c/poss} final lives"
                     else:
                         life_text = "lost a life"
                 else:
@@ -1781,15 +1791,19 @@ class ProfileScreen(Screens):
             # Button to trans or cis the cats.
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
-            if self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
-                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
-                                                      starting_height=2, object_id="#change_trans_male_button",
-                                                      manager=MANAGER)
-            elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
+            if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_trans_female_button",
                                                       manager=MANAGER)
-            elif self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
+            elif self.the_cat.gender == "female" and self.the_cat.genderalign == "female":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_trans_male_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign in ['trans female', 'trans male']:
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_nonbi_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign not in ['female', 'trans female', 'male', 'trans male']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)
