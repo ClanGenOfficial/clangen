@@ -479,14 +479,6 @@ class EventsScreen(Screens):
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
 
-        # commenting out for now as there seems to be a consensus that it isn't needed anymore?
-        #if game.clan.closed_borders:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Open Clan Borders")
-        #else:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Close Clan Borders")
-
         # Sets up the buttons to switch between the event types.
         self.all_events_button = UIImageButton(
             scale(pygame.Rect((120, 570), (300, 60))),
@@ -654,10 +646,11 @@ class EventsScreen(Screens):
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
         self.display_events_elements = {}
-        self.display_events_elements["you"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1050, 200), (200, 200))),
-                                                                    pygame.transform.scale(
-                                                                        game.clan.your_cat.sprite,
-                                                                        (200, 200)), manager=MANAGER)
+        if game.clan.your_cat.moons != -1:
+            self.display_events_elements["you"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1050, 200), (200, 200))),
+                                                                        pygame.transform.scale(
+                                                                            game.clan.your_cat.sprite,
+                                                                            (200, 200)), manager=MANAGER)
         for ele in self.involved_cat_buttons:
             ele.kill()
         self.involved_cat_buttons = []

@@ -119,7 +119,7 @@ class ClanScreen(Screens):
         # This should be a temp solution. We should change the code that determines positions.
         i = 0
         for x in game.clan.clan_cats:
-            if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
+            if Cat.all_cats[x].moons != -1 and not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
                     not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside) and (Cat.all_cats[x].status != 'newborn' or game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']):
 
                 i += 1
@@ -328,7 +328,7 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
-            if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
+            if Cat.all_cats[x].dead or Cat.all_cats[x].outside or Cat.all_cats[x].moons == -1:
                 continue
 
             # Newborns are not meant to be placed. They are hiding. 
@@ -1207,7 +1207,7 @@ class ListScreen(Screens):
     def get_living_cats(self):
         self.living_cats = []
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
+            if not the_cat.dead and not the_cat.outside and the_cat.moons != -1:
                 self.living_cats.append(the_cat)
 
     def screen_switches(self):
