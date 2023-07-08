@@ -1343,7 +1343,8 @@ class ProfileScreen(Screens):
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
             if event["revealed"] is True:
                 final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
-                final_text = final_text + event["revelation_text"]
+                if event["revelation_text"]:
+                    final_text = final_text + event["revelation_text"]
                 return final_text
             else:
                 return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
@@ -1433,11 +1434,10 @@ class ProfileScreen(Screens):
             moons = True
         else:
             moons = False
+        victims = []
         if murder_history:
             if 'is_murderer' in murder_history:
-                victims = murder_history["is_murderer"]
-            else:
-                victims = []
+                victims = murder_history["is_murderer"]                
 
         if len(victims) > 0:
             victim_names = {}
@@ -1450,7 +1450,8 @@ class ProfileScreen(Screens):
 
                 if victim["revealed"]:
                     victim_names[name] = []
-                    reveal_text = str(victim["revelation_text"])
+                    if victim["revelation_text"]:
+                        reveal_text = str(victim["revelation_text"])
                     if moons:
                         victim_names[name].append(victim["moon"])
 
