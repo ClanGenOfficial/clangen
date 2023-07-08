@@ -468,7 +468,9 @@ class EventsScreen(Screens):
                 
             print("Chose " + str(game.clan.your_cat.name))
         # Set text for clan age
-        if game.clan.your_cat.moons != 1:
+        if game.clan.your_cat.moons == -1:
+            self.clan_age.set_text(f'Your age: Unborn')
+        elif game.clan.your_cat.moons != 1:
             self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moons')
         elif game.clan.your_cat.moons == 1:
             self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moon')
@@ -642,10 +644,12 @@ class EventsScreen(Screens):
         
         self.leaf.set_text(f'Current season: {game.clan.current_season}')
         self.season.set_text(str(game.clan.your_cat.name))
-        if game.clan.age == 1:
-            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moon')
-        if game.clan.age != 1:
+        if game.clan.your_cat.moons == -1:
+            self.clan_age.set_text(f'Your age: Unborn')
+        elif game.clan.your_cat.moons != 1:
             self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moons')
+        elif game.clan.your_cat.moons == 1:
+            self.clan_age.set_text(f'Your age: {game.clan.your_cat.moons} moon')
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()

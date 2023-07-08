@@ -992,7 +992,7 @@ class MakeClanScreen(Screens):
                          self.game_mode, self.members,
                          starting_season=self.selected_season,
                          your_cat=self.your_cat)
-        game.clan.your_cat.moons = 0
+        game.clan.your_cat.moons = -1
         game.clan.create_clan()
         #game.clan.starclan_cats.clear()
         game.cur_events_list.clear()

@@ -820,11 +820,14 @@ class ProfileScreen(Screens):
             elif the_cat.dead_for != 1:
                 output += ' moons (in death)'
         else:
-            output += str(the_cat.moons)
-            if the_cat.moons == 1:
-                output += ' moon'
-            elif the_cat.moons != 1:
-                output += ' moons'
+            if the_cat.moons == -1:
+                output += 'Unborn'
+            else:
+                output += str(the_cat.moons)
+                if the_cat.moons == 1:
+                    output += ' moon'
+                elif the_cat.moons != 1:
+                    output += ' moons'
 
         # MATE
         if len(the_cat.mate) > 0:

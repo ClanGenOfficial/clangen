@@ -262,7 +262,7 @@ class Events:
                   encoding="ascii") as read_file:
             self.c_txt = ujson.loads(read_file.read())
         if not game.clan.your_cat.dead and not game.clan.your_cat.status == 'exiled':
-            if game.clan.your_cat.moons == 1:
+            if game.clan.your_cat.moons == 0:
                 self.generate_birth()
             elif game.clan.your_cat.moons < 6:
                 self.generate_kit_events()
@@ -328,7 +328,7 @@ class Events:
         game.clan.your_cat.init_all_relationships()
 
     def create_sibling(self):
-        sibling = Cat(status='kitten', moons=1)
+        sibling = Cat(status='newborn', moons=0)
         sibling.thought = "Snuggles up to you"
         sibling.backstory = game.clan.your_cat.backstory
         game.clan.add_cat(sibling)
@@ -340,7 +340,7 @@ class Events:
         sibling_text = ""
         if num_siblings == 1:
             sibling_text = sibling_names[0]
-        if num_siblings == 2:
+        elif num_siblings == 2:
             sibling_text = ' and '.join(sibling_names)
         elif num_siblings == 3:
             sibling_text = f"{siblings[0].name}, {siblings[1].name}, and {siblings[2].name}"

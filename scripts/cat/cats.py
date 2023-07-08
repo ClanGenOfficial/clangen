@@ -250,7 +250,7 @@ class Cat():
             if moons > 300:
                 # Out of range, always elder
                 self.age = 'senior'
-            elif moons == 0:
+            elif moons == 0 or moons == -1:
                 self.age = 'newborn'
             else:
                 # In range
@@ -2755,7 +2755,9 @@ class Cat():
                 updated_age = True
                 self.age = key_age
         try:
-            if not updated_age and self.age is not None:
+            if self.moons == -1:
+                self.age = "newborn"
+            elif not updated_age and self.age is not None:
                 self.age = "senior"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
