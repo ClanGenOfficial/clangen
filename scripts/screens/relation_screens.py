@@ -5351,7 +5351,7 @@ class ChooseMurderCatScreen(Screens):
         valid_mentors = []
 
         for cat in Cat.all_cats_list:
-            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID:
+            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID and not cat.moons == 0:
                 valid_mentors.append(cat)
         
         return valid_mentors
@@ -5360,7 +5360,7 @@ class ChooseMurderCatScreen(Screens):
         valid_mentors = []
 
         for cat in Cat.all_cats_list:
-            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID and not cat.ID == self.cat_to_murder.ID:
+            if not cat.dead and not cat.outside and not cat.ID == game.clan.your_cat.ID and not cat.ID == self.cat_to_murder.ID and not cat.moons == 0:
                 valid_mentors.append(cat)
         
         return valid_mentors
