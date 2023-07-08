@@ -3129,7 +3129,35 @@ def create_example_cats():
         for scar in game.choose_cats[a].pelt.scars:
             if scar in not_allowed:
                 game.choose_cats[a].pelt.scars.remove(scar)
-    
+            
+        chance = game.config["cat_generation"]["base_permanent_condition"]
+        if not int(random() * chance):
+            possible_conditions = []
+            for condition in PERMANENT:
+                if PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                    continue
+                # next part ensures that a kit won't get a condition that takes too long to reveal
+                age = game.choose_cats[a].moons
+                leeway = 5 - (PERMANENT[condition]['moons_until'] + 1)
+                if age > leeway:
+                    continue
+                possible_conditions.append(condition)
+                
+            if possible_conditions:
+                chosen_condition = choice(possible_conditions)
+                born_with = False
+                if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
+                    born_with = True
+
+                game.choose_cats[a].get_permanent_condition(chosen_condition, born_with)
+                if game.choose_cats[a].permanent_condition[chosen_condition]["moons_until"] == 0:
+                    game.choose_cats[a].permanent_condition[chosen_condition]["moons_until"] = -2
+
+                # assign scars
+                if chosen_condition in ['lost a leg', 'born without a leg']:
+                    game.choose_cats[a].pelt.scars.append('NOPAW')
+                elif chosen_condition in ['lost their tail', 'born without a tail']:
+                    game.choose_cats[a].pelt.scars.append("NOTAIL")
         #update_sprite(game.choose_cats[a])
     
 
