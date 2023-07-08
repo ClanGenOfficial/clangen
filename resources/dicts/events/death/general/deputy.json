@@ -15,7 +15,7 @@
             "neg_platonic",
             "jealousy"
         ],
-        "death_text": "m_c was murdered by r_c in cold blood, with the hope of taking their place.",
+        "death_text": "m_c was murdered by r_c in cold blood, with the hope of taking {PRONOUN/m_c/poss} place.",
         "history_text": {
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
@@ -54,7 +54,7 @@
             "neg_platonic",
             "jealousy"
         ],
-        "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident, and hopes to take their place.",
+        "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident, and hopes to take {PRONOUN/m_c/poss} place.",
         "history_text": {
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."

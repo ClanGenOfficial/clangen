@@ -113,7 +113,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -158,7 +158,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -201,7 +201,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -237,7 +237,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -281,7 +281,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -323,7 +323,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -359,7 +359,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -403,7 +403,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -446,7 +446,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -483,7 +483,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -512,13 +512,13 @@
         "chance_of_success": 40,
         "exp": 40,
         "success_text": {
-            "unscathed_common": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, they heavily praise app1 as they head back home with their harvest - they haven't uttered a single word of complaint about the miserable conditions, and p_l couldn't be prouder and was even the one to find the wild garlic on the way back home.",
+            "unscathed_common": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, they heavily praise app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/haven't/hasn't} uttered a single word of complaint about the miserable conditions, and was even the one to find the wild garlic on the way back home. p_l couldn't be prouder.",
             "unscathed_rare": "It's a truly miserable, gray day, but the colds of leaf-bare can't dampen app1's happiness when they uncover a few good dandelions. Watching them find joy in safeguarding the Clan, p_l feels a flash of affection for the apprentice. Their instincts are sharp, too - it's app1 who notices the single, unwithered wild garlic bulb a little distance away.",
-            "stat_skill": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed."
+            "stat_skill": "It's not just spotting things that s_c is talented at - finding any plants in leaf-bare is hard enough, but finding good, non-wilted leaves of dandelions and an intact wild garlic bulb is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in their wake, wide eyed and impressed."
         },
         "fail_text": {
-            "unscathed_common": "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
-            "injury": "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
+            "unscathed_common": "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} can't even find any dandelions under the snow. A wasted and horribly chilly day.",
+            "injury": "Not only does r_c end up soaked to the skin, {PRONOUN/p_l/subject} can't even find any dandelions under the snow, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left shivering violently by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
         },
         "win_skills": [
             "SENSE,2"
@@ -528,7 +528,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -572,7 +572,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -609,7 +609,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -654,7 +654,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -697,7 +697,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -735,7 +735,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -781,7 +781,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -825,7 +825,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     }
 ]
