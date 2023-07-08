@@ -1440,7 +1440,7 @@ class ProfileScreen(Screens):
                 victims = []
 
             if "is_victim" in murder_history:
-               murderer = Cat.fetch_cat(murder_history["is_victim"]["murderer"])
+               murderer = Cat.fetch_cat(murder_history["is_victim"][0]["murderer"])
             else:
                murderer = None
 
@@ -1473,8 +1473,8 @@ class ProfileScreen(Screens):
                     victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
 
         if murderer:
-            if murder_history["is_victim"]["revealed"]:
-                murdered_text = murder_history["is_victim"]["text"]
+            if murder_history["is_victim"][0]["revealed"]:
+                murdered_text = murder_history["is_victim"][0]["text"]
 
         if victim_text:
             return victim_text
