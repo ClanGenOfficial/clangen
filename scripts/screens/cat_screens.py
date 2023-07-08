@@ -1457,6 +1457,7 @@ class ProfileScreen(Screens):
                     victim_names[name] = []
                     if moons:
                         victim_names[name].append(victim["moon"])
+                    victim_names[name].append(victim["revelation_text"])
 
             if victim_names:
                 for name in victim_names:
@@ -1475,6 +1476,7 @@ class ProfileScreen(Screens):
         if murderer:
             if murder_history["is_victim"][0]["revealed"] is True:
                 murdered_text = murder_history["is_victim"][0]["text"]
+                murdered_text = murdered_text + murder_history["is_victim"][0]["revelation_text"]
 
         if victim_text:
             return victim_text

@@ -645,20 +645,22 @@ class History:
         :param victim: The victim whose murder is being revealed
         :param murder_index: Index of the murder'''
 
+        victim = Cat.fetch_cat(victim)
         murder_history = History.get_murders(cat)
+        victim_history = History.get_murders(victim)
+
         if murder_history:
             if "is_murderer" in murder_history:
-                murder_history["is_murderer"][murder_index]["revealed"] = True
-                murder_history["is_murderer"][murder_index]["revealed_by"] = other_cat.ID
-                murder_history["is_murderer"][murder_index]["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
+                murder_history = murder_history["is_murderer"][murder_index]
+                murder_history["revealed"] = True
+                murder_history["revealed_by"] = other_cat.ID
+                murder_history["revelation_text"] = "The truth of their crime against [victim] was discovered by [discoverer]."
 
-                victim = Cat.fetch_cat(victim)
-                print(victim)
-                victim_history = victim.history.murder["is_victim"]
+                victim_history = victim_history["is_victim"][0]
                 victim_history["revealed"] = True
                 victim_history["revealed_by"] = other_cat.ID
                 victim_history["revelation_text"] = "The truth of their murder was discovered by [discoverer]."
 
-                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', victim.name)
-                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', other_cat.name)
-                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', other_cat.name)
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[victim]', str(victim.name))
+                murder_history["revelation_text"] = murder_history["revelation_text"].replace('[discoverer]', str(other_cat.name))
+                victim_history["revelation_text"] = victim_history["revelation_text"].replace('[discoverer]', str(other_cat.name))

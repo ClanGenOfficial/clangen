@@ -43,6 +43,11 @@ class MiscEvents():
             if (not accessory and event.accessories) or (accessory and not event.accessories):
                 continue
 
+            if "other_cat" in event.tags and not other_cat:
+                other_cat = Cat.fetch_cat(random.choice(Cat.all_cats_list))
+                if other_cat.dead or other_cat.outside:
+                    other_cat = None
+
             acc_checked_events.append(event)
             
         reveal = False

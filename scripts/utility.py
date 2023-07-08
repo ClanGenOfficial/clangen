@@ -965,7 +965,7 @@ def event_text_adjust(Cat,
 
     if murder_reveal:
         victim_cat = Cat.fetch_cat(victim)
-        text = text.replace("mur_c", victim_cat.name)
+        text = text.replace("mur_c", str(victim_cat.name))
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
