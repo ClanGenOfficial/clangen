@@ -121,7 +121,7 @@
         "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
         "success_text": {
             "unscathed_common": "Your patrol catches the bird before it flies away!",
-            "unscathed_rare": "r_c creeps towards the bird, setting their paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
+            "unscathed_rare": "r_c creeps towards the bird, setting {PRONOUN/r_c/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
         },
         "fail_text": {
             "unscathed_common": "Your patrol narrowly misses the bird."
@@ -225,7 +225,9 @@
         "tags": [
             "hunting",
             "poison_clan",
-            "large_prey0"
+            "large_prey0",
+            "injury",
+            "poisoned"
         ],
         "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "success_text": {
@@ -268,7 +270,7 @@
         },
         "fail_text": {
             "unscathed_common": "Your patrol jumps after it, but the rabbit has too great of a head start.",
-            "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
+            "unscathed_stat": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
         },
         "win_skills": [
             "HUNTER,2"
@@ -317,14 +319,14 @@
             "large_prey1",
             "large_prey2"
         ],
-        "intro_text": "As they head out to hunt, r_c thinks about the dream they had last night... was it sent by StarClan?",
-        "decline_text": "They push it from their mind.",
+        "intro_text": "As {PRONOUN/r_c/subject} head out to hunt, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} push it from their mind.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "It definitely distracts them from the hunt, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
-            "unscathed_rare": "Somehow hunting brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also bring back a good haul to the prey pile.",
-            "stat_skill": "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at."
+            "unscathed_common": "It definitely distracts {PRONOUN/r_c/object} from the hunt, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} need to figure out what to do next.",
+            "unscathed_rare": "Somehow hunting brings r_c to almost a meditative state, and not only are {PRONOUN/r_c/subject} fairly confident of their next steps having been given this vision, but {PRONOUN/r_c/subject} also bring back a good haul to the prey pile.",
+            "stat_skill": "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at."
         },
         "fail_text": {
             "unscathed_common": "r_c can't make sense of the vision."
@@ -424,7 +426,7 @@
         },
         "fail_text": {
             "unscathed_common": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
-            "unscathed_stat": "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when they slink in to their nest that night."
+            "unscathed_stat": "{PRONOUN/r_c/subject/CAP} {VERB/s_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} slink in to {PRONOUN/r_c/poss} nest that night."
         },
         "min_cats": 2,
         "max_cats": 6,

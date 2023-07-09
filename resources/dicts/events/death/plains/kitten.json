@@ -51,7 +51,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "death_text": "m_c was playing on the ice, when it cracked and they fell in.",
+        "death_text": "m_c was playing on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
         "history_text": {
             "reg_death": "m_c froze to death after falling through ice."
         },

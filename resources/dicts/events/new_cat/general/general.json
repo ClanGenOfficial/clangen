@@ -14,7 +14,7 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "m_c finds an abandoned kit and names them n_c.",
+        "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c/object} n_c.",
         "loner": true,
         "kit": true,
         "backstory": [
@@ -41,7 +41,7 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "m_c finds an abandoned kit and names them n_c.",
+        "event_text": "m_c finds an abandoned kit and names {PRONOUN/n_c/object} n_c.",
         "kittypet": true,
         "kit": true,
         "backstory": [
@@ -65,7 +65,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A loner brings their kit named n_c_pre to the Clan, stating they no longer can care for them.",
+        "event_text": "A loner brings their kit named n_c_pre to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
         "loner": true,
         "kit": true,
         "backstory": [
@@ -88,7 +88,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A kittypet brings their kit named n_c_pre to the Clan, stating they no longer can care for them.",
+        "event_text": "A kittypet brings their kit named n_c_pre to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
         "kittypet": true,
         "kit": true,
         "backstory": [
@@ -111,7 +111,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A rogue brings their kit named n_c_pre to the Clan, stating they no longer can care for them.",
+        "event_text": "A rogue brings their kit named n_c_pre to the Clan, stating they no longer can care for {PRONOUN/n_c/object}.",
         "loner": true,
         "kit": true,
         "backstory": [
@@ -137,7 +137,7 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "m_c finds a loner named n_c_pre, who joins the Clan. The loner decides to keep their old name.",
+        "event_text": "m_c finds a loner named n_c_pre, who joins the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name.",
         "loner": true,
         "backstory": [
             "loner1",
@@ -191,7 +191,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A loner waits on the border for a patrol, asking to join the Clan. The loner decides to keep their old name, n_c.",
+        "event_text": "A loner waits on the border for a patrol, asking to join the Clan. The loner decides to keep {PRONOUN/n_c/poss} old name, n_c.",
         "loner": true,
         "backstory": [
             "loner1",
@@ -245,7 +245,7 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "m_c finds a kittypet named n_c_pre, who joins the Clan. The kittypet decides to keep their old name.",
+        "event_text": "m_c finds a kittypet named n_c_pre, who joins the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name.",
         "kittypet": true,
         "backstory": [
             "kittypet1",
@@ -301,7 +301,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A kittypet waits on the border for a patrol, asking to join the Clan. The kittypet decides to keep their old name, n_c.",
+        "event_text": "A kittypet waits on the border for a patrol, asking to join the Clan. The kittypet decides to keep {PRONOUN/n_c/poss} old name, n_c.",
         "kittypet": true,
         "backstory": [
             "kittypet1",
@@ -358,7 +358,7 @@
             "neutral",
             "hostile"
         ],
-        "event_text": "m_c finds a rogue named n_c_pre, who joins the Clan. The rogue decides to keep their old name.",
+        "event_text": "m_c finds a rogue named n_c_pre, who joins the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name.",
         "loner": true,
         "backstory": [
             "rogue1",
@@ -414,7 +414,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A rogue waits on the border for a patrol, asking to join the Clan. The rogue decides to keep their old name, n_c.",
+        "event_text": "A rogue waits on the border for a patrol, asking to join the Clan. The rogue decides to keep {PRONOUN/n_c/poss} old name, n_c.",
         "loner": true,
         "backstory": [
             "rogue1",
@@ -531,7 +531,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as their own.",
+        "event_text": "A o_c queen decides to leave their litter with you. m_c takes them as {PRONOUN/m_c/subject} own.",
         "other_clan": true,
         "litter": true,
         "backstory": [
@@ -557,7 +557,7 @@
             "welcoming",
             "neutral"
         ],
-        "event_text": "m_c finds an abandoned litter, and decides to adopt them as their own.",
+        "event_text": "m_c finds an abandoned litter, and decides to adopt them as {PRONOUN/m_c/subject} own.",
         "loner": true,
         "litter": true,
         "backstory": [
@@ -584,7 +584,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as their own.",
+        "event_text": "A loner leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/subject} own.",
         "loner": true,
         "litter": true,
         "backstory": [
@@ -609,7 +609,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as their own.",
+        "event_text": "A kittypet leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/subject} own.",
         "kittypet": true,
         "litter": true,
         "backstory": [
@@ -634,7 +634,7 @@
         "reputation": [
             "welcoming"
         ],
-        "event_text": "A rogue leaves their litter to the Clan. m_c decides to adopt them as their own.",
+        "event_text": "A rogue leaves their litter to the Clan. m_c decides to adopt them as {PRONOUN/m_c/subject} own.",
         "loner": true,
         "litter": true,
         "backstory": [
@@ -684,7 +684,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects in the war and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan2",
@@ -705,7 +705,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "A member of o_c defects from their birth Clan and chooses to join c_n. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan2",
@@ -728,7 +728,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the deputy of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "otherclan1",
@@ -751,7 +751,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/m_c/subject} {VERB/decide/decides} to keep {PRONOUN/m_c/poss} name.",
+        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "medicine_cat",

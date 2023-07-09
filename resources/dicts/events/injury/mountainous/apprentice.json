@@ -9,10 +9,10 @@
             "scar",
             "FACE"
         ],
-        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff they could find. Their plan backfired when they slipped and plummeted to the ground.",
+        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tall cliff.",
-            "reg_death": "m_c died from their wounds after falling from a tall cliff."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
         },
         "cat_trait": [
             "adventurous",

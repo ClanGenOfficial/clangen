@@ -1355,6 +1355,7 @@
             "juniper"
         ]
     },
+
     "severe headache": {
         "duration": 1,
         "severity": "major",
@@ -1381,6 +1382,7 @@
             "juniper"
         ]
     },
+    
     "pregnant": {
         "duration": 2,
         "severity": "major",

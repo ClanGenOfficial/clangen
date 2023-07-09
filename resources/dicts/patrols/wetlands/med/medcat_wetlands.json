@@ -146,7 +146,7 @@
             "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
         },
         "fail_text": {
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -186,7 +186,7 @@
         },
         "fail_text": {
             "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -269,7 +269,7 @@
             "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
         },
         "fail_text": {
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -309,7 +309,7 @@
         },
         "fail_text": {
             "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -392,7 +392,7 @@
             "stat_trait": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
         },
         "fail_text": {
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -432,7 +432,7 @@
         },
         "fail_text": {
             "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -515,7 +515,7 @@
             "stat_trait": "Night falls, and s_c still insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves, wilted but still valuable."
         },
         "fail_text": {
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",
@@ -555,7 +555,7 @@
         },
         "fail_text": {
             "unscathed_stat": "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general, been utterly obnoxious today.",
-            "injury": "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+            "injury": "p_l searches until their pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
         },
         "win_skills": [
             "SENSE,2",

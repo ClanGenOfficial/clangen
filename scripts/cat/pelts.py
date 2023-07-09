@@ -111,12 +111,12 @@ class Pelt():
     ]
     little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS',
                     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'LUNA',
-                    'EXTRA']
+                    'EXTRA', 'MUSTACHE', 'REVERSEHEART']
     mid_white = ['TUXEDO', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR', 'WINGS',
-                'DIVA', 'SAVANNAH', 'FADESPOTS', 'BEARD', 'DAPPLEPAW', 'TOPCOVER', 'WOODPECKER', 'MISS']
+                'DIVA', 'SAVANNAH', 'FADESPOTS', 'BEARD', 'DAPPLEPAW', 'TOPCOVER', 'WOODPECKER', 'MISS', 'BOWTIE', 'VEST']
     high_white = ['ANY', 'ANYTWO', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO',
                 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-                'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB']
+                'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB', 'SPARROW']
     mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
                     'CHESTSPECK', 'BLACKSTAR', 'PETAL', 'HEARTTWO','PEBBLESHINE', 'BOOTS', 'COW', 'COWTWO']
     point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
@@ -277,13 +277,15 @@ class Pelt():
                 self.cat_sprites['senior'] = 14
         
         if self.pattern in convert_dict["old_tortie_patches"]:
-            self.pattern = convert_dict["old_tortie_patches"][self.pattern][1]
+            old_pattern = self.pattern
+            self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
+            
             # If the pattern is old, there is also a change the base color is stored in
             # tortiecolour, and that may be different from the pelt color (main for torties
             # generated before the "ginger-on-ginger" update. If it was generated after that update,
             # tortiecolour and pelt_colour will be the same. Therefore, lets also re-set the pelt color
             self.colour = self.tortiecolour
-            self.tortiecolour = convert_dict["old_tortie_patches"][self.pattern][0]
+            self.tortiecolour = convert_dict["old_tortie_patches"][old_pattern][0]
             
         if self.pattern == "MINIMAL1":
             self.pattern = "MINIMALONE"

@@ -419,7 +419,7 @@
             "Is chattering at the birds in the trees above",
             "Was recently caught humming to {PRONOUN/m_c/self}",
             "Had a nightmare involving the rushing river nearby",
-            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still in their nest sleeping",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still in {PRONOUN/m_c/poss} nest sleeping",
             "Is craving the taste of mouse",
             "Is craving the taste of rabbit",
             "Is craving the taste of vole",
@@ -513,7 +513,7 @@
             "Is making {PRONOUN/m_c/poss} mentor laugh",
             "Is really bonding with {PRONOUN/m_c/poss} mentor",
             "Wants to show {PRONOUN/m_c/poss} mentor that {PRONOUN/m_c/subject} {VERB/m_c/are/is} smart, skilled, and talented",
-            "Can see how busy their mentor is"
+            "Can see how busy {PRONOUN/m_c/poss} mentor is"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -772,7 +772,8 @@
     {
         "id": "vengeful_apprentice",
         "thoughts": [
-            "Snaps at another apprentice"
+            "Snaps at another apprentice",
+            "Is still glaring at r_c after {PRONOUN/r_c/subject} teased {PRONOUN/m_c/object} yesterday"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -857,7 +858,8 @@
         "id": "strange_apprentice",
         "thoughts": [
             "Decides to stare at {PRONOUN/m_c/poss} mentor without blinking",
-            "Has found an unorthodox way out of camp"
+            "Has found an unorthodox way out of camp",
+            "Asks {PRONOUN/m_c/poss} mentor why snakes don't have legs"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1013,7 +1015,8 @@
         "id": "bold_apprentices",
         "thoughts": [
             "Winked cheekily at another apprentice",
-            "Is criticizing {PRONOUN/m_c/poss} mentor"
+            "Is criticizing {PRONOUN/m_c/poss} mentor",
+            "Tells the leader they're doing something wrong"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1100,7 +1103,8 @@
     {
         "id": "cold_apprentices",
         "thoughts": [
-            "Is hoping {PRONOUN/m_c/poss} name will end in -claw"
+            "Is hoping {PRONOUN/m_c/poss} name will end in -claw",
+            "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1134,7 +1138,8 @@
         "id": "daring_apprentices",
         "thoughts": [
             "Is itching to go and train",
-            "Is being scolded by for reckless behavior while training"
+            "Is being scolded by for reckless behavior while training",
+            "Was chastised yesterday for sticking {PRONOUN/m_c/poss} head in an unknown burrow"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1149,7 +1154,8 @@
         "id": "faithful_apprentice",
         "thoughts": [
             "Is sending thanks to the stars for a good training session",
-            "Prays to StarClan that the training session goes well"
+            "Prays to StarClan that the training session goes well",
+            "Has faith that {PRONOUN/m_c/poss} warrior ancestors are leading {PRONOUN/m_c/object} on the right path"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1167,7 +1173,7 @@
             "Finds that today is going to be a better day than the last",
             "Is making {PRONOUN/m_c/poss} friends laugh at the expense of {PRONOUN/m_c/self}",
             "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
-            "Is complimenting another apprentice on their hunting crouch",
+            "Is complimenting another apprentice on {PRONOUN/m_c/poss} hunting crouch",
             "Is unsure that this is what {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to do"
         ],
         "main_status_constraint": [
@@ -1182,7 +1188,8 @@
     {
         "id": "adventurous_apprentices",
         "thoughts": [
-            "Is trying to recruit other apprentices for a quick adventure"
+            "Is trying to recruit other apprentices for a quick adventure",
+            "Sneaks off to the Twolegplace to explore"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1216,7 +1223,8 @@
     {
         "id": "bloodthirsty_apprentices",
         "thoughts": [
-            "Starts a fight with another apprentice"
+            "Starts a fight with another apprentice",
+            "Unnerves {PRONOUN/m_c/poss} mentor with {PRONOUN/m_c/poss} intensity during battle training"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -1231,7 +1239,8 @@
         "id": "med_cat_alive_kit",
         "thoughts": [
             "Is teaching kits about what plants to stay away from",
-            "Chased kits out of {PRONOUN/m_c/poss} den"
+            "Chased kits out of {PRONOUN/m_c/poss} den",
+            "Is visiting the nursery for to give r_c a checkup"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -1265,7 +1274,8 @@
         "id": "paralyzed_gen_to_alive_kit",
         "thoughts": [
             "Is spinning an epic tale to the kits about how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} legs",
-            "Couldn't escape in time before kits piled on {PRONOUN/m_c/object}!"
+            "Couldn't escape in time before kits piled on {PRONOUN/m_c/object}!",
+            "Takes r_c for a badger ride around camp"
         ],
         "perm_conditions": {
             "m_c": [
