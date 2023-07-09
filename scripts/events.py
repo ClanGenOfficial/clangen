@@ -115,6 +115,8 @@ class Events:
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
+                if cat.status not in ['kitten', 'newborn']:
+                    cat.experience += random.randint(1,10)
             else:
                 self.one_moon_outside_cat(cat)
                 
