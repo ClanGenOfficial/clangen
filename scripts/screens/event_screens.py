@@ -757,8 +757,9 @@ class EventsScreen(Screens):
         else:
             self.event_container.set_dimensions((box_length, self.events_container_y))
         # Set the scroll bar to the last position it was at
-        if self.scroll_height.get(self.event_display_type):
-            self.event_container.vert_scroll_bar.set_scroll_from_start_percentage(self.scroll_height[self.event_display_type])
+        if self.event_container.vert_scroll_bar:
+            if self.scroll_height.get(self.event_display_type):
+                self.event_container.vert_scroll_bar.set_scroll_from_start_percentage(self.scroll_height[self.event_display_type])
 
     def make_cat_buttons(self, button_pressed):
         """ Makes the buttons that take you to the profile. """
@@ -808,11 +809,11 @@ class EventsScreen(Screens):
         """
         
         self.all_events = [x for x in game.cur_events_list if "interaction" not in x.types]
-        self.ceremony_events = [x for x in game.other_events_list if "ceremony" in x.types]
-        self.birth_death_events = [x for x in game.other_events_list if "birth_death" in x.types]
+        self.ceremony_events = [x for x in (game.other_events_list + game.cur_events_list) if "ceremony" in x.types]
+        self.birth_death_events = [x for x in (game.other_events_list + game.cur_events_list) if "birth_death" in x.types]
         self.relation_events = [x for x in (game.other_events_list + game.cur_events_list) if "relation" in x.types]
-        self.other_clans_events = [x for x in game.other_events_list if "other_clans" in x.types]
-        self.misc_events = [x for x in game.other_events_list if "misc" in x.types]
+        self.other_clans_events = [x for x in (game.other_events_list + game.cur_events_list) if "other_clans" in x.types]
+        self.misc_events = [x for x in (game.other_events_list + game.cur_events_list) if "misc" in x.types]
 
     
         

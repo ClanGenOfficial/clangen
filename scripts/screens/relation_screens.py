@@ -225,9 +225,13 @@ class ChooseMentorScreen(Screens):
                 self.the_cat.sprite,
                 (300, 300)),
             manager=MANAGER)
-
-        info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
-               "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skills.skill_string(short=True)
+        info = ""
+        if self.the_cat.moons <= 0:
+            info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
+               "\n" + self.the_cat.personality.trait + "\n???"
+        else:
+            info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
+                "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skills.skill_string(short=True)
         self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
             info,
             scale(pygame.Rect((980, 325), (210, 250))),
