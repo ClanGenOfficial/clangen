@@ -186,7 +186,7 @@ del lineart # unneeded
 if width / 3 == height / 7:
     spriteSize = width / 3
 else:
-    spriteSize = 50 # default, what base clangen uses
+    spriteSize = 200 # default, what base clangen uses
     print(f"lineart.png is not 3x7, falling back to {spriteSize}")
     print(f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
 
