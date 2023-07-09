@@ -45,7 +45,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got scarred training in the plains as an apprentice."
+            "scar": "m_c got scarred training in the plains as an apprentice."
         }
     },
     {
@@ -111,8 +111,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a badger.",
-            "reg_death": "r_c lost their life to a badger.",
+            "scar": "m_c was scarred by a badger.",
+            "reg_death": "m_c lost their life to a badger.",
             "lead_death": "died to a badger"
         }
     },
@@ -249,8 +249,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -319,8 +319,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -389,8 +389,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -426,8 +426,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol.",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol.",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -477,7 +477,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {

@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
@@ -18,7 +19,6 @@ class MiscEvents():
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
-        pass
 
     def handle_misc_events(self, cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
         """ 
@@ -43,11 +43,30 @@ class MiscEvents():
             if (not accessory and event.accessories) or (accessory and not event.accessories):
                 continue
 
+            if "other_cat" in event.tags and not other_cat:
+                other_cat = Cat.fetch_cat(random.choice(Cat.all_cats_list))
+                if other_cat.dead or other_cat.outside:
+                    other_cat = None
+
             acc_checked_events.append(event)
+            
+        reveal = False
+        victim = None
+        if cat.history:
+            history = cat.history.get_murders(cat)
+            if history:
+                if "is_murderer" in history:
+                    murder_history = history["is_murderer"]
+                    reveal = True #self.handle_murder_self_reveals(cat)
+                    for murder in murder_history:
+                        murder_index = murder_history.index(murder)
+                        if murder_history[murder_index]["revealed"] is True:
+                            continue
+                        victim = murder_history[murder_index]["victim"]
 
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
-                                                                   alive_kits)
+                                                                   alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
         #                                    event                                     #
@@ -76,7 +95,7 @@ class MiscEvents():
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -84,6 +103,9 @@ class MiscEvents():
         if ceremony:
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+
+        if reveal:
+            History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 
@@ -158,10 +180,31 @@ class MiscEvents():
             if acc not in ["WILD", "PLANT", "COLLAR"]:
                 acc_list.append(acc)
 
-        if ("NOTAIL" or "HALFTAIL") in cat.pelt.scars:
-            try:
-                acc_list.remove(acc for acc in Pelt.tail_accessories)
-            except:
-                print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
+        if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+            for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
 
         cat.pelt.accessory = random.choice(acc_list)
+
+    def handle_murder_self_reveals(self, cat):
+        ''' Handles reveals for murders where the murderer reveals themself '''
+        if cat.personality.lawfulness > 8:
+            murderer_guilty = random.choice([True, False])
+        chance_of_reveal = 120
+        if murderer_guilty:
+            chance_of_reveal = chance_of_reveal - 100
+
+        # testing purposes
+        chance_of_reveal = 1
+
+        chance_roll = random.randint(0, chance_of_reveal)
+        print(chance_roll)
+
+        return bool(chance_roll = 1)
+
+    def handle_murder_witness_reveals(self, cat, other_cat):
+        ''' Handles reveals where the witness reveals the murderer '''

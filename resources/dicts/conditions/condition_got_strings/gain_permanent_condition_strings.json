@@ -11,7 +11,7 @@
     },
     "broken bone": {
         "weak leg": [
-            "m_c has been impatient, and r_c has noticed {PRONOUN/m_c/subject} haven't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. It's unfortunately having consequences, as {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/subject} a weaker leg.",
+            "m_c has been impatient, and r_c has noticed {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. It's unfortunately having consequences, as {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/subject} a weaker leg.",
             "r_c examines m_c's leg and reports that everything seems to be healed, the weakness that m_c has complained about is likely a permanent consequence of the injury.",
             "m_c pads along on all four legs for the first time in a long time, wincing. {PRONOUN/m_c/poss/CAP} healed broken bone has definitely left the leg weaker, but it's manageable as far as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} concerned.",
             "m_c can't run as long or as quickly as before, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} glad that {PRONOUN/m_c/poss} leg healed at all."
@@ -30,7 +30,7 @@
             "The leg is too mangled - r_c sighs, and prepares the poppy seeds to knock m_c out while it's removed.",
             "When m_c wakes up from {PRONOUN/m_c/poss} poppy seed induced sleep, r_c breaks the news that m_c's leg had to be removed.",
             "m_c wakes up one leg less than {PRONOUN/m_c/subject} went to sleep with, and it's both upsetting and a relief. {PRONOUN/m_c/poss/CAP} leg was so mangled, and m_c in so much pain, that this might be for the best. But it's still a loss.",
-            "The damage to m_c's leg has turned out to be too great and {PRONOUN/m_c/poss} leg had to be removed if {PRONOUN/m_c/subject} have any hope of recovery.",
+            "The damage to m_c's leg has turned out to be too great and {PRONOUN/m_c/poss} leg had to be removed if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any hope of recovery.",
             "m_c has healed from {PRONOUN/m_c/poss} mangled leg, but the leg had to be removed completely."
 
         ],
@@ -69,7 +69,7 @@
     "torn ear": {
         "partial hearing loss": [
             "r_c continues {PRONOUN/m_c/poss} test, but it's clear that m_c's hearing isn't what it used to be, probably related to {PRONOUN/m_c/poss} ear injury.",
-            "r_c informs m_c that though {PRONOUN/m_c/poss} ear has healed from it's tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life.",
+            "r_c informs m_c that though {PRONOUN/m_c/poss} ear has healed from its tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life.",
             "m_c realizes that it's not that the camp has been more peaceful lately - {PRONOUN/m_c/subject} just can't hear as much as {PRONOUN/m_c/subject} used to."
 
         ]
@@ -127,7 +127,7 @@
     "lingering shock": {
         "recurring shock": [
             "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c doesn't have answers, but {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} {PRONOUN/r_c/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting m_c.",
-            "r_c tells m_c that {PRONOUN/r_c/subject} have no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
+            "r_c tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/have/has} no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, and {PRONOUN/m_c/poss} memories feel like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
 
         ]
@@ -139,7 +139,7 @@
             "m_c only seems to grow more disoriented, despite {PRONOUN/m_c/poss} head injury seeming to be fully healed. It seems {PRONOUN/m_c/poss} vision is blurry and slightly doubled now, {PRONOUN/m_c/subject}'ll have to find a way to adjust."
         ],
         "one bad eye": [
-            "m_c waits a few days before telling r_c, hoping that {PRONOUN/m_c/poss} vision will come back on it's own. It doesn't, however, and {PRONOUN/m_c/subject} begrudgingly {VERB/m_c/admit/admits} to r_c that {PRONOUN/m_c/subject} haven't been able to see out of one eye ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head.",
+            "m_c waits a few days before telling r_c, hoping that {PRONOUN/m_c/poss} vision will come back on it's own. It doesn't, however, and {PRONOUN/m_c/subject} begrudgingly {VERB/m_c/admit/admits} to r_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been able to see out of one eye ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head.",
             "m_c begins to practice moving around camp, trying to get used to the lack of depth perception that {PRONOUN/m_c/poss} vision loss is causing."
         ],
         "blind": [

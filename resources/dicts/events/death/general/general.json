@@ -17,20 +17,6 @@
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "sneaky",
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "vengeful",
-            "careful",
-            "lonesome",
-            "strange",
-            "daring",
-            "righteous",
-            "patient"
-        ],
         "other_cat_skill": [
             "CLEVER,1"
         ]
@@ -49,22 +35,11 @@
             "neg_platonic",
             "dislike"
         ],
-        "death_text": "m_c was murdered. r_c stands over them, blood dripping from their pelt.",
+        "death_text": "m_c was murdered. r_c stands over {PRONOUN/m_c/object}, blood dripping from {PRONOUN/r_c/poss} pelt.",
         "history_text": {
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "cold",
-            "fierce",
-            "vengeful",
-            "lonesome",
-            "strange",
-            "daring",
-            "righteous"
-        ],
         "other_cat_skill": [
             "FIGHTER,2"
         ]
@@ -88,12 +63,6 @@
             "reg_death": "m_c was murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
         },
-        "other_cat_trait": [
-            "vengeful",
-            "ambitious",
-            "bloodthirsty",
-            "fierce"
-        ],
         "other_cat_skill": [
             "FIGHTER,2"
         ],
@@ -106,7 +75,6 @@
         "tags": [
             "other_cat",
             "murder",
-            "revealed",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -120,13 +88,6 @@
             "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, who made the death look accidental."
         },
-        "other_cat_trait": [
-            "vengeful",
-            "ambitious",
-            "bloodthirsty",
-            "fierce",
-            "sneaky"
-        ],
         "other_cat_skill": [
             "FIGHTER,2",
             "CLEVER,3"
@@ -150,17 +111,11 @@
             "dislike",
             "neg_platonic"
         ],
-        "death_text": "r_c killed m_c by feeding them deathberries.",
+        "death_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} deathberries.",
         "history_text": {
-            "reg_death": "m_c was murdered by r_c, who fed them deathberries.",
+            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with deathberries."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -180,17 +135,11 @@
             "dislike",
             "neg_platonic"
         ],
-        "death_text": "r_c killed m_c by feeding them foxglove seeds.",
+        "death_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} foxglove seeds.",
         "history_text": {
-            "reg_death": "m_c was murdered by r_c, who fed them foxglove seeds.",
+            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with foxglove seeds."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -210,17 +159,11 @@
             "dislike",
             "neg_platonic"
         ],
-        "death_text": "r_c killed m_c by feeding them nightshade berries.",
+        "death_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} nightshade berries.",
         "history_text": {
-            "reg_death": "m_c was murdered by r_c, who fed them nightshade berries.",
+            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with nightshade berries."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -240,17 +183,11 @@
             "dislike",
             "neg_platonic"
         ],
-        "death_text": "r_c killed m_c by feeding them water hemlock.",
+        "death_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} water hemlock.",
         "history_text": {
-            "reg_death": "m_c was murdered by r_c, who fed them water hemlock.",
+            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer with water hemlock."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -270,17 +207,11 @@
             "dislike",
             "neg_platonic"
         ],
-        "death_text": "r_c killed m_c by consciously giving them the wrong herbs.",
+        "death_text": "r_c killed m_c by consciously giving {PRONOUN/m_c/object} the wrong herbs.",
         "history_text": {
-            "reg_death": "m_c was murdered by r_c, who purposefully fed them the wrong herbs.",
+            "reg_death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer, by being fed incorrect herbs."
         },
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "sneaky",
-            "righteous"
-        ],
         "cat_negate_skill": [
             "CLEVER,2"
         ]
@@ -332,7 +263,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c saved a kit from a snake, but was bitten in the process. The venom killed them.",
+        "death_text": "m_c saved a kit from a snake, but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
         "history_text": {
             "reg_death": "m_c was killed by a snake, while saving a kit."
         },
@@ -518,7 +449,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c fell into the river and r_c drowned alongside m_c while trying to rescue them.",
+        "death_text": "m_c fell into the river and r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "history_text": {
             "reg_death": "m_c drowned alongside a Clanmate.",
             "lead_death": "drowned alongside a Clanmate"
@@ -610,7 +541,7 @@
             "Leaf-bare"
         ],
         "camp": "Any",
-        "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, they launch a search. c_n finds {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of c_n, and what killed {PRONOUN/m_c/object}.",
+        "death_text": "m_c has always wondered where {PRONOUN/m_c/subject} came from. {PRONOUN/m_c/subject/CAP} {VERB/m_c/sneak/sneaks} out of camp, intending to find loners who might have some clues about {PRONOUN/m_c/poss} origins. Frantic with worry and confusion after finding m_c's empty nest in the morning, c_n launches a search. They find {PRONOUN/m_c/poss} cooling body after a long search and wonders why {PRONOUN/m_c/subject} decided to leave the safety of c_n, and what killed {PRONOUN/m_c/object}.",
         "history_text": {
             "reg_death": "Curiosity killed this cat.",
             "lead_death": "lost a life because of curiosity."

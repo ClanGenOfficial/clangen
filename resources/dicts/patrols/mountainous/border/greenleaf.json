@@ -56,9 +56,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -118,9 +118,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -174,9 +174,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue.",
-            "reg_death": "r_c was killed by an invading rogue.",
-            "lead_death": "were killed by an invading rogue"
+            "scar": "m_c was scarred by an invading rogue.",
+            "reg_death": "m_c was killed by an invading rogue.",
+            "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
         }
     },
     {
@@ -235,7 +235,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {
@@ -295,7 +295,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {
@@ -348,7 +348,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "history_text": {
-            "scar": "r_c was scarred by an invading rogue."
+            "scar": "m_c was scarred by an invading rogue."
         }
     },
     {

@@ -130,7 +130,7 @@ class ClanScreen(Screens):
                         UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
                                        Cat.all_cats[x].sprite,
                                        cat_id=x,
-                                       starting_height=i)
+                                       starting_height=1)
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
@@ -544,6 +544,7 @@ class StarClanScreen(Screens):
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
+        Cat.sort_cats()
         # Determine the dead, non-exiled cats.
         self.get_dead_cats()
 
