@@ -1339,13 +1339,16 @@ class ProfileScreen(Screens):
         
 
     def get_text_for_murder_event(self, event, death):
+        ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True:
-                return event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            if event["revealed"] is True: 
+                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                if event.get("revelation_text"):
+                    final_text = final_text + event["revelation_text"]
+                return final_text
             else:
                 return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
         return None
-
 
 
     def get_death_text(self):
@@ -1366,7 +1369,6 @@ class ProfileScreen(Screens):
             for index, death in enumerate(death_history):
                 found_murder = False  # Add this line to track if a matching murder event is found
                 if "is_victim" in murder_history:
-                    print(str(murder_history))
                     for event in murder_history["is_victim"]:
                         text = self.get_text_for_murder_event(event, death)
                         if text is not None:
@@ -1422,57 +1424,58 @@ class ProfileScreen(Screens):
 
     def get_murder_text(self):
         """
-        returns adjusted murder history text
+        returns adjusted murder history text FOR THE MURDERER
 
         """
         murder_history = History.get_murders(self.the_cat)
         victim_text = ""
-        murdered_text = ""
 
         if game.switches['show_history_moons']:
             moons = True
         else:
             moons = False
+        victims = []
         if murder_history:
             if 'is_murderer' in murder_history:
-                victims = murder_history["is_murderer"]
-            else:
-                victims = []
+                victims = murder_history["is_murderer"]                
 
-            # if "is_victim" in murder_history:
-            #    murderers = murder_history["is_victim"]
-            # else:
-            #    murderers = []
+        if len(victims) > 0:
+            victim_names = {}
+            name_list = []
+            reveal_text = None
 
-            if victims:
-                victim_names = {}
-                name_list = []
+            for victim in victims:
+                if not Cat.fetch_cat(victim["victim"]):
+                    continue 
+                name = str(Cat.fetch_cat(victim["victim"]).name)
 
-                for victim in victims:
-                    if not Cat.fetch_cat(victim["victim"]):
-                        continue 
-                    name = str(Cat.fetch_cat(victim["victim"]).name)
+                if victim["revealed"]:
+                    victim_names[name] = []
+                    if victim.get("revelation_text"):
+                        reveal_text = str(victim["revelation_text"])
+                    if moons:
+                        victim_names[name].append(victim["moon"])
 
-                    if victim["revealed"]:
-                        victim_names[name] = []
-                        if moons:
-                            victim_names[name].append(victim["moon"])
-
-                if victim_names:
-                    for name in victim_names:
-                        if not moons:
-                            name_list.append(name)
-                        else:
-                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
-
-                    if len(name_list) == 1:
-                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
-                    elif len(victim_names) == 2:
-                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+            if victim_names:
+                for name in victim_names:
+                    if not moons:
+                        name_list.append(name)
                     else:
-                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
-        #print(victim_text)
+                if len(name_list) == 1:
+                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                elif len(victim_names) == 2:
+                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+                else:
+                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+            if reveal_text:
+                cat_dict = {
+                        "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+                    }
+                victim_text = f'{victim_text} {process_text(reveal_text, cat_dict)}'
+
         return victim_text
 
     def toggle_conditions_tab(self):

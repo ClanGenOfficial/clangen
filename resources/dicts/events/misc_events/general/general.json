@@ -550,8 +550,20 @@
             "Leaf-bare",
             "Leaf-fall",
             "murder_reveal",
-            "other_cat_adult"
+            "other_cat"
         ],
-        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} somnambulistic muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death."
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death."
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} tell the story of mur_c's death."
     }
 ]
