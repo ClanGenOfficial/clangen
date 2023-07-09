@@ -430,6 +430,8 @@ class CatSkills:
             if self.secondary:
                 output.append(self.secondary.skill)
 
+        if game.clan.your_cat.moons <= 1:
+            output = []
         if not output:
             return "???"
 
