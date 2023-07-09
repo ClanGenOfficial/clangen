@@ -618,6 +618,8 @@ class EventsScreen(Screens):
         self.leaf.kill()
         del self.leaf
         self.event_container.kill()
+        self.cat_icon.kill()
+        del self.cat_icon
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
