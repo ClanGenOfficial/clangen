@@ -1622,7 +1622,7 @@ class Events:
         """
         TODO: DOCS
         """
-        hit = int(random.random() * 20)
+        hit = int(random.random() * 30)
         if hit:
             return
 
