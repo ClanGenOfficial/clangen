@@ -48,21 +48,21 @@
 		"get_injuries": {
 			"m_c": {
 				"injury_names": ["claw-wound"],
-				"scar_text": "m_c got a scar after r_c2 challenged them.",
-				"death_text": "Died after r_c2 challenged them.",
-				"death_leader_text": "after r_c2 challenged them"
+				"scar_text": "m_c got a scar after r_c2 challenged {PRONOUN/m_c/object}.",
+				"death_text": "Died after r_c2 challenged {PRONOUN/m_c/object}.",
+				"death_leader_text": "after r_c2 challenged {PRONOUN/m_c/object}"
 			},
 			"r_c1": {
 				"injury_names": ["claw-wound"],
-				"scar_text": "Got a scar while punishing r_c2, in the name of m_c",
-				"death_text": "Died after punishing r_c2, in the name of m_c.",
+				"scar_text": "Got a scar while punishing r_c2 in the name of m_c.",
+				"death_text": "Died after punishing r_c2 in the name of m_c.",
 				"death_leader_text": "while punishing r_c2"
 			},
 			"r_c2": {
 				"injury_names": ["claw-wound", "bite-wound"],
-				"scar_text": "r_c2 challenged m_c, was punished by r_c1, and got a scar as memory of their actions.",
-				"death_text": "They challenged m_c, were punished by r_c1, and, due to their actions, r_c2 died.",
-				"death_leader_text": "after they challenged m_c and got punished by r_c1"
+				"scar_text": "r_c2 challenged m_c, was punished by r_c1 for this, and got a scar as a reminder of {PRONOUN/r_c2/poss} actions.",
+				"death_text": "{PRONOUN/r_c2/subject/CAP} challenged m_c, {VERB/r_c2/was/were} punished by r_c1, and died as a result.",
+				"death_leader_text": "after {PRONOUN/r_c2/subject} challenged m_c and got punished by r_c1"
 			}
 		},
 		"status_constraint": {

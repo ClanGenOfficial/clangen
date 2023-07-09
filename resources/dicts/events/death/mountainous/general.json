@@ -111,7 +111,6 @@
         "tags": [
             "other_cat",
             "murder",
-            "revealed",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
@@ -127,17 +126,6 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "ambitious",
-            "sneaky",
-            "patient",
-            "wise",
-            "righteous",
-            "cold",
-            "patient"
-        ],
         "other_cat_skill": [
             "CLEVER,2",
             "HUNTER,3"
@@ -169,14 +157,6 @@
         },
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": [
-            "bloodthirsty",
-            "vengeful",
-            "ambitious",
-            "righteous",
-            "cold",
-            "patient"
-        ],
         "other_cat_skill": [
             "HUNTER,3",
             "FIGHTER,2"
