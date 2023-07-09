@@ -741,12 +741,12 @@ class ProfileScreen(Screens):
             else:
                 if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
-                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                        check_cat.df == self.the_cat.df and not check_cat.faded and check_cat.moons > -1:
                     previous_cat = check_cat.ID
 
                 elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
-                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                        check_cat.df == self.the_cat.df and not check_cat.faded and check_cat.moons > -1:
                     next_cat = check_cat.ID
 
                 elif int(next_cat) > 1:
