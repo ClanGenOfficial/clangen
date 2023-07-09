@@ -4931,124 +4931,167 @@ class ChooseMurderCatScreen(Screens):
         cat_to_murder = self.cat_to_murder
         game.clan.murdered = True
         if murdered:
-            resource_dir = "resources/dicts/events/lifegen_events/"
-            with open(f"{resource_dir}murder.json",
-                    encoding="ascii") as read_file:
-                self.m_txt = ujson.loads(read_file.read())
-            with open(f"{resource_dir}murder_unsuccessful.json",
-                    encoding="ascii") as read_file:
-                self.mu_txt = ujson.loads(read_file.read())
-            c_s = cat_to_murder.status.replace(" ", "")
-            if c_s == "newborn":
-                c_s = "kitten"
-            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + c_s])
-            ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
-            ceremony_txt = ceremony_txt.replace('c_n', game.clan.name)
-            if cat_to_murder.status == 'leader':
-                game.clan.leader_lives = 0
-            cat_to_murder.die()
-            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
-            discover_chance = randint(1,5)
-            if discover_chance == 1:
-                you.revealed = True
-                if accomplice:
-                    if accompliced:
-                        game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " with the help of " + str(accomplice.name) + "."))
-                        History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
-                        History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
-                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat with the help of {accomplice.name}.")
-                    else:
-                        game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help you."))
-                        History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
-                else:
-                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + "."))
-                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
-                txt = ""
-                if game.clan.your_cat.status in ['kitten', 'leader', 'deputy', 'medicine cat']:
-                    txt = choice(self.mu_txt["murder_discovered " + game.clan.your_cat.status])
-                else:
-                    txt = choice(self.mu_txt["murder_discovered general"])
-                txt = txt.replace('v_c', str(cat_to_murder.name))
-                game.cur_events_list.insert(2, Single_Event(txt))
-                kit_punishment = ["You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
-                                  "You are to be kept in the nursery under the watchful eye of the queens at all times until you become an apprentice."]
-                gen_punishment = ["You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
-                                  "You will be required to take meals last and are forced to sleep in a separate den away from your clanmates.",
-                                  "You are assigned to several moons of tasks that include cleaning out nests, checking elders for ticks, and other chores alongside your normal duties.",
-                                  "You are assigned a mentor who will better educate you about the Warrior Code and the sacredness of life."]
-                demote_leader = ["Your lives will be stripped away and you will be demoted to a warrior, no longer trusted to be the Clan's leader."]
-                demote_deputy = ["The Clan decides that you will be demoted to a warrior, no longer trusting you as their deputy."]
-                demote_medicine_cat = ["The Clan decides that you will be demoted to a warrior, no longer trusting you as their medicine cat."]
-                exiled = ["The Clan decides that they no longer feel safe with you as a Clanmate. You will be exiled from the Clan."]
-                if you.status == 'kitten' or you.status == 'newborn':
-                    game.cur_events_list.insert(3, Single_Event(choice(kit_punishment)))
-                elif you.status == 'leader':
-                    lead_choice = randint(1,3)
-                    if lead_choice == 1:
-                        game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
-                    elif lead_choice == 2:
-                        game.cur_events_list.insert(3, Single_Event(choice(demote_leader)))
-                        game.clan.your_cat.status_change('warrior')
-                    else:
-                        game.cur_events_list.insert(3, Single_Event(choice(exiled)))
-                        Cat.exile(game.clan.your_cat)
-                elif you.status == 'deputy':
-                    lead_choice = randint(1,3)
-                    if lead_choice == 1:
-                        game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
-                    elif lead_choice == 2:
-                        game.cur_events_list.insert(3, Single_Event(choice(demote_deputy)))
-                        game.clan.your_cat.status_change('warrior')
-                    else:
-                        game.cur_events_list.insert(3, Single_Event(choice(exiled)))
-                        Cat.exile(game.clan.your_cat)
-                elif you.status == 'medicine cat':
-                    lead_choice = randint(1,3)
-                    if lead_choice == 1:
-                        game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
-                    elif lead_choice == 2:
-                        game.cur_events_list.insert(3, Single_Event(choice(demote_medicine_cat)))
-                        game.clan.your_cat.status_change('warrior')
-                    else:
-                        game.cur_events_list.insert(1, Single_Event(choice(exiled)))
-                        Cat.exile(game.clan.your_cat)
-                else:
-                    lead_choice = randint(1,5)
-                    if lead_choice == 1:
-                        game.cur_events_list.insert(3, Single_Event(choice(exiled)))
-                        Cat.exile(game.clan.your_cat)
-                    else:
-                        game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
-            else:
-                if accomplice:
-                    if accompliced:
-                        History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
-                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat along with {accomplice.name}.")
-                        History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
-
-                        game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " along with " + str(accomplice.name) + ". It seems no one is aware of your actions."))
-                    else:
-                        History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                        History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
-                        game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help. It seems no one is aware of your actions."))
-                else:
-                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
-                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
-
+            self.choose_murder_text(you, cat_to_murder, accomplice, accompliced)
         else:
-            c_m = str(cat_to_murder.name)
-            discover_chance = randint(1,2)
-            fail_texts = []
-            if discover_chance == 1:
-                fail_texts = ["You attempted to murder "+ c_m + ", but were unsuccessful. They were oblivious of your attempt.",
-                                "You attempted to murder "+ c_m + ", but they sidestepped the peril you'd arranged. They remained oblivious to your intent.",
-                                "You made an effort to end "+ c_m + "'s life, but fortune favored them. They were none the wiser of your deadly plot.",
-                                "Your plot to murder "+ c_m + " fell through, and they went about their day, unaware of the fate you'd intended for them.",
-                                "Despite your best efforts, "+ c_m + " remained unscathed. They continued on, blissfully ignorant of your lethal plan.",
-                                "Your attempt to kill "+ c_m + " proved futile, and they stayed clueless about your ominous intentions."]
+            self.handle_murder_fail(you, cat_to_murder, accomplice, accompliced)
+        game.switches['cur_screen'] = "events screen"
+    
+    RESOURCE_DIR = "resources/dicts/events/lifegen_events/"
+    def choose_murder_text(self, you, cat_to_murder, accomplice, accompliced):
+        with open(f"{self.RESOURCE_DIR}murder.json",
+                encoding="ascii") as read_file:
+            self.m_txt = ujson.loads(read_file.read())
+        with open(f"{self.RESOURCE_DIR}murder_unsuccessful.json",
+                encoding="ascii") as read_file:
+            self.mu_txt = ujson.loads(read_file.read())
+        ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+        ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
+        ceremony_txt = ceremony_txt.replace('c_n', game.clan.name)
+        if cat_to_murder.status == 'leader':
+            game.clan.leader_lives = 0
+        cat_to_murder.die()
+        game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+        discover_chance = self.get_discover_chance(you,cat_to_murder, accomplice, accompliced)
+        r_num = randint(1,100)
+        discovered = False
+        if r_num < discover_chance:
+            discovered = True
+        else:
+            discovered = False
+        if discovered:
+            you.revealed = True
+            if accomplice:
+                if accompliced:
+                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " with the help of " + str(accomplice.name) + "."))
+                    History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat with the help of {accomplice.name}.")
+                else:
+                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help you."))
+                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
+            else:
+                game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + "."))
+                History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
+            txt = ""
+            if game.clan.your_cat.status in ['kitten', 'leader', 'deputy', 'medicine cat']:
+                txt = choice(self.mu_txt["murder_discovered " + game.clan.your_cat.status])
+            else:
+                txt = choice(self.mu_txt["murder_discovered general"])
+            txt = txt.replace('v_c', str(cat_to_murder.name))
+            game.cur_events_list.insert(2, Single_Event(txt))
+            kit_punishment = ["You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
+                                "You are to be kept in the nursery under the watchful eye of the queens at all times until you become an apprentice."]
+            gen_punishment = ["You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
+                                "You will be required to take meals last and are forced to sleep in a separate den away from your clanmates.",
+                                "You are assigned to several moons of tasks that include cleaning out nests, checking elders for ticks, and other chores alongside your normal duties.",
+                                "You are assigned a mentor who will better educate you about the Warrior Code and the sacredness of life."]
+            demote_leader = ["Your lives will be stripped away and you will be demoted to a warrior, no longer trusted to be the Clan's leader."]
+            demote_deputy = ["The Clan decides that you will be demoted to a warrior, no longer trusting you as their deputy."]
+            demote_medicine_cat = ["The Clan decides that you will be demoted to a warrior, no longer trusting you as their medicine cat."]
+            exiled = ["The Clan decides that they no longer feel safe with you as a Clanmate. You will be exiled from the Clan."]
+            if you.status == 'kitten' or you.status == 'newborn':
+                game.cur_events_list.insert(3, Single_Event(choice(kit_punishment)))
+            elif you.status == 'leader':
+                lead_choice = randint(1,3)
+                if lead_choice == 1:
+                    game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
+                elif lead_choice == 2:
+                    game.cur_events_list.insert(3, Single_Event(choice(demote_leader)))
+                    game.clan.your_cat.status_change('warrior')
+                else:
+                    game.cur_events_list.insert(3, Single_Event(choice(exiled)))
+                    Cat.exile(game.clan.your_cat)
+            elif you.status == 'deputy':
+                lead_choice = randint(1,3)
+                if lead_choice == 1:
+                    game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
+                elif lead_choice == 2:
+                    game.cur_events_list.insert(3, Single_Event(choice(demote_deputy)))
+                    game.clan.your_cat.status_change('warrior')
+                else:
+                    game.cur_events_list.insert(3, Single_Event(choice(exiled)))
+                    Cat.exile(game.clan.your_cat)
+            elif you.status == 'medicine cat':
+                lead_choice = randint(1,3)
+                if lead_choice == 1:
+                    game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
+                elif lead_choice == 2:
+                    game.cur_events_list.insert(3, Single_Event(choice(demote_medicine_cat)))
+                    game.clan.your_cat.status_change('warrior')
+                else:
+                    game.cur_events_list.insert(1, Single_Event(choice(exiled)))
+                    Cat.exile(game.clan.your_cat)
+            else:
+                lead_choice = randint(1,5)
+                if lead_choice == 1:
+                    game.cur_events_list.insert(3, Single_Event(choice(exiled)))
+                    Cat.exile(game.clan.your_cat)
+                else:
+                    game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
+        else:
+            if accomplice:
+                if accompliced:
+                    History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+                    History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+
+                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " along with " + str(accomplice.name) + ". It seems no one is aware of your actions."))
+                else:
+                    History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
+                    game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help. It seems no one is aware of your actions."))
+            else:
+                History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
+                History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
+                game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
+                
+    def get_discover_chance(you, cat_to_murder, accomplice, accompliced):
+        chance = 10
+        if you.status == 'kitten':
+            chance += 40
+        elif you.age == 'adolescent':
+            chance += 30
+        if you.experience >= 100:
+            chance -= 10
+        elif you.experience <= 30:
+            chance += 20
+        if cat_to_murder.status in ['leader', 'deputy', 'medicine cat']:
+            chance += 20
+        if accomplice:
+            if accompliced:
+                chance -= 10
+        return chance + randint(-10,10)
+
+    def handle_murder_fail(self, you, cat_to_murder, accomplice, accompliced):
+        c_m = str(cat_to_murder.name)
+        discover_chance = randint(1,2)
+        fail_texts = []
+        if discover_chance == 1:
+            fail_texts = ["You attempted to murder "+ c_m + ", but were unsuccessful. They were oblivious of your attempt.",
+                            "You attempted to murder "+ c_m + ", but they sidestepped the peril you'd arranged. They remained oblivious to your intent.",
+                            "You made an effort to end "+ c_m + "'s life, but fortune favored them. They were none the wiser of your deadly plot.",
+                            "Your plot to murder "+ c_m + " fell through, and they went about their day, unaware of the fate you'd intended for them.",
+                            "Despite your best efforts, "+ c_m + " remained unscathed. They continued on, blissfully ignorant of your lethal plan.",
+                            "Your attempt to kill "+ c_m + " proved futile, and they stayed clueless about your ominous intentions."]
+        else:
+            if accomplice and accompliced:
+                fail_texts = [f"You attempted to murder {c_m}, but your plot was unsuccessful. They appear to be slightly wary of you and {accomplice.name} now.",
+                                f"Your effort to end {c_m}'s life was thwarted, and they now seem a bit more cautious around you and {accomplice.name}.",
+                                f"Despite your intent to murder {c_m}, they remained unscathed. They now look at you and {accomplice.name} with a hint of suspicion.",
+                                f"You and {accomplice.name} tried to kill {c_m}, but they survived. They now seem to watch you both with wary eyes.",
+                                "Your plot to murder {c_m} fell through, and they remain alive, now showing signs of mild suspicion towards you and {accomplice.name}."]
+                cat_to_murder.relationships[you.ID].dislike += randint(1,20)
+                cat_to_murder.relationships[you.ID].platonic_like -= randint(1,15)
+                cat_to_murder.relationships[you.ID].comfortable -= randint(1,15)
+                cat_to_murder.relationships[you.ID].trust -= randint(1,15)
+                cat_to_murder.relationships[you.ID].admiration -= randint(1,15)
+                cat_to_murder.relationships[accomplice.ID].dislike += randint(1,20)
+                cat_to_murder.relationships[accomplice.ID].platonic_like -= randint(1,15)
+                cat_to_murder.relationships[accomplice.ID].comfortable -= randint(1,15)
+                cat_to_murder.relationships[accomplice.ID].trust -= randint(1,15)
+                cat_to_murder.relationships[accomplice.ID].admiration -= randint(1,15)
             else:
                 fail_texts = ["You attempted to murder "+ c_m + ", but your plot was unsuccessful. They appear to be slightly wary now.",
                                 "Your effort to end "+ c_m + "'s life was thwarted, and they now seem a bit more cautious around you.",
@@ -5060,8 +5103,7 @@ class ChooseMurderCatScreen(Screens):
                 cat_to_murder.relationships[you.ID].comfortable -= randint(1,15)
                 cat_to_murder.relationships[you.ID].trust -= randint(1,15)
                 cat_to_murder.relationships[you.ID].admiration -= randint(1,15)
-            game.cur_events_list.insert(0, Single_Event(choice(fail_texts)))
-        game.switches['cur_screen'] = "events screen"
+        game.cur_events_list.insert(0, Single_Event(choice(fail_texts)))
         
     
     status_chances = {
@@ -5179,7 +5221,7 @@ class ChooseMurderCatScreen(Screens):
                         c_text = "low"
                     elif chance < 40:
                         c_text = "average"
-                    elif chance < 60:
+                    elif chance < 70:
                         c_text = "high"
                     else:
                         c_text = "very high"
@@ -5200,13 +5242,13 @@ class ChooseMurderCatScreen(Screens):
                 if not self.selected_cat.dead and not self.selected_cat.outside:
                     c_text = ""
                     chance = self.get_accomplice_chance(game.clan.your_cat, self.selected_cat)
-                    if chance < 20:
+                    if chance < 30:
                         c_text = "very low"
-                    elif chance < 30:
-                        c_text = "low"
                     elif chance < 40:
+                        c_text = "low"
+                    elif chance < 50:
                         c_text = "average"
-                    elif chance < 60:
+                    elif chance < 70:
                         c_text = "high"
                     else:
                         c_text = "very high"
@@ -5225,21 +5267,27 @@ class ChooseMurderCatScreen(Screens):
                                                                                             manager=MANAGER)
                         
     def get_accomplice_chance(self, you, accomplice):
-        chance = 30
+        chance = 20
         if accomplice.relationships[you.ID].platonic_like > 10:
-            chance += 20
+            chance += 10
         if accomplice.relationships[you.ID].dislike < 10:
-            chance += 20
+            chance += 10
         if accomplice.relationships[you.ID].romantic_love > 10:
-            chance += 20
+            chance += 10
         if accomplice.relationships[you.ID].comfortable > 10:
-            chance += 20
+            chance += 10
         if accomplice.relationships[you.ID].trust > 10:
-            chance += 20
+            chance += 10
         if accomplice.relationships[you.ID].admiration > 10:
-            chance += 20
+            chance += 10
         if you.status in ['medicine cat', 'mediator', 'deputy', 'leader']:
-            chance += 20
+            chance += 10
+        if accomplice.status in ['medicine cat', 'mediator', 'deputy', 'leader']:
+            chance -= 20
+        if accomplice.ID in game.clan.your_cat.mate:
+            chance += 50
+        if game.clan.your_cat.is_related(accomplice, False):
+            chance += 30
         return chance
                     
     def update_selected_cat2(self):
