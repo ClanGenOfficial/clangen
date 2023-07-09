@@ -222,7 +222,7 @@
     "Airplane", "Alley", "Asphalt", "Bicycle", "Bike", "Brass", "Brick", "Bus", "Cab", "Car", "Cargo", "Church", "Cross", "Dust", "Dusty",
     "Engine", "Fountain", "Gas", "Glass", "Headlight", "Helicopter", "Jet", "Machine", "Oil", "Road", "Roof", "Sedan", "Street", "Subway",
     "Tar", "Tire", "Track", "Traffic", "Trail", "Train", "Van", "Vehicle", "Wandering", "Waste", "Wasted"
-    ],
+    ]
   },
 
   "biome_suffixes": {
