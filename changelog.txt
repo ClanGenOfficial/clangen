@@ -1,3 +1,11 @@
+<strong>v0.4.4: </strong>
+- Button to choose to only show relations for your cat
+- Add history text for accomplices
+- Chance to be born with permanent condition
+- You will now start out as unborn
+- New text for other roles gaining an apprentice
+- Bug fixes
+
 <strong>v0.4.3: </strong>
 - Basics of accomplices added
 - Added new dialogue
