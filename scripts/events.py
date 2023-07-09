@@ -115,8 +115,6 @@ class Events:
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
-                if cat.status not in ['kitten', 'newborn']:
-                    cat.experience += random.randint(1,10)
             else:
                 self.one_moon_outside_cat(cat)
                 
@@ -1142,7 +1140,7 @@ class Events:
             if cat.dead:
                 return
             self.handle_outbreaks(cat)
-        elif cat.ID != game.clan.your_cat.ID and cat.status not in ['kitten', 'elder']:
+        elif cat.ID != game.clan.your_cat.ID and cat.status not in ['kitten', 'elder', 'newborn'] and not cat.outside and not cat.dead:
             cat.experience += random.randint(0,5)
 
         # newborns don't do much
