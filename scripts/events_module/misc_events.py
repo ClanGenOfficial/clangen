@@ -53,9 +53,10 @@ class MiscEvents():
         reveal = False
         victim = None
         if cat.history:
-            if cat.history.murder:
-                if "is_murderer" in cat.history.murder:
-                    murder_history = cat.history.murder["is_murderer"]
+            history = cat.history.get_murders(cat)
+            if history:
+                if "is_murderer" in history:
+                    murder_history = history["is_murderer"]
                     reveal = True #self.handle_murder_self_reveals(cat)
                     for murder in murder_history:
                         murder_index = murder_history.index(murder)
