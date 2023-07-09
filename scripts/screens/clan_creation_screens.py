@@ -634,6 +634,12 @@ class MakeClanScreen(Screens):
                                                str(selected.age + "\n" +
                                                    str(selected.personality.trait) + "\n" +
                                                    str(selected.skills.skill_string())))
+            if selected.permanent_condition:
+                self.elements['cat_info'].set_text(selected.gender + "\n" +
+                                               str(selected.age + "\n" +
+                                                   str(selected.personality.trait) + "\n" +
+                                                   str(selected.skills.skill_string()) + "\n" +
+                                                   "has a permanent condition"))
             self.elements['cat_info'].show()
 
 
