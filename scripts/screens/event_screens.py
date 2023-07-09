@@ -91,6 +91,7 @@ class EventsScreen(Screens):
                     GameOver('events screen')
                 
                 self.event_display_type = 'all events'
+                self.cat_icon.hide()
                 self.all_events_button.disable()
                 self.update_display_events_lists()
 
@@ -257,7 +258,7 @@ class EventsScreen(Screens):
                 self.update_events_display()
             elif event.ui_element == self.cat_icon:
                 if self.yc_pressed:
-                    self.relation_events = [x for x in (game.cur_events_list + game.other_events_list) if "relation" in x.types]
+                    self.relation_events = [x for x in (game.other_events_list + game.cur_events_list) if "relation" in x.types]
                     self.display_events = self.relation_events
                     self.update_events_display()
                     self.yc_pressed = False
