@@ -188,6 +188,7 @@ class EventsScreen(Screens):
                 if self.event_container.vert_scroll_bar:
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "all events"
+                self.cat_icon.hide()
                 # Update Display
                 self.update_list_buttons(self.all_events_button)
                 self.display_events = self.all_events
@@ -197,6 +198,8 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "ceremony events"
                 self.ceremonies_events_button.disable()
+                self.cat_icon.hide()
+
                 # Update Display
                 self.update_list_buttons(self.ceremonies_events_button, self.ceremony_alert)
                 self.display_events = self.ceremony_events
@@ -206,6 +209,8 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "birth death events"
                 self.birth_death_events_button.enable()
+                self.cat_icon.hide()
+
                 # Update Display
                 self.update_list_buttons(self.birth_death_events_button, self.birth_death_alert)
                 self.display_events = self.birth_death_events
@@ -215,6 +220,7 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "relationship events"
                 self.relationship_events_button.enable()
+                self.cat_icon.show()
                 # Update Display
                 self.update_list_buttons(self.relationship_events_button, self.relation_alert)
                 self.display_events = self.relation_events
@@ -224,6 +230,7 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "health events"
                 self.health_events_button.disable()
+                self.cat_icon.hide()
                 # Update Display
                 self.update_list_buttons(self.health_events_button, self.health_alert)
                 self.display_events = self.health_events
@@ -233,6 +240,7 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "other clans events"
                 self.other_clans_events_button.disable()
+                self.cat_icon.hide()
                 # Update Display
                 self.update_list_buttons(self.other_clans_events_button, self.other_clans_alert)
                 self.display_events = self.other_clans_events
@@ -242,10 +250,23 @@ class EventsScreen(Screens):
                     self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
                 self.event_display_type = "misc events"
                 self.misc_events_button.disable()
+                self.cat_icon.hide()
                 # Update Display
                 self.update_list_buttons(self.misc_events_button, self.misc_alert)
                 self.display_events = self.misc_events
                 self.update_events_display()
+            elif event.ui_element == self.cat_icon:
+                if self.yc_pressed:
+                    self.relation_events = [x for x in (game.cur_events_list + game.other_events_list) if "relation" in x.types]
+                    self.display_events = self.relation_events
+                    self.update_events_display()
+                    self.yc_pressed = False
+                else:
+                    self.relation_events = [x for x in (game.cur_events_list) if "relation" in x.types]
+                    self.display_events = self.relation_events
+                    self.update_events_display()
+                    self.yc_pressed = True
+                
             elif event.ui_element in self.involved_cat_buttons:
                 self.make_cat_buttons(event.ui_element)
             elif event.ui_element in self.cat_profile_buttons:
@@ -454,7 +475,7 @@ class EventsScreen(Screens):
                                                             "resources/images/event_page_frame.png").convert_alpha()
                                                         , manager=MANAGER)
         self.events_frame.disable()
-        
+        self.yc_pressed = True
         if not game.clan.your_cat:
             print("Are you playing a normal ClanGen save? Switch to a LifeGen save or create a new cat!")
             print("Choosing random cat to play...")
@@ -496,6 +517,11 @@ class EventsScreen(Screens):
             scale(pygame.Rect((120, 872), (300, 60))),
             "",
             object_id="#relationship_events_button")
+        self.cat_icon = UIImageButton(
+            scale(pygame.Rect((75, 875), (50, 50))),
+            "",
+            object_id="#events_cat_button")
+        self.cat_icon.hide()
         self.health_events_button = UIImageButton(
             scale(pygame.Rect((120, 972), (300, 60))),
             "",
