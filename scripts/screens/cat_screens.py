@@ -3585,7 +3585,7 @@ class TalkScreen(Screens):
                 if "random_cat" in talk[0]:
                     random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
                     counter = 0
-                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID:
+                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID or random_cat.ID == cat.ID:
                         counter+=1
                         if counter == 15:
                             continue
