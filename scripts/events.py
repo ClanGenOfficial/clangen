@@ -456,6 +456,7 @@ class Events:
             if blood_parent: sibling.parent1 = blood_parent.ID
             sibling.create_inheritance_new_cat()
             sibling.init_all_relationships()
+            sibling.backstory = game.clan.your_cat.backstory
         game.clan.your_cat.create_inheritance_new_cat()
         game.clan.your_cat.init_all_relationships()
         if blood_parent:
