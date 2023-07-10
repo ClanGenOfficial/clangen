@@ -1,3 +1,9 @@
+<strong>v0.4.5: </strong>
+- New moon events after a murder is discovered
+- Other cats may now be punished for being an accomplice
+- Accomplice and murder discovery chance overhaul
+- Bug fixes
+
 <strong>v0.4.4: </strong>
 - Button to choose to only show relations for your cat
 - Add history text for accomplices
