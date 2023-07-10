@@ -2092,10 +2092,10 @@ class Patrol():
                     elif amount >= game.clan.freshkill_pile.amount_food_needed():
                         amount_text = "good"
 
-                if len(self.patrol_cats) == 1:
-                    self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} amount of prey.")
-                else:
-                    self.results_text.append(f"The patrol still manages to bring home a {amount_text} amount of prey.")
+                    if len(self.patrol_cats) == 1:
+                        self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} amount of prey.")
+                    else:
+                        self.results_text.append(f"The patrol still manages to bring home a {amount_text} amount of prey.")
             return
 
         prey_amount_per_cat = 0
