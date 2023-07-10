@@ -201,7 +201,7 @@
         ],
         "intro_text": "You stumble upon a stash of fresh moss, perfect for changing bedding in the elders' den.",
         "success_text": {
-            "unscathed_common": "With great effort, you manage to haul a good bunch of the moss to the elder's den. An appretice, out of breath, thanks you for your help with their chores. The elders appreciate your initiative and hard work."
+            "unscathed_common": "With great effort, you manage to haul a good bunch of the moss to the elder's den. An apprentice, out of breath, thanks you for your help with their chores. The elders appreciate your initiative and hard work."
         },
         "fail_text": {
             "unscathed_common": "You attempt to move the moss, but it's a bit too much for your small size. You're left with a big mess!"

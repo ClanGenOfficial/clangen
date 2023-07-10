@@ -5151,7 +5151,7 @@ class ChooseMurderCatScreen(Screens):
                                 f"Your effort to end {c_m}'s life was thwarted, and they now seem a bit more cautious around you and {accomplice.name}.",
                                 f"Despite your intent to murder {c_m}, they remained unscathed. They now look at you and {accomplice.name} with a hint of suspicion.",
                                 f"You and {accomplice.name} tried to kill {c_m}, but they survived. They now seem to watch you both with wary eyes.",
-                                "Your plot to murder {c_m} fell through, and they remain alive, now showing signs of mild suspicion towards you and {accomplice.name}."]
+                                f"Your plot to murder {c_m} fell through, and they remain alive, now showing signs of mild suspicion towards you and {accomplice.name}."]
                 cat_to_murder.relationships[you.ID].dislike += randint(1,20)
                 cat_to_murder.relationships[you.ID].platonic_like -= randint(1,15)
                 cat_to_murder.relationships[you.ID].comfortable -= randint(1,15)
