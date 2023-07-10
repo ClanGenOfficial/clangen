@@ -264,7 +264,7 @@ class Events:
                   encoding="ascii") as read_file:
             self.e_txt = ujson.loads(read_file.read())
         if not game.clan.your_cat.dead and not game.clan.your_cat.status == 'exiled':
-            if game.clan.age - 3 <= game.clan.your_cat.revealed and game.clan.your_cat.moons != 0 and game.clan.your_cat.moons != 6 and not (game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done) and not game.clan.your_cat.moons == 120:
+            if game.clan.your_cat.revealed != 0 and game.clan.age - 3 <= game.clan.your_cat.revealed and game.clan.your_cat.moons != 0 and game.clan.your_cat.moons != 6 and not (game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done) and not game.clan.your_cat.moons == 120:
                 for i in range(random.randint(0,2)):
                     d_e = Single_Event(random.choice(self.e_txt[game.clan.your_cat.status]))
                     if d_e not in game.cur_events_list:
