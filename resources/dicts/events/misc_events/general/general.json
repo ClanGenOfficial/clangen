@@ -565,5 +565,125 @@
             "other_cat"
         ],
         "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} tell the story of mur_c's death."
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c laughs menacingly as r_c accuses {PRONOUN/m_c/object} of murdering mur_c. So what if {PRONOUN/m_c/subject} did? What is r_c going to do about it?",
+        "cat_trait": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "r_c gathers all the courage {PRONOUN/r_c/subject} {VERB/r_c/have/has} and quietly tells m_c {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. m_c glares menacingly and threatens r_c with the same fate if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} keep {PRONOUN/r_c/poss} mouth shut.",
+        "cat_trait": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN/r_c/subject} can't keep it a secret but is terrified of what m_c might do.",
+        "cat_trait": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c doesn't change expressions in the slightest when r_c accuses {PRONOUN/m_c/object} of murdering mur_c. Who cares?",
+        "cat_trait": [
+            "cold"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
+        "cat_trait": [
+            "cold"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",
+        "cat_trait": [
+            "vengeful"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "m_c is truthful when r_c questions {PRONOUN/m_c/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
+        "cat_trait": [
+            "vengeful"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "murder_reveal",
+            "other_cat"
+        ],
+        "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
+        "cat_trait": [
+            "oblivious"
+        ]
     }
 ]
