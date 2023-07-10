@@ -2697,10 +2697,13 @@ class Cat():
         """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
         they have been dead, rather than age at death"""
         if cat.dead:
-            if game.sort_type == "rank":
-                return cat.dead_for
+            if game.config["sorting"]["sort_dead_by_death"]:
+                if game.sort_type == "rank":
+                    return cat.dead_for
+                else:
+                    return cat.dead_for + cat.moons
             else:
-                return cat.dead_for + cat.moons
+                return cat.dead_for
         else:
             return cat.moons
         

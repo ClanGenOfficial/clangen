@@ -2327,7 +2327,7 @@ class RelationshipScreen(Screens):
         self.inspect_cat = None
 
         # Keep a list of all the relations
-        if game.config["relationship"]["sort_by_rel_total"]:
+        if game.config["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(self.the_cat.relationships.values(),
                                         key=lambda x: sum(map(abs, [x.romantic_love, x.platonic_like, x.dislike, x.admiration, x.comfortable, x.jealousy, x.trust])),
                                         reverse=True)
