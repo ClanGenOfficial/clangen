@@ -2079,7 +2079,7 @@ class Patrol():
                     print(f" -- FRESHKILL: added {amount} fail-prey")
                 if amount > 0:
                     amount_text = "medium"
-                    if amount < game.clan.freshkill_pile.amount_food_needed() / 4:
+                    if amount < game.clan.freshkill_pile.amount_food_needed() / 5:
                         amount_text = "very small"
                     elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                         amount_text = "small"
@@ -2134,7 +2134,7 @@ class Patrol():
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
                 amount_text = "medium"
-                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 4:
+                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
                     amount_text = "very small"
                 elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                     amount_text = "small"
