@@ -104,8 +104,8 @@ class MiscEvents():
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
-        if reveal:
-            History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
+        # if reveal:
+        #     History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 
