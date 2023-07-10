@@ -352,7 +352,7 @@
 		"load_integrity_checks": true
 	},
 	"sorting": {
-		"sort_dead_by_death": false,
+		"sort_dead_by_death": true,
         "sort_by_rel_total": true,
 		"comment": [
 			"sort_by_death - true: the age filter will sort dead cats in the order they died; false: it sorts dead cats in the order they were born. Ranked sorting always sorts by death regardless.",
