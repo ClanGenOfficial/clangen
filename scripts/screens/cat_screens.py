@@ -292,8 +292,7 @@ class ProfileScreen(Screens):
                 #if the cat is trans then set them to nonbinary
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = 'nonbinary'
-                '''if self.the_cat.genderalign in ["female", "trans female"]:
-                #pronoun handler
+                '''#pronoun handler
                 if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
                 elif self.the_cat.genderalign in ["male", "trans male"]:
