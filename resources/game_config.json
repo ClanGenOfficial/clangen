@@ -73,10 +73,12 @@
 		"chance_for_neutral": 10,
 		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 15,
+        "sort_by_rel_total": false,
 		"comment":[
 			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
 			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
-			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
+			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate",
+            "sort_by_rel_total - sort a cat's relationships by the sum of their values. If False, they will be sorted in the order they were added."
 		]
 	},
 	"mates":{
