@@ -1,14 +1,15 @@
 {
     "general": [
         "Waking up in the Dark Forest, you feel the usual pang of unease. The trees are silent, devoid of the sounds of life you're accustomed to in your Clan.",
-        "You practice the brutal techniques you've learned. Each thrust of your claws and silent pounce feels like a betrayal of your Clan, but you're driven forward by an insatiable desire to be stronger.",
+        "You practice the brutal techniques you've learned in the Dark Forest. Each thrust of your claws and silent pounce feels like a betrayal of your Clan, but you're driven forward by an insatiable desire to be stronger.",
         "You explore deeper into the Dark Forest, its unfamiliar shadows playing tricks on your eyes. There's an air of malice that makes your fur stand on end.",
         "You wander in the silent wilderness, caught in the eerie tranquility of the Dark Forest. Here, you can almost forget about your Clan and the consequences of your choices.",
         "Your claws rake through the thin air as you practice a deadly move. The Dark Forest feels like a second home now, a place where your ambitions aren't shackled by the warrior code.",
-        "You stop mid-strike, listening to the unnatural stillness around you. You feel eyes on you, but you look around and you can't see anything.",
+        "You stop mid-strike, listening to the unnatural stillness around you in the Dark Forest. You feel eyes on you, but you look around and you can't see anything.",
         "The chilling cold of the Dark Forest wraps around you. There's no warmth here, only the relentless pursuit of power.",
-        "You repeat a lethal move over and over again until your muscles ache. It's a stark contrast to the harmless training of your apprenticehood.",
-        "In the heart of the Dark Forest, you find a strange comfort. There's a freedom here from the expectations and rules of Clan life."
+        "You repeat a lethal move you learned from the Dark Forest over and over again until your muscles ache. It's a stark contrast to the harmless training of your apprenticehood.",
+        "In the heart of the Dark Forest, you find a strange comfort. There's a freedom here from the expectations and rules of Clan life.",
+        "Every night in the Dark Forest brings a new challenge. Navigating through the shifting landscape becomes a skill you master."
     ],
     "clanmate": [
         "Is that... c_m? Your fur stands on end as you come face to face with them in the Dark Forest. They acknowledge you with a slight dip of their head and race off into the shadows.",
@@ -25,5 +26,9 @@
         "Amidst the eerie quiet of the Dark Forest, c_m emerges, practicing a vicious swipe on a cat you recognize from another Clan. Their training stops abruptly at your appearance, a smirk creeping onto their face before they vanish into the fog.",
         "You wake up once again in the Dark Forest. A flicker of movement reveals c_m hunched over, staring at the ground. They look up at your approach, sorrow clouding their gaze, before they melt away into the foreboding woods.",
         "As you trek through the gloom of the Dark Forest, you stumble upon c_m laughing at a shifting shadow. Seeing you, their laughter dies instantly and they swiftly turn, vanishing deeper into the forest."
+    ],
+
+    "gain_injury": [
+        "The Dark Forest is unforgiving. Wounds you sustain here don't seem to heal correctly."
     ]
 }
