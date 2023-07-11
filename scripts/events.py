@@ -263,6 +263,9 @@ class Events:
         with open(f"{resource_dir}events_distrust.json",
                   encoding="ascii") as read_file:
             self.e_txt = ujson.loads(read_file.read())
+        with open(f"{resource_dir}df.json",
+                  encoding="ascii") as read_file:
+            self.df_txt = ujson.loads(read_file.read())
         if not game.clan.your_cat.dead and not game.clan.your_cat.status == 'exiled':
             if game.clan.your_cat.revealed != 0 and game.clan.age - 3 <= game.clan.your_cat.revealed and game.clan.your_cat.moons != 0 and game.clan.your_cat.moons != 6 and not (game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done) and not game.clan.your_cat.moons == 120:
                 for i in range(random.randint(0,2)):
@@ -286,6 +289,9 @@ class Events:
                     self.generate_elder_ceremony()
                 elif game.clan.your_cat.status == 'elder':
                     self.generate_elder_events()
+            
+            if game.clan.your_cat.joined_df:
+                self.generate_df_events()
 
             self.check_gain_app(checks)
             self.check_gain_mate(checks)
@@ -611,6 +617,26 @@ class Events:
         evt = Single_Event(random.choice(self.c_txt["exiled"]))
         if evt not in game.cur_events_list:
             game.cur_events_list.append(evt)
+            
+    def generate_df_events(self):
+        if random.randint(1,3) == 1:
+            evt = Single_Event(random.choice(self.df_txt["general"]))
+            if evt not in game.cur_events_list:
+                game.cur_events_list.append(evt)
+        if random.randint(1,30) == 1:
+            r_clanmate = Cat.all_cats.get(random.choice(game.clan.clan_cats))
+            counter = 0
+            while r_clanmate.dead or r_clanmate.outside or r_clanmate.status in ['kitten', 'newborn', 'deputy', 'leader'] or r_clanmate.joined_df or r_clanmate.ID == game.clan.your_cat.ID:
+                counter+=1
+                if counter > 15:
+                    return
+                r_clanmate = Cat.all_cats.get(random.choice(game.clan.clan_cats))
+            
+            r_clanmate.joined_df = True
+            evt_txt = random.choice(self.df_txt["clanmate"]).replace("c_m", str(r_clanmate.name))
+            evt = Single_Event(evt_txt)
+            if evt not in game.cur_events_list:
+                game.cur_events_list.append(evt)
 
     def mediator_events(self, cat):
         """ Check for mediator events """

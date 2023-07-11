@@ -1,14 +1,29 @@
 {
     "general": [
-        "Stepping into the Dark Forest, you feel the usual pang of unease. The trees are silent, devoid of the sounds of life you're accustomed to in your Clan.",
+        "Waking up in the Dark Forest, you feel the usual pang of unease. The trees are silent, devoid of the sounds of life you're accustomed to in your Clan.",
         "You practice the brutal techniques you've learned. Each thrust of your claws and silent pounce feels like a betrayal of your Clan, but you're driven forward by an insatiable desire to be stronger.",
         "You explore deeper into the Dark Forest, its unfamiliar shadows playing tricks on your eyes. There's an air of malice that makes your fur stand on end.",
         "You wander in the silent wilderness, caught in the eerie tranquility of the Dark Forest. Here, you can almost forget about your Clan and the consequences of your choices.",
         "Your claws rake through the thin air as you practice a deadly move. The Dark Forest feels like a second home now, a place where your ambitions aren't shackled by the warrior code.",
-        "You stop mid-strike, listening to the unnatural stillness around you. The Dark Forest may be a place of forbidden knowledge, but it's also a place of isolation.",
-        "You gaze into the murky waters of an eerily still pond. Your reflection is distorted by the shadowy surroundings, mirroring the changes you feel within.",
+        "You stop mid-strike, listening to the unnatural stillness around you. You feel eyes on you, but you look around and you can't see anything.",
         "The chilling cold of the Dark Forest wraps around you. There's no warmth here, only the relentless pursuit of power.",
-        "You repeat a lethal move until your muscles ache. It's a stark contrast to the harmless training of your apprentice days.",
+        "You repeat a lethal move over and over again until your muscles ache. It's a stark contrast to the harmless training of your apprenticehood.",
         "In the heart of the Dark Forest, you find a strange comfort. There's a freedom here from the expectations and rules of Clan life."
+    ],
+    "clanmate": [
+        "Is that... c_m? Your fur stands on end as you come face to face with them in the Dark Forest. They acknowledge you with a slight dip of their head and race off into the shadows.",
+        "Through the darkness, you spot c_m huddled beside a twisted tree within the Dark Forest. They jump at your approach, their eyes wide and fearful, before sprinting away into the darkness.",
+        "There's a rustle of dead leaves within the Dark Forest. You turn and notice c_m. They seem entranced by a ghostly flower, plucking its petals one by one. Their eyes meet yours, their expression a mix of fear and defiance, before they fade into the shadows.",
+        "In the ghostly twilight of the Dark Forest, you bump into c_m. They look just as shocked to see you. After a moment of awkward silence, they sprint away, leaving you alone once more.",
+        "c_m is standing by a still, dark pool within the Dark Forest. Their reflection looks distorted, their eyes haunted. They meet your gaze, nod, and then walk off into the darkness.",
+        "A rustle in the undergrowth reveals c_m. They seem as out of place in the Dark Forest as you feel. Their eyes dart to you before they quickly move away.",
+        "In the distance, you see c_m engaged in a ruthless fight with an unknown Dark Forest cat. The sight of you halts them mid-swing, their eyes flashing surprise and an unnerving bloodlust.",
+        "In the Dark Forest, you catch sight of c_m standing at the edge of a murky pool, their reflection distorted on the surface. They appear lost in thought. You run off before they can notice you.",
+        "You find c_m hissing at a shadowy figure in the Dark Forest, their fur standing on end. They pause at your arrival, shooting you a challenging glance before turning to chase the shadow.",
+        "A shadow moves and c_m is revealed, standing solemnly beneath a gnarled tree within the Dark Forest. They acknowledge your presence with a forlorn gaze before they silently fade back into the gloom.",
+        "Within the Dark Forest, you nearly collide with c_m, who's running in panic. They stop short, panting heavily. They glance at you with wild fear in their eyes, then dart off into the obscurity of the forest.",
+        "Amidst the eerie quiet of the Dark Forest, c_m emerges, practicing a vicious swipe on a cat you recognize from another Clan. Their training stops abruptly at your appearance, a smirk creeping onto their face before they vanish into the fog.",
+        "You wake up once again in the Dark Forest. A flicker of movement reveals c_m hunched over, staring at the ground. They look up at your approach, sorrow clouding their gaze, before they melt away into the foreboding woods.",
+        "As you trek through the gloom of the Dark Forest, you stumble upon c_m laughing at a shifting shadow. Seeing you, their laughter dies instantly and they swiftly turn, vanishing deeper into the forest."
     ]
 }
