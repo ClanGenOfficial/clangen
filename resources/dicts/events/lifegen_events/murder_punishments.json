@@ -1,13 +1,24 @@
 {
     "kit_punishment": [
         "You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
-        "You are to be kept in the nursery under the watchful eye of the queens at all times until you become an apprentice."
+        "You are to be kept in the nursery under the watchful eye of the queens at all times until you become an apprentice.",
+        "You are prohibited from playing or leaving the nursery unless accompanied by a queen or elder, restricting your freedom as a penalty.",
+        "You are assigned to listen to the elders' stories about the Warrior Code every day, to better understand the importance of respect and life preservation.",
+        "Your play sessions are limited, and you're expected to spend the rest of your time helping the queens in the nursery.",
+        "You are made to apologize to the victim's family and the Clan, acknowledging your actions and promising to strive for better.",
+        "You are expected to make amends by helping the elders with their chores, serving those who are more vulnerable in the Clan."
     ],
     "gen_punishment": [
         "You are assigned counseling by the Clan's medicine cat to help you understand the severity of your actions and to guide you to make better decisions in the future.",
         "You will be required to take meals last and are forced to sleep in a separate den away from your clanmates.",
         "You are assigned to several moons of tasks that include cleaning out nests, checking elders for ticks, and other chores alongside your normal duties.",
-        "You are assigned a mentor who will better educate you about the Warrior Code and the sacredness of life."
+        "You are assigned a mentor who will better educate you about the Warrior Code and the sacredness of life.",
+        "You are required to make a public apology at a Clan meeting, expressing your regret and the lessons you've learned from your actions.",
+        "You are required to carry out a vigil in silence at the edge of the Clan's territory, reflecting on your actions and the harm they've caused.",
+        "You are exiled from the Clan camp, forced to live out in the territory. You are permitted back in a half-moon.",
+        "You are forbidden to attend the next Gathering, symbolizing your dishonor in the eyes of the Clan and the other Clans.",
+        "You are made to apologize to the victim's family and the Clan, acknowledging your actions and promising to strive for better.",
+        "You are isolated from the Clan, confined to a separate corner of the camp, and forbidden to speak or interact with your Clanmates unless necessary."
     ],
     "demote_leader": [
         "Your lives will be stripped away and you will be demoted to a warrior, no longer trusted to be the Clan's leader."
