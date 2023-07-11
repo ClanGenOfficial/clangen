@@ -670,7 +670,8 @@
             "border",
             "new_cat_elder_loner",
             "no_new_cat2",
-            "no_new_cat3"
+            "no_new_cat3",
+            "death"
         ],
         "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
         "decline_text": "r_c decides not to investigate.",
