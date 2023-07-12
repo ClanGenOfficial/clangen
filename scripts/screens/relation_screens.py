@@ -4758,8 +4758,7 @@ class ChooseMurderCatScreen(Screens):
                     self.next.kill()
                     del self.next
 
-            elif self.stage == 'choose accomplice':
-                if event.ui_element == self.next:
+            elif self.stage == 'choose accomplice' and event.ui_element == self.next:
                     self.change_cat(self.murder_cat, None, None)
                     self.stage = 'choose murder cat'
                     self.next.kill()
