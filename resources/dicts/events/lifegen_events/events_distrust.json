@@ -9,7 +9,10 @@
         "The medicine cat treats you with a cool detachment, their gaze distant and hardened. It feels like their once comforting presence has become cold and unwelcoming.",
         "The apprentices, who you once admired and aspired to join, now avoid you, crossing the camp to keep their distance. Their chatter stops when you approach, replaced by an uncomfortable silence.",
         "Even the leader's gaze darkens when they see you. They have yet to say a word to you since the incident, but their silence speaks volumes.",
-        "Playtime is no longer a joyful event. The queens watch you carefully, their eyes narrowing whenever you play a little too rough with the other kits."
+        "Playtime is no longer a joyful event. The queens watch you carefully, their eyes narrowing whenever you play a little too rough with the other kits.",
+        "You play with a mossball alone.",
+        "You overhear the leader debating whether your apprenticeship should be delayed.",
+        "You are left alone more often than not."
     ],
     "apprentice": [
         "Your mentor, once proud and supportive, avoids your gaze. There's a new hardness in their eyes that wasn't there before, a wall erected to keep you at a distance.",
@@ -20,7 +23,11 @@
         "The medicine cat refuses to meet your gaze, their aura of comfort replaced by a chilling aloofness.",
         "The stories that the elders share are no longer open to you. Their words cease when you approach, replaced by disapproving silence and cold glares.",
         "The gatherings are a different experience now. Other Clans' apprentices eye you curiously, whispers spreading like wildfire. Your reputation precedes you.",
-        "The deputy avoids you, only speaking to assign you tasks. Their stern gaze follows you around the camp, an ever-present reminder of your transgression."
+        "The deputy avoids you, only speaking to assign you tasks. Their stern gaze follows you around the camp, an ever-present reminder of your transgression.",
+        "Your peers exchange guarded glances when you're nearby. There's an unspoken agreement to exclude you from their games and conversations.",
+        "The other apprentices move their nests farther away from yours.",
+        "You notice the queens shooing their kits away when you're nearby, their worried eyes not missing a single move you make.",
+        "Your mentor often leaves you to practice alone. They used to be so attentive, but now their actions seem obligatory."
     ],
     "medicine cat apprentice": [
         "The herbs in your den, once comforting, now feel sinister. They were supposed to heal, not to hurt. You wonder if your mentor feels the same unease around you.",
@@ -32,7 +39,12 @@
         "The Clan leader summons you, their disappointment clear. The sacred role of a medicine cat requires trust and compassion - attributes you've apparently lost.",
         "The elders refuse your help, even for the simplest tasks. Their formerly kind mews are replaced by anxious glances and hushed whispers.",
         "Your dreams are plagued by the faces of StarClan cats, their eyes accusing. You no longer find comfort in sleep.",
-        "Your mentor insists on revisiting the Warrior Code. Each word feels like a stone being piled on your back, heavy with their disappointment."
+        "Your mentor insists on revisiting the Warrior Code. Each word feels like a stone being piled on your back, heavy with their disappointment.",
+        "You're asked to stay behind this Gathering.",
+        "Your mentor no longer guides you, leaving you alone most days. When you ask questions, they answer shortly out of obligation.",
+        "StarClan's voices in your dreams grow faint. Their messages become obscured and it's harder to find guidance in your slumber.",
+        "At the half-moon meeting, you wake up to a shadow-filled forest instead of starry meadows.",
+        "You wonder if being a medicine cat apprentice is the right path for you."
     ],
     "mediator apprentice": [
         "Clan meetings become a burden. Instead of working out disputes, you're the subject of them. No one seems to trust your judgment anymore.",
@@ -44,7 +56,10 @@
         "You're no longer invited to participate in the regular Clan meetings. Your advice, once valued, is now shunned.",
         "Even the kits, usually eager to listen to your stories and advice, stay away from you. Their playful laughter is now replaced with fearful silence.",
         "Your mentor solemnly suggests revisiting the fundamental teachings of peace and understanding, as though they question your comprehension.",
-        "Your dreams are disturbed with images of the cat you murdered, their ghostly eyes filled with accusation. Sleep offers no solace."
+        "Your dreams are disturbed with images of the cat you murdered, their ghostly eyes filled with accusation. Sleep offers no solace.",
+        "Your access to sensitive issues within the Clan is limited at the request of your mentor.",
+        "You're asked to stay at camp when it becomes time for the next Gathering.",
+        "You wonder if becoming a mediator is the right path for you."
     ],
     "warrior": [
         "The atmosphere in the warriors' den changes. No one wants to share tongues with you, their eyes filled with distrust and suspicion.",
@@ -63,6 +78,8 @@
         "During training sessions, you notice the apprentices whispering amongst themselves, their gazes darting towards you with fear.",
         "An elder tells stories of treacherous warriors from the past. You can't help but feel each tale is a subtle jab at you.",
         "The Clan deputy keeps a close eye on you during patrols. You're never out of their sight.",
+        "The Clan leader hardly meets your eye, their disappointment as palpable as the chill of leaf-bare. Their stern silence speaks more than any words could.",
+        "You're put on the most arduous and menial tasks, like border patrols in the coldest nights or preparing the elder's den. It seems as if your Clanmates want to keep you occupied, perhaps too wary to let you be idle.",
         "Once sought for advice, you're now left alone. Your wisdom is now overshadowed by your crime.",
         "The memory of your victim haunts your every step. Every cat you see seems to wear their face.",
         "Clan meetings are a challenge. Your contributions are often met with silence, the distrust in the air palpable.",
@@ -76,14 +93,22 @@
         "The leader questions your interpretations of omens now. Your words no longer carry their previous weight.",
         "Apprentices are hesitant to train under you. Your reputation precedes you.",
         "You debate whether staying in this Clan is the right path.",
+        "The gatherings feel different. Other Clans' medicine cats regard you warily, as if your actions have tainted the sacred bond you all share.",
+        "Even the kits, who once looked at you with awe and fascination, now scurry away at your approach. The tales of your deeds have filtered down to even the youngest members of the Clan.",
+        "The respect that the elders held for you has evaporated. Their warm tales of your skill and devotion are replaced with cold silence, and their eyes hold a look of disappointment.",
+        "StarClan's voices in your dreams grow faint. Their messages become obscured and it's harder to find guidance in your slumber.",
+        "At the half-moon meeting, you wake up to a shadow-filled forest instead of starry meadows.",
         "Cats take longer to recover under your care. Whether it's their fear or your guilt affecting the healing, you can't tell.",
         "An unexpected illness spreads through the Clan. Some cats mutter that it's a punishment from StarClan.",
         "You hear the elders talking about the old medicine cat, how they were so skilled and how cats these days aren't the same.",
         "The once comforting presence of the StarClan guide feels distant now, leaving you feeling even more isolated."
     ],
     "mediator": [
+        "The queens, who once trusted you to resolve quarrels amongst their kits, now steer their young ones away from you. Their disappointed looks serve as a bitter reminder of your deeds.",
         "Every disagreement in the clan now seems amplified, your guilt twisting every dispute into a possible harbinger of violence.",
+        "As the Clan's mediator, your role was to solve conflicts, not create them. The trust that your clanmates once had in your ability to maintain peace has vanished.",
         "Cats avoid bringing their issues to you, preferring to solve them by themselves or let them fester.",
+        "You notice the clans' younger cats, the kits and apprentices, who once looked up to you as a role model, now regard you with fear and uncertainty.",
         "Your words fall on deaf ears at gatherings, the other clans no longer willing to listen to a murderer mediate.",
         "You notice more fights breaking out within your clan. The peace you had worked hard to maintain shatters.",
         "Younger cats ask their mentors about your actions, their innocent curiosity stinging more than any accusation.",
