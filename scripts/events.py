@@ -1693,10 +1693,10 @@ class Events:
             return True
 
         # chance to die of old age
-        age_change = game.config["death_related"]["old_age_death_chance"]
+        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
         if cat.moons > int(
-                random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
+                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
             
             self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits)
