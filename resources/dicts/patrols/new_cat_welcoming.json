@@ -327,7 +327,7 @@
         "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
         "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leaves, guilt pricking at them.",
         "history_text": {
-            "scar": "m_c was scared when a loner attacked {PRONOUN/m_c/object}.",
+            "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
             "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
             "lead_death": "{VERB/m_c/were/was} attacked by a loner"
         },

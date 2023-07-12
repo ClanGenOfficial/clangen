@@ -324,6 +324,11 @@
         },
         "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and viciously spit at the loner not to cross the border.",
         "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leers back in return. c_n doesn't owe loners anything.",
+        "history_text": {
+            "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
+            "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+        },
         "chance_of_success": 40,
         "exp": 10,
         "win_skills": [
