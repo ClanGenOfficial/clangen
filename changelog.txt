@@ -1,3 +1,9 @@
+<strong>v0.4.6: </strong>
+- Added Dark Forest moon events
+- You can now meet clanmates in the Dark Forest
+- Added new punishments for murder
+- Bug fixes
+
 <strong>v0.4.5: </strong>
 - New moon events after a murder is discovered
 - Other cats may now be punished for being an accomplice

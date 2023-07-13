@@ -471,6 +471,7 @@ class Clan():
         self.pregnancy_data = {}
         self.inheritance = {}
         self.murdered = False
+        self.achievements = []
         
         """
         Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
@@ -745,7 +746,8 @@ class Clan():
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build,
-            "your_cat": self.your_cat.ID
+            "your_cat": self.your_cat.ID,
+            "murdered": self.murdered
         }
 
         # LEADER DATA
@@ -790,6 +792,7 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join(
             [str(i.temperament) for i in self.all_clans])
         clan_data["war"] = self.war
+        clan_data['achievements'] = self.achievements
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
@@ -1091,6 +1094,9 @@ class Clan():
         
         if "your_cat" in clan_data:
             game.clan.your_cat = Cat.all_cats[clan_data["your_cat"]]
+        
+        if "achievements" in clan_data:
+            game.clan.achievements = clan_data["achievements"]
 
         # Return Version Info. 
         return {

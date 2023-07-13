@@ -4,7 +4,7 @@ from .clan_creation_screens import MakeClanScreen
 from .catlist_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen, MedDenScreen
 from .event_screens import EventsScreen
 from .organizational_screens import\
-    StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
+    StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen, AchievementScreen
 from .patrol_screens import PatrolScreen, PatrolScreen2, PatrolScreen3
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen, ChooseRebornCat, ChooseMurderCatScreen
@@ -73,6 +73,8 @@ events_screen = EventsScreen('events screen')
 
 settings_screen = SettingsScreen('settings screen')
 stats_screen = StatsScreen('stats screen')
+achievements_screen = AchievementScreen('achievements screen')
+
 start_screen = StartScreen('start screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 

@@ -303,6 +303,8 @@ class Events:
             self.generate_exile_event()
             
         game.clan.murdered = False
+        
+        self.check_achievements()
             
         # Resort
         if game.sort_type != "id":
@@ -320,6 +322,72 @@ class Events:
                 game.save_events()
             except:
                 SaveError(traceback.format_exc())
+    
+    def check_achievements(self):
+        you = game.clan.your_cat
+        achievements = set()
+        murder_history = History.get_murders(you)
+        clan_cats = game.clan.clan_cats
+        if murder_history:
+            if 'is_murderer' in murder_history:
+                num_victims = len(murder_history["is_murderer"])
+                if num_victims >= 0:
+                    achievements.add("1")
+                if num_victims >= 5:
+                    achievements.add("2")
+                if num_victims >= 20:
+                    achievements.add("3")
+                if num_victims >= 50:
+                    achievements.add("4")
+        for cat in clan_cats:
+            if Cat.all_cats.get(cat).pelt.tortiebase and Cat.all_cats.get(cat).gender == 'male':
+                achievements.add("5")
+        
+        if you.joined_df:
+            achievements.add("7")
+        
+        if len(you.former_apprentices) >= 1:
+            achievements.add("8")
+        if len(you.former_apprentices) >= 5:
+            achievements.add("9")
+        
+        if you.inheritance.get_kits():
+            achievements.add("10")
+        for i in you.relationships.keys():
+            if you.relationships.get(i).dislike >= 60:
+                achievements.add("11")
+            if you.relationships.get(i).romantic_love >= 60:
+                achievements.add('12')
+            
+        if len(you.mate) >= 5:
+            achievements.add('13')
+        if you.status == 'warrior':
+            achievements.add('14')
+        elif you.status == 'medicine cat':
+            achievements.add('15')
+        elif you.status == 'mediator':
+            achievements.add('16')
+        elif you.status == 'deputy':
+            achievements.add('17')
+        elif you.status == 'leader':
+            achievements.add('18')
+        elif you.status == 'elder':
+            achievements.add('19')
+        
+        if you.moons >= 200:
+            achievements.add('20')
+        if you.exiled:
+            achievements.add('21')
+        elif you.outside:
+            achievements.add('22')
+        
+        if len(clan_cats) == 1 and not you.dead:
+            achievements.add('23')
+        
+        for i in game.clan.achievements:
+            achievements.add(i)
+        
+        game.clan.achievements = list(achievements)
                 
     def pick_valid_parent(self):
         parent = random.choice(Cat.all_cats_list).ID
