@@ -4995,6 +4995,10 @@ class ChooseMurderCatScreen(Screens):
             punishment_chance = 1
             
         if punishment_chance == 1:
+            if accomplice and not accompliced:
+                a_s = randint(1,2)
+                if a_s == 1:
+                    game.cur_events_list.insert(2, f"Shocked at your request to be an accomplice to murder, {accomplice.name} reports your actions to the Clan leader.")
             txt = ""
             if game.clan.your_cat.status in ['kitten', 'leader', 'deputy', 'medicine cat']:
                 txt = choice(self.mu_txt["murder_discovered " + game.clan.your_cat.status])
