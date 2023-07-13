@@ -461,8 +461,8 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Lifegen/.itch.toml dist/ 
-          tar.exe -a -c -f LifeGen_Win64_Windows10+.zip -C dist Lifegen .itch.toml
+          cp dist/Clangen/.itch.toml dist/ 
+          tar.exe -a -c -f LifeGen_Win64_Windows10+.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
           name: LifeGen_Win64_Windows10+
@@ -478,7 +478,7 @@ jobs:
         if: github.repository == 'Thlumyn/clangen'
         shell: bash
         run: |
-          gpg --output Lifegen_Win64_Windows10+.zip.sig --detach-sig -a Lifegen_Win64_Windows10+.zip
+          gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
           curl -X 'POST' \
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Appoint' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
@@ -488,8 +488,8 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Lifegen_Win64_Windows10+.zip;type=application/zip' \
-            -F 'fileBundle=@Lifegen_Win64_Windows10+.zip.sig' \
+            -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
             --http1.1
       - name: Set up butler
         uses: jdno/setup-butler@v1
@@ -497,12 +497,12 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
-        run: butler push Lifegen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
+        run: butler push Clangen_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Lifegen_Win64_Windows10+.zip
+          files: Clangen_Win64_Windows10+.zip
           
   build_macos64:
     # For commits to the original mac build action see:
