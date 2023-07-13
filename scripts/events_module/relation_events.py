@@ -200,6 +200,14 @@ class Relation_Events():
 
         # new mates
         if not self.had_one_event:
+            # if cat_to.is_potential_mate(cat) and cat.ID not in cat.mate and (cat_to.ID == game.clan.your_cat.ID or cat.ID == game.clan.your_cat.ID):
+            #     print(f"{cat_to.name} confesses their feelings towards you. Do you want to become mates?")
+            #     if cat.ID != game.clan.your_cat.ID:
+            #         game.switches['new_mate'] = cat
+            #     else:
+            #         game.switches['new_mate'] = cat_to
+            #     MateScreen('events screen')
+                
             if cat_to.is_potential_mate(cat) and cat.ID not in cat.mate:
                 self.romantic_events_class.handle_new_mates(current_relationship, cat, cat_to)
             self.had_one_event = True

@@ -16,6 +16,8 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
+from scripts.game_structure.windows import MateScreen
+
 from scripts.cat_relations.relationship import (
     INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
@@ -171,9 +173,16 @@ class Romantic_Events():
         become_mates, mate_string = self.check_if_new_mate(relationship, relationship_to, cat_from, cat_to)
 
         if become_mates and mate_string:
-            self.had_one_event = True
-            cat_from.set_mate(cat_to)
-            game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+            if cat_from.ID == game.clan.your_cat.ID or cat_to.ID == game.clan.your_cat.ID:
+                if cat_to.ID != game.clan.your_cat.ID:
+                    game.switches['new_mate'] = cat_to
+                else:
+                    game.switches['new_mate'] = cat_from
+                MateScreen('events screen')
+            else:
+                self.had_one_event = True
+                cat_from.set_mate(cat_to)
+                game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         ''' Handles cats breaking up their relationship '''
@@ -221,30 +230,41 @@ class Romantic_Events():
             return False
 
         become_mate = False
-        condition = game.config["mates"]["confession"]["accept_confession"]
-        rel_to_check = highest_romantic_relation.opposite_relationship
-        if not rel_to_check:
-            highest_romantic_relation.link_relationship()
-            rel_to_check = highest_romantic_relation.opposite_relationship
-        if self.relationship_fulfill_condition(rel_to_check, condition):
-            become_mate = True
-            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
-        # second acceptance chance if the romantic is high enough
-        elif "romantic" in condition and condition["romantic"] != 0 and\
-            condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
-            become_mate = True
-            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
-        else:
-            mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
-            cat_from.relationships[cat_to.ID].romantic_love -= 8
-            cat_to.relationships[cat_from.ID].comfortable -= 8
 
-        mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
-        game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
+        if game.clan.your_cat.ID != cat_from.ID and game.clan.your_cat.ID != cat_to.ID:
+            
+            condition = game.config["mates"]["confession"]["accept_confession"]
+            rel_to_check = highest_romantic_relation.opposite_relationship
+            if not rel_to_check:
+                highest_romantic_relation.link_relationship()
+                rel_to_check = highest_romantic_relation.opposite_relationship
+            if self.relationship_fulfill_condition(rel_to_check, condition):
+                become_mate = True
+                mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+            # second acceptance chance if the romantic is high enough
+            elif "romantic" in condition and condition["romantic"] != 0 and\
+                condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
+                become_mate = True
+                mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+            else:
+                mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
+                cat_from.relationships[cat_to.ID].romantic_love -= 8
+                cat_to.relationships[cat_from.ID].comfortable -= 8
+
+        
+            mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
+            game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
         if become_mate:
-            cat_from.set_mate(cat_to)
-
+            if game.clan.your_cat.ID == cat_from.ID or game.clan.your_cat.ID == cat_to.ID:
+                if game.clan.your_cat.ID == cat_from.ID:
+                    game.switches['new_mate'] == cat_to
+                else:
+                    game.switches['new_mate'] = cat_from
+                MateScreen('events screen')
+            else:
+                cat_from.set_mate(cat_to)
+                return True
         return True
 
     # ---------------------------------------------------------------------------- #
