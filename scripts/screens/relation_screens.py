@@ -4732,6 +4732,7 @@ class ChooseMurderCatScreen(Screens):
         self.mentor = None
         self.the_cat = None
         self.murder_cat = None
+        self.next = None
         
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -4796,7 +4797,7 @@ class ChooseMurderCatScreen(Screens):
             self.the_cat = game.clan.your_cat
             self.mentor = Cat.fetch_cat(self.the_cat.mentor)
             self.selected_cat = None
-
+            self.next = None
             self.heading = pygame_gui.elements.UITextBox("Choose a cat to murder",
                                                         scale(pygame.Rect((300, 50), (1000, 80))),
                                                         object_id=get_text_box_theme("#text_box_34_horizcenter"),
@@ -4883,6 +4884,10 @@ class ChooseMurderCatScreen(Screens):
         del self.previous_page_button
         self.next_page_button.kill()
         del self.next_page_button
+        
+        if self.next:
+            self.next.kill()
+            del self.next
             
 
     def find_next_previous_cats(self):

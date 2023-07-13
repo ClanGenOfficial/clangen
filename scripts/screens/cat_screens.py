@@ -1418,13 +1418,7 @@ class ProfileScreen(Screens):
     def get_text_for_murder_event(self, event, death):
         ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True: 
-                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
-                if event.get("revelation_text"):
-                    final_text = final_text + event["revelation_text"]
-                return final_text
-            else:
-                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
         return None
 
 
