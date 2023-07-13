@@ -1026,7 +1026,7 @@ class StatsScreen(Screens):
         self.show_menu_buttons()
         self.update_heading_text(f'{game.clan.name}Clan')
         self.cat_icon = UIImageButton(
-            scale(pygame.Rect((1300, 1300), (50, 50))),
+            scale(pygame.Rect((780, 1300), (50, 50))),
             "",
             object_id="#events_cat_button")
 

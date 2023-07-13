@@ -2,6 +2,7 @@
 - Added Dark Forest moon events
 - You can now meet clanmates in the Dark Forest
 - Added new punishments for murder
+- Hidden feature
 - Bug fixes
 
 <strong>v0.4.5: </strong>
