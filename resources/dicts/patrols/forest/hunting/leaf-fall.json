@@ -1224,7 +1224,7 @@
         "fail_text": {
             "unscathed_common": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their freshkill."
         },
-        "win_skills": ["CLEVER,0", "INSIGHTFUL,0", "SENSE,0", "STORY,0", "LORE,0"],
+        "win_skills": ["CLEVER,0", "INSIGHTFUL,0", "SENSE,0", "HEALER,0", "STORY,0", "LORE,0"],
         "min_cats": 3,
         "max_cats": 6
 },
