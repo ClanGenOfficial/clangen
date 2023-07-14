@@ -1341,8 +1341,7 @@ class MateScreen(UIWindow):
                 self.mediator_button.kill()
                 self.kill()
                 game.clan.your_cat.set_mate(game.switches['new_mate'])
-                mate_string = f"You have become mates with {game.switches['new_mate'].name}."
-                game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"]))
+                game.switches['accept'] = True
 
             elif event.ui_element == self.mediator_button:
                 game.last_screen_forupdate = None
@@ -1355,5 +1354,4 @@ class MateScreen(UIWindow):
                 self.kill()
                 game.switches['new_mate'].relationships[game.clan.your_cat.ID].romantic_love -= 8
                 game.clan.your_cat.relationships[game.switches['new_mate'].ID].comfortable -= 8
-                mate_string = f"You have rejected {game.switches['new_mate'].name}."
-                game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"]))
+                game.switches['reject'] = True

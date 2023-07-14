@@ -1,0 +1,23 @@
+{
+    "reject_good": [
+        "During a quiet afternoon, mate1 shyly pads up to you, glancing around to ensure no one is within earshot. They softly admit that they've developed feelings for you beyond friendship. As much as you value them, you don't share the same sentiment. When you tell them this, mate1 gives a small, understanding smile, saying they're grateful for your honesty and they're just as happy to remain your friend.",
+        "You find mate1 sitting alone by the riverbank, their gaze lost in the rushing water. They invite you to join them and after a moment of silence, they express their affection towards you. Taken aback, you gently let them know that your heart doesn't beat the same way. Mate1 simply nods, their gaze steady, assuring you they respect your feelings and wish to continue your bond as friends.",
+        "Underneath the silvery glow of the moon, mate1 pulls you aside, their eyes shimmering with unspoken words. When they finally voice their romantic feelings for you, you have no choice but to admit that you don't reciprocate. A wave of relief washes over mate1's face as they thank you for your transparency, insisting that they wouldn't want to lose your friendship over this.",
+        "One evening, mate1 catches up with you at the end of a patrol. They choose this moment to reveal their romantic feelings for you. You value their friendship but know you cannot return their feelings. After you confess this, mate1 simply nods, offering you a small, sincere smile, and promise to remain a steadfast friend despite this.",
+        "As you and mate1 share tongues, they unexpectedly confess their deeper feelings for you. Unprepared, you express that you don't share their romantic feelings. With a light-hearted laugh, mate1 brushes it off, claiming it was worth the shot and that they're content with remaining close friends."
+    ],
+    "reject_neutral": [
+        "While sharing tongues after a hunting patrol, mate1 hesitantly admits their deeper feelings for you. When you explain that your heart doesn't quite feel the same, mate1 simply nods, their gaze distant yet understanding. They quietly suggest going back to camp, and seem a little more distant the next time you talk to them.",
+        "Under the light of the setting sun, mate1 approaches you with a solemn look. They confess their affection for you, but when you tell them you can't reciprocate, mate1 just sighs, their eyes showing a mixture of disappointment and understanding. They murmur a quiet acknowledgment before wandering off.",
+        "You and mate1 are enjoying the fresh air when they suddenly share their feelings for you. Despite the shock, you explain that you don't share their romantic sentiments. They nod, a flicker of disappointment in their eyes, but soon they regain their composure and attempt to continue the conversation as if nothing happened.",
+        "During a quiet moment, mate1 reveals their romantic feelings for you. When you can't return their affections, mate1 seems taken aback for a moment but quickly masks their surprise, saying that it was just a joke.",
+        "While resting under the shadow of the trees, mate1 discloses their affection towards you. You express your lack of reciprocal feelings, and mate1 merely shrugs, suggesting you both go back to what you were doing, with no hard feelings."
+    ],
+    "reject_bad": [
+        "While walking beside the lake under the silvery glow of the moon, mate1 confides their deep feelings for you. When you express that you don't share those feelings, their face falls. Anger flashes in their eyes and they stalk off without another word, their tail lashing violently.",
+        "mate1 shares their affection for you. Upon your gentle refusal, their gaze hardens. Their fur bristles and they hiss out a bitter 'fine' before storming off into the underbrush.",
+        "During a shared meal, mate1 tentatively confesses their feelings for you. When you reveal that you don't feel the same way, they knock aside the remaining fresh-kill in frustration. They rise abruptly and leave, the hurt in their eyes deeply evident.",
+        "In the quiet after dusk, mate1 opens up about their love for you. When you tell them your heart does not beat the same way, they recoil. Shocked and upset, they bare their teeth and accuse you of leading them on before disappearing into the night.",
+        "While gazing at the stars from the clearing, mate1 admits they're in love with you. Your gentle rejection sends them spiraling into fury. They spit out an angry retort and leave you alone under the night sky, their tail whipping the air in agitation."
+    ]
+}
