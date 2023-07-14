@@ -46,11 +46,11 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf LifeGen_Linux64_glibc2.31+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_Linux64_glibc2.31+.tar.xz
-          path: LifeGen_Linux64_glibc2.31+.tar.xz
+          name: Clangen_Linux64_glibc2.31+.tar.xz
+          path: Clangen_Linux64_glibc2.31+.tar.xz
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -130,11 +130,11 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf LifeGen_Linux64_glibc2.35+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_Linux64_glibc2.35+.tar.xz
-          path: LifeGen_Linux64_glibc2.35+.tar.xz
+          name: Clangen_Linux64_glibc2.35+.tar.xz
+          path: Clangen_Linux64_glibc2.35+.tar.xz
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -236,11 +236,11 @@ jobs:
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f LifeGen_Win32.zip -C dist Clangen .itch.toml
+          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_Win32
-          path: LifeGen_Win32.zip
+          name: Clangen_Win32
+          path: Clangen_Win32.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -349,11 +349,11 @@ jobs:
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f LifeGen_Win64.zip -C dist Clangen .itch.toml
+          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_Win64
-          path: LifeGen_Win64.zip
+          name: Clangen_Win64
+          path: Clangen_Win64.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -462,11 +462,11 @@ jobs:
       - name: Create archive (.zip)
         run: |
           cp dist/Clangen/.itch.toml dist/ 
-          tar.exe -a -c -f LifeGen_Win64_Windows10+.zip -C dist Clangen .itch.toml
+          tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen .itch.toml
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_Win64_Windows10+
-          path: LifeGen_Win64_Windows10+.zip
+          name: Clangen_Win64_Windows10+
+          path: Clangen_Win64_Windows10+.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
@@ -564,11 +564,11 @@ jobs:
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg
-        run: "appdmg appdmg.json LifeGen_macOS64.dmg"
+        run: "appdmg appdmg.json Clangen_macOS64.dmg"
       - uses: actions/upload-artifact@v3
         with:
-          name: LifeGen_macOS64.dmg
-          path: LifeGen_macOS64.dmg
+          name: Clangen_macOS64.dmg
+          path: Clangen_macOS64.dmg
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
