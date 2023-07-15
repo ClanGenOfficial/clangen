@@ -325,7 +325,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. r_c quickly hides {PRONOUN/r_c/self} in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and drives {PRONOUN/r_c/object} off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
@@ -390,7 +390,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. r_c quickly hides {PRONOUN/r_c/self} in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone.",
@@ -456,7 +456,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject}{VERB/app1/'re/'s} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/app1/object} completely.",
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores {PRONOUN/app1/object} completely.",
             "death": "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         },
@@ -509,7 +509,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
@@ -569,7 +569,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
@@ -631,7 +631,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/app1/subject} {VERB/app1/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         },
         "fail_trait": [
@@ -678,7 +678,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c's confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c's confidence and the number of cats, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -733,7 +733,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -791,7 +791,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing {PRONOUN/s_c/object} up, leaves c_n territory."
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing {PRONOUN/s_c/object} up, leaves c_n territory."
         },
         "fail_trait": [
             "ambitious",

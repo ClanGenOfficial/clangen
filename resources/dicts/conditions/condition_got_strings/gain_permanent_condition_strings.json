@@ -11,7 +11,7 @@
     },
     "broken bone": {
         "weak leg": [
-            "m_c has been impatient, and r_c has noticed {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. It's unfortunately having consequences, as {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/subject} a weaker leg.",
+            "m_c has been impatient, and r_c has noticed {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. It's unfortunately having consequences, as {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/object} a weaker leg.",
             "r_c examines m_c's leg and reports that everything seems to be healed, the weakness that m_c has complained about is likely a permanent consequence of the injury.",
             "m_c pads along on all four legs for the first time in a long time, wincing. {PRONOUN/m_c/poss/CAP} healed broken bone has definitely left the leg weaker, but it's manageable as far as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} concerned.",
             "m_c can't run as long or as quickly as before, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} glad that {PRONOUN/m_c/poss} leg healed at all."
@@ -167,7 +167,7 @@
             "Eventually m_c just accepts the truth that has made itself apparent, {PRONOUN/m_c/poss} vision will never come back. This is life now, this fog of shadows and shapes."
         ],
         "one bad eye": [
-            "r_c breaks the new gently, that m_c is never going to see out of that eye again. This doesn't have to hinder {PRONOUN/m_c/subject}, though! {PRONOUN/m_c/subject/CAP} still {VERB/m_c/have/has} one good eye and {PRONOUN/m_c/subject} {VERB/m_c/plan/plans} to make full use of it.",
+            "r_c breaks the new gently, that m_c is never going to see out of that eye again. This doesn't have to hinder {PRONOUN/m_c/object}, though! {PRONOUN/m_c/subject/CAP} still {VERB/m_c/have/has} one good eye and {PRONOUN/m_c/subject} {VERB/m_c/plan/plans} to make full use of it.",
             "m_c growls when r_c tells {PRONOUN/m_c/object} that the lack of vision in {PRONOUN/m_c/poss} eye is permanent. It feels unfair, to have half of {PRONOUN/m_c/poss} vision stolen away.",
             "m_c won't let this hold {PRONOUN/m_c/object} back, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} determined to adapt to {PRONOUN/m_c/poss} newly limited eyesight and continue living as normal."
         ],
