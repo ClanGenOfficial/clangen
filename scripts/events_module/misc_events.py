@@ -60,13 +60,13 @@ class MiscEvents():
                     reveal = True #self.handle_murder_self_reveals(cat)
                     for murder in murder_history:
                         murder_index = murder_history.index(murder)
-                        # if murder_history[murder_index]["revealed"] is True:
-                        #     continue
+                        if murder_history[murder_index]["revealed"] is True:
+                            continue
                         victim = murder_history[murder_index]["victim"]
 
         #print('misc event', cat.ID)
         final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war, enemy_clan, other_clan,
-                                                                   alive_kits, murder_reveal=False)
+                                                                   alive_kits, murder_reveal=reveal)
 
         # ---------------------------------------------------------------------------- #
         #                                    event                                     #
@@ -104,8 +104,8 @@ class MiscEvents():
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
-        # if reveal:
-        #     History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
+        if reveal:
+            History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
     def handle_relationship_changes(self, cat, misc_event, other_cat):
 

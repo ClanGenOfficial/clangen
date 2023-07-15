@@ -295,7 +295,7 @@ class GenerateEvents:
 
             if murder_reveal and "murder_reveal" not in event.tags:
                 continue
-            if murder_reveal and "murder_reveal" in event.tags:
+            if not murder_reveal and "murder_reveal" in event.tags:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons

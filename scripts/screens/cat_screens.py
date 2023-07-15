@@ -631,7 +631,7 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
-            elif not self.the_cat.dead and not self.the_cat.outside and and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+            elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
                     (662, 220), (68, 68))),
                     "",
@@ -1418,7 +1418,13 @@ class ProfileScreen(Screens):
     def get_text_for_murder_event(self, event, death):
         ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            if event["revealed"] is True: 
+                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                if event.get("revelation_text"):
+                    final_text = final_text + event["revelation_text"]
+                return final_text
+            else:
+                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
         return None
 
 
@@ -3513,6 +3519,9 @@ class TalkScreen(Screens):
                         if "is_murderer" in game.clan.your_cat.history.murder:
                             if len(game.clan.your_cat.history.murder["is_murderer"]) == 0:
                                 continue
+                            elif 'accomplices' in game.switches:
+                                if cat.ID in game.switches['accomplices']:
+                                    continue
                         else:
                             continue
                     else:

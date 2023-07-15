@@ -4753,6 +4753,11 @@ class ChooseMurderCatScreen(Screens):
                     accompliced = False
                     if r < self.get_accomplice_chance(game.clan.your_cat, self.selected_cat):
                         accompliced = True
+                        if 'accomplices' in game.switches:
+                            game.switches['accomplices'].append(self.selected_cat.ID)
+                        else:
+                            game.switches['accomplices'] = []
+                            game.switches['accomplices'].append(self.selected_cat.ID)
                                                 
                     self.change_cat(self.murder_cat, self.selected_cat, accompliced)
                     self.stage = 'choose murder cat'
@@ -4761,8 +4766,6 @@ class ChooseMurderCatScreen(Screens):
             elif self.stage == 'choose accomplice' and event.ui_element == self.next:
                     self.change_cat(self.murder_cat, None, None)
                     self.stage = 'choose murder cat'
-                    # self.next.kill()
-                    # del self.next
             
             elif event.ui_element == self.back_button:
                 self.change_screen('events screen')
