@@ -260,7 +260,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "r_c peers at m_c, witnessing the depths of {PRONOUN/m_c/poss} wisdom and calmness, like still waters that run deep. With an approving mod, r_c offers {PRONOUN/m_c/object} a life of [virtue], trusting that m_c will lead the Clan with care.",
+          "text": "r_c peers at m_c, witnessing the depths of {PRONOUN/m_c/poss} wisdom and calmness, like still waters that run deep. With an approving nod, r_c offers {PRONOUN/m_c/object} a life of [virtue], trusting that m_c will lead the Clan with care.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
