@@ -2077,11 +2077,25 @@ class Patrol():
                 game.clan.freshkill_pile.add_freshkill(int(amount))
                 if FRESHKILL_ACTIVE:
                     print(f" -- FRESHKILL: added {amount} fail-prey")
-                if len(self.patrol_cats) == 1:
-                    self.results_text.append(
-                        f"{self.patrol_leader.name} still manages to bring home some amount of prey.")
-                else:
-                    self.results_text.append(f"The patrol still manages to bring home some amount of prey.")
+                if amount > 0:
+                    amount_text = "medium"
+                    if amount < game.clan.freshkill_pile.amount_food_needed() / 7:
+                        amount_text = "very small"
+                    elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
+                        amount_text = "small"
+                    elif amount < game.clan.freshkill_pile.amount_food_needed():
+                        amount_text = "decent"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+                        amount_text = "huge"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+                        amount_text = "large"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed():
+                        amount_text = "good"
+
+                    if len(self.patrol_cats) == 1:
+                        self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} amount of prey.")
+                    else:
+                        self.results_text.append(f"The patrol still manages to bring home a {amount_text} amount of prey.")
             return
 
         prey_amount_per_cat = 0
@@ -2120,7 +2134,9 @@ class Patrol():
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
                 amount_text = "medium"
-                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 2:
+                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
+                    amount_text = "very small"
+                elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                     amount_text = "small"
                 elif total_amount < game.clan.freshkill_pile.amount_food_needed():
                     amount_text = "decent"
