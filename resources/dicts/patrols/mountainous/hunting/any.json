@@ -123,7 +123,7 @@
         "fail_text": {
             "unscathed_common": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
             "unscathed_stat": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
-            "injury": "During the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/m_c/return/returns} to camp."
+            "injury": "During the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_trait": [
             "calm",
@@ -151,7 +151,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -348,7 +348,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -389,9 +389,9 @@
         "min_cats": 2,
         "max_cats": 4,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "were killed by a wolverine"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
     {
@@ -433,9 +433,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine while patrolling alone.",
-            "lead_death": "were killed by a predator while patrolling alone"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine while patrolling alone.",
+            "lead_death": "{VERB/m_c/were/was} killed by a predator while patrolling alone"
         }
     },
     {
@@ -637,9 +637,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -688,9 +688,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     }
 ]

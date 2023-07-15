@@ -23,9 +23,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when a hawk attempted to grab and lift them.",
+        "death_text": "m_c lost a life when a hawk attempted to grab and lift {PRONOUN/m_c/object}.",
         "history_text": {
-            "lead_death": "were grabbed by a hawk"
+            "lead_death": "{VERB/m_c/were/was} grabbed by a hawk"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -45,7 +45,7 @@
         ],
         "death_text": "m_c was grabbed and dropped by an eagle, losing a life.",
         "history_text": {
-            "lead_death": "were grabbed by an eagle"
+            "lead_death": "{VERB/m_c/were/was} grabbed by an eagle"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -60,7 +60,7 @@
         ],
         "death_text": "m_c lost a life after being swept away by a flood.",
         "history_text": {
-            "lead_death": "were swept away by a flood"
+            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -161,7 +161,7 @@
         ],
         "death_text": "m_c was carried off by an eagle, never to be seen again.",
         "history_text": {
-            "lead_death": "were carried away by an eagle"
+            "lead_death": "{VERB/m_c/were/was} carried away by an eagle"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -182,7 +182,7 @@
         ],
         "death_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
         "history_text": {
-            "lead_death": "were swept away by the river"
+            "lead_death": "{VERB/m_c/were/was} swept away by the river"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -217,7 +217,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c fell into a hidden burrow and was buried alive, losing all their lives.",
+        "death_text": "m_c fell into a hidden burrow and was buried alive, losing all {PRONOUN/m_c/poss} lives.",
         "history_text": {
             "lead_death": "fell into a hidden burrow"
         },
@@ -235,9 +235,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was buried alive when a burrow collapsed on them, losing all their lives.",
+        "death_text": "m_c was buried alive when a burrow collapsed on {PRONOUN/m_c/object}, losing all {PRONOUN/m_c/poss} lives.",
         "history_text": {
-            "lead_death": "were buried alive when a burrow collapsed"
+            "lead_death": "{VERB/m_c/were/was} buried alive when a burrow collapsed"
         },
         "cat_trait": null,
         "cat_skill": null,

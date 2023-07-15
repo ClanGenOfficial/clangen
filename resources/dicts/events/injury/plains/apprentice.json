@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running around excitedly on patrol, when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
+        "event_text": "m_c was running around excitedly on patrol, when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "cat_trait": [
             "adventurous",
             "bold",

@@ -69,7 +69,7 @@
             "classic",
             "Leaf-bare"
         ],
-        "death_text": "m_c caught greencough while caring for their patients, and couldn't manage to fight it off.",
+        "death_text": "m_c caught greencough while caring for {PRONOUN/m_c/poss} patients, and couldn't manage to fight it off.",
         "history_text": {
             "reg_death": "m_c died of greencough."
         },

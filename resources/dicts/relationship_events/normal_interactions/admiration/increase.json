@@ -225,6 +225,15 @@
 		"interactions": [
 			"m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
 			"m_c is wowed by how bravely r_c fought the other day."
+		],
+		"random_status_constraint": [
+			"warrior",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+            "medicine cat",
+            "deputy",
+            "leader"
 		]
 	},
 	{

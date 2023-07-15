@@ -213,8 +213,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/r_c/subject} always {VERB/r_c/say/says} it was a huge dog.",
-            "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/r_c/subject} took the dog out with {PRONOUN/r_c/object}.",
+            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+            "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
             "lead_death": "killed in a fight with a small dog"
         }
     },
@@ -254,7 +254,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/r_c/subject} always {VERB/r_c/say/says} it was a huge dog."
+            "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog."
         }
     },
     {
@@ -293,7 +293,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, though {PRONOUN/r_c/subject} {VERB/r_c/insist/insists} it was huge."
+            "scar": "This cat got a scar from a fight with a small dog, though {PRONOUN/m_c/subject} {VERB/m_c/insist/insists} it was huge."
         }
     },
     {
@@ -371,7 +371,7 @@
         "antagonize_text": "p_l seizes the opportunity to weaken o_c_n and orders the patrol to attack and kill the kits.",
         "antagonize_fail_text": "p_l and the patrol cross the border to attack the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
         "history_text": {
-            "reg_death": "r_c was slain by o_c_n warriors",
+            "reg_death": "m_c was slain by o_c_n warriors",
             "lead_death": "lost a life by o_c_n warriors"
         }
     },

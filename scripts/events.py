@@ -16,7 +16,6 @@ from scripts.patrol import Patrol
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -1623,8 +1622,8 @@ class Events:
         """
         TODO: DOCS
         """
-
-        if int(random.random() * 40):
+        hit = int(random.random() * 30)
+        if hit:
             return
 
         other_cat = random.choice(list(Cat.all_cats.values()))
@@ -1633,7 +1632,8 @@ class Events:
             other_cat = random.choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
-                return
+                other_cat = None
+                break
 
         enemy_clan = None
         if game.clan.war.get("at_war", False):
@@ -1693,10 +1693,10 @@ class Events:
             return True
 
         # chance to die of old age
-        age_change = game.config["death_related"]["old_age_death_chance"]
+        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
         if cat.moons > int(
-                random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
+                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
             
             self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits)
