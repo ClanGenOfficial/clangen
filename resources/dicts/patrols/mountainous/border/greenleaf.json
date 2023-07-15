@@ -19,7 +19,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/m_c/accept/accepts} the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone.",
@@ -81,7 +81,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. r_c runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone.",
@@ -147,7 +147,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/are/is} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
+            "unscathed_stat": "Boldly, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
             "death": "Nose to the ground following the trail, app1 doesn't see the blow that kills {PRONOUN/app1/object}.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet, squealing with pain, and run for home."
         },
@@ -199,7 +199,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
@@ -261,7 +261,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Less eyes watching that embarrassing moment.",
@@ -324,7 +324,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Less eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} don't want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
+            "unscathed_stat": "Boldly, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. {PRONOUN/app1/subject/CAP} {VERB/app1/haul/hauls} {PRONOUN/app1/self} to {PRONOUN/app1/poss} feet feet, squealing with pain, and run for home."
         },
         "fail_trait": [
@@ -367,7 +367,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -419,7 +419,7 @@
             "unscathed_common": "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "unscathed_rare": "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-            "stat_trait": "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+            "stat_trait": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From {PRONOUN/s_c/poss} seat above the rogue, perched on a high rock, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -475,7 +475,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border."
+            "unscathed_stat": "Boldly, s_c follows the scent to a trespassing rogue, and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off huffily back over the border."
         },
         "fail_trait": [
             "ambitious",

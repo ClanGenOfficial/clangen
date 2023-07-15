@@ -351,7 +351,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. r_c quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and drives them off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
@@ -413,7 +413,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. r_c quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
@@ -479,7 +479,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
             "death": "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
         },
@@ -532,7 +532,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
@@ -592,7 +592,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
@@ -656,7 +656,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             "injury": "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
         },
         "fail_trait": [
@@ -702,7 +702,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -756,7 +756,7 @@
             "unscathed_common": "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves behind a bush and sets up an ambush that sends the rogue fleeing off c_n territory.",
             "unscathed_rare": "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
             "stat_skill": "The pawprints lead to a trespassing rogue. s_c sets up a trap, climbing into the trees with r_c and breaking a branch onto the rogue's head that sends the startled intruder yowling as they flee c_n territory.",
-            "stat_trait": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+            "stat_trait": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
         },
         "fail_text": {
             "unscathed_common": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
@@ -815,7 +815,7 @@
         },
         "fail_text": {
             "unscathed_common": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
-            "unscathed_stat": "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the young cat, but with the full patrol backing them up, leaves c_n territory."
+            "unscathed_stat": "Boldly, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the young cat, but with the full patrol backing them up, leaves c_n territory."
         },
         "fail_trait": [
             "ambitious",
