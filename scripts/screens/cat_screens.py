@@ -137,6 +137,7 @@ class ProfileScreen(Screens):
         self.placeholder_tab_4 = None
         self.placeholder_tab_3 = None
         self.placeholder_tab_2 = None
+        self.your_tab = None
         self.backstory_tab_button = None
         self.dangerous_tab_button = None
         self.personal_tab_button = None
@@ -424,7 +425,11 @@ class ProfileScreen(Screens):
             object_id="#conditions_tab_button", manager=MANAGER
         )
 
-        self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+        if self.the_cat.ID == game.clan.your_cat.ID:
+            self.your_tab = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+                                               object_id="#your_tab", starting_height=1, manager=MANAGER)
+        else:
+            self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
                                                object_id="#cat_tab_3_blank_button", starting_height=1, manager=MANAGER)
         # self.placeholder_tab_3.disable()
 
@@ -462,7 +467,10 @@ class ProfileScreen(Screens):
         self.dangerous_tab_button.kill()
         self.backstory_tab_button.kill()
         self.conditions_tab_button.kill()
-        self.placeholder_tab_3.kill()
+        if self.placeholder_tab_3:
+            self.placeholder_tab_3.kill()
+        if self.your_tab:
+            self.your_tab.kill()
         self.placeholder_tab_4.kill()
         self.inspect_button.kill()
         self.close_current_tab()

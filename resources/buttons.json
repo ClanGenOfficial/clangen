@@ -1755,6 +1755,29 @@
             }
         }
     },
+    "#your_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/your_tab.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/your_tab_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/your_tab_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/your_tab_unavailable.png"
+            }
+        }
+    },
     "#cat_tab_3_blank_button": 
     {
         "prototype": "#image_button",
