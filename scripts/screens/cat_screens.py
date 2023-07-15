@@ -631,7 +631,7 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
-            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+            elif not self.the_cat.dead and not self.the_cat.outside and and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
                     (662, 220), (68, 68))),
                     "",
@@ -650,7 +650,7 @@ class ProfileScreen(Screens):
                     object_id="#insult_button",
                     tool_tip_text="Insult this Cat", manager=MANAGER
                 )
-            elif self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
+            elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
                     (830, 220), (68, 68))),
                     "",
