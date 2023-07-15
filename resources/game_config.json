@@ -85,7 +85,7 @@
 		"chance_friends_to_lovers": 200,
 		"confession": {
 			"make_confession" : {
-				"romantic": 30,
+				"romantic": 20,
 				"platonic": 15,
 				"dislike": -15,
 				"admiration": 0,
@@ -104,7 +104,7 @@
 			}
 		},
 		"mate_condition": {
-			"romantic": 20,
+			"romantic": 15,
 			"platonic": 30,
 			"dislike": -10,
 			"admiration": 0,
@@ -114,7 +114,7 @@
 		},
 		"platonic_to_romantic": {
 			"romantic": 0,
-			"platonic": 40,
+			"platonic": 30,
 			"dislike": -15,
 			"admiration": 0,
 			"comfortable": 25,
