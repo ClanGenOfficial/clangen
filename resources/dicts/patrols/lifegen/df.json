@@ -4,7 +4,8 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
-            "border"
+            "border",
+            "death"
         ],
         "intro_text": "You wake up in a forest. Shadowy trees hang overhead, and you feel eyes on you despite not seeing anyone around.",
         "success_text": {
