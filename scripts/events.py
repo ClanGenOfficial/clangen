@@ -433,7 +433,8 @@ class Events:
         num_siblings = random.choice([0,1,2,3])
         siblings, sibling_text = self.create_siblings(num_siblings)
 
-        birth_type = random.randint(0,6)
+        birth_type = random.randint(1,6)
+        birth_type = 6
         if birth_type == 1:
             game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
@@ -500,15 +501,25 @@ class Events:
         return self.set_birth_text("birth_two_parents", replacements)
 
     def handle_birth_adoptive_parents(self, siblings, sibling_text):
+        thought = "Is happy their kits are safe"
+        blood_parent = create_new_cat(Cat, Relationship,
+                                        status=random.choice(["loner", "kittypet"]),
+                                        alive=False,
+                                        thought=thought,
+                                        age=random.randint(15,120))[0]
+        blood_parent.outside = True
+        game.clan.add_to_unknown(blood_parent)
         parent1, parent2 = self.pick_valid_parent(), self.pick_valid_parent()
         while parent2 == parent1:
             parent2 = self.pick_valid_parent()
         Cat.all_cats[parent1].set_mate(Cat.all_cats[parent2])
         Cat.all_cats[parent2].set_mate(Cat.all_cats[parent1])
         game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
+        game.clan.your_cat.parent1 = blood_parent
         if siblings:
             for i in siblings:
                 i.adoptive_parents.extend([parent1,parent2])
+                i.parent1 = blood_parent
                 i.create_inheritance_new_cat()
                 i.init_all_relationships()
                 game.clan.your_cat.create_inheritance_new_cat()
@@ -517,8 +528,10 @@ class Events:
                     Cat.all_cats[parent1].create_inheritance_new_cat()
                 if parent2:
                     Cat.all_cats[parent2].create_inheritance_new_cat()
+            blood_parent.create_inheritance_new_cat()
             return self.set_birth_text("birth_adoptive_parents_siblings", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name,"insert_siblings": sibling_text})
         self.create_inheritance([parent1, parent2])
+        blood_parent.create_inheritance_new_cat()
         return self.set_birth_text("birth_adoptive_parents", {"parent1": Cat.all_cats[parent1].name, "parent2": Cat.all_cats[parent2].name, "y_c": game.clan.your_cat.name})
 
     def add_siblings_and_inheritance(self, siblings, parent1=None, parent2=None, blood_parent=None):
