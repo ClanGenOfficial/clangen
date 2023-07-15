@@ -434,7 +434,6 @@ class Events:
         siblings, sibling_text = self.create_siblings(num_siblings)
 
         birth_type = random.randint(1,6)
-        birth_type = 6
         if birth_type == 1:
             game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
@@ -515,11 +514,11 @@ class Events:
         Cat.all_cats[parent1].set_mate(Cat.all_cats[parent2])
         Cat.all_cats[parent2].set_mate(Cat.all_cats[parent1])
         game.clan.your_cat.adoptive_parents.extend([parent1,parent2])
-        game.clan.your_cat.parent1 = blood_parent
+        game.clan.your_cat.parent1 = blood_parent.ID
         if siblings:
             for i in siblings:
                 i.adoptive_parents.extend([parent1,parent2])
-                i.parent1 = blood_parent
+                i.parent1 = blood_parent.ID
                 i.create_inheritance_new_cat()
                 i.init_all_relationships()
                 game.clan.your_cat.create_inheritance_new_cat()
