@@ -1354,7 +1354,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Whisperings on the wind tickle at (previous_mentor)'s ears as {PRONOUN/(previous_mentor)/subject} {VERB/(previous_mentor)/gaze/gazes} up to the stars, an echo rolling smoothly off {PRONOUN/(previous_mentor)/poss} tongue. StarClan blesses m_c and welcomes {PRONOUN/(previous_mentor)/object}!"
+    "Whisperings on the wind tickle at (previous_mentor)'s ears as {PRONOUN/(previous_mentor)/subject} {VERB/(previous_mentor)/gaze/gazes} up to the stars, an echo rolling smoothly off {PRONOUN/(previous_mentor)/poss} tongue. StarClan blesses m_c and welcomes {PRONOUN/m_c/object}!"
   ],
   "med_4": [
     [
