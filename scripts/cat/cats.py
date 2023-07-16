@@ -1981,7 +1981,11 @@ class Cat():
                     if not cat.apprentice and not cat.not_working(): 
                         priority_mentors.append(cat)
             # First try for a cat who currently has no apprentices and is working
-            if priority_mentors:  # length of list > 0
+            if 'request apprentice' in game.switches:
+                if game.switches['request apprentice']:
+                    new_mentor = game.clan.your_cat
+                    game.switches['request apprentice'] = False
+            elif priority_mentors:  # length of list > 0
                 new_mentor = choice(priority_mentors)
             elif potential_mentors:  # length of list > 0
                 new_mentor = choice(potential_mentors)

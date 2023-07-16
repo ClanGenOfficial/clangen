@@ -5281,6 +5281,29 @@
             }
         }
     },
+    "#change_accessory_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/change_accessory.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/change_accessory_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/change_accessory_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/change_accessory_unavailable.png"
+            }
+        }
+    },
     "#have_kits_button": 
     {
         "prototype": "#image_button",
@@ -5301,6 +5324,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/have_kits_unavailable.png"
+            }
+        }
+    },
+    "#request_apprentice_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/request_apprentice.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/request_apprentice_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/request_apprentice_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/request_apprentice_unavailable.png"
             }
         }
     },

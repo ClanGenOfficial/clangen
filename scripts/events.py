@@ -654,6 +654,8 @@ class Events:
     
     def check_gain_app(self, checks):
         if len(game.clan.your_cat.apprentice) == checks[0] + 1:
+            if 'request apprentice' in game.switches:
+                game.switches['request apprentice'] = False
             resource_dir = "resources/dicts/events/lifegen_events/"
             with open(f"{resource_dir}ceremonies.json",
                     encoding="ascii") as read_file:
