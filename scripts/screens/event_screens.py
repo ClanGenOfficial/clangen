@@ -752,6 +752,7 @@ class EventsScreen(Screens):
         self.ceremony_events = [x for x in game.cur_events_list if "ceremony" in x.types]
         self.birth_death_events = [x for x in game.cur_events_list if "birth_death" in x.types]
         self.relation_events = [x for x in game.cur_events_list if "relation" in x.types]
+        self.health_events = [x for x in game.cur_events_list if "health" in x.types]
         self.other_clans_events = [x for x in game.cur_events_list if "other_clans" in x.types]
         self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
 

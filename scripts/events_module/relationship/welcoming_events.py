@@ -53,12 +53,6 @@ class Welcoming_Events():
         # prepare string for display
         interaction_str = event_text_adjust(Cat, interaction_str, clan_cat, new_cat)
 
-        # add to relationship log
-        if new_cat.ID in clan_cat.relationships:
-            clan_cat.relationships[new_cat.ID].log.append(interaction_str)
-        if clan_cat in new_cat.relationships:
-            new_cat.relationships[clan_cat.ID].log.append(interaction_str)
-
         # influence the relationship
         new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
         clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
@@ -87,8 +81,22 @@ class Welcoming_Events():
 
         # add it to the event list
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
-        ))
+            interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]))
+
+        # add to relationship logs
+        if new_cat.ID in clan_cat.relationships:
+            if clan_cat.age == 1:
+                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+            else:
+                clan_cat.relationships[new_cat.ID].log.append(interaction_str + f" - {clan_cat.name} was {clan_cat.moons} moons old")
+
+            new_cat.relationships[clan_cat.ID].link_relationship()
+
+        if clan_cat.ID in new_cat.relationships:
+            if new_cat.age == 1:
+                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old")
+            else:
+                new_cat.relationships[clan_cat.ID].log.append(interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old")
 
     def filter_welcome_interactions(self, welcome_interactions : list, new_cat: Cat) -> list:
         """Filter welcome events based on states.

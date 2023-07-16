@@ -105,7 +105,7 @@
 		"id": "platonic_inc_med8",
 		"interactions": [
 			"r_c is playing tag with m_c.",
-			"r_c bats a bit of fluff in front of m_c and gets {PRONOUN/m_c/subject} to play a game."
+			"r_c bats a bit of fluff in front of m_c and gets {PRONOUN/m_c/object} to play a game."
 		],
 		"random_trait_constraint": [
 			"playful"
