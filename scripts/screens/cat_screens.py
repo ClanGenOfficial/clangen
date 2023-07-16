@@ -1988,11 +1988,13 @@ class ProfileScreen(Screens):
                                                  manager=MANAGER)
             if self.the_cat.status in ['leader', 'deputy', 'medicine cat', 'mediator', 'queen', 'warrior']:
                 self.request_apprentice_button = UIImageButton(scale(pygame.Rect((804, 1028), (344, 72))), "",
+                                                               tool_tip_text='You will be more likely to recieve an apprentice.',
                                                     starting_height=2, object_id="#request_apprentice_button",
                                                     manager=MANAGER)
             else:
                 self.request_apprentice_button = UIImageButton(scale(pygame.Rect((804, 1028), (344, 72))), "",
-                                                    starting_height=2, object_id="#request_apprentice_button",
+                                                    starting_height=2, 
+                                                    tool_tip_text='You will be more likely to recieve an apprentice.', object_id="#request_apprentice_button",
                                                     manager=MANAGER)
                 self.request_apprentice_button.disable()
             if 'request apprentice' in game.switches:
