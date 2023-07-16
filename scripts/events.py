@@ -200,7 +200,7 @@ class Events:
 
         self.herb_destruction()
         self.herb_gather()
-
+        game.switches['have kits'] = True
         if game.clan.game_mode in ["expanded", "cruel season"]:
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
             med_fullfilled = medical_cats_condition_fulfilled(

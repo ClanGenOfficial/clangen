@@ -108,6 +108,9 @@ class Pregnancy_Events():
                 return
 
         chance = self.get_balanced_kit_chance(cat, second_parent, is_affair)
+        if 'have kits' in game.switches:
+            if cat.ID == game.clan.your_cat.ID and not game.switches['have kits']:
+                chance -= randint(10,40)
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!

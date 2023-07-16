@@ -21,6 +21,7 @@ from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
+from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER, screen
 from scripts.cat.names import names, Name
@@ -185,6 +186,8 @@ class ProfileScreen(Screens):
                 self.toggle_roles_tab()
             elif event.ui_element == self.personal_tab_button:
                 self.toggle_personal_tab()
+            elif event.ui_element == self.your_tab:
+                self.toggle_your_tab()
             elif event.ui_element == self.dangerous_tab_button:
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
@@ -311,6 +314,15 @@ class ProfileScreen(Screens):
                 else:
                     self.the_cat.no_kits = True
                 self.update_disabled_buttons_and_text()
+        elif self.open_tab == 'your tab':
+            if event.ui_element == self.have_kits_button:
+                if 'have kits' not in game.switches:
+                    game.switches['have kits'] = True
+                if game.switches.get('have kits'):
+                    relation = Pregnancy_Events()
+                    relation.handle_having_kits(game.clan.your_cat, game.clan)
+                    game.switches['have kits'] = False
+                    self.have_kits_button.disable()
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
             if event.ui_element == self.kill_cat_button:
@@ -1770,6 +1782,21 @@ class ProfileScreen(Screens):
             self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
                                                     starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
             self.update_disabled_buttons_and_text()
+    
+    def toggle_your_tab(self):
+        # Save what is previously open, for toggle purposes.
+        previous_open_tab = self.open_tab
+
+        # This closes the current tab, so only one can be open as a time
+        self.close_current_tab()
+
+        if previous_open_tab == 'your tab':
+            '''If the current open tab is relations, just close the tab and do nothing else. '''
+            pass
+        else:
+            self.open_tab = 'your tab'
+            self.have_kits_button = None
+            self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
         # Save what is previously open, for toggle purposes.
@@ -1937,6 +1964,16 @@ class ProfileScreen(Screens):
                                                  starting_height=2, object_id="#prevent_kits_button",
                                                  manager=MANAGER)
                 self.toggle_kits.disable()
+        elif self.open_tab == 'your tab':
+            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead and not self.the_cat.outside:
+                self.have_kits_button = UIImageButton(scale(pygame.Rect((804, 1172), (344, 72))), "",
+                                                    starting_height=2, object_id="#have_kits_button",
+                                                    manager=MANAGER)
+            else:
+                self.have_kits_button = UIImageButton(scale(pygame.Rect((804, 1172), (344, 72))), "",
+                                                 starting_height=2, object_id="#have_kits_button",
+                                                 manager=MANAGER)
+                self.have_kits_button.disable()
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
 
@@ -2139,7 +2176,9 @@ class ProfileScreen(Screens):
                     self.history_text_box.kill()
                 self.show_moons.kill()
                 self.no_moons.kill()
-
+        elif self.open_tab == 'your tab':
+            if self.have_kits_button:
+                self.have_kits_button.kill()
         elif self.open_tab == 'conditions':
             self.left_conditions_arrow.kill()
             self.right_conditions_arrow.kill()

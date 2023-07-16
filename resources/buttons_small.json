@@ -5281,6 +5281,29 @@
             }
         }
     },
+    "#have_kits_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/have_kits.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/have_kits_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/have_kits_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/have_kits_unavailable.png"
+            }
+        }
+    },
     "#join_df_button": 
     {
         "prototype": "#image_button",
