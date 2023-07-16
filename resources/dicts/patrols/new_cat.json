@@ -321,6 +321,11 @@
         },
         "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
         "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching.",
+        "history_text": {
+            "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
+            "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+        },
         "win_skills": [
             "FIGHTER,1"
         ],
@@ -670,7 +675,8 @@
             "border",
             "new_cat_elder_loner",
             "no_new_cat2",
-            "no_new_cat3"
+            "no_new_cat3",
+            "death"
         ],
         "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
         "decline_text": "r_c decides not to investigate.",

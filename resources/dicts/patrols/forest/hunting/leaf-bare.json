@@ -463,7 +463,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "m_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "died while fighting a fox"
         }
     },
     {
@@ -1724,7 +1726,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "m_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "died while fighting a fox"
         }
     },
     {
