@@ -2078,24 +2078,32 @@ class Patrol():
                 if FRESHKILL_ACTIVE:
                     print(f" -- FRESHKILL: added {amount} fail-prey")
                 if amount > 0:
-                    amount_text = "medium"
+                    amount_text = ["medium amount", "fine haul", "acceptable total"
+                    ]
                     if amount < game.clan.freshkill_pile.amount_food_needed() / 7:
-                        amount_text = "very small"
+                        amount_text = ["very small amount", "minuscule contribution", "tiny amount"
+                        ]
                     elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
-                        amount_text = "small"
+                        amount_text = ["small amount", "sparse addition", "little bit"
+                        ]
                     elif amount < game.clan.freshkill_pile.amount_food_needed():
-                        amount_text = "decent"
+                        amount_text = ["decent amount", "fulfilling amount", "satisfying contribution"
+                        ]
                     elif amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
-                        amount_text = "huge"
+                        amount_text = ["huge amount", "impressively huge haul", "wonderfully huge contribution"
+                        ]
                     elif amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
-                        amount_text = "large"
+                        amount_text = ["large amount", "pleasingly excessive", "happy haul"
+                        ]
                     elif amount >= game.clan.freshkill_pile.amount_food_needed():
-                        amount_text = "good"
+                        amount_text = ["good amount", "alright amount", "unremarkably fine contribution"
+                        ]
 
                     if len(self.patrol_cats) == 1:
-                        self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} amount of prey.")
+                        self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} of prey."
+                                                   )
                     else:
-                        self.results_text.append(f"The patrol still manages to bring home a {amount_text} amount of prey.")
+                        self.results_text.append(f"The patrol still manages to bring home a {amount_text} of prey.")
             return
 
         prey_amount_per_cat = 0
@@ -2133,24 +2141,31 @@ class Patrol():
                 print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
-                amount_text = "medium"
+                amount_text = ["medium amount", "fine haul", "acceptable total"
+                    ]
                 if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
-                    amount_text = "very small"
+                    amount_text = ["very small amount", "minuscule contribution", "tiny amount"
+                        ]
                 elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
-                    amount_text = "small"
+                    amount_text = ["small amount", "sparse addition", "little bit"
+                        ]
                 elif total_amount < game.clan.freshkill_pile.amount_food_needed():
-                    amount_text = "decent"
+                    amount_text = ["decent amount", "fulfilling amount", "satisfying contribution"
+                        ]
                 elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
-                    amount_text = "huge"
+                    amount_text = ["huge amount", "impressively huge haul", "wonderfully huge contribution", "pile to be proud of", "staggering amount", "astonishing catch", "huge catch's worth"
+                        ]
                 elif total_amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
-                    amount_text = "large"
+                    amount_text = ["large amount", "pleasingly excessive", "happy haul", "heavy load", "surprisingly large cotribution", "successful haul", "happy hunt's worth", "great catch", "impressive catch"
+                        ]
                 elif total_amount >= game.clan.freshkill_pile.amount_food_needed():
-                    amount_text = "good"
+                    amount_text = ["good amount", "alright amount", "unremarkably fine contribution"
+                        ]
 
                 if len(self.patrol_cats) == 1:
-                    self.results_text.append(f"{self.patrol_leader.name} brings back a {amount_text} amount of prey.")
+                    self.results_text.append(f"{self.patrol_leader.name} brings back a {amount_text} of prey.")
                 else:
-                    self.results_text.append(f"The patrol brings back a {amount_text} amount of prey.")
+                    self.results_text.append(f"The patrol brings back a {amount_text} of prey.")
 
     def handle_clan_relations(self, difference, antagonize, outcome):
         """
