@@ -1273,7 +1273,7 @@
         "chance_of_success": 50,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanicly strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end almost lose the octopus' body to the tides.",
+            "unscathed_common": "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanically strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end almost lose the octopus' body to the tides.",
             "stat_skill": "s_c coordinates the cats, and they all work together, distracting the octopus while another member of the patrol grabs an arm and hauls it backwards. Through repeated short jerks, and avoiding its snapping beak, they manage to drag the octopus away from the ocean. Then it's just a matter of time before it dies.",
             "stat_trait": "Keeping a cool head under very odd circumstances, s_c manages to keep the patrol focused on the prey opportunity, and not how weird the whole thing is. The octopus is an individual so large that if it was in the water the patrol would never have a chance, but on land and working together calmly, they manage to win."
         },
@@ -2241,7 +2241,7 @@
             "unscathed_rare": "p_l gives the dolphins a few of their fish, and is surprised and grateful when {PRONOUN/p_l/subject} get some useful herbs in return, for the medicine cat den."
         },
         "fail_text": {
-            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins tries to give some herbs for the good laugh {PRONOUN/p_l/object} gave them, but p_l just walks away, embarrassed and soaked."
+            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins try to give some herbs for the good laugh {PRONOUN/p_l/subject} gave them, but p_l just walks away, embarrassed and soaked."
         },
         "min_cats": 2,
         "max_cats": 6,
