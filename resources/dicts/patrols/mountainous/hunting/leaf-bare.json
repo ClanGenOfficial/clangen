@@ -45,9 +45,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -96,9 +96,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -153,9 +153,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -211,9 +211,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -263,7 +263,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -302,8 +302,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c died trying to provide for c_n during leaf-bare.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c died trying to provide for c_n during leaf-bare.",
             "lead_death": "died while hunting in the cold of leaf-bare"
         }
     },
@@ -352,8 +352,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "died while hunting in the cold of leaf-bare"
         }
     },
@@ -411,7 +411,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -468,7 +468,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -526,9 +526,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
-            "lead_death": "were killed in battle with a fox"
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
         }
     },
     {
@@ -743,7 +743,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got a scar underestimating a bluejay."
+            "scar": "m_c got a scar underestimating a bluejay."
         }
     },
     {

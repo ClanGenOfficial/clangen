@@ -417,7 +417,7 @@ class Cat():
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
-                    text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
+                    text = 'They\'ve lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
             game.just_died.append(self.ID)
@@ -2009,7 +2009,7 @@ class Cat():
                 return False
 
         # check for mentor
-        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
+        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices or other_cat.ID in self.apprentice or self.ID in other_cat.apprentice)
         if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
 
@@ -2697,7 +2697,13 @@ class Cat():
         """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
         they have been dead, rather than age at death"""
         if cat.dead:
-            return cat.dead_for
+            if game.config["sorting"]["sort_dead_by_death"]:
+                return cat.dead_for
+            else:
+                if game.sort_type == "rank":
+                    return cat.dead_for
+                else:
+                    return cat.dead_for + cat.moons
         else:
             return cat.moons
         

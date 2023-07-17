@@ -93,7 +93,7 @@
             "medium_prey",
             "no_fail_prey",
             "injury",
-            "bite-wound",
+            "snake bite",
             "poisoned",
             "scar",
             "SNAKE"
@@ -119,7 +119,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a rattlesnake."
+            "scar": "m_c was scarred by a rattlesnake."
         }
     },
     {
@@ -141,7 +141,7 @@
         "success_text": {
             "unscathed_common": "The patrol makes short work of locating the squirrels, spreading out into a loose formation to encircle their prey. Slowly, they move in, the circle getting tighter and tighter, until they're finally seen. The squirrels screech and scatter in different directions, but the circle cuts off their escape, and by the end of it they're fresh-kill.",
             "unscathed_rare": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
-            "stat_skill": "s_c murmurs instructions to their Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+            "stat_skill": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
         },
         "fail_text": {
             "unscathed_common": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
@@ -186,7 +186,7 @@
             "death": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
             "injury": "The mother red fox's snapping jaws leave r_c dripping blood on the sand, forcing the patrol to back off.",
             "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
-            "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+            "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of {PRONOUN/p_l/poss} Clanmates, losing a life."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -210,8 +210,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen.",
-            "reg_death": "r_c fell in battle with a red fox.",
+            "scar": "m_c carries a scar from a fight with a red vixen.",
+            "reg_death": "m_c fell in battle with a red fox.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -268,7 +268,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen."
+            "scar": "m_c carries a scar from a fight with a red vixen."
         }
     },
     {
@@ -324,8 +324,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red vixen.",
-            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "scar": "m_c carries a scar from a solo fight with a red vixen.",
+            "reg_death": "m_c fell in a solo battle with a vixen.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -381,7 +381,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -436,7 +436,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -489,7 +489,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray vixen."
+            "scar": "m_c carries a scar from a solo fight with a gray vixen."
         }
     },
     {

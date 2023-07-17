@@ -268,13 +268,39 @@ class ProfileScreen(Screens):
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
                 SpecifyCatGender(self.the_cat)
+                '''if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                elif self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
+            #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
-                if self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
+                #if the cat is anything besides m/f/transm/transf then turn them back to cis
+                if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
                     self.the_cat.genderalign = self.the_cat.gender
-                elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
+                elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'female':
+                    self.the_cat.genderalign = self.the_cat.gender
+                elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'male':
+                    self.the_cat.genderalign = self.the_cat.gender
+                #if the cat is cis (gender & gender align are the same) then set them to trans
+                #cis males -> trans female first
+                elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'male':
                     self.the_cat.genderalign = 'trans female'
-                elif self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
+                #cis females -> trans male
+                elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'female':
                     self.the_cat.genderalign = 'trans male'
+                #if the cat is trans then set them to nonbinary
+                elif self.the_cat.genderalign in ["trans female", "trans male"]:
+                    self.the_cat.genderalign = 'nonbinary'
+                '''#pronoun handler
+                if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                elif self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                elif self.the_cat.genderalign in ["nonbinary"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
+                elif self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -1329,13 +1355,16 @@ class ProfileScreen(Screens):
         
 
     def get_text_for_murder_event(self, event, death):
+        ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True:
-                return event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+            if event["revealed"] is True: 
+                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+                if event.get("revelation_text"):
+                    final_text = final_text + event["revelation_text"]
+                return final_text
             else:
                 return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
         return None
-
 
 
     def get_death_text(self):
@@ -1356,7 +1385,6 @@ class ProfileScreen(Screens):
             for index, death in enumerate(death_history):
                 found_murder = False  # Add this line to track if a matching murder event is found
                 if "is_victim" in murder_history:
-                    print(str(murder_history))
                     for event in murder_history["is_victim"]:
                         text = self.get_text_for_murder_event(event, death)
                         if text is not None:
@@ -1372,9 +1400,9 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
-                            life_text = "lost their final life"
+                            life_text = "lost {PRONOUN/m_c/poss} final life"
                         else:
-                            life_text = "lost their final lives"
+                            life_text = "lost {PRONOUN/m_c/poss} final lives"
                     else:
                         life_text = "lost a life"
                 else:
@@ -1412,57 +1440,58 @@ class ProfileScreen(Screens):
 
     def get_murder_text(self):
         """
-        returns adjusted murder history text
+        returns adjusted murder history text FOR THE MURDERER
 
         """
         murder_history = History.get_murders(self.the_cat)
         victim_text = ""
-        murdered_text = ""
 
         if game.switches['show_history_moons']:
             moons = True
         else:
             moons = False
+        victims = []
         if murder_history:
             if 'is_murderer' in murder_history:
-                victims = murder_history["is_murderer"]
-            else:
-                victims = []
+                victims = murder_history["is_murderer"]                
 
-            # if "is_victim" in murder_history:
-            #    murderers = murder_history["is_victim"]
-            # else:
-            #    murderers = []
+        if len(victims) > 0:
+            victim_names = {}
+            name_list = []
+            reveal_text = None
 
-            if victims:
-                victim_names = {}
-                name_list = []
+            for victim in victims:
+                if not Cat.fetch_cat(victim["victim"]):
+                    continue 
+                name = str(Cat.fetch_cat(victim["victim"]).name)
 
-                for victim in victims:
-                    if not Cat.fetch_cat(victim["victim"]):
-                        continue 
-                    name = str(Cat.fetch_cat(victim["victim"]).name)
+                if victim["revealed"]:
+                    victim_names[name] = []
+                    if victim.get("revelation_text"):
+                        reveal_text = str(victim["revelation_text"])
+                    if moons:
+                        victim_names[name].append(victim["moon"])
 
-                    if victim["revealed"]:
-                        victim_names[name] = []
-                        if moons:
-                            victim_names[name].append(victim["moon"])
-
-                if victim_names:
-                    for name in victim_names:
-                        if not moons:
-                            name_list.append(name)
-                        else:
-                            name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
-
-                    if len(name_list) == 1:
-                        victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
-                    elif len(victim_names) == 2:
-                        victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+            if victim_names:
+                for name in victim_names:
+                    if not moons:
+                        name_list.append(name)
                     else:
-                        victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+                        name_list.append(name + f" (Moon {', '.join(victim_names[name])})")
 
-        #print(victim_text)
+                if len(name_list) == 1:
+                    victim_text = f"{self.the_cat.name} murdered {name_list[0]}."
+                elif len(victim_names) == 2:
+                    victim_text = f"{self.the_cat.name} murdered {' and '.join(name_list)}."
+                else:
+                    victim_text = f"{self.the_cat.name} murdered {', '.join(name_list[:-1])}, and {name_list[-1]}."
+
+            if reveal_text:
+                cat_dict = {
+                        "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+                    }
+                victim_text = f'{victim_text} {process_text(reveal_text, cat_dict)}'
+
         return victim_text
 
     def toggle_conditions_tab(self):
@@ -1781,15 +1810,31 @@ class ProfileScreen(Screens):
             # Button to trans or cis the cats.
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
-            if self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
-                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
-                                                      starting_height=2, object_id="#change_trans_male_button",
-                                                      manager=MANAGER)
-            elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
+            if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_trans_female_button",
                                                       manager=MANAGER)
-            elif self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
+            elif self.the_cat.gender == "female" and self.the_cat.genderalign == "female":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_trans_male_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign in ['trans female', 'trans male']:
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_nonbi_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign not in ['female', 'trans female', 'male', 'trans male']:
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)

@@ -48,8 +48,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was scarred by a porcupine while on patrol.",
-            "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+            "scar": "m_c was scarred by a porcupine while on patrol.",
+            "reg_death": "m_c was killed by an angry porcupine while on patrol.",
             "lead_death": "killed by a porcupine"
         },
         "antagonize_text": null,
@@ -99,8 +99,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a porcupine while on patrol.",
-            "reg_death": "r_c was killed by an angry porcupine while on patrol.",
+            "scar": "m_c was scarred by a porcupine while on patrol.",
+            "reg_death": "m_c was killed by an angry porcupine while on patrol.",
             "lead_death": "killed by a porcupine"
         }
     },
@@ -220,7 +220,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c gained a scar after trying to chase some squirrels up a tree."
+            "scar": "m_c gained a scar after trying to chase some squirrels up a tree."
         },
         "antagonize_text": null,
         "antagonize_fail_text": null
@@ -261,7 +261,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+            "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
         }
     },
     {
@@ -298,7 +298,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
+            "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
             "lead_death": "killed by a wolverine"
         }
     },
@@ -355,8 +355,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
-            "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+            "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
+            "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
             "lead_death": "killed by a coyote"
         }
     },
@@ -413,8 +413,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a coyote protecting its scavenged meal.",
-            "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+            "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
+            "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
             "lead_death": "killed by a coyote"
         }
     },
@@ -467,7 +467,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed by a coyote protecting its scavenged meal.",
+            "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
             "lead_death": "killed by a coyote"
         }
     },
@@ -524,8 +524,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a wolf protecting its scavenged meal.",
-            "reg_death": "r_c was killed by a wolf pack protecting its meal.",
+            "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
+            "reg_death": "m_c was killed by a wolf pack protecting its meal.",
             "lead_death": "killed by a wolf pack"
         }
     },
@@ -578,7 +578,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed by a wolf protecting its meal.",
+            "reg_death": "m_c was killed by a wolf protecting its meal.",
             "lead_death": "killed by a wolf"
         }
     },
@@ -631,7 +631,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed by a wolf protecting its meal.",
+            "reg_death": "m_c was killed by a wolf protecting its meal.",
             "lead_death": "killed by a wolf"
         }
     },
@@ -729,7 +729,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-            "unscathed_rare": "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            "unscathed_rare": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
             "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
         },
         "fail_text": {
@@ -765,7 +765,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -973,7 +973,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -1019,8 +1019,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
             "lead_death": "killed by a wolverine"
         }
     },
@@ -1532,9 +1532,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1584,9 +1584,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1637,9 +1637,9 @@
         "min_cats": 5,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1689,9 +1689,9 @@
         "min_cats": 5,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1810,7 +1810,7 @@
             "comfort",
             "small_prey"
         ],
-        "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little lizard!",
+        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
         "exp": 15,

@@ -33,7 +33,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -67,7 +67,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -103,7 +103,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -137,7 +137,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "history_text": {
-            "reg_death": "r_c mistook deathberries for something edible.",
+            "reg_death": "m_c mistook deathberries for something edible.",
             "lead_death": "after eating deathberries"
         }
     },
@@ -672,21 +672,26 @@
             "distrust",
             "big_change"
         ],
-        "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, they reveal they're been having a hard time sleeping. Their dreams are filled with shadows and... images.",
-        "decline_text": "This is beyond p_l's sphere of teachable subjects, but they promise that there'll be another cat back at camp who can help, probably app1 should talk to a medicine cat.",
+        "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, {PRONOUN/app1/subject} {VERB/app1/reveal/reveals} {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having a hard time sleeping. {PRONOUN/app1/poss/CAP} dreams are filled with shadows and... images.",
+        "decline_text": "This is beyond p_l's sphere of teachable subjects, but {PRONOUN/p_l/subject} {VERB/p_l/promise/promises} that there'll be another cat back at camp who can help, and app1 should probably talk to a medicine cat.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l listens sympathetically, gently nodding as app1 pours out their troubles, until the apprentice eventually runs out of words. They've been dealing with a lot, apparently, and while p_l isn't too sure what to do, they can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
-            "unscathed_rare": "That... honestly sounds like it could be a vision. That's unusual, and also not to say that it's been particularly fun for app1 to deal with everything, p_l hastens to add, but it's not a bad thing. Those connected to StarClan in such ways are rare, and have been critical for protecting c_n in the past.",
-            "stat_skill": "s_c listens to app1 talk was a deep sense of deja vu, in addition to their shock. This sounds like the trouble they had, when they were young, plagued by contact with StarClan regardless of whether they wanted it or not, and they immediately take app1 aside to give them their full attention and support.",
-            "stat_trait": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but they can't believe their Clanmate has been going through so much without anybody noticing. Wrapping their tail around app1's shoulders, they tell app1 this will all be alright - they're going to make sure that app1 doesn't have to shoulder this burden alone."
+            "unscathed_common": "p_l listens sympathetically, gently nodding as app1 pours out {PRONOUN/app1/poss} troubles, until the apprentice eventually runs out of words. {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been dealing with a lot, apparently, and while p_l isn't too sure what to do, {PRONOUN/p_l/subject} can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
+            "unscathed_rare": "That... honestly sounds like it could be a vision. That's unusual - not to say that it's been particularly fun for app1 to deal with everything, p_l hastens to add, but it's not a bad thing. Those connected to StarClan in such ways are rare, and have been critical for protecting c_n in the past.",
+            "stat_skill": "s_c listens to app1 talk with a deep sense of deja vu, in addition to {PRONOUN/s_c/poss} shock. This sounds like the trouble {PRONOUN/s_c/subject} had when {PRONOUN/s_c/subject} {VERB/s_c/were/was} young, plagued by contact with StarClan regardless of whether {PRONOUN/s_c/subject} wanted it or not, and {PRONOUN/s_c/subject} immediately {VERB/s_c/take/takes} app1 aside to give them {PRONOUN/s_c/poss} full attention and support.",
+            "stat_trait": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but {PRONOUN/s_c/subject} can't believe their Clanmate has been going through so much without anybody noticing. Wrapping {PRONOUN/s_c/poss} tail around app1's shoulders, {PRONOUN/s_c/subject} tell app1 this will all be alright - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} going to make sure that app1 doesn't have to shoulder this burden alone."
         },
         "fail_text": {
-            "unscathed_common": "app1 isn't a kit anymore, and though p_l tries to be gentle about it, they make it clear that it's app1's responsibility to make sure they're well rested and attentive for their training.",
-            "unscathed_stat": "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how they should use this unexpected ability."
+            "unscathed_common": "app1 isn't a kit anymore, and though p_l tries to be gentle about it, {PRONOUN/p_l/subject} {VERB/p_l/make/makes} it clear that it's app1's responsibility to make sure {PRONOUN/app1/subject}{VERB/app1/'re/'s} well rested and attentive for {PRONOUN/app1/poss} training.",
+            "unscathed_stat": "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how {PRONOUN/app1/subject} should use this unexpected ability."
         },
-        "win_skills": [],
+        "win_skills": [
+            "DREAM,2",
+            "STAR,1",
+            "CLAIRVOYANT,2",
+            "PROPHET,2"
+        ],
         "win_trait": [
             "calm",
             "compassionate",
@@ -1717,7 +1722,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
+            "unscathed_common": "p_l gives them all {PRONOUN/p_l/poss} attention, as r_c talks about how, hypothetically, if {PRONOUN/r_c/subject} {VERB/r_c/were/was} interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
             "unscathed_rare": "r_c talks about how, sometimes, often even, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} tripping over {PRONOUN/r_c/poss} own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want r_c to change.",
             "stat_skill": "s_c talks about how choosing the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
         },

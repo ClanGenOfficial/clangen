@@ -137,11 +137,11 @@
         "success_text": {
             "unscathed_common": "app1 manages a skillful catch, and brings it back to the camp to show everyone!",
             "unscathed_rare": "app1 focuses completely on {PRONOUN/app1/poss} test, slipping into a clear-eyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/app1/subject}{VERB/app1/'ve/'s} caught enough to need {PRONOUN/app1/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/app1/poss} prey stock the fresh-kill pile - {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready to burst with happiness!",
-            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
+            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
         },
         "fail_text": {
             "unscathed_common": "Hunting is poor, and while app1's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
-            "unscathed_stat": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training.",
+            "unscathed_stat": "s_c is too hasty, bouncing after first one prey animal, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training.",
             "injury": "While on the hunt, app1 tumbles right down into a rock pool while {PRONOUN/app1/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/app1/subject} {VERB/app1/return/returns} to camp."
         },
         "win_trait": [
@@ -172,7 +172,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -190,8 +190,8 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were, as far as that big crab thought.",
-            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with their Clanmates.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} are bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that big crab thought.",
+            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren in the sand dunes that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/magages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
@@ -242,8 +242,8 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
-            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} are bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted in the sand dunes that's particularly badly built, and {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
@@ -294,8 +294,8 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
-            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with their Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} are bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_rare": "r_c finds a trapped fish flopping in a tidal pool, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
             "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted in the sand dunes that's particularly badly built, and {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
             "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
@@ -370,7 +370,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -414,9 +414,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "{VERB/p_l/were/was} killed by a wolverine"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
     {
@@ -442,8 +442,8 @@
             "stat_skill": "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
         },
         "fail_text": {
-            "unscathed_common": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! They aren't quick enough to catch it, but at least the noise was nothing dangerous.",
-            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wants to get away from them and quickly runs off back behind the rocks.",
+            "unscathed_common": "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP}{VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
+            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} {VERB/s_c/regret/regrets} {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wants to get away from {PRONOUN/s_c/object} and quickly runs off back behind the rocks.",
             "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling dog! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol, and {PRONOUN/r_c/subject} {VERB/r_c/have/has} the sudden realization that no one can help {PRONOUN/r_c/object} now. The dog kills the lone cat with little trouble.",
             "injury": "r_c  heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away."
         },
@@ -460,9 +460,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a dog while patrolling alone.",
-            "lead_death": "were killed while patrolling alone"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a dog while patrolling alone.",
+            "lead_death": "{VERB/m_c/were/was} killed while patrolling alone"
         }
     },
     {
@@ -802,7 +802,7 @@
         "success_text": {
             "unscathed_common": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
             "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. {PRONOUN/app2/subject/CAP} {VERB/app2/fetch/fetches} app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are wide-eyed and thrilled by the experience.",
-            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until they two are probably the most obvious pair of cats in the neighborhood."
+            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until the two are probably the most obvious pair of cats in the neighborhood."
         },
         "fail_text": {
             "unscathed_common": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app2/poss} pelt against app1 as they pad home.",
@@ -969,9 +969,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1021,9 +1021,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1073,9 +1073,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1127,9 +1127,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "{VERB/r_c/were/was} hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1273,7 +1273,7 @@
         "chance_of_success": 50,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanicly strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end almost lose the octopus' body to the tides.",
+            "unscathed_common": "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanically strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end almost lose the octopus' body to the tides.",
             "stat_skill": "s_c coordinates the cats, and they all work together, distracting the octopus while another member of the patrol grabs an arm and hauls it backwards. Through repeated short jerks, and avoiding its snapping beak, they manage to drag the octopus away from the ocean. Then it's just a matter of time before it dies.",
             "stat_trait": "Keeping a cool head under very odd circumstances, s_c manages to keep the patrol focused on the prey opportunity, and not how weird the whole thing is. The octopus is an individual so large that if it was in the water the patrol would never have a chance, but on land and working together calmly, they manage to win."
         },
@@ -1330,7 +1330,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak."
+            "scar": "m_c carries a scar from an eagle's beak."
         }
     },
     {
@@ -1375,7 +1375,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak."
+            "scar": "m_c carries a scar from an eagle's beak."
         }
     },
     {
@@ -1423,9 +1423,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -1473,9 +1473,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "{VERB/r_c/were/was} killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -1531,7 +1531,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1587,7 +1587,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1644,8 +1644,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died fighting a fox"
         }
     },
@@ -1704,7 +1704,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a gray fox fight."
+            "scar": "m_c carries a scar from a gray fox fight."
         }
     },
     {
@@ -1812,7 +1812,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray fox."
+            "scar": "m_c carries a scar from a solo fight with a gray fox."
         }
     },
     {
@@ -1881,7 +1881,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a red fox fight."
+            "scar": "m_c carries a scar from a red fox fight."
         }
     },
     {
@@ -1949,7 +1949,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a red fox fight."
+            "scar": "m_c carries a scar from a red fox fight."
         }
     },
     {
@@ -2016,7 +2016,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red fox."
+            "scar": "m_c carries a scar from a solo fight with a red fox."
         }
     },
     {
@@ -2085,7 +2085,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a gray fox fight."
+            "scar": "m_c carries a scar from a gray fox fight."
         }
     },
     {
@@ -2216,7 +2216,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray fox."
+            "scar": "m_c carries a scar from a solo fight with a gray fox."
         }
     },
     {
@@ -2233,7 +2233,7 @@
             "dislike"
         ],
         "intro_text": "The patrol, going back to camp with a good haul of fish, sees a pod of dolphins chattering at them.",
-        "decline_text": "p_l bows their head and offers {PRONOUN/p_l/poss} apologies to the pod of dolphins, but they will keep those fish for the fresh-kill pile.",
+        "decline_text": "p_l bows {PRONOUN/p_l/poss} head and offers {PRONOUN/p_l/poss} apologies to the pod of dolphins, but they will keep those fish for the fresh-kill pile.",
         "chance_of_success": 60,
         "exp": 5,
         "success_text": {
@@ -2241,7 +2241,7 @@
             "unscathed_rare": "p_l gives the dolphins a few of their fish, and is surprised and grateful when {PRONOUN/p_l/subject} get some useful herbs in return, for the medicine cat den."
         },
         "fail_text": {
-            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins tries to give some herbs for the good laugh {PRONOUN/p_l/object} gave them, but p_l just walks away emberassed and soaked."
+            "unscathed_common": "As p_l offers the dolphin some of their fishes, {PRONOUN/p_l/subject} accidentally {VERB/p_l/slip/slips} and {VERB/p_l/fall/falls} into the water. Both the patrol and the dolphins seem to be laughing at {PRONOUN/p_l/object}. The dolphins try to give some herbs for the good laugh {PRONOUN/p_l/subject} gave them, but p_l just walks away, embarrassed and soaked."
         },
         "min_cats": 2,
         "max_cats": 6,
