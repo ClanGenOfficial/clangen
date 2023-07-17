@@ -522,7 +522,7 @@
         "antagonize_text": "p_l strolls across the border, deliberately laying {PRONOUN/p_l/poss} scent everywhere {PRONOUN/p_l/subject} can. For good measure, {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts} and {VERB/p_l/kill/kills} a mouse, feasting messily and leaving the bones strewn about. That'll show those good-for-nothing o_c_n cats who really owns these lands.",
         "antagonize_fail_text": "p_l moves to pad across the border, only to be called back with a sharp yowl. Of all the nights for there to be a night patrol {PRONOUN/p_l/subject} didn't know about, it had to be <i>tonight?</i> {PRONOUN/p_l/subject/CAP} {VERB/p_l/get/gets} such an earful that a certain cat from o_c_n hears and wanders over, watching the altercation with an unreadable expression. How embarrassing...",
         "history_text": {
-            "scar": "r_c was scarred when trying to sneak across the o_c_n border."
+            "scar": "r_c was scarred when {PRONOUN/r_c/subject} tried to sneak across the o_c_n border."
         }
     }
 ]
