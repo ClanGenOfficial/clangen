@@ -1106,7 +1106,7 @@
             "platonic",
             "comfort"
         ],
-        "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little salamander!",
+        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little salamander!",
         "decline_text": "Startled by the salamander, the patrol watches it scurry away.",
         "chance_of_success": 60,
         "exp": 15,
@@ -1139,7 +1139,7 @@
             "apprentice",
             "small_prey"
         ],
-        "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little salamander!",
+        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little salamander!",
         "decline_text": "Startled by the salamander, the patrol watches it scurry away.",
         "chance_of_success": 60,
         "exp": 15,
