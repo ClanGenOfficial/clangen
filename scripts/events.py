@@ -23,6 +23,7 @@ from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
 from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
+from scripts.cat.pelts import Pelt
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.disaster_events import DisasterEvents
@@ -295,6 +296,7 @@ class Events:
 
             self.check_gain_app(checks)
             self.check_gain_mate(checks)
+            self.gain_acc()
 
         elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
             self.generate_death_event()
@@ -322,6 +324,30 @@ class Events:
                 game.save_events()
             except:
                 SaveError(traceback.format_exc())
+                
+    def gain_acc(self):
+        possible_accs = ["WILD", "PLANT", "COLLAR"]
+        acc_list = []
+        if "WILD" in possible_accs:
+            acc_list.extend(Pelt.wild_accessories)
+        if "PLANT" in possible_accs:
+            acc_list.extend(Pelt.plant_accessories)
+        if "COLLAR" in possible_accs:
+            acc_list.extend(Pelt.collars)
+
+        for acc in possible_accs:
+            if acc not in ["WILD", "PLANT", "COLLAR"]:
+                acc_list.append(acc)
+
+        if "NOTAIL" in game.clan.your_cat.pelt.scars or "HALFTAIL" in game.clan.your_cat.pelt.scars:
+            for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
+
+        game.clan.your_cat.pelt.accessory = random.choice(acc_list)
     
     def check_achievements(self):
         you = game.clan.your_cat

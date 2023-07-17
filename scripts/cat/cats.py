@@ -212,6 +212,7 @@ class Cat():
         self.insulted = False
         self.joined_df = False
         self.revealed = 0
+        self.inventory = []
 
         
         self.prevent_fading = False  # Prevents a cat from fading.
@@ -2863,7 +2864,8 @@ class Cat():
                 "talked_to": self.talked_to if self.talked_to else False,
                 "insulted": self.insulted if self.insulted else False,
                 "joined_df": self.joined_df if self.joined_df else False,
-                "revealed": self.revealed if self.revealed and isinstance(self.revealed, int) else 0
+                "revealed": self.revealed if self.revealed and isinstance(self.revealed, int) else 0,
+                "inventory": self.inventory if self.inventory else []
             }
 
 
