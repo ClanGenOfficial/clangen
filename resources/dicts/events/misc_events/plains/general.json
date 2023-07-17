@@ -1,3 +1,105 @@
 [
-
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf"
+        ],
+        "event_text": "m_c found a small little patch of bright yellow flowers in camp, and snagged one to decorate {PRONOUN/m_c/self} with!",
+        "accessories": ["YELLOW PRIMROSE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c takes m_c by surprise, swiftly decorating m_c with pretty yellow blooms. Bewildered, m_c thanks {PRONOUN/r_c/object} for the gift.",
+        "accessories": ["YELLOW PRIMROSE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf"
+        ],
+        "event_text": "m_c purrs as {PRONOUN/m_c/subject} {VERB/m_c/stretch/stretches} smugly in the middle of camp, showing off the new purple blooms that decorate {PRONOUN/m_c/poss} pelt.",
+        "accessories": ["HESPERIS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c, inbetween grooming m_c, gently dots m_c's fur with shades of purple flowers during a low sunset.",
+        "accessories": ["HESPERIS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} it with poise.",
+        "accessories": ["MARIGOLD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c, inbetween grooming m_c, tucks marigolds next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
+        "accessories": ["MARIGOLD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's eyes sparkle as {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} something <i>wonderful</i> --- {PRONOUN/m_c/subject} can propagate the bamboo on the edges of c_n territory, and decorate {PRONOUN/m_c/poss} nest with it! A week later, m_c is seen sleeping soundly with leafy stalks of bamboo casting shadows on {PRONOUN/m_c/poss} pelt.",
+        "accessories": ["BAMBOO"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with bamboo brushing {PRONOUN/m_c/poss} face. Despite the slight scare it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/thank/thanks} r_c in the morning for the nice surprise.",
+        "accessories": ["BAMBOO"]
+    }
 ]

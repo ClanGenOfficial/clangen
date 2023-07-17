@@ -1,3 +1,131 @@
 [
-
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c plucks a few pristine white flowers from the camp's nearby frangipani bush. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} it with genuine joy, brighter than the beachy sun.",
+        "accessories": ["FRANGIPANI"]
+    },
+    {
+        "camp": "any",
+        "tags": [ 
+            "Newleaf",
+            "Leaf-fall",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c, inbetween grooming m_c, tucks the prettiest frangipanis they could find next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
+        "accessories": ["FRANGIPANI"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Greenleaf", 
+            "Leaf-fall"
+        ],
+        "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} it with poise.",
+        "accessories": ["MARIGOLD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c, inbetween grooming m_c, tucks marigolds next to m_c's ear. m_c almost doesn't notice the next morning, and purrs a thank you to r_c when {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} by.",
+        "accessories": ["MARIGOLD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c's eyes sparkle as {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} something <i>wonderful</i> --- {PRONOUN/m_c/subject} can propagate the reeds on c_n territory, and decorate {PRONOUN/m_c/poss} nest with it! A week later, m_c is seen sleeping soundly with thick stalks of dark green reeds casting shadows on {PRONOUN/m_c/poss} pelt.",
+        "accessories": ["REEDS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with reeds brushing {PRONOUN/m_c/poss} face. Despite the slight scare it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/thank/thanks} r_c in the morning for the nice surprise.",
+        "accessories": ["REEDS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c catches a cool snail that slid into camp! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to keep the snail.",
+        "accessories": ["RED SNAIL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c and m_c find a cute snail with a red, pointy shell while hanging out in camp together! m_c decides to keep it with {PRONOUN/m_c/object}.",
+        "accessories": ["RED SNAIL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c peeks out of their den, and finds that some seaweed managed to get into camp. m_c decides to use it as some cool decoration for {PRONOUN/m_c/poss} tail!",
+        "accessories": ["SEAWEED"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c, during a free sunny morning before dawn patrol, quietly wraps vibrant seaweed around m_c's tail.",
+        "accessories": ["SEAWEED"]
+    }
 ]

@@ -1,3 +1,300 @@
 [
-
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf"
+        ],
+        "event_text": "m_c spots collections and clusters of gorgeous acc_singular, and decides to wear one of them!",
+        "accessories": ["DIANTHUS", "WISTERIA"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c offers m_c acc_singular {PRONOUN/r_c/subject} found near camp, telling m_c that {PRONOUN/r_c/subject} thought that it'd look better on m_c than on {PRONOUN/r_c/self}.",
+        "accessories": ["DIANTHUS", "WISTERIA"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c gets smacked on the head by a falling stick! Grumbling, but liking the perfectly sized stick too much to destroy it out of rage, {PRONOUN/m_c/subject} {VERB/m_c/take/takes} it to carry it around.",
+        "accessories": ["STICK"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c offers m_c a stick that bonked them on the head earlier today, figuring that m_c could make some kind of use of it. m_c accepts, and carries it around with {PRONOUN/m_c/object}!",
+        "accessories": ["STICK"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c finds paths and twists of healthy green ivy growing down just above the leader's den. Looking left and right for any cat paying attention to them, {PRONOUN/m_c/subject} quickly snap a pair of leaves off of one of the lower branches. m_c is seen wearing the ivy shortly after.",
+        "accessories": ["IVY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c offers m_c some ivy {PRONOUN/r_c/subject} managed to find, telling {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} made sure it wasn't the itchy kind. m_c tilts {PRONOUN/m_c/poss} head and accepts {PRONOUN/r_c/poss} offer, wearing the pretty leaves with a little smile.",
+        "accessories": ["IVY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c skips back into camp with a pep in {PRONOUN/m_c/poss} step... and with a new noodly, harmless friend!",
+        "accessories": ["WESTERN COACHWHIP"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers to show {PRONOUN/m_c/object} a cool, silly little snake {PRONOUN/r_c/subject} found! m_c takes {PRONOUN/r_c/poss} invitation. After seeing the weird, harmless thing, m_c decides to take it home with {PRONOUN/m_c/object}.",
+        "accessories": ["WESTERN COACHWHIP"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c gently guides a acc_singular into camp. Seems like m_c has found a new friend?",
+        "cat_trait": ["bold", "adventurous", "careful", "confident", "calm", "strange", "charismatic", "loving", "compassionate"],
+        "accessories": ["SMALLANIMAL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c and m_c, on a walk together, stumble upon an acc_singular. m_c tilts {PRONOUN/m_c/poss} head, and decides to take it home! r_c is charmed by m_c's generosity.",
+        "accessories": ["SMALLANIMAL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c gently guides a acc_singular into camp. Seems like m_c has found a new friend?",
+        "cat_trait": ["bold", "adventurous", "careful", "confident", "calm", "strange", "charismatic", "loving", "compassionate"],
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c and m_c, on a walk together, stumble upon an acc_singular. m_c tilts {PRONOUN/m_c/poss} head, and decides to take it home! r_c is charmed by m_c's generosity.",
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c leaps and gracefully sweeps across the plains of c_n territory. m_c quickly scans the scenery around {PRONOUN/m_c/object} inbetween leaps, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "m_c and r_c both leap and gracefully sweep across the plains of c_n territory. m_c quickly scans the scenery around them both inbetween a shared leap, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat"
+        ],
+        "event_text": "m_c eyes a pink-nosed rat that wandered into the leader's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
+        "accessories": ["RAT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c grins toothily at a acc_singular that wandered into camp! Instead of diving toward it like anyone would expect a cat to do, m_c decides to befriend it with seeds and nuts.",
+        "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "dislike",
+            "jealousy",
+            "neg_trust"
+        ],
+        "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunch/hunches} down to watch a mouse nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} pounce, and manages to.. befriend the mouse! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
+        "other_cat_trait": ["bloodthirsty", "vengeful", "cold", "fierce", "shameless", "righteous", "strange"],
+        "accessories": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, happily sharing how m_c managed to keep a snail as {PRONOUN/m_c/poss} pet.",
+        "accessories": ["BLUE SNAIL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c and m_c go on a walk together! After a while, m_c and r_c run into a cute, slowly moving snail! m_c decides to keep it as a pet, and r_c coos at the little thing as m_c carries it home.",
+        "accessories": ["BLUE SNAIL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a fruity smelling acc_singular! m_c flaunts their new acc_singular with grace.",
+        "accessories": ["YEW"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "romantic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c and m_c decide to go for a short walk together! r_c blinks in surprise, before pointing out a yew tree {PRONOUN/r_c/subject} managed to spot from a ways away! m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good eye, and decides to tread over and wear the acc_singular! r_c compliments {PRONOUN/r_c/object}, and m_c grins, flustered.",
+        "accessories": ["YEW"]
+    }
 ]

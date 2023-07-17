@@ -176,6 +176,58 @@ class Sprites():
             sprites.make_group('nyloncollars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             sprites.make_group('nyloncollars', (a, 2), f'collars{i}')
+            
+        # ohdan's accessories
+        for a, i in enumerate([
+            "DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY", "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY"]):
+            sprites.make_group('flower_accessories', (a, 0), f'acc_flower{i}')
+        for a, i in enumerate([
+            "YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA"]):
+            sprites.make_group('flower_accessories', (a, 1), f'acc_flower{i}')
+        
+        for a, i in enumerate([
+            "CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]):
+            sprites.make_group('plant2_accessories', (a, 0), f'acc_plant2{i}')
+
+        for a, i in enumerate([
+            "GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]):
+            sprites.make_group('snake_accessories', (a, 0), f'acc_snake{i}')
+            
+        for a, i in enumerate([
+            "GRAY SQUIRREL", "RED SQUIRREL", "CRAB", "WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "INDIAN GIANT SQUIRREL", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT"]):
+            sprites.make_group('smallAnimal_accessories', (a, 0), f'acc_smallAnimal{i}')
+        for a, i in enumerate([
+            "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE"]):
+            sprites.make_group('smallAnimal_accessories', (a, 1), f'acc_smallAnimal{i}')
+        for a, i in enumerate([
+            "CUBAN TROGON", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "RAT", "WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "GRAY RABBIT"]):
+            sprites.make_group('smallAnimal_accessories', (a, 2), f'acc_smallAnimal{i}')
+        for a, i in enumerate([
+            "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]):
+            sprites.make_group('smallAnimal_accessories', (a, 3), f'acc_smallAnimal{i}')
+            
+        for a, i in enumerate([
+            "LUNAR MOTH", "ROSY MAPLE MOTH", "MONARCH BUTTERFLY", "DAPPLED MONARCH", "POLYPHEMUS MOTH", "MINT MOTH"]):
+            sprites.make_group('deadInsect_accessories', (a, 0), f'acc_deadInsect{i}')
+            
+        for a, i in enumerate([
+            "BROWN SNAIL", "RED SNAIL", "WORM", "BLUE SNAIL", "ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD", "BEE", "RED LADYBUG"]):
+            sprites.make_group('aliveInsect_accessories', (a, 0), f'acc_aliveInsect{i}')
+        for a, i in enumerate([
+            "ORANGE LADYBUG", "YELLOW LADYBUG"]):
+            sprites.make_group('aliveInsect_accessories', (a, 1), f'acc_aliveInsect{i}')
+        
+        for a, i in enumerate([
+            "RASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]):
+            sprites.make_group('fruit_accessories', (a, 0), f'acc_fruit{i}')
+        
+        for a, i in enumerate([
+            "WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT", "BIRD SKULL", "LEAF BOW"]):
+            sprites.make_group('crafted_accessories', (a, 0), f'acc_crafted{i}')
+        
+        for a, i in enumerate([
+            "SEAWEED", "DAISY CORSAGE"]):
+            sprites.make_group('tail2_accessories', (a, 0), f'acc_tail2{i}')
 
 # get the width and height of the spritesheet
 lineart = pygame.image.load('sprites/lineart.png')
@@ -205,7 +257,8 @@ for x in [
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
     'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-    'fadestarclan', 'fadedarkforest'
+    'fadestarclan', 'fadedarkforest', 'flower_accessories', 'plant2_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
+    'aliveInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories'
 
 ]:
     if 'lineart' in x and game.config['fun']['april_fools']:

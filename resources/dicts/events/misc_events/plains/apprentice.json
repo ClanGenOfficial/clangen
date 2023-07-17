@@ -9,5 +9,49 @@
             "war"
         ],
         "event_text": "The apprentices of the Clan are taking special training to learn how to survive in underground tunnels long-term, in the case of a siege conducted by o_c."
+    },
+
+
+
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c leaps and gracefully sweeps across the plains of c_n territory. m_c quickly scans the scenery around {PRONOUN/m_c/object} inbetween leaps, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_app",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "m_c and r_c both leap and gracefully sweep across the plains of c_n territory. m_c quickly scans the scenery around them both inbetween a shared leap, and quickly finds that a acc_singular has joined {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} walk. m_c decides to keep it when {PRONOUN/m_c/subject} {VERB/m_c/speed/speeds} back to camp.",
+        "accessories": ["WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat"
+        ],
+        "event_text": "m_c eyes a pink-nosed rat that wandered into the apprentice's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a piece of grass.",
+        "accessories": ["RAT"]
     }
 ]

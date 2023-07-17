@@ -198,5 +198,148 @@
             "childish",
             "playful"
         ]
+    },
+
+
+
+    {
+        "camp": "any",
+        "tags": [
+          "Newleaf",
+          "Greenleaf",
+          "Leaf-fall",
+          "Leaf-bare"
+      ],
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
+        "accessories": ["COLLAR"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c, after meeting a kittypet on the border, comes back to camp disgruntled, ruffled, and with a collar around {PRONOUN/m_c/poss} neck.",
+        "accessories": ["COLLAR"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_mate",
+            "romantic",
+            "comfort",
+            "trust"
+        ],
+        "event_text": "m_c gifts {PRONOUN/m_c/poss} beloved r_c with a acc_singular to wear in {PRONOUN/r_c/poss} pelt.",
+        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+          "Newleaf",
+          "Greenleaf",
+          "Leaf-fall",
+          "Leaf-bare", 
+          "other_cat",
+          "other_cat_mate",
+          "romantic",
+          "comfort",
+          "trust"
+      ],
+        "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
+        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "romantic",
+            "comfort",
+            "trust",
+            "neg_jealousy",
+            "neg_dislike"
+        ],
+        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
+        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "romantic",
+            "comfort",
+            "trust",
+            "neg_jealousy",
+            "neg_dislike"
+        ],
+        "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
+        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c waltzes back into camp... with a grass snake!? m_c promises that the snake is safe to be around, and that {PRONOUN/m_c/subject} will be the one to take care of it's needs.",
+        "cat_trait": ["bold", "adventurous", "careful", "confident", "daring", "ambitious", "strange", "charismatic"],
+        "accessories": ["GRASS SNAKE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c waltzes onto camp with a acc_singular following suit! {PRONOUN/m_c/subject/CAP} {VERB/m_c/snap/snaps} at any cat who attempts to snap at the poor thing, and m_c proudly states that it's {PRONOUN/m_c/poss} new pet.",
+        "cat_trait": ["bold", "adventurous", "careful", "confident", "daring", "ambitious", "strange", "charismatic"],
+        "accessories": ["GRAY SQUIRREL", "RED SQUIRREL", "INDIAN GIANT SQUIRREL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "trust",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "m_c and r_c sneak out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after they attempt to leave!",
+        "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall"
+        ],
+        "event_text": "m_c tilts {PRONOUN/m_c/poss} head idly at a bee flying around {PRONOUN/m_c/poss} head. It doesn't seem to want to sting {PRONOUN/m_c/object}, so m_c assumes it wants to be {PRONOUN/m_c/poss} friend!",
+        "cat_trait": ["loving", "compassionate", "bold", "adventurous", "thoughtful"],
+        "accessories": ["BEE"]
     }
 ]

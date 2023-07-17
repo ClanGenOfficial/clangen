@@ -143,5 +143,524 @@
             "STORY,1",
             "LORE,2"
         ]
+    },
+
+
+
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c finds acc_plural while out on a walk and decides to keep them.",
+        "accessories": ["WILD", "PLANT", "FLOWER", "ALIVEINSECT", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "trust",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
+        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty flower! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
+        "accessories": ["FLOWER"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty acc_singular! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
+        "accessories": ["DAISY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers {PRONOUN/m_c/object} a pretty acc_singular! m_c takes it and decorates {PRONOUN/m_c/self} with it, purring out a thank you.",
+        "accessories": ["BLUE GLORY", "PURPLE GLORY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c finds a pretty, smelly field of onions with pretty pink blooms. {PRONOUN/r_c/subject/CAP} {VERB/r_c/take/takes} a few, and {VERB/r_c/gift/gifts} the stalks to m_c! m_c wears them all with a big sunny smile.",
+        "accessories": ["ALLIUM"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c finds a patch of odd red orchids. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to take a pair of it's prettiest blooms for a gift to give to m_c! m_c decorates {PRONOUN/m_c/self} with the pretty flowers, cooing softly at how pretty {PRONOUN/m_c/subject} feel with them on.",
+        "accessories": ["LACELEAF"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c finds acc_singular! {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} the blooms with a smile.",
+        "accessories": ["HESPERIS", "WISTERIA"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c gifted m_c bunches of pretty purple flowers! m_c wears them all with a big sunny smile.",
+        "accessories": ["HESPERIS", "WISTERIA"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c finds a cool stick near the edge of camp! m_c decides it's cool enough to keep around.",
+        "accessories": ["STICK"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall"
+        ],
+        "event_text": "Mysteriously, it seems like m_c has found a small pumpkin near camp. m_c decides to roll it around along with {PRONOUN/m_c/object} around camp.",
+        "accessories": ["PUMPKIN"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c finds a weird little pumpkin while on patrol! {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} it back home to m_c, and tells {PRONOUN/m_c/object} it's a gift! m_c accepts it happily, and decides to roll it around.",
+        "accessories": ["PUMPKIN"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf"
+        ],
+        "event_text": "After a warm stroll in the leaf-broken sunlight, m_c comes back with moss in {PRONOUN/m_c/poss} jaws. {PRONOUN/m_c/subject/CAP} seem oddly possessive over it.",
+        "cat_trait": ["impulsive", "charismatic", "childish", "strange"],
+        "accessories": ["MOSS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "m_c meows softly, volunteering to go on a moss-gathering patrol with r_c. They have a nice time talking while walking to a moss patch, and m_c comes home with fresh moss in their jaws.",
+        "accessories": ["MOSS"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c tilts {PRONOUN/m_c/poss} head at the camp wall. Nobody's entirely sure why... until {PRONOUN/m_c/subject} {VERB/m_c/pluck/plucks} a few ivy leaves off of the wall, and wear it with pride.",
+        "accessories": ["IVY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c finds a cool ivy-covered tree while on patrol! {PRONOUN/r_c/subject/CAP} {VERB/r_c/bring/brings} a pair of pretty leaves back home to m_c, and tells {PRONOUN/m_c/object} it's a gift! m_c accepts it happily, and decides to wear it.",
+        "accessories": ["IVY"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall"
+        ],
+        "event_text": "m_c spots an oak tree dropping acorns, and decided to take and wear one.",
+        "accessories": ["ACORN"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall"
+        ],
+        "event_text": "After m_c gets bonked on the head by a towering oak tree's falling acorns, {PRONOUN/m_c/subject} decide to take and wear one out of pure spite.",
+        "cat_trait": ["vengeful", "fierce", "troublesome", "strange"],
+        "accessories": ["ACORN"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat"
+        ],
+        "event_text": "m_c trudges around camp with {PRONOUN/m_c/poss} pelt somehow covered in muddy grime and moss. After being properly cleaned, m_c decides to keep the moss.",
+        "accessories": ["MOSS PELT"]
+    },
+    {
+        
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "other_cat",
+            "to_both",
+            "dislike"
+        ],
+        "event_text": "r_c, while m_c dozes off in camp, proceeds to pelt m_c with moss! m_c wakes up and snaps at r_c, but... keeps the moss on anyway. Strange.",
+        "accessories": ["MOSS PELT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c chirps softly at m_c as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} over, and offers to show {PRONOUN/m_c/object} a cool, silly little snake {PRONOUN/r_c/subject} found! m_c takes {PRONOUN/r_c/poss} invitation. After seeing the weird, harmless thing, m_c decides to take it home with {PRONOUN/m_c/object}.",
+        "accessories": ["GRASS SNAKE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c gently guides a acc_singular into camp. Seems like m_c has found a new friend?",
+        "cat_trait": ["bold", "adventurous", "careful", "confident", "calm", "strange", "charismatic", "loving", "compassionate"],
+        "accessories": ["SMALLANIMAL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c sneaks out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after {PRONOUN/m_c/subject} attempt to leave!",
+        "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "trust",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "m_c and r_c sneak out of camp to go bird watching. Seems like one of the birds decided to stick around m_c after {PRONOUN/m_c/subject} attempt to leave!",
+        "accessories": ["BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "r_c <i>mrrps</i> at m_c, asking {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} wanted acc_plural that they found. m_c says yes, and thanks {PRONOUN/r_c/object} for the cool wings!",
+        "accessories": ["DEADINSECT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c comes into camp with a happy glint in {PRONOUN/m_c/poss} eye, happily sharing how m_c managed to keep a snail as {PRONOUN/m_c/poss} pet.",
+        "accessories": ["BROWN SNAIL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c seems to have found a strange bug, and has decided to keep it as a pet.",
+        "accessories": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c seems to have found a strange bug, and calls m_c over to see it. Curiously enough, m_c has decided to keep it as a pet.",
+        "accessories": ["ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Leaf-fall"
+        ],
+        "event_text": "m_c tilts {PRONOUN/m_c/poss} head idly at a bee flying around {PRONOUN/m_c/poss} head. It doesn't seem to want to sting {PRONOUN/m_c/object}, so m_c assumes it wants to be {PRONOUN/m_c/poss} friend!",
+        "cat_trait": ["loving", "compassionate", "bold", "adventurous", "thoughtful"],
+        "accessories": ["BEE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a bee! m_c claims it's {PRONOUN/m_c/poss} new pet.",
+        "accessories": ["BEE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a fruity smelling acc_singular! m_c flaunts their new acc_singular with grace.",
+        "accessories": ["BLUE BERRIES", "FRUIT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "trust",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "m_c proudly shows off something that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been working on for the past few days -- a perfectly crafted acc_singular! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear it, and {PRONOUN/m_c/subject} do so proudly.",
+        "accessories": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "trust",
+            "comfort",
+            "neg_dislike"
+        ],
+        "event_text": "r_c proudly shows off something that {PRONOUN/r_c/subject} {VERB/r_c/have/has} been working on for the past few days -- a perfectly crafted acc_singular, made as a gift for m_c! {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear it, purring softly.",
+        "accessories": ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c proudly shows off something that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been working on for the past new days -- a clean, pristine white bird skull. {PRONOUN/m_c/subject/CAP} decide to wear it, and {PRONOUN/m_c/subject} do so proudly.",
+        "cat_trait": ["bloodthirsty", "vengeful", "cold", "fierce", "shameless", "strange"],
+        "accessories": ["BIRD SKULL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c proudly shows off something that {PRONOUN/r_c/subject} {VERB/r_c/have/has} been working on for the past few days -- a clean, pristine white bird skull. m_c wears it with a purr, thanking them for the cool trinket.",
+        "accessories": ["BIRD SKULL"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Over the past few days, m_c has been adamant on being near a nearby daisy patch. On an early morning, m_c reveals that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been braiding a daisy corsage for {PRONOUN/m_c/poss} tail! m_c flaunts {PRONOUN/m_c/poss} work proudly.",
+        "accessories": ["DAISY CORSAGE"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "m_c received a present, gently weaved acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
+        "accessories": ["DAISY CORSAGE"]
     }
 ]

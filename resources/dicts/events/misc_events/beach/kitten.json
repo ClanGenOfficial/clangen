@@ -1,3 +1,49 @@
 [
-
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c curiously pokes and prods at a crab that wandered into camp. The crab, unbothered to m_c's antics, seems relaxed enough to keep as a pet. m_c cheerfully shows off {PRONOUN/m_c/poss} new friend!",
+        "accessories": ["CRAB"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "r_c decides to stop by the nursery, asking if m_c would like to try a crab. m_c nods with big eyes, and r_c plops down the critter as it still attempts to crawl while on it's back. m_c doesn't crack {PRONOUN/m_c/poss} jaws into it's shell like expected. Instead, m_c flips it over and ogles it curiously. Seems like m_c has found a new friend...?",
+        "accessories": ["CRAB"]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_adult",
+            "to_both",
+            "platonic",
+            "comfort",
+            "neg_dislike",
+            "neg_jealousy"
+        ],
+        "event_text": "m_c received a present, dried but vibrant acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} tail.",
+        "accessories": ["SEAWEED"]
+    }
 ]
