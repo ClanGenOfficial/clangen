@@ -417,7 +417,7 @@ class Cat():
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
-                    text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
+                    text = 'They\'ve lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
             game.just_died.append(self.ID)
