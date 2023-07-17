@@ -491,7 +491,7 @@
         ],
         "intro_text": "p_l slinks through c_n's territory, low to the ground and watchful as {PRONOUN/p_l/subject} {VERB/p_l/approach/approaches} the o_c_n border. The moon hangs heavy in the sky, and {PRONOUN/p_l/poss} eyes dart around, taking in {PRONOUN/p_l/poss} surroundings - did {PRONOUN/p_l/subject} make it here unnoticed?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hear/hears} something shift in the distance. Heart pounding, {PRONOUN/p_l/subject} silently {VERB/p_l/draw/draws} back, not wanting to stay to find out if it was prey or cat.",
-        "chance_of_success": 30,
+        "chance_of_success": 45,
         "exp": 5,
         "success_text": {
             "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/crouch/crouches} out of sight and {VERB/p_l/wait/waits}, still as stone. After a short while, there's a soft call across the border. Perking up, p_l rushes forward, pushing {PRONOUN/p_l/poss} nose into the fur of a cat from o_c_n. Tails entwined, they talk in hushed voices until the stars start to blink out. With a soft goodbye, each returns home, their Clans unknowing of their secret.",
