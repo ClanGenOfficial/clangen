@@ -329,6 +329,8 @@ class ProfileScreen(Screens):
                 if not game.switches['request apprentice']:
                     game.switches['request apprentice'] = True
                     self.request_apprentice_button.disable()
+            if event.ui_element == self.change_accessory_button:
+                self.change_screen("accessory screen")
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
             if event.ui_element == self.kill_cat_button:

@@ -105,7 +105,8 @@ def json_load():
                 tint=cat["tint"] if "tint" in cat else "none",
                 scars=cat["scars"] if "scars" in cat else [],
                 accessory=cat["accessory"],
-                opacity=cat["opacity"] if "opacity" in cat else 100
+                opacity=cat["opacity"] if "opacity" in cat else 100,
+                accessories=cat["accessories"] if "accessories" in cat else []
             )
             
             # Runs a bunch of apperence-related convertion of old stuff. 

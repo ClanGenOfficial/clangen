@@ -184,6 +184,7 @@ class Pelt():
                  senior_sprite:int=None,
                  para_adult_sprite:int=None,
                  reverse:bool=False,
+                 accessories:list=[]
                  ) -> None:
         self.name = name
         self.colour = colour
@@ -219,7 +220,7 @@ class Pelt():
         
         self.reverse = reverse
         self.skin = skin
-        self.accessories = []
+        self.accessories = accessories
 
     @staticmethod
     def generate_new_pelt(gender:str, parents:tuple=(), age:str="adult"):

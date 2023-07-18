@@ -13,6 +13,8 @@ from .base_screens import Screens, cat_profiles
 from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
+from scripts.cat.sprites2 import Sprites2, spriteSize
+from scripts.cat.pelts import Pelt
 from scripts.game_structure.windows import GameOver, PickPath, DeathScreen
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
@@ -5520,7 +5522,7 @@ class ChooseMurderCatScreen(Screens):
 
 
 class ChangeAccessoryScreen(Screens):
-    selected_mentor = None
+    selected_cat = None
     current_page = 1
     list_frame = pygame.transform.scale(image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
                                         (1300 / 1600 * screen_x, 452 / 1400 * screen_y))
@@ -5552,31 +5554,31 @@ class ChangeAccessoryScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.cat_list_buttons.values():
-                self.selected_mentor = event.ui_element.return_cat_object()
+                self.selected_cat = event.ui_element.return_cat_object()
                 self.update_selected_cat()
-                self.update_buttons()
-            elif event.ui_element == self.confirm_mentor:
-                self.change_mentor(self.selected_mentor)
-                self.update_buttons()
-                self.update_selected_cat()
+                # self.update_buttons()
+            elif event.ui_element == self.confirm_mentor and self.selected_cat:
+                if not self.selected_cat.dead:
+                    self.update_selected_cat()
+
+                    self.change_cat(self.selected_cat)
+                    # self.update_buttons()
             elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
+                self.change_screen('events screen')
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
-                    self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
-                    self.update_buttons()
+                    # self.update_buttons()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches['cat'] = self.previous_cat
-                    self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
-                    self.update_buttons()
+                    # self.update_buttons()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_page_button:
@@ -5587,7 +5589,7 @@ class ChangeAccessoryScreen(Screens):
                 self.update_cat_list()
 
     def screen_switches(self):
-        self.the_cat = Cat.all_cats[game.switches['cat']]
+        self.the_cat = game.clan.your_cat
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
         self.heading = pygame_gui.elements.UITextBox("Change your accessory",
@@ -5599,51 +5601,29 @@ class ChangeAccessoryScreen(Screens):
                                                   object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                   manager=MANAGER)
 
-
         # Layout Images:
-        self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((80, 226), (562, 394))),
+        self.mentor_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 226), (562, 394))),
                                                         pygame.transform.scale(
                                                             image_cache.load_image(
                                                                 "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
                                                             (562, 394)), manager=MANAGER)
 
-
-        self.mentor_icon = pygame_gui.elements.UIImage(scale(pygame.Rect((630, 320), (343, 228))),
-                                                       pygame.transform.scale(
-                                                           image_cache.load_image(
-                                                               "resources/images/mentor.png").convert_alpha(),
-                                                           (343, 228)), manager=MANAGER)
-
-        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
-                                                 object_id="#previous_cat_button")
-        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "",
-                                             object_id="#next_cat_button")
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
-        self.confirm_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
-                                            object_id="#confirm_mentor_button")
-        if self.mentor is not None:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox(
-                "Current mentor selected",
-                scale(pygame.Rect((600, 670), (400, 60))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
-                manager=MANAGER)
-        else:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
-                                                                        , scale(pygame.Rect((600, 680), (400, 60))),
-                                                                        object_id=get_text_box_theme(
-                                                                            "#text_box_22_horizcenter"),
-                                                                        manager=MANAGER)
+        self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
+                                            object_id="#patrol_select_button")
+      
         self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
                                                   object_id="#relation_list_previous", manager=MANAGER)
         self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
                                               object_id="#relation_list_next", manager=MANAGER)
 
-        self.update_apprentice()  # Draws the current apprentice
         self.update_selected_cat()  # Updates the image and details of selected cat
-        self.update_cat_list()
-        self.update_buttons()
+        # self.update_cat_list()
 
     def exit_screen(self):
+
+        # self.selected_details["selected_image"].kill()
+        # self.selected_details["selected_info"].kill()
         for ele in self.cat_list_buttons:
             self.cat_list_buttons[ele].kill()
         self.cat_list_buttons = {}
@@ -5658,88 +5638,20 @@ class ChangeAccessoryScreen(Screens):
 
         self.heading.kill()
         del self.heading
-        self.info.kill()
-        del self.info
-        self.current_mentor_text.kill()
-        del self.current_mentor_text
+
         self.mentor_frame.kill()
         del self.mentor_frame
-        self.mentor_icon.kill()
-        del self.mentor_icon
-        self.previous_cat_button.kill()
-        del self.previous_cat_button
-        self.next_cat_button.kill()
-        del self.next_cat_button
+
         self.back_button.kill()
         del self.back_button
         self.confirm_mentor.kill()
         del self.confirm_mentor
-        self.current_mentor_warning.kill()
-        del self.current_mentor_warning
+
         self.previous_page_button.kill()
         del self.previous_page_button
         self.next_page_button.kill()
         del self.next_page_button
-        self.app_frame.kill()
-        del self.app_frame
 
-    def update_apprentice(self):
-        """ Updates the apprentice focused on. """
-        for ele in self.apprentice_details:
-            self.apprentice_details[ele].kill()
-        self.apprentice_details = {}
-
-        self.the_cat = Cat.all_cats[game.switches['cat']]
-        self.current_page = 1
-        self.selected_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        self.mentor = Cat.fetch_cat(self.the_cat.mentor)
-
-        self.heading.set_text(f"Choose a new mentor for {self.the_cat.name}")
-        if self.the_cat.mentor:
-            self.current_mentor_text.set_text(
-                f"{self.the_cat.name}'s current mentor is {self.mentor.name}")
-        else:
-            self.current_mentor_text.set_text(
-                f"{self.the_cat.name} does not have a mentor")
-        self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((1200, 300), (300, 300))),
-            pygame.transform.scale(
-                self.the_cat.sprite,
-                (300, 300)),
-            manager=MANAGER)
-        info = ""
-        if self.the_cat.moons <= 0:
-            info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
-               "\n" + self.the_cat.personality.trait + "\n???"
-        else:
-            info = self.the_cat.status + "\n" + self.the_cat.genderalign + \
-                "\n" + self.the_cat.personality.trait + "\n" + self.the_cat.skills.skill_string(short=True)
-        self.apprentice_details["apprentice_info"] = pygame_gui.elements.UITextBox(
-            info,
-            scale(pygame.Rect((980, 325), (210, 250))),
-            object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
-            manager=MANAGER)
-
-        name = str(self.the_cat.name)  # get name
-        if 11 <= len(name):  # check name length
-            short_name = str(name)[0:9]
-            name = short_name + '...'
-        self.apprentice_details["apprentice_name"] = pygame_gui.elements.ui_label.UILabel(
-            scale(pygame.Rect((1240, 230), (220, 60))),
-            name,
-            object_id="#text_box_34_horizcenter", manager=MANAGER)
-
-        self.find_next_previous_cats()  # Determine where the next and previous cat buttons lead
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
 
     def find_next_previous_cats(self):
         """Determines where the previous and next buttons lead"""
@@ -5777,75 +5689,85 @@ class ChangeAccessoryScreen(Screens):
         if self.next_cat == 1:
             self.next_cat = 0
 
-    def change_mentor(self, new_mentor=None):
-        old_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        if new_mentor and old_mentor is not None:
-            old_mentor.apprentice.remove(self.the_cat.ID)
-            if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
-                old_mentor.former_apprentices.append(self.the_cat.ID)
-
-            self.the_cat.patrol_with_mentor = 0
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
-            self.mentor = new_mentor
-
-            # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
-
-        elif new_mentor:
-            self.the_cat.mentor = new_mentor.ID
-            new_mentor.apprentice.append(self.the_cat.ID)
-            self.mentor = new_mentor
-
-            # They are a current apprentice, not a former one now!
-            if self.the_cat.ID in new_mentor.former_apprentices:
-                new_mentor.former_apprentices.remove(self.the_cat.ID)
-
-        if self.mentor is not None:
-            self.current_mentor_text.set_text(
-                f"{self.the_cat.name}'s current mentor is {self.mentor.name}")
-        else:
-            self.current_mentor_text.set_text(f"{self.the_cat.name} does not have a mentor")
+    def change_cat(self, new_mentor=None):
+        self.exit_screen()
+        game.cur_events_list.clear()
+        game.clan.your_cat = new_mentor
+        if game.clan.your_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+            game.clan.your_cat.w_done = True
+        game.switches['cur_screen'] = "events screen"
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
+        self.selected_cat = game.clan.your_cat
         for ele in self.selected_details:
             self.selected_details[ele].kill()
         self.selected_details = {}
-        if self.selected_mentor:
+        if self.selected_cat:
 
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((100, 300), (300, 300))),
+                scale(pygame.Rect((650, 300), (300, 300))),
                 pygame.transform.scale(
-                    self.selected_mentor.sprite,
+                    self.selected_cat.sprite,
                     (300, 300)), manager=MANAGER)
 
-            info = self.selected_mentor.status + "\n" + \
-                   self.selected_mentor.genderalign + "\n" + self.selected_mentor.personality.trait + "\n" + \
-                   self.selected_mentor.skills.skill_string(short=True)
-            if len(self.selected_mentor.former_apprentices) >= 1:
-                info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
-            if len(self.selected_mentor.apprentice) >= 1:
-                info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
+            info = "Current accessories: "
+            all_accessories = game.clan.your_cat.pelt.accessories
+            if game.clan.your_cat.pelt.accessory and game.clan.your_cat.pelt.accessory not in all_accessories:
+                all_accessories.append(game.clan.your_cat.pelt.accessory)
+            if len(all_accessories) > 0:
+                for i in all_accessories:
+                    info += "\n" + self.accessory_display_name(i)
+            else:
+                info += " None"        
+            
             self.selected_details["selected_info"] = pygame_gui.elements.UITextBox(info,
-                                                                                   scale(pygame.Rect((420, 325),
+                                                                                   scale(pygame.Rect((980, 325),
                                                                                                      (210, 250))),
                                                                                    object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
                                                                                    manager=MANAGER)
 
-            name = str(self.selected_mentor.name)  # get name
+            name = str(self.selected_cat.name)  # get name
             if 11 <= len(name):  # check name length
                 short_name = str(name)[0:9]
                 name = short_name + '...'
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
-                scale(pygame.Rect((130, 230), (220, 60))),
+                scale(pygame.Rect((690, 230), (220, 60))),
                 name,
                 object_id="#text_box_34_horizcenter", manager=MANAGER)
+    
+    def accessory_display_name(self, accessory):
+        if accessory is None:
+            return ''
+        acc_display = accessory.lower()
+
+        if accessory in Pelt.collars:
+            collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan',
+                            'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow',
+                            'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink',
+                            'purple': 'purple', 'multi': 'multi', 'indigo': 'indigo'}
+            collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
+
+            if collar_color:
+                if acc_display.endswith('bow') and not collar_color == 'rainbow':
+                    acc_display = collar_colors[collar_color] + ' bow'
+                elif acc_display.endswith('bell'):
+                    acc_display = collar_colors[collar_color] + ' bell collar'
+                else:
+                    acc_display = collar_colors[collar_color] + ' collar'
+
+        elif accessory in Pelt.wild_accessories:
+            if acc_display == 'blue feathers':
+                acc_display = 'crow feathers'
+            elif acc_display == 'red feathers':
+                acc_display = 'cardinal feathers'
+
+        return acc_display
+
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
-        valid_mentors = self.chunks(self.get_valid_mentors(), 30)
+        valid_mentors = self.chunks(self.get_valid_cats(), 30)
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
@@ -5874,47 +5796,260 @@ class ChangeAccessoryScreen(Screens):
             self.cat_list_buttons[ele].kill()
         self.cat_list_buttons = {}
 
+
+        sprites = Sprites2(spriteSize)
+        
+        for x in [
+            'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
+            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+            'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
+            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
+            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
+            'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
+            'fadestarclan', 'fadedarkforest', 'flower_accessories', 'plant2_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
+            'aliveInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories'
+
+        ]:
+            if 'lineart' in x and game.config['fun']['april_fools']:
+                sprites.spritesheet(f"sprites/aprilfools{x}.png", x)
+            else:
+                sprites.spritesheet(f"sprites/{x}.png", x)
+
+        # Line art
+        sprites.make_group('lineart', (0, 0), 'lines')
+        sprites.make_group('shadersnewwhite', (0, 0), 'shaders')
+        sprites.make_group('lightingnew', (0, 0), 'lighting')
+
+        sprites.make_group('lineartdead', (0, 0), 'lineartdead')
+        sprites.make_group('lineartdf', (0, 0), 'lineartdf')
+
+        # Fading Fog
+        for i in range(0, 3):
+            sprites.make_group('fademask', (i, 0), f'fademask{i}')
+            sprites.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
+            sprites.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
+
+        for a, i in enumerate(
+                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
+                'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+            sprites.make_group('eyes', (a, 0), f'eyes{i}')
+            sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
+        for a, i in enumerate(
+                ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
+                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+            sprites.make_group('eyes', (a, 1), f'eyes{i}')
+            sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
+
+        # white patches
+        for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
+            'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
+            sprites.make_group('whitepatches', (a, 0), f'white{i}')
+        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
+            'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
+            sprites.make_group('whitepatches', (a, 1), f'white{i}')
+        # ryos white patches
+        for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO', 'GOATEE', 'VITILIGOTWO',
+            'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE', 'DIVA', 'BEARD']):
+            sprites.make_group('whitepatches', (a, 2), f'white{i}')
+        for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
+            'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'TOPCOVER']):
+            sprites.make_group('whitepatches', (a, 3), f'white{i}')
+        for a, i in enumerate(
+                ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW',
+                'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'DAPPLEPAW']):
+            sprites.make_group('whitepatches', (a, 4), f'white{i}')
+        # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
+        for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
+            'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
+            sprites.make_group('whitepatches', (a, 5), f'white{i}')
+        # acorn's white patches + ryos' bub
+        for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART', 'SPARROW', 'VEST']):
+            sprites.make_group('whitepatches', (a, 6), 'white' + i)
+
+        # single (solid)
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('singlecolours', (a, 0), f'single{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('singlecolours', (a, 1), f'single{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('singlecolours', (a, 2), f'single{i}')
+        # tabby
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('tabbycolours', (a, 0), f'tabby{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('tabbycolours', (a, 1), f'tabby{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('tabbycolours', (a, 2), f'tabby{i}')
+        # marbled
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('marbledcolours', (a, 0), f'marbled{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('marbledcolours', (a, 1), f'marbled{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('marbledcolours', (a, 2), f'marbled{i}')
+        # rosette
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('rosettecolours', (a, 0), f'rosette{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('rosettecolours', (a, 1), f'rosette{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('rosettecolours', (a, 2), f'rosette{i}')
+        # smoke
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('smokecolours', (a, 0), f'smoke{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('smokecolours', (a, 1), f'smoke{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('smokecolours', (a, 2), f'smoke{i}')
+        # ticked
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('tickedcolours', (a, 0), f'ticked{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('tickedcolours', (a, 1), f'ticked{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('tickedcolours', (a, 2), f'ticked{i}')
+        # speckled
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('speckledcolours', (a, 0), f'speckled{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('speckledcolours', (a, 1), f'speckled{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('speckledcolours', (a, 2), f'speckled{i}')
+        # bengal
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('bengalcolours', (a, 0), f'bengal{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('bengalcolours', (a, 1), f'bengal{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('bengalcolours', (a, 2), f'bengal{i}')
+        # mackerel
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('mackerelcolours', (a, 0), f'mackerel{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('mackerelcolours', (a, 1), f'mackerel{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('mackerelcolours', (a, 2), f'mackerel{i}')
+        # classic
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('classiccolours', (a, 0), f'classic{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('classiccolours', (a, 1), f'classic{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('classiccolours', (a, 2), f'classic{i}')
+        # sokoke
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('sokokecolours', (a, 0), f'sokoke{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('sokokecolours', (a, 1), f'sokoke{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('sokokecolours', (a, 2), f'sokoke{i}')
+        # agouti
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('agouticolours', (a, 0), f'agouti{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('agouticolours', (a, 1), f'agouti{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('agouticolours', (a, 2), f'agouti{i}')
+        # singlestripe
+        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
+            sprites.make_group('singlestripecolours', (a, 0), f'singlestripe{i}')
+        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
+            sprites.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
+        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
+            sprites.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
+            
+        # new new torties
+        for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK']):
+            sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
+        for a, i in enumerate(['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST', 'ARMTAIL']):
+            sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
+        for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER']):
+            sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
+        for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET']):
+            sprites.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
+
+        # SKINS
+        for a, i in enumerate(['BLACK', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', "RED"]):
+            sprites.make_group('skin', (a, 0), f"skin{i}")
+        for a, i in enumerate(['DARK', 'DARKGREY', 'GREY', 'DARKSALMON', 'SALMON', 'PEACH']):
+            sprites.make_group('skin', (a, 1), f"skin{i}")
+        for a, i in enumerate(['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']):
+            sprites.make_group('skin', (a, 2), f"skin{i}")
+
+        sprites.load_scars()
+
+        cat = game.clan.your_cat
+        age = cat.age
+        dead = cat.dead
+        cat_sprite = str(cat.pelt.cat_sprites[cat.age])
+
+        
+        # setting the cat_sprite (bc this makes things much easier)
+        if cat.not_working() and age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
+            if age in ['kitten', 'adolescent']:
+                cat_sprite = str(19)
+            else:
+                cat_sprite = str(18)
+        elif cat.pelt.paralyzed and age != 'newborn':
+            if age in ['kitten', 'adolescent']:
+                cat_sprite = str(17)
+            else:
+                if cat.pelt.length == 'long':
+                    cat_sprite = str(16)
+                else:
+                    cat_sprite = str(15)
+        else:
+            if age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
+                age = 'senior'
+            
+            if game.config['fun']['all_cats_are_newborn']:
+                cat_sprite = str(cat.pelt.cat_sprites['newborn'])
+            else:
+                cat_sprite = str(cat.pelt.cat_sprites[age])
         pos_x = 0
         pos_y = 40
         i = 0
-        for cat in display_cats:
-            self.cat_list_buttons["cat" + str(i)] = UISpriteButton(
-                scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))),
-                cat.sprite, cat_object=cat, manager=MANAGER)
-            pos_x += 120
-            if pos_x >= 1100:
-                pos_x = 0
-                pos_y += 120
-            i += 1
 
-    def update_buttons(self):
-        """Updates the status of buttons. """
-        # Disable to enable the choose mentor button
-        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
-            self.confirm_mentor.disable()
-            self.current_mentor_warning.show()
-        else:
-            self.confirm_mentor.enable()
-            self.current_mentor_warning.hide()
+        if game.clan.your_cat.pelt.accessories:
+            for accessory in game.clan.your_cat.pelt.accessories:
+                if accessory in cat.pelt.plant_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_herbs' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.wild_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_wild' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.collars:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['collars' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.flower_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_flower' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.plant2_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_plant2' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.snake_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_snake' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.smallAnimal_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_smallAnimal' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.deadInsect_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_deadInsect' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.aliveInsect_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_aliveInsect' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.fruit_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_fruit' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.crafted_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_crafted' + accessory + cat_sprite], manager=MANAGER)
+                elif accessory in cat.pelt.tail2_accessories:
+                    self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_tail2' + accessory + cat_sprite], manager=MANAGER)
+                    
+                pos_x += 120
+                if pos_x >= 1100:
+                    pos_x = 0
+                    pos_y += 120
+                i += 1
 
-    def get_valid_mentors(self):
+    def get_valid_cats(self):
         valid_mentors = []
 
-        if self.the_cat.status == "apprentice":
-            for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status in [
-                    'warrior', 'deputy', 'leader'
-                ]:
-                    valid_mentors.append(cat)
-        elif self.the_cat.status == "medicine cat apprentice":
-            for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status == 'medicine cat':
-                    valid_mentors.append(cat)
-        elif self.the_cat.status == 'mediator apprentice':
-            for cat in Cat.all_cats_list:
-                if not cat.dead and not cat.outside and cat.status == 'mediator':
-                    valid_mentors.append(cat)
-
+        for accessory in game.clan.your_cat.pelt.accessories:
+            valid_mentors.append(accessory)
+        
         return valid_mentors
 
     def on_use(self):

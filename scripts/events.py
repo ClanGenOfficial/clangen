@@ -359,12 +359,19 @@ class Events:
                 except ValueError:
                     print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
-
         if not game.clan.your_cat.pelt.accessories:
-            game.clan.your_cat.accessories = []
+            game.clan.your_cat.pelt.accessories = []
         acc = random.choice(acc_list)
-        if acc not in game.clan.your_cat.accessories:
+        if acc not in game.clan.your_cat.pelt.accessories:
             game.clan.your_cat.pelt.accessories.append(acc)
+        
+        
+        # if not game.clan.your_cat.inventory:
+        #     game.clan.your_cat.inventory = []
+        # acc = random.choice(acc_list)
+        # if acc not in game.clan.your_cat.inventory:
+        #     game.clan.your_cat.inventory.append(acc)
+            
         
     
     def check_achievements(self):

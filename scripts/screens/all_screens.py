@@ -7,7 +7,7 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen, AchievementScreen
 from .patrol_screens import PatrolScreen, PatrolScreen2, PatrolScreen3
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen, ChooseRebornCat, ChooseMurderCatScreen
+    RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen, ChooseAdoptiveParentScreen, ChooseRebornCat, ChooseMurderCatScreen, ChangeAccessoryScreen
 #from scripts.screens.relation.choose_adoptive_parent import ChooseAdoptiveParentScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
 
@@ -100,6 +100,7 @@ relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = FamilyTreeScreen('see kits screen')
 mediation_screen = MediationScreen("mediation screen")
 murder_screen = ChooseMurderCatScreen("murder screen")
+accessory_screen = ChangeAccessoryScreen("accessory screen")
 
 # ---------------------------------------------------------------------------- #
 #                               world_screens.py                               #
