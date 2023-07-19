@@ -597,7 +597,9 @@
             "Is showing off to the kits",
             "Is telling off kits for being immature",
             "Is rambling on to kits about the importance of respecting their elders",
-            "Makes fun of r_c for not being an apprentice yet"
+            "Makes fun of r_c for not being an apprentice yet",
+            "Is playfighting with r_c",
+            "Teaches r_c a cool new trick that {PRONOUN/m_c/poss} learned"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -701,7 +703,8 @@
             "Wonders if the kits get mossballs in StarClan",
             "Hopes that the kits in StarClan get time to play games",
             "Looks up at the night sky, and wonders which stars are long-gone kits",
-            "Thought {PRONOUN/m_c/subject} saw a stray kit infront of the nursery, but it vanished"
+            "Thought {PRONOUN/m_c/subject} saw a stray kit infront of the nursery, but it vanished",
+            "Walks in the nursery, hoping to see r_c again, but then realizes that r_c isn't coming back"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -758,7 +761,10 @@
         "thoughts": [
             "Is ignoring {PRONOUN/m_c/poss} mentor's orders",
             "Is making other apprentices laugh",
-            "Got in trouble for shirking {PRONOUN/m_c/poss} training the other day"
+            "Got in trouble for shirking {PRONOUN/m_c/poss} training the other day",
+            "Is talking back to {PRONOUN/m_c/poss} mentor",
+            "Is mocking a other apprentice",
+            "Was told off by {PRONOUN/m_c/poss} mentor for not taking {PRONOUN/m_c/poss} training seriously enough"
         ],
         "main_status_constraint": [
             "apprentice",

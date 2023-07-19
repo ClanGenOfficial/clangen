@@ -601,7 +601,7 @@
             "comfort",
             "medium_prey"
         ],
-        "intro_text": "Something skitters across the grass, catching the patrols eyes. A little lizard!",
+        "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
         "exp": 15,
@@ -730,7 +730,7 @@
         "season": "greenleaf",
         "tags": [
             "hunting",
-            "heat_illness",
+            "hot_injury",
             "medium_prey0",
             "huge_prey1"
         ],
@@ -744,7 +744,7 @@
         },
         "fail_text": {
             "unscathed_common": "No way, it's too hot for this. They can try to hunt again later.",
-            "injury": "r_c collapses from heat exhaustion. p_l carries them back to camp."
+            "injury": "r_c collapses from the unbearable heat. p_l carries them back to camp."
         },
         "min_cats": 2,
         "max_cats": 6,
