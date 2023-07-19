@@ -510,7 +510,7 @@ class Cat():
                 possible_strings.extend(
                     self.generate_events.possible_death_reactions(family_relation, "platonic", cat.personality.trait,
                                                                   body_status)
-                 )proformant
+                 )
             
             if to_self.admiration > 70:
                 possible_strings.extend(
