@@ -486,36 +486,50 @@ class Cat():
 
         text = None
 
+        
+        
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside or cat.moons < 1:
                 continue
-            relationships = cat.relationships.values()
-
-            pos_rel_values = {
-                "romantic": [i for i in relationships if i.romantic_love > 55],
-                "platonic": [i for i in relationships if i.platonic_like > 50],
-                "admiration": [i for i in relationships if i.admiration > 70],
-                "comfort": [i for i in relationships if i.comfortable > 60],
-                "trust": [i for i in relationships if i.trust > 70]
-            }
-
-            neg_rel_values = {
-                "dislike": [i for i in relationships if i.dislike > 50],
-                "jealousy": [i for i in relationships if i.jealousy > 50]
-            }
-
+            
+            to_self = cat.relationships.get(self.ID)
+            if not isinstance(to_self, Relationship):
+                continue
+            
             possible_strings = []
-            for value in pos_rel_values:
-                value_list = pos_rel_values[value]
-                for y in range(len(value_list)):
-                    cat_to = value_list[y].cat_to
-                    if cat_to == self:
-                        family_relation = self.familial_grief(living_cat=cat)
-                        possible_strings.extend(
-                            self.generate_events.possible_death_reactions(family_relation, value, cat.personality.trait,
-                                                                          body_status))
-
+            family_relation = self.familial_grief(living_cat=cat)
+            
+            if to_self.romantic_love > 55:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "romantic", cat.personality.trait,
+                                                                  body_status)
+                 )
+            
+            if to_self.platonic_like > 50:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "platonic", cat.personality.trait,
+                                                                  body_status)
+                 )proformant
+            
+            if to_self.admiration > 70:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "admiration", cat.personality.trait,
+                                                                  body_status)
+                 )
+                
+            if to_self.comfortable > 60:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "comfort", cat.personality.trait,
+                                                                  body_status)
+                 )
+                
+            if to_self.trust > 70:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "trust", cat.personality.trait,
+                                                                  body_status)
+                 )
+            
             if possible_strings:
                 # choose string
                 text = [choice(possible_strings)]
@@ -547,33 +561,35 @@ class Cat():
                         MINOR_MAJOR_REACTION["minor"]
                     ))
 
+                #Generate the event:
+                event = event_text_adjust(Cat, ' '.join(text), self, cat)
+                Cat.grief_strings[cat.ID] = (event, (self.ID, cat.ID))
+                
                 # grief the cat
                 if game.clan.game_mode != 'classic':
                     cat.get_ill("grief stricken", event_triggered=True, severity=severity)
 
-            # negative reactions, no grief
-            else:
-                for value in neg_rel_values:
-                    value_list = neg_rel_values[value]
-                    for y in range(len(value_list)):
-                        cat_to = value_list[y].cat_to
-                        if cat_to == self:
-                            family_relation = self.familial_grief(living_cat=cat)
-                            possible_strings.extend(
-                                self.generate_events.possible_death_reactions(family_relation, value, cat.personality.trait,
-                                                                              body_status))
-
-                if possible_strings:
-                    # choose string
-                    text = [choice(possible_strings)]
-
-            if text:
-                # adjust and append text to grief string list
-                text = ' '.join(text)
-                text = event_text_adjust(Cat, text, self, cat)
-                Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
-                possible_strings.clear()
-                text = None
+                
+                continue
+            
+            
+            if to_self.dislike > 50:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "dislike", cat.personality.trait,
+                                                                  body_status)
+                 )
+                
+            if to_self.jealousy > 50:
+                possible_strings.extend(
+                    self.generate_events.possible_death_reactions(family_relation, "jealousy", cat.personality.trait,
+                                                                  body_status)
+                 )
+            
+            if possible_strings:
+                #Generate the event:
+                event = event_text_adjust(Cat, choice(possible_strings), self, cat)
+                Cat.grief_strings[cat.ID] = (event, (self.ID, cat.ID))
+                
 
     def familial_grief(self, living_cat: Cat):
         """
