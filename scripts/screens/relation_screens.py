@@ -324,7 +324,7 @@ class ChooseMentorScreen(Screens):
             self.the_cat.mentor = new_mentor.ID
             new_mentor.apprentice.append(self.the_cat.ID)
             self.mentor = new_mentor
-            if self.the_cat.ID not in old_mentor.former_apprentices:
+            if self.the_cat.ID not in new_mentor.former_apprentices:
                 self.the_cat.patrol_with_mentor = 0
 
             # They are a current apprentice, not a former one now!
