@@ -351,6 +351,14 @@
 	"save_load": {
 		"load_integrity_checks": true
 	},
+	"sorting": {
+		"sort_dead_by_death": false,
+        "sort_by_rel_total": true,
+		"comment": [
+			"sort_by_death - true: the age filter will sort dead cats in the order they died; false: it sorts dead cats in the order they were born. Ranked sorting always sorts by death regardless.",
+            "sort_by_rel_total - true: sort a cat's relationships by the sum of their values; false: they will be sorted in the order they were added."
+		]
+	},
 	"fun": {
 		"april_fools": false,
 		"all_cats_are_newborn": false,

@@ -1810,7 +1810,7 @@
             "comfort",
             "small_prey"
         ],
-        "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little lizard!",
+        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
         "exp": 15,
