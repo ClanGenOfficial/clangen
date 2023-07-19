@@ -29,6 +29,15 @@
             "tool_tip_delay": "0"
         }
     },
+    "button": {
+        "normal_bg": "resources/images/buttons/blank.png",
+        "hover_bg": "resources/images/buttons/blank.png",
+        "down_bg": "resources/images/buttons/blank.png",
+        "text_color": "#000000",
+        "font": "default",
+        "border_width": 0,
+        "shadow_width": 0
+    },
     "#cat_button": 
     {
 		"colours":

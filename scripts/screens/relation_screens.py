@@ -5529,6 +5529,7 @@ class ChangeAccessoryScreen(Screens):
     apprentice_details = {}
     selected_details = {}
     cat_list_buttons = {}
+    accessory_buttons = {}
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -5553,16 +5554,10 @@ class ChangeAccessoryScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element in self.cat_list_buttons.values():
-                self.selected_cat = event.ui_element.return_cat_object()
-                self.update_selected_cat()
-                # self.update_buttons()
+            if event.ui_element in self.accessory_buttons.values():
+                print('key')
             elif event.ui_element == self.confirm_mentor and self.selected_cat:
-                if not self.selected_cat.dead:
-                    self.update_selected_cat()
-
-                    self.change_cat(self.selected_cat)
-                    # self.update_buttons()
+                print('hi')
             elif event.ui_element == self.back_button:
                 self.change_screen('events screen')
             elif event.ui_element == self.next_cat_button:
@@ -5570,7 +5565,6 @@ class ChangeAccessoryScreen(Screens):
                     game.switches['cat'] = self.next_cat
                     self.update_cat_list()
                     self.update_selected_cat()
-                    # self.update_buttons()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
@@ -5578,7 +5572,6 @@ class ChangeAccessoryScreen(Screens):
                     game.switches['cat'] = self.previous_cat
                     self.update_cat_list()
                     self.update_selected_cat()
-                    # self.update_buttons()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_page_button:
@@ -5618,12 +5611,10 @@ class ChangeAccessoryScreen(Screens):
                                               object_id="#relation_list_next", manager=MANAGER)
 
         self.update_selected_cat()  # Updates the image and details of selected cat
-        # self.update_cat_list()
+        self.update_cat_list()
 
     def exit_screen(self):
 
-        # self.selected_details["selected_image"].kill()
-        # self.selected_details["selected_info"].kill()
         for ele in self.cat_list_buttons:
             self.cat_list_buttons[ele].kill()
         self.cat_list_buttons = {}
@@ -5639,6 +5630,9 @@ class ChangeAccessoryScreen(Screens):
         self.heading.kill()
         del self.heading
 
+        self.info.kill()
+        del self.info
+
         self.mentor_frame.kill()
         del self.mentor_frame
 
@@ -5651,51 +5645,6 @@ class ChangeAccessoryScreen(Screens):
         del self.previous_page_button
         self.next_page_button.kill()
         del self.next_page_button
-
-
-    def find_next_previous_cats(self):
-        """Determines where the previous and next buttons lead"""
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        self.previous_cat = 0
-        self.next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            self.next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                self.next_cat = 1
-
-            if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
-                    and check_cat.df == self.the_cat.df:
-                self.previous_cat = check_cat.ID
-
-            elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
-                    and check_cat.df == self.the_cat.df:
-                self.next_cat = check_cat.ID
-
-            elif int(self.next_cat) > 1:
-                break
-
-        if self.next_cat == 1:
-            self.next_cat = 0
-
-    def change_cat(self, new_mentor=None):
-        self.exit_screen()
-        game.cur_events_list.clear()
-        game.clan.your_cat = new_mentor
-        if game.clan.your_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
-            game.clan.your_cat.w_done = True
-        game.switches['cur_screen'] = "events screen"
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
@@ -5800,13 +5749,8 @@ class ChangeAccessoryScreen(Screens):
         sprites = Sprites2(spriteSize)
         
         for x in [
-            'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+            'scars', 'missingscars', 'medcatherbs',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
-            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
-            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
-            'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
             'fadestarclan', 'fadedarkforest', 'flower_accessories', 'plant2_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
             'aliveInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories'
 
@@ -5816,172 +5760,11 @@ class ChangeAccessoryScreen(Screens):
             else:
                 sprites.spritesheet(f"sprites/{x}.png", x)
 
-        # Line art
-        sprites.make_group('lineart', (0, 0), 'lines')
-        sprites.make_group('shadersnewwhite', (0, 0), 'shaders')
-        sprites.make_group('lightingnew', (0, 0), 'lighting')
-
-        sprites.make_group('lineartdead', (0, 0), 'lineartdead')
-        sprites.make_group('lineartdf', (0, 0), 'lineartdf')
-
-        # Fading Fog
-        for i in range(0, 3):
-            sprites.make_group('fademask', (i, 0), f'fademask{i}')
-            sprites.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
-            sprites.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
-
-        for a, i in enumerate(
-                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
-                'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
-            sprites.make_group('eyes', (a, 0), f'eyes{i}')
-            sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
-        for a, i in enumerate(
-                ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
-                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
-            sprites.make_group('eyes', (a, 1), f'eyes{i}')
-            sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
-
-        # white patches
-        for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
-            'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
-            sprites.make_group('whitepatches', (a, 0), f'white{i}')
-        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
-            'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
-            sprites.make_group('whitepatches', (a, 1), f'white{i}')
-        # ryos white patches
-        for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO', 'GOATEE', 'VITILIGOTWO',
-            'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE', 'DIVA', 'BEARD']):
-            sprites.make_group('whitepatches', (a, 2), f'white{i}')
-        for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
-            'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'TOPCOVER']):
-            sprites.make_group('whitepatches', (a, 3), f'white{i}')
-        for a, i in enumerate(
-                ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW',
-                'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'DAPPLEPAW']):
-            sprites.make_group('whitepatches', (a, 4), f'white{i}')
-        # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
-        for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
-            'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
-            sprites.make_group('whitepatches', (a, 5), f'white{i}')
-        # acorn's white patches + ryos' bub
-        for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART', 'SPARROW', 'VEST']):
-            sprites.make_group('whitepatches', (a, 6), 'white' + i)
-
-        # single (solid)
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('singlecolours', (a, 0), f'single{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('singlecolours', (a, 1), f'single{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('singlecolours', (a, 2), f'single{i}')
-        # tabby
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('tabbycolours', (a, 0), f'tabby{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('tabbycolours', (a, 1), f'tabby{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('tabbycolours', (a, 2), f'tabby{i}')
-        # marbled
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('marbledcolours', (a, 0), f'marbled{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('marbledcolours', (a, 1), f'marbled{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('marbledcolours', (a, 2), f'marbled{i}')
-        # rosette
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('rosettecolours', (a, 0), f'rosette{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('rosettecolours', (a, 1), f'rosette{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('rosettecolours', (a, 2), f'rosette{i}')
-        # smoke
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('smokecolours', (a, 0), f'smoke{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('smokecolours', (a, 1), f'smoke{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('smokecolours', (a, 2), f'smoke{i}')
-        # ticked
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('tickedcolours', (a, 0), f'ticked{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('tickedcolours', (a, 1), f'ticked{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('tickedcolours', (a, 2), f'ticked{i}')
-        # speckled
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('speckledcolours', (a, 0), f'speckled{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('speckledcolours', (a, 1), f'speckled{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('speckledcolours', (a, 2), f'speckled{i}')
-        # bengal
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('bengalcolours', (a, 0), f'bengal{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('bengalcolours', (a, 1), f'bengal{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('bengalcolours', (a, 2), f'bengal{i}')
-        # mackerel
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('mackerelcolours', (a, 0), f'mackerel{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('mackerelcolours', (a, 1), f'mackerel{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('mackerelcolours', (a, 2), f'mackerel{i}')
-        # classic
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('classiccolours', (a, 0), f'classic{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('classiccolours', (a, 1), f'classic{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('classiccolours', (a, 2), f'classic{i}')
-        # sokoke
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('sokokecolours', (a, 0), f'sokoke{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('sokokecolours', (a, 1), f'sokoke{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('sokokecolours', (a, 2), f'sokoke{i}')
-        # agouti
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('agouticolours', (a, 0), f'agouti{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('agouticolours', (a, 1), f'agouti{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('agouticolours', (a, 2), f'agouti{i}')
-        # singlestripe
-        for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']):
-            sprites.make_group('singlestripecolours', (a, 0), f'singlestripe{i}')
-        for a, i in enumerate(['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']):
-            sprites.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
-        for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
-            sprites.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
-            
-        # new new torties
-        for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK']):
-            sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
-        for a, i in enumerate(['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST', 'ARMTAIL']):
-            sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
-        for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER']):
-            sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
-        for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET']):
-            sprites.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
-
-        # SKINS
-        for a, i in enumerate(['BLACK', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', "RED"]):
-            sprites.make_group('skin', (a, 0), f"skin{i}")
-        for a, i in enumerate(['DARK', 'DARKGREY', 'GREY', 'DARKSALMON', 'SALMON', 'PEACH']):
-            sprites.make_group('skin', (a, 1), f"skin{i}")
-        for a, i in enumerate(['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']):
-            sprites.make_group('skin', (a, 2), f"skin{i}")
 
         sprites.load_scars()
 
         cat = game.clan.your_cat
         age = cat.age
-        dead = cat.dead
         cat_sprite = str(cat.pelt.cat_sprites[cat.age])
 
         
@@ -6037,7 +5820,9 @@ class ChangeAccessoryScreen(Screens):
                     self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_crafted' + accessory + cat_sprite], manager=MANAGER)
                 elif accessory in cat.pelt.tail2_accessories:
                     self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_tail2' + accessory + cat_sprite], manager=MANAGER)
-                    
+                self.accessory_buttons["acc" + str(i)] = UIImageButton(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), "", object_id="#blank_button")
+
+                
                 pos_x += 120
                 if pos_x >= 1100:
                     pos_x = 0
