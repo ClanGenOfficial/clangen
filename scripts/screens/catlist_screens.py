@@ -130,7 +130,7 @@ class ClanScreen(Screens):
                         UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
                                        Cat.all_cats[x].sprite,
                                        cat_id=x,
-                                       starting_height=1)
+                                       starting_height=0)
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
@@ -1044,7 +1044,7 @@ class DFScreen(Screens):
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.sprite,
                                    cat.ID,
-                                   starting_height=1))
+                                   starting_height=0))
 
                 name = str(cat.name)
                 if len(name) >= 13:
@@ -1404,7 +1404,7 @@ class ListScreen(Screens):
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.sprite,
                                    cat.ID,
-                                   starting_height=1, manager=MANAGER))
+                                   starting_height=0, manager=MANAGER))
 
                 name = str(cat.name)
                 if len(name) >= 13:

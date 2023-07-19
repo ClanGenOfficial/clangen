@@ -239,7 +239,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "With a graceful gait, r_c treated forward, {PRONOUN/r_c/poss} serene presence washing over m_c like one would be put under a spell. In the moment of peace, r_c tenderly extends an offer; a life infused with the essence of [virtue].",
+          "text": "With a graceful gait, r_c treads forward, {PRONOUN/r_c/poss} serene presence washing over m_c like one would be put under a spell. In the moment of peace, r_c tenderly extends an offer; a life infused with the essence of [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
@@ -249,22 +249,18 @@
       ]
     },
   
-    "careful_warrior_EXAMPLE": {
+    "careful_warrior": {
       "tags": [],
       "lead_trait": ["careful"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c walks up to m_c, offering a life for [virtue]. They smile, and state that the Clan will do well under m_c's leadership.",
+          "text": "r_c steps forward to m_c, holding {PRONOUN/m_c/poss} gaze. Pressing {PRONOUN/r_c/poss} muzzle against m_c's, {PRONOUN/r_c/subject} {VERB/r_c/nod/nods} and {VERB/r_c/grant/grants} {PRONOUN/m_c/object} a life of [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "A new cat approaches. r_c steps forward to give m_c a life for [virtue]. m_c grits their teeth as the life rushes into them.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        },
-        {
-          "text": "r_c dips their head in greeting. Energy surges through m_c's pelt as they receive a life for [virtue]. They reassure m_c that they are almost done.",
+          "text": "r_c peers at m_c, witnessing the depths of {PRONOUN/m_c/poss} wisdom and calmness, like still waters that run deep. With an approving nod, r_c offers {PRONOUN/m_c/object} a life of [virtue], trusting that m_c will lead the Clan with care.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgement", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]

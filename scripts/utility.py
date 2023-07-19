@@ -86,6 +86,9 @@ def get_med_cats(Cat, working=True):
     if working:
         possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
 
+    # Sort the cats by age before returning
+    possible_med_cats = sorted(possible_med_cats, key=lambda cat: cat.moons, reverse=True)
+
     return possible_med_cats
 
 
