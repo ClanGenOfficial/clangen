@@ -146,7 +146,7 @@
     {
         "id": "ambitious_deputy",
         "thoughts": [
-            "Is imagining the respect {PRONOUN/m_c/object}'d command as the leader of the Clan",
+            "Is imagining the respect {PRONOUN/m_c/subject}'d command as the leader of the Clan",
             "Is considering innovative strategies to earn more recognition",
             "Feels a burning desire to prove {PRONOUN/m_c/self} worthy of leadership"
         ],

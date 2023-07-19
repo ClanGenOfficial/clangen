@@ -230,7 +230,7 @@ class History:
         if not cat.history.mentor_influence["skill"]:
             return
 
-        # working under the impression that these blurbs will be preceeded by "become better at"
+        # working under the impression that these blurbs will be preceded by "become better at"
         skill_influence_text = {
                 SkillPath.TEACHER: [ "teaching" ],
                 SkillPath.HUNTER: [ "hunting" ],
@@ -251,7 +251,7 @@ class History:
                 SkillPath.STAR: [ "connecting to starclan" ],
                 SkillPath.OMEN: [ "finding omens" ],
                 SkillPath.DREAM: [ "understanding dreams" ],
-                SkillPath.CLAIRVOYANT: [ "predicting the furture" ],
+                SkillPath.CLAIRVOYANT: [ "predicting the future" ],
                 SkillPath.PROPHET: [ "understanding prophecies" ],
                 SkillPath.GHOST: [ "connecting to the afterlife" ],
             }
