@@ -5530,6 +5530,7 @@ class ChangeAccessoryScreen(Screens):
     selected_details = {}
     cat_list_buttons = {}
     accessory_buttons = {}
+    accessories_list = []
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -5555,7 +5556,18 @@ class ChangeAccessoryScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.accessory_buttons.values():
-                print('key')
+                value = {i for i in self.accessory_buttons if self.accessory_buttons[i]==event.ui_element}
+                n = int(list(value)[0])
+                if self.accessories_list[n] in game.clan.your_cat.pelt.accessories:
+                    game.clan.your_cat.pelt.accessories.remove(self.accessories_list[n])
+                else:
+                    game.clan.your_cat.pelt.accessories.append(self.accessories_list[n])
+                self.selected_details["selected_image"].kill()
+                self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
+                scale(pygame.Rect((650, 300), (300, 300))),
+                pygame.transform.scale(
+                    self.selected_cat.sprite,
+                    (300, 300)), manager=MANAGER)
             elif event.ui_element == self.confirm_mentor and self.selected_cat:
                 print('hi')
             elif event.ui_element == self.back_button:
@@ -5793,9 +5805,15 @@ class ChangeAccessoryScreen(Screens):
         pos_x = 0
         pos_y = 40
         i = 0
+        if game.clan.your_cat.pelt.accessory:
+            if game.clan.your_cat.pelt.accessory not in game.clan.your_cat.inventory:
+                game.clan.your_cat.inventory.append(game.clan.your_cat.pelt.accessory)
 
-        if game.clan.your_cat.pelt.accessories:
-            for accessory in game.clan.your_cat.pelt.accessories:
+        for acc in game.clan.your_cat.pelt.accessories:
+            if acc not in game.clan.your_cat.inventory:
+                game.clan.your_cat.inventory.append(acc)
+        if game.clan.your_cat.inventory:
+            for accessory in game.clan.your_cat.inventory:
                 if accessory in cat.pelt.plant_accessories:
                     self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_herbs' + accessory + cat_sprite], manager=MANAGER)
                 elif accessory in cat.pelt.wild_accessories:
@@ -5820,7 +5838,8 @@ class ChangeAccessoryScreen(Screens):
                     self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_crafted' + accessory + cat_sprite], manager=MANAGER)
                 elif accessory in cat.pelt.tail2_accessories:
                     self.cat_list_buttons["cat" + str(i)] = pygame_gui.elements.UIImage(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), sprites.sprites['acc_tail2' + accessory + cat_sprite], manager=MANAGER)
-                self.accessory_buttons["acc" + str(i)] = UIImageButton(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), "", object_id="#blank_button")
+                self.accessories_list.append(accessory)
+                self.accessory_buttons[str(i)] = UIImageButton(scale(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100))), "", object_id="#blank_button")
 
                 
                 pos_x += 120
