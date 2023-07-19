@@ -3328,6 +3328,29 @@
             }
         }
     },
+    "#remove_mentor_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/remove_mentor2.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/remove_mentor2_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/remove_mentor2_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/remove_mentor2_unavailable.png"
+            }
+        }
+    },
   "#relation_list_previous":
     {
         "prototype": "#image_button",

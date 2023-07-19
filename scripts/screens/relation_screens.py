@@ -32,6 +32,7 @@ class ChooseMentorScreen(Screens):
         self.previous_page_button = None
         self.current_mentor_warning = None
         self.confirm_mentor = None
+        self.remove_mentor = None
         self.back_button = None
         self.next_cat_button = None
         self.previous_cat_button = None
@@ -51,6 +52,10 @@ class ChooseMentorScreen(Screens):
                 self.update_selected_cat()
                 self.update_buttons()
             elif event.ui_element == self.confirm_mentor:
+                self.change_mentor(self.selected_mentor)
+                self.update_buttons()
+                self.update_selected_cat()
+            elif event.ui_element == self.remove_mentor:
                 self.change_mentor(self.selected_mentor)
                 self.update_buttons()
                 self.update_selected_cat()
@@ -135,6 +140,8 @@ class ChooseMentorScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
         self.confirm_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
                                             object_id="#confirm_mentor_button")
+        self.remove_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
+                                            object_id="#remove_mentor_button")
         if self.mentor is not None:
             self.current_mentor_warning = pygame_gui.elements.UITextBox(
                 "Current mentor selected",
@@ -188,6 +195,8 @@ class ChooseMentorScreen(Screens):
         del self.back_button
         self.confirm_mentor.kill()
         del self.confirm_mentor
+        self.remove_mentor.kill()
+        del self.remove_mentor
         self.current_mentor_warning.kill()
         del self.current_mentor_warning
         self.previous_page_button.kill()
@@ -289,7 +298,15 @@ class ChooseMentorScreen(Screens):
 
     def change_mentor(self, new_mentor=None):
         old_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        if new_mentor and old_mentor is not None:
+        if new_mentor == old_mentor:
+        #if "changing mentor" to the same cat, remove them as mentor instead
+            if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self.the_cat.ID)
+            self.the_cat.patrol_with_mentor = 0
+            self.the_cat.mentor = None
+            old_mentor.apprentice.remove(self.the_cat.ID)
+            self.mentor = None
+        elif new_mentor and old_mentor is not None:
             old_mentor.apprentice.remove(self.the_cat.ID)
             if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
                 old_mentor.former_apprentices.append(self.the_cat.ID)
@@ -400,10 +417,19 @@ class ChooseMentorScreen(Screens):
     def update_buttons(self):
         """Updates the status of buttons. """
         # Disable to enable the choose mentor button
-        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
+        if not self.selected_mentor:
+            self.remove_mentor.hide()
+            self.confirm_mentor.show()
             self.confirm_mentor.disable()
             self.current_mentor_warning.show()
+        elif self.selected_mentor.ID == self.the_cat.mentor:
+            self.confirm_mentor.hide()
+            self.remove_mentor.show()
+            self.remove_mentor.enable()
+            self.current_mentor_warning.show()
         else:
+            self.remove_mentor.hide()
+            self.confirm_mentor.show()
             self.confirm_mentor.enable()
             self.current_mentor_warning.hide()
 
