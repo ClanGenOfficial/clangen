@@ -422,7 +422,7 @@ class ChooseMentorScreen(Screens):
             self.remove_mentor.hide()
             self.remove_mentor.disable()
             self.confirm_mentor.show()
-            self.confirm_mentor.enable()
+            self.confirm_mentor.disable()
             self.current_mentor_warning.hide()
             self.no_mentor_warning.show()
         elif self.selected_mentor.ID == self.the_cat.mentor:
