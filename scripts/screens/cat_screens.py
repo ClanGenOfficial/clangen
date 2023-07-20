@@ -2015,7 +2015,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'your tab':
             if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.have_kits_button = UIImageButton(scale(pygame.Rect((804, 1172), (344, 72))), "",
-                                                    starting_height=2, object_id="#have_kits_button",
+                                                    starting_height=2, object_id="#have_kits_button", tool_tip_text='You will be more likely to have kits the next moon.',
                                                     manager=MANAGER)
             else:
                 self.have_kits_button = UIImageButton(scale(pygame.Rect((804, 1172), (344, 72))), "",

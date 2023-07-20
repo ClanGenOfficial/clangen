@@ -1,3 +1,15 @@
+<strong>v0.5.0: </strong>
+- Flirt with clanmates 
+- Choose your mate 
+- Choose to have kits  
+- Request an apprentice 
+- Collect new accessories 
+- Change accessories 
+- More than one accessory 
+- Add new accessories from ohdan-mod 
+- Add new moon events
+- Bug fixes
+
 <strong>v0.4.6: </strong>
 - Added Dark Forest moon events
 - You can now meet clanmates in the Dark Forest

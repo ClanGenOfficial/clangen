@@ -5128,7 +5128,7 @@ class ChooseMurderCatScreen(Screens):
                 else:
                     game.cur_events_list.insert(3, Single_Event(choice(gen_punishment)))
     
-    def get_discover_chance(self, you, cat_to_murder, accomplice, accompliced):
+    def get_discover_chance(self, you, cat_to_murder, accomplice=None, accompliced=None):
         chance = 30
         if you.status == 'kitten':
             chance += 40
