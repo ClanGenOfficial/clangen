@@ -684,7 +684,7 @@ class ProfileScreen(Screens):
                 self.profile_elements["talk"].disable()
             else:
                 self.profile_elements["talk"].enable()
-        if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside:    
+        if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside and not game.clan.your_cat.dead and not game.clan.your_cat.outside:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
                     (806, 220), (68, 68))),
