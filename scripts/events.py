@@ -145,29 +145,28 @@ class Events:
 
         # Handle grief events.
         if Cat.grief_strings:
-            remove_cats = []
-            death_report_cats = []
-
             # Grab all the dead or outside cats, who should not have grief text
-            for ID in Cat.grief_strings:
+            for ID in Cat.grief_strings.copy():
                 check_cat = Cat.all_cats.get(ID)
-                if check_cat:
+                if isinstance(check_cat, Cat):
                     if check_cat.dead or check_cat.outside:
-                        remove_cats.append(check_cat.ID)
-                    else:
-                        death_report_cats.append(check_cat.ID)
-
-            # Remove the dead or outside cats
-            for ID in remove_cats:
-                if ID in Cat.grief_strings:
-                    Cat.grief_strings.pop(ID)
+                        Cat.grief_strings.pop(ID)
 
             # Generate events
-            for item in Cat.grief_strings.values():
-                game.cur_events_list.append(
-                    Single_Event(item[0], ["birth_death", "relation"],
-                                 item[1]))
-
+            
+            for cat_id, values in Cat.grief_strings.items():
+                for _val in values:
+                    if _val[2] == "minor":
+                        # Apply the grief message as a thought to the cat
+                        text = event_text_adjust(Cat, _val[0], Cat.fetch_cat(cat_id), Cat.fetch_cat(_val[1][0]))
+                        Cat.fetch_cat(cat_id).thought = text
+                    else:
+                        game.cur_events_list.append(
+                            Single_Event(_val[0], ["birth_death", "relation"],
+                                        _val[1]))
+            
+            
+                
             Cat.grief_strings.clear()
 
         if Cat.dead_cats:
