@@ -466,6 +466,63 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_border_otherclan_meeting1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "border",
+            "other_clan",
+            "no_app",
+            "no_leader",
+            "warrior",
+            "injury",
+            "claw-wound",
+            "non-lethal",
+            "scar",
+            "ONE",
+            "otherclan_nochangesuccess",
+            "clan_to_pl",
+            "no_change_success",
+            "pos_dislike",
+            "disrespect",
+            "distrust"
+        ],
+        "intro_text": "p_l slinks through c_n's territory, low to the ground and watchful as {PRONOUN/p_l/subject} {VERB/p_l/approach/approaches} the o_c_n border. The moon hangs heavy in the sky, and {PRONOUN/p_l/poss} eyes dart around, taking in {PRONOUN/p_l/poss} surroundings - did {PRONOUN/p_l/subject} make it here unnoticed?",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hear/hears} something shift in the distance. Heart pounding, {PRONOUN/p_l/subject} silently {VERB/p_l/draw/draws} back, not wanting to stay to find out if it was prey or cat.",
+        "chance_of_success": 45,
+        "exp": 5,
+        "success_text": {
+            "unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/crouch/crouches} out of sight and {VERB/p_l/wait/waits}, still as stone. After a short while, there's a soft call across the border. Perking up, p_l rushes forward, pushing {PRONOUN/p_l/poss} nose into the fur of a cat from o_c_n. Tails entwined, they talk in hushed voices until the stars start to blink out. With a soft goodbye, each returns home, their Clans unknowing of their secret.",
+            "unscathed_rare": "p_l steps across the border, padding across as if {PRONOUN/p_l/subject} {VERB/p_l/belong/belongs} there. At the end of a hidden path sits a cat from o_c_n, who rises with a purr to rub up against p_l. The two simply lay together, the light of the moon dappling their pelts as they enjoy each other's company. When dawn approaches, r_c heads home, {PRONOUN/p_l/poss} absence and return each unnoticed.",
+            "stat_trait": "p_l just about walks right into o_c_n's camp, {PRONOUN/p_l/poss} steps so practiced and quiet {PRONOUN/p_l/subject} may as well not be there at all. A cat from o_c_n ducks out and twines their tails together, pressing their side to p_l's with a purr. They slowly walk to the border, murmuring to each other about this and that, where they part ways with a gentle brush of their noses."
+        },
+            "fail_text": {
+            "unscathed_common": "There's movement across the border, and while p_l's heart beats fast at the sight of a certain cat, {PRONOUN/p_l/subject}'{VERB/p_l/re/s} crestfallen to see them accompanied by a Clanmate. The Clanmate stares with narrowed eyes at p_l, gruffly reminding {PRONOUN/p_l/object} to stay on {PRONOUN/p_l/poss} own side of the border before whisking away with the other cat in tow.",
+            "unscathed_stat": "Boldly, p_l steps right across the border, only to be unceremoniously yanked back by the tail almost right away. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} over {PRONOUN/p_l/poss} shoulder in bewilderment, heart sinking when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} one of {PRONOUN/p_l/poss} Clanmates staring {PRONOUN/p_l/object} down. {PRONOUN/p_l/subject/CAP} would almost rather be seeing a fox right now... how will {PRONOUN/p_l/subject} explain <i>this?</i>",
+            "injury": "There's movement across the border, and while p_l's heart beats fast at the sight of a certain cat, {PRONOUN/p_l/subject}'{VERB/p_l/re/s} crestfallen to see them accompanied by a Clanmate. What's worse, this cat is one known to be aggressive, and tonight is no different - p_l is sent back to camp with {PRONOUN/p_l/poss} tail between {PRONOUN/p_l/poss} legs, fresh claw-wounds glistening in the moonlight.",
+            "stat_injury": "Deciding it looks safe enough, p_l walks across the border... right into a late-night border patrol. {PRONOUN/p_l/subject/CAP}'{VERB/p_l/re/s} dealt with pretty quickly, and {PRONOUN/p_l/poss} fur prickles with embarrassment as {PRONOUN/p_l/subject} {VERB/p_l/scramble/scrambles} back over the border, trying to figure out how {PRONOUN/p_l/subject}'ll explain the fresh claw-wounds scoring {PRONOUN/p_l/poss} pelt to {PRONOUN/p_l/poss} Clanmates."
+        },
+        "win_trait": [
+            "sneaky",
+            "careful",
+            "cunning"
+        ],
+        "fail_trait": [
+            "bold",
+            "daring",
+            "confident",
+            "arrogant",
+            "shameless",
+            "oblivious"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": "p_l strolls across the border, deliberately laying {PRONOUN/p_l/poss} scent everywhere {PRONOUN/p_l/subject} can. For good measure, {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts} and {VERB/p_l/kill/kills} a mouse, feasting messily and leaving the bones strewn about. That'll show those good-for-nothing o_c_n cats who really owns these lands.",
+        "antagonize_fail_text": "p_l moves to pad across the border, only to be called back with a sharp yowl. Of all the nights for there to be a night patrol {PRONOUN/p_l/subject} didn't know about, it had to be <i>tonight?</i> {PRONOUN/p_l/subject/CAP} {VERB/p_l/get/gets} such an earful that a certain cat from o_c_n hears and wanders over, watching the altercation with an unreadable expression. How embarrassing...",
+        "history_text": {
+            "scar": "r_c was scarred when {PRONOUN/r_c/subject} tried to sneak across the o_c_n border."
+        }
     }
- 
 ]
