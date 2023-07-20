@@ -4770,7 +4770,7 @@ class ChooseMurderCatScreen(Screens):
                     self.stage = 'choose murder cat'
             
             elif event.ui_element == self.back_button:
-                self.change_screen('events screen')
+                self.change_screen('profile screen')
                 self.stage = 'choose murder cat'
 
             elif event.ui_element == self.next_cat_button:
@@ -5555,23 +5555,22 @@ class ChangeAccessoryScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element in self.accessory_buttons.values():
-                value = {i for i in self.accessory_buttons if self.accessory_buttons[i]==event.ui_element}
-                n = int(list(value)[0])
+            b_data = event.ui_element.blit_data[1]
+            b_2data = []
+            for b in self.accessory_buttons.values():
+                b_2data.append(b.blit_data[1])
+            if b_data in b_2data:
+                value = b_2data.index(b_data)
+                n = value
                 if self.accessories_list[n] in game.clan.your_cat.pelt.accessories:
                     game.clan.your_cat.pelt.accessories.remove(self.accessories_list[n])
                 else:
                     game.clan.your_cat.pelt.accessories.append(self.accessories_list[n])
-                self.selected_details["selected_image"].kill()
-                self.selected_details["selected_image"] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((650, 300), (300, 300))),
-                pygame.transform.scale(
-                    self.selected_cat.sprite,
-                    (300, 300)), manager=MANAGER)
+                self.update_selected_cat()
             elif event.ui_element == self.confirm_mentor and self.selected_cat:
                 print('hi')
             elif event.ui_element == self.back_button:
-                self.change_screen('events screen')
+                self.change_screen('profile screen')
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     game.switches['cat'] = self.next_cat
@@ -5596,7 +5595,9 @@ class ChangeAccessoryScreen(Screens):
     def screen_switches(self):
         self.the_cat = game.clan.your_cat
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
-
+        self.cat_list_buttons = {}
+        self.accessory_buttons = {}
+        self.accessories_list = []
         self.heading = pygame_gui.elements.UITextBox("Change your accessory",
                                                      scale(pygame.Rect((300, 50), (1000, 80))),
                                                      object_id=get_text_box_theme("#text_box_34_horizcenter"),
