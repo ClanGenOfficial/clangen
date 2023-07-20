@@ -21,7 +21,7 @@
         "success_text": {
             "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
             "unscathed_rare": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
-            "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+            "stat_skill": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
         },
         "fail_text": {
             "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
@@ -48,7 +48,7 @@
             "apprentice",
             "injury",
             "poisoned",
-            "death_app1",
+            "death",
             "no_herbs0"
         ],
         "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
@@ -91,7 +91,7 @@
         "success_text": {
             "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
             "unscathed_rare": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
-            "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+            "stat_skill": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
         },
         "fail_text": {
             "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",

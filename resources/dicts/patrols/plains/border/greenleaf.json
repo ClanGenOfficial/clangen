@@ -12,7 +12,7 @@
         "exp": 5,
         "success_text": {
             "unscathed_common": "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
-            "stat_trait": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, responsibly, although r_c wades through the watering hole as {PRONOUN/r_c/subject} {PRONOUN/r_c/do/does}, letting the water cool {PRONOUN/r_c/poss} paws pleasantly."
+            "stat_trait": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, responsibly, although r_c wades through the watering hole as {PRONOUN/r_c/subject} {VERB/r_c/do/does}, letting the water cool {PRONOUN/r_c/poss} paws pleasantly."
         },
         "fail_text": {
             "unscathed_common": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done."

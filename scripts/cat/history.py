@@ -231,7 +231,7 @@ class History:
         if not cat.history.mentor_influence["skill"]:
             return
 
-        # working under the impression that these blurbs will be preceeded by "become better at"
+        # working under the impression that these blurbs will be preceded by "become better at"
         skill_influence_text = {
                 SkillPath.TEACHER: [ "teaching" ],
                 SkillPath.HUNTER: [ "hunting" ],
@@ -252,7 +252,7 @@ class History:
                 SkillPath.STAR: [ "connecting to starclan" ],
                 SkillPath.OMEN: [ "finding omens" ],
                 SkillPath.DREAM: [ "understanding dreams" ],
-                SkillPath.CLAIRVOYANT: [ "predicting the furture" ],
+                SkillPath.CLAIRVOYANT: [ "predicting the future" ],
                 SkillPath.PROPHET: [ "understanding prophecies" ],
                 SkillPath.GHOST: [ "connecting to the afterlife" ],
             }
@@ -337,7 +337,10 @@ class History:
             # Use a default is none is provided.
             # Will probably sound weird, but it's better than nothing
             if not death_text:
-                death_text = f"m_c died from an injury or illness ({condition})."
+                if cat.status == 'leader':
+                    death_text = f"died from an injury of illness ({condition})"
+                else:
+                    death_text = f"m_c died from an injury or illness ({condition})."
             if not scar_text:
                 scar_text = f"m_c was scarred from an injury or illness ({condition})."
             
