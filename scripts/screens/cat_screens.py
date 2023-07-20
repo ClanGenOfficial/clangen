@@ -673,6 +673,10 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
+                if self.the_cat.talked_to:
+                    self.profile_elements["talk"].disable()
+                else:
+                    self.profile_elements["talk"].enable()
             elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["talk"] = UIImageButton(scale(pygame.Rect(
                     (662, 220), (68, 68))),
@@ -680,10 +684,10 @@ class ProfileScreen(Screens):
                     object_id="#talk_button",
                     tool_tip_text="Talk to this Cat", manager=MANAGER
                 )
-            if self.the_cat.talked_to:
-                self.profile_elements["talk"].disable()
-            else:
-                self.profile_elements["talk"].enable()
+                if self.the_cat.talked_to:
+                    self.profile_elements["talk"].disable()
+                else:
+                    self.profile_elements["talk"].enable()
         if self.the_cat.ID != game.clan.your_cat.ID and not self.the_cat.dead and not self.the_cat.outside and not game.clan.your_cat.dead and not game.clan.your_cat.outside:    
             if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
@@ -692,6 +696,10 @@ class ProfileScreen(Screens):
                     object_id="#insult_button",
                     tool_tip_text="Insult this Cat", manager=MANAGER
                 )
+                if self.the_cat.insulted:
+                    self.profile_elements["insult"].disable()
+                else:
+                    self.profile_elements["insult"].enable()
             elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                 self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
                     (830, 220), (68, 68))),
@@ -699,10 +707,10 @@ class ProfileScreen(Screens):
                     object_id="#insult_button",
                     tool_tip_text="Insult this Cat", manager=MANAGER
                 )
-            if self.the_cat.insulted:
-                self.profile_elements["insult"].disable()
-            else:
-                self.profile_elements["insult"].enable()
+                if self.the_cat.insulted:
+                    self.profile_elements["insult"].disable()
+                else:
+                    self.profile_elements["insult"].enable()
             
             if (self.the_cat.ID not in game.clan.your_cat.get_relatives() and self.the_cat.moons >= 12 and self.the_cat.moons < game.clan.your_cat.moons + 40 and self.the_cat.moons > game.clan.your_cat.moons - 40 and game.clan.your_cat.moons >= 12) or self.the_cat.ID in game.clan.your_cat.mate:
                 if not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status not in ['leader', 'mediator', 'mediator apprentice']:
@@ -712,6 +720,10 @@ class ProfileScreen(Screens):
                         object_id="#flirt_button",
                         tool_tip_text="Flirt with this Cat", manager=MANAGER
                     )
+                    if self.the_cat.flirted:
+                        self.profile_elements["flirt"].disable()
+                    else:
+                        self.profile_elements["flirt"].enable()
                 elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
                     self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
                         (910, 220), (68, 68))),
@@ -719,10 +731,11 @@ class ProfileScreen(Screens):
                         object_id="#flirt_button",
                         tool_tip_text="Flirt with this Cat", manager=MANAGER
                     )
-                if self.the_cat.flirted:
-                    self.profile_elements["flirt"].disable()
-                else:
-                    self.profile_elements["flirt"].enable()
+                    if self.the_cat.flirted:
+                        self.profile_elements["flirt"].disable()
+                    else:
+                        self.profile_elements["flirt"].enable()
+                
         
         if self.the_cat.ID == game.clan.your_cat.ID and not game.clan.your_cat.dead and not game.clan.your_cat.outside:
             self.placeholder_tab_3.kill()
