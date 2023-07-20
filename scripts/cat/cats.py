@@ -606,7 +606,7 @@ class Cat():
                 if cat.ID not in Cat.grief_strings:
                     Cat.grief_strings[cat.ID] = []
                 
-                Cat.grief_strings[cat.ID].append((text, (self.ID, cat.ID), grief_type))
+                Cat.grief_strings[cat.ID].append((text, (self.ID, cat.ID), "negative"))
                 
 
     def familial_grief(self, living_cat: Cat):
