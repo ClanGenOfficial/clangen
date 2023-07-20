@@ -725,7 +725,7 @@ class ProfileScreen(Screens):
                     else:
                         self.profile_elements["flirt"].enable()
                 elif not self.the_cat.dead and not self.the_cat.outside and self.the_cat.status in ['leader', 'mediator', 'mediator apprentice']:
-                    self.profile_elements["insult"] = UIImageButton(scale(pygame.Rect(
+                    self.profile_elements["flirt"] = UIImageButton(scale(pygame.Rect(
                         (910, 220), (68, 68))),
                         "",
                         object_id="#flirt_button",
