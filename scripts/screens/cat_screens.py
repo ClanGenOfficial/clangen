@@ -870,7 +870,7 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
 
         # ACCESSORY
-        if the_cat.pelt.accessories:
+        if the_cat.pelt.accessories and the_cat.ID == game.clan.your_cat.ID:
             if len(the_cat.pelt.accessories) > 0:
                 output += "\n"
                 output += 'accessories: ' + str(ACC_DISPLAY[the_cat.pelt.accessories[0]]["default"])

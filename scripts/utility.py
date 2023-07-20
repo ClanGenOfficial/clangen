@@ -1386,7 +1386,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
         # draw accessories
-        if cat.pelt.accessories:
+        if cat.pelt.accessories and cat.ID == game.clan.your_cat.ID:
             for i in cat.pelt.accessories:
                 if i in cat.pelt.plant_accessories:
                     new_sprite.blit(sprites.sprites['acc_herbs' + i + cat_sprite], (0, 0))
