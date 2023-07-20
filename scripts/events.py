@@ -829,11 +829,32 @@ class Events:
 
     def generate_mate_events(self):
         if len(game.clan.your_cat.mate) > 0:
-            if random.randint(1,5) == 1:
+            if random.randint(1,20) == 1:
                 ceremony_txt = random.choice(self.c_txt['mate_events'])
-                ceremony_txt.replace("mate1", Cat.all_cats.get(random.choice(game.clan.your_cat.mate)))
+                ceremony_txt = ceremony_txt.replace("mate1", str(Cat.all_cats.get(random.choice(game.clan.your_cat.mate)).name))
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
-        
+            if game.settings['affair']:
+                if random.randint(1,50) == 1:
+                    ceremony_txt = random.choice(self.c_txt['affair_events'])
+                    ceremony_txt = ceremony_txt.replace("mate1", str(Cat.all_cats.get(random.choice(game.clan.your_cat.mate)).name))
+                    game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+        if random.randint(1,20) == 1:
+            if (len(game.clan.your_cat.mate) > 0 and game.settings['affair']) or (len(game.clan.your_cat.mate) == 0):
+                if len(game.clan.your_cat.mate) > 0:
+                    if random.randint(1,50) != 1:
+                        return
+                c = Cat.all_cats.get(random.choice(game.clan.clan_cats))
+                counter = 0
+                while not c.relationships.get(game.clan.your_cat.ID) or c.relationships.get(game.clan.your_cat.ID).romantic_love < 10:
+                    if counter == 15:
+                        return
+                    c = Cat.all_cats.get(random.choice(game.clan.clan_cats))
+                    counter+=1
+                ceremony_txt = random.choice(self.c_txt['crush_events'])
+                ceremony_txt = ceremony_txt.replace("crush1", str(c.name))
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
+                
+            
         
     
     def generate_death_event(self):

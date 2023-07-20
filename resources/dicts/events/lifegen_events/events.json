@@ -693,6 +693,7 @@
     ],
     "crush_events": [
         "You debate asking crush1 out on a date. Today seems like the perfect day!",
+        "One dusk, you watch the sunset and crush1 comes and sits next to you. As the lightning bugs circle through the air, you feel a spark of chemistry between you.",
         "Watching crush1 stretch in the sunlight beaming into camp, you stare until they make eye contact with you, and you avert your eyes hurriedly.",
         "crush1 offers to help you clean your fur after a day out in the territory.",
         "You wake up from a bad dream, and decide to take a walk outside. Surprisingly, crush1 is awake too, and joins you on your walk. You feel like you can understand them a bit better.",
@@ -711,6 +712,7 @@
         "mate1 asks you if you would like to have kits and start a family.",
         "Thunder cracks in the sky, startling mate1 awake. What startles you is that they move over to you for comfort, and you can't help but drape your tail over them reassuringly.",
         "You and mate1 spend a moonlit evening sharing tongues.",
+        "mate1 asks you to tell them about your current interests, their eyes full of genuine interest. Your heart soars as you begin a very long, very detailed description of your interests, hardly noticing the affection on mate1's face as they watch you ramble on.",
         "After a battle with an enemy Clan, mate1 is the first cat you make sure is alright.",
         "You challenge mate1 to a friendly bug-hunting challenge! The two of you have a great time, playfully arguing over which bug is cooler.",
         "You and mate1 find yourselves staring up at the sky, trying to associate a thing or scene to each cloud that passes by.",
@@ -723,6 +725,7 @@
         "You and mate1 spent the night cuddled together in the den during a chilly night.",
         "mate1 has seemed really distant lately, maybe a walk around the territory with you will help them feel a bit better.",
         "You and mate1 take a walk on a rainy evening, and it ends with you two splashing each other and playing in puddles."
+
     ],
     "pregnant_events": [
         "You and mate1 discuss the ideal number of kits the two of you would like."
@@ -730,6 +733,5 @@
     "affair_events": [
         "Your gaze lands on a sight that makes your heart drop - your mate, mate1, sharing an intimate moment of laughter and playful nudges with another cat.",
         "You look for your mate to ask them out on a date, when you see them pressing their pelt up against another cat. When mate1 sees you, they quickly run up to you to explain."
-
     ]
 }
