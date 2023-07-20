@@ -5562,13 +5562,17 @@ class ChangeAccessoryScreen(Screens):
             if b_data in b_2data:
                 value = b_2data.index(b_data)
                 n = value
+                if self.accessories_list[n] == game.clan.your_cat.pelt.accessory:
+                    game.clan.your_cat.pelt.accessory = None
                 if self.accessories_list[n] in game.clan.your_cat.pelt.accessories:
                     game.clan.your_cat.pelt.accessories.remove(self.accessories_list[n])
                 else:
                     game.clan.your_cat.pelt.accessories.append(self.accessories_list[n])
                 self.update_selected_cat()
             elif event.ui_element == self.confirm_mentor and self.selected_cat:
-                print('hi')
+                game.clan.your_cat.pelt.accessories.clear()
+                game.clan.your_cat.pelt.accessory =None
+                self.update_selected_cat()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
             elif event.ui_element == self.next_cat_button:
@@ -5615,8 +5619,8 @@ class ChangeAccessoryScreen(Screens):
                                                             (562, 394)), manager=MANAGER)
 
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
-        self.confirm_mentor = UIImageButton(scale(pygame.Rect((680, 610), (208, 52))), "",
-                                            object_id="#patrol_select_button")
+        self.confirm_mentor = UIImageButton(scale(pygame.Rect((660, 605), (248, 70))), "",
+                                            object_id="#remove_all_button")
       
         self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
                                                   object_id="#relation_list_previous", manager=MANAGER)

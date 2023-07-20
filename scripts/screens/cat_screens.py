@@ -822,7 +822,13 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
 
         # ACCESSORY
-        if the_cat.pelt.accessory:
+        if the_cat.pelt.accessories:
+            if len(the_cat.pelt.accessories) > 0:
+                output += "\n"
+                output += 'accessories: ' + str(ACC_DISPLAY[the_cat.pelt.accessories[0]]["default"])
+            if len(the_cat.pelt.accessories) > 1:
+                output += ' and ' + str(len(the_cat.pelt.accessories) - 1) + ' more'
+        elif the_cat.pelt.accessory:
             output += "\n"
             output += 'accessory: ' + str(ACC_DISPLAY[the_cat.pelt.accessory]["default"])
             # NEWLINE ----------

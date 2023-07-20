@@ -459,6 +459,15 @@
         "As elders, you and mate1 share many quiet moments together, enjoying the peaceful times after a life full of adventure. Their companionship brings you comfort and one day, you confess your feelings to them. They respond by leaning against you, their purr soothing your nerves. In the later stages of your life, you've gained a mate in mate1.",
         "You've always admired mate1 for their wisdom and strength, even now as elders. Their stories of the past inspire you, their resilience impresses you. One day, you tell them of your feelings, expecting only friendship in return. But they surprise you, reciprocating your affection. Even as elders, you've found a mate in mate1."
     ],
+    "have_kits no mate": [
+        "You welcome insert_kits into the world."
+    ],
+    "have_kits mate": [
+        "You and mate1 welcome insert_kits into the world."
+    ],
+    "have_kits mates": [
+        "You and your mates welcome insert_kits into the world."
+    ],
     "death_kit": [
         "As you close your eyes, a comforting warmth envelops you. The noises of the camp fade, replaced by a gentle lullaby carried by the wind. You feel a soft presence cradling you, a familiar purr resonating in your ears. It's as if you're falling into an eternal sleep, surrounded by the love and warmth of your kin.",
         "Your little heart, filled with so much spirit, begins to slow. Around you, the world is fading... Everything mixes together -- purrs, soft whispers, and the familiar scents of your clan. The gentle grooming of your fur lulls you into a deep sleep, the sound of purrs faint around you.",

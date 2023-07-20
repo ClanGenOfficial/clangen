@@ -73,7 +73,8 @@ class Events:
         self.load_war_resources()
         self.disaster_events = DisasterEvents()
         self.c_txt = None
-        self.d_txt = None        
+        self.d_txt = None
+        self.checks = [0,0,0]
 
     def one_moon(self):
         """
@@ -87,7 +88,6 @@ class Events:
         self.relation_events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
-        checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate)]
         game.just_died.clear()
         
 
@@ -293,9 +293,13 @@ class Events:
             
             if game.clan.your_cat.joined_df:
                 self.generate_df_events()
+            
 
-            self.check_gain_app(checks)
-            self.check_gain_mate(checks)
+            self.check_gain_app(self.checks)
+            self.check_gain_mate(self.checks)
+            # self.check_gain_kits(self.checks)
+        
+            self.generate_mate_events()
 
             if random.randint(1,10) == 1:
                 self.gain_acc()
@@ -309,6 +313,8 @@ class Events:
         game.clan.murdered = False
         
         self.check_achievements()
+        self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits())]
+
             
         # Resort
         if game.sort_type != "id":
@@ -788,7 +794,48 @@ class Events:
             ceremony_txt = ceremony_txt.replace('mate1', str(game.switches['new_mate'].name))
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
             game.switches['reject'] = False
+            
+    def check_gain_kits(self, checks):
+        if len(game.clan.your_cat.inheritance.get_blood_kits()) > checks[2]:
+            insert_kits = []
+            for kit in game.clan.your_cat.inheritance.get_blood_kits():
+                kit_cat = Cat.all_cats.get(kit)
+                if kit_cat.moons == 0:
+                    insert_kits.append(str(kit_cat.name))
+            resource_dir = "resources/dicts/events/lifegen_events/"
+            with open(f"{resource_dir}ceremonies.json",
+                    encoding="ascii") as read_file:
+                self.z_txt = ujson.loads(read_file.read())
+            mate_status = "no mate"
+            if len(game.clan.your_cat.mate) == 1:
+                mate_status = "mate"
+            elif len(game.clan.your_cat.mate) > 1:
+                mate_status = "mates"
+            
+            ceremony_txt = random.choice(self.z_txt['have_kits ' + mate_status])
+            kit_names = ""
+            if len(insert_kits) == 1:
+                kit_names = insert_kits[0]
+            elif len(insert_kits) == 2:
+                kit_names = insert_kits[0] + " and " + insert_kits[1]
+            else:
+                for i in range(len(insert_kits)):
+                    if i == len(insert_kits) - 1:
+                        kit_names += "and " + insert_kits[i]
+                    else:
+                        kit_names += insert_kits[i] + ", "
+            ceremony_txt = ceremony_txt.replace('insert_kits', kit_names)
+            game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+
+    def generate_mate_events(self):
+        if len(game.clan.your_cat.mate) > 0:
+            if random.randint(1,5) == 1:
+                ceremony_txt = random.choice(self.c_txt['mate_events'])
+                ceremony_txt.replace("mate1", Cat.all_cats.get(random.choice(game.clan.your_cat.mate)))
+                game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         
+        
+    
     def generate_death_event(self):
         if game.clan.your_cat.status == 'kitten':
             ceremony_txt = random.choice(self.b_txt['death_kit'])

@@ -56,7 +56,6 @@
         "You hear of cats that have traveled far and wide, and stay up all night asking the elders about them.",
         "You see a new cat in the camp and ask the queens curiously what the wrap around their neck is.",
         "You and the other kits play a game where you hide from the queens. They are quite upset when they finally find you, and you don't know why."
-
     ],
     "moon_2_one_parent": [
         "You feel the soft touch of parent1's fur as they curl around you. Their warm purr is comforting, making you feel safe. The familiar scent of your parent fills your senses, offering you a sense of belonging and home. The world may be wide and unknown, but here, buried in their fur, you know you are loved and protected.",
@@ -689,6 +688,48 @@
         "During a Clan meeting, you doze off and start snoring loudly, causing the younger cats to giggle and the leader to pause their speech.",
         "You attempt to jump onto a ledge, forgetting it's a bit higher than it used to be. Your surprised yowl when you land back on the ground causes laughter to echo through the camp."
     ],
-    "exiled":
-    ["You wander around, lost."]
+    "exiled": [
+        "You wander around, lost."
+    ],
+    "crush_events": [
+        "You debate asking crush1 out on a date. Today seems like the perfect day!",
+        "Watching crush1 stretch in the sunlight beaming into camp, you stare until they make eye contact with you, and you avert your eyes hurriedly.",
+        "crush1 offers to help you clean your fur after a day out in the territory.",
+        "You wake up from a bad dream, and decide to take a walk outside. Surprisingly, crush1 is awake too, and joins you on your walk. You feel like you can understand them a bit better.",
+        "While out hunting with crush1 you manage to trip over your own paws, whiskers first and crash to the ground. crush1 notices and runs to your side, helping you up. Though you weren't injured, it warms your heart at their concern.",
+        "You spend all day hunting for crush1's favorite piece of fresh-kill. The happiness in their eyes more than make up for your exhaustion.",
+        "Your crush, crush1, asks if you'd like to share a squirrel together in the shade.",
+        "After a bad day, crush1 offers to let you talk to them about it. You feel much better afterwards.",
+        "You catch crush1 playing with some kits in the nursery and can't help but imagine what a good parent they would be.",
+        "You invite crush1 to go stargazing with you, though you end up looking at them more than the sky.",
+        "You find your crush, crush1's favorite type of prey on a hunting patrol. You bring it to them, hoping they might interpret it as more than a friendly gesture.",
+        "You can't help but stare at crush1 from across the clearing, but they see you and smile at you. You quickly scramble to pretend like you weren't looking, unable to stop a smile forming on your face.",
+        "You start to feel a connection with crush1 and ask to go on a moonlit walk with them. crush1 is surprised at first, but then happily agrees."
+    ],
+    "mate_events": [
+        "Your mate, mate1 takes you on a midnight stroll. Both of you enjoy the night air and each other's company.",
+        "mate1 asks you if you would like to have kits and start a family.",
+        "Thunder cracks in the sky, startling mate1 awake. What startles you is that they move over to you for comfort, and you can't help but drape your tail over them reassuringly.",
+        "You and mate1 spend a moonlit evening sharing tongues.",
+        "After a battle with an enemy Clan, mate1 is the first cat you make sure is alright.",
+        "You challenge mate1 to a friendly bug-hunting challenge! The two of you have a great time, playfully arguing over which bug is cooler.",
+        "You and mate1 find yourselves staring up at the sky, trying to associate a thing or scene to each cloud that passes by.",
+        "You invite mate1 to go stargazing with you, though you end up looking at them more than the sky.",
+        "You and mate1 share a nest one night, snuggling together for warmth.",
+        "mate1 shyly asks your opinion on kits.",
+        "You wake up to find that mate1 brought you your favorite piece of freshkill. How thoughtful!",
+        "While trying to impress mate1, you trip over your paws. They snicker beforing moving to help you back up.",
+        "You catch a look at mate1 from across the camp. They get even more beautiful with every day that passes.",
+        "You and mate1 spent the night cuddled together in the den during a chilly night.",
+        "mate1 has seemed really distant lately, maybe a walk around the territory with you will help them feel a bit better.",
+        "You and mate1 take a walk on a rainy evening, and it ends with you two splashing each other and playing in puddles."
+    ],
+    "pregnant_events": [
+        "You and mate1 discuss the ideal number of kits the two of you would like."
+    ],
+    "affair_events": [
+        "Your gaze lands on a sight that makes your heart drop - your mate, mate1, sharing an intimate moment of laughter and playful nudges with another cat.",
+        "You look for your mate to ask them out on a date, when you see them pressing their pelt up against another cat. When mate1 sees you, they quickly run up to you to explain."
+
+    ]
 }

@@ -206,8 +206,11 @@ class MiscEvents():
                 except ValueError:
                     print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
-
-        cat.pelt.accessory = random.choice(acc_list)
+        acc = random.choice(acc_list)
+        cat.pelt.accessory = acc
+        if not cat.inventory:
+            cat.inventory = []
+        cat.inventory.append(acc)
 
     def handle_murder_self_reveals(self, cat):
         ''' Handles reveals for murders where the murderer reveals themself '''
