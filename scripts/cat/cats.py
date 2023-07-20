@@ -540,7 +540,7 @@ class Cat():
                 if body_treated:
                     major_chance -= 1
                 
-                # Chance for a cat with major grief to fail to minor    
+                # Chance for a cat with major grief to fail to minor.    
                 grief_type = "minor" if int(random() * major_chance) else "major"
             elif high_values:
                 
@@ -549,11 +549,15 @@ class Cat():
                 
             if grief_type == "major":
                 possible_strings = []
-                for x in high_values:
+                for x in very_high_values:
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(family_relation, x, cat.personality.trait,
                                                                 body_status)
                     )
+                
+                if not possible_strings:
+                    print("No grief strings")
+                    return
                 
                 text = [choice(possible_strings)]
                 text.append(choice(
@@ -568,10 +572,14 @@ class Cat():
                 
                 # These minor grief message will be applied as throughts. 
                 minor_grief_messages = (
-                        "Tells a fond story at r_c's vigil",
+                        "Told a fond story at r_c's vigil",
                         "Bargins with StarClan, begging them to send r_c back",
                         "Sat all night at r_c's vigil",
-                        "Helped bury r_c, bringing {PRONOUN/r_c/poss} favorite prey to leave at the grave"
+                        "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
+                        "Will never forget r_c",
+                        "Prays that r_c is safe in StarClan",
+                        "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                        "Is mourning r_c"
                     )
                 
                 text = choice(minor_grief_messages)
