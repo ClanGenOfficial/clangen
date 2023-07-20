@@ -544,8 +544,7 @@ class Cat():
                 grief_type = "minor" if int(random() * major_chance) else "major"
             elif high_values:
                 
-                # If this triggers, the cat is only eligable for minor grief
-                
+                # If this triggers, the cat can only get minor grief
                 grief_type = "minor"
                 
             if grief_type == "major":
@@ -604,7 +603,10 @@ class Cat():
                     )
                 
                 text = event_text_adjust(Cat, choice(possible_strings), self, cat)
-                Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID), "negative")
+                if cat.ID not in Cat.grief_strings:
+                    Cat.grief_strings[cat.ID] = []
+                
+                Cat.grief_strings[cat.ID].append((text, (self.ID, cat.ID), grief_type))
                 
 
     def familial_grief(self, living_cat: Cat):
