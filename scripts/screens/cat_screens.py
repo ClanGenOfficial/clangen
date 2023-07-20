@@ -445,13 +445,10 @@ class ProfileScreen(Screens):
             object_id="#conditions_tab_button", manager=MANAGER
         )
 
-        if self.the_cat.ID == game.clan.your_cat.ID:
-            self.your_tab = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
-                                               object_id="#your_tab", starting_height=1, manager=MANAGER)
-        else:
-            self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+
+        self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
                                                object_id="#cat_tab_3_blank_button", starting_height=1, manager=MANAGER)
-        # self.placeholder_tab_3.disable()
+        self.placeholder_tab_3.disable()
 
         self.placeholder_tab_4 = UIImageButton(scale(pygame.Rect((1152, 1244), (352, 60))), "",
                                                object_id="#cat_tab_4_blank_button", manager=MANAGER)
@@ -487,10 +484,7 @@ class ProfileScreen(Screens):
         self.dangerous_tab_button.kill()
         self.backstory_tab_button.kill()
         self.conditions_tab_button.kill()
-        if self.placeholder_tab_3:
-            self.placeholder_tab_3.kill()
-        if self.your_tab:
-            self.your_tab.kill()
+        self.placeholder_tab_3.kill()
         self.placeholder_tab_4.kill()
         self.inspect_button.kill()
         self.close_current_tab()
@@ -689,6 +683,20 @@ class ProfileScreen(Screens):
                 self.profile_elements["insult"].disable()
             else:
                 self.profile_elements["insult"].enable()
+        
+        if self.the_cat.ID == game.clan.your_cat.ID and not game.clan.your_cat.dead and not game.clan.your_cat.outside:
+            self.placeholder_tab_3.kill()
+            self.profile_elements['your_tab'] = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+                                               object_id="#your_tab", starting_height=1, manager=MANAGER)
+            self.your_tab = self.profile_elements['your_tab']
+        else:
+            if self.open_tab == 'your tab':
+                self.close_current_tab()
+            self.placeholder_tab_3.kill()
+            self.placeholder_tab_3 = None
+            self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+                                            object_id="#cat_tab_3_blank_button", starting_height=1, manager=MANAGER)
+
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
