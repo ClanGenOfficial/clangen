@@ -106,13 +106,13 @@ class ChooseMentorScreen(Screens):
         if self.mentor is not None:
             self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name}'s current mentor is "
                                                                      f"{self.mentor.name}",
-                                                                     scale(pygame.Rect((460, 265), (680, 60))),
+                                                                     scale(pygame.Rect((460, 260), (680, 60))),
                                                                      object_id=get_text_box_theme(
                                                                          "#text_box_22_horizcenter")
                                                                      , manager=MANAGER)
         else:
             self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name} does not have a mentor",
-                                                                     scale(pygame.Rect((460, 265), (680, 60))),
+                                                                     scale(pygame.Rect((460, 260), (680, 60))),
                                                                      object_id=get_text_box_theme(
                                                                          "#text_box_22_horizcenter")
                                                                      , manager=MANAGER)
