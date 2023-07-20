@@ -1714,9 +1714,9 @@ class Cat():
         condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age]
-        if mortality != 0:
-            if game.clan.game_mode == "cruel season":
-                mortality = int(mortality * 0.65)
+        # if mortality != 0:
+        #     if game.clan.game_mode == "cruel season":
+        #         mortality = int(mortality * 0.65)
 
         if condition['congenital'] == 'always':
             born_with = True
