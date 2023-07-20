@@ -599,7 +599,7 @@
             "Is rambling on to kits about the importance of respecting their elders",
             "Makes fun of r_c for not being an apprentice yet",
             "Is playfighting with r_c",
-            "Teaches r_c a cool new trick that {PRONOUN/m_c/poss} learned"
+            "Teaches r_c a cool new trick that {PRONOUN/m_c/subject} learned"
         ],
         "main_status_constraint": [
             "apprentice",
