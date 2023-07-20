@@ -210,6 +210,7 @@ class Cat():
         self.w_done = False
         self.talked_to = False
         self.insulted = False
+        self.flirted = False
         self.joined_df = False
         self.revealed = 0
         self.inventory = []
@@ -2864,6 +2865,7 @@ class Cat():
                 "w_done": self.w_done if self.w_done else False,
                 "talked_to": self.talked_to if self.talked_to else False,
                 "insulted": self.insulted if self.insulted else False,
+                "flirted": self.flirted if self.flirted else False,
                 "joined_df": self.joined_df if self.joined_df else False,
                 "revealed": self.revealed if self.revealed and isinstance(self.revealed, int) else 0,
                 "inventory": self.inventory if self.inventory else []

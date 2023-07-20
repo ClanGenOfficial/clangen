@@ -3891,6 +3891,29 @@
             }
         }
     },
+    "#flirt_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/flirt.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/flirt_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/flirt_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/flirt_unavailable.png"
+            }
+        }
+    },
     "#insult_button":
     {
         "prototype": "#image_button",

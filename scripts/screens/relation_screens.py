@@ -5644,6 +5644,17 @@ class ChangeAccessoryScreen(Screens):
             self.selected_details[ele].kill()
         self.selected_details = {}
 
+        for ele in self.accessory_buttons:
+            self.accessory_buttons[ele].kill()
+        self.accessory_buttons = {}
+
+        for ele in self.cat_list_buttons:
+            self.cat_list_buttons[ele].kill()
+        self.cat_list_buttons = {}
+        
+        self.accessories_list = []
+
+
         self.heading.kill()
         del self.heading
 

@@ -1501,6 +1501,7 @@ class Events:
         self.handle_murder(cat)
         cat.talked_to = False
         cat.insulted = False
+        cat.flirted = False
 
         game.switches['skip_conditions'].clear()
 

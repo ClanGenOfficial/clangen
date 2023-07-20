@@ -34,7 +34,7 @@
             "Return safe, y_c. May StarClan light your path, and may the sea sing you home."
         ]
     ],
-    "dep_2": [
+    "depd_2": [
         [
             "warrior",
             "plains"
@@ -71,7 +71,7 @@
             "Say that again and you'll regret it."
         ]
     ],
-    "dep_3": [
+    "dep_c3": [
         [
             "kitten"
         ],
@@ -85,7 +85,7 @@
             "Now off you go, back to the nursery. We'll have plenty of time to talk about your duties when you're an apprentice. But for now, enjoy being a kit. It's a special time, and it only happens once."
         ]
     ],
-    "dep_4": [
+    "depv_4": [
         [
             "apprentice",
             "forest",
@@ -99,7 +99,7 @@
             "Stay strong, y_c. Each day is a step on the journey to becoming a warrior. And remember, each trial is a lesson, each triumph, a milestone."
         ]
     ],
-    "dep_5": [
+    "depa_5": [
         [
             "medicine cat apprentice",
             "greenleaf"
@@ -114,7 +114,7 @@
             "Go now, back to your herbs, back to your studies. Know that c_nClan is proud of you, our young healer. May StarClan light your path, and may your journey be as boundless as the open sky."
         ]
     ],
-    "dep_6": [
+    "dep_d6": [
         [
             "apprentice"
         ],
@@ -127,7 +127,7 @@
             "And remember, always be proud of who you are. You are not just an apprentice, you are the future of our Clan. The strength and survival of our Clan depends on you, so carry this responsibility with pride and honor."
         ]
     ],
-    "dep_7": [
+    "depr_7": [
         [
             "medicine cat apprentice"
         ],
@@ -142,7 +142,7 @@
             "So walk this path with confidence, for you are the beacon of hope in your Clan."
         ]
     ],
-    "dep_8": [
+    "depcx_8": [
         [
             "mediator apprentice"
         ],
@@ -157,7 +157,7 @@
             "And in this journey, remember, you're not alone. We're all here to support you, and I'm especially proud of the path you've chosen."
         ]
     ],
-    "dep_9": [
+    "depa_9": [
         [
             "warrior"
         ],
@@ -173,7 +173,7 @@
             "Finally, a good warrior knows when to ask for help. You don't need to bear your burdens alone. The Clan is here to support you. Don't hesitate to reach out when you need it. We are a Clan, and our strength lies in our unity."
         ]
     ],
-    "dep_10": [
+    "depa_10": [
         [
             "medicine cat"
         ],

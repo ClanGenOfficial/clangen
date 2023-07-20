@@ -176,6 +176,7 @@ def json_load():
             new_cat.w_done = cat["w_done"] if "w_done" in cat else False
             new_cat.talked_to = cat["talked_to"] if "talked_to" in cat else False
             new_cat.insulted = cat["insulted"] if "insulted" in cat else False
+            new_cat.flirted = cat['flirted'] if "flirted" in cat else False
             new_cat.joined_df = cat["joined_df"] if "joined_df" in cat else False
             new_cat.revealed = cat["revealed"] if "revealed" in cat else 0
             new_cat.inventory = cat["inventory"] if "inventory" in cat else []
