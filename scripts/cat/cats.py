@@ -602,7 +602,6 @@ class Cat():
                 #Generate the event:
                 possible_strings = []
                 for x in high_values:
-                    possible_strings = []
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(family_relation, x, cat.personality.trait,
                                                                 body_status)
