@@ -340,10 +340,15 @@ class Romantic_Events():
 
         mate_string = None
         mate_chance = game.config["mates"]["chance_fulfilled_condition"]
+        if cat_from.ID == game.clan.your_cat.ID or cat_to.ID == game.clan.your_cat.ID:
+            mate_chance = 1
         hit = int(random.random() * mate_chance)
 
+        
         # has to be high because every moon this will be checked for each relationship in the game
         friends_to_lovers = game.config["mates"]["chance_friends_to_lovers"]
+        if cat_from.ID == game.clan.your_cat.ID or cat_to.ID == game.clan.your_cat.ID:
+            friends_to_lovers = 20
         random_hit = int(random.random() * friends_to_lovers)
 
         # already return if there is 'no' hit (everything above 0), other checks are not necessary

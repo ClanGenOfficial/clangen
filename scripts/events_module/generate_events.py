@@ -369,7 +369,7 @@ class GenerateEvents:
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if "old_age" not in event.tags and cat.moons > 150:
-                if not int(random.random() * 2):
+                if not int(random.random() * 5):
                     continue
 
             # check other_cat status and other identifiers
@@ -550,9 +550,13 @@ class GenerateEvents:
                     final_events = minor
                 elif severity_chosen[0] == 'major':
                     final_events = major
-                else:
+                elif severity_chosen[0] == 'severe':
                     final_events = severe
+                if not final_events:
+                    final_events.extend(minor + major + severe)
 
+        if not final_events:
+            print('no final events')
         return final_events
 
     def possible_ongoing_events(self, event_type=None, specific_event=None):

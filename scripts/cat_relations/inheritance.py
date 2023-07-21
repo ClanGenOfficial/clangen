@@ -456,7 +456,8 @@ class Inheritance():
         # so it is only needed to check if the inter cat has a parent which is also in the parents_siblings dict
         inter_parent_ids = self.get_parents(inter_cat)
         parents_cats = [self.cat.fetch_cat(c_id) for c_id in inter_parent_ids]
-        parent_cats_names = [str(c.name) for c in parents_cats]
+        if parents_cats:
+            parent_cats_names = [str(c.name) for c in parents_cats]
 
         for inter_parent_id in inter_parent_ids:
             if inter_parent_id in self.parents_siblings.keys():

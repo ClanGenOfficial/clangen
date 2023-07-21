@@ -16,7 +16,8 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "other_cat"
         ],
         "event_text": "r_c has a wonderful idea for decorating m_c's nest! m_c wakes up in the middle of the night with bamboo brushing {PRONOUN/m_c/poss} face. Despite the slight spook it gave m_c, {PRONOUN/m_c/subject} {VERB/m_c/mew/mews} to r_c in the morning a thank you for the cool surprise!",
         "accessories": ["BAMBOO"]

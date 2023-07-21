@@ -296,14 +296,13 @@ class Events:
             if game.clan.your_cat.joined_df:
                 self.generate_df_events()
             
+            if game.clan.your_cat.moons >= 12:
+                self.check_gain_app(self.checks)
+                self.check_gain_mate(self.checks)
+                # self.check_gain_kits(self.checks)
+                self.generate_mate_events()
 
-            self.check_gain_app(self.checks)
-            self.check_gain_mate(self.checks)
-            # self.check_gain_kits(self.checks)
-        
-            self.generate_mate_events()
-
-            if random.randint(1,10) == 1:
+            if random.randint(1,15) == 1:
                 self.gain_acc()
 
         elif game.clan.your_cat.dead and game.clan.your_cat.dead_for == 0:
@@ -774,6 +773,7 @@ class Events:
             ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
             game.switches['accept'] = False
+            self.checks[1] = len(game.clan.mate)
         elif 'reject' in game.switches and game.switches['reject']:
             resource_dir = "resources/dicts/events/lifegen_events/"
             with open(f"{resource_dir}mate_lifegen.json",
