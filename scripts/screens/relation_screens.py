@@ -31,7 +31,9 @@ class ChooseMentorScreen(Screens):
         self.next_page_button = None
         self.previous_page_button = None
         self.current_mentor_warning = None
+        self.no_mentor_warning = None
         self.confirm_mentor = None
+        self.remove_mentor = None
         self.back_button = None
         self.next_cat_button = None
         self.previous_cat_button = None
@@ -51,6 +53,10 @@ class ChooseMentorScreen(Screens):
                 self.update_selected_cat()
                 self.update_buttons()
             elif event.ui_element == self.confirm_mentor:
+                self.change_mentor(self.selected_mentor)
+                self.update_buttons()
+                self.update_selected_cat()
+            elif event.ui_element == self.remove_mentor:
                 self.change_mentor(self.selected_mentor)
                 self.update_buttons()
                 self.update_selected_cat()
@@ -91,9 +97,10 @@ class ChooseMentorScreen(Screens):
                                                      manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox("If an apprentice is 6 moons old and their mentor is changed, they "
                                                   "will not be listed as a former apprentice on their old mentor's "
-                                                  "profile. An apprentice's mentor can have an influence on their "
-                                                  "trait and skill later in life.\nChoose your mentors wisely",
-                                                  scale(pygame.Rect((360, 120), (880, 200))),
+                                                  "profile. Apprentices without a mentor will have one automatically "
+                                                  "assigned next moon. An apprentice's mentor can have an influence on "
+                                                  "their trait and skill later in life.\nChoose your mentors wisely",
+                                                  scale(pygame.Rect((360, 105), (880, 185))),
                                                   object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                   manager=MANAGER)
         if self.mentor is not None:
@@ -135,18 +142,18 @@ class ChooseMentorScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
         self.confirm_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
                                             object_id="#confirm_mentor_button")
-        if self.mentor is not None:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox(
-                "Current mentor selected",
-                scale(pygame.Rect((600, 670), (400, 60))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
-                manager=MANAGER)
-        else:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
-                                                                        , scale(pygame.Rect((600, 680), (400, 60))),
-                                                                        object_id=get_text_box_theme(
-                                                                            "#text_box_22_horizcenter"),
-                                                                        manager=MANAGER)
+        self.remove_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
+                                            object_id="#remove_mentor_button")
+        self.current_mentor_warning = pygame_gui.elements.UITextBox(
+            "Current mentor selected",
+            scale(pygame.Rect((600, 670), (400, 60))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
+            manager=MANAGER)
+        self.no_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
+                                                                    , scale(pygame.Rect((600, 680), (400, 60))),
+                                                                    object_id=get_text_box_theme(
+                                                                        "#text_box_22_horizcenter"),
+                                                                    manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
                                                   object_id="#relation_list_previous", manager=MANAGER)
         self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
@@ -188,8 +195,12 @@ class ChooseMentorScreen(Screens):
         del self.back_button
         self.confirm_mentor.kill()
         del self.confirm_mentor
+        self.remove_mentor.kill()
+        del self.remove_mentor
         self.current_mentor_warning.kill()
         del self.current_mentor_warning
+        self.no_mentor_warning.kill()
+        del self.no_mentor_warning
         self.previous_page_button.kill()
         del self.previous_page_button
         self.next_page_button.kill()
@@ -289,7 +300,14 @@ class ChooseMentorScreen(Screens):
 
     def change_mentor(self, new_mentor=None):
         old_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        if new_mentor and old_mentor is not None:
+        if new_mentor == old_mentor:
+        #if "changing mentor" to the same cat, remove them as mentor instead
+            if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self.the_cat.ID)
+            self.the_cat.mentor = None
+            old_mentor.apprentice.remove(self.the_cat.ID)
+            self.mentor = None
+        elif new_mentor and old_mentor is not None:
             old_mentor.apprentice.remove(self.the_cat.ID)
             if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
                 old_mentor.former_apprentices.append(self.the_cat.ID)
@@ -307,6 +325,8 @@ class ChooseMentorScreen(Screens):
             self.the_cat.mentor = new_mentor.ID
             new_mentor.apprentice.append(self.the_cat.ID)
             self.mentor = new_mentor
+            if self.the_cat.ID not in new_mentor.former_apprentices:
+                self.the_cat.patrol_with_mentor = 0
 
             # They are a current apprentice, not a former one now!
             if self.the_cat.ID in new_mentor.former_apprentices:
@@ -400,12 +420,26 @@ class ChooseMentorScreen(Screens):
     def update_buttons(self):
         """Updates the status of buttons. """
         # Disable to enable the choose mentor button
-        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
+        if not self.selected_mentor:
+            self.remove_mentor.hide()
+            self.remove_mentor.disable()
+            self.confirm_mentor.show()
             self.confirm_mentor.disable()
+            self.current_mentor_warning.hide()
+            self.no_mentor_warning.show()
+        elif self.selected_mentor.ID == self.the_cat.mentor:
+            self.confirm_mentor.hide()
+            self.remove_mentor.show()
+            self.remove_mentor.enable()
             self.current_mentor_warning.show()
+            self.no_mentor_warning.hide()
         else:
+            self.remove_mentor.hide()
+            self.remove_mentor.disable()
+            self.confirm_mentor.show()
             self.confirm_mentor.enable()
             self.current_mentor_warning.hide()
+            self.no_mentor_warning.hide()
 
     def get_valid_mentors(self):
         valid_mentors = []
