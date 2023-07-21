@@ -135,6 +135,11 @@
             "Allow background color change with murder",
             "Background color will get more red as your cat murders",
             true
+        ],
+        "new acc": [
+            "Enable new accessories from Ohdan's mod",
+            "Disabling new accessories will make LifeGen compatible with sprite mods",
+            true
         ]
     },
     "relation": {

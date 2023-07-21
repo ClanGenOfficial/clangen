@@ -75,7 +75,6 @@ events_screen = EventsScreen('events screen')
 settings_screen = SettingsScreen('settings screen')
 stats_screen = StatsScreen('stats screen')
 achievements_screen = AchievementScreen('achievements screen')
-
 start_screen = StartScreen('start screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 
