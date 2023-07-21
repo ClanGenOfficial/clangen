@@ -948,6 +948,10 @@ def event_text_adjust(Cat,
     if "acc_singular" in text:
         text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
+    if murder_reveal:
+        victim_cat = Cat.fetch_cat(victim)
+        text = text.replace("mur_c", str(victim_cat.name))
+    
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
 
@@ -967,9 +971,7 @@ def event_text_adjust(Cat,
 
     text = text.replace("c_n", clan_name + "Clan")
 
-    if murder_reveal:
-        victim_cat = Cat.fetch_cat(victim)
-        text = text.replace("mur_c", str(victim_cat.name))
+
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
