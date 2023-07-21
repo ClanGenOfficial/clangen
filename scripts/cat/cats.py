@@ -557,13 +557,11 @@ class Cat():
                 
                 if not possible_strings:
                     print("No grief strings")
-                    return
+                    continue
                 
-                text = [choice(possible_strings)]
-                text.append(choice(
-                    MINOR_MAJOR_REACTION["major"]
-                ))
-                text = event_text_adjust(Cat, ' '.join(text), self, cat)
+                text = choice(possible_strings)
+                text += ' ' + choice(MINOR_MAJOR_REACTION["major"])
+                text = event_text_adjust(Cat, text, self, cat)
                 
                 # grief the cat
                 if game.clan.game_mode != 'classic':
@@ -594,7 +592,6 @@ class Cat():
             
             
             # Negative "grief" messages are just for flavor. 
-            possible_strings = []
             if to_self.dislike > 50:
                 high_values.append("dislike")
                 
@@ -605,6 +602,7 @@ class Cat():
                 #Generate the event:
                 possible_strings = []
                 for x in high_values:
+                    possible_strings = []
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(family_relation, x, cat.personality.trait,
                                                                 body_status)
