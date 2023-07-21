@@ -363,10 +363,11 @@ class Events:
             acc_list.extend(Pelt.tail2_accessories)
         if "NOTAIL" in game.clan.your_cat.pelt.scars or "HALFTAIL" in game.clan.your_cat.pelt.scars:
             for acc in Pelt.tail_accessories + Pelt.tail2_accessories:
-                try:
-                    acc_list.remove(acc)
-                except ValueError:
-                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+                if acc in acc_list:
+                    try:
+                        acc_list.remove(acc)
+                    except ValueError:
+                        print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
         # if not game.clan.your_cat.pelt.accessories:
         #     game.clan.your_cat.pelt.accessories = []
