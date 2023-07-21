@@ -950,7 +950,8 @@ def event_text_adjust(Cat,
 
     if murder_reveal:
         victim_cat = Cat.fetch_cat(victim)
-        text = text.replace("mur_c", str(victim_cat.name))
+        if victim_cat:
+            text = text.replace("mur_c", str(victim_cat.name))
     
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
