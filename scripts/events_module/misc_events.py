@@ -207,10 +207,11 @@ class MiscEvents():
 
         if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
             for acc in Pelt.tail_accessories or Pelt.tail2_accessories:
-                try:
-                    acc_list.remove(acc)
-                except ValueError:
-                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+                if acc in acc_list:
+                    try:
+                        acc_list.remove(acc)
+                    except ValueError:
+                        print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
         acc = random.choice(acc_list)
         cat.pelt.accessory = acc

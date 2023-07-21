@@ -1986,6 +1986,13 @@ class Cat():
             if 'request apprentice' in game.switches:
                 if game.switches['request apprentice']:
                     new_mentor = game.clan.your_cat
+                    try:
+                        if game.clan.your_cat.status in ["medicine cat", "mediator"]:
+                            self.status_change(game.clan.your_cat.status + " apprentice")
+                        else:
+                            self.status_change("apprentice")
+                    except:
+                        print("couldn't change status")
                     game.switches['request apprentice'] = False
                 else:
                     if priority_mentors:  # length of list > 0
