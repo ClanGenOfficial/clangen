@@ -592,6 +592,8 @@ class Cat():
             
             
             # Negative "grief" messages are just for flavor. 
+            high_values = []
+            very_high_values = []
             if to_self.dislike > 50:
                 high_values.append("dislike")
                 
