@@ -948,6 +948,11 @@ def event_text_adjust(Cat,
     if "acc_singular" in text:
         text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
+    if murder_reveal:
+        victim_cat = Cat.fetch_cat(victim)
+        if victim_cat:
+            text = text.replace("mur_c", str(victim_cat.name))
+    
     if other_cat:
         cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
 
@@ -967,9 +972,7 @@ def event_text_adjust(Cat,
 
     text = text.replace("c_n", clan_name + "Clan")
 
-    if murder_reveal:
-        victim_cat = Cat.fetch_cat(victim)
-        text = text.replace("mur_c", str(victim_cat.name))
+
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
@@ -1386,7 +1389,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
         # draw accessories
-        if cat.pelt.accessories:
+        if cat.pelt.accessories and cat.ID == game.clan.your_cat.ID:
             for i in cat.pelt.accessories:
                 if i in cat.pelt.plant_accessories:
                     new_sprite.blit(sprites.sprites['acc_herbs' + i + cat_sprite], (0, 0))

@@ -95,7 +95,7 @@ class MiscEvents():
             difference = 1
             change_clan_relations(other_clan, difference=difference)
 
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=False, victim=victim)
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:
@@ -103,7 +103,10 @@ class MiscEvents():
         if ceremony:
             types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
-
+        if "r_c" in event_text:
+            print("r_c was found")
+            print(event_text)
+            
         if reveal and victim:
             History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 

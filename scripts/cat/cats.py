@@ -1714,9 +1714,9 @@ class Cat():
         condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age]
-        if mortality != 0:
-            if game.clan.game_mode == "cruel season":
-                mortality = int(mortality * 0.65)
+        # if mortality != 0:
+        #     if game.clan.game_mode == "cruel season":
+        #         mortality = int(mortality * 0.65)
 
         if condition['congenital'] == 'always':
             born_with = True
@@ -1987,6 +1987,11 @@ class Cat():
                 if game.switches['request apprentice']:
                     new_mentor = game.clan.your_cat
                     game.switches['request apprentice'] = False
+                else:
+                    if priority_mentors:  # length of list > 0
+                        new_mentor = choice(priority_mentors)
+                    elif potential_mentors:  # length of list > 0
+                        new_mentor = choice(potential_mentors)
             elif priority_mentors:  # length of list > 0
                 new_mentor = choice(priority_mentors)
             elif potential_mentors:  # length of list > 0

@@ -74,12 +74,14 @@ class Events:
         self.disaster_events = DisasterEvents()
         self.c_txt = None
         self.d_txt = None
-        self.checks = [0,0,0]
+        self.checks = [-1,-1,-1]
 
     def one_moon(self):
         """
         TODO: DOCS
         """
+        if self.checks == [-1,-1,-1]:
+            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits())]
         game.cur_events_list = []
         game.herb_events_list = []
         game.mediated = []
