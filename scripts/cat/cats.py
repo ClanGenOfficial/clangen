@@ -497,31 +497,31 @@ class Cat():
             
             if to_self.romantic_love > 55:
                 very_high_values.append("romantic")
-            if to_self.romantic_love > 20:
+            if to_self.romantic_love > 40:
                 high_values.append("romantic")
             
             if to_self.platonic_like > 50:
                 very_high_values.append("platonic")
-            if to_self.platonic_like > 15:
+            if to_self.platonic_like > 40:
                 high_values.append("platonic")
             
             if to_self.admiration > 70:
                 very_high_values.append("admiration")
-            if to_self.admiration > 30:
+            if to_self.admiration > 50:
                 high_values.append("admiration")
                 
             if to_self.comfortable > 60:
                 very_high_values.append("comfort")
-            if to_self.comfortable > 30:
+            if to_self.comfortable > 40:
                 high_values.append("comfort")
                 
             if to_self.trust > 70:
                 very_high_values.append("trust")
-            if to_self.trust > 30:
+            if to_self.trust > 50:
                 high_values.append("trust")
             
             
-            grief_type = None
+            major_chance = 0
             if very_high_values:
                 # major grief eligable cats. 
                 
@@ -540,14 +540,12 @@ class Cat():
                 if body_treated:
                     major_chance -= 1
                 
-                # Chance for a cat with major grief to fail to minor.    
-                grief_type = "minor" if int(random() * major_chance) else "major"
-            elif high_values:
+            # If major_chance is not 0, there is a chance for major grief
+            grief_type = None
+            if major_chance and not int(random() * major_chance):
                 
-                # If this triggers, the cat can only get minor grief
-                grief_type = "minor"
+                grief_type = "major"
                 
-            if grief_type == "major":
                 possible_strings = []
                 for x in very_high_values:
                     possible_strings.extend(
@@ -566,7 +564,13 @@ class Cat():
                 # grief the cat
                 if game.clan.game_mode != 'classic':
                     cat.get_ill("grief stricken", event_triggered=True, severity="major")
-            elif grief_type == "minor":
+
+                
+            # If major grief fails, but there are still very_high or high values, 
+            # fail to minor grief. 
+            elif very_high_values or high_values:
+                
+                grief_type = "minor"
                 
                 # These minor grief message will be applied as throughts. 
                 minor_grief_messages = (
