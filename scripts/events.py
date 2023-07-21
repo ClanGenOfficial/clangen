@@ -16,7 +16,6 @@ from scripts.patrol import Patrol
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.skills import CatSkills
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE, FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -146,29 +145,28 @@ class Events:
 
         # Handle grief events.
         if Cat.grief_strings:
-            remove_cats = []
-            death_report_cats = []
-
             # Grab all the dead or outside cats, who should not have grief text
-            for ID in Cat.grief_strings:
+            for ID in Cat.grief_strings.copy():
                 check_cat = Cat.all_cats.get(ID)
-                if check_cat:
+                if isinstance(check_cat, Cat):
                     if check_cat.dead or check_cat.outside:
-                        remove_cats.append(check_cat.ID)
-                    else:
-                        death_report_cats.append(check_cat.ID)
-
-            # Remove the dead or outside cats
-            for ID in remove_cats:
-                if ID in Cat.grief_strings:
-                    Cat.grief_strings.pop(ID)
+                        Cat.grief_strings.pop(ID)
 
             # Generate events
-            for item in Cat.grief_strings.values():
-                game.cur_events_list.append(
-                    Single_Event(item[0], ["birth_death", "relation"],
-                                 item[1]))
-
+            
+            for cat_id, values in Cat.grief_strings.items():
+                for _val in values:
+                    if _val[2] == "minor":
+                        # Apply the grief message as a thought to the cat
+                        text = event_text_adjust(Cat, _val[0], Cat.fetch_cat(cat_id), Cat.fetch_cat(_val[1][0]))
+                        Cat.fetch_cat(cat_id).thought = text
+                    else:
+                        game.cur_events_list.append(
+                            Single_Event(_val[0], ["birth_death", "relation"],
+                                        _val[1]))
+            
+            
+                
             Cat.grief_strings.clear()
 
         if Cat.dead_cats:
@@ -1623,8 +1621,8 @@ class Events:
         """
         TODO: DOCS
         """
-
-        if int(random.random() * 40):
+        hit = int(random.random() * 30)
+        if hit:
             return
 
         other_cat = random.choice(list(Cat.all_cats.values()))
@@ -1633,7 +1631,8 @@ class Events:
             other_cat = random.choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
-                return
+                other_cat = None
+                break
 
         enemy_clan = None
         if game.clan.war.get("at_war", False):
@@ -1693,10 +1692,10 @@ class Events:
             return True
 
         # chance to die of old age
-        age_change = game.config["death_related"]["old_age_death_chance"]
+        age_chance = game.config["death_related"]["old_age_death_chance"]
         age_start = game.config["death_related"]["old_age_death_start"]
         if cat.moons > int(
-                random.random() * age_change) + age_start:  # cat.moons > 150 <--> 200
+                random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
             
             self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits)

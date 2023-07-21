@@ -90,7 +90,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -127,7 +127,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -193,7 +193,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
-            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
+            "unscathed_stat": "s_c watches r_c with undisguised envy, desperately wishing {PRONOUN/s_c/subject} {VERB/s_c/were/was} the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
         },
         "win_skills": [],
         "fail_trait": [
@@ -299,7 +299,7 @@
         },
         "fail_text": {
             "unscathed_common": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. app1 pads uncertainly back to camp, wondering if it was even real in the first place.",
-            "unscathed_stat": "app1 turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/app1/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/app1/object}, and things must change. app1 cowers in front of them, wishing {PRONOUN/app1/subject} were anywhere else."
+            "unscathed_stat": "app1 turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/app1/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/app1/object}, and things must change. app1 cowers in front of them, wishing {PRONOUN/app1/subject} {VERB/app1/were/was} anywhere else."
         },
         "fail_trait": [
             "bloodthirsty",
@@ -469,7 +469,7 @@
         "chance_of_success": 20,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other.  By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other. By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
             "unscathed_rare": "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They spend some time in a warm sunbeam, sharing tongues and sunning themselves, and by the time they're ready to go home, every cat is feeling closer to one another.",
             "stat_skill": "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask {PRONOUN/s_c/object} what's up, and spots {PRONOUN/s_c/object} veering down a side path. r_c motions for the others as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} s_c, and {VERB/r_c/find/finds} {PRONOUN/s_c/object} purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} this will keep the Clan healthy for ages."
         },
@@ -505,7 +505,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other.  They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+            "unscathed_common": "The cats take turns veering off for herbs, allowing the others time to chat with each other. They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
             "unscathed_rare": "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They sit themselves in the cover of a tree to share tongues and chat out of the rain, and by the time they're ready to go home, every cat is feeling closer to one another.",
             "stat_skill": "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask {PRONOUN/s_c/object} what's up, and spots {PRONOUN/s_c/object} veering down a side path. r_c motions for the others as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} s_c, and {VERB/r_c/find/finds} {PRONOUN/s_c/object} purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} this will keep the Clan healthy for ages."
         },
@@ -909,7 +909,7 @@
         "success_text": {
             "unscathed_common": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 tentatively explains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} curious about what it's like to get a vision from StarClan. p_l ponders how to explain it, and settles for a vague description and iterating that it's different for every cat who has one. app1 seems a bit confused, but grateful.",
             "unscathed_rare": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to talk about it. p_l gently reassures {PRONOUN/app1/object} that it's okay to ask questions, and though app1 doesn't ask, {PRONOUN/app1/subject} {VERB/app1/seem/seems} more chipper, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} a big help anyways.",
-            "stat_skill": "s_c sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 tentatively explains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} were curious about how visits from StarClan work. s_c is probably the best cat {PRONOUN/app1/subject} could have asked that question to. The older cat takes pride in the way app1 listens to {PRONOUN/s_c/object} talk, wonder shining in {PRONOUN/app1/poss} eyes."
+            "stat_skill": "s_c sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 tentatively explains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} curious about how visits from StarClan work. s_c is probably the best cat {PRONOUN/app1/subject} could have asked that question to. The older cat takes pride in the way app1 listens to {PRONOUN/s_c/object} talk, wonder shining in {PRONOUN/app1/poss} eyes."
         },
         "fail_text": {
             "unscathed_common": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to talk about it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",

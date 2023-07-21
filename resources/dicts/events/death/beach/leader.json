@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c lost a life when they fell from the top branches of a tree.",
+        "death_text": "m_c lost a life when {PRONOUN/m_c/subject} fell from the top branches of a tree.",
         "history_text": {
             "lead_death": "fell from a tall tree"
         },
@@ -28,7 +28,7 @@
         ],
         "death_text": "m_c was washed out to sea, never to be seen again.",
         "history_text": {
-            "lead_death": "were washed out to sea"
+            "lead_death": "{VERB/m_c/were/was} washed out to sea"
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -56,7 +56,7 @@
         ],
         "death_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "history_text": {
-            "lead_death": "were lost to the sea while trying to save r_c"
+            "lead_death": "{VERB/m_c/were/was} lost to the sea while trying to save r_c"
         },
         "cat_trait": [
             "altruistic",
@@ -91,7 +91,7 @@
         ],
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking till the body slid beneath the waves.",
         "history_text": {
-            "lead_death": "were shoved off a cliff by r_c",
+            "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c",
             "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
         },
         "cat_trait": [
@@ -154,7 +154,7 @@
         ],
         "death_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident, that m_c slipped on loose shale.",
         "history_text": {
-            "lead_death": "were shoved off a cliff by r_c",
+            "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c",
             "lead_murder_unrevealed": "were shoved off a cliff by an unknown killer"
         },
         "cat_trait": [
@@ -215,10 +215,10 @@
             "Leaf-bare",
             "no_body"
         ],
-        "death_text": "Usually m_c is well aware of when the high tide will come in, but today they're distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at their paws, the last thing they see is the smug grin of r_c sat high above on the rocks.",
+        "death_text": "Usually m_c is well aware of when the high tide will come in, but today {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at {PRONOUN/m_c/poss} paws, the last thing {PRONOUN/m_c/subject} {VERB/m_c/see/sees} is the smug grin of r_c sat high above on the rocks.",
         "history_text": {
-            "lead_death": "were trapped in the tides by r_c",
-            "lead_murder_unrevealed": "were trapped by high tides"
+            "lead_death": "{VERB/m_c/were/was} trapped in the tides by r_c",
+            "lead_murder_unrevealed": "{VERB/m_c/were/was} trapped by high tides"
         },
         "cat_trait": [
             "responsible",

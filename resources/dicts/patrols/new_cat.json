@@ -321,6 +321,11 @@
         },
         "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and warn the loner not to cross the border.",
         "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching.",
+        "history_text": {
+            "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
+            "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+        },
         "win_skills": [
             "FIGHTER,1"
         ],
@@ -343,7 +348,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with their kits."
+            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with their kits."
         },
         "fail_text": {
             "unscathed_common": "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
@@ -397,7 +402,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
-            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help the queen joins c_n with their kits."
+            "unscathed_rare": "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help, the queen joins c_n with their kits."
         },
         "fail_text": {
             "unscathed_common": "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
@@ -532,7 +537,7 @@
         "antagonize_fail_text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
         "history_text": {
             "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -574,7 +579,7 @@
         "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
         "history_text": {
             "reg_death": "This cat died in an ambush set by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -616,7 +621,7 @@
         "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n.",
         "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
         "history_text": {
-            "scar": "p_l gained a scar after tussling with a rogue."
+            "scar": "m_c gained a scar after tussling with a rogue."
         }
     },
     {
@@ -658,7 +663,7 @@
         "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
         "history_text": {
             "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
     {
@@ -670,20 +675,21 @@
             "border",
             "new_cat_elder_loner",
             "no_new_cat2",
-            "no_new_cat3"
+            "no_new_cat3",
+            "death"
         ],
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "p_l decides not to investigate.",
+        "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
+        "decline_text": "r_c decides not to investigate.",
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "It's just an odd loner singing to themself. p_l greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
-            "unscathed_rare": "It's just an odd loner singing to themself. When they see p_l they invite {PRONOUN/p_l/object} to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "unscathed_common": "It's just an odd loner singing to themself. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and r_c invites them to c_n's camp. The loner agrees.",
+            "unscathed_rare": "It's just an odd loner singing to themself. When they see r_c, they invite {PRONOUN/r_c/object} to sing too, but instead, r_c offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "stat_skill": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
             "stat_trait": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
         },
         "fail_text": {
-            "death": "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp."
+            "death": "r_c decides that a quick peek can't hurt. As {PRONOUN/r_c/subject} {VERB/r_c/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. r_c never makes it back to camp."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -695,11 +701,11 @@
         ],
         "min_cats": 1,
         "max_cats": 1,
-        "antagonize_text": "p_l can sense it's a trap, and waits just outside, setting {PRONOUN/p_l/poss} own trap. {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-        "antagonize_fail_text": "p_l can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart.",
+        "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting {PRONOUN/r_c/poss} own trap. {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+        "antagonize_fail_text": "r_c can sense it's a trap, and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c/object} there too. r_c escapes with {PRONOUN/r_c/poss} life, but fear in {PRONOUN/r_c/poss} heart.",
         "history_text": {
-            "reg_death": "This cat died from being ambushed by rogues.",
-            "lead_death": "{VERB/p_l/were/was} killed in a rogue ambush"
+            "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
+            "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush while on a solo patrol"
         }
     },
     {
@@ -750,7 +756,7 @@
             "battle_injury",
             "meeting"
         ],
-        "intro_text": "As the patrol is checking the border lines, they hear the traispe of pawsteps through the territory.",
+        "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
         "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
         "chance_of_success": 50,
         "exp": 10,
@@ -858,7 +864,7 @@
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the pitious cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
+            "unscathed_common": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
             "unscathed_rare": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, their fur soft and thin, their cries desperate as they call in confusion. app1 comes down to them, startling the poor thing half out of their pelt, and ask if they need assistance - this cat clearly doesn't belong here.",
             "stat_trait": "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/app1/self} cheerfully, and the desperate kittypet slowly loses a little of their fear as app1 guides them back to camp, sure that the Leader will know what to do with them."
         },
@@ -900,16 +906,16 @@
             "border"
         ],
         "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
-        "decline_text": "Its not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
+        "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely.",
         "chance_of_success": 85,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "The patrol races towards the sound. They are puzzled when they only see a lone Twoleg, but grim realization soon dawns on them after they hear more screams coming from a bag the Twoleg is holding. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the rest of the patrol claws the ankles of the now furious Twoleg, p_l and r_c quickly and quietly get the old shivering cat out of sight, promising them safety and welcome in c_n for as long as they like.",
-            "stat_trait": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside - it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that they aren't a burden, and they all would be happy to have their wisdom and knowledge be a part of c_n."
+            "unscathed_common": "The patrol races towards the sound. They're puzzled when they only see a Twoleg, but realization soon dawns when the bag it holds thrashes and wails. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the angered Twoleg is distracted, p_l and r_c hurriedly get the shivering old cat out of sight, promising them safety in c_n for as long as they wish.",
+            "stat_trait": "s_c sees the Twoleg, the thrashing bag, the stones piled within - it's now or never to save this poor cat. The patrol leaps and claws at the Twoleg, while s_c sneaks over to the bag, gently hurrying the elderly cat to a safe hiding place. As the patrol retreats, s_c softly reassures the old cat, promising that c_n would be honored to take them in."
         },
         "fail_text": {
-            "injury": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the bag wiggling and screaming, {PRONOUN/r_c/subject} {VERB/r_c/jump/jumps} into action. Unfortunately r_c was just a tad too slow and got kicked quite hard against a tree. p_l orders the patrol to protect and carry r_c while they retreat, with pain in their heart for the unknown cat that they couldn't save.",
-            "stat_injury": "Upon seeing the Twoleg and the screeching bag they are holding s_c just can't take it. {PRONOUN/s_c/subject} {VERB/cat/jump/jumps}, into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard onto the floor the only thing the rest of the patrol can do is grab s_c and flee back to the safety of c_n."
+            "injury": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} a Twoleg holding a thrashing, screaming bag, {PRONOUN/r_c/subject} {VERB/r_c/leap/leaps} into action. Unfortunately r_c is just a tad too slow, earning quite a hard kick against a tree. p_l orders the patrol to protect and carry r_c while they retreat, hearts aching for the cat they couldn't save.",
+            "stat_injury": "s_c can't take the sight of the Twoleg clutching the screeching bag. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leap/leaps} into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up, and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard to the ground, all the patrol can do is grab s_c and flee to the safety of c_n."
         },
         "win_skills": [
             "CLEVER,2",
@@ -926,8 +932,8 @@
         ],
         "min_cats": 3,
         "max_cats": 6,
-        "antagonize_text": "As soon as the patrol realizes that a Twoleg is holding a Kittypet in a bag and that's where the screaming originates from, they quickly turn and resume their patrol. Kittypets are not their problem.",
-        "antagonize_fail_text": "The patrol quickly turn away once they realize that a Twoleg and a kittypet are involved, not their problem. Still, when they hear a loud splash everyone goes quiet and the rest of the patrol is spend in silence and shame."
+        "antagonize_text": "As soon as the patrol realizes that the sound is coming from a Twoleg clutching a screeching bag, they quickly turn and resume their patrol. Kittypets are <i>not</i> their problem.",
+        "antagonize_fail_text": "The patrol quickly turns away once they realize that a Twoleg and a kittypet are involved. Not their problem. Still, when they hear a loud splash, and the screaming bubbles and stops, everyone goes quiet. The rest of the patrol is spent in silence, shame churning their stomachs and making them feel ill."
     },
     {
         "patrol_id": "bch_bord_ocean_newcatkits1",
@@ -948,7 +954,7 @@
         "chance_of_success": 20,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
+            "unscathed_common": "The patrol races towards the section of beach they heard the wailing coming from. To their horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them in place. p_l and r_c leap into the water, grabbing the kits by their scruffs and handing them over to the rest of the patrol.",
             "stat_trait": "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} a piece of wood as a makeshift raft and {VERB/s_c/paddle/paddles} the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
         },
         "fail_text": {

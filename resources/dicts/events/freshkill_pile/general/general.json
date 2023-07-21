@@ -28,8 +28,8 @@
         ],
         "event_text": "m_c woke up in the middle of the night to a strange noise. No one else was awake, or so {PRONOUN/m_c/subject} thought, until seeing someone at the fresh-kill pile. Before m_c could realize {PRONOUN/m_c/poss} mistake, sharp canine teeth were at {PRONOUN/m_c/poss} throat, ensuring the Clan wakes up to find {PRONOUN/m_c/poss} nest empty, and the prey gone.",
         "history_text": [
-            "Was killed by a fox.",
-            "Lost a life to a fox."
+            "m_c was killed by a fox that snuck into camp.",
+            "{VERB/m_c/were/was} killed by a fox that snuck into camp"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -48,8 +48,8 @@
         ],
         "event_text": "m_c was taking some prey from the fresh-kill pile only to find a swarm of rats! In the midst of battle, {PRONOUN/m_c/subject} called to r_c for help. Together they fought off the rats, but not without their losses.",
         "history_text": [
-            "Was killed by a swarm of rats, while defending the fresh-kill pile.",
-            "a swarm of rats, while defending the fresh-kill pile"
+            "m_c was killed by a swarm of rats while defending the fresh-kill pile.",
+            "{VERB/m_c/were/was} killed by a swarm of rats while defending the fresh-kill pile"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -69,9 +69,9 @@
         ],
         "event_text": "m_c was taking some prey from the fresh-kill pile only to find a swarm of rats! In the midst of battle, {PRONOUN/m_c/subject} called to r_c for help. Together they fought off the rats, but got injured in the process.",
         "history_text": [
-            "Was hurt while defending the fresh-kill pile from a swarm of rats.",
-            "Died from their wounds after defending the fresh-kill pile from a swarm of rats.",
-            "defending the fresh-kill pile from a swarm of rats"
+            "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from a swarm of rats.",
+            "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from a swarm of rats.",
+            "{VERB/m_c/were/was} killed defending the fresh-kill pile from a swarm of rats"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -90,9 +90,9 @@
         ],
         "event_text": "m_c was taking some prey from the fresh-kill pile only to find a swarm of rats! While m_c managed to fight off every last rat, {PRONOUN/m_c/subject} got injured in the process.",
         "history_text": [
-            "Was hurt while defending the fresh-kill pile from a swarm of rats.",
-            "Died from their wounds after defending the fresh-kill pile from a swarm of rats.",
-            "defending the fresh-kill pile from a swarm of rats"
+            "{VERB/m_c/were/was} hurt while defending the fresh-kill pile from a swarm of rats.",
+            "Died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from a swarm of rats.",
+            "{VERB/m_c/were/was} killed defending the fresh-kill pile from a swarm of rats"
         ],
         "cat_trait": null,
         "cat_skill": null,
