@@ -136,9 +136,9 @@
             "Background color will get more red as your cat murders",
             true
         ],
-        "new acc": [
-            "Enable new accessories from Ohdan's mod",
-            "Disabling new accessories will make LifeGen compatible with sprite mods",
+        "new accessories": [
+            "Enable display of new accessories from Ohdan's mod",
+            "Disabling new accessories display will make LifeGen compatible with sprite mods",
             true
         ]
     },

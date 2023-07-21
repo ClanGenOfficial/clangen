@@ -1046,7 +1046,6 @@ class ProfileScreen(Screens):
         output += the_cat.personality.trait
         # NEWLINE ----------
         output += "\n"
-
         # CAT SKILLS
 
         if the_cat.moons <= 6:
