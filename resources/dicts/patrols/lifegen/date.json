@@ -379,7 +379,7 @@
         "biome": "Forest",
         "season": "Any",
         "tags": ["date"],
-        "intro_text": "You and r_c take a walk along the edge of the territory, trees gently swaying and birds calling in the breeze overhead. You notice a scrap of leaf clinging to [Cat's] fur and consider brushing it off with your tail... but, no. Would that be too weird?",
+        "intro_text": "You and r_c take a walk along the edge of the territory, trees gently swaying and birds calling in the breeze overhead. You notice a scrap of leaf clinging to r_c's fur and consider brushing it off with your tail... but, no. Would that be too weird?",
         "success_text": {
             "unscathed_common": "You gently brush your tail across r_c's shoulder blade, and they thank you with a purr that's a little too warm for the simplicity of the favor."
         },
@@ -510,47 +510,6 @@
         "reputation_change": {
             "outsiders": -5
         }
-    },
-    {
-        "patrol_id": "outsider_kits",
-        "biome": "Outsider territory",
-        "season": "Any",
-        "tags": ["date"],
-        "intro_text": "You met [loner/rouge], who you secretly have had an affair with. She wants to introduce you to her kits, which she had finally given birth to. She asks if you want to bring one of them back to camp with you to be raised as a warrior, hearing how clan-life is.",
-        "success_text": {
-            "unscathed_common": "You say yes to [loner/rouge], which you later bring back the kit to the clan, claiming that you found [pronouns] 'abandoned' near the borders. Your mate, [mate], and you decide to raise this kit, which you decided to name, [kit's name]. You find a queen to provide the kit with milk to be fed with. [mate] is completely oblivious to the fact that this kit smells like [loner/rouge]."
-        },
-        "fail_text": {
-            "unscathed_common": "You bring the kit back to camp, claiming that they were 'abandoned', but guilt fills your stomach of how you have broken the warrior code and how you weren't staying loyal to your mate. You forget about [kit] so you won't have to deal with this burden and guilt, as they slowly fade away, until one day, they don't wake up from the nursery."
-        },
-        "decline_text": "You decline the offer, as you fear how questions would rise if you brought back a kit that your mate, [mate], never had. [loner/rouge] walks away in disappointment.",
-        "chance_of_success": 50,
-        "exp": 15,
-        "win_skills": [],
-        "min_cats": 2,
-        "max_cats": 3,
-        "trust_change": {
-            "loner_rouge": -10
-        }
-    },
-    {
-        "patrol_id": "sneak_outsider",
-        "biome": "Clan territory",
-        "season": "Any",
-        "tags": ["date"],
-        "intro_text": "You've known [outsider] since that one patrol, and long to see them again, and now's your chance on this one solo patrol.",
-        "success_text": {
-            "unscathed_common": "You go on a 'patrol' only to sneak to [outsider] talking for a bit, sharing tongues, and sharing prey. You later greet [outsider], hoping to grow your love with them for a little more next time."
-        },
-        "fail_text": {
-            "unscathed_common": "You sneak out to see [outsider], only to be caught by a patrol! You feel burning in embarrassment and rage as the leader looks at you sternly, wondering what to do with you now, since you have broken the warrior code."
-        },
-        "decline_text": "You have other things to do, and you wouldn't want to be caught breaking the warrior code, would you?",
-        "chance_of_success": 60,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 1
     },
     {
         "patrol_id": "new_leaf_crush",

@@ -1002,6 +1002,8 @@ class PatrolScreen2(Screens):
                                       (100, 100))
     df_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/df_toggle.png").convert_alpha(),
                                       (100, 100))
+    date_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/flirt.png").convert_alpha(),
+                                      (100, 100))
 
     current_patrol = []
     patrol_stage = 'choose_cats'  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
@@ -1095,7 +1097,10 @@ class PatrolScreen2(Screens):
                 if event.ui_element == self.elements['df_icon']:
                     self.change_screen("patrol screen3")
                     self.elements['df_icon'].disable()
-
+        if 'date_icon' in self.elements:
+                if event.ui_element == self.elements['date_icon']:
+                    self.change_screen("patrol screen4")
+                    self.elements['date_icon'].disable()
         if event.ui_element == self.elements["random"]:
             self.selected_cat = choice(self.able_cats)
             self.update_selected_cat()
@@ -1463,6 +1468,10 @@ class PatrolScreen2(Screens):
                         scale(pygame.Rect((820, 230), (50, 50))), "",
                         object_id='#dark_forest_button', manager=MANAGER)
 
+        if game.clan.your_cat.moons >= 12:
+            self.elements['date_icon'] = UIImageButton(
+                        scale(pygame.Rect((870, 230), (50, 50))), "",
+                        object_id='#flirt_button', manager=MANAGER)
         self.update_cat_images_buttons()
         self.update_button()
 
@@ -1958,6 +1967,8 @@ class PatrolScreen3(Screens):
                                         (332, 340))
     cat_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/cat_icon.png").convert_alpha(),
                                       (100, 100))
+    date_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/flirt.png").convert_alpha(),
+                                      (100, 100))
 
     current_patrol = []
     patrol_stage = 'choose_cats'  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
@@ -2047,6 +2058,10 @@ class PatrolScreen3(Screens):
         if 'cat_icon' in self.elements:
                 if event.ui_element == self.elements['cat_icon']:
                     self.change_screen("patrol screen2")
+        if 'date_icon' in self.elements:
+                if event.ui_element == self.elements['date_icon']:
+                    self.change_screen("patrol screen4")
+                    self.elements['date_icon'].disable()
         if event.ui_element == self.elements["random"]:
             self.selected_cat = choice(self.able_cats)
             self.update_selected_cat()
@@ -2415,6 +2430,11 @@ class PatrolScreen3(Screens):
                         scale(pygame.Rect((820, 230), (50, 50))), "",
                         object_id='#dark_forest_button', manager=MANAGER)
             self.elements['df_icon'].disable()
+        
+        if game.clan.your_cat.moons >= 12:
+            self.elements['date_icon'] = UIImageButton(
+                        scale(pygame.Rect((870, 230), (50, 50))), "",
+                        object_id='#date_icon', manager=MANAGER)
 
         self.update_cat_images_buttons()
         self.update_button()
@@ -2918,6 +2938,8 @@ class PatrolScreen4(Screens):
                                       (100, 100))
     df_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/df_toggle.png").convert_alpha(),
                                       (100, 100))
+    date_icon = pygame.transform.scale(pygame.image.load("resources/images/buttons/flirt.png").convert_alpha(),
+                                      (100, 100))
     current_patrol = []
     patrol_stage = 'choose_cats'  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
     patrol_screen = 'patrol_cats'  # Can be "patrol_cats" or "skills". Controls the tab on the select_cats stage
@@ -2943,7 +2965,6 @@ class PatrolScreen4(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
-                self.current_patrol.append(game.clan.your_cat)
             elif self.patrol_stage == 'patrol_events':
                 self.handle_patrol_events_event(event)
             elif self.patrol_stage == 'patrol_complete':
@@ -3107,7 +3128,7 @@ class PatrolScreen4(Screens):
             else:
                 self.patrol_type = 'hunting'
             self.update_button()
-        elif event.ui_element == self.elements['patrol_start']:
+        elif event.ui_element == self.elements['patrol_start'] and len(self.current_patrol) == 2:
             self.selected_cat = None
             self.open_patrol_event_screen()  # Starting patrol.
 
@@ -3157,7 +3178,7 @@ class PatrolScreen4(Screens):
 
             # Update add random cat buttons
             # Enable all the buttons, to reset them
-            self.elements['add_one'].enable()
+            self.elements['add_one'].disable()
             self.elements['add_three'].disable()
             self.elements['add_six'].disable()
             self.elements["random"].disable()
@@ -3379,6 +3400,12 @@ class PatrolScreen4(Screens):
                         scale(pygame.Rect((820, 230), (50, 50))), "",
                         object_id='#dark_forest_button', manager=MANAGER)
 
+        if game.clan.your_cat.moons >= 12:
+            self.elements['date_icon'] = UIImageButton(
+                        scale(pygame.Rect((870, 230), (50, 50))), "",
+                        object_id='#flirt_button', manager=MANAGER)
+            self.elements['date_icon'].disable()
+        self.current_patrol.append(game.clan.your_cat)
         self.update_cat_images_buttons()
         self.update_button()
 
@@ -3529,7 +3556,7 @@ class PatrolScreen4(Screens):
 
         # ASSIGN TO ABLE CATS
         # print(game.patrolled)
-        if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
+        if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and not the_cat.outside and not the_cat.not_working():
             for the_cat in Cat.all_cats_list:
                 if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
                     'newborn', 'kitten', 'apprentice', 'mediator apprentice', 'medicine cat apprentice'

@@ -995,7 +995,7 @@ class Patrol():
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
-
+            
         gm_modifier = game.config["patrol_generation"][f"{game.clan.game_mode}_difficulty_modifier"]
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
@@ -1046,12 +1046,53 @@ class Patrol():
         else:
             common = True
             # print("TRY FOR COMMON OUTCOME")
-
+            
+        if game.current_screen == 'patrol screen4':
+            c = random.randint(1,100)
+            success_chance = 40
+            date = None
+            you = game.clan.your_cat
+            if self.patrol_cats[0].ID == game.clan.your_cat.ID:
+                date = self.patrol_cats[1]
+            else:
+                date = self.patrol_cats[0]
+            if date.relationships.get(you.ID):
+                if date.relationships.get(you.ID).romantic_love > 50:
+                    success_chance += 40
+                elif date.relationships.get(you.ID).romantic_love > 40:
+                    success_chance += 30
+                elif date.relationships.get(you.ID).romantic_love > 30:
+                    success_chance += 20
+                elif date.relationships.get(you.ID).romantic_love > 10:
+                    success_chance += 10
+                
+                if date.relationships.get(you.ID).platonic_like > 40:
+                    success_chance += 15
+                elif date.relationships.get(you.ID).platonic_like > 30:
+                    success_chance += 10
+                elif date.relationships.get(you.ID).platonic_like > 20:
+                    success_chance += 5
+                    
+                if date.relationships.get(you.ID).dislike > 50:
+                    success_chance -= 50
+                if date.relationships.get(you.ID).dislike > 30:
+                    success_chance -= 40
+                if date.relationships.get(you.ID).dislike > 20:
+                    success_chance -= 30
+                if date.relationships.get(you.ID).dislike > 0:
+                    success_chance -= 10
+                success_chance += random.randint(-20,20)
+            success_chance = min(90, success_chance)
+            success_chance = max(success_chance, 10)
+            print(f"c: {c} chance: {success_chance}")
+            if c < success_chance:
+                date.relationships.get(you.ID).romantic_love += 10
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
 
         if c < success_chance:
+            
             self.success = True
             self.patrol_fail_stat_cat = None
 
