@@ -15,7 +15,7 @@
         },
         "decline_text": "You decide against it. You don't want to freeze to death, after all.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -36,7 +36,7 @@
         },
         "decline_text": "Your nerves get to you, and you find yourself unable to speak.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -57,7 +57,7 @@
         },
         "decline_text": "No... what if they think you're weird for wanting to watch your dead ancestors fall out the sky?!",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -78,7 +78,7 @@
         },
         "decline_text": "That's a horrible idea. You shake it out of your head, and move on.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -99,14 +99,14 @@
         },
         "decline_text": "You're too nervous to inch closer, deciding it must be too soon. What if r_c thinks you're acting out of place?",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "date_sea",
-        "biome": "Beach",
+        "biome": "beach",
         "season": "Any",
         "tags": [
             "date"
@@ -120,7 +120,7 @@
         },
         "decline_text": "Maybe some other day. Right now, the sea looks a little too wild.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -141,7 +141,7 @@
         },
         "decline_text": "You don't want to risk getting your paws all cold and wet - and worse, what if y_c doesn't want them?",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -162,7 +162,7 @@
         },
         "decline_text": "You decide not to. The thought of rejection is too overwhelming.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -183,7 +183,7 @@
         },
         "decline_text": "Nope. You don't do that. That would be weird. You choose to respect r_c's boundaries.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -204,7 +204,7 @@
         },
         "decline_text": "Nevermind, you have an important patrol ahead. You decide to move onwards.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -225,7 +225,7 @@
         },
         "decline_text": "It's too early in the morning, r_c enjoys their rest.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -246,7 +246,7 @@
         },
         "decline_text": "You decide it's not your place to be nosy. You respect r_c's boundaries, after all. If it was important, they'd tell you, right?",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -257,7 +257,7 @@
         "season": "Any",
         "tags": [
             "date",
-            "you_medcat"
+            "you_med"
         ],
         "intro_text": "You need herbs for the medicine den, and decide to bring r_c with you. You appreciate them coming with you, the extra paws are a massive help! You notice how their fur sparkles beautifully with dew, looking almost like silverpelt had come alive on them. You consider telling them so.",
         "success_text": {
@@ -268,7 +268,7 @@
         },
         "decline_text": "Nope. They're here on business. They're just helping you get herbs. Don't get any weird ideas.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -289,7 +289,7 @@
         },
         "decline_text": "No! No way in Starclan! You're too awkward for that! So you just sit in silence with them.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -310,7 +310,7 @@
         },
         "decline_text": "You shake your head and r_c seems almost disappointed, but keeps up.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -331,14 +331,14 @@
         },
         "decline_text": "You slow to a stop, feeling stupid for even trying to do that. You stutter out an excuse to r_c before heading back over to them, your ears burning with embarrassment.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "forest_fireflies",
-        "biome": "Forest",
+        "biome": "forest",
         "season": "Any",
         "tags": ["date"],
         "intro_text": "You and r_c take a walk through the forest at night, the soft croaking of frogs seeming to ring out to the beat of your pawsteps. You spot a long field of grass, and remember something someone taught you when you were just a kit. You turn to r_c, wanting to ask them something.",
@@ -350,7 +350,7 @@
         },
         "decline_text": "You can't muster up the courage to ask, and turn back to the patrol, your gaze flitting back to the field longingly.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
@@ -369,14 +369,14 @@
         },
         "decline_text": "But due to the anxiety in your heart that you would accidentally make r_c more tense then they already are, you say nothing and the two of you continue the patrol in silence.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "edge_leafbrush",
-        "biome": "Forest",
+        "biome": "Any",
         "season": "Any",
         "tags": ["date"],
         "intro_text": "You and r_c take a walk along the edge of the territory, trees gently swaying and birds calling in the breeze overhead. You notice a scrap of leaf clinging to r_c's fur and consider brushing it off with your tail... but, no. Would that be too weird?",
@@ -388,17 +388,17 @@
         },
         "decline_text": "You decide to play it safe and simply tell r_c about the leaf scrap instead. The rest of the walk goes smoothly enough, but you can't stop wondering what could have been.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "hunting_mapleleaves",
-        "biome": "Forest",
-        "season": "Fall",
+        "biome": "Any",
+        "season": "leaf-fall",
         "tags": ["date"],
-        "intro_text": "You were on a hunting patrol with r_c, and after catching mouthfuls of prey, you and r_c decided to take a break. You've noticed how pretty the maple leaves look, and wanted to give some to [pronouns]. Was it a good choice, though?",
+        "intro_text": "You were on a hunting patrol with r_c, and after catching mouthfuls of prey, you and r_c decided to take a break. You've noticed how pretty the maple leaves look, and wanted to give some to them. Was it a good choice, though?",
         "success_text": {
             "unscathed_common": "You stood up and collected the prettiest of maple leaves, and after gathering a good load of them, you stepped over and showed r_c the leaves. They look joyous and gracefully receive the maple leaves from your paw, putting them on their ear."
         },
@@ -407,16 +407,16 @@
         },
         "decline_text": "You decided not to, and finish the break after a short while to resume hunting.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "blue_supermoon",
-        "biome": "Forest",
+        "biome": "Any",
         "season": "Any",
-        "tags": ["date", "special_event"],
+        "tags": ["date"],
         "intro_text": "You were told about the blue supermoon, and decided it will be a good opportunity to ask r_c out. You padded up to them, but hesitated. What if it doesn't go as planned?",
         "success_text": {
             "unscathed_common": "They turned back, looking at you- and you successfully asked them without stuttering if they wanted to go see the blue supermoon tonight with you. They happily agreed, and when the time comes, you and them sit on top of a tall tree, gazing at the bright, massive, slightly blue-colored moon and the countless sparkly stars together. You felt extremely happy to hear r_c's soft purrs and see their face being lit up."
@@ -433,10 +433,10 @@
     },
     {
         "patrol_id": "df_training",
-        "biome": "Dark Forest",
+        "biome": "Any",
         "season": "Any",
-        "tags": ["date", "forbidden"],
-        "intro_text": "You and r_c go out in the Dark Forest, away from the spirits and trainees. r_c - who you've been practicing with and secretly admiring - enthusiastically offers to teach you some of their forbidden moves. Should you practice with [pronouns]?",
+        "tags": ["date", "df"],
+        "intro_text": "You and r_c go out in the Dark Forest, away from the spirits and trainees. r_c - who you've been practicing with and secretly admiring - enthusiastically offers to teach you some of their forbidden moves. Should you practice with them?",
         "success_text": {
             "unscathed_common": "You and r_c practice these forbidden moves together. You feel more confident and strong. Later, you and r_c later take a break in the muck, heavily breathing, lightly scratched, but your love and cooperation with r_c slowly growing."
         },
@@ -452,9 +452,9 @@
     },
     {
         "patrol_id": "protect_trainee",
-        "biome": "Dark Forest",
+        "biome": "Any",
         "season": "Any",
-        "tags": ["protect", "fight"],
+        "tags": ["date", "df"],
         "intro_text": "One of your trainees, r_c, who is also your clanmate, is being taunted and mistreated by a Dark Forest spirit. You feel like stepping up, but you might be injured.",
         "success_text": {
             "unscathed_common": "You decide to step up, and you approach the spirit who had been berating r_c. They angrily hiss at you and leap on you, and you give them a good fight before making them flee off. r_c thanks you, and they help lick your minor wounds clean, but you soon notice yourself leaning on them, tails twining."
@@ -471,50 +471,27 @@
     },
     {
         "patrol_id": "help_from_clanmate",
-        "biome": "Dark Forest",
+        "biome": "Any",
         "season": "Any",
-        "tags": ["help", "thanks"],
-        "intro_text": "A spirit was whispering into your ear threats, and taunting you. A fellow clanmate sees you and decides to help, chasing the spirit away. You feel your heart beating full of love, wanting to say something.",
+        "tags": ["date", "df"],
+        "intro_text": "A Dark Forest cat whispers threats into your ear and taunts you. A fellow clanmate sees you and decides to help, chasing the spirit away. You feel your heart beating full of love, wanting to say something.",
         "success_text": {
-            "unscathed_common": "You respond to the cat a simple thanks, and the cat introduces themself as r_c, which you immediately recognized was from your clan. [pronouns] then talks to you for a bit, but you feel as if you are being watched behind your back by the residents of the Dark Forest."
+            "unscathed_common": "You respond to the cat a simple thanks, and the cat introduces themself as r_c, which you immediately recognized was from your clan. They then talk to you for a bit, but you feel as if you are being watched behind your back by the residents of the Dark Forest."
         },
         "fail_text": {
             "unscathed_common": "You awkwardly stutter a thanks to the cat, which they hesitantly introduce themselves as r_c, but after that, they quickly walk through the muck, away from your sight. Your ears feel hot from embarrassment."
         },
         "decline_text": "You walk away, hastily, dragging your tail through the muck. Maybe you weren't meant for them.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
-        "patrol_id": "meet_kittypet",
-        "biome": "Twolegplace",
-        "season": "Any",
-        "tags": ["affair", "kittypet", "guilt"],
-        "intro_text": "You see a kittypet, and they look beautiful. You feel like approaching them, but at the same time, guilt fills you as you think of how your mate would feel. Should you interact with the kittypet?",
-        "success_text": {
-            "unscathed_common": "You approach the kittypet, and ask them what's their name, but they looked a little nervous about you approaching them. They respond with r_c, and they later get used to you, as you have a nice talk and share your freshkill that you caught for them, as you promise to come back sometime again, both you and r_c purring while you part ways."
-        },
-        "fail_text": {
-            "unscathed_common": "You approach the kittypet, but as they notice you, they quickly scurry away! You see their beautiful eyes full of fear as their shining, well-groomed pelt disappears behind the twoleg fence."
-        },
-        "decline_text": "You don't feel like jeopardizing your relationship with your current mate.",
-        "antagonize_text": "You don't feel like cheating on your mate, so you chase off the kittypet, hissing, as they run off in fear.",
-        "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": [],
-        "min_cats": 1,
-        "max_cats": 1,
-        "reputation_change": {
-            "outsiders": -5
-        }
-    },
-    {
         "patrol_id": "new_leaf_crush",
-        "biome": "Clan territory",
-        "season": "New-Leaf",
+        "biome": "Any",
+        "season": "newleaf",
         "tags": ["date"],
         "intro_text": "You and r_c end up on a patrol together. As you walk together through your clan's territory, the smell of budding plants fills your nostrils and your attention is drawn to r_c. Did they always look so nice? You can't seem to look away, their luxurious fur, the way they walk..",
         "success_text": {
@@ -525,14 +502,14 @@
         },
         "decline_text": "You shake off the feeling. There are more important things to do than to swoon at a stupid crush.",
         "chance_of_success": 50,
-        "exp": 5,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "ask_crush_help",
-        "biome": "Clan camp",
+        "biome": "Any",
         "season": "Any",
         "tags": ["date"],
         "intro_text": "You are assigned one of the more tedious chores around camp. As you're preparing to start, an idea pops into your mind; You could ask r_c if they would want to help out! It would make the chore easier, and you'd get to spend time together!",
@@ -544,14 +521,14 @@
         },
         "decline_text": "You decide not to bother r_c, and instead dive into the chore on your own.",
         "chance_of_success": 50,
-        "exp": 5,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "morning_stroll",
-        "biome": "Clan camp outskirts",
+        "biome": "Any",
         "season": "Any",
         "tags": ["date"],
         "intro_text": "You've wanted to get closer to r_c for a while now, but you're not quite sure how to do it. An idea strikes you as you consider asking r_c if they'd want to accompany you on a morning stroll out of camp.",
@@ -563,14 +540,14 @@
         },
         "decline_text": "You try to muster up the courage to approach them, but you can't quite seem to catch them at the right time. Your struggle goes on for so long that it's no longer early morning, and you quietly resign yourself to a lonely stroll by yourself for the following days.",
         "chance_of_success": 50,
-        "exp": 7,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     },
     {
         "patrol_id": "express_feelings_patrol",
-        "biome": "Clan territory",
+        "biome": "Any",
         "season": "Any",
         "tags": ["date"],
         "intro_text": "You and r_c are assigned in a patrol together, knowing that this is your chance to express your feelings towards them.",
@@ -580,26 +557,11 @@
         "fail_text": {
             "unscathed_common": "You stutter a lot while trying to express your love towards r_c, but they awkwardly turn their head to look at you, cringing. With their mouth full of moss, r_c doesn't talk to you after that patrol, and quickly continues their duties without interacting with you afterwards."
         },
-        "decline_text": "You decide to focus instead.",
+        "decline_text": "You decide to focus on your task instead.",
         "chance_of_success": 45,
-        "exp": 5,
+        "exp": 0,
         "win_skills": [],
         "min_cats": 2,
         "max_cats": 2
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 ]

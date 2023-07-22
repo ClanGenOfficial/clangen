@@ -700,6 +700,14 @@ class Patrol():
                     if Cat.all_cats.get(game.clan.your_cat.mentor).personality.trait != "bloodthirsty":
                         continue
 
+            if game.current_screen == 'patrol screen4':
+                if "you_med" in patrol.tags:
+                    if game.clan.your_cat.status != 'medicine cat':
+                        continue
+                if "df" in patrol.tags:
+                    if not game.clan.your_cat.joined_df:
+                        continue
+            
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if patrol_type != 'med':
