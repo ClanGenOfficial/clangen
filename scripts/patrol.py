@@ -204,12 +204,16 @@ class Patrol():
             
         # DETERMINE RANDOM CAT
         #Find random cat
-        if len(patrol_cats) > 1:
-            possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
+        if game.current_screen == 'patrol screen4':
+            possible_random_cats = [i for i in patrol_cats if i.ID != game.clan.your_cat.ID]
             self.patrol_random_cat = choice(possible_random_cats)
         else:
-            possible_random_cats = [i for i in patrol_cats]
-            self.patrol_random_cat = choice(possible_random_cats)
+            if len(patrol_cats) > 1:
+                possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
+                self.patrol_random_cat = choice(possible_random_cats)
+            else:
+                possible_random_cats = [i for i in patrol_cats]
+                self.patrol_random_cat = choice(possible_random_cats)
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -303,6 +307,8 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.elder_lifegen))
             else:
                 possible_patrols.extend(self.generate_patrol_events(self.warrior_lifegen))
+        elif game.current_screen == 'patrol screen4':
+            possible_patrols.extend(self.generate_patrol_events(self.date_lifegen))
         else:
             possible_patrols.extend(self.generate_patrol_events(self.df_lifegen))
 
@@ -1728,6 +1734,10 @@ class Patrol():
             self.df_lifegen = None
             with open(f"{resource_dir}/lifegen/df.json", 'r', encoding='ascii') as read_file:
                 self.df_lifegen = ujson.loads(read_file.read())
+        elif game.current_screen == 'patrol screen4':
+            self.date_lifegen = None
+            with open(f"{resource_dir}/lifegen/date.json", 'r', encoding='ascii') as read_file:
+                self.date_lifegen = ujson.loads(read_file.read())
 
     # ---------------------------------------------------------------------------- #
     #                                   Handlers                                   #

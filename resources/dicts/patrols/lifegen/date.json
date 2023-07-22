@@ -557,7 +557,7 @@
         "biome": "Clan territory",
         "season": "New-Leaf",
         "tags": ["date"],
-        "intro_text": "You and [crush] end up on a patrol together. As you walk together through your clan's territory, the smell of budding plants fills your nostrils and your attention is drawn to [crush]. Did they always look so nice? You can't seem to look away, their luxurious fur, the way they walk..",
+        "intro_text": "You and r_c end up on a patrol together. As you walk together through your clan's territory, the smell of budding plants fills your nostrils and your attention is drawn to r_c. Did they always look so nice? You can't seem to look away, their luxurious fur, the way they walk..",
         "success_text": {
             "unscathed_common": "As you stare over at them, they slowly swivel their head to see you gawking, and chuckle lightly before giving you a warm look. Your heart flutters!"
         },
@@ -576,14 +576,14 @@
         "biome": "Clan camp",
         "season": "Any",
         "tags": ["date"],
-        "intro_text": "You are assigned one of the more tedious chores around camp. As you're preparing to start, an idea pops into your mind; You could ask crush1 if they would want to help out! It would make the chore easier, and you'd get to spend time together!",
+        "intro_text": "You are assigned one of the more tedious chores around camp. As you're preparing to start, an idea pops into your mind; You could ask r_c if they would want to help out! It would make the chore easier, and you'd get to spend time together!",
         "success_text": {
-            "unscathed_common": "You are thrilled when crush1 happily agrees to help. Though the chore is boring, the two of you joke around and have fun, and before you know it, you're all done. The two of you continue messing around afterwards, and you feel a happy flutter in your chest."
+            "unscathed_common": "You are thrilled when r_c happily agrees to help. Though the chore is boring, the two of you joke around and have fun, and before you know it, you're all done. The two of you continue messing around afterwards, and you feel a happy flutter in your chest."
         },
         "fail_text": {
-            "unscathed_common": "crush1 gives an apologetic look; wouldn't it be better for one cat to do it? Then they wouldn't be in the way... You mutter in agreement, and hurry away. How embarrassing!"
+            "unscathed_common": "r_c gives an apologetic look; wouldn't it be better for one cat to do it? Then they wouldn't be in the way... You mutter in agreement, and hurry away. How embarrassing!"
         },
-        "decline_text": "You decide not to bother crush1, and instead dive into the chore on your own.",
+        "decline_text": "You decide not to bother r_c, and instead dive into the chore on your own.",
         "chance_of_success": 50,
         "exp": 5,
         "win_skills": [],
@@ -595,12 +595,12 @@
         "biome": "Clan camp outskirts",
         "season": "Any",
         "tags": ["date"],
-        "intro_text": "You've wanted to get closer to crush1 for a while now, but you're not quite sure how to do it. An idea strikes you as you consider asking crush1 if they'd want to accompany you on a morning stroll out of camp.",
+        "intro_text": "You've wanted to get closer to r_c for a while now, but you're not quite sure how to do it. An idea strikes you as you consider asking r_c if they'd want to accompany you on a morning stroll out of camp.",
         "success_text": {
-            "unscathed_common": "crush1 agrees to walk with you out of camp, and you have to keep yourself from jumping in joy. In the soft morning light of early sunrise, you quietly admire their side profile to yourself, awed by how their fur looks under the golden lighting."
+            "unscathed_common": "r_c agrees to walk with you out of camp, and you have to keep yourself from jumping in joy. In the soft morning light of early sunrise, you quietly admire their side profile to yourself, awed by how their fur looks under the golden lighting."
         },
         "fail_text": {
-            "unscathed_common": "You gather your courage and ask, but you know you've failed as soon as crush1 averts their eyes and shuffles their paws awkwardly. They try to let you down gently, but the rejection stings sharply in your chest as you watch them walk away."
+            "unscathed_common": "You gather your courage and ask, but you know you've failed as soon as r_c averts their eyes and shuffles their paws awkwardly. They try to let you down gently, but the rejection stings sharply in your chest as you watch them walk away."
         },
         "decline_text": "You try to muster up the courage to approach them, but you can't quite seem to catch them at the right time. Your struggle goes on for so long that it's no longer early morning, and you quietly resign yourself to a lonely stroll by yourself for the following days.",
         "chance_of_success": 50,
@@ -614,12 +614,12 @@
         "biome": "Clan territory",
         "season": "Any",
         "tags": ["date"],
-        "intro_text": "You and [crush] are assigned in a patrol together, knowing that this is your chance to express your feelings towards them.",
+        "intro_text": "You and r_c are assigned in a patrol together, knowing that this is your chance to express your feelings towards them.",
         "success_text": {
-            "unscathed_common": "As [crush] and you gather moss, you sheepishly express your love towards them, and they quickly turn their head towards you, and giggles a little, telling you how they have always known how you felt about them, but your shocked expression is full of joy and love. [crush] and you manage to gather moss while talking and making jokes together, and when you return to camp, a new aura emerges from [crush]."
+            "unscathed_common": "As r_c and you gather moss, you sheepishly express your love towards them, and they quickly turn their head towards you, and giggles a little, telling you how they have always known how you felt about them, but your shocked expression is full of joy and love. r_c and you manage to gather moss while talking and making jokes together, and when you return to camp, a new aura emerges from r_c."
         },
         "fail_text": {
-            "unscathed_common": "You stutter a lot while trying to express your love towards [crush], but they awkwardly turn their head to look at you, cringing. With their mouth full of moss, [crush] doesn't talk to you after that patrol, and quickly continues their duties without interacting with you afterwards."
+            "unscathed_common": "You stutter a lot while trying to express your love towards r_c, but they awkwardly turn their head to look at you, cringing. With their mouth full of moss, r_c doesn't talk to you after that patrol, and quickly continues their duties without interacting with you afterwards."
         },
         "decline_text": "You decide to focus instead.",
         "chance_of_success": 45,

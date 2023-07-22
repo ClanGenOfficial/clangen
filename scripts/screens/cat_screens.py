@@ -1563,7 +1563,6 @@ class ProfileScreen(Screens):
 
                     text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
 
-
                 if self.the_cat.status == 'leader':
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
