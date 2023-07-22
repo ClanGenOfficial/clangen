@@ -2434,7 +2434,7 @@ class PatrolScreen3(Screens):
         if game.clan.your_cat.moons >= 12:
             self.elements['date_icon'] = UIImageButton(
                         scale(pygame.Rect((870, 230), (50, 50))), "",
-                        object_id='#date_icon', manager=MANAGER)
+                        object_id='#flirt_button', manager=MANAGER)
 
         self.update_cat_images_buttons()
         self.update_button()
