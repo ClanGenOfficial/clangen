@@ -847,8 +847,11 @@ class Events:
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
             if game.settings['affair']:
                 if random.randint(1,50) == 1:
+                    mate1 = Cat.all_cats.get(random.choice(game.clan.your_cat.mate))
+                    if mate1.dead or mate1.outside:
+                        return
                     ceremony_txt = random.choice(self.c_txt['affair_events'])
-                    ceremony_txt = ceremony_txt.replace("mate1", str(Cat.all_cats.get(random.choice(game.clan.your_cat.mate)).name))
+                    ceremony_txt = ceremony_txt.replace("mate1", str(mate1.name))
                     game.cur_events_list.insert(1, Single_Event(ceremony_txt))
         if random.randint(1,20) == 1:
             if (len(game.clan.your_cat.mate) > 0 and game.settings['affair']) or (len(game.clan.your_cat.mate) == 0):

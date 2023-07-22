@@ -105,11 +105,12 @@ class MiscEvents():
         if other_cat and reveal:
             if "mu" + str(other_cat.name) in event_text:
                 return
-        game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
         if "r_c" in event_text:
             print("r_c was found")
             print(event_text)
-            
+            return
+        
+        game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
         if reveal and victim:
             History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 

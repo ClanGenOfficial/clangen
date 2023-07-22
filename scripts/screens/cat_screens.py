@@ -473,6 +473,9 @@ class ProfileScreen(Screens):
         self.placeholder_tab_4 = UIImageButton(scale(pygame.Rect((1152, 1244), (352, 60))), "",
                                                object_id="#cat_tab_4_blank_button", manager=MANAGER)
         self.placeholder_tab_4.disable()
+        
+        if 'have kits' not in game.switches:
+            game.switches['have kits'] = True
 
         self.build_profile()
 
@@ -1513,17 +1516,18 @@ class ProfileScreen(Screens):
         return text
         
 
-    def get_text_for_murder_event(self, event, death):
-        ''' returns the adjusted murder history text for the victim '''
-        if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True: 
-                final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
-                if event.get("revelation_text"):
-                    final_text = final_text + event["revelation_text"]
-                return final_text
-            else:
-                return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
-        return None
+    # def get_text_for_murder_event(self, event, death):
+    #     ''' returns the adjusted murder history text for the victim '''
+        
+    #     if event["text"] == death["text"] and event["moon"] == death["moon"]:
+    #         if event["revealed"] is True: 
+    #             final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+    #             if event.get("revelation_text"):
+    #                 final_text = final_text + event["revelation_text"]
+    #             return final_text
+    #         else:
+    #             return event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
+    #     return None
 
 
     def get_death_text(self):
@@ -1545,14 +1549,18 @@ class ProfileScreen(Screens):
                 found_murder = False  # Add this line to track if a matching murder event is found
                 if "is_victim" in murder_history:
                     for event in murder_history["is_victim"]:
-                        text = self.get_text_for_murder_event(event, death)
+                        text = None
+                        # text = self.get_text_for_murder_event(event, death)
                         if text is not None:
                             found_murder = True  # Update the flag if a matching murder event is found
                             break
 
                 if found_murder and text is not None and not event["revealed"]:
+                    # text = "This cat was murdered."
                     text = event_text_adjust(Cat, event["unrevealed_text"], self.the_cat, Cat.fetch_cat(death["involved"]))
                 elif not found_murder:
+                    # text = "This cat was murdered."
+
                     text = event_text_adjust(Cat, death["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
 
 
@@ -2057,7 +2065,7 @@ class ProfileScreen(Screens):
                                                  manager=MANAGER)
                 self.toggle_kits.disable()
         elif self.open_tab == 'your tab':
-            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead and not self.the_cat.outside:
+            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead and not self.the_cat.outside and game.switches['have kits']:
                 self.have_kits_button = UIImageButton(scale(pygame.Rect((804, 1172), (344, 72))), "",
                                                     starting_height=2, object_id="#have_kits_button", tool_tip_text='You will be more likely to have kits the next moon.',
                                                     manager=MANAGER)
