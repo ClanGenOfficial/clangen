@@ -707,7 +707,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "The bluejay seems more focused on what it's eating then the patrol, and r_c walks home with the brightly colored bird proudly in their mouth, wondering what to do with the brilliant blue feathers.",
-            "unscathed_rare": "To the patrol's surprise, a second bluejay joins the first! They carefully position themselves, and soon find that while one piece of freshkill is worth two in the tree, two pieces of freshkill are more than enough in the mountains!",
+            "unscathed_rare": "To the patrol's surprise, a second bluejay joins the first! They carefully position themselves, and soon find that while one piece of fresh-kill is worth two in the tree, two pieces of fresh-kill are more than enough in the mountains!",
             "stat_skill": "s_c holds the patrol off from pouncing right away, and they're rewarded by a second bluejay joining the first! They catch both and s_c explains that bluejays travel in groups of five or more.",
             "stat_trait": "They catch the bluejay, and s_c quickly bites up the blood-riddled snow, then lingers behind to wait. They come back with two more mice! They explain the bluejay was eating something mice also liked, and was hoping they might catch some with the same bait."
         },
