@@ -3960,6 +3960,29 @@
             }
         }
     },
+    "#filter_death_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_death.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_death_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_death.png"
+            },
+            "disabled_image":
+            {
+            "path": "resources/images/buttons/filter_death_unavailable.png"
+            }
+        }
+    },
     "#med_den_button":
     {
         "prototype": "#image_button",

@@ -2701,6 +2701,8 @@ class Cat():
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
         elif game.sort_type == "exp":
             Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
+        elif game.sort_type == "death":
+            Cat.all_cats_list.sort(key=lambda x: -1 * int(x.dead_for))
 
         return
 
@@ -2720,6 +2722,8 @@ class Cat():
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
             elif game.sort_type == "reverse_id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
+            elif game.sort_type == "death":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.dead_for))
         except (TypeError, NameError):
             # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
             # do the slower option of adding the cat, then resorting
@@ -2735,16 +2739,22 @@ class Cat():
 
     @staticmethod
     def get_adjusted_age(cat: Cat):
-        """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
-        they have been dead, rather than age at death"""
+        """Returns the moons + dead_for moons rather than the moons at death for dead cats, so dead cats are sorted by
+        total age, rather than age at death"""
         if cat.dead:
-            if game.config["sorting"]["sort_dead_by_death"]:
-                return cat.dead_for
-            else:
+            if game.config["sorting"]["sort_rank_by_death"]:
                 if game.sort_type == "rank":
                     return cat.dead_for
                 else:
+                    if game.config["sorting"]["sort_dead_by_total_age"]:
+                        return cat.dead_for + cat.moons
+                    else:
+                        return cat.moons
+            else:
+                if game.config["sorting"]["sort_dead_by_total_age"]:
                     return cat.dead_for + cat.moons
+                else:
+                    return cat.moons
         else:
             return cat.moons
         
