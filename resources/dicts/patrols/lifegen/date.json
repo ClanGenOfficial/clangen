@@ -111,12 +111,12 @@
         "tags": [
             "date"
         ],
-        "intro_text": "Harsh winds are roaming the air today, and the sea is looking wild. You remember when you as an apprentice jumped out to play in the waves - perhaps y_c would want to play with you today?",
+        "intro_text": "Harsh winds are roaming the air today, and the sea is looking wild. You remember when you as an apprentice jumped out to play in the waves - perhaps r_c would want to play with you today?",
         "success_text": {
             "unscathed_common": "They agree! Phew. The two of you have a wonderful day, jumping around in the waves and engaging in small water fights, and you feel like your connection has strengthened."
         },
         "fail_text": {
-            "unscathed_common": "They agree, and you walk out to the seabank together. When you've stepped out in the water, y_c looks at you questionably, not seeming to understand why you think this is fun. You attempt to show them as you joyfully jump around, but a sharp wave hits y_c and they hiss loudly, walking back with a soaked pelt. Maybe this wasn't the best idea after all.."
+            "unscathed_common": "They agree, and you walk out to the seabank together. When you've stepped out in the water, r_c looks at you questionably, not seeming to understand why you think this is fun. You attempt to show them as you joyfully jump around, but a sharp wave hits r_c and they hiss loudly, walking back with a soaked pelt. Maybe this wasn't the best idea after all.."
         },
         "decline_text": "Maybe some other day. Right now, the sea looks a little too wild.",
         "chance_of_success": 50,
@@ -134,12 +134,12 @@
         ],
         "intro_text": "As you wander out by the cliffs with r_c you notice a few pretty flowers sticking out of a pile of snow. Perhaps you should pick some for them?",
         "success_text": {
-            "unscathed_common": "You tell y_c to stop for a moment as you carefully lift the flowers. y_c looks confused, but lights up in a smile as you drop the flowers in front of them. They decide to wear the flowers on their pelt, and you feel all warm and fuzzy as you continue the patrol."
+            "unscathed_common": "You tell r_c to stop for a moment as you carefully lift the flowers. r_c looks confused, but lights up in a smile as you drop the flowers in front of them. They decide to wear the flowers on their pelt, and you feel all warm and fuzzy as you continue the patrol."
         },
         "fail_text": {
-            "unscathed_common": "You tell y_c to stop for a quick moment, but as you struggle to pick the flowers, y_c states that you don't have time for this. You decide to leave the pretty flowers, but you can't help but keep looking back at them with disappointment as you continue the patrol."
+            "unscathed_common": "You tell r_c to stop for a quick moment, but as you struggle to pick the flowers, r_c states that you don't have time for this. You decide to leave the pretty flowers, but you can't help but keep looking back at them with disappointment as you continue the patrol."
         },
-        "decline_text": "You don't want to risk getting your paws all cold and wet - and worse, what if y_c doesn't want them?",
+        "decline_text": "You don't want to risk getting your paws all cold and wet - and worse, what if r_c doesn't want them?",
         "chance_of_success": 50,
         "exp": 0,
         "win_skills": [],
