@@ -1,3 +1,8 @@
+<strong>v0.5.1: </strong>
+- Option to disable new accessories
+- Add dates
+- Lots of bug fixes
+
 <strong>v0.5.0: </strong>
 - Flirt with clanmates 
 - Choose your mate 
