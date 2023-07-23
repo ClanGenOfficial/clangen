@@ -477,6 +477,8 @@ class Relationship():
     def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
         self.admiration += value
+        if value > 0:
+            self.trust += buff
         if value < 0:
             self.trust -= buff
             self.dislike += buff
@@ -493,7 +495,6 @@ class Relationship():
             self.trust -= buff
             self.platonic_like -= buff
             self.dislike += buff
-            self.jealousy += buff
 
     def complex_jealousy(self, value, buff):
         """Add the value to the jealousy type and influence other value types as well."""
