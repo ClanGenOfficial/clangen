@@ -99,7 +99,7 @@ class SaveCheck(UIWindow):
             scale(pygame.Rect((540, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
-            starting_height=menu_layer_height,
+            starting_height=top_stack_menu_layer_height,
             container=self
         )
 
