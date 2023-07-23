@@ -44,14 +44,15 @@ class SaveCheck(UIWindow):
         self.last_screen = last_screen
         self.isMainMenu = isMainMenu
         self.mm_btn = mm_btn
-
+        #adding a variable for starting_height to make sure that this menu is always on top
+        top_stack_menu_layer_height = 10000
         if (self.isMainMenu):
             self.mm_btn.disable()
             self.main_menu_button = UIImageButton(
                 scale(pygame.Rect((146, 310), (305, 60))),
                 "",
                 object_id="#main_menu_button",
-                starting_height=2,
+                starting_height=top_stack_menu_layer_height,
                 container=self
             )
             self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
@@ -60,7 +61,7 @@ class SaveCheck(UIWindow):
                 scale(pygame.Rect((146, 310), (305, 60))),
                 "",
                 object_id="#smallquit_button",
-                starting_height=2,
+                starting_height=top_stack_menu_layer_height,
                 container=self
             )
             self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
@@ -76,6 +77,7 @@ class SaveCheck(UIWindow):
         self.save_button = UIImageButton(scale(pygame.Rect((186, 230), (228, 60))),
                                          "",
                                          object_id="#save_button",
+                                         starting_height=top_stack_menu_layer_height,
                                          container=self
                                          )
         self.save_button_saved_state = pygame_gui.elements.UIImage(
@@ -97,6 +99,7 @@ class SaveCheck(UIWindow):
             scale(pygame.Rect((540, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
+            starting_height=menu_layer_height,
             container=self
         )
 
