@@ -360,12 +360,12 @@
         "biome": "beach",
         "season": "Any",
         "tags": ["date"],
-        "intro_text": "You and m_c pad along the coast, the glittering waves of the cool water lapping at your paws. m_c was looking especially tense lately, and you wished to see their warm smile appear on their face once again. Looking at the rising and falling waves, you notice coquina clams being pulled out of the sand and quickly burying themselves back under, and you get an idea.",
+        "intro_text": "You and r_c pad along the coast, the glittering waves of the cool water lapping at your paws. r_c was looking especially tense lately, and you wished to see their warm smile appear on their face once again. Looking at the rising and falling waves, you notice coquina clams being pulled out of the sand and quickly burying themselves back under, and you get an idea.",
         "success_text": {
-            "unscathed_common": "Quickly grabbing m_c's attention with a playful mew, you dash towards the small oncoming wave and gracefully leap into it. r_c yelped in shock and waded slowly into the water to find you and make sure you were okay, until your soaked head popped out of the water with a colorful coquina clam in your jaws. m_c was confused for a moment until you started imitating a silly voice, doing your best to open and close the clam in sync with your words. They burst out in laughter, their warm smile back on their beautifully lit face from the dusk."
+            "unscathed_common": "Quickly grabbing r_c's attention with a playful mew, you dash towards the small oncoming wave and gracefully leap into it. r_c yelped in shock and waded slowly into the water to find you and make sure you were okay, until your soaked head popped out of the water with a colorful coquina clam in your jaws. r_c was confused for a moment until you started imitating a silly voice, doing your best to open and close the clam in sync with your words. They burst out in laughter, their warm smile back on their beautifully lit face from the dusk."
         },
         "fail_text": {
-            "unscathed_common": "You dash into the water and jump into an oncoming wave, but you underestimated how strong the wave was going to be, and you were immediately pushed back onto the shore on your back. You hoped that your failed attempt at swimming would make m_c giggle even a little bit, but watching you suddenly leap into the water and be aggressively thrown by a wave only heightened m_c's stress levels, and they now walked ahead of you after heavily reprimanding you on the dangers of the ocean. That clearly didn't make them feel better..."
+            "unscathed_common": "You dash into the water and jump into an oncoming wave, but you underestimated how strong the wave was going to be, and you were immediately pushed back onto the shore on your back. You hoped that your failed attempt at swimming would make r_c giggle even a little bit, but watching you suddenly leap into the water and be aggressively thrown by a wave only heightened r_c's stress levels, and they now walked ahead of you after heavily reprimanding you on the dangers of the ocean. That clearly didn't make them feel better..."
         },
         "decline_text": "But due to the anxiety in your heart that you would accidentally make r_c more tense then they already are, you say nothing and the two of you continue the patrol in silence.",
         "chance_of_success": 50,
@@ -470,7 +470,7 @@
         "max_cats": 2
     },
     {
-        "patrol_id": "help_from_clanmate",
+        "patrol_id": "help_fror_clanmate",
         "biome": "Any",
         "season": "Any",
         "tags": ["date", "df"],
