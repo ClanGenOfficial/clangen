@@ -80,8 +80,10 @@ class Events:
         """
         TODO: DOCS
         """
-        if self.checks == [-1,-1,-1] and game.clan.your_cat:
+        if self.checks == [-1,-1,-1] and game.clan.your_cat and game.clan.your_cat.inheritance:
             self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), len(game.clan.your_cat.inheritance.get_blood_kits())]
+        else:
+            self.checks = [len(game.clan.your_cat.apprentice), len(game.clan.your_cat.mate), 0]
         game.cur_events_list = []
         game.herb_events_list = []
         game.mediated = []

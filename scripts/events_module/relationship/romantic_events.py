@@ -169,6 +169,7 @@ class Romantic_Events():
             if cat_to.ID not in cat_from.mate:
                 cat_to.set_mate(cat_from)
             return
+            
         relationship_to = relationship.opposite_relationship
         become_mates, mate_string = self.check_if_new_mate(relationship, relationship_to, cat_from, cat_to)
 
@@ -209,6 +210,7 @@ class Romantic_Events():
         return: bool if event is triggered or not
         """
         # get the highest romantic love relationships and
+            
         rel_list = cat_from.relationships.values()
         highest_romantic_relation = get_highest_romantic_relation(rel_list, exclude_mate=True)
         if not highest_romantic_relation:
@@ -219,6 +221,7 @@ class Romantic_Events():
             return False
 
         cat_to = highest_romantic_relation.cat_to
+        
         if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(cat_to):
             return False
 
@@ -230,35 +233,32 @@ class Romantic_Events():
             return False
 
         become_mate = False
+        condition = game.config["mates"]["confession"]["accept_confession"]
+        rel_to_check = highest_romantic_relation.opposite_relationship
+        if not rel_to_check:
+            highest_romantic_relation.link_relationship()
+            rel_to_check = highest_romantic_relation.opposite_relationship
+        if self.relationship_fulfill_condition(rel_to_check, condition):
+            become_mate = True
+            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+        # second acceptance chance if the romantic is high enough
+        elif "romantic" in condition and condition["romantic"] != 0 and\
+            condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
+            become_mate = True
+            mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
+        else:
+            mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
+            cat_from.relationships[cat_to.ID].romantic_love -= 8
+            cat_to.relationships[cat_from.ID].comfortable -= 8
 
         if game.clan.your_cat.ID != cat_from.ID and game.clan.your_cat.ID != cat_to.ID:
-            
-            condition = game.config["mates"]["confession"]["accept_confession"]
-            rel_to_check = highest_romantic_relation.opposite_relationship
-            if not rel_to_check:
-                highest_romantic_relation.link_relationship()
-                rel_to_check = highest_romantic_relation.opposite_relationship
-            if self.relationship_fulfill_condition(rel_to_check, condition):
-                become_mate = True
-                mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
-            # second acceptance chance if the romantic is high enough
-            elif "romantic" in condition and condition["romantic"] != 0 and\
-                condition["romantic"] > 0 and rel_to_check.romantic_love >= condition["romantic"] * 1.5:
-                become_mate = True
-                mate_string = self.get_mate_string("high_romantic", poly, cat_from, cat_to)
-            else:
-                mate_string = self.get_mate_string("rejected", poly, cat_from, cat_to)
-                cat_from.relationships[cat_to.ID].romantic_love -= 8
-                cat_to.relationships[cat_from.ID].comfortable -= 8
-
-        
             mate_string = self.prepare_relationship_string(mate_string, cat_from, cat_to)
             game.cur_events_list.append(Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]))
 
         if become_mate:
             if game.clan.your_cat.ID == cat_from.ID or game.clan.your_cat.ID == cat_to.ID:
                 if game.clan.your_cat.ID == cat_from.ID:
-                    game.switches['new_mate'] == cat_to
+                    game.switches['new_mate'] = cat_to
                 else:
                     game.switches['new_mate'] = cat_from
                 MateScreen('events screen')
@@ -333,6 +333,7 @@ class Romantic_Events():
 
     def check_if_new_mate(self, relationship_from, relationship_to, cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
+
         become_mates = False
         young_age = ['newborn', 'kitten', 'adolescent']
         if cat_from.age in young_age or cat_to.age in young_age:
@@ -361,6 +362,7 @@ class Romantic_Events():
 
         if poly and not self.current_mates_allow_new_mate(cat_from, cat_to):
             return False, None
+
 
         if not hit and self.relationship_fulfill_condition(relationship_from, game.config["mates"]["mate_condition"]) and\
             self.relationship_fulfill_condition(relationship_to, game.config["mates"]["mate_condition"]):

@@ -212,9 +212,10 @@ class Inheritance():
       
         for inter_id in self.get_blood_parents() + self.cat.adoptive_parents:
             inter_cat = self.cat.fetch_cat(inter_id)
-            for inter_sibling_id in inter_cat.faded_offspring:
-                inter_sibling = self.cat.fetch_cat(inter_sibling_id)
-                self.init_siblings(inter_sibling_id, inter_sibling)
+            if inter_cat:
+                for inter_sibling_id in inter_cat.faded_offspring:
+                    inter_sibling = self.cat.fetch_cat(inter_sibling_id)
+                    self.init_siblings(inter_sibling_id, inter_sibling)
              
     def init_faded_parents_siblings(self):
         
