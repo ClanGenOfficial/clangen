@@ -5008,7 +5008,6 @@ class ChooseMurderCatScreen(Screens):
             discovered = False
             
         if discovered:
-            you.revealed = game.clan.age
             if accomplice and accompliced:
                 game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " with the help of " + str(accomplice.name) + "."))
                 History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
@@ -5041,7 +5040,8 @@ class ChooseMurderCatScreen(Screens):
         punishment_chance = randint(1,3)
         if not accomplice or not accompliced:
             punishment_chance = 1
-            
+        if punishment_chance == 1 or punishment_chance == 3:
+            you.revealed = game.clan.age
         if punishment_chance == 1:
             if accomplice and not accompliced:
                 a_s = randint(1,2)
