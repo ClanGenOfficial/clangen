@@ -323,7 +323,7 @@ class OutsideClanScreen(Screens):
                 short_name = ''
                 for index, character in enumerate(name):
                     char_width = font.size(character)[0]
-                    ellipsis_width = font.size("…")[0]
+                    ellipsis_width = font.size("...")[0]
                         
                     # Check if the current character is the last one and its width is less than or equal to ellipsis_width
                     if index == len(name) - 1 and char_width <= ellipsis_width:
@@ -336,7 +336,7 @@ class OutsideClanScreen(Screens):
 
                 # If the name was truncated, add '...'
                 if len(short_name) < len(name):
-                    short_name += '…'
+                    short_name += '...'
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
@@ -676,7 +676,7 @@ class UnknownResScreen(Screens):
                 short_name = ''
                 for index, character in enumerate(name):
                     char_width = font.size(character)[0]
-                    ellipsis_width = font.size("…")[0]
+                    ellipsis_width = font.size("...")[0]
                         
                     # Check if the current character is the last one and its width is less than or equal to ellipsis_width
                     if index == len(name) - 1 and char_width <= ellipsis_width:
@@ -689,7 +689,7 @@ class UnknownResScreen(Screens):
 
                 # If the name was truncated, add '...'
                 if len(short_name) < len(name):
-                    short_name += '…'
+                    short_name += '...'
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240

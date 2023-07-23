@@ -807,7 +807,7 @@ class FamilyTreeScreen(Screens):
         short_name = ''
         for index, character in enumerate(name):
             char_width = font.size(character)[0]
-            ellipsis_width = font.size("…")[0] 
+            ellipsis_width = font.size("...")[0] 
 
             # Check if the current character is the last one and its width is less than or equal to ellipsis_width
             if index == len(name) - 1 and char_width <= ellipsis_width:
@@ -820,7 +820,7 @@ class FamilyTreeScreen(Screens):
 
         # If the name was truncated, add '...'
         if len(short_name) < len(name):
-            short_name += '…'
+            short_name += '...'
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
 
