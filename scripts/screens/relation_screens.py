@@ -798,17 +798,34 @@ class FamilyTreeScreen(Screens):
                                                                manager=MANAGER,
                                                                container=self.family_tree)
         name = str(self.the_cat.name)
-        if len(name) >= 9:
-            short_name = name[0:7]
-            name = short_name + '...'
-        self.cat_elements["center_cat_name"] = pygame_gui.elements.UITextBox(name,
-                                                                             scale(
-                                                                                 pygame.Rect((10 + x_pos, 118 + y_pos),
-                                                                                             (145, 100))),
-                                                                             object_id=get_text_box_theme(
-                                                                                 "#text_box_22_horizcenter"),
-                                                                             manager=MANAGER,
-                                                                             container=self.family_tree)
+        font_size = 22 if game.settings['fullscreen'] else 11 
+        font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
+
+        # Add dynamic name lengths by checking the actual width of the text
+        length_limit = 114 if game.settings['fullscreen'] else 57
+        total_width = 0
+        short_name = ''
+        for index, character in enumerate(name):
+            char_width = font.size(character)[0]
+            ellipsis_width = font.size("…")[0] 
+
+            # Check if the current character is the last one and its width is less than or equal to ellipsis_width
+            if index == len(name) - 1 and char_width <= ellipsis_width:
+                short_name += character
+            else:
+                total_width += char_width
+                if total_width + ellipsis_width > length_limit:
+                    break
+                short_name += character
+
+        # If the name was truncated, add '...'
+        if len(short_name) < len(name):
+            short_name += '…'
+
+        self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
+
+
+
 
         if self.parents:
             self.siblings_button = UIImageButton(scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
