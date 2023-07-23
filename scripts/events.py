@@ -770,19 +770,7 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(ceremony_txt))
             except:
                 print("You gained a new mate but an event could not be shown1")
-        # elif 'accept' in game.switches and game.switches['accept']:
-        #     try:
-        #         resource_dir = "resources/dicts/events/lifegen_events/"
-        #         with open(f"{resource_dir}ceremonies.json",
-        #                 encoding="ascii") as read_file:
-        #             self.d_txt = ujson.loads(read_file.read())
-        #         ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
-        #         ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
-        #         game.cur_events_list.insert(0, Single_Event(ceremony_txt))
-        #         game.switches['accept'] = False
-        #         self.checks[1] = len(game.clan.mate)
-        #     except:
-        #         print("You gained a new mate but an event could not be shown2")
+
         elif 'reject' in game.switches and game.switches['reject']:
             try:
                 resource_dir = "resources/dicts/events/lifegen_events/"
@@ -844,8 +832,11 @@ class Events:
     def generate_mate_events(self):
         if len(game.clan.your_cat.mate) > 0:
             if random.randint(1,20) == 1:
+                mate1 = Cat.all_cats.get(random.choice(game.clan.your_cat.mate))
+                if mate1.dead or mate1.outside:
+                    return
                 ceremony_txt = random.choice(self.c_txt['mate_events'])
-                ceremony_txt = ceremony_txt.replace("mate1", str(Cat.all_cats.get(random.choice(game.clan.your_cat.mate)).name))
+                ceremony_txt = ceremony_txt.replace("mate1", str(mate1.name))
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
             if game.settings['affair']:
                 if random.randint(1,50) == 1:
