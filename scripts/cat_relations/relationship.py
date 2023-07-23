@@ -442,7 +442,7 @@ class Relationship():
     # increase jealousy -> decreases: - | increases: dislike
     # increase trust -> decreases: dislike | increases: -
 
-    # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
+    # !! DECREASING ONE STATE DOESN'T INFLUENCE OTHERS !!
 
     def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
@@ -451,6 +451,8 @@ class Relationship():
             self.platonic_like += buff
             self.comfortable += buff
             self.dislike -= buff
+        if value < 0:
+            self.comfortable -= buff
 
     def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
@@ -458,6 +460,9 @@ class Relationship():
         if value > 0:
             self.comfortable += buff
             self.dislike -= buff
+        if value < 0:
+            self.comfortable -= buff
+            self.dislike += buff
 
     def complex_dislike(self, value, buff):
         """Add the value to the dislike type and influence other value types as well."""
@@ -465,10 +470,16 @@ class Relationship():
         if value > 0:
             self.romantic_love -= buff
             self.platonic_like -= buff
+        if value < 0:
+            self.platonic_like += buff
+            self.comfortable += buff
 
     def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
         self.admiration += value
+        if value < 0:
+            self.trust -= buff
+            self.dislike += buff
 
     def complex_comfortable(self, value, buff):
         """Add the value to the comfortable type and influence other value types as well."""
@@ -478,17 +489,25 @@ class Relationship():
             self.platonic_like += buff
             self.dislike -= buff
             self.jealousy -= buff
+        if value < 0:
+            self.trust -= buff
+            self.platonic_like -= buff
+            self.dislike += buff
+            self.jealousy += buff
 
     def complex_jealousy(self, value, buff):
         """Add the value to the jealousy type and influence other value types as well."""
         self.jealousy += value
         if value > 0:
             self.dislike += buff
+        if value < 0:
+            self.comfortable += buff
 
     def complex_trust(self, value, buff):
         """Add the value to the trust type and influence other value types as well."""
         self.trust += value
         if value > 0:
+            self.comfortable += buff
             self.dislike -= buff
 
 
