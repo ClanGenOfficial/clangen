@@ -4291,6 +4291,7 @@ class FlirtScreen(Screens):
             r = randint(1,100) < chance
             if r:
                 cat.relationships.get(game.clan.your_cat.ID).romantic_love += randint(1,10)
+                game.clan.your_cat.relationships.get(cat.ID).romantic_love += randint(1,10)
             return r
         else:
             return False

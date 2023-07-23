@@ -1095,6 +1095,7 @@ class Patrol():
             print(f"c: {c} chance: {success_chance}")
             if c < success_chance:
                 date.relationships.get(you.ID).romantic_love += 10
+                you.relationships.get(date.ID).romantic_love += 10
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
