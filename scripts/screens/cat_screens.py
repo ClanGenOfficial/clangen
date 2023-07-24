@@ -4287,10 +4287,10 @@ class FlirtScreen(Screens):
             "brooding": ["bloodthirsty", "cold", "strict", "vengeful", "grumpy"],
             "cool": ["charismatic", "sneaky", "cunning", "arrogant"],
             "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible"],
-            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise"],
+            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful"],
             "neurotic": ["nervous", "insecure", "lonesome"],
             "silly": ["troublesome", "childish", "playful", "strange"],
-            "stable": ["loyal", "responsible", "wise", "faithful", "confident"],
+            "stable": ["loyal", "responsible", "wise", "faithful"],
             "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere"],
             "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant"],
             "unlawful": ["troublesome", "bloodthirsty", "sneaky", "rebellious"]
