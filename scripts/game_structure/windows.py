@@ -8,6 +8,7 @@ import pygame_gui
 from sys import exit
 from re import sub
 from platform import system
+from random import choice
 import logging
 import subprocess
 
@@ -22,7 +23,7 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
-from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger
+from scripts.utility import scale, quit, update_sprite, scale_dimentions, logger, process_text
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
 
@@ -514,12 +515,21 @@ class KillCat(UIWindow):
         game.switches['window_open'] = True
         self.the_cat = cat
         self.take_all = False
+        death_history = History.get_death_or_scars(self.the_cat, death=True)
+        if death_history:
+            death_number = len(death_history)
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         self.back_button = UIImageButton(
             scale(pygame.Rect((840, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
         )
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         self.heading = pygame_gui.elements.UITextBox(f"<b>-- How did this cat die? --</b>",
                                                      scale(pygame.Rect((20, 20), (860, 150))),
                                                      object_id="#text_box_30_horizcenter_spacing_95",
@@ -530,7 +540,7 @@ class KillCat(UIWindow):
             (50, 300), (68, 68))),
             "",
             object_id="#unchecked_checkbox",
-            tool_tip_text='If this is checked, the leader will lose all their lives',
+            tool_tip_text = process_text('If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives', cat_dict),
             manager=MANAGER,
             container=self
         )
@@ -538,7 +548,7 @@ class KillCat(UIWindow):
             (50, 300), (68, 68))),
             "",
             object_id="#checked_checkbox",
-            tool_tip_text='If this is checked, the leader will lose all their lives',
+            tool_tip_text = process_text('If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives', cat_dict),
             manager=MANAGER,
             container=self
         )
@@ -548,8 +558,10 @@ class KillCat(UIWindow):
                                              object_id="#done_button",
                                              manager=MANAGER,
                                              container=self)
-            self.prompt = 'This cat died when they...'
-            self.initial = 'were killed by something unknowable to even StarClan'
+            self.prompt='This cat died when {PRONOUN/m_c/subject}...'
+            self.initial='{VERB/m_c/were/was} killed by something unknowable to even StarClan'
+            self.prompt_processed = process_text(self.prompt, cat_dict)
+            self.initial_processed = process_text(self.initial, cat_dict)
 
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
@@ -557,18 +569,42 @@ class KillCat(UIWindow):
                                                            object_id="#text_box_30_horizleft",
                                                            manager=MANAGER,
                                                            container=self)
-            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt_processed,
                                                                   scale(pygame.Rect((50, 60), (900, 80))),
                                                                   object_id="#text_box_30_horizleft",
                                                                   manager=MANAGER,
                                                                   container=self)
 
             self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 130), (800, 150))),
-                                                                      initial_text=self.initial,
+                                                                      initial_text=self.initial_processed,
                                                                       object_id="text_entry_line",
                                                                       manager=MANAGER,
                                                                       container=self)
 
+        elif death_number > 1:
+            self.prompt='This cat died when {PRONOUN/m_c/subject}...'
+            self.initial='{VERB/m_c/were/was} killed by something unknowable to even StarClan'
+            self.prompt_processed = process_text(self.prompt, cat_dict)
+            self.initial_processed = process_text(self.initial, cat_dict)
+            self.all_lives_check.hide()
+            self.one_life_check.hide()
+
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt_processed,
+                                                                  scale(pygame.Rect((50, 60), (900, 80))),
+                                                                  object_id="#text_box_30_horizleft",
+                                                                  manager=MANAGER,
+                                                                  container=self)
+                                                                  
+            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 110), (800, 150))),
+                                                                      initial_text=self.initial_processed,
+                                                                      object_id="text_entry_line",
+                                                                      manager=MANAGER,
+                                                                      container=self)
+
+            self.done_button = UIImageButton(scale(pygame.Rect((373, 305), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
         else:
             self.initial = 'It was the will of something even mightier than StarClan that this cat died.'
             self.prompt = None
@@ -592,14 +628,19 @@ class KillCat(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
+                death_text = self.death_entry_box.get_text()
                 if self.the_cat.status == 'leader':
-                    death_message = sub(r"[^A-Za-z0-9<->/()*'&#, ]+", "", self.death_entry_box.get_text())
+                    if death_text.startswith('was'):
+                        death_text = '{VERB/m_c/were/was}' + death_text[3:]
+                    elif death_text.startswith('were'):
+                        death_text = '{VERB/m_c/were/was}' + death_text[4:]
+                    death_message = sub(r"[^A-Za-z0-9<->/.{}()*'&#!?,| ]+_", "", death_text)
                     if self.take_all:
                         game.clan.leader_lives -= 10
                     else:
                         game.clan.leader_lives -= 1
                 else:
-                    death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.death_entry_box.get_text())
+                    death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _]+", "", self.death_entry_box.get_text())
 
                 self.the_cat.die()
                 self.history.add_death(self.the_cat, death_message)
