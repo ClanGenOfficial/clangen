@@ -801,9 +801,7 @@ class Clan():
             os.remove(get_save_dir() + f'/{self.name}clan.txt')
 
     def save_clan_settings(self):
-        with open(get_save_dir() + f'/{self.name}/clan_settings.json', 'w',
-                  encoding='utf-8') as write_file:
-            write_file.write(ujson.dumps(self.clan_settings, indent=4))
+        game.safe_save(get_save_dir() + f'/{self.name}/clan_settings.json', self.clan_settings)
 
     def load_clan(self):
         """

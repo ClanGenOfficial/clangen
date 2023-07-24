@@ -44,7 +44,8 @@
       "general_backstory",
       "careful",
       "insecure",
-      "nervous"
+      "nervous",
+      "gloomy"
     ],
     "m_c carefully touches noses with {PRONOUN/m_c/poss} new mentor, (mentor), looking quite intimidated and nervous."
   ],
@@ -62,7 +63,12 @@
       "bold",
       "daring",
       "confident",
-      "fierce"
+      "fierce",
+      "arrogant",
+      "competitive",
+      "cunning",
+      "sincere",
+      "flamboyant"
     ],
     "m_c excitedly touches noses with {PRONOUN/m_c/poss} new mentor, (mentor), looking quite eager to start training."
   ],
@@ -75,7 +81,12 @@
       "general_leader",
       "general_backstory",
       "ambitious",
-      "confident"
+      "confident",
+      "arrogant",
+      "competitive",
+      "cunning",
+      "sincere",
+      "flamboyant"
     ],
     "m_c strides up to {PRONOUN/m_c/poss} new mentor, looking very proud and excited to be apprenticed to (mentor)."
   ],
@@ -94,7 +105,9 @@
       "fierce",
       "playful",
       "strange",
-      "troublesome"
+      "troublesome",
+      "oblivious",
+      "flamboyant"
     ],
     "In {PRONOUN/m_c/poss} eagerness, m_c accidentally shoves {PRONOUN/m_c/poss} nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it."
   ],
@@ -108,7 +121,8 @@
       "general_backstory",
       "insecure",
       "nervous",
-      "thoughtful"
+      "thoughtful",
+      "gloomy"
     ],
     "(mentor) sees how nervous m_c is and whispers a quiet encouragement to {PRONOUN/m_c/object} as they touch noses, promising to be a good mentor to {PRONOUN/m_c/object}."
   ],
@@ -127,7 +141,8 @@
       "nervous",
       "insecure",
       "compassionate",
-      "thoughtful"
+      "thoughtful",
+      "gloomy"
     ],
     "m_c touches noses with (mentor), wondering whether this is truly the right path for {PRONOUN/m_c/object}."
   ],
@@ -143,7 +158,8 @@
       "cold",
       "sneaky",
       "strict",
-      "wise"
+      "wise",
+      "cunning"
     ],
     "m_c remains calm as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor), but {PRONOUN/m_c/poss} twitching tail gives away how excited {PRONOUN/m_c/subject} truly {VERB/m_c/are/is}."
   ],
@@ -161,7 +177,11 @@
       "childish",
       "confident",
       "loyal",
-      "righteous"
+      "righteous",
+      "arrogant",
+      "competitive",
+      "sincere",
+      "flamboyant"
     ],
     "m_c can't seem to sit still as {PRONOUN/m_c/subject} {VERB/m_c/bounce/bounces} up to touch noses with (mentor), swearing {PRONOUN/m_c/subject}'ll be the best warrior the Clan has ever seen."
   ],
@@ -180,7 +200,8 @@
       "sneaky",
       "strict",
       "vengeful",
-      "wise"
+      "wise",
+      "cunning"
     ],
     "m_c sits up straighter as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called forward to be made an apprentice. While {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to look calm and collected, {PRONOUN/m_c/subject} still {VERB/m_c/tremble/trembles} a bit as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor)."
   ],
@@ -195,7 +216,13 @@
       "adventurous",
       "ambitious",
       "shameless",
-      "troublesome"
+      "troublesome",
+      "arrogant",
+      "competitive",
+      "grumpy",
+      "oblivious",
+      "flamboyant",
+      "rebellious"
     ],
     "Almost immediately after m_c touches noses with (mentor), {PRONOUN/m_c/subject} {VERB/m_c/start/starts} asking about when they're going to go out and explore the territory."
   ],
@@ -214,7 +241,11 @@
       "playful",
       "shameless",
       "strange",
-      "troublesome"
+      "troublesome",
+      "arrogant",
+      "competitive",
+      "flamboyant",
+      "rebellious"
     ],
     "m_c fidgets impatiently beside (mentor) as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the meeting to end. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to hurry up, get out there, and go, go, go!"
   ],
@@ -304,7 +335,10 @@
       "shameless",
       "sneaky",
       "troublesome",
-      "vengeful"
+      "vengeful",
+      "arrogant",
+      "grumpy",
+      "rebellious"
     ],
     "As m_c touches noses with (mentor), {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} that {PRONOUN/(mentor)/subject}'ll be a cool mentor that won't assign boring tasks. Anything but gathering moss or tick duty!"
   ],
@@ -320,7 +354,8 @@
       "bold",
       "daring",
       "fierce",
-      "playful"
+      "playful",
+      "sincere"
     ],
     "(old_name) sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly {VERB/m_c/touch/touches} noses with (mentor), happy to start {PRONOUN/m_c/poss} apprenticeship."
   ],
@@ -335,7 +370,6 @@
       "compassionate",
       "loving",
       "faithful",
-      "careful",
       "charismatic",
       "loyal",
       "nervous",
@@ -346,7 +380,7 @@
       "wise",
       "thoughtful"
     ],
-    "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding."
+    "Surprising (mentor), the first thing that m_c does after {PRONOUN/m_c/poss} apprentice ceremony is gather moss, just to make sure everyone has fresh bedding."
   ],
   "app_23": [
     [
@@ -387,7 +421,8 @@
       "confident",
       "loyal",
       "responsible",
-      "wise"
+      "wise",
+      "cunning"
     ],
     "Eager to learn the best ways to help {PRONOUN/m_c/poss} Clan thrive, m_c excitedly touches noses with (mentor)."
   ],
@@ -405,7 +440,8 @@
       "charismatic",
       "childish",
       "playful",
-      "thoughtful"
+      "thoughtful",
+      "sincere"
     ],
     "m_c purrs so hard that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} shaking as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor)."
   ],
@@ -426,7 +462,9 @@
       "fierce",
       "loyal",
       "righteous",
-      "wise"
+      "wise",
+      "gloomy",
+      "sincere"
     ],
     "m_c silently swears to StarClan to do {PRONOUN/m_c/poss} best for the Clan as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor)."
   ],
@@ -448,7 +486,11 @@
       "righteous",
       "troublesome",
       "vengeful",
-      "thoughtful"
+      "thoughtful",
+      "arrogant",
+      "competitive",
+      "oblivious",
+      "flamboyant"
     ],
     "As m_c touches noses with (mentor), {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} {PRONOUN/m_c/subject}'ll get to do something that will really impress the Clan on {PRONOUN/m_c/poss} first day. Maybe {PRONOUN/m_c/subject} could catch a big, fat rabbit? Or chase off a fox! That'll show the Clan {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the best apprentice anyone's ever seen!"
   ],
@@ -466,7 +508,10 @@
       "daring",
       "fierce",
       "troublesome",
-      "vengeful"
+      "vengeful",
+      "arrogant",
+      "competitive",
+      "grumpy"
     ],
     "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something."
   ],
@@ -501,7 +546,11 @@
       "general_backstory",
       "ambitious",
       "shameless",
-      "troublesome"
+      "troublesome",
+      "arrogant",
+      "competitive",
+      "grumpy",
+      "rebellious"
     ],
     "m_c has been pestering everyone for moons on when {PRONOUN/m_c/subject} finally {VERB/m_c/get/gets} to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until {PRONOUN/m_c/subject} {VERB/m_c/start/starts} asking about when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a warrior as soon as the meeting ends."
   ],
@@ -516,7 +565,9 @@
       "bold",
       "daring",
       "confident",
-      "strange"
+      "strange",
+      "arrogant",
+      "rebellious"
     ],
     "As {PRONOUN/m_c/poss} mentor is about to be chosen, m_c interrupts and announces {PRONOUN/m_c/subject} {VERB/m_c/want/wants} {PRONOUN/m_c/poss} mentor to be (mentor). {PRONOUN/m_c/subject/CAP} {VERB/m_c/stride/strides} forward with confidence to touch noses with (mentor) when it's allowed."
   ],
@@ -531,7 +582,10 @@
       "bold",
       "daring",
       "childish",
-      "playful"
+      "playful",
+      "competitive",
+      "oblivious",
+      "flamboyant"
     ],
     "m_c can't believe {PRONOUN/m_c/poss} apprenticeship is finally here! Nearly tripping over {PRONOUN/m_c/poss} own paws, {PRONOUN/m_c/subject} {VERB/m_c/scurry/scurries} up to (mentor), excitedly touching noses with {PRONOUN/(mentor)/object}."
   ],
@@ -790,7 +844,8 @@
       "yes_leader",
       "general_backstory",
       "ambitious",
-      "daring"
+      "daring",
+      "arrogant"
     ],
     "(old_name) has always wished to be the hero of {PRONOUN/m_c/poss} Clan, a warrior admired by all. (mentor) hopes, while m_c touches noses with {PRONOUN/(mentor)/object}, that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to stay wary of the dangers of their territory and not endanger {PRONOUN/m_c/self}."
   ],
@@ -856,7 +911,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "ambitious"
+      "ambitious",
+      "arrogant"
     ],
     "Wanting to stand out among {PRONOUN/m_c/poss} Clanmates more, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
   ],
@@ -879,7 +935,8 @@
       "general_leader",
       "general_backstory",
       "nervous",
-      "insecure"
+      "insecure",
+      "gloomy"
     ],
     "Worried {PRONOUN/m_c/subject} may not be good as a hunter or fighter, but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
   ],
@@ -1072,7 +1129,11 @@
       "general_mentor",
       "general_leader",
       "general_backstory",
-      "confident"
+      "confident",
+      "arrogant",
+      "cunning",
+      "flamboyant",
+      "rebellious"
     ],
     "After m_c touches noses with (mentor), {PRONOUN/m_c/subject} immediately {VERB/m_c/run/runs} towards the medicine den boasting that {PRONOUN/m_c/subject} will be the best medicine cat any Clan has ever seen."
   ],
@@ -1082,9 +1143,11 @@
       "general_mentor",
       "general_leader",
       "general_backstory",
-      "bold"
+      "bold",
+      "arrogant",
+      "rebellious"
     ],
-    "m_c tells (mentor) right after the ceremony that {PRONOUN/m_c/subject} will tell {PRONOUN/(mentor)/object} if {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/(mentor)/subject}{VERB/(mentor)/'re/'s} being a mousebrain. All the other cats immediately gasp and look for (mentor)'s reaction, then relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
+    "Right after {PRONOUN/m_c/poss} medicine cat apprentice ceremony, m_c declares that {PRONOUN/m_c/subject} won't hesitate to tell (mentor) if {PRONOUN/(mentor)/subject}{VERB/(mentor)/'ve/'s} being a mousebrain. All the other cats immediately gasp and look (mentor)'s reaction and relax as {PRONOUN/(mentor)/subject} only {VERB/(mentor)/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
   ],
   "med_app_27": [
     [
@@ -1496,7 +1559,9 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "bold"
+      "bold",
+      "arrogant",
+      "rebellious"
     ],
     "(old_name) may have butted heads against nearly every Clan member {PRONOUN/m_c/object} {VERB/m_c/have/has}, but being able to argue was a blessing as a medicine cat, as m_c will have to continue shoving odd mixtures down everyone's throat. StarClan will be watching {PRONOUN/m_c/object} with pride."
   ],
@@ -1532,7 +1597,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "charismatic"
+      "charismatic",
+      "flamboyant"
     ],
     "(old_name)'s charming attitude does as much for {PRONOUN/m_c/poss} patients as {PRONOUN/m_c/poss} skill does. {PRONOUN/m_c/subject/CAP} will continue to heal with words and herbs as m_c now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a full medicine cat of c_n."
   ],
@@ -1544,7 +1610,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "childish"
+      "childish",
+      "flamboyant"
     ],
     "Though {PRONOUN/m_c/poss} actions may come off as lighthearted, (old_name) has worked hard to earn {PRONOUN/m_c/poss} name of m_c, and mews that {PRONOUN/m_c/subject}'ll protect c_n as a medicine cat. Though {PRONOUN/m_c/subject} {VERB/m_c/start/starts} giggling right after {PRONOUN/m_c/subject} {VERB/m_c/say/says} it, causing a few purrs of amusement from onlookers both here, and in StarClan."
   ],
@@ -1556,7 +1623,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "cold"
+      "cold",
+      "gloomy"
     ],
     "No one knows what (old_name) is thinking as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} {PRONOUN/m_c/poss} medicine cat name of m_c, only that {PRONOUN/m_c/poss} eyes are focused, clear, and as immovable as ice. No one doubts that {PRONOUN/m_c/subject} will be well suited to the heartbreaks that wait for all medicine cats."
   ],
@@ -1580,9 +1648,12 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "confident"
+      "confident",
+      "arrogant",
+      "cunning",
+      "rebellious"
     ],
-    "(old_name) is so sure of {PRONOUN/m_c/poss} skill as medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to choose {PRONOUN/m_c/subject} own name. While it may not be tradition, no one can think of a better fitting name for {PRONOUN/m_c/object} then the one {PRONOUN/m_c/subject} chose {PRONOUN/m_c/self}, and welcome m_c warmly as a full medicine cat."
+    "(old_name) is so sure of {PRONOUN/m_c/poss} skill as medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to choose {PRONOUN/m_c/subject} own name. While it may not be traditional, no one can think of a better fitting name for {PRONOUN/m_c/object} then the one {PRONOUN/m_c/subject} chose {PRONOUN/m_c/self}, and welcome m_c warmly as a full medicine cat."
   ],
   "med_23": [
     [
@@ -1592,7 +1663,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "daring"
+      "daring",
+      "rebellious"
     ],
     "(old_name)'s methods are a little unconventional, but it's hard to argue with results, and (old_name) gets results. {PRONOUN/m_c/subject/CAP} {VERB/m_c/gain/gains} {PRONOUN/m_c/poss} medicine cat name of m_c, and the eldest medicine cat in the Clans warns {PRONOUN/m_c/object} not to do anything too risky."
   ],
@@ -1640,7 +1712,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "insecure"
+      "insecure",
+      "gloomy"
     ],
     "As the end of {PRONOUN/m_c/poss} apprenticeship nears, (old_name) is worried StarClan won't accept {PRONOUN/m_c/object} as a full medicine cat. However, the ceremony plays out without a hitch, and m_c is honored as a skilled medicine cat."
   ],
@@ -1652,7 +1725,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "insecure"
+      "insecure",
+      "gloomy"
     ],
     "While the rest of the Clan may not understand it (old_name) enjoys {PRONOUN/m_c/poss} time alone in the medicine den. In fact, now {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it, and away from the center of attention."
   ],
@@ -1748,7 +1822,10 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "shameless"
+      "shameless",
+      "arrogant",
+      "grumpy",
+      "oblivious"
     ],
     "(old_name) blurts out {PRONOUN/m_c/poss} new medicine cat name of m_c, cutting off the words of the ceremony mid-meow, not surprising anyone. There's no arguing with m_c, so the other medicine cats cheer for {PRONOUN/m_c/object}, through purrs of amusement."
   ],
@@ -1772,7 +1849,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "strange"
+      "strange",
+      "oblivious"
     ],
     "No one knows why (old_name) brought a mossball to {PRONOUN/m_c/poss} medicine cat naming ceremony. StarClan grants {PRONOUN/m_c/object} the name m_c all the same, welcoming {PRONOUN/m_c/object} into the full mysteries of StarClan."
   ],
@@ -1906,7 +1984,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As a StarClan cat steps forward to give (old_name) {PRONOUN/m_c/poss} new name of m_c, {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} dead_par1 and dead_par2 watching {PRONOUN/m_c/object} proudly with the other StarClan cats."
+    "As a StarClan cat steps forward to give (old_name) {PRONOUN/m_c/poss} new name of m_c, {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} dead_par1 and dead_par2 watching {PRONOUN/m_c/object} proudly."
   ],
   "med_51": [
     [
@@ -2060,7 +2138,8 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "adventurous"
+      "adventurous",
+      "oblivious"
     ],
     "(old_name) sits in front of the Clan, eager to receive {PRONOUN/m_c/poss} name, but {PRONOUN/m_c/poss} focus seems somewhere else, somewhere beyond the horizon. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/seem/seems} to be paying attention as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2084,7 +2163,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "compassionate"
+      "ambitious"
     ],
     "(old_name)'s eyes gleam as {PRONOUN/m_c/subject} {VERB/m_c/stare/stares} up at l_n, vowing silently to {PRONOUN/m_c/self} to one day be up there. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2108,7 +2187,9 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "bold"
+      "bold",
+      "arrogant",
+      "cunning"
     ],
     "(old_name) stands tall and puffs out {PRONOUN/m_c/poss} chest as l_n announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/subject} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2120,7 +2201,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "calm"
+      "calm",
+      "cunning"
     ],
     "(old_name) sits before the Clan, ears pricked forward and gaze calm as l_n addresses the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/bow/bows} {PRONOUN/m_c/poss} head as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2144,7 +2226,9 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "charismatic"
+      "charismatic",
+      "flamboyant",
+      "rebellious"
     ],
     "(old_name) holds {PRONOUN/m_c/poss} head high as l_n announces it is time for {PRONOUN/m_c/object} to be given {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c in honor of {PRONOUN/m_c/poss} r_h, and the Clan explodes into loud cheers."
   ],
@@ -2156,7 +2240,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "childish"
+      "childish",
+      "oblivious"
     ],
     "(old_name) barely seems to be paying attention, attention focused on a fluttering leaf. l_n has to repeat {PRONOUN/m_c/poss} name a few times before {PRONOUN/m_c/subject} finally {VERB/m_c/pay/pays} attention long enough to give {PRONOUN/m_c/poss} vow. Sighing, the leader names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2180,7 +2265,9 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "cold"
+      "cold",
+      "grumpy",
+      "gloomy"
     ],
     "(old_name) remains completely quiet as l_n names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h. Before anyone can congratulate {PRONOUN/m_c/object}, however, {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} and walks away without a word to do {PRONOUN/m_c/poss} silent vigil."
   ],
@@ -2192,7 +2279,9 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "cold"
+      "cold",
+      "cunning",
+      "gloomy"
     ],
     "(old_name) stares at l_n as {PRONOUN/l_n/subject} {VERB/l_n/speak/speaks}. l_n is sure it doesn't mean anything, but (old_name)'s lack of enthusiasm worries {PRONOUN/l_n/object}. Brushing past it, l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2229,7 +2318,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "confident"
+      "confident",
+      "arrogant"
     ],
     "(old_name) soaks up all of the attention as {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} before {PRONOUN/m_c/poss} Clan, eager for {PRONOUN/m_c/poss} new name. l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2241,7 +2331,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "daring"
+      "daring",
+      "grumpy"
     ],
     "(old_name) looks up at the leader with pride. {PRONOUN/m_c/subject/CAP} knew all that hard work - proving {PRONOUN/m_c/subject} {VERB/m_c/were/was} the best apprentice in the Clan - was worth it, even if it caused {PRONOUN/m_c/object} a lot of trouble. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hold/holds} {PRONOUN/m_c/poss} head high as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2301,7 +2392,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "fierce"
+      "fierce",
+      "grumpy"
     ],
     "(old_name) sits in front of the leader, tail twitching back and forth as {PRONOUN/m_c/subject} {VERB/m_c/await/awaits} {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} eager for this ceremony to be done so {PRONOUN/m_c/subject} can go back to work and make sure the Clan is safe. Finally, l_n looks down upon {PRONOUN/m_c/object} and names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2325,7 +2417,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "lonesome"
+      "lonesome",
+      "gloomy"
     ],
     "(old_name), now m_c, named so for {PRONOUN/m_c/poss} r_h, can only awkwardly thank {PRONOUN/m_c/poss} Clanmates as {PRONOUN/m_c/subject} {VERB/m_c/weave/weaves} through the crowd of purring cats. Once the meeting comes to a close, {PRONOUN/m_c/subject} {VERB/m_c/slink/slinks} out of camp to be alone for a while."
   ],
@@ -2337,7 +2430,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "loving"
+      "loving",
+      "sincere"
     ],
     "(old_name) is overjoyed to finally be a warrior. After l_n renames {PRONOUN/m_c/object} and honors {PRONOUN/m_c/poss} r_h, m_c nuzzles (previous_mentor), thanking {PRONOUN/(previous_mentor)/object} for {PRONOUN/(previous_mentor)/poss} guidance."
   ],
@@ -2421,7 +2515,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "righteous"
+      "righteous",
+      "sincere"
     ],
     "(old_name) stands tall before the Clan, gaze determined as l_n says {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} warrior name. (old_name) takes the vow seriously, and promises to always do what is best for everyone. Gaze proud, l_n names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
   ],
@@ -2433,7 +2528,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "shameless"
+      "shameless",
+      "sincere"
     ],
     "(old_name) is still messy after tussling with someone else, and doesn't even bother to groom {PRONOUN/m_c/self} before trotting up to the front of the crowd. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c, and honored for {PRONOUN/m_c/poss} r_h."
   ],
@@ -2471,7 +2567,7 @@
       "general_backstory",
       "strict"
     ],
-    "(old_name) grumbles to {PRONOUN/m_c/self} as l_n changes just a single word in the ceremony, but knows better than to correct {PRONOUN/l_n/object} during such an important ceremony. {PRONOUN/m_c/subject/CAP} can speak to l_n about it later. For now, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} as {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, and are honored for {PRONOUN/m_c/poss} r_h."
+    "(old_name) grumbles to {PRONOUN/m_c/self} as l_n changes just a single word in the ceremony. But {PRONOUN/m_c/subject} {VERB/m_c/know/knows} better than to correct {PRONOUN/l_n/object} during such an important ceremony. {PRONOUN/m_c/subject/CAP} can speak to l_n about it later. For now, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} as {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, and are honored for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_43": [
     [
@@ -2494,7 +2590,8 @@
       "yes_leader",
       "general_backstory",
       "thoughtful",
-      "wise"
+      "wise",
+      "cunning"
     ],
     "l_n almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} months of training and feels confident when {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
   ],
@@ -2506,7 +2603,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "troublesome"
+      "troublesome",
+      "rebellious"
     ],
     "(old_name)'s penchant for getting into, and even starting, trouble has almost made l_n hold back on making {PRONOUN/m_c/object} a warrior. However, l_n can tell that (old_name) has been trying really hard lately to make up for it, and it would feel cruel to make {PRONOUN/m_c/object} wait any longer. So, l_n names {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
   ],
@@ -2530,7 +2628,8 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "wise"
+      "wise",
+      "cunning"
     ],
     "(old_name)'s advice has helped many cats throughout {PRONOUN/m_c/poss} days as an apprentice. Even l_n has sought {PRONOUN/m_c/object} out at times. l_n has no doubts in {PRONOUN/l_n/poss} mind that (old_name) is ready to be a warrior, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
