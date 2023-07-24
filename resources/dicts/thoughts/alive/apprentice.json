@@ -194,9 +194,7 @@
             "Doesn't miss being a rogue",
             "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "main_backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        }
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
     },
     {
         "id": "thoughtful_apprentice",
