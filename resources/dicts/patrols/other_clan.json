@@ -1181,7 +1181,8 @@
             "other_clan",
             "battle_injury",
             "scar",
-            "BRIDGE"
+            "BRIDGE",
+            "no_deputy"
         ],
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
@@ -1189,12 +1190,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-            "unscathed_rare": "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious yowl, and then bring the prey back to c_n camp to report the incident to the deputy.",
+            "unscathed_rare": "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks them for their restraint.",
             "stat_skill": "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
             "stat_trait": "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
         },
         "fail_text": {
             "unscathed_common": "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home. Unclear borders won't make o_c_n too happy, though...",
+            "unscathed_rare": "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious yowl, and then bring the prey back to c_n camp to report the incident to the deputy.",
             "unscathed_stat": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
             "injury": "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
         },

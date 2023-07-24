@@ -443,7 +443,7 @@
             "unscathed_rare": "p_l is laughing at the faces the apprentices are making, as they complain about all the icky smells coming from the other Clans at the border. They keep up their disgusted grimaces while asking questions about the other Clans their specific cultures."
         },
         "fail_text": {
-            "unscathed_common": "p_l just can't deal with those mouse brained apprentices today. {PRONOUN/p_l/subject} had to stop app1 from crossing the border twice now. {PRONOUN/p_l/subject} order them all back to camp scolding them along the way."
+            "unscathed_common": "p_l just can't deal with those mouse-brained apprentices today. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} had to stop app1 from crossing the border twice now. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} them all back to camp, scolding them along the way."
         },
         "win_skills": [
             "CLEVER,1",
