@@ -2,7 +2,9 @@
     "ad9wkx7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive",
+            "stable"
         ],
         [
             "Sorry... I don't see you like that."
@@ -11,7 +13,8 @@
     "h2k7jd2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "introspective"
         ],
         [
             "Oh... I didn't know you... saw me that way."
@@ -20,7 +23,10 @@
     "j7e9sd3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive",
+            "unlawful",
+            "brooding"
         ],
         [
             "... Never speak to me again."
@@ -28,7 +34,9 @@
     ],
     "d9r2gs4": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "sweet"
         ],
         [
             "Oh wow, that was funny!",
@@ -38,7 +46,8 @@
     "j9h3sd5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool"
         ],
         [
             "Oh honey... no...",
@@ -67,7 +76,9 @@
     "h2w5gs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "stable"
         ],
         [
             "That's... nice of you to say."
@@ -76,7 +87,10 @@
     "d6f3jk3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "introspective",
+            "neurotic",
+            "upstanding"
         ],
         [
             "Are you... flirting with me?"
@@ -85,7 +99,8 @@
     "b9g2hs4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet"
         ],
         [
             "Haha! That's the funniest joke I've heard all season!"
@@ -94,7 +109,9 @@
     "j7h3xs5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "assertive"
         ],
         [
             "...That's a joke, right?"
@@ -103,7 +120,11 @@
     "k3x7js6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive",
+            "brooding",
+            "unabashed",
+            "unlawful"
         ],
         [
             "You've got to be joking."
@@ -112,7 +133,8 @@
     "b8d3gs7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive"
         ],
         [
             "Thanks, I guess."
@@ -121,7 +143,8 @@
     "g5h6xd8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding"
         ],
         [
             "Whatever."
@@ -130,7 +153,10 @@
     "a9w5kf9": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "assertive",
+            "unabashed"
         ],
         [
             "... is that the best you could do?"
@@ -139,7 +165,8 @@
     "b9d3ks0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed"
         ],
         [
             "Stop that, it's not getting you anywhere."
@@ -148,7 +175,8 @@
     "h4j7xs1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding"
         ],
         [
             "What is it going to take in order for you to leave me alone?"
@@ -157,7 +185,8 @@
     "f8h5xs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed"
         ],
         [
             "You are such an idiot, that was the worst attempt at flirting I've heard for moons."
@@ -166,7 +195,9 @@
     "h2k5jd3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "introspective"
         ],
         [
             "Okay?"
@@ -175,7 +206,9 @@
     "j5d7hs4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed",
+            "upstanding"
         ],
         [
             "... Ew."
@@ -184,7 +217,10 @@
     "k3w9gf5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed",
+            "upstanding",
+            "silly"
         ],
         [
             "Ew. No."
@@ -193,7 +229,11 @@
     "h3k7gf6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "unabashed",
+            "cool",
+            "upstanding"
         ],
         [
             "Not a chance in Starclan."
@@ -212,7 +252,9 @@
     "h6w5kd8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive",
+            "upstanding"
         ],
         [
             "You are so not my type."
@@ -221,7 +263,9 @@
     "d5h7gs9": [
         [
             "Any",
-            "reject"
+            "reject",
+            "stable",
+            "silly"
         ],
         [
             "....... Dude, that's... Was that an insult or an attempt at flirting..? Go away, please."
@@ -230,7 +274,10 @@
     "j8h3ks0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "unlawful",
+            "upstanding"
         ],
         [
             "Um... No. You're not even on my playing field."
@@ -239,7 +286,9 @@
     "b3d5gs1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "upstanding",
+            "unabashed"
         ],
         [
             "Ew. I'm too good for you..."
@@ -248,7 +297,9 @@
     "d6h3gs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "unlawful"
         ],
         [
             ".... Really..? Even a Dark Forest cat could do better than that..."
@@ -257,7 +308,11 @@
     "f5w7ks3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "stable",
+            "introspective",
+            "neurotic"
         ],
         [
             "... Was that supposed to be flirting?'"
@@ -266,7 +321,10 @@
     "k3x5gs4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "neurotic",
+            "upstanding",
+            "assertive"
         ],
         [
             "... Is that an insult?"
@@ -275,7 +333,9 @@
     "j5h9sd5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "assertive"
         ],
         [
             "I think I'd rather take my chances with a Dark Forest cat."
@@ -284,7 +344,9 @@
     "h6d3gs6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "brooding"
         ],
         [
             "I'd rather kiss a badger."
@@ -293,7 +355,8 @@
     "b8w5kd7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly"
         ],
         [
             "I never thought I'd ever think about being mates with a snake, but after THAT flirt..."
@@ -302,7 +365,8 @@
     "k3s7gs8": [
         [
             "Any",
-            "platonic_like"
+            "platonic_like",
+            "reject"
         ],
         [
             "Hehe! That was so funny, y_c!",
@@ -312,7 +376,8 @@
     "j3s7gs0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive"
         ],
         [
             "... Are you trying to start a fight?"
@@ -321,7 +386,10 @@
     "b9h5ks1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "stable",
+            "upstanding",
+            "neurotic"
         ],
         [
             "...Was that sarcasm?"
@@ -330,7 +398,10 @@
     "k7h3xs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "introspective",
+            "sweet",
+            "stable"
         ],
         [
             "...No. I'm sorry but just... no."
@@ -339,16 +410,24 @@
     "j5d3gs3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "neurotic",
+            "sweet",
+            "introspective",
+            "stable"
         ],
         [
-            "Uh- me? Sorry, you aren't exactly my type... later.."
+            "Uh- me? Sorry, you aren't exactly my type..."
         ]
     ],
     "h6d7ks4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "introspective",
+            "neurotic",
+            "stable"
         ],
         [
             "Um... no."
@@ -357,7 +436,8 @@
     "b5w3kd5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding"
         ],
         [
             "Don't talk to me."
@@ -366,7 +446,10 @@
     "j6h5ks6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "stable",
+            "introspective"
         ],
         [
             "Just...no."
@@ -375,7 +458,11 @@
     "b8w7jd7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "stable",
+            "introspective",
+            "neurotic"
         ],
         [
             "I'd rather... not."
@@ -402,7 +489,10 @@
     "a2s6df1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "neurotic",
+            "stable"
         ],
         [
             "Oh... you."
@@ -411,7 +501,9 @@
     "h3d4jk2": [
         [
             "warrior",
-            "reject"
+            "reject",
+            "cool",
+            "neurotic"
         ],
         [
             "Oh... I'm sorry, but I think I have to go...I'm pretty sure I have a hunting patrol to be on... Yea..."
@@ -420,7 +512,9 @@
     "j5g6sd3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "introspective"
         ],
         [
             "...",
@@ -441,7 +535,9 @@
     "h2d6gs5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "unabashed"
         ],
         [
             "Did a badger teach you how to flirt?"
@@ -450,7 +546,8 @@
     "d7f5xs6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding"
         ],
         [
             "Stop."
@@ -459,7 +556,8 @@
     "h3d9gf7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "neurotic"
         ],
         [
             "You're... you're kidding, right?"
@@ -468,7 +566,9 @@
     "f8w4kd8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed",
+            "unlawful"
         ],
         [
             "You're delusional if you think you're good enough for me."
@@ -477,7 +577,8 @@
     "d9w3gf0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet"
         ],
         [
             "Oh! Um, I'm gonna go..."
@@ -486,7 +587,9 @@
     "h3d5gf1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "introspective",
+            "neurotic"
         ],
         [
             "...Um, I think I hear someone calling my name, actually. Bye."
@@ -504,7 +607,8 @@
     "h5d6xs3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive"
         ],
         [
             "You foxhearted cat! Leave me alone!"
@@ -513,7 +617,9 @@
     "f7w4df4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "silly"
         ],
         [
             "Fresh-kill interests me more than you."
@@ -522,10 +628,13 @@
     "d5f6xs5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "neurotic",
+            "assertive",
+            "brooding"
         ],
         [
-            "What does that supposed mean?"
+            "What’s that supposed to mean?"
         ]
     ],
     "j5g6df6": [
@@ -540,7 +649,10 @@
     "d6f7xs7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "assertive",
+            "unabashed"
         ],
         [
             "That was actually a nice one.",
@@ -550,7 +662,9 @@
     "j7s5gf8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "sweet"
         ],
         [
             "Oh dear. Let me teach you how to flirt."
@@ -559,7 +673,11 @@
     "h4d5xs9": [
         [
             "Any",
-            "reject"
+            "reject",
+            "stable",
+            "upstanding",
+            "unabashed",
+            "introspective"
         ],
         [
             "Uh... sorry, but that was... horrible."
@@ -568,7 +686,9 @@
     "f8d4gf0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "introspective"
         ],
         [
             "... You've got a little something on your face..."
@@ -577,7 +697,10 @@
     "d7f4xs1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "assertive",
+            "cool"
         ],
         [
             "Ugh... I'm not that shallow."
@@ -586,7 +709,9 @@
     "j5g6xs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed",
+            "silly"
         ],
         [
             "Well your face looks like crowfood."
@@ -595,7 +720,9 @@
     "h6d5gf3": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "unabashed"
         ],
         [
             "Frankly, I'd rather eat all our clan's dirt left in the dirtplace."
@@ -604,7 +731,8 @@
     "d5f4xs4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding"
         ],
         [
             "Hmph. Not interested."
@@ -613,7 +741,8 @@
     "j8g6df5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool"
         ],
         [
             "Um ... oof, this is awkward.",
@@ -623,7 +752,10 @@
     "h7d5xs6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "stable",
+            "upstanding",
+            "unabashed"
         ],
         [
             "Okay, I'm gonna stop you right there. I can see what you're doing and I'll save you the embarrassment in two simple words:",
@@ -645,7 +777,9 @@
     "d9f6xs8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "assertive"
         ],
         [
             "Hehe. Thanks, cutie. But I just don't like you like that.",
@@ -655,7 +789,9 @@
     "j7g8df9": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "introspective"
         ],
         [
             "Oh, dear ... Um, why don't you just stick to admiring me from afar?"
@@ -664,7 +800,12 @@
     "h8d7gf0": [
         [
             "Any",
-            "reject"
+            "reject",
+            "assertive",
+            "upstanding",
+            "unabashed",
+            "silly",
+            "unlawful"
         ],
         [
             "Hahaha! That one got me laughing!",
@@ -675,7 +816,9 @@
     "f9d6xs1": [
         [
             "Any",
-            "reject"
+            "reject",
+            "brooding",
+            "stable"
         ],
         [
             "... For your own sake, I better have misheard you."
@@ -684,7 +827,9 @@
     "h9d5xs2": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "stable"
         ],
         [
             "Aw, bestie! That's sweet, but no. My heart belongs to another."
@@ -703,7 +848,9 @@
     "j8g7df4": [
         [
             "Any",
-            "reject"
+            "reject",
+            "unabashed",
+            "assertive"
         ],
         [
             "Woah... Your breath stinks..."
@@ -712,7 +859,11 @@
     "d6f7xs5": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "unabashed",
+            "assertive",
+            "brooding"
         ],
         [
             "Even a fox's dirt sounds more appealing than you..."
@@ -721,7 +872,9 @@
     "h7d6gf6": [
         [
             "Any",
-            "reject"
+            "reject",
+            "introspective",
+            "sweet"
         ],
         [
             "..... Have you washed today..?"
@@ -730,7 +883,10 @@
     "f9d6xs7": [
         [
             "Any",
-            "reject"
+            "reject",
+            "silly",
+            "cool",
+            "unlawful"
         ],
         [
             "I'm sorry, dude... We ain't got that chemistry, you feel me?"
@@ -739,7 +895,11 @@
     "d9f7gf8": [
         [
             "Any",
-            "reject"
+            "reject",
+            "sweet",
+            "introspective",
+            "stable",
+            "upstanding"
         ],
         [
             "Ha! Very funny y_c!",
@@ -749,7 +909,10 @@
     "j9g7df9": [
         [
             "Any",
-            "reject"
+            "reject",
+            "cool",
+            "upstanding",
+            "stable"
         ],
         [
             "Where did you learn to flirt like that?!",
@@ -758,7 +921,10 @@
     ],
     "h3d9jk3": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "assertive",
+            "unabashed"
         ],
         [
             "No one else could ever be as good as you!"
@@ -766,7 +932,9 @@
     ],
     "d4f2xs4": [
         [
-            "Any"
+            "Any",
+            "mate",
+            "introspective"
         ],
         [
             "Kits... do you think they would bring us joy, or would they be a hassle to take care of?"
@@ -774,7 +942,11 @@
     ],
     "j5g1sd5": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "assertive",
+            "brooding",
+            "unabashed"
         ],
         [
             "If I act like I'm interested will it get you to stop?"
@@ -782,7 +954,9 @@
     ],
     "f6d8xs6": [
         [
-            "Any"
+            "Any",
+            "brooding",
+            "neurotic"
         ],
         [
             "W-whatever..."
@@ -790,23 +964,22 @@
     ],
     "j7g6df7": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "mate",
+            "stable"
         ],
         [
             "As much as I like you, we have got to work on your flirting ability, dear."
         ]
     ],
-    "h8d7gf8": [
-        [
-            "Any"
-        ],
-        [
-            "*Their eyes grew, and they suddenly ran off. I wonder what that was about- was that good or bad?*"
-        ]
-    ],
     "j9g8df9": [
         [
-            "Any"
+            "Any",
+            "neurotic",
+            "sweet",
+            "introspective",
+            "stable"
         ],
         [
             "Um- I like your eyes too! They're really pretty!"
@@ -814,7 +987,8 @@
     ],
     "h9d8xs0": [
         [
-            "Any"
+            "Any",
+            "neurotic"
         ],
         [
             "O-Oh, you really think..?",
@@ -824,7 +998,9 @@
     ],
     "f9d0xs1": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "neurotic"
         ],
         [
             "Y- You really think so? Ah- thank you so much!"
@@ -832,7 +1008,12 @@
     ],
     "h0d9gf2": [
         [
-            "Any"
+            "Any",
+            "assertive",
+            "unabashed",
+            "cool",
+            "silly",
+            "unlawful"
         ],
         [
             "Were you always this charming?",
@@ -842,7 +1023,13 @@
     ],
     "j0g1df3": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "upstanding",
+            "cool",
+            "sweet",
+            "introspective",
+            "assertive"
         ],
         [
             "Your pelt looks lovely in this lighting!"
@@ -850,7 +1037,10 @@
     ],
     "h1d2gf4": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "stable",
+            "introspective"
         ],
         [
             "Aw, that's so nice of you!"
@@ -858,7 +1048,11 @@
     ],
     "j2g3df5": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "sweet",
+            "silly",
+            "upstanding"
         ],
         [
             "Oh, wow, thank you!"
@@ -866,7 +1060,11 @@
     ],
     "f3d4xs6": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "neurotic",
+            "stable",
+            "introspective"
         ],
         [
             "T-Thank you... I guess I should say you've always been looking quite beautiful too!",
@@ -875,7 +1073,9 @@
     ],
     "h3d5gf7": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "silly"
         ],
         [
             "Oh, you're so cute sometimes! Do tell me more, hehe.",
@@ -885,7 +1085,10 @@
     ],
     "j4g5df8": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "stable",
+            "introspective"
         ],
         [
             "Oh! Thank you! It means a lot to me."
@@ -893,7 +1096,12 @@
     ],
     "h5d6xs9": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "stable",
+            "introspective",
+            "upstanding",
+            "neurotic"
         ],
         [
             "You deserve compliments much more than I do!"
@@ -901,7 +1109,9 @@
     ],
     "f6d7gf0": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "sweet"
         ],
         [
             "Awee, me? No way, you deserve all these compliments!"
@@ -909,7 +1119,8 @@
     ],
     "j7g6xs1": [
         [
-            "Any"
+            "Any",
+            "brooding"
         ],
         [
             "Heh... Thanks..."
@@ -917,7 +1128,9 @@
     ],
     "h6d5gf2": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "stable"
         ],
         [
             "Aw, thank you! That's so sweet of you!"
@@ -925,7 +1138,10 @@
     ],
     "f7d8gf3": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "cool",
+            "silly"
         ],
         [
             "Thanks! Wow... Your fur is really shiny today... Was it always like that?"
@@ -933,7 +1149,9 @@
     ],
     "j8g7xs4": [
         [
-            "Any"
+            "Any",
+            "unlawful",
+            "unabashed"
         ],
         [
             "Is that so? Well, go on. Tell me more about how wonderful I am."
@@ -941,7 +1159,9 @@
     ],
     "h7d8gf5": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "sweet"
         ],
         [
             "Oh goodness! You're so sweet!",
@@ -952,7 +1172,9 @@
     ],
     "f8d9xs6": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "stable"
         ],
         [
             "hGK- Oh my goodness-",
@@ -961,15 +1183,19 @@
     ],
     "j9g8xs7": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "stable"
         ],
         [
-            "AWW!! That's so sweet of you!! You really think of me that way??"
+            "AWW!! That's so sweet of you!! You really think of me that way?"
         ]
     ],
     "h8d9gf8": [
         [
-            "Any"
+            "Any",
+            "unlawful",
+            "unabashed"
         ],
         [
             "Heh. I am quite attractive, aren't I? Do go on."
@@ -977,7 +1203,11 @@
     ],
     "f9d0gf9": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "unlawful",
+            "unabashed",
+            "cool"
         ],
         [
             "Finally! Someone who noticed."
@@ -985,7 +1215,9 @@
     ],
     "j0g9xs0": [
         [
-            "Any"
+            "Any",
+            "brooding",
+            "unlawful"
         ],
         [
             "At least you have eyes."
@@ -993,7 +1225,10 @@
     ],
     "h9d0xs1": [
         [
-            "Any"
+            "Any",
+            "unlawful",
+            "unabashed",
+            "brooding"
         ],
         [
             "Obviously."
@@ -1001,7 +1236,9 @@
     ],
     "f0d9gf2": [
         [
-            "Any"
+            "Any",
+            "unlawful",
+            "assertive"
         ],
         [
             "I always look lovely. Are you trying to imply that I don't?"
@@ -1009,7 +1246,8 @@
     ],
     "j1g0xs3": [
         [
-            "Any"
+            "Any",
+            "neurotic"
         ],
         [
             "R-Really... me? ...",
@@ -1027,7 +1265,8 @@
     ],
     "f1d2gf5": [
         [
-            "Any"
+            "Any",
+            "brooding"
         ],
         [
             "Uh, oh, thanks. I needed to hear that."
@@ -1035,17 +1274,18 @@
     ],
     "j2g3xs6": [
         [
-            "Any"
+            "Any",
+            "cool"
         ],
         [
-            "Oh- Oh that was horrible! Hahaha!",
-            "Ah- I love you so much."
+            "Oh- Oh that was horrible! Hahaha!"
         ]
     ],
     "j3g4df9": [
         [
             "mate",
-            "Any"
+            "Any",
+            "stable"
         ],
         [
             "Ah- I love you so much."
@@ -1053,7 +1293,9 @@
     ],
     "h4d5xs0": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "silly"
         ],
         [
             "...Hahaha! At least you're funny."
@@ -1061,7 +1303,9 @@
     ],
     "f5d6gf1": [
         [
-            "Any"
+            "Any",
+            "introspective",
+            "upstanding"
         ],
         [
             "You noticed!? Aw, thank you! I spent extra time grooming my pelt today!"
@@ -1069,7 +1313,9 @@
     ],
     "j6g5df2": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "unabashed"
         ],
         [
             "Hehe! You've got something on your face.. Here I'll get it!"
@@ -1077,7 +1323,9 @@
     ],
     "h5d6hxs3": [
         [
-            "Any"
+            "Any",
+            "upstanding",
+            "unlawful"
         ],
         [
             "..Thanks.. Your pelt looks... scruffy today?"
@@ -1085,7 +1333,9 @@
     ],
     "f6d7gf4": [
         [
-            "Any"
+            "Any",
+            "mate",
+            "stable"
         ],
         [
             "Aw! I love you too!"
@@ -1094,7 +1344,9 @@
     "j7g6xs5": [
         [
             "mate",
-            "Any"
+            "Any",
+            "sweet",
+            "stable"
         ],
         [
             "You're still just as good at flirting as when we first got together, you know?"
@@ -1103,42 +1355,43 @@
     "h6d7gf6": [
         [
             "mate",
-            "Any"
+            "Any",
+            "assertive",
+            "introspective",
+            "neurotic"
         ],
         [
-            "What's your secret? You know what I want to hear before I do."
+            "What's your secret? You always know what I want to hear before I do."
         ]
     ],
     "f7d8xs7": [
         [
             "mate",
-            "Any"
+            "Any",
+            "introspective"
         ],
         [
-            "Do you have some sort of secret starclan cat in your dreams telling you how to woo me?"
+            "Do you have some sort of secret StarClan cat in your dreams telling you how to woo me?"
         ]
     ],
     "j8g7df8": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "sweet",
+            "stable"
         ],
         [
             "Awww!! Thank you!"
         ]
     ],
-    "h7d8gf9": [
-        [
-            "Any"
-        ],
-        [
-            "Wait! Let me try one!"
-        ]
-    ],
     "f8d9xs0": [
         [
-            "Any"
+            "Any",
+            "silly"
         ],
         [
+            "Wait! Let me try one!",
             "...",
             ".....",
             "Uhhhh...",
@@ -1148,7 +1401,10 @@
     ],
     "j9g81df1": [
         [
-            "Any"
+            "Any",
+            "sweet",
+            "unabashed",
+            "silly"
         ],
         [
             "Aw! Aren't you adorable!"
@@ -1157,7 +1413,10 @@
     "h8d9gf2": [
         [
             "mate",
-            "Any"
+            "Any",
+            "stable",
+            "introspective",
+            "sweet"
         ],
         [
             "If Starclan came for me tomorrow, I would be able to go, knowing that I got to spend time with a cat as wonderful as you."
@@ -1166,7 +1425,10 @@
     "f9d0gf3": [
         [
             "mate",
-            "Any"
+            "Any",
+            "stable",
+            "introspective",
+            "sweet"
         ],
         [
             "You know, I never knew that I'd end up with a cat like you... but now that I'm here, I wouldn't have it any other way."
@@ -1174,7 +1436,10 @@
     ],
     "j0g1df4": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "introspective",
+            "sweet"
         ],
         [
             "O-Oh! Wow, you're wonderful, you know that, right?"
@@ -1183,16 +1448,20 @@
     "h9d0xs5": [
         [
             "beach",
-            "Any"
+            "Any",
+            "silly",
+            "cool",
+            "unabashed"
         ],
         [
-            "I must have sand in my ears if you said that about me!"
+            "I must have sand in my ears… What was that again?"
         ]
     ],
     "f0d1gf6": [
         [
             "forest",
-            "Any"
+            "Any",
+            "introspective"
         ],
         [
             "Mmm! You smell wonderful, like the forest just after rain!"
@@ -1200,7 +1469,10 @@
     ],
     "j1g2df7": [
         [
-            "Any"
+            "Any",
+            "brooding",
+            "introspective",
+            "assertive"
         ],
         [
             "I... must agree that was actually neat. Look, I'm surprised."
@@ -1208,7 +1480,10 @@
     ],
     "h0d2gf8": [
         [
-            "Any"
+            "Any",
+            "introspective",
+            "silly",
+            "sweet"
         ],
         [
             "Uh- you smell good too! Like- catmint and lavender!"
@@ -1216,7 +1491,8 @@
     ],
     "f1d3gf9": [
         [
-            "Any"
+            "Any",
+            "introspective"
         ],
         [
             "Thank you... Uhm, well, your eyes are like the stars, you know? They're.. Beautiful."
@@ -1224,7 +1500,10 @@
     ],
     "j2g4df0": [
         [
-            "Any"
+            "Any",
+            "assertive",
+            "unabashed",
+            "cool"
         ],
         [
             "I know I'm beautiful."
@@ -1232,7 +1511,9 @@
     ],
     "h1d4gf1": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "silly"
         ],
         [
             "Awhh, how sweet, you love me? Well, clever choice, 'cause who doesn't?"
@@ -1240,7 +1521,8 @@
     ],
     "f2d5gf2": [
         [
-            "Any"
+            "Any",
+            "cool"
         ],
         [
             "Everybody tells me that, but thanks anyways!"
@@ -1248,23 +1530,21 @@
     ],
     "j3g6df3": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "upstanding",
+            "assertive"
         ],
         [
             "Same goes for you too."
         ]
     ],
-    "h2d6gf4": [
-        [
-            "Any"
-        ],
-        [
-            "I wonder why when others do this to me I usually laugh, but when you say things like this I feel weird...?"
-        ]
-    ],
     "f3d7gf5": [
         [
-            "Any"
+            "Any",
+            "neurotic",
+            "sweet",
+            "stable"
         ],
         [
             "What- uh, thanks! That's really nice of you."
@@ -1272,7 +1552,10 @@
     ],
     "j4g8df6": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "upstanding",
+            "assertive"
         ],
         [
             "I think you need to work on your flirting, but I'm flattered anyways."
@@ -1280,7 +1563,11 @@
     ],
     "h3d8gf7": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "sweet",
+            "assertive",
+            "introspective"
         ],
         [
             "Do you really mean it?",
@@ -1290,7 +1577,9 @@
     ],
     "f4d9gf8": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "sweet"
         ],
         [
             "You're so silly, you know!"
@@ -1298,7 +1587,10 @@
     ],
     "j5g0df9": [
         [
-            "Any"
+            "Any",
+            "brooding",
+            "unlawful",
+            "upstanding"
         ],
         [
             "...",
@@ -1307,7 +1599,9 @@
     ],
     "h4d0gf0": [
         [
-            "Any"
+            "Any",
+            "assertive",
+            "cool"
         ],
         [
             "Really? Well, your eyes are like moonlight!",
@@ -1316,7 +1610,11 @@
     ],
     "f5d1gf1": [
         [
-            "Any"
+            "Any",
+            "cool",
+            "unabashed",
+            "unlawful",
+            "assertive"
         ],
         [
             "I've heard that a million times, but thanks anyways."
@@ -1324,7 +1622,9 @@
     ],
     "j6g2df2": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "introspective"
         ],
         [
             "You're beautiful like a butterfly, and you sparkle in the moonlight. Was that good, or what?"
@@ -1332,16 +1632,19 @@
     ],
     "h5d2gf3": [
         [
-            "Any"
+            "Any",
+            "unabashed",
+            "silly",
+            "cool"
         ],
         [
-            "Thanks! That's the 15th time someone said I was handsome/beautiful today! I'm trying to get to 20!"
+            "Thanks! That's the 15th time someone said I was beautiful today! I'm trying to get to 20!"
         ]
     ],
     "f6d3gf4": [
         [
             "Any",
-            "insecure"
+            "neurotic"
         ],
         [
             "...",
@@ -1352,7 +1655,8 @@
     ],
     "j7g4df5": [
         [
-            "Any"
+            "Any",
+            "brooding"
         ],
         [
             "Your compliments are like a ray of sunshine in my bleak world."
@@ -1360,7 +1664,10 @@
     ],
     "h6d4gf6": [
         [
-            "Any"
+            "Any",
+            "stable",
+            "sweet",
+            "introspective"
         ],
         [
             "You really think that?",
@@ -1378,29 +1685,34 @@
     ],
     "j8g6df8": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "sweet"
         ],
         [
             "Is it my turn now, hehe?",
             "You're beautiful like moonlight, and, and, and...",
-            "Your fur is like moss!",
+            "Your fur is as soft as moss!",
             "This is fun!"
         ]
     ],
     "h7d6gf9": [
         [
-            "medicine cat",
-            "Any"
+            "Any",
+            "unabashed",
+            "upstanding"
         ],
         [
             "You're distracting me...",
-            "I need to focus on my duties, but you're so attractive too."
+            "I need to focus on my duties, but you're too attractive."
         ]
     ],
     "f8d7gf0": [
         [
-            "gloomy",
-            "Any"
+            "brooding",
+            "Any",
+            "unlawful",
+            "neurotic"
         ],
         [
             "I wish all cats were as good as you."
@@ -1408,7 +1720,9 @@
     ],
     "j9g8df1": [
         [
-            "Any"
+            "Any",
+            "silly",
+            "neurotic"
         ],
         [
             "Arrggh, stop making me feel weird! It feels like there's butterflies in my belly whenever I see you as is!"
@@ -1417,7 +1731,10 @@
     "j9gf8df1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "cool",
+            "stable",
+            "sweet"
         ],
         [
             "I knew it. I've got the best mate EVER"
@@ -1426,7 +1743,10 @@
     "j9g8dbf1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "stable",
+            "cool",
+            "assertive"
         ],
         [
             "Thanks, honey. That was really cute even though it was kind of lame..."
@@ -1435,7 +1755,10 @@
     "jx9g8df1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "silly",
+            "sweet",
+            "cool"
         ],
         [
             "Don't worry! You'll get better one day."
@@ -1444,7 +1767,9 @@
     "j9g8dvf1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "neurotic",
+            "introspective"
         ],
         [
             "Thank you! I really appreciate it...",
@@ -1456,7 +1781,10 @@
     "j9g8d4f1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "cool",
+            "silly",
+            "unlawful"
         ],
         [
             "You really suck at that, you know? Hah."
@@ -1465,20 +1793,25 @@
     "j9g28df1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "brooding",
+            "unlawful"
         ],
         [
-            "...Shut up."
+            "... Oh, shut up."
         ]
     ],
     "j9g8ddf1": [
         [
             "Any",
-            "mate"
+            "mate",
+            "assertive",
+            "brooding",
+            "neurotic"
         ],
         [
             "About that, I'm sorry for being so..",
-            "...Cold?-- Around you. I've been trying to get better with that sort of thing.",
+            "...Cold? -- Around you. I've been trying to get better with that sort of thing.",
             "I guess I just get nervous."
         ]
     ]
