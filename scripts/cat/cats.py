@@ -144,7 +144,7 @@ class Cat():
             self.dead = True
             self.outside = False
             self.exiled = False
-            self.inheritance = None # This should never be used, but just for safty
+            self.inheritance = None # This should never be used, but just for safety
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
@@ -523,7 +523,7 @@ class Cat():
             
             grief_type = None
             if very_high_values:
-                # major grief eligable cats. 
+                # major grief eligible cats. 
                 
                 major_chance = 3
                 if cat.personality.stability < 8:
@@ -568,10 +568,10 @@ class Cat():
                     cat.get_ill("grief stricken", event_triggered=True, severity="major")
             elif grief_type == "minor":
                 
-                # These minor grief message will be applied as throughts. 
+                # These minor grief message will be applied as thoughts. 
                 minor_grief_messages = (
                         "Told a fond story at r_c's vigil",
-                        "Bargins with StarClan, begging them to send r_c back",
+                        "Bargains with StarClan, begging them to send r_c back",
                         "Sat all night at r_c's vigil",
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
                         "Will never forget r_c",
@@ -740,7 +740,7 @@ class Cat():
         """Updates trait and skill upon ceremony"""  
 
         if self.status in ["warrior", "medicine cat", "mediator"]:
-            # Give a couple doses of mentor inflence:
+            # Give a couple doses of mentor influence:
             if mentor:
                 max = randint(0, 2)
                 i = 0
@@ -2401,14 +2401,14 @@ class Cat():
         elif compat is False:
             chance -= 5
 
-        # Cat's compatablity with mediator also has an effect on success chance.
+        # Cat's compatibility with mediator also has an effect on success chance.
         for cat in [cat1, cat2]:
             if get_personality_compatibility(cat, mediator) is True:
                 chance += 5
             elif get_personality_compatibility(cat, mediator) is False:
                 chance -= 5
 
-        # Determine chance to fail, turing sabotage into mediate and mediate into sabotage
+        # Determine chance to fail, turning sabotage into mediate and mediate into sabotage
         if not int(random() * chance):
             apply_bonus = False
             if sabotage:
@@ -2457,7 +2457,7 @@ class Cat():
         # Determine the number of positive traits to effect, and choose the traits
         chosen_pos = sample(pos_traits, k=randint(2, len(pos_traits)))
 
-        # Determine netative trains effected
+        # Determine negative trains effected
         neg_traits = sample(neg_traits, k=randint(1, 2))
 
         if compat is True:
@@ -2620,7 +2620,7 @@ class Cat():
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
         self.faded = True
 
-        # Sillotette sprite
+        # Silhouette sprite
         if self.age == 'newborn':
             file_name = "faded_newborn"
         elif self.age == 'kitten':
@@ -3104,7 +3104,7 @@ class Personality():
             self.trait = "strange"
             
     def facet_wobble(self, max=5):
-        """Makes a small adjusment to all the facets, and redetermines trait if needed."""        
+        """Makes a small adjustment to all the facets, and redetermines trait if needed."""        
         self.lawfulness += randint(-max, max)
         self.stability += randint(-max, max)
         self.aggression += randint(-max, max)

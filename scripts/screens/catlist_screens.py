@@ -700,7 +700,7 @@ class StarClanScreen(Screens):
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.sprite,
                                    cat.ID,
-                                   starting_height=1, manager=MANAGER))
+                                   starting_height=0, manager=MANAGER))
 
                 name = str(cat.name)
                 if len(name) >= 13:

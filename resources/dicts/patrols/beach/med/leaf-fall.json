@@ -1662,7 +1662,7 @@
         "chance_of_success": 70,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "Not one of the plants that turn red before {PRONOUN/p_l/subject} {VERB/p_l/die/dies} off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on.",
+            "unscathed_common": "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on.",
             "unscathed_rare": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple."
         },
@@ -1703,7 +1703,7 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Not one of the plants that turn red before {PRONOUN/p_l/subject} {VERB/p_l/die/dies} off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. app1 is worried about the herb stores when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp, and p_l reassures {PRONOUN/p_l/object} that c_n will be alright.",
+            "unscathed_common": "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. app1 is worried about the herb stores when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp, and p_l reassures {PRONOUN/p_l/object} that c_n will be alright.",
             "unscathed_rare": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
         },
@@ -1739,7 +1739,7 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "Not one of the plants that turn red before {PRONOUN/p_l/subject} {VERB/p_l/die/dies} off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while {PRONOUN/p_l/subject} can still find it.",
+            "unscathed_common": "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while {PRONOUN/p_l/subject} can still find it.",
             "unscathed_rare": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
             "stat_skill": "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
         },
