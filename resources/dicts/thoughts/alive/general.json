@@ -729,7 +729,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "backstory_constraint": {
+        "main_backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
         },
         "relationship_constraint": [
@@ -749,7 +749,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "backstory_constraint": {
+        "main_backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
         },
         "random_status_constraint": [
@@ -826,7 +826,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "backstory_constraint": {
+        "main_backstory_constraint": {
             "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
         }
     },
