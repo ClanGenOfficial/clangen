@@ -21,7 +21,7 @@
         "success_text": {
             "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
             "unscathed_rare": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
-            "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+            "stat_skill": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
         },
         "fail_text": {
             "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
@@ -48,7 +48,7 @@
             "apprentice",
             "injury",
             "poisoned",
-            "death_app1",
+            "death",
             "no_herbs0"
         ],
         "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
@@ -91,7 +91,7 @@
         "success_text": {
             "unscathed_common": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
             "unscathed_rare": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
-            "stat_skill": "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+            "stat_skill": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
         },
         "fail_text": {
             "unscathed_common": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
@@ -680,7 +680,7 @@
             "unscathed_common": "p_l listens sympathetically, gently nodding as app1 pours out {PRONOUN/app1/poss} troubles, until the apprentice eventually runs out of words. {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been dealing with a lot, apparently, and while p_l isn't too sure what to do, {PRONOUN/p_l/subject} can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
             "unscathed_rare": "That... honestly sounds like it could be a vision. That's unusual - not to say that it's been particularly fun for app1 to deal with everything, p_l hastens to add, but it's not a bad thing. Those connected to StarClan in such ways are rare, and have been critical for protecting c_n in the past.",
             "stat_skill": "s_c listens to app1 talk with a deep sense of deja vu, in addition to {PRONOUN/s_c/poss} shock. This sounds like the trouble {PRONOUN/s_c/subject} had when {PRONOUN/s_c/subject} {VERB/s_c/were/was} young, plagued by contact with StarClan regardless of whether {PRONOUN/s_c/subject} wanted it or not, and {PRONOUN/s_c/subject} immediately {VERB/s_c/take/takes} app1 aside to give them {PRONOUN/s_c/poss} full attention and support.",
-            "stat_trait": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but {PRONOUN/s_c/subject} can't believe their Clanmate has been going through so much without anybody noticing. Wrapping {PRONOUN/s_c/poss} tail around app1's shoulders, {PRONOUN/s_c/subject} tell app1 this will all be alright - {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} going to make sure that app1 doesn't have to shoulder this burden alone."
+            "stat_trait": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but {PRONOUN/s_c/subject} can't believe their Clanmate has been going through so much without anybody noticing. Wrapping {PRONOUN/s_c/poss} tail around app1's shoulders, {PRONOUN/s_c/subject} tell app1 this will all be alright - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to make sure that app1 doesn't have to shoulder this burden alone."
         },
         "fail_text": {
             "unscathed_common": "app1 isn't a kit anymore, and though p_l tries to be gentle about it, {PRONOUN/p_l/subject} {VERB/p_l/make/makes} it clear that it's app1's responsibility to make sure {PRONOUN/app1/subject}{VERB/app1/'re/'s} well rested and attentive for {PRONOUN/app1/poss} training.",
