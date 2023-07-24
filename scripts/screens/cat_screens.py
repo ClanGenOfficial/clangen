@@ -1401,8 +1401,24 @@ class ProfileScreen(Screens):
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
                             life_text = "lost {PRONOUN/m_c/poss} final life"
+                        elif death_number == 1:
+                            life_text = "lost all of {PRONOUN/m_c/poss} lives"
                         else:
-                            life_text = "lost {PRONOUN/m_c/poss} final lives"
+                            life_text = "lost the rest of {PRONOUN/m_c/poss} lives"
+                    else:
+                        life_text = "lost a life"
+                elif death_number > 1:
+                    print("Non leader")
+                    #for retired leaders
+                    if index == death_number - 1 and self.the_cat.dead:
+                        life_text = "lost {PRONOUN/m_c/poss} last remaining life"
+                        # added code
+                        print(text)
+                        if "This cat was" in text:
+                            print("test")
+                            text = text.replace("This cat was", "{VERB/m_c/were/was}")
+                        else:
+                            text = text[0].lower() + text[1:]
                     else:
                         life_text = "lost a life"
                 else:
@@ -1427,7 +1443,11 @@ class ProfileScreen(Screens):
                 else:
                     deaths = all_deaths[0]
 
-                text = str(self.the_cat.name) + " " + deaths + "."
+                if not deaths.endswith('.'):
+                    deaths += "."
+
+                text = str(self.the_cat.name) + " " + deaths
+
             else:
                 text = all_deaths[0]
 
