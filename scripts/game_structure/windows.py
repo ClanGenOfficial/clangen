@@ -516,6 +516,12 @@ class KillCat(UIWindow):
         game.switches['window_open'] = True
         self.the_cat = cat
         self.take_all = False
+        death_history = History.get_death_or_scars(self.the_cat, death=True)
+        if death_history:
+            death_number = len(death_history)
+        cat_dict = {
+            "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
+        }
         self.back_button = UIImageButton(
             scale(pygame.Rect((840, 10), (44, 44))),
             "",
@@ -576,6 +582,30 @@ class KillCat(UIWindow):
                                                                       manager=MANAGER,
                                                                       container=self)
 
+        elif death_number > 1:
+            self.prompt='This cat died when {PRONOUN/m_c/subject}...'
+            self.initial='{VERB/m_c/were/was} killed by something unknowable to even StarClan'
+            self.prompt_processed = process_text(self.prompt, cat_dict)
+            self.initial_processed = process_text(self.initial, cat_dict)
+            self.all_lives_check.hide()
+            self.one_life_check.hide()
+
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt_processed,
+                                                                  scale(pygame.Rect((50, 60), (900, 80))),
+                                                                  object_id="#text_box_30_horizleft",
+                                                                  manager=MANAGER,
+                                                                  container=self)
+                                                                  
+            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 110), (800, 150))),
+                                                                      initial_text=self.initial_processed,
+                                                                      object_id="text_entry_line",
+                                                                      manager=MANAGER,
+                                                                      container=self)
+
+            self.done_button = UIImageButton(scale(pygame.Rect((373, 305), (154, 60))), "",
+                                             object_id="#done_button",
+                                             manager=MANAGER,
+                                             container=self)
         else:
             self.initial = 'It was the will of something even mightier than StarClan that this cat died.'
             self.prompt = None
