@@ -3325,10 +3325,32 @@ class MediationScreen(Screens):
         # RELATION BARS
 
         if other_cat:
-
             name = str(cat.name)
-            if len(name) > 13:
-                name = name[:10] + ".."
+            font_size = 22 if game.settings['fullscreen'] else 11 
+            font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
+
+            # Add dynamic name lengths by checking the actual width of the text
+            length_limit = 136 if game.settings['fullscreen'] else 68
+            total_width = 0
+            short_name = ''
+            for index, character in enumerate(name):
+                char_width = font.size(character)[0]
+                ellipsis_width = font.size("...")[0] 
+
+                # Check if the current character is the last one and its width is less than or equal to ellipsis_width
+                if index == len(name) - 1 and char_width <= ellipsis_width:
+                    short_name += character
+                else:
+                    total_width += char_width
+                    if total_width + ellipsis_width > length_limit:
+                        break
+                    short_name += character
+
+            # If the name was truncated, add '...'
+            if len(short_name) < len(name):
+                short_name += '...'
+                name = short_name
+
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x + 40, y + 320),
                                   (320, -1))),
