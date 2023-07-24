@@ -518,9 +518,6 @@ class KillCat(UIWindow):
         game.switches['window_open'] = True
         self.the_cat = cat
         self.take_all = False
-        death_history = History.get_death_or_scars(self.the_cat, death=True)
-        if death_history:
-            death_number = len(death_history)
         cat_dict = {
             "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
         }
@@ -561,10 +558,10 @@ class KillCat(UIWindow):
                                              object_id="#done_button",
                                              manager=MANAGER,
                                              container=self)
-            self.prompt='This cat died when {PRONOUN/m_c/subject}...'
-            self.initial='{VERB/m_c/were/was} killed by something unknowable to even StarClan'
-            self.prompt_processed = process_text(self.prompt, cat_dict)
-            self.initial_processed = process_text(self.initial, cat_dict)
+            
+            
+            self.prompt= process_text('This cat died when {PRONOUN/m_c/subject}...', cat_dict)
+            self.initial= process_text('{VERB/m_c/were/was} killed by something unknowable to even StarClan', cat_dict)
 
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox('Take all the leader\'s lives',
@@ -572,34 +569,34 @@ class KillCat(UIWindow):
                                                            object_id="#text_box_30_horizleft",
                                                            manager=MANAGER,
                                                            container=self)
-            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt_processed,
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
                                                                   scale(pygame.Rect((50, 60), (900, 80))),
                                                                   object_id="#text_box_30_horizleft",
                                                                   manager=MANAGER,
                                                                   container=self)
 
             self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 130), (800, 150))),
-                                                                      initial_text=self.initial_processed,
+                                                                      initial_text=self.initial,
                                                                       object_id="text_entry_line",
                                                                       manager=MANAGER,
                                                                       container=self)
 
-        elif death_number > 1:
-            self.prompt='This cat died when {PRONOUN/m_c/subject}...'
-            self.initial='{VERB/m_c/were/was} killed by something unknowable to even StarClan'
-            self.prompt_processed = process_text(self.prompt, cat_dict)
-            self.initial_processed = process_text(self.initial, cat_dict)
+        elif History.get_death_or_scars(self.the_cat, death=True):
+            # This should only occur for retired leaders. 
+            
+            self.prompt= process_text('This cat died when {PRONOUN/m_c/subject}...', cat_dict)
+            self.initial= process_text('{VERB/m_c/were/was} killed by something unknowable to even StarClan', cat_dict)
             self.all_lives_check.hide()
             self.one_life_check.hide()
 
-            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt_processed,
+            self.beginning_prompt = pygame_gui.elements.UITextBox(self.prompt,
                                                                   scale(pygame.Rect((50, 60), (900, 80))),
                                                                   object_id="#text_box_30_horizleft",
                                                                   manager=MANAGER,
                                                                   container=self)
                                                                   
-            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 110), (800, 150))),
-                                                                      initial_text=self.initial_processed,
+            self.death_entry_box = pygame_gui.elements.UITextEntryBox(scale(pygame.Rect((50, 130), (800, 150))),
+                                                                      initial_text=self.initial,
                                                                       object_id="text_entry_line",
                                                                       manager=MANAGER,
                                                                       container=self)
@@ -631,19 +628,12 @@ class KillCat(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
-                death_text = self.death_entry_box.get_text()
+                death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _]+", "", self.death_entry_box.get_text())
                 if self.the_cat.status == 'leader':
-                    if death_text.startswith('was'):
-                        death_text = '{VERB/m_c/were/was}' + death_text[3:]
-                    elif death_text.startswith('were'):
-                        death_text = '{VERB/m_c/were/was}' + death_text[4:]
-                    death_message = sub(r"[^A-Za-z0-9<->/.{}()*'&#!?,| ]+_", "", death_text)
                     if self.take_all:
-                        game.clan.leader_lives -= 10
+                        game.clan.leader_lives = 0
                     else:
                         game.clan.leader_lives -= 1
-                else:
-                    death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _]+", "", self.death_entry_box.get_text())
 
                 self.the_cat.die()
                 self.history.add_death(self.the_cat, death_message)
