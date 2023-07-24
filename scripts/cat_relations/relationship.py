@@ -433,16 +433,22 @@ class Relationship():
     #                            complex value addition                            #
     # ---------------------------------------------------------------------------- #
 
-    # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
+    # How increasing/decreasing one state influences another directly (an increase of one state doesn't trigger a chain reaction)
     # increase romantic_love -> decreases: dislike | increases: like, comfortable
+    # decrease romantic_love -> decreases: comfortable | increases: -
     # increase like -> decreases: dislike | increases: comfortable
+    # decrease like -> increases: dislike | decreases: comfortable
     # increase dislike -> decreases: romantic_love, like | increases: -
-    # increase admiration -> decreases: - | increases: -
+    # decrease dislike -> increases: like, comfortable | decreases: -
+    # increase admiration -> decreases: - | increases: trust
+    # decrease admiration -> increases: dislike | decreases: trust
     # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
+    # decrease comfortable -> increases: jealousy, dislike | decreases: trust, like
     # increase jealousy -> decreases: - | increases: dislike
-    # increase trust -> decreases: dislike | increases: -
-
-    # !! DECREASING ONE STATE DOESN'T INFLUENCE OTHERS !!
+    # decrease jealousy -> increases: comfortable | decreases: -
+    # increase trust -> decreases: dislike | increases: comfortable
+    # decrease trust -> increases: dislike | decreases: comfortable
+    
 
     def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
