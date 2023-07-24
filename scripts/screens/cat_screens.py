@@ -1408,14 +1408,11 @@ class ProfileScreen(Screens):
                     else:
                         life_text = "lost a life"
                 elif death_number > 1:
-                    print("Non leader")
                     #for retired leaders
                     if index == death_number - 1 and self.the_cat.dead:
                         life_text = "lost {PRONOUN/m_c/poss} last remaining life"
                         # added code
-                        print(text)
                         if "This cat was" in text:
-                            print("test")
                             text = text.replace("This cat was", "{VERB/m_c/were/was}")
                         else:
                             text = text[0].lower() + text[1:]
