@@ -487,10 +487,6 @@ class Cat():
             if not isinstance(to_self, Relationship):
                 continue
             
-            
-            # FIRST, MAJOR GRIEF, which results in it's own message and the 
-            # condition. It also has a chance to "fail" to minor grief. 
-            
             family_relation = self.familial_grief(living_cat=cat)
             very_high_values = []
             high_values = []
@@ -502,7 +498,7 @@ class Cat():
             
             if to_self.platonic_like > 50:
                 very_high_values.append("platonic")
-            if to_self.platonic_like > 40:
+            if to_self.platonic_like > 30:
                 high_values.append("platonic")
             
             if to_self.admiration > 70:
@@ -526,7 +522,7 @@ class Cat():
                 # major grief eligable cats. 
                 
                 major_chance = 3
-                if cat.personality.stability < 8:
+                if cat.personality.stability < 5:
                     major_chance -= 1
                 
                 # decrease major grief chance if grave herbs are used
@@ -540,6 +536,7 @@ class Cat():
                 if body_treated:
                     major_chance -= 1
                 
+            
             # If major_chance is not 0, there is a chance for major grief
             grief_type = None
             if major_chance and not int(random() * major_chance):
@@ -574,15 +571,20 @@ class Cat():
                 
                 # These minor grief message will be applied as throughts. 
                 minor_grief_messages = (
-                        "Told a fond story at r_c's vigil",
-                        "Bargins with StarClan, begging them to send r_c back",
-                        "Sat all night at r_c's vigil",
+                            "Told a fond story at r_c's vigil",
+                            "Bargins with StarClan, begging them to send r_c back",
+                            "Sat all night at r_c's vigil",
+                            "Will never forget r_c",
+                            "Prays that r_c is safe in StarClan",
+                            "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                            "Is mourning r_c"
+                        )
+                
+                if body: 
+                    minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
-                        "Will never forget r_c",
-                        "Prays that r_c is safe in StarClan",
-                        "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                        "Is mourning r_c"
                     )
+
                 
                 text = choice(minor_grief_messages)
                 
