@@ -405,8 +405,26 @@
     "Zahra", "Zambezi", "Zambia", "Zaniah", "Zari", "Zariah", "Zazu", "Zebra", "Zelda", "Zell", 
     "Zendaya", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva"
     ],
-	"animal_suffixes": [],
-	"animal_prefixes": [],
+	"animal_suffixes": [
+		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
+    "jay", "kestrel", "kite", "lamb", "leopard", "lion", "minnow", "moth", "mouse", "newt", "ram", "raven", "roach", "scorpion", "sheep", "snake", "spider", 
+    "squid", "swan", "thrush", "tiger", "turtle"
+	],
+	"animal_prefixes": [
+		"Addax", "Adder", "Albatross", "Alligator", "Alpaca", "Ant", "Antelope", "Aphid", "Avocet", "Axolotl", "Badger", "Barracuda", "Bass", "Bat", "Bear", "Beaver", 
+    "Bee", "Beetle", "Beluga", "Bird", "Bison", "Bittern", "Boar", "Buck", "Buffalo", "Bug", "Butterfly", "Camel", "Canary", "Caracal", "Caribou", "Carp", 
+    "Caterpillar", "Chaffinch", "Chamois", "Cheetah", "Chick", "Cicada", "Civet", "Clam", "Coati", "Cobra", "Cod", "Condor", "Coral", "Cormorant", "Cougar", "Cow", 
+    "Coyote", "Crab", "Crane", "Crocodile", "Crow", "Curlew", "Cygnet", "Deer", "Dingo", "Doe", "Dog", "Dolphin", "Dove", "Duck", "Eagle", "Egret", "Elk", "Ermine", 
+    "Ewe", "Falcon", "Fawn", "Fennec", "Ferret", "Finch", "Fish", "Fox", "Frog", "Gander", "Gannet", "Gar", "Gazelle", "Goat", "Goose", "Gosling", "Grackle", "Grebe", 
+    "Grouse", "Gull", "Guppy", "Hare", "Hawk", "Heron", "Hornet", "Horse", "Hound", "Ibis", "Jackal", "Jackdaw", "Jackrabbit", "Jay", "Jellyfish", "Jerboa", "Junco", 
+    "Kestrel", "Kingfisher", "Kite", "Lamb", "Lark", "Leopard", "Lion", "Lizard", "Loach", "Locust", "Lynx", "Magpie", "Mamba", "Mantis", "Marlin", "Meerkat", "Midge", 
+    "Mink", "Minnow", "Mite", "Mole", "Moorhen", "Moose", "Mosquito", "Moth", "Mouse", "Newt", "Nightingale", "Octopus", "Oriole", "Oryx", "Osprey", "Otter", "Owl", 
+    "Panther", "Partridge", "Pelican", "Perch", "Pheasant", "Pigeon", "Pike", "Pipit", "Pronghorn", "Python", "Quail", "Rabbit", "Raccoon", "Ram", "Rat", "Raven", 
+    "Roach", "Robin", "Sable", "Salamander", "Salmon", "Sardine", "Scorpion", "Seabass", "Seagull", "Serpent", "Shark", "Sheep", "Shrew", "Shrike", "Skink", "Skunk", 
+    "Slug", "Snail", "Snake", "Sparrow", "Spider", "Spoonbill", "Squid", "Squirrel", "Stag", "Starling", "Stoat", "Stork", "Swallow", "Swan", "Tadpole", "Taipan", 
+    "Tarantula", "Tiger", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", "Vulture", "Warbler", "Wasp", "Weasel", "Weevil", "Whale", "Wolf", "Wolverine", "Worm", 
+    "Wren"
+	],
 	"inappropriate_names": [
 		"Wetback", "Yellowface", "Redface", "Blackface", "Brownface", "Pancakeface", "Yellowbone"
 	]
