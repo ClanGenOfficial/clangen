@@ -966,7 +966,7 @@ def event_text_adjust(Cat,
 
     text = text.replace("c_n", clan_name + "Clan")
 
-    if murder_reveal:
+    if murder_reveal and victim:
         victim_cat = Cat.fetch_cat(victim)
         text = text.replace("mur_c", str(victim_cat.name))
 

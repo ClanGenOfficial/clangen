@@ -709,6 +709,11 @@ class Patrol():
             if "no_leader" in patrol.tags:
                 if "leader" in self.patrol_statuses:
                     continue
+                    
+            # makes sure the deputy isn't present if they're not supposed to be
+            if "no_deputy" in patrol.tags:
+                if "deputy" in self.patrol_statuses:
+                    continue
 
             # cruel season tag check
             if "cruel_season" in patrol.tags:

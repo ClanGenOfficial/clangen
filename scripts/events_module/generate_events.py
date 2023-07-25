@@ -388,7 +388,7 @@ class GenerateEvents:
                     continue
                 if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and other_cat.age in ["senior", "kitten", "newborn"]:
                     continue
                 if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
