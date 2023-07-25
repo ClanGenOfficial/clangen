@@ -2881,6 +2881,11 @@ class RoleScreen(Screens):
                      f"the Clan. Rather, mediators are charged with handling disagreements between " \
                      f"Clanmates and disputes between Clans. Some mediators train as apprentices to serve their Clan, " \
                      f"while others may choose to become mediators later in life. "
+        elif self.the_cat.status == "queen":
+            output = f"{self.the_cat.name} is a <b>queen</b>. Permanent queens dedicate their lives to " \
+                    f"caring for and nurturing the kits of the Clan, ensuring their safety and early education. " \
+                    f"While most queens return to their warrior duties once their kits grow, permanent queens remain " \
+                    f"in the nursery, offering guidance to new parents and providing a steady presence for the Clan's young. "
         elif self.the_cat.status == "elder":
             output = f"{self.the_cat.name} is an <b>elder</b>. They have spent many moons serving their Clan, " \
                      f"and have earned " \
@@ -2907,6 +2912,12 @@ class RoleScreen(Screens):
                      f"Mediator apprentices are often chosen for their quick thinking and steady personality. " \
                      f"Apprentices take the suffix \"paw\", " \
                      f"to represent the path their paws take towards adulthood. "
+        elif self.the_cat.status == "queen's apprentice":
+            output = f"{self.the_cat.name} is a <b>queen's apprentice</b>. A queen's apprentice is trained under the guidance " \
+                    f"of a permanent queen to learn the intricacies of caring for and nurturing kits. These apprentices " \
+                    f"learn about the basic needs of kits, early Clan teachings, and the importance of the nursery environment. " \
+                    f"They assist in keeping the nursery safe and comfortable, mediating between kits, and ensuring their " \
+                    f"general wellbeing. "
         elif self.the_cat.status == "kitten":
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
