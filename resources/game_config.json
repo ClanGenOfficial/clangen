@@ -280,7 +280,7 @@
 		}
 	},
 	"lost_cat": {
-		"rejoin_chance": 20
+		"rejoin_chance": 10
 	},
 	"cat_ages": {
 		"newborn": [0, 0],
@@ -296,7 +296,7 @@
 		]
 	},
     "cat_sprites": {
-        "sick_sprites": true,
+        "sick_sprites": false,
         "comment": "Set this to false to disable sick sprites."
     },
 	"patrol_generation": {
@@ -335,7 +335,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
@@ -362,7 +362,7 @@
 	"fun": {
 		"april_fools": false,
 		"all_cats_are_newborn": false,
-		"newborns_can_roam": false,
+		"newborns_can_roam": true,
 		"newborns_can_patrol": false
 	},
 	"theme": {
