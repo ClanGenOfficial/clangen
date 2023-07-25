@@ -426,7 +426,6 @@
             "Is craving the taste of frog",
             "Is craving the taste of shrew",
             "Is wondering if {PRONOUN/m_c/subject} would be a good swimmer",
-            "Is thinking about how awful kittypet food must taste",
             "Is feeling underappreciated...",
             "Is staring off into space",
             "Is picking the burrs from {PRONOUN/m_c/poss} pelt",
@@ -444,6 +443,56 @@
             "leader",
             "elder"
         ]
+    },
+    {
+        "id": "gen_not_kittypet",
+        "thoughts": [
+            "Is thinking about how awful kittypet food must taste",
+            "Is wondering what living with Twolegs must be like",
+            "Saw some kittypets playing with colorful mossballs",
+            "Saw a kittypet sitting calmly next to a dog!",
+            "Almost got lost near some Twoleg nests",
+            "Saw some wandering Twolegs today",
+            "Saw a Twoleg kit playing with a dog",
+            "Saw a Twoleg kit playing with a kittypet",
+            "Saw a kittypet rolling around a Twoleg garden",
+            "Is thinking about a strange Twoleg object they saw recently",
+            "Is wondering how the inside of a Twoleg den looks like"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "main_backstory_constraint": [
+            "clan_founder", "clanborn", "halfclan1", "halfclan2", "outsider_roots1", "outsider_roots2","loner1", "loner2", "rogue1", "rogue2", "rogue3", "abandoned1", "abandoned2", "abandoned3", "abandoned4",
+            "otherclan1", "otherclan2", "otherclan3", "otherclan4","disgraced1", "disgraced2", "disgraced3", "retired_leader", "medicine_cat", "ostracized_warrior", "refugee1", "refugee2", "refugee4", "refugee5",
+            "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor4","wandering_healer1", "wandering_healer2", "guided2", "guided3", "guided4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+        ]
+    },
+    {
+        "id": "gen_wandering_healer",
+        "thoughts": [
+            "Is wondering how the cats {PRONOUN/m_c/subject} helped in the past are doing"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "main_backstory_constraint": ["wandering_healer1", "wandering_healer2"]
     },
     {
         "id": "gen_to_alive_gen",
@@ -465,6 +514,81 @@
         ],
         "random_status_constraint":[
             "any"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_tragedy_survivor_to_alive_gen",
+        "thoughts": [
+            "Leaves a conversation after it reminds {PRONOUN/m_c/object} of things {PRONOUN/m_c/subject}'d rather forget",
+            "A cat says something that reminds {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} lost home",
+            "Spent last night stressing over possible disasters",
+            "Hisses at r_c when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} {PRONOUN/m_c/object} about where {PRONOUN/m_c/subject} used to live",
+            "Is ignoring the gossip about {PRONOUN/m_c/poss} past"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
+        "random_status_constraint":[
+            "any"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_tragedy_survivor_to_alive_leader",
+        "thoughts": [
+            "Is wondering how well the Clan would fare a distater under r_c's leadership"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "elder"
+        ],
+        "main_backstory_constraint": ["refugee5", "tragedy_survivor1", "tragedy_survivor2", "tragedy_survivor3", "tragedy_survivor4"],
+        "random_status_constraint":[
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_refugee_to_alive_leader",
+        "thoughts": [
+            "Is observing r_c's actions closely",
+            "Is nervous about some of r_c's choices recently"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "elder"
+        ],
+        "main_backstory_constraint": ["refugee1", "refugee4"],
+        "random_status_constraint":[
+            "leader"
         ],
         "random_living_status": [
             "living"
@@ -729,9 +853,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        },
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
         "relationship_constraint": [
             "app/mentor"
         ]
@@ -742,16 +864,16 @@
             "Boasts to the other apprentices about how {PRONOUN/m_c/subject} didn't need anyone before",
             "Offers to show r_c the ways of a rogue",
             "Doesn't understand why r_c brings {PRONOUN/r_c/poss} prey to the older cats before eating",
-            "Finds it hard to befriend {PRONOUN/m_c/poss} new denmates"
+            "Finds it hard to befriend {PRONOUN/m_c/poss} new denmates",
+            "Slightly embellishes a story about {PRONOUN/m_c/poss} rogue days to other apprentices",
+            "Is ignoring the gossip about {PRONOUN/m_c/poss} past"
         ],
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        },
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
         "random_status_constraint": [
             "apprentice"
         ]
@@ -818,7 +940,6 @@
             "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
             "Brags about all the prey {PRONOUN/m_c/subject} caught when {PRONOUN/m_c/subject} {VERB/m_c/were/was} a rogue",
             "Can't help but be intrigued by the Warrior Code",
-            "Slightly embellishes a story about {PRONOUN/m_c/poss} rogue days to other apprentices",
             "Is trying to memorize the Warrior Code"
         ],
         "main_status_constraint": [
@@ -826,9 +947,7 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        }
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     {
         "id": "shameless_apprentice",
