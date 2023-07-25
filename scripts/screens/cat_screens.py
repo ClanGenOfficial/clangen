@@ -1196,11 +1196,11 @@ class ProfileScreen(Screens):
                 if i != 0:
                     sentence_beginners = [
                         "This cat",
-                        "Then {PRONOUN/m_c/subject} were",
-                        "{PRONOUN/m_c/subject/CAP} were also",
-                        "Also, {PRONOUN/m_c/subject} were",
+                        "Then {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} also",
+                        "Also, {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
                         "As well as",
-                        "{PRONOUN/m_c/subject/CAP} were then"
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} then"
                     ]
                     chosen = choice(sentence_beginners)
                     if chosen == 'This cat':
