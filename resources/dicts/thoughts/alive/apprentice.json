@@ -196,7 +196,7 @@
         "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     {
-        "id": "thoughtful_apprentice",
+        "id": "thoughtful_warrior_apprentice",
         "thoughts": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
             "Wants to gather moss for the elder's den",
@@ -378,7 +378,7 @@
         ]
     }, 
     {
-        "id": "childish_apprentice",
+        "id": "childish_warrior_apprentice",
         "thoughts": [
             "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
             "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",
