@@ -35,7 +35,7 @@ class Scar_Events():
         "BRIDGE"
     ]
     leg_scars = [
-        "NOPAW", "TOETRAP", "MANLEG"
+        "NOPAW", "TOETRAP", "MANLEG",
     ]
     tail_scars = [
         "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"
@@ -103,11 +103,11 @@ class Scar_Events():
             return None, None
         
         moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
-        chance = max(4 - moons_with, 1)
+        chance = max(5 - moons_with, 1)
         
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
-            chance += 1
+            chance += 2
         
         if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
             
@@ -139,9 +139,19 @@ class Scar_Events():
                 scar_pool = [i for i in scar_pool if i not in ['LEFTEAR']]
             if 'NORIGHT' in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ['RIGHTEAR']]
+                
+            # Extra check for disabling scars.
+            if int(random.random() * 3):
+                condition_scars = {
+                    "LEGBITE", "THREE", "NOPAW", "TOETRAP", "NOTAIL", "HALFTAIL", "LEFTEAR", "RIGHTEAR",
+                    "MANLEG", "BRIGHTHEART", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "LEFTBLIND",
+                    "RIGHTBLIND", "BOTHBLIND", "RATBITE"
+                }
+                
+                scar_pool = list(set(scar_pool).difference(condition_scars))
+                
+                
             
-            
-            scar_pool = [i for i in scar_pool]
             # If there are not new scars to give them, return None, None.
             if not scar_pool:
                 return None, None

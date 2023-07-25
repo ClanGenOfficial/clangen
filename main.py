@@ -195,9 +195,9 @@ while True:
     time_delta = clock.tick(game.switches['fps']) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
-            screen.fill((57, 50, 36))
+            screen.fill(game.config["theme"]["dark_mode_background"])
         else:
-            screen.fill((206, 194, 168))
+            screen.fill(game.config["theme"]["light_mode_background"])
 
     if game.settings['custom cursor']:
         if pygame.mouse.get_cursor() == disabled_cursor:
