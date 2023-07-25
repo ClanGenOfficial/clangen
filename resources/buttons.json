@@ -3670,6 +3670,29 @@
             }
         }
     },
+    "#queen":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/queen.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/queen_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/queen_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/queen.png"
+            }
+        }
+    },
   "#delete_it_button":
     {
         "prototype": "#image_button",

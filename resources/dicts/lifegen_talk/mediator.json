@@ -188,5 +188,67 @@
             "Remember, your role in the clan is vital. Your words are a guiding light for us all.",
             "No matter how old you are, there's always room to learn and grow."
         ]
+    ],
+    "mediator_30": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "What you've done... it's grave. But talking can help us understand it better.",
+            "Perhaps you can help me understand why you made such a decision?",
+            "There's a darkness in your heart that needs addressing. Let's try to shed some light on it.",
+            "It's important to face our actions, no matter how painful they may be. Are you ready to face yours?",
+            "No judgement here. Just a space for you to express what led you to such a drastic action."
+        ]
+    ],
+    "mediator_31": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "This is a safe space. I want to help you navigate through the turmoil you must be experiencing.",
+            "Your actions may be unacceptable, but your feelings matter. Can you share them with me?",
+            "Can we try to uncover the sequence of events, the feelings, that led to this act?",
+            "It's a long path towards healing and understanding. Are you willing to walk it with me?",
+            "Despite the gravity of your actions, you're still a part of our Clan. It's my duty to help you."
+        ]
+    ],
+    "mediator_32": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "I'm here to help you through this, not to judge. Can we start by you telling me what happened?",
+            "It's important for us to understand what led you to this point. It's the only way we can start to heal.",
+            "There's a deep pain in your actions. Do you want to talk about it?",
+            "Even in the darkest times, we can find a way towards light. Let's work together to find your path.",
+            "What's done is done. Now, we focus on how you can make amends and heal."
+        ]
+    ],
+    "mediator_33": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "Your actions have caused harm, but it's never too late to start the journey towards healing.",
+            "Tell me about your feelings. How are you dealing with the aftermath of your actions?",
+            "Sharing can lighten the burden you're carrying. Whenever you're ready, I'm here to listen.",
+            "Let's work on understanding the root of your actions, so we can ensure this doesn't happen again.",
+            "We can't undo the past, but we can learn from it. Can you share your thoughts and feelings leading up to the incident?"
+        ]
+    ],
+
+    "medi2": [
+        [
+            "murder",
+            "Any"
+        ],
+        [
+            "I know that mistakes can happen, but it's crucial to take responsibility for our actions. Honesty and accountability are the foundations of trust within our community."
+        ]
     ]
 }
