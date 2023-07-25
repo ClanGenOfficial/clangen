@@ -691,6 +691,7 @@ class ProfileScreen(Screens):
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
                         check_cat.df == self.the_cat.df and not check_cat.faded:
                     next_cat = check_cat.ID
+                    break
 
                 elif int(next_cat) > 1:
                     break
