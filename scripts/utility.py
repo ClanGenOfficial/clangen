@@ -1206,6 +1206,38 @@ def adjust_patrol_text(text, patrol):
     return text
 
 
+def shorten_text_to_fit(name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"):
+    length_limit = length_limit//2 if not game.settings['fullscreen'] else length_limit
+    # Set the font size based on fullscreen settings if not provided
+    # Text box objects are named by their fullscreen text size so it's easier to do it this way
+    if font_size is None:
+        font_size = 30
+    font_size = font_size//2 if not game.settings['fullscreen'] else font_size
+    # Create the font object
+    font = pygame.font.Font(font_type, font_size)
+    
+    # Add dynamic name lengths by checking the actual width of the text
+    total_width = 0
+    short_name = ''
+    for index, character in enumerate(name):
+        char_width = font.size(character)[0]
+        ellipsis_width = font.size("...")[0]
+        
+        # Check if the current character is the last one and its width is less than or equal to ellipsis_width
+        if index == len(name) - 1 and char_width <= ellipsis_width:
+            short_name += character
+        else:
+            total_width += char_width
+            if total_width + ellipsis_width > length_limit:
+                break
+            short_name += character
+
+    # If the name was truncated, add '...'
+    if len(short_name) < len(name):
+        short_name += '...'
+
+    return short_name
+
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #
 # ---------------------------------------------------------------------------- #

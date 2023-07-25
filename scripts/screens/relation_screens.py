@@ -6,7 +6,7 @@ from scripts.cat_relations.inheritance import Inheritance
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
+from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions, shorten_text_to_fit
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
@@ -775,10 +775,10 @@ class FamilyTreeScreen(Screens):
                                                             cat_id=self.the_cat.ID,
                                                             manager=MANAGER)
         name = str(self.the_cat.name)
-        if len(name) >= 13:
-            short_name = name[0:10]
-            name = short_name + '...'
-        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {name}'s Lineage",
+        length_limit = 260
+        font_size = 22
+        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {short_name}'s Lineage",
                                                                               scale(
                                                                                   pygame.Rect((150, 1282), (300, 150))),
                                                                               object_id=get_text_box_theme(
@@ -798,29 +798,9 @@ class FamilyTreeScreen(Screens):
                                                                manager=MANAGER,
                                                                container=self.family_tree)
         name = str(self.the_cat.name)
-        font_size = 22 if game.settings['fullscreen'] else 11 
-        font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
-
-        # Add dynamic name lengths by checking the actual width of the text
-        length_limit = 114 if game.settings['fullscreen'] else 57
-        total_width = 0
-        short_name = ''
-        for index, character in enumerate(name):
-            char_width = font.size(character)[0]
-            ellipsis_width = font.size("...")[0] 
-
-            # Check if the current character is the last one and its width is less than or equal to ellipsis_width
-            if index == len(name) - 1 and char_width <= ellipsis_width:
-                short_name += character
-            else:
-                total_width += char_width
-                if total_width + ellipsis_width > length_limit:
-                    break
-                short_name += character
-
-        # If the name was truncated, add '...'
-        if len(short_name) < len(name):
-            short_name += '...'
+        length_limit = 114
+        font_size = 22
+        short_name = shorten_text_to_fit(name, length_limit, font_size)
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
 
@@ -2629,13 +2609,13 @@ class RelationshipScreen(Screens):
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
-        if len(name) >= 14:  # check name length
-            short_name = str(the_relationship.cat_to.name)[0:11]
-            name = short_name + '...'
-        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
+        length_limit = 210
+        font_size = 26
+        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(short_name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x, pos_y - 48),
-                                                                                         (204, 60))),
+                                                                                         (pos_x - 5, pos_y - 48),
+                                                                                         (215, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
@@ -3076,11 +3056,12 @@ class MediationScreen(Screens):
                     mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
-            if len(name) > 17:
-                name = name[:15] + "..."
+            length_limit = 240
+            font_size = 22
+            short_name = shorten_text_to_fit(name, length_limit, font_size)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x_value - 10, 480), (320, -1))),
-                name,
+                short_name,
                 object_id=get_text_box_theme())
 
             text = mediator.personality.trait + "\n" + mediator.experience_level
@@ -3200,11 +3181,12 @@ class MediationScreen(Screens):
                 cat.sprite, (200, 200)))
 
         name = str(cat.name)
-        if len(name) > 17:
-            name = name[:15] + "..."
+        length_limit = 250
+        font_size = 30
+        short_name = shorten_text_to_fit(name, length_limit, font_size)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x, y + 200), (400, 60))),
-            name,
+            short_name,
             object_id="#text_box_30_horizcenter")
 
         # Gender
@@ -3326,35 +3308,15 @@ class MediationScreen(Screens):
 
         if other_cat:
             name = str(cat.name)
-            font_size = 22 if game.settings['fullscreen'] else 11 
-            font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
+            length_limit = 136
+            font_size = 22
+            short_name = shorten_text_to_fit(name, length_limit, font_size)
 
-            # Add dynamic name lengths by checking the actual width of the text
-            length_limit = 136 if game.settings['fullscreen'] else 68
-            total_width = 0
-            short_name = ''
-            for index, character in enumerate(name):
-                char_width = font.size(character)[0]
-                ellipsis_width = font.size("...")[0] 
-
-                # Check if the current character is the last one and its width is less than or equal to ellipsis_width
-                if index == len(name) - 1 and char_width <= ellipsis_width:
-                    short_name += character
-                else:
-                    total_width += char_width
-                    if total_width + ellipsis_width > length_limit:
-                        break
-                    short_name += character
-
-            # If the name was truncated, add '...'
-            if len(short_name) < len(name):
-                short_name += '...'
-                name = short_name
 
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x + 40, y + 320),
                                   (320, -1))),
-                f"~~{name}'s feelings~~",
+                f"~~{short_name}'s feelings~~",
                 object_id="#text_box_22_horizcenter")
 
             if other_cat.ID in cat.relationships:

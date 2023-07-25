@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from ..utility import get_text_box_theme, update_sprite, scale
+from ..utility import get_text_box_theme, update_sprite, scale, shorten_text_to_fit
 
 
 class OutsideClanScreen(Screens):
@@ -312,31 +312,10 @@ class OutsideClanScreen(Screens):
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
 
-                font_size = 30 if game.settings['fullscreen'] else 15  # Update the font size as needed
-                font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
-
                 name = str(cat.name)
-                length_limit = 220 if game.settings['fullscreen'] else 110  # Update the length limit as needed
-
-                # Add dynamic name lengths by checking the actual width of the text
-                total_width = 0
-                short_name = ''
-                for index, character in enumerate(name):
-                    char_width = font.size(character)[0]
-                    ellipsis_width = font.size("...")[0]
-                        
-                    # Check if the current character is the last one and its width is less than or equal to ellipsis_width
-                    if index == len(name) - 1 and char_width <= ellipsis_width:
-                        short_name += character
-                    else:
-                        total_width += char_width
-                        if total_width + ellipsis_width > length_limit:
-                            break
-                        short_name += character
-
-                # If the name was truncated, add '...'
-                if len(short_name) < len(name):
-                    short_name += '...'
+                length_limit = 220
+                font_size = 30
+                short_name = shorten_text_to_fit(name, length_limit, font_size)
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
@@ -665,31 +644,10 @@ class UnknownResScreen(Screens):
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
 
-                font_size = 30 if game.settings['fullscreen'] else 15  # Update the font size as needed
-                font = pygame.font.Font("resources/fonts/NotoSans-Medium.ttf", font_size)  # None for default font
-
                 name = str(cat.name)
-                length_limit = 220 if game.settings['fullscreen'] else 110  # Update the length limit as needed
-
-                # Add dynamic name lengths by checking the actual width of the text
-                total_width = 0
-                short_name = ''
-                for index, character in enumerate(name):
-                    char_width = font.size(character)[0]
-                    ellipsis_width = font.size("...")[0]
-                        
-                    # Check if the current character is the last one and its width is less than or equal to ellipsis_width
-                    if index == len(name) - 1 and char_width <= ellipsis_width:
-                        short_name += character
-                    else:
-                        total_width += char_width
-                        if total_width + ellipsis_width > length_limit:
-                            break
-                        short_name += character
-
-                # If the name was truncated, add '...'
-                if len(short_name) < len(name):
-                    short_name += '...'
+                length_limit = 220
+                font_size = 30
+                short_name = shorten_text_to_fit(name, length_limit, font_size)
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240
