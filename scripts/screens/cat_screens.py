@@ -2924,14 +2924,14 @@ class RoleScreen(Screens):
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
                      f"Although they don't have any official duties in the Clan, they are expected to learn the " \
                      f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
-                     f"eat first. Kit take the suffix \"kit\"."
+                     f"eat first. Kits take the suffix \"kit\"."
         elif self.the_cat.status == "newborn":
             output = f"{self.the_cat.name} is a <b>newborn kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
                      f"Although they don't have any official duties in the Clan, they are expected to learn the " \
                      f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
-                     f"eat first. Kit take the suffix \"kit\"."
+                     f"eat first. Kits take the suffix \"kit\"."
         else:
             output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
 
