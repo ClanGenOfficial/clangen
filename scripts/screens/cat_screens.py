@@ -488,8 +488,7 @@ class ProfileScreen(Screens):
         if is_df_instructor:
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
-        # Write cat name
-        self.og_name = self.the_cat.name
+
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(
@@ -559,11 +558,10 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width * 7 / 15)
+            x_pos = 745 - name_text_size.width//2
         else:
             x_pos = 740 - name_text_size.width
-        # TODO: positioning is weird. closer to names on some, further on others
-        # this only happens on fullscreen :waaaaaaa:
+
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                         ((x_pos, 287), (56, 56))),
                                                                   "",
@@ -1108,7 +1106,7 @@ class ProfileScreen(Screens):
             if app_history:
                 life_history.append(app_history)
                 
-            #Get mentorshif text if it exists
+            #Get mentorship text if it exists
             mentor_history = self.get_mentorship_text()
             if mentor_history:
                 life_history.append(mentor_history)
@@ -1245,7 +1243,7 @@ class ProfileScreen(Screens):
             else:
                 influence_history += "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. "
             
-            # Seocnd, do the facet/personality effect
+            # Second, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and mentor_influence["trait"] != None:
                 if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
@@ -2950,8 +2948,8 @@ class SpriteInspectScreen(Screens):
         self.set_background_visablity()
         
         # Gather list of current and previous life states
-        # "young adult", "adult", and "senior adult" all look the same: collape to adult
-        # This is not the best way to do it, so if we make them have difference apperences, this will
+        # "young adult", "adult", and "senior adult" all look the same: collapse to adult
+        # This is not the best way to do it, so if we make them have difference appearances, this will
         # need to be changed/removed. 
         if self.the_cat.age in ["young adult", "adult", "senior adult"]:
             current_life_stage = "adult"
@@ -2978,12 +2976,14 @@ class SpriteInspectScreen(Screens):
         self.make_cat_image()
         
         cat_name = str(self.the_cat.name)  # name
-        if len(cat_name) >= 40:
-            cat_name = f"{cat_name[0:39]}..."
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
+
+        length_limit = 390
+        font_size = 40
+        short_name = shorten_text_to_fit(cat_name, length_limit, font_size)
         
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
                                                                           scale(pygame.Rect((50, 120), (-1, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_40_horizcenter"), manager=MANAGER)
@@ -2991,7 +2991,7 @@ class SpriteInspectScreen(Screens):
 
         self.cat_elements["cat_name"].kill()
 
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
                                                                       scale(pygame.Rect(
                                                                         (800 - name_text_size.width, 120),
                                                                         (name_text_size.width * 2, 80))),
@@ -3000,11 +3000,9 @@ class SpriteInspectScreen(Screens):
         
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width * 7 / 15)
+            x_pos = 745 - name_text_size.width//2
         else:
             x_pos = 740 - name_text_size.width
-        # TODO: positioning is weird. closer to names on some, further on others
-        # this only happens on fullscreen :waaaaaaa:
         self.cat_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                 ((x_pos, 127), (56, 56))),
                                                               "",
@@ -3061,7 +3059,7 @@ class SpriteInspectScreen(Screens):
     def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True,
                           disabled_object_id = "#unchecked_checkbox"):
         """Makes a single checkbox. So I don't have to copy and paste this 5 times. 
-            if cat_value_to_allow evalates to False, then the unchecked checkbox is always used the the checkbox 
+            if cat_value_to_allow evaluates to False, then the unchecked checkbox is always used the the checkbox 
             is disabled"""
         
         if not cat_value_to_allow:
