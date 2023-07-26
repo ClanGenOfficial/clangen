@@ -11,7 +11,7 @@ from .base_screens import Screens, cat_profiles
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, update_sprite, scale, get_med_cats
+from scripts.utility import get_text_box_theme, update_sprite, scale, get_med_cats, shorten_text_to_fit
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from .cat_screens import ProfileScreen
@@ -703,14 +703,9 @@ class StarClanScreen(Screens):
                                    starting_height=0, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60))),
-                                                                    object_id="#text_box_30_horizcenter_light",
-                                                                    manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -1047,14 +1042,9 @@ class DFScreen(Screens):
                                    starting_height=0))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60))),
-                                                                    object_id="#text_box_30_horizcenter_light",
-                                                                    manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -1407,13 +1397,9 @@ class ListScreen(Screens):
                                    starting_height=0, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60))),
-                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -2037,12 +2023,10 @@ class MedDenScreen(Screens):
                                           cat.sprite,
                                           cat_object=cat, manager=MANAGER)
             name = str(cat.name)
-            if len(name) >= 20:
-                short_name = str(cat.name)[0:18]
-                name = short_name + '...'
+            short_name = shorten_text_to_fit(name, 275, 30)
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
                                                                        ((1050, 310), (450, 60))),
-                                                                 name,
+                                                                 short_name,
                                                                  object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )
             self.med_info = UITextBoxTweaked(
@@ -2129,10 +2113,8 @@ class MedDenScreen(Screens):
 
 
             name = str(cat.name)
-            if len(name) >= 10:
-                short_name = str(cat.name)[0:9]
-                name = short_name + '...'
-            self.cat_names.append(pygame_gui.elements.UITextBox(name,
+            short_name = shorten_text_to_fit(name, 185, 30)
+            self.cat_names.append(pygame_gui.elements.UITextBox(short_name,
                                                                 scale(
                                                                     pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
                                                                 object_id="#text_box_30_horizcenter", manager=MANAGER))

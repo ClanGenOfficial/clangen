@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from ..utility import get_text_box_theme, update_sprite, scale
+from ..utility import get_text_box_theme, update_sprite, scale, shorten_text_to_fit
 
 
 class OutsideClanScreen(Screens):
@@ -313,12 +313,9 @@ class OutsideClanScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -646,13 +643,9 @@ class UnknownResScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id="#text_box_30_horizcenter_light",
-                                                                    manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0

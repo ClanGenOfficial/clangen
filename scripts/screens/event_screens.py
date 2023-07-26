@@ -3,7 +3,7 @@ import pygame_gui
 from .base_screens import Screens, cat_profiles
 import pygame
 from scripts.events import events_class
-from scripts.utility import get_living_clan_cat_count, get_text_box_theme, scale
+from scripts.utility import get_living_clan_cat_count, get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.image_button import IDImageButton, UIImageButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..cat.cats import Cat
@@ -721,14 +721,13 @@ class EventsScreen(Screens):
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    if len(name) > 10:
-                        name = name[:9] + ".."
+                    short_name = shorten_text_to_fit(name, 195, 26)
 
                     self.cat_profile_buttons.append(
                         IDImageButton(pygame.Rect((pressed_button_pos[0] - (240/1600 * screen_x * i) - 1,
                                                    pressed_button_pos[1] + 4),
                                                    (232/1600 * screen_x, 60/1400 * screen_y)),
-                                      text=name, ids=ev, container=self.event_container,
+                                      text=short_name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button", layer_starting_height=2, 
                                       manager=MANAGER))
                     # There is only room for about four buttons.

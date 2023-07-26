@@ -6,7 +6,7 @@ from scripts.cat_relations.inheritance import Inheritance
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
+from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions, shorten_text_to_fit
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
@@ -775,10 +775,8 @@ class FamilyTreeScreen(Screens):
                                                             cat_id=self.the_cat.ID,
                                                             manager=MANAGER)
         name = str(self.the_cat.name)
-        if len(name) >= 13:
-            short_name = name[0:10]
-            name = short_name + '...'
-        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {name}'s Lineage",
+        short_name = shorten_text_to_fit(name, 260, 22)
+        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {short_name}'s Lineage",
                                                                               scale(
                                                                                   pygame.Rect((150, 1282), (300, 150))),
                                                                               object_id=get_text_box_theme(
@@ -798,17 +796,12 @@ class FamilyTreeScreen(Screens):
                                                                manager=MANAGER,
                                                                container=self.family_tree)
         name = str(self.the_cat.name)
-        if len(name) >= 9:
-            short_name = name[0:7]
-            name = short_name + '...'
-        self.cat_elements["center_cat_name"] = pygame_gui.elements.UITextBox(name,
-                                                                             scale(
-                                                                                 pygame.Rect((10 + x_pos, 118 + y_pos),
-                                                                                             (145, 100))),
-                                                                             object_id=get_text_box_theme(
-                                                                                 "#text_box_22_horizcenter"),
-                                                                             manager=MANAGER,
-                                                                             container=self.family_tree)
+        short_name = shorten_text_to_fit(name, 114, 22)
+
+        self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
+
+
+
 
         if self.parents:
             self.siblings_button = UIImageButton(scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
@@ -2612,13 +2605,11 @@ class RelationshipScreen(Screens):
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
-        if len(name) >= 14:  # check name length
-            short_name = str(the_relationship.cat_to.name)[0:11]
-            name = short_name + '...'
-        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
+        short_name = shorten_text_to_fit(name, 210, 26)
+        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(short_name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x, pos_y - 48),
-                                                                                         (204, 60))),
+                                                                                         (pos_x - 5, pos_y - 48),
+                                                                                         (215, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
@@ -3059,11 +3050,10 @@ class MediationScreen(Screens):
                     mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
-            if len(name) > 17:
-                name = name[:15] + "..."
+            short_name = shorten_text_to_fit(name, 240, 22)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x_value - 10, 480), (320, -1))),
-                name,
+                short_name,
                 object_id=get_text_box_theme())
 
             text = mediator.personality.trait + "\n" + mediator.experience_level
@@ -3183,11 +3173,10 @@ class MediationScreen(Screens):
                 cat.sprite, (200, 200)))
 
         name = str(cat.name)
-        if len(name) > 17:
-            name = name[:15] + "..."
+        short_name = shorten_text_to_fit(name, 250, 30)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x, y + 200), (400, 60))),
-            name,
+            short_name,
             object_id="#text_box_30_horizcenter")
 
         # Gender
@@ -3308,14 +3297,14 @@ class MediationScreen(Screens):
         # RELATION BARS
 
         if other_cat:
-
             name = str(cat.name)
-            if len(name) > 13:
-                name = name[:10] + ".."
+            short_name = shorten_text_to_fit(name, 136, 22)
+
+
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x + 40, y + 320),
                                   (320, -1))),
-                f"~~{name}'s feelings~~",
+                f"~~{short_name}'s feelings~~",
                 object_id="#text_box_22_horizcenter")
 
             if other_cat.ID in cat.relationships:
