@@ -245,8 +245,8 @@
 
   "biome_suffixes": {
     "Forest": [
-    "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "deer", "fawn", "fern", "fog", "frond", "grove", "moss", 
-    "sap", "shade", "twig", "wood", "thicket", "glade", "bear"
+    "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "fern", "fog", "frond", "grove", "moss", 
+    "sap", "shade", "twig", "wood", "thicket", "glade"
     ],
     "Beach": [
     "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
