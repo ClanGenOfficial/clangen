@@ -387,7 +387,7 @@
             "clan_to_patrol",
             "otherclan_nochangefail",
             "respect",
-            "otherclan"
+            "other_clan"
         ],
         "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
         "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject}  {VERB/p_l/make/makes} a mental note to mention the badger to {PRONOUN/p_l/poss} leader later.",
