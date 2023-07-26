@@ -39,7 +39,7 @@
     "zoom"
   ],
   "pelt_suffixes": {
-    "TwoColour": ["patch", "spot", "splash", "patch", "spots", "swan"],
+    "TwoColour": ["patch", "spot", "splash", "patch", "spots"],
     "Tabby": ["stripe", "feather", "leaf", "stripe", "shade"],
     "Marbled": ["stripe", "feather", "leaf", "stripe", "shade"],
     "Speckled": ["dapple", "speckle", "spot", "speck", "freckle", "fleck"],
