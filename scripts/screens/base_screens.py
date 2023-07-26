@@ -169,7 +169,6 @@ class Screens():
         elif event.ui_element == self.menu_buttons["camp_screen"]:
             self.change_screen('camp screen')
         elif event.ui_element == self.menu_buttons["catlist_screen"]:
-            Cat.sort_cats()
             self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
