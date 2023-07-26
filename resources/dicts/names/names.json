@@ -245,29 +245,29 @@
 
   "biome_suffixes": {
     "Forest": [
-    "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "deer", "fawn", "fern", "fog", "frond", "grove", "moss", 
-    "sap", "shade", "twig", "wood", "thicket", "glade", "bear"
+    "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "fawn", "fern", "fog", "frond", "grove", "moss", 
+    "sap", "shade", "twig", "wood", "thicket", "glade",
     ],
     "Beach": [
-    "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
+    "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "coral", "pearl",
     "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill", "cove"
     ],
     "Plains": [
-    "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner",
-    "tunnel", "horse", "sheep", "burrow", "brush"
+    "field", "meadow", "wool", "oat", "flutter", "pollen", "swish", "breeze", "runner",
+    "tunnel" "burrow", "brush"
     ],
     "Mountainous": [
-    "cave", "caw", "cliff", "crag", "cricket", "drop", "eagle", "echo", "fall", "frost", "goat", "horn", "lichen",
+    "cave", "caw", "cliff", "crag", "cricket", "drop", "echo", "fall", "frost", "horn", "lichen",
     "mound", "peak", "point", "ram", "shatter", "shard", "stone", "steep", "summit", "quake", "whisper",
     "whistle"
 
     ],
     "Wetlands": [
-    "flood", "swamp", "splash", "croak", "duck", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow",
+    "flood", "swamp", "splash", "croak", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow",
     "wave", "creek", "ripple", "turtle", "mire"
     ],
     "Desert": [
-    "prickle", "dune", "sand", "canyon", "rattle", "wind", "dust", "sun", "fly", "scorpion", "snake", "needle", "fang", "tooth", "bite",
+    "prickle", "dune", "sand", "canyon", "rattle", "wind", "dust", "sun", "fly", "needle", "fang", "tooth", "bite",
     "aloe"
     ]
   },
