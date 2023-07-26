@@ -356,6 +356,7 @@ class UnknownResScreen(Screens):
         self.filter_age = None
         self.filter_rank = None
         self.filter_exp = None
+        self.filter_death = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.load_images()
@@ -390,6 +391,7 @@ class UnknownResScreen(Screens):
                 self.filter_age.show()
                 self.filter_id.show()
                 self.filter_exp.show()
+                self.filter_death.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -397,6 +399,7 @@ class UnknownResScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_age.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_age.hide()
                 self.filter_rank.hide()
@@ -404,6 +407,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "reverse_age"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -415,6 +419,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "rank"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -426,6 +431,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "id"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -437,7 +443,20 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "exp"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_death:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_id.hide()
+                self.filter_exp.hide()
+                self.filter_death.hide()
+                game.sort_type = "death"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -471,6 +490,7 @@ class UnknownResScreen(Screens):
         self.filter_age.kill()
         self.filter_id.kill()
         self.filter_exp.kill()
+        self.filter_death.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -563,6 +583,14 @@ class UnknownResScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_exp.hide()
+        y_pos += 58
+        self.filter_death = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_death_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_death.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
