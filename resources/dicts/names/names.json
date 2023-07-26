@@ -245,9 +245,9 @@
 
   "biome_prefixes": {
     "Forest": [
-    "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", "Canopy",
-    "Cedar", "Civet", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
-    "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Skunk", "Sparrow", "Sprig",
+    "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Beech", "Birch", "Branch", "Branch", "Buck", "Canopy",
+    "Cedar","Doe", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Magnolia",
+    "Maple", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Sap", "Sprig",
     "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Tarantula", "Thicket", "Twig", "Twig", "Wood", "Wolf", "Coati"
     ],
     "Beach": [
