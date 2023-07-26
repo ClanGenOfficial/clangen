@@ -253,8 +253,8 @@
     "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill", "cove"
     ],
     "Plains": [
-    "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner",
-    "tunnel", "horse", "sheep", "burrow", "brush"
+    "field", "meadow", "wool", "oat", "flutter", "pollen", "swish", "breeze", "runner",
+    "tunnel", "burrow", "brush"
     ],
     "Mountainous": [
     "cave", "caw", "cliff", "crag", "cricket", "drop", "eagle", "echo", "fall", "frost", "goat", "horn", "lichen",
