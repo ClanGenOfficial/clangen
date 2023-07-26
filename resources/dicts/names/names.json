@@ -203,46 +203,43 @@
 
   "biome_prefixes": {
     "Forest": [
-    "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", "Canopy",
-    "Cedar", "Civet", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
-    "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Skunk", "Sparrow", "Sprig",
-    "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Tarantula", "Thicket", "Twig", "Twig", "Wood", "Wolf", "Coati"
+    "Acorn","Almond", "Antler", "Aspen", "Bark", "Beech", "Birch", "Branch", "Branch", "Buck", "Canopy",
+    "Cedar", "Doe", "Fern", "Fern", "Fir", "Forest", "Frond", "Grove", "Honey", "Log", "Magnolia",
+    "Maple", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Sap", "Sprig",
+    "Spruce", "Stag", "Stick", "Stump", "Thicket", "Twig", "Twig", "Wood", "Coati"
     ],
     "Beach": [
-    "Albatross", "Algae", "Anchovy", "Anemone", "Avocet", "Bass", "Barnacle", "Barracuda", "Beluga", "Brine", "Clam", "Coast",
-    "Coconut", "Cod", "Conch", "Coral", "Cove", "Crab", "Current", "Delta", "Dolphin", "Dolphin", "Drip", "Drop", "Fin", "Flounder",
-    "Foam", "Gannet", "Gull", "Gull", "Hermit", "Jellyfish", "Lagoon", "Lake", "Marlin", "Nacre", "Ocean", "Octopus", "Palm", "Pearl", "Pearl",
-    "Pearly", "Pelican", "Pool", "Pool", "Ripple", "Reef", "Ripple", "Sago", "Salmon", "Salt", "Sand", "Sand", "Sardine",  "Scale", "Scale", "Sea",
-    "Seabass", "Seagull", "Shark", "Shell", "Shimmer", "Shimmer", "Shore", "Slug", "Snail", "Splash", "Squid",
-    "Tide", "Tidal", "Torrent", "Wave", "Wave", "Whale", "Coati"
+    "Algae",  "Anemone", "Avocet", "Bass", "Barnacle", "Brine", "Clam", "Coast",
+    "Coconut", "Conch", "Coral", "Cove", "Current", "Delta", "Drip", "Drop", "Fin",
+    "Foam", "Hermit", "Lagoon", "Lake", "Nacre", "Ocean", "Palm", "Pearl", "Pearl",
+    "Pearly", "Pool", "Pool", "Ripple", "Reef", "Ripple", "Sago", "Salt", "Sand", "Sand", "Scale", "Scale", "Sea",
+    "Shell", "Shimmer", "Shimmer", "Shore", "Splash",
+    "Tide", "Tidal", "Torrent", "Wave", "Wave"
     ],
     "Plains": [
-    "Anise", "Barley", "Barley", "Bison", "Breeze", "Breeze", "Burrow", "Butterfly", "Cow", "Cow", "Dandelion", "Elk", "Ewe", "Field", "Field",
-    "Flutter", "Gopher", "Grass", "Grass", "Grouse", "Hare", "Heather", "Heather", "Horse", "Lamb", "Meadow", "Oat", "Plover",
-    "Poppy", "Poppy", "Pollen", "Prairie", "Pronghorn", "Roan", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Sheep", "Swish", "Tunnel", "Tarantula",
-    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Woolly", "Coati"
+    "Anise", "Barley", "Barley", "Breeze", "Breeze", "Burrow", "Butterfly", "Dandelion", "Field", "Field",
+    "Flutter", "Grass", "Grass", "Heather", "Heather", "Meadow", "Oat",
+    "Poppy", "Poppy", "Pollen", "Prairie", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Swish", "Tunnel",
+    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Woolly"
     ],
     "Mountainous": [
-    "Alpaca", "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Caribou", "Cavern", "Cave", "Chamois", "Chasm", "Cliff", "Cliff", "Crag",
-    "Eagle", "Eagle", "Echo", "Echo", "Flint", "Goat", "Granite", "Gravel", "High", "Lichen",
+    "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Cavern", "Cave", "Chasm", "Cliff", "Cliff", "Crag",
+    "Echo", "Echo", "Flint", "Granite", "Gravel", "High", "Lichen",
     "Mountain", "Peak", "Pebble", "Pinnacle", "Rock", "Rocky", "Ram", "Salt", "Shale", "Shard", "Spire", "Stone", "Steppe", 
     "Summit", "Volcano", "Yucca", "Whistle", "Whisper", "Whisper", "Mica", "Frigid", "Abyss"
     ],
     "Wetlands": [
-    "Willow", "Marsh", "Bog", "Lotus", "Reed", "Frog", "Toad", "Stork", "Civet", "Crane", "Duck", "Heron", "Ibis", "Mangrove",
-    "Swamp", "Murk", "Algae", "Mud", "Mire", "Splash", "Mosquito", "Mallard", "Goose", "Peat", "Bog", "Skink", "Tamarack",
-    "Spruce", "Beaver", "Wade", "Cypress", "Magnolia", "Skunk", "Mosquito", "Lily", "Bayou", "Clay", "Grebe", "Egret",
-    "Creek", "Skip", "Reed", "Bullrush", "Beetle", "Bug", "Vine", "Creeper", "Buffalo", "Rush", "Swam", "Cygnet", "Gosling",
-    "Cormorant", "Stork", "Moorhen", "Spoonbill", "Kingfisher", "Plover", "Alligator", "Crocodile", "Newt",
-    "Axolotl", "Salamander", "Gar", "Coati"
+    "Willow", "Marsh", "Bog", "Lotus", "Reed", "Mangrove",
+    "Swamp", "Murk", "Algae", "Mud", "Mire", "Splash", "Mallard", "Peat", "Bog", "Tamarack",
+    "Spruce", "Wade", "Cypress", "Magnolia", "Lily", "Bayou", "Clay",
+    "Creek", "Skip", "Reed", "Bullrush", "Bug", "Vine", "Creeper", "Rush", "Swam"
     ],
     "Desert": [
-    "Cactus", "Dune", "Coyote", "Vulture", "Condor", "Canyon", "Prickle", "Pear", "Agave", "Jackal", "Dry", "Drought",
-    "Rattle", "Desert", "Brittle", "Mesa", "Barren", "Oasis", "Dust", "Arid", "Buzzard", "Fly", "Scrub", "Gully", "Wax",
-    "Yucca", "Salt", "Dingo", "Mirage", "Cobra", "Cheetah", "Caracal", "Scorpion", "Lion", "Antelope", "Gazelle", "Oryx",
-    "Camel", "Meerkat", "Skull", "Rye", "Jackrabbit", "Needle", "Aloe", "Acacia", "Viper",
-    "Snake", "Poison", "Venom", "Tiapan", "Fang", "Blister", "Blaze", "Burn", "Scorch", "Smolder", "Jerboa", "Fennec", "Mamba", "Coati",
-    "Addax"
+    "Cactus", "Dune", "Canyon", "Prickle", "Pear", "Agave", "Dry", "Drought",
+    "Rattle", "Desert", "Brittle", "Mesa", "Barren", "Oasis", "Dust", "Arid", "Fly", "Scrub", "Gully", "Wax",
+    "Yucca", "Salt", "Mirage",
+    "Skull", "Rye","Needle", "Aloe", "Acacia", "Viper",
+    "Poison", "Venom", "Fang", "Blister", "Blaze", "Burn", "Scorch", "Smolder"
     ]
   },
 
