@@ -394,15 +394,15 @@
     "Tortilla", "Totoro", "Toulouse", "Toxel", "Toyota", "Tractor", "Traveler", "Treasure", "T-rex", "Tribble", "Trick", "Trinity", "Trinket", "Trip", "Triscuit", "Triton",
     "Trixie", "Trouble Nuggets", "Trouble", "Troublemaker", "Trumpet", "Tucker", "Tuffnut", "Tumble", "Tumblebrutus", "Tumo", "Turbo", "Twiggy", "Twilight", "Twinkle Lights", "Twister", "Twix", "Two Sprouts", "Uba", "Ula", 
     "Ulyssa", "Umbriel", "Uncle Butter", "Undyne", "Union", "Uriel", "Ursala", "Valente", "Valentino", "Van Pelt", "Vanilla", "Vaxx", "Vega", 
-    "Venti", "Venture", "Venus", "Vervain", "Vesper", "Vesta", "Via", "Victini", "Victor", "Victoria", "Vida", "Viktor", "Vinnie", 
+    "Venti", "Venture", "Venus", "Vervain", "Vesper", "Vesta", "Via", "Victor", "Victoria", "Vida", "Viktor", "Vinnie", 
     "Vinyl", "Violet", "Virgo", "Vivian", "Vivienne", "Void", "Void Worm", "Volkswagen", "Voltage", 
     "Vox", "Vulpix", "Wade", "Waffle", "Wagyu", "Wally", "Walnut", "Wanda", "Wanderer", "Warren Peace", "Wasabi", "Webby", "Wednesday", 
     "Wendy", "Whiskers", "Whiskey", "Whisper", "Whitney", "Whiz Kid", "Wiggity Wacks", "Wigglebutt", "Willow", "Windy", 
-    "Winry", "Wishbone", "Wisp", "Wisteria", "Wolfgang", "Wolverine", "Wonder", 
+    "Winry", "Wishbone", "Wisp", "Wisteria", "Wolfgang", "Wonder", 
     "Worm", "Wrath", "X'ek", "Xelle", "Xhosa", "Xiao", "Xola", "Yaoyao", "Yazhu", "Yeet", "Yeeted", "Yen", "Yeobo", "Yeza", 
-    "Yinuo", "Yokai", "Yoonmin", "Yooted", "Yoshi", "Yote", "Yuca", "Yuka", "Yuki", "Yumeko", "Yusuke", "Yuzu", "Yvaine", 
-    "Zahra", "Zambezi", "Zambia", "Zaniah", "Zari", "Zariah", "Zazu", "Zebra", "Zekrom", "Zelda", "Zell", 
-    "Zendaya", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva"
+    "Yinuo", "Yokai", "Yoonmin", "Yooted", "Yoshi", "Yote", "Yuca", "Yuka", "Yuki", "Yumeko", "Yusuke", "Yuzu", "Yvaine", "Yami", "YamiCreampuff", "Yamma Whamma", "Tobi"
+    "Zahra", "Zambezi", "Zambia", "Zaniah", "Zari", "Zariah", "Zazu", "Zelda", "Zell", 
+    "Zendaya", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zorro", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva"
     ],
 	"animal_suffixes": [""],
 	"animal_prefixes": [""],
