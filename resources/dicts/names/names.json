@@ -218,9 +218,9 @@
     ],
     "Plains": [
     "Anise", "Barley", "Barley", "Breeze", "Breeze", "Burrow", "Dandelion", "Field", "Field",
-    "Flutter", "Grass", "Grass", "Grouse", "Hare", "Heather", "Heather", "Horse", "Lamb", "Meadow", "Oat", "Plover",
-    "Poppy", "Poppy", "Pollen", "Prairie", "Pronghorn", "Roan", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Sheep", "Swish", "Tunnel", "Tarantula",
-    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Woolly", "Coati"
+    "Flutter", "Grass", "Grass", "Heather", "Heather", "Meadow", "Oat", "Plover",
+    "Poppy", "Poppy", "Pollen", "Prairie", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Swish", "Tunnel",
+    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Woolly"
     ],
     "Mountainous": [
     "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Cavern", "Cave", "Chasm", "Cliff", "Cliff", "Crag",
