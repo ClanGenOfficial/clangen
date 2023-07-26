@@ -775,9 +775,7 @@ class FamilyTreeScreen(Screens):
                                                             cat_id=self.the_cat.ID,
                                                             manager=MANAGER)
         name = str(self.the_cat.name)
-        length_limit = 260
-        font_size = 22
-        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        short_name = shorten_text_to_fit(name, 260, 22)
         self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {short_name}'s Lineage",
                                                                               scale(
                                                                                   pygame.Rect((150, 1282), (300, 150))),
@@ -798,9 +796,7 @@ class FamilyTreeScreen(Screens):
                                                                manager=MANAGER,
                                                                container=self.family_tree)
         name = str(self.the_cat.name)
-        length_limit = 114
-        font_size = 22
-        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        short_name = shorten_text_to_fit(name, 114, 22)
 
         self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
 
@@ -2609,9 +2605,7 @@ class RelationshipScreen(Screens):
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
-        length_limit = 210
-        font_size = 26
-        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        short_name = shorten_text_to_fit(name, 210, 26)
         self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(short_name,
                                                                                      scale(pygame.Rect(
                                                                                          (pos_x - 5, pos_y - 48),
@@ -3056,9 +3050,7 @@ class MediationScreen(Screens):
                     mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
-            length_limit = 240
-            font_size = 22
-            short_name = shorten_text_to_fit(name, length_limit, font_size)
+            short_name = shorten_text_to_fit(name, 240, 22)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x_value - 10, 480), (320, -1))),
                 short_name,
@@ -3181,9 +3173,7 @@ class MediationScreen(Screens):
                 cat.sprite, (200, 200)))
 
         name = str(cat.name)
-        length_limit = 250
-        font_size = 30
-        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        short_name = shorten_text_to_fit(name, 250, 30)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x, y + 200), (400, 60))),
             short_name,
@@ -3308,9 +3298,7 @@ class MediationScreen(Screens):
 
         if other_cat:
             name = str(cat.name)
-            length_limit = 136
-            font_size = 22
-            short_name = shorten_text_to_fit(name, length_limit, font_size)
+            short_name = shorten_text_to_fit(name, 136, 22)
 
 
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(

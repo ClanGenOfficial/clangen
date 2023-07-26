@@ -721,9 +721,7 @@ class EventsScreen(Screens):
                 if cat_ob:
                     # Shorten name if needed
                     name = str(cat_ob.name)
-                    length_limit = 195
-                    font_size = 26
-                    short_name = shorten_text_to_fit(name, length_limit, font_size)
+                    short_name = shorten_text_to_fit(name, 195, 26)
 
                     self.cat_profile_buttons.append(
                         IDImageButton(pygame.Rect((pressed_button_pos[0] - (240/1600 * screen_x * i) - 1,

@@ -313,9 +313,7 @@ class OutsideClanScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                length_limit = 220
-                font_size = 30
-                short_name = shorten_text_to_fit(name, length_limit, font_size)
+                short_name = shorten_text_to_fit(name, 220, 30)
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
@@ -645,9 +643,7 @@ class UnknownResScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                length_limit = 220
-                font_size = 30
-                short_name = shorten_text_to_fit(name, length_limit, font_size)
+                short_name = shorten_text_to_fit(name, 220, 30)
 
                 self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240

@@ -788,9 +788,7 @@ class PatrolScreen(Screens):
                                                                           manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            length_limit = 350
-            font_size = 30
-            short_name = shorten_text_to_fit(name, length_limit, font_size)
+            short_name = shorten_text_to_fit(name, 350, 30)
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),

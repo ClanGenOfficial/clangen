@@ -478,9 +478,7 @@ class ProfileScreen(Screens):
 
         # Info in string
         cat_name = str(self.the_cat.name)
-        length_limit = 425
-        font_size = 40
-        cat_name = shorten_text_to_fit(cat_name, length_limit, font_size)
+        cat_name = shorten_text_to_fit(cat_name, 425, 40)
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
         if is_sc_instructor:
@@ -2356,9 +2354,7 @@ class RoleScreen(Screens):
         )
 
         name = str(self.the_cat.name)
-        length_limit = 300
-        font_size = 26
-        short_name = shorten_text_to_fit(name, length_limit, font_size)
+        short_name = shorten_text_to_fit(name, 300, 26)
         self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((775, 140), (350, -1))),
                                                                              short_name,
                                                                              object_id=get_text_box_theme())
@@ -2978,10 +2974,7 @@ class SpriteInspectScreen(Screens):
         cat_name = str(self.the_cat.name)  # name
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
-
-        length_limit = 390
-        font_size = 40
-        short_name = shorten_text_to_fit(cat_name, length_limit, font_size)
+        short_name = shorten_text_to_fit(cat_name, 390, 40)
         
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
                                                                           scale(pygame.Rect((50, 120), (-1, 80))),
