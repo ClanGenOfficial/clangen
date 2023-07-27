@@ -19,6 +19,7 @@ import shutil
 import sys
 import time
 import os
+import threading
 
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
@@ -131,26 +132,65 @@ from scripts.screens.all_screens import start_screen # pylint: disable=ungrouped
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
 
+game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+game.rpc.start()
+game.rpc.start_rpc.set()
+
 # LOAD cats & clan
-clan_list = game.read_clans()
-if clan_list:
-    game.switches['clan_list'] = clan_list
-    try:
-        load_cats()
-        version_info = clan_class.load_clan()
-        version_convert(version_info)
-        game.load_events()
-    except Exception as e:
-        logging.exception("File failed to load")
-        if not game.switches['error_message']:
-            game.switches[
-                'error_message'] = 'There was an error loading the cats file!'
-            game.switches['traceback'] = e
+finished_loading = False
 
+def load_user_data():
+    global finished_loading
+    
+    clan_list = game.read_clans()
+    if clan_list:
+        game.switches['clan_list'] = clan_list
+        try:
+            load_cats()
+            version_info = clan_class.load_clan()
+            version_convert(version_info)
+            game.load_events()
+        except Exception as e:
+            logging.exception("File failed to load")
+            if not game.switches['error_message']:
+                game.switches[
+                    'error_message'] = 'There was an error loading the cats file!'
+                game.switches['traceback'] = e
+    
+    finished_loading = True
 
-# LOAD settings
+def loading_animation():
+    global finished_loading
+    
+    image = pygame.image.load("resources\images\silver.png")
+    angle = 0
+    
+    while not finished_loading:
+        
+        screen.fill(game.config["theme"]["light_mode_background"])
+        
+        screen.blit(pygame.transform.rotate(image, angle), (200, 200))
+        angle += 1
+        
+        pygame.time.delay(10)
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit(savesettings=False)
+            
+        pygame.display.update()
+    
 
-sprites.load_scars()
+loading_thread = threading.Thread(target=load_user_data)
+loading_thread.start()
+
+loading_animation()
+del finished_loading
+
+# The loading thread should be done by now. This line
+# is just for safety
+loading_thread.join()
+del loading_thread
 
 start_screen.screen_switches()
 
@@ -177,10 +217,6 @@ if get_version_info().is_source_build or get_version_info().is_dev():
         "Dev Build:",
         object_id="#dev_watermark"
     )
-
-game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
-game.rpc.start()
-game.rpc.start_rpc.set()
 
 
 cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()

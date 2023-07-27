@@ -1177,4 +1177,26 @@ class SaveAsImage(UIWindow):
                 self.large_size_button.disable()
     
     
+class EventLoading(UIWindow):
+    def __init__(self):
+        super().__init__(scale(pygame.Rect((500, 400), (600, 180))),
+                         window_display_title='Game Over',
+                         object_id='#game_over_window',
+                         resizable=False)
         
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        
+        self.announce_message = UITextBoxTweaked(
+            f"Loading...",
+            scale(pygame.Rect((40, 40), (520, -1))),
+            line_spacing=1,
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+        
+    def kill(self):
+        game.switches['window_open'] = False
+        super().kill()
+        
+
