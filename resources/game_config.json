@@ -16,6 +16,7 @@
 			"medicine cat": 2,
 			"medicine cat apprentice": 1.5,
 			"mediator apprentice": 1.5,
+			"queen's apprentice": 1.5,
 			"mediator": 2,
 			"warrior": 3,
 			"apprentice": 1.5,
@@ -32,6 +33,7 @@
 			"medicine cat",
 			"medicine cat apprentice",
 			"apprentice",
+			"queen's apprentice",
 			"mediator apprentice",
 			"warrior",
 			"mediator",
@@ -344,7 +346,8 @@
 		"max_apprentice_age": {
 			"medicine cat apprentice": 30,
 			"apprentice": 25,
-			"mediator apprentice": 25
+			"mediator apprentice": 25,
+			"queen's apprentice": 25
 		},
 		"min_graduating_age": 10
 	},

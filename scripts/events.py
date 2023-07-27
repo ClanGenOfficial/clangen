@@ -99,7 +99,7 @@ class Events:
                 str(cat.status) in {
                     'leader', 'deputy', 'warrior', 'medicine cat',
                     'medicine cat apprentice', 'apprentice', 'mediator',
-                    'mediator apprentice'
+                    'mediator apprentice', "queen", "queen's apprentice"
                 } and not cat.dead and not cat.outside
                 for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
@@ -280,12 +280,12 @@ class Events:
                 if game.clan.your_cat.moons == 0:
                     self.generate_birth()
                 elif game.clan.your_cat.moons < 6:
-                    self.generate_kit_events()
+                    self.generate_kit_events() 
                 elif game.clan.your_cat.moons == 6:
                     self.generate_app_ceremony()
-                elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+                elif game.clan.your_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice', "queen's apprentice"]:
                     self.generate_app_events()
-                elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done:
+                elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator', "queen"] and not game.clan.your_cat.w_done:
                     self.generate_ceremony()
                 elif game.clan.your_cat.status != 'elder':
                     self.generate_events_adult()
@@ -1299,12 +1299,14 @@ class Events:
         # Proform a ceremony if needed
         for x in [lost_cat] + [Cat.fetch_cat(i) for i in additional_cats]:             
            
-            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "kitten", "newborn"]: 
+            if x.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice" "kitten", "newborn"]: 
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
                         self.ceremony(x, "medicine cat")
                     elif x.status == "mediator apprentice":
                         self.ceremony(x, "mediator")
+                    elif x.status == "queen's apprentice":
+                        self.ceremony(x, "queen")
                     else:
                         self.ceremony(x, "warrior")
                 elif x.status in ["kitten", "newborn"] and x.moons >= 6:
@@ -1789,7 +1791,7 @@ class Events:
             # graduate
             if cat.status in [
                 "apprentice", "mediator apprentice",
-                "medicine cat apprentice"
+                "medicine cat apprentice", "queen's apprentice"
             ]:
 
                 if game.settings["12_moon_graduation"]:
@@ -1823,6 +1825,11 @@ class Events:
 
                     elif cat.status == 'mediator apprentice':
                         self.ceremony(cat, 'mediator', preparedness)
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                    
+                    elif cat.status == "queen's apprentice":
+                        self.ceremony(cat, "queen", preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -1871,6 +1878,7 @@ class Events:
         living_parents = []
         mentor_type = {
             "medicine cat": ["medicine cat"],
+            "queen": ["queen"],
             "warrior": ["warrior", "deputy", "leader", "elder"],
             "mediator": ["mediator"]
         }
@@ -1880,7 +1888,7 @@ class Events:
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
 
             # Get ones for prepared status ----------------------------------------------
-            if promoted_to in ["warrior", "medicine cat", "mediator"]:
+            if promoted_to in ["warrior", "medicine cat", "mediator", "queen"]:
                 possible_ceremonies = possible_ceremonies.intersection(
                     self.ceremony_id_by_tag[preparedness])
 
@@ -2023,7 +2031,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in ['warrior', 'mediator', 'medicine cat']:
+        if promoted_to in ['warrior', 'mediator', 'medicine cat', "queen"]:
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
@@ -2033,7 +2041,7 @@ class Events:
             except KeyError:
                 random_honor = "hard work"
 
-        if cat.status in ["warrior", "medicine cat", "mediator"]:
+        if cat.status in ["warrior", "medicine cat", "mediator", "queen"]:
             self.history.add_app_ceremony(cat, random_honor)
         
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(

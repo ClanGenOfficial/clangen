@@ -193,6 +193,8 @@ class GenerateEvents:
             cat_type = "medicine"
         elif cat_type in ["mediator", "mediator apprentice"]:
             cat_type = "mediator"
+        elif cat_type in ["queen", "queen's apprentice"]:
+            cat_type = "queen"
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:

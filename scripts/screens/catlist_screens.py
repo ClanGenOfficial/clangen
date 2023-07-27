@@ -340,7 +340,7 @@ class ClanScreen(Screens):
                 else:
                     continue
  
-            if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
+            if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice', "queen's apprentice"]:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
             elif Cat.all_cats[x].status == 'deputy':
@@ -1523,7 +1523,7 @@ class AllegiancesScreen(Screens):
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
-            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
                 living_apprentices.append(cat)
             elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)

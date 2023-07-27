@@ -49,6 +49,7 @@ class Clan():
         "leader",
         "elder",
         "mediator",
+        "queen",
         "general",
     ]
 
@@ -508,7 +509,7 @@ class Clan():
         the program starts
         """
         self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
-                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+                                             "medicine cat", "leader", "mediator", "queen", "queen's apprentice", "deputy", "elder"]),
                               )
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)

@@ -1620,7 +1620,7 @@ class PatrolScreen2(Screens):
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
-                'elder', 'kitten', 'mediator', 'mediator apprentice'
+                'elder', 'kitten', 'mediator', 'mediator apprentice', "queen", "queen's apprentice"
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
                     if game.config['fun']['newborns_can_patrol']:
@@ -3559,7 +3559,7 @@ class PatrolScreen4(Screens):
         if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and not the_cat.outside and not the_cat.not_working():
             for the_cat in Cat.all_cats_list:
                 if not the_cat.dead and the_cat.in_camp and the_cat.ID not in game.patrolled and the_cat.status not in [
-                    'newborn', 'kitten', 'apprentice', 'mediator apprentice', 'medicine cat apprentice'
+                    'newborn', 'kitten', 'apprentice', 'mediator apprentice', 'medicine cat apprentice', "queen", "queen's apprentice"
                 ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working() and the_cat.is_potential_mate(game.clan.your_cat) and the_cat.moons < game.clan.your_cat.moons + 40 and the_cat.moons > game.clan.your_cat.moons - 40:
                     if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
                         if game.config['fun']['newborns_can_patrol']:

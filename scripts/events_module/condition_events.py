@@ -677,7 +677,7 @@ class Condition_Events():
 
         if not triggered and not cat.dead and cat.status not in \
                 ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
-                 'mediator apprentice', 'elder'] \
+                 'mediator apprentice', "queen", "queen's apprentice", 'elder'] \
                 and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] in ['major', 'severe']:

@@ -332,6 +332,38 @@
         "You forget a crucial piece of information while relaying a message from one Clanmate to another, resulting in a mix-up and a delay in decision-making.",
         "You accidentally overstep your boundaries while trying to mediate between two elders, leading to them becoming even more stubborn in their disagreement."
     ],
+    "queen's apprentice": [
+        "During a training session, a kit expresses their fear of becoming an apprentice. You spend time with them, sharing stories of your own journey, alleviating their worries.",
+        "A kit gets a thorn stuck in their paw. You gently calm them down and carefully remove the thorn, using some techniques you've been taught by the medicine cat.",
+        "You notice a kit showing signs of a mild cold. Remembering your training, you immediately inform the medicine cat and keep the kit warm, preventing the illness from spreading.",
+        "A young kit refuses to eat after a tiring day. Using your newfound skills, you manage to coax them into eating by turning mealtime into a fun story session.",
+        "You cleverly intervene when two kits quarrel over a moss-ball, suggesting they team up against you.",
+        "You soothe a restless kit having a nightmare, using a lullaby you recently learned. The grateful queen praises your gentle touch.",
+        "When a kit is feeling homesick for the outside world, you distract them with a tale of bravery, teaching them the value of the Clan and kinship.",
+        "During a sudden rainstorm, you quickly create a makeshift barrier in the nursery to prevent water from seeping in, earning grateful nods from the queens.",
+        "You ingeniously craft a play area within the nursery, using twigs and leaves, where kits can safely practice their mock-battles, earning appreciation from the queens.",
+        "During a particularly chilly night, you gather extra moss and ferns, ensuring that the nursery is cozy and warm.",
+        "You organize a 'story evening' where elders come to the nursery to share tales of their youth. The kits are enthralled and the elders appreciate their energy.",
+        "When a particularly adventurous kit keeps wandering out of the nursery, you create a fun 'explorer game' inside, making the nursery the most exciting place for the kit.",
+        "You notice a kit struggling to interact with their littermates. Drawing on your training, you engage in activities that build the kit's confidence and foster stronger bonds among siblings.",
+        "A sudden flea outbreak in the nursery has everyone itching. Remembering some tips, you collaborate with the medicine cat to ensure the nursery is cleaned and the kits are treated.",
+        "During a Clan gathering, you take charge of the kits, ensuring they're safe.",
+        "You assist a queen in teaching her kits basic life skills, like grooming and eating prey safely.",
+        "When a thunderstorm scares the kits, you gather them and explain the natural phenomenon, turning their fear into curiosity and wonder.",
+        "A kit mimics warrior moves and accidentally hurts a littermate. You step in, teaching them the importance of being careful and using their skills responsibly.",
+        "You notice a kit being left out of play sessions. You create inclusive games that encourage teamwork and camaraderie, ensuring every kit feels valued."
+    ],
+    "queen": [
+        "You talk to two mates who are interested in having kits, telling them of the responsibilities they would have to share.",
+        "You give advice to some new parents. They are appreciative of your help.",
+        "You recognize signs of anxiety in a young queen awaiting their first litter. Drawing from your vast experience, you comfort and counsel them, preparing them for parenthood.",
+        "In collaboration with the medicine cat, you start a tradition of giving certain herbs to pregnant queens, ensuring they have the necessary nutrients for a healthy litter.",
+        "You notice some kits bullying a littermate. Intervening, you impart lessons on respect, compassion, and Clan unity, shaping the future warriors' values.",
+        "When a rogue's kit is found abandoned at the border, you champion its adoption into the Clan, emphasizing the warrior code's tenet of protecting the young.",
+        "During a Clan meeting, you voice concerns about the safety of the camp's entrance for the kits. Your insights lead to reinforcements, ensuring a safer environment for the young ones.",
+        "You notice some kits bullying a littermate. Intervening, you impart lessons on respect, compassion, and Clan unity, shaping the future warriors' values.",
+        "A kit falls ill with greencough. You segregate the sick kit, ensuring the others stay warm and comforted, while also assisting the medicine cat with treatments."
+    ],
     "warrior": [
         "You practice your fighting moves. It never hurts to stay sharp!",
         "You save a kit from a fox, earning respect from your clan.",
@@ -725,7 +757,6 @@
         "You and mate1 spent the night cuddled together in the den during a chilly night.",
         "mate1 has seemed really distant lately, maybe a walk around the territory with you will help them feel a bit better.",
         "You and mate1 take a walk on a rainy evening, and it ends with you two splashing each other and playing in puddles."
-
     ],
     "pregnant_events": [
         "You and mate1 discuss the ideal number of kits the two of you would like."

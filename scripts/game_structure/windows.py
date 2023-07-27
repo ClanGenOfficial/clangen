@@ -1142,7 +1142,7 @@ class SaveAsImage(UIWindow):
     
 class PickPath(UIWindow):
     def __init__(self, last_screen):
-        super().__init__(scale(pygame.Rect((500, 400), (600, 500))),
+        super().__init__(scale(pygame.Rect((500, 400), (800, 500))),
                          window_display_title='Choose your Path',
                          object_id='#game_over_window',
                          resizable=False)
@@ -1152,7 +1152,7 @@ class PickPath(UIWindow):
         self.last_screen = last_screen
         self.pick_path_message = UITextBoxTweaked(
             f"You have an important decision to make...",
-            scale(pygame.Rect((40, 40), (520, -1))),
+            scale(pygame.Rect((40, 40), (720, -1))),
             line_spacing=1,
             object_id="text_box_30_horizcenter",
             container=self
@@ -1181,8 +1181,16 @@ class PickPath(UIWindow):
             tool_tip_text='Choose to become a mediator apprentice'
 
         )
+        self.queen_button = UIImageButton(
+            scale(pygame.Rect((600, 190), (150, 150))),
+            "",
+            object_id="#queen",
+            container=self,
+            tool_tip_text="Choose to become a queen's apprentice"
+
+        )
         self.random_button = UIImageButton(
-            scale(pygame.Rect((255, 370), (100, 100))),
+            scale(pygame.Rect((345, 370), (100, 100))),
             "",
             object_id="#random_dice_button",
             container=self,
@@ -1213,10 +1221,14 @@ class PickPath(UIWindow):
                 game.switches['window_open'] = False
                 game.clan.your_cat.status = 'mediator apprentice'
                 self.kill()
+            elif event.ui_element == self.queen_button:
+                game.switches['window_open'] = False
+                game.clan.your_cat.status = "queen's apprentice"
+                self.kill()
             elif event.ui_element == self.random_button:
                 game.switches['window_open'] = False
                 
-                game.clan.your_cat.status = random.choice(['mediator apprentice','apprentice','medicine cat apprentice'])
+                game.clan.your_cat.status = random.choice(['mediator apprentice','apprentice','medicine cat apprentice', "queen's apprentice"])
                 self.kill()
                 
 class DeathScreen(UIWindow):

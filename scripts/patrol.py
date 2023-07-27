@@ -295,6 +295,10 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.medapp_lifegen))
             elif game.clan.your_cat.status == 'mediator apprentice':
                 possible_patrols.extend(self.generate_patrol_events(self.mediatorapp_lifegen))
+            elif game.clan.your_cat.status == "queen's apprentice":
+                possible_patrols.extend(self.generate_patrol_events(self.queenapp_lifegen))
+            elif game.clan.your_cat.status == "queen":
+                possible_patrols.extend(self.generate_patrol_events(self.queen_lifegen))
             elif game.clan.your_cat.status == 'medicine cat':
                 possible_patrols.extend(self.generate_patrol_events(self.med_lifegen))
             elif game.clan.your_cat.status == 'mediator':
@@ -1752,6 +1756,14 @@ class Patrol():
             self.medapp_lifegen = None
             with open(f"{resource_dir}/lifegen/medapp.json", 'r', encoding='ascii') as read_file:
                 self.medapp_lifegen = ujson.loads(read_file.read())
+                
+            self.queenapp_lifegen = None
+            with open(f"{resource_dir}/lifegen/queenapp.json", 'r', encoding='ascii') as read_file:
+                self.queenapp_lifegen = ujson.loads(read_file.read())
+
+            self.queen_lifegen = None
+            with open(f"{resource_dir}/lifegen/queen.json", 'r', encoding='ascii') as read_file:
+                self.queen_lifegen = ujson.loads(read_file.read())
                 
             self.mediatorapp_lifegen = None
             with open(f"{resource_dir}/lifegen/mediatorapp.json", 'r', encoding='ascii') as read_file:

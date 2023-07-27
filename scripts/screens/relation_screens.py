@@ -292,13 +292,13 @@ class ChooseMentorScreen(Screens):
 
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
@@ -467,6 +467,10 @@ class ChooseMentorScreen(Screens):
         elif self.the_cat.status == 'mediator apprentice':
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status == 'mediator':
+                    valid_mentors.append(cat)
+        elif self.the_cat.status == "queen's apprentice":
+            for cat in Cat.all_cats_list:
+                if not cat.dead and not cat.outside and cat.status == 'queen':
                     valid_mentors.append(cat)
 
         return valid_mentors
@@ -4625,13 +4629,13 @@ class ChooseRebornCat(Screens):
 
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
@@ -4645,7 +4649,7 @@ class ChooseRebornCat(Screens):
         self.exit_screen()
         game.cur_events_list.clear()
         game.clan.your_cat = new_mentor
-        if game.clan.your_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+        if game.clan.your_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice', "queen's apprentice"]:
             game.clan.your_cat.w_done = True
         game.switches['cur_screen'] = "events screen"
 
@@ -4953,13 +4957,13 @@ class ChooseMurderCatScreen(Screens):
 
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
@@ -5234,6 +5238,8 @@ class ChooseMurderCatScreen(Screens):
         'apprentice': 30,
         'medicine cat apprentice': 25,
         'mediator apprentice': 20,
+        "queen": 25,
+        "queen's apprentice": 20,
         'deputy': 50,
         'leader': 60,
         'elder': 25,
@@ -5243,10 +5249,12 @@ class ChooseMurderCatScreen(Screens):
     skill_chances = {
         'warrior': -5,
         'medicine cat': -5,
-        'mediator': 5,
+        'mediator': 0,
         'apprentice': 5,
         'medicine cat apprentice': 5,
         'mediator apprentice': 5,
+        "queen's apprentice": 10,
+        'queen': 5,
         'deputy': -10,
         'leader': -15,
         'elder': 5,

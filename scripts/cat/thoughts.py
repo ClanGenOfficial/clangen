@@ -269,6 +269,8 @@ class Thoughts():
             status = "medicine_cat_apprentice"
         elif status == "mediator apprentice":
             status = "mediator_apprentice"
+        elif status == "queen's apprentice":
+            status == "queens_apprentice"
         elif status == "medicine cat":
             status = "medicine_cat"
         elif status == 'former Clancat':
