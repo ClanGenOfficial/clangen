@@ -83,10 +83,83 @@ class EventsScreen(Screens):
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             
             if event.ui_element == self.timeskip_button:
+                # Save the start time, so the loading animation can be
+                # set to only show up if timeskip is taking a good amount of time. 
                 self.start = time.time() 
                 self.events_thread = threading.Thread(target=self.one_moon)
+                # Set game.switched["window_open"] to true to prevent setting off more than one 
+                # timeskip thread at once. 
                 game.switches['window_open'] = True
                 self.events_thread.start()
+            
+            # Change the type of events displayed
+            elif event.ui_element == self.all_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "all events"
+                # Update Display
+                self.update_list_buttons(self.all_events_button)
+                self.display_events = self.all_events
+                self.update_events_display()
+            elif event.ui_element == self.ceremonies_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "ceremony events"
+                self.ceremonies_events_button.disable()
+                # Update Display
+                self.update_list_buttons(self.ceremonies_events_button, self.ceremony_alert)
+                self.display_events = self.ceremony_events
+                self.update_events_display()
+            elif event.ui_element == self.birth_death_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "birth death events"
+                self.birth_death_events_button.enable()
+                # Update Display
+                self.update_list_buttons(self.birth_death_events_button, self.birth_death_alert)
+                self.display_events = self.birth_death_events
+                self.update_events_display()
+            elif event.ui_element == self.relationship_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "relationship events"
+                self.relationship_events_button.enable()
+                # Update Display
+                self.update_list_buttons(self.relationship_events_button, self.relation_alert)
+                self.display_events = self.relation_events
+                self.update_events_display()
+            elif event.ui_element == self.health_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "health events"
+                self.health_events_button.disable()
+                # Update Display
+                self.update_list_buttons(self.health_events_button, self.health_alert)
+                self.display_events = self.health_events
+                self.update_events_display()
+            elif event.ui_element == self.other_clans_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "other clans events"
+                self.other_clans_events_button.disable()
+                # Update Display
+                self.update_list_buttons(self.other_clans_events_button, self.other_clans_alert)
+                self.display_events = self.other_clans_events
+                self.update_events_display()
+            elif event.ui_element == self.misc_events_button:
+                if self.event_container.vert_scroll_bar:
+                    self.scroll_height[self.event_display_type] = self.event_container.vert_scroll_bar.scroll_position / self.event_container.vert_scroll_bar.scrollable_height
+                self.event_display_type = "misc events"
+                self.misc_events_button.disable()
+                # Update Display
+                self.update_list_buttons(self.misc_events_button, self.misc_alert)
+                self.display_events = self.misc_events
+                self.update_events_display()
+            elif event.ui_element in self.involved_cat_buttons:
+                self.make_cat_buttons(event.ui_element)
+            elif event.ui_element in self.cat_profile_buttons:
+                game.switches['cat'] = event.ui_element.ids
+                self.change_screen('profile screen')    
             else:
                 self.menu_button_pressed(event)
             
@@ -168,9 +241,18 @@ class EventsScreen(Screens):
                     self.display_events = self.misc_events
                     self.update_events_display()
             elif event.key == pygame.K_SPACE:
-                self.timeskip()
+                # Save the start time, so the loading animation can be
+                # set to only show up if timeskip is taking a good amount of time. 
+                self.start = time.time() 
+                self.events_thread = threading.Thread(target=self.one_moon)
+                # Set game.switched["window_open"] to true to prevent setting off more than one 
+                # timeskip thread at once. 
+                game.switches['window_open'] = True
+                self.events_thread.start()
     
     def one_moon(self):
+        """Runs one_moon, and sets self.done_moon = True when done. """
+        
         events_class.one_moon()
         self.done_moon = True
 
@@ -342,19 +424,24 @@ class EventsScreen(Screens):
         # self.hide_menu_buttons()
 
     def on_use(self):
+        
+        # Handled the loading animation, both creating and killing it. 
         if not self.loading_window and self.events_thread.is_alive() \
-                and time.time() - self.start > 0.5:
+                and time.time() - self.start > 0.7:
             self.loading_window = EventLoading()
         elif self.loading_window and not self.events_thread.is_alive():
             self.loading_window.kill()
             self.loading_window = None
-            
+        
+        # Handles displaying the events once timeskip is done. 
         if self.done_moon:
             self.timeskip_done()
             game.switches['window_open'] = False
             self.done_moon = False
             
     def timeskip_done(self):
+        """Various sorting and other tasks that must be done with the timeskip is over. """
+        
         self.scroll_height = {}
         
         if get_living_clan_cat_count(Cat) == 0:

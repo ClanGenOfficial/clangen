@@ -165,13 +165,20 @@ def loading_animation():
     image = pygame.image.load("resources\images\silver.png")
     angle = 0
     
+    x = screen.get_width() / 2
+    y = screen.get_height() / 2
+    
     while not finished_loading:
         
-        screen.fill(game.config["theme"]["light_mode_background"])
+        if game.settings["dark mode"]:
+            screen.fill(game.config["theme"]["dark_mode_background"])
+        else:
+            screen.fill(game.config["theme"]["light_mode_background"])
         
-        screen.blit(pygame.transform.rotate(image, angle), (200, 200))
+        
+        rotated = pygame.transform.rotate(image, angle)
+        screen.blit(rotated, (x - rotated.get_width() / 2 , y - rotated.get_height() / 2))
         angle += 1
-        
         pygame.time.delay(10)
         
         for event in pygame.event.get():
@@ -185,12 +192,14 @@ loading_thread = threading.Thread(target=load_user_data)
 loading_thread.start()
 
 loading_animation()
-del finished_loading
 
 # The loading thread should be done by now. This line
-# is just for safety
+# is just for safety. Plus some cleanup. 
 loading_thread.join()
 del loading_thread
+del finished_loading
+del loading_animation
+del load_user_data
 
 start_screen.screen_switches()
 
