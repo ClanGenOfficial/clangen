@@ -2503,6 +2503,9 @@ class RoleScreen(Screens):
             elif event.ui_element == self.switch_queen_app:
                 self.the_cat.status_change("queen's apprentice", resort=True)
                 self.update_selected_cat()
+            elif event.ui_element == self.switch_queen:
+                self.the_cat.status_change("queen", resort=True)
+                self.update_selected_cat()
         
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
@@ -2560,6 +2563,9 @@ class RoleScreen(Screens):
         self.switch_mediator = UIImageButton(scale(pygame.Rect((805, 824), (344, 72))), "",
                                              object_id="#switch_mediator_button",
                                              manager=MANAGER)
+        self.switch_queen = UIImageButton(scale(pygame.Rect((805, 895), (344, 104))), "",
+                                             object_id="#switch_queen_button",
+                                             manager=MANAGER)
 
         # In-TRAINING ROLES:
         self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1159, 720), (344, 104))), "",
@@ -2571,6 +2577,10 @@ class RoleScreen(Screens):
         self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1159, 928), (344, 104))), "",
                                                  object_id="#switch_mediator_app_button",
                                                  manager=MANAGER)
+        self.switch_queen_app = UIImageButton(scale(pygame.Rect((1159, 1032), (344, 104))), "",
+                                             object_id="#switch_queen_app_button",
+                                             manager=MANAGER)
+
 
         self.update_selected_cat()
 
@@ -2697,12 +2707,14 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.enable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.enable()
+            self.switch_queen_app.enable()
         elif self.the_cat.status == "warrior":
             # LEADERSHIP
             if leader_invalid:
@@ -2719,12 +2731,15 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
+            self.switch_queen.enable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
+
         elif self.the_cat.status == "deputy":
             if leader_invalid:
                 self.promote_leader.enable()
@@ -2737,12 +2752,15 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
+            
         elif self.the_cat.status == "medicine cat":
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -2750,12 +2768,29 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.enable()
+            self.switch_queen.enable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
+        elif self.the_cat.status == "queen":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_queen.disable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
         elif self.the_cat.status == "mediator":
             if leader_invalid:
                 self.promote_leader.enable()
@@ -2770,12 +2805,14 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.disable()
+            self.switch_queen.enable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
         elif self.the_cat.status == "elder":
             if leader_invalid:
                 self.promote_leader.enable()
@@ -2791,12 +2828,14 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.enable()
             self.switch_mediator.enable()
+            self.switch_queen.enable()
             self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
         elif self.the_cat.status == "medicine cat apprentice":
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -2805,12 +2844,30 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.enable()
             self.switch_mediator_app.enable()
+            self.switch_queen_app.enable()
+        elif self.the_cat.status == "medicine cat apprentice":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.switch_queen.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.enable()
+            self.switch_warrior_app.enable()
+            self.switch_mediator_app.enable()
+            self.switch_queen_app.disable()
         elif self.the_cat.status == "mediator apprentice":
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -2819,12 +2876,14 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.enable()
             self.switch_warrior_app.enable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.enable()
         elif self.the_cat.status == "leader":
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -2833,12 +2892,14 @@ class RoleScreen(Screens):
             self.switch_warrior.enable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
         else:
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -2847,12 +2908,14 @@ class RoleScreen(Screens):
             self.switch_warrior.disable()
             self.switch_med_cat.disable()
             self.switch_mediator.disable()
+            self.switch_queen.disable()
             self.retire.disable()
 
             # In-TRAINING ROLES:
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
+            self.switch_queen_app.disable()
 
     def get_role_blurb(self):
         if self.the_cat.status == "warrior":
@@ -2998,6 +3061,10 @@ class RoleScreen(Screens):
         del self.switch_warrior
         self.switch_med_cat.kill()
         del self.switch_med_cat
+        self.switch_queen.kill()
+        del self.switch_queen
+        self.switch_queen_app.kill()
+        del self.switch_queen_app
         self.switch_mediator.kill()
         del self.switch_mediator
         self.retire.kill()

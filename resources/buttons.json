@@ -4581,6 +4581,52 @@
             }
         }
   },
+  "#switch_queen_app_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/switch_queen_app.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/switch_queen_app_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/switch_queen_app_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/switch_queen_app_unavailable.png"
+            }
+        }
+  },
+  "#switch_queen_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/switch_queen.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/switch_queen_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/switch_queen_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/switch_queen_unavailable.png"
+            }
+        }
+  },
   "#switch_mediator_app_button":
   {
         "prototype": "#image_button",
