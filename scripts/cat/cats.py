@@ -53,7 +53,7 @@ class Cat():
         "apprentice",
         "warrior",
         "queen's apprentice",
-        "queen"
+        "queen",
         "mediator apprentice",
         "mediator",
         "medicine cat apprentice",

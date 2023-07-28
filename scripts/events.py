@@ -758,15 +758,38 @@ class Events:
             game.cur_events_list.insert(0, Single_Event(ceremony_txt))
 
     def check_gain_mate(self, checks):
+        
         if len(game.clan.your_cat.mate) == checks[1] + 1:
             try:
                 resource_dir = "resources/dicts/events/lifegen_events/"
                 with open(f"{resource_dir}ceremonies.json",
                         encoding="ascii") as read_file:
                     self.d_txt = ujson.loads(read_file.read())
-                ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
+                try:
+                    ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
+                except:
+                    ceremony_txt = random.choice(self.d_txt["gain_mate general"])
+
                 ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
                 game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+            except:
+                print("You gained a new mate but an event could not be shown1")
+        
+        elif 'accept' in game.switches and game.switches['accept']:
+            try:
+                resource_dir = "resources/dicts/events/lifegen_events/"
+                with open(f"{resource_dir}ceremonies.json",
+                        encoding="ascii") as read_file:
+                    self.d_txt = ujson.loads(read_file.read())
+                try:
+                    ceremony_txt = random.choice(self.d_txt["gain_mate " + game.clan.your_cat.status.replace(" ", "") + " " + Cat.all_cats[game.clan.your_cat.mate[-1]].status.replace(" ", "")])
+                except:
+                    ceremony_txt = random.choice(self.d_txt["gain_mate general"])
+
+                ceremony_txt = ceremony_txt.replace('mate1', str(Cat.all_cats[game.clan.your_cat.mate[-1]].name))
+                game.cur_events_list.insert(0, Single_Event(ceremony_txt))
+                game.switches['accept'] = False
+                checks[1] = len(game.clan.your_cat.mate)
             except:
                 print("You gained a new mate but an event could not be shown1")
 
@@ -1751,7 +1774,7 @@ class Events:
                         self.ceremony(cat, 'medicine cat apprentice')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                    elif random.randint(1,50) == 1:
+                    elif random.randint(1,40) == 1:
                         self.ceremony(cat, "queen's apprentice")
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)

@@ -118,6 +118,14 @@
         "Cats speak in hushed tones when you approach, leaving you paranoid about their conversations.",
         "You struggle to sleep, haunted by the memory of your actions and the implications they hold for your role within the clan."
     ],
+    "queen": [
+        "No one trusts you around the kits anymore.",
+        "Kits shrink away from you when you approach them."
+    ],
+    "queen's apprentice": [
+        "No one trusts you around the kits anymore.",
+        "Kits shrink away from you when you approach them."
+    ],
     "deputy": [
         "Patrol assignments become tense, with many warriors wary of being sent out alone with you.",
         "Cats whisper and quickly disperse when you approach, making it difficult for you to maintain clan order.",

@@ -1520,6 +1520,7 @@ class AllegiancesScreen(Screens):
         living_mediators = []
         living_warriors = []
         living_apprentices = []
+        living_queens = []
         living_kits = []
         living_elders = []
         for cat in living_cats:
@@ -1529,6 +1530,8 @@ class AllegiancesScreen(Screens):
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
+            elif cat.status == 'queen':
+                living_queens.append(cat)
             elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
                 living_apprentices.append(cat)
             elif cat.status in ["kitten", "newborn"]:
@@ -1631,7 +1634,7 @@ class AllegiancesScreen(Screens):
             outputs.append(_box)
         
          # Queens and Kits Box:
-        if queen_dict or living_kits:
+        if queen_dict or living_kits or living_queens:
             _box = ["", ""]
             _box[0] = '<b><u>QUEENS AND KITS</u></b>'
             
@@ -1651,6 +1654,8 @@ class AllegiancesScreen(Screens):
 
                 all_entries.append(self.generate_one_entry(queen, kittens))
 
+            for k in living_queens:
+                all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
             #Now kittens without carers
             for k in living_kits:
                 all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")

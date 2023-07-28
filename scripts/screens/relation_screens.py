@@ -4996,7 +4996,11 @@ class ChooseMurderCatScreen(Screens):
         with open(f"{self.RESOURCE_DIR}murder_unsuccessful.json",
                 encoding="ascii") as read_file:
             self.mu_txt = ujson.loads(read_file.read())
-        ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+        try:
+            ceremony_txt = choice(self.m_txt["murder " + game.clan.your_cat.status.replace(" ", "") + " " + cat_to_murder.status.replace(" ", "")])
+        except:
+            ceremony_txt = choice(self.m_txt["murder general"])
+
         ceremony_txt = ceremony_txt.replace('v_c', str(cat_to_murder.name))
         ceremony_txt = ceremony_txt.replace('c_n', game.clan.name)
         if cat_to_murder.status == 'leader':
@@ -5026,17 +5030,17 @@ class ChooseMurderCatScreen(Screens):
             if accomplice:
                 if accompliced:
                     History.add_death(cat_to_murder, f"{you.name} and {accomplice.name} murdered this cat.")
-                    History.add_murders(cat_to_murder, you, False, f"{you.name} murdered this cat along with {accomplice.name}.")
-                    History.add_murders(cat_to_murder, accomplice, False, f"{you.name} murdered this cat along with {accomplice.name}.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat along with {accomplice.name}.")
+                    History.add_murders(cat_to_murder, accomplice, True, f"{you.name} murdered this cat along with {accomplice.name}.")
 
                     game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " along with " + str(accomplice.name) + ". It seems no one is aware of your actions."))
                 else:
                     History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                    History.add_murders(cat_to_murder, you, False, f"{you.name} murdered this cat.")
+                    History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                     game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + " but " + str(accomplice.name) + " chose not to help. It seems no one is aware of your actions."))
             else:
                 History.add_death(cat_to_murder, f"{you.name} murdered this cat.")
-                History.add_murders(cat_to_murder, you, False, f"{you.name} murdered this cat.")
+                History.add_murders(cat_to_murder, you, True, f"{you.name} murdered this cat.")
                 game.cur_events_list.insert(1, Single_Event("You successfully murdered "+ str(cat_to_murder.name) + ". It seems no one is aware of your actions."))
                 
     def choose_discover_punishment(self, you, cat_to_murder, accomplice, accompliced):
