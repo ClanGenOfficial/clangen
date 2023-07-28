@@ -1,0 +1,43 @@
+{
+    "queen_1": [
+        [
+            "Any",
+            "no_kit"
+        ],
+        [
+            "Being a queen... it's a role filled with both joy and heartache. Every kit that's born, I feel an overwhelming surge of love and protectiveness. I watch them take their first breath, open their eyes, and explore the world.",
+            "Yet, with that love comes immense responsibility. I am not just nurturing the next generation of warriors, but the very future of our Clan. Their every scrape, every cry, keeps me awake at night. Have I done enough? Am I teaching them the right lessons?",
+            "The nursery can sometimes feel like a bubble, separated from the rest of the Clan. But every whisper, every decision made by the leaders, affects us deeply. For one day, these kits will face those very challenges outside.",
+            "Seeing them grow, becoming apprentices, and then warriors, fills my heart with pride. But it's also tinged with fear. Will they remember what they learned in the nursery? Will the world be kind to them?",
+            "It's a life of countless emotions, challenges, and rewards. But when I see them succeed, when I see them find their place in the Clan, all the sleepless nights and worries fade away. For I know, I've played a part in shaping the Clan's future, one kit at a time."
+        ]
+    ],
+    "queen_2": [
+        [
+            "kitten"
+        ],
+        [
+            "Come here, little one. Your fur is so spiky!",
+            "Hey! Don't run away from me!"
+        ]
+    ],
+    "queen_3": [
+        [
+            "kitten"
+        ],
+        [
+            "My dear kit, being a queen is a role woven from strands of love, sacrifice, and hope. When I look at you, so tiny and curious, my heart swells with dreams and wishes for your future.",
+            "But there's more to being in the nursery than just cuddles and playtime. We queens tell stories, teach values, and instill courage. We prepare little ones like you for the big world outside, with its challenges and triumphs.",
+            "Some nights, when the moon is high and you're nestled close, I wonder what kind of warrior you'll become. Will you be fierce and brave, or wise and gentle? Maybe a mix of both, like the stars in the sky."
+        ]
+    ],
+    "queen_3": [
+        [
+            "insult",
+            "Any"
+        ],
+        [
+            "Where are your manners?"
+        ]
+    ]
+}

@@ -1,0 +1,90 @@
+[
+    {
+        "patrol_id": "gen_queen_apprentice70",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "Kits are having nightmares after hearing scary stories from some warriors. You want to comfort them with a gentle lullaby.",
+        "success_text": {
+            "unscathed_common": "Your soothing lullaby calms the distressed kits, allowing them to sleep peacefully. The Clan praises your caring nature."
+        },
+        "fail_text": {
+            "unscathed_common": "While your intentions are good, the lullaby doesn't seem to work for all the kits."
+        },
+        "decline_text": "You decide that your singing voice will do no good for the Clan.",
+        "chance_of_success": 65,
+        "exp": 15,
+        "win_skills": [
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_queen_apprentice66",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "An anxious queen is worried about her kit's mobility development. You offer to share some exercises that might help.",
+        "success_text": {
+            "unscathed_common": "The exercises you suggest seem to make a difference, and the kit shows signs of improvement. The grateful queen praises your knowledge."
+        },
+        "fail_text": {
+            "unscathed_common": "Despite trying the exercises, there's no noticeable difference in the kit's progress."
+        },
+        "decline_text": "You refer them to the medicine cat.",
+        "chance_of_success": 55,
+        "exp": 10,
+        "win_skills": [
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_queen_apprentice67",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "With more kits in the nursery than usual, there's a debate about the sleeping arrangements. You propose a new layout for the nursery to accommodate everyone.",
+        "success_text": {
+            "unscathed_common": "Your proposed layout works wonders, ensuring each kit and queen has enough space. The Clan is impressed by your resourcefulness."
+        },
+        "fail_text": {
+            "unscathed_common": "The new layout causes more issues than it solves, causing some fights between kits who had confused their new designated nests."
+        },
+        "decline_text": "You decide that the old layout works for now.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    },
+    {
+        "patrol_id": "gen_queen_apprentice68",
+        "biome": "Any",
+        "season": "Any",
+        "tags": [
+            "camp"
+        ],
+        "intro_text": "A kit has become fussy and refuses to eat. You're called in to assist.",
+        "success_text": {
+            "unscathed_common": "You have an idea and tear up some freshkill into easy to swallow strips. The kit happily eats the prey."
+        },
+        "fail_text": {
+            "unscathed_common": "The kit remains uninterested, turning their nose up at the prey."
+        },
+        "decline_text": "You assure the kit's parents that the kit will eat eventually and you do not need to intervene.",
+        "chance_of_success": 55,
+        "exp": 10,
+        "win_skills": [
+        ],
+        "min_cats": 1,
+        "max_cats": 3
+    }
+]

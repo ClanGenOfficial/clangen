@@ -61,6 +61,10 @@
             "I'd suggest you spend less time throwing insults and more time serving the Clan."
         ]
     ],
+    "dep_321": [
+        ["Any"],
+        ["There's too much to do right now. Let's talk later."]
+    ],
     "dep_15af": [
         [
             "Any",

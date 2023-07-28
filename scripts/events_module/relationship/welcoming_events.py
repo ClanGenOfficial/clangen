@@ -37,6 +37,9 @@ class Welcoming_Events():
 
         if status == "mediator apprentice":
             status = "mediator"
+        
+        if status == "queen's apprentice":
+            status = "queen"
 
         # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)

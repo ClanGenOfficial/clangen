@@ -762,7 +762,7 @@ class Cat():
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""  
 
-        if self.status in ["warrior", "medicine cat", "mediator"]:
+        if self.status in ["warrior", "medicine cat", "mediator", "queen"]:
             # Give a couple doses of mentor inflence:
             if mentor:
                 max = randint(0, 2)
@@ -2041,6 +2041,8 @@ class Cat():
                     try:
                         if game.clan.your_cat.status in ["medicine cat", "mediator"]:
                             self.status_change(game.clan.your_cat.status + " apprentice")
+                        elif game.clan.your_cat.status == "queen":
+                            self.status_change(game.clan.your_cat.status + "'s apprentice")
                         else:
                             self.status_change("apprentice")
                     except:

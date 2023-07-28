@@ -84,6 +84,10 @@
             "And remember, even if you're the smallest in the clan, you're just as important as the biggest warrior."
         ]
     ],
+    "dep_321": [
+        ["Any"],
+        ["There's too much to do right now. Let's talk later."]
+    ],
     "medfas": [
         ["Any", "no_kit", "insult"],
         ["As a medicine cat, I've learned to heal more than physical wounds. Your words can't harm me.",

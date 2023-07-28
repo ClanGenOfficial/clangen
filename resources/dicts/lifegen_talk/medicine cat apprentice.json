@@ -11,6 +11,10 @@
             "And remember, even though you're small now, one day you might be the one taking care of the clan. So listen, learn, and play nice with your littermates."
         ]
     ],
+    "dep_321": [
+        ["Any"],
+        ["There's too much to do right now. Let's talk later."]
+    ],
     "medapp_15": [
         [
             "Any"

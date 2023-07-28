@@ -1751,6 +1751,10 @@ class Events:
                         self.ceremony(cat, 'medicine cat apprentice')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
+                    elif random.randint(1,50) == 1:
+                        self.ceremony(cat, "queen's apprentice")
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
                     else:
                         # Chance for mediator apprentice
                         mediator_list = list(
@@ -2166,7 +2170,7 @@ class Events:
         TODO: DOCS
         """
         if cat.status in [
-            "apprentice", "medicine cat apprentice", "mediator apprentice"
+            "apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"
         ]:
 
             if cat.not_working() and int(random.random() * 3):

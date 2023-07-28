@@ -1,0 +1,88 @@
+[{
+    "patrol_id": "gen_queen_event101",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "camp"
+    ],
+    "intro_text": "During a fierce storm, water starts to seep into the nursery. You need to find a way to keep the kits dry and warm.",
+    "success_text": {
+        "unscathed_common": "You quickly move the kits to a drier part of the nursery and gather extra moss to insulate them. Thanks to your quick thinking, the kits stay warm and safe."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite your best efforts, some kits still end up cold and wet."
+    },
+    "decline_text": "You call upon the warriors to help relocate the kits to a temporary shelter. Their combined effort ensures that the kits remain safe and comfortable.",
+    "chance_of_success": 65,
+    "exp": 10,
+    "win_skills": [
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+},
+{
+    "patrol_id": "gen_queen_event102",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "camp"
+    ],
+    "intro_text": "A kit has gone missing from the nursery. You need to organize a search.",
+    "success_text": {
+        "unscathed_common": "You promptly organize a search party, and with combined efforts, the kit is found playing near the elders' den, unaware of the panic. Your decisiveness ensures the kit's safety."
+    },
+    "fail_text": {
+        "unscathed_common": "Despite the frantic search, it's an elder who eventually finds the kit."
+    },
+    "decline_text": "You alert the Clan leader, trusting their experience in such matters. The leader's strategy ensures the kit is found safe and sound.",
+    "chance_of_success": 70,
+    "exp": 15,
+    "win_skills": [
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+},
+{
+    "patrol_id": "gen_queen_event103",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "camp"
+    ],
+    "intro_text": "One of the kits has developed a cough. You need to decide on the best course of action.",
+    "success_text": {
+        "unscathed_common": "Recognizing the symptoms, you immediately consult the medicine cat. Under their care, the kit quickly recovers. Your prompt action is commended."
+    },
+    "fail_text": {
+        "unscathed_common": "While you try some traditional remedies, the kit's condition doesn't improve."
+    },
+    "decline_text": "Unsure of the best approach, you seek advice from the senior queens. They suggest bringing the kit to the medicine cat, ensuring its wellbeing.",
+    "chance_of_success": 75,
+    "exp": 10,
+    "win_skills": [
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+},
+{
+    "patrol_id": "gen_queen_event104",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "camp"
+    ],
+    "intro_text": "Kits are getting curious and start wandering too close to the warrior's training area. You need to ensure their safety.",
+    "success_text": {
+        "unscathed_common": "You organize a barrier with the help of other queens and apprentices, keeping the kits safely away from the training ground. The warriors appreciate your efforts."
+    },
+    "fail_text": {
+        "unscathed_common": "Though you caution the kits, one still ends up wandering into the training area, getting a minor scratch. The experience stresses the need for constant vigilance."
+    },
+    "decline_text": "Feeling the situation might be too much for you alone, you enlist the help of the Clan's deputy.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "win_skills": [
+    ],
+    "min_cats": 1,
+    "max_cats": 3
+}]
