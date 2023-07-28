@@ -32,5 +32,16 @@
 	},
     "#debug_console": {
         "prototype": "#window_base_theme"
+    },
+    "#loading_window": {
+        "colours": {
+            "normal_border": "#00000000",
+            "dark_bg": "#00000000"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "enable_title_bar": "0"
+        }
     }
 }
