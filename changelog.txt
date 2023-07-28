@@ -1,3 +1,10 @@
+<strong>v0.5.2: </strong>
+- Added new role: queen
+- Added new role: queen's apprentice
+- Added new thoughts/patrols/events etc
+- Reactions to flirting will be based on personality
+- Fix various bugs
+
 <strong>v0.5.1: </strong>
 - Option to disable new accessories
 - Add dates
