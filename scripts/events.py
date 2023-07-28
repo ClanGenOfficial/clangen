@@ -774,7 +774,6 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(ceremony_txt))
             except:
                 print("You gained a new mate but an event could not be shown1")
-        
         elif 'accept' in game.switches and game.switches['accept']:
             try:
                 resource_dir = "resources/dicts/events/lifegen_events/"
