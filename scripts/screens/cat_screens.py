@@ -667,26 +667,28 @@ class ProfileScreen(Screens):
 
         previous_cat = 0
         next_cat = 0
+        current_cat_found = 0
         if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df and \
                 not (self.the_cat.outside or self.the_cat.exiled):
             previous_cat = game.clan.instructor.ID
 
         if is_instructor:
-            next_cat = 1
+            current_cat_found = 1
 
         for check_cat in Cat.all_cats_list:
             if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
+                current_cat_found = 1
             else:
-                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                if current_cat_found == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
                         check_cat.df == self.the_cat.df and not check_cat.faded:
                     previous_cat = check_cat.ID
 
-                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                elif current_cat_found == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
                         check_cat.df == self.the_cat.df and not check_cat.faded:
                     next_cat = check_cat.ID
+                    break
 
                 elif int(next_cat) > 1:
                     break
@@ -1191,11 +1193,11 @@ class ProfileScreen(Screens):
                 if i != 0:
                     sentence_beginners = [
                         "This cat",
-                        "Then {PRONOUN/m_c/subject} were",
-                        "{PRONOUN/m_c/subject/CAP} were also",
-                        "Also, {PRONOUN/m_c/subject} were",
+                        "Then {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} also",
+                        "Also, {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
                         "As well as",
-                        "{PRONOUN/m_c/subject/CAP} were then"
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} then"
                     ]
                     chosen = choice(sentence_beginners)
                     if chosen == 'This cat':
