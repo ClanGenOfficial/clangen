@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from ..utility import get_text_box_theme, update_sprite, scale
+from ..utility import get_text_box_theme, update_sprite, scale, shorten_text_to_fit
 
 
 class OutsideClanScreen(Screens):
@@ -313,12 +313,9 @@ class OutsideClanScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -359,6 +356,7 @@ class UnknownResScreen(Screens):
         self.filter_age = None
         self.filter_rank = None
         self.filter_exp = None
+        self.filter_death = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.load_images()
@@ -393,6 +391,7 @@ class UnknownResScreen(Screens):
                 self.filter_age.show()
                 self.filter_id.show()
                 self.filter_exp.show()
+                self.filter_death.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -400,6 +399,7 @@ class UnknownResScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_age.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_age.hide()
                 self.filter_rank.hide()
@@ -407,6 +407,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "reverse_age"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -418,6 +419,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "rank"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -429,6 +431,7 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "id"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -440,7 +443,20 @@ class UnknownResScreen(Screens):
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_exp.hide()
+                self.filter_death.hide()
                 game.sort_type = "exp"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_death:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_id.hide()
+                self.filter_exp.hide()
+                self.filter_death.hide()
+                game.sort_type = "death"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -474,6 +490,7 @@ class UnknownResScreen(Screens):
         self.filter_age.kill()
         self.filter_id.kill()
         self.filter_exp.kill()
+        self.filter_death.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -566,6 +583,14 @@ class UnknownResScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_exp.hide()
+        y_pos += 58
+        self.filter_death = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_death_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_death.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -646,13 +671,9 @@ class UnknownResScreen(Screens):
                                    starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
-                if len(name) >= 13:
-                    short_name = str(cat.name)[0:12]
-                    name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id="#text_box_30_horizcenter_light",
-                                                                    manager=MANAGER))
+                short_name = shorten_text_to_fit(name, 220, 30)
+
+                self.cat_names.append(pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))), short_name, object_id="#text_box_30_horizcenter_light", manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0

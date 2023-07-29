@@ -1603,6 +1603,29 @@
             }
         }
     },
+    "#remove_accessory_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/remove_accessory.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/remove_accessory_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/remove_accessory_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/remove_accessory_unavailable.png"
+            }
+        }
+    },
     "#dangerous_tab_button": 
     {
         "prototype": "#image_button",
@@ -4173,6 +4196,29 @@
             "disabled_image":
             {
             "path": "resources/images/buttons/filter_exp_unavailable.png"
+            }
+        }
+    },
+    "#filter_death_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_death.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_death_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_death.png"
+            },
+            "disabled_image":
+            {
+            "path": "resources/images/buttons/filter_death_unavailable.png"
             }
         }
     },

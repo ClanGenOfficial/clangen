@@ -188,18 +188,15 @@
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Has some trouble adjusting",
             "Forgets the Warrior Code sometimes",
-            "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Wants to prove to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a good warrior",
             "Doesn't want to run into any rogues while on patrol",
             "Doesn't miss being a rogue",
             "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        }
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     {
-        "id": "thoughtful_apprentice",
+        "id": "thoughtful_warrior_apprentice",
         "thoughts": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
             "Wants to gather moss for the elder's den",
@@ -381,7 +378,7 @@
         ]
     }, 
     {
-        "id": "childish_apprentice",
+        "id": "childish_warrior_apprentice",
         "thoughts": [
             "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
             "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",

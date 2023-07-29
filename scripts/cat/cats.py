@@ -146,7 +146,7 @@ class Cat():
             self.dead = True
             self.outside = False
             self.exiled = False
-            self.inheritance = None # This should never be used, but just for safty
+            self.inheritance = None # This should never be used, but just for safety
             if "df" in kwargs:
                 self.df = kwargs["df"]
             else:
@@ -504,46 +504,42 @@ class Cat():
             if not isinstance(to_self, Relationship):
                 continue
             
-            
-            # FIRST, MAJOR GRIEF, which results in it's own message and the 
-            # condition. It also has a chance to "fail" to minor grief. 
-            
             family_relation = self.familial_grief(living_cat=cat)
             very_high_values = []
             high_values = []
             
             if to_self.romantic_love > 55:
                 very_high_values.append("romantic")
-            if to_self.romantic_love > 20:
+            if to_self.romantic_love > 40:
                 high_values.append("romantic")
             
             if to_self.platonic_like > 50:
                 very_high_values.append("platonic")
-            if to_self.platonic_like > 15:
+            if to_self.platonic_like > 30:
                 high_values.append("platonic")
             
             if to_self.admiration > 70:
                 very_high_values.append("admiration")
-            if to_self.admiration > 30:
+            if to_self.admiration > 50:
                 high_values.append("admiration")
                 
             if to_self.comfortable > 60:
                 very_high_values.append("comfort")
-            if to_self.comfortable > 30:
+            if to_self.comfortable > 40:
                 high_values.append("comfort")
                 
             if to_self.trust > 70:
                 very_high_values.append("trust")
-            if to_self.trust > 30:
+            if to_self.trust > 50:
                 high_values.append("trust")
             
             
-            grief_type = None
+            major_chance = 0
             if very_high_values:
-                # major grief eligable cats. 
+                # major grief eligible cats. 
                 
                 major_chance = 3
-                if cat.personality.stability < 8:
+                if cat.personality.stability < 5:
                     major_chance -= 1
                 
                 # decrease major grief chance if grave herbs are used
@@ -557,14 +553,13 @@ class Cat():
                 if body_treated:
                     major_chance -= 1
                 
-                # Chance for a cat with major grief to fail to minor.    
-                grief_type = "minor" if int(random() * major_chance) else "major"
-            elif high_values:
+            
+            # If major_chance is not 0, there is a chance for major grief
+            grief_type = None
+            if major_chance and not int(random() * major_chance):
                 
-                # If this triggers, the cat can only get minor grief
-                grief_type = "minor"
+                grief_type = "major"
                 
-            if grief_type == "major":
                 possible_strings = []
                 for x in very_high_values:
                     possible_strings.extend(
@@ -583,19 +578,29 @@ class Cat():
                 # grief the cat
                 if game.clan.game_mode != 'classic':
                     cat.get_ill("grief stricken", event_triggered=True, severity="major")
-            elif grief_type == "minor":
+            
+            # If major grief fails, but there are still very_high or high values, 
+            # fail to minor grief. 
+            elif very_high_values or high_values:
+            
+                grief_type = "minor"
                 
                 # These minor grief message will be applied as throughts. 
                 minor_grief_messages = (
-                        "Told a fond story at r_c's vigil",
-                        "Bargins with StarClan, begging them to send r_c back",
-                        "Sat all night at r_c's vigil",
+                            "Told a fond story at r_c's vigil",
+                            "Bargins with StarClan, begging them to send r_c back",
+                            "Sat all night at r_c's vigil",
+                            "Will never forget r_c",
+                            "Prays that r_c is safe in StarClan",
+                            "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
+                            "Is mourning r_c"
+                        )
+                
+                if body: 
+                    minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
-                        "Will never forget r_c",
-                        "Prays that r_c is safe in StarClan",
-                        "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                        "Is mourning r_c"
                     )
+
                 
                 text = choice(minor_grief_messages)
                 
@@ -2450,14 +2455,14 @@ class Cat():
         elif compat is False:
             chance -= 5
 
-        # Cat's compatablity with mediator also has an effect on success chance.
+        # Cat's compatibility with mediator also has an effect on success chance.
         for cat in [cat1, cat2]:
             if get_personality_compatibility(cat, mediator) is True:
                 chance += 5
             elif get_personality_compatibility(cat, mediator) is False:
                 chance -= 5
 
-        # Determine chance to fail, turing sabotage into mediate and mediate into sabotage
+        # Determine chance to fail, turning sabotage into mediate and mediate into sabotage
         if not int(random() * chance):
             apply_bonus = False
             if sabotage:
@@ -2506,7 +2511,7 @@ class Cat():
         # Determine the number of positive traits to effect, and choose the traits
         chosen_pos = sample(pos_traits, k=randint(2, len(pos_traits)))
 
-        # Determine netative trains effected
+        # Determine negative trains effected
         neg_traits = sample(neg_traits, k=randint(1, 2))
 
         if compat is True:
@@ -2669,7 +2674,7 @@ class Cat():
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
         self.faded = True
 
-        # Sillotette sprite
+        # Silhouette sprite
         if self.age == 'newborn':
             file_name = "faded_newborn"
         elif self.age == 'kitten':
@@ -2750,6 +2755,8 @@ class Cat():
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
         elif game.sort_type == "exp":
             Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
+        elif game.sort_type == "death":
+            Cat.all_cats_list.sort(key=lambda x: -1 * int(x.dead_for))
 
         return
 
@@ -2769,6 +2776,8 @@ class Cat():
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
             elif game.sort_type == "reverse_id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
+            elif game.sort_type == "death":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.dead_for))
         except (TypeError, NameError):
             # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
             # do the slower option of adding the cat, then resorting
@@ -2784,16 +2793,22 @@ class Cat():
 
     @staticmethod
     def get_adjusted_age(cat: Cat):
-        """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
-        they have been dead, rather than age at death"""
+        """Returns the moons + dead_for moons rather than the moons at death for dead cats, so dead cats are sorted by
+        total age, rather than age at death"""
         if cat.dead:
-            if game.config["sorting"]["sort_dead_by_death"]:
-                return cat.dead_for
-            else:
+            if game.config["sorting"]["sort_rank_by_death"]:
                 if game.sort_type == "rank":
                     return cat.dead_for
                 else:
+                    if game.config["sorting"]["sort_dead_by_total_age"]:
+                        return cat.dead_for + cat.moons
+                    else:
+                        return cat.moons
+            else:
+                if game.config["sorting"]["sort_dead_by_total_age"]:
                     return cat.dead_for + cat.moons
+                else:
+                    return cat.moons
         else:
             return cat.moons
         
@@ -3163,7 +3178,7 @@ class Personality():
             self.trait = "strange"
             
     def facet_wobble(self, max=5):
-        """Makes a small adjusment to all the facets, and redetermines trait if needed."""        
+        """Makes a small adjustment to all the facets, and redetermines trait if needed."""        
         self.lawfulness += randint(-max, max)
         self.stability += randint(-max, max)
         self.aggression += randint(-max, max)
