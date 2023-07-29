@@ -179,7 +179,7 @@ def loading_animation():
         rotated = pygame.transform.rotate(image, angle)
         screen.blit(rotated, (x - rotated.get_width() / 2 , y - rotated.get_height() / 2))
         angle += 1
-        pygame.time.delay(10)
+        pygame.time.wait(10)
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
