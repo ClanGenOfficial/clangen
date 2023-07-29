@@ -1177,7 +1177,54 @@ class SaveAsImage(UIWindow):
                 self.small_size_button.enable()
                 self.medium_size_button.enable()
                 self.large_size_button.disable()
+                
+class EventLoading(UIWindow):
+    def __init__(self):
+        super().__init__(scale(pygame.Rect((800, 700), (200, 200))),
+                         window_display_title='Game Over',
+                         object_id='#loading_window',
+                         resizable=False)
+        
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        
+        self.frames = self.load_images()
+        self.end_animation = False
+        
+        self.animated_image = pygame_gui.elements.UIImage(scale(pygame.Rect(0, 0, 200, 200)), self.frames[0], container=self)
+        
+        self.animation_thread = threading.Thread(target=self.animate)
+        self.animation_thread.start()
+        
+    @staticmethod
+    def load_images():
+        frames = []
+        for i in range(1, 9):
+            frames.append(pygame.image.load(f"resources/images/loading_animate/{i}.png"))
+        
+        return frames
     
+    def animate(self):
+        
+        i = 0
+        while True:
+            if self.end_animation:
+                break
+            
+            i += 1
+            if i >= len(self.frames):
+                i = 0
+            
+            self.animated_image.set_image(self.frames[i])
+            
+            time.sleep(0.3)
+            
+            
+        
+    def kill(self):
+        self.end_animation = True
+        game.switches['window_open'] = False
+        super().kill()
     
 class PickPath(UIWindow):
     def __init__(self, last_screen):
@@ -1196,12 +1243,6 @@ class PickPath(UIWindow):
             object_id="text_box_30_horizcenter",
             container=self
         )
-class EventLoading(UIWindow):
-    def __init__(self):
-        super().__init__(scale(pygame.Rect((800, 700), (200, 200))),
-                         window_display_title='Game Over',
-                         object_id='#loading_window',
-                         resizable=False)
 
         self.begin_anew_button = UIImageButton(
             scale(pygame.Rect((30, 190), (150, 150))),
@@ -1412,45 +1453,3 @@ class MateScreen(UIWindow):
                 game.switches['new_mate'].relationships[game.clan.your_cat.ID].romantic_love -= 8
                 game.clan.your_cat.relationships[game.switches['new_mate'].ID].comfortable -= 8
                 game.switches['reject'] = True
-        self.set_blocking(True)
-        game.switches['window_open'] = True
-        
-        self.frames = self.load_images()
-        self.end_animation = False
-        
-        self.animated_image = pygame_gui.elements.UIImage(scale(pygame.Rect(0, 0, 200, 200)), self.frames[0], container=self)
-        
-        self.animation_thread = threading.Thread(target=self.animate)
-        self.animation_thread.start()
-        
-    @staticmethod
-    def load_images():
-        frames = []
-        for i in range(1, 9):
-            frames.append(pygame.image.load(f"resources/images/loading_animate/{i}.png"))
-        
-        return frames
-    
-    def animate(self):
-        
-        i = 0
-        while True:
-            if self.end_animation:
-                break
-            
-            i += 1
-            if i >= len(self.frames):
-                i = 0
-            
-            self.animated_image.set_image(self.frames[i])
-            
-            time.sleep(0.3)
-            
-            
-        
-    def kill(self):
-        self.end_animation = True
-        game.switches['window_open'] = False
-        super().kill()
-        
-

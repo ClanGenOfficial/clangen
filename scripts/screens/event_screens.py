@@ -503,7 +503,6 @@ class EventsScreen(Screens):
         """Various sorting and other tasks that must be done with the timeskip is over. """
         
         self.scroll_height = {}
-        events_class.one_moon()
         if get_living_clan_cat_count(Cat) == 0:
             GameOver('events screen')
         
