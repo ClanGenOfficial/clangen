@@ -162,7 +162,7 @@ def load_user_data():
 def loading_animation():
     global finished_loading
     
-    image = pygame.image.load("resources\images\silver.png")
+    image = pygame.image.load("resources/images/silver.png")
     angle = 0
     
     x = screen.get_width() / 2
