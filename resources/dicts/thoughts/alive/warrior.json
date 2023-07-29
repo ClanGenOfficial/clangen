@@ -152,7 +152,11 @@
     {
         "id": "warrior_gen_warrior",
         "thoughts": [
-            "Is sparring with some Clanmates"
+            "Is sparring with some Clanmates",
+            "Thinks r_c is really pretty",
+            "Thinks r_c is really handsome",
+            "Wants to critique r_c's fighting techniques",
+            "Wants to compliment r_c's fighting techniques"
         ],
         "random_status_constraint": [
             "warrior"
