@@ -291,6 +291,9 @@ class ChangeCatName(UIWindow):
             object_id="#exit_window_button",
             container=self
         )
+        
+        self.specsuffic_hidden = self.the_cat.name.specsuffix_hidden
+        
         self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Name-",
                                                      scale(pygame.Rect((0, 20), (800, 80))),
                                                      object_id="#text_box_30_horizcenter",
@@ -312,7 +315,7 @@ class ChangeCatName(UIWindow):
 
         self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(
             scale(pygame.Rect((0 + x_pos, 100 + y_pos), (240, 60))),
-            placeholder_text=self.the_cat.name.prefix,
+            initial_text=self.the_cat.name.prefix,
             manager=MANAGER,
             container=self)
 
@@ -372,7 +375,7 @@ class ChangeCatName(UIWindow):
             self.toggle_spec_block_off.hide()
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
-                placeholder_text=self.the_cat.name.suffix
+                initial_text=self.the_cat.name.suffix
                 , manager=MANAGER,
                 container=self)
         self.set_blocking(True)
@@ -382,21 +385,29 @@ class ChangeCatName(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
+                old_name = str(self.the_cat.name)
+                
+                self.the_cat.specsuffix_hidden = self.specsuffic_hidden
+                self.the_cat.name.specsuffix_hidden = self.specsuffic_hidden
+                
+                # Note: Prefixes are not allowed be all spaces or empty, but they can have spaces in them. 
                 if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
                     self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
-                    self.name_changed.show()
 
-                if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
+                # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden 
+                # by a special suffix. 
+                if self.the_cat.name.status not in self.the_cat.name.names_dict["special_suffixes"] or \
+                        self.the_cat.name.specsuffix_hidden:
                     self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
                     
-                elif sub(r'[^A-Za-z0-9 ]+', '',
-                         self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
+        
+                if old_name != str(self.the_cat.name):
                     self.name_changed.show()
+                    self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
                 else:
-                    self.the_cat.specsuffix_hidden = False
-                    self.the_cat.name.specsuffix_hidden = False
-                self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
+                    self.name_changed.hide()
+                    
             elif event.ui_element == self.random_prefix:
                 if self.suffix_entry_box.text:
                     use_suffix = self.suffix_entry_box.text
@@ -408,10 +419,7 @@ class ChangeCatName(UIWindow):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.pelt.tortiepattern,
-                                                    specsuffix_hidden=
-                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
-                                                        "special_suffixes"])).prefix)
+                                                    self.the_cat.pelt.tortiepattern).prefix)
             elif event.ui_element == self.random_suffix:
                 if self.prefix_entry_box.text:
                     use_prefix = self.prefix_entry_box.text
@@ -423,11 +431,9 @@ class ChangeCatName(UIWindow):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.pelt.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.pelt.tortiepattern,
-                                                    specsuffix_hidden=
-                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
-                                                        "special_suffixes"])).suffix)
+                                                    self.the_cat.pelt.tortiepattern).suffix)
             elif event.ui_element == self.toggle_spec_block_on:
+                self.specsuffic_hidden = True
                 self.suffix_entry_box.enable()
                 self.random_suffix.enable()
                 self.toggle_spec_block_on.disable()
@@ -436,6 +442,7 @@ class ChangeCatName(UIWindow):
                 self.toggle_spec_block_off.show()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
             elif event.ui_element == self.toggle_spec_block_off:
+                self.specsuffic_hidden = False
                 self.random_suffix.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
