@@ -2137,7 +2137,10 @@ class Cat():
                 self_relationship.mate = False
                 if fight:
                     self_relationship.platonic_like -= 30
-
+                if randint(1,5) == 1:
+                    self.get_ill("heartbroken")
+                if randint(1,5) == 1:
+                    other_cat.get_ill("heartbroken")
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
                     other_cat.create_one_relationship(self)

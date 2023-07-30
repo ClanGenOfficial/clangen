@@ -70,6 +70,16 @@
         "m_c's nightmares have stopped.",
         "m_c is no longer having constant nightmares."
     ],
+    "heartbroken": [
+        "m_c often revisits the memories but now, instead of feeling pain, there's a bittersweet warmth that envelops {PRONOUN/m_c/object}.",
+        "At the sight of the setting sun, m_c realizes that endings can also be beautiful and not every goodbye is forever.",
+        "One evening, m_c listens to the gentle rustling of leaves and feels a sense of peace that had eluded {PRONOUN/m_c/object} for so long.",
+        "With each passing moon, m_c learns to appreciate the still moments, understanding that healing from heartbreak is in the quiet spaces between the pain.",
+        "m_c gazes into a still pond, seeing {PRONOUN/m_c/poss} reflection, and for the first time in many seasons, the sorrow isn't staring back.",
+        "As a leaf falls into m_c's path, {PRONOUN/m_c/subject} realizes that sometimes, letting go is the best way to move forward.",
+        "m_c dreams of the past but wakes up feeling thankful for the present, understanding that heartbreak, too, shaped {PRONOUN/m_c/poss} journey.",
+        "As m_c walks under a canopy of stars, {PRONOUN/m_c/subject} finally feels the weight lifting, replaced by a newfound hope."
+    ],
     "grief stricken": [
         "m_c will always feel {PRONOUN/m_c/poss} grief, but time has softened it, at least a little.",
         "m_c gazes up into Silverpelt and finds that, finally, the grief has begun to lessen.",

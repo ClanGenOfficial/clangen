@@ -639,5 +639,36 @@
         "herbs": [
             "thyme"
         ]
+    },
+    "heartbroken": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "duration": 5,
+        "medicine_duration": 3,
+        "infectiousness": 0,
+        "risks": [
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
+        ]
     }
 }
