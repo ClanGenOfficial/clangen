@@ -188,14 +188,14 @@ def loading_animation():
     i = 0
     total_frames = len(images)
     while not finished_loading:
-        
+        clock.tick(8) # Loading screen is 8FPS
+
         if game.settings["dark mode"]:
             screen.fill(game.config["theme"]["dark_mode_background"])
         else:
             screen.fill(game.config["theme"]["light_mode_background"])
         
         screen.blit(images[i], (x - images[i].get_width() / 2 , y - images[i].get_height() / 2))
-        pygame.time.wait(134)
         
         i += 1
         if i >= total_frames:
