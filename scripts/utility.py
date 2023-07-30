@@ -25,7 +25,7 @@ from scripts.game_structure import image_cache
 
 from sys import exit as sys_exit
 
-from scripts.cat.sprites import sprites, Sprites, spriteSize
+from scripts.cat.sprites import sprites
 
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
@@ -1343,12 +1343,12 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             new_sprite.blit(patches, (0, 0))
 
         # TINTS
-        if cat.pelt.tint != "none" and cat.pelt.tint in Sprites.cat_tints["tint_colours"]:
+        if cat.pelt.tint != "none" and cat.pelt.tint in sprites.cat_tints["tint_colours"]:
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
-            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.pelt.tint]))
+            tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+            tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
         # draw white patches
@@ -1356,10 +1356,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             white_patches = sprites.sprites['white' + cat.pelt.white_patches + cat_sprite].copy()
 
             # Apply tint to white patches.
-            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in sprites.white_patches_tints[
                 "tint_colours"]:
-                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
+                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                tint.fill(tuple(sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
             new_sprite.blit(white_patches, (0, 0))
@@ -1368,10 +1368,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
         if cat.pelt.points:
             points = sprites.sprites['white' + cat.pelt.points + cat_sprite].copy()
-            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in sprites.white_patches_tints[
                 "tint_colours"]:
-                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
+                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                tint.fill(tuple(sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 points.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(points, (0, 0))
 

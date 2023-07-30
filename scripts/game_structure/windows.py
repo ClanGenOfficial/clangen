@@ -638,10 +638,10 @@ class KillCat(UIWindow):
                 death_message = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| _]+", "", self.death_entry_box.get_text())
                 if self.the_cat.status == 'leader':
                     
-                    if death_text.startswith('was'):
-                        death_text = death_text.replace("was", '{VERB/m_c/were/was}', 1)
-                    elif death_text.startswith('were'):
-                        death_text = death_text.replace("were", '{VERB/m_c/were/was}', 1)
+                    if death_message.startswith('was'):
+                        death_message = death_message.replace("was", '{VERB/m_c/were/was}', 1)
+                    elif death_message.startswith('were'):
+                        death_message = death_message.replace("were", '{VERB/m_c/were/was}', 1)
                     
                     if self.take_all:
                         game.clan.leader_lives = 0
