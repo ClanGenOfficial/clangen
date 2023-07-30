@@ -4309,7 +4309,9 @@ class FlirtScreen(Screens):
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
                 continue
-            if not success and "reject" not in talk[0]:
+            if "heartbroken" in cat.illnesses.keys() and "heartbroken" not in talk[0]:
+                continue
+            elif not success and "reject" not in talk[0]:
                 continue
             elif success and "reject" in talk[0]:
                 continue

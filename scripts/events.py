@@ -1453,6 +1453,10 @@ class Events:
             if cat.dead:
                 return
 
+        cat.talked_to = False
+        cat.insulted = False
+        cat.flirted = False
+        
         # prevent injured or sick cats from unrealistic Clan events
         if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
@@ -1531,9 +1535,6 @@ class Events:
                 return
 
         self.handle_murder(cat)
-        cat.talked_to = False
-        cat.insulted = False
-        cat.flirted = False
 
         game.switches['skip_conditions'].clear()
 

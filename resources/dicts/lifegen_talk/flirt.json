@@ -1814,5 +1814,192 @@
             "...Cold? -- Around you. I've been trying to get better with that sort of thing.",
             "I guess I just get nervous."
         ]
+    ],
+    "heartbroken_1": [
+        [
+            "Any",
+            "heartbroken",
+            "introspective",
+            "sweet"
+        ],
+        [
+            "It's kind of you to say that, but my heart is elsewhere."
+        ]
+    ],
+    "heartbroken_2": [
+        [
+            "Any",
+            "heartbroken",
+            "assertive",
+            "upstanding",
+            "introspective",
+            "stable"
+        ],
+        [
+            "I appreciate the gesture, but I'm not ready for this."
+        ]
+    ],
+    "heartbroken_3": [
+        [
+            "Any",
+            "heartbroken",
+            "brooding",
+            "introspective"
+        ],
+        [
+            "Right now, my emotions are too raw for anything more."
+        ]
+    ],
+    "heartbroken_4": [
+        [
+            "Any",
+            "heartbroken",
+            "upstanding",
+            "stable",
+            "sweet"
+        ],
+        [
+            "I need some time to heal. Please understand."
+        ]
+    ],
+    "heartbroken_5": [
+        [
+            "Any",
+            "heartbroken",
+            "assertive",
+            "upstanding",
+            "introspective",
+            "stable"
+        ],
+        [
+            "Now's not a good time for me. I hope you get that."
+        ]
+    ],
+    "heartbroken_6": [
+        [
+            "Any",
+            "heartbroken",
+            "assertive",
+            "brooding"
+        ],
+        [
+            "It's not about you, it's about where my heart is right now."
+        ]
+    ],
+    "heartbroken_7": [
+        [
+            "Any",
+            "heartbroken",
+            "neurotic"
+        ],
+        [
+            "Um, thank you... but I'm... I'm still processing things."
+        ]
+    ],
+    "heartbroken_8": [
+        [
+            "Any",
+            "heartbroken",
+            "assertive",
+            "unlawful"
+        ],
+        [
+            "Not the time or the place. Move along."
+        ]
+    ],
+    "heartbroken_9": [
+        [
+            "Any",
+            "heartbroken",
+            "cool",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "Well, that's just what I needed. More complicated feelings!"
+        ]
+    ],
+    "heartbroken_10": [
+        [
+            "Any",
+            "heartbroken",
+            "cool",
+            "silly",
+            "unabashed"
+        ],
+        [
+            "That's cool, but I've got other things on my mind."
+        ]
+    ],
+    "heartbroken_11": [
+        [
+            "Any",
+            "heartbroken",
+            "unlawful",
+            "brooding"
+        ],
+        [
+            "Life's strange, isn't it? I'm still trying to recover from my last relationship, and here you are."
+        ]
+    ],
+    "heartbroken_12": [
+        [
+            "Any",
+            "heartbroken",
+            "cool",
+            "stable",
+            "introspective"
+        ],
+        [
+            "Kind words, but I'm walking a solitary path for now."
+        ]
+    ],
+    "heartbroken_13": [
+        [
+            "Any",
+            "heartbroken",
+            "assertive",
+            "upstanding",
+            "brooding"
+        ],
+        [
+            "Why now? Why me?"
+        ]
+    ],
+    "heartbroken_14": [
+        [
+            "Any",
+            "heartbroken",
+            "stable",
+            "assertive",
+            "upstanding"
+        ],
+        [
+            "Trust is earned. Let's keep things as they are."
+        ]
+    ],
+    "heartbroken_15": [
+        [
+            "Any",
+            "heartbroken",
+            "silly",
+            "unabashed",
+            "neurotic"
+        ],
+        [
+            "Tempting, but I'm playing hard to get right now."
+        ]
+    ],
+    "heartbroken_16": [
+        [
+            "Any",
+            "heartbroken",
+            "neurotic",
+            "sweet",
+            "stable"
+        ],
+        [
+            "I'm... taking things slow right now."
+        ]
     ]
 }
