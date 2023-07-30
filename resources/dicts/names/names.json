@@ -429,6 +429,6 @@
     "Wren"
 	],
 	"inappropriate_names": [
-		"Wetback", "Yellowface", "Redface", "Blackface", "Brownface", "Pancakeface", "Yellowbone"
+		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone"
 	]
 }

@@ -139,9 +139,12 @@ game.rpc.start_rpc.set()
 # LOAD cats & clan
 finished_loading = False
 
-def load_user_data():
+def load_data():
     global finished_loading
     
+    #load in the spritesheets
+    sprites.load_all()
+
     clan_list = game.read_clans()
     if clan_list:
         game.switches['clan_list'] = clan_list
@@ -162,12 +165,28 @@ def load_user_data():
 def loading_animation():
     global finished_loading
     
-    image = pygame.image.load("resources/images/silver.png")
-    angle = 0
+    # Load images, adjust color
+    color = pygame.Surface((200, 210))
+    if game.settings["dark mode"]:
+        color.fill(game.config["theme"]["light_mode_background"])
+    else:
+        color.fill(game.config["theme"]["dark_mode_background"])
+    
+    images = []
+    for i in range(1, 11):
+        im = pygame.image.load(f"resources/images/loading_animate/startup/{i}.png")
+        im.blit(color, (0,0), special_flags=pygame.BLEND_RGBA_MULT)
+        images.append(im)
+        
+    #Cleanup
+    del im
+    del color
     
     x = screen.get_width() / 2
     y = screen.get_height() / 2
     
+    i = 0
+    total_frames = len(images)
     while not finished_loading:
         
         if game.settings["dark mode"]:
@@ -175,11 +194,12 @@ def loading_animation():
         else:
             screen.fill(game.config["theme"]["light_mode_background"])
         
+        screen.blit(images[i], (x - images[i].get_width() / 2 , y - images[i].get_height() / 2))
+        pygame.time.wait(134)
         
-        rotated = pygame.transform.rotate(image, angle)
-        screen.blit(rotated, (x - rotated.get_width() / 2 , y - rotated.get_height() / 2))
-        angle += 1
-        pygame.time.wait(10)
+        i += 1
+        if i >= total_frames:
+            i = 0
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -188,7 +208,7 @@ def loading_animation():
         pygame.display.update()
     
 
-loading_thread = threading.Thread(target=load_user_data)
+loading_thread = threading.Thread(target=load_data)
 loading_thread.start()
 
 loading_animation()
@@ -199,7 +219,7 @@ loading_thread.join()
 del loading_thread
 del finished_loading
 del loading_animation
-del load_user_data
+del load_data
 
 start_screen.screen_switches()
 
