@@ -3,14 +3,18 @@
 		"id": "admire_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c saw r_c being rude."
+			"m_c saw r_c being rude.",
+			"m_c heard r_c say something mean.",
+			"m_c is annoyed by r_c's negative comments."
 		]
 	},
 	{
 		"id": "admire_de_low2",
 		"intensity": "low",
 		"interactions": [
-			"m_c complains about something r_c did."
+			"m_c complains about something r_c did.",
+			"m_c notices that r_c doesn't want to help out.",
+			"m_c doesn't understand why r_c is being so rude."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
@@ -28,7 +32,9 @@
 	{
 		"id": "admire_de_medium2",
 		"interactions": [
-			"m_c tried to bring r_c's behaviour up to them, but it turned into a fight that someone else had to break up."
+			"m_c tried to bring r_c's behaviour up to them, but it turned into a fight that someone else had to break up.",
+			"m_c confronted r_c about {PRONOUN/r_c/poss} bad attitude but that only makes r_c act out more.",
+			"m_c is disappointed when r_c doesn't uphold a promise."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
@@ -37,7 +43,10 @@
 	{
 		"id": "admire_de_medium3",
 		"interactions": [
-			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat in the end."
+			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat in the end.",
+			"m_c notices that r_c has been avoiding {PRONOUN/r_c/poss} responsibilities lately.",
+			"m_c and r_c were supposed to be working together today, but they can never agree long enough to accomplish anything.",
+			"m_c is frustrated after finishing a task that r_c was supposed to do."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
@@ -68,7 +77,10 @@
 	{
 		"id": "admire_adult_de_med1",
 		"interactions": [
-			"m_c saw r_c miss an easy catch today."
+			"m_c saw r_c miss an easy catch today.",
+			"m_c is disappointed in r_c's subpar work lately.",
+			"m_c is let down by r_c's sloppy performance during a sparring session.",
+			"r_c was supposed to be showing m_c a cool battle move but messed up so badly it made m_c cringe."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -86,7 +98,9 @@
 	{
 		"id": "admire_adult_de_med2",
 		"interactions": [
-			"m_c has noticed r_c isn't doing a lot of work lately."
+			"m_c has noticed r_c isn't doing a lot of work lately.",
+			"m_c is disappointed in r_c's lack of initiative.",
+			"m_c notices that r_c seems to disappear whenever difficult tasks are being discussed."
 		],
 		"main_status_constraint": [
 			"elder",
@@ -112,7 +126,8 @@
 		"id": "admire_de_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c heard an ugly rumor about r_c."
+			"m_c heard an ugly rumor about r_c.",
+			"m_c overheard r_c spreading a hurtful rumor."
 		]
 	},
 	{
@@ -120,7 +135,10 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c had a difficult conversation with r_c, and they both ended up resentful of each other.",
-			"m_c was noticeably distracted while r_c was trying to tell a story."
+			"m_c was noticeably distracted while r_c was trying to tell a story.",
+			"m_c and r_c have a long discussion about goals and aspirations, and find that they don't agree on many things.",
+			"m_c spent a long time talking with r_c and was disappointed by r_c's lack of interest.",
+			"m_c asks r_c about something complicated and regrets it almost immediately when r_c misses the point."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
