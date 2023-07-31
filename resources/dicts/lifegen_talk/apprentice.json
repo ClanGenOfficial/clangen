@@ -511,43 +511,5 @@
             "Fine, I'll take your words as a challenge. Someday, I'll prove you wrong.",
             "One day, I'll be a warrior too, and I won't forget your words."
         ]
-    ],
-    "app_3221": [
-        [
-            "apprentice",
-            "flirt"
-        ],
-        [
-            "Oh, um...! I like your pelt too!"
-        ]
-    ],
-    "app_3231": [
-        [
-            "apprentice",
-            "flirt"
-        ],
-        [
-            "What? What? What?!"
-        ]
-    ],
-    "1": [
-        [
-            "apprentice",
-            "flirt",
-            "dislike"
-        ],
-        [
-            "Ew! Ew! Ew! I don't want your cooties!"
-        ]
-    ],
-    "2": [
-        [
-            "apprentice",
-            "flirt",
-            "dislike"
-        ],
-        [
-            "Um... okay?"
-        ]
     ]
 }
