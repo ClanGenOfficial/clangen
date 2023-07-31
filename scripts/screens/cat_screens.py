@@ -2921,6 +2921,23 @@ class RoleScreen(Screens):
             self.switch_warrior_app.enable()
             self.switch_mediator_app.disable()
             self.switch_queen_app.enable()
+        
+        elif self.the_cat.status == "queen's apprentice":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.switch_queen.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.enable()
+            self.switch_warrior_app.enable()
+            self.switch_mediator_app.enable()
+            self.switch_queen_app.disable()
         elif self.the_cat.status == "leader":
             self.promote_leader.disable()
             self.promote_deputy.disable()
