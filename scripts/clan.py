@@ -27,7 +27,7 @@ from scripts.utility import update_sprite, get_current_season, quit  # pylint: d
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
-from scripts.cat.sprites import spriteSize
+from scripts.cat.sprites import sprites
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -801,9 +801,7 @@ class Clan():
             os.remove(get_save_dir() + f'/{self.name}clan.txt')
 
     def save_clan_settings(self):
-        with open(get_save_dir() + f'/{self.name}/clan_settings.json', 'w',
-                  encoding='utf-8') as write_file:
-            write_file.write(ujson.dumps(self.clan_settings, indent=4))
+        game.safe_save(get_save_dir() + f'/{self.name}/clan_settings.json', self.clan_settings)
 
     def load_clan(self):
         """
@@ -1419,7 +1417,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((spriteSize, spriteSize))
+        white = pygame.Surface((sprites.size, sprites.size))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items

@@ -22,5 +22,12 @@
         "random_living_status": [
             "living"
         ]
+    },
+    {
+        "id": "dead_leader_founder",
+        "thoughts": [
+            "Is proud of being c_n's first leader"
+        ],
+        "main_backstory_constraint": ["clan_founder"]
     }
 ]

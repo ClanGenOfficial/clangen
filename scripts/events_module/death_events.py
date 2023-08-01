@@ -111,27 +111,26 @@ class Death_Events():
                 involved_cats.append(other_cat.ID)
 
         # give history to cat if they die
-        if "other_cat_death" not in death_cause.tags:
-            if cat.status == 'leader':
-                if "all_lives" in death_cause.tags:
-                    game.clan.leader_lives -= 10
-                    additional_event_text += cat.die(body)
-                elif "some_lives" in death_cause.tags:
-                    game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    additional_event_text += cat.die(body)
-                else:
-                    game.clan.leader_lives -= 1
-                    additional_event_text += cat.die(body)
-                death_history = history_text_adjust(death_history, other_clan_name, game.clan)
-
-            else:
+        if cat.status == 'leader':
+            if "all_lives" in death_cause.tags:
+                game.clan.leader_lives -= 10
                 additional_event_text += cat.die(body)
-                death_history = history_text_adjust(death_history, other_clan_name, game.clan)
+            elif "some_lives" in death_cause.tags:
+                game.clan.leader_lives -= random.randrange(2, current_lives - 1)
+                additional_event_text += cat.die(body)
+            else:
+                game.clan.leader_lives -= 1
+                additional_event_text += cat.die(body)
+            death_history = history_text_adjust(death_history, other_clan_name, game.clan)
 
-            self.history.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
+        else:
+            additional_event_text += cat.die(body)
+            death_history = history_text_adjust(death_history, other_clan_name, game.clan)
+
+        self.history.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
 
         # give death history to other cat and kill them if they die
-        if "other_cat_death" in death_cause.tags or "multi_death" in death_cause.tags:
+        if "multi_death" in death_cause.tags:
             if other_cat.status == 'leader':
                 if "all_lives" in death_cause.tags:
                     game.clan.leader_lives -= 10

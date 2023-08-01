@@ -15,7 +15,7 @@ from scripts.utility import event_text_adjust, scale, ACC_DISPLAY, process_text,
 
 from .base_screens import Screens
 
-from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite
+from scripts.utility import get_text_box_theme, scale_dimentions, generate_sprite, shorten_text_to_fit
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
 from scripts.game_structure import image_cache
@@ -268,16 +268,32 @@ class ProfileScreen(Screens):
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
                 SpecifyCatGender(self.the_cat)
+                '''if self.the_cat.genderalign in ["female", "trans female"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                elif self.the_cat.genderalign in ["male", "trans male"]:
+                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
+            #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
+                #if the cat is anything besides m/f/transm/transf then turn them back to cis
                 if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
                     self.the_cat.genderalign = self.the_cat.gender
+                elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'female':
+                    self.the_cat.genderalign = self.the_cat.gender
+                elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'male':
+                    self.the_cat.genderalign = self.the_cat.gender
+                #if the cat is cis (gender & gender align are the same) then set them to trans
+                #cis males -> trans female first
                 elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'male':
                     self.the_cat.genderalign = 'trans female'
+                #cis females -> trans male
                 elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'female':
                     self.the_cat.genderalign = 'trans male'
+                #if the cat is trans then set them to nonbinary
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = 'nonbinary'
-                '''if self.the_cat.genderalign in ["female", "trans female"]:
+                '''#pronoun handler
+                if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
                 elif self.the_cat.genderalign in ["male", "trans male"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
@@ -461,9 +477,8 @@ class ProfileScreen(Screens):
             is_df_instructor = True
 
         # Info in string
-        cat_name = str(self.the_cat.name)  # name
-        if len(cat_name) >= 40:
-            cat_name = f"{cat_name[0:39]}..."
+        cat_name = str(self.the_cat.name)
+        cat_name = shorten_text_to_fit(cat_name, 425, 40)
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
         if is_sc_instructor:
@@ -471,8 +486,7 @@ class ProfileScreen(Screens):
         if is_df_instructor:
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
-        # Write cat name
-        self.og_name = self.the_cat.name
+
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(
@@ -542,11 +556,10 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width * 7 / 15)
+            x_pos = 745 - name_text_size.width//2
         else:
             x_pos = 740 - name_text_size.width
-        # TODO: positioning is weird. closer to names on some, further on others
-        # this only happens on fullscreen :waaaaaaa:
+
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                         ((x_pos, 287), (56, 56))),
                                                                   "",
@@ -654,26 +667,28 @@ class ProfileScreen(Screens):
 
         previous_cat = 0
         next_cat = 0
+        current_cat_found = 0
         if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df and \
                 not (self.the_cat.outside or self.the_cat.exiled):
             previous_cat = game.clan.instructor.ID
 
         if is_instructor:
-            next_cat = 1
+            current_cat_found = 1
 
         for check_cat in Cat.all_cats_list:
             if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
+                current_cat_found = 1
             else:
-                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                if current_cat_found == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
                         check_cat.df == self.the_cat.df and not check_cat.faded:
                     previous_cat = check_cat.ID
 
-                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                elif current_cat_found == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
                         and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
                         check_cat.df == self.the_cat.df and not check_cat.faded:
                     next_cat = check_cat.ID
+                    break
 
                 elif int(next_cat) > 1:
                     break
@@ -1091,7 +1106,7 @@ class ProfileScreen(Screens):
             if app_history:
                 life_history.append(app_history)
                 
-            #Get mentorshif text if it exists
+            #Get mentorship text if it exists
             mentor_history = self.get_mentorship_text()
             if mentor_history:
                 life_history.append(mentor_history)
@@ -1178,11 +1193,11 @@ class ProfileScreen(Screens):
                 if i != 0:
                     sentence_beginners = [
                         "This cat",
-                        "Then {PRONOUN/m_c/subject} were",
-                        "{PRONOUN/m_c/subject/CAP} were also",
-                        "Also, {PRONOUN/m_c/subject} were",
+                        "Then {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} also",
+                        "Also, {PRONOUN/m_c/subject} {VERB/m_c/were/was}",
                         "As well as",
-                        "{PRONOUN/m_c/subject/CAP} were then"
+                        "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} then"
                     ]
                     chosen = choice(sentence_beginners)
                     if chosen == 'This cat':
@@ -1228,7 +1243,7 @@ class ProfileScreen(Screens):
             else:
                 influence_history += "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. "
             
-            # Seocnd, do the facet/personality effect
+            # Second, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and mentor_influence["trait"] != None:
                 if ("Benevolent" or "Abrasive" or "Reserved" or "Outgoing") in mentor_influence["trait"]:
@@ -1385,8 +1400,21 @@ class ProfileScreen(Screens):
                     if index == death_number - 1 and self.the_cat.dead:
                         if death_number == 9:
                             life_text = "lost {PRONOUN/m_c/poss} final life"
+                        elif death_number == 1:
+                            life_text = "lost all of {PRONOUN/m_c/poss} lives"
                         else:
-                            life_text = "lost {PRONOUN/m_c/poss} final lives"
+                            life_text = "lost the rest of {PRONOUN/m_c/poss} lives"
+                    else:
+                        life_text = "lost a life"
+                elif death_number > 1:
+                    #for retired leaders
+                    if index == death_number - 1 and self.the_cat.dead:
+                        life_text = "lost {PRONOUN/m_c/poss} last remaining life"
+                        # added code
+                        if "This cat was" in text:
+                            text = text.replace("This cat was", "{VERB/m_c/were/was}")
+                        else:
+                            text = text[0].lower() + text[1:]
                     else:
                         life_text = "lost a life"
                 else:
@@ -1411,7 +1439,11 @@ class ProfileScreen(Screens):
                 else:
                     deaths = all_deaths[0]
 
-                text = str(self.the_cat.name) + " " + deaths + "."
+                if not deaths.endswith('.'):
+                    deaths += "."
+
+                text = str(self.the_cat.name) + " " + deaths
+
             else:
                 text = all_deaths[0]
 
@@ -1807,6 +1839,18 @@ class ProfileScreen(Screens):
                                                       starting_height=2, object_id="#change_nonbi_button",
                                                       manager=MANAGER)
             elif self.the_cat.genderalign not in ['female', 'trans female', 'male', 'trans male']:
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.genderalign:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)
@@ -2312,10 +2356,9 @@ class RoleScreen(Screens):
         )
 
         name = str(self.the_cat.name)
-        if len(name) > 17:
-            name = name[:14] + "..."
-        self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((790, 140), (320, -1))),
-                                                                             name,
+        short_name = shorten_text_to_fit(name, 300, 26)
+        self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((775, 140), (350, -1))),
+                                                                             short_name,
                                                                              object_id=get_text_box_theme())
 
         text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.personality.trait}\n"
@@ -2903,8 +2946,8 @@ class SpriteInspectScreen(Screens):
         self.set_background_visablity()
         
         # Gather list of current and previous life states
-        # "young adult", "adult", and "senior adult" all look the same: collape to adult
-        # This is not the best way to do it, so if we make them have difference apperences, this will
+        # "young adult", "adult", and "senior adult" all look the same: collapse to adult
+        # This is not the best way to do it, so if we make them have difference appearances, this will
         # need to be changed/removed. 
         if self.the_cat.age in ["young adult", "adult", "senior adult"]:
             current_life_stage = "adult"
@@ -2931,12 +2974,11 @@ class SpriteInspectScreen(Screens):
         self.make_cat_image()
         
         cat_name = str(self.the_cat.name)  # name
-        if len(cat_name) >= 40:
-            cat_name = f"{cat_name[0:39]}..."
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
+        short_name = shorten_text_to_fit(cat_name, 390, 40)
         
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
                                                                           scale(pygame.Rect((50, 120), (-1, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_40_horizcenter"), manager=MANAGER)
@@ -2944,7 +2986,7 @@ class SpriteInspectScreen(Screens):
 
         self.cat_elements["cat_name"].kill()
 
-        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
+        self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(short_name,
                                                                       scale(pygame.Rect(
                                                                         (800 - name_text_size.width, 120),
                                                                         (name_text_size.width * 2, 80))),
@@ -2953,11 +2995,9 @@ class SpriteInspectScreen(Screens):
         
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width * 7 / 15)
+            x_pos = 745 - name_text_size.width//2
         else:
             x_pos = 740 - name_text_size.width
-        # TODO: positioning is weird. closer to names on some, further on others
-        # this only happens on fullscreen :waaaaaaa:
         self.cat_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                 ((x_pos, 127), (56, 56))),
                                                               "",
@@ -3014,7 +3054,7 @@ class SpriteInspectScreen(Screens):
     def make_one_checkbox(self, location:tuple, name:str, stored_bool: bool, cat_value_to_allow=True,
                           disabled_object_id = "#unchecked_checkbox"):
         """Makes a single checkbox. So I don't have to copy and paste this 5 times. 
-            if cat_value_to_allow evalates to False, then the unchecked checkbox is always used the the checkbox 
+            if cat_value_to_allow evaluates to False, then the unchecked checkbox is always used the the checkbox 
             is disabled"""
         
         if not cat_value_to_allow:

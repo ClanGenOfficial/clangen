@@ -19,6 +19,7 @@ import shutil
 import sys
 import time
 import os
+import threading
 
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
@@ -131,26 +132,94 @@ from scripts.screens.all_screens import start_screen # pylint: disable=ungrouped
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
 
+game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+game.rpc.start()
+game.rpc.start_rpc.set()
+
 # LOAD cats & clan
-clan_list = game.read_clans()
-if clan_list:
-    game.switches['clan_list'] = clan_list
-    try:
-        load_cats()
-        version_info = clan_class.load_clan()
-        version_convert(version_info)
-        game.load_events()
-    except Exception as e:
-        logging.exception("File failed to load")
-        if not game.switches['error_message']:
-            game.switches[
-                'error_message'] = 'There was an error loading the cats file!'
-            game.switches['traceback'] = e
+finished_loading = False
 
+def load_data():
+    global finished_loading
+    
+    #load in the spritesheets
+    sprites.load_all()
 
-# LOAD settings
+    clan_list = game.read_clans()
+    if clan_list:
+        game.switches['clan_list'] = clan_list
+        try:
+            load_cats()
+            version_info = clan_class.load_clan()
+            version_convert(version_info)
+            game.load_events()
+        except Exception as e:
+            logging.exception("File failed to load")
+            if not game.switches['error_message']:
+                game.switches[
+                    'error_message'] = 'There was an error loading the cats file!'
+                game.switches['traceback'] = e
+    
+    finished_loading = True
 
-sprites.load_scars()
+def loading_animation():
+    global finished_loading
+    
+    # Load images, adjust color
+    color = pygame.Surface((200, 210))
+    if game.settings["dark mode"]:
+        color.fill(game.config["theme"]["light_mode_background"])
+    else:
+        color.fill(game.config["theme"]["dark_mode_background"])
+    
+    images = []
+    for i in range(1, 11):
+        im = pygame.image.load(f"resources/images/loading_animate/startup/{i}.png")
+        im.blit(color, (0,0), special_flags=pygame.BLEND_RGBA_MULT)
+        images.append(im)
+        
+    #Cleanup
+    del im
+    del color
+    
+    x = screen.get_width() / 2
+    y = screen.get_height() / 2
+    
+    i = 0
+    total_frames = len(images)
+    while not finished_loading:
+        clock.tick(8) # Loading screen is 8FPS
+
+        if game.settings["dark mode"]:
+            screen.fill(game.config["theme"]["dark_mode_background"])
+        else:
+            screen.fill(game.config["theme"]["light_mode_background"])
+        
+        screen.blit(images[i], (x - images[i].get_width() / 2 , y - images[i].get_height() / 2))
+        
+        i += 1
+        if i >= total_frames:
+            i = 0
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit(savesettings=False)
+            
+        pygame.display.update()
+    
+
+loading_thread = threading.Thread(target=load_data)
+loading_thread.start()
+
+loading_animation()
+
+# The loading thread should be done by now. This line
+# is just for safety. Plus some cleanup. 
+loading_thread.join()
+del loading_thread
+del finished_loading
+del loading_animation
+del load_data
 
 start_screen.screen_switches()
 
@@ -178,10 +247,6 @@ if get_version_info().is_source_build or get_version_info().is_dev():
         object_id="#dev_watermark"
     )
 
-game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
-game.rpc.start()
-game.rpc.start_rpc.set()
-
 
 cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
 cursor = pygame.cursors.Cursor((9,0), cursor_img)
@@ -195,9 +260,9 @@ while True:
     time_delta = clock.tick(game.switches['fps']) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
-            screen.fill((57, 50, 36))
+            screen.fill(game.config["theme"]["dark_mode_background"])
         else:
-            screen.fill((206, 194, 168))
+            screen.fill(game.config["theme"]["light_mode_background"])
 
     if game.settings['custom cursor']:
         if pygame.mouse.get_cursor() == disabled_cursor:

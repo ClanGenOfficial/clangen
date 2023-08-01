@@ -8,6 +8,7 @@ from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values, create_new_cat
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
+from scripts.cat.names import Name
 from scripts.cat.history import History
 
 
@@ -50,8 +51,13 @@ class NewCatEvents:
                 if name_change == 1 or backstory == 'former Clancat':
                     event_text = event_text + f" They decide to keep their name."
                 elif name_change == 2 and backstory != 'former Clancat':
-                    outside_cat.name.prefix = random.choice(names.names_dict["normal_prefixes"])
-                    outside_cat.name.suffix = random.choice(names.names_dict["normal_suffixes"])
+                    outside_cat.name = Name(outside_cat.status, 
+                                            colour=outside_cat.pelt.colour,
+                                            eyes=outside_cat.pelt.eye_colour,
+                                            pelt=outside_cat.pelt.name,
+                                            tortiepattern=outside_cat.pelt.tortiepattern,
+                                            biome=game.clan.biome)
+                    
                     event_text = event_text + f" They decide to take a new name, {outside_cat.name}."
                 outside_cat.thought = "Is looking around the camp with wonder"
                 involved_cats = [outside_cat.ID]

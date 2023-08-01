@@ -66,6 +66,43 @@
         ]
     },
     {
+        "id": "founder_dead_to_dead_other",
+        "thoughts": [
+            "Is speaking with r_c about how c_n came to be",
+            "Is telling other StarClan cats stories of c_n's beginning"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "founder_dead_to_dead_other_founder",
+        "thoughts": [
+            "Is reminiscing with r_c about how c_n came to be",
+            "Is speaking with r_c about how the Clan they founded had changed"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_backstory_constraint": ["clan_founder"],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
         "id": "general_dead_to_alive_other",
         "thoughts": [
             "Is watching over r_c",
@@ -81,6 +118,26 @@
             "Accidentally found {PRONOUN/m_c/self} in r_c's dreams the other night",
             "Knows what r_c's secret is and wants to tell some cat",
             "Is judging r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "founder_dead_to_alive_kit",
+        "thoughts": [
+            "Is watching over the newest additions to {PRONOUN/m_c/poss} Clan"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_status_constraint": [
+            "kitten"
         ],
         "random_living_status": [
             "living"

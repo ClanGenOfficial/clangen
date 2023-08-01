@@ -662,7 +662,8 @@
             "romantic",
             "platonic",
             "comfort",
-            "no_app"
+            "no_app",
+            "rc_has_stat"
         ],
         "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
         "decline_text": "r_c declines gently, explaining that they have too much work to do.",
