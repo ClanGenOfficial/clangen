@@ -16,10 +16,10 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves them! The kit is still left injured from the ordeal.",
+        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "history_text": {
-            "scar": "m_c was scarred as a kit, when a hawk tried to carry them off.",
-            "reg_death": "m_c died from their wounds after a hawk tried to carry them off."
+            "scar": "m_c was scarred as a kit, when a hawk tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a hawk tried to carry {PRONOUN/m_c/object} off."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -33,10 +33,10 @@
             "scar",
             "FROSTMITT"
         ],
-        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
+        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
         "history_text": {
             "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after they got frostbite sneaking out of camp."
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite sneaking out of camp."
         },
         "cat_trait": [
             "daring",

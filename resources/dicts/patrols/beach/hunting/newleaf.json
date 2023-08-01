@@ -8,14 +8,14 @@
             "no_app",
             "medium_prey"
         ],
-        "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. Their jaws hang open to taste at the air, and a tingle of satisfaction shoots through them as they scent a nearby ground squirrel, snuffling in the sand for fresh newleaf morsels.",
-        "decline_text": "p_l decides against pursuing this one. Newleaf is mating season, and they know if they want more squirrels in the seasons to come, some should be left alone for now.",
+        "intro_text": "p_l walks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, snuffling in the sand for fresh newleaf morsels.",
+        "decline_text": "p_l decides against pursuing this one. Newleaf is mating season, and {PRONOUN/p_l/subject} {VERB/p_l/know/knows} if {PRONOUN/p_l/subject} {VERB/p_l/want/wants} more squirrels in the seasons to come, some should be left alone for now.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": {
             "unscathed_common": "The wind shifts, but before the squirrel can react p_l acts fast and leaps, stopping it from shrieking an alarm call with a quick nip to the back of the neck.",
-            "unscathed_rare": "The squirrel doesn't notice p_l stalking up to them.. that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
-            "stat_skill": "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; they just walk right up behind it and take the kill."
+            "unscathed_rare": "The squirrel doesn't notice p_l stalking up to them.. that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and have it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though.",
+            "stat_skill": "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; {PRONOUN/s_c/subject} just {VERB/s_c/walk/walks} right up behind it and {VERB/s_c/take/takes} the kill."
         },
         "fail_text": {
             "unscathed_common": "The wind shifts, and the squirrel stiffens, shrieks out an alarm call, and vanishes back into its burrow. Oh well."
@@ -37,16 +37,16 @@
             "apprentice",
             "medium_prey"
         ],
-        "intro_text": "app1 has snuck out of camp alone, hoping to be able to bring back one of the first squirrels of newleaf. Running through everything they've been taught in their head, they carefully scent the air and strain their ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
-        "decline_text": "They're focusing so hard, they don't notice a Clanmate is standing silently behind them, waiting for them to notice that they've been caught red-pawed. Oops!",
+        "intro_text": "app1 has snuck out of camp alone, hoping to be able to bring back one of the first squirrels of newleaf. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
+        "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate in the maze of stones, and they're pretty sure at one point it's long gone, but in the end they find and catch it!",
-            "unscathed_rare": "app1 hears a quiet snuffling nearby, and slides into a hunting crouch. Slinking forward, they find the source is a squirrel, foraging for newleaf food! They stalk carefully and catch it while it's distracted, heading home with their head held high."
+            "unscathed_common": "The wind blows a scent towards them, and app1 immediately drops into a crouch. It's hard to locate in the maze of stones, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure at one point it's long gone, but in the end {PRONOUN/app1/subject} {VERB/app1/find/finds} and {VERB/app1/catch/catches} it!",
+            "unscathed_rare": "app1 hears a quiet snuffling nearby, and slides into a hunting crouch. Slinking forward, {PRONOUN/app1/subject} {VERB/app1/find/finds} the source is a squirrel, foraging for newleaf food! {PRONOUN/app1/subject/CAP} {VERB/app1/stalk/stalks} carefully and {VERB/app1/catch/catches} it while it's distracted, heading home with {PRONOUN/app1/poss} head held high."
         },
         "fail_text": {
-            "unscathed_common": "Unfortunately, they don't end up finding anything, and they slink back to camp empty-pawed."
+            "unscathed_common": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed."
         },
         "min_cats": 1,
         "max_cats": 1,
@@ -66,15 +66,15 @@
             "trust"
         ],
         "intro_text": "p_l and app1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!",
-        "decline_text": "p_l praises them and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
+        "decline_text": "p_l praises {PRONOUN/app1/object} and smiles, but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though their paws are rather unpracticed, the basic knowledge is solid, and their hunt is a success!",
-            "unscathed_rare": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. They're nervous, of course, but their technique is pretty-near flawless, and they catch the squirrel easily!"
+            "unscathed_common": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN/app1/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN/app1/poss} hunt is a success!",
+            "unscathed_rare": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} nervous, of course, but {PRONOUN/app1/poss} technique is pretty-near flawless, and {PRONOUN/app1/subject} {VERB/app1/catch/catches} the squirrel easily!"
         },
         "fail_text": {
-            "unscathed_common": "p_l praises them and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in their excitement, app1 loses their footing and their claws skid a little on the rocks; the squirrel shrieks at them and vanishes into the burrow."
+            "unscathed_common": "p_l praises {PRONOUN/app1/object} and smiles, and app1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN/app1/poss} excitement, app1 loses {PRONOUN/app1/poss} footing, and {PRONOUN/app1/poss} claws skid a little on the rocks; the squirrel shrieks at {PRONOUN/app1/object} and vanishes into the burrow."
         },
         "min_cats": 2,
         "max_cats": 2,
@@ -93,23 +93,23 @@
             "medium_prey",
             "no_fail_prey",
             "injury",
-            "bite-wound",
+            "snake bite",
             "poisoned",
             "scar",
             "SNAKE"
         ],
-        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once they realize what's making it - there's a rattlesnake, staring down a ground squirrel!",
+        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it - there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
         "chance_of_success": 40,
         "exp": 40,
         "success_text": {
             "unscathed_common": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, before turning and slithering away. r_c wastes no time in pouncing on the squirrel now that it's safe to approach, securing the meal for the Clan!",
-            "unscathed_rare": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, before r_c remembers what they're doing and kills the squirrel before it, too, flees.",
-            "stat_skill": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c moves in once they realize the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c carry both home, eager to show the Clan what they accomplished."
+            "unscathed_rare": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, before r_c remembers what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and kills the squirrel before it, too, flees.",
+            "stat_skill": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c moves in once {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c carry both home, eager to show the Clan what {PRONOUN/s_c/subject} accomplished."
         },
         "fail_text": {
             "unscathed_common": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send it fleeing, and nobody even thinks to catch the squirrel until it, too, is long gone.",
-            "injury": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once they realize the snake is intimidated by it, but doesn't anticipate it turning on them instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den."
+            "injury": "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it, but doesn't anticipate it turning on {PRONOUN/r_c/object} instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine den."
         },
         "win_skills": [
             "HUNTER,1"
@@ -119,7 +119,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a rattlesnake."
+            "scar": "m_c was scarred by a rattlesnake."
         }
     },
     {
@@ -135,13 +135,13 @@
             "large_prey2"
         ],
         "intro_text": "p_l's patrol strolls leisurely along the coastline, enjoying the smells of newleaf. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. Better not to disturb the squirrels during mating season.",
+        "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels during mating season.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
             "unscathed_common": "The patrol makes short work of locating the squirrels, spreading out into a loose formation to encircle their prey. Slowly, they move in, the circle getting tighter and tighter, until they're finally seen. The squirrels screech and scatter in different directions, but the circle cuts off their escape, and by the end of it they're fresh-kill.",
             "unscathed_rare": "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. One really couldn't ask for a better hunt.",
-            "stat_skill": "s_c murmurs instructions to their Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+            "stat_skill": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. One cat feints at a squirrel, who raises the alarm and turns to run; another cat blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
         },
         "fail_text": {
             "unscathed_common": "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
@@ -177,16 +177,16 @@
         "success_text": {
             "unscathed_common": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
             "unscathed_rare": "Your patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-            "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+            "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it."
         },
         "fail_text": {
             "unscathed_common": "The mother red fox is vicious and determined, and the small patrol is beaten back. But this coast is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-            "unscathed_stat": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+            "unscathed_stat": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol have to rescue {PRONOUN/s_c/object} from the red vixen.",
             "death": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
             "injury": "The mother red fox's snapping jaws leave r_c dripping blood on the sand, forcing the patrol to back off.",
-            "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-            "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+            "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
+            "leader_death": "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of {PRONOUN/p_l/poss} Clanmates, losing a life."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -210,8 +210,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen.",
-            "reg_death": "r_c fell in battle with a red fox.",
+            "scar": "m_c carries a scar from a fight with a red vixen.",
+            "reg_death": "m_c fell in battle with a red fox.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -237,14 +237,14 @@
         "success_text": {
             "unscathed_common": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The coasts will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
             "unscathed_rare": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she and her cubs pose.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-            "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+            "stat_trait": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it."
         },
         "fail_text": {
             "unscathed_common": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-            "unscathed_stat": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+            "unscathed_stat": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol has to rescue {PRONOUN/s_c/object} from the red vixen.",
             "injury": "r_c is left wounded as the patrol and the red mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the coast.",
-            "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
+            "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -268,7 +268,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a red vixen."
+            "scar": "m_c carries a scar from a fight with a red vixen."
         }
     },
     {
@@ -294,13 +294,13 @@
         "exp": 50,
         "success_text": {
             "unscathed_common": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
-            "stat_trait": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
+            "stat_trait": "A brilliant battle move by s_c knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} pelt to do it alone."
         },
         "fail_text": {
             "death": "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
             "injury": "The mother red fox's snapping jaws leave r_c dripping blood on the sand, and barely able to escape further injury.",
-            "stat_injury": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
+            "stat_injury": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -324,8 +324,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a red vixen.",
-            "reg_death": "r_c fell in a solo battle with a vixen.",
+            "scar": "m_c carries a scar from a solo fight with a red vixen.",
+            "reg_death": "m_c fell in a solo battle with a vixen.",
             "lead_death": "died while fighting a red vixen"
         }
     },
@@ -350,14 +350,14 @@
         "success_text": {
             "unscathed_common": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
             "unscathed_rare": "Your patrol drives away the gray fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves. Better to deal with them now than when they're the height and nearly double the weight of a cat, though a gray fox will always be easier than a big red one.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
-            "stat_trait": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill."
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters; a gray fox is a dangerous competitor.",
+            "stat_trait": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill."
         },
         "fail_text": {
             "unscathed_common": "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises the cats. This round goes to the gray fox.",
-            "unscathed_stat": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
+            "unscathed_stat": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
             "injury": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-            "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
+            "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -381,7 +381,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -405,14 +405,14 @@
         "success_text": {
             "unscathed_common": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
             "unscathed_rare": "With so many cats working together in tight coordination, they're able to keep the gray vixen they find pinned and distracted as they wear her down. The fox eventually flees for her den, and the patrol follows to take care of the cubs she's raising.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
-            "stat_trait": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee."
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters; a gray fox is a dangerous competitor.",
+            "stat_trait": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee."
         },
         "fail_text": {
             "unscathed_common": "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises the cats. This round goes to the gray fox.",
-            "unscathed_stat": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one. In a moment that embarrasses them deeply, the gray vixen slips past them and flees into the maze of the sand dunes.",
+            "unscathed_stat": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one. In a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
             "injury": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-            "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
+            "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} ass over paws as she flees from the patrol."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -436,7 +436,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a gray vixen."
+            "scar": "m_c carries a scar from a fight with a gray vixen."
         }
     },
     {
@@ -457,15 +457,15 @@
         "chance_of_success": 40,
         "exp": 50,
         "success_text": {
-            "unscathed_common": "The stocky gray vixen they track down smells of milk, and though she's near double r_c's weight and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes.",
-            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by themselves. Now neither the gray fox nor her dependent cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
-            "stat_trait": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."
+            "unscathed_common": "The stocky gray vixen {PRONOUN/r_c/subject} {VERB/r_c/track/tracks} down smells of milk, and though she's near double r_c's weight and all of it muscle, {PRONOUN/r_c/subject} {VERB/r_c/meet/meets} her eyes squarely, and {VERB/r_c/leap/leaps} to attack. c_n does not tolerate sharing their territory with foxes.",
+            "stat_skill": "s_c displays incredible skill, driving the mother vixen and her brood off of the coast all by {PRONOUN/s_c/self}. Now neither the gray fox nor her dependent cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
+            "stat_trait": "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on {PRONOUN/s_c/object}, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."
         },
         "fail_text": {
-            "unscathed_common": "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises r_c. This round goes to the gray fox.",
-            "unscathed_stat": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
-            "injury": "r_c nearly manages to pin the gray vixen they find on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today, this round goes to the gray fox.",
-            "stat_injury": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
+            "unscathed_common": "r_c comes across a gray vixen at the end of the scent trail. She spots {PRONOUN/r_c/object} too, measures herself up against {PRONOUN/r_c/object}, then flees, scrambling up the cliffs of the headland in a move that completely surprises r_c. This round goes to the gray fox.",
+            "unscathed_stat": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the sand dunes.",
+            "injury": "r_c nearly manages to pin the gray vixen {PRONOUN/r_c/subject} {VERB/r_c/find/finds} on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today, this round goes to the gray fox.",
+            "stat_injury": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract {PRONOUN/s_c/object} as she flees."
         },
         "win_skills": [
             "FIGHTER,3"
@@ -489,7 +489,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fight with a gray vixen."
+            "scar": "m_c carries a scar from a solo fight with a gray vixen."
         }
     }
 ]

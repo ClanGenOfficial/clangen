@@ -7,7 +7,7 @@ import pygame_gui
 import ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_special_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text
+    get_special_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text, shorten_text_to_fit
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import Patrol
 from scripts.cat.cats import Cat
@@ -788,11 +788,9 @@ class PatrolScreen(Screens):
                                                                           manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if len(name) >= 16:  # check name length
-                short_name = name[0:15]
-                name = short_name + '..'
+            short_name = shorten_text_to_fit(name, 350, 30)
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(short_name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
                                                                            object_id=get_text_box_theme(
                                                                                "#text_box_30_horizcenter"),

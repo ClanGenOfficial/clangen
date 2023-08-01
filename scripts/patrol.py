@@ -109,14 +109,14 @@ class Patrol():
         return self.patrol_event.intro_text
 
     def proceed_patrol(self, path:str="proceed"):
-        """Procced the patrol to the next step. 
+        """Proceed the patrol to the next step. 
             path can be: "proceed", "antag", or "decline" """
         
         if path == "decline":
             if self.patrol_event:
                 return self.patrol_event.decline_text
             else:
-                return "Error - no event choosen"
+                return "Error - no event chosen"
         
         self.patrol_done = True
         self.calculate_success(antagonize=(path == "antag"))
@@ -478,12 +478,12 @@ class Patrol():
             # For a 2 cat patrol, the only restriction is
             # that s_c can't be r_c. s_c only allowed to be the 
             # same cat as the p_l. This
-            # can be overidden by the "rc_has_stat"
+            # can be overridden by the "rc_has_stat"
             # tag, which forces s_c to be r_c instead. 
             if "rc_has_stat" in self.patrol_event.tags:
                 return True if kitty == self.patrol_random_cat else False
-
-            return True if kitty == self.patrol_leader else False
+            else:
+                return True if kitty == self.patrol_leader else False
 
         # normal, 3+ cat p_l and r_c 
         # filtering, where stat cat must be
@@ -713,6 +713,11 @@ class Patrol():
             if "no_leader" in patrol.tags:
                 if "leader" in self.patrol_statuses:
                     continue
+                    
+            # makes sure the deputy isn't present if they're not supposed to be
+            if "no_deputy" in patrol.tags:
+                if "deputy" in self.patrol_statuses:
+                    continue
 
             # cruel season tag check
             if "cruel_season" in patrol.tags:
@@ -784,7 +789,7 @@ class Patrol():
         -then checks for image file with the patrol_id minus any numbers
         -then checks for image file with the patrol_id minus any numbers and with 'gen' replacing biome indicator
         -if none of those are available, then uses placeholder patrol type image
-        if you are adding art and the art has gore or blood, add it's exact patrol id to the explicit_patrol_art.json
+        if you are adding art and the art has gore or blood, add its exact patrol id to the explicit_patrol_art.json
         """
         path = "resources/images/patrol_art/"
 
@@ -966,7 +971,7 @@ class Patrol():
                 len(self.patrol_cats) * gm_modifier * 2)
         success_chance = self.patrol_event.chance_of_success + int(success_adjust)
 
-        # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
+        # Auto-wins based on EXP are sorta lame. Often makes it impossible for large patrols with experienced cats to fail patrols at all. 
         # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
         success_chance = min(success_chance, 90)
 
@@ -1884,14 +1889,16 @@ class Patrol():
                 for poisoned in cats_to_poison:
                     poisoned.get_injured('poisoned')
                     self.handle_history(cat, 'poisoned', possible=True, death=True)
-                    self.results_text.append(f"{poisoned.name} got: poisoned")
+                    if f"{poisoned.name} got: poisoned" not in self.results_text:
+                        self.results_text.append(f"{poisoned.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
                 for cat in self.patrol_cats:
                     if len(possible_conditions) > 0:
                         new_condition = choice(possible_conditions)
-                        self.results_text.append(f"{cat.name} got: {new_condition}")
+                        if f"{cat.name} got: {new_condition}" not in self.results_text:
+                            self.results_text.append(f"{cat.name} got: {new_condition}")
                         if new_condition in INJURIES:
                             cat.get_injured(new_condition, lethal=lethal)
                         elif new_condition in ILLNESSES:
@@ -1947,7 +1954,7 @@ class Patrol():
             adjust_text = adjust_text.replace("r_c", str(cat.name))
             adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
             if possible:
-                History.add_possible_history(cat, condition, scar_text=adjust_text)
+                History.add_possible_history(cat, condition=condition, scar_text=adjust_text)
             else:
                 History.add_scar(cat, adjust_text)
         if death:
@@ -1957,7 +1964,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
             else:
@@ -1966,7 +1973,7 @@ class Patrol():
                     adjust_text = adjust_text.replace("r_c", str(cat.name))
                     adjust_text = adjust_text.replace("o_c_n", str(self.other_clan.name))
                     if possible:
-                        History.add_possible_history(cat,condition=condition, death_text=adjust_text)
+                        History.add_possible_history(cat, condition=condition, death_text=adjust_text)
                     else:
                         History.add_death(cat, adjust_text)
 
@@ -2071,20 +2078,33 @@ class Patrol():
             relevant_patrol_tags = [tag for tag in self.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
-                if "fantastic hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
-                elif "great hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
-                elif "good hunter" in self.patrol_skills:
-                    amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
-                game.clan.freshkill_pile.add_freshkill(amount)
+                for cat in self.patrol_cats:
+                    if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
+                        amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]) / 10 + 1)
+                    elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
+                        amount += int((HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]) / 10 + 1)
+                game.clan.freshkill_pile.add_freshkill(int(amount))
                 if FRESHKILL_ACTIVE:
                     print(f" -- FRESHKILL: added {amount} fail-prey")
-                if len(self.patrol_cats) == 1:
-                    self.results_text.append(
-                        f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
-                else:
-                    self.results_text.append(f"The patrol still manages to bring home some amount of prey.")
+                if amount > 0:
+                    amount_text = "medium"
+                    if amount < game.clan.freshkill_pile.amount_food_needed() / 7:
+                        amount_text = "very small"
+                    elif amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
+                        amount_text = "small"
+                    elif amount < game.clan.freshkill_pile.amount_food_needed():
+                        amount_text = "decent"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed() * 2:
+                        amount_text = "huge"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed() * 1.5:
+                        amount_text = "large"
+                    elif amount >= game.clan.freshkill_pile.amount_food_needed():
+                        amount_text = "good"
+
+                    if len(self.patrol_cats) == 1:
+                        self.results_text.append(f"{self.patrol_leader.name} still manages to bring home a {amount_text} amount of prey.")
+                    else:
+                        self.results_text.append(f"The patrol still manages to bring home a {amount_text} amount of prey.")
             return
 
         prey_amount_per_cat = 0
@@ -2113,16 +2133,19 @@ class Patrol():
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
             # add bonus of certain skills
-            if cat.skills.meets_skill_requirement(SkillPath.HUNTER.name):
-                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
-
+            if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.primary.tier)]
+            elif cat.skills.secondary and cat.skills.secondary.path == SkillPath.HUNTER and cat.skills.secondary.tier > 0:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[str(cat.skills.secondary.tier)]
         if game.clan.game_mode != "classic":
             if FRESHKILL_ACTIVE:
                 print(f" -- FRESHKILL: added {total_amount} prey")
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
                 amount_text = "medium"
-                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 2:
+                if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
+                    amount_text = "very small"
+                elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                     amount_text = "small"
                 elif total_amount < game.clan.freshkill_pile.amount_food_needed():
                     amount_text = "decent"
@@ -2134,7 +2157,7 @@ class Patrol():
                     amount_text = "good"
 
                 if len(self.patrol_cats) == 1:
-                    self.results_text.append(f"{self.patrol_leader_name} brings back a {amount_text} amount of prey.")
+                    self.results_text.append(f"{self.patrol_leader.name} brings back a {amount_text} amount of prey.")
                 else:
                     self.results_text.append(f"The patrol brings back a {amount_text} amount of prey.")
 
@@ -2587,7 +2610,7 @@ class PatrolEvent:
         "six_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
 
         "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the 
-        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifers) and "apprentice".
+        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifiers) and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
@@ -2623,7 +2646,7 @@ class PatrolEvent:
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
         "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the Clan 
-        (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
+        (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", etc) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.
         "pos_fail" is for if you want the tagged relationship values to still be positive on a failure, rather than negative.

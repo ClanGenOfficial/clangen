@@ -133,7 +133,7 @@
             "other_clan",
             "rel_down"
         ],
-        "event_text": "m_c was seen arguing, and borderline-fighting with, a cat from o_c.",
+        "event_text": "m_c was seen arguing, and borderline-fighting, with a cat from o_c.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -220,7 +220,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was seen arguing, and borderline-fighting with, a loner.",
+        "event_text": "m_c was seen arguing, and borderline-fighting, with a loner.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

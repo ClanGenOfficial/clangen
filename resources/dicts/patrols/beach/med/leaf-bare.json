@@ -118,7 +118,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -166,7 +166,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -211,7 +211,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -250,7 +250,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -298,7 +298,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -343,7 +343,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -382,7 +382,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -430,7 +430,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -475,7 +475,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -514,7 +514,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -562,7 +562,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -606,7 +606,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -628,7 +628,7 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
+            "unscathed_common": "At least {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
             "unscathed_rare": "Sometimes, p_l finds {PRONOUN/p_l/object} near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare.",
             "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         },
@@ -646,7 +646,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -677,7 +677,7 @@
         "chance_of_success": 40,
         "exp": 40,
         "success_text": {
-            "unscathed_common": "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/app1/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
+            "unscathed_common": "At least {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/app1/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
             "unscathed_rare": "Sometimes, p_l finds {PRONOUN/p_l/object} near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare. app1 gives them a weird look, though, prompting p_l to explain {PRONOUN/p_l/poss} wide smile.",
             "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         },
@@ -695,7 +695,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -722,7 +722,7 @@
         "chance_of_success": 20,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "At least {PRONOUN/p_l/subject} don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object}, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
+            "unscathed_common": "At least {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object}, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
             "unscathed_rare": "Sometimes, p_l finds {PRONOUN/p_l/object} near giddy with gratitude for evergreens, plants that scoff at leaf-bare and grow in spite of it. It's not an effect of the plant - juniper calms, not induces euphoria - just the relief of still having a fresh herb source in leaf-bare, and the warmth of having {PRONOUN/p_l/poss} Clanmates there to help {PRONOUN/p_l/subject} gather it.",
             "stat_skill": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare."
         },
@@ -740,7 +740,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+            "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
         }
     },
     {
@@ -781,7 +781,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -831,7 +831,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     },
     {
@@ -877,7 +877,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by frostbite from searching for herbs in leaf-bare."
+            "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
         }
     }
 ]

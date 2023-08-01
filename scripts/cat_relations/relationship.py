@@ -165,7 +165,10 @@ class Relationship():
             effect = f" ({intensity} negative effect)"
 
         interaction_str = interaction_str + effect
-        self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moon(s) old")
+        if self.cat_from.moons == 1:
+            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moon old")
+        else:
+            self.log.append(interaction_str + f" - {self.cat_from.name} was {self.cat_from.moons} moons old")
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")

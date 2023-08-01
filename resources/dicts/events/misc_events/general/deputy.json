@@ -51,7 +51,7 @@
             "Leaf-bare",
             "war"
         ],
-        "event_text": "As the deputy, m_c is doing their best to prepare for leadership in the case that the worst happens."
+        "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case that the worst happens."
     },
     {
         "camp": "any",

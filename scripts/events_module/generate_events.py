@@ -252,7 +252,7 @@ class GenerateEvents:
 
         return event_list
 
-    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False):
+    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False, murder_reveal=False):
         final_events = []
 
         minor = []
@@ -291,6 +291,11 @@ class GenerateEvents:
             if murder and "murder" not in event.tags:
                 continue
             if not murder and "murder" in event.tags:
+                continue
+
+            if murder_reveal and "murder_reveal" not in event.tags:
+                continue
+            if not murder_reveal and "murder_reveal" in event.tags:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons

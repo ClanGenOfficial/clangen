@@ -3,14 +3,18 @@
 		"id": "admire_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c saw r_c being considerate."
+			"m_c saw r_c being considerate.",
+			"m_c noticed r_c is doing {PRONOUN/r_c/poss} best today.",
+			"m_c appreciates r_c's helpful attitude."
 		]
 	},
 	{
 		"id": "admire_inc_low2",
 		"intensity": "low",
 		"interactions": [
-			"m_c mews congratulations to r_c for a job well done."
+			"m_c mews congratulations to r_c for a job well done.",
+			"m_c thinks r_c is being thoughtful of others.",
+			"m_c approves of r_c's recent efforts."
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
@@ -20,7 +24,11 @@
 		"id": "admire_inc_low3",
 		"intensity": "low",
 		"interactions": [
-			"m_c wants to be just like r_c someday."
+			"m_c wants to be just like r_c someday.",
+			"m_c really looks up to r_c!",
+			"m_c is awed by how much r_c has done for the Clan.",
+			"m_c is really impressed by all of r_c's accomplishments.",
+			"m_c wants to hold an important position like r_c."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -38,14 +46,18 @@
 	{
 		"id": "admire_inc_medium1",
 		"interactions": [
-			"m_c admires how brave r_c is."
+			"m_c admires how brave r_c is.",
+			"m_c admires r_c's dedication.",
+			"m_c is impressed with r_c's willingness to help.",
+			"m_c notices that r_c is always one of the first to volunteer for a difficult task."
 		]
 	},
 	{
 		"id": "admire_inc_medium2",
 		"interactions": [
 			"m_c is sparring with r_c.",
-			"m_c has a mock battle with r_c."
+			"m_c has a mock battle with r_c.",
+			"m_c learns a helpful skill from r_c."
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
@@ -150,7 +162,10 @@
 		"interactions": [
 			"m_c is feeling proud of r_c.",
 			"m_c is watching r_c perform an almost-decent hunting crouch.",
-			"m_c is wowed by how well r_c did today!"
+			"m_c is wowed by how well r_c did today!",
+			"m_c is impressed with r_c's progress.",
+			"m_c thinks that r_c will grow up to be an excellent member of the Clan.",
+			"m_c thinks r_c has a bright future ahead of {PRONOUN/r_c/object}."
 		],
 		"relationship_constraint": [
 			"admiration_30"
@@ -173,7 +188,9 @@
 	{
 		"id": "admire_adult_odd_med1",
 		"interactions": [
-			"m_c feels like {PRONOUN/m_c/subject}'ll never accomplish as much as r_c."
+			"m_c feels like {PRONOUN/m_c/subject}'ll never accomplish as much as r_c.",
+			"m_c wonders if {PRONOUN/m_c/subject} can ever be as good as r_c.",
+			"m_c strives to catch up to r_c's success."
 		],
 		"relationship_constraint": [
 			"admiration_30"
@@ -195,7 +212,8 @@
 	{
 		"id": "admire_adult_odd_med1",
 		"interactions": [
-			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}."
+			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}.",
+			"m_c feels like r_c is more accomplished than {PRONOUN/m_c/object}."
 		],
 		"relationship_constraint": [
 			"admiration_60"
@@ -224,14 +242,29 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
-			"m_c is wowed by how bravely r_c fought the other day."
+			"m_c is wowed by how bravely r_c fought the other day.",
+			"m_c is impressed by r_c's competence in any situation.",
+			"m_c is amazed at how skilled r_c really is.",
+			"m_c can't believe how talented r_c is!"
+		],
+		"random_status_constraint": [
+			"warrior",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+            "medicine cat",
+            "deputy",
+            "leader"
 		]
 	},
 	{
 		"id": "admire_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c had a difficult conversation with r_c and they now have a deeper understanding of each other."
+			"m_c had a difficult conversation with r_c and they now have a deeper understanding of each other.",
+			"m_c and r_c have a long discussion about goals and aspirations, and find that they both have a lot in common.",
+			"m_c spent a long time talking with r_c and was impressed by r_c's insight.",
+			"m_c asks r_c about something complicated and is amazed at how quickly r_c understands."
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
@@ -241,7 +274,8 @@
 		"id": "admire_inc_high3",
 		"intensity": "high",
 		"interactions": [
-			"m_c defends r_c from a Clanmate's rude remarks."
+			"m_c defends r_c from a Clanmate's rude remarks.",
+			"r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}."
 		],
 		"relationship_constraint": [
 			"admiration_30"

@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was climbing a tree when they fell. Luckily, they were only bruised by the incident.",
+        "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -23,7 +23,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trips over an unseen rabbit hole, spraining their paw.",
+        "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -38,7 +38,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
+        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at {PRONOUN/m_c/poss} pelt.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -68,7 +68,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was moving some branches out of the way when they got a splinter.",
+        "event_text": "m_c was moving some branches out of the way when {PRONOUN/m_c/subject} got a splinter.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -86,7 +86,7 @@
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": {
             "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after they got frostbite."
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -101,7 +101,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "history_text": {
             "reg_death": "m_c died from water-inhalation after falling in the river."
         },
@@ -124,7 +124,7 @@
         "event_text": "m_c's tail was badly injured by a falling tree.",
         "history_text": {
             "scar": "m_c was scarred by a falling tree.",
-            "reg_death": "m_c died from their wounds after a tree fell on them."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -142,7 +142,7 @@
         "event_text": "A fire rages through the forest. m_c manages to escape, though not unscathed by the experience.",
         "history_text": {
             "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from their burns after a forest fire."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -165,10 +165,10 @@
             "scar",
             "BURNPAWS"
         ],
-        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
+        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside! m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/m_c/poss} grasp.",
         "history_text": {
             "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from their burns after a forest fire."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
         },
         "cat_trait": [
             "ambitious",
@@ -193,7 +193,7 @@
         "event_text": "A fire rages through the forest and m_c manages to escape, though not unscathed by the experience.",
         "history_text": {
             "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from their burns after a forest fire."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -216,10 +216,10 @@
             "scar",
             "BURNBELLY"
         ],
-        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
+        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside! m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/m_c/poss} grasp.",
         "history_text": {
             "scar": "m_c's pelt was burned by a forest fire.",
-            "reg_death": "m_c died from their burns after a forest fire."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
         },
         "cat_trait": [
             "ambitious",

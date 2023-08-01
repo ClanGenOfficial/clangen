@@ -1036,7 +1036,7 @@ class StatsScreen(Screens):
                     warriors_num += 1
                 elif cat.status in ['apprentice', 'medicine cat apprentice']:
                     app_num += 1
-                elif cat.status == 'kitten':
+                elif cat.status in ['kitten', 'newborn']:
                     kit_num += 1
                 elif cat.status == 'elder':
                     elder_num += 1

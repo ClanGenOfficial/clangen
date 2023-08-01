@@ -319,7 +319,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr.",
-            "unscathed_rare": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot.",
+            "unscathed_rare": "p_l shows {PRONOUN/p_l/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot.",
             "stat_skill": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot."
         },
         "fail_text": {
@@ -359,9 +359,9 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding {PRONOUN/p_l/object} that's hard, it's trying to carry the roots back to camp all at once that proves difficult! app1 actually topples over at one point, although p_l pretends {PRONOUN/p_l/subject} didn't see, hiding {PRONOUN/p_l/poss} smile.",
+            "unscathed_common": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry the roots back to camp all at once that proves difficult! app1 actually topples over at one point, although p_l pretends {PRONOUN/p_l/subject} didn't see, hiding {PRONOUN/p_l/poss} smile.",
             "unscathed_rare": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
-            "stat_skill": "s_c shows {PRONOUN/p_l/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. app1 asks {PRONOUN/p_l/object} about it, and p_l replies with an explanation of how the distinctive size and shape of burdock leaves helps to quickly identify {PRONOUN/p_l/object} from a distance."
+            "stat_skill": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. app1 asks {PRONOUN/p_l/object} about it, and p_l replies with an explanation of how the distinctive size and shape of burdock leaves helps to quickly identify them from a distance."
         },
         "fail_text": {
             "unscathed_common": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely come close."
@@ -397,8 +397,8 @@
         "chance_of_success": 30,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding {PRONOUN/p_l/object} that's hard, it's trying to carry the roots back to camp all at once that proves difficult! It's a long, but productive, light-hearted afternoon, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
-            "unscathed_rare": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and {PRONOUN/p_l/poss} Clanmates smile, obligingly helping out {PRONOUN/p_l/poss} hard-working medicine cat.",
+            "unscathed_common": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry the roots back to camp all at once that proves difficult! It's a long, but productive, light-hearted afternoon, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
+            "unscathed_rare": "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and {PRONOUN/p_l/poss} Clanmates smile, obligingly helping out their hard-working medicine cat.",
             "stat_skill": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/s_c/poss/CAP} team follows {PRONOUN/s_c/object}, ready to pitch in and provide the muscle needed to bring back such an excellent harvest."
         },
         "fail_text": {
@@ -428,12 +428,12 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp.",
-            "unscathed_rare": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp.",
-            "stat_skill": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp."
+            "unscathed_common": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+            "unscathed_rare": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+            "stat_skill": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp."
         },
         "fail_text": {
-            "unscathed_common": "It's alright to fail, p_l reminds {PRONOUN/p_l/object}. At least {PRONOUN/p_l/subject} {VERB/p_l/know/knows} where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
+            "unscathed_common": "It's alright to fail, p_l reminds {PRONOUN/p_l/self}. At least {PRONOUN/p_l/subject} {VERB/p_l/know/knows} where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
         },
         "win_skills": [
             "SENSE,2"
@@ -694,7 +694,7 @@
             "stat_skill": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, {PRONOUN/s_c/subject} let app1 take the lead in finding the plants, praising {PRONOUN/s_c/object} for all the progress {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} made in herbcraft."
         },
         "fail_text": {
-            "unscathed_common": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that {PRONOUN/p_l/subject} don't need to worry about protecting the dandelion patch for the future."
+            "unscathed_common": "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't need to worry about protecting the dandelion patch for the future."
         },
         "win_skills": [
             "SENSE,2"
@@ -759,7 +759,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead."
         },
         "fail_text": {
@@ -804,7 +804,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade {PRONOUN/p_l/poss} pride in plucking from the highest branches, even if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} no more potent than those at the bottom.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously, a great demonstration to app1 about why {PRONOUN/p_l/subject} came here and not anywhere else.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously, a great demonstration to app1 about why {PRONOUN/p_l/subject} came here and not anywhere else.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pass/passes} on the trick to app1, and once {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} back at camp both medicine cats strip off the leaves and give them a quick wash."
         },
         "fail_text": {
@@ -844,7 +844,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. {PRONOUN/p_l/subject/CAP} {VERB/p_l/share/shares} the little joke with the patrol, and the cats murrp with amusement, but it does also remind everyone to be careful as {PRONOUN/p_l/subject} {VERB/p_l/strip/strips} leaves from the tree.",
-            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} were expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to work plucking leaves to bring a impressive haul home.",
+            "unscathed_rare": "p_l manages to gather more than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting - the tree {PRONOUN/p_l/subject} chose is in a good spot, and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to work plucking leaves to bring a impressive haul home.",
             "stat_skill": "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants, {PRONOUN/s_c/subject} can bring a truly massive haul home, where the rest of the patrol helps {PRONOUN/s_c/subject} strip the leaves and carefully store {PRONOUN/s_c/object}."
         },
         "fail_text": {
@@ -879,7 +879,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} were anticipating.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores."
         },
         "fail_text": {
@@ -920,7 +920,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. app1 and p_l occasionally exchange quiet meows as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, contact calls reassuring each other that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} both still there amidst the towering goldenrod.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and the cats collect more goldenrod than {PRONOUN/p_l/subject} were anticipating. app1 nearly disappears underneath {PRONOUN/p_l/poss} light, but chaotically bushy, bundle, which has p_l stifling purrs of amusement.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and the cats collect more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating. app1 nearly disappears underneath {PRONOUN/app1/poss} light, but chaotically bushy, bundle, which has p_l stifling purrs of amusement.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As {PRONOUN/s_c/subject} do, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
         },
         "fail_text": {
@@ -958,7 +958,7 @@
         "exp": 10,
         "success_text": {
             "unscathed_common": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, exchanging gossip and news as the smell of cut stems wreathes around {PRONOUN/p_l/object}.",
-            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} were anticipating, loading up every cat until everyone agrees the medicine cat den can't possibly fit more than this.",
+            "unscathed_rare": "It always amazes p_l how quickly the goldenrod bushes sprout back up after leaf-bare, and {PRONOUN/p_l/subject} {VERB/p_l/collect/collects} more goldenrod than {PRONOUN/p_l/subject} {VERB/p_l/were/was} anticipating, loading up every cat until everyone agrees the medicine cat den can't possibly fit more than this.",
             "stat_skill": "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. {PRONOUN/s_c/subject/CAP} {VERB/s_c/control/controls} what is harvested, while {PRONOUN/s_c/poss} team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
         },
         "fail_text": {
@@ -1274,7 +1274,7 @@
         "success_text": {
             "unscathed_common": "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as {PRONOUN/p_l/subject} {VERB/p_l/work/works}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snip/snips} off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the hive might be to app1.",
             "unscathed_rare": "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in {PRONOUN/p_l/poss} own vigorous newleaf competition between each other, leaving p_l with tons to harvest. {PRONOUN/p_l/subject/CAP} {VERB/p_l/test/tests} app1 on {PRONOUN/p_l/poss} knowledge as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, and the apprentice passes with flying colors.",
-            "stat_skill": "s_c has a good eye for these things, finding an excellent patch of mallow. As {PRONOUN/s_c/subject} do, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
+            "stat_skill": "s_c has a good eye for these things, finding an excellent patch of mallow. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
         },
         "fail_text": {
             "unscathed_common": "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude about it doesn't help, either."
@@ -1897,7 +1897,7 @@
             "stat_skill": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. It's difficult, but doable, if only just."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
         },
         "win_skills": [
             "SENSE,2"
@@ -1938,7 +1938,7 @@
             "stat_skill": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. It's difficult, but doable, if only just, and app1 is desperately grateful to learn the trick."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
         },
         "win_skills": [
             "SENSE,2"
@@ -1976,7 +1976,7 @@
             "stat_skill": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying {PRONOUN/s_c/object} back to camp without chewing or salivating. Some of the warriors are too impatient to follow {PRONOUN/s_c/poss} lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the ragwort leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}.."
         },
         "win_skills": [
             "SENSE,2"
@@ -2008,7 +2008,7 @@
             "stat_skill": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"
@@ -2049,7 +2049,7 @@
             "stat_skill": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 thankfully seems to be taking the appropriate amount of care harvesting it."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"
@@ -2086,7 +2086,7 @@
             "stat_skill": "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure {PRONOUN/s_c/subject}'ll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, which is extra helpful when gathering with {PRONOUN/s_c/poss} less-experienced Clanmates."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"
@@ -2228,7 +2228,7 @@
             "stat_skill": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"
@@ -2269,7 +2269,7 @@
             "stat_skill": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"
@@ -2306,7 +2306,7 @@
             "stat_skill": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for {PRONOUN/s_c/poss} patrol to harvest."
         },
         "fail_text": {
-            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
+            "unscathed_common": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as {PRONOUN/p_l/subject} {VERB/p_l/say/says}."
         },
         "win_skills": [
             "SENSE,2"

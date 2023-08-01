@@ -9,7 +9,7 @@
         "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
         "history_text": {
             "scar": "m_c was scarred after slipping on ice.",
-            "reg_death": "m_c died from their wounds after slipping on ice."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after slipping on ice."
         },
         "cat_trait": null,
         "cat_skill": null,

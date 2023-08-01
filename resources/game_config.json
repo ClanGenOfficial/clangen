@@ -38,7 +38,7 @@
 			"deputy",
 			"leader"
 		],
-		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
+		"hunter_bonus": {"1": 1, "2": 2, "3": 3},
 		"hunter_exp_bonus": {
 			"untrained": 0.1,
 			"trainee": 1,
@@ -350,6 +350,16 @@
 	},
 	"save_load": {
 		"load_integrity_checks": true
+	},
+	"sorting": {
+		"sort_dead_by_total_age": true,
+		"sort_rank_by_death": true,
+        "sort_by_rel_total": true,
+		"comment": [
+			"sort_dead_by_total_age - true: sort dead cats by total age (in the order they were born); false: sort dead cats by their age at the time of death.",
+            "sort_rank_by_death - true: when filtering dead cats by rank, list them in the order they died; false: when filtering dead cats by rank, sort dead cats by total age (in the order they were born).",
+            "sort_by_rel_total - true: sort a cat's relationships by the sum of their values; false: they will be sorted in the order they were added."
+		]
 	},
 	"fun": {
 		"april_fools": false,

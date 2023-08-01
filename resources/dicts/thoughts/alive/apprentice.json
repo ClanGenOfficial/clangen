@@ -188,18 +188,15 @@
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Has some trouble adjusting",
             "Forgets the Warrior Code sometimes",
-            "Is ignoring the gossip about {PRONOUN/m_c/poss} past",
             "Wants to prove to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a good warrior",
             "Doesn't want to run into any rogues while on patrol",
             "Doesn't miss being a rogue",
             "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "backstory_constraint": {
-            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
-        }
+        "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     {
-        "id": "thoughtful_apprentice",
+        "id": "thoughtful_warrior_apprentice",
         "thoughts": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
             "Wants to gather moss for the elder's den",
@@ -219,7 +216,7 @@
         "thoughts": [
             "Is busy mastering a fighting technique",
             "Spent all morning mastering and practicing the hunting crouch",
-            "Wants to train until {PRONOUN/m_c/subject} have learned everything",
+            "Wants to train until {PRONOUN/m_c/subject} {VERB/m_c/have/has} learned everything",
             "Doesn't stop practicing a move until it's done perfectly",
             "Likes to catch fish",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
@@ -331,7 +328,7 @@
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
             "Drew blood during {PRONOUN/m_c/poss} battle training",
-            "Sinks {PRONOUN/m_c/poss} into prey, pretending its another cat's pelt",
+            "Sinks {PRONOUN/m_c/poss} teeth into prey, pretending its another cat's pelt",
             "Is caught playing with {PRONOUN/m_c/poss} prey instead of hunting",
             "Is cleaning blood from {PRONOUN/m_c/poss} claws",
             "Is hissing defiantly at r_c",
@@ -381,14 +378,14 @@
         ]
     }, 
     {
-        "id": "childish_apprentice",
+        "id": "childish_warrior_apprentice",
         "thoughts": [
             "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
             "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",
             "Asks if {PRONOUN/m_c/subject} can chase pretty bugs instead of prey",
             "Isn't paying attention to the lesson... again",
             "Overslept and missed the dawn patrol",
-            "Says {PRONOUN/m_c/subject} don't want to do anything today",
+            "Says {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't want to do anything today",
             "Is not allowed to leave camp without asking first"
         ],
         "main_trait_constraint": [

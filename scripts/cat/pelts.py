@@ -1,5 +1,5 @@
 from random import choice
-from scripts.cat.sprites import Sprites
+from scripts.cat.sprites import sprites
 import random
 from re import sub
 from scripts.game_structure.game_essentials import game
@@ -111,14 +111,14 @@ class Pelt():
     ]
     little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS',
                     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'LUNA',
-                    'EXTRA']
+                    'EXTRA', 'MUSTACHE', 'REVERSEHEART']
     mid_white = ['TUXEDO', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR', 'WINGS',
-                'DIVA', 'SAVANNAH', 'FADESPOTS', 'BEARD', 'DAPPLEPAW', 'TOPCOVER', 'WOODPECKER', 'MISS']
+                'DIVA', 'SAVANNAH', 'FADESPOTS', 'BEARD', 'DAPPLEPAW', 'TOPCOVER', 'WOODPECKER', 'MISS', 'BOWTIE', 'VEST']
     high_white = ['ANY', 'ANYTWO', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO',
                 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-                'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB']
+                'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB', 'SPARROW']
     mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
-                    'CHESTSPECK', 'BLACKSTAR', 'PETAL', 'HEARTTWO','PEBBLESHINE', 'BOOTS', 'COW', 'COWTWO']
+                    'CHESTSPECK', 'BLACKSTAR', 'PETAL', 'HEARTTWO','PEBBLESHINE', 'BOOTS', 'COW', 'COWTWO', 'LOVEBUG']
     point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
     vit = ['VITILIGO', 'VITILIGOTWO', 'MOON', 'PHANTOM', 'KARPATI', 'POWDER', 'BLEACHED']
     white_sprites = [
@@ -880,10 +880,10 @@ class Pelt():
 
         # PELT TINT
         # Basic tints as possible for all colors.
-        base_tints = Sprites.cat_tints["possible_tints"]["basic"]
-        if self.colour in Sprites.cat_tints["colour_groups"]:
-            color_group = Sprites.cat_tints["colour_groups"].get(self.colour, "warm")
-            color_tints = Sprites.cat_tints["possible_tints"][color_group]
+        base_tints = sprites.cat_tints["possible_tints"]["basic"]
+        if self.colour in sprites.cat_tints["colour_groups"]:
+            color_group = sprites.cat_tints["colour_groups"].get(self.colour, "warm")
+            color_tints = sprites.cat_tints["possible_tints"][color_group]
         else:
             color_tints = []
         
@@ -895,10 +895,10 @@ class Pelt():
         # WHITE PATCHES TINT
         if self.white_patches or self.points:
             #Now for white patches
-            base_tints = Sprites.white_patches_tints["possible_tints"]["basic"]
-            if self.colour in Sprites.cat_tints["colour_groups"]:
-                color_group = Sprites.white_patches_tints["colour_groups"].get(self.colour, "white")
-                color_tints = Sprites.white_patches_tints["possible_tints"][color_group]
+            base_tints = sprites.white_patches_tints["possible_tints"]["basic"]
+            if self.colour in sprites.cat_tints["colour_groups"]:
+                color_group = sprites.white_patches_tints["colour_groups"].get(self.colour, "white")
+                color_tints = sprites.white_patches_tints["possible_tints"][color_group]
             else:
                 color_tints = []
             

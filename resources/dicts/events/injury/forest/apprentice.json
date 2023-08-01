@@ -8,7 +8,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
+        "event_text": "m_c was running around excitedly on patrol when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "cat_trait": [
             "adventurous",
             "bold",
@@ -31,10 +31,10 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
+        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tall tree.",
-            "reg_death": "m_c died from their wounds after falling from a tall tree."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree."
         },
         "cat_trait": [
             "adventurous",
@@ -61,10 +61,10 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c was practicing their tree climbing skills when they slipped from a branch! Thankfully they survived, though badly injured.",
+        "event_text": "m_c was practicing {PRONOUN/m_c/poss} tree climbing skills when {PRONOUN/m_c/subject} slipped from a branch! Thankfully {PRONOUN/m_c/subject} survived, though badly injured.",
         "history_text": {
             "scar": "m_c was scarred after falling from a tree.",
-            "reg_death": "m_c died from their wounds after falling from a tree."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -82,10 +82,10 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was hunting on a night patrol, and nearly carried off by an owl! They're alive, but with many a scratch as proof of their adventure.",
+        "event_text": "m_c was hunting on a night patrol, and nearly got carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
         "history_text": {
-            "scar": "m_c was scarred after an owl tried to carry them off.",
-            "reg_death": "m_c died from their wounds after an owl tried to carry them off."
+            "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -110,7 +110,7 @@
         ],
         "event_text": "r_c dares m_c to climb one of the tallest trees in the territory. m_c gets pretty high, but a branch breaks and it's a long way to the ground. r_c goes sprinting for camp to get help.",
         "history_text": {
-            "reg_death": "m_c died from their wounds after falling from a tall tree and breaking their back."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back."
         },
         "cat_trait": null,
         "cat_skill": null,

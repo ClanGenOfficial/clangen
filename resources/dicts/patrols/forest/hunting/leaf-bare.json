@@ -44,7 +44,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -78,7 +78,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -124,8 +124,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "froze to death while hunting"
         }
     },
@@ -151,12 +151,12 @@
         "success_text": {
             "unscathed_common": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -182,7 +182,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -207,12 +207,12 @@
         "success_text": {
             "unscathed_common": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -238,7 +238,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -256,20 +256,20 @@
             "respect",
             "large_prey"
         ],
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find their red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            "stat_skill": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
+            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         },
         "fail_text": {
             "unscathed_common": "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
-            "death": "Fiercely, r_c throws themselves at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "death": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
             "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
             "FIGHTER,2"
@@ -295,8 +295,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died while fighting a fox"
         }
     },
@@ -322,12 +322,12 @@
         "success_text": {
             "unscathed_common": "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
-            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -353,7 +353,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -377,11 +377,11 @@
         "success_text": {
             "unscathed_common": "Your cats are only just smaller and heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
-            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
+            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -407,7 +407,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -424,20 +424,20 @@
             "respect",
             "large_prey"
         ],
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            "stat_skill": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
+            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         },
         "fail_text": {
             "unscathed_common": "r_c fails to drive away the gray fox, which keeps possession of the food. However, there were no injuries.",
             "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over their own feet that saves them. They give up, and settle down to wait a safe distance away until the fox leaves of its own accord.",
             "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The gray fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the gray fox settles back down to its meal."
+            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the gray fox settles back down to its meal."
         },
         "win_skills": [
             "FIGHTER,2"
@@ -463,7 +463,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "died while fighting a fox"
         }
     },
     {
@@ -819,7 +821,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after disappearing on patrol and being discovered injured."
+            "scar": "m_c was scarred after disappearing on patrol and being discovered injured."
         }
     },
     {
@@ -928,7 +930,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting a swarm of rats."
+            "scar": "m_c carries a scar from fighting a swarm of rats."
         }
     },
     {
@@ -965,7 +967,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting a rat king."
+            "scar": "m_c carries a scar from fighting a rat king."
         }
     },
     {
@@ -1002,7 +1004,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c died from their wounds after battling the rat king."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling the rat king."
         }
     },
     {
@@ -1118,7 +1120,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c froze to death."
+            "reg_death": "m_c froze to death."
         }
     },
     {
@@ -1166,14 +1168,14 @@
             "comfort",
             "medium_prey"
         ],
-        "intro_text": "As they give up on digging out an escaped mouse from its snowy tunnels, r_c swears they can smell something.",
-        "decline_text": "Nevermind?",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c <i>swears</i> {PRONOUN/r_c/subject} can smell something.",
+        "decline_text": "Nevermind..? Must have been the wind, blowing stale scent back at {PRONOUN/r_c/object}.",
         "chance_of_success": 60,
         "exp": 15,
         "success_text": {
-            "unscathed_common": "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol really doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slighlty odd prize home without trouble.",
+            "unscathed_common": "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol <i>really</i> doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log at the end of it. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slightly odd prize home without trouble.",
             "unscathed_rare": "It's very weird how the lizards won't wake, not even with cats ripping apart their burrow, but no one is going to argue with more prey for the fresh-kill pile.",
-            "stat_skill": "s_c manages to figure it out - a hibernating lizard! If they hadn't all already had their faces in the snow, they'd never have found it, it gives off such little scent."
+            "stat_skill": "s_c manages to figure it out - a hibernating lizard! If they hadn't all had their faces in the snow already, they'd never have found it, what with it giving off such little scent."
         },
         "fail_text": {
             "unscathed_common": "The patrol is unable to fish out whatever is giving off that prey-scent - maybe it's just the scent left by the mouse?"
@@ -1203,18 +1205,18 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. The canopy of the forest will shelter them while they hunt.",
-        "decline_text": "But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears.",
+        "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} the canopy of the forest will shelter {PRONOUN/r_c/object} while they hunt.",
+        "decline_text": ".. But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears, after all.",
         "success_text": {
-            "unscathed_common": "With the benefits of a full fresh-kill pile at the forefront of their mind, r_c is determined to bring back whatever they can for the Clan. Thankfully the snowfall stays light and inconsistent, and their trip out is rewarded by a f_tp_s and several f_tp_p - though one of the f_tp_p is prey brought down by the cold, rather than by claw. Still, it's not crowfood, and it's all useful for c_n.",
-            "unscathed_rare": "r_c takes a risk, hunting between the bare tree trunks of the woods that have lost their leaves, rather than in the evergreens. But their judegement pays off, netting them a f_mp_s. They'll have to discuss it with the other warriors back at camp, maybe c_n has been overhunting the evergreen woods.",
-            "stat_skill": "The f_mp_p they net will be sorely appreciated back at camp, though the combination of fresh snow powder and more compacted stuff makes it difficult for s_c to keep their footing. Still, slipping over while carrying prey is far better than slipping over while pouncing on it!",
-            "stat_trait": "s_c doesn't like the look of the weather - not that they can actually see the clouds. They wait in camp instead, and as night sets sniff out a f_tp_s and a clutch of f_tp_p that froze to death in the storm. Frozen meat is still meat afterall."
+            "unscathed_common": "With the benefits of a full fresh-kill pile dancing in {PRONOUN/r_c/poss} mind, r_c is determined to bring back whatever {PRONOUN/r_c/subject} can. Thankfully, the snowfall is light and inconsistent, and {PRONOUN/r_c/poss} is rewarded by a f_tp_s and several f_tp_p - though one of the f_tp_p was found frozen, not killed by r_c. Still, it's not crowfood, and it's all edible.",
+            "unscathed_rare": "r_c takes a risk, hunting amongst the the trees that have lost their leaves, rather than the still-lush evergreens. {PRONOUN/r_c/poss/CAP} judgement pays off, netting them a f_mp_s. {PRONOUN/r_c/subject/CAP}'ll have to discuss it with the others back at camp, maybe c_n has been overhunting the evergreen woods..?",
+            "stat_skill": "The f_mp_p {PRONOUN/s_c/subject} net will be sorely appreciated back at camp, though the combination of fresh snow powder and more compacted stuff makes it difficult for s_c to keep {PRONOUN/s_c/poss} footing. Still, slipping over while carrying prey is <i>far</i> better than slipping over while pouncing on it!",
+            "stat_trait": "s_c doesn't like the look of the weather - not that {PRONOUN/s_c/subject} can actually see the clouds. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wait/waits} in camp instead - and, as night sets, {PRONOUN/s_c/subject} {VERB/s_c/sniff/sniffs} out a f_tp_s and a clutch of f_tp_p that froze to death in the storm. Frozen meat is still meat, after all."
         },
         "fail_text": {
             "unscathed_common": "The skies darken and the snow thickens, and r_c retreats back to camp instead of risking the cold.",
-            "injury": "The skies darken and the snow thickens, but r_c is too far away from camp to turn back now. They end up huddled under a bush, cold and stiff as they wait out the storm from their uncomfortable shelter.",
-            "stat_injury": "Perhaps wandering so far when it was already snowing was a little... not their finest idea. Just a little, s_c reflects, shivering in a half rotten log as the thick snowstorm rages around them."
+            "injury": "The skies darken and the snow thickens, but r_c is too far away from camp to turn back now. {PRONOUN/r_c/subject/CAP} {VERB/r_c/end/ends} up huddled under a bush, cold and stiff as {PRONOUN/r_c/subject} {VERB/r_c/wait/waits} out the storm from {PRONOUN/r_c/poss} uncomfortable shelter.",
+            "stat_injury": "Perhaps wandering so far when it was already snowing was a little... foolhardy. Just a little, s_c reflects, shivering in a half-rotten log as the thick snowstorm rages around {PRONOUN/s_c/object}."
         },
         "chance_of_success": 30,
         "exp": 25,
@@ -1236,7 +1238,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
+            "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
         }
     },
     {
@@ -1282,7 +1284,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -1328,8 +1330,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-            "reg_death": "r_c froze to death, caught in a snowstorm while hunting by themselves."
+            "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
+            "reg_death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
         }
     },
     {
@@ -1373,8 +1375,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "froze to death while hunting"
         }
     },
@@ -1404,12 +1406,12 @@
         "success_text": {
             "unscathed_common": "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -1433,7 +1435,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1462,12 +1464,12 @@
         "success_text": {
             "unscathed_common": "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
             "injury": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -1491,7 +1493,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1513,20 +1515,20 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find their red enemy feeding on a deer carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            "stat_skill": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
+            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-            "death": "Fiercely, r_c throws themselves at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "death": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
             "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal."
         },
         "win_skills": [
             "FIGHTER,2"
@@ -1550,8 +1552,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
             "lead_death": "died while fighting a fox"
         }
     },
@@ -1581,12 +1583,12 @@
         "success_text": {
             "unscathed_common": "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+            "stat_trait": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
-            "stat_injury": "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
+            "stat_injury": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink their teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -1610,7 +1612,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1638,11 +1640,11 @@
         "success_text": {
             "unscathed_common": "Your cats are only just smaller and heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             "stat_skill": "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+            "stat_trait": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
-            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
+            "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
         },
         "win_skills": [
             "FIGHTER,1"
@@ -1666,7 +1668,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -1687,20 +1689,20 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find a stocky gray fox feeding on a deer carcass, either a small doe or one of last newleaf's fawns. A gray fox could never take on prey this size, it must have found the carcass, and now c_n has too.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-            "stat_skill": "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+            "unscathed_common": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            "stat_skill": "s_c uses every trick in {PRONOUN/s_c/poss} talented fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, until the perfect opportunity opens up and {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
+            "stat_trait": "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
         },
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the gray fox, which keeps possession of the food. However there were no injuries.",
             "unscathed_stat": "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over their own feet that saves them. They give up, and settle down to wait a safe distance away until the fox leaves of its own accord.",
             "injury": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The gray fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-            "stat_injury": "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the gray fox settles back down to its meal."
+            "stat_injury": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink their teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the gray fox settles back down to its meal."
         },
         "win_skills": [
             "FIGHTER,2"
@@ -1724,7 +1726,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight."
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "died while fighting a fox"
         }
     },
     {

@@ -45,9 +45,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -96,9 +96,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -153,9 +153,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -211,9 +211,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from an eagle's beak.",
-            "reg_death": "r_c was killed by an eagle, scrapping over food.",
-            "lead_death": "were killed by an eagle"
+            "scar": "m_c carries a scar from an eagle's beak.",
+            "reg_death": "m_c was killed by an eagle, scrapping over food.",
+            "lead_death": "{VERB/m_c/were/was} killed by an eagle"
         }
     },
     {
@@ -263,7 +263,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare."
+            "scar": "m_c caught a chill while hunting in leaf-bare."
         }
     },
     {
@@ -302,8 +302,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c died trying to provide for c_n during leaf-bare.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c died trying to provide for c_n during leaf-bare.",
             "lead_death": "died while hunting in the cold of leaf-bare"
         }
     },
@@ -352,8 +352,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c caught a chill while hunting in leaf-bare.",
-            "reg_death": "r_c froze to death while hunting in a storm.",
+            "scar": "m_c caught a chill while hunting in leaf-bare.",
+            "reg_death": "m_c froze to death while hunting in a storm.",
             "lead_death": "died while hunting in the cold of leaf-bare"
         }
     },
@@ -411,7 +411,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -468,7 +468,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fox fight."
+            "scar": "m_c carries a scar from a fox fight."
         }
     },
     {
@@ -526,9 +526,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a solo fox fight.",
-            "reg_death": "r_c fell in a solo battle with a fox.",
-            "lead_death": "were killed in battle with a fox"
+            "scar": "m_c carries a scar from a solo fox fight.",
+            "reg_death": "m_c fell in a solo battle with a fox.",
+            "lead_death": "{VERB/m_c/were/was} killed in battle with a fox"
         }
     },
     {
@@ -707,15 +707,15 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "The bluejay seems more focused on what it's eating then the patrol, and r_c walks home with the brightly colored bird proudly in their mouth, wondering what to do with the brilliant blue feathers.",
-            "unscathed_rare": "To the patrol's surprise, a second bluejay joins the first! They carefully position themselves, and soon find that while one peice of freshkill is worth two in the tree, two peices of freshkill are more than enough in the mountains!",
+            "unscathed_rare": "To the patrol's surprise, a second bluejay joins the first! They carefully position themselves, and soon find that while one piece of fresh-kill is worth two in the tree, two pieces of fresh-kill are more than enough in the mountains!",
             "stat_skill": "s_c holds the patrol off from pouncing right away, and they're rewarded by a second bluejay joining the first! They catch both and s_c explains that bluejays travel in groups of five or more.",
-            "stat_trait": "They catch the bluejay, and s_c quickly bites up the bloodriddeled snow, and lingers behind to wait. They come back with two more mice! They explain the bluejay was eating something mice also liked, and was hoping they might catch some with the same bait."
+            "stat_trait": "They catch the bluejay, and s_c quickly bites up the blood-riddled snow, then lingers behind to wait. They come back with two more mice! They explain the bluejay was eating something mice also liked, and was hoping they might catch some with the same bait."
         },
         "fail_text": {
             "unscathed_common": "The bluejay spots them coming from several fox-lengths away, and follows them back to camp, laughing in only the way bluejays can laugh.",
-            "unscathed_stat": "To the patrol's suprise, a second bluejay joins the first! s_c gets ahead of themselves, rushing out to catch them, only for both of them fly off, and- Are they mocking s_c before they can even pounce?",
+            "unscathed_stat": "To the patrol's surprise, a second bluejay joins the first! s_c gets ahead of themselves, rushing out to catch them, only for both of them fly off, and- Are they mocking s_c before they can even pounce?",
             "injury": "As r_c gets into the hunting crouch, there's an odd sound from above, and soon the whole patrol is yowling in terror as they get mobbed by bluejays. A piece of fresh-kill in paws doesn't mean not to look out for danger!",
-            "stat_injury": "s_c is facinated by the pretty feathers and can't wait to get their claws on them! They rush out to catch the bluejay, only for a mob of bluejays to decend on the patrol, every cat suffering for s_c's impulsive behaviour."
+            "stat_injury": "s_c is fascinated by the pretty feathers and can't wait to get their claws on them! They rush out to catch the bluejay, only for a mob of bluejays to descend on the patrol, every cat suffering for s_c's impulsive behaviour."
         },
         "win_skills": [
             "HUNTER,1",
@@ -743,7 +743,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got a scar underestimating a bluejay."
+            "scar": "m_c got a scar underestimating a bluejay."
         }
     },
     {
@@ -776,9 +776,9 @@
         "exp": 40,
         "success_text": {
             "unscathed_common": "p_l decides to risk it, and leaps for the common buzzard, killing it before it has a chance to fly off. They try not to be seen bringing it back, just in case, and feel odd looks on their pelt for it.",
-            "unscathed_rare": "It's definintely vultures. They catch the common buzzard and bring it back to camp proudly-- But some of the other cats have the same question. Oh well. Fresh-kill is fresh-kill, and it's <i>not</i> a vulture!",
+            "unscathed_rare": "It's definitely vultures. They catch the common buzzard and bring it back to camp proudly-- But some of the other cats have the same question. Oh well. Fresh-kill is fresh-kill, and it's <i>not</i> a vulture!",
             "stat_skill": "s_c laughs to themselves, of course it's vultures! They catch the common buzzard, which has a feathered head, with ease, bring it home, and are disappointed when they have to explain the difference between this bird and the vultures.",
-            "stat_trait": "s_c knows the difference between a common buzzard and a vulture! Unfortunantly they end up having to explain the difference anyway. It seems some outcomes are unavoidable."
+            "stat_trait": "s_c knows the difference between a common buzzard and a vulture! Unfortunately they end up having to explain the difference anyway. It seems some outcomes are unavoidable."
         },
         "fail_text": {
             "unscathed_common": "Drat! p_l hesitated too long and the bird flew off! They still don't know if they could have caught it!",
@@ -786,7 +786,7 @@
             "death": "p_l lunges for the common buzzard, only for the buzzard to spread their wings to much, much larger then they look folded and startle the cat right off the cliff. They are never seen again.",
             "injury": "p_l does a little butt wiggle and launches themselves at the common buzzard. They barely have time to get away as the buzzard spreads their wings and snaps at them, leaving them with a nasty peck! Ouch!",
             "stat_death": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird - but the bird flies off, and the cat slips on the cold, icy cliff, and are never seen again.",
-            "stat_injury": "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the medicince cat gets to tell them the difference between common buzzards and vultures."
+            "stat_injury": "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the medicine cat gets to tell them the difference between common buzzards and vultures."
         },
         "win_skills": [
             "CLEVER,2",

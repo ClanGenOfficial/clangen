@@ -121,6 +121,8 @@ class Scar_Events():
                 scar_pool = [i for i in scar_pool if i not in ['TOETRAP', 'RATBITE', "FROSTSOCK"]]
             if 'NOTAIL' in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL", "FROSTTAIL"]]
+            if 'HALFTAIL' in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ["TAILSCAR", "MANTAIL", "FROSTTAIL"]]
             if "BRIGHTHEART" in cat.pelt.scars:
                 scar_pool = [i for i in scar_pool if i not in ["RIGHTBLIND", "BOTHBLIND"]]
             if 'BOTHBLIND' in cat.pelt.scars:

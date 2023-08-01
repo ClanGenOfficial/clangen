@@ -9,10 +9,10 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
+        "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
         "history_text": {
-            "scar": "m_c was scarred when an eagle grabbed them.",
-            "reg_death": "m_c died from their wounds after an eagle grabbed them."
+            "scar": "m_c was scarred when an eagle grabbed {PRONOUN/m_c/subject}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle grabbed {PRONOUN/m_c/subject}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -27,7 +27,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills, when they tripped over their own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -39,7 +39,7 @@
             "Newleaf",
             "Leaf-fall"
         ],
-        "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains their paw while trying to walk through the muck.",
+        "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -53,7 +53,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c trips over an unseen rabbit hole, spraining their paw.",
+        "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -67,7 +67,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was running over the hills, when they tripped over their own legs and hit the ground hard.",
+        "event_text": "m_c was running over the hills, when they tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -81,7 +81,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c is feeling extremely sore from the long distances they've run lately.",
+        "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -100,7 +100,7 @@
         "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
         "history_text": {
             "scar": "m_c was scarred by an eagle.",
-            "reg_death": "m_c died from their wounds after fighting an eagle."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting an eagle."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -118,7 +118,7 @@
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": {
             "scar": "m_c was scarred by frostbite.",
-            "reg_death": "m_c died after they got frostbite."
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} got frostbite."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -132,7 +132,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. They've been hacking and sputtering ever since.",
+        "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "history_text": {
             "reg_death": "m_c died from water-inhalation after falling in the river."
         },
