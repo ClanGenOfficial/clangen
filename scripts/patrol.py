@@ -168,21 +168,23 @@ class Patrol():
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
         if "medicine cat" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat")
+            self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif "medicine cat apprentice" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat apprentice")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat apprentice")
+            self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif clan.leader and clan.leader in self.patrol_cats:
-            self.patrol_leader = clan.leader
-        elif clan.deputy and clan.deputy in self.patrol_cats:
-            self.patrol_leader = clan.deputy
+        elif "leader" in self.patrol_statuses:
+            index = self.patrol_statuses.index("leader")
+            self.patrol_leader = self.patrol_cats[index]
+        elif "deputy" in self.patrol_statuses:
+            index = self.patrol_statuses.index("deputy")
+            self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
             possible_leader = [i for i in self.patrol_cats if i.status not in 
@@ -205,11 +207,13 @@ class Patrol():
         # DETERMINE RANDOM CAT
         #Find random cat
         if len(patrol_cats) > 1:
-            possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
+            possible_random_cats = [i for i in patrol_cats if i.ID != self.patrol_leader.ID]
             self.patrol_random_cat = choice(possible_random_cats)
         else:
-            possible_random_cats = [i for i in patrol_cats]
-            self.patrol_random_cat = choice(possible_random_cats)
+            self.patrol_random_cat = choice(patrol_cats)
+            
+        print("Patrol Leader:", str(self.patrol_leader.name))
+        print("Random Cat:", str(self.patrol_random_cat.name))
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
