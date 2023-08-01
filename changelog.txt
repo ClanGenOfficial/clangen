@@ -5,6 +5,7 @@
 - Background color is now stored in game_config.
 - Adjusted injury chances.
 - Fixed special suffix being unexpectedly hidden.
+- Fixed crash associated with grief events
 - Other small adjustments.
 
 <strong>v0.9.3</strong>
