@@ -234,14 +234,8 @@ class EventsScreen(Screens):
                     self.display_events = self.misc_events
                     self.update_events_display()
             elif event.key == pygame.K_SPACE:
-                # Save the start time, so the loading animation can be
-                # set to only show up if timeskip is taking a good amount of time. 
-                self.start = time.time() 
-                self.events_thread = threading.Thread(target=self.one_moon)
-                # Set game.switched["window_open"] to true to prevent setting off more than one 
-                # timeskip thread at once. 
-                game.switches['window_open'] = True
-                self.events_thread.start()
+                
+                self.events_thread, self.start = self.loading_screen_start_work(events_class.one_moon)
 
     def screen_switches(self):
         # On first open, update display events list
