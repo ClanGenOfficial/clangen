@@ -156,8 +156,8 @@ class Screens():
         # Handles displaying the events once timeskip is done. 
         if self.work_done:
             # By this time, the thread should have already finished.
-            # This line allows exceptions in the timeskip thread to be 
-            # passed to the main thread, so issues in timeskip are not
+            # This line allows exceptions in the work thread to be 
+            # passed to the main thread, so issues in the work thread are not
             # silent failures. 
             work_thread.join()
             
