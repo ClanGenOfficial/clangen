@@ -50,11 +50,11 @@ class Cat():
     rank_sort_order = [
         "newborn",
         "kitten",
+        "queen's apprentice",
+        "queen",
         "elder",
         "apprentice",
         "warrior",
-        "queen's apprentice",
-        "queen",
         "mediator apprentice",
         "mediator",
         "medicine cat apprentice",

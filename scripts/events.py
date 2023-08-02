@@ -95,7 +95,8 @@ class Events:
         Patrol.used_patrols.clear()
         game.patrolled.clear()
         game.just_died.clear()
-        
+        # 1 = reg patrol 2 = lifegen patrol 3 = df patrol 4 = date
+        game.switches['patrolled'] = []
 
         if any(
                 str(cat.status) in {
