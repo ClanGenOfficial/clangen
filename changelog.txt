@@ -1,8 +1,20 @@
+<strong>v0.5.3: </strong>
+- Cats may not get a heartbroken condition after breakup
+- More patrols per moon
+- Choose to retire
+- More queen/queen's apprentice content
+- Clicking "have kits" automatically turns off "Disable kits"
+- Permaqueens are now located by kits
+- Able to flirt with apprentices when you are an apprentice
+- New menus
+
 <strong>v0.5.2: </strong>
 - Added new role: queen
 - Added new role: queen's apprentice
 - Added new thoughts/patrols/events etc
 - Reactions to flirting will be based on personality
+- New menus
+- New patrol art
 - Fix various bugs
 
 <strong>v0.5.1: </strong>
