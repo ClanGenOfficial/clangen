@@ -38,6 +38,7 @@ from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
 from scripts.housekeeping.datadir import get_save_dir
+from scripts.game_structure.windows import RetireScreen
 
 class Events:
     """
@@ -288,8 +289,10 @@ class Events:
                     self.generate_app_events()
                 elif game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator', "queen"] and not game.clan.your_cat.w_done:
                     self.generate_ceremony()
-                elif game.clan.your_cat.status != 'elder':
+                elif game.clan.your_cat.status != 'elder' and game.clan.your_cat.moons != 119:
                     self.generate_events_adult()
+                elif game.clan.your_cat.moons == 119:
+                    RetireScreen('events screen')
                 elif game.clan.your_cat.moons == 120 and game.clan.your_cat.status == 'elder':
                     self.generate_elder_ceremony()
                 elif game.clan.your_cat.status == 'elder':
@@ -303,6 +306,7 @@ class Events:
                 self.check_gain_mate(self.checks)
                 # self.check_gain_kits(self.checks)
                 self.generate_mate_events()
+                self.check_retire()
 
             if random.randint(1,15) == 1:
                 self.gain_acc()
@@ -884,8 +888,15 @@ class Events:
                 ceremony_txt = ceremony_txt.replace("crush1", str(c.name))
                 game.cur_events_list.insert(1, Single_Event(ceremony_txt))
                 
-            
-        
+    def check_retire(self):
+        if 'retire' in game.switches:
+            if game.switches['retire']:
+                
+                game.switches['retire'] = False
+        if 'retire_reject' in game.switches:
+            if game.switches['retire_reject']:
+                
+                game.switches['retire_reject'] = False
     
     def generate_death_event(self):
         if game.clan.your_cat.status == 'kitten':

@@ -25,6 +25,7 @@ from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 from .thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
+from scripts.game_structure.windows import RetireScreen
 
 
 class Cat():
@@ -1835,13 +1836,14 @@ class Cat():
         
         #There are some special tasks we need to do for apprentice
         # Note that although you can unretire cats, they will be a full warrior/med_cat/mediator
+
         if self.moons > 6 and self.status in ["apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"]:
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
             self.status_change("warrior") # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
-            
-        
+
         self.status_change("elder")
+
         return
 
     def is_ill(self):

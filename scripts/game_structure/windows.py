@@ -1460,3 +1460,73 @@ class MateScreen(UIWindow):
                 game.switches['new_mate'].relationships[game.clan.your_cat.ID].romantic_love -= 8
                 game.clan.your_cat.relationships[game.switches['new_mate'].ID].comfortable -= 8
                 game.switches['reject'] = True
+
+class RetireScreen(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(scale(pygame.Rect((500, 400), (600, 500))),
+                         window_display_title='Choose to retire',
+                         object_id='#game_over_window',
+                         resizable=False)
+        self.set_blocking(True)
+        game.switches['window_open'] = True
+        self.clan_name = str(game.clan.name + 'Clan')
+        self.last_screen = last_screen
+        game.switches['retire'] = False
+        game.switches['retire_reject'] = False
+        self.pick_path_message = UITextBoxTweaked(
+            f"You're asked if you would like to retire",
+            scale(pygame.Rect((40, 40), (520, -1))),
+            line_spacing=1,
+            object_id="text_box_30_horizcenter",
+            container=self
+        )
+
+        self.begin_anew_button = UIImageButton(
+            scale(pygame.Rect((130, 190), (150, 150))),
+            "",
+            object_id="#your_clan_button",
+            container=self,
+            tool_tip_text='Accept and become an elder'
+        )
+        
+        self.mediator_button = UIImageButton(
+            scale(pygame.Rect((310, 190), (150, 150))),
+            "",
+            object_id="#outside_clan_button",
+            container=self,
+            tool_tip_text='Reject'
+
+        )
+        
+        self.begin_anew_button.enable()
+        self.mediator_button.enable()
+
+
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.begin_anew_button:
+                game.last_screen_forupdate = None
+                game.switches['window_open'] = False
+                # game.switch_screens = True
+                
+                game.switches['cur_screen'] = 'events screen'
+                
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
+                self.kill()
+                game.switches['retire'] = True
+                game.clan.your_cat.status_change('elder')
+            elif event.ui_element == self.mediator_button:
+                game.last_screen_forupdate = None
+                game.switches['window_open'] = False
+                game.switches['cur_screen'] = "events screen"
+                # game.switch_screens = True
+                self.begin_anew_button.kill()
+                self.pick_path_message.kill()
+                self.mediator_button.kill()
+                self.kill()
+                game.switches['retire_reject'] = True

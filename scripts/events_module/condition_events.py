@@ -11,6 +11,8 @@ from scripts.utility import event_text_adjust, get_med_cats, change_relationship
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
+from scripts.game_structure.windows import RetireScreen
+
 from scripts.event_class import Single_Event
 
 
@@ -728,12 +730,15 @@ class Condition_Events():
                         if cat.age == 'adolescent':
                             event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
-
-                        cat.retire_cat()
-                        # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
-                        game.cur_events_list.append(
-                                Single_Event(event, "ceremony", retire_involved))
-
+                        if cat.ID != game.clan.your_cat.ID:
+                            
+                            cat.retire_cat()
+                            # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
+                            game.cur_events_list.append(
+                                    Single_Event(event, "ceremony", retire_involved))
+                        else:
+                            RetireScreen('events screen')
+                            
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
         event_triggered = False
         if dictionary == cat.permanent_condition:
