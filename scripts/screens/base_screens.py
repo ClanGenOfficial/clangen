@@ -1,5 +1,4 @@
 import pygame
-from time import time
 
 from scripts.utility import update_sprite, scale, scale_dimentions
 from scripts.cat.cats import Cat
