@@ -1,5 +1,5 @@
 <strong>v0.5.3: </strong>
-- Cats may not get a heartbroken condition after breakup
+- Cats may now get a heartbroken condition after breakup
 - More patrols per moon
 - Choose to retire
 - More queen/queen's apprentice content
