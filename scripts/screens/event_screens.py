@@ -12,6 +12,7 @@ from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver, EventLoading
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class EventsScreen(Screens):
@@ -52,7 +53,7 @@ class EventsScreen(Screens):
         self.involved_cat_buttons = []
         self.cat_profile_buttons = {}
         self.scroll_height = {}
-        self.events_thread = threading.Thread()
+        self.events_thread = PropagatingThread()
         self.start = 0
         self.loading_window = None
         self.done_moon = False
@@ -86,7 +87,7 @@ class EventsScreen(Screens):
                 # Save the start time, so the loading animation can be
                 # set to only show up if timeskip is taking a good amount of time. 
                 self.start = time.time() 
-                self.events_thread = threading.Thread(target=self.one_moon)
+                self.events_thread = PropagatingThread(target=self.one_moon)
                 # Set game.switched["window_open"] to true to prevent setting off more than one 
                 # timeskip thread at once. 
                 game.switches['window_open'] = True
@@ -253,8 +254,12 @@ class EventsScreen(Screens):
     def one_moon(self):
         """Runs one_moon, and sets self.done_moon = True when done. """
         
-        events_class.one_moon()
-        self.done_moon = True
+        try:
+            events_class.one_moon()
+        except:
+            raise
+        finally:
+            self.done_moon = True
 
     def screen_switches(self):
         # On first open, update display events list
@@ -435,6 +440,12 @@ class EventsScreen(Screens):
         
         # Handles displaying the events once timeskip is done. 
         if self.done_moon:
+            # By this time, the thread should have already finished.
+            # This line allows exceptions in the timeskip thread to be 
+            # passed to the main thread, so issues in timeskip are not
+            # silent failures. 
+            self.events_thread.join()
+            
             self.timeskip_done()
             game.switches['window_open'] = False
             self.done_moon = False
