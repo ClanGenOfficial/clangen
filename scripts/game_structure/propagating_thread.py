@@ -1,8 +1,14 @@
 from threading import Thread
+from time import time
 
 class PropagatingThread(Thread):
     """ Thread that catched any exceptions and re-raised them when .join is called. 
-    Taken from https://stackoverflow.com/questions/2829329/catch-a-threads-exception-in-the-caller-thread """
+    Heavily barrowed from https://stackoverflow.com/questions/2829329/catch-a-threads-exception-in-the-caller-thread """
+    
+    def start(self) -> None:
+        self.start_time = time()
+        
+        return super().start()
     
     def run(self):
         self.exc = None
@@ -16,3 +22,7 @@ class PropagatingThread(Thread):
         if self.exc:
             raise self.exc
         return self.ret
+    
+    def get_time_from_start(self):
+        """Returns the time since the tread started"""
+        return time() - self.start_time

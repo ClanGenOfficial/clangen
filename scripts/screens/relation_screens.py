@@ -1197,7 +1197,6 @@ class ChooseMateScreen(Screens):
         
         #Loading screen
         self.work_thread = PropagatingThread()
-        self.start = 0
 
     def handle_event(self, event):
         """ Handles events. """
@@ -1208,7 +1207,7 @@ class ChooseMateScreen(Screens):
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_mate:
                 
-                self.work_thread, self.start = self.loading_screen_start_work(self.change_mate)
+                self.work_thread = self.loading_screen_start_work(self.change_mate)
                 
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
@@ -2070,8 +2069,7 @@ class ChooseMateScreen(Screens):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
         
-        self.loading_screen_on_use(self.work_thread, self.update_both, 
-                                   start=self.start)
+        self.loading_screen_on_use(self.work_thread, self.update_both)
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
@@ -3669,7 +3667,6 @@ class ChooseAdoptiveParentScreen(Screens):
         self.tab_buttons = {}
         
         self.work_thread = PropagatingThread()
-        self.start = 0
 
     def handle_event(self, event):
         """ Handles events. """
@@ -3680,7 +3677,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_adoptive_parent:
                 
-                self.work_thread, self.start = self.loading_screen_start_work(self.change_adoptive_parent)
+                self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
@@ -4297,8 +4294,7 @@ class ChooseAdoptiveParentScreen(Screens):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
         
-        self.loading_screen_on_use(self.work_thread, self.update_after_change, 
-                                   start = self.start)
+        self.loading_screen_on_use(self.work_thread, self.update_after_change)
 
     def get_valid_adoptive_parents(self):
         """Get a list of valid parents for the current cat"""

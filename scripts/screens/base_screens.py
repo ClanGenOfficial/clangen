@@ -115,15 +115,15 @@ class Screens():
         
 
     def loading_screen_start_work(self,
-                                  target) -> tuple:
+                                  target) -> PropagatingThread:
         """Creates and starts the work_thread. 
-            Returns a tuple in the form (work_thread, time_started) """
+            Returns the started thread. """
 
         work_thread = PropagatingThread(target=self._work_target, args=(target,), daemon=True)
         game.switches['window_open'] = True
         work_thread.start()
         
-        return (work_thread, time())
+        return work_thread
         
     
     def _work_target(self, target):
@@ -138,8 +138,7 @@ class Screens():
     def loading_screen_on_use(self, 
                               work_thread:PropagatingThread,
                               final_actions,
-                              loading_screen_pos:tuple=None,
-                              start:float=0, 
+                              loading_screen_pos:tuple=None, 
                               delay:float=0.7) -> bool:
         """Handles all actions that must be run every frame for the loading window to work. 
         Also handles creating and killing the loading window. 
@@ -147,7 +146,7 @@ class Screens():
         
         # Handled the loading animation, both creating and killing it. 
         if not self.loading_window and work_thread.is_alive() \
-                and time() - start > delay:
+                and work_thread.get_time_from_start() > delay:
             self.loading_window = EventLoading(loading_screen_pos)
         elif self.loading_window and not work_thread.is_alive():
             self.loading_window.kill()

@@ -54,7 +54,6 @@ class EventsScreen(Screens):
         self.cat_profile_buttons = {}
         self.scroll_height = {}
         self.events_thread = PropagatingThread()
-        self.start = 0
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -83,7 +82,7 @@ class EventsScreen(Screens):
             
             if event.ui_element == self.timeskip_button:
                 
-                self.events_thread, self.start = self.loading_screen_start_work(events_class.one_moon)
+                self.events_thread = self.loading_screen_start_work(events_class.one_moon)
             
             # Change the type of events displayed
             elif event.ui_element == self.all_events_button:
@@ -235,7 +234,7 @@ class EventsScreen(Screens):
                     self.update_events_display()
             elif event.key == pygame.K_SPACE:
                 
-                self.events_thread, self.start = self.loading_screen_start_work(events_class.one_moon)
+                self.events_thread = self.loading_screen_start_work(events_class.one_moon)
 
     def screen_switches(self):
         # On first open, update display events list
@@ -406,8 +405,7 @@ class EventsScreen(Screens):
 
     def on_use(self):
         
-        self.loading_screen_on_use(self.events_thread, self.timeskip_done,
-                                                    start = self.start)
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
             
     def timeskip_done(self):
         """Various sorting and other tasks that must be done with the timeskip is over. """
