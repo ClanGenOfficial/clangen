@@ -168,21 +168,23 @@ class Patrol():
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
         if "medicine cat" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat")
+            self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif "medicine cat apprentice" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat apprentice")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat apprentice")
+            self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif clan.leader and clan.leader in self.patrol_cats:
-            self.patrol_leader = clan.leader
-        elif clan.deputy and clan.deputy in self.patrol_cats:
-            self.patrol_leader = clan.deputy
+        elif "leader" in self.patrol_statuses:
+            index = self.patrol_statuses.index("leader")
+            self.patrol_leader = self.patrol_cats[index]
+        elif "deputy" in self.patrol_statuses:
+            index = self.patrol_statuses.index("deputy")
+            self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
             possible_leader = [i for i in self.patrol_cats if i.status not in 
