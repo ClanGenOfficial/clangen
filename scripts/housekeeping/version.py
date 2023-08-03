@@ -13,7 +13,6 @@ SAVE_VERSION_NUMBER = 2  # This is saved in the Clan save-file, and is used for 
 
 def get_version_info():
     if get_version_info.instance is None:
-        print(is_thonny)
         is_source_build = False
         version_number = VERSION_NAME
         release_channel = False
