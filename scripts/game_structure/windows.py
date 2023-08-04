@@ -1185,8 +1185,12 @@ class SaveAsImage(UIWindow):
     
     
 class EventLoading(UIWindow):
-    def __init__(self):
-        super().__init__(scale(pygame.Rect((800, 700), (200, 200))),
+    def __init__(self, pos):
+        
+        if pos is None: 
+            pos = (800, 700)
+        
+        super().__init__(scale(pygame.Rect(pos, (200, 200))),
                          window_display_title='Game Over',
                          object_id='#loading_window',
                          resizable=False)
