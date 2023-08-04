@@ -12,6 +12,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import RelationshipLog
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class ChooseMentorScreen(Screens):
@@ -1193,26 +1194,24 @@ class ChooseMateScreen(Screens):
         self.tab_buttons = {}
         
         self.no_kits_message = None
+        
+        #Loading screen
+        self.work_thread = PropagatingThread()
 
     def handle_event(self, event):
         """ Handles events. """
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_mate:
-                if not self.selected_cat:
-                    return
                 
-                if self.selected_cat.ID not in self.the_cat.mate:
-                    self.the_cat.set_mate(self.selected_cat)
-                    
-                else:
-                    self.the_cat.unset_mate(self.selected_cat, breakup=True)
+                self.work_thread = self.loading_screen_start_work(self.change_mate)
                 
-                self.update_current_cat_info(reset_selected_cat=False) # This will also refresh tab contents
-                self.update_selected_cat()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
@@ -1383,6 +1382,23 @@ class ChooseMateScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def change_mate(self):
+        if not self.selected_cat:
+            return
+        
+        if self.selected_cat.ID not in self.the_cat.mate:
+            self.the_cat.set_mate(self.selected_cat)
+            
+        else:
+            self.the_cat.unset_mate(self.selected_cat, breakup=True)
+        
+
+    def update_both(self):
+        """Updates both the current cat and selected cat info. """
+        
+        self.update_current_cat_info(reset_selected_cat=False) # This will also refresh tab contents
+        self.update_selected_cat()
 
     def update_mates_container(self):
         """Updates everything in the mates container, including the list of current mates,
@@ -2055,6 +2071,8 @@ class ChooseMateScreen(Screens):
     def on_use(self):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        
+        self.loading_screen_on_use(self.work_thread, self.update_both)
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
@@ -3650,31 +3668,23 @@ class ChooseAdoptiveParentScreen(Screens):
         # for the offspring tab, and "mates" for the mate tab. 
         self.open_tab = "potential" 
         self.tab_buttons = {}
+        
+        self.work_thread = PropagatingThread()
 
     def handle_event(self, event):
         """ Handles events. """
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_adoptive_parent:
-                if not self.selected_cat:
-                    return
                 
-                if self.selected_cat.ID not in self.the_cat.adoptive_parents:
-                    self.the_cat.adoptive_parents.append(self.selected_cat.ID)
-                    self.the_cat.create_inheritance_new_cat()
-                    
-                else:
-                    self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
-                    self.the_cat.create_inheritance_new_cat()
-                    self.selected_cat.create_inheritance_new_cat()
+                self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
-                self.draw_tab_button()
-                self.update_toggle_button()
-                self.update_potential_parents_container()
-                self.update_adoptive_parents_container()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
@@ -3823,6 +3833,29 @@ class ChooseAdoptiveParentScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def change_adoptive_parent(self):
+        """Make adoptive parent changes"""
+        
+        if not self.selected_cat:
+            return
+        
+        if self.selected_cat.ID not in self.the_cat.adoptive_parents:
+            self.the_cat.adoptive_parents.append(self.selected_cat.ID)
+            self.the_cat.create_inheritance_new_cat()
+            
+        else:
+            self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
+            self.the_cat.create_inheritance_new_cat()
+            self.selected_cat.create_inheritance_new_cat()
+            
+    def update_after_change(self):
+        """Updates that need to be run after setting an adoptive parent """
+        
+        self.draw_tab_button()
+        self.update_toggle_button()
+        self.update_potential_parents_container()
+        self.update_adoptive_parents_container()
 
     def update_birth_container(self):
         """Updates everything in the mates container, including the list of current mates,
@@ -4266,6 +4299,8 @@ class ChooseAdoptiveParentScreen(Screens):
 
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        
+        self.loading_screen_on_use(self.work_thread, self.update_after_change)
 
     def get_valid_adoptive_parents(self):
         """Get a list of valid parents for the current cat"""
