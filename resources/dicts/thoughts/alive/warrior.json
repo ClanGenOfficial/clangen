@@ -410,7 +410,7 @@
             "Is scolding the apprentices over something slight",
             "Is pushing around the apprentices",
             "Berates an apprentice for not doing their chores",
-            "Tells r_c to toughen up or else"
+            "Tells r_c to toughen up"
         ],
         "random_status_constraint": [
             "apprentice"
