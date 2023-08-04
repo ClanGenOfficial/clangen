@@ -278,6 +278,7 @@ class StartScreen(Screens):
 
         if game.settings['show_changelog']:
             show_changelog = True
+            lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
                 with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
                     lastCommit = read_file.readline()
