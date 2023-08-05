@@ -153,8 +153,6 @@
         "id": "warrior_gen_warrior",
         "thoughts": [
             "Is sparring with some Clanmates",
-            "Thinks r_c is really pretty",
-            "Thinks r_c is really handsome",
             "Wants to critique r_c's fighting techniques",
             "Wants to compliment r_c's fighting techniques"
         ],
@@ -203,7 +201,8 @@
     {
         "id": "adventurous_warrior_to_alive_kits",
         "thoughts": [
-            "Involves the kits in a game of make believe about traveling through a strange land"
+            "Involves the kits in a game of make believe about traveling through a strange land",
+            "Encourages the kits to explore as much as possible"
         ],
         "random_status_constraint": [
             "kitten"
@@ -410,7 +409,8 @@
         "thoughts": [
             "Is scolding the apprentices over something slight",
             "Is pushing around the apprentices",
-            "Berates an apprentice for not doing their chores"
+            "Berates an apprentice for not doing their chores",
+            "Tells r_c to toughen up"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -498,7 +498,8 @@
     {
         "id": "compassionate_warrior_to_living_apprentices",
         "thoughts": [
-            "Feels bad seeing the apprentices worked to the bone"
+            "Feels bad seeing the apprentices worked to the bone",
+            "Takes r_c's place in the dawn patrol so {PRONOUN/r_c/subject} can sleep in a little"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -830,7 +831,8 @@
     {
         "id": "responsible_warrior_to_living_apprentices",
         "thoughts": [
-            "Doesn't approve of the trouble the apprentices have been making"
+            "Doesn't approve of the trouble the apprentices have been making",
+            "Scolds the apprentices for not taking the warrior code seriously"
         ],
         "random_status_constraint": [
             "apprentice"

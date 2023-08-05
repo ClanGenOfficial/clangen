@@ -86,33 +86,41 @@ class StartScreen(Screens):
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
-                #game.switches['error_message'] = ''
-                #game.switches['traceback'] = ''
+                # game.switches['error_message'] = ''
+                # game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
             elif event.ui_element == self.social_buttons['discord_button']:
                 if platform.system() == 'Darwin':
-                    subprocess.Popen(["open", "-u", "https://discord.gg/clangen"])
+                    subprocess.Popen(
+                        ["open", "-u", "https://discord.gg/clangen"])
                 elif platform.system() == 'Windows':
                     os.system(f"start \"\" {'https://discord.gg/clangen'}")
                 elif platform.system() == 'Linux':
-                    subprocess.Popen(['xdg-open', "https://discord.gg/clangen"])
+                    subprocess.Popen(
+                        ['xdg-open', "https://discord.gg/clangen"])
             elif event.ui_element == self.social_buttons['tumblr_button']:
                 if platform.system() == 'Darwin':
-                    subprocess.Popen(["open", "-u", "https://officialclangen.tumblr.com/"])
+                    subprocess.Popen(
+                        ["open", "-u", "https://officialclangen.tumblr.com/"])
                 elif platform.system() == 'Windows':
-                    os.system(f"start \"\" {'https://officialclangen.tumblr.com/'}")
+                    os.system(
+                        f"start \"\" {'https://officialclangen.tumblr.com/'}")
                 elif platform.system() == 'Linux':
-                    subprocess.Popen(['xdg-open', "https://officialclangen.tumblr.com/"])
+                    subprocess.Popen(
+                        ['xdg-open', "https://officialclangen.tumblr.com/"])
             elif event.ui_element == self.social_buttons['twitter_button']:
                 if platform.system() == 'Darwin':
-                    subprocess.Popen(["open", "-u", "https://twitter.com/OfficialClangen"])
+                    subprocess.Popen(
+                        ["open", "-u", "https://twitter.com/OfficialClangen"])
                 elif platform.system() == 'Windows':
-                    os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
+                    os.system(
+                        f"start \"\" {'https://twitter.com/OfficialClangen'}")
                 elif platform.system() == 'Linux':
-                    subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
+                    subprocess.Popen(
+                        ['xdg-open', "https://twitter.com/OfficialClangen"])
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
                 self.change_screen('camp screen')
@@ -257,7 +265,8 @@ class StartScreen(Screens):
                                 show_popup = False
 
                     if show_popup:
-                        UpdateAvailablePopup(game.switches['last_screen'], show_checkbox=True)
+                        UpdateAvailablePopup(
+                            game.switches['last_screen'], show_checkbox=True)
 
                 has_checked_for_update = True
 
@@ -269,15 +278,17 @@ class StartScreen(Screens):
 
         if game.settings['show_changelog']:
             show_changelog = True
+            lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
                 with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
-                    if read_file.readline() == get_version_info().version_number:
+                    lastCommit = read_file.readline()
+                    if lastCommit == get_version_info().version_number:
                         show_changelog = False
 
             if show_changelog:
+                ChangelogPopup(game.switches['last_screen'], lastCommit)
                 with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
                     write_file.write(get_version_info().version_number)
-                ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore, violence, and animal abuse",
@@ -285,12 +296,11 @@ class StartScreen(Screens):
             object_id="#default_dark",
             manager=MANAGER)
 
-        
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
         else:
             self.continue_button.disable()
-        
+
         if len(game.switches['clan_list']) > 1:
             self.switch_clan_button.enable()
         else:
@@ -360,7 +370,7 @@ class SwitchClanScreen(Screens):
                         Clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
-                        
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen('start screen')
@@ -619,7 +629,7 @@ class SettingsScreen(Screens):
                 self.open_lang_settings()
             if self.sub_menu in ['general', 'relation', 'language']:
                 self.handle_checkbox_events(event)
-        
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen('start screen')
@@ -721,8 +731,8 @@ class SettingsScreen(Screens):
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
                 tool_tip_text="This will close the game. "
-                            "When you reopen, the game"
-                            " will be windowed. ")
+                "When you reopen, the game"
+                " will be windowed. ")
         else:
             self.fullscreen_toggle = UIImageButton(
                 scale(pygame.Rect((1234, 50), (316, 72))),
@@ -730,8 +740,8 @@ class SettingsScreen(Screens):
                 object_id="#toggle_fullscreen_button",
                 manager=MANAGER,
                 tool_tip_text="This will close the game. "
-                            "When you reopen, the game"
-                            " will be fullscreen. ")
+                "When you reopen, the game"
+                " will be fullscreen. ")
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
@@ -1015,7 +1025,7 @@ class StatsScreen(Screens):
         """
         TODO: DOCS
         """
-        
+
         self.set_disabled_menu_buttons(["stats"])
         self.show_menu_buttons()
         self.update_heading_text(f'{game.clan.name}Clan')
