@@ -1756,6 +1756,9 @@
         "min_cats": 3,
         "max_cats": 4,
         "antagonize_text": null,
-        "antagonize_fail_text": null
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "m_c was injured while hunting."
+        }
     }
 ]
