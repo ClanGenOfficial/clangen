@@ -755,7 +755,7 @@
         },
         "fail_text": {
             "injury": "As soon as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} the bag wiggling and screaming, {PRONOUN/r_c/subject} {VERB/r_c/jump/jumps} into action. Unfortunately r_c was just a tad too slow and got kicked quite hard against a tree. p_l orders the patrol to protect and carry r_c while they retreat, with pain in their heart for the unknown cat that they couldn't save.",
-            "stat_injury": "Upon seeing the Twoleg and the screeching bag they are holding s_c just can't take it. {PRONOUN/s_c/subject} {VERB/cat/jump/jumps}, into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard onto the floor the only thing the rest of the patrol can do is grab s_c and flee back to the safety of c_n."
+            "stat_injury": "Upon seeing the Twoleg and the screeching bag they are holding s_c just can't take it. {PRONOUN/s_c/subject} {VERB/s_c/jump/jumps}, into action without waiting for the rest of the patrol to back {PRONOUN/s_c/object} up and {PRONOUN/s_c/subject} {VERB/s_c/pay/pays} the price. Grabbed by the scruff and thrown hard onto the floor the only thing the rest of the patrol can do is grab s_c and flee back to the safety of c_n."
         },
         "win_skills": [
             "CLEVER,2",
