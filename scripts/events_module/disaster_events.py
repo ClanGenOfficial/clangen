@@ -122,7 +122,7 @@ class DisasterEvents():
                         Single_Event(event, "misc"))
 
                     # now grab all the disaster's info and save it
-                    secondary_disaster = self.generate_events.possible_ongoing_events(
+                    secondary_disaster = GenerateEvents.possible_ongoing_events(
                                                                     "disasters",
                                                                     specific_event=secondary_disaster["disaster"])
                     game.clan.secondary_disaster = secondary_disaster
