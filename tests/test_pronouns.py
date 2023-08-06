@@ -1,9 +1,8 @@
 """
 
  Please dont put this *unittest* in the tests/unittest github action.
- It is only for local use.
 HOWEVER
- Please keep the raw python script, so it can be run by the tests/pronoun_test github action.
+ Please keep the raw python script and the unittest, so it can be run by the tests/pronoun_test github action.
 
 This test checks that pronoun tags are formated correctly, 
 
@@ -144,7 +143,3 @@ class TestPronouns(unittest.TestCase):
         with self.assertRaises(SystemExit) as cm:
             test()
         self.assertEqual(cm.exception.code, 0)
-
-
-if __name__ == "__main__":
-    test()
