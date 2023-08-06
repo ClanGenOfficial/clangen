@@ -101,4 +101,4 @@ jobs:
         - name: install dependencies
           run: poetry install
         - name: Check for pronoun tag errors in resources
-          run: poetry run python3 tests/test_pronouns.py
+          run: poetry run python3 -m unittest tests/test_pronouns.py
