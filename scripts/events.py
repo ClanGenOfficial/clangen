@@ -215,16 +215,7 @@ class Events:
             if not med_fullfilled:
                 string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
                          f"for longer and have a higher chance of dying. "
-                game.cur_events_list.insert(0, Single_Event(string, "health"))
-        else:
-            has_med = any(
-                str(cat.status) in {"medicine cat", "medicine cat apprentice"}
-                and not cat.dead and not cat.outside
-                for cat in Cat.all_cats.values())
-            if not has_med:
-                string = f"{game.clan.name}Clan has no medicine cat!"
-                game.cur_events_list.insert(0, Single_Event(string, "health"))
-                
+                game.cur_events_list.insert(0, Single_Event(string, "health"))                
         
         new_list = []
         other_list = []
@@ -873,7 +864,7 @@ class Events:
                     ceremony_txt = random.choice(self.c_txt['affair_events'])
                     ceremony_txt = ceremony_txt.replace("mate1", str(mate1.name))
                     game.cur_events_list.insert(1, Single_Event(ceremony_txt))
-        if random.randint(1,20) == 1:
+        if random.randint(1,30) == 1:
             if (len(game.clan.your_cat.mate) > 0 and game.settings['affair']) or (len(game.clan.your_cat.mate) == 0):
                 if len(game.clan.your_cat.mate) > 0:
                     if random.randint(1,50) != 1:

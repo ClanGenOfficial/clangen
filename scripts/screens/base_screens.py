@@ -7,7 +7,8 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
-from scripts.game_structure.windows import SaveCheck
+from scripts.game_structure.windows import SaveCheck, EventLoading
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 class Screens():
     game_screen = screen
@@ -106,7 +107,64 @@ class Screens():
         self.name = name
         if name is not None:
             game.all_screens[name] = self
+        
+        # Place to store the loading window
+        self.loading_window = None
+        self.work_done = False
+        
 
+    def loading_screen_start_work(self,
+                                  target) -> PropagatingThread:
+        """Creates and starts the work_thread. 
+            Returns the started thread. """
+
+        work_thread = PropagatingThread(target=self._work_target, args=(target,), daemon=True)
+        game.switches['window_open'] = True
+        work_thread.start()
+        
+        return work_thread
+        
+    
+    def _work_target(self, target):
+        
+        try:
+            target()
+        except:
+            raise
+        finally:
+            self.work_done = True
+
+    def loading_screen_on_use(self, 
+                              work_thread:PropagatingThread,
+                              final_actions,
+                              loading_screen_pos:tuple=None, 
+                              delay:float=0.7) -> bool:
+        """Handles all actions that must be run every frame for the loading window to work. 
+        Also handles creating and killing the loading window. 
+         """
+        
+        # Handled the loading animation, both creating and killing it. 
+        if not self.loading_window and work_thread.is_alive() \
+                and work_thread.get_time_from_start() > delay:
+            self.loading_window = EventLoading(loading_screen_pos)
+        elif self.loading_window and not work_thread.is_alive():
+            self.loading_window.kill()
+            self.loading_window = None
+        
+        # Handles displaying the events once timeskip is done. 
+        if self.work_done:
+            # By this time, the thread should have already finished.
+            # This line allows exceptions in the work thread to be 
+            # passed to the main thread, so issues in the work thread are not
+            # silent failures. 
+            work_thread.join()
+            
+            final_actions()
+            game.switches['window_open'] = False
+            self.work_done = False
+            
+        return self.work_done
+        
     def fill(self, tuple):
         pygame.Surface.fill(color=tuple)
 

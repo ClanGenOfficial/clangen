@@ -14,6 +14,7 @@ from scripts.event_class import Single_Event
 from scripts.game_structure.windows import GameOver, PickPath, DeathScreen, EventLoading
 import ujson
 import random
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class EventsScreen(Screens):
@@ -59,6 +60,7 @@ class EventsScreen(Screens):
         self.start = 0
         self.loading_window = None
         self.done_moon = False
+        self.events_thread = PropagatingThread()
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -93,13 +95,7 @@ class EventsScreen(Screens):
             elif event.ui_element == self.timeskip_button:
                 # Save the start time, so the loading animation can be
                 # set to only show up if timeskip is taking a good amount of time. 
-                self.start = time.time() 
-                self.events_thread = threading.Thread(target=self.one_moon)
-                # Set game.switched["window_open"] to true to prevent setting off more than one 
-                # timeskip thread at once. 
-                game.switches['window_open'] = True
-                self.events_thread.start()
-                
+                self.events_thread = self.loading_screen_start_work(events_class.one_moon)
                 
             elif event.ui_element == self.toggle_borders_button:
                 if game.clan.closed_borders:
@@ -107,10 +103,7 @@ class EventsScreen(Screens):
                     self.toggle_borders_button.set_text("Close Clan Borders")
                 else:
                     game.clan.closed_borders = True
-                    self.toggle_borders_button.set_text("Open Clan Borders")
-
-                        
-            
+                    self.toggle_borders_button.set_text("Open Clan Borders")            
             # Change the type of events displayed
             elif event.ui_element == self.all_events_button:
                 if self.event_container.vert_scroll_bar:
@@ -281,20 +274,8 @@ class EventsScreen(Screens):
                     self.display_events = self.misc_events
                     self.update_events_display()
             elif event.key == pygame.K_SPACE:
-                # Save the start time, so the loading animation can be
-                # set to only show up if timeskip is taking a good amount of time. 
-                self.start = time.time() 
-                self.events_thread = threading.Thread(target=self.one_moon)
-                # Set game.switched["window_open"] to true to prevent setting off more than one 
-                # timeskip thread at once. 
-                game.switches['window_open'] = True
-                self.events_thread.start()
-    
-    def one_moon(self):
-        """Runs one_moon, and sets self.done_moon = True when done. """
-        
-        events_class.one_moon()
-        self.done_moon = True
+                
+                self.events_thread = self.loading_screen_start_work(events_class.one_moon)
 
     def screen_switches(self):
         # On first open, update display events list
@@ -485,19 +466,7 @@ class EventsScreen(Screens):
 
     def on_use(self):
         
-        # Handled the loading animation, both creating and killing it. 
-        if not self.loading_window and self.events_thread.is_alive() \
-                and time.time() - self.start > 0.7:
-            self.loading_window = EventLoading()
-        elif self.loading_window and not self.events_thread.is_alive():
-            self.loading_window.kill()
-            self.loading_window = None
-        
-        # Handles displaying the events once timeskip is done. 
-        if self.done_moon:
-            self.timeskip_done()
-            game.switches['window_open'] = False
-            self.done_moon = False
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
             
     def timeskip_done(self):
         """Various sorting and other tasks that must be done with the timeskip is over. """
