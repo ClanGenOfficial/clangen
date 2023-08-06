@@ -15,14 +15,9 @@ from scripts.event_class import Single_Event
 
 class Death_Events():
     """All events with a connection to death."""
-
-    def __init__(self) -> None:
-        self.event_sums = 0
-        self.had_one_event = False
-        self.generate_events = GenerateEvents()
-        self.history = History()
-
-    def handle_deaths(self, cat, other_cat, war, enemy_clan, alive_kits, murder=False):
+    
+    @staticmethod
+    def handle_deaths(cat, other_cat, war, enemy_clan, alive_kits, murder=False):
         """ 
         This function handles the deaths
         """
@@ -38,11 +33,11 @@ class Death_Events():
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_short_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
+        possible_short_events = GenerateEvents.possible_short_events(cat.status, cat.age, "death")
 
-        final_events = self.generate_events.filter_possible_short_events(possible_short_events, cat, other_cat, war,
-                                                                         enemy_clan,
-                                                                         other_clan, alive_kits, murder=murder)
+        final_events = GenerateEvents.filter_possible_short_events(possible_short_events, cat, other_cat, war,
+                                                                                 enemy_clan,
+                                                                                 other_clan, alive_kits, murder=murder)
 
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
@@ -90,7 +85,7 @@ class Death_Events():
             death_history = history_text_adjust(death_history, other_clan_name, game.clan)
             if murder_unrevealed_history:
                 murder_unrevealed_history = history_text_adjust(murder_unrevealed_history, other_clan_name, game.clan)
-            self.history.add_murders(cat, other_cat, revealed, death_history, murder_unrevealed_history)
+            History.add_murders(cat, other_cat, revealed, death_history, murder_unrevealed_history)
 
         # check if the cat's body was retrievable
         if "no_body" in death_cause.tags:
@@ -102,7 +97,7 @@ class Death_Events():
         if other_cat and "other_cat" in death_cause.tags:
             # if at least one cat survives, change relationships
             if "multi_death" not in death_cause.tags:
-                self.handle_relationship_changes(cat, death_cause, other_cat)
+                Death_Events.handle_relationship_changes(cat, death_cause, other_cat)
             # handle murder history
             if murder:
                 if revealed:
@@ -127,7 +122,7 @@ class Death_Events():
             additional_event_text += cat.die(body)
             death_history = history_text_adjust(death_history, other_clan_name, game.clan)
 
-        self.history.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
+        History.add_death(cat, death_history, other_cat=other_cat, extra_text=murder_unrevealed_history)
 
         # give death history to other cat and kill them if they die
         if "multi_death" in death_cause.tags:
@@ -147,7 +142,7 @@ class Death_Events():
                 additional_event_text += other_cat.die(body)
                 other_death_history = history_text_adjust(death_cause.history_text.get('reg_death'), other_clan_name, game.clan)
 
-            self.history.add_death(other_cat, other_death_history, other_cat=cat)
+            History.add_death(other_cat, other_death_history, other_cat=cat)
 
         # give injuries to other cat if tagged as such
         if "other_cat_injured" in death_cause.tags:
@@ -170,7 +165,8 @@ class Death_Events():
             types.append("other_clans")
         game.cur_events_list.append(Single_Event(death_text + " " + additional_event_text, types, involved_cats))
 
-    def handle_witness(self, cat, other_cat):
+    @staticmethod
+    def handle_witness(cat, other_cat):
         """
         on hold until personality rework because i'd rather not have to figure this out a second time
         tentative plan is to have capability for a cat to witness the murder and then have a reaction based off trait
@@ -197,7 +193,8 @@ class Death_Events():
                                        trust=-50
                                        )
 
-    def handle_relationship_changes(self, cat, death_cause, other_cat):
+    @staticmethod
+    def handle_relationship_changes(cat, death_cause, other_cat):
         n = 30
         romantic = 0
         platonic = 0
