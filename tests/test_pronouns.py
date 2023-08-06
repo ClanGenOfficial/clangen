@@ -131,10 +131,6 @@ def get_all_strings(data):
         
     return all_strings
     
-    
-
-# THE UNITTEST IS ONLY FOR LOCAL USE
-# PLEASE DONT PUT THIS IN THE GITHUB ACTION
 class TestPronouns(unittest.TestCase):
     """Test for some common pronoun tagging errors in resources"""
 
