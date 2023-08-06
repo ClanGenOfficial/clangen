@@ -135,7 +135,7 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "p_l is plucking some rosemary when their attention is suddenly grabbed by omen_list_emotional_smell_sound. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
+            "unscathed_common": "p_l is plucking some rosemary when their attention is suddenly grabbed by omen_list_sight. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
         },
         "fail_text": {
             "unscathed_common": "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions."

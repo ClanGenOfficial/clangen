@@ -388,7 +388,7 @@ class GenerateEvents:
                     continue
                 if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and other_cat.age in ["senior", "kitten", "newborn"]:
                     continue
                 if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
@@ -587,8 +587,8 @@ class GenerateEvents:
         if trait in events:
             possible_events.extend(events[trait][body_status])
 
-        # grab family events if they're needed
-        if family_relation != 'general':
+        # grab family events if they're needed. Family events should not be romantic. 
+        if family_relation != 'general' and rel_value != "romantic":
             events = self.get_death_reaction_dicts(family_relation, rel_value)
             possible_events.extend(events["general"][body_status])
             if trait in events:

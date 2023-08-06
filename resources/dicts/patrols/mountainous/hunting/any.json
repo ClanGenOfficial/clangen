@@ -82,7 +82,7 @@
             "stat_trait": "s_c rolls in a patch of garlic to disguise {PRONOUN/s_c/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/r_c/poss} pelt though."
         },
         "fail_text": {
-            "unscathed_common": "{PRONOUN/r_c/poss/CAP} {VERB/r_c/find/finds} nothing to disguise {PRONOUN/r_c/poss} scent, and no prey either.",
+            "unscathed_common": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} nothing to disguise {PRONOUN/r_c/poss} scent, and no prey either.",
             "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of {PRONOUN/r_c/poss} stench!"
         },
         "win_skills": [

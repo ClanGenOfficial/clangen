@@ -78,7 +78,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/subject} while on a solo patrol.",
+            "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
             "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
         }
     },
