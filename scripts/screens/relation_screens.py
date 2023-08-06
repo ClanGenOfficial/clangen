@@ -6,12 +6,13 @@ from scripts.cat_relations.inheritance import Inheritance
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions
+from scripts.utility import get_personality_compatibility, get_text_box_theme, scale, scale_dimentions, shorten_text_to_fit
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import RelationshipLog
+from scripts.game_structure.propagating_thread import PropagatingThread
 
 
 class ChooseMentorScreen(Screens):
@@ -31,7 +32,9 @@ class ChooseMentorScreen(Screens):
         self.next_page_button = None
         self.previous_page_button = None
         self.current_mentor_warning = None
+        self.no_mentor_warning = None
         self.confirm_mentor = None
+        self.remove_mentor = None
         self.back_button = None
         self.next_cat_button = None
         self.previous_cat_button = None
@@ -51,6 +54,10 @@ class ChooseMentorScreen(Screens):
                 self.update_selected_cat()
                 self.update_buttons()
             elif event.ui_element == self.confirm_mentor:
+                self.change_mentor(self.selected_mentor)
+                self.update_buttons()
+                self.update_selected_cat()
+            elif event.ui_element == self.remove_mentor:
                 self.change_mentor(self.selected_mentor)
                 self.update_buttons()
                 self.update_selected_cat()
@@ -91,9 +98,10 @@ class ChooseMentorScreen(Screens):
                                                      manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox("If an apprentice is 6 moons old and their mentor is changed, they "
                                                   "will not be listed as a former apprentice on their old mentor's "
-                                                  "profile. An apprentice's mentor can have an influence on their "
-                                                  "trait and skill later in life.\nChoose your mentors wisely",
-                                                  scale(pygame.Rect((360, 120), (880, 200))),
+                                                  "profile. Apprentices without a mentor will have one automatically "
+                                                  "assigned next moon. An apprentice's mentor can have an influence on "
+                                                  "their trait and skill later in life.\nChoose your mentors wisely",
+                                                  scale(pygame.Rect((360, 105), (880, 185))),
                                                   object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                                                   manager=MANAGER)
         if self.mentor is not None:
@@ -135,18 +143,18 @@ class ChooseMentorScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button")
         self.confirm_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
                                             object_id="#confirm_mentor_button")
-        if self.mentor is not None:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox(
-                "Current mentor selected",
-                scale(pygame.Rect((600, 670), (400, 60))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
-                manager=MANAGER)
-        else:
-            self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
-                                                                        , scale(pygame.Rect((600, 680), (400, 60))),
-                                                                        object_id=get_text_box_theme(
-                                                                            "#text_box_22_horizcenter"),
-                                                                        manager=MANAGER)
+        self.remove_mentor = UIImageButton(scale(pygame.Rect((652, 620), (296, 60))), "",
+                                            object_id="#remove_mentor_button")
+        self.current_mentor_warning = pygame_gui.elements.UITextBox(
+            "Current mentor selected",
+            scale(pygame.Rect((600, 670), (400, 60))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
+            manager=MANAGER)
+        self.no_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
+                                                                    , scale(pygame.Rect((600, 680), (400, 60))),
+                                                                    object_id=get_text_box_theme(
+                                                                        "#text_box_22_horizcenter"),
+                                                                    manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((630, 1160), (68, 68))), "",
                                                   object_id="#relation_list_previous", manager=MANAGER)
         self.next_page_button = UIImageButton(scale(pygame.Rect((902, 1160), (68, 68))), "",
@@ -188,8 +196,12 @@ class ChooseMentorScreen(Screens):
         del self.back_button
         self.confirm_mentor.kill()
         del self.confirm_mentor
+        self.remove_mentor.kill()
+        del self.remove_mentor
         self.current_mentor_warning.kill()
         del self.current_mentor_warning
+        self.no_mentor_warning.kill()
+        del self.no_mentor_warning
         self.previous_page_button.kill()
         del self.previous_page_button
         self.next_page_button.kill()
@@ -289,7 +301,14 @@ class ChooseMentorScreen(Screens):
 
     def change_mentor(self, new_mentor=None):
         old_mentor = Cat.fetch_cat(self.the_cat.mentor)
-        if new_mentor and old_mentor is not None:
+        if new_mentor == old_mentor:
+        #if "changing mentor" to the same cat, remove them as mentor instead
+            if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self.the_cat.ID)
+            self.the_cat.mentor = None
+            old_mentor.apprentice.remove(self.the_cat.ID)
+            self.mentor = None
+        elif new_mentor and old_mentor is not None:
             old_mentor.apprentice.remove(self.the_cat.ID)
             if self.the_cat.moons > 6 and self.the_cat.ID not in old_mentor.former_apprentices:
                 old_mentor.former_apprentices.append(self.the_cat.ID)
@@ -307,6 +326,8 @@ class ChooseMentorScreen(Screens):
             self.the_cat.mentor = new_mentor.ID
             new_mentor.apprentice.append(self.the_cat.ID)
             self.mentor = new_mentor
+            if self.the_cat.ID not in new_mentor.former_apprentices:
+                self.the_cat.patrol_with_mentor = 0
 
             # They are a current apprentice, not a former one now!
             if self.the_cat.ID in new_mentor.former_apprentices:
@@ -400,12 +421,26 @@ class ChooseMentorScreen(Screens):
     def update_buttons(self):
         """Updates the status of buttons. """
         # Disable to enable the choose mentor button
-        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
+        if not self.selected_mentor:
+            self.remove_mentor.hide()
+            self.remove_mentor.disable()
+            self.confirm_mentor.show()
             self.confirm_mentor.disable()
+            self.current_mentor_warning.hide()
+            self.no_mentor_warning.show()
+        elif self.selected_mentor.ID == self.the_cat.mentor:
+            self.confirm_mentor.hide()
+            self.remove_mentor.show()
+            self.remove_mentor.enable()
             self.current_mentor_warning.show()
+            self.no_mentor_warning.hide()
         else:
+            self.remove_mentor.hide()
+            self.remove_mentor.disable()
+            self.confirm_mentor.show()
             self.confirm_mentor.enable()
             self.current_mentor_warning.hide()
+            self.no_mentor_warning.hide()
 
     def get_valid_mentors(self):
         valid_mentors = []
@@ -741,10 +776,8 @@ class FamilyTreeScreen(Screens):
                                                             cat_id=self.the_cat.ID,
                                                             manager=MANAGER)
         name = str(self.the_cat.name)
-        if len(name) >= 13:
-            short_name = name[0:10]
-            name = short_name + '...'
-        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {name}'s Lineage",
+        short_name = shorten_text_to_fit(name, 260, 22)
+        self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(f"Viewing {short_name}'s Lineage",
                                                                               scale(
                                                                                   pygame.Rect((150, 1282), (300, 150))),
                                                                               object_id=get_text_box_theme(
@@ -764,17 +797,12 @@ class FamilyTreeScreen(Screens):
                                                                manager=MANAGER,
                                                                container=self.family_tree)
         name = str(self.the_cat.name)
-        if len(name) >= 9:
-            short_name = name[0:7]
-            name = short_name + '...'
-        self.cat_elements["center_cat_name"] = pygame_gui.elements.UITextBox(name,
-                                                                             scale(
-                                                                                 pygame.Rect((10 + x_pos, 118 + y_pos),
-                                                                                             (145, 100))),
-                                                                             object_id=get_text_box_theme(
-                                                                                 "#text_box_22_horizcenter"),
-                                                                             manager=MANAGER,
-                                                                             container=self.family_tree)
+        short_name = shorten_text_to_fit(name, 114, 22)
+
+        self.cat_elements["center_cat_name"] = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect((10 + x_pos, 90 + y_pos), (145, 100))), short_name, object_id="#text_box_22_horizcenter", manager=MANAGER, container=self.family_tree)
+
+
+
 
         if self.parents:
             self.siblings_button = UIImageButton(scale(pygame.Rect((152 + x_pos, 65 + y_pos), (316, 60))),
@@ -1166,26 +1194,24 @@ class ChooseMateScreen(Screens):
         self.tab_buttons = {}
         
         self.no_kits_message = None
+        
+        #Loading screen
+        self.work_thread = PropagatingThread()
 
     def handle_event(self, event):
         """ Handles events. """
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_mate:
-                if not self.selected_cat:
-                    return
                 
-                if self.selected_cat.ID not in self.the_cat.mate:
-                    self.the_cat.set_mate(self.selected_cat)
-                    
-                else:
-                    self.the_cat.unset_mate(self.selected_cat, breakup=True)
+                self.work_thread = self.loading_screen_start_work(self.change_mate)
                 
-                self.update_current_cat_info(reset_selected_cat=False) # This will also refresh tab contents
-                self.update_selected_cat()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
@@ -1356,6 +1382,23 @@ class ChooseMateScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def change_mate(self):
+        if not self.selected_cat:
+            return
+        
+        if self.selected_cat.ID not in self.the_cat.mate:
+            self.the_cat.set_mate(self.selected_cat)
+            
+        else:
+            self.the_cat.unset_mate(self.selected_cat, breakup=True)
+        
+
+    def update_both(self):
+        """Updates both the current cat and selected cat info. """
+        
+        self.update_current_cat_info(reset_selected_cat=False) # This will also refresh tab contents
+        self.update_selected_cat()
 
     def update_mates_container(self):
         """Updates everything in the mates container, including the list of current mates,
@@ -2028,6 +2071,8 @@ class ChooseMateScreen(Screens):
     def on_use(self):
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        
+        self.loading_screen_on_use(self.work_thread, self.update_both)
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
@@ -2578,13 +2623,11 @@ class RelationshipScreen(Screens):
 
         # CHECK NAME LENGTH - SHORTEN IF NECESSARY
         name = str(the_relationship.cat_to.name)  # get name
-        if len(name) >= 14:  # check name length
-            short_name = str(the_relationship.cat_to.name)[0:11]
-            name = short_name + '...'
-        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name,
+        short_name = shorten_text_to_fit(name, 210, 26)
+        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(short_name,
                                                                                      scale(pygame.Rect(
-                                                                                         (pos_x, pos_y - 48),
-                                                                                         (204, 60))),
+                                                                                         (pos_x - 5, pos_y - 48),
+                                                                                         (215, 60))),
                                                                                      object_id="#text_box_26_horizcenter")
 
         # Gender alignment
@@ -3025,11 +3068,10 @@ class MediationScreen(Screens):
                     mediator.sprite, (300, 300)))
 
             name = str(mediator.name)
-            if len(name) > 17:
-                name = name[:15] + "..."
+            short_name = shorten_text_to_fit(name, 240, 22)
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x_value - 10, 480), (320, -1))),
-                name,
+                short_name,
                 object_id=get_text_box_theme())
 
             text = mediator.personality.trait + "\n" + mediator.experience_level
@@ -3149,11 +3191,10 @@ class MediationScreen(Screens):
                 cat.sprite, (200, 200)))
 
         name = str(cat.name)
-        if len(name) > 17:
-            name = name[:15] + "..."
+        short_name = shorten_text_to_fit(name, 250, 30)
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
             scale(pygame.Rect((x, y + 200), (400, 60))),
-            name,
+            short_name,
             object_id="#text_box_30_horizcenter")
 
         # Gender
@@ -3274,14 +3315,14 @@ class MediationScreen(Screens):
         # RELATION BARS
 
         if other_cat:
-
             name = str(cat.name)
-            if len(name) > 13:
-                name = name[:10] + ".."
+            short_name = shorten_text_to_fit(name, 136, 22)
+
+
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(
                 scale(pygame.Rect((x + 40, y + 320),
                                   (320, -1))),
-                f"~~{name}'s feelings~~",
+                f"~~{short_name}'s feelings~~",
                 object_id="#text_box_22_horizcenter")
 
             if other_cat.ID in cat.relationships:
@@ -3627,31 +3668,23 @@ class ChooseAdoptiveParentScreen(Screens):
         # for the offspring tab, and "mates" for the mate tab. 
         self.open_tab = "potential" 
         self.tab_buttons = {}
+        
+        self.work_thread = PropagatingThread()
 
     def handle_event(self, event):
         """ Handles events. """
+        if game.switches["window_open"]:
+            return
+        
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
                 self.change_screen('profile screen')
             elif event.ui_element == self.toggle_adoptive_parent:
-                if not self.selected_cat:
-                    return
                 
-                if self.selected_cat.ID not in self.the_cat.adoptive_parents:
-                    self.the_cat.adoptive_parents.append(self.selected_cat.ID)
-                    self.the_cat.create_inheritance_new_cat()
-                    
-                else:
-                    self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
-                    self.the_cat.create_inheritance_new_cat()
-                    self.selected_cat.create_inheritance_new_cat()
+                self.work_thread = self.loading_screen_start_work(self.change_adoptive_parent)
                 
-                self.draw_tab_button()
-                self.update_toggle_button()
-                self.update_potential_parents_container()
-                self.update_adoptive_parents_container()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     game.switches["cat"] = self.previous_cat
@@ -3800,6 +3833,29 @@ class ChooseAdoptiveParentScreen(Screens):
         # This will set up everything else on the page. Basically everything that changed with selected or
         # current cat
         self.update_current_cat_info()
+
+    def change_adoptive_parent(self):
+        """Make adoptive parent changes"""
+        
+        if not self.selected_cat:
+            return
+        
+        if self.selected_cat.ID not in self.the_cat.adoptive_parents:
+            self.the_cat.adoptive_parents.append(self.selected_cat.ID)
+            self.the_cat.create_inheritance_new_cat()
+            
+        else:
+            self.the_cat.adoptive_parents.remove(self.selected_cat.ID)
+            self.the_cat.create_inheritance_new_cat()
+            self.selected_cat.create_inheritance_new_cat()
+            
+    def update_after_change(self):
+        """Updates that need to be run after setting an adoptive parent """
+        
+        self.draw_tab_button()
+        self.update_toggle_button()
+        self.update_potential_parents_container()
+        self.update_adoptive_parents_container()
 
     def update_birth_container(self):
         """Updates everything in the mates container, including the list of current mates,
@@ -4243,6 +4299,8 @@ class ChooseAdoptiveParentScreen(Screens):
 
         # Due to a bug in pygame, any image with buttons over it must be blited
         screen.blit(self.list_frame, (150 / 1600 * screen_x, 782 / 1400 * screen_y))
+        
+        self.loading_screen_on_use(self.work_thread, self.update_after_change)
 
     def get_valid_adoptive_parents(self):
         """Get a list of valid parents for the current cat"""

@@ -23,7 +23,6 @@ class OutsiderEvents:
         # killing outside cats
         if cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                cat.die()
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
                 elif cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
@@ -34,6 +33,8 @@ class OutsiderEvents:
                     text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
                            f"but as they drift away, they hope to see " \
                            f"familiar starry fur on the other side."
+                
+                cat.die()
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat.ID))
                 

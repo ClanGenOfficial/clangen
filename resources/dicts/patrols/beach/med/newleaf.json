@@ -428,12 +428,12 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp.",
-            "unscathed_rare": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp.",
-            "stat_skill": "s_c has a few favourite catmint plants, and goes to check whether {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} regrown this newleaf. Two haven't, but another two have, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} enough for a great harvest to take back to camp."
+            "unscathed_common": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+            "unscathed_rare": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp.",
+            "stat_skill": "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp."
         },
         "fail_text": {
-            "unscathed_common": "It's alright to fail, p_l reminds {PRONOUN/p_l/object}. At least {PRONOUN/p_l/subject} {VERB/p_l/know/knows} where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
+            "unscathed_common": "It's alright to fail, p_l reminds {PRONOUN/p_l/self}. At least {PRONOUN/p_l/subject} {VERB/p_l/know/knows} where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
         },
         "win_skills": [
             "SENSE,2"

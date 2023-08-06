@@ -30,7 +30,7 @@
             "The leg is too mangled - r_c sighs, and prepares the poppy seeds to knock m_c out while it's removed.",
             "When m_c wakes up from {PRONOUN/m_c/poss} poppy seed induced sleep, r_c breaks the news that m_c's leg had to be removed.",
             "m_c wakes up one leg less than {PRONOUN/m_c/subject} went to sleep with, and it's both upsetting and a relief. {PRONOUN/m_c/poss/CAP} leg was so mangled, and m_c in so much pain, that this might be for the best. But it's still a loss.",
-            "The damage to m_c's leg has turned out to be too great and {PRONOUN/m_c/poss} leg had to be removed if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any hope of recovery.",
+            "The damage to m_c's leg has turned out to be too great and {PRONOUN/m_c/poss} leg had to be removed for any hope of recovery.",
             "m_c has healed from {PRONOUN/m_c/poss} mangled leg, but the leg had to be removed completely."
 
         ],
@@ -93,7 +93,7 @@
         ],
         "deaf": [
             "m_c does {PRONOUN/m_c/poss} best to communicate to r_c with rudimentary tail signals that {PRONOUN/m_c/poss} hearing is permanently damaged, the frostbite having damaged something deep within.",
-            "m_c watches as r_c talks to another cat in the medicine den, glancing towards {PRONOUN/m_c/poss} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
+            "m_c watches as r_c talks to another cat in the medicine den, glancing towards {PRONOUN/m_c/object} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
             "m_c sits and watches the Clan going about their business and tries to get used to the stark silence. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows}, instinctively, that {PRONOUN/m_c/poss} hearing is never coming back. The frostbite must have scarred something deep within {PRONOUN/m_c/poss} ears."
 
         ]
