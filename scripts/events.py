@@ -264,7 +264,7 @@ class Events:
         with open(f"{resource_dir}df.json",
                   encoding="ascii") as read_file:
             self.df_txt = ujson.loads(read_file.read())
-        if not game.clan.your_cat.dead and not game.clan.your_cat.status == 'exiled':
+        if not game.clan.your_cat.dead and game.clan.your_cat.status != 'exiled':
             if game.clan.your_cat.revealed != 0 and game.clan.age - 3 <= game.clan.your_cat.revealed and game.clan.your_cat.moons != 0 and game.clan.your_cat.moons != 6 and not (game.clan.your_cat.status in ['warrior', 'medicine cat', 'mediator'] and not game.clan.your_cat.w_done) and not game.clan.your_cat.moons == 120:
                 for i in range(random.randint(0,2)):
                     d_e = Single_Event(random.choice(self.e_txt[game.clan.your_cat.status]))
@@ -367,13 +367,6 @@ class Events:
                     except ValueError:
                         print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
 
-        # if not game.clan.your_cat.pelt.accessories:
-        #     game.clan.your_cat.pelt.accessories = []
-        # acc = random.choice(acc_list)
-        # if acc not in game.clan.your_cat.pelt.accessories:
-        #     game.clan.your_cat.pelt.accessories.append(acc)
-        
-        
         if not game.clan.your_cat.inventory:
             game.clan.your_cat.inventory = []
         acc = random.choice(acc_list)
@@ -519,10 +512,11 @@ class Events:
         return siblings, sibling_text
 
     def get_birth_txt(self):
-        num_siblings = random.choice([0,1,2,3])
+        num_siblings = 0
+        # num_siblings = random.choice([0,1,2,3])
         siblings, sibling_text = self.create_siblings(num_siblings)
-
-        birth_type = random.randint(1,6)
+        birth_type = 1
+        # birth_type = random.randint(1,6)
         if birth_type == 1:
             game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
@@ -539,12 +533,22 @@ class Events:
     def handle_birth_no_parents(self, siblings, sibling_text):
         thought = "Is happy their kits are safe"
         blood_parent = create_new_cat(Cat, Relationship,
-                                        status=random.choice(["loner", "kittypet"]),
-                                        alive=False,
+                                        status='warrior',
+                                        alive=True,
                                         thought=thought,
-                                        age=random.randint(15,120))[0]
-        blood_parent.outside = True
-        game.clan.add_to_unknown(blood_parent)
+                                        age=random.randint(15,120),
+                                        backstory=random.choice(["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "loner1", "loner2", "tragedy_survivor3", "guided1", "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5"]))[0]
+        if random.randint(1,2) == 1 and not siblings:
+            game.clan.add_to_clan(blood_parent)
+            game.clan.your_cat.parent1 = blood_parent.ID
+            game.clan.your_cat.create_inheritance_new_cat()
+            game.clan.your_cat.init_all_relationships()
+            blood_parent.create_inheritance_new_cat()
+            game.clan.your_cat.backstory = "outsider_roots2"
+            return self.set_birth_text("birth_parent_outsider", {"y_c": game.clan.your_cat.name, "parent1": blood_parent.name})
+        else:
+            blood_parent.outside = True
+            game.clan.add_to_unknown(blood_parent)
         if siblings:
             self.add_siblings_and_inheritance(siblings, blood_parent=blood_parent)
             return self.set_birth_text("birth_no_parents_siblings", {"y_c": game.clan.your_cat.name, "insert_siblings": sibling_text})

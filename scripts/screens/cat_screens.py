@@ -1073,7 +1073,7 @@ class ProfileScreen(Screens):
         output += "\n"
         # CAT SKILLS
 
-        if the_cat.moons <= 6:
+        if the_cat.moons < 6:
             output += "???"
         else:
             output += the_cat.skills.skill_string()
