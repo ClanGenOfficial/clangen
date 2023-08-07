@@ -285,7 +285,7 @@ class StartScreen(Screens):
                     if lastCommit == get_version_info().version_number:
                         show_changelog = False
 
-            if 1:
+            if show_changelog:
                 ChangelogPopup(game.switches['last_screen'])
                 with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
                     write_file.write(get_version_info().version_number)
