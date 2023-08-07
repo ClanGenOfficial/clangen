@@ -39,7 +39,7 @@ jobs:
       - name: Write commit file
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
-          git log --pretty=oneline -15 --no-decorate  --no-merges > changelog.txt
+          git log --pretty=format:%H|||%cD|||%b|||%s -15 --no-decorate --merges --grep=Merge pull request > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: poetry run python3 -m PyInstaller Clangen.spec
