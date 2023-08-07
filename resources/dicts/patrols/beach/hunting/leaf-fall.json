@@ -794,7 +794,7 @@
         "season": "leaf-fall",
         "tags": ["hunting", "medium_prey", "no_app", "pos_dislike", "rel_patrol", "no_change_fail"],
         "intro_text": "As the sea murmurs a deceptively calm threat of an upcoming storm, p_l is out on a hunting patrol with their siblings.",
-        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try a land hunt. {PRONOUN/p_l/subject/CAP} wave {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
