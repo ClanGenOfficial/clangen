@@ -2495,6 +2495,35 @@
         }
     },
     {
+        "patrol_id": "fst_hunt_kiwi_leafbare_parentchildapprentice1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": ["hunting", "large_prey", "apprentice", "app_stat", "warrior", "respect", "rel_patrol", "trust", "sacrificial", "injury", "sore", "bruises", "scrapes", "torn ear"],
+        "intro_text": "app1 has been acting weird all day, full of too quick answers and furtive glances. A parent usually knows, p_l having seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty chilled shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
+        "decline_text": "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn app1's nighttime wanderings around and head {PRONOUN/app1/object} back to the apprentice's den. p_l will have a talk with {PRONOUN/app1/subject} in the morning - leaf-bare isn't the season to take risks like this.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "app1 straightens - c_n <i>needs</i> food, and app1 is going to provide. {PRONOUN/app1/subject/CAP} stride forward, tail beckoning p_l as though this is a normal hunt, not an illicit adventure, and helplessly p_l follows, determined to keep app1 safe. But, lead by {PRONOUN/p_l/poss} child, in the dark and cold, together they bring down a kiwi bird. p_l will cover for app1's shenanigans, just this once.",
+            "unscathed_rare": "There's an injured kiwi, app1 explains, tripping over {PRONOUN/app1/poss} words a little. c_n could really use the freshkill. And p_l can't argue with that, which is how {PRONOUN/p_l/subject} find {PRONOUN/p_l/self} chilled through and damp, helping app1 haul the bird (which managed to die on its own) out of a gully, trying to think of a way to express {PRONOUN/p_l/poss} pride without encouraging this nonsense in the future.",
+            "stat_skill": "{PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been tracking a night bird, app1 explains, and - look could p_l just help {PRONOUN/app1/object}? Which is how p_l finds {PRONOUN/p_l/self} setting up an ambush for the kiwi on a forest trail, at midnight, like an insane cat. Even worse, it <i>works,</i> both deeply impressing and worrying p_l. {PRONOUN/p_l/subject/CAP} don't want app1 encouraged to attempt these adventures."
+            },
+        "fail_text": {
+            "injury": "app1 bolts. p_l loses sight of {PRONOUN/app1/object} in the bushes, but doesn't lose {PRONOUN/app1/poss} scent - and good thing too. Apparently app1 has found the nest of a kiwi. p_l is only just in time to rescue {PRONOUN/app1/object} from getting the snot kicked out of {PRONOUN/app1/object} by the irate and far less helpless than predicted bird. Exhuasted and panting, {PRONOUN/p_l/subject} curl around {PRONOUN/p_l/poss} kit, too tired to scold."
+            },
+        "min_cats": 2,
+        "max_cats": 2,
+        "win_skills": ["HUNTER,0"],
+        "history_text": {
+            "scar": "r_c tore {PRONOUN/r_c/poss} ear while learning a harsh lesson about overestimating prey as an apprentice."
+    },
+        "constraints": {
+	        "relationship": [
+                "parent/child"
+	        ]
+        }
+    },
+    {
         "patrol_id": "fst_hunt_mouse4",
         "biome": "forest",
         "season": "leaf-bare",
