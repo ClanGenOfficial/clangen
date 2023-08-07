@@ -950,10 +950,11 @@ class ChangelogPopup(UIWindow):
 
         self.changelog_text = UITextBoxTweaked(
             file_cont,
-            scale(pygame.Rect((0, 0), (900, -1))),
+            scale(pygame.Rect((20, 130), (960, 650))),
             object_id="#text_box_30",
-            line_spacing=.8,
-            container=self.scrolling_container,
+            line_spacing=.95,
+            starting_height=2,
+            container=self,
             manager=MANAGER)
 
         self.close_button = UIImageButton(
@@ -964,8 +965,6 @@ class ChangelogPopup(UIWindow):
             container=self
         )
 
-        self.scrolling_container.set_scrollable_area_dimensions(
-            (self.changelog_text.relative_rect.width, self.changelog_text.relative_rect.height))
 
     def process_event(self, event):
         super().process_event(event)
