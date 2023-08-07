@@ -1727,5 +1727,38 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_climbtree1",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "minor_injury",
+            "no_fail_prey",
+            "medium_prey",
+            "rc_has_stat"
+        ],
+        "intro_text": "The greenleaf air is warm on their whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c seems to want to try.",
+        "decline_text": "They decide it's not worth the effort and look for other prey.",
+        "success_text": {
+            "stat_skill": "Surprising everyone, r_c begins stalking. As they guessed, the squirrel notices something amiss and hops onto the tree for safety. r_c, not willing to let the prey go, climbs right after it! Everyone is rather impressed when {PRONOUN/r_c/subject} {VERB/r_c/return/returns}, the squirrel firmly clutched in {PRONOUN/r_c/poss} jaws."
+        },
+        "fail_text": {
+            "injury": "When the squirrel scurries up the tree as expected, r_c clambers after it. Unfortunately, {PRONOUN/r_c/subject} {VERB/r_c/return/returns} empty-pawed, and looking a bit worse for wear.",
+            "stat_injury": "When the squirrel scurries up the tree as expected, r_c clambers after it. Unfortunately, {PRONOUN/r_c/subject} {VERB/r_c/return/returns} empty-pawed, and looking a bit worse for wear."
+        },
+        "chance_of_success": 50,
+        "exp": 25,
+        "win_skills": [
+            "CLIMB,1"
+        ],
+        "min_cats": 3,
+        "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": {
+            "scar": "m_c was injured while hunting."
+        }
     }
 ]

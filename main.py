@@ -158,7 +158,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
-from scripts.debugmode import debugmode
+from scripts.debugMenu import debugmode
 import pygame_gui
 import pygame
 
