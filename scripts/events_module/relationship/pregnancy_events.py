@@ -680,6 +680,10 @@ class Pregnancy_Events():
 
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
+            if cat and "vampirism" in cat.permanent_condition:
+                kit.get_permanent_condition("vampirism", born_with=True)
+                self.condition_events.handle_already_disabled(kit)
+
             if game.clan and not int(random.random() * game.config["cat_generation"]["base_permanent_condition"]) \
                     and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
