@@ -69,7 +69,7 @@
             "random_herbs"
         ],
         "intro_text": "app1 has been sent out into the desert to try to find some specific herbs alone.",
-        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/app1/poss} back, {PRONOUN/app1/subject} {VERB/app1/decides} to go back to camp and try again another day, {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object}.",
+        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/app1/poss} back, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day, {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object}.",
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {

@@ -692,9 +692,17 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def pronoun_repl(m, cat_pronouns_dict):
-    """ Helper function for add_pronouns """
+def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
+    """ Helper function for add_pronouns. If raise_exception is 
+    False, any error in pronoun formatting will not raise an 
+    exception, and will use a simple replacement "error" """
+    
+    # Add protection about the "insert" sometimes used
+    if m.group(0) == "{insert}":
+        return m.group(0)
+    
     inner_details = m.group(1).split("/")
+    
     try:
         d = cat_pronouns_dict[inner_details[1]][1]
         if inner_details[0].upper() == "PRONOUN":
@@ -704,9 +712,17 @@ def pronoun_repl(m, cat_pronouns_dict):
             return pro
         elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
+        
+        if raise_exception:
+            raise KeyError(f"Pronoun tag: {m.group(1)} is not properly"
+                           "indicated as a PRONOUN or VERB tag.")
+        
         print("Failed to find pronoun:", m.group(1))
         return "error1"
-    except KeyError as e:
+    except (KeyError, IndexError) as e:
+        if raise_exception:
+            raise
+        
         logger.exception("Failed to find pronoun: " + m.group(1))
         print("Failed to find pronoun:", m.group(1))
         return "error2"
@@ -717,9 +733,10 @@ def name_repl(m, cat_dict):
     return cat_dict[m.group(0)][0]
 
 
-def process_text(text, cat_dict):
+def process_text(text, cat_dict, raise_exception=False):
     """ Add the correct name and pronouns into a string. """
-    adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict), text)
+    adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict, raise_exception),
+                                                              text)
 
     name_patterns = [re.escape(l) for l in cat_dict]
 
