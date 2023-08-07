@@ -32,6 +32,11 @@ class Command(ABC):
         return []
 
     @property
+    def subCommands(self):
+        """The sub commands of the command"""
+        return []
+
+    @property
     def bypassConjoinedStrings(self):
         """Bypasses arguments wrapped in quotes being joined together"""
         return False
