@@ -374,7 +374,7 @@
             "Leaf-fall",
             "Leafbare"
         ],
-        "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush."
+        "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
         "accessories": [
             "HOLLY",
             "JUNIPER"
