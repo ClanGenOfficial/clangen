@@ -791,16 +791,17 @@
             "patrol_to_r_c",
             "medium_prey3",
             "injure_all",
-            "cold_injury"
+            "cold_injury",
+            "rc_has_stat"
         ],
         "intro_text": "Snow falling around the patrol hushes the world around and between them into a white-tinted haze, and p_l grows increasingly on edge. There's something wrong. Where is r_c?",
         "decline_text": "r_c eventually catches up.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+            "unscathed_common": "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their patrol, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
             "unscathed_rare": "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a corpse of trees so thick and overgrown that their branches have protected the leaf litter beneath them from the snowfall. If they can find prey anywhere, it'll be there.",
-            "stat_trait": "p_l, leading the search for r_c, spots tracks headed away form the path. Confused, they signal the rest of the patrol over, only for r_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
+            "stat_trait": "p_l, leading the search for s_c, spots tracks headed away form the path. Confused, {PRONOUN/p_l/subject} hesitates, only for s_c to pop out of a bush - there's a rabbit here, frosty and cold but edible. Well worth investigating, and a good (albeit chilly) addition to the fresh-kill pile."
         },
         "fail_text": {
             "unscathed_common": "p_l is silently furious at r_c when they find them. A snow storm is no time to go haring off by themselves, and it's destroyed the patrol's hunting chances.",
