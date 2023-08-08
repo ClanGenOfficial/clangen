@@ -189,7 +189,7 @@ class Sprites():
             'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO', 'WOODPECKER']):
             self.make_group('whitepatches', (a, 5), f'white{i}')
         # acorn's white patches + ryos' bub
-        for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART', 'SPARROW', 'VEST', 'LOVEBUG']):
+        for a, i in enumerate(['BOOTS', 'MISS', 'COW', 'COWTWO', 'BUB', 'BOWTIE', 'MUSTACHE', 'REVERSEHEART', 'SPARROW', 'VEST', 'LOVEBUG', 'TRIXIE']):
             self.make_group('whitepatches', (a, 6), 'white' + i)
 
         # single (solid)
