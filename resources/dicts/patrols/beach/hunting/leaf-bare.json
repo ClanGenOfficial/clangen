@@ -215,7 +215,7 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "app1 thinks app2's b_tp_a_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two b_tp_l_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back f_tp_p.",
+            "unscathed_common": "app1 thinks app2's b_tp_a_s looks infinitly more delicous than {PRONOUN/app1/poss} own contributions of two b_tp_l_p, while app2 insists that {PRONOUN/app2/subject}'d much rather bring back b_tp_a_s.",
 	        "stat_skill": "s_c spends half the patrol in the heavy waves of the tidal zone, both impressing and frustrating the sibling trying to keep up with {PRONOUN/s_c/object}. Plus, s_c has to dry off and warm up afterwards."
             },
         "fail_text": {
@@ -544,7 +544,7 @@
         "chance_of_success": 30,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "app1 collects two b_tp_l_p, and watches p_l take down a b_mp_a_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+            "unscathed_common": "app1 collects two b_tp_l_p, and watches p_l take down a b_mp_a_s in a astonishing pounce. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's b_tp_l_p, making app1 grimace at what's got to be fake praise.",
 	        "stat_skill": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?"
             },
         "fail_text": {
@@ -619,7 +619,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "app1 collects two b_tp_l_p, and watches p_l take down a b_mp_a_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two b_mp_a_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's f_tp_p, making app1 grimace at what's got to be fake praise.",
+            "unscathed_common": "app1 collects two b_tp_l_p, and watches p_l take down a b_mp_a_s in a astonishing pounce and the rest of {PRONOUN/app1/poss} older siblings bring down two b_mp_a_p. {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments app1's b_tp_l_p, making app1 grimace at what's got to be fake praise.",
 	        "stat_skill": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?"
             },
         "fail_text": {
@@ -669,7 +669,7 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Three f_tp_p are nothing to sniff at in leaf-bare as a hunting success, but stars above being alone with r_c makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
+            "unscathed_common": "Three b_tp_l_p are nothing to sniff at in leaf-bare as a hunting success, but stars above being alone with r_c makes p_l feel like a kitten again. And not in the cute way either, in the chewing on tails, whiny, petty, immature way. Ugh.",
             "unscathed_rare": "The hunting patrol isn't very successful, yet it matters not a wit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable.",
 	        "stat_skill": "s_c nets them a healthy b_mp_a_s to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to to even try for a pounce, {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?"
             },

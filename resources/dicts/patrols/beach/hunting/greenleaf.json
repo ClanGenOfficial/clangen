@@ -727,7 +727,7 @@
             },
         "fail_text": {
 	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
-            "injury": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock settin up a good pounce a rogue wave washes them into the ocean - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
+            "injury": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
             },
         "win_skills": ["SWIMMER,1"],
         "min_cats": 2,
@@ -856,7 +856,7 @@
             },
         "fail_text": {
 	        "unscathed_common": "Sometimes, the prey just doesn't run, and today is one of those times.",
-            "injury": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock settin up a good pounce a rogue wave washes them into the ocean - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
+            "injury": "r_c sees a fish {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce a rogue wave washes them into the ocean - {PRONOUN/r_c/subject} {VERB/r_c/bob/bobs} to the surface and splutter {PRONOUN/r_c/poss} way to shore, but {PRONOUN/r_c/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
             },
         "win_skills": ["SWIMMER,1"],
         "min_cats": 3,
