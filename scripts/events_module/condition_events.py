@@ -736,7 +736,7 @@ class Condition_Events():
                             # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
                             game.cur_events_list.append(
                                     Single_Event(event, "ceremony", retire_involved))
-                        else:
+                        elif game.clan.age % 10 == 0:
                             RetireScreen('events screen')
                             
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):

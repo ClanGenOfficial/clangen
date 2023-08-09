@@ -512,11 +512,9 @@ class Events:
         return siblings, sibling_text
 
     def get_birth_txt(self):
-        num_siblings = 0
-        # num_siblings = random.choice([0,1,2,3])
+        num_siblings = random.choice([0,1,2,3])
         siblings, sibling_text = self.create_siblings(num_siblings)
-        birth_type = 1
-        # birth_type = random.randint(1,6)
+        birth_type = random.randint(1,6)
         if birth_type == 1:
             game.clan.your_cat.backstory = random.choice(["abandoned1", "abandoned2", "abandoned3", "abandoned4", "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"])
             return self.handle_birth_no_parents(siblings, sibling_text)
