@@ -1,3 +1,5 @@
+from typing import List
+
 from scripts.debugCommands.command import Command
 
 from scripts.debugCommands.utils import add_output_line_to_log
@@ -10,7 +12,7 @@ class addCatCommand(Command):
     description = "Add a cat"
     aliases = ["a"]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         cat = Cat()
         game.clan.add_cat(cat)
         add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
