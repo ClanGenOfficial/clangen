@@ -253,12 +253,12 @@ class MakeClanScreen(Screens):
         e = random.sample(range(12), 3)
         not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
                     'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
-        for a in range(12):
+        for a in range(15):
             if a in e:
                 game.choose_cats[a] = Cat(status='warrior', biome=None)
             else:
                 game.choose_cats[a] = Cat(status=choice(
-                    ['kitten', 'apprentice', 'warrior', 'warrior', 'elder', "queen", "mediator", "queen's apprentice", "mediator apprentice"]), biome=None)
+                    ['kitten', 'apprentice', 'apprentice', 'apprentice', 'apprentice', 'warrior', 'warrior', "warrior", 'warrior', 'warrior', "warrior", 'elder', "queen", "mediator", "queen's apprentice", "mediator apprentice"]), biome=None)
             if game.choose_cats[a].moons >= 160:
                 game.choose_cats[a].moons = choice(range(120, 155))
             elif game.choose_cats[a].moons == 0:

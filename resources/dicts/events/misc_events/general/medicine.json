@@ -1195,6 +1195,7 @@
         ],
         "event_text": "m_c received a present, gently weaved acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": ["DAISY CORSAGE"]
+    },
     {
         "camp": "Any",
         "tags": [
