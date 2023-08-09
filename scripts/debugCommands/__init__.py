@@ -4,8 +4,9 @@ from scripts.debugCommands.settings import ToggleCommand, SetCommand, GetCommand
 from scripts.debugCommands.eval import EvalCommand, UnderstandRisksCommand
 from scripts.debugCommands.clear import ClearCommand
 from scripts.debugCommands.fps import FpsCommand
+from typing import List
 
-commandList: list[Command] = [
+commandList: List[Command] = [
     ToggleCommand(),
     SetCommand(),
     GetCommand(),

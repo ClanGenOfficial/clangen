@@ -1,5 +1,6 @@
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log
+from typing import List
 
 # Command is an abstract class
 
@@ -10,12 +11,12 @@ class HelpCommand(Command):
     usage = "[command]"
     aliases = ["h"]
 
-    commandList: list[Command] = []
+    commandList: List[Command] = []
 
-    def __init__(self, commandList: list[Command]):
+    def __init__(self, commandList: List[Command]):
         self.commandList = commandList + [self]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 0:
             add_output_line_to_log("Commands:")
             for command in self.commandList:

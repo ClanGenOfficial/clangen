@@ -3,6 +3,7 @@ Base command class for debug mode.
 """
 
 from abc import ABC, abstractmethod
+from typing import List
 
 
 class Command(ABC):
@@ -41,5 +42,5 @@ class Command(ABC):
         return [self.name] + self.aliases
 
     @abstractmethod
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         """The callback of the command"""
