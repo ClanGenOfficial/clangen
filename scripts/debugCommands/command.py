@@ -1,7 +1,7 @@
 """
 Base command class for debug mode.
 """
-
+from typing import List
 from abc import ABC, abstractmethod
 from typing import List
 
@@ -30,6 +30,11 @@ class Command(ABC):
     @property
     def aliases(self):
         """The aliases of the command"""
+        return []
+
+    @property
+    def subCommands(self):
+        """The sub commands of the command"""
         return []
 
     @property

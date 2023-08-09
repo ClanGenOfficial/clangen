@@ -1,9 +1,11 @@
+from typing import List
+from ast import literal_eval
+
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log
 from typing import List
 
 from scripts.game_structure.game_essentials import game
-from ast import literal_eval
 
 
 class ToggleCommand(Command):
