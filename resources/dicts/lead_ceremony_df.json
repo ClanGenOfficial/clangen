@@ -775,7 +775,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-          "text": "r_c watches m_c with piercing eyes, as though the dark spirit can see right through all of m_c's thoughts! {PRONOUN/r_c/subject/CAP} {VERB/cat/are/is} silent as {PRONOUN/r_c/subject} {VERB/r_c/gives/give} a life for [virtue].",
+          "text": "r_c watches m_c with piercing eyes, as though the dark spirit can see right through all of m_c's thoughts! {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent as {PRONOUN/r_c/subject} {VERB/r_c/gives/give} a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgement", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]

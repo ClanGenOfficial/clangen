@@ -1195,5 +1195,16 @@
         ],
         "event_text": "m_c received a present, gently weaved acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": ["DAISY CORSAGE"]
+    {
+        "camp": "Any",
+        "tags": [
+            "medicine_cat",
+            "medicine_cat_app",
+            "other_cat",
+            "mc_to_rc",
+            "dislike"
+        ],
+        "event_text": "m_c is getting increasingly annoyed with r_c because {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} bothering {PRONOUN/m_c/object} about the most trivial of wounds and aches."
     }
+
 ]

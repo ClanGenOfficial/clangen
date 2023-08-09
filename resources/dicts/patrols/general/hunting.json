@@ -457,7 +457,7 @@
         },
         "fail_text": {
             "unscathed_common": "r_c gives in to {PRONOUN/r_c/poss} grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on {PRONOUN/r_c/poss} lips, {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the suspicious stares of the other warriors on {PRONOUN/r_c/poss} pelt.",
-            "unscathed_stat": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s) gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} {VERB/r_c/slink/slinks} in to {PRONOUN/r_c/object} nest that night."
+            "unscathed_stat": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace, and r_c hears snide remarks when {PRONOUN/r_c/subject} {VERB/r_c/slink/slinks} in to {PRONOUN/r_c/object} nest that night."
         },
         "min_cats": 2,
         "max_cats": 6,
@@ -491,7 +491,7 @@
             "unscathed_rare": "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile."
         },
         "fail_text": {
-            "unscathed_common": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s) gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells."
+            "unscathed_common": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells."
         },
         "min_cats": 2,
         "max_cats": 6,
