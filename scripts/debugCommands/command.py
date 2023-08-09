@@ -3,6 +3,7 @@ Base command class for debug mode.
 """
 from typing import List
 from abc import ABC, abstractmethod
+from typing import List
 
 
 class Command(ABC):

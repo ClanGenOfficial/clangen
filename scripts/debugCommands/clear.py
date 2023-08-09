@@ -1,6 +1,7 @@
 from typing import List
 
 from scripts.debugCommands.command import Command
+from typing import List
 
 from scripts.debugCommands.utils import _debugClass
 

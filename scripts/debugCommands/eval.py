@@ -4,6 +4,7 @@ from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log, add_multiple_lines_to_log
 
 import builtins
+from typing import List
 
 warningAccepted = False
 
