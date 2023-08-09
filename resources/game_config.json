@@ -274,7 +274,7 @@
 		"visual_fading_speed": 5
 	},
 	"roles": {
-		"mediator_app_chance": 50,
+		"mediator_app_chance": 40,
 		"base_medicine_app_chance": 41,
 		"become_mediator_chances": {
 			"warrior": 5000,
