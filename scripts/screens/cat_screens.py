@@ -2182,6 +2182,10 @@ class ProfileScreen(Screens):
             else:
                 self.murder_cat_button.show()
                 self.join_df_button.show()
+                if game.clan.your_cat.dead or game.clan.your_cat.outside:
+                    self.murder_cat_button.disable()
+                    self.join_df_button.disable()
+
             if game.clan.your_cat.status == 'kitten':
                 self.join_df_button.hide()
         # History Tab:
