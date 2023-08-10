@@ -1,5 +1,8 @@
+from typing import List
+
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log
+from typing import List
 
 from scripts.game_structure.game_essentials import game
 
@@ -9,7 +12,7 @@ class FpsCommand(Command):
     description = "Toggle fps counter"
     usage = "[value]"
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 1:
             if args[0].lower() in ['none', 'null', '0'] or args[0].is_integer() and int(args[0]) <= 0:
                 game.switches['fps'] = 0

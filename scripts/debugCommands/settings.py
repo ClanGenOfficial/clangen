@@ -1,8 +1,11 @@
+from typing import List
+from ast import literal_eval
+
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log
+from typing import List
 
 from scripts.game_structure.game_essentials import game
-from ast import literal_eval
 
 
 class ToggleCommand(Command):
@@ -11,7 +14,7 @@ class ToggleCommand(Command):
     usage = "<game|switch|debug> <setting>"
     aliases = ["t"]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) != 2 or args[0] not in ["game", "switch", "debug"]:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
@@ -37,7 +40,7 @@ class SetCommand(Command):
     usage = "<game|switch|debug> <setting> <value>"
     aliases = ["s"]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) != 3 or args[0] not in ["game", "switch", "debug"]:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
@@ -63,7 +66,7 @@ class GetCommand(Command):
     usage = "<game|switch|debug> <setting>"
     aliases = ["g"]
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 0 or args[0] not in ["game", "switch", "debug"]:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return

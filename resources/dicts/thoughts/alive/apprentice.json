@@ -140,7 +140,8 @@
             "Hopes r_c is in a better mood today",
             "Asks r_c what it's like to be an elder",
             "Is doing {PRONOUN/m_c/poss} best to keep r_c happy",
-            "Is bringing r_c a nice piece of prey"
+            "Is bringing r_c a nice piece of prey",
+            "Is complaining about picking ticks out of the elders' pelts"
         ],
         "random_status_constraint":[
             "elder"

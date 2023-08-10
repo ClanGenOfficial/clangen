@@ -1,7 +1,10 @@
+from typing import List
+
 from scripts.debugCommands.command import Command
 from scripts.debugCommands.utils import add_output_line_to_log, add_multiple_lines_to_log
 
 import builtins
+from typing import List
 
 warningAccepted = False
 
@@ -13,7 +16,7 @@ class EvalCommand(Command):
     aliases = ["e"]
     bypassConjoinedStrings = True
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         if len(args) == 0:
             add_output_line_to_log(f"Usage: {self.name} {self.usage}")
             return
@@ -46,7 +49,7 @@ class UnderstandRisksCommand(Command):
     name = "understandrisks"
     description = "Accept the risks of using the eval command"
 
-    def callback(self, args: list[str]):
+    def callback(self, args: List[str]):
         global warningAccepted  # pylint: disable=global-statement
         warningAccepted = True
         add_output_line_to_log(

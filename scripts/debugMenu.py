@@ -56,7 +56,18 @@ class debugConsole(pygame_gui.windows.UIConsoleWindow):
                                 else:
                                     curArgGroup += " " + arg
                         args = _args
-                    cmd.callback(args)
+                    if len(args) > 0:
+                        for subcommand in cmd.subCommands:
+                            if args[0] in subcommand._aliases:  # pylint: disable=protected-access
+                                args = args[1:]
+                                cmd = subcommand
+                                break
+                    try:
+                        cmd.callback(args)
+                    except Exception as e:
+                        self.add_output_line_to_log(
+                            f"Error while executing command {command}: {e}")
+                        raise e
                     break
             if not commandFound:
                 self.add_output_line_to_log(f"Command {command} not found")
