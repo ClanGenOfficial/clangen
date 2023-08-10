@@ -575,7 +575,7 @@ class Pregnancy_Events():
             potential_mate=True
         )
 
-        if mate and highest_romantic_relation:
+        if mate and highest_romantic_relation and game.clan.your_cat.ID != cat:
             # Love affair calculation when the cat has a mate
             chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
             if not chance_love_affair or not int(random.random() * chance_love_affair):

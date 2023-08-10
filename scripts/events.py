@@ -2394,9 +2394,20 @@ class Events:
             if not random.getrandbits(9):  # 1/512
                 self.handle_mass_extinctions(cat)
                 return True
-
+        chance_death = game.get_config_value("death_related", f"{game.clan.game_mode}_death_chance")
+        try:
+            if cat.status == "kitten" or cat.status == "newborn":
+                num_queens = 0
+                for c in game.clan.clan_cats:
+                    if not Cat.all_cats.get(c).outside and not Cat.all_cats.get(c).dead:
+                        if Cat.all_cats.get(c).status == "queen" or Cat.all_cats.get(c).status == "queen's apprentice":
+                            num_queens+=1
+                chance_death+=(num_queens*5)
+        except:
+            print("couldn't handle queen mortality")
+            
         # final death chance and then, if not triggered, head to injuries
-        if not int(random.random() * game.get_config_value("death_related", f"{game.clan.game_mode}_death_chance")) \
+        if not int(random.random() * chance_death) \
                 and not cat.not_working():  # 1/400
             self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
