@@ -21,7 +21,10 @@
     "#dev_watermark": {
         "colours": {
             "dark_bg": "#00000000",
-            "normal_text": "#EFE5CE88"
+            "normal_text": "#EFE5CE88",
+            "link_text": "#2E8B57",
+            "link_hover": "#556B2F",
+            "link_selected": "#556B2F"
         },
         "font": {
             "name": "notosans",
@@ -58,7 +61,10 @@
             "dark_bg": "#FFFF0000",
             "normal_text": "#000000",
             "selected_bg": "#776045",
-            "selected_text": "#AC9D72"
+            "selected_text": "#AC9D72",
+            "link_text": "#2E8B57",
+            "link_hover": "#556B2F",
+            "link_selected": "#556B2F"
         },
         "font": {
             "name": "notosans",
