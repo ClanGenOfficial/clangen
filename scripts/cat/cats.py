@@ -847,6 +847,30 @@ class Cat():
             colour = colour + ' and ' + colour2
         return colour
 
+    def get_cluster(self, trait):
+        # Mapping traits to their respective clusters
+        trait_to_clusters = {
+            "assertive": ["troublesome", "fierce", "bold", "daring", "confident", "adventurous", "arrogant", "competitive", "rebellious"],
+            "brooding": ["bloodthirsty", "cold", "strict", "vengeful", "grumpy"],
+            "cool": ["charismatic", "sneaky", "cunning", "arrogant"],
+            "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible"],
+            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful"],
+            "neurotic": ["nervous", "insecure", "lonesome"],
+            "silly": ["troublesome", "childish", "playful", "strange"],
+            "stable": ["loyal", "responsible", "wise", "faithful"],
+            "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere"],
+            "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant"],
+            "unlawful": ["troublesome", "bloodthirsty", "sneaky", "rebellious"]
+        }
+
+        clusters = [key for key, values in trait_to_clusters.items() if trait in values]
+
+        # Assign cluster and second_cluster based on the length of clusters list
+        cluster = clusters[0] if clusters else ""
+        second_cluster = clusters[1] if len(clusters) > 1 else ""
+
+        return cluster, second_cluster
+
     def convert_history(self, died_by, scar_events):
         """
         this is to handle old history save conversions
@@ -1109,18 +1133,32 @@ class Cat():
         lives = []
         used_lives = []
         used_virtues = []
+        trait = self.personality.trait
+        cluster, second_cluster = self.get_cluster(trait)
+        
         for giver in life_givers:
             giver_cat = self.fetch_cat(giver)
             if not giver_cat:
                 continue
+            trait = giver_cat.personality.trait
+            cluster2, second_cluster2 = self.get_cluster(trait)
             life_list = []
+            victim_in_lifegiver = False
+            if game.clan.your_cat.history:
+                if game.clan.your_cat.history.murder and "murdered" in tags:
+                    if "is_murderer" in game.clan.your_cat.history.murder:
+                        if len(game.clan.your_cat.history.murder["is_murderer"]) > 0:
+                            for i in game.clan.your_cat.history.murder["is_murderer"]:
+                                if i['victim'] == giver_cat.ID:
+                                    victim_in_lifegiver = True
+                                        
             for life in possible_lives:
                 tags = possible_lives[life]["tags"]
                 rank = giver_cat.status
-
+                if victim_in_lifegiver and "murdered" not in tags:
+                    continue
                 if "unknown_blessing" in tags:
                     continue
-
                 if "guide" in tags and giver_cat != game.clan.instructor:
                     continue
                 if game.clan.age != 0 and "new_clan" in tags:
@@ -1143,14 +1181,15 @@ class Cat():
                     continue
                 if "leader_apprentice" in tags and giver_cat.ID not in self.former_apprentices:
                     continue
+
                 if possible_lives[life]["rank"]:
                     if rank not in possible_lives[life]["rank"]:
                         continue
                 if possible_lives[life]["lead_trait"]:
-                    if self.personality.trait not in possible_lives[life]["lead_trait"]:
+                    if (self.personality.trait not in possible_lives[life]["lead_trait"]) and (cluster not in possible_lives[life]["lead_trait"]) and (second_cluster not in possible_lives[life]["lead_trait"]):
                         continue
                 if possible_lives[life]["star_trait"]:
-                    if giver_cat.personality.trait not in possible_lives[life]["star_trait"]:
+                    if giver_cat.personality.trait not in possible_lives[life]["star_trait"] and (cluster2 not in possible_lives[life]["star_trait"]) and (second_cluster2 not in possible_lives[life]["star_trait"]):
                         continue
                 life_list.extend([i for i in possible_lives[life]["life_giving"]])
 
@@ -1577,9 +1616,7 @@ class Cat():
         severity = leave 'default' to keep default severity, otherwise set to the desired severity
                    ('minor', 'major', 'severe')
         """
-        if game.clan.game_mode == "classic":
-            return
-        
+
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1642,9 +1679,6 @@ class Cat():
             }
 
     def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
-        if game.clan.game_mode == "classic":
-            return
-        
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")

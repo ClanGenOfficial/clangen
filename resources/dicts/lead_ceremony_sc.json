@@ -979,7 +979,307 @@
           "virtue": ["endurance in the face of hardship", "knowing when to fight and when to choose peace", "leadership through the darkest times", "loyalty to {PRONOUN/m_c/poss} Clan", "the strength to overcome {PRONOUN/m_c/poss} fears", "tireless energy"]
         }
       ]
+    },
+    "murdered_1": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "A chilling silence sweeps over the assembly as r_c walks up to m_c. Without a word, r_c shares a life for [virtue], their silent gaze speaking volumes more than any words could. As they retreat, the heavy weight of unspoken emotions lingers.",
+          "virtue": ["compassion", "kindness", "mercy", "forgiveness", "understanding"]
+        }
+      ]
+    },
+
+ "murdered_2": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life_giving": [
+        {
+          "text": "r_c steps forward, their expression blank. Their bright future was extinguished by m_c's fateful decision. Gifting a life for [virtue], they highlight the weight of lost potential and dreams. As they fade away, their spirit leaves behind a deep sense of what could have been.",
+          "virtue": ["hope", "kindness", "mercy", "forgiveness", "innocence"]
+        }
+      ]
+    },
+
+ "murdered_3": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life_giving": [
+        {
+          "text": "r_c tumbles forward, their presence met with shocked gasps and whispers from the crowd. They eagerly press their nose into your leg and gift a life for [virtue], chirping that they know you never meant to hurt them, it was only an accident. But when r_c trots back into the crowd, you can't help the twinge of guilt that follows, can't help but notice the sharp glares of the cats who silently condemn you for having killed such an innocent soul.",
+          "virtue": ["fun", "gentleness", "energy", "innocence"]
+        }
+      ]
+    },
+
+
+ "murdered_4": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["assertive", "brooding", "stable", "upstanding", "unabashed", "unlawful"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c sniffs that they don't know what sick, twisted turn of events led to you becoming leader of c_n, but rest assured, there will never be a place for you in StarClan. Still, they reluctantly give you a life for [virtue], if only for the good of the clanmates that they were stolen away from. They stalk back into the crowd muttering curses to your name.",
+          "virtue": ["morality", "righteousness", "strength"]
+        }
+      ]
+    },
+
+ "murdered_5": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["introspective", "sweet", "unlawful", "cool", "stable"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c utterly refuses to participate in the ceremony; after all, a murderer like you doesn't deserve to be leader. Only after several minutes of coaxing from the crowd do they finally step forward and gift you a life for [virtue]. They hiss that you had better use it wisely, or else a taste of the divine punishment you have always been owed will be coming your way.",
+          "virtue": ["patience", "thoughtfulness", "mercy"]
+        }
+      ]
+    },
+
+ "murdered_6": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["introspective", "sweet", "unlawful", "cool"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "Outwardly, r_c appears calm, noble, and pleasant: they step forward with a purr, beaming with pride. You wonder if perhaps they've forgotten what you did to them, or maybe didn't even know it was your fault, but while awarding you your life for [virtue], they lean into your ear and hiss just one word: 'traitor'. And when they step away, the darkness in their gaze betrays their true feelings: they haven't forgotten. In fact, they seem to remember all too well.",
+          "virtue": ["patience", "thoughtfulness", "level-headedness"]
+        }
+      ]
+    },
+
+ "murdered_7": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["sweet"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "You're filled with dread when r_c steps forward, expecting vengeance or fury, but to your surprise, they actually seem ... tearful? r_c presses their nose into your forehead, sobbing that they're so sorry for whatever they did to upset you, and they wish they could've been there to help you through the terrible pain you must have been experiencing to inflict that type of violence onto another cat. They gift you a life for [virtue] and, when they vanish, you find yourself wishing they'd just cursed you out instead.",
+          "virtue": ["honesty", "openness", "vulnerability", "peace", "stability"]
+        }
+      ]
+    },
+
+ "murdered_8": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["leader", "deputy"],
+      "life_giving": [
+        {
+          "text": "r_c steps forward with a dark expression. Awarding you a life for [virtue], they mutter how they've always honored your ambition, but never could've imagined you'd take it so far. If only they'd known who you really were, they'd have never ... r_c shakes their head and disappears back into the crowd.",
+          "virtue": ["mercy", "caution", "gentleness", "kindness"]
+        }
+      ]
+    },
+
+ "murdered_9": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["assertive", "brooding", "unlawful", "unabashed"],
+      "rank": ["leader", "deputy"],
+      "life_giving": [
+        {
+          "text": "r_c lunges towards you, hissing and spitting that if only you were both still living, they'd kill you where you stood. Somehow, the rest of the crowd calms them down enough to award you a life for [virtue]. r_c bitterly remarks that they hope this life is short and ends painfully before stalking back into the crowd. You wonder why they even bothered to show up at all ... maybe just to get the last word in?",
+          "virtue": ["humility", "courage", "ferocity", "candor"]
+        }
+      ]
+    },
+
+ "murdered_10": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["neurotic"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "When you first spotted r_c in the crowd, you were filled with dread, but somehow, it seems they're more scared of you than you are of them. They stutter and stammer through their speech, ears drooped, as they award you a life for [virtue] before slinking back into the crowd, where they're comforted by friends.",
+          "virtue": ["gentleness", "mercy", "empathy", "kindness"]
+        }
+      ]
+    },
+
+ "murdered_11": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["leader", "deputy"],
+      "life_giving": [
+        {
+          "text": "Though r_c does, in fact, step forward, they seem to be trying to acknowledge your presence as little as possible. You can barely even hear them mumble through their speech as they award you a life for [virtue], and as soon as you figure out what they were actually trying to tell you, they've already disappeared back into the crowd. A pang of guilt stabs through you as you remember what you did to them.",
+          "virtue": ["loyalty", "strength", "swiftness"]
+        }
+      ]
+    },
+
+ "murdered_12": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["silly"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c pads towards you. You wholeheartedly expect their wrath, but instead, r_c recounts all the things you did together in your shared lifetime, way back when there was still a chance to gain your laughter and understanding. There was that time they covered themself in leaves and pretended to be a bush, or all of the horrible puns they'd recount to you and the rest of the Clan at any given opportunity. r_c doesn't hesitate to offer you a life for [virtue], but asks that you treat it exactly how it should be treated - like the life of any cat. When r_c is finished giving you the life, they uncharacteristically leave without even giving you another look back.",
+          "virtue": ["appreciating the small things", "giving second chances", "harmlessness", "love"]
+        }
+      ]
+    },
+
+ "murdered_13": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["sweet"],
+      "rank": ["apprentice"],
+      "life_giving": [
+        {
+          "text": "r_c bounds up to you, excited to see you despite what happened. There is a gentle and kind look in r_c's eyes, and they tell you that they forgive you, and all they want is for you to learn and grow like they never could. They crane their head up to touch noses with you, giving you a life for [virtue]. Just before they head back into the crowd, they whisper that they believe in you, and that they know you can make things right. The other StarClan cats glare at you for betraying such a sweet soul.",
+          "virtue": ["second chances", "improvement"]
+        }
+      ]
+    },
+
+ "murdered_14": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [""],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c does not greet you with a purr or an embrace, but instead, a cold stare. They ask you point-blank if you regret killing them. Before you can answer, a hiss from the crowd demands that r_c get on with their duty. r_c mumbles through their speech, awarding you a life for [virtue], then returns to their place, leaving you wondering if they'll ever know your true answer.",
+          "virtue": ["candor", "redemption", "logic", "reason"]
+        }
+      ]
+    },
+
+ "murdered_15": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kit", "apprentice"],
+      "life_giving": [
+        {
+          "text": "r_c steps forward, eyes blazing with a rage far beyond their moons.They grant you a life for [virtue]: the [virtue] to forever carry with you the weight of what you did, the weight of a life cut so short. It's a weight that will never go away, but one that you'll have to learn to live with. Their words echo in your ears as the life rushes into you, and you vow to never forget them.",
+          "virtue": ["strength", "power"]
+        }
+      ]
+    },
+
+ "murdered_16": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["assertive", "brooding", "unlawful"],
+      "rank": ["warrior", "deputy", "elder"],
+      "life_giving": [
+        {
+          "text": "r_c practically lunges for you, shoving their muzzle into your face. Their eyes burn with a flaming hatred, their claws outstretched as if they want to drag you to the Dark Forest themself, and are only barely holding their cool. The only reason they don't pin you down and claw at your muzzle for what you did to them is someone holding them back by their tail. Their eyes narrow, spitting in your face that they give you the life for [virtue], and turn away. Their tail slaps your face as they walk away, their pawprints practically burning into the ground.",
+          "virtue": ["loyalty", "mercy", "gentleness"]
+        }
+      ]
+    },
+
+ "murdered_17": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["neurotic"],
+      "rank": ["kit", "apprentice", "medicine cat apprentice", "mediator apprentice", "queen's apprentice"],
+      "life_giving": [
+        {
+          "text": "As stardust brushes your ears, you hear quiet whimpering from the crowd. A small, but all too familiar face, emerges from the crowd. It seems r_c had to be gently nudged out as they look at you with their ears pinned and their fur fluffed up. Their claws are out and it seems like they want to flee, tears in their eyes. r_c almost seems to look at you in the same way a mouse does, and they hardly manage to tell you the life you got, [virtue], before they sprint away.",
+          "virtue": ["mercy", "gentleness", "forgiveness", "patience", "love", "selflessness"]
+        }
+      ]
+    },
+
+ "murdered_18": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["queen", "queen's apprentice"],
+      "life_giving": [
+        {
+          "text": "r_c slowly approaches you, a gaggle of starry kits following in their stride. r_c watches the young ones with a smile, making sure they're distracted with playing with stardust before turning to you, their eyes suddenly engorged in a flame so sharp, it causes you to flinch. They stand over you, almost like a scolding parent. Loudly, almost loud enough that the living cats could hear, they announce that they give you the life for [virtue], and they hope you use it well. Before you can get a word in, r_c turns away, the kits squealing and hurrying after them.",
+          "virtue": ["parental love", "affection", "gentleness", "tenderness"]
+        }
+      ]
+    },
+
+ "murdered_19": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["silly", "unabashed"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c approaches you with an almost pitiful smirk on their face. They remark about how you're a pathetic creature, which frankly stings, and lazily announce that they give you the life of [virtue]. The second you open your maw to say something, they glare at you with the same pained smirk. They ask if you're going to kill them again, then tell you to just take the life and leave, as they wander back into the crowd.",
+          "virtue": ["decision-making", "humor", "remorse"]
+        }
+      ]
+    },
+
+ "murdered_20": {
+      "tags": ["murdered"],
+      "lead_trait": ["sweet", "stable", "upstanding"],
+      "star_trait": [],
+      "rank": ["leader", "deputy", "medicine cat"],
+      "life_giving": [
+        {
+          "text": "A chill races down your spine as r_c steps out, meeting your eyes with their scarily cold ones. They mew that they're surprised that you, of all cats, could've done this... and that they thought better of you. Before you're given a chance to respond, they step forward, a bit too close to your face for comfort. They calmly comment that they give you the life for [virtue] before turning around, stalking away.",
+          "virtue": ["benevolence", "altruism", "honesty"]
+        }
+      ]
+    },
+
+ "murdered_21": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["kitten"],
+      "life_giving": [
+        {
+          "text": "It takes an awkward moment before the next cat skitters out of the crowd, squeaking out apologies. The cat, r_c, giggles that they were practicing their hunting crouch for their apprentice ceremony, and you are immediately hit with a wave of guilt. r_c happily wobbles over to you, mewing that they give you the life of [virtue], and that they just know you'll be a 'super cool awesome leader'. They stumble away, happily giggling, and you feel as though the whole of StarClan is glaring at you.",
+          "virtue": ["happiness", "kindness", "helping someone no matter what"]
+        }
+      ]
+    },
+
+ "murdered_22": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": [],
+      "rank": ["apprentice"],
+      "life_giving": [
+        {
+          "text": "r_c seems surprised that you, of all cats, are who they have to give a life to. They murmur something to the cats around them, and begrudgingly pad up to you after receiving a solemn nod. Instantly, their demeanor changes, and it's impossible to tell what they're thinking. Every distinguishable sign of fear or anger or sadness or longing is compressed and replaced with a cold stare. r_c flatly gives you a life for [virtue], which you seem to need more than any other cat, before turning and slowly walking back. When they join the other cats, signs of confusion and grief and regret flow from the apprentice out of every avenue, and the surrounding cats stare at you as though you had murdered- oh, wait, you had.",
+          "virtue": ["justice", "compassion", "forethought", "common sense"]
+        }
+      ]
+    },
+
+ "murdered_23": {
+      "tags": ["murdered"],
+      "lead_trait": [],
+      "star_trait": ["unabashed", "silly"],
+      "rank": [],
+      "life_giving": [
+        {
+          "text": "r_c bounds up to you, but quickly skitters to a halt as they recognize you. They tilt their head to the side. \"Oh, you?\" r_c seems both confused and offended. \"Well, I guess that explains why this place smells so bad all of a sudden.\" They give you a life for [virtue] and run happily back to the other cats in StarClan.",
+          "virtue": ["honesty", "humor", "peace", "calm", "love"]
+        }
+      ]
     }
+
   },
   
   "outros": {
