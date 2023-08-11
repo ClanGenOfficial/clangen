@@ -344,5 +344,40 @@
             "MOTH WINGS",
             "CICADA WINGS"
         ]
+    },
+    {
+        "camp": "any",
+        "tags":[
+            "Leaf-fall"
+        ],
+        "event_text": "As the wind brings many fallen leaves in the camp, m_c picks a acc_singular to decorate {PRONOUN/m_c/poss} pelt.",
+        "accessories": [
+            "OAK LEAVES",
+            "MAPLE LEAF"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf"
+        ],
+        "event_text": "As the wind blows many petals in the camp, m_c picks a few to decorate {PRONOUN/m_c/self}.",
+        "accessories": [
+            "PETALS"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leafbare"
+        ],
+        "event_text": "m_c sneaked out of camp, and brought back with them some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
+        "accessories": [
+            "HOLLY",
+            "JUNIPER"
+        ]
     }
 ]

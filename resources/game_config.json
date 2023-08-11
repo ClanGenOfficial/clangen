@@ -69,7 +69,7 @@
 		"max_interaction": 5,
 		"max_interaction_special": 8,
 		"compatibility_effect": 5,
-		"passive_influence_div": 1.3,
+		"passive_influence_div": 1.5,
 		"chance_for_neutral": 10,
 		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 15,
@@ -308,6 +308,7 @@
 		"best_stat_modifier": 10,
 		"fail_stat_cat_modifier": -15,
 		"chance_of_romance_patrol": 16,
+		"debug_ensure_patrol_id": null,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
 			"due to how it's written in the save files. So don't try to 'fix' it."
