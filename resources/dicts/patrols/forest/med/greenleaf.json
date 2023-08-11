@@ -2471,13 +2471,13 @@
         "tags": [
             "herb_gathering",
             "med_cat",
-            "med_only",
             "death",
             "injury",
             "poisoned",
+            "apprentice"
         ],
-        "intro_text": "p_l sets off to find the bulbs of a corpse lily. They work wonders for memory loss and diseases of the mind, but they come at a high price.",
-        "decline_text": "Still, they're lilies - poisonous and deadly. p_l decides to not risk {PRONOUN/p_l/poss} life.",
+        "intro_text": "p_l sets off to find the bulbs of a corpse lily, so that app1 can learn both risk and reward.",
+        "decline_text": "Still, they're lilies - poisonous and deadly. p_l decides to not risk their collective life.",
         "chance_of_success": 55,
         "exp": 20,
        "success_text": {
