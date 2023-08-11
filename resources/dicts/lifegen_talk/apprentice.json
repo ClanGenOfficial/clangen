@@ -2,7 +2,11 @@
     "app_1": [
         [
             "apprentice",
-            "romantic_like"
+            "romantic_like",
+            "neurotic",
+            "sweet",
+            "silly",
+            "upstanding"
         ],
         [
             "H-hi there! Didn't see you there. Well, I mean, I saw you, but I didn't expect to... um... run into you here, at the fresh-kill pile. Yeah, I was just... grabbing something to eat.",
@@ -16,7 +20,14 @@
     "app_2": [
         [
             "apprentice",
-            "platonic_like"
+            "platonic_like",
+            "stable",
+            "sweet",
+            "assertive",
+            "sweet",
+            "unabashed",
+            "unlawful",
+            "upstanding"
         ],
         [
             "Hey there! Finally got away from your mentor, huh? Mine's been keeping me on my paws all day. I swear, if I have to stalk one more imaginary mouse...",
@@ -31,7 +42,12 @@
     "app_3": [
         [
             "apprentice",
-            "jealousy"
+            "jealousy",
+            "upstanding",
+            "assertive",
+            "brooding",
+            "stable",
+            "unabashed"
         ],
         [
             "Hey there. I saw you in the training hollow today. You and your mentor seem to be really hitting it off, huh? Must be nice, having m_n as your teacher.",
@@ -45,7 +61,10 @@
     "app_4": [
         [
             "apprentice",
-            "dislike"
+            "dislike",
+            "brooding",
+            "upstanding",
+            "assertive"
         ],
         [
             "Huh? What do you want?",
@@ -59,7 +78,13 @@
     "app_5": [
         [
             "apprentice",
-            "comfort"
+            "comfort",
+            "introspective",
+            "sweet",
+            "stable",
+            "assertive",
+            "unabashed"
+            
         ],
         [
             "Hey, friend! Come sit with me, the sun's rays feel really warm over here. Isn't it amazing how after a hard day's training, something as simple as sunlight can make us feel so content?",
@@ -71,7 +96,11 @@
     "app_6": [
         [
             "apprentice",
-            "respect"
+            "respect",
+            "unabashed",
+            "sweet",
+            "introspective",
+            "stable"
         ],
         [
             "There you are. I've been meaning to talk to you. I watched you in training today, and I gotta say, I'm... wowed. You've really been putting your all into your training, and it shows.",
@@ -84,7 +113,14 @@
     "app_7": [
         [
             "apprentice",
-            "trust"
+            "trust",
+            "assertive",
+            "stable",
+            "neurotic",
+            "unabashed",
+            "sweet",
+            "introspective",
+            "upstanding"
         ],
         [
             "Hey there, friend! I was just thinking about that adventure we had last moon. Remember when we got lost in the forest? I was so scared, but having you there made everything less frightening.",
@@ -114,7 +150,10 @@
     "app_10": [
         [
             "Any",
-            "hate"
+            "hate",
+            "assertive",
+            "brooding",
+            "unlawful"
         ],
         [
             "Talk to me again and I'll shred you."
@@ -149,7 +188,11 @@
     ],
     "app_14": [
         [
-            "kitten"
+            "kitten",
+            "upstanding",
+            "introspective",
+            "assertive",
+            "stable"
         ],
         [
             "Hey, y_c! You're getting so big, you'll be an apprentice before you know it. Do you ever wonder what it's like, getting to train and go on patrols?",
@@ -161,7 +204,12 @@
     ],
     "app_15": [
         [
-            "medicine cat apprentice"
+            "medicine cat apprentice",
+            "assertive",
+            "sweet",
+            "introspective",
+            "stable",
+            "upstanding"
         ],
         [
             "Hey, y_c. Where've you been? Oh? I guess it's no surprise to find you here. Always with your nose in the herbs, aren't you?",
@@ -173,7 +221,13 @@
     ],
     "app_16": [
         [
-            "mediator apprentice"
+            "mediator apprentice",
+            "introspective",
+            "stable",
+            "sweet",
+            "assertive",
+            "upstanding",
+            "neurotic"
         ],
         [
             "Hey, there you are! I heard about your latest peace talks with the other Clans. That's some pretty intense work you're doing, isn't it?",
@@ -185,7 +239,12 @@
     ],
     "app_17": [
         [
-            "warrior"
+            "warrior",
+            "neurotic",
+            "introspective",
+            "stable",
+            "assertive",
+            "upstanding"
         ],
         [
             "I've been meaning to talk to you, actually. It's about my final assessment. It's coming up soon and... well, I'm a little nervous, to be honest.",
@@ -197,7 +256,12 @@
     ],
     "app_18": [
         [
-            "medicine cat"
+            "medicine cat",
+            "introspective",
+            "stable",
+            "assertive",
+            "neurotic",
+            "sweet"
         ],
         [
             "Hello, I've been meaning to come see you. It's about this recurring dream I've been having, I'm not sure if it's anything important, but it has been bothering me.",
@@ -209,7 +273,11 @@
     ],
     "app_19": [
         [
-            "mediator"
+            "mediator",
+            "introspective",
+            "neurotic",
+            "stable",
+            "sweet"
         ],
         [
             "Hey, I was hoping to find you. There's something that's been on my mind lately, and I think you might be the right cat to help me sort it out.",
@@ -222,7 +290,11 @@
     ],
     "app_20": [
         [
-            "deputy"
+            "deputy",
+            "upstanding",
+            "introspective",
+            "stable",
+            "sweet"
         ],
         [
             "y_c, may I have a word with you? I've been thinking a lot about my future in the Clan and... well, I wanted to discuss it with you.",
@@ -234,7 +306,11 @@
     ],
     "app_21": [
         [
-            "leader"
+            "leader",
+            "upstanding",
+            "sweet",
+            "stable",
+            "introspective"
         ],
         [
             "y_c, if you have a moment, there's something I'd like to discuss with you. It's about my future in the Clan and the path I wish to take",
@@ -248,7 +324,12 @@
     "app_22": [
         [
             "Any",
-            "leafbare"
+            "leafbare",
+            "introspective",
+            "stable",
+            "upstanding",
+            "assertive",
+            "sweet"
         ],
         [
             "Leaf-bare is coming, isn't it? You can already feel the chill in the air, and the leaves are almost all off the trees. I've heard stories, but this will be my first leaf-bare as an apprentice.",
@@ -261,7 +342,8 @@
     "app_23": [
         [
             "Any",
-            "leaffall"
+            "leaffall",
+            "introspective"
         ],
         [
             "Leaf-fall is such a beautiful time, isn't it? When the leaves start changing colors, painting the forest in hues of red, orange, and yellow. I feel like the whole forest is preparing for a long rest.",
@@ -274,7 +356,11 @@
     "app_24": [
         [
             "Any",
-            "newleaf"
+            "newleaf",
+            "introspective",
+            "sweet",
+            "stable",
+            "cool"
         ],
         [
             "Newleaf... It's like the whole forest is waking up from a long sleep, don't you think? The trees are budding, the prey is coming out from their hiding spots, everything feels... alive.",
@@ -285,7 +371,10 @@
     "app_25": [
         [
             "Any",
-            "greenleaf"
+            "greenleaf",
+            "introspective",
+            "sweet",
+            "cool"
         ],
         [
             "Greenleaf is amazing, isn't it? The forest is in full bloom, and there is prey at every pawstep. It's like StarClan has opened up the skies and poured life onto the earth.",
@@ -296,7 +385,10 @@
     ],
     "app_26": [
         [
-            "elder"
+            "elder",
+            "neurotic",
+            "sweet",
+            "upstanding"
         ],
         [
             "There you are, you old badger!",
@@ -307,7 +399,11 @@
     "app_2d8": [
         [
             "murder",
-            "Any"
+            "Any",
+            "sweet",
+            "introspective",
+            "neurotic",
+            "cool"
         ],
         [
             "I wish I could forget what I know, but it haunts me every day."
@@ -316,7 +412,11 @@
     "app_28": [
         [
             "murder",
-            "Any"
+            "Any",
+            "assertive",
+            "brooding",
+            "unlawful",
+            "cool"
         ],
         [
             "You're a foxhearted monster! I can't believe I trusted you."
@@ -334,7 +434,9 @@
     "app_29c": [
         [
             "murder",
-            "Any"
+            "Any",
+            "neurotic",
+            "introspective"
         ],
         [
             "D-don't come any closer."
@@ -343,7 +445,10 @@
     "app_29": [
         [
             "murder",
-            "Any"
+            "Any",
+            "stable",
+            "assertive",
+            "brooding"
         ],
         [
             "You'll pay for what you've done!"
@@ -352,7 +457,12 @@
     "app_16a": [
         [
             "kitten",
-            "insult"
+            "insult",
+            "stable",
+            "sweet",
+            "introspective",
+            "upstanding",
+            "cool"
         ],
         [
             "Hey! Be nice! When you're an apprentice, your mentor won't let that slide."
@@ -361,7 +471,13 @@
     "app_292": [
         [
             "Any",
-            "random_cat"
+            "random_cat",
+            "upstanding",
+            "neurotic",
+            "sweet",
+            "assertive",
+            "stable",
+            "cool"
         ],
         [
             "Hey, I need an opinion, if you're up for it.",
@@ -371,7 +487,10 @@
     ],
     "app_2592": [
         [
-            "Any"
+            "Any",
+            "neurotic",
+            "brooding",
+            "platonic_like"
         ],
         [
             "Do you ever wonder what it's like up there? In Starclan, I mean. There must be loads of cats up there.",
@@ -383,7 +502,7 @@
     "app_fdsa": [
         [
             "medicine cat apprentice",
-            "you_insecure"
+            "you_neurotic"
         ],
         [
             "Hi y_c! How's your training going? Having any trouble memorizing all those different herbs and remedies?",
@@ -420,7 +539,13 @@
     "app_321": [
         [
             "insult",
-            "Any"
+            "Any",
+            "cool",
+            "stable",
+            "introspective",
+            "assertive",
+            "silly",
+            "unabashed"
         ],
         [
             "Uh... okay?"
@@ -429,7 +554,13 @@
     "app_32a1": [
         [
             "insult",
-            "Any"
+            "Any",
+            "cool",
+            "stable",
+            "introspective",
+            "assertive",
+            "silly",
+            "unabashed"
         ],
         [
             "... Am I supposed to be offended?"
@@ -438,7 +569,10 @@
     "app_3j2a1": [
         [
             "insult",
-            "Any"
+            "Any",
+            "upstanding",
+            "cool",
+            "assertive"
         ],
         [
             "Are you just saying that because I caught a bigger bird than you?"
@@ -447,7 +581,11 @@
     "app_32ga1": [
         [
             "insult",
-            "Any"
+            "Any",
+            "assertive",
+            "unlawful",
+            "silly",
+            "unabashed"
         ],
         [
             "Well, at least I don't have a furball stuck in my throat all the time!"
@@ -456,7 +594,11 @@
     "app_32fa1": [
         [
             "insult",
-            "Any"
+            "Any",
+            "silly",
+            "assertive",
+            "unabashed",
+            "cool"
         ],
         [
             "Hmm, I think I smell sour mouse! Oh wait, it's just your attitude."
@@ -465,7 +607,10 @@
     "app_32aa1": [
         [
             "insult",
-            "apprentice"
+            "apprentice",
+            "upstanding",
+            "introspective",
+            "stable"
         ],
         [
             "If you put as much effort into hunting as you do into hurling insults, we'd never go hungry."
@@ -474,7 +619,10 @@
     "app_32ax1": [
         [
             "insult",
-            "apprentice"
+            "apprentice",
+            "cool",
+            "upstanding",
+            "stable"
         ],
         [
             "Careful, your jealousy is showing."
@@ -484,7 +632,11 @@
         [
             "insult",
             "Any",
-            "platonic_like"
+            "platonic_like",
+            "neurotic",
+            "sweet",
+            "introspective",
+            "brooding"
         ],
         [
             "You don't really mean that... do you?"
@@ -493,7 +645,9 @@
     "app_321321": [
         [
             "insult",
-            "Any"
+            "Any",
+            "sweet",
+            "neurotic"
         ],
         [
             "I don't understand... Why are you being like this?"
@@ -502,7 +656,11 @@
     "app_1511": [
         [
             "warrior",
-            "insult"
+            "insult",
+            "upstanding",
+            "assertive",
+            "unabashed",
+            "introspective"
         ],
         [
             "I may be an apprentice, but that doesn't mean you can just talk down to me. I work hard and I'm learning fast!",
