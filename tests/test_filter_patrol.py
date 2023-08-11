@@ -6,7 +6,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
-from scripts.patrol import PatrolEvent, Patrol
+from scripts.patrol.patrol import PatrolEvent, Patrol
 from scripts.clan import Clan
 
 class TestRelationshipConstraintPatrols(unittest.TestCase):

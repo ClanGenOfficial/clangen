@@ -1,42 +1,51 @@
 [
     {
         "patrol_id": "bch_bord_flashflood_tide3",
-        "biome": "beach",
-        "season": "leaf-bare",
-        "tags": [
-            "border",
-            "death",
-            "large_prey",
-            "no_body",
-            "no_fail_prey"
-        ],
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
         "decline_text": "r_c decides to head back early.",
         "chance_of_success": 30,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
-            "stat_skill": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-            "stat_trait": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss} caution saved {PRONOUN/s_c/poss} life."
-        },
-        "fail_text": {
-            "death": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean."
-        },
-        "win_skills": [
-            "CLEVER,3"
+        "success_outcomes": [
+            {
+                "text": "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,3"],
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss} caution saved {PRONOUN/s_c/poss} life.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["careful", "insecure", "nervous"],
+                "prey": ["large"]
+            }
         ],
-        "win_trait": [
-            "careful",
-            "insecure",
-            "nervous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "reg_death": "m_c was swept out to sea by a flood.",
-            "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"
-        }
-    }   
+        "fail_outcomes": [
+            {
+                "text": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}, freezing water rushing from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c was swept out to sea by a flood.",
+                    "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"
+                }
+            }
+        ]
+    }
 ]

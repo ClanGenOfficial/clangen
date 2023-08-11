@@ -1,304 +1,735 @@
 [
     {
         "patrol_id": "fst_bord_dog1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "death",
-            "scar",
-            "BRIGHTHEART",
-            "big_bite_injury",
-            "border",
-            "respect",
-            "trust",
-            "clan_to_patrol",
-            "sacrificial"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
         "decline_text": "r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 30,
-        "exp": 40,
-        "success_text": {
-            "unscathed_common": "r_c bolts back to camp, yowling a warning!",
-            "stat_skill": "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
-            "stat_trait": "They don't feel like they have anything like the skill or power, but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
-        },
-        "fail_text": {
-            "death": "r_c would give their life to protect c_n, and as they lead the huge dog away from the Clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
-            "injury": "r_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. r_c is injured, desperate, and terrified - but they're alive."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "r_c bolts back to camp, yowling a warning!",
+                "exp": 40,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
+                "exp": 40,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "They don't feel like they have anything like the skill or power, but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge.",
+                "exp": 40,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "ambitious",
+                    "compassionate",
+                    "confident",
+                    "empathetic",
+                    "faithful",
+                    "fierce",
+                    "loving",
+                    "loyal",
+                    "responsible",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "ambitious",
-            "compassionate",
-            "confident",
-            "empathetic",
-            "faithful",
-            "fierce",
-            "loving",
-            "loyal",
-            "responsible",
-            "righteous"
-        ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-            "reg_death": "This cat died to keep c_n safe from a large dog.",
-            "lead_death": "died to keep c_n safe from a large dog"
-        }
+        "fail_outcomes": [
+            {
+                "text": "r_c would give their life to protect c_n, and as they lead the huge dog away from the Clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep c_n safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "r_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. r_c is injured, desperate, and terrified - but they're alive.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["BRIGHTHEART"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep c_n safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_dog2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "death",
-            "scar",
-            "MANLEG",
-            "big_bite_injury",
-            "respect",
-            "trust",
-            "border",
-            "clan_to_patrol",
-            "patrol_rel",
-            "pos_fail"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["patrol_rel", "pos_fail"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
         "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 40,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
-            "unscathed_rare": "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
-            "stat_skill": "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
-            "stat_trait": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their Clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
-            "unscathed_stat": "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
-            "death": "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
-            "injury": "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their Clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "confident",
+                    "empathetic",
+                    "faithful",
+                    "fierce",
+                    "loving",
+                    "loyal",
+                    "responsible",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "confident",
-            "empathetic",
-            "faithful",
-            "fierce",
-            "loving",
-            "loyal",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "troublesome",
-            "vengeful"
-        ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-            "reg_death": "This cat died to keep the Clan safe from a large dog.",
-            "lead_death": "died to keep c_n safe from a large dog"
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep the Clan safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["MANLEG"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep the Clan safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_dog3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "death",
-            "scar",
-            "BRIGHTHEART",
-            "big_bite_injury",
-            "respect",
-            "trust",
-            "border",
-            "clan_to_patrol",
-            "patrol_rel",
-            "pos_fail"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["patrol_rel", "pos_fail"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
         "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 50,
-        "exp": 20,
-        "success_text": {
-            "unscathed_common": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
-            "unscathed_rare": "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
-            "stat_skill": "s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the dog that protects the cats from the chance of injury. The dog tucks tail, and runs for more friendly lands.",
-            "stat_trait": "s_c selflessly throw themselves into the fight, and every time the dog tries to grab at their Clanmates, they're there with claws, fur puffed out to twice their normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly."
-        },
-        "fail_text": {
-            "unscathed_common": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
-            "unscathed_stat": "s_c tries to protect their Clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order.",
-            "death": "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take them to StarClan.",
-            "injury": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
-        },
-        "win_skills": [
-            "FIGHTER,3"
+        "success_outcomes": [
+            {
+                "text": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the dog that protects the cats from the chance of injury. The dog tucks tail, and runs for more friendly lands.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c selflessly throw themselves into the fight, and every time the dog tries to grab at their Clanmates, they're there with claws, fur puffed out to twice their normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "confident",
+                    "empathetic",
+                    "faithful",
+                    "fierce",
+                    "loving",
+                    "loyal",
+                    "responsible",
+                    "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "win_trait": [
-            "altruistic",
-            "compassionate",
-            "confident",
-            "empathetic",
-            "faithful",
-            "fierce",
-            "loving",
-            "loyal",
-            "responsible",
-            "righteous"
-        ],
-        "fail_trait": [
-            "ambitious",
-            "bloodthirsty",
-            "troublesome",
-            "vengeful"
-        ],
-        "min_cats": 4,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-            "reg_death": "This cat died to keep the Clan safe from a large dog.",
-            "lead_death": "died to keep c_n safe from a large dog"
-        }
+        "fail_outcomes": [
+            {
+                "text": "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c tries to protect their Clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take them to StarClan.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep the Clan safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["BRIGHTHEART"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "This cat died to keep the Clan safe from a large dog.",
+                    "lead_death": "died to keep c_n safe from a large dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_smalldog1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "scar",
-            "LEGBITE",
-            "death",
-            "small_bite_injury",
-            "border",
-            "respect",
-            "trust"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol comes across a small dog.",
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?",
-            "unscathed_rare": "r_c unsheathes their claws, puffs their fur out to as far as it'll go, gathers their courage, and drives the small dog from the border.",
-            "stat_skill": "s_c unleashes all their battle experience, darting this way and that, ripping chunks of dog fur out as they drive it into the distance."
-        },
-        "fail_text": {
-            "unscathed_common": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
-            "death": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.",
-            "injury": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c unsheathes their claws, puffs their fur out to as far as it'll go, gathers their courage, and drives the small dog from the border.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c unleashes all their battle experience, darting this way and that, ripping chunks of dog fur out as they drive it into the distance.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
-            "reg_death": "This cat was killed in a fight with a small dog, but they took the dog out with them.",
-            "lead_death": "killed in a fight with a small dog"
-        }
+        "fail_outcomes": [
+            {
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
+                    "reg_death": "This cat was killed in a fight with a small dog, but they took the dog out with them.",
+                    "lead_death": "killed in a fight with a small dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
+                    "reg_death": "This cat was killed in a fight with a small dog, but they took the dog out with them.",
+                    "lead_death": "killed in a fight with a small dog"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_smalldog2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "scar",
-            "LEGBITE",
-            "small_bite_injury",
-            "border",
-            "respect",
-            "trust",
-            "comfort",
-            "no_change_fail"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",
-            "unscathed_rare": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
-            "stat_skill": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."
-        },
-        "fail_text": {
-            "unscathed_common": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
-            "injury": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."
-        },
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
-        }
+        "fail_outcomes": [
+            {
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+                }
+            }
+        ]
     },
     {
         "patrol_id": "fst_bord_smalldog3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": [
-            "fighting",
-            "scar",
-            "LEGBITE",
-            "small_bite_injury",
-            "border",
-            "trust",
-            "respect",
-            "comfort",
-            "no_change_fail"
-        ],
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
         "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
-        "exp": 10,
-        "success_text": {
-            "unscathed_common": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
-            "unscathed_rare": "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
-            "stat_skill": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."
-        },
-        "fail_text": {
-            "unscathed_common": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
-            "injury": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."
-        },
-        "min_cats": 4,
-        "max_cats": 6,
-        "win_skills": [
-            "FIGHTER,1"
+        "success_outcomes": [
+            {
+                "text": "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
         ],
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": {
-            "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
-        }
+        "fail_outcomes": [
+            {
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+                }
+            }
+        ]
     }
 ]

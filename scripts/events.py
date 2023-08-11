@@ -12,7 +12,7 @@ import traceback
 import time
 
 from scripts.cat.history import History
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 
 import ujson
 
