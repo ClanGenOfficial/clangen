@@ -131,22 +131,33 @@ class Romantic_Events():
             "r_c": (str(cat_to.name), choice(cat_to.pronouns))
         }
         interaction_str = process_text(interaction_str, cat_dict)
+        
+        # extract intensity from the interaction
+        intensity = getattr(chosen_interaction, 'intensity', 'neutral')
 
-        # display the interaction in the moon events
-        effect = " (positive effect)" if positive else " (negative effect)"
+        effect = " (neutral effect)"
+        if in_de_crease != "neutral" and positive:
+            effect = f" ({intensity} positive effect)"
+        if in_de_crease != "neutral" and not positive:
+            effect = f" ({intensity} negative effect)"
+
         interaction_str = interaction_str + effect
 
-        relationship.log.append(interaction_str)
-        if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
-            relationship.link_relationship()
-            relationship.opposite_relationship.log.append(interaction_str)
-
+        # send string to current moon relationship events before adding age of cats
         relevant_event_tabs = ["relation", "interaction"]
         if len(chosen_interaction.get_injuries) > 0:
             relevant_event_tabs.append("health")
         game.cur_events_list.append(Single_Event(
             interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
         ))
+
+        # now add the age of the cats before the string is sent to the cats' relationship logs
+        relationship.log.append(interaction_str + f" - {cat_from.name} was {cat_from.moons} moons old")
+
+        if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
+            relationship.link_relationship()
+            relationship.opposite_relationship.log.append(interaction_str + f" - {cat_to.name} was {cat_to.moons} moons old")
+
         #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
         return True
 

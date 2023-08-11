@@ -4,8 +4,8 @@
   "trigger_events": [
     "The war with o_c has begun.",
     "Rising tensions have finally come to a breaking point, a war against o_c has been declared.",
-    "lead_name declares war against o_c.",
-    "After many moons of tensions between o_c and c_n, lead_name announces that a war has started."
+    "c_n declares war against o_c.",
+    "After many moons of tensions between o_c and c_n, a formal war is declared."
   ],
   "progress_events": {
     "comment": [
@@ -16,7 +16,7 @@
       "Rumors are circulating that o_c wishes the war would end.",
       "Both c_n and o_c tire of the war, wishing for it to end.",
       "Mutual exhaustion pushes both c_n and o_c to consider ending the war.",
-      "Neither c_n nor o_c wishes to lose cats to the war, they seem to be considering peace.",
+      "Neither c_n nor o_c wishes to lose cats to the war; they seem to be considering peace.",
       "Murmurings of peace between c_n and o_c permeated the last Gathering.",
       "The other Clan leaders pushed c_n and o_c to make peace at the last Gathering."
     ],

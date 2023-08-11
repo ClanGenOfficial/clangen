@@ -22,7 +22,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
         "cat_trait": null,
         "cat_skill": [
             "KIT,1"
@@ -39,7 +39,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. They'll be sore for the next few days.",
+        "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
         "cat_trait": null,
         "cat_skill": [
             "KIT,1"
@@ -69,7 +69,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "The weather has been bad lately, and m_c can feel it in their bones.",
+        "event_text": "The weather has been bad lately, and m_c can feel it in {PRONOUN/m_c/poss} bones.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -83,7 +83,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c can feel their bones and joints aching. Bad weather must be on its way.",
+        "event_text": "m_c can feel {PRONOUN/m_c/poss} bones and joints aching. Bad weather must be on its way.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -97,7 +97,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c isn't as young as they used to be, and their aching joints are making that extremely clear.",
+        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/poss} aching joints are making that extremely clear.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -111,7 +111,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - their joints are now quite sore.",
+        "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - {PRONOUN/m_c/poss} joints are now quite sore.",
         "cat_trait": null,
         "cat_skill": [
             "CAMP,2"
@@ -132,7 +132,7 @@
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
         "history_text": {
             "scar": "m_c was scarred after a bad fall.",
-            "reg_death": "m_c died from their wounds after taking a bad fall."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after taking a bad fall."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -161,7 +161,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has collected quite a lot of ticks in their pelt, and grumbles about the itchy bites dotted through their pelt.",
+        "event_text": "m_c has collected quite a lot of ticks in {PRONOUN/m_c/poss} pelt, and grumbles about the itchy bites dotted through {PRONOUN/m_c/poss} pelt.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -175,7 +175,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has been yowling about their ticks for the better part of the day, the itchy bites maddening to them.",
+        "event_text": "m_c has been yowling about {PRONOUN/m_c/poss} ticks for the better part of the day, the itchy bites maddening to {PRONOUN/m_c/object}.",
         "cat_trait": [
             "cold",
             "fierce",
@@ -197,7 +197,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c keeps pointedly reminding other cats that their ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting their pelt.",
+        "event_text": "m_c keeps pointedly reminding other cats that {PRONOUN/m_c/poss} ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting {PRONOUN/m_c/poss} pelt.",
         "cat_trait": [
             "cold",
             "fierce",
@@ -219,7 +219,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c has been getting more and more frustrated by the number of ticks they have, but doesn't want to bother anyone with their troubles. Regardless, they're found out when someone spots them scratching at the bites.",
+        "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/object}'re found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
         "cat_trait": [
             "altruistic",
             "calm",
@@ -251,10 +251,10 @@
             "scar",
             "CHEEK"
         ],
-        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through their pelt.",
+        "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption.  m_c limps away, fresh clawmarks scored through {PRONOUN/m_c/poss} pelt.",
         "history_text": {
             "scar": "m_c was scarred by r_c.",
-            "reg_death": "m_c died from their wounds after r_c hurt them for trying to stop an argument."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after r_c hurt {PRONOUN/m_c/object} for trying to stop an argument."
         },
         "cat_trait": [
             "altruistic",
@@ -300,10 +300,10 @@
             "scar",
             "ONE"
         ],
-        "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
+        "event_text": "m_c was on a walk when {PRONOUN/m_c/subject} saw r_c being attacked by an enemy warrior! {PRONOUN/m_c/subject/CAP} helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from an enemy warrior.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from an enemy warrior."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from an enemy warrior."
         },
         "cat_trait": [
             "altruistic",
@@ -338,10 +338,10 @@
             "scar",
             "TWO"
         ],
-        "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
+        "event_text": "m_c was on a walk when {PRONOUN/m_c/subject} saw r_c being attacked by a rogue! {PRONOUN/m_c/subject/CAP} helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from a rogue.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from a rogue."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a rogue."
         },
         "cat_trait": [
             "altruistic",
@@ -376,10 +376,10 @@
             "scar",
             "LEGBITE"
         ],
-        "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
+        "event_text": "m_c was on a walk when {PRONOUN/m_c/subject} saw r_c being attacked by a dog! {PRONOUN/m_c/subject/CAP} helped r_c escape, but not before gaining a few wounds.",
         "history_text": {
             "scar": "m_c was scarred while trying to save r_c from a dog.",
-            "reg_death": "m_c died from their wounds after trying to save r_c from a dog."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after trying to save r_c from a dog."
         },
         "cat_trait": [
             "altruistic",

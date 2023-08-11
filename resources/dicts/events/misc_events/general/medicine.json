@@ -330,5 +330,17 @@
             "war"
         ],
         "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side."
+    },
+    {
+        "camp": "Any",
+        "tags": [
+            "medicine_cat",
+            "medicine_cat_app",
+            "other_cat",
+            "mc_to_rc",
+            "dislike"
+        ],
+        "event_text": "m_c is getting increasingly annoyed with r_c because {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} bothering {PRONOUN/m_c/object} about the most trivial of wounds and aches."
     }
+
 ]

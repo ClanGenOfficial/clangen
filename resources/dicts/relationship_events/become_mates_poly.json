@@ -27,8 +27,8 @@
 	},
 	"platonic_to_romantic":{
 		"m_c_mates": [
-			"m_c talked with [m_c_mates], that {PRONOUN/m_c/subject} sees r_c in a different light, and m_c and r_c have become mates.",
-			"m_c talked with {PRONOUN/m_c/poss} (m_c_mate/mates), that {PRONOUN/m_c/subject} sees r_c in a different light, and m_c and r_c have become mates."
+			"m_c talked with [m_c_mates], that {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c in a different light, and m_c and r_c have become mates.",
+			"m_c talked with {PRONOUN/m_c/poss} (m_c_mate/mates), that {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c in a different light, and m_c and r_c have become mates."
 		],
 		"r_c_mates": [
 			"m_c and r_c see each other in a different light; after r_c talked with [r_c_mates], m_c and r_c have become mates.",

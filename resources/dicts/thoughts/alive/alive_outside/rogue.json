@@ -102,7 +102,7 @@
             "Sniffs for {PRONOUN/m_c/poss} next meal",
             "Wonders if {PRONOUN/m_c/subject} can find a warm place to sleep tonight",
             "Was chased by a fox recently",
-            "Wishes {PRONOUN/m_c/subject} were in a warm nest",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} in a warm nest",
             "Wonders what it's like to live with Twolegs",
             "Is struggling to survive on {PRONOUN/m_c/poss} own",
             "Is fighting with another rogue over food",

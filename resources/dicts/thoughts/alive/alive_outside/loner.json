@@ -116,7 +116,7 @@
             "Is glad {PRONOUN/m_c/subject} chose this life of freedom",
             "Thinks about old friends",
             "Hopes it isn't too late to join a Clan",
-            "Wonders where {PRONOUN/m_c/subject}'ll go when {PRONOUN/m_c/subject} die",
+            "Wonders where {PRONOUN/m_c/subject}'ll go when {PRONOUN/m_c/subject} {VERB/m_c/die/dies}",
             "Is telling stories about {PRONOUN/m_c/poss} younger days",
             "Licks {PRONOUN/m_c/poss} sore pawpads from travelling too long",
             "Is admiring the massive territory {PRONOUN/m_c/subject} secured for so long",

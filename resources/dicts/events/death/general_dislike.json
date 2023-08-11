@@ -6,15 +6,15 @@
       "r_c wanders past m_c's vigil. {PRONOUN/r_c/subject/CAP} won't mourn m_c's passing.",
       "Frankly, they're all better off without m_c, and r_c doesn't know why everyone else is so grief stricken.",
       "As much as {PRONOUN/r_c/subject} hated m_c, the sight of {PRONOUN/m_c/poss} body still fills r_c with dread.",
-      "Yes, {PRONOUN/r_c/subject} hated m_c, but m_c was {PRONOUN/r_c/poss} Clanmate first and foremost, and r_c bows {PRONOUN/r_c/poss} head at the vigil respectfully.",      "Despite feeling uncomfortable at m_c's vigil, r_c knows how everyone would react if {PRONOUN/r_c/subject} bad-mouthed {PRONOUN/r_c/poss} own Clanmate, so {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} quiet."
-
+      "Yes, {PRONOUN/r_c/subject} hated m_c, but m_c was {PRONOUN/r_c/poss} Clanmate first and foremost, and r_c bows {PRONOUN/r_c/poss} head at the vigil respectfully.",
+      "Despite feeling uncomfortable at m_c's vigil, r_c knows how everyone would react if {PRONOUN/r_c/subject} bad-mouthed {PRONOUN/r_c/poss} own Clanmate, so {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} quiet."
     ],
     "no_body": [
       "Nobody wants to admit such a terrible thing out loud, but m_c will not be missed by the whole Clan. r_c wanders past the vigil being held for {PRONOUN/m_c/object}, pointedly ignoring it.",
       "r_c wanders past m_c's vigil. {PRONOUN/r_c/subject/CAP} won't mourn m_c's passing.",
       "Frankly, they're all better off without m_c, and r_c doesn't know why everyone else is so grief stricken.",
-      "Yes, {PRONOUN/r_c/subject} hated m_c, but m_c was {PRONOUN/r_c/poss} Clanmate first and foremost, and r_c bows {PRONOUN/r_c/poss} head at the vigil respectfully.",      "Despite feeling uncomfortable at m_c's vigil, r_c knows how everyone would react if {PRONOUN/r_c/subject} bad-mouthed {PRONOUN/r_c/poss} own Clanmate, so {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} quiet."
-
+      "Yes, {PRONOUN/r_c/subject} hated m_c, but m_c was {PRONOUN/r_c/poss} Clanmate first and foremost, and r_c bows {PRONOUN/r_c/poss} head at the vigil respectfully.",
+      "Despite feeling uncomfortable at m_c's vigil, r_c knows how everyone would react if {PRONOUN/r_c/subject} bad-mouthed {PRONOUN/r_c/poss} own Clanmate, so {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} quiet."
     ]
   },
   "adventurous": {

@@ -27,7 +27,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was killed by o_c warriors when they accidentally wandered over the border.",
+        "death_text": "m_c was killed by o_c warriors when {PRONOUN/m_c/subject} accidentally wandered over the border.",
         "history_text": {
             "reg_death": "m_c was killed by o_c warriors after accidentally trespassing."
         },

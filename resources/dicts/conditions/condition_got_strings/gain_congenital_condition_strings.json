@@ -15,12 +15,12 @@
 
     ],
     "born without a tail": [
-        "m_c is healthy, r_c confirms, but {PRONOUN/m_c/subject} simply haven't been born with a tail.",
+        "m_c is healthy, r_c confirms, but {PRONOUN/m_c/subject} simply {VERB/m_c/haven't/hasn't} been born with a tail.",
         "m_c is fluffy and full of yelling and the want for milk, but {PRONOUN/m_c/subject}'ll never be able to lash {PRONOUN/m_c/poss} tail like the other kittens, having been born without one."
 
     ],
     "paralyzed": [
-        "r_c soothes m_c's frantically worried parent - their kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy healthy life.",
+        "r_c soothes m_c's frantically worried parent - their kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy, healthy life.",
         "It's immediately clear that m_c can't feel {PRONOUN/m_c/poss} hindlegs when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} born, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like a happy bundle of newborn fluff anyway."
 
     ],

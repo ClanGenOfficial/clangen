@@ -5,15 +5,15 @@
       "r_c resented m_c for what {PRONOUN/r_c/subject} couldn't have, but seeing m_c's body lying in the clearing as the Clan hold vigil for {PRONOUN/m_c/object} makes {PRONOUN/r_c/poss} jealousy feel petty and stupid.",
       "r_c has always felt jealous of m_c, but could never want to take {PRONOUN/m_c/poss} place now, watching the Clan holding vigil for {PRONOUN/m_c/object}.",
       "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to {PRONOUN/r_c/poss} nest. {PRONOUN/r_c/subject/CAP} can't stand hearing everyone praise such a useless cat.",
-      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it."
-
-,      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} think of m_c."    ],
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it.",
+      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} think of m_c."
+      ],
     "no_body": [
       "r_c watches the vigil being held for m_c from the sidelines, not at all sure how {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} about {PRONOUN/m_c/poss} death.",
       "r_c has always felt jealous of m_c, but could never want to take {PRONOUN/m_c/poss} place now, watching the Clan holding vigil for {PRONOUN/m_c/object}.",
       "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to {PRONOUN/r_c/poss} nest. {PRONOUN/r_c/subject/CAP} can't stand hearing everyone praise such a useless cat.",
-      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it.",      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} think of m_c."
-
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dead, and r_c isn't interested in hearing it.",
+      "r_c knows that, even though m_c's family and friends are present at the vigil, everybody has a right to speak up, and so {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} everyone at the vigil just what {PRONOUN/r_c/subject} think of m_c."
     ]
   },
   "adventurous": {

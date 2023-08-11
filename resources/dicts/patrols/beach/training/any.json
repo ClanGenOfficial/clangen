@@ -42,7 +42,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "app1 got spiked by a sea urchin while training as an apprentice."
+            "scar": "m_c got spiked by a sea urchin while training as an apprentice."
         }
     },
     {
@@ -76,7 +76,7 @@
         },
         "fail_text": {
             "unscathed_common": "The patrol works all day to free r_c and gets nothing else done.",
-            "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that they don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+            "unscathed_stat": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
             "death": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
             "injury": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
             "stat_death": "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
@@ -112,8 +112,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol.",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol.",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -147,7 +147,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l works all day to free r_c and gets nothing else done.",
-            "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/s_c/object} harshly that {PRONOUN/s_c/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+            "unscathed_stat": "As s_c rarely has patience for other cats, {PRONOUN/s_c/object} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
             "death": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
             "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         },
@@ -182,8 +182,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -217,7 +217,7 @@
         },
         "fail_text": {
             "unscathed_common": "p_l works all day to free r_c and gets nothing else done.",
-            "unscathed_stat": "As s_c rarely has patience for other cats, r_c tells {PRONOUN/p_l/object} harshly that {PRONOUN/p_l/subject} don't have time for some idiot who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
+            "unscathed_stat": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't have time for some idiot who got stuck, making r_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/r_c/object} out of the sand.",
             "death": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
             "injury": "p_l eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured."
         },
@@ -252,8 +252,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -289,8 +289,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from being trapped on patrol.",
-            "reg_death": "r_c tragically died after being trapped on patrol.",
+            "scar": "m_c carries a scar from being trapped on patrol.",
+            "reg_death": "m_c tragically died after being trapped on patrol.",
             "lead_death": "died after being trapped on patrol"
         }
     },
@@ -340,7 +340,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -718,7 +718,7 @@
             "stat_trait": "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly present it to app2, wondering if app2 might like it for {PRONOUN/app2/poss} nest. Blushing to the tips of {PRONOUN/app2/poss} ears, app2 accepts {PRONOUN/app1/poss} gift."
         },
         "fail_text": {
-            "unscathed_common": "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} don't want it, and the crestfallen apprentice slinks off sadly."
+            "unscathed_common": "app1 tries to give app2 a shell, but {PRONOUN/app2/subject} {VERB/app2/do/does}n't want it, and the crestfallen apprentice slinks off sadly."
         },
         "win_trait": [
             "altruistic",

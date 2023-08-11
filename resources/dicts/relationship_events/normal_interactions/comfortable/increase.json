@@ -3,7 +3,8 @@
 		"id": "comfort_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest."
+			"m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest.",
+			"m_c has a friendly chat with r_c that leaves them both feeling happy."
 		]
 	},
 	{
@@ -12,7 +13,8 @@
 		"interactions": [
 			"m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
 			"m_c has been spending time with r_c lately.",
-			"m_c shares a joke about a neighboring Clan with r_c."
+			"m_c shares a joke about a neighboring Clan with r_c.",
+			"m_c reassures r_c about something that was bothering {PRONOUN/r_c/object}."
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase"
@@ -22,7 +24,8 @@
 		"id": "comfort_inc_low3",
 		"intensity": "low",
 		"interactions": [
-			"m_c is asking r_c to check {PRONOUN/m_c/object} for ticks."
+			"m_c is asking r_c to check {PRONOUN/m_c/object} for ticks.",
+			"m_c is happy to see r_c is the cat who is helping {PRONOUN/m_c/object} today."
 		],
 		"main_status_constraint": [
 			"elder"
@@ -59,7 +62,8 @@
 			"m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
 			"m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
 			"m_c playfully teases r_c for missing a catch.",
-			"m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest."
+			"m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest.",
+			"m_c is delighted to be working with r_c today."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -112,7 +116,8 @@
 		"id": "comfort_inc_med7",
 		"interactions": [
 			"m_c is watching the shooting stars with r_c.",
-			"m_c calmly explains hunting techniques to r_c again for the fourth time today."
+			"m_c calmly explains hunting techniques to r_c again for the fourth time today.",
+			"m_c helps r_c with a tedious task and it makes the whole day a lot easier."
 		],
 		"random_trait_constraint": [
 			"patient"

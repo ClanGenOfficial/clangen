@@ -1,17 +1,19 @@
 {
   "general": {
     "body": [
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and doesn't, than any grief for m_c.",
+      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and {VERB/r_c/do/does}n't, than any grief for m_c.",
       "r_c refuses to sit vigil for m_c. {PRONOUN/m_c/subject/CAP} failed r_c as a parent, guardian, and mentor. Why should r_c honor {PRONOUN/m_c/object} now?",
       "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
-      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
-,      "m_c wasn't the best parent out there, but r_c decided that {PRONOUN/r_c/subject} had the decency to at least be respectful at m_c's vigil.."   ],
+      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil.",
+      "m_c wasn't the best parent out there, but r_c decided that {PRONOUN/r_c/subject} had the decency to at least be respectful at m_c's vigil.."
+      ],
    "no_body": [
-      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and doesn't, than any grief for m_c.",
+      "It's sad, the vigil. More so because r_c knows {PRONOUN/r_c/subject} should care and {VERB/r_c/do/does}n't, than any grief for m_c.",
       "r_c refuses to sit vigil for m_c. {PRONOUN/m_c/subject/CAP} failed r_c as a parent, guardian, and mentor. Why should r_c honor {PRONOUN/m_c/object} now?",
       "r_c is called to m_c's vigil, but declines to speak. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/subject}'d have anything good to say.",
-      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
-,      "m_c wasn't the best parent out there, but r_c decided that {PRONOUN/r_c/subject} had the decency to at least be respectful at m_c's vigil."   ]
+      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil.",
+      "m_c wasn't the best parent out there, but r_c decided that {PRONOUN/r_c/subject} had the decency to at least be respectful at m_c's vigil."
+      ]
   },
   "adventurous": {
     "body": [

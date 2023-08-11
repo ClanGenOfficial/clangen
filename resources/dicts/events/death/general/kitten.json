@@ -64,9 +64,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was killed when they snuck out of camp.",
+        "death_text": "m_c was killed when {PRONOUN/m_c/subject} snuck out of camp.",
         "history_text": {
-            "reg_death": "m_c died when they snuck out of camp."
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} snuck out of camp."
         },
         "cat_trait": [
             "troublesome",
@@ -88,7 +88,7 @@
         ],
         "death_text": "m_c died after getting into the herb stores and accidentally eating deathberries.",
         "history_text": {
-            "reg_death": "m_c died when they got into the herb stores and ate deathberries."
+            "reg_death": "m_c died when {PRONOUN/m_c/subject} got into the herb stores and ate deathberries."
         },
         "cat_trait": [
             "troublesome",
@@ -108,7 +108,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was killed in their sleep by a snake that had snuck into camp.",
+        "death_text": "m_c was killed in {PRONOUN/m_c/poss} sleep by a snake that had snuck into camp.",
         "history_text": {
             "reg_death": "m_c was killed by a snake."
         },
@@ -172,7 +172,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c caught a cold, slowly fading until they eventually passed on.",
+        "death_text": "m_c caught a cold, slowly fading until {PRONOUN/m_c/subject} eventually passed on.",
         "history_text": {
             "reg_death": "m_c was killed by sickness."
         },

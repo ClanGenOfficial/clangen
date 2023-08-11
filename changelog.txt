@@ -1,3 +1,17 @@
+<strong>v0.9.4</strong>
+- Added new traits to ceremonies.
+- Reduce chance of disabling scars.
+- Ensure clan_settings.json will not nullify.
+- Background color is now stored in game_config.
+- Adjusted injury chances.
+- Fixed special suffix being unexpectedly hidden.
+- Fixed crash associated with grief events
+- Other small adjustments.
+
+<strong>v0.9.3</strong>
+- Fix x86 build not actually being x86. Rude.
+- Take away the auto-updater's ability to prevent the game from opening due to connection issues.
+
 <strong>v0.9.2</strong>
 - Update the content warning on the start screen
 - Increase chance of condition-related scars in expanded mode

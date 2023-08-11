@@ -12,7 +12,7 @@
         "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "history_text": {
             "scar": "m_c was scarred by a snake bite.",
-            "reg_death": "m_c died after they were bit by a snake."
+            "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -27,7 +27,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, gaining a few bruises.",
+        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, gaining a few bruises.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -55,7 +55,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and dislocated their leg.",
+        "event_text": "m_c slipped on some rocks and dislocated {PRONOUN/m_c/poss} leg.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -69,7 +69,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c slipped on some rocks and twisted their paw.",
+        "event_text": "m_c slipped on some rocks and twisted {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -83,7 +83,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c leapt from a rock, but they didn't land quite right.",
+        "event_text": "m_c leapt from a rock, but {PRONOUN/m_c/subject} didn't land quite right.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -97,7 +97,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c misstepped and slipped from a rock, spraining their paw.",
+        "event_text": "m_c misstepped and slipped from a rock, spraining {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -111,7 +111,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c wasn't looking where they were going and tripped over a small trunk, spraining their paw.",
+        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, spraining {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -125,7 +125,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c got their paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
+        "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -139,7 +139,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c ran too fast over harsh ground and hurt their paws.",
+        "event_text": "m_c ran too fast over harsh ground and hurt {PRONOUN/m_c/poss} paws.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -164,7 +164,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c helped to strengthen the camp walls, but scraped up their paw pads in the process.",
+        "event_text": "m_c helped to strengthen the camp walls, but scraped up {PRONOUN/m_c/poss} paw pads in the process.",
         "cat_trait": [
             "ambitious",
             "loyal",
@@ -187,7 +187,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c overexerted themself, and is feeling extremely sore.",
+        "event_text": "m_c overexerted {PRONOUN/m_c/self}, and is feeling extremely sore.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -201,7 +201,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was out on a walk alone when they heard a dog approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a dog approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "cat_trait": [
             "nervous",
             "wise",
@@ -225,7 +225,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was out on a walk alone when they heard a fox approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a fox approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "cat_trait": [
             "nervous",
             "wise",
@@ -260,7 +260,7 @@
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": {
             "scar": "m_c was scarred by r_c for disobeying orders.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c for disobeying them."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -295,10 +295,10 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was hurt by r_c for speaking out against them.",
+        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c for speaking out against them.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c for their dissent."
+            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for {PRONOUN/m_c/poss} dissent."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -335,10 +335,10 @@
             "scar",
             "ONE"
         ],
-        "event_text": "m_c was hurt by r_c to make an example out of them.",
+        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c to make an example out of them.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c to make an example out of them."
+            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -363,10 +363,10 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c got their paw stuck in a Twoleg trap, and while they eventually escaped, their leg is heavily injured.",
+        "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, and while {PRONOUN/m_c/subject} eventually escaped, {PRONOUN/m_c/poss} leg is heavily injured.",
         "history_text": {
             "scar": "m_c was scarred by a Twoleg trap.",
-            "reg_death": "m_c died from their injuries caused by a Twoleg trap."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} injuries caused by a Twoleg trap."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -391,10 +391,10 @@
             "scar",
             "MANLEG"
         ],
-        "event_text": "m_c was maimed by r_c for questioning their leadership.",
+        "event_text": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
         "history_text": {
-            "scar": "m_c was maimed by r_c for questioning their leadership.",
-            "reg_death": "m_c died from their wounds after being maimed by r_c for questioning their leadership."
+            "scar": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being maimed by r_c for questioning {PRONOUN/r_c/poss} leadership."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -428,7 +428,7 @@
         "event_text": "m_c's tail was badly injured by a dog.",
         "history_text": {
             "scar": "m_c was scarred by a dog.",
-            "reg_death": "m_c died from their wounds after they were hurt by a dog."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a dog."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -451,7 +451,7 @@
         "event_text": "m_c's tail was badly injured by a fox.",
         "history_text": {
             "scar": "m_c was scarred by a fox.",
-            "reg_death": "m_c died from their wounds after they were hurt by a fox."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a fox."
         },
         "cat_skill": null,
         "other_cat_trait": null,
@@ -479,7 +479,7 @@
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": {
             "scar": "m_c was scarred by r_c for disobeying orders.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c for disobeying them."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for disobeying {PRONOUN/r_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -514,10 +514,10 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was hurt by r_c for speaking out against them.",
+        "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c for speaking out against them.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c for their dissent."
+            "scar": "m_c was scarred by r_c for speaking out against {PRONOUN/r_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c for {PRONOUN/m_c/poss} dissent."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -553,10 +553,10 @@
             "scar",
             "CATBITE"
         ],
-        "event_text": "m_c was hurt by r_c to make an example out of them.",
+        "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "history_text": {
-            "scar": "m_c was scarred by r_c to make an example out of them.",
-            "reg_death": "m_c died from their wounds after being hurt by r_c to make an example out of them."
+            "scar": "m_c was scarred by r_c to make an example out of {PRONOUN/m_c/object}.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by r_c to make an example out of {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,
@@ -580,7 +580,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was helping reinforce the camp walls when they got a thorn stuck in their paw.",
+        "event_text": "m_c was helping reinforce the camp walls when {PRONOUN/m_c/subject} got a thorn stuck in {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -595,7 +595,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was trying to fluff up their nest when they discovered that they were the victim of a prank. Fox-dung! There's now a sharp thorn embedded in their paw.",
+        "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} discovered that {PRONOUN/m_c/subject} {VERB/m_c/were/was} the victim of a prank. Fox-dung! There's now a sharp thorn embedded in {PRONOUN/m_c/poss} paw.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -610,9 +610,9 @@
             "scar",
             "BRIDGE"
         ],
-        "event_text": "m_c found a patch of flowering catmint! No one else is around, so they bend down and take a big bite-- Yowch! A bee! They come home with a swollen face...",
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} bend down and take a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} come home with a swollen face...",
         "history_text": {
-            "scar": "m_c, unbelievably, was scarred when they tried to eat a bee.",
+            "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a bee.",
             "reg_death": "m_c died from complications caused by a bee sting."
         },
         "cat_trait": null,
@@ -634,9 +634,9 @@
             "scar",
             "QUILLCHUNK"
         ],
-        "event_text": "The day is so nice out today that m_c decided to sneak out of camp and go play in the flowers without anyone noticing. They come back with a swollen paw, having stepped on a bee.",
+        "event_text": "The day is so nice out today that m_c decided to sneak out of camp and go play in the flowers without anyone noticing. {PRONOUN/m_c/subject/CAP} come back with a swollen paw, having stepped on a bee.",
         "history_text": {
-            "scar": "m_c, unbelievably, was scarred when they tried to eat a bee.",
+            "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a bee.",
             "reg_death": "m_c died from complications caused by a bee sting."
         },
         "cat_trait": null,
@@ -658,7 +658,7 @@
             "scar",
             "BOTHBLIND"
         ],
-        "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by their buzzing, m_c attacks them, and got swarmed by bees.",
+        "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by {PRONOUN/m_c/poss} buzzing, m_c attacks them, and got swarmed by bees.",
         "history_text": {
             "scar": "m_c was scarred by a swarm of bees.",
             "reg_death": "m_c died from complications caused by bee stings."
@@ -689,7 +689,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c woke up with a mild headache, but went about their day anyway, trying to ignore the nagging pain.",
+        "event_text": "m_c woke up with a mild headache, but went about {PRONOUN/m_c/poss} day anyway, trying to ignore the nagging pain.",
         "history_text": null,
         "cat_trait": null,
         "cat_skill": null,
@@ -705,7 +705,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
+        "event_text": "m_c woke up with a splitting headache, and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
         "history_text": null,
         "cat_trait": null,
         "cat_skill": null,

@@ -66,6 +66,43 @@
         ]
     },
     {
+        "id": "founder_dead_to_dead_other",
+        "thoughts": [
+            "Is speaking with r_c about how c_n came to be",
+            "Is telling other StarClan cats stories of c_n's beginning"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "founder_dead_to_dead_other_founder",
+        "thoughts": [
+            "Is reminiscing with r_c about how c_n came to be",
+            "Is speaking with r_c about how the Clan they founded had changed"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_backstory_constraint": ["clan_founder"],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
         "id": "general_dead_to_alive_other",
         "thoughts": [
             "Is watching over r_c",
@@ -81,6 +118,26 @@
             "Accidentally found {PRONOUN/m_c/self} in r_c's dreams the other night",
             "Knows what r_c's secret is and wants to tell some cat",
             "Is judging r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "founder_dead_to_alive_kit",
+        "thoughts": [
+            "Is watching over the newest additions to {PRONOUN/m_c/poss} Clan"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": ["clan_founder"],
+        "random_status_constraint": [
+            "kitten"
         ],
         "random_living_status": [
             "living"
@@ -105,7 +162,7 @@
             "Has an important message for r_c",
             "Is distraught that {PRONOUN/m_c/subject} can't help r_c take care of the Clan",
             "Sends an omen of things to come to r_c",
-            "Is excited that {PRONOUN/m_c/subject} are able to help c_n by sharing a new prophecy",
+            "Is excited that {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to help c_n by sharing a new prophecy",
             "Whispers useful suggestions in r_c's ears",
             "Sends a vision of an undiscovered herb patch to r_c",
             "Lets {PRONOUN/m_c/poss} scent linger near r_c, if only for a moment"
@@ -281,7 +338,7 @@
         "id": "gen_dead_to_alive_sibling",
         "thoughts": [
             "Watches r_c grow and live the life {PRONOUN/m_c/subject} could never have",
-            "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} are of {PRONOUN/r_c/object}",
+            "Wishes {PRONOUN/m_c/subject} could tell r_c how proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}",
             "Celebrates r_c's successes with {PRONOUN/r_c/object}",
             "Is proud of who r_c has become"
         ],

@@ -138,8 +138,8 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-            "unscathed_rare": "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
-            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+            "unscathed_rare": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
+            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/subject}, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} pull off a perfect catch!"
         },
         "fail_text": {
             "unscathed_common": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
@@ -172,7 +172,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -522,9 +522,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -576,9 +576,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -628,7 +628,7 @@
         "antagonize_fail_text": null,
         "history_text": {
             "scar": "This cat got heatstroke while on a patrol.",
-            "reg_death": "r_c died from heatstroke.",
+            "reg_death": "m_c died from heatstroke.",
             "lead_death": "died from heatstroke"
         }
     },
@@ -1068,7 +1068,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting with a swift fox."
+            "scar": "m_c carries a scar from fighting with a swift fox."
         }
     },
     {
@@ -1139,7 +1139,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from fighting with a swift fox."
+            "scar": "m_c carries a scar from fighting with a swift fox."
         }
     },
     {
@@ -1180,7 +1180,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -1220,7 +1220,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -1261,7 +1261,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -1301,7 +1301,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was marked by a fight with a swift fox vixen."
+            "scar": "m_c was marked by a fight with a swift fox vixen."
         }
     },
     {
@@ -1330,7 +1330,7 @@
         },
         "fail_text": {
             "unscathed_common": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
-            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1376,7 +1376,7 @@
         },
         "fail_text": {
             "unscathed_common": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
-            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1431,7 +1431,7 @@
         "fail_text": {
             "unscathed_common": "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
             "death": "One tiny kit fox against r_c? No contest. r_c settles in to open the carcass, but is caught unawares by the boar returning to reclaim it, and is killed and eaten by the boar.",
-            "injury": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
+            "injury": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg."
         },
         "win_skills": [
             "CLEVER,1",
@@ -1458,8 +1458,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c fell when they were surprised by a peccary boar.",
-            "lead_death": "were gored and eaten by a peccary boar"
+            "reg_death": "m_c fell when {PRONOUN/m_c/subject} {VERB/m_c/were/was} surprised by a peccary boar.",
+            "lead_death": "{VERB/m_c/were/was} gored and eaten by a peccary boar"
         }
     },
     {
@@ -1513,7 +1513,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a kit fox."
+            "scar": "m_c was scarred by a kit fox."
         }
     },
     {
@@ -1566,7 +1566,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a kit fox."
+            "scar": "m_c carries a scar from a fight with a kit fox."
         }
     },
     {

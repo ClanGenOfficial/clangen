@@ -115,7 +115,7 @@
     },
     "frostbite": {
         "running nose": [
-            "It's minor compared to the frostbite, but r_c remembers to bring along herbs for m_c's running nose when {PRONOUN/r_c/subject} go to check up on {PRONOUN/m_c/object}.",
+            "It's minor compared to the frostbite, but r_c remembers to bring along herbs for m_c's running nose when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to check up on {PRONOUN/m_c/object}.",
             "As if frostbite wasn't a big enough worry, m_c has also developed a running nose.",
             "m_c was out in the cold far too long and while the frostbite is the biggest concern, a running nose isn't a good sign either."
 

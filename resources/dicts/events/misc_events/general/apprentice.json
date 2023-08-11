@@ -57,7 +57,7 @@
             "neg_jealousy",
             "to_both"
         ],
-        "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hopping that r_c notices {PRONOUN/m_c/object}.",
+        "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
         "accessories": [
             "BLUE BERRIES",
             "HOLLY"

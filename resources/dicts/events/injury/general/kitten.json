@@ -7,7 +7,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c tried to sneak out of the camp, but fell and got a bruise before they even left the safety of the camp walls.",
+        "event_text": "m_c tried to sneak out of the camp, but fell and got a bruise before {PRONOUN/m_c/subject} even left the safety of the camp walls.",
         "cat_trait": [
             "daring",
             "impulsive",
@@ -26,7 +26,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c snuck out of camp and returned a bit bruised, but brimming with pride despite the scolding they were given.",
+        "event_text": "m_c snuck out of camp and returned a bit bruised, but brimming with pride despite the scolding {PRONOUN/m_c/subject} {VERB/m_c/were/was} given.",
         "cat_trait": [
             "daring",
             "impulsive",
@@ -45,7 +45,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c play-fought a bit too hard and got a bit bruised.",
+        "event_text": "m_c play-fought a bit too hard and got a little bruised.",
         "cat_trait": [
             "daring",
             "bouncy",
@@ -66,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c tried to sneak out of the camp, but fell and scraped their paw before they even left the safety of the camp walls.",
+        "event_text": "m_c tried to sneak out of the camp, but fell and scraped {PRONOUN/m_c/poss} paw before {PRONOUN/m_c/subject} even left the safety of the camp walls.",
         "cat_trait": [
             "daring",
             "impulsive",
@@ -85,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c snuck out of camp and returned scraped up, but brimming with pride despite the scolding they were given.",
+        "event_text": "m_c snuck out of camp and returned scraped up, but brimming with pride despite the scolding {PRONOUN/m_c/subject} {VERB/m_c/were/was} given.",
         "cat_trait": [
             "daring",
             "impulsive",
@@ -104,7 +104,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c play-fought a bit too hard and scraped themselves up.",
+        "event_text": "m_c play-fought a bit too hard and scraped {PRONOUN/m_c/self} up.",
         "cat_trait": [
             "daring",
             "bouncy",
@@ -142,7 +142,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c woke up with a splitting headache, and couldn't get out of their nest. They spent the entire day curled up in the nursery, trying to avoid light and noise so that the throbbing pain could subside.",
+        "event_text": "m_c woke up with a splitting headache, and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up in the nursery, trying to avoid light and noise so that the throbbing pain could subside.",
         "history_text": null,
         "cat_trait": null,
         "cat_skill": null,

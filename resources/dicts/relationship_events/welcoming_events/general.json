@@ -3,14 +3,14 @@
 		"id": "gen1",
 		"interactions":[
 			"m_c is welcoming r_c.",
-			"m_c sees r_c arrive in the Clan and offers {PRONOUN/r_c/object} to show {PRONOUN/r_c/object} around.",
+			"m_c sees r_c arrive in the Clan and {PRONOUN/m_c/subject} {VERB/m_c/offer/offers} to show {PRONOUN/r_c/object} around.",
 			"m_c asks r_c if {PRONOUN/r_c/subject} could use some help getting introduced to the other Clan members."
 		]
 	},
   { 
 		"id": "gen2",
 		"interactions":[
-			"m_c offers r_c some feathers as a welcome gift, that {PRONOUN/r_c/subject} can use to decorate {PRONOUN/r_c/poss} new nest.",
+			"m_c offers r_c some feathers as a welcome gift that {PRONOUN/r_c/subject} can use to decorate {PRONOUN/r_c/poss} new nest.",
 			"m_c offers r_c some tips for building a new nest."
 		],
 		"reaction_random_cat": {

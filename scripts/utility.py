@@ -25,7 +25,7 @@ from scripts.game_structure import image_cache
 
 from sys import exit as sys_exit
 
-from scripts.cat.sprites import sprites, Sprites, spriteSize
+from scripts.cat.sprites import sprites
 
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
@@ -85,6 +85,9 @@ def get_med_cats(Cat, working=True):
 
     if working:
         possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
+
+    # Sort the cats by age before returning
+    possible_med_cats = sorted(possible_med_cats, key=lambda cat: cat.moons, reverse=True)
 
     return possible_med_cats
 
@@ -689,9 +692,17 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def pronoun_repl(m, cat_pronouns_dict):
-    """ Helper function for add_pronouns """
+def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
+    """ Helper function for add_pronouns. If raise_exception is 
+    False, any error in pronoun formatting will not raise an 
+    exception, and will use a simple replacement "error" """
+    
+    # Add protection about the "insert" sometimes used
+    if m.group(0) == "{insert}":
+        return m.group(0)
+    
     inner_details = m.group(1).split("/")
+    
     try:
         d = cat_pronouns_dict[inner_details[1]][1]
         if inner_details[0].upper() == "PRONOUN":
@@ -701,9 +712,17 @@ def pronoun_repl(m, cat_pronouns_dict):
             return pro
         elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
+        
+        if raise_exception:
+            raise KeyError(f"Pronoun tag: {m.group(1)} is not properly"
+                           "indicated as a PRONOUN or VERB tag.")
+        
         print("Failed to find pronoun:", m.group(1))
         return "error1"
-    except KeyError as e:
+    except (KeyError, IndexError) as e:
+        if raise_exception:
+            raise
+        
         logger.exception("Failed to find pronoun: " + m.group(1))
         print("Failed to find pronoun:", m.group(1))
         return "error2"
@@ -714,9 +733,10 @@ def name_repl(m, cat_dict):
     return cat_dict[m.group(0)][0]
 
 
-def process_text(text, cat_dict):
+def process_text(text, cat_dict, raise_exception=False):
     """ Add the correct name and pronouns into a string. """
-    adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict), text)
+    adjust_text = re.sub(r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict, raise_exception),
+                                                              text)
 
     name_patterns = [re.escape(l) for l in cat_dict]
 
@@ -862,7 +882,7 @@ def find_special_list_types(text):
 
 def history_text_adjust(text,
                         other_clan_name,
-                        clan):
+                        clan,other_cat_rc=None):
     """
     we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
     this is so that future pronoun changes or name changes will continue to be reflected in history
@@ -871,6 +891,8 @@ def history_text_adjust(text,
         text = text.replace("o_c", other_clan_name)
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
+    if "r_c" in text and other_cat_rc:
+        text = text.replace("r_c", str(other_cat_rc.name))
     return text
 
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
@@ -916,7 +938,9 @@ def event_text_adjust(Cat,
                       other_cat=None,
                       other_clan_name=None,
                       new_cat=None,
-                      clan=None):
+                      clan=None,
+                      murder_reveal=False,
+                      victim=None):
     """
     This function takes the given text and returns it with the abbreviations replaced appropriately
     :param Cat: Always give the Cat class
@@ -926,6 +950,7 @@ def event_text_adjust(Cat,
     :param other_clan_name: The other clan involved in the event
     :param new_cat: The cat taking the place of n_c
     :param clan: The player's Clan
+    :param murder_reveal: Whether or not this event is a murder reveal
     :return: the adjusted text
     """
 
@@ -957,6 +982,10 @@ def event_text_adjust(Cat,
             clan_name = str(game.clan.name)
 
     text = text.replace("c_n", clan_name + "Clan")
+
+    if murder_reveal and victim:
+        victim_cat = Cat.fetch_cat(victim)
+        text = text.replace("mur_c", str(victim_cat.name))
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
@@ -1072,11 +1101,11 @@ def adjust_patrol_text(text, patrol):
         "p_l": (str(patrol.patrol_leader.name), choice(patrol.patrol_leader.pronouns)),
     }
 
-    if patrol.patrol_random_cat:
+    if len(patrol.patrol_cats) > 1:
         replace_dict["r_c"] = (str(patrol.patrol_random_cat.name),
                                choice(patrol.patrol_random_cat.pronouns))
     else:
-        replace_dict["r_c"] = (str(patrol.patrol_leader_name),
+        replace_dict["r_c"] = (str(patrol.patrol_leader.name),
                                choice(patrol.patrol_leader.pronouns))
 
     other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
@@ -1194,6 +1223,38 @@ def adjust_patrol_text(text, patrol):
     return text
 
 
+def shorten_text_to_fit(name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"):
+    length_limit = length_limit//2 if not game.settings['fullscreen'] else length_limit
+    # Set the font size based on fullscreen settings if not provided
+    # Text box objects are named by their fullscreen text size so it's easier to do it this way
+    if font_size is None:
+        font_size = 30
+    font_size = font_size//2 if not game.settings['fullscreen'] else font_size
+    # Create the font object
+    font = pygame.font.Font(font_type, font_size)
+    
+    # Add dynamic name lengths by checking the actual width of the text
+    total_width = 0
+    short_name = ''
+    for index, character in enumerate(name):
+        char_width = font.size(character)[0]
+        ellipsis_width = font.size("...")[0]
+        
+        # Check if the current character is the last one and its width is less than or equal to ellipsis_width
+        if index == len(name) - 1 and char_width <= ellipsis_width:
+            short_name += character
+        else:
+            total_width += char_width
+            if total_width + ellipsis_width > length_limit:
+                break
+            short_name += character
+
+    # If the name was truncated, add '...'
+    if len(short_name) < len(name):
+        short_name += '...'
+
+    return short_name
+
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #
 # ---------------------------------------------------------------------------- #
@@ -1299,12 +1360,12 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             new_sprite.blit(patches, (0, 0))
 
         # TINTS
-        if cat.pelt.tint != "none" and cat.pelt.tint in Sprites.cat_tints["tint_colours"]:
+        if cat.pelt.tint != "none" and cat.pelt.tint in sprites.cat_tints["tint_colours"]:
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
-            tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-            tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.pelt.tint]))
+            tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+            tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
         # draw white patches
@@ -1312,10 +1373,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             white_patches = sprites.sprites['white' + cat.pelt.white_patches + cat_sprite].copy()
 
             # Apply tint to white patches.
-            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in sprites.white_patches_tints[
                 "tint_colours"]:
-                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
+                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                tint.fill(tuple(sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
             new_sprite.blit(white_patches, (0, 0))
@@ -1324,10 +1385,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
         if cat.pelt.points:
             points = sprites.sprites['white' + cat.pelt.points + cat_sprite].copy()
-            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in Sprites.white_patches_tints[
+            if cat.pelt.white_patches_tint != "none" and cat.pelt.white_patches_tint in sprites.white_patches_tints[
                 "tint_colours"]:
-                tint = pygame.Surface((spriteSize, spriteSize)).convert_alpha()
-                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
+                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                tint.fill(tuple(sprites.white_patches_tints["tint_colours"][cat.pelt.white_patches_tint]))
                 points.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             new_sprite.blit(points, (0, 0))
 

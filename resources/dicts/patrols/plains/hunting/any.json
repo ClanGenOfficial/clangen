@@ -103,7 +103,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": "The patrol is frustrated by this seemingly permanent proof of Twoleg on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the Twoleg whose land this is.",
-        "antagonize_fail_text": "The atmosphere in this place is eerie and r_c takes out their tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of their aggression remains."
+        "antagonize_fail_text": "The atmosphere in this place is eerie and r_c takes out {PRONOUN/r_c/poss} tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of {PRONOUN/r_c/poss} aggression remains."
     },
     {
         "patrol_id": "pln_hunt_burrow1",
@@ -127,7 +127,7 @@
         },
         "fail_text": {
             "unscathed_common": "The burrow turns out to be empty - the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
-            "unscathed_stat": "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+            "unscathed_stat": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
             "injury": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
         },
         "fail_trait": [
@@ -141,7 +141,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred after an unfortunate encounter with a wolverine."
+            "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
         }
     },
     {
@@ -164,7 +164,7 @@
         },
         "fail_text": {
             "unscathed_common": "The burrow turns out to be empty - the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
-            "unscathed_stat": "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+            "unscathed_stat": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
             "death": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator."
         },
         "fail_trait": [
@@ -178,8 +178,8 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "reg_death": "r_c was killed after an unfortunate experience with a wolverine.",
-            "lead_death": "were killed by a wolverine"
+            "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
         }
     },
     {
@@ -231,7 +231,7 @@
             "large_prey3",
             "no_fail_prey"
         ],
-        "intro_text": "r_c looks around for something to disguise their scent while hunting.",
+        "intro_text": "r_c looks around for something to disguise {PRONOUN/r_c/poss} scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
         "exp": 20,
@@ -242,7 +242,7 @@
         },
         "fail_text": {
             "unscathed_common": "The patrol finds nothing to disguise their scent, and no prey either.",
-            "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+            "unscathed_stat": "r_c finds no prey; it seems like all the prey was scared off because of {PRONOUN/r_c/poss} stench!"
         },
         "win_skills": [
             "CLEVER,2"
@@ -269,19 +269,19 @@
             "medium_prey",
             "no_fail_prey"
         ],
-        "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
-        "decline_text": "r_c asks their mentor to do the assessment some other time.",
+        "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
+        "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
             "unscathed_common": "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-            "unscathed_rare": "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
-            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+            "unscathed_rare": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
+            "stat_trait": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the perfect opportunity falls into place and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
         },
         "fail_text": {
             "unscathed_common": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
-            "unscathed_stat": "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
-            "injury": "While on the hunt, r_c tumbles right down an empty badger sett while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+            "unscathed_stat": "s_c is too hasty, bouncing after first one prey, then another, and it ends with {PRONOUN/s_c/object} empty pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly need more training.",
+            "injury": "While on the hunt, r_c tumbles right down an empty badger sett while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp."
         },
         "win_trait": [
             "calm",
@@ -311,7 +311,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c got injured as an apprentice, exploring alone."
+            "scar": "m_c got injured as an apprentice, exploring alone."
         }
     },
     {
@@ -327,15 +327,15 @@
             "large_prey3",
             "no_fail_prey"
         ],
-        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought.",
-            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
-            "stat_skill": "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
-            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought.",
+            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates.",
+            "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing baby rabbits out by the pawful.",
+            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
         "fail_text": {
             "unscathed_common": "You can't catch what isn't there, and the prey today is certainly not there.",
@@ -382,19 +382,19 @@
             "large_prey3",
             "no_fail_prey"
         ],
-        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
-            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
-            "stat_skill": "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
         "fail_text": {
             "unscathed_common": "You can't catch what isn't there, and the prey today is certainly not there.",
-            "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+            "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
             "CLEVER,1"
@@ -437,19 +437,19 @@
             "large_prey3",
             "no_fail_prey"
         ],
-        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
-            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
-            "stat_skill": "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "unscathed_common": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that prairie dog thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
+            "unscathed_rare": "r_c finds a fat, dumb, slow rabbit, and {PRONOUN/r_c/subject} can barely drag the thing back to camp, but by the stars it's juicy when {PRONOUN/r_c/subject} {VERB/r_c/sit/sits} down to eat it with {PRONOUN/r_c/poss} Clanmates. Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a small moment of peace, relaxing with {PRONOUN/r_c/poss} friends.",
+            "stat_skill": "s_c gets the chance to try out an idea {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} spotted that's particularly badly built, and {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+            "stat_trait": "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c/object}."
         },
         "fail_text": {
             "unscathed_common": "You can't catch what isn't there, and the prey today is certainly not there.",
-            "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+            "unscathed_stat": "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up and return to camp, to try and at least make progress on all the work piling up there."
         },
         "win_skills": [
             "CLEVER,1"
@@ -497,13 +497,13 @@
         "chance_of_success": 20,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the grass and return to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
         },
         "fail_text": {
             "unscathed_common": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-            "unscathed_stat": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts from the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
-            "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "unscathed_stat": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly regret {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts from the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the grass.",
+            "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up."
         },
         "win_skills": [
             "HUNTER,1"
@@ -518,7 +518,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox."
+            "scar": "m_c gained a scar from a fox."
         }
     },
     {
@@ -540,14 +540,14 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the grass and return to the patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
         },
         "fail_text": {
             "unscathed_common": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
-            "unscathed_stat": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
-            "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
-            "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "unscathed_stat": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly regret {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the grass.",
+            "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+            "injury": "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up."
         },
         "win_skills": [
             "HUNTER,1"
@@ -562,9 +562,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine.",
-            "lead_death": "were killed by a predator"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine.",
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -586,14 +586,14 @@
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {
-            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and continue on their patrol with the tasty morsel dangling from their mouth.",
+            "unscathed_common": "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/subject} to be correct when {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} into the grass and continue on {PRONOUN/r_c/poss} patrol with the tasty morsel dangling from {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
         },
         "fail_text": {
             "unscathed_common": "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
-            "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now. The wolverine kills the lone cat with little trouble.",
-            "injury": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
+            "unscathed_stat": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly regret {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the grass.",
+            "death": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/haves} the sudden realization that no one can help {PRONOUN/r_c/object} now. The wolverine kills the lone cat with little trouble.",
+            "injury": "r_c heads toward the source of the noise and comes face to face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still manages to take a bite out of {PRONOUN/r_c/object} before {PRONOUN/r_c/subject} can sprint away."
         },
         "win_skills": [
             "HUNTER,1"
@@ -608,9 +608,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "p_l gained a scar from a fox.",
-            "reg_death": "p_l was killed by a wolverine while patrolling alone.",
-            "lead_death": "were killed by a predator"
+            "scar": "m_c gained a scar from a fox.",
+            "reg_death": "m_c was killed by a wolverine while patrolling alone.",
+            "lead_death": "{VERB/m_c/were/was} killed by a predator"
         }
     },
     {
@@ -629,13 +629,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They continue hunting undetected.",
-            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a sandwich in {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
             "stat_trait": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
         },
         "fail_text": {
-            "death": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
-            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+            "death": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/s_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/s_c/object} away in the monster."
         },
         "win_skills": [
             "CLEVER,3"
@@ -680,13 +680,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
-            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in their mouth.",
+            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
             "stat_trait": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
         },
         "fail_text": {
-            "death": "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
-            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+            "death": "The patrol mostly ignores the Twolegs. As they hunt, they a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/s_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/s_c/object} away in the monster."
         },
         "win_skills": [
             "CLEVER,3"
@@ -731,13 +731,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They continue hunting undetected.",
-            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+            "unscathed_rare": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, before darting forward and making off with a sandwich in {PRONOUN/r_c/poss} mouth.",
             "stat_skill": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
             "stat_trait": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
         },
         "fail_text": {
             "death": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
-            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
+            "stat_death": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? {PRONOUN/s_c/subject/CAP} {VERB/s_c/wander/wanders} closer, drawing more of the patrol in with {PRONOUN/s_c/object}. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
         },
         "win_skills": [
             "CLEVER,3"
@@ -782,14 +782,14 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
-            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They've always wondered what it might taste like... dry is the answer. Very odd.",
-            "stat_skill": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} always wondered what it might taste like... dry is the answer. Very odd.",
+            "stat_skill": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
             "stat_trait": "Calmly, s_c weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
         },
         "fail_text": {
             "unscathed_stat": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
             "death": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
-            "injury": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+            "injury": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that a broken window is just wide enough to push {PRONOUN/r_c/object} out to safety through, but the glass leaves {PRONOUN/r_c/object} bleeding as {PRONOUN/r_c/subject} {VERB/r_c/run/runs} back to c_n."
         },
         "win_skills": [
             "CLEVER,1"
@@ -836,13 +836,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
-            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. They've always wondered what it might taste like... dry is the answer. It's strangely appealing.",
-            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. A successful, sneaky hunt."
+            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... dry is the answer. It's strangely appealing.",
+            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. A successful, sneaky hunt."
         },
         "fail_text": {
             "unscathed_stat": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
             "death": "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
-            "injury": "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+            "injury": "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/app1/subject} {VERB/app1/discover/discovers} that a broken window is just wide enough to push {PRONOUN/app1/object} out to safety through, but the glass leaves {PRONOUN/app1/object} bleeding as {PRONOUN/app1/subject} {VERB/app1/run/runs} back to c_n."
         },
         "win_trait": [
             "calm",
@@ -886,12 +886,12 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
-            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
-            "stat_skill": "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much they know about the strange animals and their weird behavior, and enjoying getting to feel clever.",
+            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/fetch/fetches} p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
+            "stat_skill": "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c/subject} {VERB/s_c/know/knows} about the strange animals and their weird behavior, and enjoying getting to feel clever.",
             "stat_trait": "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way."
         },
         "fail_text": {
-            "unscathed_common": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
+            "unscathed_common": "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses {PRONOUN/r_c/poss} pelt against p_l on the way back to c_n.",
             "unscathed_stat": "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
             "death": "Carelessly, r_c is seen by Twolegs, and taken from c_n."
         },
@@ -942,11 +942,11 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
-            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
-            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood."
+            "unscathed_rare": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. {PRONOUN/app2/subject/CAP} {VERB/app2/fetch/fetches} app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
+            "stat_trait": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood."
         },
         "fail_text": {
-            "unscathed_common": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
+            "unscathed_common": "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app1/poss} pelt against app1 as they pad home.",
             "unscathed_stat": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
             "death": "Carelessly, app1 is seen by Twolegs, and taken from c_n."
         },
@@ -988,12 +988,12 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
-            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
-            "stat_skill": "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and strip the cover of the earth away from a Twoleg trap underneath.",
-            "stat_trait": "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. They leave it, deciding to return to camp and report it to the deputy instead."
+            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+            "stat_skill": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates}, carefully, and strip the cover of the earth away from a Twoleg trap underneath.",
+            "stat_trait": "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} it, deciding to return to camp and report it to the deputy instead."
         },
         "fail_text": {
-            "unscathed_stat": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+            "unscathed_stat": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it. {PRONOUN/s_c/subject/CAP} never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
             "death": "r_c is caught in a trap hidden in the earth and is taken by Twolegs shortly after."
         },
         "win_skills": [
@@ -1033,13 +1033,13 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
-            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
-            "stat_skill": "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and the patrol helps them strip the cover of the earth away from a Twoleg trap underneath.",
-            "stat_trait": "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. They leave it, convincing the patrol to return to camp and report it to the deputy instead."
+            "unscathed_rare": "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for {PRONOUN/r_c/poss} fur to stand on end as {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. It's to {PRONOUN/r_c/poss} great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c/subject/CAP} {VERB/r_c/leave/leaves} quickly.",
+            "stat_skill": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates}, carefully, and the patrol helps {PRONOUN/s_c/subject} strip the cover of the earth away from a Twoleg trap underneath.",
+            "stat_trait": "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} it, convincing the patrol to return to camp and report it to the deputy instead."
         },
         "fail_text": {
-            "unscathed_stat": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
-            "death": "r_c is caught in a trap hidden in the earth! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after."
+            "unscathed_stat": "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it. {PRONOUN/s_c/subject/CAP} never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+            "death": "r_c is caught in a trap hidden in the earth! There's nothing the patrol is able to do to help {PRONOUN/r_c/object}, and r_c is taken by Twolegs shortly after."
         },
         "win_skills": [
             "CLEVER,1"
@@ -1088,7 +1088,7 @@
             "stat_trait": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         },
         "fail_text": {
-            "unscathed_common": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "unscathed_common": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             "death": "r_c is hit by a monster while crossing and dies instantly.",
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
@@ -1112,9 +1112,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1142,8 +1142,8 @@
             "stat_trait": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         },
         "fail_text": {
-            "unscathed_common": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
-            "death": "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+            "unscathed_common": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "death": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}, and the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
         "win_skills": [
@@ -1166,9 +1166,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1218,9 +1218,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
             "reg_death": "This cat was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1248,7 +1248,7 @@
             "stat_trait": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
         },
         "fail_text": {
-            "unscathed_common": "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "unscathed_common": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             "death": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
             "injury": "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         },
@@ -1272,9 +1272,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was heavily injured by a monster, and carries the scars from it.",
-            "reg_death": "r_c was hit by a monster and killed.",
-            "lead_death": "were hit by a monster"
+            "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+            "reg_death": "m_c was hit by a monster and killed.",
+            "lead_death": "{VERB/m_c/were/was} hit by a monster"
         }
     },
     {
@@ -1292,8 +1292,8 @@
         "success_text": {
             "unscathed_common": "Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
             "unscathed_rare": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol.",
-            "stat_skill": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it there until they're very sure it will never dare sneak across c_n's borders again.",
-            "stat_trait": "s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind."
+            "stat_skill": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it there until {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} very sure it will never dare sneak across c_n's borders again.",
+            "stat_trait": "s_c wanders up to the kit fox, swagger in {PRONOUN/s_c/poss} step as {PRONOUN/s_c/subject} {VERB/s_c/take/takes} the opportunity to be the bigger predator for once in {PRONOUN/s_c/poss} life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind."
         },
         "fail_text": {
             "unscathed_common": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse."
@@ -1334,18 +1334,18 @@
             "LEGBITE",
             "small_bite_injury"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
         "chance_of_success": 40,
         "exp": 10,
         "success_text": {
             "unscathed_common": "r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the fresh-kill pile.",
-            "unscathed_rare": "The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. There's a long, tense moment as both puff up, ready for a fight, but the fox's nerve breaks first and it runs, leaving r_c with the mouse.",
-            "stat_skill": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c uses that moment to grab that fluffy tail and shake, until the fox gives up its prey and turns to bite. They dart backwards, and that's as much fight as the fox had in them - the fox runs, and s_c has won the mouse.",
-            "stat_trait": "s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. It looks like it's going to fight for a second, but s_c's confidence intimidates it into dropping the mouse and fleeing back into the long grass."
+            "unscathed_rare": "The kit fox locks eyes with r_c as {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from the grass, weighing up its options against the bigger cat. There's a long, tense moment as both puff up, ready for a fight, but the fox's nerve breaks first and it runs, leaving r_c with the mouse.",
+            "stat_skill": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c uses that moment to grab that fluffy tail and shake, until the fox gives up its prey and turns to bite. {PRONOUN/s_c/subject/CAP} {VERB/s_c/dart/darts} backwards, and that's as much fight as the fox had in them - the fox runs, and s_c has won the mouse.",
+            "stat_trait": "s_c wanders up to the kit fox, swagger in {PRONOUN/s_c/poss} step as {PRONOUN/s_c/subject} {VERB/s_c/take/takes} the opportunity to be the bigger predator for once in {PRONOUN/s_c/poss} life. It looks like it's going to fight for a second, but s_c's confidence intimidates it into dropping the mouse and fleeing back into the long grass."
         },
         "fail_text": {
-            "unscathed_common": "r_c approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse.",
+            "unscathed_common": "r_c approaches the kit fox, who spots {PRONOUN/r_c/object} and sets off at full speed. It's not worth following them, not over a single mouse.",
             "injury": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
         },
         "win_skills": [
@@ -1372,7 +1372,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from a fight with a kit fox."
+            "scar": "m_c carries a scar from a fight with a kit fox."
         }
     },
     {
@@ -1384,18 +1384,18 @@
             "warrior",
             "no_app"
         ],
-        "intro_text": "As r_c jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
+        "intro_text": "As r_c jumps up onto a rock to survey the plains, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} the blood red pelt of a truly massive red fox.",
         "decline_text": "Not today, thank you - they'll go back to camp.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": {
-            "unscathed_common": "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
-            "unscathed_rare": "No way, these things are barely ever seen! The hunting around here will already be ruined by the other predator, so r_c feels no guilt in hanging around to watch the maned wolf, thinking of the stories they'll tell back at camp.",
-            "stat_skill": "With a huff, r_c accepts that this hunt has failed - the massive maned wolf, despite every appearance, hunts nearly identical prey to c_n. Still, they're not one to give up on an opportunity to learn, and sit and watch the wolf pounce for mice in case there might be tips to pick up."
+            "unscathed_common": "Swallowing {PRONOUN/r_c/poss} instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
+            "unscathed_rare": "No way, these things are barely ever seen! The hunting around here will already be ruined by the other predator, so r_c feels no guilt in hanging around to watch the maned wolf, thinking of the stories {PRONOUN/r_c/subject}'ll tell back at camp.",
+            "stat_skill": "With a huff, r_c accepts that this hunt has failed - the massive maned wolf, despite every appearance, hunts nearly identical prey to c_n. Still, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not one to give up on an opportunity to learn, and sit and watch the wolf pounce for mice in case there might be tips to pick up."
         },
         "fail_text": {
-            "unscathed_common": "Their jolt of fear gives them strength, and r_c is most of the way home before it occurs to them that the huge maned creature might have been too big to be a red fox.",
-            "unscathed_stat": "r_c doesn't know what that monster is, and isn't sticking around to find out! They run home, tail between their legs."
+            "unscathed_common": "{PRONOUN/r_c/poss/CAP} jolt of fear gives them strength, and r_c is most of the way home before it occurs to {PRONOUN/r_c/object} that the huge maned creature might have been too big to be a red fox.",
+            "unscathed_stat": "r_c doesn't know what that monster is, and isn't sticking around to find out! {PRONOUN/r_c/subject/CAP} {VERB/r_c/run/runs} home, tail between {PRONOUN/r_c/poss} legs."
         },
         "win_skills": [
             "CLEVER,1",
@@ -1424,20 +1424,20 @@
             "injury",
             "shock"
         ],
-        "intro_text": "As app1 jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
+        "intro_text": "As app1 jumps up onto a rock to survey the plains, {PRONOUN/app1/subject} {VERB/app1/spot/spots} the blood red pelt of a truly massive red fox.",
         "decline_text": "Not today, thank you - they'll go back to camp.",
         "chance_of_success": 40,
         "exp": 25,
         "success_text": {
-            "unscathed_common": "Terrified beyond sense, they freeze - and the massive fox sees them. It paces closer, giving app1 a heartstopping view of its distorted stretched legs and giant gaping mouth, gathering itself, before in one might spring, it - crashes past app1 and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, before loping off.",
-            "unscathed_rare": "app1 crouches to the rock, but it's too late - the fox has seen them. They freeze in terror, already sure they can't out run the horrifically lengthened legs, sure that at any moment they'll be ripped apart and silently begging StarClan to save them. The closer the fox gets, the more gigantic it's revealed to be, and it stares down at app1 on the rock, it's head bigger than their entire body. Only to move on, without a sound.",
+            "unscathed_common": "Terrified beyond sense, {PRONOUN/app1/subject} {VERB/app1/freeze/freezes} - and the massive fox sees {PRONOUN/app1/object}. It paces closer, giving app1 a heartstopping view of its distorted stretched legs and giant gaping mouth, gathering itself, before in one might spring, it - crashes past app1 and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, before loping off.",
+            "unscathed_rare": "app1 crouches to the rock, but it's too late - the fox has seen {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} {VERB/app1/freeze/freezes} in terror, already sure {PRONOUN/app1/subject} can't out run the horrifically lengthened legs, sure that at any moment {PRONOUN/app1/subject}'ll be ripped apart and silently begging StarClan to save {PRONOUN/app1/object}. The closer the fox gets, the more gigantic it's revealed to be, and it stares down at app1 on the rock, it's head bigger than {PRONOUN/app1/poss} entire body. Only to move on, without a sound.",
             "stat_trait": "Slowly, so that the sudden movement doesn't attract attention, app1 lowers themself to the rock. There's something off about the situation here. It's not just a big red fox, it's impossibly big, with legs stretched and distorted until they look more like a deer's than a fox's. Could this be the rare, massive, but mostly harmless maned wolf that the elders told app1 stories of in the nursery?"
         },
         "fail_text": {
-            "unscathed_common": "Tarror gives app1 strength, and the don't stop running until their back in camp, gasping about the grassland monster they saw.",
-            "unscathed_stat": "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
-            "injury": "Terror freezes s_c as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
-            "stat_injury": "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
+            "unscathed_common": "Terror gives app1 strength, and the don't stop running until {PRONOUN/app1/poss} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
+            "unscathed_stat": "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/s_c/poss} bravery. {PRONOUN/s_c/subject/CAP} {VERB/s_c/sneak/sneaks} closer and closer, until a puzzle wuff of air makes {PRONOUN/s_c/subject} {VERB/s_c/look/looks} up. And up. And up. That is no fox. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pelt/pelts} for home, as behind {PRONOUN/s_c/object}, a confused maned wolf watches {PRONOUN/s_c/object} go.",
+            "injury": "Terror freezes s_c as the massive fox sees {PRONOUN/s_c/object}, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes {PRONOUN/s_c/poss} claws. {PRONOUN/s_c/poss/CAP} screw {PRONOUN/s_c/poss} eyes shut at the outraged yelp, and feel {PRONOUN/s_c/self} being taken up and tossed by those gaping jaws. {PRONOUN/s_c/subject/CAP} {VERB/s_c/tense/tenses}, waiting for death to descend, and wait, and... waiting?",
+            "stat_injury": "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/app1/poss} bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at {PRONOUN/app1/poss} feet and tosses {PRONOUN/app1/object} aside so they can get back to hunting."
         },
         "win_trait": [
             "patient",
@@ -1463,7 +1463,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c carries a scar from irritating a maned wolf as an apprentice."
+            "scar": "m_c carries a scar from irritating a maned wolf as an apprentice."
         }
     },
     {
@@ -1478,7 +1478,7 @@
             "platonic",
             "dislike"
         ],
-        "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
+        "intro_text": "This is just one of the weirdest things {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
         "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
         "chance_of_success": 50,
         "exp": 25,
@@ -1486,11 +1486,11 @@
             "unscathed_common": "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
             "unscathed_rare": "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
             "stat_skill": "s_c is able to recall some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
-            "stat_trait": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
+            "stat_trait": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave {PRONOUN/s_c/poss} Clanmate in danger, the rest of the patrol follows. s_c refuses to let {PRONOUN/s_c/subject} be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         },
         "fail_text": {
             "unscathed_common": "The patrol tries, they do, but they can't get a good look at the distorted red foxish creature, and eventually have to return to camp to give a rather unsatisfatory report about it. The cats stalk off to do their own things, feeling like they should've been able to do better.",
-            "unscathed_stat": "s_c's stressed nerves can't handle this weird monster, and they beg to go back homeinstead of confronting it."
+            "unscathed_stat": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back homeinstead of confronting it."
         },
         "win_skills": [
             "CLEVER,1",
@@ -1532,20 +1532,20 @@
             "injury",
             "shock"
         ],
-        "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
+        "intro_text": "This is just one of the weirdest things {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
         "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
         "chance_of_success": 10,
         "exp": 30,
         "success_text": {
-            "unscathed_common": "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
-            "unscathed_rare": "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. Their six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
-            "stat_skill": "While they'd hardly expected to need their skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes their job inifinitely easier, as they drive away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown."
+            "unscathed_common": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
+            "unscathed_rare": "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. {PRONOUN/p_l/poss/CAP} six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
+            "stat_skill": "While {PRONOUN/s_c/subject}'d hardly expected to need {PRONOUN/s_c/poss} skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes {PRONOUN/s_c/poss} job inifinitely easier, as {PRONOUN/s_c/subject} {VERB/s_c/drive/drives} away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown."
         },
         "fail_text": {
-            "unscathed_common": "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",
-            "unscathed_stat": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save their tail. They retreat, as the inceased maned wolf snarls and the rest of the patrol tries not to do the same at s_c.",
-            "injury": "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, but a kick from a flailing long leg sends cats flying, and the wolf manages to whirl to sink its teeth into r_c.",
-            "stat_injury": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save their tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets them go, its a serious wound."
+            "unscathed_common": "Looking out over {PRONOUN/p_l/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",
+            "unscathed_stat": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, as the inceased maned wolf snarls and the rest of the patrol tries not to do the same at s_c.",
+            "injury": "Looking out over {PRONOUN/r_c/poss} full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, but a kick from a flailing long leg sends cats flying, and the wolf manages to whirl to sink its teeth into r_c.",
+            "stat_injury": "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save {PRONOUN/s_c/poss} tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets {PRONOUN/s_c/subject} go, its a serious wound."
         },
         "win_skills": [
             "CLEVER,1",
@@ -1566,7 +1566,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "r_c was scarred by a maned wolf, fighting over food."
+            "scar": "m_c was scarred by a maned wolf, fighting over food."
         }
     }
 ]

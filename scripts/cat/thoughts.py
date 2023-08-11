@@ -115,7 +115,7 @@ class Thoughts():
                     print("Throught constraint not properly formated", _skill)
                     continue
                 
-                if main_cat.skills.meets_skill_requirement(spli[0], spli[1]):
+                if main_cat.skills.meets_skill_requirement(spli[0], int(spli[1])):
                     _flag = True
                     break
             
@@ -138,10 +138,12 @@ class Thoughts():
             if not _flag:
                 return False
 
-        if 'backstory_constraint' in thought:
-            if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
+        if 'main_backstory_constraint' in thought:
+            if main_cat.backstory not in thought['main_backstory_constraint']:
                 return False
-            if random_cat and random_cat.backstory not in thought['backstory_constraint']["r_c"]:
+        
+        if 'random_backstory_constraint' in thought:
+            if random_cat and random_cat.backstory not in thought['random_backstory_constraint']:
                 return False
 
         # Filter for the living status of the random cat. The living status of the main cat
@@ -312,6 +314,6 @@ class Thoughts():
             chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception:
             traceback.print_exc()
-            chosen_thought = "No thoughts, head empty"
+            chosen_thought = "Prrrp! You shouldn't see this! Report as a bug."
 
         return chosen_thought
