@@ -2472,8 +2472,6 @@
             "herb_gathering",
             "med_cat",
             "death",
-            "injury",
-            "poisoned",
             "apprentice"
         ],
         "intro_text": "p_l sets off to find the bulbs of a corpse lily, so that app1 can learn both risk and reward.",
@@ -2481,15 +2479,14 @@
         "chance_of_success": 55,
         "exp": 20,
        "success_text": {
-            "unscathed_common": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. A few of the bulbs will be salvagable, if wrapped tightly in cobwebs and leaves for protection. Fortunately, there's plenty of cobwebs and enough tree leaves to wrap the bulb entirely.",
-            "unscathed_rare": "There's plenty of corpse lilies here, and p_l can only be thankful the pollen can be washed off with moss, and that {PRONOUN/p_l/subject} had the forethought to wrap {PRONOUN/p_l/poss} maw in cobwebs before coming."
+            "unscathed_common": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. p_l steers clear, but has a productive session telling app1 about their memory enhancing effects.",
+            "unscathed_rare": "There's plenty of corpse lilies here, and p_l can only be thankful the pollen can be washed off with moss, <i>and</i> that app1 hung back while {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the strange effects of poison."
         },
         "fail_text": {
-            "death": "Teeth break bulb skin, but p_l assumes it's the protective leaves crunching in {PRONOUN/p_l/poss} maw. It's not. A patrol searches for {PRONOUN/p_l/object} later, and finds {PRONOUN/p_l/poss} body cooling in red flowers.",
-            "injury": "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on - only to collapse a few heartbeats later."
+            "death": "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on - only to collapse a few heartbeats later."
         },
-        "min_cats": 1,
-        "max_cats": 1,
+        "min_cats": 2,
+        "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
