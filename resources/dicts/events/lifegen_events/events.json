@@ -703,7 +703,6 @@
         "You share a story about a legendary warrior, the camp falling silent as you speak.",
         "You watch a warrior ceremony, the new warrior's eyes shining with pride under the moonlight.",
         "You share a quiet moment with the medicine cat, their gentle touch checking for any aches or pains.",
-        "You receive a visit from your grandkits, their excited chatter filling the elders' den.",
         "You share a story about an old battle, the kits hanging onto your every word as you describe the fight.",
         "You give advice to a new parent, their nervous gaze softening as they listen to your words.",
         "You watch the sunset from the elders' den, the sky a blaze of colors as the day ends.",
@@ -719,6 +718,18 @@
         "A kit tells you that you're really old. You respond that if they stop pestering you, they may get to be this old as well!",
         "During a Clan meeting, you doze off and start snoring loudly, causing the younger cats to giggle and the leader to pause their speech.",
         "You attempt to jump onto a ledge, forgetting it's a bit higher than it used to be. Your surprised yowl when you land back on the ground causes laughter to echo through the camp."
+    ],
+    "young_elder": [
+        "You pay a visit to the medicine cat for a checkup. Your health is in great shape!",
+        "One of your warrior friends comes to visit you, and you spend all day chatting about the most recent gossip around camp.",
+        "You speculate with the other elders about which cats will end up as mates, which couples are destined to end in disaster, and which kits are most likely to end up as medicine cats.",
+        "You're invited to spend the night with your friends in the warrior's den, and stay up all night laughing and playing pranks on each other.",
+        "You enlist the help of an apprentice to help with the exercises the medicine cat prescribed you. They seem a bit worried, but your jokes and gentle touch put them at ease.",
+        "You decide to spend the day with the mediator, curious about their role in the clan. You gain a newfound respect for the practice after watching how they skillfully navigate conflicts, and soothe clanmates with their careful tongue.",
+        "A group of kits asks you how you ended up in the elder's den so young, and you craft a tall tale about how you didn't obey your parents, so StarClan had to strike you down with their wrath and fury! They run squealing back to their mothers, who shoot you grateful looks.",
+        "One of your friends escorts you out on the territory, and you spend all day exploring, taking in all the new sights, sounds, smells, and textures. It's exciting, but overwhelming, and you're grateful to return to the familiarity of camp.",
+        "You made the mistake of trying to take a nap in the sun today, and now you've been awakened by a group of kits using you as hunting practice!"
+
     ],
     "exiled": [
         "You wander around, lost."

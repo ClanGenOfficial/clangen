@@ -3783,6 +3783,36 @@ class TalkScreen(Screens):
                     self.frame_index = len(self.text_frames[self.text_index]) - 1  # Go to the last frame
         return
     
+    def get_cluster(self, trait):
+        # Mapping traits to their respective clusters
+        trait_to_clusters = {
+            "assertive": ["troublesome", "fierce", "bold", "daring", "confident", "adventurous", "arrogant", "competitive", "rebellious"],
+            "brooding": ["bloodthirsty", "cold", "strict", "vengeful", "grumpy"],
+            "cool": ["charismatic", "sneaky", "cunning", "arrogant"],
+            "upstanding": ["righteous", "ambitious", "strict", "competitive", "responsible"],
+            "introspective": ["lonesome", "righteous", "calm", "gloomy", "wise", "thoughtful"],
+            "neurotic": ["nervous", "insecure", "lonesome"],
+            "silly": ["troublesome", "childish", "playful", "strange"],
+            "stable": ["loyal", "responsible", "wise", "faithful"],
+            "sweet": ["compassionate", "faithful", "loving", "oblivious", "sincere"],
+            "unabashed": ["childish", "confident", "bold", "shameless", "strange", "oblivious", "flamboyant"],
+            "unlawful": ["troublesome", "bloodthirsty", "sneaky", "rebellious"]
+        }
+
+        clusters = [key for key, values in trait_to_clusters.items() if trait in values]
+
+        # Assign cluster and second_cluster based on the length of clusters list
+        cluster = clusters[0] if clusters else ""
+        second_cluster = clusters[1] if len(clusters) > 1 else ""
+
+        return cluster, second_cluster
+    
+    def get_cluster_list(self):
+        return ["assertive", "brooding", "cool", "upstanding", "introspective", "neurotic", "silly", "stable", "sweet", "unabashed", "unlawful"]
+    
+    def get_cluster_list_you(self):
+        return ["you_assertive", "you_brooding", "you_cool", "you_upstanding", "you_introspective", "you_neurotic", "you_silly", "you_stable", "you_sweet", "you_unabashed", "you_unlawful"]
+    
     def get_possible_text(self, cat):
         status = cat.status
         trait = cat.personality.trait
@@ -3794,9 +3824,14 @@ class TalkScreen(Screens):
         with open(f"{resource_dir}{status}.json", 'r') as read_file:
             possible_texts = ujson.loads(read_file.read())
             
+        cluster1, cluster2 = self.get_cluster(trait)
+        cluster3, cluster4 = self.get_cluster(you_trait)
         texts_list = []
         for talk in possible_texts.values():
             if game.clan.your_cat.status not in talk[0] and "Any" not in talk[0]:
+                if "young elder" not in talk[0] or ("young elder" in talk[0] and status == 'elder' and cat.moons >= 100):
+                    continue
+            if status == "elder" and cat.moons < 100 and "young elder" not in talk[0]:
                 continue
             if "insult" in talk[0]:
                 continue
@@ -3812,12 +3847,20 @@ class TalkScreen(Screens):
                 continue
             if (game.clan.your_cat.status == 'kitten') and 'no_kit' in talk[0]:
                 continue
+            if any(i in self.get_cluster_list() for i in talk[0]):
+                if cluster1 not in talk[0] and cluster2 not in talk[0]:
+                    continue
+            if any(i in self.get_cluster_list_you() for i in talk[0]):
+                if ("you_"+cluster3) not in talk[0] and ("you_"+cluster4) not in talk[0]:
+                    continue
+            
             if any(i in ['you_bloodthirsty', "you_insecure", 'you_cold', 'you_childish', 'you_faithful', 'you_strict', 'you_insecure', "you_nervous", "you_lonesome", "you_vengeful", "you_fierce"] for i in talk[0]):
                 ts = ['you_bloodthirsty', "you_insecure", 'you_cold', 'you_childish', 'you_faithful', 'you_strict', 'you_insecure', "you_nervous", "you_lonesome", "you_vengeful", "you_fierce"]
                 for j in range(len(ts)):
                     ts[j] = ts[j][3:]
                 if you_trait not in ts:
                     continue
+            
             if "from_mentor" in talk[0]:
                 if game.clan.your_cat.mentor != cat.ID:
                     continue
@@ -3876,7 +3919,7 @@ class TalkScreen(Screens):
                 if "random_cat" in talk[0]:
                     random_cat = Cat.all_cats.get(choice(game.clan.clan_cats))
                     counter = 0
-                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID:
+                    while random_cat.outside or random_cat.dead or random_cat.ID == game.clan.your_cat.ID or random_cat.ID == cat.ID:
                         counter+=1
                         if counter == 15:
                             continue

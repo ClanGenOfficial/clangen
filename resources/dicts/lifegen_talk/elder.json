@@ -436,5 +436,421 @@
         [
             "Pfft... You make me laugh."
         ]
+    ],
+    "assertive_elder": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "young elder"
+        ],
+        [
+            "Do I ever wish I could explore the territory with the rest of my clanmates?",
+            "Well, sure ... but there's plenty of adventure to be found here in the elder's den, as well!",
+            "Who else can drop everything to help our clanmates who are in need of comfort? Or play with the kits when their parents need a break? Or keep you entertained when you want a story? Hehehe.",
+            "I may be an elder, but don't be fooled. I contribute to the clan in my own special way."
+            
+        ]
+    ],
+    "assertive_elder2": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "silly",
+            "young elder"
+        ],
+        [
+            "Get me a piece of prey from the freshkill pile, wouldja, y_c? I'm practically starving to death over here.",
+            "Kits and elders eat first, after all. Hehehe! I could get used to this life!"
+            
+        ]
+    ],
+    "assertive_elder3": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "silly",
+            "cool",
+            "platonic_like",
+            "romantic_like",
+            "from_parent",
+            "comfort",
+            "trust",
+            "from_mate",
+            "young elder"
+        ],
+        [
+            "y_c! Get over here and do some exercises with me, won't ya? If the medicine cat wants me to stay cooped up in this den all day, they'll have to drag me back in themself!",
+            "[You and r_c chat about your days as you walk laps around camp, side-by-side, pelts brushing in the morning sun.]" 
+            
+        ]
+    ],
+    "assertive_elder3": [
+        [
+            "no_kit",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "silly",
+            "sweet",
+            "stable",
+            "platonic_like",
+            "romantic_like",
+            "from_parent",
+            "comfort",
+            "trust",
+            "from_mate",
+            "young elder"
+        ],
+        [
+            "Hey, y_c! How was your day? ",
+            "The craziest thing happened to me today ... I was telling a story to one of the kits, and then, later in the day, they were totally repeating the story to all their friends!",
+            "And then, they started acting it out, and playing all the characters together ... StarClan, it was so cool to watch.",
+            "It's nice to know that I'm making a difference, y'know?",
+            "Anyways, wanna share a meal together later?"
+        ]
+    
+    ],
+    "assertive_elder4": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "young elder"
+        ],
+        [
+            "Psst. y_c.",
+            "Any chance you can help me sneak outta here later? I'm going insane trapped inside this place ... plus, all my denmates snore like crazy!",
+            "I know there's a way out by the camp entrance ... maybe you can distract the guards, then slip out and meet up with me later?",
+            "Ah, don't look so scared! No reason an elder can't get out and stretch their legs once in a while, huh? It's good for my health!"
+        ]
+    ],
+    "cool_elder": [
+        [
+            "any",
+            "cool",
+            "from_mate",
+            "young elder"
+        ],
+        [
+            "There's my beautiful mate. How've you been, gorgeous? Survive another day of work without me?",
+            "I'm fine, as always, though every second without you is frankly unbearable.",
+            "So, c'mon, then! Come share tongues with me!",
+            "We both know you'd never pass up that opportunity."
+        ]
+    ],
+    "cool_elder1": [
+        [
+            "any",
+            "cool",
+            "assertive",
+            "unlawful",
+            "unabashed",
+            "silly",
+            "young elder"
+        ],
+        [
+            "The smell of this den ... StarClan, I can hardly stand it!",
+            "Like dust mixed with herb poultice mixed with old, decaying leaves. Where's the vibrance? Where's the energy?",
+            "Oh, no ... Don't tell me I'm starting to smell like that, too!"
+        ]
+    ],
+    "introspective_elder": [
+        [
+            "any",
+            "introspective",
+            "young elder"
+        ],
+        [
+            "Somehow, even as a kit, I've always felt like the elder's den is where I most belonged.",
+            "Dispensing wisdom ... admiring nature ... taking in the day-to-day scenery around camp ... There's something so beautiful in the mundanity of it all, don't you think?",
+            "Though, I suppose I always have been labeled an 'old soul' ..."
+        ]
+    
+    ],
+    "assertive_elder5": [
+        [
+            "any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "brooding",
+            "dislike",
+            "young elder"
+        ],
+        [
+            "Hmph. Come to mock me again?",
+            "Eat fox-dung!"
+        ]
+    ],
+    
+    "assertive_elder6": [
+        [
+            "any",
+            "assertive",
+            "silly",
+            "unlawful",
+            "randoy_cat",
+            "young elder"
+        ],
+        [
+            "Hey, y_c, come and help me to my paws. I wanna play a prank on r_c.",
+            "What? You mean you refuse to help a poor, helpless elder find a little harmless joy in their life? Hmph. How heartless!",
+            "Guess who just landed themselves a spot on my 'next-to-prank' list?"
+        ]
+    ],
+    "introspective_elder2": [
+        [
+            "any",
+            "brooding",
+            "introspective",
+            "stable",
+            "sweet",
+            "neurotic",
+            "young elder"
+        ],
+        [
+            "Hi, y_c. Want to try out this new training exercise the medicine cat just taught me?",
+            "It's called 'practiced breathing.' You just have to close your eyes, relax, and breathe in, two, three, four ... and out, two, three, four.",
+            "In, two, three, four ... and out, two, three, four.",
+            "... It's supposed to keep my lungs healthy and exercised, but I think it can be useful for a lot of different things. Like, easing anxiety, for instance.",
+            "Come and find me if you ever want to learn more stuff!"
+        ]
+    ],
+    "introspective_elder3": [
+        [
+            "any",
+            "brooding",
+            "introspective",
+            "stable",
+            "sweet",
+            "neurotic",
+            "young elder"
+        ],
+        [
+            "Twenty-six, twenty-seven ...",
+            "Oh, hello, y_c. No, I'm not talking to myself. I'm counting all of the rocks I see around camp!",
+            "It can get pretty boring sometimes in the elder's den. But I refuse to just while away the days, letting my mind turn into mush. I need to exercise it, so I can stay as sharp as ever!",
+            "Oh, mouse-dung, now I've lost count.",
+            "One, two, three ..."
+        ]
+    ],
+    "sweet_elder1": [
+        [
+            "any",
+            "sweet",
+            "upstanding",
+            "silly",
+            "stable",
+            "young elder"
+        ],
+        [
+            "Oh, y_c, it's so good to see you!",
+            "You've been so busy lately, are you making sure to take care of yourself? Your health is super important, y'know!",
+            "The older cats are teaching me a lot about stuff, they're actually gonna tell me a story they've been hyping up for a while now.",
+            "You should stop by later, take a break from the patrols and bring a snack or two? I'd love to tell you about it!"
+        ]
+    ],
+    "sweet_elder2": [
+        [
+            "any",
+            "sweet",
+            "from_mate",
+            "young elder"
+        ],
+        [
+            "y_c! There you are! How was your day, sweetheart?",
+            "I always get so worried seeing you head out there, I hope you're taking care of yourself.",
+            "I know I know, I shouldn't worry so much, but I do! I can't let the most amazing cat in the world get hurt, y'know?",
+            "Well, enjoy your day, my love! I'll stop by your den and make sure your nest is nice and tidy, just for you."
+        ]
+    ],
+    "young_eldergen": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "silly",
+            "stable",
+            "introspective",
+            "brooding",
+            "upstanding",
+            "cool",
+            "young elder"
+        ],
+        [
+            "All these pitying looks ... I just can't stand it!",
+            "Like, yeah, I may be an elder, but my brain still works just fine! Unlike half the cats in this clan ...",
+            "What's it gonna take to be treated with some respect around here? It's not like I'm some sad, helpless kit! I'm a c_n cat, just like everybody else!"
+        ]
+    ],
+    "young_eldergen1": [
+        [
+            "any",
+            "assertive",
+            "unlawful",
+            "silly",
+            "stable",
+            "introspective",
+            "brooding",
+            "upstanding",
+            "cool",
+            "young elder"
+        ],
+        [
+            "I'm so sick and tired of cats asking me why I chose to retire rather than doing something 'useful'.",
+            "First of all, I'm plenty useful! I do chores around camp, I kitskit, I help care for my denmates, I make others laugh ...",
+            "And second, why do I even have to be so-called 'useful' anyways? Doesn't just ... existing as a living, breathing cat give my life value? Why should I have to prove my 'use' to be worthy of respect and a place in the clan?",
+            "*Sigh* Whatever. Thanks for listening to me rant, y_c.",
+            "It isn't easy being a young elder. But still, at the end of the day, this is who I am. And I wouldn't have it any other way."
+        ]
+    ],
+    "young_eldergen1": [
+        [
+            "any",
+            "assertive",
+            "sweet",
+            "silly",
+            "young elder"
+        ],
+        [
+            "Hey, y_c! My denmates are the best storytellers... they just told me this really cool one, how did it go again?",
+            "It was like... There once was an apprentice called Doepaw. She had a brother, Stagpaw, and her mother was training in the Dark Forest .... er, actually, maybe I wasn't supposed to tell you that yet.",
+            "*Sigh* Oh, well. Looks like I'll need to practice my storytelling skills!",
+            "If you ever stop by again, I'll try to have a better one ready!"
+        ]
+    ],
+    "silly_elder": [
+        [
+            "kit",
+            "silly",
+            "cool",
+            "unlawful",
+            "young elder"
+        ],
+        [
+            "How'd I end up retired? Oh well, it's a funny story...",
+            "When I was just a kit, I was kidnapped by a hawk! Luckily, it dropped me ... right into the jaws of a huge dog! The dog then abandoned me to be discovered by foxes, but then this huge flood came and washed us all away into enemy territory, and ...",
+            "What, you don't believe me?",
+            "Psh. You're no fun!"
+        ]
+    ],
+    "silly_elder": [
+        [
+            "kit",
+            "silly",
+            "young elder"
+        ],
+        [
+            "How'd I end up retired? Oh well, it's a funny story ...",
+            "When I was just a kit, I was kidnapped by a hawk! Luckily, the hawk dropped me ... right into the jaws of a huge dog! The dog then abandoned me to be discovered by foxes, but then this huge flood came and washed us all away, and ...",
+            "What, you don't believe me?",
+            "Psh. You're no fun!"
+        ]
+    ],
+    "upstanding_elder": [
+        [
+            "any",
+            "upstanding",
+            "young elder"
+        ],
+        [
+            "What do you need, y_c? I'm very busy. I have a full schedule today!",
+            "*Sigh* Yes, even though I'm an elder.",
+            "Since my retirement, I've really stepped into managing the affairs of my older denmates. It's a full-time job, keeping track of their health needs, assisting them through physical exercises, helping their memories ...",
+            "Now, if you'll excuse me, one of my denmates has a meeting with their grandkits imminently. Goodbye!"
+        ]
+    ],
+    "sweet_elder3": [
+        [
+            "any",
+            "sweet",
+            "introspective",
+            "upstanding",
+            "stable",
+            "neurotic",
+            "young elder"
+        ],
+        [
+            "Yes, very good! And what's the name of that apprentice, over there ...?",
+            "Oh, hello, y_c! I didn't see you there. I was just helping one of my denmates through a memory exercise!",
+            "I think their mind is slipping a bit ... they almost couldn't recognize me this morning! Perfectly natural at their age, of course, but I'd like to help them hold onto their wits as long as possible.",
+            "So right now, I'm challenging them to name all the cats around camp.",
+            "I wonder if they remember you ...?",
+            "[r_c's face lights up as the elder correctly identifies you as y_c.]"
+        ]
+    ],
+    "sweet_elder4": [
+        [
+            "any",
+            "sweet",
+            "introspective",
+            "upstanding",
+            "stable",
+            "neurotic",
+            "young elder"
+        ],
+        [
+            "C'mon, just one more bite!",
+            "*Sigh* It can be so difficult, getting them to eat sometimes ...",
+            "y_c, could you run to the medicine den and see if they have anything to help the elders with their appetites?",
+            "I'm really starting to get worried ..."
+        ]
+    ],
+    "brooding_elder": [
+        [
+            "any",
+            "brooding",
+            "young elder"
+        ],
+        [
+            "How'd I end up in the elder's den?",
+            "Hmph. Why does everyone always ask me that?",
+            "At least come up with an original question."
+        ]
+    ],
+    "neurotic_elder": [
+        [
+            "any",
+            "neurotic",
+            "young elder"
+        ],
+        [
+            "How'd I end up in the elder's den?",
+            "[r_c shifts their gaze nervously.]",
+            "Um ... maybe another time."
+        ]
+    ],
+    "introspective_elder1": [
+        [
+            "any",
+            "introspective",
+            "sweet",
+            "stable",
+            "young elder"
+        ],
+        [
+            "How'd I end up in the elder's den?",
+            "Well, you see ...",
+            "[r_c calmly and evenly explains to you the circumstances around their disability, their decision to retire, and their perspectives on the social systems within the clan.]",
+            "[It amazes you just how insightful they are, and you leave the den with a newfound respect for them!]"
+        ]
+    ],
+    "silly_elder_15": [
+        [
+            "any",
+            "silly",
+            "unlawful",
+            "young elder"
+        ],
+        [
+            "How did I end up in the elders' den?",
+            "What, do ya want a live reenactment?"
+        ]
     ]
 }
