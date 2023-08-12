@@ -682,8 +682,8 @@
         "max_cats": 2,
         "history_text":{
             "scar": "r_c still shows where cold sunk its fangs into {PRONOUN/r_c/subject} after an unplanned leaf-bare swim.",
-            "death": "r_c was killed by cold water - not that the swim was planned.",
-            "leader death": "were taken by an unexpected cold water dunking"
+            "reg_death": "r_c was killed by cold water - not that the swim was planned.",
+            "lead_death": "were taken by an unexpected cold water dunking"
 
         },
         "constraints": {
@@ -741,8 +741,8 @@
         "max_cats": 2,
         "history_text":{
             "scar": "r_c bears the scars from an unexpected cold dunking on a hunting patrol.",
-            "death": "r_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
-            "leader death": "were taken by an unexpected cold water dunking"
+            "reg_death": "r_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
+            "lead_death": "were taken by an unexpected cold water dunking"
 
         },
         "constraints": {
@@ -824,8 +824,8 @@
         "max_cats": 6,
         "history_text":{
             "scar": "r_c still shows where cold sunk its fangs into {PRONOUN/r_c/subject} after an unplanned leaf-bare swim.",
-            "death": "r_c was killed by cold water - not that the swim was planned.",
-            "leader death": "were taken by an unexpected cold water dunking"
+            "reg_death": "r_c was killed by cold water - not that the swim was planned.",
+            "lead_death": "were taken by an unexpected cold water dunking"
 
         },
         "constraints": {
@@ -883,8 +883,8 @@
         "max_cats": 6,
         "history_text":{
             "scar": "r_c bears the scars from an unexpected cold dunking on a hunting patrol.",
-            "death": "r_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
-            "leader death": "were taken by an unexpected cold water dunking"
+            "reg_death": "r_c was killed by the cold ocean dunking they received when a wave swamped them unexpectedly.",
+            "lead_death": "were taken by an unexpected cold water dunking"
 
         },
         "constraints": {
