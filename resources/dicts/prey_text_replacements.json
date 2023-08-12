@@ -248,25 +248,24 @@
     "least shrews", "marsh shrews"
   ],
   "wetlands_tinyprey_aquatic_singular": [
-    
+    "common frog", "boreal chorus frog", "spring peeper frog"
   ],
   "wetlands_tinyprey_aquatic_plural": [
-    
+    "common frogs", "boreal chorus frogs", "spring peeper frogs"
   ],
   "wetlands_midprey_land_singular": [
     "blackbird", "round-tailed muskrat", "muskrat", "big lizard", "grass snake", "marsh rice rat", "rice rat",
-    "kingfisher", "star-nosed mole"
+    "kingfisher", "star-nosed mole", "bullfrog"
   ],
   "wetlands_midprey_land_plural": [
     "blackbirds", "round-tailed muskrats", "muskrats", "big lizards", "grass snakes", "marsh rice rats", "rice rats",
-    "kingfishers", "star-nosed moles"
+    "kingfishers", "star-nosed moles", "bullfrogs"
   ],
   "wetlands_midprey_aquatic_singular": [
-    "eel", "needlenose", "seagull", "blowfish", "sea bass", "young squid", "lionfish", "lobster", "sea snake",
-    "clown triggerfish", "angel fish", "powder blue tang", "yellow tang", "powder brown tang", "butterfly fish"
+    "eel", "crayfish", "bullfrog"
   ],
   "wetlands_midprey_aquatic_plural": [
-
+    "eels", "crayfish", "bullfrogs"
   ],
   "wetlands_largeprey_land_singular": [
 

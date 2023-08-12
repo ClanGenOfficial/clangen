@@ -28,6 +28,26 @@
         "antagonize_fail_text": null
     },
     {
+        "patrol_id": "fst_med_herbsrandom_greenleafbutterfly_tigerswallowtail1",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": ["herb_gathering", "med_cat", "warrior", "rc_has_stat", "herb", "random_herbs", "rel_patrol", "romantic", "comfort", "no_change_fail"
+        ],
+        "intro_text": "The sun is hot on r_c's pelt as {PRONOUN/r_c/subject} follow p_l to what's apparently a 'really good spot' for herbs. r_c doesn't know what makes one spot better than any other, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt.",
+        "decline_text": "It's not meant to be - a yowl interrupts their herbal hunt, the Clan needs p_l.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": {
+            "unscathed_common": "Uh. Is that where p_l thinks it is? r_c stiffles a laugh, choking it into a purr as {PRONOUN/r_c/subject} help p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} can't blame the butterfly for mistaking p_l for a beautiful flower.",
+            "unscathed_rare": "Err... A little help? p_l asks, and r_c pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's arse. If p_l could just- no maybe if r_c moves around - whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c tries not to die of embarassment on {PRONOUN/r_c/poss} back in the flowers with p_l smilings so prettily."
+        },
+        "fail_text": {
+            "unscathed_common": "Try as {PRONOUN/r_c/subject} might, r_c is more of a hinderance than a help for herb hunting, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, apologizing profusely. p_l waves it off with a shrug, but it's not what either cat was hoping for from the afternoon."
+        },
+        "min_cats": 2,
+        "max_cats": 2
+    },
+    {
         "patrol_id": "fst_med_herbsmeadow_greenleaf1",
         "biome": "forest",
         "season": "greenleaf",
