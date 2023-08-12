@@ -1,3 +1,11 @@
+<strong>v0.5.4: </strong>
+- Your outsider birth parent may join the Clan with you
+- Many new events for young elders -- thanks writers!
+- Cats who you have murdered may not be happy to give you a life when you are becoming leader
+- Queens lower chance of kits dying
+- Bugfixes
+- New menus
+
 <strong>v0.5.3: </strong>
 - Cats may now get a heartbroken condition after breakup
 - More patrols per moon

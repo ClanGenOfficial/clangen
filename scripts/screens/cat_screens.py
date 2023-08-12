@@ -3957,7 +3957,8 @@ class TalkScreen(Screens):
         
         text = choice(texts_list)
         text = [t1.replace("c_n", game.clan.name) for t1 in text]
-        text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]        
+        text = [t1.replace("y_c", str(game.clan.your_cat.name)) for t1 in text]
+        text = [t1.replace("t_c", str(cat.name)) for t1 in text]    
         return text
         
 class InsultScreen(Screens):

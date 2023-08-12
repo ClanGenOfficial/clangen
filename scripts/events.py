@@ -738,10 +738,16 @@ class Events:
         game.cur_events_list.append(Single_Event(ceremony_txt))
     
     def generate_elder_events(self):
-        for i in range(random.randint(0,5)):
-            evt = Single_Event(random.choice(self.c_txt["elder"]))
+        if game.clan.your_cat.moons < 100:
+            evt = Single_Event(random.choice(self.c_txt["young_elder"]))
             if evt not in game.cur_events_list:
                 game.cur_events_list.append(evt)
+        else:
+            for i in range(random.randint(0,5)):
+                evt = Single_Event(random.choice(self.c_txt["elder"]))
+                if evt not in game.cur_events_list:
+                    game.cur_events_list.append(evt)
+        
     
     def check_gain_app(self, checks):
         if len(game.clan.your_cat.apprentice) == checks[0] + 1:
@@ -870,6 +876,9 @@ class Events:
             if (len(game.clan.your_cat.mate) > 0 and game.settings['affair']) or (len(game.clan.your_cat.mate) == 0):
                 if len(game.clan.your_cat.mate) > 0:
                     if random.randint(1,50) != 1:
+                        return
+                    mate1 = Cat.all_cats.get(random.choice(game.clan.your_cat.mate))
+                    if mate1.dead or mate1.outside:
                         return
                 c = Cat.all_cats.get(random.choice(game.clan.clan_cats))
                 counter = 0

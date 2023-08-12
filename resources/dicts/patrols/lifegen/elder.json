@@ -124,7 +124,7 @@
             "unscathed_common": "You go out on your walk, and everything is peaceful. The sun is shining, and leaves seem to gracefully trail after you as you walk. It was worth it to see such sights, and now you're ready to go home and get some rest."
         },
         "fail_text": {
-            "unscathed_common": "You go out on your walk, but whilst things are peaceful at first… they aren't for the whole time. The fox, it seems, thought you would be something good enough to hunt, and it chases you around before a patrol finds you and comes to help. Whilst you were luckily unscathed, your pride remains pretty bruised."
+            "unscathed_common": "You go out on your walk, but whilst things are peaceful at first... they aren't for the whole time. The fox, it seems, thought you would be something good enough to hunt, and it chases you around before a patrol finds you and comes to help. Whilst you were luckily unscathed, your pride remains pretty bruised."
         },
         "decline_text": "Yeah, it's probably best if you stay in camp, safe from any sort of danger. You'll just go out when it's safer.",
         "chance_of_success": 50,

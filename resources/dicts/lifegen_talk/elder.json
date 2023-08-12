@@ -485,7 +485,7 @@
         ],
         [
             "y_c! Get over here and do some exercises with me, won't ya? If the medicine cat wants me to stay cooped up in this den all day, they'll have to drag me back in themself!",
-            "[You and r_c chat about your days as you walk laps around camp, side-by-side, pelts brushing in the morning sun.]" 
+            "[You and t_c chat about your days as you walk laps around camp, side-by-side, pelts brushing in the morning sun.]" 
             
         ]
     ],
@@ -782,7 +782,7 @@
             "I think their mind is slipping a bit ... they almost couldn't recognize me this morning! Perfectly natural at their age, of course, but I'd like to help them hold onto their wits as long as possible.",
             "So right now, I'm challenging them to name all the cats around camp.",
             "I wonder if they remember you ...?",
-            "[r_c's face lights up as the elder correctly identifies you as y_c.]"
+            "[t_c's face lights up as the elder correctly identifies you as y_c.]"
         ]
     ],
     "sweet_elder4": [
@@ -822,7 +822,7 @@
         ],
         [
             "How'd I end up in the elder's den?",
-            "[r_c shifts their gaze nervously.]",
+            "[t_c shifts their gaze nervously.]",
             "Um ... maybe another time."
         ]
     ],
@@ -837,7 +837,7 @@
         [
             "How'd I end up in the elder's den?",
             "Well, you see ...",
-            "[r_c calmly and evenly explains to you the circumstances around their disability, their decision to retire, and their perspectives on the social systems within the clan.]",
+            "[t_c calmly and evenly explains to you the circumstances around their disability, their decision to retire, and their perspectives on the social systems within the clan.]",
             "[It amazes you just how insightful they are, and you leave the den with a newfound respect for them!]"
         ]
     ],
