@@ -342,7 +342,7 @@ class Patrol():
         
         
         if game.current_screen == 'patrol screen2' or game.current_screen =='patrol screen4':
-            final_patrols, final_romance_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season,
+            final_patrols, final_romance_patrols = self._filter_patrols(possible_patrols, biome, patrol_size, current_season,
                                                                    patrol_type)
 
         # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible, 
