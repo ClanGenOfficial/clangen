@@ -795,7 +795,7 @@
         "success_text": {
             "unscathed_common": "A scruffy m_tp_s, a bundle of m_tp_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
             "unscathed_rare": "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized m_mp_s with some m_tp_p on the side for the fresh-kill pile.",
-	        "stat_skill": "r_c is proud of s_c, watching s_c dart among the treetops."
+	        "stat_skill": "r_c is proud of s_c, watching s_c creep near soundless up and over an overhang to set up an ambush for prey."
             },
         "fail_text": {
 	        "unscathed_common": "They don't manage anything like the number of catches they were both expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
@@ -826,7 +826,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Watching r_c execute a fantastic leap to bring down a m_mp_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it as they move on to the next hunting ground.",
-            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two m_mp_p for the fresh-kill pile r_c spends a bit just chasing p_l around the forest, batting at each other in a moment of silliness.",
+            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two m_mp_p for the fresh-kill pile r_c spends a bit just chasing p_l around the rock formations, batting at each other in a moment of silliness.",
 	        "stat_skill": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} keep {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} bound up the slopes."
             },
         "fail_text": {
@@ -931,7 +931,7 @@
         "success_text": {
             "unscathed_common": "A scruffy m_tp_s, a bundle of m_tp_p, and a patrol spent retreading all their favorite in-jokes, it's a good day.",
             "unscathed_rare": "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c/object}, regardless of their similarities and differences. And they also bring back a good sized m_mp_s with some m_tp_p on the side for the fresh-kill pile.",
-	        "stat_skill": "The siblings are proud of s_c, watching s_c dart among the treetops."
+	        "stat_skill": "The siblings are proud of s_c, watching s_c creep near soundless up and over an overhang to set up an ambush for prey."
             },
         "fail_text": {
 	        "unscathed_common": "They don't manage anything like the number of catches they were all expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
@@ -962,7 +962,7 @@
         "exp": 20,
         "success_text": {
             "unscathed_common": "Watching r_c execute a fantastic leap to bring down a m_mp_s, p_l smiles. Does r_c remember the time {PRONOUN/r_c/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c/poss} own tail? The siblings laugh about it together as they move on to the next hunting ground.",
-            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two m_mp_p and a m_tp_s for the fresh-kill pile r_c spends a bit just chasing their siblings around the forest, batting at each other in a moment of silliness.",
+            "unscathed_rare": "It's been a while since they've been on a patrol alone together, and after they catch two m_mp_p and a m_tp_s for the fresh-kill pile r_c spends a bit just chasing their siblings around the rock formations, batting at each other in a moment of silliness.",
 	        "stat_skill": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from mountain goats, not cats, with the way {PRONOUN/s_c/subject} keep {PRONOUN/s_c/poss} footing as {PRONOUN/s_c/subject} bound up the slopes."
             },
         "fail_text": {
