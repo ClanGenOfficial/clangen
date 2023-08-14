@@ -222,7 +222,7 @@
         "history_text": {
             "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
             "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+            "lead_death": "followed the scent of a trespassing cat and was killed by a dog"
         }
     },
     {
@@ -274,7 +274,7 @@
         "history_text": {
             "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
             "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-            "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+            "lead_death": "followed the scent of a trespassing cat and was killed by a dog"
         }
     },
     {
