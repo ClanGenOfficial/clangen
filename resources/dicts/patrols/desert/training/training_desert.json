@@ -213,7 +213,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
+            "scar": "m_c carries a scar from being trapped on patrol.",
             "reg_death": "m_c tragically died after being trapped on patrol."
         }
     },
@@ -275,7 +275,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
+            "scar": "m_c carries a scar from being trapped on patrol.",
             "reg_death": "m_c tragically died after being trapped on patrol."
         }
     },
@@ -308,7 +308,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": {
-            "scar": "m_c carries a scar from being trapped on patrol",
+            "scar": "m_c carries a scar from being trapped on patrol.",
             "reg_death": "m_c tragically died after being trapped on patrol."
         }
     },
