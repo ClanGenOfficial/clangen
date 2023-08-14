@@ -17,9 +17,6 @@ from scripts.cat.pelts import Pelt
 import ujson
 import logging
 
-import datetime
-from enum import Enum
-
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
@@ -1462,40 +1459,6 @@ def apply_opacity(surface, opacity):
             pixel[3] = int(pixel[3] * opacity / 100)
             surface.set_at((x, y), tuple(pixel))
     return surface
-
-
-# ---------------------------------------------------------------------------- #
-#                                Fun Date Stuff                                #
-# ---------------------------------------------------------------------------- #
-
-class SpecialDate(Enum):
-    """
-    Enum keeping track of registered 'special dates'. Format is (mm, dd).
-    """
-    APRIL_FOOLS = (4, 1)
-    HALLOWEEN = (10, 31)
-    NEW_YEARS = (1, 1)
-
-
-def is_today(date: SpecialDate) -> bool:
-    """
-    Checks if today is a specified 'special date'.
-    """
-    today = datetime.date.today()
-    return (today.month, today.day) == date.value
-
-
-def get_special_date() -> SpecialDate:
-    """
-    If today is a 'special date', return the SpecialDate. 
-
-    Otherwise, return None.
-    """
-    today = datetime.date.today()
-    for date in SpecialDate:
-        if (today.month, today.day) == date.value:
-            return date
-    return None
 
 
 # ---------------------------------------------------------------------------- #
