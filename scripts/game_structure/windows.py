@@ -905,8 +905,7 @@ class ChangelogPopup(UIWindow):
             container=self
         )
 
-        current_version_number = "{:.16}".format(
-            get_version_info().version_number)
+        current_version_number = "{:.16}".format(get_version_info().version_number)
 
         self.changelog_popup_subtitle = UITextBoxTweaked(
             f"Version {current_version_number}",
@@ -921,34 +920,18 @@ class ChangelogPopup(UIWindow):
             container=self,
             manager=MANAGER)
 
-        dynamic_changelog = False
-        if get_version_info().is_dev and get_version_info().is_source_build and get_version_info().git_installed:
-            with open("changelog.txt", "r") as read_file:
-                file_cont = read_file.read()
-        else:
-            with open("changelog.txt", "r") as read_file:
-                file_cont = read_file.read()
-
-        # if get_version_info().is_dev and not get_version_info().is_source_build:
-        #     dynamic_changelog = True
-
-        # if dynamic_changelog:
-        #     commits = file_cont.splitlines()
-        #     file_cont = ""
-        #     for line in commits:
-        #         commit = line.split(" ", 1)[0]
-        #         if last_commit == commit:
-        #             break
-        #         file_cont += f"<b>{commit[:7]}</b>\n- {line.split(' ', 1)[1]}\n"
+        with open("changelog.txt", "r") as read_file:
+            file_cont = read_file.read()
 
         self.changelog_text = UITextBoxTweaked(
-            file_cont,
-            scale(pygame.Rect((20, 130), (960, 650))),
+            f"{file_cont}",
+            scale(pygame.Rect((0, 0), (900, -1))),
             object_id="#text_box_30",
-            line_spacing=.95,
-            starting_height=2,
-            container=self,
+            line_spacing=.8,
+            container=self.scrolling_container,
             manager=MANAGER)
+
+        self.changelog_text.disable()
 
         self.close_button = UIImageButton(
             scale(pygame.Rect((940, 10), (44, 44))),
@@ -958,6 +941,8 @@ class ChangelogPopup(UIWindow):
             container=self
         )
 
+        self.scrolling_container.set_scrollable_area_dimensions(
+            (self.changelog_text.relative_rect.width, self.changelog_text.relative_rect.height))
 
     def process_event(self, event):
         super().process_event(event)
