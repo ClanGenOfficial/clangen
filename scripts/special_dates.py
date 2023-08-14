@@ -3,6 +3,7 @@
 Functions related to today's current date.
 """  # pylint: enable=line-too-long
 
+from scripts.game_structure.game_essentials import game
 
 import datetime
 from enum import Enum
@@ -23,6 +24,8 @@ def is_today(date: SpecialDate) -> bool:
     """
     Checks if today is a specified 'special date'.
     """
+    if not game.settings["special_dates"]:
+        return False
     today = datetime.date.today()
     return (today.month, today.day) == date.value
 
@@ -32,6 +35,8 @@ def get_special_date() -> SpecialDate:
 
     Otherwise, return None.
     """
+    if not game.settings["special_dates"]:
+        return None
     today = datetime.date.today()
     for date in SpecialDate:
         if (today.month, today.day) == date.value:
