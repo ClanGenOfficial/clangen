@@ -1483,32 +1483,35 @@ class MateScreen(UIWindow):
         super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = None
-                game.switches['window_open'] = False
-                # game.switch_screens = True
-                
-                game.switches['cur_screen'] = 'events screen'
-                
-                self.begin_anew_button.kill()
-                self.pick_path_message.kill()
-                self.mediator_button.kill()
-                self.kill()
-                game.clan.your_cat.set_mate(game.switches['new_mate'])
-                game.switches['accept'] = True
+            try:
+                if event.ui_element == self.begin_anew_button:
+                    game.last_screen_forupdate = None
+                    game.switches['window_open'] = False
+                    # game.switch_screens = True
+                    
+                    game.switches['cur_screen'] = 'events screen'
+                    
+                    self.begin_anew_button.kill()
+                    self.pick_path_message.kill()
+                    self.mediator_button.kill()
+                    self.kill()
+                    game.clan.your_cat.set_mate(game.switches['new_mate'])
+                    game.switches['accept'] = True
 
-            elif event.ui_element == self.mediator_button:
-                game.last_screen_forupdate = None
-                game.switches['window_open'] = False
-                game.switches['cur_screen'] = "events screen"
-                # game.switch_screens = True
-                self.begin_anew_button.kill()
-                self.pick_path_message.kill()
-                self.mediator_button.kill()
-                self.kill()
-                game.switches['new_mate'].relationships[game.clan.your_cat.ID].romantic_love -= 8
-                game.clan.your_cat.relationships[game.switches['new_mate'].ID].comfortable -= 8
-                game.switches['reject'] = True
+                elif event.ui_element == self.mediator_button:
+                    game.last_screen_forupdate = None
+                    game.switches['window_open'] = False
+                    game.switches['cur_screen'] = "events screen"
+                    # game.switch_screens = True
+                    self.begin_anew_button.kill()
+                    self.pick_path_message.kill()
+                    self.mediator_button.kill()
+                    self.kill()
+                    game.switches['new_mate'].relationships[game.clan.your_cat.ID].romantic_love -= 8
+                    game.clan.your_cat.relationships[game.switches['new_mate'].ID].comfortable -= 8
+                    game.switches['reject'] = True
+            except:
+                print("error with mate screen")
 
 class RetireScreen(UIWindow):
     def __init__(self, last_screen):
@@ -1556,26 +1559,29 @@ class RetireScreen(UIWindow):
         super().process_event(event)
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = None
-                game.switches['window_open'] = False
-                # game.switch_screens = True
-                
-                game.switches['cur_screen'] = 'events screen'
-                
-                self.begin_anew_button.kill()
-                self.pick_path_message.kill()
-                self.mediator_button.kill()
-                self.kill()
-                game.switches['retire'] = True
-                game.clan.your_cat.status_change('elder')
-            elif event.ui_element == self.mediator_button:
-                game.last_screen_forupdate = None
-                game.switches['window_open'] = False
-                game.switches['cur_screen'] = "events screen"
-                # game.switch_screens = True
-                self.begin_anew_button.kill()
-                self.pick_path_message.kill()
-                self.mediator_button.kill()
-                self.kill()
-                game.switches['retire_reject'] = True
+            try:
+                if event.ui_element == self.begin_anew_button:
+                    game.last_screen_forupdate = None
+                    game.switches['window_open'] = False
+                    # game.switch_screens = True
+                    
+                    game.switches['cur_screen'] = 'events screen'
+                    
+                    self.begin_anew_button.kill()
+                    self.pick_path_message.kill()
+                    self.mediator_button.kill()
+                    self.kill()
+                    game.switches['retire'] = True
+                    game.clan.your_cat.status_change('elder')
+                elif event.ui_element == self.mediator_button:
+                    game.last_screen_forupdate = None
+                    game.switches['window_open'] = False
+                    game.switches['cur_screen'] = "events screen"
+                    # game.switch_screens = True
+                    self.begin_anew_button.kill()
+                    self.pick_path_message.kill()
+                    self.mediator_button.kill()
+                    self.kill()
+                    game.switches['retire_reject'] = True
+            except:
+                print("error with retire screen")
