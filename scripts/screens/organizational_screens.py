@@ -284,17 +284,15 @@ class StartScreen(Screens):
 
         if game.settings['show_changelog']:
             show_changelog = True
-            lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
                 with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
-                    lastCommit = read_file.readline()
-                    if lastCommit == get_version_info().version_number:
+                    if read_file.readline() == get_version_info().version_number:
                         show_changelog = False
 
             if show_changelog:
-                ChangelogPopup(game.switches['last_screen'])
                 with open(f"{get_cache_dir()}/changelog_popup_shown", 'w') as write_file:
                     write_file.write(get_version_info().version_number)
+                ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes descriptions of gore, violence, murder, kit death, and animal abuse",
