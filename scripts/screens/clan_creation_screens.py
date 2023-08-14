@@ -267,7 +267,7 @@ class MakeClanScreen(Screens):
                 elif r > 30:
                     s = "apprentice"
                 elif r > 25:
-                    s = "kit"
+                    s = "kitten"
                 elif r > 20:
                     s = "elder"
                 elif r > 15:
