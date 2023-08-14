@@ -12,10 +12,13 @@ class addCatCommand(Command):
     description = "Add a cat"
     aliases = ["a"]
 
-    def callback(self, args: List[str]):
-        cat = Cat()
-        game.clan.add_cat(cat)
-        add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
+    def callback(self, args):
+        try:
+            cat = Cat()
+            game.clan.add_cat(cat)
+            add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
+        except:
+            print("callback except")
 
 class removeCatCommand(Command):
     name = "remove"
@@ -23,25 +26,31 @@ class removeCatCommand(Command):
     aliases = ["r"]
     usage = "<cat name|id>"
 
-    def callback(self, args: list[str]):
-        if len(args) == 0:
-            add_output_line_to_log("Please specify a cat name or ID")
-            return
-        for cat in Cat.all_cats_list:
-            if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
-                game.clan.remove_cat(cat.ID)
-                add_output_line_to_log(f"Removed {cat.name} with ID {cat.ID}")
-                return
-        add_output_line_to_log(f"Could not find cat with name or ID {args[0]}")
+    def callback(self, args):
+        try:
+            if len(args) == 0:
+                    add_output_line_to_log("Please specify a cat name or ID")
+                    return
+            for cat in Cat.all_cats_list:
+                if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
+                    game.clan.remove_cat(cat.ID)
+                    add_output_line_to_log(f"Removed {cat.name} with ID {cat.ID}")
+                    return
+            add_output_line_to_log(f"Could not find cat with name or ID {args[0]}")
+        except:
+            print("callback except")
 
 class listCatsCommand(Command):
     name = "list"
     description = "List all cats"
     aliases = ["l"]
 
-    def callback(self, args: list[str]):
-        for cat in Cat.all_cats_list:
-            add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
+    def callback(self, args):
+        try:
+            for cat in Cat.all_cats_list:
+                add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
+        except:
+            print("callback except")
 
 class ageCatsCommand(Command):
     name = "age"
@@ -49,23 +58,26 @@ class ageCatsCommand(Command):
     aliases = ["a"]
     usage = "<cat name|id> [number]"
 
-    def callback(self, args: list[str]):
-        if len(args) == 0:
-            add_output_line_to_log("Please specify a cat name or ID")
-            return
-        for cat in Cat.all_cats_list:
-            if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
-                if len(args) == 1:
-                    add_output_line_to_log(f"{cat.name} is {cat.moons} moons old")
-                    return
-                else:
-                    if args[1].startswith("+"):
-                        cat.moons += int(args[1][1:])
-                    elif args[1].startswith("-"):
-                        cat.moons -= int(args[1][1:])
+    def callback(self, args):
+        try:
+            if len(args) == 0:
+                add_output_line_to_log("Please specify a cat name or ID")
+                return
+            for cat in Cat.all_cats_list:
+                if str(cat.name).lower() == args[0].lower() or cat.ID == args[0]:
+                    if len(args) == 1:
+                        add_output_line_to_log(f"{cat.name} is {cat.moons} moons old")
+                        return
                     else:
-                        cat.moons = int(args[1])
-                    add_output_line_to_log(f"{cat.name} is now {cat.moons} moons old")
+                        if args[1].startswith("+"):
+                            cat.moons += int(args[1][1:])
+                        elif args[1].startswith("-"):
+                            cat.moons -= int(args[1][1:])
+                        else:
+                            cat.moons = int(args[1])
+                        add_output_line_to_log(f"{cat.name} is now {cat.moons} moons old")
+        except:
+            print("callback except")
 
 
 
