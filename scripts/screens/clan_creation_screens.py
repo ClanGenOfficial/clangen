@@ -198,8 +198,6 @@ class MakeClanScreen(Screens):
             self.elements['select_cat'].hide()
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
-            # if self.elements['error_message']:
-            #     self.elements['error_message'].kill()
             self.refresh_cat_images_and_info()  # Refresh all the images.
             self.rolls_left -= 1
             if game.config["clan_creation"]["rerolls"] == 3:
@@ -230,6 +228,11 @@ class MakeClanScreen(Screens):
                 return
             self.your_cat.name.prefix = new_name
             self.open_choose_background()
+        elif event.ui_element == self.elements["random"]:
+            self.elements["name_entry"].set_text(choice(names.names_dict["normal_prefixes"]))
+        elif event.ui_element == self.elements['previous_step']:
+            self.selected_cat = None
+            self.open_choose_leader()
     
     def handle_create_other_cats(self):
         self.create_example_cats2()
@@ -631,15 +634,15 @@ class MakeClanScreen(Screens):
                 self.elements['cat_name'].set_text(str(selected.name))
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
-                                               str(selected.age + "\n" +
+                                               "fur length:" + str(selected.pelt.length) + "\n" +
                                                    str(selected.personality.trait) + "\n" +
-                                                   str(selected.skills.skill_string())))
+                                                   str(selected.skills.skill_string()))
             if selected.permanent_condition:
                 self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
                                                    str(selected.personality.trait) + "\n" +
                                                    str(selected.skills.skill_string()) + "\n" +
-                                                   "has a permanent condition"))
+                                                   "permanent condition: " + list(selected.permanent_condition.keys())[0]))
             self.elements['cat_info'].show()
 
 
@@ -734,6 +737,10 @@ class MakeClanScreen(Screens):
         self.refresh_cat_images_and_info2()
         
         self.sub_screen = 'choose name'
+        
+        self.elements["random"] = UIImageButton(scale(pygame.Rect((520, 995), (68, 68))), "",
+                                                object_id="#random_dice_button"
+                                                , manager=MANAGER)
 
         self.elements["error"] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((506, 1310), (596, -1))),
                                                                manager=MANAGER,

@@ -659,8 +659,8 @@ class Events:
             for moons in moons_list:
                 if game.clan.your_cat.moons == moons:
                     for parents in parents_txt.keys():
-                        if (game.clan.your_cat.parent1 and not game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead) or \
-                        (parents == 2 and game.clan.your_cat.parent1 and game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead and not Cat.all_cats[game.clan.your_cat.parent2].dead):
+                        if (game.clan.your_cat.parent1 and not game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead and not Cat.all_cats[game.clan.your_cat.parent1].outside) or \
+                        (parents == 2 and game.clan.your_cat.parent1 and game.clan.your_cat.parent2 and not Cat.all_cats[game.clan.your_cat.parent1].dead and not Cat.all_cats[game.clan.your_cat.parent1].outside and not Cat.all_cats[game.clan.your_cat.parent2].dead and not Cat.all_cats[game.clan.your_cat.parent2].outside):
                             kit_event1 = random.choice(self.c_txt[f"moon_{moons}_{parents_txt[parents]}"])
                             if game.clan.your_cat.parent1:
                                 kit_event1 = kit_event1.replace("parent1", str(Cat.all_cats[game.clan.your_cat.parent1].name))

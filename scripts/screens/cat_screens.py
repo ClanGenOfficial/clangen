@@ -151,6 +151,8 @@ class ProfileScreen(Screens):
         self.prevent_fading_text = None
         self.checkboxes = {}
         self.profile_elements = {}
+        self.join_df_button = None
+        self.exit_df_button = None
 
     def handle_event(self, event):
 
@@ -361,6 +363,9 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.join_df_button:
                 game.clan.your_cat.joined_df = True
                 self.join_df_button.disable()
+            elif event.ui_element == self.exit_df_button:
+                game.clan.your_cat.joined_df = False
+                self.exit_df_button.disable()
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     Cat.exile(self.the_cat)
@@ -2000,15 +2005,23 @@ class ProfileScreen(Screens):
             if game.clan.murdered:
                 self.murder_cat_button.disable()
             
-            self.join_df_button = UIImageButton(
+            
+            if game.clan.your_cat.joined_df:
+                self.exit_df_button = UIImageButton(
+                scale(pygame.Rect((1156, 1118), (344, 72))),
+                "",
+                object_id="#exit_df_button",
+                tool_tip_text='Leave the Dark Forest',
+                starting_height=2, manager=MANAGER
+                )
+            else:
+                self.join_df_button = UIImageButton(
                 scale(pygame.Rect((1156, 1118), (344, 72))),
                 "",
                 object_id="#join_df_button",
                 tool_tip_text='Join the Dark Forest',
                 starting_height=2, manager=MANAGER
             )
-            if game.clan.your_cat.joined_df:
-                self.join_df_button.disable()
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -2178,16 +2191,28 @@ class ProfileScreen(Screens):
                 
             if self.the_cat.ID != game.clan.your_cat.ID:
                 self.murder_cat_button.hide()
-                self.join_df_button.hide()
+                if self.join_df_button:
+                    self.join_df_button.hide()
+                if self.exit_df_button:
+                    self.exit_df_button.hide()
             else:
                 self.murder_cat_button.show()
-                self.join_df_button.show()
+                if self.join_df_button:
+                    self.join_df_button.show()
+                if self.exit_df_button:
+                    self.exit_df_button.show()
                 if game.clan.your_cat.dead or game.clan.your_cat.outside:
                     self.murder_cat_button.disable()
-                    self.join_df_button.disable()
+                    if self.join_df_button:
+                        self.join_df_button.disable()
+                    if self.exit_df_button:
+                        self.exit_df_button.disable()
 
             if game.clan.your_cat.status == 'kitten':
-                self.join_df_button.hide()
+                if self.join_df_button:
+                    self.join_df_button.hide()
+                elif self.exit_df_button:
+                    self.exit_df_button.hide()
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
@@ -2313,7 +2338,10 @@ class ProfileScreen(Screens):
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
             self.murder_cat_button.kill()
-            self.join_df_button.kill()
+            if self.join_df_button:
+                self.join_df_button.kill()
+            if self.exit_df_button:
+                self.exit_df_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()

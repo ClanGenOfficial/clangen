@@ -5566,6 +5566,29 @@
             }
         }
     },
+    "#exit_df_button": 
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/exit_df.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/exit_df_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/exit_df_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/exit_df_unavailable.png"
+            }
+        }
+    },
     "#set_adoptive_parent": 
     {
         "prototype": "#image_button",

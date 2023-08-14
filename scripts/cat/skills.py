@@ -143,6 +143,76 @@ class SkillPath(Enum):
         "ghost speaker"
     )
     
+    # NEW SKILLS --
+    
+    # EXPLORER = (
+    #     "curious wanderer",
+    #     "knowledgeable explorer",
+    #     "brave pathfinder",
+    #     "master of territories"
+    # )
+    # TRACKER = (
+    #     "tracker instincts",
+    #     "proficient tracker",
+    #     "great tracker",
+    #     "masterful tracker"
+    # )
+    # ARTISTAN = (
+    #     "likes to decorate",
+    #     "good decorator",
+    #     "great decorator",
+    #     "artisan"
+    # )
+    # GUARDIAN = (
+    #     "watchful",
+    #     "good guard",
+    #     "great guard",
+    #     "guardian"
+    # )
+    # TUNNELER = (
+    #     "enjoys digging",
+    #     "good tunneler",
+    #     "great tunneler",
+    #     "fantastic tunneler"
+    # )
+    # NAVIGATOR = (
+    #     "good with directions",
+    #     "good navigator",
+    #     "great navigator",
+    #     "pathfinder"
+    # )
+    # SONG = (
+    #     "likes to sing",
+    #     "good singer",
+    #     "great singer",
+    #     "captivating singer"
+    # )
+    # GRACE = (
+    #     "steps lightly",
+    #     "graceful",
+    #     "elegant",
+    #     "radiates elegance"
+    # )
+    # CLEAN = (
+    #     "tidy",
+    #     "fur-care enthusiast",
+    #     "meticulous cleaner",
+    #     "master of aesthetics"
+    # )
+    # INNOVATOR = (
+    #     "always curious",
+    #     "problem solver",
+    #     "creator of solutions",
+    #     "visionary thinker"
+    # )
+    # COMFORTER = (
+    #     "gentle voice",
+    #     "comforting presence",
+    #     "nightmare soother",
+    #     "boogeyman-fighter"
+    # )
+    
+    
     @staticmethod
     def get_random(exclude:list=()):
         """Get a random path, with more uncommon paths being less common"""

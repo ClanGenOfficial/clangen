@@ -1157,6 +1157,8 @@ class Cat():
                 rank = giver_cat.status
                 if victim_in_lifegiver and "murdered" not in tags:
                     continue
+                if not victim_in_lifegiver and "murdered" in tags:
+                    continue
                 if "unknown_blessing" in tags:
                     continue
                 if "guide" in tags and giver_cat != game.clan.instructor:
