@@ -258,9 +258,11 @@ class NewCatEvents:
     @staticmethod
     def select_outside_cat():
         outside_cats = [i for i in Cat.all_cats.values() if i.status in ["kittypet", "loner", "rogue", "former Clancat"] and not i.dead and i.outside]
-        for cat in outside_cats:  # iterating over the generated list
-            if cat.status in ["kittypet", "loner", "rogue", "former Clancat"] and not cat.dead:
-                return cat
+        if outside_cats:
+            return random.choice(outside_cats)
+        else:
+            return None
+        
 
     @staticmethod
     def update_cat_properties(cat):
