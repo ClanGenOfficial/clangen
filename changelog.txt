@@ -1,9 +1,10 @@
-<strong>v0.5.4: </strong>
+<strong>v0.5.5: </strong>
 - Affair expansion 
 - Expanded Info on selection page 
 - Randomise names in 'Choose a kit' Menu 
 - Leave the darkforest 
-- Restructured LifeGen Patrol Screen 
+- Restructured LifeGen Patrol Screen
+- New skills 
 - Bugfixes
 - New menus
 
