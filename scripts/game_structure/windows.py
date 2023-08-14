@@ -2,8 +2,6 @@ import os
 import shutil
 import threading
 import time
-from re import search as re_search
-import platform
 
 import pygame
 import pygame_gui
@@ -889,7 +887,7 @@ class UpdateAvailablePopup(UIWindow):
 
 
 class ChangelogPopup(UIWindow):
-    def __init__(self, last_screen):
+    def __init__(self, last_screen, last_commit: str):
         super().__init__(scale(pygame.Rect((300, 300), (1000, 800))),
                          window_display_title='Changelog',
                          object_id='#game_over_window',
@@ -905,7 +903,8 @@ class ChangelogPopup(UIWindow):
             container=self
         )
 
-        current_version_number = "{:.16}".format(get_version_info().version_number)
+        current_version_number = "{:.16}".format(
+            get_version_info().version_number)
 
         self.changelog_popup_subtitle = UITextBoxTweaked(
             f"Version {current_version_number}",
@@ -920,8 +919,25 @@ class ChangelogPopup(UIWindow):
             container=self,
             manager=MANAGER)
 
-        with open("changelog.txt", "r") as read_file:
-            file_cont = read_file.read()
+        dynamic_changelog = False
+        if get_version_info().is_dev and get_version_info().is_source_build and get_version_info().git_installed:
+            with open("changelog.txt", "r") as read_file:
+                file_cont = read_file.read()
+        else:
+            with open("changelog.txt", "r") as read_file:
+                file_cont = read_file.read()
+
+        if get_version_info().is_dev and not get_version_info().is_source_build:
+            dynamic_changelog = True
+
+        if dynamic_changelog:
+            commits = file_cont.splitlines()
+            file_cont = ""
+            for line in commits:
+                commit = line.split(" ", 1)[0]
+                if last_commit == commit:
+                    break
+                file_cont += f"<b>{commit[:7]}</b>\n- {line.split(' ', 1)[1]}\n"
 
         self.changelog_text = UITextBoxTweaked(
             f"{file_cont}",
@@ -951,6 +967,7 @@ class ChangelogPopup(UIWindow):
             if event.ui_element == self.close_button:
                 game.switches['window_open'] = False
                 self.kill()
+
 
 class RelationshipLog(UIWindow):
     """This window allows the user to see the relationship log of a certain relationship."""
@@ -1265,6 +1282,7 @@ class EventLoading(UIWindow):
     def kill(self):
         self.end_animation = True
         game.switches['window_open'] = False
+        super().kill()
     
 class PickPath(UIWindow):
     def __init__(self, last_screen):
