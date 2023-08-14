@@ -1,4 +1,13 @@
 <strong>v0.5.4: </strong>
+- Affair expansion 
+- Expanded Info on selection page 
+- Randomise names in 'Choose a kit' Menu 
+- Leave the darkforest 
+- Restructured LifeGen Patrol Screen 
+- Bugfixes
+- New menus
+
+<strong>v0.5.4: </strong>
 - Your outsider birth parent may join the Clan with you
 - Many new events for young elders -- thanks writers!
 - Cats who you have murdered may not be happy to give you a life when you are becoming leader

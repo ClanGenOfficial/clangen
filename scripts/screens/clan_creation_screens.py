@@ -260,8 +260,25 @@ class MakeClanScreen(Screens):
             if a in e:
                 game.choose_cats[a] = Cat(status='warrior', biome=None)
             else:
-                game.choose_cats[a] = Cat(status=choice(
-                    ['kitten', 'apprentice', 'apprentice', 'apprentice', 'apprentice', 'warrior', 'warrior', "warrior", 'warrior', 'warrior', "warrior", 'elder', "queen", "mediator", "queen's apprentice", "mediator apprentice"]), biome=None)
+                r = random.randint(1,60)
+                s = "warrior"
+                if r > 45:
+                    s = "warrior"
+                elif r > 30:
+                    s = "apprentice"
+                elif r > 25:
+                    s = "kit"
+                elif r > 20:
+                    s = "elder"
+                elif r > 15:
+                    s = "mediator"
+                elif r > 10:
+                    s = "mediator apprentice"
+                elif r > 5:
+                    s = "queen"
+                elif r >= 0:
+                    s = "queen's apprentice"
+                game.choose_cats[a] = Cat(status=s, biome=None)
             if game.choose_cats[a].moons >= 160:
                 game.choose_cats[a].moons = choice(range(120, 155))
             elif game.choose_cats[a].moons == 0:
@@ -634,7 +651,7 @@ class MakeClanScreen(Screens):
                 self.elements['cat_name'].set_text(str(selected.name))
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
-                                               "fur length:" + str(selected.pelt.length) + "\n" +
+                                               "fur length: " + str(selected.pelt.length) + "\n" +
                                                    str(selected.personality.trait) + "\n" +
                                                    str(selected.skills.skill_string()))
             if selected.permanent_condition:
