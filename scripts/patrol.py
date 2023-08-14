@@ -26,6 +26,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
+from scripts.special_dates import get_special_date
 from os.path import exists as file_exists
 
 # ---------------------------------------------------------------------------- #
@@ -637,6 +638,12 @@ class Patrol():
                 continue
             if patrol.season not in [current_season, "Any"]:
                 continue
+
+            # filtering for dates
+            if 'date_exclusive' in patrol.tags:
+                special_date = get_special_date()
+                if not (special_date and special_date.patrol_tag in patrol.tags):
+                    continue
 
             #  correct button check
             if patrol_type == "general":
