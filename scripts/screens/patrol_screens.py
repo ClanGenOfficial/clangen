@@ -1153,7 +1153,30 @@ class PatrolScreen2(Screens):
         elif event.ui_element == self.elements["last_page"]:
             self.current_page -= 1
             self.update_cat_images_buttons()
-        
+        elif event.ui_element == self.elements["paw"]:
+            if self.patrol_type == 'training':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'training'
+            self.update_button()
+        elif event.ui_element == self.elements["claws"]:
+            if self.patrol_type == 'border':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'border'
+            self.update_button()
+        elif event.ui_element == self.elements["herb"]:
+            if self.patrol_type == 'med':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'med'
+            self.update_button()
+        elif event.ui_element == self.elements["mouse"]:
+            if self.patrol_type == 'hunting':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'hunting'
+            self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
             self.open_patrol_event_screen()  # Starting patrol.
@@ -1217,6 +1240,10 @@ class PatrolScreen2(Screens):
                     self.patrol_type = 'general'
 
             if game.clan.game_mode != 'classic':
+                self.elements['paw'].enable()
+                self.elements['mouse'].enable()
+                self.elements['claws'].enable()
+                self.elements['herb'].enable()
                 self.elements['cat_icon'].disable()
                 self.elements['your_cat'].enable()
                 if game.clan.your_cat.joined_df:
@@ -1227,7 +1254,7 @@ class PatrolScreen2(Screens):
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
                 if self.patrol_type != 'med' and self.current_patrol:
-                    # self.elements['herb'].disable()
+                    self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
 
@@ -1242,9 +1269,9 @@ class PatrolScreen2(Screens):
                 elif self.patrol_type == 'med':
                     if self.current_patrol:
                         text = 'herb gathering'
-                        # self.elements['mouse'].disable()
-                        # self.elements['claws'].disable()
-                        # self.elements['paw'].disable()
+                        self.elements['mouse'].disable()
+                        self.elements['claws'].disable()
+                        self.elements['paw'].disable()
                     else:
                         text = 'herb gathering'
                 else:
@@ -1254,11 +1281,11 @@ class PatrolScreen2(Screens):
                     text, scale(pygame.Rect((500, 1050), (600, 800))),
                     object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                 )
-            # else:
-            #     self.elements['paw'].hide()
-            #     self.elements['mouse'].hide()
-            #     self.elements['claws'].hide()
-            #     self.elements['herb'].hide()
+            else:
+                self.elements['paw'].hide()
+                self.elements['mouse'].hide()
+                self.elements['claws'].hide()
+                self.elements['herb'].hide()
 
             able_no_med = [cat for cat in self.able_cats if
                            cat.status not in ['medicine cat', 'medicine cat apprentice']]
@@ -1371,22 +1398,22 @@ class PatrolScreen2(Screens):
                                                  , manager=MANAGER)
 
         # patrol type buttons - disabled for now
-        # self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
-        #                                      object_id="#paw_patrol_button"
-        #                                      , manager=MANAGER)
-        # self.elements['paw'].disable()
-        # self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
-        #                                        object_id="#mouse_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['mouse'].disable()
-        # self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
-        #                                        object_id="#claws_patrol_button"
-        #                                        , manager=MANAGER)
-        # self.elements['claws'].disable()
-        # self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
-        #                                       object_id="#herb_patrol_button"
-        #                                       , manager=MANAGER)
-        # self.elements['herb'].disable()
+        self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1270), (68, 68))), "",
+                                             object_id="#paw_patrol_button"
+                                             , manager=MANAGER)
+        self.elements['paw'].disable()
+        self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1270), (68, 68))), "",
+                                               object_id="#mouse_patrol_button"
+                                               , manager=MANAGER)
+        self.elements['mouse'].disable()
+        self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1270), (68, 68))), "",
+                                               object_id="#claws_patrol_button"
+                                               , manager=MANAGER)
+        self.elements['claws'].disable()
+        self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1270), (68, 68))), "",
+                                              object_id="#herb_patrol_button"
+                                              , manager=MANAGER)
+        self.elements['herb'].disable()
 
         # Able cat page buttons
         self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "",
