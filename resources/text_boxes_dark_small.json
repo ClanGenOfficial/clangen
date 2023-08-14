@@ -3,7 +3,10 @@
         "colours":
         {
             "dark_bg": "#00000000",
-            "normal_text": "#EFE5CE"
+            "normal_text": "#EFE5CE",
+            "link_text": "#2E8B57",
+            "link_hover": "#556B2F",
+            "link_selected": "#556B2F"
         },
         "font":
         {
