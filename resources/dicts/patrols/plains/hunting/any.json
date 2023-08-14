@@ -1486,11 +1486,11 @@
             "unscathed_common": "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
             "unscathed_rare": "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
             "stat_skill": "s_c is able to recall some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
-            "stat_trait": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave {PRONOUN/s_c/poss} Clanmate in danger, the rest of the patrol follows. s_c refuses to let {PRONOUN/s_c/subject} be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
+            "stat_trait": "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave {PRONOUN/s_c/poss} Clanmate in danger, the rest of the patrol follows. s_c refuses to let them be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         },
         "fail_text": {
             "unscathed_common": "The patrol tries, they do, but they can't get a good look at the distorted red foxish creature, and eventually have to return to camp to give a rather unsatisfatory report about it. The cats stalk off to do their own things, feeling like they should've been able to do better.",
-            "unscathed_stat": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back homeinstead of confronting it."
+            "unscathed_stat": "s_c's stressed nerves can't handle this weird monster, and {PRONOUN/s_c/subject} {VERB/s_c/beg/begs} to go back home instead of confronting it."
         },
         "win_skills": [
             "CLEVER,1",
