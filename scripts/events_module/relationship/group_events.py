@@ -13,13 +13,46 @@ from scripts.cat_relations.relationship import Relationship
 
 class Group_Events():
 
-    def __init__(self) -> None:
-        self.history = History()
-        self.chosen_interaction = None
-        self.abbreviations_cat_id = {}
-        self.cat_abbreviations_counter = {}
+    # ---------------------------------------------------------------------------- #
+    #                   build master dictionary for interactions                   #
+    # ---------------------------------------------------------------------------- #
 
-    def start_interaction(self, cat: Cat, interact_cats: list) -> list:
+
+    base_path = os.path.join(
+        "resources",
+        "dicts",
+        "relationship_events",
+        "group_interactions"
+    )
+
+    GROUP_INTERACTION_MASTER_DICT = {}
+    for cat_amount in os.listdir(base_path):
+        if cat_amount == "group_types.json":
+            continue
+        file_path = os.path.join(base_path, cat_amount, "neutral.json")
+        GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+        with open(file_path, 'r') as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list)
+        
+        file_path = os.path.join(base_path, cat_amount, "positive.json")
+        with open(file_path, 'r') as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list)
+
+        file_path = os.path.join(base_path, cat_amount, "negative.json")
+        with open(file_path, 'r') as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list)
+            
+    del base_path
+
+    abbreviations_cat_id = {}
+    cat_abbreviations_counter = {}
+    chosen_interaction = None
+
+    @staticmethod
+    def start_interaction(cat: Cat, interact_cats: list) -> list:
         """Start to define the possible group interactions.
 
             Parameters
@@ -34,11 +67,12 @@ class Group_Events():
             list
                 returns the list of the cat id's, which interacted with each other
         """
-        self.abbreviations_cat_id = {} # keeps track of which abbreviation is which cat
-        self.cat_abbreviations_counter = {} # will be needed to check which cat is the best fit for which abbreviation
-        self.abbreviations_cat_id["m_c"] = cat.ID # set the main cat
+        Group_Events.abbreviations_cat_id = {} # keeps track of which abbreviation is which cat
+        Group_Events.cat_abbreviations_counter = {} # will be needed to check which cat is the best fit for which abbreviation
+        Group_Events.abbreviations_cat_id["m_c"] = cat.ID # set the main cat
+        Group_Events.chosen_interaction = None
 
-        cat_amount = choice(list(GROUP_INTERACTION_MASTER_DICT.keys()))
+        cat_amount = choice(list(Group_Events.GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
 
         # if the chosen amount is bigger than the given interaction cats,
@@ -49,10 +83,10 @@ class Group_Events():
         # setup the abbreviations_cat_id dictionary
         for integer in range(int(cat_amount)-1):
             new_key = "r_c" + str(integer+1)
-            self.abbreviations_cat_id[new_key] = None
+            Group_Events.abbreviations_cat_id[new_key] = None
 
         # get all possibilities
-        possibilities = GROUP_INTERACTION_MASTER_DICT[cat_amount][inter_type]
+        possibilities = Group_Events.GROUP_INTERACTION_MASTER_DICT[cat_amount][inter_type]
         
         # get some filters premisses
         biome = str(game.clan.biome).casefold()
@@ -60,37 +94,37 @@ class Group_Events():
 
         # start filter for main cat / basic checks
         # - this might reduce the amount of checks which will be needed when checking for other cats 
-        possibilities = self.get_main_cat_interactions(possibilities,biome,season)
+        possibilities = Group_Events.get_main_cat_interactions(possibilities,biome,season)
 
         # get possible interactions, considering the possible interacting cats 
-        possibilities = self.get_filtered_interactions(possibilities, int(cat_amount), interact_cats)
+        possibilities = Group_Events.get_filtered_interactions(possibilities, int(cat_amount), interact_cats)
 
         # if there is no possibility return
         if len(possibilities) < 1:
             return []
         # choose one interaction and 
-        self.chosen_interaction = choice(possibilities)
+        Group_Events.chosen_interaction = choice(possibilities)
 
         # TRIGGER ALL NEEDED FUNCTIONS TO REFLECT THE INTERACTION
         if game.clan.game_mode != 'classic':
-            self.injuring_cats()
-        amount = game.config["relationship"]["in_decrease_value"][self.chosen_interaction.intensity]
+            Group_Events.injuring_cats()
+        amount = game.config["relationship"]["in_decrease_value"][Group_Events.chosen_interaction.intensity]
 
-        if len(self.chosen_interaction.general_reaction) > 0:
+        if len(Group_Events.chosen_interaction.general_reaction) > 0:
             # if there is a general reaction in the interaction, then use this
-            self.influence_general_relationship(amount)
+            Group_Events.influence_general_relationship(amount)
         else:
-            self.influence_specific_relationships(amount)
+            Group_Events.influence_specific_relationships(amount)
 
         # choose the interaction text and display 
-        interaction_str = choice(self.chosen_interaction.interactions)
-        interaction_str = self.prepare_text(interaction_str)
+        interaction_str = choice(Group_Events.chosen_interaction.interactions)
+        interaction_str = Group_Events.prepare_text(interaction_str)
         # TODO: add the interaction to the relationship log?
 
         interaction_str = interaction_str + f" ({inter_type} effect)"
-        ids = list(self.abbreviations_cat_id.values())
+        ids = list(Group_Events.abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
-        if self.chosen_interaction.get_injuries:
+        if Group_Events.chosen_interaction.get_injuries:
             relevant_event_tabs.append("health")
 
         game.cur_events_list.append(Single_Event(
@@ -102,7 +136,8 @@ class Group_Events():
     #                  functions to filter and decide interaction                  #
     # ---------------------------------------------------------------------------- #
 
-    def get_main_cat_interactions(self, interactions: list, biome : str, season : str) -> list:
+    @staticmethod
+    def get_main_cat_interactions(interactions: list, biome : str, season : str) -> list:
         """Filter interactions for MAIN cat.
             
             Parameters
@@ -122,7 +157,7 @@ class Group_Events():
         filtered_interactions = []
         allowed_season = [season, "Any", "any"]
         allowed_biome = [biome, "Any", "any"]
-        main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
+        main_cat = Cat.all_cats[Group_Events.abbreviations_cat_id["m_c"]]
         for interact in interactions:
             in_tags = [i for i in interact.biome if i in allowed_biome] 
             if len(in_tags) < 1:
@@ -151,7 +186,8 @@ class Group_Events():
             filtered_interactions.append(interact)
         return filtered_interactions
 
-    def get_filtered_interactions(self, interactions: list, amount: int, interact_cats: list):
+    @staticmethod
+    def get_filtered_interactions(interactions: list, amount: int, interact_cats: list):
         """ First assign which cat is which abbreviation, then filtered interaction list based on all constraints, which include the other cats.
 
             Parameters
@@ -170,12 +206,12 @@ class Group_Events():
         
         """
         # first handle the abbreviations possibilities for the cats
-        abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
-        abbr_per_interaction = self.remove_abbreviations_missing_cats(abbr_per_interaction)
-        self.set_abbreviations_cats(interact_cats)
+        abbr_per_interaction = Group_Events.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
+        abbr_per_interaction = Group_Events.remove_abbreviations_missing_cats(abbr_per_interaction)
+        Group_Events.set_abbreviations_cats(interact_cats)
 
         # check if any abbreviations_cat_ids is None, if so return 
-        not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
+        not_none = [abbr != None for abbr in Group_Events.abbreviations_cat_id.values()]
         if not all(not_none):
             return []
 
@@ -189,12 +225,12 @@ class Group_Events():
                 continue
 
             # check how the cats are and if they are fulfill the constraints like: status, trait, skill, ...
-            cat_allow_interaction = self.cat_allow_interaction(interact)
+            cat_allow_interaction = Group_Events.cat_allow_interaction(interact)
             if not cat_allow_interaction:
                 continue
 
             # now check for relationship constraints
-            relationship_allow_interaction = self.relationship_allow_interaction(interact)
+            relationship_allow_interaction = Group_Events.relationship_allow_interaction(interact)
             if not relationship_allow_interaction:
                 continue
 
@@ -202,7 +238,8 @@ class Group_Events():
 
         return filtered
 
-    def get_abbreviations_possibilities(self, interactions: list, amount: int, interact_cats: list):
+    @staticmethod
+    def get_abbreviations_possibilities(interactions: list, amount: int, interact_cats: list):
         """ Iterate over all pre-filtered interactions and 
             check which cat fulfills skill/trait/status condition of which abbreviation.
 
@@ -257,20 +294,21 @@ class Group_Events():
                     if cat_id in status_ids and cat_id in skill_ids and cat_id in trait_ids:
                         dictionary[abbreviation].append(cat_id)
 
-                        if cat_id in self.cat_abbreviations_counter and\
-                            abbreviation in self.cat_abbreviations_counter[cat_id]:
-                            self.cat_abbreviations_counter[cat_id][abbreviation] +=1
-                        elif cat_id in self.cat_abbreviations_counter and\
-                            abbreviation not in self.cat_abbreviations_counter[cat_id]:
-                            self.cat_abbreviations_counter[cat_id][abbreviation] = 1
+                        if cat_id in Group_Events.cat_abbreviations_counter and\
+                            abbreviation in Group_Events.cat_abbreviations_counter[cat_id]:
+                            Group_Events.cat_abbreviations_counter[cat_id][abbreviation] +=1
+                        elif cat_id in Group_Events.cat_abbreviations_counter and\
+                            abbreviation not in Group_Events.cat_abbreviations_counter[cat_id]:
+                            Group_Events.cat_abbreviations_counter[cat_id][abbreviation] = 1
                         else:
-                            self.cat_abbreviations_counter[cat_id] = {}
-                            self.cat_abbreviations_counter[cat_id][abbreviation] = 1
+                            Group_Events.cat_abbreviations_counter[cat_id] = {}
+                            Group_Events.cat_abbreviations_counter[cat_id][abbreviation] = 1
 
             possibilities[interact.id] = dictionary
         return possibilities
 
-    def remove_abbreviations_missing_cats(self, abbreviations_per_interaction: dict):
+    @staticmethod
+    def remove_abbreviations_missing_cats(abbreviations_per_interaction: dict):
         """
         Check which combinations of abbreviations are allowed and possible and which are not, only return a dictionary,
         with possible combinations together with the id for the interaction.
@@ -286,13 +324,14 @@ class Group_Events():
             filtered_abbreviations[interaction_id] = dictionary
         return filtered_abbreviations
 
-    def set_abbreviations_cats(self, interact_cats: list):
+    @staticmethod
+    def set_abbreviations_cats(interact_cats: list):
         """Choose which cat is which abbreviations."""
         free_to_choose = [cat.ID for cat in interact_cats]
         # shuffle the list to prevent choosing the same cats every time
         shuffle(free_to_choose)
 
-        for abbr_key in list(self.abbreviations_cat_id.keys()):
+        for abbr_key in list(Group_Events.abbreviations_cat_id.keys()):
             if abbr_key == "m_c":
                 continue
             highest_value = 0
@@ -301,18 +340,18 @@ class Group_Events():
             # gets the cat id which fits the abbreviations most of the time
             for cat_id in free_to_choose:
                 # first set some values if there are none
-                if cat_id not in self.cat_abbreviations_counter:
-                    self.cat_abbreviations_counter[cat_id] = {}
-                if abbr_key not in self.cat_abbreviations_counter[cat_id]:
-                    self.cat_abbreviations_counter[cat_id][abbr_key] = 0
+                if cat_id not in Group_Events.cat_abbreviations_counter:
+                    Group_Events.cat_abbreviations_counter[cat_id] = {}
+                if abbr_key not in Group_Events.cat_abbreviations_counter[cat_id]:
+                    Group_Events.cat_abbreviations_counter[cat_id][abbr_key] = 0
 
                 # find the highest value
-                curr_value = self.cat_abbreviations_counter[cat_id][abbr_key]
+                curr_value = Group_Events.cat_abbreviations_counter[cat_id][abbr_key]
                 if highest_value < curr_value:
                     highest_value = curr_value
                     highest_id = cat_id
             
-            self.abbreviations_cat_id[abbr_key] = highest_id
+            Group_Events.abbreviations_cat_id[abbr_key] = highest_id
             if highest_id in free_to_choose:
                 free_to_choose.remove(highest_id)
 
@@ -320,7 +359,8 @@ class Group_Events():
     #                  helper functions for filtering interactions                 #
     # ---------------------------------------------------------------------------- #
 
-    def relationship_allow_interaction(self, interaction: Group_Interaction):
+    @staticmethod
+    def relationship_allow_interaction(interaction: Group_Interaction):
         """Check if the interaction is allowed with the current chosen cats."""
         fulfilled_list = []
 
@@ -328,8 +368,8 @@ class Group_Events():
             abbre_from = name.split('_to_')[0]
             abbre_to = name.split('_to_')[1]
 
-            cat_from_id = self.abbreviations_cat_id[abbre_from]
-            cat_to_id = self.abbreviations_cat_id[abbre_to]
+            cat_from_id = Group_Events.abbreviations_cat_id[abbre_from]
+            cat_to_id = Group_Events.abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
             cat_to = Cat.all_cats[cat_to_id]
 
@@ -346,7 +386,8 @@ class Group_Events():
 
         return all(fulfilled_list)
 
-    def cat_allow_interaction(self, interaction: Group_Interaction):
+    @staticmethod
+    def cat_allow_interaction(interaction: Group_Interaction):
         """Check if the assigned cats fulfill the constraints of the interaction."""
 
         all_fulfilled = True
@@ -355,7 +396,7 @@ class Group_Events():
             if abbr == "m_c":
                 continue
             # check if the current abbreviations cat fulfill the constraint
-            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            relevant_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbr]]
             if relevant_cat.status not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
@@ -368,7 +409,7 @@ class Group_Events():
             if abbr == "m_c":
                 continue
             # check if the current abbreviations cat fulfill the constraint
-            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            relevant_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbr]]
             if relevant_cat.skill not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
@@ -381,7 +422,7 @@ class Group_Events():
             if abbr == "m_c":
                 continue
             # check if the current abbreviations cat fulfill the constraint
-            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            relevant_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbr]]
             if relevant_cat.personality.trait not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
@@ -394,7 +435,7 @@ class Group_Events():
             if abbr == "m_c":
                 continue
             # check if the current abbreviations cat fulfill the constraint
-            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            relevant_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbr]]
             if relevant_cat.backstory not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
@@ -410,7 +451,7 @@ class Group_Events():
             if abbr == "m_c":
                 continue
             # check if the current abbreviations cat fulfill the constraint
-            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            relevant_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbr]]
             injuries_in_needed = list(
                 filter(lambda inj: inj in constraint, relevant_cat.injuries.keys())
             )
@@ -425,11 +466,12 @@ class Group_Events():
     #                      functions after interaction decision                    #
     # ---------------------------------------------------------------------------- #
 
-    def influence_general_relationship(self, amount):
+    @staticmethod
+    def influence_general_relationship(amount):
         """
         Influence the relationship between all cats with the same amount, defined by the chosen group relationship.
         """
-        dictionary = self.chosen_interaction.general_reaction
+        dictionary = Group_Events.chosen_interaction.general_reaction
 
         # set the amount
         romantic = 0
@@ -455,11 +497,11 @@ class Group_Events():
             platonic = amount if dictionary["trust"] == "increase" else amount *-1
 
 
-        for inter_cat_id in self.abbreviations_cat_id.values():
+        for inter_cat_id in Group_Events.abbreviations_cat_id.values():
             inter_cat = Cat.all_cats[inter_cat_id]
             change_relationship_values(
                 cats_from=[inter_cat],
-                cats_to=list(self.abbreviations_cat_id.values()),
+                cats_to=list(Group_Events.abbreviations_cat_id.values()),
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,
@@ -469,19 +511,20 @@ class Group_Events():
                 trust=trust
             )
 
-    def influence_specific_relationships(self, amount):
+    @staticmethod
+    def influence_specific_relationships(amount):
         """
         Influence the relationships based on the list of the reaction of the chosen group interaction.
         """
-        if len(self.chosen_interaction.specific_reaction) <= 0:
+        if len(Group_Events.chosen_interaction.specific_reaction) <= 0:
             return
 
-        for name, dictionary in self.chosen_interaction.specific_reaction.items():
+        for name, dictionary in Group_Events.chosen_interaction.specific_reaction.items():
             abbre_from = name.split('_to_')[0]
             abbre_to = name.split('_to_')[1]
 
-            cat_from_id = self.abbreviations_cat_id[abbre_from]
-            cat_to_id = self.abbreviations_cat_id[abbre_to]
+            cat_from_id = Group_Events.abbreviations_cat_id[abbre_from]
+            cat_to_id = Group_Events.abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
 
             # set all values to influence the relationship
@@ -519,70 +562,40 @@ class Group_Events():
                 trust=trust
             )
 
-    def injuring_cats(self):
+    @staticmethod
+    def injuring_cats():
         """
         Injuring the cats based on the list of the injuries of the chosen group interaction.
         """
-        if not self.chosen_interaction.get_injuries.items:
+        if not Group_Events.chosen_interaction.get_injuries.items:
             return
 
-        for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+        for abbreviations, injury_dict in Group_Events.chosen_interaction.get_injuries.items():
             if "injury_names" not in injury_dict:
-                print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                print(f"ERROR: there are no injury names in the chosen interaction {Group_Events.chosen_interaction.id}.")
                 continue
-            injured_cat = Cat.all_cats[self.abbreviations_cat_id[abbreviations]]
+            injured_cat = Cat.all_cats[Group_Events.abbreviations_cat_id[abbreviations]]
 
             injuries = []
             for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
                 injuries.append(inj)
 
-            possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
-            possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            possible_scar = Group_Events.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            possible_death = Group_Events.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
             if injured_cat.status == "leader":
-                possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
+                possible_death = Group_Events.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
             
             if possible_death or possible_scar:
                 for condition in injuries:
-                    self.history.add_possible_history(injured_cat, condition, death_text=possible_death, scar_text=possible_scar)
+                    History.add_possible_history(injured_cat, condition, death_text=possible_death, scar_text=possible_scar)
 
-    def prepare_text(self, text: str) -> str:
+    @staticmethod
+    def prepare_text(text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
         
         replace_dict = {}
-        for abbr, cat_id in self.abbreviations_cat_id.items():
+        for abbr, cat_id in Group_Events.abbreviations_cat_id.items():
             replace_dict[abbr] = (str(Cat.all_cats[cat_id].name), choice(Cat.all_cats[cat_id].pronouns))
         
         return process_text(text, replace_dict)
-
-# ---------------------------------------------------------------------------- #
-#                   build master dictionary for interactions                   #
-# ---------------------------------------------------------------------------- #
-
-
-base_path = os.path.join(
-    "resources",
-    "dicts",
-    "relationship_events",
-    "group_interactions"
-)
-
-GROUP_INTERACTION_MASTER_DICT = {}
-for cat_amount in os.listdir(base_path):
-    if cat_amount == "group_types.json":
-        continue
-    file_path = os.path.join(base_path, cat_amount, "neutral.json")
-    GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-    with open(file_path, 'r') as read_file:
-        welcome_list = ujson.load(read_file)
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list)
-    
-    file_path = os.path.join(base_path, cat_amount, "positive.json")
-    with open(file_path, 'r') as read_file:
-        welcome_list = ujson.load(read_file)
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list)
-
-    file_path = os.path.join(base_path, cat_amount, "negative.json")
-    with open(file_path, 'r') as read_file:
-        welcome_list = ujson.load(read_file)
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list)
