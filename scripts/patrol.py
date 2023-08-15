@@ -640,10 +640,9 @@ class Patrol():
                 continue
 
             # filtering for dates
-            if 'date_exclusive' in patrol.tags:
-                special_date = get_special_date()
-                if not (special_date and special_date.patrol_tag in patrol.tags):
-                    continue
+            special_date = get_special_date()
+            if not (special_date and special_date.patrol_tag in patrol.tags):
+                continue
 
             #  correct button check
             if patrol_type == "general":
