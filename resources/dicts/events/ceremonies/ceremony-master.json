@@ -902,7 +902,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The thought alone of fighting and hurting another cat makes m_c shiver. {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to heal instead of fight, and (mentor) takes {PRONOUN/m_c/object} under {PRONOUN/(mentor)/poss} wing."
+    "The thought alone of fighting and hurting another cat makes m_c shiver. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to heal instead of fight, and (mentor) takes {PRONOUN/m_c/object} under {PRONOUN/(mentor)/poss} wing."
   ],
   "med_app_5": [
     [
@@ -1525,7 +1525,7 @@
       "general_backstory",
       "compassionate"
     ],
-    "Helping cats heal is what (old_name) does best. {PRONOUN/m_c/poss/CAP} full name of m_c proves to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re's} fully qualified to do so, and that StarClan has accepted {PRONOUN/m_c/object}."
+    "Helping cats heal is what (old_name) does best. {PRONOUN/m_c/poss/CAP} full name of m_c proves to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fully qualified to do so, and that StarClan has accepted {PRONOUN/m_c/object}."
   ],
   "med_13": [
     [
@@ -2567,7 +2567,7 @@
       "general_backstory",
       "strict"
     ],
-    "(old_name) grumbles to {PRONOUN/m_c/self} as l_n changes just a single word in the ceremony. But {PRONOUN/m_c/subject} {VERB/m_c/know/knows} better than to correct {PRONOUN/l_n/object} during such an important ceremony. {PRONOUN/m_c/subject/CAP} can speak to l_n about it later. For now, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} as {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, and are honored for {PRONOUN/m_c/poss} r_h."
+    "(old_name) grumbles to {PRONOUN/m_c/self} as l_n changes just a single word in the ceremony. But {PRONOUN/m_c/subject} {VERB/m_c/know/knows} better than to correct {PRONOUN/l_n/object} during such an important ceremony. {PRONOUN/m_c/subject/CAP} can speak to l_n about it later. For now, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} as {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_43": [
     [
@@ -2703,7 +2703,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't) care if there's no leader, (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't} care if there's no leader, (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_54": [
     [

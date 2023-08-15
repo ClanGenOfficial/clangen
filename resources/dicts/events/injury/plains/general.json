@@ -12,7 +12,7 @@
         "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
         "history_text": {
             "scar": "m_c was scarred when an eagle grabbed {PRONOUN/m_c/subject}.",
-            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle grabbed {PRONOUN/m_c/subject}."
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an eagle grabbed {PRONOUN/m_c/object}."
         },
         "cat_trait": null,
         "cat_skill": null,

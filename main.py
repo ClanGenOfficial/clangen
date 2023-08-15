@@ -21,6 +21,46 @@ import time
 import os
 import threading
 
+from importlib.util import find_spec
+
+if not getattr(sys, 'frozen', False):
+    requiredModules = [
+        "ujson",
+        "pygame",
+        "pygame_gui",
+        "platformdirs",
+        "pgpy",
+        "requests",
+        "strenum"
+    ]
+
+    isMissing = False
+
+    for module in requiredModules:
+        if find_spec(module) is None:
+            isMissing = True
+            break
+
+    if isMissing:
+        if find_spec("thonny") is not None:
+            print("""You are missing some requirements to run clangen!
+Please press "Tools" -> "Manage Packages"
+Once the menu opens, click the link below "Install from requirements file".
+Then, select the file "requirements.txt" in the clangen folder.""")
+        else:
+            print("""You are missing some requirements to run clangen!
+Please run the following command in your terminal to install them:
+
+python3 -m pip install -r requirements.txt
+""")
+        
+        print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
+        sys.exit(1)
+
+    del requiredModules
+    del isMissing
+del find_spec
+
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
@@ -118,7 +158,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
-from scripts.debugmode import debugmode
+from scripts.debugMenu import debugmode
 import pygame_gui
 import pygame
 

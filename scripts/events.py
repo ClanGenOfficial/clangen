@@ -9,10 +9,9 @@ TODO: Docs
 # pylint: enable=line-too-long
 import random
 import traceback
-import time
 
 from scripts.cat.history import History
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 
 import ujson
 
@@ -35,7 +34,6 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.game_structure.windows import SaveError
-from scripts.housekeeping.datadir import get_save_dir
 
 class Events:
     """
@@ -43,32 +41,14 @@ class Events:
     """
     all_events = {}
     game.switches['timeskip'] = False
-    # This is so we call the static function needed to clear the events dict.
-    generate_events = GenerateEvents()
-
-    def __init__(self, e_type=None, **cats):
-        self.history = History()
-        self.e_type = e_type
-        self.ID = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(
-            random.randint(0, 9)) + str(random.randint(0, 9))
-        if e_type is not None:
-            self.all_events[self.ID] = self
-        self.cats = cats
-        self.new_cat_invited = False
-        self.ceremony_accessory = False
-        self.relation_events = Relation_Events()
-        self.pregnancy_events = Pregnancy_Events()
-        self.condition_events = Condition_Events()
-        self.death_events = Death_Events()
-        self.freshkill_events = Freshkill_Events()
-        self.new_cat_events = NewCatEvents()
-        self.outsider_events = OutsiderEvents()
-        self.misc_events = MiscEvents()
-        self.CEREMONY_TXT = None
-        self.WAR_TXT = None
+    new_cat_invited = False
+    ceremony_accessory = False
+    CEREMONY_TXT = None
+    WAR_TXT = None
+        
+    def __init__(self):
         self.load_ceremonies()
         self.load_war_resources()
-        self.disaster_events = DisasterEvents()
 
     def one_moon(self):
         """
@@ -79,7 +59,7 @@ class Events:
         game.mediated = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
-        self.relation_events.clear_trigger_dict()
+        Relation_Events.clear_trigger_dict()
         Patrol.used_patrols.clear()
         game.patrolled.clear()
         game.just_died.clear()
@@ -98,7 +78,7 @@ class Events:
         game.clan.age += 1
         get_current_season()
         # print(game.clan.current_season)
-        self.pregnancy_events.handle_pregnancy_age(game.clan)
+        Pregnancy_Events.handle_pregnancy_age(game.clan)
         self.check_war()
 
         if game.clan.game_mode in ['expanded', 'cruel season'
@@ -117,7 +97,7 @@ class Events:
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
             if game.clan.age >= 5:
-                self.freshkill_events.handle_amount_freshkill_pile(
+                Freshkill_Events.handle_amount_freshkill_pile(
                     game.clan.freshkill_pile, relevant_cats)
             # make a notification if the Clan has not enough prey
             if not game.clan.freshkill_pile.clan_has_enough_food(
@@ -256,7 +236,7 @@ class Events:
             Cat.sort_cats()
 
         # Clear all the loaded event dicts.
-        Events.generate_events.clear_loaded_events()
+        GenerateEvents.clear_loaded_events()
 
         # autosave
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -742,10 +722,10 @@ class Events:
         cat.manage_outside_trait()
             
         cat.skills.progress_skill(cat)
-        self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+        Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         
         if not cat.dead:
-            self.outsider_events.killing_outsiders(cat)
+            OutsiderEvents.killing_outsiders(cat)
     
     def one_moon_cat(self, cat):
         """
@@ -782,7 +762,7 @@ class Events:
         # (CARE: the cats has to be fed before - should be handled in "one_moon" function)
         if game.clan.game_mode in ['expanded', 'cruel season'
                                    ] and game.clan.freshkill_pile:
-            self.freshkill_events.handle_nutrient(
+            Freshkill_Events.handle_nutrient(
                 cat, game.clan.freshkill_pile.nutrition_info)
             if cat.dead:
                 return
@@ -791,17 +771,17 @@ class Events:
         if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
                 if random.getrandbits(1):
-                    triggered_death = self.condition_events.handle_injuries(cat)
+                    triggered_death = Condition_Events.handle_injuries(cat)
                     if not triggered_death:
-                        self.condition_events.handle_illnesses(cat)
+                        Condition_Events.handle_illnesses(cat)
                 else:
-                    triggered_death = self.condition_events.handle_illnesses(cat)
+                    triggered_death = Condition_Events.handle_illnesses(cat)
                     if not triggered_death:
-                        self.condition_events.handle_injuries(cat)
+                        Condition_Events.handle_injuries(cat)
             elif cat.is_ill():
-                self.condition_events.handle_illnesses(cat)
+                Condition_Events.handle_illnesses(cat)
             else:
-                self.condition_events.handle_injuries(cat)
+                Condition_Events.handle_injuries(cat)
             game.switches['skip_conditions'].clear()
             if cat.dead:
                 return
@@ -820,23 +800,22 @@ class Events:
 
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
-            self.condition_events.handle_already_disabled(cat)
+            Condition_Events.handle_already_disabled(cat)
             if cat.dead:
                 return
 
         self.coming_out(cat)
-        self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+        Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         # Stop the timeskip if the cat died in childbirth
         if cat.dead:
             return
 
-        # this is the new interaction function, currently not active
         cat.relationship_interaction()
         cat.thoughts()
 
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead or cat.outside:
-            self.relation_events.handle_relationships(cat)
+            Relation_Events.handle_relationships(cat)
 
         # now we make sure ill and injured cats don't get interactions they shouldn't
         if cat.is_ill() or cat.is_injured():
@@ -1389,7 +1368,7 @@ class Events:
                 random_honor = "hard work"
 
         if cat.status in ["warrior", "medicine cat", "mediator"]:
-            self.history.add_app_ceremony(cat, random_honor)
+            History.add_app_ceremony(cat, random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
@@ -1496,7 +1475,7 @@ class Events:
                         break
             
             
-            self.misc_events.handle_misc_events(
+            MiscEvents.handle_misc_events(
                 cat,
                 other_cat,
                 game.clan.war.get("at_war", False),
@@ -1610,13 +1589,13 @@ class Events:
                         enemy_clan = other_clan
                         break
             
-            new_cats = self.new_cat_events.handle_new_cats(
+            new_cats = NewCatEvents.handle_new_cats(
                 cat=cat,
                 other_cat=other_cat,
                 war=game.clan.war.get("at_war", False),
                 enemy_clan=enemy_clan,
                 alive_kits=get_alive_kits(Cat))
-            self.relation_events.welcome_new_cats(new_cats)
+            Relation_Events.welcome_new_cats(new_cats)
 
     def other_interactions(self, cat):
         """
@@ -1643,7 +1622,7 @@ class Events:
                     enemy_clan = other_clan
                     break
         
-        self.misc_events.handle_misc_events(cat,
+        MiscEvents.handle_misc_events(cat,
                                             other_cat,
                                             game.clan.war.get("at_war", False),
                                             enemy_clan,
@@ -1689,7 +1668,7 @@ class Events:
         if not int(random.random() * game.get_config_value("death_related", "leader_death_chance")) \
                 and cat.status == 'leader' \
                 and not cat.not_working():
-            self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
 
         # chance to die of old age
@@ -1698,7 +1677,7 @@ class Events:
         if cat.moons > int(
                 random.random() * age_chance) + age_start:  # cat.moons > 150 <--> 200
             
-            self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits)
             return True
 
@@ -1711,10 +1690,10 @@ class Events:
         # final death chance and then, if not triggered, head to injuries
         if not int(random.random() * game.get_config_value("death_related", f"{game.clan.game_mode}_death_chance")) \
                 and not cat.not_working():  # 1/400
-            self.death_events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
+            Death_Events.handle_deaths(cat, other_cat, game.clan.war.get("at_war", False), enemy_clan, alive_kits)
             return True
         else:
-            triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, game.clan.war.get("at_war", False),
+            triggered_death = Condition_Events.handle_injuries(cat, other_cat, alive_kits, game.clan.war.get("at_war", False),
                                                                     enemy_clan, game.clan.current_season)
             return triggered_death
 
@@ -1748,7 +1727,7 @@ class Events:
                         enemy_clan = other_clan
                         break
             
-            self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
+            Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                             enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
             
             return
@@ -1797,7 +1776,7 @@ class Events:
                             enemy_clan = other_clan
                             break
                 
-                self.death_events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
+                Death_Events.handle_deaths(Cat.fetch_cat(chosen_target.cat_to), cat, game.clan.war.get("at_war", False),
                                                 enemy_clan, alive_kits=get_alive_kits(Cat), murder=True)
 
     def handle_mass_extinctions(self, cat):  # pylint: disable=unused-argument
@@ -1906,7 +1885,7 @@ class Events:
         # if triggered_death is True then the cat will die
         triggered_death = False
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            triggered_death = self.condition_events.handle_illnesses(
+            triggered_death = Condition_Events.handle_illnesses(
                 cat, game.clan.current_season)
         return triggered_death
 

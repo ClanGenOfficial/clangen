@@ -12,7 +12,7 @@ from re import sub
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 
 
 class MakeClanScreen(Screens):

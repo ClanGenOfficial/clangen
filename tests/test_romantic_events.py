@@ -10,7 +10,6 @@ class RelationshipConditions(unittest.TestCase):
         cat1 = Cat()
         cat2 = Cat()
         
-        event_class = Romantic_Events()
         condition = {
             "romantic": 0,
             "platonic": 0,
@@ -31,4 +30,4 @@ class RelationshipConditions(unittest.TestCase):
         rel_fulfill.trust = 50
 
         # then
-        self.assertTrue(event_class.relationship_fulfill_condition(rel_fulfill, condition))
+        self.assertTrue(Romantic_Events.relationship_fulfill_condition(rel_fulfill, condition))
