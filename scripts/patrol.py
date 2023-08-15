@@ -641,7 +641,7 @@ class Patrol():
                 continue
 
             # filtering for dates
-            if not (special_date and special_date.patrol_tag in patrol.tags):
+            if special_date and special_date.patrol_tag not in patrol.tags:
                 continue
 
             #  correct button check
