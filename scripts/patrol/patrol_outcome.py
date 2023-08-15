@@ -180,8 +180,11 @@ class PatrolOutcome():
         results.append(self._handle_condition_and_scars(patrol))
         results.append(self._handle_relationship_changes(patrol))
         results.append(self._handle_rep_changes(patrol))
+        results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
         results.append(self._handle_herbs(patrol))
+        results.append(self._handle_exp(patrol))
+        results.append(self._handle_mentor_app(patrol))
         
         # Filter out empty results strings
         results = [x for x in results if x]
@@ -295,7 +298,7 @@ class PatrolOutcome():
 
 
         base_exp = 0
-        if "master" in [x.experence_level for x in patrol.patrol_cats]:
+        if "master" in [x.experience_level for x in patrol.patrol_cats]:
             max_boost = 10
         else:
             max_boost = 0
@@ -305,7 +308,7 @@ class PatrolOutcome():
 
         # Apprentice exp, does not depend on success
         if game.clan.game_mode != "classic":
-            app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(self.patrol_cats)), 1)
+            app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(patrol.patrol_cats)), 1)
         else:
             app_exp = 0
 
@@ -344,7 +347,7 @@ class PatrolOutcome():
                 elif _cat == "patrol":
                     out_set.update(patrol.patrol_cats)
                 elif _cat == "multi":
-                    cats_dying = random.randint(1, max(1, len(self.patrol_cats) - 1))
+                    cats_dying = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
                     out_set.update(random.sample(patrol.patrol_cats, cats_dying))
                     
             return list(out_set)
@@ -404,7 +407,7 @@ class PatrolOutcome():
                 elif _cat == "patrol":
                     out_set.update(patrol.patrol_cats)
                 elif _cat == "multi":
-                    cats_dying = random.randint(1, max(1, len(self.patrol_cats) - 1))
+                    cats_dying = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
                     out_set.update(random.sample(patrol.patrol_cats, cats_dying))
                     
             return list(out_set)
@@ -446,7 +449,7 @@ class PatrolOutcome():
                 elif _cat == "patrol":
                     out_set.update(patrol.patrol_cats)
                 elif _cat == "multi":
-                    cat_num = random.randint(1, max(1, len(self.patrol_cats) - 1))
+                    cat_num = random.randint(1, max(1, len(patrol.patrol_cats) - 1))
                     out_set.update(random.sample(patrol.patrol_cats, cat_num))
                 elif _cat == "some_clan":
                     clan_cats = [x for x in Cat.all_cats_list if not (x.dead or x.outside)]
