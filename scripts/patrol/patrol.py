@@ -1061,114 +1061,137 @@ class Patrol():
 # ---------------------------------------------------------------------------- #
 
 """
-New experimental patrol format:
+More Documentation: https://docs.google.com/document/d/1Vuyclyd40mjG7PFXtl0852DlkcxIiyi_uIWxyi41sbI/edit?usp=sharing
 
-The idea for this new format is to make this more like a proper "tree", with 
-more vesible outcomes. 
 
-What's in a patrol?
+Patrol Template.
+This is a good starting point for writing your own patrols. 
 
-"patrol_id": str - the unique string ID of a patrol
-"biome": list - which biome can this patrol occur in
-"season": list - which seasons the patrol occurs in
-"type": list - which type(s) of patrol is this? Also option for "general", and "all"
-"tags": list - list of strings ONLY FOR THINGS THAT ARE NEEDED IN THE PATROL FILTERING PROCESS. Right now, only "new_cat"
-"min_cats": int
-"max_cats": int
-"weight": int - NEW!! This will weight the patrol when it's being chosen, allowing some patrols to be
-                less common than others. Common is ~20. 
-"into_text": str - into text
-"decline_text": str - decline text
-"chance_of_success: int
+{
+	"patrol_id": "some_unique_id",
+	"biome": [],
+	"season": [],
+	"types": [],
+	"tags": [],
+	"patrol_art": null,
+	"patrol_art_clean": null,
+	"min_cats": 1,
+	"max_cats": 6,
+	"min_max_status": {
+		"apprentice": [0, 6],
+		"medicine cat apprentice": [0, 6],
+		"medicine cat": [0, 6],
+		"deputy": [0, 6]
+		"warrior": [0, 6],
+		"leader": [0, 6],
+		"healer cats": [0, 6],
+		"normal_adult": [1, 6],
+		"all apprentices": [1, 6]
+	}
+	"weight": 20,
+	"chance_of_success": 50,
+	"relationship_constraint": [],
+	"pl_skill_constraint": [],
+	"intro_text": "The patrol heads out.",
+	"decline_text": "And they head right back!",
+	"success_outcomes": [
+		{
+			SEE OUTCOME BLOCK TEMPLATE
+        },
+        {
+			SEE OUTCOME BLOCK TEMPLATE
+			
+		},
+	],
+	"fail_outcomes": [
+		{
+			SEE OUTCOME BLOCK TEMPLATE
+        },
+        {
+			SEE OUTCOME BLOCK TEMPLATE
+			
+		},
+	],
 
-# Big change - how things status is determined, to move these out of tags. 
-# These are optional. If not included, no constaints are placed. 
-"min_max_status" {
-    "warrior", [1, 4],
-    "leader", [1, 1],
-    "apprentice": [2, 3],
+	"antag_success_outcomes": [
+		{
+			SEE OUTCOME BLOCK TEMPLATE
+        },
+        {
+			SEE OUTCOME BLOCK TEMPLATE
+			
+		},
+	],
+
+	"antag_fail_outcomes": [
+		{
+			SEE OUTCOME BLOCK TEMPLATE
+        },
+        {
+			SEE OUTCOME BLOCK TEMPLATE
+			
+		},
+	],
+
 }
 
-:: Also option. Restricts the patrols
-"pl_rc_relationship_containts": ["list of relationship containts" ]
-"pl_skill_containts": [list of skill constaints]
-"pl_trait_constaints: [list of trait constaints]
 
-# Buggest change in success outcomes and fail outcomes. More tree-like
-# more outcome veritlity, less relience on tags to determine outcome behavior. 
 
-"success_outcomes : [
-    {
-        
-        ::following are nessesary!::
-        
-        "text": str - the displayed text. 
-        "weight": int - The weight of this outcome during outcome determination. 
-        "exp": int - the amount of EXP gained in this outcome. 
-        
-        ::optional, allow more outcome control::
-        
-        :: Including anything in either of these makes this a stat outcome ::
-        "stat_trait": [list, of, traits] 
-        "stat_skill": [list, of, skill, strings]
-        "can_have_stat": ["p_l", "r_c", "app1" ]
-        
-        :: Including any of these makes this a death or injury outcome
-        :: A outcome can be both. If either death or injury is given, 
-        :: make sure history text is also included. 
-        "dead_cats": [various, strs, telling, which, cats, should die]
-        "injury: {
-            "cats": [list of cats]
-            "injury": [list of injury],
-            "scars" [list of scars]
+----------------------------------------------------------------------------------------
+
+Outcome Block Template.
+This is a good starting point for writing your own outcomes.
+{
+	"text": "The raw displayed outcome text.",
+	"exp": 0,
+    "weight": 20,
+    "stat_skill": [],
+    "stat_trait": [],
+    "can_have_stat": [],
+    "lost_cats": [],
+	"dead_cats": [],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"injury": [
+        {
+			"cats": [],
+			"injuries": [],
+			"scars": [],
+			"no_results": false
+        },
+        {
+			"cats": [],
+			"injuries": [],
+			"scars": [],
+			"no_results": false
         }
-        "lost_cats": [list, of cats]
-        "history_text": {
-            "reg_death": "",
-            "lead_death: "",
-            "scar": "",
-        }
-        
-        
-        :: New Cat Block. Including this makes this
-        :: outcome a new_cat outcome.
-        "new_cat": [
-            [ details for new_cat block, includeing "meet" or "join" ],
-            [  ],
-            [  ]
-        ]
-        
-        ::Resources Block
-        "herbs": []
-        "prey": []
-        
-        :: Relationships block
-        "outsider_rep": int (-2, -1, 0, 1, 2) IE, gain, neutral or lose. 
-        "other_clan_rep": int (-2, 1, 0, 1, 2) IE, gain, neutral or lose
-        "relationship" [
-            {
-                :: at least two ::
-                cat_from: str
-                cat_to: [list]
-                type: str: "normal", "two-way", "all-way"
-                value: "jeliousy"
-                amount: "amount"
-                log: "optional relationship log entry"
-            }
-        ]
-        
-        :: relationship_containts - works the same as the containts for the whole patrol. 
-        relationship_containts: list[str]
-        
-        
-        
-        
-    }
-]
+    ]
+	"history_text": {
+		"reg_death": "m_c died while on a patrol.",
+		"leader_death": "died on patrol",
+		"scar": "m_c was scarred on patrol",
+	}
+	"relationships": [
+        {
+			"cats_to": [],
+			"cats_from": [],
+			"mutual": false
+			"values": [],
+			"amount": 5
+        },	
+        {
+			"cats_to": [],
+			"cats_from": [],
+			"mutual": false
+			"values": [],
+			"amount": 5
+		}
+    ],
+    "new_cat" [
+        [],
+        []
+    ],
 
--- WHEN WRIING --   
-        Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.
-        History text needs to be written in past tense.
-        o_c_n and c_n should use "a" not "an" in front of them
+}
 
 """
