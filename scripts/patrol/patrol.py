@@ -23,7 +23,7 @@ from itertools import combinations
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome
 from scripts.cat.cats import Cat
-from scripts.special_dates import get_special_date
+from scripts.special_dates import get_special_date, contains_special_date_tag
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -537,8 +537,9 @@ class Patrol():
                 continue
 
             # filtering for dates
-            if special_date and special_date.patrol_tag not in patrol.tags:
-                continue
+            if contains_special_date_tag(patrol.tags):
+                if not special_date or special_date.patrol_tag not in patrol.tags:
+                    continue
 
             if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
                 continue

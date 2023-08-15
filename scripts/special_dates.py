@@ -7,7 +7,7 @@ from scripts.game_structure.game_essentials import game
 import datetime
 from dataclasses import dataclass
 from enum import Enum, auto
-from typing import Dict, Tuple, Union
+from typing import Dict, Tuple, Union, List
 
 #fixing year to 2000 so we can use date comparison functions.
 #2000 is used because it is a leap year.
@@ -85,3 +85,13 @@ def get_special_date() -> Union[DateInfo, None]:
         if date.in_range(_today):
             return date
     return None
+
+def contains_special_date_tag(lst: List[str]) -> bool:
+    """
+    Returns True if lst contains a special date tag. False otherwise.
+    """
+    for tag in lst:
+        for _, date in _date_map.items():
+            if date.patrol_tag == tag:
+                return True
+    return False
