@@ -1,15 +1,11 @@
-import random
-from os.path import exists as file_exists
 from random import choice, sample
 import pygame
 import pygame_gui
 
-import ujson
-from .base_screens import Screens, cat_profiles
-from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
-    get_special_snippet_list, process_text, adjust_prey_abbr, adjust_patrol_text, shorten_text_to_fit
+from .base_screens import Screens
+from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
 
@@ -505,16 +501,18 @@ class PatrolScreen(Screens):
             intro_text = self.patrol_obj.setup_patrol(self.current_patrol, self.patrol_type)
         except RuntimeError:
             self.change_screen("camp screen")
+            return
+
 
         self.elements['intro_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((150, 300), (600, 600))),
                         pygame.transform.scale(
-                            self.patrol_obj.patrol_art, (600, 600))
+                            self.patrol_obj.get_patrol_art(), (600, 600))
                     )
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
+        #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text,
                                                                      scale(pygame.Rect((770, 345), (670, 500))),
                                                                      object_id="#text_box_30_horizleft_pad_10_10_spacing_95",
@@ -527,12 +525,15 @@ class PatrolScreen(Screens):
         for x in self.patrol_obj.patrol_cats:
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
-        for x in self.patrol_obj.patrol_skills:
-            if x.get_short_skill() not in skills:
-                skills.append(x.get_short_skill())
-        for x in self.patrol_obj.patrol_traits:
-            if x not in traits:
-                traits.append(x)
+        for x in self.patrol_obj.patrol_cats:
+            if x.personality.trait not in traits:
+                traits.append(x.personality.trait)
+            
+            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
+                skills.append(x.skills.primary.get_short_skill())
+                
+            if x.skills.secondary and x.skills.secondary.get_short_skill() not in skills:
+                skills.append(x.skills.secondary.get_short_skill())
 
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {str(self.patrol_obj.patrol_leader.name)} \n'
@@ -569,7 +570,7 @@ class PatrolScreen(Screens):
 
         self.elements["antagonize"] = UIImageButton(scale(pygame.Rect((1100, 980), (344, 72))), "",
                                                     object_id="#antagonize_button", manager=MANAGER)
-        if self.patrol_obj.patrol_event.antagonize_text is None:
+        if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
     def open_patrol_complete_screen(self, user_input):
@@ -586,21 +587,21 @@ class PatrolScreen(Screens):
                                                       object_id="#patrol_again", manager=MANAGER)
         
         if user_input in ["nopro", "notproceed"]:
-            display_text = self.patrol_obj.proceed_patrol("decline")
+            display_text, results = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
-            display_text = self.patrol_obj.proceed_patrol("antag")
+            display_text, results = self.patrol_obj.proceed_patrol("antag")
         else:
-            display_text = self.patrol_obj.proceed_patrol("proceed")
+            display_text, results = self.patrol_obj.proceed_patrol("proceed")
         
         # Adjust text for solo patrols
-        display_text = adjust_patrol_text(display_text, self.patrol_obj)
+        #display_text = adjust_patrol_text(display_text, self.patrol_obj)
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
                                                                             "#text_box_22_horizcenter_spacing_95"),
                                                                         manager=MANAGER)
-        self.elements["patrol_results"].set_text(self.patrol_obj.results())
+        self.elements["patrol_results"].set_text(results)
 
         self.elements["patrol_text"].set_text(display_text)
 
