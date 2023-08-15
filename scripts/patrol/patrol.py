@@ -23,6 +23,7 @@ from itertools import combinations
 from scripts.patrol.patrol_event import PatrolEvent
 from scripts.patrol.patrol_outcome import PatrolOutcome
 from scripts.cat.cats import Cat
+from scripts.special_dates import get_special_date
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -523,6 +524,7 @@ class Patrol():
     def _filter_patrols(self, possible_patrols: List[PatrolEvent], biome:str, current_season:str, patrol_type:str):
         filtered_patrols = []
         romantic_patrols = []
+        special_date = get_special_date()
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -532,6 +534,10 @@ class Patrol():
             # Don't check for repeat patrols if ensure_patrol_id is being used. 
             if not isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str) and \
                     patrol.patrol_id in self.used_patrols:
+                continue
+
+            # filtering for dates
+            if special_date and special_date.patrol_tag not in patrol.tags:
                 continue
 
             if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
