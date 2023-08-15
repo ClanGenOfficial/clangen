@@ -622,6 +622,7 @@ class Patrol():
         filtered_patrols = []
         romantic_patrols = []
         self.filter_count = 0
+        special_date = get_special_date()
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -640,7 +641,6 @@ class Patrol():
                 continue
 
             # filtering for dates
-            special_date = get_special_date()
             if not (special_date and special_date.patrol_tag in patrol.tags):
                 continue
 
