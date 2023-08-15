@@ -358,7 +358,7 @@ class PatrolOutcome():
             return ""
         
         body = True
-        if "no_body" is self.dead_cats:
+        if "no_body" in self.dead_cats:
             body=False
         
         results = []
@@ -1018,7 +1018,7 @@ class PatrolOutcome():
     def __handle_scarring(self, cat:Cat, scar_list:str, patrol:'Patrol') -> str:
         """Add scar and scar history. Returns scar given """
         
-        if cat.pelt.scars >= 4:
+        if len(cat.pelt.scars) >= 4:
             return None
         
         scar_list = [x for x in scar_list if x in Pelt.scars1 + Pelt.scars2 + Pelt.scars3 
